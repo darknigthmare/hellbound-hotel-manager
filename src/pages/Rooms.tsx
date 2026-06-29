@@ -294,7 +294,9 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
                         
                         <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
                           {!safetyCheck.isSafe && (
-                            <ShieldAlert size={12} style={{ color: '#ff6b7a' }} title="Risk alert: high threat guest in unsecured room" />
+                            <span title="Risk alert: high threat guest in unsecured room" style={{ display: 'inline-flex' }}>
+                              <ShieldAlert size={12} style={{ color: '#ff6b7a' }} />
+                            </span>
                           )}
                           <span style={{ fontSize: '0.6rem', opacity: 0.8, textTransform: 'uppercase' }}>
                             {room.type === 'staff_room' ? 'staff' : room.type === 'secured_room' ? 'secure' : room.type}
