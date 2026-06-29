@@ -164,6 +164,32 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
         </button>
       </div>
 
+      {/* Visual Hotel Banner */}
+      <div 
+        className="glass-panel art-deco-border"
+        style={{
+          height: '220px',
+          backgroundImage: "linear-gradient(to bottom, rgba(12, 8, 9, 0.2), rgba(12, 8, 9, 0.95)), url('/assets/hotel_exterior.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 35%',
+          borderRadius: 'var(--radius-lg)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          padding: '20px',
+          boxShadow: 'var(--shadow-gold)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        <h2 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-title)', color: 'var(--color-gold)', textShadow: '0 2px 10px rgba(0,0,0,0.95)' }}>
+          {settings.appName}
+        </h2>
+        <p style={{ color: 'var(--color-text-main)', textShadow: '0 1px 6px rgba(0,0,0,0.95)', maxWidth: '550px', fontSize: '0.85rem', fontStyle: 'italic', marginTop: '4px' }}>
+          "Where a second chance isn't a dream... it's a structural hazard."
+        </p>
+      </div>
+
       {/* Narrative event ticker */}
       <div
         className="glass-panel art-deco-border"
@@ -297,38 +323,44 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
             External Threats
           </h3>
           
-          {/* Heaven Attention */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <Eye size={16} style={{ color: '#ffd700' }} />
-              <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Heaven Attention Level</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ flex: 1, height: '12px', backgroundColor: 'var(--bg-main)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ height: '100%', width: `${reputation.heavenAttention}%`, backgroundColor: '#ffd700', transition: 'width 0.4s ease' }} />
+          <div className="brass-gauge-container" style={{ display: 'flex', justifyContent: 'space-around', gap: '16px', padding: '10px 0' }}>
+            {/* Heaven Attention Dial */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#ffd700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Heaven Attention
+              </span>
+              <div className="brass-dial" title={`Heaven Attention: ${reputation.heavenAttention}%`}>
+                <div 
+                  className="brass-dial-needle" 
+                  style={{ transform: `rotate(${(reputation.heavenAttention / 100) * 180 - 90}deg)` }}
+                />
+                <strong style={{ fontSize: '1.2rem', color: '#ffd700', zIndex: 2, marginTop: '24px' }}>
+                  {reputation.heavenAttention}%
+                </strong>
               </div>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, minWidth: '35px', textAlign: 'right' }}>{reputation.heavenAttention}%</span>
+              <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textAlign: 'center' }}>
+                Extermination countdown
+              </span>
             </div>
-            <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', display: 'block', marginTop: '4px' }}>
-              Triggers countdown acceleration and celestial inspections.
-            </span>
-          </div>
 
-          {/* Vees Hostility */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <Tv size={16} style={{ color: '#a8202a' }} />
-              <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Vees Influence / Hostility</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ flex: 1, height: '12px', backgroundColor: 'var(--bg-main)', borderRadius: '6px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ height: '100%', width: `${reputation.veesInfluence}%`, backgroundColor: 'var(--color-primary)', transition: 'width 0.4s ease' }} />
+            {/* Vees Hostility Dial */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#ff6b7a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Vees Influence
+              </span>
+              <div className="brass-dial" title={`Vees Hostility: ${reputation.veesInfluence}%`}>
+                <div 
+                  className="brass-dial-needle" 
+                  style={{ transform: `rotate(${(reputation.veesInfluence / 100) * 180 - 90}deg)` }}
+                />
+                <strong style={{ fontSize: '1.2rem', color: '#ff6b7a', zIndex: 2, marginTop: '24px' }}>
+                  {reputation.veesInfluence}%
+                </strong>
               </div>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, minWidth: '35px', textAlign: 'right' }}>{reputation.veesInfluence}%</span>
+              <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textAlign: 'center' }}>
+                Smear signals level
+              </span>
             </div>
-            <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', display: 'block', marginTop: '4px' }}>
-              Spurs cyber attack events, gossip, and media smear projects.
-            </span>
           </div>
         </div>
       </div>

@@ -16,6 +16,9 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
   const [typeFilter, setTypeFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
+  // Niffty sweep animation states
+  const [cleaningRooms, setCleaningRooms] = useState<Record<string, boolean>>({});
+
   // Edit / Assign Modal state
   const [isAssignModalOpen, setIsAssignModalOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -81,17 +84,23 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
       return;
     }
 
-    const updated: Room = {
-      ...room,
-      status: 'clean',
-      lastInspectionDate: new Date().toISOString().split('T')[0],
-      lastInspectedBy: cleanerId,
-      maintenanceNotes: `${room.maintenanceNotes}\nInspected & cleaned by staff.`
-    };
-    
-    db.saveRoom(updated);
-    db.logAction('ROOM_CLEAN', `Staff inspected/cleaned room ${room.number}.`);
-    onStateChange();
+    // Set cleaning status to trigger animation overlay
+    setCleaningRooms(prev => ({ ...prev, [room.number]: true }));
+
+    setTimeout(() => {
+      const updated: Room = {
+        ...room,
+        status: 'clean',
+        lastInspectionDate: new Date().toISOString().split('T')[0],
+        lastInspectedBy: cleanerId,
+        maintenanceNotes: `${room.maintenanceNotes}\nInspected & cleaned by staff.`
+      };
+      
+      db.saveRoom(updated);
+      db.logAction('ROOM_CLEAN', `Staff inspected/cleaned room ${room.number}.`);
+      setCleaningRooms(prev => ({ ...prev, [room.number]: false }));
+      onStateChange();
+    }, 1200);
   };
 
   // Quick Action: Repair Room
@@ -232,157 +241,122 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
         </div>
       </div>
 
-      {/* Grid Layout */}
-      {filteredRooms.length === 0 ? (
-        <div className="glass-panel" style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-muted)' }}>
-          <Info size={40} style={{ color: 'var(--color-gold-dark)', marginBottom: '12px' }} />
-          <h3>No rooms match the selected filters.</h3>
-        </div>
-      ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
-          {filteredRooms.map((room: Room) => {
-            const tenant = characters.find((c: Character) => c.id === room.occupantId);
-            const safetyCheck = RulesEngine.validateRoomAssignment(room, tenant);
-            
-            const isDamaged = room.status === 'damaged';
-            const isClean = room.status === 'clean';
-            const hasTenant = room.occupantId !== null;
+      {/* Stacked 2D Floor Map Blueprint */}
+      <div className="blueprint-hotel" style={{ marginBottom: '24px' }}>
+        <div className="blueprint-roof">HELLBOUND REDEMPTION HOTEL蓝图</div>
+        
+        {[4, 3, 2, 1, 0].map(floorNum => {
+          const floorRooms = rooms.filter((r: Room) => r.floor === floorNum);
+          
+          return (
+            <div key={floorNum} className="blueprint-floor">
+              <div className="blueprint-floor-label">
+                Floor {floorNum}
+              </div>
+              <div className="blueprint-rooms-row">
+                {floorRooms.map((room: Room) => {
+                  const tenant = characters.find((c: Character) => c.id === room.occupantId);
+                  const isMatchingFilter = filteredRooms.some((f: Room) => f.number === room.number);
+                  const safetyCheck = RulesEngine.validateRoomAssignment(room, tenant);
+                  
+                  const isDamaged = room.status === 'damaged';
+                  const isClean = room.status === 'clean';
+                  const isCleaning = cleaningRooms[room.number];
+                  const hasTenant = room.occupantId !== null;
 
-            return (
-              <div 
-                key={room.number} 
-                className="glass-panel animate-fade-in"
-                style={{ 
-                  padding: '20px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between',
-                  borderTop: isDamaged ? '3px solid var(--status-high)' : '1px solid var(--border-crimson)',
-                  backgroundColor: room.status === 'cursed' ? 'rgba(168, 32, 42, 0.05)' : 'rgba(28, 17, 19, 0.7)'
-                }}
-              >
-                <div>
-                  {/* Top Row: Room number & type */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
-                    <div>
-                      <h3 style={{ fontSize: '1.2rem', color: 'var(--color-gold)' }}>
-                        Ward {room.number}
-                      </h3>
-                      <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
-                        {room.type.replace('_', ' ')} (Floor {room.floor})
-                      </span>
-                    </div>
-                    <span 
+                  // Get initials
+                  const initials = tenant ? tenant.name.split(' ').map((n: string) => n[0]).join('') : '';
+
+                  return (
+                    <div 
+                      key={room.number}
+                      className={`blueprint-room-slot ${room.status}`}
+                      onClick={() => handleOpenAssign(room)}
                       style={{ 
-                        fontSize: '0.7rem', 
-                        padding: '3px 8px', 
-                        borderRadius: '3px',
-                        textTransform: 'uppercase',
-                        fontWeight: 700,
-                        backgroundColor: 
-                          room.status === 'clean' ? 'rgba(40,167,69,0.15)' :
-                          room.status === 'messy' ? 'rgba(253,126,20,0.15)' :
-                          room.status === 'damaged' ? 'rgba(220,53,69,0.15)' :
-                          'rgba(114,28,36,0.3)',
-                        color:
-                          room.status === 'clean' ? '#4ce06c' :
-                          room.status === 'messy' ? '#fca34d' :
-                          room.status === 'damaged' ? '#ff6b7a' :
-                          '#ff808b',
-                        border: 
-                          room.status === 'clean' ? '1px solid rgba(40,167,69,0.3)' :
-                          room.status === 'messy' ? '1px solid rgba(253,126,20,0.3)' :
-                          room.status === 'damaged' ? '1px solid rgba(220,53,69,0.3)' :
-                          '1px solid rgba(168,32,42,0.5)'
+                        opacity: isMatchingFilter ? 1 : 0.25,
+                        boxShadow: isCleaning ? '0 0 15px rgba(212, 175, 55, 0.6)' : 'var(--shadow-card)',
+                        pointerEvents: isCleaning ? 'none' : 'auto'
                       }}
                     >
-                      {room.status.replace('_', ' ')}
-                    </span>
-                  </div>
+                      {/* Cleaning Overlay */}
+                      {isCleaning && (
+                        <div className="sweep-overlay">
+                          <span className="niffty-broom-sweep" style={{ fontSize: '1.2rem', marginRight: '4px' }}>🧹</span>
+                          <span>Sweeping...</span>
+                        </div>
+                      )}
 
-                  {/* Safety Warning */}
-                  {!safetyCheck.isSafe && safetyCheck.warning && (
-                    <div style={{ backgroundColor: 'rgba(220, 53, 69, 0.12)', border: '1px solid rgba(220,53,69,0.4)', borderRadius: '4px', padding: '8px', color: '#ff6b7a', fontSize: '0.75rem', marginBottom: '12px', display: 'flex', gap: '6px', alignItems: 'flex-start', fontWeight: 600 }}>
-                      <ShieldAlert size={14} style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span>{safetyCheck.warning}</span>
-                    </div>
-                  )}
-
-                  {/* Tenant info */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', padding: '8px', backgroundColor: 'rgba(0,0,0,0.15)', borderRadius: '4px' }}>
-                    <Users size={16} style={{ color: 'var(--color-text-muted)' }} />
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-main)' }}>
-                      Occupant: {tenant ? <strong style={{ color: 'var(--color-gold)' }}>{tenant.name}</strong> : <span style={{ color: 'var(--color-text-muted)', fontStyle: 'italic' }}>Vacant</span>}
-                    </span>
-                  </div>
-
-                  {/* Restrictions */}
-                  {room.restrictions.length > 0 && (
-                    <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '12px' }}>
-                      {room.restrictions.map((r, i) => (
-                        <span key={i} style={{ fontSize: '0.65rem', padding: '1px 5px', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '3px', color: 'var(--color-text-muted)' }}>
-                          {r}
+                      {/* Header */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '0.85rem', color: 'var(--color-gold)' }}>
+                          Ward {room.number}
                         </span>
-                      ))}
+                        
+                        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+                          {!safetyCheck.isSafe && (
+                            <ShieldAlert size={12} style={{ color: '#ff6b7a' }} title="Risk alert: high threat guest in unsecured room" />
+                          )}
+                          <span style={{ fontSize: '0.6rem', opacity: 0.8, textTransform: 'uppercase' }}>
+                            {room.type === 'staff_room' ? 'staff' : room.type === 'secured_room' ? 'secure' : room.type}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Body */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        {tenant ? (
+                          <>
+                            <div className="crest-avatar" title={tenant.name}>
+                              {initials}
+                            </div>
+                            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-text-main)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '80px' }}>
+                              {tenant.name}
+                            </span>
+                          </>
+                        ) : (
+                          <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
+                            Vacant
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Footer Actions / Info */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.65rem' }}>
+                        <span style={{ color: 'var(--color-text-muted)' }}>
+                          Status: {room.status}
+                        </span>
+                        
+                        {/* Quick clean/repair hooks */}
+                        <div onClick={(e) => e.stopPropagation()} style={{ display: 'flex', gap: '4px' }}>
+                          {isDamaged ? (
+                            <button 
+                              onClick={() => handleRepairRoom(room)} 
+                              style={{ background: 'none', border: 'none', color: '#ff6b7a', cursor: 'pointer', padding: 0, fontWeight: 'bold' }}
+                              title={`Repair room for ${room.repairCost} HN`}
+                            >
+                              Repair
+                            </button>
+                          ) : (
+                            !isClean && (
+                              <button 
+                                onClick={() => handleCleanRoom(room, 'niffty')} 
+                                style={{ background: 'none', border: 'none', color: 'var(--color-gold)', cursor: 'pointer', padding: 0 }}
+                                title="Send Niffty to clean room"
+                              >
+                                Clean
+                              </button>
+                            )
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  )}
-
-                  {/* Notes / Cost info */}
-                  <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '8px', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '8px' }}>
-                    <div style={{ fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '2px' }}>Maintenance Notes:</div>
-                    <div style={{ fontStyle: 'italic', fontSize: '0.75rem' }}>{room.maintenanceNotes || 'No notes compiled.'}</div>
-                  </div>
-
-                  {isDamaged && room.repairCost > 0 && (
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#ff6b7a', backgroundColor: 'rgba(220,53,69,0.06)', padding: '6px 10px', borderRadius: '4px', border: '1px solid rgba(220,53,69,0.15)', marginBottom: '12px' }}>
-                      <span>Estimated Repair Cost:</span>
-                      <strong>{room.repairCost} HN</strong>
-                    </div>
-                  )}
-
-                  {/* Inspection info */}
-                  <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                    Last inspected: {room.lastInspectionDate || 'Unknown'} 
-                    {room.lastInspectedBy && ` by ${characters.find((c: Character) => c.id === room.lastInspectedBy)?.name || room.lastInspectedBy}`}
-                  </div>
-                </div>
-
-                {/* Actions row */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', marginTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px' }}>
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button className="btn btn-secondary" style={{ padding: '6px 10px' }} onClick={() => handleOpenAssign(room)} title="Configure Room Setting & Tenant" id={`configure-room-${room.number}`}>
-                      Assign
-                    </button>
-                    {hasTenant && (
-                      <button className="btn btn-danger" style={{ padding: '6px 10px' }} onClick={() => handleVacateRoom(room)} title="Vacate guest" id={`vacate-room-${room.number}`}>
-                        <LogOut size={12} />
-                      </button>
-                    )}
-                  </div>
-
-                  {isDamaged ? (
-                    <button className="btn btn-primary" style={{ padding: '6px 12px', fontSize: '0.75rem' }} onClick={() => handleRepairRoom(room)} id={`repair-room-${room.number}`}>
-                      <Hammer size={12} />
-                      Repair
-                    </button>
-                  ) : (
-                    <button 
-                      className="btn btn-gold" 
-                      style={{ padding: '6px 12px', fontSize: '0.75rem', opacity: isClean ? 0.6 : 1 }} 
-                      disabled={isClean}
-                      onClick={() => handleCleanRoom(room, 'niffty')} // Send Niffty to clean!
-                      id={`clean-room-${room.number}`}
-                    >
-                      <Sparkles size={12} />
-                      Clean (Niffty)
-                    </button>
-                  )}
-                </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-      )}
+            </div>
+          );
+        })}
+      </div>
 
       {/* Assign / Edit Modal */}
       {isAssignModalOpen && selectedRoom && (

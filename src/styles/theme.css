@@ -252,3 +252,258 @@ label {
   padding: 24px;
   overflow-y: auto;
 }
+
+/* Stacked 2D Floor Blueprint Map */
+.blueprint-hotel {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(20, 13, 14, 0.9) 0%, rgba(12, 8, 9, 0.95) 100%), url('/assets/hotel_lobby.png') no-repeat center center;
+  background-size: cover;
+  border: var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-gold);
+  padding: 24px;
+  gap: 12px;
+  position: relative;
+}
+
+.blueprint-roof {
+  height: 40px;
+  background: linear-gradient(135deg, transparent 40%, var(--color-gold) 40%, var(--color-gold) 60%, transparent 60%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--color-gold-dark);
+}
+
+.blueprint-floor {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed var(--color-primary-light);
+  padding-bottom: 12px;
+  gap: 16px;
+}
+
+.blueprint-floor-label {
+  width: 100px;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  text-shadow: var(--shadow-gold);
+  text-transform: uppercase;
+}
+
+.blueprint-rooms-row {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.blueprint-room-slot {
+  flex: 1;
+  min-width: 120px;
+  height: 90px;
+  background-color: rgba(28, 17, 19, 0.85);
+  border: 1px solid var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-room-slot:hover {
+  border-color: var(--color-gold);
+  background-color: var(--bg-card-hover);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.blueprint-room-slot.clean {
+  border-left: 4px solid var(--status-low);
+}
+.blueprint-room-slot.messy {
+  border-left: 4px solid var(--status-medium);
+}
+.blueprint-room-slot.damaged {
+  border-left: 4px solid var(--status-high);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(220,53,69,0.05) 10px, rgba(220,53,69,0.05) 20px);
+}
+.blueprint-room-slot.cursed {
+  border-left: 4px solid #721c24;
+  box-shadow: 0 0 10px rgba(114, 28, 36, 0.4) inset;
+}
+.blueprint-room-slot.locked {
+  border-left: 4px solid #333;
+  opacity: 0.6;
+}
+
+.crest-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-gold-dark);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+  font-family: var(--font-title);
+}
+
+/* Sweep Cleanup Animation */
+@keyframes sweepBroom {
+  0% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(-15deg) translateX(-8px); }
+  75% { transform: rotate(15deg) translateX(8px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+.niffty-broom-sweep {
+  animation: sweepBroom 0.4s ease infinite;
+}
+
+.sweep-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(168, 32, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  color: var(--color-gold);
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-shadow: 0 1px 3px black;
+  backdrop-filter: blur(1px);
+}
+
+/* Dialogue Speech Bubbles */
+.dialogue-box {
+  background-color: rgba(20, 13, 14, 0.95);
+  border: var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: relative;
+  margin-top: 16px;
+  box-shadow: var(--shadow-gold);
+}
+
+.dialogue-bubble {
+  position: relative;
+  background-color: var(--bg-card);
+  border: var(--border-crimson);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  color: var(--color-text-main);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.dialogue-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 30px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: var(--bg-card) transparent;
+  display: block;
+  width: 0;
+}
+
+/* SVG Interactive Network Graph */
+.svg-graph-container {
+  background-color: var(--bg-sidebar);
+  border: var(--border-crimson);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.graph-node:hover circle {
+  fill: var(--color-primary-light);
+  stroke: var(--color-gold);
+  stroke-width: 2px;
+}
+
+.graph-node-avatar-text {
+  font-family: var(--font-title);
+  font-weight: bold;
+  font-size: 10px;
+  fill: var(--color-gold);
+  pointer-events: none;
+}
+
+.graph-link {
+  stroke-opacity: 0.6;
+  transition: stroke-width var(--transition-fast);
+}
+
+.graph-link.highlighted {
+  stroke-opacity: 1;
+}
+
+/* Threat Gauges Dials */
+.brass-gauge-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.brass-dial {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 4px double var(--color-gold-dark);
+  border-radius: 50%;
+  background: radial-gradient(circle, #221416 0%, #0c0809 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-gold);
+}
+
+.brass-dial-needle {
+  position: absolute;
+  width: 2px;
+  height: 42px;
+  background-color: var(--color-primary);
+  top: 8px;
+  left: 49px;
+  transform-origin: 50% 100%;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 4px var(--color-primary);
+}
+
+.brass-dial-needle::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  bottom: 0;
+  left: -3px;
+}
+
