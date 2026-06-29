@@ -52,6 +52,10 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
 
   // Form: Log Session state
   const [isSessionModalOpen, setIsSessionModalOpen] = useState(false);
+  const [sessionStep, setSessionStep] = useState<number>(1);
+  const [selectedDialoguePath, setSelectedDialoguePath] = useState<string | null>(null);
+  const [dialogueLog, setDialogueLog] = useState<{ charSpeech: string, residentSpeech: string } | null>(null);
+
   const [sessionType, setSessionType] = useState<SessionType>('empathy_workshop');
   const [sessionSummary, setSessionSummary] = useState('');
   const [sessionConductedBy, setSessionConductedBy] = useState('charlie');
@@ -125,8 +129,8 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   };
 
   // Log session
-  const handleLogSession = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLogSession = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!selectedPlan || !selectedChar) return;
 
     const session: RehabilitationSession = {
@@ -169,6 +173,9 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     });
 
     setIsSessionModalOpen(false);
+    setSessionStep(1);
+    setSelectedDialoguePath(null);
+    setDialogueLog(null);
     setSessionSummary('');
     setDeltaEmpathy(0);
     setDeltaAccountability(0);
@@ -581,99 +588,300 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
         </div>
       )}
 
-      {/* Log Session Modal */}
+      {/* Log Session Modal (Dialogue Simulator Wizard) */}
       {isSessionModalOpen && selectedPlan && selectedChar && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '520px', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
-              Log Session: {selectedChar.name}
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '620px', padding: '24px', maxHeight: '90vh', overflowY: 'auto' }}>
+            
+            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span>Log Session: {selectedChar.name}</span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
+                Step {sessionStep} of 2
+              </span>
             </h2>
-            <form onSubmit={handleLogSession} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+
+            {/* STEP 1: INITIAL DETAILS SETUP */}
+            {sessionStep === 1 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div>
+                    <label htmlFor="sess-type">Session Category</label>
+                    <select 
+                      id="sess-type" 
+                      value={sessionType} 
+                      onChange={(e) => setSessionType(e.target.value as SessionType)}
+                      style={{ width: '100%' }}
+                    >
+                      <option value="empathy_workshop">Empathy Workshop</option>
+                      <option value="accountability_session">Accountability Session</option>
+                      <option value="conflict_resolution">Conflict Resolution</option>
+                      <option value="trust_building">Trust Building Exercise</option>
+                      <option value="public_apology">Public Apology</option>
+                      <option value="group_activity">Group Activity</option>
+                      <option value="hotel_service">Hotel Duty / Service</option>
+                      <option value="therapy_like_checkin">Bar Check-in (Diagnostics)</option>
+                      <option value="custom">Custom Session</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="sess-conducted">Conducted By</label>
+                    <select 
+                      id="sess-conducted" 
+                      value={sessionConductedBy} 
+                      onChange={(e) => {
+                        setSessionConductedBy(e.target.value);
+                        // Auto switch type to bar checkin if Husk is chosen
+                        if (e.target.value === 'husk') {
+                          setSessionType('therapy_like_checkin');
+                        }
+                      }}
+                      style={{ width: '100%' }}
+                    >
+                      {staffMembers.map((staff: Character) => (
+                        <option key={staff.id} value={staff.id}>{staff.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="sess-type">Session Category</label>
-                  <select 
-                    id="sess-type" 
-                    value={sessionType} 
-                    onChange={(e) => setSessionType(e.target.value as SessionType)}
-                    style={{ width: '100%' }}
+                  <label htmlFor="sess-summary">Pre-Session Context (Optional Notes)</label>
+                  <textarea 
+                    id="sess-summary" 
+                    rows={2} 
+                    value={sessionSummary} 
+                    onChange={(e) => setSessionSummary(e.target.value)} 
+                    style={{ width: '100%' }} 
+                    placeholder="e.g. Session planned after incident. Focus will be on accountability."
+                  />
+                </div>
+
+                <div style={{ padding: '16px', backgroundColor: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)', borderRadius: '6px' }}>
+                  <h4 style={{ color: 'var(--color-gold)', fontSize: '0.85rem', marginBottom: '4px', fontWeight: 600 }}>
+                    Visual Check-in Simulator
+                  </h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>
+                    Proceeding will launch the dialogue tree window. You will choose Charlie's or Husk's check-in responses, and watch the resident's stats update in real-time.
+                  </p>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '12px' }}>
+                  <button type="button" className="btn btn-secondary" onClick={() => setIsSessionModalOpen(false)}>
+                    Cancel
+                  </button>
+                  <button 
+                    type="button" 
+                    className="btn btn-primary"
+                    onClick={() => {
+                      if (!sessionSummary) {
+                        setSessionSummary(`${sessionType.replace('_', ' ')} conducted by ${characters.find((c: Character) => c.id === sessionConductedBy)?.name || sessionConductedBy}`);
+                      }
+                      setSessionStep(2);
+                    }}
                   >
-                    <option value="empathy_workshop">Empathy Workshop</option>
-                    <option value="accountability_session">Accountability Session</option>
-                    <option value="conflict_resolution">Conflict Resolution</option>
-                    <option value="trust_building">Trust Building Exercise</option>
-                    <option value="public_apology">Public Apology</option>
-                    <option value="group_activity">Group Activity</option>
-                    <option value="hotel_service">Hotel Duty / Service</option>
-                    <option value="therapy_like_checkin">Bar Check-in (Diagnostics)</option>
-                    <option value="custom">Custom Session</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="sess-conducted">Conducted By</label>
-                  <select 
-                    id="sess-conducted" 
-                    value={sessionConductedBy} 
-                    onChange={(e) => setSessionConductedBy(e.target.value)}
-                    style={{ width: '100%' }}
-                  >
-                    {staffMembers.map((staff: Character) => (
-                      <option key={staff.id} value={staff.id}>{staff.name}</option>
-                    ))}
-                  </select>
+                    Launch Check-in Simulation →
+                  </button>
                 </div>
               </div>
+            )}
 
-              <div>
-                <label htmlFor="sess-summary">Session Log Summary *</label>
-                <textarea 
-                  id="sess-summary" 
-                  rows={2} 
-                  required
-                  value={sessionSummary} 
-                  onChange={(e) => setSessionSummary(e.target.value)} 
-                  style={{ width: '100%' }} 
-                  placeholder="e.g. Resident completed trust fall. Sincerity level estimated high..."
-                />
-              </div>
+            {/* STEP 2: DIALOGUE WORKSHOP SIMULATION */}
+            {sessionStep === 2 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                
+                {/* Visual Backdrop Frame */}
+                <div 
+                  style={{
+                    height: '240px',
+                    backgroundImage: `linear-gradient(rgba(12, 8, 9, 0.2), rgba(12, 8, 9, 0.95)), url(${sessionConductedBy === 'husk' ? "'/assets/hotel_bar.png'" : "'/assets/hotel_lobby.png'"})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    border: '1px solid var(--border-gold-dark)',
+                    borderRadius: 'var(--radius-md)',
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    padding: '16px'
+                  }}
+                >
+                  {/* Counselor Crest & Dialogue */}
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <div className="crest-avatar" style={{ width: '32px', height: '32px', flexShrink: 0, border: '2px solid var(--color-gold)' }}>
+                      {sessionConductedBy === 'charlie' ? 'CM' : sessionConductedBy === 'husk' ? 'HK' : 'SF'}
+                    </div>
+                    <div className="dialogue-bubble" style={{ fontSize: '0.8rem', padding: '8px 12px', flex: 1, backgroundColor: 'rgba(28, 17, 19, 0.9)' }}>
+                      {dialogueLog ? dialogueLog.charSpeech : `Hi, ${selectedChar.name}! Let's talk about your progress. I want to discuss something important.`}
+                    </div>
+                  </div>
 
-              {/* Adjustments */}
-              <div style={{ padding: '12px', border: '1px dashed var(--color-primary-light)', borderRadius: '4px', backgroundColor: 'rgba(0,0,0,0.15)' }}>
-                <h4 style={{ fontSize: '0.8rem', color: 'var(--color-gold)', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Sparkles size={14} />
-                  Moral Parameter Adjustments
-                </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.8rem' }}>
-                  <div>
-                    <label htmlFor="delta-emp">Empathy Change</label>
-                    <input type="number" id="delta-emp" value={deltaEmpathy} onChange={(e) => setDeltaEmpathy(parseInt(e.target.value) || 0)} style={{ width: '100%' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="delta-acc">Accountability Change</label>
-                    <input type="number" id="delta-acc" value={deltaAccountability} onChange={(e) => setDeltaAccountability(parseInt(e.target.value) || 0)} style={{ width: '100%' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="delta-imp">Impulse Control Change</label>
-                    <input type="number" id="delta-imp" value={deltaImpulse} onChange={(e) => setDeltaImpulse(parseInt(e.target.value) || 0)} style={{ width: '100%' }} />
-                  </div>
-                  <div>
-                    <label htmlFor="delta-coop">Cooperation Change</label>
-                    <input type="number" id="delta-coop" value={deltaCooperation} onChange={(e) => setDeltaCooperation(parseInt(e.target.value) || 0)} style={{ width: '100%' }} />
-                  </div>
+                  {/* Resident Crest & Response */}
+                  {dialogueLog && (
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end', alignSelf: 'flex-end', width: '80%' }}>
+                      <div className="dialogue-bubble" style={{ fontSize: '0.8rem', padding: '8px 12px', flex: 1, backgroundColor: 'rgba(20, 13, 14, 0.95)', border: '1px solid var(--color-gold)' }}>
+                        {dialogueLog.residentSpeech}
+                      </div>
+                      <div className="crest-avatar" style={{ width: '32px', height: '32px', flexShrink: 0, backgroundColor: 'var(--color-primary-dark)', color: 'var(--color-gold)', border: '2px solid var(--color-primary)' }}>
+                        {selectedChar.name.split(' ').map((n: string) => n[0]).join('')}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
 
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '12px' }}>
-                <button type="button" className="btn btn-secondary" onClick={() => setIsSessionModalOpen(false)} id="cancel-log-sess-btn">
-                  Cancel
-                </button>
-                <button type="submit" className="btn btn-primary" id="save-log-sess-btn">
-                  Record Log
-                </button>
+                {/* Choices Row / Conclude Pane */}
+                {!selectedDialoguePath ? (
+                  <div>
+                    <label style={{ marginBottom: '8px' }}>Select Counseling Dialogue Focus:</label>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {(() => {
+                        // Options generator
+                        const getOpts = (resId: string, cond: string) => {
+                          const isAngel = resId === 'angeldust';
+                          const isPentious = resId === 'sirpentious';
+
+                          if (cond === 'husk') {
+                            return [
+                              {
+                                id: 'bar_therapy',
+                                label: 'Husk Check-in: "Listen kid, you don\'t have to keep drinking the poison."',
+                                charSpeech: "Look, I've lost my soul, you've lost yours. We're all in the dirt. But you don't have to keep drinking the poison. Let's dump the junk.",
+                                responseText: isAngel 
+                                  ? "Husk... you actually get it. No fake smiles. Fine, I'll dump the pills for tonight. Give me a Shirley Temple." 
+                                  : isPentious
+                                  ? "You think a simple bartender can understand my villainy?! ...Wait, this mocktail tastes like... victory? Refill, please!"
+                                  : "Thanks, bartender. Sometimes a quiet drink and a real conversation is all a sinner needs.",
+                                deltas: { empathy: 5, accountability: 5, impulse: 15, cooperation: 5 },
+                                logText: "Husk served mocktails. Resident relaxed and shared coping notes."
+                              }
+                            ];
+                          } else {
+                            return [
+                              {
+                                id: 'empathy',
+                                label: 'Charlie Empathy Focus: "Let\'s share our feelings and trust each other!"',
+                                charSpeech: "I know it's scary to open up, but sharing our feelings makes us stronger. How do you feel about those you've hurt?",
+                                responseText: isAngel
+                                  ? "Feelings? Honey, I get paid to look good, not to feel. But... I guess Vaggie has a point sometimes. She doesn't take my crap."
+                                  : isPentious
+                                  ? "Feelings?! I am a creature of cold, steel malice! But... if you insist, I do feel slightly bad when my egg bois get squished..."
+                                  : "It's difficult to say. Groundwork is hard, but talking helps, I suppose.",
+                                deltas: { empathy: 12, accountability: 4, impulse: 0, cooperation: 8 },
+                                logText: "Charlie conducted an empathy check-in. Resident showed moral remorse."
+                              },
+                              {
+                                id: 'accountability',
+                                label: 'Charlie Accountability Focus: "Actions have consequences. We must face them."',
+                                charSpeech: "Every deal we make binds us. We have to take responsibility for our actions to redeem ourselves.",
+                                responseText: isAngel
+                                  ? "Responsibility? Val owns my soul, Charlie. Taking responsibility just gets me beaten. But I'll follow hotel rules..."
+                                  : isPentious
+                                  ? "A mastermind always takes credit for his misdeeds! I did construct that death laser, and I shall build the repair beams next!"
+                                  : "I understand. Rules are rules for a reason. I'll make sure to follow the guidelines.",
+                                deltas: { empathy: 4, accountability: 12, impulse: 5, cooperation: 8 },
+                                logText: "Charlie pushed accountability rules. Resident confirmed guidelines compliance."
+                              }
+                            ];
+                          }
+                        };
+
+                        const options = getOpts(selectedChar.id, sessionConductedBy);
+
+                        return options.map(opt => (
+                          <button
+                            key={opt.id}
+                            type="button"
+                            className="btn btn-secondary"
+                            style={{ textAlign: 'left', padding: '10px 14px', fontSize: '0.85rem' }}
+                            onClick={() => {
+                              setSelectedDialoguePath(opt.id);
+                              setDialogueLog({
+                                charSpeech: opt.charSpeech,
+                                residentSpeech: opt.responseText
+                              });
+                              setDeltaEmpathy(opt.deltas.empathy);
+                              setDeltaAccountability(opt.deltas.accountability);
+                              setDeltaImpulse(opt.deltas.impulse);
+                              setDeltaCooperation(opt.deltas.cooperation);
+                              setSessionSummary(prev => prev + (prev ? ' - ' : '') + opt.logText);
+                            }}
+                          >
+                            {opt.label}
+                          </button>
+                        ));
+                      })()}
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ padding: '12px', border: '1px dashed var(--color-gold-dark)', borderRadius: '6px', backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                    <h4 style={{ color: 'var(--color-gold)', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Sparkles size={14} />
+                      Moral Parameter Changes Applied
+                    </h4>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '10px', fontSize: '0.8rem', textAlign: 'center', marginBottom: '12px' }}>
+                      <div style={{ padding: '8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+                        <span style={{ color: 'var(--color-text-muted)', display: 'block', fontSize: '0.7rem' }}>Empathy</span>
+                        <strong style={{ color: '#4ce06c', fontSize: '1.1rem' }}>+{deltaEmpathy}</strong>
+                      </div>
+                      <div style={{ padding: '8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+                        <span style={{ color: 'var(--color-text-muted)', display: 'block', fontSize: '0.7rem' }}>Accountability</span>
+                        <strong style={{ color: '#4ce06c', fontSize: '1.1rem' }}>+{deltaAccountability}</strong>
+                      </div>
+                      <div style={{ padding: '8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+                        <span style={{ color: 'var(--color-text-muted)', display: 'block', fontSize: '0.7rem' }}>Impulse Control</span>
+                        <strong style={{ color: '#4ce06c', fontSize: '1.1rem' }}>+{deltaImpulse}</strong>
+                      </div>
+                      <div style={{ padding: '8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+                        <span style={{ color: 'var(--color-text-muted)', display: 'block', fontSize: '0.7rem' }}>Cooperation</span>
+                        <strong style={{ color: '#4ce06c', fontSize: '1.1rem' }}>+{deltaCooperation}</strong>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
+                      <button 
+                        type="button" 
+                        className="btn btn-secondary" 
+                        style={{ padding: '6px 12px', fontSize: '0.8rem' }}
+                        onClick={() => {
+                          setSelectedDialoguePath(null);
+                          setDialogueLog(null);
+                          setDeltaEmpathy(0);
+                          setDeltaAccountability(0);
+                          setDeltaImpulse(0);
+                          setDeltaCooperation(0);
+                        }}
+                      >
+                        ← Back to Themes
+                      </button>
+                      
+                      <button 
+                        type="button" 
+                        className="btn btn-primary" 
+                        style={{ padding: '6px 16px', fontSize: '0.8rem' }}
+                        onClick={() => handleLogSession()}
+                      >
+                        Conclude & Record Session Log
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* Conclude Actions for step 2 footer if not choice made */}
+                {!selectedDialoguePath && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '12px', marginTop: '4px' }}>
+                    <button type="button" className="btn btn-secondary" onClick={() => setSessionStep(1)}>
+                      ← Back to Setup
+                    </button>
+                    <button type="button" className="btn btn-secondary" onClick={() => setIsSessionModalOpen(false)}>
+                      Cancel
+                    </button>
+                  </div>
+                )}
+
               </div>
-            </form>
+            )}
+
           </div>
         </div>
       )}
