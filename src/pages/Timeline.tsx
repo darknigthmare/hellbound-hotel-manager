@@ -1,119 +1,52 @@
 import React from 'react';
-import { Hourglass, Shield, ShieldOff, AlertTriangle, Eye, EyeOff, CheckCircle } from 'lucide-react';
+import { Hourglass, AlertTriangle, Eye, EyeOff } from 'lucide-react';
 import { db } from '../db/localDb';
-import { TimelineScope, SpoilerLevel, Character, Room } from '../types';
+import { DatabaseState, TimelineScope, SpoilerLevel } from '../types';
 
 interface TimelineProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
 }
 
 export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
-  const { timeline, characters, rooms } = state;
+  const { timeline } = state;
+
+  const commitTimeline = (
+    operation: string,
+    nextTimeline: DatabaseState['timeline'],
+    action: string,
+    details: string
+  ) => {
+    const committed = db.transaction(operation, (draft) => {
+      draft.timeline = nextTimeline;
+    }, { action, details });
+    if (committed) onStateChange();
+  };
 
   const handleUpdateTimeline = (scope: TimelineScope) => {
-    let hotelState: 'original' | 'damaged' | 'rebuilt' = 'original';
-    
-    // Determine hotel condition based on timeline
-    if (scope === 'season_1_end') {
-      hotelState = 'damaged';
-    } else if (scope === 'season_2') {
-      hotelState = 'rebuilt';
-    }
+    const hotelState: 'original' | 'damaged' | 'rebuilt' = scope === 'custom'
+      ? timeline.hotelState
+      : scope === 'season_1_end' || scope === 'season_2' ? 'rebuilt' : 'original';
 
-    const updatedTimeline = {
+    commitTimeline('TIMELINE_VIEW_CHANGE', {
       ...timeline,
       current: scope,
       hotelState
-    };
-
-    // Save timeline state
-    db.saveTimeline(updatedTimeline);
-
-    // Apply lore constraints based on timeline scope
-    const chars: Character[] = db.getCharacters();
-    const rms: Room[] = db.getRooms();
-
-    // 1. Sir Pentious status
-    const pentious = chars.find(c => c.id === 'sirpentious');
-    if (pentious) {
-      const updatedPentious = { ...pentious };
-      if (scope === 'pilot_legacy') {
-        updatedPentious.role = 'antagonist';
-        updatedPentious.status = 'external';
-        updatedPentious.riskLevel = 'medium';
-        updatedPentious.rehabProgress = 0;
-      } else if (scope === 'season_1_start') {
-        updatedPentious.role = 'resident';
-        updatedPentious.status = 'applicant';
-        updatedPentious.riskLevel = 'medium';
-        updatedPentious.rehabProgress = 10;
-      } else if (scope === 'season_1_end') {
-        updatedPentious.role = 'resident';
-        updatedPentious.status = 'resident';
-        updatedPentious.riskLevel = 'low';
-        updatedPentious.rehabProgress = 70;
-      } else if (scope === 'season_2') {
-        updatedPentious.role = 'external';
-        updatedPentious.status = 'redeemed'; // officially redeemed!
-        updatedPentious.riskLevel = 'low';
-        updatedPentious.rehabProgress = 100;
-      }
-      db.saveCharacter(updatedPentious);
-
-      // If redeemed under Season 2, vacate their room
-      if (scope === 'season_2') {
-        const room = rms.find(r => r.occupantId === 'sirpentious');
-        if (room) {
-          db.saveRoom({ ...room, occupantId: null });
-        }
-      }
-    }
-
-    // 2. Adjust rooms structural state based on hotel status
-    if (scope === 'season_1_end') {
-      // Mark more rooms as damaged
-      rms.forEach(r => {
-        if (r.number === '404' || r.number === '102') {
-          db.saveRoom({
-            ...r,
-            status: 'damaged',
-            repairCost: r.repairCost > 0 ? r.repairCost : 400
-          });
-        }
-      });
-    } else if (scope === 'season_2') {
-      // Repair rooms
-      rms.forEach(r => {
-        if (r.status === 'damaged') {
-          db.saveRoom({
-            ...r,
-            status: 'clean',
-            repairCost: 0
-          });
-        }
-      });
-    }
-
-    onStateChange();
+    }, 'TIMELINE_VIEW_CHANGE', `Lore view changed to ${scope}; operational rosters, rooms and costs were not modified.`);
   };
 
   const handleToggleHideSpoilers = (hide: boolean) => {
-    db.saveTimeline({
+    commitTimeline('SPOILER_VISIBILITY_CHANGE', {
       ...timeline,
       hideSpoilers: hide
-    });
-    db.logAction('CONFIG_CHANGE', `Spoiler protection setting changed: ${hide ? 'HIDDEN' : 'VISIBLE'}.`);
-    onStateChange();
+    }, 'CONFIG_CHANGE', `Spoiler protection setting changed: ${hide ? 'HIDDEN' : 'VISIBLE'}.`);
   };
 
   const handleSelectSpoilerLevel = (level: SpoilerLevel) => {
-    db.saveTimeline({
+    commitTimeline('SPOILER_BOUNDARY_CHANGE', {
       ...timeline,
       spoilerLevel: level
-    });
-    db.logAction('CONFIG_CHANGE', `Spoiler boundary set to: ${level.toUpperCase()}.`);
-    onStateChange();
+    }, 'CONFIG_CHANGE', `Spoiler boundary set to: ${level.toUpperCase()}.`);
   };
 
   return (
@@ -123,7 +56,7 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
         <div>
           <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Timeline Selector</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Set the operational time frame of the hotel. Changing the timeline applies canonical updates to guest rosters and room conditions.
+            Select a lore snapshot. This filter is reversible and never rewrites rooms, costs, incidents or gameplay progress.
           </p>
         </div>
       </div>
@@ -141,32 +74,39 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
               {
                 id: 'pilot_legacy',
                 title: 'Pilot Legacy',
-                desc: 'Initial hotel setup. Sir Pentious acts as a low-level urban antagonist deployable in brawls. Hotel structure intact.',
-                badge: 'original state'
+                desc: '2019 pilot continuity only. Pilot claims stay isolated unless the Prime Video series independently confirms them.',
+                badge: 'legacy source'
               },
               {
                 id: 'season_1_start',
-                title: 'Season 1 Start',
-                desc: 'Charlie launches the official curriculum. Sir Pentious joins as an applicant. Exorcists purges follow active timers.',
-                badge: 'intake active'
+                title: 'Season 1 — Episodes 1–7',
+                desc: 'Charlie opens the series-era hotel. Sir Pentious arrives in Episode 2; Adam remains alive and commands the exorcists.',
+                badge: 'series opening'
               },
               {
                 id: 'season_1_end',
-                title: 'Season 1 End',
-                desc: 'Post-battle conditions. Hotel is structurally damaged. Sir Pentious is an active resident with high moral score.',
-                badge: 'damaged structure'
+                title: 'Season 1 — After Episode 8',
+                desc: 'The original building is destroyed and its replacement is completed. Pentious appears redeemed in Heaven; Adam is deceased.',
+                badge: 'finale state'
               },
               {
                 id: 'season_2',
-                title: 'Season 2 Active',
-                desc: 'Hotel is fully rebuilt. Sir Pentious is officially cataloged as redeemed and residing in Heaven. Celestial eyes alert.',
-                badge: 'ascended state'
+                title: 'Season 2',
+                desc: 'The rebuilt hotel receives new arrivals. Pentious\' redemption affects Heaven while Vox escalates his campaign.',
+                badge: 'current canon'
+              },
+              {
+                id: 'custom',
+                title: 'Simulation AU / Custom',
+                desc: 'Shows every operational and user-authored record. Scores, budgets, risks and player outcomes remain simulation data, not canon claims.',
+                badge: 'gameplay layer'
               }
             ].map((t) => {
               const isActive = timeline.current === t.id;
 
               return (
-                <div
+                <button
+                  type="button"
                   key={t.id}
                   onClick={() => handleUpdateTimeline(t.id as TimelineScope)}
                   style={{
@@ -176,10 +116,14 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
                     borderRadius: '6px',
                     cursor: 'pointer',
                     transition: 'all var(--transition-fast)',
-                    position: 'relative'
+                    position: 'relative',
+                    width: '100%',
+                    textAlign: 'left',
+                    color: 'inherit'
                   }}
                   className="timeline-card-option"
                   id={`timeline-card-${t.id}`}
+                  aria-pressed={isActive}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
                     <h4 style={{ color: isActive ? 'var(--color-gold)' : 'var(--color-text-main)', fontSize: '1rem' }}>
@@ -197,7 +141,7 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
                       ✦ ACTIVE CONFIGURATION
                     </div>
                   )}
-                </div>
+                </button>
               );
             })}
           </div>
@@ -230,6 +174,7 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => handleToggleHideSpoilers(!timeline.hideSpoilers)}
                   style={{
                     backgroundColor: timeline.hideSpoilers ? '#28a745' : 'var(--color-primary-light)',
@@ -284,7 +229,7 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
           {/* Hotel Condition Summary */}
           <div className="glass-panel" style={{ padding: '20px' }}>
             <h4 style={{ color: 'var(--color-text-muted)', marginBottom: '8px', fontSize: '0.85rem', textTransform: 'uppercase' }}>
-              Hotel Structural Status
+              Canonical Building Snapshot
             </h4>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Hourglass size={18} style={{ color: 'var(--color-gold)' }} />
@@ -293,12 +238,15 @@ export const Timeline: React.FC<TimelineProps> = ({ state, onStateChange }) => {
                   State: {timeline.hotelState.toUpperCase()}
                 </span>
                 <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                  {timeline.hotelState === 'original' && 'Standard rooms active. Normal maintenance overhead.'}
-                  {timeline.hotelState === 'damaged' && 'Severe repair overhead. Multiple rooms damaged post-battle.'}
-                  {timeline.hotelState === 'rebuilt' && 'Reconstructed facilities. Golden wards active. High defense rating.'}
+                  {timeline.hotelState === 'original' && 'Original series-era building; operational room records remain player-managed.'}
+                  {timeline.hotelState === 'damaged' && 'Transitional damage snapshot; no room or ledger mutation is performed.'}
+                  {timeline.hotelState === 'rebuilt' && 'Replacement hotel shown by the finale and used in Season 2.'}
                 </span>
               </div>
             </div>
+            <p style={{ marginTop: '10px', fontSize: '0.7rem', color: '#fca34d', lineHeight: 1.45 }}>
+              Lore selection never grants free repairs or clears repair costs. Use the Rooms and Resources gameplay systems for operational changes.
+            </p>
           </div>
 
         </div>

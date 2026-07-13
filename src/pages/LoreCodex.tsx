@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { BookOpen, Plus, Edit2, Trash2, ShieldAlert, Lock, Unlock, EyeOff, Info, CheckCircle, FileText, AlertCircle } from 'lucide-react';
+import { Plus, Edit2, Trash2, ShieldAlert, Lock, Unlock, Info, CheckCircle, FileText, AlertCircle } from 'lucide-react';
 import { db } from '../db/localDb';
-import { RulesEngine } from '../lib/rules-engine';
 import { LoreValidation, LoreGap } from '../lib/lore-validation';
-import { LoreEntry, CanonStatus, SourceType, SpoilerLevel, TimelineScope, LoreCategory } from '../types';
+import { LoreEntry, CanonStatus, SourceType, SpoilerLevel, TimelineScope, LoreCategory, DatabaseState } from '../types';
 import { CanonBadge } from '../components/CanonBadge';
 import { SpoilerBadge } from '../components/SpoilerBadge';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { useDialogFocus } from '../components/useDialogFocus';
 
 interface LoreCodexProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
   searchQuery: string;
 }
@@ -44,9 +44,34 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
   const [formSpoiler, setFormSpoiler] = useState<SpoilerLevel>('none');
   const [formTimeline, setFormTimeline] = useState<TimelineScope>('season_1_start');
   const [formLocked, setFormLocked] = useState(false);
+  const modalRef = useDialogFocus(isModalOpen, () => setIsModalOpen(false), '#lore-title');
 
-  // Run validation gaps scanner
-  const validationGaps = LoreValidation.validateLoreEntries(loreCodex);
+  const handleTabKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    currentTab: 'directory' | 'validation',
+  ) => {
+    const tabs = ['directory', 'validation'] as const;
+    const currentIndex = tabs.indexOf(currentTab);
+    let nextIndex: number | null = null;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = tabs.length - 1;
+    if (nextIndex === null) return;
+    event.preventDefault();
+    const nextTab = tabs[nextIndex];
+    setActiveTab(nextTab);
+    document.getElementById(`tab-lore-${nextTab}`)?.focus();
+  };
+
+  const timelineVisibleEntries = loreCodex.filter((entry: LoreEntry) => {
+    if (!LoreValidation.isAvailableAtTimeline(entry.timelineScope, timeline.current)) return false;
+    const spoilerRanks: Record<SpoilerLevel, number> = { none: 0, season_1: 1, season_2: 2, future: 3 };
+    return !timeline.hideSpoilers || spoilerRanks[entry.spoilerLevel] <= spoilerRanks[timeline.spoilerLevel];
+  });
+
+  // Validation follows the active spoiler boundary so hidden titles never leak.
+  const validationGaps = LoreValidation.validateLoreEntries(timelineVisibleEntries);
 
   const handleEdit = (entry: LoreEntry) => {
     setEditingEntry(entry);
@@ -96,13 +121,6 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
       return;
     }
 
-    // Canon status rule verification
-    const isValidSource = RulesEngine.validateLoreSource(formCanon, formSourceRef);
-    if (!isValidSource) {
-      setValidationError(`Rule Violation: You cannot classify a lore entry as '${formCanon}' without providing a Source Reference citation.`);
-      return;
-    }
-
     const newEntry: LoreEntry = {
       id: editingEntry ? editingEntry.id : 'lore_' + Date.now(),
       title: formTitle.trim(),
@@ -117,7 +135,21 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
       isLocked: formLocked
     };
 
-    db.saveLoreEntry(newEntry);
+    const candidateEntries = [
+      ...loreCodex.filter((entry: LoreEntry) => entry.id !== newEntry.id),
+      newEntry
+    ];
+    const entryErrors = LoreValidation.validateLoreEntries(candidateEntries)
+      .filter((gap) => gap.entryId === newEntry.id && gap.severity === 'error');
+    if (entryErrors.length > 0) {
+      setValidationError(entryErrors.map((gap) => gap.message).join(' '));
+      return;
+    }
+
+    if (!db.saveLoreEntry(newEntry)) {
+      setValidationError(db.getStorageStatus().lastError?.message || 'The lore entry could not be saved.');
+      return;
+    }
     setIsModalOpen(false);
     onStateChange();
   };
@@ -129,24 +161,25 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
 
   const confirmDelete = () => {
     if (deleteTargetId) {
-      db.deleteLoreEntry(deleteTargetId);
-      setIsConfirmOpen(false);
-      setDeleteTargetId(null);
-      onStateChange();
+      if (db.deleteLoreEntry(deleteTargetId)) {
+        setIsConfirmOpen(false);
+        setDeleteTargetId(null);
+        onStateChange();
+      }
     }
   };
 
   // Toggle locked status (locks/unlocks database entries)
   const handleToggleLock = (entry: LoreEntry) => {
-    db.saveLoreEntry({
+    const success = db.saveLoreEntry({
       ...entry,
       isLocked: !entry.isLocked
     });
-    onStateChange();
+    if (success) onStateChange();
   };
 
   // Filter listings
-  const filteredEntries = loreCodex.filter((entry: LoreEntry) => {
+  const filteredEntries = timelineVisibleEntries.filter((entry: LoreEntry) => {
     // Global search
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
@@ -161,10 +194,6 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
     if (categoryFilter !== 'all' && entry.category !== categoryFilter) return false;
     if (canonFilter !== 'all' && entry.canonStatus !== canonFilter) return false;
 
-    // Spoiler visibility check
-    const visible = RulesEngine.isContentVisible(entry, timeline);
-    if (!visible) return false;
-
     return true;
   });
 
@@ -178,16 +207,22 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
             Store canon rules, review factions, verify facts, and isolate narrative spoilers.
           </p>
         </div>
-        <button className="btn btn-primary" onClick={handleCreate} id="add-lore-btn">
+        <button type="button" className="btn btn-primary" onClick={handleCreate} id="add-lore-btn">
           <Plus size={16} />
           Add Lore Entry
         </button>
       </div>
 
       {/* Tabs Row */}
-      <div style={{ display: 'flex', borderBottom: '1px solid var(--color-primary-light)', marginBottom: '20px', gap: '8px' }}>
+      <div role="tablist" aria-label="Lore Codex views" style={{ display: 'flex', borderBottom: '1px solid var(--color-primary-light)', marginBottom: '20px', gap: '8px' }}>
         <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'directory'}
+          aria-controls="lore-panel-directory"
+          tabIndex={activeTab === 'directory' ? 0 : -1}
           onClick={() => setActiveTab('directory')}
+          onKeyDown={(event) => handleTabKeyDown(event, 'directory')}
           style={{
             padding: '10px 20px',
             backgroundColor: activeTab === 'directory' ? 'rgba(168, 32, 42, 0.15)' : 'transparent',
@@ -196,15 +231,20 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
             color: activeTab === 'directory' ? 'var(--color-gold)' : 'var(--color-text-muted)',
             cursor: 'pointer',
             fontWeight: 600,
-            fontFamily: 'var(--font-title)',
-            outline: 'none'
+            fontFamily: 'var(--font-title)'
           }}
           id="tab-lore-directory"
         >
           Codex Library
         </button>
         <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'validation'}
+          aria-controls="lore-panel-validation"
+          tabIndex={activeTab === 'validation' ? 0 : -1}
           onClick={() => setActiveTab('validation')}
+          onKeyDown={(event) => handleTabKeyDown(event, 'validation')}
           style={{
             padding: '10px 20px',
             backgroundColor: activeTab === 'validation' ? 'rgba(168, 32, 42, 0.15)' : 'transparent',
@@ -216,8 +256,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
             fontFamily: 'var(--font-title)',
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            outline: 'none'
+            gap: '8px'
           }}
           id="tab-lore-validation"
         >
@@ -231,7 +270,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
       </div>
 
       {activeTab === 'directory' ? (
-        <>
+        <div id="lore-panel-directory" role="tabpanel" aria-labelledby="tab-lore-directory" tabIndex={0}>
           {/* Filters Bar */}
           <div 
             className="glass-panel" 
@@ -261,6 +300,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                 <option value="world_rule">World Rules / Magic</option>
                 <option value="relation">Factions Relationships</option>
                 <option value="contract">Demon Deals / Contracts</option>
+                <option value="media_piece">Media / Broadcast Pieces</option>
                 <option value="item">Key Items</option>
                 <option value="threat">External Threats</option>
               </select>
@@ -277,6 +317,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                 <option value="all">All Statuses</option>
                 <option value="canon">Canon Verified</option>
                 <option value="semi_canon">Semi-Canon</option>
+                <option value="simulation_au">Simulation AU</option>
                 <option value="headcanon">Headcanon</option>
                 <option value="user_note">User Log / Custom</option>
                 <option value="unknown">Unknown</option>
@@ -295,6 +336,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
               {filteredEntries.map((entry: LoreEntry) => (
                 <div 
                   key={entry.id} 
+                  id={`lore-card-${entry.id}`}
                   className="glass-panel animate-fade-in" 
                   style={{ 
                     padding: '20px', 
@@ -339,7 +381,9 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                   {/* Actions footer */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px', marginTop: '10px' }}>
                     <button
+                      type="button"
                       onClick={() => handleToggleLock(entry)}
+                      aria-label={`${entry.isLocked ? 'Unlock' : 'Lock'} ${entry.title}`}
                       style={{ background: 'none', border: 'none', color: 'var(--color-text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem' }}
                       id={`lock-toggle-${entry.id}`}
                     >
@@ -358,19 +402,25 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
 
                     <div style={{ display: 'flex', gap: '8px' }}>
                       <button 
+                        type="button"
                         className="btn btn-secondary" 
                         style={{ padding: '4px 8px', fontSize: '0.75rem' }} 
                         onClick={() => handleEdit(entry)}
                         disabled={entry.isLocked}
+                        aria-label={`Edit ${entry.title}`}
+                        title={`Edit ${entry.title}`}
                         id={`edit-lore-${entry.id}`}
                       >
                         <Edit2 size={12} />
                       </button>
                       <button 
+                        type="button"
                         className="btn btn-danger" 
                         style={{ padding: '4px 8px', fontSize: '0.75rem' }} 
                         onClick={() => handleDeleteTrigger(entry.id)}
                         disabled={entry.isLocked}
+                        aria-label={`Delete ${entry.title}`}
+                        title={`Delete ${entry.title}`}
                         id={`delete-lore-${entry.id}`}
                       >
                         <Trash2 size={12} />
@@ -381,23 +431,23 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
               ))}
             </div>
           )}
-        </>
+        </div>
       ) : (
         /* Validation Logs tab */
-        <div className="glass-panel" style={{ padding: '24px' }}>
+        <div id="lore-panel-validation" role="tabpanel" aria-labelledby="tab-lore-validation" tabIndex={0} className="glass-panel" style={{ padding: '24px' }}>
           <h3 style={{ color: 'var(--color-gold)', marginBottom: '12px', borderBottom: '1px solid var(--color-primary-light)', paddingBottom: '6px' }}>
-            Canon Validation Diagnostic Reports
+            Lore Metadata Diagnostic
           </h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '20px' }}>
-            This scanner flags unconfirmed entries, blank files, or canon assertions that lack proper media references. Click 'Fix' on any warning to repair it immediately.
+            This scanner checks the currently visible codex entries for source-reference format, canon/simulation separation, duplicates and timeline/spoiler contradictions. It cannot prove that a citation supports a claim or audit characters, factions and relationships. Fixes remain manual.
           </p>
 
           {validationGaps.length === 0 ? (
             <div style={{ padding: '24px', backgroundColor: 'rgba(40,167,69,0.08)', border: '1px solid rgba(40,167,69,0.3)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '12px', color: '#4ce06c' }}>
               <CheckCircle size={24} />
               <div>
-                <strong style={{ display: 'block' }}>All Data Validated!</strong>
-                <span style={{ fontSize: '0.8rem' }}>No verification gaps or undocumented claims found in the current codex database.</span>
+                <strong style={{ display: 'block' }}>Visible metadata checks passed</strong>
+                <span style={{ fontSize: '0.8rem' }}>No structural issue was detected in the visible codex entries. Source truth still requires human review.</span>
               </div>
             </div>
           ) : (
@@ -451,14 +501,20 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
 
       {/* Add / Edit Entry Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '560px', maxHeight: '90vh', overflowY: 'auto', padding: '24px', margin: 'auto' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.currentTarget === event.target) setIsModalOpen(false);
+          }}
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}
+        >
+          <div ref={modalRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="lore-dialog-title" className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '560px', maxHeight: '90vh', overflowY: 'auto', padding: '24px', margin: 'auto' }}>
+            <h2 id="lore-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               {editingEntry ? `Edit Codex Entry` : 'Create Codex Record'}
             </h2>
 
             {validationError && (
-              <div style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
+              <div role="alert" style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
                 <ShieldAlert size={16} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'text-bottom' }} />
                 {validationError}
               </div>
@@ -485,6 +541,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                     <option value="world_rule">World Rules / Magic</option>
                     <option value="relation">Factions Relations</option>
                     <option value="contract">Demon Deals / Contracts</option>
+                    <option value="media_piece">Media / Broadcast Pieces</option>
                     <option value="item">Key Items</option>
                     <option value="threat">External Threats</option>
                   </select>
@@ -495,6 +552,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                   <select id="lore-canon" value={formCanon} onChange={(e) => setFormCanon(e.target.value as CanonStatus)} style={{ width: '100%' }}>
                     <option value="canon">Canon (Episode source)</option>
                     <option value="semi_canon">Semi-Canon (Creator State)</option>
+                    <option value="simulation_au">Simulation AU (Gameplay only)</option>
                     <option value="headcanon">Headcanon (Speculative)</option>
                     <option value="user_note">User Log / Custom</option>
                     <option value="unknown">Unknown</option>
@@ -519,6 +577,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                     <label htmlFor="lore-source-type">Source Category</label>
                     <select id="lore-source-type" value={formSourceType} onChange={(e) => setFormSourceType(e.target.value as SourceType)} style={{ width: '100%', fontSize: '0.8rem' }}>
                       <option value="episode">Episode (Season 1/2)</option>
+                      <option value="official_pilot">Official 2019 Pilot</option>
                       <option value="official_page">Official Page / Media</option>
                       <option value="creator_statement">Creator Q&A Statement</option>
                       <option value="user_manual_note">User Notes</option>
@@ -528,7 +587,7 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
 
                   <div>
                     <label htmlFor="lore-source-ref">Source Reference (Required for Canon)</label>
-                    <input type="text" id="lore-source-ref" value={formSourceRef} onChange={(e) => setFormSourceRef(e.target.value)} style={{ width: '100%', fontSize: '0.8rem' }} placeholder="e.g. S1E04, Q&A stream" />
+                    <input type="text" id="lore-source-ref" value={formSourceRef} onChange={(e) => setFormSourceRef(e.target.value)} style={{ width: '100%', fontSize: '0.8rem' }} placeholder="S1E04; S2E01; PILOT-2019; official URL" />
                   </div>
 
                   <div>
@@ -545,8 +604,8 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                     <label htmlFor="lore-scope">Timeline Scope</label>
                     <select id="lore-scope" value={formTimeline} onChange={(e) => setFormTimeline(e.target.value as TimelineScope)} style={{ width: '100%', fontSize: '0.8rem' }}>
                       <option value="pilot_legacy">Pilot Legacy</option>
-                      <option value="season_1_start">Season 1 Start</option>
-                      <option value="season_1_end">Season 1 End</option>
+                      <option value="season_1_start">Season 1 Opening / Mid-season</option>
+                      <option value="season_1_end">Season 1 Finale</option>
                       <option value="season_2">Season 2 Active</option>
                       <option value="custom">Custom Timeline</option>
                     </select>

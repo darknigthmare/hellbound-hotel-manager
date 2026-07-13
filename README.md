@@ -1,115 +1,68 @@
-# Hellbound Hotel Manager — Local Safehouse Operations
+# Hellbound Hotel Manager
 
-An offline-first, private fan-made administration panel for managing the daily operations, rehabilitation logs, security incidents, and staff shifts at the Hazbin Hotel (styled as **Hellbound Hotel Manager**). It strictly respects the canon lore while ensuring that no copyrighted official media, protected logos, images, or lyrics are embedded. All lore information contains verification tags (canon status, source reference, timeline scope, and spoiler level).
+A local-first, fan-made Hazbin Hotel operations simulator built with React and TypeScript. It manages residents, rooms, rehabilitation, incidents, staff, reputation, resources, relationships and a source-labelled lore codex without bundling official artwork, audio, lyrics or transcripts.
 
----
+The application deliberately separates two kinds of information:
 
-## Technical Stack
-- **Frontend**: React (18.3) + TypeScript + Vite
-- **Styling**: Custom CSS (Vanilla theme variables, Cabernet/Gold Art Deco aesthetics)
-- **Database (Local-First)**: TypeScript repository layer persisting fully typed models directly to the browser's `localStorage`.
-- **Blueprints**: `schema.prisma` is provided in `src/db` to serve as a SQLite compile target if packaged with Tauri or Electron.
-- **Tests**: Vitest for unit rules and validation validations.
+- **Lore records** carry a source, timeline, spoiler level and canon classification.
+- **Gameplay records** such as scores, risk levels, budgets and room assignments belong to the `simulation_au` layer; they are not presented as episode facts.
 
----
+## Main features
 
-## Getting Started
+- Strict schema-v3 local backups with validation, atomic database/inventory transactions, rollback and bounded recovery snapshots.
+- Optional Supabase account backup, triggered only by explicit Sync/Load actions.
+- Rehabilitation progression with session prerequisites, cooldowns and supply costs.
+- A campaign-day loop with upkeep, fatigue, delayed staff work, cooldowns and escalating Heaven/Vees/Overlord pressure.
+- Resource-constrained room, incident, rehabilitation, staff and public-relations actions with exactly-once rewards.
+- Non-destructive timeline and spoiler filters.
+- Global search, responsive navigation, keyboard-friendly dialogs and high-contrast mode.
+- Lore metadata diagnostics and explicitly guarded edits for bundled canonical entries.
 
-### 1. Installation
-Ensure you have [Node.js](https://nodejs.org/) installed locally. Clone or locate the workspace directory and install dependencies:
-```bash
-npm install
-```
+## Requirements and commands
 
-### 2. Run Local Development Server
-Launch the local dev server:
-```bash
-npm run dev
-```
-Open `http://localhost:3000` in your web browser.
+- Node.js 22 LTS or newer.
+- Install: `npm install`
+- Development server: `npm run dev`, then open `http://localhost:3000`
+- Type check: `npm run typecheck`
+- ESLint: `npm run lint`
+- Tests: `npm test`
+- Production build: `npm run build`
+- Full local quality gate: `npm run qa`
 
-### 3. Run Test Suite
-Run the business rules test suite:
-```bash
-npm run test
-```
+The same quality gate runs automatically for pushes and pull requests through `.github/workflows/quality.yml`.
 
-### 4. Build Production Bundle
-Build and compile the static bundle for browser deploy:
-```bash
-npm run build
-```
+## Persistence and privacy
 
----
+The main database is stored in the browser under `hellbound_hotel_db_state`. Inventory uses `h_inv_*` keys. If persistent browser storage is unavailable, the Settings screen displays a session-only warning: changes then live only in memory and disappear on reload or tab close. Clearing site storage removes persistent local state, so use **Settings & Data > Export full backup** before clearing browser data.
 
-## Project Structure
+Cloud backup is optional. When connected, the app sends only `hellbound_hotel_db_state` and the three `h_inv_*` inventory keys to the configured Supabase project after the user presses **Sync cloud**. Loading a cloud save replaces those same keys after validation and confirmation; sessions, recovery copies and unrelated browser storage are not included. See [docs/privacy.md](docs/privacy.md).
+
+Full backups use schema version 3 and include every database section, durable `gameplayMeta` and all three inventory counters. Version-3 imports reject missing required fields; recognized unversioned/version-1/version-2 files alone receive legacy defaults and migration warnings. A validated file is not applied until the user confirms replacement. Invalid or migrated raw local data can be downloaded unchanged from the recovery panel before any restore attempt.
+
+## Source layout
+
 ```text
-/src
-  /components
-    Sidebar.tsx          # Navigation drawer (cabaret styled)
-    Topbar.tsx           # Global search, resource status, and active timeline indicators
-    RiskBadge.tsx        # Danger level chip (low, medium, high, catastrophic)
-    CanonBadge.tsx       # Lore validation status (canon, semi-canon, headcanon)
-    SpoilerBadge.tsx     # Spoiler safety chip (none, season_1, season_2, future)
-    ConfirmDialog.tsx    # Modal for deletion alerts
-  /pages
-    Dashboard.tsx        # Stats overview, safety alerts, external threat meters, and narrative ticker
-    Characters.tsx       # Resident and Staff registry with multi-metric filters and profiles editor
-    Rooms.tsx            # Visual grid of rooms, occupancy assigner, and Niffty clean controls
-    Rehabilitation.tsx   # Progress dials, goals notebooks, session logger, and redemption ascension
-    Incidents.tsx        # Security logging, consequence alerts, and room damage connectors
-    Staff.tsx            # Shift schedules, mental load meters, and tasks checklist dispatcher
-    Reputation.tsx       # Public relations hub, Voxtek smearing logs, and public broadcast events
-    Timeline.tsx         # Active timeline configuration (seasons toggle, spoiler boundaries)
-    LoreCodex.tsx        # Knowledge base,locked entry triggers, and canon validation report scanner
-    Relations.tsx        # Factions influence overview and social bonds contract alerts
-    Resources.tsx        # Financial balance sheet ledger, bar inventories, and supply restock tools
-    Settings.tsx         # JSON import/export, reset database triggers, and offline privacy panels
-  /db
-    schema.prisma        # Database blue-print schema for documentations & native SQLite wrapper
-    localDb.ts           # Storage repository mapping database CRUD operations to localStorage
-    seed.ts              # Seed database containing characters, rooms, factions, and initial lore
-  /lib
-    rules-engine.ts      # Rehabilitation, room safety, reputation adjustments, and spoiler logic
-    lore-validation.ts   # Codex gaps checker (missing references, empty descriptors)
-    export-import.ts     # JSON backup validations and parsing rules
-  /styles
-    theme.css            # Cabaret Art Deco global stylesheet containing variables and core layout
-  /tests
-    rules.test.ts        # Unit test suite verifying compliance rules
-/docs
-  privacy.md             # Detailed offline security notice
-  data-model.md          # Entity relationship schema document
-  lore-governance.md     # Lore classification and verification rules
+src/
+  components/       shared navigation, badges and dialogs
+  db/               seed data and the local repository
+  lib/              rules, lore validation and backup validation
+  pages/            gameplay and administration screens
+  tests/            gameplay and data-integrity tests
+  types/            shared domain model
+supabase/migrations/ cloud-save schema and owner-only RLS policies
+docs/               data, privacy and lore-governance documentation
 ```
 
----
+The runtime has no Prisma or SQLite layer. `src/db/localDb.ts` is the authoritative repository, and `supabase/migrations` contains only the optional cloud-backup schema.
 
-## Customizing the Seed Data
-To edit the initial guest roster, baseline rooms, or default codex logs:
-1. Open the file [seed.ts](file:///C:/Users/chuck/Documents/antigravity/zealous-babbage/src/db/seed.ts).
-2. Locate the arrays (`characters`, `rooms`, `rehabilitationPlans`, `loreCodex`, etc.).
-3. Add or modify entries. Ensure all character ids and room numbers match references correctly.
-4. Save the file and navigate to **Settings & Data** in the app.
-5. Click **Reset Database State** to clear local storage and force a re-seed from the updated file.
+The July 2026 audit correction record is available in [docs/audit-remediation-2026-07-13.md](docs/audit-remediation-2026-07-13.md).
 
----
+## Editing seed data
 
-## Adding Custom Lore References
-This application is "lore-first". To register user notes or creator statements:
-1. Navigate to **Lore Codex** -> **Add Lore Entry**.
-2. Set the **Canon Status** to *User Log / Custom* or *Headcanon* if not verified.
-3. If marking as *Canon*, ensure you provide a valid **Source Reference** (e.g. `S1E05` or `Creator Q&A Stream`). The rules engine blocks labeling claims as "canon" if source reference citations are left blank.
+Edit `src/db/seed.ts`, keep IDs and foreign-key references consistent, then use **Settings & Data > Reset local database** to reseed the current browser. The reset removes both database and inventory keys.
 
----
-
-## Privacy & Telemetry
-This manager works **100% offline** and runs entirely within your local browser sandbox.
-- **No telemetry tracking**: No data, clicks, or settings are transmitted.
-- **No cloud accounts required**: You do not need to register.
-- **Local JSON backups**: Export and save your database to your local hard drive at any time.
-
----
+When adding lore, use `canon` only with a traceable official source. Use `official_pilot`/`pilot_legacy` for the 2019 pilot, `simulation_au` for mechanics invented by this manager, and `user_note` or `headcanon` for personal material. Full rules are in [docs/lore-governance.md](docs/lore-governance.md).
 
 ## Disclaimer
-*This is a fan-made, local-first utility built for educational and personal entertainment purposes in the universe of Hazbin Hotel. No copyrighted assets (such as official character drawings, logos, exact song lyrics, transcripts, audio files, or exact visual designs) are bundled inside this codebase. All graphics are initial-based avatars or generic SVG iconography.*
+
+This is an unofficial, non-commercial fan project. Hazbin Hotel and its characters belong to their respective rights holders. The repository contains operational text and generic UI only; it does not include official character art, logos, episode transcripts, music, lyrics or audio.

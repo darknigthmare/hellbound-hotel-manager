@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { db } from './db/localDb';
 import { Sidebar, ViewType } from './components/Sidebar';
-import { Topbar } from './components/Topbar';
-import { Dashboard } from './pages/Dashboard';
-import { Characters } from './pages/Characters';
-import { Rooms } from './pages/Rooms';
-import { Rehabilitation } from './pages/Rehabilitation';
-import { Incidents } from './pages/Incidents';
-import { Staff } from './pages/Staff';
-import { Reputation } from './pages/Reputation';
-import { Timeline } from './pages/Timeline';
-import { LoreCodex } from './pages/LoreCodex';
-import { Relations } from './pages/Relations';
-import { Resources } from './pages/Resources';
-import { Settings } from './pages/Settings';
+import { GlobalSearchResult, Topbar } from './components/Topbar';
+import { LoreValidation } from './lib/lore-validation';
+import { RulesEngine } from './lib/rules-engine';
 import './styles/theme.css';
+
+const Dashboard = lazy(() => import('./pages/Dashboard').then(module => ({ default: module.Dashboard })));
+const Characters = lazy(() => import('./pages/Characters').then(module => ({ default: module.Characters })));
+const Rooms = lazy(() => import('./pages/Rooms').then(module => ({ default: module.Rooms })));
+const Rehabilitation = lazy(() => import('./pages/Rehabilitation').then(module => ({ default: module.Rehabilitation })));
+const Incidents = lazy(() => import('./pages/Incidents').then(module => ({ default: module.Incidents })));
+const Staff = lazy(() => import('./pages/Staff').then(module => ({ default: module.Staff })));
+const Reputation = lazy(() => import('./pages/Reputation').then(module => ({ default: module.Reputation })));
+const Timeline = lazy(() => import('./pages/Timeline').then(module => ({ default: module.Timeline })));
+const LoreCodex = lazy(() => import('./pages/LoreCodex').then(module => ({ default: module.LoreCodex })));
+const Relations = lazy(() => import('./pages/Relations').then(module => ({ default: module.Relations })));
+const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
+const Settings = lazy(() => import('./pages/Settings').then(module => ({ default: module.Settings })));
 
 export const App: React.FC = () => {
   // Navigation active view
@@ -22,6 +25,13 @@ export const App: React.FC = () => {
   
   // Search query
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchAnnouncement, setSearchAnnouncement] = useState('');
+  const [pendingSearchTarget, setPendingSearchTarget] = useState<{ result: GlobalSearchResult; sequence: number } | null>(null);
+  const searchSequenceRef = useRef(0);
+
+  // Responsive navigation state. Desktop layout remains permanently visible.
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pageScrollRef = useRef<HTMLElement>(null);
 
   // Nav target character ID (transfers character contexts to rehab plans page)
   const [selectedCharacterId, setSelectedCharacterId] = useState<string | null>(null);
@@ -38,16 +48,195 @@ export const App: React.FC = () => {
       setSelectedCharacterId(charId);
     }
     setCurrentView(view);
+    setIsSidebarOpen(false);
   };
 
+  const handleViewChange = (view: ViewType) => {
+    setCurrentView(view);
+    setIsSidebarOpen(false);
+  };
+
+  // Every screen starts at its own top instead of inheriting the previous view scroll.
+  useEffect(() => {
+    pageScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [currentView]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = dbState.settings?.theme || 'default-artdeco';
+  }, [dbState.settings?.theme]);
+
+  useEffect(() => {
+    if (!pendingSearchTarget) return;
+
+    let highlightTimer: number | undefined;
+    const frame = window.requestAnimationFrame(() => {
+      const { result } = pendingSearchTarget;
+      const page = pageScrollRef.current;
+      if (!page) return;
+
+      let target = result.targetId ? document.getElementById(result.targetId) : null;
+      if (!target) {
+        const normalizedLabel = result.label.trim().toLocaleLowerCase();
+        const labelNode = Array.from(page.querySelectorAll<HTMLElement>('h2, h3, h4, strong, td, span'))
+          .find((element) => element.textContent?.trim().toLocaleLowerCase() === normalizedLabel);
+        target = labelNode?.closest<HTMLElement>('tr') ?? labelNode ?? null;
+      }
+
+      if (!target) {
+        setSearchAnnouncement(`${result.label} is shown in the ${result.view} section.`);
+        return;
+      }
+
+      if (!target.matches('button, [href], input, select, textarea, [tabindex]')) target.tabIndex = -1;
+      target.classList.add('global-search-target');
+      target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      target.focus({ preventScroll: true });
+      setSearchAnnouncement(`${result.label} selected in the ${result.view} section.`);
+      highlightTimer = window.setTimeout(() => target?.classList.remove('global-search-target'), 2600);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      if (highlightTimer !== undefined) window.clearTimeout(highlightTimer);
+    };
+  }, [currentView, pendingSearchTarget]);
+
   // Calculate budget balance
-  const totalExpenses = dbState.resourceLedger
+  const totalExpenses = (dbState.resourceLedger ?? [])
     .filter(l => l.type === 'expense')
     .reduce((sum, item) => sum + item.amount, 0);
-  const totalIncome = dbState.resourceLedger
+  const totalIncome = (dbState.resourceLedger ?? [])
     .filter(l => l.type === 'income')
     .reduce((sum, item) => sum + item.amount, 0);
   const budgetBalance = totalIncome - totalExpenses;
+
+  const globalSearchResults = useMemo<GlobalSearchResult[]>(() => {
+    const normalized = searchQuery.trim().toLocaleLowerCase();
+    if (normalized.length < 2) return [];
+
+    const includes = (...values: Array<string | number | null | undefined>) =>
+      values.some((value) => String(value ?? '').toLocaleLowerCase().includes(normalized));
+
+    const results: GlobalSearchResult[] = [];
+
+    (dbState.characters ?? []).forEach((character) => {
+      const projection = dbState.timeline.current === 'custom'
+        ? undefined
+        : character.timelineStates?.[dbState.timeline.current];
+      const projectedCharacter = { ...character, ...projection };
+      const hasProjection = Boolean(projection);
+      if (!hasProjection && !LoreValidation.isAvailableAtTimeline(character.timelineScope, dbState.timeline.current)) return;
+      if (!RulesEngine.isContentVisible(projectedCharacter, dbState.timeline)) return;
+
+      if (includes(projectedCharacter.name, projectedCharacter.alias, projectedCharacter.role, projectedCharacter.status, projectedCharacter.description)) {
+        results.push({
+          id: `character-${projectedCharacter.id}`,
+          label: projectedCharacter.name,
+          meta: `Character • ${projectedCharacter.role} • ${projectedCharacter.status}`,
+          view: 'characters',
+          searchTerm: projectedCharacter.name,
+          targetId: `character-card-${projectedCharacter.id}`,
+        });
+      }
+    });
+
+    (dbState.loreCodex ?? []).forEach((entry) => {
+      if (!LoreValidation.isAvailableAtTimeline(entry.timelineScope, dbState.timeline.current)) return;
+      if (!RulesEngine.isContentVisible(entry, dbState.timeline)) return;
+      if (includes(entry.title, entry.entityName, entry.description, entry.sourceRef)) {
+        results.push({
+          id: `lore-${entry.id}`,
+          label: entry.title,
+          meta: `Lore • ${entry.canonStatus} • ${entry.sourceRef || 'no source'}`,
+          view: 'lore',
+          searchTerm: entry.title,
+          targetId: `lore-card-${entry.id}`,
+        });
+      }
+    });
+
+    (dbState.rooms ?? []).forEach((room) => {
+      if (includes(room.number, room.type, room.status, room.maintenanceNotes)) {
+        results.push({
+          id: `room-${room.number}`,
+          label: `Room ${room.number}`,
+          meta: `Rooms • ${room.type} • ${room.status}`,
+          view: 'rooms',
+          searchTerm: `Room ${room.number}`,
+          targetId: `room-card-${room.number}`,
+        });
+      }
+    });
+
+    (dbState.incidents ?? []).forEach((incident) => {
+      const linkedLore = incident.loreLink
+        ? dbState.loreCodex.find((entry) => entry.id === incident.loreLink)
+        : undefined;
+      if (linkedLore && (
+        !LoreValidation.isAvailableAtTimeline(linkedLore.timelineScope, dbState.timeline.current)
+        || !RulesEngine.isContentVisible(linkedLore, dbState.timeline)
+      )) return;
+      if (includes(incident.location, incident.summary, incident.type, incident.status)) {
+        results.push({
+          id: `incident-${incident.id}`,
+          label: incident.summary || `Incident at ${incident.location}`,
+          meta: `Incident • ${incident.severity} • ${incident.status}`,
+          view: 'incidents',
+          searchTerm: incident.summary || incident.location,
+          targetId: `incident-card-${incident.id}`,
+        });
+      }
+    });
+
+    (dbState.staffTasks ?? []).forEach((task) => {
+      if (includes(task.title, task.type, task.status, task.notes)) {
+        results.push({
+          id: `task-${task.id}`,
+          label: task.title,
+          meta: `Staff task • ${task.status}`,
+          view: 'staff',
+          searchTerm: task.title,
+          targetId: `task-card-${task.id}`,
+        });
+      }
+    });
+
+    (dbState.factions ?? []).forEach((faction) => {
+      if (includes(faction.name, faction.description)) {
+        results.push({
+          id: `faction-${faction.id}`,
+          label: faction.name,
+          meta: `Faction • influence ${faction.influence}%`,
+          view: 'relations',
+          searchTerm: faction.name,
+        });
+      }
+    });
+
+    (dbState.resourceLedger ?? []).forEach((entry) => {
+      if (includes(entry.description, entry.category, entry.type, entry.amount)) {
+        results.push({
+          id: `ledger-${entry.id}`,
+          label: entry.description,
+          meta: `Ledger • ${entry.type} • ${entry.amount} HN`,
+          view: 'resources',
+          searchTerm: entry.description,
+          targetId: `ledger-row-${entry.id}`,
+        });
+      }
+    });
+
+    return results.slice(0, 12);
+  }, [dbState, searchQuery]);
+
+  const handleSelectSearchResult = (result: GlobalSearchResult) => {
+    setCurrentView(result.view);
+    setSearchQuery(result.searchTerm ?? result.label);
+    searchSequenceRef.current += 1;
+    setPendingSearchTarget({ result, sequence: searchSequenceRef.current });
+    setSearchAnnouncement(`Opening ${result.label}.`);
+    setIsSidebarOpen(false);
+  };
 
   // Page Routing dispatcher
   const renderActivePage = () => {
@@ -74,6 +263,7 @@ export const App: React.FC = () => {
           <Rooms 
             state={dbState} 
             onStateChange={handleRefreshState} 
+            searchQuery={searchQuery}
           />
         );
       case 'rehab':
@@ -90,6 +280,7 @@ export const App: React.FC = () => {
           <Incidents 
             state={dbState} 
             onStateChange={handleRefreshState} 
+            searchQuery={searchQuery}
           />
         );
       case 'staff':
@@ -97,6 +288,7 @@ export const App: React.FC = () => {
           <Staff 
             state={dbState} 
             onStateChange={handleRefreshState} 
+            searchQuery={searchQuery}
           />
         );
       case 'reputation':
@@ -133,6 +325,7 @@ export const App: React.FC = () => {
           <Resources 
             state={dbState} 
             onStateChange={handleRefreshState} 
+            searchQuery={searchQuery}
           />
         );
       case 'settings':
@@ -156,16 +349,20 @@ export const App: React.FC = () => {
   return (
     <div className="app-container">
       {/* Sidebar Navigation */}
-      <Sidebar 
+      <Sidebar
         currentView={currentView} 
-        onViewChange={(view) => setCurrentView(view)} 
+        onViewChange={handleViewChange}
         appName={dbState.settings.appName}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
       />
 
       {/* Main Panel */}
       <div className="main-content">
+        <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">{searchAnnouncement}</div>
         {/* Header Bar */}
         <Topbar 
+          currentView={currentView}
           timelineScope={dbState.timeline.current}
           hideSpoilers={dbState.timeline.hideSpoilers}
           spoilerLevel={dbState.timeline.spoilerLevel}
@@ -173,11 +370,17 @@ export const App: React.FC = () => {
           searchQuery={searchQuery}
           onSearchChange={(q) => setSearchQuery(q)}
           onNavigateToTimeline={() => setCurrentView('timeline')}
+          onMenuToggle={() => setIsSidebarOpen((open) => !open)}
+          isSidebarOpen={isSidebarOpen}
+          searchResults={globalSearchResults}
+          onSelectSearchResult={handleSelectSearchResult}
         />
 
         {/* Dynamic Page mount */}
-        <main className="page-container" style={{ flex: 1, overflowY: 'auto' }}>
-          {renderActivePage()}
+        <main className="app-page-scroll" ref={pageScrollRef} tabIndex={-1}>
+          <Suspense fallback={<div className="page-loading" role="status">Loading hotel recordsâ€¦</div>}>
+            {renderActivePage()}
+          </Suspense>
         </main>
       </div>
     </div>

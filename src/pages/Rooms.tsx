@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Bed, Users, ShieldAlert, Sparkles, Hammer, LogOut, CheckCircle, Info } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { Room, Character, RoomType, RoomStatus, RiskLevel } from '../types';
+import { Room, Character, RoomType, RoomStatus, RiskLevel, DatabaseState } from '../types';
+import { useDialogFocus } from '../components/useDialogFocus';
 
 interface RoomsProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
+  searchQuery: string;
 }
 
-export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
+export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery }) => {
   const { rooms, characters } = state;
 
   // Filter state
@@ -31,14 +33,12 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
   const [formRestrictions, setFormRestrictions] = useState<string>('');
   const [formMaintNotes, setFormMaintNotes] = useState('');
   const [formRepairCost, setFormRepairCost] = useState(0);
+  const modalRef = useDialogFocus(isAssignModalOpen, () => setIsAssignModalOpen(false), '#assign-tenant');
 
   // Filter characters who can occupy rooms
   const eligibleTenants = characters.filter((c: Character) => 
     c.status === 'resident' || c.status === 'staff' || c.status === 'applicant'
   );
-
-  // Filter staff members who can conduct inspections
-  const staffMembers = characters.filter((c: Character) => c.status === 'staff');
 
   const handleOpenAssign = (room: Room) => {
     setSelectedRoom(room);
@@ -69,10 +69,71 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
       dangerLevel: formDanger,
       restrictions: restrictionsArray,
       maintenanceNotes: formMaintNotes.trim(),
-      repairCost: formRepairCost
+      repairCost: Math.max(0, formRepairCost)
     };
 
-    db.saveRoom(updatedRoom);
+    if (updatedRoom.occupantId === null) {
+      updatedRoom.occupantIds = [];
+    } else if (selectedRoom.occupantIds?.includes(updatedRoom.occupantId)) {
+      updatedRoom.occupantIds = [updatedRoom.occupantId, ...selectedRoom.occupantIds.filter(id => id !== updatedRoom.occupantId)];
+    } else {
+      updatedRoom.occupantIds = [updatedRoom.occupantId];
+    }
+
+    const occupant = characters.find((character: Character) => character.id === updatedRoom.occupantId);
+    if (occupant) {
+      if (updatedRoom.status === 'damaged' || updatedRoom.status === 'under_repair' || updatedRoom.status === 'locked') {
+        window.alert('Residents cannot be assigned to damaged, under-repair, or locked rooms.');
+        return;
+      }
+
+      if (updatedRoom.restrictions.includes('staff_only') && occupant.status !== 'staff') {
+        window.alert(`Room ${updatedRoom.number} is staff-only. ${occupant.name} is not registered as staff.`);
+        return;
+      }
+
+      if (updatedRoom.restrictions.includes('no_entry')) {
+        window.alert(`Room ${updatedRoom.number} is marked no-entry and cannot receive an occupant until that restriction is removed.`);
+        return;
+      }
+
+      const safetyCheck = RulesEngine.validateRoomAssignment(updatedRoom, occupant);
+      if (!safetyCheck.isSafe) {
+        window.alert(safetyCheck.warning || 'Unsafe room assignment blocked.');
+        return;
+      }
+
+      const previousRoom = rooms.find((room: Room) => (room.occupantId === occupant.id || room.occupantIds?.includes(occupant.id)) && room.number !== updatedRoom.number);
+      if (previousRoom) {
+        const shouldMove = window.confirm(`${occupant.name} already occupies Room ${previousRoom.number}. Move them to Room ${updatedRoom.number}?`);
+        if (!shouldMove) return;
+      }
+    }
+
+    const saved = db.transaction('ROOM_CONFIGURATION', (draft) => {
+      const roomIndex = draft.rooms.findIndex(room => room.number === updatedRoom.number);
+      if (roomIndex < 0) throw new Error('Room no longer exists.');
+      if (occupant) {
+        draft.rooms = draft.rooms.map(room => {
+          if (room.number === updatedRoom.number) return room;
+          const occupantIds = room.occupantIds?.filter(id => id !== occupant.id);
+          return {
+            ...room,
+            ...(room.occupantIds ? { occupantIds } : {}),
+            occupantId: room.occupantId === occupant.id ? occupantIds?.[0] || null : room.occupantId
+          };
+        });
+      }
+      const targetIndex = draft.rooms.findIndex(room => room.number === updatedRoom.number);
+      draft.rooms[targetIndex] = updatedRoom;
+    }, {
+      action: 'ROOM_CONFIGURATION',
+      details: `Room ${updatedRoom.number} saved${occupant ? ` with ${occupant.name} assigned` : ' as vacant'}.`
+    });
+    if (!saved) {
+      window.alert(db.getStorageStatus().lastError?.message || 'Room assignment failed atomically.');
+      return;
+    }
     setIsAssignModalOpen(false);
     onStateChange();
   };
@@ -83,22 +144,41 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
       // Cannot clean damaged room directly without repairing it
       return;
     }
+    if (room.status === 'cursed' || room.status === 'locked') {
+      window.alert(`Room ${room.number} requires security clearance before normal cleaning can begin.`);
+      return;
+    }
+
+    const cleaningStock = db.getInventory().clean;
+    if (cleaningStock < 1) {
+      window.alert('Cleaning supplies are depleted. Restock them in Ledger & Facility Supplies before sending Niffty.');
+      return;
+    }
 
     // Set cleaning status to trigger animation overlay
     setCleaningRooms(prev => ({ ...prev, [room.number]: true }));
 
     setTimeout(() => {
-      const updated: Room = {
-        ...room,
-        status: 'clean',
-        lastInspectionDate: new Date().toISOString().split('T')[0],
-        lastInspectedBy: cleanerId,
-        maintenanceNotes: `${room.maintenanceNotes}\nInspected & cleaned by staff.`
-      };
-      
-      db.saveRoom(updated);
-      db.logAction('ROOM_CLEAN', `Staff inspected/cleaned room ${room.number}.`);
+      const cleaned = db.transaction('ROOM_CLEAN', (draft, inventory) => {
+        const target = draft.rooms.find(candidate => candidate.number === room.number);
+        if (!target || target.status === 'damaged' || target.status === 'under_repair' || target.status === 'locked' || target.status === 'cursed') {
+          throw new Error('Room condition changed before cleaning completed.');
+        }
+        if (inventory.clean < 1) throw new Error('Cleaning supplies were consumed by another operation.');
+        inventory.clean -= 1;
+        target.status = 'clean';
+        target.lastInspectionDate = `Campaign Day ${draft.gameplayMeta!.campaignDay}`;
+        target.lastInspectedBy = cleanerId;
+        target.maintenanceNotes = `${target.maintenanceNotes}\nInspected & cleaned by staff.`;
+      }, {
+        action: 'ROOM_CLEAN',
+        details: `Staff inspected/cleaned room ${room.number}; consumed 1 cleaning supply.`
+      });
       setCleaningRooms(prev => ({ ...prev, [room.number]: false }));
+      if (!cleaned) {
+        window.alert(db.getStorageStatus().lastError?.message || 'Cleaning failed atomically.');
+        return;
+      }
       onStateChange();
     }, 1200);
   };
@@ -107,11 +187,11 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
   const handleRepairRoom = (room: Room) => {
     // 1. Calculate budget impact
     const totalExpenses = state.resourceLedger
-      .filter((l: any) => l.type === 'expense')
-      .reduce((sum: number, item: any) => sum + item.amount, 0);
+      .filter(l => l.type === 'expense')
+      .reduce((sum, item) => sum + item.amount, 0);
     const totalIncome = state.resourceLedger
-      .filter((l: any) => l.type === 'income')
-      .reduce((sum: number, item: any) => sum + item.amount, 0);
+      .filter(l => l.type === 'income')
+      .reduce((sum, item) => sum + item.amount, 0);
     const currentBalance = totalIncome - totalExpenses;
 
     if (currentBalance < room.repairCost) {
@@ -119,45 +199,66 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
       return;
     }
 
-    // 2. Charge expenses
-    if (room.repairCost > 0) {
-      db.saveResourceLedgerEntry({
-        id: 'rep_' + Date.now(),
-        date: new Date().toISOString().split('T')[0],
-        type: 'expense',
-        category: 'repair',
-        amount: room.repairCost,
-        description: `Structural repairs conducted on Room ${room.number}.`
-      });
+    const repaired = db.transaction('ROOM_REPAIR', (draft) => {
+      const target = draft.rooms.find(candidate => candidate.number === room.number);
+      if (!target || target.status !== 'damaged') throw new Error('This room is no longer awaiting repair.');
+      const freshBalance = draft.resourceLedger.reduce((sum, entry) => sum + (entry.type === 'income' ? entry.amount : -entry.amount), 0);
+      if (freshBalance < target.repairCost) throw new Error(`Only ${freshBalance} HN remains for a ${target.repairCost} HN repair.`);
+      const chargedCost = target.repairCost;
+      if (chargedCost > 0) {
+        draft.resourceLedger.push({
+          id: `rep_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+          date: `Campaign Day ${draft.gameplayMeta!.campaignDay}`,
+          type: 'expense',
+          category: 'repair',
+          amount: chargedCost,
+          description: `Structural repairs conducted on Room ${room.number}.`
+        });
+      }
+      target.status = 'clean';
+      target.repairCost = 0;
+      target.maintenanceNotes = `${target.maintenanceNotes}\nStructural repairs completed. Cleaned and set to active.`;
+    }, {
+      action: 'ROOM_REPAIR',
+      details: `Completed structural repairs on room ${room.number} for ${room.repairCost} HN.`
+    });
+    if (!repaired) {
+      alert(db.getStorageStatus().lastError?.message || 'Repair failed atomically.');
+      return;
     }
-
-    const updated: Room = {
-      ...room,
-      status: 'clean',
-      repairCost: 0,
-      maintenanceNotes: `${room.maintenanceNotes}\nStructural repairs completed. Cleaned and set to active.`
-    };
-
-    db.saveRoom(updated);
-    db.logAction('ROOM_REPAIR', `Completed structural repairs on room ${room.number} for ${room.repairCost} HN.`);
     onStateChange();
   };
 
   // Quick Action: Vacate Room
   const handleVacateRoom = (room: Room) => {
-    const updated: Room = {
-      ...room,
-      occupantId: null
-    };
-    db.saveRoom(updated);
-    db.logAction('ROOM_VACATE', `Guest vacated Room ${room.number}.`);
+    const vacated = db.transaction('ROOM_VACATE', (draft) => {
+      const target = draft.rooms.find(candidate => candidate.number === room.number);
+      if (!target) throw new Error('Room no longer exists.');
+      target.occupantId = null;
+      target.occupantIds = [];
+    }, {
+      action: 'ROOM_VACATE',
+      details: `All occupants vacated Room ${room.number}.`
+    });
+    if (!vacated) {
+      window.alert(db.getStorageStatus().lastError?.message || 'Room could not be vacated.');
+      return;
+    }
     onStateChange();
   };
 
   // Filter grid
+  const normalizedSearch = searchQuery.trim().toLocaleLowerCase();
   const filteredRooms = rooms.filter((r: Room) => {
     if (typeFilter !== 'all' && r.type !== typeFilter) return false;
     if (statusFilter !== 'all' && r.status !== statusFilter) return false;
+    if (normalizedSearch) {
+      const occupantNames = (r.occupantIds ?? (r.occupantId ? [r.occupantId] : []))
+        .map((id) => characters.find((character: Character) => character.id === id)?.name ?? '')
+        .join(' ');
+      const searchable = `room ${r.number} ward ${r.number} ${r.type} ${r.status} ${r.maintenanceNotes} ${r.restrictions.join(' ')} ${occupantNames}`.toLocaleLowerCase();
+      if (!searchable.includes(normalizedSearch)) return false;
+    }
     return true;
   });
 
@@ -176,9 +277,12 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px' }}>
         {[
           { label: 'Total Rooms', val: rooms.length },
-          { label: 'Occupied', val: rooms.filter((r: Room) => r.occupantId).length },
+          { label: 'Occupied', val: rooms.filter((r: Room) => Boolean(r.occupantId || r.occupantIds?.length)).length },
           { label: 'Damaged & Cursed', val: rooms.filter((r: Room) => r.status === 'damaged' || r.status === 'cursed').length },
-          { label: 'Available', val: rooms.filter((r: Room) => !r.occupantId && r.status !== 'damaged' && r.status !== 'locked').length }
+          { label: 'Available', val: rooms.filter((r: Room) => {
+            const occupants = r.occupantIds?.length ?? (r.occupantId ? 1 : 0);
+            return occupants < r.capacity && r.status === 'clean' && !r.restrictions.includes('no_entry');
+          }).length }
         ].map((stat, idx) => (
           <div key={idx} className="glass-panel" style={{ padding: '12px 24px', flex: 1, minWidth: '150px' }}>
             <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', display: 'block', fontWeight: 600 }}>
@@ -255,14 +359,15 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
               </div>
               <div className="blueprint-rooms-row">
                 {floorRooms.map((room: Room) => {
-                  const tenant = characters.find((c: Character) => c.id === room.occupantId);
+                  const occupantIds = room.occupantIds?.length ? room.occupantIds : (room.occupantId ? [room.occupantId] : []);
+                  const tenant = characters.find((c: Character) => c.id === room.occupantId) || characters.find((c: Character) => c.id === occupantIds[0]);
                   const isMatchingFilter = filteredRooms.some((f: Room) => f.number === room.number);
                   const safetyCheck = RulesEngine.validateRoomAssignment(room, tenant);
                   
                   const isDamaged = room.status === 'damaged';
                   const isClean = room.status === 'clean';
                   const isCleaning = cleaningRooms[room.number];
-                  const hasTenant = room.occupantId !== null;
+                  const hasTenant = occupantIds.length > 0;
 
                   // Get initials
                   const initials = tenant ? tenant.name.split(' ').map((n: string) => n[0]).join('') : '';
@@ -270,8 +375,18 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
                   return (
                     <div 
                       key={room.number}
+                      id={`room-card-${room.number}`}
                       className={`blueprint-room-slot ${room.status}`}
+                      role="button"
+                      tabIndex={isCleaning ? -1 : 0}
+                      aria-label={`Configure Ward ${room.number}, ${tenant?.name || 'vacant'}, status ${room.status}`}
+                      aria-disabled={isCleaning}
                       onClick={() => handleOpenAssign(room)}
+                      onKeyDown={(event) => {
+                        if (event.target !== event.currentTarget || isCleaning || (event.key !== 'Enter' && event.key !== ' ')) return;
+                        event.preventDefault();
+                        handleOpenAssign(room);
+                      }}
                       style={{ 
                         opacity: isMatchingFilter ? 1 : 0.25,
                         boxShadow: isCleaning ? '0 0 15px rgba(212, 175, 55, 0.6)' : 'var(--shadow-card)',
@@ -330,6 +445,16 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
                         
                         {/* Quick clean/repair hooks */}
                         <div onClick={(e) => e.stopPropagation()} style={{ display: 'flex', gap: '4px' }}>
+                          {hasTenant && (
+                            <button
+                              onClick={() => handleVacateRoom(room)}
+                              style={{ background: 'none', border: 'none', color: 'var(--color-text-muted)', cursor: 'pointer', padding: 0 }}
+                              title={`Vacate ${tenant?.name || 'occupant'} from Room ${room.number}`}
+                              aria-label={`Vacate Room ${room.number}`}
+                            >
+                              Vacate
+                            </button>
+                          )}
                           {isDamaged ? (
                             <button 
                               onClick={() => handleRepairRoom(room)} 
@@ -362,9 +487,9 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
 
       {/* Assign / Edit Modal */}
       {isAssignModalOpen && selectedRoom && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '500px', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsAssignModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div ref={modalRef} tabIndex={-1} className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="room-dialog-title" style={{ width: '90%', maxWidth: '500px', padding: '24px' }}>
+            <h2 id="room-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               Configure Ward {selectedRoom.number}
             </h2>
 
@@ -444,7 +569,8 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange }) => {
                     type="number" 
                     id="room-repair" 
                     value={formRepairCost} 
-                    onChange={(e) => setFormRepairCost(parseInt(e.target.value) || 0)}
+                  min="0"
+                  onChange={(e) => setFormRepairCost(Math.max(0, parseInt(e.target.value) || 0))}
                     style={{ width: '100%' }} 
                   />
                 </div>

@@ -1,48 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   AlertTriangle, 
   Users, 
   Bed, 
   TrendingUp, 
-  Tv, 
   ShieldAlert, 
-  Eye, 
-  Play, 
-  CheckCircle,
-  HelpCircle
+  Play
 } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { DatabaseState, ReputationState } from '../types';
+import { Character, DatabaseState } from '../types';
+import { INVENTORY_MAX, InventoryBackup } from '../lib/export-import';
+import type { ViewType } from '../components/Sidebar';
 
 interface DashboardProps {
   state: DatabaseState;
   onStateChange: () => void;
-  onNavigate: (view: any, targetId?: string) => void;
+  onNavigate: (view: ViewType, targetId?: string) => void;
+}
+
+interface NarrativeEvent {
+  id: string;
+  title: string;
+  message: string;
+  cooldownDays: number;
+  isAvailable: () => boolean;
+  apply: (draft: DatabaseState, inventory: InventoryBackup) => string;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNavigate }) => {
   const [tickerMessage, setTickerMessage] = useState<string>('All systems operational. Redeeming process active.');
-  const [warnings, setWarnings] = useState<string[]>([]);
 
   // Destructure state
   const { characters, rooms, incidents, staffTasks, reputation, settings } = state;
+  const gameplayMeta = state.gameplayMeta || db.getGameplayMeta();
+  const campaignOutcome = RulesEngine.evaluateCampaignOutcome(state);
+  const campaignLocked = campaignOutcome.phase !== 'active';
 
   // Run security checks
-  useEffect(() => {
+  const warnings = (() => {
     const safetyWarnings: string[] = [];
     
     // Check rooms for high-risk occupancy
     rooms.forEach(room => {
-      if (room.occupantId) {
-        const guest = characters.find(c => c.id === room.occupantId);
+      const occupantIds = room.occupantIds?.length ? room.occupantIds : (room.occupantId ? [room.occupantId] : []);
+      occupantIds.forEach(occupantId => {
+        const guest = characters.find(c => c.id === occupantId);
         if (guest) {
           const check = RulesEngine.validateRoomAssignment(room, guest);
           if (!check.isSafe && check.warning) {
             safetyWarnings.push(check.warning);
           }
         }
-      }
+      });
     });
 
     // Check budget
@@ -61,19 +71,26 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
     // Check staff workload
     const activeStaff = characters.filter(c => c.status === 'staff');
     activeStaff.forEach(staff => {
-      const staffTasksCount = staffTasks.filter(t => t.assignedTo === staff.id && t.status !== 'completed' && t.status !== 'cancelled').length;
-      if (staffTasksCount >= 4) {
-        safetyWarnings.push(`STAFF OVERLOAD: ${staff.name} is assigned to ${staffTasksCount} concurrent tasks. Mental load threshold exceeded.`);
+      const workload = staffTasks
+        .filter(t => t.assignedTo === staff.id && t.status !== 'completed' && t.status !== 'cancelled')
+        .reduce((sum, task) => sum + task.mentalWorkload, gameplayMeta.staffFatigue[staff.id] || 0);
+      if (workload >= 8) {
+        safetyWarnings.push(`STAFF OVERLOAD: ${staff.name} has ${workload}/10 combined task load and fatigue.`);
       }
     });
 
-    setWarnings(safetyWarnings);
-  }, [rooms, characters, staffTasks, state.resourceLedger]);
+    if (reputation.heavenAttention >= 80) safetyWarnings.push('CELESTIAL PRESSURE: advancing the campaign may create an active Heaven threat incident.');
+    if (reputation.veesInfluence >= 70 || reputation.mediaChaos >= 70) safetyWarnings.push('MEDIA PRESSURE: the next day will reduce sinner reputation and internal trust.');
+    if (reputation.overlordHostility >= 70) safetyWarnings.push('OVERLORD PRESSURE: the next day will incur emergency security costs.');
+    if (reputation.internalTrust <= 25) safetyWarnings.push('STAFF COHESION CRISIS: low trust increases fatigue on the next day.');
+
+    return safetyWarnings;
+  })();
 
   // Calculations
   const activeResidents = characters.filter(c => c.status === 'resident').length;
   const totalRoomsCount = rooms.length;
-  const occupiedRoomsCount = rooms.filter(r => r.occupantId !== null).length;
+  const occupiedRoomsCount = rooms.filter(r => Boolean(r.occupantId || r.occupantIds?.length)).length;
   const occupancyRate = totalRoomsCount > 0 ? (occupiedRoomsCount / totalRoomsCount) * 100 : 0;
   
   const damagedRoomsCount = rooms.filter(r => r.status === 'damaged').length;
@@ -82,70 +99,442 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
 
   // Narrative event pool
   const triggerNarrativeEvent = () => {
-    const events = [
+    if (campaignLocked) {
+      setTickerMessage(`${campaignOutcome.title}. Finalize the outcome before leaving the campaign.`);
+      return;
+    }
+    if (!settings.randomEventsEnabled) {
+      setTickerMessage('Narrative events are disabled in the current application settings.');
+      return;
+    }
+
+    const availableDay = gameplayMeta.cooldowns.narrative || 0;
+    if (availableDay > gameplayMeta.campaignDay) {
+      setTickerMessage(`Operations need time to settle. Next narrative event is available on Campaign Day ${availableDay}.`);
+      return;
+    }
+
+    const availableRooms = rooms.filter(room => {
+      const occupants = room.occupantIds?.length ?? (room.occupantId ? 1 : 0);
+      return occupants < room.capacity && room.status === 'clean'
+        && !room.restrictions.includes('staff_only') && !room.restrictions.includes('no_entry');
+    }).length;
+    const activeApplicants = characters.filter(character => character.status === 'applicant').length;
+    const angelPlan = state.rehabilitationPlans.find(plan => plan.characterId === 'angeldust');
+    const angel = characters.find(character => character.id === 'angeldust');
+    const damagedRoom = rooms.find(room => room.status === 'damaged');
+    const unbroadcastRedeemedCharacter = characters.find(character => (
+      character.status === 'redeemed'
+      && !gameplayMeta.broadcastRedemptionIds.includes(character.id)
+    ));
+    const barSessionKey = angelPlan ? `${gameplayMeta.campaignDay}:${angelPlan.id}` : '';
+    const inventory = db.getInventory();
+    const activeResidentIds = new Set(characters
+      .filter(character => character.status === 'resident' || character.status === 'applicant')
+      .map(character => character.id));
+    const contractLink = state.relationships.find(relationship => relationship.type === 'contract_bound'
+      && (activeResidentIds.has(relationship.charAId) || activeResidentIds.has(relationship.charBId)));
+    const supportiveLinkCount = state.relationships.filter(relationship => (
+      relationship.type === 'ally'
+      || relationship.type === 'family'
+      || relationship.type === 'staff'
+      || relationship.type === 'romantic'
+    )).length;
+    const veesCharacterIds = new Set(['vox', 'valentino', 'velvette']);
+    const hostileVeesLink = state.relationships.some(relationship => (
+      relationship.type === 'enemy' || relationship.type === 'manipulative'
+    ) && (veesCharacterIds.has(relationship.charAId) || veesCharacterIds.has(relationship.charBId)));
+    const totalStaffFatigue = Object.values(gameplayMeta.staffFatigue).reduce((total, fatigue) => total + fatigue, 0);
+    const factionInfluence = (id: string) => state.factions.find(faction => faction.id === id)?.influence || 0;
+
+    const events: NarrativeEvent[] = [
       {
+        id: 'new_sinner_intake',
         title: 'New Sinner Intake',
         message: 'A chaotic sinner arrives at the lobby requesting a standard suite and promising to try "the trust exercises".',
-        apply: (rep: ReputationState) => {
-          rep.sinnerReputation = Math.min(100, rep.sinnerReputation + 5);
-          rep.mediaChaos = Math.min(100, rep.mediaChaos + 3);
-          return { text: 'New sinner arrived. Public interest increased.', rep };
+        cooldownDays: 4,
+        isAvailable: () => reputation.sinnerReputation >= 30 && availableRooms > 0 && activeApplicants < 3,
+        apply: (draft) => {
+          if (draft.reputation.sinnerReputation < 30 || draft.characters.filter(character => character.status === 'applicant').length >= 3) {
+            throw new Error('The hotel is not currently eligible for another walk-in applicant.');
+          }
+          const applicantIndex = draft.characters.filter(character => character.id.startsWith('walkin_')).length + 1;
+          const applicantId = `walkin_day${draft.gameplayMeta!.campaignDay}_${applicantIndex}`;
+          if (draft.characters.some(character => character.id === applicantId)) throw new Error('This campaign-day intake was already registered.');
+          const applicant: Character = {
+            id: applicantId,
+            name: `Walk-in Applicant ${applicantIndex}`,
+            alias: 'Unverified Hotel Applicant',
+            type: 'sinner',
+            role: 'resident',
+            status: 'applicant',
+            riskLevel: 'medium',
+            charlieTrust: 20,
+            rehabProgress: 0,
+            contracts: [],
+            notes: 'Procedural intake generated by hotel operations. Requires interview, room review, and a custom rehabilitation plan.',
+            canonStatus: 'simulation_au',
+            operationalDataStatus: 'simulation_au',
+            timelineScope: draft.timeline.current,
+            sourceRef: '',
+            spoilerLevel: 'none',
+            description: 'A non-canon walk-in applicant generated for the local management campaign.'
+          };
+          const room = draft.rooms.find(candidate => {
+            const occupants = candidate.occupantIds?.length ?? (candidate.occupantId ? 1 : 0);
+            return occupants < candidate.capacity && candidate.status === 'clean'
+              && !candidate.restrictions.includes('staff_only') && !candidate.restrictions.includes('no_entry');
+          });
+          if (!room) throw new Error('No bed remains available for intake.');
+          const occupants = room.occupantIds ? [...room.occupantIds] : (room.occupantId ? [room.occupantId] : []);
+          occupants.push(applicant.id);
+          room.occupantIds = occupants;
+          room.occupantId = room.occupantId || applicant.id;
+          draft.characters.push(applicant);
+          draft.reputation.sinnerReputation = Math.min(100, draft.reputation.sinnerReputation + 5);
+          draft.reputation.mediaChaos = Math.min(100, draft.reputation.mediaChaos + 3);
+          return `${applicant.name} was registered and assigned to Room ${room.number}.`;
         }
       },
       {
+        id: 'voxtek_smear',
         title: 'Voxtek Smear Campaign',
         message: 'Vox coordinates a prime-time television broadcast claiming the hotel is a shell company for soul exploitation.',
-        apply: (rep: ReputationState) => {
-          const updated = RulesEngine.calculateReputationEvent('vox_propaganda', rep);
-          return { text: 'Vox launched a television broadcast smearing our credibility.', rep: updated };
+        cooldownDays: 3,
+        isAvailable: () => reputation.mediaChaos < 100 || reputation.sinnerReputation > 0,
+        apply: (draft) => {
+          draft.reputation = RulesEngine.calculateReputationEvent('vox_propaganda', draft.reputation);
+          return 'Vox launched a television broadcast smearing our credibility.';
         }
       },
       {
+        id: 'bar_deescalation',
         title: 'Bar Talk De-escalation',
         message: 'Husk listens to Angel Dust venting about Valentino. Angel Dust gains +5 rehab control. Husk remains slightly annoyed.',
-        apply: (rep: ReputationState) => {
-          rep.internalTrust = Math.min(100, rep.internalTrust + 5);
-          return { text: 'Husk held a de-escalation conversation at the bar. Internal trust improved.', rep };
+        cooldownDays: 2,
+        isAvailable: () => Boolean(angel && angelPlan && !angelPlan.isRedeemedConfirmed && angelPlan.impulseControlScore < 100
+          && inventory.bar > 0 && (gameplayMeta.dailySessionCounts[barSessionKey] || 0) < 2),
+        apply: (draft, supplies) => {
+          const plan = draft.rehabilitationPlans.find(candidate => candidate.id === angelPlan?.id);
+          const resident = draft.characters.find(candidate => candidate.id === angel?.id);
+          const husk = draft.characters.find(candidate => candidate.id === 'husk' && candidate.status === 'staff');
+          if (!plan || !resident || resident.status !== 'resident' || plan.isRedeemedConfirmed || !husk || supplies.bar < 1 || plan.impulseControlScore >= 100) {
+            throw new Error('Bar de-escalation requirements are no longer met.');
+          }
+          const meta = draft.gameplayMeta!;
+          const key = `${meta.campaignDay}:${plan.id}`;
+          if ((meta.dailySessionCounts[key] || 0) >= 2) throw new Error('Angel has reached the daily session limit.');
+          const huskLoad = draft.staffTasks
+            .filter(task => task.assignedTo === 'husk' && task.status !== 'completed' && task.status !== 'cancelled')
+            .reduce((sum, task) => sum + task.mentalWorkload, meta.staffFatigue.husk || 0);
+          if (huskLoad >= 10) throw new Error('Husk is overloaded or too fatigued for a bar check-in.');
+          supplies.bar -= 1;
+          const sessionSequence = (meta.dailySessionCounts[key] || 0) + 1;
+          const sessionId = `sess_bar_day${meta.campaignDay}_${plan.id}_${sessionSequence}`;
+          if (draft.rehabilitationSessions.some(session => session.id === sessionId)) throw new Error('This de-escalation session was already recorded.');
+          draft.rehabilitationSessions.push({
+            id: sessionId,
+            planId: plan.id,
+            date: `Campaign Day ${meta.campaignDay}`,
+            campaignDay: meta.campaignDay,
+            approachId: 'narrative_bar_deescalation',
+            type: 'therapy_like_checkin',
+            summary: 'Husk conducted a documented de-escalation check-in at the hotel bar.',
+            empathyDelta: 0,
+            accountabilityDelta: 0,
+            impulseControlDelta: 5,
+            cooperationDelta: 0,
+            conductedBy: 'husk'
+          });
+          plan.impulseControlScore = Math.min(100, plan.impulseControlScore + 5);
+          resident.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
+          meta.dailySessionCounts[key] = (meta.dailySessionCounts[key] || 0) + 1;
+          meta.staffFatigue.husk = Math.min(100, (meta.staffFatigue.husk || 0) + 1);
+          draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 3);
+          return 'Husk completed a documented de-escalation session; 1 bar supply was consumed.';
         }
       },
       {
+        id: 'heaven_patrol',
         title: 'Heavenly Eye Patrol',
         message: 'An Exorcist scout ship approaches the Pride Ring skies. Exorcist attention levels spike.',
-        apply: (rep: ReputationState) => {
-          rep.heavenAttention = Math.min(100, rep.heavenAttention + 15);
-          return { text: 'A Heavenly scout eye was detected in the perimeter sky.', rep };
+        cooldownDays: 4,
+        isAvailable: () => reputation.heavenAttention < 100,
+        apply: (draft) => {
+          draft.reputation.heavenAttention = Math.min(100, draft.reputation.heavenAttention + 15);
+          return 'A Heavenly scout eye was detected; Heaven attention increased by 15.';
         }
       },
       {
+        id: 'alastor_assistance',
         title: 'Alastor\'s Dark Assistance',
         message: 'Alastor shadows fix a broken door instantly, but whispers a minor riddle regarding future favors.',
-        apply: (rep: ReputationState) => {
-          rep.internalTrust = Math.max(0, rep.internalTrust - 5);
-          rep.overlordHostility = Math.min(100, rep.overlordHostility + 5);
-          return { text: 'Alastor deployed shadow magic for structural repairs. Staff caution levels increased.', rep };
+        cooldownDays: 30,
+        isAvailable: () => Boolean(damagedRoom && !gameplayMeta.narrativeFlags.includes('alastor_emergency_favor_used')),
+        apply: (draft) => {
+          const room = draft.rooms.find(candidate => candidate.status === 'damaged');
+          if (!room || draft.gameplayMeta!.narrativeFlags.includes('alastor_emergency_favor_used')) throw new Error('The emergency favor is unavailable.');
+          room.status = 'clean';
+          room.repairCost = 0;
+          room.maintenanceNotes = `${room.maintenanceNotes}\nSimulation AU: one-time emergency shadow repair accepted; a future favor is owed.`;
+          draft.gameplayMeta!.narrativeFlags.push('alastor_emergency_favor_used');
+          draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 10);
+          draft.reputation.overlordHostility = Math.min(100, draft.reputation.overlordHostility + 15);
+          return `Alastor repaired Room ${room.number}; the one-time favor created substantial long-term hostility.`;
         }
       },
       {
+        id: 'contract_enforcement',
+        title: 'Contract Enforcement Notice',
+        message: 'A binding-contract holder sends collectors to pressure a hotel resident. This is a Simulation AU operational event.',
+        cooldownDays: 5,
+        isAvailable: () => Boolean(contractLink),
+        apply: (draft) => {
+          const meta = draft.gameplayMeta!;
+          const residents = new Set(draft.characters
+            .filter(character => character.status === 'resident' || character.status === 'applicant')
+            .map(character => character.id));
+          const link = draft.relationships.find(relationship => relationship.type === 'contract_bound'
+            && (residents.has(relationship.charAId) || residents.has(relationship.charBId)));
+          if (!link) throw new Error('No active resident contract remains to enforce.');
+          const involved = [link.charAId, link.charBId].filter(id => residents.has(id));
+          draft.incidents.push({
+            id: `contract_pressure_${meta.campaignDay}_${link.id}`,
+            date: `Campaign Day ${meta.campaignDay}`,
+            location: 'Hotel perimeter',
+            residentsInvolved: involved,
+            type: 'deal_contract',
+            severity: 'medium',
+            summary: 'Simulation AU: contract collectors attempted to pressure a protected hotel resident.',
+            consequences: 'The unresolved binding relationship increased Overlord leverage and staff stress.',
+            repairCost: 0,
+            reputationImpact: -3,
+            trustImpact: -4,
+            actionTaken: '',
+            status: 'open',
+            loreLink: null,
+            tags: ['simulation_au', 'relationship_consequence', `relationship:${link.id}`]
+          });
+          draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 4);
+          draft.reputation.overlordHostility = Math.min(100, draft.reputation.overlordHostility + 6);
+          draft.factions = draft.factions.map(faction => faction.id === 'overlords'
+            ? { ...faction, influence: Math.min(100, faction.influence + 2) }
+            : faction);
+          return `Collectors targeted ${involved.length || 1} resident record; a contract-pressure incident is now open.`;
+        }
+      },
+      {
+        id: 'allied_supply_drive',
+        title: 'Allied Supply Drive',
+        message: 'The hotel support network organizes a non-canon mutual-aid delivery.',
+        cooldownDays: 4,
+        isAvailable: () => supportiveLinkCount >= 4 && (inventory.food < INVENTORY_MAX || inventory.clean < INVENTORY_MAX),
+        apply: (draft, supplies) => {
+          const links = draft.relationships.filter(relationship => (
+            relationship.type === 'ally'
+            || relationship.type === 'family'
+            || relationship.type === 'staff'
+            || relationship.type === 'romantic'
+          )).length;
+          if (links < 4 || (supplies.food >= INVENTORY_MAX && supplies.clean >= INVENTORY_MAX)) {
+            throw new Error('The support network or storage capacity no longer qualifies for a supply drive.');
+          }
+          supplies.food = Math.min(INVENTORY_MAX, supplies.food + 5);
+          supplies.clean = Math.min(INVENTORY_MAX, supplies.clean + 3);
+          draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 3);
+          draft.factions = draft.factions.map(faction => faction.id === 'hotel'
+            ? { ...faction, influence: Math.min(100, faction.influence + 2) }
+            : faction);
+          return 'Allies delivered up to 5 food and 3 cleaning supplies; hotel cohesion and influence improved.';
+        }
+      },
+      {
+        id: 'staff_recovery_circle',
+        title: 'Staff Recovery Circle',
+        message: 'A high-fatigue team schedules a protected recovery shift instead of adding more duties.',
+        cooldownDays: 3,
+        isAvailable: () => totalStaffFatigue >= 12 && inventory.food >= 2,
+        apply: (draft, supplies) => {
+          const meta = draft.gameplayMeta!;
+          const fatigue = Object.values(meta.staffFatigue).reduce((total, value) => total + value, 0);
+          if (fatigue < 12 || supplies.food < 2) throw new Error('Recovery-circle requirements are no longer met.');
+          supplies.food -= 2;
+          Object.keys(meta.staffFatigue).forEach(staffId => {
+            meta.staffFatigue[staffId] = Math.max(0, meta.staffFatigue[staffId] - 3);
+          });
+          draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 4);
+          return 'The staff consumed 2 food supplies, recovered fatigue, and rebuilt internal trust.';
+        }
+      },
+      {
+        id: 'vees_data_leak',
+        title: 'Vees Data Leak',
+        message: 'A hostile or manipulative Vees connection exposes fragments of hotel operations.',
+        cooldownDays: 4,
+        isAvailable: () => hostileVeesLink || factionInfluence('vees') >= 70,
+        apply: (draft) => {
+          const stillExposed = draft.relationships.some(relationship => (
+            relationship.type === 'enemy' || relationship.type === 'manipulative'
+          ) && (veesCharacterIds.has(relationship.charAId) || veesCharacterIds.has(relationship.charBId)))
+            || (draft.factions.find(faction => faction.id === 'vees')?.influence || 0) >= 70;
+          if (!stillExposed) throw new Error('Vees exposure is no longer high enough for this event.');
+          draft.reputation.mediaChaos = Math.min(100, draft.reputation.mediaChaos + 10);
+          draft.reputation.sinnerReputation = Math.max(0, draft.reputation.sinnerReputation - 5);
+          draft.reputation.veesInfluence = Math.min(100, draft.reputation.veesInfluence + 5);
+          draft.factions = draft.factions.map(faction => faction.id === 'vees'
+            ? { ...faction, influence: Math.min(100, faction.influence + 2) }
+            : faction);
+          return 'The leak increased media chaos and Vees leverage; counter-messaging is now more valuable.';
+        }
+      },
+      {
+        id: 'resident_testimony',
+        title: 'Resident Testimony Night',
+        message: 'Residents voluntarily share progress with local guests in a Simulation AU community event.',
+        cooldownDays: 5,
+        isAvailable: () => factionInfluence('hotel') >= 25 && reputation.redemptionCredibility >= 30 && activeResidents >= 2,
+        apply: (draft) => {
+          const hotelInfluence = draft.factions.find(faction => faction.id === 'hotel')?.influence || 0;
+          const residentCount = draft.characters.filter(character => character.status === 'resident').length;
+          if (hotelInfluence < 25 || draft.reputation.redemptionCredibility < 30 || residentCount < 2) {
+            throw new Error('Resident testimony requirements are no longer met.');
+          }
+          draft.reputation.redemptionCredibility = Math.min(100, draft.reputation.redemptionCredibility + 5);
+          draft.reputation.sinnerReputation = Math.min(100, draft.reputation.sinnerReputation + 4);
+          draft.reputation.heavenAttention = Math.min(100, draft.reputation.heavenAttention + 2);
+          draft.factions = draft.factions.map(faction => faction.id === 'hotel'
+            ? { ...faction, influence: Math.min(100, faction.influence + 2) }
+            : faction);
+          return 'Voluntary testimony improved credibility and support while drawing limited celestial attention.';
+        }
+      },
+      {
+        id: 'celestial_dossier_review',
+        title: 'Celestial Dossier Review',
+        message: 'A documented Simulation AU evidence packet reaches a cautious celestial review desk.',
+        cooldownDays: 6,
+        isAvailable: () => reputation.redemptionCredibility >= 50
+          && reputation.heavenAttention >= 35
+          && reputation.heavenAttention <= 85,
+        apply: (draft) => {
+          if (draft.reputation.redemptionCredibility < 50
+            || draft.reputation.heavenAttention < 35
+            || draft.reputation.heavenAttention > 85) {
+            throw new Error('Celestial review conditions are no longer met.');
+          }
+          draft.reputation.redemptionCredibility = Math.min(100, draft.reputation.redemptionCredibility + 3);
+          draft.reputation.heavenAttention = Math.max(0, draft.reputation.heavenAttention - 5);
+          draft.factions = draft.factions.map(faction => faction.id === 'exorcists'
+            ? { ...faction, influence: Math.max(0, faction.influence - 2) }
+            : faction);
+          return 'The review reduced immediate Heaven attention and slightly weakened Exorcist leverage.';
+        }
+      },
+      {
+        id: 'redemption_broadcast',
         title: 'Redemption Proof Broadcast',
-        message: 'A sinner successfully exhibits advanced moral control, sparking celestial reaction.',
-        apply: (rep: ReputationState) => {
-          const updated = RulesEngine.calculateReputationEvent('proof_of_redemption', rep);
-          return { text: 'Proof of moral redemption broadcasted to celestial spectators.', rep: updated };
+        message: `${unbroadcastRedeemedCharacter?.name || 'A redeemed soul'} is presented as verified proof of Charlie's program.`,
+        cooldownDays: 5,
+        isAvailable: () => Boolean(unbroadcastRedeemedCharacter),
+        apply: (draft) => {
+          const character = draft.characters.find(candidate => candidate.id === unbroadcastRedeemedCharacter?.id);
+          if (!character || character.status !== 'redeemed'
+            || !draft.gameplayMeta!.rewardedRedemptionIds.includes(character.id)
+            || draft.gameplayMeta!.broadcastRedemptionIds.includes(character.id)) {
+            throw new Error('This redemption is not an unbroadcast, workflow-confirmed result.');
+          }
+          draft.gameplayMeta!.broadcastRedemptionIds.push(character.id);
+          draft.reputation.sinnerReputation = Math.min(100, draft.reputation.sinnerReputation + 3);
+          draft.reputation.mediaChaos = Math.max(0, draft.reputation.mediaChaos - 8);
+          draft.reputation.heavenAttention = Math.min(100, draft.reputation.heavenAttention + 5);
+          draft.reputation.veesInfluence = Math.min(100, draft.reputation.veesInfluence + 5);
+          return `The already-rewarded redemption of ${character.name} was broadcast once without duplicating the ascension reward.`;
         }
       }
     ];
 
-    const randomEvent = events[Math.floor(Math.random() * events.length)];
+    const availableEvents = events.filter(event => event.isAvailable()
+      && (gameplayMeta.cooldowns[`event:${event.id}`] || 0) <= gameplayMeta.campaignDay);
+    if (availableEvents.length === 0) {
+      setTickerMessage('No coherent narrative event is currently available. Context requirements or per-event cooldowns must change first.');
+      return;
+    }
+
+    // Stable campaign-day rotation makes the same save choose the same event.
+    const selectedEvent = availableEvents[gameplayMeta.campaignDay % availableEvents.length];
     
-    // Apply changes
-    const currentRep = { ...db.getReputation() };
-    const { text, rep: updatedRep } = randomEvent.apply(currentRep);
-    
-    db.saveReputation(updatedRep);
-    db.logAction('NARRATIVE_EVENT', `[${randomEvent.title}] ${randomEvent.message}`);
-    setTickerMessage(`[EVENT TRIGGERED] ${randomEvent.title}: ${randomEvent.message}`);
-    
+    let resultText = '';
+    const applied = db.transaction(`NARRATIVE_EVENT:${selectedEvent.id}`, (draft, supplies) => {
+      const meta = draft.gameplayMeta!;
+      if (RulesEngine.evaluateCampaignOutcome(draft).phase !== 'active') throw new Error('The campaign outcome locks narrative events.');
+      if ((meta.cooldowns.narrative || 0) > meta.campaignDay) throw new Error('Narrative event cooldown is active.');
+      const eventCooldownKey = `event:${selectedEvent.id}`;
+      if ((meta.cooldowns[eventCooldownKey] || 0) > meta.campaignDay) throw new Error('This contextual event is still on cooldown.');
+      resultText = selectedEvent.apply(draft, supplies);
+      meta.cooldowns.narrative = meta.campaignDay + 1;
+      meta.cooldowns[eventCooldownKey] = meta.campaignDay + selectedEvent.cooldownDays;
+    }, {
+      action: `NARRATIVE_EVENT:${selectedEvent.id}`,
+      details: `[Simulation AU · ${selectedEvent.title}] ${selectedEvent.message}`
+    });
+    if (!applied) {
+      setTickerMessage(db.getStorageStatus().lastError?.message || 'Narrative event failed atomically.');
+      return;
+    }
+    setTickerMessage(`[SIMULATION AU EVENT] ${selectedEvent.title}: ${resultText} Repeats no earlier than Day ${gameplayMeta.campaignDay + selectedEvent.cooldownDays}.`);
     onStateChange();
+  };
+
+  const advanceCampaignDay = () => {
+    if (campaignLocked) {
+      setTickerMessage(`${campaignOutcome.title}. Campaign time is locked pending finalization.`);
+      return;
+    }
+    if (!db.advanceCampaignDay()) {
+      setTickerMessage(db.getStorageStatus().lastError?.message || 'Campaign day could not advance.');
+      return;
+    }
+    setTickerMessage(`Campaign Day ${gameplayMeta.campaignDay + 1} started. Upkeep, fatigue recovery, and threat thresholds were processed.`);
+    onStateChange();
+  };
+
+  const finalizeCampaignOutcome = () => {
+    if ((campaignOutcome.phase !== 'victory' && campaignOutcome.phase !== 'defeat')
+      || !campaignOutcome.result
+      || !campaignOutcome.endingId) return;
+    const endingMarker = `campaign_ended:${campaignOutcome.result}:${campaignOutcome.endingId}`;
+    const finalized = db.transaction('CAMPAIGN_FINALIZE', (draft) => {
+      const freshOutcome = RulesEngine.evaluateCampaignOutcome(draft);
+      if (freshOutcome.phase !== campaignOutcome.phase
+        || freshOutcome.result !== campaignOutcome.result
+        || freshOutcome.endingId !== campaignOutcome.endingId) {
+        throw new Error('Campaign outcome conditions changed before finalization.');
+      }
+      const existingEnding = draft.gameplayMeta!.narrativeFlags.find(flag => flag.startsWith('campaign_ended:'));
+      if (existingEnding && existingEnding !== endingMarker) throw new Error('A different campaign ending is already finalized.');
+      if (!draft.gameplayMeta!.narrativeFlags.includes(endingMarker)) {
+        draft.gameplayMeta!.narrativeFlags.push(endingMarker);
+      }
+      const milestone = `campaign:${campaignOutcome.result}:${campaignOutcome.endingId}`;
+      if (!draft.gameplayMeta!.completedMilestones.includes(milestone)) {
+        draft.gameplayMeta!.completedMilestones.push(milestone);
+      }
+    }, {
+      action: 'CAMPAIGN_FINALIZED',
+      details: `Finalized Simulation AU ${campaignOutcome.result}: ${campaignOutcome.endingId}.`
+    });
+    if (!finalized) {
+      setTickerMessage(db.getStorageStatus().lastError?.message || 'The campaign outcome could not be finalized.');
+      return;
+    }
+    setTickerMessage(`Campaign finalized: ${campaignOutcome.title}.`);
+    onStateChange();
+  };
+
+  const handleStatCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, view: ViewType) => {
+    if (event.target !== event.currentTarget || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    onNavigate(view);
   };
 
   return (
@@ -158,11 +547,48 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
             Active Operations Overseer — Management of residents, security, and redemption paths.
           </p>
         </div>
-        <button className="btn btn-gold" onClick={triggerNarrativeEvent} id="trigger-narrative-event-btn">
-          <Play size={16} />
-          Trigger Narrative Event
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          <strong style={{ color: 'var(--color-gold)', fontSize: '0.8rem' }}>Day {gameplayMeta.campaignDay}</strong>
+          <button type="button" className="btn btn-secondary" onClick={advanceCampaignDay} id="advance-campaign-day-btn" disabled={campaignLocked}>
+            Advance Day
+          </button>
+          <button
+            type="button"
+            className="btn btn-gold"
+            onClick={triggerNarrativeEvent}
+            id="trigger-narrative-event-btn"
+            disabled={campaignLocked || !settings.randomEventsEnabled || (gameplayMeta.cooldowns.narrative || 0) > gameplayMeta.campaignDay}
+            title={settings.randomEventsEnabled ? 'Trigger one currently valid narrative event' : 'Narrative events are disabled in Settings'}
+          >
+            <Play size={16} />
+            Trigger Narrative Event
+          </button>
+          {(campaignOutcome.phase === 'victory' || campaignOutcome.phase === 'defeat') && (
+            <button type="button" className="btn btn-primary" onClick={finalizeCampaignOutcome} id="finalize-campaign-btn">
+              Finalize {campaignOutcome.result === 'victory' ? 'Victory' : 'Defeat'}
+            </button>
+          )}
+        </div>
       </div>
+
+      <section
+        className="glass-panel"
+        aria-labelledby="campaign-status-title"
+        style={{ padding: '14px 16px', borderLeft: `4px solid ${campaignOutcome.phase === 'active' ? 'var(--color-gold)' : campaignOutcome.result === 'victory' ? '#4ce06c' : 'var(--status-high)'}` }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+          <div>
+            <strong id="campaign-status-title" style={{ color: 'var(--color-gold)', display: 'block' }}>{campaignOutcome.title}</strong>
+            <span style={{ color: 'var(--color-text-muted)', fontSize: '0.78rem' }}>{campaignOutcome.summary}</span>
+          </div>
+          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', textTransform: 'uppercase' }}>Non-canon Simulation AU</span>
+        </div>
+        {campaignOutcome.requirements.length > 0 && (
+          <ul style={{ margin: '8px 0 0', paddingLeft: '18px', color: 'var(--color-text-muted)', fontSize: '0.72rem', display: 'grid', gap: '3px' }}>
+            {campaignOutcome.requirements.map(requirement => <li key={requirement}>{requirement}</li>)}
+          </ul>
+        )}
+      </section>
 
       {/* Visual Hotel Banner */}
       <div 
@@ -237,7 +663,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
 
       {/* Key Stats Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
-        <div className="glass-panel" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('characters')}>
+        <div className="glass-panel" role="button" tabIndex={0} aria-label={`Open residents: ${activeResidents} active`} style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('characters')} onKeyDown={(event) => handleStatCardKeyDown(event, 'characters')}>
           <div style={{ padding: '12px', backgroundColor: 'var(--color-primary-light)', borderRadius: '8px', color: 'var(--color-gold)' }}>
             <Users size={24} />
           </div>
@@ -247,7 +673,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('rooms')}>
+        <div className="glass-panel" role="button" tabIndex={0} aria-label={`Open rooms: ${occupancyRate.toFixed(1)} percent occupied`} style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('rooms')} onKeyDown={(event) => handleStatCardKeyDown(event, 'rooms')}>
           <div style={{ padding: '12px', backgroundColor: 'var(--color-primary-light)', borderRadius: '8px', color: 'var(--color-gold)' }}>
             <Bed size={24} />
           </div>
@@ -262,7 +688,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('incidents')}>
+        <div className="glass-panel" role="button" tabIndex={0} aria-label={`Open incidents: ${openIncidents} unresolved`} style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('incidents')} onKeyDown={(event) => handleStatCardKeyDown(event, 'incidents')}>
           <div style={{ padding: '12px', backgroundColor: 'var(--color-primary-light)', borderRadius: '8px', color: '#ff6b7a' }}>
             <ShieldAlert size={24} />
           </div>
@@ -279,7 +705,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
           </div>
         </div>
 
-        <div className="glass-panel" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('staff')}>
+        <div className="glass-panel" role="button" tabIndex={0} aria-label={`Open staff duties: ${pendingTasks} active`} style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={() => onNavigate('staff')} onKeyDown={(event) => handleStatCardKeyDown(event, 'staff')}>
           <div style={{ padding: '12px', backgroundColor: 'var(--color-primary-light)', borderRadius: '8px', color: 'var(--color-gold)' }}>
             <TrendingUp size={24} />
           </div>

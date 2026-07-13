@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
-import { Coins, Plus, AlertTriangle, TrendingDown, TrendingUp, ShoppingCart, Info, Wrench, ShieldAlert } from 'lucide-react';
+import { Coins, Plus, Info, ShieldAlert } from 'lucide-react';
 import { db } from '../db/localDb';
-import { ResourceLedger, ResourceCategory } from '../types';
+import { DatabaseState, ResourceLedger, ResourceCategory } from '../types';
+import { INVENTORY_MAX } from '../lib/export-import';
+import { useDialogFocus } from '../components/useDialogFocus';
 
 interface ResourcesProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
+  searchQuery: string;
 }
 
-export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) => {
+export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange, searchQuery }) => {
   const { resourceLedger } = state;
 
-  // Inventory simulation (persisted on component load/save or kept in localStorage)
-  const [barStock, setBarStock] = useState<number>(() => {
-    return parseInt(localStorage.getItem('h_inv_bar') || '12');
-  });
-  const [cleanStock, setCleanStock] = useState<number>(() => {
-    return parseInt(localStorage.getItem('h_inv_clean') || '8');
-  });
-  const [foodStock, setFoodStock] = useState<number>(() => {
-    return parseInt(localStorage.getItem('h_inv_food') || '15');
-  });
+  // Inventory is loaded through the same guarded adapter used by atomic gameplay transactions.
+  const [barStock, setBarStock] = useState<number>(() => db.getInventory().bar);
+  const [cleanStock, setCleanStock] = useState<number>(() => db.getInventory().clean);
+  const [foodStock, setFoodStock] = useState<number>(() => db.getInventory().food);
 
   // Modal / Form state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,6 +28,7 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
   const [formCategory, setFormCategory] = useState<ResourceCategory>('repair');
   const [formAmount, setFormAmount] = useState(100);
   const [formDesc, setFormDesc] = useState('');
+  const modalRef = useDialogFocus(isModalOpen, () => setIsModalOpen(false), '#txn-type');
 
   // Calculations
   const totalIncome = resourceLedger
@@ -42,21 +40,9 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
     .reduce((sum: number, entry: ResourceLedger) => sum + entry.amount, 0);
 
   const balance = totalIncome - totalExpense;
-
-  // Handle Inventory Updates
-  const handleUpdateInventory = (item: 'bar' | 'clean' | 'food', value: number) => {
-    const val = Math.max(0, value);
-    if (item === 'bar') {
-      setBarStock(val);
-      localStorage.setItem('h_inv_bar', val.toString());
-    } else if (item === 'clean') {
-      setCleanStock(val);
-      localStorage.setItem('h_inv_clean', val.toString());
-    } else if (item === 'food') {
-      setFoodStock(val);
-      localStorage.setItem('h_inv_food', val.toString());
-    }
-  };
+  const dailyDonationCap = Math.min(1000, 200 + state.reputation.sinnerReputation * 6);
+  const normalizedSearch = searchQuery.trim().toLocaleLowerCase();
+  const filteredLedger = resourceLedger.filter((entry) => !normalizedSearch || `${entry.date} ${entry.category} ${entry.type} ${entry.description} ${entry.amount}`.toLocaleLowerCase().includes(normalizedSearch));
 
   // Restock inventory via transaction expense
   const handleRestockSupply = (item: 'bar' | 'clean' | 'food') => {
@@ -83,22 +69,40 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
       return;
     }
 
-    // Register expense
-    db.saveResourceLedgerEntry({
-      id: 'inv_buy_' + Date.now(),
-      date: new Date().toISOString().split('T')[0],
-      type: 'expense',
-      category,
-      amount: cost,
-      description: `Purchased restock of ${name} for hotel facilities.`
+    const currentStock = item === 'bar' ? barStock : item === 'clean' ? cleanStock : foodStock;
+    if (currentStock >= INVENTORY_MAX) {
+      alert(`Inventory is already at its ${INVENTORY_MAX}-unit storage limit.`);
+      return;
+    }
+
+    const restocked = db.transaction('RESTOCK_SUPPLIES', (draft, inventory) => {
+      const freshBalance = draft.resourceLedger.reduce((sum, entry) => sum + (entry.type === 'income' ? entry.amount : -entry.amount), 0);
+      if (freshBalance < cost) throw new Error(`Only ${freshBalance} HN remains; restock costs ${cost} HN.`);
+      if (inventory[item] >= INVENTORY_MAX) throw new Error('This inventory is already full.');
+      draft.resourceLedger.push({
+        id: `inv_buy_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+        date: `Campaign Day ${draft.gameplayMeta!.campaignDay}`,
+        type: 'expense',
+        category,
+        amount: cost,
+        description: `Purchased restock of ${name} for hotel facilities.`
+      });
+      const requestedUnits = item === 'food' ? 12 : 10;
+      const acceptedUnits = Math.min(requestedUnits, INVENTORY_MAX - inventory[item]);
+      if (acceptedUnits < requestedUnits) throw new Error(`Restock requires ${requestedUnits} free slots; only ${acceptedUnits} are available.`);
+      inventory[item] += acceptedUnits;
+    }, {
+      action: 'RESTOCK_SUPPLIES',
+      details: `Purchased restock of ${name} for ${cost} HN.`
     });
-
-    // Update stock levels
-    if (item === 'bar') handleUpdateInventory('bar', barStock + 10);
-    if (item === 'clean') handleUpdateInventory('clean', cleanStock + 10);
-    if (item === 'food') handleUpdateInventory('food', foodStock + 12);
-
-    db.logAction('RESTOCK_SUPPLIES', `Purchased restock of ${name} for ${cost} HN.`);
+    if (!restocked) {
+      alert(db.getStorageStatus().lastError?.message || 'Restock failed atomically.');
+      return;
+    }
+    const updatedInventory = db.getInventory();
+    setBarStock(updatedInventory.bar);
+    setCleanStock(updatedInventory.clean);
+    setFoodStock(updatedInventory.food);
     onStateChange();
   };
 
@@ -109,21 +113,59 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
       setValidationError('Transaction description details are required.');
       return;
     }
-    if (formAmount <= 0) {
+    if (!Number.isFinite(formAmount) || formAmount <= 0) {
       setValidationError('Amount must be greater than zero.');
       return;
     }
 
+    if (formType === 'expense' && formAmount > balance) {
+      setValidationError(`Expense exceeds the available ${balance} HN balance.`);
+      return;
+    }
+
+    const campaignDay = (state.gameplayMeta || db.getGameplayMeta()).campaignDay;
+    const today = `Campaign Day ${campaignDay}`;
+    if (formType === 'income') {
+      if (formCategory !== 'donation') {
+        setValidationError('Manual income must be documented as a donation. Operational income is generated by gameplay events.');
+        return;
+      }
+      const donationsToday = (state.gameplayMeta || db.getGameplayMeta()).dailyDonationAmounts[String(campaignDay)] || 0;
+      if (donationsToday + formAmount > dailyDonationCap) {
+        setValidationError(`Campaign-day donations are capped at ${dailyDonationCap} HN by current sinner reputation (${donationsToday} HN already logged).`);
+        return;
+      }
+    }
+
     const entry: ResourceLedger = {
-      id: 'txn_' + Date.now(),
-      date: new Date().toISOString().split('T')[0],
+      id: `txn_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      date: today,
       type: formType,
       category: formCategory,
       amount: formAmount,
       description: formDesc.trim()
     };
 
-    db.saveResourceLedgerEntry(entry);
+    const saved = db.transaction('RESOURCE_TRANSACTION', (draft) => {
+      const freshBalance = draft.resourceLedger.reduce((sum, ledgerEntry) => sum + (ledgerEntry.type === 'income' ? ledgerEntry.amount : -ledgerEntry.amount), 0);
+      if (entry.type === 'expense' && entry.amount > freshBalance) throw new Error(`Expense exceeds the current ${freshBalance} HN balance.`);
+      const meta = draft.gameplayMeta!;
+      if (entry.type === 'income') {
+        const donationKey = String(meta.campaignDay);
+        const donated = meta.dailyDonationAmounts[donationKey] || 0;
+        const currentCap = Math.min(1000, 200 + draft.reputation.sinnerReputation * 6);
+        if (donated + entry.amount > currentCap) throw new Error(`Campaign-day donation limit of ${currentCap} HN exceeded.`);
+        meta.dailyDonationAmounts[donationKey] = donated + entry.amount;
+      }
+      draft.resourceLedger.push(entry);
+    }, {
+      action: 'RESOURCE_TRANSACTION',
+      details: `${entry.type} ${entry.amount} HN: ${entry.description}`
+    });
+    if (!saved) {
+      setValidationError(db.getStorageStatus().lastError?.message || 'Transaction could not be saved.');
+      return;
+    }
     setIsModalOpen(false);
     onStateChange();
   };
@@ -161,8 +203,8 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
           <ul style={{ paddingLeft: '24px', margin: 0, color: 'var(--color-text-main)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
             {balance < 0 && <li><strong>FINANCIAL DEFICIT:</strong> Total expenses exceed total income! Hotel runs on debt.</li>}
             {cleanStock < 5 && <li><strong>CLEANING STOCK CRITICAL:</strong> Brooms and spray levels running low ({cleanStock} remaining). Niffty\'s inspection schedule may suffer.</li>}
-            {barStock < 5 && <li><strong>BAR STOCK CRITICAL:</strong> Whiskey count is low ({barStock} remaining). Husk reports increased resident irritability.</li>}
-            {foodStock < 5 && <li><strong>KITCHEN STOCK LOW:</strong> Food supplies depleted ({foodStock} remaining).</li>}
+            {barStock < 5 && <li><strong>BAR STOCK CRITICAL:</strong> Only {barStock} session supplies remain for Husk-led check-ins.</li>}
+            {foodStock < 5 && <li><strong>KITCHEN STOCK LOW:</strong> Only {foodStock} workshop/rehabilitation supplies remain.</li>}
           </ul>
         </div>
       )}
@@ -210,34 +252,25 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             {[
-              { id: 'bar', label: 'Bar Alcohol stock (Husk)', val: barStock, color: barStock < 5 ? '#ff6b7a' : 'var(--color-gold)' },
-              { id: 'clean', label: 'Cleaning supply count (Niffty)', val: cleanStock, color: cleanStock < 5 ? '#ff6b7a' : '#4ce06c' },
-              { id: 'food', label: 'Kitchen Rations count', val: foodStock, color: foodStock < 5 ? '#ff6b7a' : 'var(--color-text-main)' }
+              { id: 'bar' as const, label: 'Bar Alcohol stock (Husk)', val: barStock, color: barStock < 5 ? '#ff6b7a' : 'var(--color-gold)' },
+              { id: 'clean' as const, label: 'Cleaning supply count (Niffty)', val: cleanStock, color: cleanStock < 5 ? '#ff6b7a' : '#4ce06c' },
+              { id: 'food' as const, label: 'Kitchen Rations count', val: foodStock, color: foodStock < 5 ? '#ff6b7a' : 'var(--color-text-main)' }
             ].map((inv) => (
-              <div key={inv.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(0,0,0,0.15)', padding: '10px', borderRadius: '4px' }}>
+                <div key={inv.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(0,0,0,0.15)', padding: '10px', borderRadius: '4px' }}>
                 <div>
                   <strong style={{ fontSize: '0.85rem', display: 'block', color: 'var(--color-text-main)' }}>{inv.label}</strong>
                   <span style={{ fontSize: '0.75rem', color: inv.color, fontWeight: 'bold' }}>
                     Level: {inv.val} {inv.val < 5 ? '(CRITICAL)' : 'Safe'}
                   </span>
+                  <span style={{ display: 'block', marginTop: '2px', fontSize: '0.62rem', color: 'var(--color-text-muted)' }}>
+                    Automatically consumed by matching hotel operations.
+                  </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <button 
-                    onClick={() => handleUpdateInventory(inv.id as any, inv.val - 1)}
-                    style={{ padding: '3px 8px', border: 'none', borderRadius: '3px', backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--color-text-main)', cursor: 'pointer' }}
-                  >
-                    -
-                  </button>
-                  <button 
-                    onClick={() => handleUpdateInventory(inv.id as any, inv.val + 1)}
-                    style={{ padding: '3px 8px', border: 'none', borderRadius: '3px', backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--color-text-main)', cursor: 'pointer' }}
-                  >
-                    +
-                  </button>
-                  <button 
                     className="btn btn-gold" 
                     style={{ padding: '4px 8px', fontSize: '0.65rem' }}
-                    onClick={() => handleRestockSupply(inv.id as any)}
+                    onClick={() => handleRestockSupply(inv.id)}
                     id={`buy-${inv.id}-btn`}
                   >
                     Buy
@@ -256,7 +289,7 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
           Historical Transaction Ledger
         </h3>
 
-        {resourceLedger.length === 0 ? (
+        {filteredLedger.length === 0 ? (
           <div style={{ padding: '30px 0', textAlign: 'center', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
             <Info size={32} style={{ color: 'var(--color-gold-dark)', marginBottom: '8px' }} />
             <p>No transactions registered in this ledger session.</p>
@@ -274,8 +307,8 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
                 </tr>
               </thead>
               <tbody>
-                {resourceLedger.map((item: ResourceLedger) => (
-                  <tr key={item.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }} className="ledger-table-row">
+                {filteredLedger.map((item: ResourceLedger) => (
+                  <tr key={item.id} id={`ledger-row-${item.id}`} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }} className="ledger-table-row">
                     <td style={{ padding: '10px', color: 'var(--color-text-muted)' }}>{item.date}</td>
                     <td style={{ padding: '10px', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 600 }}>{item.category.replace('_', ' ')}</td>
                     <td style={{ padding: '10px' }}>
@@ -305,14 +338,14 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
 
       {/* Transaction Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '440px', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div ref={modalRef} tabIndex={-1} className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="transaction-dialog-title" style={{ width: '90%', maxWidth: '440px', padding: '24px' }}>
+            <h2 id="transaction-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               Log Transaction
             </h2>
 
             {validationError && (
-              <div style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
+              <div role="alert" style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
                 <ShieldAlert size={16} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'text-bottom' }} />
                 {validationError}
               </div>
@@ -325,7 +358,12 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
                   <select 
                     id="txn-type" 
                     value={formType} 
-                    onChange={(e) => setFormType(e.target.value as 'income' | 'expense')}
+                    onChange={(e) => {
+                      const nextType = e.target.value as 'income' | 'expense';
+                      setFormType(nextType);
+                      if (nextType === 'income') setFormCategory('donation');
+                      if (nextType === 'expense' && formCategory === 'donation') setFormCategory('repair');
+                    }}
                     style={{ width: '100%' }}
                   >
                     <option value="expense">Expense (-)</option>
@@ -341,15 +379,20 @@ export const Resources: React.FC<ResourcesProps> = ({ state, onStateChange }) =>
                     onChange={(e) => setFormCategory(e.target.value as ResourceCategory)}
                     style={{ width: '100%' }}
                   >
-                    <option value="repair">Facility Repair</option>
-                    <option value="food_beverage">Food & Rations</option>
-                    <option value="bar_stock">Husk\'s Bar Stock</option>
-                    <option value="cleaning_supplies">Niffty Cleaning Supplies</option>
-                    <option value="security">Perimeter Security</option>
-                    <option value="donation">Royal Grant / Donation</option>
-                    <option value="reconstruction">Hotel Reconstruction</option>
-                    <option value="incident">Incident Containment Cost</option>
-                    <option value="custom">Custom Transaction</option>
+                    {formType === 'income' ? (
+                      <option value="donation">Documented Donation (max 1,000 HN/day)</option>
+                    ) : (
+                      <>
+                        <option value="repair">Facility Repair</option>
+                        <option value="food_beverage">Food & Rations</option>
+                        <option value="bar_stock">Husk\'s Bar Stock</option>
+                        <option value="cleaning_supplies">Niffty Cleaning Supplies</option>
+                        <option value="security">Perimeter Security</option>
+                        <option value="reconstruction">Hotel Reconstruction</option>
+                        <option value="incident">Incident Containment Cost</option>
+                        <option value="custom">Custom Transaction</option>
+                      </>
+                    )}
                   </select>
                 </div>
               </div>

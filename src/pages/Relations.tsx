@@ -1,21 +1,45 @@
-import React, { useState } from 'react';
-import { Network, Plus, ShieldAlert, Edit2, Trash2, HelpCircle, Users, Link2, Info } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Network, Plus, ShieldAlert } from 'lucide-react';
 import { db } from '../db/localDb';
-import { Relationship, Character, Faction, RelationshipType } from '../types';
+import { LoreValidation } from '../lib/lore-validation';
+import { RulesEngine } from '../lib/rules-engine';
+import { Relationship, Character, DatabaseState, Faction, RelationshipType, TimelineScope } from '../types';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 
 interface RelationsProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
 }
 
 export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) => {
-  const { relationships, characters, factions } = state;
+  const { relationships: allRelationships, characters: allCharacters, factions, timeline } = state;
+  const gameplayMeta = state.gameplayMeta || db.getGameplayMeta();
+  const campaignOutcome = RulesEngine.evaluateCampaignOutcome(state);
+  const campaignLocked = campaignOutcome.phase !== 'active';
+  const characters = allCharacters
+    .map((character: Character) => ({
+      ...character,
+      ...(timeline.current !== 'custom'
+        ? character.timelineStates?.[timeline.current as Exclude<TimelineScope, 'custom'>]
+        : undefined)
+    }))
+    .filter((character: Character) => {
+      const source = allCharacters.find((candidate: Character) => candidate.id === character.id) || character;
+      const hasProjection = timeline.current !== 'custom'
+        && Boolean(source.timelineStates?.[timeline.current as Exclude<TimelineScope, 'custom'>]);
+      return (hasProjection || LoreValidation.isAvailableAtTimeline(source.timelineScope, timeline.current))
+        && RulesEngine.isContentVisible(source, timeline);
+    });
+  const visibleCharacterIds = new Set(characters.map((character: Character) => character.id));
+  const relationships = allRelationships.filter((relationship: Relationship) => (
+    visibleCharacterIds.has(relationship.charAId) && visibleCharacterIds.has(relationship.charBId)
+  ));
 
   // Modal / Form state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingRel, setEditingRel] = useState<Relationship | null>(null);
   const [validationError, setValidationError] = useState<string | null>(null);
+  const [operationMessage, setOperationMessage] = useState<string | null>(null);
 
   // Confirm delete modal state
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
@@ -29,9 +53,28 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
   const [formCharB, setFormCharB] = useState('');
   const [formType, setFormType] = useState<RelationshipType>('ally');
   const [formNotes, setFormNotes] = useState('');
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    modalRef.current?.querySelector<HTMLElement>('select, textarea, button')?.focus();
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsModalOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      previouslyFocused?.focus();
+    };
+  }, [isModalOpen]);
 
   // Handle Edit click
   const handleEdit = (rel: Relationship) => {
+    if (campaignLocked) {
+      setOperationMessage('The Simulation AU campaign outcome is ready or finalized; relationship operations are locked.');
+      return;
+    }
     setEditingRel(rel);
     setFormCharA(rel.charAId);
     setFormCharB(rel.charBId);
@@ -43,6 +86,10 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
 
   // Handle Create click
   const handleCreate = () => {
+    if (campaignLocked) {
+      setOperationMessage('The Simulation AU campaign outcome is ready or finalized; relationship operations are locked.');
+      return;
+    }
     setEditingRel(null);
     setFormCharA(characters[0]?.id || '');
     setFormCharB(characters[1]?.id || '');
@@ -56,37 +103,167 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
   const handleSaveRel = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!characters.some((character) => character.id === formCharA) || !characters.some((character) => character.id === formCharB)) {
+      setValidationError('Choose two valid characters.');
+      return;
+    }
+
     if (formCharA === formCharB) {
       setValidationError('Cannot establish a relationship link between a character and themselves.');
       return;
     }
 
+    const duplicate = allRelationships.some((relationship) =>
+      relationship.id !== editingRel?.id
+      && ((relationship.charAId === formCharA && relationship.charBId === formCharB)
+        || (relationship.charAId === formCharB && relationship.charBId === formCharA))
+      && relationship.type === formType
+    );
+    if (duplicate) {
+      setValidationError('This relationship type is already logged for that pair.');
+      return;
+    }
+
+    let sequence = allRelationships.length + 1;
+    let generatedId = `rel_user_${sequence}`;
+    while (allRelationships.some(relationship => relationship.id === generatedId)) {
+      sequence += 1;
+      generatedId = `rel_user_${sequence}`;
+    }
     const newRel: Relationship = {
-      id: editingRel ? editingRel.id : 'rel_' + Date.now(),
+      id: editingRel ? editingRel.id : generatedId,
       charAId: formCharA,
       charBId: formCharB,
       type: formType,
       notes: formNotes.trim()
     };
 
-    db.saveRelationship(newRel);
+    let consequenceSummary = '';
+    const saved = db.transaction('RELATION_SAVE', (draft) => {
+      const hasValidA = draft.characters.some(character => character.id === newRel.charAId);
+      const hasValidB = draft.characters.some(character => character.id === newRel.charBId);
+      if (!hasValidA || !hasValidB || newRel.charAId === newRel.charBId) {
+        throw new Error('The relationship endpoints are no longer valid.');
+      }
+      const hasDuplicate = draft.relationships.some(relationship => relationship.id !== newRel.id
+        && ((relationship.charAId === newRel.charAId && relationship.charBId === newRel.charBId)
+          || (relationship.charAId === newRel.charBId && relationship.charBId === newRel.charAId))
+        && relationship.type === newRel.type);
+      if (hasDuplicate) throw new Error('This relationship type is already logged for that pair.');
+
+      const existingIndex = draft.relationships.findIndex(relationship => relationship.id === newRel.id);
+      if (existingIndex >= 0) draft.relationships[existingIndex] = newRel;
+      else draft.relationships.push(newRel);
+
+      const marker = `relationship-effect:${newRel.id}:${newRel.type}`;
+      if (!draft.gameplayMeta!.completedMilestones.includes(marker)) {
+        const consequence = RulesEngine.applyRelationshipConsequence(
+          draft.reputation,
+          draft.factions,
+          newRel.type,
+          'establish'
+        );
+        draft.reputation = consequence.reputation;
+        draft.factions = consequence.factions;
+        draft.gameplayMeta!.completedMilestones.push(marker);
+        consequenceSummary = consequence.summary;
+      }
+    }, {
+      action: editingRel ? 'RELATION_UPDATE' : 'RELATION_CREATE',
+      details: `${editingRel ? 'Updated' : 'Logged'} a ${newRel.type} Simulation AU operational relationship.`
+    });
+    if (!saved) {
+      setValidationError(db.getStorageStatus().lastError?.message || 'The relationship could not be saved.');
+      return;
+    }
     setIsModalOpen(false);
+    setOperationMessage(consequenceSummary || 'Relationship saved. Its one-time operational consequence was already applied earlier.');
     onStateChange();
   };
 
   // Handle Delete
   const handleDeleteTrigger = (id: string) => {
+    if (campaignLocked) {
+      setOperationMessage('The Simulation AU campaign outcome is ready or finalized; relationship operations are locked.');
+      return;
+    }
     setDeleteTargetId(id);
     setIsConfirmOpen(true);
   };
 
   const confirmDelete = () => {
     if (deleteTargetId) {
-      db.deleteRelationship(deleteTargetId);
-      setIsConfirmOpen(false);
-      setDeleteTargetId(null);
-      onStateChange();
+      let consequenceSummary = '';
+      const removed = db.transaction('RELATION_DELETE', (draft) => {
+        const relationship = draft.relationships.find(candidate => candidate.id === deleteTargetId);
+        if (!relationship) throw new Error('The relationship no longer exists.');
+        const marker = `relationship-remove:${relationship.id}:${relationship.type}`;
+        if (!draft.gameplayMeta!.completedMilestones.includes(marker)) {
+          const consequence = RulesEngine.applyRelationshipConsequence(
+            draft.reputation,
+            draft.factions,
+            relationship.type,
+            'remove'
+          );
+          draft.reputation = consequence.reputation;
+          draft.factions = consequence.factions;
+          draft.gameplayMeta!.completedMilestones.push(marker);
+          consequenceSummary = consequence.summary;
+        }
+        draft.relationships = draft.relationships.filter(candidate => candidate.id !== relationship.id);
+      }, {
+        action: 'RELATION_DELETE',
+        details: 'Removed a Simulation AU operational relationship and applied its one-time consequence.'
+      });
+      if (removed) {
+        setIsConfirmOpen(false);
+        setDeleteTargetId(null);
+        setOperationMessage(consequenceSummary || 'Relationship removed. Its one-time operational consequence was already applied earlier.');
+        onStateChange();
+      }
     }
+  };
+
+  const handleFactionOperation = (faction: Faction) => {
+    const operation = RulesEngine.getFactionOperation(faction.id);
+    if (!operation || campaignLocked) {
+      setOperationMessage(campaignLocked
+        ? 'The Simulation AU campaign outcome is ready or finalized; faction operations are locked.'
+        : 'No operational action is defined for this faction.');
+      return;
+    }
+    const cooldownKey = `faction:${faction.id}`;
+    const nextAvailableDay = gameplayMeta.cooldowns[cooldownKey] || 0;
+    if (nextAvailableDay > gameplayMeta.campaignDay) {
+      setOperationMessage(`${operation.title} is available again on Campaign Day ${nextAvailableDay}.`);
+      return;
+    }
+
+    const applied = db.transaction(`FACTION_OPERATION:${faction.id}`, (draft) => {
+      const meta = draft.gameplayMeta!;
+      if (RulesEngine.evaluateCampaignOutcome(draft).phase !== 'active') {
+        throw new Error('The campaign outcome now locks faction operations.');
+      }
+      if ((meta.cooldowns[cooldownKey] || 0) > meta.campaignDay) {
+        throw new Error(`This faction operation is on cooldown until Campaign Day ${meta.cooldowns[cooldownKey]}.`);
+      }
+      if (!draft.factions.some(candidate => candidate.id === faction.id)) {
+        throw new Error('The faction is no longer present.');
+      }
+      const consequence = RulesEngine.applyFactionOperation(draft.reputation, draft.factions, operation);
+      draft.reputation = consequence.reputation;
+      draft.factions = consequence.factions;
+      meta.cooldowns[cooldownKey] = meta.campaignDay + 3;
+    }, {
+      action: `FACTION_OPERATION:${faction.id}`,
+      details: `${operation.title}. ${operation.summary}`
+    });
+    if (!applied) {
+      setOperationMessage(db.getStorageStatus().lastError?.message || 'The faction operation failed atomically.');
+      return;
+    }
+    setOperationMessage(`${operation.title}: ${operation.summary} Cooldown: 3 campaign days.`);
+    onStateChange();
   };
 
   // Find contract-bound threats
@@ -104,11 +281,26 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
             Map out political alignments in Hell, trace demonic contracts, and review social connections.
           </p>
         </div>
-        <button className="btn btn-primary" onClick={handleCreate} id="add-relationship-btn">
+        <button type="button" className="btn btn-primary" onClick={handleCreate} id="add-relationship-btn" disabled={characters.length < 2 || campaignLocked}>
           <Plus size={16} />
           Log Relationship Link
         </button>
       </div>
+
+      {(operationMessage || campaignLocked) && (
+        <div
+          className="glass-panel"
+          role="status"
+          style={{ padding: '12px 16px', marginBottom: '20px', borderLeft: `4px solid ${campaignLocked ? 'var(--status-high)' : 'var(--color-gold)'}` }}
+        >
+          <strong style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '3px' }}>
+            Simulation AU operational consequences
+          </strong>
+          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>
+            {operationMessage || `${campaignOutcome.title}. Relationship and faction actions are locked until the campaign is finalized.`}
+          </span>
+        </div>
+      )}
 
       {/* Main Grid: Factions List & Contract Warnings */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '20px', marginBottom: '24px' }}>
@@ -116,19 +308,36 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
         {/* Left Side: Faction Influence Tracker */}
         <div className="glass-panel" style={{ padding: '20px' }}>
           <h3 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-primary-light)', paddingBottom: '6px' }}>
-            Faction Influence (Pentagram Hegemony)
+            Simulation Faction Influence
           </h3>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {factions.map((f: Faction) => (
-              <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 600, width: '150px', flexShrink: 0 }}>{f.name}</span>
-                <div style={{ flex: 1, height: '6px', backgroundColor: 'var(--bg-main)', borderRadius: '3px', overflow: 'hidden' }}>
-                  <div style={{ height: '100%', width: `${f.influence}%`, backgroundColor: f.id === 'hotel' ? 'var(--color-primary)' : 'var(--color-gold-dark)' }} />
+            {factions.map((f: Faction) => {
+              const operation = RulesEngine.getFactionOperation(f.id);
+              const nextAvailableDay = gameplayMeta.cooldowns[`faction:${f.id}`] || 0;
+              const isCoolingDown = nextAvailableDay > gameplayMeta.campaignDay;
+              return (
+                <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', paddingBottom: '8px', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 600, width: '150px', flexShrink: 0 }}>{f.name}</span>
+                  <div style={{ flex: 1, minWidth: '120px', height: '6px', backgroundColor: 'var(--bg-main)', borderRadius: '3px', overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${f.influence}%`, backgroundColor: f.id === 'hotel' ? 'var(--color-primary)' : 'var(--color-gold-dark)' }} />
+                  </div>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 700, width: '35px', textAlign: 'right' }}>{f.influence}%</span>
+                  {operation && (
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      style={{ padding: '4px 8px', fontSize: '0.68rem' }}
+                      onClick={() => handleFactionOperation(f)}
+                      disabled={campaignLocked || isCoolingDown}
+                      title={isCoolingDown ? `Available on Campaign Day ${nextAvailableDay}` : operation.summary}
+                    >
+                      {isCoolingDown ? `Day ${nextAvailableDay}` : operation.title}
+                    </button>
+                  )}
                 </div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 700, width: '35px', textAlign: 'right' }}>{f.influence}%</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -326,7 +535,16 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
                   <g 
                     key={char.id} 
                     className="graph-node"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Inspect ${char.name}'s relationships`}
                     onClick={() => setSelectedCharId(isSelected ? null : char.id)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        setSelectedCharId(isSelected ? null : char.id);
+                      }
+                    }}
                     style={{ 
                       opacity: isRelated ? 1 : 0.2, 
                       transition: 'opacity 0.3s ease, transform 0.2s ease'
@@ -385,6 +603,7 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
             {/* Clear Button */}
             {selectedCharId && (
               <button 
+                type="button"
                 className="btn btn-secondary" 
                 style={{ position: 'absolute', top: '12px', right: '12px', padding: '4px 8px', fontSize: '0.7rem' }}
                 onClick={() => setSelectedCharId(null)}
@@ -420,7 +639,7 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
                     <div style={{ borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px', marginBottom: '12px' }}>
                       <h4 style={{ color: 'var(--color-gold)', fontSize: '1.2rem' }}>{char.name}</h4>
                       <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
-                        {char.type} ({char.role}) — {char.riskLevel} risk
+                        {char.type}{char.rank && char.rank !== 'none' ? ` • ${char.rank}` : ''} ({char.role}) — {char.riskLevel} simulation risk
                       </span>
                     </div>
 
@@ -482,10 +701,10 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
                               
                               {/* Edit / Delete quick buttons */}
                               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '6px', marginTop: '6px' }}>
-                                <button className="btn btn-secondary" style={{ padding: '2px 6px', fontSize: '0.65rem' }} onClick={() => handleEdit(rel)}>
+                                <button type="button" className="btn btn-secondary" style={{ padding: '2px 6px', fontSize: '0.65rem' }} onClick={() => handleEdit(rel)}>
                                   Edit Link
                                 </button>
-                                <button className="btn btn-danger" style={{ padding: '2px 6px', fontSize: '0.65rem' }} onClick={() => handleDeleteTrigger(rel.id)}>
+                                <button type="button" className="btn btn-danger" style={{ padding: '2px 6px', fontSize: '0.65rem' }} onClick={() => handleDeleteTrigger(rel.id)}>
                                   Break Link
                                 </button>
                               </div>
@@ -498,6 +717,7 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
                   
                   {/* Quick Add Connection Launcher */}
                   <button 
+                    type="button"
                     className="btn btn-gold" 
                     style={{ width: '100%', marginTop: '12px' }}
                     onClick={() => {
@@ -523,9 +743,15 @@ export const Relations: React.FC<RelationsProps> = ({ state, onStateChange }) =>
 
       {/* Add / Edit Link Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '440px', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.currentTarget === event.target) setIsModalOpen(false);
+          }}
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}
+        >
+          <div ref={modalRef} role="dialog" aria-modal="true" aria-labelledby="relationship-dialog-title" className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '440px', padding: '24px' }}>
+            <h2 id="relationship-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               {editingRel ? 'Edit Relationship Link' : 'Register Relationship Connection'}
             </h2>
 

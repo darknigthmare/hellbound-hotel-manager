@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
-import { ShieldAlert, Plus, Calendar, MapPin, Users, Heart, AlertTriangle, FileText, Info, CheckCircle } from 'lucide-react';
+import { ShieldAlert, Plus, Calendar, Users, Info, CheckCircle } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { Incident, Character, Room, IncidentType, IncidentSeverity, IncidentStatus } from '../types';
+import { Incident, Character, Room, IncidentType, IncidentSeverity, IncidentStatus, DatabaseState } from '../types';
+import { useDialogFocus } from '../components/useDialogFocus';
 
 interface IncidentsProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
+  searchQuery: string;
 }
 
-export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) => {
-  const { incidents, characters, rooms, reputation } = state;
+const INCIDENT_RECORDED_IMPACTS: Record<IncidentSeverity, { reputation: number; trust: number }> = {
+  low: { reputation: -2, trust: -1 },
+  medium: { reputation: -5, trust: -5 },
+  high: { reputation: -10, trust: -10 },
+  crisis: { reputation: -25, trust: -20 }
+};
+
+export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange, searchQuery }) => {
+  const { incidents, characters, rooms } = state;
 
   // Filters
   const [severityFilter, setSeverityFilter] = useState<string>('all');
@@ -29,11 +38,10 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
   const [formSummary, setFormSummary] = useState('');
   const [formConsequences, setFormConsequences] = useState('');
   const [formRepairCost, setFormRepairCost] = useState(0);
-  const [formRepImpact, setFormRepImpact] = useState(5);
-  const [formTrustImpact, setFormTrustImpact] = useState(5);
   const [formActionTaken, setFormActionTaken] = useState('');
   const [formStatus, setFormStatus] = useState<IncidentStatus>('open');
   const [linkedRoomNumber, setLinkedRoomNumber] = useState('');
+  const modalRef = useDialogFocus(isModalOpen, () => setIsModalOpen(false), '#inc-location');
 
   // Handle Multi-select characters
   const handleInvolvedToggle = (charId: string) => {
@@ -57,75 +65,101 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
       return;
     }
 
+    const recordedImpact = INCIDENT_RECORDED_IMPACTS[formSeverity];
+    const normalizedRepairCost = Math.max(0, formRepairCost);
     const newIncident: Incident = {
-      id: 'inc_' + Date.now(),
-      date: new Date().toISOString().split('T')[0],
+      id: `inc_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      date: `Campaign Day ${(state.gameplayMeta || db.getGameplayMeta()).campaignDay}`,
       location: formLocation.trim(),
       residentsInvolved: formInvolved,
       type: formType,
       severity: formSeverity,
       summary: formSummary.trim(),
       consequences: formConsequences.trim(),
-      repairCost: formRepairCost,
-      reputationImpact: formRepImpact,
-      trustImpact: formTrustImpact,
+      repairCost: normalizedRepairCost,
+      reputationImpact: recordedImpact.reputation,
+      trustImpact: recordedImpact.trust,
       actionTaken: formActionTaken.trim(),
       status: formStatus,
       loreLink: null,
       tags: [formType, formSeverity]
     };
 
-    // 1. Apply rules-engine reputation impact calculations
-    const updatedRep = RulesEngine.calculateIncidentImpact(newIncident, reputation);
-    db.saveReputation(updatedRep);
-
-    // 2. Link to room property damage if applicable
-    if (linkedRoomNumber !== '') {
-      const room = rooms.find((r: Room) => r.number === linkedRoomNumber);
-      if (room) {
-        db.saveRoom({
-          ...room,
-          status: 'damaged',
-          repairCost: room.repairCost + formRepairCost,
-          maintenanceNotes: `${room.maintenanceNotes}\nDAMAGED in incident on ${newIncident.date}. Summary: ${newIncident.summary}`
+    const saved = db.transaction('INCIDENT_REPORTED', (draft) => {
+      if (draft.incidents.some(incident => incident.id === newIncident.id)) throw new Error('Incident identifier collision.');
+      draft.reputation = RulesEngine.calculateIncidentImpact(newIncident, draft.reputation);
+      if (linkedRoomNumber !== '') {
+        const room = draft.rooms.find(candidate => candidate.number === linkedRoomNumber);
+        if (!room) throw new Error('Linked room no longer exists.');
+        room.status = 'damaged';
+        room.repairCost += normalizedRepairCost;
+        room.maintenanceNotes = `${room.maintenanceNotes}\nDAMAGED in incident on ${newIncident.date}. Summary: ${newIncident.summary}`;
+      } else if (normalizedRepairCost > 0) {
+        draft.resourceLedger.push({
+          id: `inc_rep_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+          date: newIncident.date,
+          type: 'expense',
+          category: 'incident',
+          amount: normalizedRepairCost,
+          description: `Immediate security/structural response for incident at ${newIncident.location}`
         });
-        db.logAction('ROOM_DAMAGE_INCIDENT', `Room ${room.number} flagged damaged by incident connection.`);
       }
+      if (formType === 'relapse' || formType === 'violence') {
+        for (const characterId of formInvolved) {
+          const plan = draft.rehabilitationPlans.find(candidate => candidate.characterId === characterId);
+          const character = draft.characters.find(candidate => candidate.id === characterId);
+          if (!plan || !character || plan.isRedeemedConfirmed) continue;
+          plan.impulseControlScore = Math.max(0, plan.impulseControlScore - (formType === 'relapse' ? 8 : 5));
+          plan.cooperationScore = Math.max(0, plan.cooperationScore - (formType === 'relapse' ? 3 : 1));
+          character.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
+        }
+      }
+      draft.incidents.push(newIncident);
+    }, {
+      action: 'INCIDENT_REPORTED',
+      details: `${formSeverity.toUpperCase()} ${formType} incident logged at ${newIncident.location}.`
+    });
+    if (!saved) {
+      setValidationError(db.getStorageStatus().lastError?.message || 'Incident could not be recorded atomically.');
+      return;
     }
-
-    // 3. Write Ledger Expense if structural costs were immediately charged
-    if (formRepairCost > 0) {
-      db.saveResourceLedgerEntry({
-        id: 'inc_rep_' + Date.now(),
-        date: newIncident.date,
-        type: 'expense',
-        category: 'incident',
-        amount: formRepairCost,
-        description: `Immediate security/structural repairs for incident at ${newIncident.location}`
-      });
-    }
-
-    // 4. Save and close
-    db.saveIncident(newIncident);
     setIsModalOpen(false);
     onStateChange();
   };
 
   const handleResolveIncident = (inc: Incident, resolutionDetails: string) => {
-    const updated: Incident = {
-      ...inc,
-      status: 'resolved',
-      actionTaken: resolutionDetails || 'Resolved by staff.'
-    };
-    db.saveIncident(updated);
+    const actionTaken = resolutionDetails.trim() || 'Resolved by staff.';
+    const resolved = db.transaction('INCIDENT_RESOLVED', (draft) => {
+      const current = draft.incidents.find(candidate => candidate.id === inc.id);
+      if (!current || current.status === 'resolved' || current.status === 'archived' || draft.gameplayMeta!.resolvedIncidentIds.includes(inc.id)) {
+        throw new Error('This incident was already resolved; recovery cannot be applied twice.');
+      }
+      current.status = 'resolved';
+      current.actionTaken = actionTaken;
+      current.resolvedDay = draft.gameplayMeta!.campaignDay;
+      draft.reputation = RulesEngine.calculateIncidentResolutionImpact(current, draft.reputation);
+      draft.gameplayMeta!.resolvedIncidentIds.push(current.id);
+    }, {
+      action: 'INCIDENT_RESOLVED',
+      details: `Incident ${inc.id} resolved: ${actionTaken}`
+    });
+    if (!resolved) {
+      window.alert(db.getStorageStatus().lastError?.message || 'Incident resolution failed.');
+      return;
+    }
     onStateChange();
   };
 
   // Filter list
+  const normalizedSearch = searchQuery.trim().toLocaleLowerCase();
   const filteredIncidents = incidents.filter((inc: Incident) => {
     if (severityFilter !== 'all' && inc.severity !== severityFilter) return false;
     if (typeFilter !== 'all' && inc.type !== typeFilter) return false;
     if (statusFilter !== 'all' && inc.status !== statusFilter) return false;
+    const involvedNames = inc.residentsInvolved
+      .map((id) => characters.find((character: Character) => character.id === id)?.name ?? id)
+      .join(' ');
+    if (normalizedSearch && !`${inc.location} ${inc.summary} ${inc.type} ${inc.status} ${inc.severity} ${inc.consequences} ${inc.actionTaken} ${involvedNames}`.toLocaleLowerCase().includes(normalizedSearch)) return false;
     return true;
   });
 
@@ -146,8 +180,6 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
           setFormSummary('');
           setFormConsequences('');
           setFormRepairCost(0);
-          setFormRepImpact(5);
-          setFormTrustImpact(5);
           setFormActionTaken('');
           setFormStatus('open');
           setLinkedRoomNumber('');
@@ -239,11 +271,12 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
               .map(id => characters.find((c: Character) => c.id === id)?.name || id)
               .join(', ');
 
-            const isResolved = inc.status === 'resolved';
+            const isResolved = inc.status === 'resolved' || inc.status === 'archived';
 
             return (
               <div 
                 key={inc.id} 
+                id={`incident-card-${inc.id}`}
                 className="glass-panel animate-fade-in"
                 style={{ 
                   padding: '20px',
@@ -361,14 +394,14 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
 
       {/* Report Incident Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '600px', maxHeight: '90vh', overflowY: 'auto', padding: '24px', margin: 'auto' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div ref={modalRef} tabIndex={-1} className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="incident-dialog-title" style={{ width: '90%', maxWidth: '600px', maxHeight: '90vh', overflowY: 'auto', padding: '24px', margin: 'auto' }}>
+            <h2 id="incident-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               Report Security Breach / Incident
             </h2>
 
             {validationError && (
-              <div style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
+              <div role="alert" style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
                 <ShieldAlert size={16} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'text-bottom' }} />
                 {validationError}
               </div>
@@ -434,8 +467,6 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
                   >
                     <option value="open">Open / Active</option>
                     <option value="contained">Contained</option>
-                    <option value="resolved">Resolved</option>
-                    <option value="archived">Archived</option>
                   </select>
                 </div>
               </div>
@@ -463,8 +494,9 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange }) =>
                   <input 
                     type="number" 
                     id="inc-repair" 
+                    min="0"
                     value={formRepairCost} 
-                    onChange={(e) => setFormRepairCost(parseInt(e.target.value) || 0)} 
+                    onChange={(e) => setFormRepairCost(Math.max(0, parseInt(e.target.value) || 0))}
                     style={{ width: '100%' }} 
                   />
                 </div>

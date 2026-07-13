@@ -1,27 +1,31 @@
-# Local Privacy and Telemetry Notice
+# Privacy and storage notice
 
-This document details the security and privacy protocols implemented in the **Hellbound Hotel Manager** application.
+Hellbound Hotel Manager is **local-first**, not cloud-only and not “100% local” when its optional account feature is used.
 
----
+## Local operation
 
-## 1. Zero Telemetry & Tracking
-This application is completely free of any analytics frameworks, tracking pixels, cookies, or remote script requests.
-- **No remote calls**: The frontend does not ping external servers or request assets from remote CDNs.
-- **No dependency on the internet**: You can sever your internet connection completely; all modules (including the search engine, rules validations, and local database) remain 100% operational.
-- **No cloud dependencies**: No cloud databases, APIs, or user login screens are used.
+- Core gameplay works without an account and stores its primary state in this browser.
+- If the browser denies persistent storage, the app uses memory only for the current tab and shows a visible session-only warning. It never describes that fallback as a durable save.
+- The app contains no analytics SDK, advertising tracker or telemetry pipeline.
+- The local database key is `hellbound_hotel_db_state`; inventory keys start with `h_inv_`.
+- Clearing this site's browser storage deletes the local save and stored cloud session. Export a JSON backup first if the data matters.
+- The production bundle does not require remote fonts or images to render the interface.
 
----
+## Optional Supabase account backup
 
-## 2. Local Storage Sandbox
-All application data (characters, safety records, incident logs, financial ledgers, and audit logs) is stored client-side inside the browser's `localStorage` sandbox under the namespace `hellbound_hotel_db_state`.
-- **No background uploads**: Data never leaves the browser environment.
-- **Wiping Data**: Discarding browser cache or site storage clears the database. To persist logs, navigate to the **Settings & Data** section and download a local JSON backup.
+The fixed **Compte local/cloud** control can create or connect an account with the configured Supabase project. Network requests occur only for authentication, session refresh, sign-out, explicit cloud save and explicit cloud load.
 
----
+- The browser stores the Supabase access/refresh session locally so the account can remain connected.
+- Only `hellbound_hotel_db_state` and the three inventory keys `h_inv_bar`, `h_inv_clean` and `h_inv_food` are captured. Recovery copies and the account session are excluded.
+- Passwords are sent to Supabase Auth over HTTPS and are never written into the application database or backup payload.
+- A cloud row is scoped by authenticated `user_id` and application key. Row Level Security allows a signed-in user to access only their own row.
+- **Sync cloud** uploads the selected snapshot. **Charger** validates and, after confirmation, replaces only the same app-owned keys. Restoration rolls back if a write fails.
+- **Déconnexion** revokes the session when possible and removes the local session copy.
 
-## 3. SQLite Conversion Path
-If you compile this application into a desktop environment using **Tauri** or **Electron**:
-- The storage layer in `src/db/localDb.ts` can be mapped directly to a local SQLite database (using our provided `schema.prisma` file).
-- The resulting database file (e.g. `dev.db`) will sit locally on your desktop machine (e.g., in `%APPDATA%` on Windows).
-- All operations will continue running offline, with Tauri coordinating local file writes.
-- Backup and JSON exports will write directly to your local file system via Tauri dialogs.
+The SQL definition and access policies are versioned in `supabase/migrations/20260713000000_app_cloud_saves.sql`.
+
+## Backups and recovery
+
+JSON exports use the strict schema-v3 envelope and include every database section, durable gameplay control state and all three inventory counters. Version-3 imports must contain all required fields; only recognized unversioned/version-1/version-2 payloads may receive migration defaults. Imports are rejected above 2 MiB and validate IDs, references, numeric ranges and supported schema version. After validation, a separate confirmation is still required before live data changes.
+
+When corrupted or recognized legacy raw data must be repaired, the local repository keeps at most five recovery snapshots and displays an alert. Settings can download the untouched raw payload even if it is not valid JSON; validation is required only for restoring it. Recovery slots remain in the same browser and are not a substitute for an external backup. Inventory read failures or malformed stored counters are surfaced as storage errors instead of being silently replaced during an operation or export.

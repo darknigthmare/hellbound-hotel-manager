@@ -1,369 +1,637 @@
-import { DatabaseState, Character, Room, RehabilitationPlan, RehabilitationSession, Incident, StaffTask, ReputationState, TimelineState, LoreEntry, Faction, Relationship, ResourceLedger, AuditLog, AppSettings } from '../types';
+import {
+  DatabaseState,
+  Character,
+  Room,
+  RehabilitationPlan,
+  StaffTask,
+  ReputationState,
+  LoreEntry,
+  AuditLog,
+  AppSettings,
+  GameplayMeta
+} from '../types';
 import { getSeedData } from './seed';
+import {
+  BACKUP_SCHEMA_VERSION,
+  DEFAULT_GAMEPLAY_META,
+  DEFAULT_INVENTORY,
+  DatabaseBackupState,
+  ExportImport,
+  InventoryBackup,
+  StorageLike
+} from '../lib/export-import';
 
 const STORAGE_KEY = 'hellbound_hotel_db_state';
+const RECOVERY_PREFIX = `${STORAGE_KEY}_recovery_`;
+const MAX_RECOVERY_SNAPSHOTS = 5;
 
-class LocalDb {
+export interface StorageErrorInfo {
+  operation: string;
+  message: string;
+  timestamp: string;
+}
+
+export interface StorageStatus {
+  ok: boolean;
+  persistent: boolean;
+  lastError: StorageErrorInfo | null;
+  lastRecoveryKey: string | null;
+}
+
+type AuditDescriptor = { action: string; details: string };
+type StorageErrorListener = (error: StorageErrorInfo) => void;
+export type GameplayTransaction = (draft: DatabaseState, inventory: InventoryBackup) => void;
+
+class EphemeralStorage implements StorageLike {
+  private values = new Map<string, string>();
+
+  public get length() { return this.values.size; }
+  public clear() { this.values.clear(); }
+  public getItem(key: string) { return this.values.get(key) ?? null; }
+  public key(index: number) { return Array.from(this.values.keys())[index] ?? null; }
+  public removeItem(key: string) { this.values.delete(key); }
+  public setItem(key: string, value: string) { this.values.set(key, value); }
+}
+
+function resolveStorage(): { storage: StorageLike; persistent: boolean } {
+  try {
+    if (typeof localStorage !== 'undefined') return { storage: localStorage, persistent: true };
+  } catch {
+    // Privacy/security settings can deny even reading the localStorage handle.
+  }
+  return { storage: new EphemeralStorage(), persistent: false };
+}
+
+function cloneState(state: DatabaseState): DatabaseState {
+  return JSON.parse(JSON.stringify(state)) as DatabaseState;
+}
+
+function freshGameplayMeta(): GameplayMeta {
+  return JSON.parse(JSON.stringify(DEFAULT_GAMEPLAY_META)) as GameplayMeta;
+}
+
+function normalizedSeed(): DatabaseState {
+  const seed = getSeedData();
+  const gameplayMeta = freshGameplayMeta();
+  gameplayMeta.appliedTaskIds = seed.staffTasks.filter(task => task.status === 'completed').map(task => task.id);
+  gameplayMeta.resolvedIncidentIds = seed.incidents
+    .filter(incident => incident.status === 'resolved' || incident.status === 'archived')
+    .map(incident => incident.id);
+  const confirmedCharacterIds = new Set(seed.rehabilitationPlans.filter(plan => plan.isRedeemedConfirmed).map(plan => plan.characterId));
+  gameplayMeta.rewardedRedemptionIds = seed.characters
+    .filter(character => character.status === 'redeemed' && confirmedCharacterIds.has(character.id))
+    .map(character => character.id);
+  return { ...seed, gameplayMeta };
+}
+
+function loreContent(entry: LoreEntry): Omit<LoreEntry, 'isLocked'> {
+  const { isLocked, ...content } = entry;
+  void isLocked;
+  return content;
+}
+
+export class LocalDb {
   private state: DatabaseState;
+  private readonly storage: StorageLike;
+  private readonly persistentStorage: boolean;
+  private lastStorageError: StorageErrorInfo | null = null;
+  private lastRecoveryKey: string | null = null;
+  private readonly storageErrorListeners = new Set<StorageErrorListener>();
 
-  constructor() {
+  public constructor(storage?: StorageLike) {
+    const resolved = storage
+      ? { storage, persistent: true }
+      : resolveStorage();
+    this.storage = resolved.storage;
+    this.persistentStorage = resolved.persistent;
     this.state = this.loadState();
-  }
-
-  private loadState(): DatabaseState {
     try {
-      const data = localStorage.getItem(STORAGE_KEY);
-      if (data) {
-        return JSON.parse(data) as DatabaseState;
-      }
-    } catch (e) {
-      console.error('Failed to parse database state from localStorage', e);
-    }
-    
-    // Seed initial state
-    const seed = getSeedData();
-    this.saveStateToStorage(seed);
-    return seed;
-  }
-
-  private saveStateToStorage(newState: DatabaseState) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
-      this.state = newState;
-    } catch (e) {
-      console.error('Failed to write database state to localStorage', e);
+      ExportImport.readInventory(this.storage);
+    } catch (error) {
+      this.reportError('INVENTORY_READ', error);
     }
   }
 
-  private persist() {
-    this.saveStateToStorage(this.state);
-  }
+  private reportError(operation: string, error: unknown) {
+    const info: StorageErrorInfo = {
+      operation,
+      message: error instanceof Error ? error.message : String(error),
+      timestamp: new Date().toISOString()
+    };
+    this.lastStorageError = info;
+    console.error(`[LocalDb:${operation}] ${info.message}`, error);
+    this.storageErrorListeners.forEach(listener => listener(info));
 
-  public getFullState(): DatabaseState {
-    return { ...this.state };
-  }
-
-  public importState(newState: DatabaseState): boolean {
-    if (!newState.characters || !newState.rooms || !newState.reputation || !newState.timeline) {
-      return false;
+    if (typeof window !== 'undefined' && typeof CustomEvent !== 'undefined') {
+      window.dispatchEvent(new CustomEvent<StorageErrorInfo>('hellbound-storage-error', { detail: info }));
     }
-    this.saveStateToStorage(newState);
-    this.logAction('DATABASE_IMPORT', 'Database restored from JSON backup.');
-    return true;
   }
 
-  public resetToSeed() {
-    const seed = getSeedData();
-    this.saveStateToStorage(seed);
-    this.logAction('DATABASE_RESET', 'Database reset to default seed data.');
+  private serializeState(state: DatabaseState): string {
+    return JSON.stringify({ schemaVersion: BACKUP_SCHEMA_VERSION, ...state });
   }
 
-  // --- Audit Log ---
-  public logAction(action: string, details: string) {
-    const log: AuditLog = {
-      id: 'log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+  private createAuditLog(action: string, details: string): AuditLog {
+    return {
+      id: `log_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`,
       timestamp: new Date().toISOString(),
       action,
       details
     };
-    this.state.auditLogs.unshift(log);
-    // Cap audit logs at 100 entries to prevent memory bloating
-    if (this.state.auditLogs.length > 100) {
-      this.state.auditLogs = this.state.auditLogs.slice(0, 100);
+  }
+
+  private withAudit(state: DatabaseState, audit?: AuditDescriptor): DatabaseState {
+    const next = cloneState(state);
+    if (!audit) return next;
+    next.auditLogs = [this.createAuditLog(audit.action, audit.details), ...next.auditLogs].slice(0, 100);
+    return next;
+  }
+
+  private normalizeForWrite(input: unknown, operation: string): DatabaseState | null {
+    const validation = ExportImport.validateState(input);
+    if (!validation.isValid || !validation.parsedState) {
+      this.reportError(operation, new Error(validation.error || 'Database state validation failed.'));
+      return null;
     }
-    this.persist();
+    return ExportImport.databaseStateOnly(validation.parsedState);
   }
 
-  public getAuditLogs(): AuditLog[] {
-    return this.state.auditLogs;
+  private writeState(state: DatabaseState, operation: string, inventory?: InventoryBackup): boolean {
+    let validationInventory = inventory;
+    if (!validationInventory) {
+      try {
+        validationInventory = ExportImport.readInventory(this.storage);
+      } catch (error) {
+        this.reportError(`${operation}_INVENTORY_READ`, error);
+        return false;
+      }
+    }
+    const normalized = this.normalizeForWrite({
+      schemaVersion: BACKUP_SCHEMA_VERSION,
+      ...state,
+      inventory: validationInventory
+    }, operation);
+    if (!normalized) return false;
+
+    const keys = [STORAGE_KEY, ...(inventory ? ExportImport.inventoryEntries(inventory).map(([key]) => key) : [])];
+    let previous: Map<string, string | null>;
+    try {
+      previous = new Map(keys.map(key => [key, this.storage.getItem(key)]));
+    } catch (error) {
+      this.reportError(operation, error);
+      return false;
+    }
+
+    try {
+      this.storage.setItem(STORAGE_KEY, this.serializeState(normalized));
+      if (inventory) {
+        ExportImport.inventoryEntries(inventory).forEach(([key, value]) => this.storage.setItem(key, value));
+      }
+      this.state = normalized;
+      this.lastStorageError = null;
+      return true;
+    } catch (error) {
+      let rollbackError: unknown = null;
+      try {
+        previous.forEach((value, key) => {
+          if (value === null) this.storage.removeItem(key);
+          else this.storage.setItem(key, value);
+        });
+      } catch (caught) {
+        rollbackError = caught;
+      }
+      const message = rollbackError
+        ? `${error instanceof Error ? error.message : String(error)}; rollback also failed: ${rollbackError instanceof Error ? rollbackError.message : String(rollbackError)}`
+        : error;
+      this.reportError(operation, message);
+      return false;
+    }
   }
 
-  public clearAuditLogs() {
-    this.state.auditLogs = [];
-    this.logAction('AUDIT_LOGS_CLEARED', 'All historical audit logs purged.');
+  private commit(nextState: DatabaseState, operation: string, audit?: AuditDescriptor): boolean {
+    return this.writeState(this.withAudit(nextState, audit), operation);
   }
 
-  // --- Characters ---
+  private preserveForRecovery(raw: string, reason: string): boolean {
+    const key = `${RECOVERY_PREFIX}${Date.now()}`;
+    try {
+      this.storage.setItem(key, raw);
+      this.lastRecoveryKey = key;
+      const recoveryKeys: string[] = [];
+      for (let index = 0; index < this.storage.length; index += 1) {
+        const candidate = this.storage.key(index);
+        if (candidate?.startsWith(RECOVERY_PREFIX)) recoveryKeys.push(candidate);
+      }
+      recoveryKeys.sort().reverse().slice(MAX_RECOVERY_SNAPSHOTS).forEach(candidate => this.storage.removeItem(candidate));
+      return true;
+    } catch (error) {
+      this.reportError('RECOVERY_BACKUP', new Error(`${reason} Original data could not be copied to a recovery slot: ${error instanceof Error ? error.message : String(error)}`));
+      return false;
+    }
+  }
+
+  private loadState(): DatabaseState {
+    let raw: string | null;
+    try {
+      raw = this.storage.getItem(STORAGE_KEY);
+    } catch (error) {
+      this.reportError('DATABASE_READ', error);
+      return normalizedSeed();
+    }
+
+    if (raw) {
+      const validation = ExportImport.validateBackup(raw);
+      if (validation.isValid && validation.parsedState) {
+        const normalized = ExportImport.databaseStateOnly(validation.parsedState);
+        if (validation.migrated) {
+          if (this.preserveForRecovery(raw, 'Legacy state migration was required.')) {
+            this.writeState(normalized, 'DATABASE_MIGRATION', validation.parsedState.inventory);
+          }
+        }
+        return normalized;
+      }
+
+      const preserved = this.preserveForRecovery(raw, validation.error || 'Stored database is invalid.');
+      const seed = normalizedSeed();
+      if (preserved) this.writeState(seed, 'DATABASE_RECOVERY', DEFAULT_INVENTORY);
+      return seed;
+    }
+
+    const seed = normalizedSeed();
+    this.writeState(seed, 'DATABASE_INITIALIZATION', DEFAULT_INVENTORY);
+    return seed;
+  }
+
+  public getStorageStatus(): StorageStatus {
+    return {
+      ok: this.lastStorageError === null,
+      persistent: this.persistentStorage,
+      lastError: this.lastStorageError ? { ...this.lastStorageError } : null,
+      lastRecoveryKey: this.lastRecoveryKey
+    };
+  }
+
+  public subscribeToStorageErrors(listener: StorageErrorListener): () => void {
+    this.storageErrorListeners.add(listener);
+    return () => this.storageErrorListeners.delete(listener);
+  }
+
+  public getRecoveryKeys(): string[] {
+    try {
+      const keys: string[] = [];
+      for (let index = 0; index < this.storage.length; index += 1) {
+        const key = this.storage.key(index);
+        if (key?.startsWith(RECOVERY_PREFIX)) keys.push(key);
+      }
+      return keys.sort().reverse().slice(0, MAX_RECOVERY_SNAPSHOTS);
+    } catch (error) {
+      this.reportError('RECOVERY_LIST', error);
+      return [];
+    }
+  }
+
+  /** Returns the untouched recovery payload so the user can download it even when validation fails. */
+  public getRecoverySnapshot(recoveryKey: string): string | null {
+    if (!recoveryKey.startsWith(RECOVERY_PREFIX)) {
+      this.reportError('RECOVERY_READ', new Error('Recovery key is outside the application recovery namespace.'));
+      return null;
+    }
+    try {
+      const raw = this.storage.getItem(recoveryKey);
+      if (raw === null) this.reportError('RECOVERY_READ', new Error('Recovery snapshot no longer exists.'));
+      return raw;
+    } catch (error) {
+      this.reportError('RECOVERY_READ', error);
+      return null;
+    }
+  }
+
+  public restoreRecovery(recoveryKey: string): boolean {
+    const raw = this.getRecoverySnapshot(recoveryKey);
+    if (!raw) return false;
+    const validation = ExportImport.validateBackup(raw);
+    if (!validation.isValid || !validation.parsedState) {
+      this.reportError('RECOVERY_RESTORE', new Error(validation.error || 'Recovery backup is invalid.'));
+      return false;
+    }
+    return this.importState(validation.parsedState);
+  }
+
+  public getFullState(): DatabaseState {
+    return cloneState(this.state);
+  }
+
+  public getGameplayMeta(): GameplayMeta {
+    return cloneState({ ...this.state, gameplayMeta: this.state.gameplayMeta || freshGameplayMeta() }).gameplayMeta!;
+  }
+
+  public getInventory(): InventoryBackup {
+    try {
+      return ExportImport.readInventory(this.storage);
+    } catch (error) {
+      this.reportError('INVENTORY_READ', error);
+      return { ...DEFAULT_INVENTORY };
+    }
+  }
+
+  /** Commits database, inventory and audit changes in one rollback-safe write. */
+  public transaction(operation: string, mutate: GameplayTransaction, audit?: AuditDescriptor): boolean {
+    const draft = cloneState(this.state);
+    draft.gameplayMeta = draft.gameplayMeta || freshGameplayMeta();
+    let inventory: InventoryBackup;
+    try {
+      inventory = ExportImport.readInventory(this.storage);
+    } catch (error) {
+      this.reportError(`${operation}_INVENTORY_READ`, error);
+      return false;
+    }
+    try {
+      mutate(draft, inventory);
+    } catch (error) {
+      this.reportError(operation, error);
+      return false;
+    }
+    return this.writeState(this.withAudit(draft, audit), operation, inventory);
+  }
+
+  /** Advances the explicit campaign clock and applies recurring pressure. */
+  public advanceCampaignDay(): boolean {
+    const nextDay = this.getGameplayMeta().campaignDay + 1;
+    return this.transaction('CAMPAIGN_DAY_ADVANCE', (draft) => {
+      const meta = draft.gameplayMeta!;
+      meta.campaignDay = nextDay;
+      const oldestRetainedDay = Math.max(1, nextDay - 30);
+      for (const key of Object.keys(meta.dailyDonationAmounts)) {
+        if (Number(key) < oldestRetainedDay) delete meta.dailyDonationAmounts[key];
+      }
+      for (const key of Object.keys(meta.dailySessionCounts)) {
+        const day = Number(key.split(':', 1)[0]);
+        if (Number.isInteger(day) && day < oldestRetainedDay) delete meta.dailySessionCounts[key];
+      }
+      for (const [staffId, fatigue] of Object.entries(meta.staffFatigue)) {
+        meta.staffFatigue[staffId] = Math.max(0, fatigue - 2);
+      }
+
+      const activeResidents = draft.characters.filter(character => character.status === 'resident').length;
+      const occupiedBeds = draft.rooms.reduce((total, room) => total + (room.occupantIds?.length ?? (room.occupantId ? 1 : 0)), 0);
+      const upkeep = 40 + activeResidents * 12 + occupiedBeds * 4;
+      draft.resourceLedger.push({
+        id: `daily_upkeep_${nextDay}`,
+        date: `Campaign Day ${nextDay}`,
+        type: 'expense',
+        category: 'food_beverage',
+        amount: upkeep,
+        description: `Day ${nextDay} wages, utilities, meals, and occupied-room upkeep.`
+      });
+
+      if (draft.reputation.veesInfluence >= 70 || draft.reputation.mediaChaos >= 70) {
+        draft.reputation.sinnerReputation = Math.max(0, draft.reputation.sinnerReputation - 8);
+        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 3);
+      }
+      if (draft.reputation.overlordHostility >= 70) {
+        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 4);
+        draft.resourceLedger.push({
+          id: `overlord_security_${nextDay}`,
+          date: `Campaign Day ${nextDay}`,
+          type: 'expense',
+          category: 'security',
+          amount: 120,
+          description: 'Emergency wards and patrols caused by high Overlord hostility.'
+        });
+      }
+      const activeResidentIds = new Set(draft.characters.filter(character => character.status === 'resident').map(character => character.id));
+      const bindingContracts = draft.relationships.filter(relationship => relationship.type === 'contract_bound'
+        && (activeResidentIds.has(relationship.charAId) || activeResidentIds.has(relationship.charBId))).length;
+      if (bindingContracts > 0) {
+        draft.reputation.overlordHostility = Math.min(100, draft.reputation.overlordHostility + Math.min(5, bindingContracts));
+        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - Math.min(3, bindingContracts));
+      }
+      if (draft.reputation.heavenAttention >= 80
+        && !draft.incidents.some(incident => incident.type === 'heaven_threat' && (incident.status === 'open' || incident.status === 'contained'))) {
+        draft.incidents.push({
+          id: `auto_heaven_${nextDay}`,
+          date: `Campaign Day ${nextDay}`,
+          location: 'Hotel airspace',
+          residentsInvolved: [],
+          type: 'heaven_threat',
+          severity: draft.reputation.heavenAttention >= 95 ? 'crisis' : 'high',
+          summary: 'Celestial surveillance escalated after sustained Heaven attention.',
+          consequences: 'Operations are under direct observation; redemption confirmations are blocked until resolved.',
+          repairCost: 0,
+          reputationImpact: -10,
+          trustImpact: -8,
+          actionTaken: '',
+          status: 'open',
+          loreLink: null,
+          tags: ['simulation_au', 'campaign_pressure']
+        });
+        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 8);
+      }
+      if (draft.reputation.internalTrust <= 25) {
+        for (const staff of draft.characters.filter(character => character.status === 'staff')) {
+          meta.staffFatigue[staff.id] = Math.min(100, (meta.staffFatigue[staff.id] || 0) + 2);
+        }
+      }
+    }, {
+      action: 'CAMPAIGN_DAY_ADVANCED',
+      details: `Advanced operations to Campaign Day ${nextDay}; upkeep and threat thresholds were processed.`
+    });
+  }
+
+  public importState(newState: DatabaseState): boolean {
+    const validation = ExportImport.validateState(newState as DatabaseBackupState);
+    if (!validation.isValid || !validation.parsedState) {
+      this.reportError('DATABASE_IMPORT', new Error(validation.error || 'Database import validation failed.'));
+      return false;
+    }
+
+    const imported = ExportImport.databaseStateOnly(validation.parsedState);
+    for (const locked of this.state.loreCodex.filter(entry => entry.isLocked)) {
+      const candidate = imported.loreCodex.find(entry => entry.id === locked.id);
+      if (!candidate || JSON.stringify(candidate) !== JSON.stringify(locked)) {
+        this.reportError('DATABASE_IMPORT', new Error(`Locked lore entry '${locked.id}' cannot be removed or changed by import.`));
+        return false;
+      }
+    }
+
+    const audited = this.withAudit(imported, {
+      action: 'DATABASE_IMPORT',
+      details: validation.migrated
+        ? 'Database restored from a JSON backup and migrated to the current schema.'
+        : 'Database restored from JSON backup.'
+    });
+    return this.writeState(audited, 'DATABASE_IMPORT', validation.parsedState.inventory);
+  }
+
+  public resetToSeed(): boolean {
+    const seed = this.withAudit(normalizedSeed(), {
+      action: 'DATABASE_RESET',
+      details: 'Database and facility inventory reset to default seed data.'
+    });
+    return this.writeState(seed, 'DATABASE_RESET', DEFAULT_INVENTORY);
+  }
+
+  public logAction(action: string, details: string): boolean {
+    return this.commit(this.state, 'AUDIT_LOG_WRITE', { action, details });
+  }
+
+  public clearAuditLogs(): boolean {
+    return this.commit({ ...this.state, auditLogs: [] }, 'AUDIT_LOG_CLEAR', {
+      action: 'AUDIT_LOGS_CLEARED',
+      details: 'All historical audit logs purged.'
+    });
+  }
+
   public getCharacters(): Character[] {
-    return this.state.characters;
+    return cloneState(this.state).characters;
   }
 
   public getCharacter(id: string): Character | undefined {
-    return this.state.characters.find(c => c.id === id);
+    return this.getCharacters().find(character => character.id === id);
   }
 
-  public saveCharacter(character: Character) {
-    const index = this.state.characters.findIndex(c => c.id === character.id);
-    const old = this.state.characters[index];
-    if (index >= 0) {
-      this.state.characters[index] = character;
-      this.logAction('CHARACTER_UPDATE', `Updated resident/staff profile for ${character.name} (${character.role}).`);
-    } else {
-      this.state.characters.push(character);
-      this.logAction('CHARACTER_CREATE', `Registered new character ${character.name} as ${character.role}.`);
+  public saveCharacter(character: Character): boolean {
+    const previous = this.state.characters.find(item => item.id === character.id);
+    if ((character.type === 'redeemed_soul') !== (character.status === 'redeemed')) {
+      this.reportError('CHARACTER_SAVE', new Error('Redeemed soul type and redeemed status must be granted together by the rehabilitation workflow.'));
+      return false;
     }
-    this.persist();
+    if ((!previous || previous.status !== 'redeemed') && character.status === 'redeemed') {
+      this.reportError('CHARACTER_SAVE', new Error('Redemption can only be granted through the rehabilitation confirmation workflow.'));
+      return false;
+    }
+    if (previous?.status === 'redeemed' && character.status !== 'redeemed') {
+      this.reportError('CHARACTER_SAVE', new Error('A confirmed redeemed soul cannot be reverted from the profile editor.'));
+      return false;
+    }
+    const plan = this.state.rehabilitationPlans.find(item => item.characterId === character.id);
+    const statusNormalizedCharacter: Character = character.status === 'redeemed'
+      ? { ...character, type: 'redeemed_soul', role: 'external', riskLevel: 'low', rehabTracked: false }
+      : character;
+    const normalizedCharacter = plan && statusNormalizedCharacter.rehabTracked && statusNormalizedCharacter.status !== 'redeemed'
+      ? {
+          ...statusNormalizedCharacter,
+          rehabProgress: Math.round((plan.empathyScore + plan.accountabilityScore + plan.impulseControlScore + plan.cooperationScore) / 4)
+        }
+      : statusNormalizedCharacter;
+    const exists = Boolean(previous);
+    const characters = exists
+      ? this.state.characters.map(item => item.id === character.id ? normalizedCharacter : item)
+      : [...this.state.characters, normalizedCharacter];
+    return this.commit({ ...this.state, characters }, 'CHARACTER_SAVE', {
+      action: exists ? 'CHARACTER_UPDATE' : 'CHARACTER_CREATE',
+      details: `${exists ? 'Updated' : 'Registered'} character ${character.name} (${character.role}).`
+    });
   }
 
-  public deleteCharacter(id: string) {
-    const char = this.getCharacter(id);
-    if (!char) return;
-    this.state.characters = this.state.characters.filter(c => c.id !== id);
-    // Clear room occupancy if this character was in a room
-    this.state.rooms = this.state.rooms.map(r => r.occupantId === id ? { ...r, occupantId: null } : r);
-    this.logAction('CHARACTER_DELETE', `Deleted character ${char.name}. Unlinked room and tasks.`);
-    this.persist();
+  public deleteCharacter(id: string): boolean {
+    const character = this.state.characters.find(item => item.id === id);
+    if (!character) return false;
+
+    const removedPlanIds = new Set(this.state.rehabilitationPlans.filter(plan => plan.characterId === id).map(plan => plan.id));
+    const taskMustBeRemoved = (task: StaffTask) => task.assignedTo === id
+      || ((task.status === 'pending' || task.status === 'in_progress') && (task.targetId === id || (task.targetId ? removedPlanIds.has(task.targetId) : false)));
+    const removedTaskIds = new Set(this.state.staffTasks.filter(taskMustBeRemoved).map(task => task.id));
+    const gameplayMeta = this.getGameplayMeta();
+    gameplayMeta.appliedTaskIds = gameplayMeta.appliedTaskIds.filter(taskId => !removedTaskIds.has(taskId));
+    gameplayMeta.rewardedRedemptionIds = gameplayMeta.rewardedRedemptionIds.filter(characterId => characterId !== id);
+    gameplayMeta.broadcastRedemptionIds = gameplayMeta.broadcastRedemptionIds.filter(characterId => characterId !== id);
+    gameplayMeta.completedMilestones = gameplayMeta.completedMilestones.filter(marker => marker !== `redemption:${id}` && !marker.startsWith(`rehab:${id}:`));
+    delete gameplayMeta.staffFatigue[id];
+    for (const key of Object.keys(gameplayMeta.dailySessionCounts)) {
+      if (Array.from(removedPlanIds).some(planId => key.endsWith(`:${planId}`))) delete gameplayMeta.dailySessionCounts[key];
+    }
+    const next: DatabaseState = {
+      ...this.state,
+      characters: this.state.characters.filter(item => item.id !== id),
+      rooms: this.state.rooms.map(room => {
+        const occupantIds = room.occupantIds?.filter(characterId => characterId !== id);
+        return {
+          ...room,
+          ...(room.occupantIds ? { occupantIds } : {}),
+          occupantId: room.occupantId === id ? occupantIds?.[0] || null : room.occupantId,
+          lastInspectedBy: room.lastInspectedBy === id ? null : room.lastInspectedBy
+        };
+      }),
+      rehabilitationPlans: this.state.rehabilitationPlans.filter(plan => plan.characterId !== id),
+      rehabilitationSessions: this.state.rehabilitationSessions.filter(session => !removedPlanIds.has(session.planId) && session.conductedBy !== id),
+      incidents: this.state.incidents.map(incident => ({
+        ...incident,
+        residentsInvolved: incident.residentsInvolved.filter(characterId => characterId !== id)
+      })),
+      staffTasks: this.state.staffTasks.filter(task => !taskMustBeRemoved(task)),
+      relationships: this.state.relationships.filter(relationship => relationship.charAId !== id && relationship.charBId !== id),
+      gameplayMeta
+    };
+    return this.commit(next, 'CHARACTER_DELETE', {
+      action: 'CHARACTER_DELETE',
+      details: `Deleted character ${character.name} and cascaded rooms, plans, sessions, incidents, tasks, and relationships.`
+    });
   }
 
-  // --- Rooms ---
   public getRooms(): Room[] {
-    return this.state.rooms;
+    return cloneState(this.state).rooms;
   }
 
-  public getRoom(number: string): Room | undefined {
-    return this.state.rooms.find(r => r.number === number);
+  public saveRehabilitationPlan(plan: RehabilitationPlan): boolean {
+    const exists = this.state.rehabilitationPlans.some(item => item.id === plan.id);
+    const plans = exists
+      ? this.state.rehabilitationPlans.map(item => item.id === plan.id ? plan : item)
+      : [...this.state.rehabilitationPlans, plan];
+    const name = this.state.characters.find(character => character.id === plan.characterId)?.name || plan.characterId;
+    const progress = Math.round((plan.empathyScore + plan.accountabilityScore + plan.impulseControlScore + plan.cooperationScore) / 4);
+    const characters = this.state.characters.map(character => character.id === plan.characterId && character.status !== 'redeemed'
+      ? { ...character, rehabProgress: progress, rehabTracked: true }
+      : character);
+    return this.commit({ ...this.state, rehabilitationPlans: plans, characters }, 'REHAB_PLAN_SAVE', {
+      action: exists ? 'REHAB_PLAN_UPDATE' : 'REHAB_PLAN_CREATE',
+      details: `${exists ? 'Updated' : 'Initialized'} rehabilitation plan for ${name}.`
+    });
   }
 
-  public saveRoom(room: Room) {
-    const index = this.state.rooms.findIndex(r => r.number === room.number);
-    if (index >= 0) {
-      this.state.rooms[index] = room;
-      this.logAction('ROOM_UPDATE', `Updated room ${room.number} settings (Status: ${room.status}, Occupant: ${room.occupantId || 'None'}).`);
-    } else {
-      this.state.rooms.push(room);
-      this.logAction('ROOM_CREATE', `Added new room ${room.number} to register.`);
-    }
-    this.persist();
-  }
-
-  public deleteRoom(number: string) {
-    this.state.rooms = this.state.rooms.filter(r => r.number !== number);
-    this.logAction('ROOM_DELETE', `Removed room ${number} from registry.`);
-    this.persist();
-  }
-
-  // --- Rehabilitation Plans ---
-  public getRehabilitationPlans(): RehabilitationPlan[] {
-    return this.state.rehabilitationPlans;
-  }
-
-  public getRehabilitationPlanForCharacter(charId: string): RehabilitationPlan | undefined {
-    return this.state.rehabilitationPlans.find(p => p.characterId === charId);
-  }
-
-  public saveRehabilitationPlan(plan: RehabilitationPlan) {
-    const index = this.state.rehabilitationPlans.findIndex(p => p.id === plan.id);
-    const char = this.getCharacter(plan.characterId);
-    const name = char ? char.name : plan.characterId;
-    if (index >= 0) {
-      this.state.rehabilitationPlans[index] = plan;
-      this.logAction('REHAB_PLAN_UPDATE', `Updated rehabilitation plan metrics for ${name}.`);
-    } else {
-      this.state.rehabilitationPlans.push(plan);
-      this.logAction('REHAB_PLAN_CREATE', `Initialized new rehabilitation program for ${name}.`);
-    }
-    this.persist();
-  }
-
-  // --- Rehabilitation Sessions ---
-  public getRehabilitationSessions(): RehabilitationSession[] {
-    return this.state.rehabilitationSessions;
-  }
-
-  public getRehabilitationSessionsForPlan(planId: string): RehabilitationSession[] {
-    return this.state.rehabilitationSessions.filter(s => s.planId === planId);
-  }
-
-  public saveRehabilitationSession(session: RehabilitationSession) {
-    const index = this.state.rehabilitationSessions.findIndex(s => s.id === session.id);
-    if (index >= 0) {
-      this.state.rehabilitationSessions[index] = session;
-      this.logAction('REHAB_SESSION_UPDATE', `Updated details for rehab session on ${session.date}.`);
-    } else {
-      this.state.rehabilitationSessions.push(session);
-      this.logAction('REHAB_SESSION_CREATE', `Logged new rehabilitation session (${session.type}) conducted by ${session.conductedBy}.`);
-    }
-    this.persist();
-  }
-
-  public deleteRehabilitationSession(id: string) {
-    this.state.rehabilitationSessions = this.state.rehabilitationSessions.filter(s => s.id !== id);
-    this.logAction('REHAB_SESSION_DELETE', `Deleted rehab session record.`);
-    this.persist();
-  }
-
-  // --- Incidents ---
-  public getIncidents(): Incident[] {
-    return this.state.incidents;
-  }
-
-  public saveIncident(incident: Incident) {
-    const index = this.state.incidents.findIndex(i => i.id === incident.id);
-    if (index >= 0) {
-      this.state.incidents[index] = incident;
-      this.logAction('INCIDENT_UPDATE', `Updated Incident #${incident.id} - ${incident.location} (${incident.severity}).`);
-    } else {
-      this.state.incidents.push(incident);
-      this.logAction('INCIDENT_CREATE', `Logged new incident in ${incident.location} (Severity: ${incident.severity}, Type: ${incident.type}).`);
-    }
-    this.persist();
-  }
-
-  public deleteIncident(id: string) {
-    this.state.incidents = this.state.incidents.filter(i => i.id !== id);
-    this.logAction('INCIDENT_DELETE', `Removed incident record #${id}.`);
-    this.persist();
-  }
-
-  // --- Staff Tasks ---
-  public getStaffTasks(): StaffTask[] {
-    return this.state.staffTasks;
-  }
-
-  public saveStaffTask(task: StaffTask) {
-    const index = this.state.staffTasks.findIndex(t => t.id === task.id);
-    const staff = this.getCharacter(task.assignedTo);
-    const name = staff ? staff.name : task.assignedTo;
-    if (index >= 0) {
-      this.state.staffTasks[index] = task;
-      this.logAction('TASK_UPDATE', `Updated shift task "${task.title}" (Status: ${task.status}, Assigned: ${name}).`);
-    } else {
-      this.state.staffTasks.push(task);
-      this.logAction('TASK_CREATE', `Created task "${task.title}" assigned to ${name}.`);
-    }
-    this.persist();
-  }
-
-  public deleteStaffTask(id: string) {
-    this.state.staffTasks = this.state.staffTasks.filter(t => t.id !== id);
-    this.logAction('TASK_DELETE', `Removed shift task from register.`);
-    this.persist();
-  }
-
-  // --- Reputation ---
   public getReputation(): ReputationState {
-    return this.state.reputation;
+    return cloneState(this.state).reputation;
   }
 
-  public saveReputation(reputation: ReputationState) {
-    this.state.reputation = reputation;
-    this.persist();
+  public saveReputation(reputation: ReputationState): boolean {
+    return this.commit({ ...this.state, reputation }, 'REPUTATION_SAVE');
   }
 
-  // --- Timeline ---
-  public getTimeline(): TimelineState {
-    return this.state.timeline;
-  }
-
-  public saveTimeline(timeline: TimelineState) {
-    const oldScope = this.state.timeline.current;
-    this.state.timeline = timeline;
-    if (oldScope !== timeline.current) {
-      this.logAction('TIMELINE_CHANGE', `Operational timeline scope changed from ${oldScope} to ${timeline.current}.`);
-    }
-    this.persist();
-  }
-
-  // --- Lore Codex ---
   public getLoreCodex(): LoreEntry[] {
-    return this.state.loreCodex;
+    return cloneState(this.state).loreCodex;
   }
 
-  public saveLoreEntry(entry: LoreEntry) {
-    const index = this.state.loreCodex.findIndex(e => e.id === entry.id);
-    if (index >= 0) {
-      if (this.state.loreCodex[index].isLocked && entry.isLocked) {
-        // Prevent editing locked entry details unless unlocked
-        // (we allow saving back if it's the unlock action itself)
-      }
-      this.state.loreCodex[index] = entry;
-      this.logAction('LORE_UPDATE', `Updated codex entry: "${entry.title}" (${entry.canonStatus}).`);
-    } else {
-      this.state.loreCodex.push(entry);
-      this.logAction('LORE_CREATE', `Added new codex entry: "${entry.title}" (${entry.category}).`);
+  public saveLoreEntry(entry: LoreEntry): boolean {
+    const existing = this.state.loreCodex.find(item => item.id === entry.id);
+    if (existing?.isLocked && JSON.stringify(loreContent(existing)) !== JSON.stringify(loreContent(entry))) {
+      this.reportError('LORE_SAVE', new Error(`Locked lore entry '${entry.id}' must be unlocked before its content can change.`));
+      return false;
     }
-    this.persist();
+
+    const loreCodex = existing
+      ? this.state.loreCodex.map(item => item.id === entry.id ? entry : item)
+      : [...this.state.loreCodex, entry];
+    return this.commit({ ...this.state, loreCodex }, 'LORE_SAVE', {
+      action: existing ? 'LORE_UPDATE' : 'LORE_CREATE',
+      details: `${existing ? 'Updated' : 'Added'} codex entry "${entry.title}" (${entry.canonStatus}).`
+    });
   }
 
-  public deleteLoreEntry(id: string) {
-    const entry = this.state.loreCodex.find(e => e.id === id);
-    if (entry?.isLocked) return; // Prevent deleting core records
-    this.state.loreCodex = this.state.loreCodex.filter(e => e.id !== id);
-    if (entry) {
-      this.logAction('LORE_DELETE', `Deleted lore codex entry "${entry.title}".`);
-    }
-    this.persist();
+  public deleteLoreEntry(id: string): boolean {
+    const entry = this.state.loreCodex.find(item => item.id === id);
+    if (!entry || entry.isLocked) return false;
+    return this.commit({
+      ...this.state,
+      loreCodex: this.state.loreCodex.filter(item => item.id !== id),
+      incidents: this.state.incidents.map(incident => incident.loreLink === id ? { ...incident, loreLink: null } : incident)
+    }, 'LORE_DELETE', {
+      action: 'LORE_DELETE',
+      details: `Deleted lore codex entry "${entry.title}" and cleared incident links.`
+    });
   }
 
-  // --- Factions ---
-  public getFactions(): Faction[] {
-    return this.state.factions;
-  }
-
-  public saveFaction(faction: Faction) {
-    const index = this.state.factions.findIndex(f => f.id === faction.id);
-    if (index >= 0) {
-      this.state.factions[index] = faction;
-    } else {
-      this.state.factions.push(faction);
-    }
-    this.persist();
-  }
-
-  // --- Relationships ---
-  public getRelationships(): Relationship[] {
-    return this.state.relationships;
-  }
-
-  public saveRelationship(rel: Relationship) {
-    const index = this.state.relationships.findIndex(r => r.id === rel.id);
-    if (index >= 0) {
-      this.state.relationships[index] = rel;
-      this.logAction('RELATION_UPDATE', `Updated connection details between characters.`);
-    } else {
-      this.state.relationships.push(rel);
-      this.logAction('RELATION_CREATE', `Logged new relationship connection of type "${rel.type}".`);
-    }
-    this.persist();
-  }
-
-  public deleteRelationship(id: string) {
-    this.state.relationships = this.state.relationships.filter(r => r.id !== id);
-    this.logAction('RELATION_DELETE', `Removed relationship connection.`);
-    this.persist();
-  }
-
-  // --- Resource Ledger ---
-  public getResourceLedger(): ResourceLedger[] {
-    return this.state.resourceLedger;
-  }
-
-  public saveResourceLedgerEntry(entry: ResourceLedger) {
-    const index = this.state.resourceLedger.findIndex(e => e.id === entry.id);
-    if (index >= 0) {
-      this.state.resourceLedger[index] = entry;
-      this.logAction('FINANCE_UPDATE', `Updated ledger transaction on ${entry.date}.`);
-    } else {
-      this.state.resourceLedger.push(entry);
-      this.logAction('FINANCE_CREATE', `Logged ${entry.type} of ${entry.amount} HN for ${entry.category}.`);
-    }
-    this.persist();
-  }
-
-  public deleteResourceLedgerEntry(id: string) {
-    this.state.resourceLedger = this.state.resourceLedger.filter(e => e.id !== id);
-    this.logAction('FINANCE_DELETE', `Deleted ledger entry.`);
-    this.persist();
-  }
-
-  // --- Settings ---
-  public getSettings(): AppSettings {
-    return this.state.settings;
-  }
-
-  public saveSettings(settings: AppSettings) {
-    this.state.settings = settings;
-    this.persist();
+  public saveSettings(settings: AppSettings): boolean {
+    return this.commit({ ...this.state, settings }, 'SETTINGS_SAVE');
   }
 }
 

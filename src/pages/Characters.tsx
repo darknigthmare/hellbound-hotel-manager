@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { Plus, Edit2, Trash2, HeartHandshake, ShieldAlert, FileText, UserPlus, Info } from 'lucide-react';
+import { Edit2, Trash2, HeartHandshake, ShieldAlert, FileText, UserPlus, Info } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { Character, CharacterType, CharacterRole, CharacterStatus, RiskLevel, CanonStatus, SpoilerLevel, TimelineScope } from '../types';
+import { LoreValidation } from '../lib/lore-validation';
+import { Character, CharacterType, CharacterRank, CharacterRole, CharacterStatus, RiskLevel, CanonStatus, SpoilerLevel, TimelineScope, DatabaseState } from '../types';
 import { RiskBadge } from '../components/RiskBadge';
 import { CanonBadge } from '../components/CanonBadge';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ViewType } from '../components/Sidebar';
+import { useDialogFocus } from '../components/useDialogFocus';
 
 interface CharactersProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
   searchQuery: string;
-  onNavigate: (view: any, targetId?: string) => void;
+  onNavigate: (view: ViewType, targetId?: string) => void;
 }
 
 export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, searchQuery, onNavigate }) => {
@@ -30,16 +33,19 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
   // Confirm Delete Dialog state
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
+  const modalRef = useDialogFocus(isModalOpen, () => setIsModalOpen(false), '#char-name');
 
   // Form Fields
   const [formName, setFormName] = useState('');
   const [formAlias, setFormAlias] = useState('');
   const [formType, setFormType] = useState<CharacterType>('sinner');
+  const [formRank, setFormRank] = useState<CharacterRank>('none');
   const [formRole, setFormRole] = useState<CharacterRole>('resident');
   const [formStatus, setFormStatus] = useState<CharacterStatus>('resident');
   const [formRisk, setFormRisk] = useState<RiskLevel>('medium');
   const [formTrust, setFormTrust] = useState(50);
   const [formProgress, setFormProgress] = useState(10);
+  const [formRehabTracked, setFormRehabTracked] = useState(true);
   const [formContracts, setFormContracts] = useState('');
   const [formNotes, setFormNotes] = useState('');
   const [formCanonStatus, setFormCanonStatus] = useState<CanonStatus>('canon');
@@ -50,22 +56,25 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
 
   // Handle Edit click
   const handleEdit = (char: Character) => {
-    setEditingChar(char);
-    setFormName(char.name);
-    setFormAlias(char.alias);
-    setFormType(char.type);
-    setFormRole(char.role);
-    setFormStatus(char.status);
-    setFormRisk(char.riskLevel);
-    setFormTrust(char.charlieTrust);
-    setFormProgress(char.rehabProgress);
-    setFormContracts(char.contracts.join('\n'));
-    setFormNotes(char.notes);
-    setFormCanonStatus(char.canonStatus);
-    setFormSourceRef(char.sourceRef);
-    setFormSpoiler(char.spoilerLevel);
-    setFormTimeline(char.timelineScope);
-    setFormDesc(char.description);
+    const source = characters.find((candidate: Character) => candidate.id === char.id) ?? char;
+    setEditingChar(source);
+    setFormName(source.name);
+    setFormAlias(source.alias);
+    setFormType(source.type === 'overlord' ? 'sinner' : source.type);
+    setFormRank(source.rank ?? (source.type === 'overlord' ? 'overlord' : 'none'));
+    setFormRole(source.role);
+    setFormStatus(source.status);
+    setFormRisk(source.riskLevel);
+    setFormTrust(source.charlieTrust);
+    setFormProgress(source.rehabProgress);
+    setFormRehabTracked(source.rehabTracked ?? (source.status === 'resident' || source.status === 'applicant'));
+    setFormContracts(source.contracts.join('\n'));
+    setFormNotes(source.notes);
+    setFormCanonStatus(source.canonStatus);
+    setFormSourceRef(source.sourceRef);
+    setFormSpoiler(source.spoilerLevel);
+    setFormTimeline(source.timelineScope);
+    setFormDesc(source.description);
     setValidationError(null);
     setIsModalOpen(true);
   };
@@ -76,17 +85,19 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
     setFormName('');
     setFormAlias('');
     setFormType('sinner');
+    setFormRank('none');
     setFormRole('resident');
     setFormStatus('resident');
     setFormRisk('medium');
     setFormTrust(50);
     setFormProgress(0);
+    setFormRehabTracked(true);
     setFormContracts('');
     setFormNotes('');
-    setFormCanonStatus('headcanon');
+    setFormCanonStatus('simulation_au');
     setFormSourceRef('');
     setFormSpoiler('none');
-    setFormTimeline('season_1_start');
+    setFormTimeline(timeline.current);
     setFormDesc('');
     setValidationError(null);
     setIsModalOpen(true);
@@ -106,16 +117,26 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
       .map(c => c.trim())
       .filter(c => c.length > 0);
 
+    let sequence = characters.length + 1;
+    let generatedId = `char_user_${sequence}`;
+    while (characters.some((character: Character) => character.id === generatedId)) {
+      sequence += 1;
+      generatedId = `char_user_${sequence}`;
+    }
     const characterData: Character = {
-      id: editingChar ? editingChar.id : 'char_' + Date.now(),
+      ...(editingChar ?? {} as Character),
+      id: editingChar ? editingChar.id : generatedId,
       name: formName.trim(),
       alias: formAlias.trim(),
       type: formType,
+      rank: formRank,
       role: formRole,
       status: formStatus,
       riskLevel: formRisk,
       charlieTrust: formTrust,
-      rehabProgress: formProgress,
+      rehabProgress: formRehabTracked ? formProgress : 0,
+      rehabTracked: formRehabTracked,
+      operationalDataStatus: editingChar?.operationalDataStatus ?? 'simulation_au',
       contracts: contractsArray,
       notes: formNotes.trim(),
       canonStatus: formCanonStatus,
@@ -132,15 +153,32 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
       return;
     }
 
-    // 2. Canon sourceRef validation check
-    const canonValid = RulesEngine.validateLoreSource(characterData.canonStatus, characterData.sourceRef);
-    if (!canonValid) {
-      setValidationError(`Rule Conflict: Canon/Semi-Canon profiles must include a valid Source Reference (e.g. S1E08).`);
+    // 2. Lore metadata format and timeline/spoiler coherence
+    const metadataErrors = LoreValidation.validateCharacterMetadata(
+      characterData.canonStatus,
+      characterData.sourceRef,
+      characterData.timelineScope,
+      characterData.spoilerLevel
+    );
+    if (metadataErrors.length > 0) {
+      setValidationError(metadataErrors.join(' '));
+      return;
+    }
+
+    if (formStatus === 'redeemed' && editingChar?.status !== 'redeemed') {
+      setValidationError('Redemption is a protected gameplay transition. Confirm it from the Rehabilitation Center.');
+      return;
+    }
+    if ((formStatus === 'resident' || formStatus === 'applicant') && formRole !== 'resident') {
+      setValidationError('Residents and applicants must use the operational resident role.');
       return;
     }
 
     // Save and close
-    db.saveCharacter(characterData);
+    if (!db.saveCharacter(characterData)) {
+      setValidationError(db.getStorageStatus().lastError?.message || 'The character could not be saved.');
+      return;
+    }
     setIsModalOpen(false);
     onStateChange();
   };
@@ -161,7 +199,12 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
   };
 
   // Filter logic
-  const filteredCharacters = characters.filter((char: Character) => {
+  const projectedCharacters = characters.map((char: Character) => ({
+    ...char,
+    ...(timeline.current !== 'custom' ? char.timelineStates?.[timeline.current as Exclude<TimelineScope, 'custom'>] : undefined)
+  }));
+
+  const filteredCharacters = projectedCharacters.filter((char: Character) => {
     // Global search filter
     if (searchQuery.trim() !== '') {
       const query = searchQuery.toLowerCase();
@@ -178,6 +221,9 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
     if (statusFilter !== 'all' && char.status !== statusFilter) return false;
     // Risk filter
     if (riskFilter !== 'all' && char.riskLevel !== riskFilter) return false;
+
+    const hasExplicitProjection = timeline.current !== 'custom' && Boolean(char.timelineStates?.[timeline.current as Exclude<TimelineScope, 'custom'>]);
+    if (!hasExplicitProjection && !LoreValidation.isAvailableAtTimeline(char.timelineScope, timeline.current)) return false;
 
     // Spoiler check filter
     const visible = RulesEngine.isContentVisible(char, timeline);
@@ -282,12 +328,13 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
       ) : (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '20px' }}>
           {filteredCharacters.map((char: Character) => {
-            const hasRehabPlan = state.rehabilitationPlans.some((p: any) => p.characterId === char.id);
+            const hasRehabPlan = state.rehabilitationPlans.some((plan) => plan.characterId === char.id);
             const isResidentType = char.status === 'resident' || char.status === 'applicant';
 
             return (
               <div 
                 key={char.id} 
+                id={`character-card-${char.id}`}
                 className="glass-panel animate-fade-in" 
                 style={{ 
                   padding: '20px', 
@@ -318,14 +365,24 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                   {/* Badges/Types info */}
                   <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', margin: '8px 0 12px 0' }}>
                     <span style={{ fontSize: '0.7rem', padding: '2px 6px', borderRadius: '3px', backgroundColor: 'var(--color-primary-light)', color: 'var(--color-text-main)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      {char.type}
+                      Species: {char.type === 'overlord' ? 'sinner (legacy)' : char.type}
                     </span>
+                    {char.rank && char.rank !== 'none' && (
+                      <span style={{ fontSize: '0.7rem', padding: '2px 6px', borderRadius: '3px', backgroundColor: 'rgba(212,175,55,0.1)', color: 'var(--color-gold)', textTransform: 'uppercase', fontWeight: 600 }}>
+                        Rank: {char.rank.replace('_', ' ')}
+                      </span>
+                    )}
                     <span style={{ fontSize: '0.7rem', padding: '2px 6px', borderRadius: '3px', backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
                       Role: {char.role}
                     </span>
                     <span style={{ fontSize: '0.7rem', padding: '2px 6px', borderRadius: '3px', backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--color-text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
                       Status: {char.status}
                     </span>
+                    {char.operationalDataStatus === 'simulation_au' && (
+                      <span style={{ fontSize: '0.7rem', padding: '2px 6px', borderRadius: '3px', backgroundColor: 'rgba(255,145,0,0.1)', color: '#ffb454', textTransform: 'uppercase', fontWeight: 600 }}>
+                        Metrics: Simulation AU
+                      </span>
+                    )}
                   </div>
 
                   <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '14px', lineHeight: 1.5 }}>
@@ -333,7 +390,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                   </p>
 
                   {/* Progress logs (Charlie Trust & Rehab Progress) */}
-                  {isResidentType && (
+                  {isResidentType && char.rehabTracked !== false && (
                     <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '10px', marginBottom: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       <div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '4px' }}>
@@ -372,14 +429,14 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                 {/* Card Actions */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', marginTop: '12px' }}>
                   <div style={{ display: 'flex', gap: '8px' }}>
-                    <button className="btn btn-secondary" style={{ padding: '6px 10px' }} onClick={() => handleEdit(char)} title="Edit profile information" id={`edit-${char.id}`}>
-                      <Edit2 size={12} />
+                    <button type="button" className="btn btn-secondary" style={{ padding: '6px 10px' }} onClick={() => handleEdit(char)} title="Edit profile information" aria-label={`Edit ${char.name}`} id={`edit-${char.id}`}>
+                      <Edit2 size={12} aria-hidden="true" />
                     </button>
-                    <button className="btn btn-danger" style={{ padding: '6px 10px' }} onClick={() => handleDeleteTrigger(char.id)} title="Delete character profile" id={`delete-${char.id}`}>
-                      <Trash2 size={12} />
+                    <button type="button" className="btn btn-danger" style={{ padding: '6px 10px' }} onClick={() => handleDeleteTrigger(char.id)} title="Delete character profile" aria-label={`Delete ${char.name}`} id={`delete-${char.id}`}>
+                      <Trash2 size={12} aria-hidden="true" />
                     </button>
                   </div>
-                  {isResidentType && (
+                  {isResidentType && char.rehabTracked !== false && (
                     <button 
                       className="btn btn-gold" 
                       style={{ padding: '6px 12px', fontSize: '0.75rem' }} 
@@ -399,14 +456,14 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
 
       {/* Add/Edit Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '640px', maxHeight: '90vh', overflowY: 'auto', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div ref={modalRef} tabIndex={-1} className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="character-dialog-title" style={{ width: '90%', maxWidth: '640px', maxHeight: '90vh', overflowY: 'auto', padding: '24px' }}>
+            <h2 id="character-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               {editingChar ? `Edit Profile: ${editingChar.name}` : 'Register New Character'}
             </h2>
 
             {validationError && (
-              <div style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
+              <div role="alert" style={{ backgroundColor: 'rgba(220, 53, 69, 0.15)', border: '1px solid var(--status-high)', color: '#ff6b7a', padding: '10px', borderRadius: '4px', marginBottom: '16px', fontSize: '0.85rem', fontWeight: 600 }}>
                 <ShieldAlert size={16} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'text-bottom' }} />
                 {validationError}
               </div>
@@ -425,21 +482,35 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                 </div>
 
                 <div>
-                  <label htmlFor="char-type">Species / Entity Type</label>
-                  <select id="char-type" value={formType} onChange={(e) => setFormType(e.target.value as CharacterType)} style={{ width: '100%' }}>
+                  <label htmlFor="char-type">Species / Origin</label>
+                  <select id="char-type" value={formType} onChange={(e) => setFormType(e.target.value as CharacterType)} disabled={editingChar?.status === 'redeemed'} style={{ width: '100%' }}>
                     <option value="sinner">Sinner (Damned Soul)</option>
                     <option value="hellborn">Hellborn</option>
                     <option value="angel">Angel</option>
                     <option value="fallen_angel">Fallen Angel</option>
-                    <option value="overlord">Overlord</option>
-                    <option value="redeemed_soul">Redeemed Soul</option>
+                    {editingChar?.status === 'redeemed' && <option value="redeemed_soul">Redeemed Soul (workflow confirmed)</option>}
                     <option value="unknown">Unknown</option>
                   </select>
                 </div>
 
                 <div>
+                  <label htmlFor="char-rank">Social / Celestial Rank</label>
+                  <select id="char-rank" value={formRank} onChange={(e) => setFormRank(e.target.value as CharacterRank)} style={{ width: '100%' }}>
+                    <option value="none">No confirmed rank</option>
+                    <option value="royalty">Royalty</option>
+                    <option value="overlord">Overlord</option>
+                    <option value="former_overlord">Former Overlord</option>
+                    <option value="seraph">Seraph</option>
+                    <option value="exorcist">Exorcist</option>
+                    <option value="former_exorcist">Former Exorcist</option>
+                    <option value="exorcist_commander">Exorcist Commander</option>
+                    <option value="unknown">Unknown / Unconfirmed</option>
+                  </select>
+                </div>
+
+                <div>
                   <label htmlFor="char-role">Operational Role</label>
-                  <select id="char-role" value={formRole} onChange={(e) => setFormRole(e.target.value as CharacterRole)} style={{ width: '100%' }}>
+                  <select id="char-role" value={formRole} onChange={(e) => setFormRole(e.target.value as CharacterRole)} disabled={editingChar?.status === 'redeemed'} style={{ width: '100%' }}>
                     <option value="founder">Founder</option>
                     <option value="manager">Manager</option>
                     <option value="resident">Resident</option>
@@ -455,12 +526,12 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
 
                 <div>
                   <label htmlFor="char-status">Hotel Status</label>
-                  <select id="char-status" value={formStatus} onChange={(e) => setFormStatus(e.target.value as CharacterStatus)} style={{ width: '100%' }}>
+                  <select id="char-status" value={formStatus} onChange={(e) => setFormStatus(e.target.value as CharacterStatus)} disabled={editingChar?.status === 'redeemed'} style={{ width: '100%' }}>
                     <option value="staff">Hotel Staff</option>
                     <option value="resident">Active Resident</option>
                     <option value="applicant">Applicant</option>
                     <option value="banned">Banned</option>
-                    <option value="redeemed">Redeemed</option>
+                    {editingChar?.status === 'redeemed' && <option value="redeemed">Redeemed (confirmed, read-only)</option>}
                     <option value="external">External</option>
                     <option value="deceased">Deceased</option>
                     <option value="unknown">Unknown</option>
@@ -469,7 +540,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
 
                 <div>
                   <label htmlFor="char-risk">Risk / Danger Rating</label>
-                  <select id="char-risk" value={formRisk} onChange={(e) => setFormRisk(e.target.value as RiskLevel)} style={{ width: '100%' }}>
+                  <select id="char-risk" value={formRisk} onChange={(e) => setFormRisk(e.target.value as RiskLevel)} disabled={editingChar?.status === 'redeemed'} style={{ width: '100%' }}>
                     <option value="low">Low Risk</option>
                     <option value="medium">Medium Risk</option>
                     <option value="high">High Risk</option>
@@ -484,8 +555,16 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
 
                 <div>
                   <label htmlFor="char-progress">Rehabilitation Progress (0-100)%</label>
-                  <input type="number" id="char-progress" min="0" max="100" value={formProgress} onChange={(e) => setFormProgress(parseInt(e.target.value) || 0)} style={{ width: '100%' }} />
+                  <input type="number" id="char-progress" min="0" max="100" value={formProgress} readOnly disabled style={{ width: '100%' }} />
+                  <span style={{ fontSize: '0.68rem', color: 'var(--color-text-muted)' }}>Derived from the four rehabilitation plan scores.</span>
                 </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <input id="char-rehab-tracked" type="checkbox" checked={formRehabTracked} onChange={(e) => setFormRehabTracked(e.target.checked)} disabled={Boolean(editingChar && state.rehabilitationPlans.some((plan: { characterId: string }) => plan.characterId === editingChar.id))} />
+                <label htmlFor="char-rehab-tracked" style={{ margin: 0 }}>
+                  Track rehabilitation as Simulation AU gameplay data
+                </label>
               </div>
 
               <div>
@@ -510,6 +589,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                     <select id="char-canon" value={formCanonStatus} onChange={(e) => setFormCanonStatus(e.target.value as CanonStatus)} style={{ width: '100%', fontSize: '0.8rem' }}>
                       <option value="canon">Canon Verified</option>
                       <option value="semi_canon">Semi-Canon (Creator State)</option>
+                      <option value="simulation_au">Simulation AU (Gameplay)</option>
                       <option value="headcanon">Headcanon</option>
                       <option value="user_note">User Log / Custom</option>
                       <option value="unknown">Unknown</option>
@@ -532,8 +612,8 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                     <label htmlFor="char-timeline">Timeline Scope</label>
                     <select id="char-timeline" value={formTimeline} onChange={(e) => setFormTimeline(e.target.value as TimelineScope)} style={{ width: '100%', fontSize: '0.8rem' }}>
                       <option value="pilot_legacy">Pilot Legacy</option>
-                      <option value="season_1_start">Season 1 Start</option>
-                      <option value="season_1_end">Season 1 End</option>
+                      <option value="season_1_start">Season 1 Opening / Mid-season</option>
+                      <option value="season_1_end">Season 1 Finale</option>
                       <option value="season_2">Season 2 Active</option>
                       <option value="custom">Custom Timeline</option>
                     </select>

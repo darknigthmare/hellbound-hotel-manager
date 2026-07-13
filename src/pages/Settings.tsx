@@ -1,226 +1,331 @@
-import React, { useState, useRef } from 'react';
-import { Download, Upload, RotateCcw, ShieldCheck, History, FileText, AlertTriangle, ShieldAlert } from 'lucide-react';
-import { db } from '../db/localDb';
-import { ExportImport } from '../lib/export-import';
+import React, { useEffect, useRef, useState } from 'react';
+import { AlertTriangle, Cloud, Download, HardDrive, History, RotateCcw, Settings2, ShieldCheck, Upload } from 'lucide-react';
 import { ConfirmDialog } from '../components/ConfirmDialog';
-import { AuditLog } from '../types';
+import { db, StorageStatus } from '../db/localDb';
+import { DatabaseBackupState, ExportImport, MAX_BACKUP_BYTES } from '../lib/export-import';
+import { AppSettings, AuditLog } from '../types';
 
 interface SettingsProps {
-  state: any;
+  state: {
+    auditLogs: AuditLog[];
+    settings: AppSettings;
+  };
   onStateChange: () => void;
 }
 
+type Notice = { success: boolean; msg: string } | null;
+type PendingImport = {
+  fileName: string;
+  state: DatabaseBackupState;
+  migrated: boolean;
+  warnings: string[];
+} | null;
+
 export const Settings: React.FC<SettingsProps> = ({ state, onStateChange }) => {
-  const { auditLogs } = state;
+  const { auditLogs, settings } = state;
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // Confirm Reset dialog
   const [isResetConfirmOpen, setIsResetConfirmOpen] = useState(false);
+  const [pendingImport, setPendingImport] = useState<PendingImport>(null);
+  const [notice, setNotice] = useState<Notice>(null);
+  const [storageStatus, setStorageStatus] = useState<StorageStatus>(() => db.getStorageStatus());
+  const recoveryKeys = db.getRecoveryKeys();
 
-  // Import notifications
-  const [importStatus, setImportStatus] = useState<{ success: boolean; msg: string } | null>(null);
+  useEffect(() => db.subscribeToStorageErrors(() => setStorageStatus(db.getStorageStatus())), []);
 
-  // Trigger Database JSON Export
-  const handleExportDb = () => {
-    const fullDbState = db.getFullState();
-    const jsonStr = ExportImport.exportToJson(fullDbState);
-    
-    // Download link browser hook
-    const blob = new Blob([jsonStr], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `hellbound_hotel_backup_${new Date().toISOString().split('T')[0]}.json`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-
-    db.logAction('DATABASE_EXPORT', 'User downloaded JSON database backup.');
+  const refresh = () => {
+    setStorageStatus(db.getStorageStatus());
+    onStateChange();
   };
 
-  // Trigger Database JSON Import
-  const handleImportDb = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+  const handleExportDb = () => {
+    try {
+      const json = ExportImport.exportToJson(db.getFullState());
+      const blobUrl = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = `hellbound_hotel_backup_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(blobUrl);
+      db.logAction('DATABASE_EXPORT', 'User downloaded a complete versioned JSON backup including inventory.');
+      setNotice({ success: true, msg: 'Complete versioned backup exported, including facility inventory.' });
+      refresh();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'The backup could not be created.';
+      setNotice({ success: false, msg: message });
+    }
+  };
+
+  const handleImportDb = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (!file) return;
+    event.target.value = '';
+
+    if (file.size > MAX_BACKUP_BYTES) {
+      setNotice({ success: false, msg: 'Backup exceeds the 2 MiB import limit.' });
+      return;
+    }
 
     const reader = new FileReader();
-    reader.onload = (event) => {
-      const text = event.target?.result as string;
-      const validation = ExportImport.validateBackup(text);
-
-      if (validation.isValid && validation.parsedState) {
-        const success = db.importState(validation.parsedState);
-        if (success) {
-          setImportStatus({ success: true, msg: 'Database state restored successfully!' });
-          onStateChange();
-        } else {
-          setImportStatus({ success: false, msg: 'Error loading parsed state parameters.' });
-        }
-      } else {
-        setImportStatus({ success: false, msg: validation.error || 'Invalid file format.' });
+    reader.onload = (loadEvent) => {
+      const validation = ExportImport.validateBackup(String(loadEvent.target?.result ?? ''), { requireInventory: true });
+      if (!validation.isValid || !validation.parsedState) {
+        setNotice({ success: false, msg: validation.error || 'Invalid backup file.' });
+        return;
       }
+      setPendingImport({
+        fileName: file.name,
+        state: validation.parsedState,
+        migrated: Boolean(validation.migrated),
+        warnings: validation.warnings || []
+      });
+      setNotice({ success: true, msg: 'Backup validated. Confirm the replacement to finish the import.' });
     };
+    reader.onerror = () => setNotice({ success: false, msg: 'The selected file could not be read.' });
     reader.readAsText(file);
-
-    // Reset file input value
-    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  // Reset to Seed
+  const handleConfirmImport = () => {
+    if (!pendingImport) return;
+    const pending = pendingImport;
+    setPendingImport(null);
+    if (!db.importState(pending.state)) {
+      setNotice({ success: false, msg: db.getStorageStatus().lastError?.message || 'Backup could not be restored.' });
+      refresh();
+      return;
+    }
+
+    const migrationNote = pending.migrated ? ' Legacy data was migrated safely.' : '';
+    const warnings = pending.warnings.length ? ` ${pending.warnings.join(' ')}` : '';
+    setNotice({ success: true, msg: `Backup restored successfully.${migrationNote}${warnings}` });
+    refresh();
+  };
+
   const handleResetDb = () => {
-    db.resetToSeed();
+    const success = db.resetToSeed();
     setIsResetConfirmOpen(false);
-    setImportStatus(null);
-    onStateChange();
+    setNotice(success
+      ? { success: true, msg: 'Database and facility inventory reset to the verified seed.' }
+      : { success: false, msg: db.getStorageStatus().lastError?.message || 'Reset failed.' });
+    refresh();
   };
 
-  // Purge audit logs
   const handlePurgeLogs = () => {
-    db.clearAuditLogs();
-    onStateChange();
+    if (db.clearAuditLogs()) {
+      setNotice({ success: true, msg: 'Audit history cleared; the purge action remains recorded.' });
+    }
+    refresh();
+  };
+
+  const handleSettingsChange = (next: Partial<AppSettings>) => {
+    if (!db.saveSettings({ ...settings, ...next })) {
+      setNotice({ success: false, msg: db.getStorageStatus().lastError?.message || 'Settings could not be saved.' });
+    }
+    refresh();
+  };
+
+  const handleRestoreRecovery = (key: string) => {
+    const success = db.restoreRecovery(key);
+    setNotice(success
+      ? { success: true, msg: 'Recovery snapshot validated and restored.' }
+      : { success: false, msg: db.getStorageStatus().lastError?.message || 'Recovery snapshot is not valid.' });
+    refresh();
+  };
+
+  const handleDownloadRecovery = (key: string) => {
+    const raw = db.getRecoverySnapshot(key);
+    if (raw === null) {
+      setNotice({ success: false, msg: db.getStorageStatus().lastError?.message || 'Recovery snapshot could not be read.' });
+      setStorageStatus(db.getStorageStatus());
+      return;
+    }
+
+    const suffix = key.replace('hellbound_hotel_db_state_recovery_', '').replace(/[^a-zA-Z0-9_-]/g, '_');
+    const blobUrl = URL.createObjectURL(new Blob([raw], { type: 'text/plain;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = `hellbound_hotel_recovery_raw_${suffix}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(blobUrl);
+    setNotice({ success: true, msg: 'Raw recovery snapshot downloaded without modifying it.' });
   };
 
   return (
     <div className="page-container animate-fade-in">
-      {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div className="page-heading">
         <div>
-          <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>System Settings & Privacy</h1>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Configure database backups, audit local transactions, and review security policies.
-          </p>
+          <h1>System Settings & Privacy</h1>
+          <p>Manage versioned backups, simulation settings, recovery snapshots and optional cloud storage.</p>
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-        
-        {/* Left Side: Backup & Privacy */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          
-          {/* Backup Panel */}
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <h3 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-primary-light)', paddingBottom: '6px' }}>
-              Database backups & Restores
-            </h3>
+      {notice && (
+        <div className={`settings-notice${notice.success ? ' is-success' : ' is-error'}`} role="status">
+          {notice.msg}
+        </div>
+      )}
 
-            {importStatus && (
-              <div 
-                style={{ 
-                  backgroundColor: importStatus.success ? 'rgba(40,167,69,0.12)' : 'rgba(220,53,69,0.12)', 
-                  border: importStatus.success ? '1px solid rgba(40,167,69,0.3)' : '1px solid rgba(220,53,69,0.3)', 
-                  color: importStatus.success ? '#4ce06c' : '#ff6b7a',
-                  padding: '10px', 
-                  borderRadius: '4px', 
-                  marginBottom: '16px', 
-                  fontSize: '0.85rem' 
-                }}
-              >
-                {importStatus.msg}
-              </div>
-            )}
+      {!storageStatus.ok && storageStatus.lastError && (
+        <div className="settings-notice is-error" role="alert">
+          <AlertTriangle size={18} aria-hidden="true" />
+          <div>
+            <strong>Local storage write failed during {storageStatus.lastError.operation}.</strong>
+            <span>{storageStatus.lastError.message} Your latest change may not persist after reload.</span>
+          </div>
+        </div>
+      )}
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}>
-              <button className="btn btn-gold" onClick={handleExportDb} id="export-json-btn">
-                <Download size={16} />
-                Export JSON State
+      {!storageStatus.persistent && (
+        <div className="settings-notice is-error" role="alert">
+          <AlertTriangle size={18} aria-hidden="true" />
+          <div>
+            <strong>Session-only storage is active.</strong>
+            <span>The browser denied persistent storage. Changes exist only in memory and will be lost when this tab reloads or closes.</span>
+          </div>
+        </div>
+      )}
+
+      {recoveryKeys.length > 0 && (
+        <div className="settings-notice is-error" role="alert">
+          <AlertTriangle size={18} aria-hidden="true" />
+          <div>
+            <strong>A raw recovery copy was created.</strong>
+            <span>The previous local data needed migration or failed validation. Download the untouched copy below before restoring or clearing browser data.</span>
+          </div>
+        </div>
+      )}
+
+      <div className="settings-grid">
+        <div className="settings-column">
+          <section className="glass-panel settings-card" aria-labelledby="backup-title">
+            <h2 id="backup-title"><HardDrive size={19} aria-hidden="true" /> Local backups & recovery</h2>
+            <p>Exports are schema-versioned, fully validated, and include the bar, cleaning and food inventory.</p>
+
+            <div className="settings-actions">
+              <button type="button" className="btn btn-gold" onClick={handleExportDb} id="export-json-btn">
+                <Download size={16} aria-hidden="true" /> Export complete backup
               </button>
-              
-              <button 
-                className="btn btn-secondary" 
-                onClick={() => fileInputRef.current?.click()}
-                id="import-json-btn"
-              >
-                <Upload size={16} />
-                Import JSON Backup
+              <button type="button" className="btn btn-secondary" onClick={() => fileInputRef.current?.click()} id="import-json-btn">
+                <Upload size={16} aria-hidden="true" /> Import validated backup
               </button>
-              <input 
-                type="file" 
-                ref={fileInputRef} 
-                onChange={handleImportDb} 
-                style={{ display: 'none' }} 
-                accept=".json" 
+              <input
+                className="sr-only"
+                type="file"
+                ref={fileInputRef}
+                onChange={handleImportDb}
+                accept="application/json,.json"
+                aria-label="Choose a Hellbound Hotel JSON backup"
               />
             </div>
 
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px' }}>
-              <h4 style={{ fontSize: '0.85rem', color: 'var(--color-text-main)', marginBottom: '6px' }}>
-                Reset Database to Seed
-              </h4>
-              <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '12px', lineHeight: 1.4 }}>
-                Purge all guest logs, room configurations, incidents, and relationships back to their default seed values.
-              </p>
-              <button className="btn btn-danger" onClick={() => setIsResetConfirmOpen(true)} id="reset-db-btn">
-                <RotateCcw size={16} />
-                Reset Database State
+            {recoveryKeys.length > 0 && (
+              <div className="recovery-list">
+                <h3>Automatic recovery snapshots</h3>
+                <p>Invalid or legacy local data is preserved before repair instead of being silently destroyed.</p>
+                {recoveryKeys.slice(0, 5).map((key) => (
+                  <div key={key}>
+                    <code>{key.replace('hellbound_hotel_db_state_recovery_', '')}</code>
+                    <div className="settings-actions">
+                      <button type="button" className="btn btn-secondary" onClick={() => handleDownloadRecovery(key)}>
+                        <Download size={15} aria-hidden="true" /> Download raw copy
+                      </button>
+                      <button type="button" className="btn btn-secondary" onClick={() => handleRestoreRecovery(key)}>
+                        Validate & restore
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="settings-danger-zone">
+              <h3>Reset database to seed</h3>
+              <p>Restores roster, rooms, lore, logs and all inventory counters to the bundled baseline.</p>
+              <button type="button" className="btn btn-danger" onClick={() => setIsResetConfirmOpen(true)} id="reset-db-btn">
+                <RotateCcw size={16} aria-hidden="true" /> Reset database and inventory
               </button>
             </div>
-          </div>
+          </section>
 
-          {/* Privacy Panel */}
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <h3 style={{ color: 'var(--color-gold)', marginBottom: '12px', borderBottom: '1px solid var(--color-primary-light)', paddingBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <ShieldCheck size={18} style={{ color: '#28a745' }} />
-              Local Privacy & Safety Charter
-            </h3>
-            
-            <div style={{ fontSize: '0.8rem', color: 'var(--color-text-main)', lineHeight: 1.6, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <p>
-                <strong>Offline-First Design:</strong> This application performs zero remote network operations. No analytics, tracking tags, telemetry, or cookies are sent to cloud storage accounts.
-              </p>
-              <p>
-                <strong>Data Governance:</strong> All configurations, profiles, and logs remain strictly inside the browser sandbox using <code>localStorage</code>. Disconnecting the internet entirely will not affect database operation.
-              </p>
-              <p>
-                <strong>Local File Storage:</strong> Backups are handled locally. To secure data permanently, export a JSON state file. If you wrap this application in Tauri or Electron, database storage translates automatically to a local SQLite file (<code>dev.db</code>).
-              </p>
+          <section className="glass-panel settings-card" aria-labelledby="simulation-title">
+            <h2 id="simulation-title"><Settings2 size={19} aria-hidden="true" /> Simulation preferences</h2>
+            <label className="settings-toggle">
+              <input
+                type="checkbox"
+                checked={settings.randomEventsEnabled}
+                onChange={(event) => handleSettingsChange({ randomEventsEnabled: event.target.checked })}
+              />
+              <span>
+                <strong>Allow narrative events</strong>
+                <small>When disabled, the dashboard dispatcher cannot create random operational events.</small>
+              </span>
+            </label>
+
+            <label htmlFor="theme-select">Display theme</label>
+            <select
+              id="theme-select"
+              value={settings.theme}
+              onChange={(event) => handleSettingsChange({ theme: event.target.value })}
+            >
+              <option value="default-artdeco">Cabernet Art Deco</option>
+              <option value="high-contrast">High contrast</option>
+            </select>
+          </section>
+
+          <section className="glass-panel settings-card" aria-labelledby="privacy-title">
+            <h2 id="privacy-title"><ShieldCheck size={19} aria-hidden="true" /> Privacy & data charter</h2>
+            <div className="privacy-facts">
+              <p><strong>Local-first core:</strong> hotel management works offline and stores its primary state in this browser. No analytics, advertising or telemetry is installed.</p>
+              <p><strong>Optional cloud backup:</strong> the account panel can send only the main hotel database and three inventory keys to Supabase after you explicitly choose Sync cloud. Recovery copies and unrelated storage stay local.</p>
+              <p><strong>Account data:</strong> signing in sends the supplied email and password to Supabase Auth. Access and refresh tokens are stored locally so the session can be renewed.</p>
+              <p><strong>Control:</strong> local JSON export remains available without an account. Cloud loading replaces the captured app snapshot only after confirmation.</p>
             </div>
-          </div>
-
+            <div className="cloud-disclosure">
+              <Cloud size={20} aria-hidden="true" />
+              <span>The cloud account is optional. Use the “Compte local/cloud” control to connect, sync, load or sign out.</span>
+            </div>
+          </section>
         </div>
 
-        {/* Right Side: Audit Ledger */}
-        <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', height: '100%' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid var(--color-primary-light)', paddingBottom: '8px' }}>
-            <h3 style={{ color: 'var(--color-gold)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <History size={18} />
-              System Audit log Ledger
-            </h3>
-            <button className="btn btn-secondary" style={{ padding: '4px 8px', fontSize: '0.7rem' }} onClick={handlePurgeLogs} id="purge-audit-logs-btn">
-              Purge Logs
+        <section className="glass-panel settings-card audit-card" aria-labelledby="audit-title">
+          <div className="audit-card-heading">
+            <h2 id="audit-title"><History size={19} aria-hidden="true" /> System audit ledger</h2>
+            <button type="button" className="btn btn-secondary" onClick={handlePurgeLogs} id="purge-audit-logs-btn">
+              Purge logs
             </button>
           </div>
 
-          <div style={{ flex: 1, overflowY: 'auto', maxHeight: '480px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div className="audit-list">
             {auditLogs.length === 0 ? (
-              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', fontStyle: 'italic', padding: '24px 0', textAlign: 'center' }}>
-                No historical operations registered.
-              </p>
-            ) : (
-              auditLogs.map((log: AuditLog) => (
-                <div key={log.id} style={{ padding: '10px', backgroundColor: 'rgba(0,0,0,0.18)', borderRadius: '4px', borderLeft: '3px solid var(--color-gold-dark)', fontSize: '0.8rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '3px', fontWeight: 600, color: 'var(--color-text-main)' }}>
-                    <span>{log.action}</span>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 'normal' }}>
-                      {log.timestamp.replace('T', ' ').substring(0, 19)}
-                    </span>
-                  </div>
-                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', lineHeight: 1.4 }}>
-                    {log.details}
-                  </p>
+              <p className="empty-state">No historical operations registered.</p>
+            ) : auditLogs.map((log) => (
+              <article key={log.id}>
+                <div>
+                  <strong>{log.action}</strong>
+                  <time dateTime={log.timestamp}>{log.timestamp.replace('T', ' ').substring(0, 19)}</time>
                 </div>
-              ))
-            )}
+                <p>{log.details}</p>
+              </article>
+            ))}
           </div>
-        </div>
-
+        </section>
       </div>
 
-      {/* Reset Confirmation Dialog */}
+      <ConfirmDialog
+        isOpen={pendingImport !== null}
+        title="Replace local database and inventory?"
+        message={`The validated file “${pendingImport?.fileName || ''}” will replace the current hotel database and all three inventory counters. This cannot be undone unless you export the current save first.`}
+        onConfirm={handleConfirmImport}
+        onCancel={() => setPendingImport(null)}
+      />
+
       <ConfirmDialog
         isOpen={isResetConfirmOpen}
-        title="Purge & Reset All Records?"
-        message="Warning: This action will restore all character rosters, rooms registry, and codex entries back to their original seed settings. This will wipe any custom sinners or logs."
+        title="Reset all local hotel data?"
+        message="This restores the verified seed and resets every inventory counter. An exported backup is the only way to keep the current state."
         onConfirm={handleResetDb}
         onCancel={() => setIsResetConfirmOpen(false)}
       />

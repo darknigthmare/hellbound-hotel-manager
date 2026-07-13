@@ -1,8 +1,18 @@
 import { describe, it, expect } from 'vitest';
 import { RulesEngine } from '../lib/rules-engine';
 import { LoreValidation } from '../lib/lore-validation';
-import { ExportImport } from '../lib/export-import';
-import { Character, Room, Incident, ReputationState, TimelineState, LoreEntry } from '../types';
+import { DEFAULT_GAMEPLAY_META, ExportImport } from '../lib/export-import';
+import { getSeedData } from '../db/seed';
+import {
+  Character,
+  Incident,
+  LoreEntry,
+  RehabilitationPlan,
+  RehabilitationSession,
+  ReputationState,
+  Room,
+  TimelineState
+} from '../types';
 
 describe('Rules Engine Tests', () => {
   
@@ -174,6 +184,181 @@ describe('Rules Engine Tests', () => {
     expect(repAfterCrisis.internalTrust).toBe(40); // 60 - 20
     expect(repAfterCrisis.heavenAttention).toBe(45); // 30 + 15
     expect(repAfterCrisis.veesInfluence).toBe(55); // 40 + 15
+  });
+
+  it('should require sustained and varied rehabilitation before redemption', () => {
+    const plan: RehabilitationPlan = {
+      id: 'plan_test',
+      characterId: 'resident_test',
+      goals: ['Own past harm', 'Help another resident'],
+      obstacles: [],
+      triggers: [],
+      empathyScore: 85,
+      accountabilityScore: 82,
+      impulseControlScore: 80,
+      cooperationScore: 86,
+      charlieNotes: '',
+      vaggieNotes: '',
+      staffPrivateNotes: '',
+      isRedeemedConfirmed: false
+    };
+    const makeSession = (index: number, type: RehabilitationSession['type']): RehabilitationSession => ({
+      id: `session_${index}`,
+      planId: plan.id,
+      date: `2026-07-${String(index + 1).padStart(2, '0')}`,
+      type,
+      summary: 'Documented work',
+      empathyDelta: 1,
+      accountabilityDelta: 1,
+      impulseControlDelta: 1,
+      cooperationDelta: 1,
+      conductedBy: 'charlie'
+    });
+
+    const insufficient = RulesEngine.evaluateRedemptionEligibility(plan, [
+      makeSession(0, 'empathy_workshop'),
+      makeSession(1, 'empathy_workshop'),
+      makeSession(2, 'empathy_workshop')
+    ]);
+    expect(insufficient.isEligible).toBe(false);
+    expect(insufficient.reasons).toEqual(expect.arrayContaining([
+      expect.stringContaining('4 documented sessions'),
+      expect.stringContaining('2 different session formats')
+    ]));
+
+    const eligible = RulesEngine.evaluateRedemptionEligibility(plan, [
+      makeSession(0, 'empathy_workshop'),
+      makeSession(1, 'accountability_session'),
+      makeSession(2, 'empathy_workshop'),
+      makeSession(3, 'accountability_session')
+    ]);
+    expect(eligible).toMatchObject({ isEligible: true, averageScore: 83 });
+
+    const completed = RulesEngine.evaluateRedemptionEligibility({ ...plan, isRedeemedConfirmed: true }, [
+      makeSession(0, 'empathy_workshop'),
+      makeSession(1, 'accountability_session'),
+      makeSession(2, 'empathy_workshop'),
+      makeSession(3, 'accountability_session')
+    ]);
+    expect(completed.isEligible).toBe(false);
+    expect(completed.reasons[0]).toContain('already confirmed');
+  });
+
+  it('should restore only part of incident damage when an incident is resolved', () => {
+    const start: ReputationState = {
+      sinnerReputation: 50,
+      redemptionCredibility: 50,
+      internalTrust: 50,
+      heavenAttention: 20,
+      overlordHostility: 20,
+      veesInfluence: 20,
+      mediaChaos: 10
+    };
+    const incident: Incident = {
+      id: 'incident_recovery',
+      date: '2026-07-13',
+      location: 'Lobby',
+      residentsInvolved: [],
+      type: 'property_damage',
+      severity: 'high',
+      summary: 'Damage',
+      consequences: 'Repairs required',
+      repairCost: 200,
+      reputationImpact: 10,
+      trustImpact: 10,
+      actionTaken: '',
+      status: 'open',
+      loreLink: null,
+      tags: []
+    };
+
+    const damaged = RulesEngine.calculateIncidentImpact(incident, start);
+    const resolved = RulesEngine.calculateIncidentResolutionImpact(incident, damaged);
+    expect(resolved.internalTrust).toBe(43);
+    expect(resolved.mediaChaos).toBe(21);
+    expect(resolved.sinnerReputation).toBe(40);
+  });
+
+  it('should keep Angel trauma-informed dialogue free of accountability rewards for abuse suffered', () => {
+    const angel = { id: 'angeldust', name: 'Angel Dust' };
+    const charlieApproaches = RulesEngine.getCounselingApproaches(angel, 'charlie');
+    const huskApproaches = RulesEngine.getCounselingApproaches(angel, 'husk');
+
+    expect(charlieApproaches.length).toBeGreaterThanOrEqual(3);
+    expect(huskApproaches.length).toBeGreaterThanOrEqual(2);
+    expect([...charlieApproaches, ...huskApproaches].every(approach => approach.deltas.accountability === 0)).toBe(true);
+    expect(charlieApproaches.map(approach => approach.counselorSpeech).join(' ')).toContain("isn't your fault");
+    expect(charlieApproaches.map(approach => approach.logText).join(' ')).toContain('no accountability score');
+  });
+
+  it('should offer generic Simulation AU approaches including consent, repair, and contribution', () => {
+    const approaches = RulesEngine.getCounselingApproaches({ id: 'walkin_test', name: 'New Applicant' }, 'charlie');
+    expect(approaches.map(approach => approach.id)).toEqual([
+      'safety_and_choice',
+      'restorative_ownership',
+      'community_contribution'
+    ]);
+    expect(approaches.find(approach => approach.id === 'safety_and_choice')?.deltas.accountability).toBe(0);
+    expect(approaches.find(approach => approach.id === 'restorative_ownership')?.deltas.accountability).toBeGreaterThan(0);
+    expect(approaches.every(approach => approach.label.includes('Simulation AU'))).toBe(true);
+  });
+
+  it('should derive explicit victory, defeat, and finalized campaign states deterministically', () => {
+    const active = getSeedData();
+    active.gameplayMeta = JSON.parse(JSON.stringify(DEFAULT_GAMEPLAY_META));
+    expect(RulesEngine.evaluateCampaignOutcome(active).phase).toBe('active');
+
+    const victory = getSeedData();
+    victory.gameplayMeta = JSON.parse(JSON.stringify(DEFAULT_GAMEPLAY_META));
+    victory.gameplayMeta!.campaignDay = 15;
+    victory.gameplayMeta!.rewardedRedemptionIds = ['redeemed_a', 'redeemed_b', 'redeemed_c'];
+    victory.reputation.redemptionCredibility = 90;
+    victory.reputation.internalTrust = 70;
+    victory.reputation.sinnerReputation = 65;
+    expect(RulesEngine.evaluateCampaignOutcome(victory)).toMatchObject({
+      phase: 'victory',
+      result: 'victory',
+      endingId: 'redemption_program_proven'
+    });
+
+    const defeat = getSeedData();
+    defeat.gameplayMeta = JSON.parse(JSON.stringify(DEFAULT_GAMEPLAY_META));
+    defeat.reputation.internalTrust = 0;
+    expect(RulesEngine.evaluateCampaignOutcome(defeat)).toMatchObject({
+      phase: 'defeat',
+      result: 'defeat',
+      endingId: 'staff_walkout'
+    });
+    defeat.gameplayMeta!.narrativeFlags.push('campaign_ended:defeat:staff_walkout');
+    expect(RulesEngine.evaluateCampaignOutcome(defeat)).toMatchObject({
+      phase: 'ended',
+      result: 'defeat',
+      endingId: 'staff_walkout'
+    });
+  });
+
+  it('should turn relationships and faction operations into bounded simulation consequences', () => {
+    const seed = getSeedData();
+    const contract = RulesEngine.applyRelationshipConsequence(seed.reputation, seed.factions, 'contract_bound', 'establish');
+    expect(contract.reputation.internalTrust).toBe(seed.reputation.internalTrust - 5);
+    expect(contract.reputation.overlordHostility).toBe(seed.reputation.overlordHostility + 5);
+    expect(contract.factions.find(faction => faction.id === 'overlords')?.influence)
+      .toBe((seed.factions.find(faction => faction.id === 'overlords')?.influence || 0) + 2);
+
+    const removal = RulesEngine.applyRelationshipConsequence(contract.reputation, contract.factions, 'contract_bound', 'remove');
+    expect(removal.reputation.internalTrust).toBe(contract.reputation.internalTrust + 4);
+    expect(removal.reputation.overlordHostility).toBe(contract.reputation.overlordHostility - 4);
+
+    const veesOperation = RulesEngine.getFactionOperation('vees');
+    expect(veesOperation).not.toBeNull();
+    const countered = RulesEngine.applyFactionOperation(
+      { ...seed.reputation, mediaChaos: 3, veesInfluence: 2 },
+      seed.factions.map(faction => faction.id === 'vees' ? { ...faction, influence: 2 } : faction),
+      veesOperation!
+    );
+    expect(countered.reputation.mediaChaos).toBe(0);
+    expect(countered.reputation.veesInfluence).toBe(0);
+    expect(countered.factions.find(faction => faction.id === 'vees')?.influence).toBe(0);
   });
 
   // 5. Spoiler check calculations

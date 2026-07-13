@@ -1,8 +1,19 @@
-import React from 'react';
-import { Search, Coins, Calendar, EyeOff, ShieldCheck } from 'lucide-react';
-import { TimelineScope, SpoilerLevel } from '../types';
+import React, { useState } from 'react';
+import { Calendar, Coins, EyeOff, Menu, Search, ShieldCheck, X } from 'lucide-react';
+import { SpoilerLevel, TimelineScope } from '../types';
+import { ViewType } from './Sidebar';
+
+export interface GlobalSearchResult {
+  id: string;
+  label: string;
+  meta: string;
+  view: ViewType;
+  searchTerm?: string;
+  targetId?: string;
+}
 
 interface TopbarProps {
+  currentView: ViewType;
   timelineScope: TimelineScope;
   hideSpoilers: boolean;
   spoilerLevel: SpoilerLevel;
@@ -10,9 +21,31 @@ interface TopbarProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onNavigateToTimeline: () => void;
+  onMenuToggle: () => void;
+  isSidebarOpen: boolean;
+  searchResults: GlobalSearchResult[];
+  onSelectSearchResult: (result: GlobalSearchResult) => void;
 }
 
+const getTimelineLabel = (scope: TimelineScope) => {
+  switch (scope) {
+    case 'pilot_legacy':
+      return 'Pilot Legacy';
+    case 'season_1_start':
+      return 'Season 1 Start';
+    case 'season_1_end':
+      return 'Season 1 End';
+    case 'season_2':
+      return 'Season 2 Active';
+    case 'custom':
+      return 'Custom timeline';
+    default:
+      return scope;
+  }
+};
+
 export const Topbar: React.FC<TopbarProps> = ({
+  currentView,
   timelineScope,
   hideSpoilers,
   spoilerLevel,
@@ -20,145 +53,133 @@ export const Topbar: React.FC<TopbarProps> = ({
   searchQuery,
   onSearchChange,
   onNavigateToTimeline,
+  onMenuToggle,
+  isSidebarOpen,
+  searchResults,
+  onSelectSearchResult,
 }) => {
-  const getTimelineLabel = (scope: TimelineScope) => {
-    switch (scope) {
-      case 'pilot_legacy':
-        return 'Pilot Legacy';
-      case 'season_1_start':
-        return 'Season 1 Start';
-      case 'season_1_end':
-        return 'Season 1 End';
-      case 'season_2':
-        return 'Season 2 Active';
-      case 'custom':
-        return 'Custom timeline';
-      default:
-        return scope;
-    }
-  };
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeResultIndex, setActiveResultIndex] = useState(0);
+  const showSearchPanel = isSearchOpen && searchQuery.trim().length >= 2;
+  const effectiveActiveResultIndex = searchResults.length === 0
+    ? -1
+    : Math.min(activeResultIndex, searchResults.length - 1);
 
   return (
-    <div
-      style={{
-        height: '64px',
-        backgroundColor: 'var(--bg-sidebar)',
-        borderBottom: 'var(--border-crimson)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 24px',
-        zIndex: 5,
-        boxShadow: '0 2px 10px rgba(0,0,0,0.4)',
-      }}
-    >
-      {/* Search Bar */}
-      <div style={{ position: 'relative', width: '320px' }}>
+    <header className="app-topbar">
+      <button
+        type="button"
+        className="topbar-menu-button"
+        onClick={onMenuToggle}
+        aria-label={isSidebarOpen ? 'Close navigation' : 'Open navigation'}
+        aria-expanded={isSidebarOpen}
+      >
+        {isSidebarOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+      </button>
+
+      <div
+        className="global-search-wrap"
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setIsSearchOpen(false);
+        }}
+      >
+        <label className="sr-only" htmlFor="global-search-input">
+          Search all hotel records
+        </label>
+        <Search className="global-search-icon" size={16} aria-hidden="true" />
         <input
-          type="text"
-          placeholder="Search records, lore, guests..."
+          type="search"
+          placeholder="Search guests, lore, rooms, incidents…"
           value={searchQuery}
-          onChange={(e) => onSearchChange(e.target.value)}
-          style={{
-            width: '100%',
-            backgroundColor: 'var(--bg-main)',
-            border: '1px solid var(--color-primary-light)',
-            color: 'var(--color-text-main)',
-            padding: '8px 12px 8px 36px',
-            borderRadius: '20px',
-            fontSize: '0.85rem',
+          onChange={(event) => {
+            onSearchChange(event.target.value);
+            setIsSearchOpen(true);
+            setActiveResultIndex(0);
+          }}
+          onFocus={() => setIsSearchOpen(true)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              setIsSearchOpen(false);
+              onSearchChange('');
+            }
+            if (event.key === 'ArrowDown' && searchResults.length > 0) {
+              event.preventDefault();
+              setActiveResultIndex((index) => Math.min(index + 1, searchResults.length - 1));
+            }
+            if (event.key === 'ArrowUp' && searchResults.length > 0) {
+              event.preventDefault();
+              setActiveResultIndex((index) => Math.max(index - 1, 0));
+            }
+            const activeResult = searchResults[effectiveActiveResultIndex] ?? searchResults[0];
+            if (event.key === 'Enter' && activeResult) {
+              setIsSearchOpen(false);
+              onSelectSearchResult(activeResult);
+            }
           }}
           id="global-search-input"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-haspopup="listbox"
+          aria-controls="global-search-results"
+          aria-activedescendant={showSearchPanel && effectiveActiveResultIndex >= 0 ? `global-search-result-${effectiveActiveResultIndex}` : undefined}
+          aria-expanded={showSearchPanel}
+          autoComplete="off"
         />
-        <Search
-          size={16}
-          style={{
-            position: 'absolute',
-            left: '12px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            color: 'var(--color-text-muted)',
-          }}
-        />
+
+        {showSearchPanel && (
+          <div className="global-search-results" id="global-search-results" role="listbox">
+            <div className="global-search-summary" role="presentation">
+              {searchResults.length > 0
+                ? `${searchResults.length} result${searchResults.length === 1 ? '' : 's'} across hotel records`
+                : 'No matching hotel record'}
+            </div>
+            {searchResults.map((result, index) => (
+              <button
+                key={result.id}
+                id={`global-search-result-${index}`}
+                type="button"
+                role="option"
+                aria-selected={effectiveActiveResultIndex === index}
+                onMouseEnter={() => setActiveResultIndex(index)}
+                onClick={() => {
+                  setIsSearchOpen(false);
+                  onSelectSearchResult(result);
+                }}
+              >
+                <strong>{result.label}</strong>
+                <span>{result.meta}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Stats and Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-        {/* Budget ledger metric */}
-        <div 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '8px',
-            backgroundColor: 'rgba(0,0,0,0.2)',
-            padding: '6px 12px',
-            borderRadius: '4px',
-            border: '1px solid rgba(212, 175, 55, 0.2)'
-          }}
-          title="Total Cash Balance (Hellbound Nobles)"
-        >
-          <Coins size={16} style={{ color: 'var(--color-gold)' }} />
-          <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-            {budget.toLocaleString()} HN
-          </span>
+      <div className="topbar-controls">
+        <div className="topbar-budget" title="Total Cash Balance (Hellbound Notes)">
+          <Coins size={16} aria-hidden="true" />
+          <span>{budget.toLocaleString()} HN</span>
         </div>
 
-        {/* Timeline trigger */}
         <button
+          type="button"
           onClick={onNavigateToTimeline}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            background: 'rgba(168, 32, 42, 0.1)',
-            border: '1px solid var(--color-primary-light)',
-            color: 'var(--color-text-main)',
-            padding: '6px 12px',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '0.85rem',
-            fontFamily: 'var(--font-body)',
-            transition: 'all var(--transition-fast)'
-          }}
-          title="Click to change active season timeline settings"
-          className="topbar-timeline-btn"
+          title="Change active timeline settings"
+          className={`topbar-timeline-btn${currentView === 'timeline' ? ' is-active' : ''}`}
         >
-          <Calendar size={16} style={{ color: 'var(--color-gold)' }} />
-          <span style={{ fontWeight: 500 }}>
-            Timeline: <strong style={{ color: 'var(--color-gold)' }}>{getTimelineLabel(timelineScope)}</strong>
+          <Calendar size={16} aria-hidden="true" />
+          <span>
+            Timeline: <strong>{getTimelineLabel(timelineScope)}</strong>
           </span>
         </button>
 
-        {/* Spoiler Redaction indicator */}
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            backgroundColor: hideSpoilers ? 'rgba(40, 167, 69, 0.1)' : 'rgba(220, 53, 69, 0.1)',
-            border: hideSpoilers 
-              ? '1px solid rgba(40, 167, 69, 0.3)' 
-              : '1px solid rgba(220, 53, 69, 0.3)',
-            padding: '6px 12px',
-            borderRadius: '4px',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            color: hideSpoilers ? '#4ce06c' : '#ff6b7a'
-          }}
+          className={`topbar-spoiler-state${hideSpoilers ? ' is-safe' : ' is-visible'}`}
+          title={hideSpoilers ? `Spoilers hidden through ${spoilerLevel}` : 'All spoilers visible'}
         >
-          {hideSpoilers ? (
-            <>
-              <EyeOff size={14} />
-              <span>SPOILERS HIDDEN ({spoilerLevel.toUpperCase()})</span>
-            </>
-          ) : (
-            <>
-              <ShieldCheck size={14} style={{ color: '#ff6b7a' }} />
-              <span>SPOILERS VISIBLE</span>
-            </>
-          )}
+          {hideSpoilers ? <EyeOff size={14} aria-hidden="true" /> : <ShieldCheck size={14} aria-hidden="true" />}
+          <span>{hideSpoilers ? `Hidden: ${spoilerLevel}` : 'Spoilers visible'}</span>
         </div>
       </div>
-    </div>
+    </header>
   );
 };

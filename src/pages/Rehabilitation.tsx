@@ -1,15 +1,52 @@
-import React, { useState } from 'react';
-import { HeartHandshake, Plus, Award, Trash2, ShieldAlert, Sparkles, Smile, MessageSquare, AlertCircle } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { HeartHandshake, Plus, Award, ShieldAlert, Sparkles, Smile, AlertCircle } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { RehabilitationPlan, RehabilitationSession, Character, SessionType } from '../types';
+import { RehabilitationPlan, RehabilitationSession, Character, Incident, DatabaseState } from '../types';
 
 interface RehabilitationProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
   targetCharacterId?: string | null;
   onClearTargetId: () => void;
 }
+
+const MAX_DAILY_SESSIONS = 2;
+
+const REHAB_PLAN_TEMPLATES = [
+  {
+    id: 'safety_stabilization',
+    name: 'Simulation AU · Safety & Stabilization',
+    description: 'Trauma-informed intake centered on consent, boundaries, and resident-chosen support.',
+    goals: ['Name two resident-chosen safety boundaries', 'Build a voluntary support contact plan', 'Complete one trust-building check-in'],
+    obstacles: ['Low trust in institutions', 'Difficulty feeling safe during structured activities'],
+    triggers: ['Unexpected physical proximity', 'Loss of control over a conversation']
+  },
+  {
+    id: 'coping_regulation',
+    name: 'Simulation AU · Coping & Regulation',
+    description: 'Practical rehearsal for stress escalation, routines, and safer replacement behaviors.',
+    goals: ['Rehearse a three-step coping plan', 'Identify two early warning signs', 'Complete one supported high-pressure task'],
+    obstacles: ['Impulsive responses under stress', 'Difficulty maintaining predictable routines'],
+    triggers: ['Public embarrassment', 'Sudden schedule changes']
+  },
+  {
+    id: 'restorative_repair',
+    name: 'Simulation AU · Restorative Repair',
+    description: 'Separates harm suffered from harm chosen and focuses only on specific, consent-based repair.',
+    goals: ['Name one specific harm personally caused', 'Ask what repair the affected person would accept', 'Complete an agreed repair without demanding forgiveness'],
+    obstacles: ['Defensiveness when discussing chosen actions', 'Fear that accountability means accepting blame for victimization'],
+    triggers: ['Broad blame statements', 'Conversations that mix abuse suffered with harm caused']
+  },
+  {
+    id: 'community_belonging',
+    name: 'Simulation AU · Community & Belonging',
+    description: 'Strength-based plan for applicants who need connection and a bounded role in hotel life.',
+    goals: ['Choose one safe group activity', 'Complete one time-limited hotel contribution', 'Identify two reciprocal support connections'],
+    obstacles: ['Isolation', 'Overcommitting to gain approval'],
+    triggers: ['Social rejection', 'Unclear expectations']
+  }
+] as const;
 
 export const Rehabilitation: React.FC<RehabilitationProps> = ({ 
   state, 
@@ -17,7 +54,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   targetCharacterId, 
   onClearTargetId 
 }) => {
-  const { characters, rehabilitationPlans, rehabilitationSessions } = state;
+  const { characters, rehabilitationPlans, rehabilitationSessions, incidents, relationships } = state;
 
   // Active resident selector
   const residents = characters.filter((c: Character) => c.status === 'resident' || c.status === 'applicant');
@@ -30,25 +67,81 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   );
 
   // Clear target ID from navigation so we can select freely
-  React.useEffect(() => {
-    if (targetCharacterId) {
+  useEffect(() => {
+    if (!targetCharacterId) return;
+    const timer = window.setTimeout(() => {
       setActiveCharId(targetCharacterId);
       onClearTargetId();
-    }
-  }, [targetCharacterId]);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [targetCharacterId, onClearTargetId]);
 
   // Selected plan and session logs
-  const selectedPlan = rehabilitationPlans.find((p: RehabilitationPlan) => p.characterId === activeCharId);
   const selectedChar = characters.find((c: Character) => c.id === activeCharId);
+  const selectableProfiles = selectedChar?.status === 'redeemed' && !residents.some((c: Character) => c.id === selectedChar.id)
+    ? [...residents, selectedChar]
+    : residents;
+  const selectedPlan = rehabilitationPlans.find((p: RehabilitationPlan) => p.characterId === activeCharId);
   const sessions = selectedPlan 
     ? rehabilitationSessions.filter((s: RehabilitationSession) => s.planId === selectedPlan.id)
     : [];
+  const gameplayMeta = state.gameplayMeta || db.getGameplayMeta();
+  const campaignDay = gameplayMeta.campaignDay;
+  const sessionCounterKey = selectedPlan ? `${campaignDay}:${selectedPlan.id}` : '';
+  const sessionsToday = sessionCounterKey ? (gameplayMeta.dailySessionCounts[sessionCounterKey] || 0) : 0;
+  const dailySessionLimitReached = sessionsToday >= MAX_DAILY_SESSIONS;
+
+  const baseRedemptionEligibility = selectedPlan
+    ? RulesEngine.evaluateRedemptionEligibility(selectedPlan, sessions)
+    : null;
+  const hasBlockingIncident = selectedChar
+    ? incidents.some((incident: Incident) => (
+        (incident.status === 'open' || incident.status === 'contained')
+        && (
+          incident.type === 'heaven_threat'
+          || (
+            incident.residentsInvolved.includes(selectedChar.id)
+            && (
+              incident.severity === 'high'
+              || incident.severity === 'crisis'
+              || incident.type === 'relapse'
+              || incident.type === 'violence'
+              || incident.type === 'deal_contract'
+            )
+          )
+        )
+      ))
+    : false;
+  const hasBindingRelationship = selectedChar
+    ? relationships.some(relationship => relationship.type === 'contract_bound'
+      && (relationship.charAId === selectedChar.id || relationship.charBId === selectedChar.id))
+    : false;
+  const redemptionReasons = [
+    ...(baseRedemptionEligibility?.reasons || []),
+    ...(selectedPlan?.isRedeemedConfirmed && selectedChar?.status !== 'redeemed' ? ['This plan is already marked as redeemed and needs an administrative state review.'] : []),
+    ...(selectedChar && selectedChar.status !== 'resident' ? ['Only an admitted active resident can be considered for redemption.'] : []),
+    ...(selectedChar && selectedChar.type !== 'sinner' ? ['Only a sinner soul is eligible for the hotel redemption protocol.'] : []),
+    ...(selectedChar?.contracts.length ? ['Resolve all active binding contracts before celestial confirmation.'] : []),
+    ...(hasBindingRelationship ? ['Resolve all contract-bound relationship records before celestial confirmation.'] : []),
+    ...(hasBlockingIncident ? ['Resolve the active Heaven alert or all high-risk, violent, relapse, and contract incidents involving this resident.'] : [])
+  ];
+  const canConfirmRedemption = Boolean(
+    selectedPlan
+    && selectedChar
+    && selectedChar.status === 'resident'
+    && selectedChar.type === 'sinner'
+    && selectedChar.contracts.length === 0
+    && !hasBindingRelationship
+    && baseRedemptionEligibility?.isEligible
+    && !hasBlockingIncident
+  );
 
   // Form: Create Plan state
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [goalsInput, setGoalsInput] = useState('');
   const [obstaclesInput, setObstaclesInput] = useState('');
   const [triggersInput, setTriggersInput] = useState('');
+  const [selectedTemplateId, setSelectedTemplateId] = useState('');
 
   // Form: Log Session state
   const [isSessionModalOpen, setIsSessionModalOpen] = useState(false);
@@ -56,13 +149,44 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   const [selectedDialoguePath, setSelectedDialoguePath] = useState<string | null>(null);
   const [dialogueLog, setDialogueLog] = useState<{ charSpeech: string, residentSpeech: string } | null>(null);
 
-  const [sessionType, setSessionType] = useState<SessionType>('empathy_workshop');
   const [sessionSummary, setSessionSummary] = useState('');
   const [sessionConductedBy, setSessionConductedBy] = useState('charlie');
   const [deltaEmpathy, setDeltaEmpathy] = useState(0);
   const [deltaAccountability, setDeltaAccountability] = useState(0);
   const [deltaImpulse, setDeltaImpulse] = useState(0);
   const [deltaCooperation, setDeltaCooperation] = useState(0);
+  const rehabGoalsRef = useRef<HTMLTextAreaElement>(null);
+  const sessionConductorRef = useRef<HTMLSelectElement>(null);
+
+  const openCreatePlan = () => {
+    setSelectedTemplateId('');
+    setGoalsInput('');
+    setObstaclesInput('');
+    setTriggersInput('');
+    setIsCreateModalOpen(true);
+  };
+
+  const applyPlanTemplate = (templateId: string) => {
+    setSelectedTemplateId(templateId);
+    const template = REHAB_PLAN_TEMPLATES.find(candidate => candidate.id === templateId);
+    if (!template) return;
+    setGoalsInput(template.goals.join('\n'));
+    setObstaclesInput(template.obstacles.join('\n'));
+    setTriggersInput(template.triggers.join('\n'));
+  };
+
+  useEffect(() => {
+    if (!isCreateModalOpen && !isSessionModalOpen) return;
+    if (isCreateModalOpen) rehabGoalsRef.current?.focus();
+    if (isSessionModalOpen) sessionConductorRef.current?.focus();
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setIsCreateModalOpen(false);
+      setIsSessionModalOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [isCreateModalOpen, isSessionModalOpen]);
 
   // Form: Edit Notes state
   const [charlieNotes, setCharlieNotes] = useState('');
@@ -87,10 +211,29 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
         vaggieNotes,
         staffPrivateNotes
       };
-      db.saveRehabilitationPlan(updatedPlan);
+      if (!db.saveRehabilitationPlan(updatedPlan)) {
+        window.alert(db.getStorageStatus().lastError?.message || 'Notes could not be saved.');
+        return;
+      }
       setIsNotesEditing(false);
       onStateChange();
     }
+  };
+
+  const handleOpenSessionModal = () => {
+    if (!selectedPlan || !selectedChar) return;
+    if (selectedChar.status === 'redeemed' || selectedPlan.isRedeemedConfirmed) {
+      window.alert('Redeemed records are read-only.');
+      return;
+    }
+    if (dailySessionLimitReached) {
+      window.alert(`Daily curriculum limit reached (${sessionsToday}/${MAX_DAILY_SESSIONS}).`);
+      return;
+    }
+    setSessionStep(1);
+    setSelectedDialoguePath(null);
+    setDialogueLog(null);
+    setIsSessionModalOpen(true);
   };
 
   // Create new Plan
@@ -98,10 +241,16 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     e.preventDefault();
     if (!activeCharId) return;
 
+    const goals = goalsInput.split('\n').map(g => g.trim()).filter(g => g.length > 0);
+    if (goals.length < 2) {
+      window.alert('A durable rehabilitation plan requires at least two concrete goals.');
+      return;
+    }
+
     const newPlan: RehabilitationPlan = {
       id: 'plan_' + activeCharId,
       characterId: activeCharId,
-      goals: goalsInput.split('\n').map(g => g.trim()).filter(g => g.length > 0),
+      goals,
       obstacles: obstaclesInput.split('\n').map(o => o.trim()).filter(o => o.length > 0),
       triggers: triggersInput.split('\n').map(t => t.trim()).filter(t => t.length > 0),
       empathyScore: 30,
@@ -114,14 +263,24 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
       isRedeemedConfirmed: false
     };
 
-    db.saveRehabilitationPlan(newPlan);
-    
-    // Update character rehab score representation
-    if (selectedChar) {
-      db.saveCharacter({
-        ...selectedChar,
-        rehabProgress: 30
-      });
+    const saved = db.transaction('REHAB_PLAN_CREATE', (draft) => {
+      if (draft.rehabilitationPlans.some(plan => plan.characterId === activeCharId)) {
+        throw new Error('This resident already has a rehabilitation plan.');
+      }
+      const character = draft.characters.find(item => item.id === activeCharId);
+      if (!character || (character.status !== 'resident' && character.status !== 'applicant')) {
+        throw new Error('Only a resident or applicant can enter rehabilitation.');
+      }
+      draft.rehabilitationPlans.push(newPlan);
+      character.rehabProgress = 30;
+      character.rehabTracked = true;
+    }, {
+      action: 'REHAB_PLAN_CREATE',
+      details: `Initialized a structured rehabilitation plan for ${selectedChar?.name || activeCharId}.`
+    });
+    if (!saved) {
+      window.alert(db.getStorageStatus().lastError?.message || 'The rehabilitation plan could not be created.');
+      return;
     }
 
     setIsCreateModalOpen(false);
@@ -133,44 +292,82 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     if (e) e.preventDefault();
     if (!selectedPlan || !selectedChar) return;
 
-    const session: RehabilitationSession = {
-      id: 'sess_' + Date.now(),
-      planId: selectedPlan.id,
-      date: new Date().toISOString().split('T')[0],
-      type: sessionType,
-      summary: sessionSummary.trim(),
-      empathyDelta: deltaEmpathy,
-      accountabilityDelta: deltaAccountability,
-      impulseControlDelta: deltaImpulse,
-      cooperationDelta: deltaCooperation,
-      conductedBy: sessionConductedBy
-    };
+    if (selectedChar.status === 'redeemed' || selectedPlan.isRedeemedConfirmed) {
+      window.alert('This resident is already redeemed. Their rehabilitation record is now read-only.');
+      return;
+    }
 
-    // 1. Save session record
-    db.saveRehabilitationSession(session);
+    if (sessionsToday >= MAX_DAILY_SESSIONS) {
+      window.alert(`Daily curriculum limit reached (${MAX_DAILY_SESSIONS} sessions). Continue on the next day.`);
+      return;
+    }
 
-    // 2. Adjust scores on the plan
-    const newEmp = Math.min(100, Math.max(0, selectedPlan.empathyScore + deltaEmpathy));
-    const newAcc = Math.min(100, Math.max(0, selectedPlan.accountabilityScore + deltaAccountability));
-    const newImp = Math.min(100, Math.max(0, selectedPlan.impulseControlScore + deltaImpulse));
-    const newCoop = Math.min(100, Math.max(0, selectedPlan.cooperationScore + deltaCooperation));
+    const approach = selectedDialoguePath
+      ? RulesEngine.getCounselingApproaches(selectedChar, sessionConductedBy)
+        .find(candidate => candidate.id === selectedDialoguePath)
+      : undefined;
+    if (!approach || approach.conductorId !== sessionConductedBy) {
+      window.alert('Choose a valid counseling approach for the selected staff member.');
+      return;
+    }
+    const supplyKind = sessionConductedBy === 'husk' ? 'bar' : 'food';
+    const supplyName = sessionConductedBy === 'husk' ? 'bar supplies' : 'food and workshop supplies';
+    const recorded = db.transaction('REHABILITATION_SESSION', (draft, inventory) => {
+      const plan = draft.rehabilitationPlans.find(item => item.id === selectedPlan.id);
+      const character = draft.characters.find(item => item.id === selectedChar.id);
+      const conductor = draft.characters.find(item => item.id === sessionConductedBy && item.status === 'staff');
+      if (!plan || !character || plan.isRedeemedConfirmed || character.status === 'redeemed') {
+        throw new Error('The rehabilitation record is no longer active.');
+      }
+      if (!conductor) throw new Error('The selected counselor is no longer on active staff duty.');
+      const meta = draft.gameplayMeta!;
+      const counterKey = `${meta.campaignDay}:${plan.id}`;
+      if ((meta.dailySessionCounts[counterKey] || 0) >= MAX_DAILY_SESSIONS) {
+        throw new Error(`Daily curriculum limit reached for Campaign Day ${meta.campaignDay}.`);
+      }
+      const workload = draft.staffTasks
+        .filter(task => task.assignedTo === sessionConductedBy && task.status !== 'completed' && task.status !== 'cancelled')
+        .reduce((total, task) => total + task.mentalWorkload, meta.staffFatigue[sessionConductedBy] || 0);
+      if (workload >= 10) throw new Error('The selected staff member is overloaded or fatigued.');
+      if (inventory[supplyKind] < 1) throw new Error(`Insufficient ${supplyName}.`);
 
-    // Average of scores defines character rehab progress
-    const averageProgress = Math.round((newEmp + newAcc + newImp + newCoop) / 4);
-
-    db.saveRehabilitationPlan({
-      ...selectedPlan,
-      empathyScore: newEmp,
-      accountabilityScore: newAcc,
-      impulseControlScore: newImp,
-      cooperationScore: newCoop
+      inventory[supplyKind] -= 1;
+      const sessionId = `sess_day${meta.campaignDay}_${plan.id}_${approach.id}`;
+      if (draft.rehabilitationSessions.some(existing => existing.id === sessionId)) {
+        throw new Error('This counseling session was already recorded.');
+      }
+      const session: RehabilitationSession = {
+        id: sessionId,
+        planId: plan.id,
+        date: `Campaign Day ${meta.campaignDay}`,
+        campaignDay: meta.campaignDay,
+        approachId: selectedDialoguePath || undefined,
+        type: approach.type,
+        summary: sessionSummary.trim()
+          ? `${sessionSummary.trim()} - ${approach.logText}`
+          : approach.logText,
+        empathyDelta: approach.deltas.empathy,
+        accountabilityDelta: approach.deltas.accountability,
+        impulseControlDelta: approach.deltas.impulse,
+        cooperationDelta: approach.deltas.cooperation,
+        conductedBy: sessionConductedBy
+      };
+      draft.rehabilitationSessions.push(session);
+      plan.empathyScore = Math.min(100, plan.empathyScore + approach.deltas.empathy);
+      plan.accountabilityScore = Math.min(100, plan.accountabilityScore + approach.deltas.accountability);
+      plan.impulseControlScore = Math.min(100, plan.impulseControlScore + approach.deltas.impulse);
+      plan.cooperationScore = Math.min(100, plan.cooperationScore + approach.deltas.cooperation);
+      character.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
+      meta.dailySessionCounts[counterKey] = (meta.dailySessionCounts[counterKey] || 0) + 1;
+      meta.staffFatigue[sessionConductedBy] = Math.min(100, (meta.staffFatigue[sessionConductedBy] || 0) + 1);
+    }, {
+      action: 'REHABILITATION_SESSION',
+      details: `Completed ${approach.type} for ${selectedChar.name}; consumed 1 unit of ${supplyName}.`
     });
-
-    // 3. Save character overall progress
-    db.saveCharacter({
-      ...selectedChar,
-      rehabProgress: averageProgress
-    });
+    if (!recorded) {
+      window.alert(db.getStorageStatus().lastError?.message || 'The session could not be recorded atomically.');
+      return;
+    }
 
     setIsSessionModalOpen(false);
     setSessionStep(1);
@@ -184,54 +381,72 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     onStateChange();
   };
 
-  const handleDeleteSession = (sessId: string) => {
-    db.deleteRehabilitationSession(sessId);
-    onStateChange();
+  const handleDeleteSession = () => {
+    window.alert('Session records are immutable because their metric changes have already been applied. Add a corrective session instead of deleting history.');
   };
 
   // REDEMPTION TRIGGER
   const handleConfirmRedemption = () => {
     if (!selectedPlan || !selectedChar) return;
 
+    if (!canConfirmRedemption) {
+      window.alert(`Redemption requirements are not met:\n- ${redemptionReasons.join('\n- ')}`);
+      return;
+    }
+
     const consent = window.confirm(`CONFIRM CELESTIAL REDEMPTION: Are you sure you want to mark '${selectedChar.name}' as fully redeemed? Under the hotel protocols, this will update their status to 'redeemed', remove them from room registers, and trigger a public ascension event.`);
     if (!consent) return;
 
-    // 1. Update character status
-    const updatedChar: Character = {
-      ...selectedChar,
-      status: 'redeemed',
-      role: 'external',
-      riskLevel: 'low',
-      rehabProgress: 100
-    };
-    db.saveCharacter(updatedChar);
+    const confirmed = db.transaction('SOUL_REDEMPTION', (draft) => {
+      const character = draft.characters.find(item => item.id === selectedChar.id);
+      const plan = draft.rehabilitationPlans.find(item => item.id === selectedPlan.id);
+      if (!character || !plan || character.status !== 'resident' || character.type !== 'sinner' || character.contracts.length > 0) {
+        throw new Error('The resident status or contract state changed before confirmation.');
+      }
+      const residentSessions = draft.rehabilitationSessions.filter(session => session.planId === plan.id);
+      const eligibility = RulesEngine.evaluateRedemptionEligibility(plan, residentSessions);
+      const blockingIncident = draft.incidents.some(incident => (
+        (incident.status === 'open' || incident.status === 'contained')
+        && (
+          incident.type === 'heaven_threat'
+          || (
+            incident.residentsInvolved.includes(character.id)
+            && (incident.severity === 'high' || incident.severity === 'crisis' || incident.type === 'relapse' || incident.type === 'violence' || incident.type === 'deal_contract')
+          )
+        )
+      ));
+      const bindingRelationship = draft.relationships.some(relationship => relationship.type === 'contract_bound'
+        && (relationship.charAId === character.id || relationship.charBId === character.id));
+      if (!eligibility.isEligible || blockingIncident || bindingRelationship) throw new Error('Redemption requirements are no longer satisfied.');
+      const meta = draft.gameplayMeta!;
+      if (meta.rewardedRedemptionIds.includes(character.id)) throw new Error('This redemption reward was already applied.');
 
-    // 2. Update Plan status
-    db.saveRehabilitationPlan({
-      ...selectedPlan,
-      isRedeemedConfirmed: true,
-      empathyScore: 100,
-      accountabilityScore: 100,
-      impulseControlScore: 100,
-      cooperationScore: 100
-    });
-
-    // 3. Clear occupied room if any
-    const occupiedRoom = db.getRooms().find(r => r.occupantId === selectedChar.id);
-    if (occupiedRoom) {
-      db.saveRoom({
-        ...occupiedRoom,
-        occupantId: null
+      character.type = 'redeemed_soul';
+      character.status = 'redeemed';
+      character.role = 'external';
+      character.riskLevel = 'low';
+      character.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
+      character.rehabTracked = false;
+      plan.isRedeemedConfirmed = true;
+      draft.rooms = draft.rooms.map(room => {
+        const occupantIds = room.occupantIds?.filter(id => id !== character.id);
+        return {
+          ...room,
+          ...(room.occupantIds ? { occupantIds } : {}),
+          occupantId: room.occupantId === character.id ? occupantIds?.[0] || null : room.occupantId
+        };
       });
+      draft.reputation = RulesEngine.calculateReputationEvent('proof_of_redemption', draft.reputation);
+      meta.rewardedRedemptionIds.push(character.id);
+      meta.completedMilestones.push(`redemption:${character.id}`);
+    }, {
+      action: 'SOUL_REDEMPTION',
+      details: `Sinner '${selectedChar.name}' achieved celestial redemption; the exactly-once ascension reward was applied.`
+    });
+    if (!confirmed) {
+      window.alert(db.getStorageStatus().lastError?.message || 'Redemption could not be confirmed atomically.');
+      return;
     }
-
-    // 4. Update Reputation
-    const currentRep = db.getReputation();
-    const updatedRep = RulesEngine.calculateReputationEvent('proof_of_redemption', currentRep);
-    db.saveReputation(updatedRep);
-
-    // 5. Audit Log
-    db.logAction('SOUL_REDEMPTION', `Sinner '${selectedChar.name}' successfully achieved celestial redemption and ascended.`);
     onStateChange();
   };
 
@@ -268,9 +483,9 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
             style={{ width: '100%' }}
           >
             <option value="" disabled>-- Select resident --</option>
-            {residents.map((c: Character) => (
+            {selectableProfiles.map((c: Character) => (
               <option key={c.id} value={c.id}>
-                {c.name} ({c.role} - Rehab: {c.rehabProgress}%)
+                {c.name} ({c.status === 'redeemed' ? 'redeemed record' : `${c.role} - Rehab: ${c.rehabProgress}%`})
               </option>
             ))}
           </select>
@@ -280,10 +495,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
             className="btn btn-primary" 
             style={{ alignSelf: 'flex-end' }} 
             onClick={() => {
-              setGoalsInput('');
-              setObstaclesInput('');
-              setTriggersInput('');
-              setIsCreateModalOpen(true);
+              openCreatePlan();
             }}
             id="initiate-rehab-btn"
           >
@@ -311,7 +523,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
           </p>
           <button 
             className="btn btn-primary"
-            onClick={() => setIsCreateModalOpen(true)}
+            onClick={openCreatePlan}
           >
             Initiate Plan
           </button>
@@ -335,7 +547,13 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                   </span>
                 </div>
                 {selectedChar.status !== 'redeemed' ? (
-                  <button className="btn btn-gold" onClick={handleConfirmRedemption} id="confirm-redemption-btn">
+                  <button
+                    className="btn btn-gold"
+                    onClick={handleConfirmRedemption}
+                    id="confirm-redemption-btn"
+                    disabled={!canConfirmRedemption}
+                    title={canConfirmRedemption ? 'All redemption requirements are met.' : redemptionReasons.join(' ')}
+                  >
                     <Award size={16} />
                     Confirm Redemption
                   </button>
@@ -345,6 +563,15 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                   </span>
                 )}
               </div>
+
+              {selectedChar.status !== 'redeemed' && redemptionReasons.length > 0 && (
+                <div style={{ marginBottom: '16px', padding: '10px 12px', border: '1px solid rgba(212,175,55,0.25)', borderRadius: '6px', backgroundColor: 'rgba(212,175,55,0.06)', fontSize: '0.75rem' }}>
+                  <strong style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '4px' }}>Redemption review pending</strong>
+                  <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-muted)' }}>
+                    {redemptionReasons.map(reason => <li key={reason}>{reason}</li>)}
+                  </ul>
+                </div>
+              )}
 
               {/* Progress bars Grid */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -455,12 +682,17 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
               <button 
                 className="btn btn-primary" 
                 style={{ width: '100%', justifyContent: 'center' }} 
-                onClick={() => setIsSessionModalOpen(true)}
+                onClick={handleOpenSessionModal}
                 id="log-session-btn"
+                disabled={selectedChar.status === 'redeemed' || dailySessionLimitReached}
+                title={dailySessionLimitReached ? `Daily limit reached (${sessionsToday}/${MAX_DAILY_SESSIONS})` : 'Start a documented rehabilitation session'}
               >
                 <Plus size={16} />
                 Log Rehabilitation Session
               </button>
+              <span style={{ display: 'block', marginTop: '6px', fontSize: '0.68rem', color: dailySessionLimitReached ? '#ff6b7a' : 'var(--color-text-muted)', textAlign: 'center' }}>
+                Daily curriculum: {sessionsToday}/{MAX_DAILY_SESSIONS}. Sessions consume facility supplies and require available staff.
+              </span>
 
               {/* Sessions List */}
               <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px', maxHeight: '400px', overflowY: 'auto' }}>
@@ -478,12 +710,12 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', fontWeight: 600, marginBottom: '4px' }}>
                         <span style={{ color: 'var(--color-gold)' }}>{sess.type.replace('_', ' ')}</span>
                         <button 
-                          onClick={() => handleDeleteSession(sess.id)}
+                          onClick={handleDeleteSession}
                           style={{ background: 'none', border: 'none', color: '#ff6b7a', cursor: 'pointer' }}
-                          title="Delete session log"
+                          title="Session history is immutable"
                           id={`delete-sess-${sess.id}`}
                         >
-                          <Trash2 size={12} />
+                          <ShieldAlert size={12} />
                         </button>
                       </div>
                       <p style={{ fontSize: '0.75rem', color: 'var(--color-text-main)', marginBottom: '6px', fontStyle: 'italic' }}>
@@ -529,25 +761,45 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
 
       {/* Initiate Plan Modal */}
       {isCreateModalOpen && selectedChar && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '480px', padding: '24px' }}>
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsCreateModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="rehab-plan-dialog-title" style={{ width: '90%', maxWidth: '480px', padding: '24px' }}>
+            <h2 id="rehab-plan-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px' }}>
               Initiate Rehabilitation
             </h2>
             <form onSubmit={handleCreatePlan} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
                 Initialize rehabilitation parameters for <strong>{selectedChar.name}</strong>. Core metrics will start at 30% baseline.
               </p>
+
+              <div>
+                <label htmlFor="rehab-template">Simulation AU Plan Template</label>
+                <select
+                  id="rehab-template"
+                  value={selectedTemplateId}
+                  onChange={(event) => applyPlanTemplate(event.target.value)}
+                  style={{ width: '100%' }}
+                >
+                  <option value="">Write a custom plan</option>
+                  {REHAB_PLAN_TEMPLATES.map(template => (
+                    <option key={template.id} value={template.id}>{template.name}</option>
+                  ))}
+                </select>
+                <span style={{ display: 'block', marginTop: '4px', color: 'var(--color-text-muted)', fontSize: '0.72rem' }}>
+                  {REHAB_PLAN_TEMPLATES.find(template => template.id === selectedTemplateId)?.description
+                    || 'Templates are non-canon starting points. Every field remains editable for a new applicant.'}
+                </span>
+              </div>
               
               <div>
                 <label htmlFor="rehab-goals">Personal Goals / Milestones (One per line)</label>
                 <textarea 
+                  ref={rehabGoalsRef}
                   id="rehab-goals" 
                   rows={2} 
                   value={goalsInput} 
                   onChange={(e) => setGoalsInput(e.target.value)} 
                   style={{ width: '100%' }} 
-                  placeholder="e.g. Apologize to Husk&#10;Reduce substance intake..."
+                  placeholder="e.g. Name one support boundary&#10;Choose a manageable community contribution..."
                 />
               </div>
 
@@ -590,10 +842,10 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
 
       {/* Log Session Modal (Dialogue Simulator Wizard) */}
       {isSessionModalOpen && selectedPlan && selectedChar && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
-          <div className="glass-panel art-deco-border" style={{ width: '90%', maxWidth: '620px', padding: '24px', maxHeight: '90vh', overflowY: 'auto' }}>
+        <div onMouseDown={(event) => { if (event.target === event.currentTarget) setIsSessionModalOpen(false); }} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, backdropFilter: 'blur(5px)' }}>
+          <div className="glass-panel art-deco-border" role="dialog" aria-modal="true" aria-labelledby="rehab-session-dialog-title" style={{ width: '90%', maxWidth: '620px', padding: '24px', maxHeight: '90vh', overflowY: 'auto' }}>
             
-            <h2 style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2 id="rehab-session-dialog-title" style={{ color: 'var(--color-gold)', marginBottom: '16px', borderBottom: '1px solid var(--color-gold-dark)', paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span>Log Session: {selectedChar.name}</span>
               <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
                 Step {sessionStep} of 2
@@ -605,36 +857,33 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
-                    <label htmlFor="sess-type">Session Category</label>
-                    <select 
-                      id="sess-type" 
-                      value={sessionType} 
-                      onChange={(e) => setSessionType(e.target.value as SessionType)}
+                    <label htmlFor="sess-derived-type">Recorded Session Category</label>
+                    <input
+                      id="sess-derived-type"
+                      value={sessionConductedBy === 'husk' ? 'Bar check-in (derived)' : 'Derived from the dialogue focus'}
+                      readOnly
+                      aria-describedby="sess-derived-help"
                       style={{ width: '100%' }}
-                    >
-                      <option value="empathy_workshop">Empathy Workshop</option>
-                      <option value="accountability_session">Accountability Session</option>
-                      <option value="conflict_resolution">Conflict Resolution</option>
-                      <option value="trust_building">Trust Building Exercise</option>
-                      <option value="public_apology">Public Apology</option>
-                      <option value="group_activity">Group Activity</option>
-                      <option value="hotel_service">Hotel Duty / Service</option>
-                      <option value="therapy_like_checkin">Bar Check-in (Diagnostics)</option>
-                      <option value="custom">Custom Session</option>
-                    </select>
+                    />
+                    <span id="sess-derived-help" style={{ display: 'block', marginTop: '4px', fontSize: '0.68rem', color: 'var(--color-text-muted)' }}>
+                      The stored category and metric deltas are locked to the counseling choice, not typed manually.
+                    </span>
                   </div>
 
                   <div>
                     <label htmlFor="sess-conducted">Conducted By</label>
                     <select 
+                      ref={sessionConductorRef}
                       id="sess-conducted" 
                       value={sessionConductedBy} 
                       onChange={(e) => {
                         setSessionConductedBy(e.target.value);
-                        // Auto switch type to bar checkin if Husk is chosen
-                        if (e.target.value === 'husk') {
-                          setSessionType('therapy_like_checkin');
-                        }
+                        setSelectedDialoguePath(null);
+                        setDialogueLog(null);
+                        setDeltaEmpathy(0);
+                        setDeltaAccountability(0);
+                        setDeltaImpulse(0);
+                        setDeltaCooperation(0);
                       }}
                       style={{ width: '100%' }}
                     >
@@ -662,7 +911,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                     Visual Check-in Simulator
                   </h4>
                   <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                    Proceeding will launch the dialogue tree window. You will choose Charlie's or Husk's check-in responses, and watch the resident's stats update in real-time.
+                    These dialogue trees are Simulation AU coaching scenarios, not canon scenes. Choose a trauma-informed or restorative approach and preview its gameplay effects.
                   </p>
                 </div>
 
@@ -675,7 +924,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                     className="btn btn-primary"
                     onClick={() => {
                       if (!sessionSummary) {
-                        setSessionSummary(`${sessionType.replace('_', ' ')} conducted by ${characters.find((c: Character) => c.id === sessionConductedBy)?.name || sessionConductedBy}`);
+                        setSessionSummary(`Documented check-in conducted by ${characters.find((c: Character) => c.id === sessionConductedBy)?.name || sessionConductedBy}`);
                       }
                       setSessionStep(2);
                     }}
@@ -734,82 +983,27 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                   <div>
                     <label style={{ marginBottom: '8px' }}>Select Counseling Dialogue Focus:</label>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {(() => {
-                        // Options generator
-                        const getOpts = (resId: string, cond: string) => {
-                          const isAngel = resId === 'angeldust';
-                          const isPentious = resId === 'sirpentious';
-
-                          if (cond === 'husk') {
-                            return [
-                              {
-                                id: 'bar_therapy',
-                                label: 'Husk Check-in: "Listen kid, you don\'t have to keep drinking the poison."',
-                                charSpeech: "Look, I've lost my soul, you've lost yours. We're all in the dirt. But you don't have to keep drinking the poison. Let's dump the junk.",
-                                responseText: isAngel 
-                                  ? "Husk... you actually get it. No fake smiles. Fine, I'll dump the pills for tonight. Give me a Shirley Temple." 
-                                  : isPentious
-                                  ? "You think a simple bartender can understand my villainy?! ...Wait, this mocktail tastes like... victory? Refill, please!"
-                                  : "Thanks, bartender. Sometimes a quiet drink and a real conversation is all a sinner needs.",
-                                deltas: { empathy: 5, accountability: 5, impulse: 15, cooperation: 5 },
-                                logText: "Husk served mocktails. Resident relaxed and shared coping notes."
-                              }
-                            ];
-                          } else {
-                            return [
-                              {
-                                id: 'empathy',
-                                label: 'Charlie Empathy Focus: "Let\'s share our feelings and trust each other!"',
-                                charSpeech: "I know it's scary to open up, but sharing our feelings makes us stronger. How do you feel about those you've hurt?",
-                                responseText: isAngel
-                                  ? "Feelings? Honey, I get paid to look good, not to feel. But... I guess Vaggie has a point sometimes. She doesn't take my crap."
-                                  : isPentious
-                                  ? "Feelings?! I am a creature of cold, steel malice! But... if you insist, I do feel slightly bad when my egg bois get squished..."
-                                  : "It's difficult to say. Groundwork is hard, but talking helps, I suppose.",
-                                deltas: { empathy: 12, accountability: 4, impulse: 0, cooperation: 8 },
-                                logText: "Charlie conducted an empathy check-in. Resident showed moral remorse."
-                              },
-                              {
-                                id: 'accountability',
-                                label: 'Charlie Accountability Focus: "Actions have consequences. We must face them."',
-                                charSpeech: "Every deal we make binds us. We have to take responsibility for our actions to redeem ourselves.",
-                                responseText: isAngel
-                                  ? "Responsibility? Val owns my soul, Charlie. Taking responsibility just gets me beaten. But I'll follow hotel rules..."
-                                  : isPentious
-                                  ? "A mastermind always takes credit for his misdeeds! I did construct that death laser, and I shall build the repair beams next!"
-                                  : "I understand. Rules are rules for a reason. I'll make sure to follow the guidelines.",
-                                deltas: { empathy: 4, accountability: 12, impulse: 5, cooperation: 8 },
-                                logText: "Charlie pushed accountability rules. Resident confirmed guidelines compliance."
-                              }
-                            ];
-                          }
-                        };
-
-                        const options = getOpts(selectedChar.id, sessionConductedBy);
-
-                        return options.map(opt => (
-                          <button
-                            key={opt.id}
-                            type="button"
-                            className="btn btn-secondary"
-                            style={{ textAlign: 'left', padding: '10px 14px', fontSize: '0.85rem' }}
-                            onClick={() => {
-                              setSelectedDialoguePath(opt.id);
-                              setDialogueLog({
-                                charSpeech: opt.charSpeech,
-                                residentSpeech: opt.responseText
-                              });
-                              setDeltaEmpathy(opt.deltas.empathy);
-                              setDeltaAccountability(opt.deltas.accountability);
-                              setDeltaImpulse(opt.deltas.impulse);
-                              setDeltaCooperation(opt.deltas.cooperation);
-                              setSessionSummary(prev => prev + (prev ? ' - ' : '') + opt.logText);
-                            }}
-                          >
-                            {opt.label}
-                          </button>
-                        ));
-                      })()}
+                      {RulesEngine.getCounselingApproaches(selectedChar, sessionConductedBy).map(approach => (
+                        <button
+                          key={approach.id}
+                          type="button"
+                          className="btn btn-secondary"
+                          style={{ textAlign: 'left', padding: '10px 14px', fontSize: '0.85rem' }}
+                          onClick={() => {
+                            setSelectedDialoguePath(approach.id);
+                            setDialogueLog({
+                              charSpeech: approach.counselorSpeech,
+                              residentSpeech: approach.residentSpeech
+                            });
+                            setDeltaEmpathy(approach.deltas.empathy);
+                            setDeltaAccountability(approach.deltas.accountability);
+                            setDeltaImpulse(approach.deltas.impulse);
+                            setDeltaCooperation(approach.deltas.cooperation);
+                          }}
+                        >
+                          {approach.label}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 ) : (

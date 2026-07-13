@@ -1,22 +1,36 @@
-export type CharacterType = 'sinner' | 'hellborn' | 'angel' | 'fallen_angel' | 'overlord' | 'redeemed_soul' | 'unknown';
+// Species/origin and social rank are deliberately separate. "Overlord" is a
+// political rank held by some sinners, not a species.
+export type CharacterType = 'sinner' | 'hellborn' | 'angel' | 'fallen_angel' | 'redeemed_soul' | 'unknown' | 'overlord';
+export type CharacterRank = 'none' | 'royalty' | 'overlord' | 'former_overlord' | 'seraph' | 'exorcist' | 'former_exorcist' | 'exorcist_commander' | 'unknown';
 export type CharacterRole = 'founder' | 'manager' | 'resident' | 'bartender' | 'housekeeper' | 'sponsor' | 'security' | 'antagonist' | 'ally' | 'external';
 export type CharacterStatus = 'staff' | 'resident' | 'applicant' | 'banned' | 'redeemed' | 'external' | 'deceased' | 'unknown';
 export type RiskLevel = 'low' | 'medium' | 'high' | 'catastrophic';
-export type CanonStatus = 'canon' | 'semi_canon' | 'user_note' | 'headcanon' | 'unknown';
-export type SourceType = 'episode' | 'official_page' | 'creator_statement' | 'user_manual_note' | 'other';
+export type CanonStatus = 'canon' | 'semi_canon' | 'simulation_au' | 'user_note' | 'headcanon' | 'unknown';
+export type SourceType = 'episode' | 'official_pilot' | 'official_page' | 'creator_statement' | 'user_manual_note' | 'other';
 export type SpoilerLevel = 'none' | 'season_1' | 'season_2' | 'future';
 export type TimelineScope = 'pilot_legacy' | 'season_1_start' | 'season_1_end' | 'season_2' | 'custom';
+
+export type CharacterTimelineSnapshot = Partial<Pick<Character,
+  'type' | 'role' | 'status' | 'riskLevel' | 'rehabProgress' | 'rehabTracked'
+>>;
 
 export interface Character {
   id: string;
   name: string;
   alias: string;
   type: CharacterType;
+  rank?: CharacterRank;
   role: CharacterRole;
   status: CharacterStatus;
   riskLevel: RiskLevel;
   charlieTrust: number; // 0 to 100
   rehabProgress: number; // 0 to 100
+  // False means the numeric field is not applicable, rather than a canon 0%.
+  rehabTracked?: boolean;
+  // Hotel roles, risk ratings and scores are gameplay data, not episode facts.
+  operationalDataStatus?: 'simulation_au' | 'user_note';
+  // Read-only projections used by timeline-aware views. They never mutate saves.
+  timelineStates?: Partial<Record<Exclude<TimelineScope, 'custom'>, CharacterTimelineSnapshot>>;
   contracts: string[]; // brief descriptions of active contracts (e.g. soul bound)
   notes: string;
   canonStatus: CanonStatus;
@@ -34,6 +48,7 @@ export interface Room {
   floor: number;
   type: RoomType;
   occupantId: string | null; // references Character.id
+  occupantIds?: string[]; // shared rooms; occupantId remains the primary legacy reference
   capacity: number;
   status: RoomStatus;
   dangerLevel: RiskLevel;
@@ -73,6 +88,8 @@ export interface RehabilitationSession {
   impulseControlDelta: number;
   cooperationDelta: number;
   conductedBy: string; // references Character.id
+  approachId?: string; // immutable dialogue/gameplay approach used to derive the deltas
+  campaignDay?: number;
 }
 
 export type IncidentType = 'violence' | 'property_damage' | 'media_scandal' | 'deal_contract' | 'heaven_threat' | 'overlord_interference' | 'staff_conflict' | 'relapse' | 'sabotage' | 'unknown';
@@ -95,6 +112,7 @@ export interface Incident {
   status: IncidentStatus;
   loreLink: string | null; // references LoreEntry.id if canon
   tags: string[];
+  resolvedDay?: number;
 }
 
 export type TaskType = 'new_sinner_intake' | 'room_inspection' | 'conflict_resolution' | 'repair_work' | 'rehab_prep' | 'media_response' | 'heaven_watch' | 'vees_watch' | 'staff_briefing' | 'custom';
@@ -109,6 +127,9 @@ export interface StaffTask {
   mentalWorkload: number; // 1 to 10
   status: TaskStatus;
   notes: string;
+  targetId?: string | null;
+  createdDay?: number;
+  availableOnDay?: number;
 }
 
 export interface ReputationState {
@@ -185,6 +206,44 @@ export interface AppSettings {
   theme: string;
 }
 
+/**
+ * Durable rule state. Audit logs are display history and must never be used as
+ * cooldowns or exactly-once markers because the user is allowed to purge them.
+ */
+export interface GameplayMeta {
+  campaignDay: number;
+  cooldowns: Record<string, number>;
+  completedMilestones: string[];
+  appliedTaskIds: string[];
+  resolvedIncidentIds: string[];
+  rewardedRedemptionIds: string[];
+  broadcastRedemptionIds: string[];
+  narrativeFlags: string[];
+  dailySessionCounts: Record<string, number>;
+  dailyDonationAmounts: Record<string, number>;
+  staffFatigue: Record<string, number>;
+}
+
+// Campaign outcomes are simulation-only management states. They are never
+// presented as events from the series canon.
+export type CampaignResult = 'victory' | 'defeat';
+export type CampaignPhase = 'active' | 'victory' | 'defeat' | 'ended';
+export type CampaignEndingId =
+  | 'redemption_program_proven'
+  | 'celestial_shutdown'
+  | 'staff_walkout'
+  | 'public_collapse'
+  | 'insolvent_hotel';
+
+export interface CampaignOutcome {
+  phase: CampaignPhase;
+  result: CampaignResult | null;
+  endingId: CampaignEndingId | null;
+  title: string;
+  summary: string;
+  requirements: string[];
+}
+
 export interface DatabaseState {
   characters: Character[];
   rooms: Room[];
@@ -200,4 +259,6 @@ export interface DatabaseState {
   resourceLedger: ResourceLedger[];
   auditLogs: AuditLog[];
   settings: AppSettings;
+  /** Optional only for legacy in-memory seeds; LocalDb always normalizes it. */
+  gameplayMeta?: GameplayMeta;
 }

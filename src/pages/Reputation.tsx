@@ -1,23 +1,62 @@
-import React from 'react';
-import { Radio, Tv, Eye, ShieldAlert, Award, AlertTriangle, Play, HelpCircle, History } from 'lucide-react';
+import React, { useState } from 'react';
+import { Radio, Tv, Award, AlertTriangle, History } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
-import { ReputationState } from '../types';
+import { Character, DatabaseState, RehabilitationPlan } from '../types';
 
 interface ReputationProps {
-  state: any;
+  state: DatabaseState;
   onStateChange: () => void;
 }
 
+type ReputationEventType = 'interview' | 'vox_propaganda' | 'resident_success' | 'public_brawl';
 export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) => {
-  const { reputation, auditLogs } = state;
+  const { reputation, auditLogs, rehabilitationPlans, characters } = state;
+  const gameplayMeta = state.gameplayMeta || db.getGameplayMeta();
+  const campaignDay = gameplayMeta.campaignDay;
+  const [actionMessage, setActionMessage] = useState<string | null>(null);
+  const milestoneResident = rehabilitationPlans
+    .map((plan: RehabilitationPlan) => ({
+      plan,
+      character: characters.find((character: Character) => character.id === plan.characterId),
+      threshold: Math.floor(RulesEngine.calculateRehabilitationProgress(plan) / 10) * 10
+    }))
+    .find(({ plan, character, threshold }: { plan: RehabilitationPlan; character?: Character; threshold: number }) => (
+      Boolean(character)
+      && character?.status === 'resident'
+      && !plan.isRedeemedConfirmed
+      && threshold >= 60
+      && !gameplayMeta.completedMilestones.includes(`rehab:${character?.id}:${threshold}`)
+    ));
 
-  const handleTriggerEvent = (eventType: string) => {
-    const updated = RulesEngine.calculateReputationEvent(eventType, reputation);
-    db.saveReputation(updated);
-    
+  const getActionBlockReason = (eventType: ReputationEventType): string | null => {
+    const availableDay = gameplayMeta.cooldowns[`pr:${eventType}`] || 0;
+    if (availableDay > campaignDay) {
+      return `Campaign cooldown: available on Day ${availableDay}.`;
+    }
+
+    if (eventType === 'resident_success') {
+      if (!milestoneResident) {
+        return 'Requires an active resident with at least 60% overall rehabilitation progress.';
+      }
+    }
+
+    if (eventType === 'interview' && reputation.sinnerReputation >= 100 && reputation.mediaChaos <= 0) {
+      return 'Public trust is already at maximum and media chaos is fully contained.';
+    }
+
+    return null;
+  };
+
+  const handleTriggerEvent = (eventType: ReputationEventType) => {
+    const blockReason = getActionBlockReason(eventType);
+    if (blockReason) {
+      setActionMessage(blockReason);
+      return;
+    }
+
     // Log details in audit logs
-    let eventName = eventType;
+    let eventName: string = eventType;
     let desc = '';
     switch (eventType) {
       case 'interview':
@@ -32,24 +71,54 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
         eventName = 'Resident Moral Success Milestone';
         desc = 'Published certified logs of a resident showing major progress in impulse control and accountability.';
         break;
-      case 'proof_of_redemption':
-        eventName = 'Certified Redemption Event';
-        desc = 'A resident officially ascended, proving to heavenly observers that sinner redemption is possible.';
-        break;
       case 'public_brawl':
         eventName = 'Public Street Brawl Scandal';
         desc = 'A dispute between residents overflowed into the public street, causing property damages and bad press.';
         break;
     }
 
-    db.logAction('REPUTATION_EVENT', `[${eventName}] - ${desc}`);
+    const milestoneKey = eventType === 'resident_success' && milestoneResident?.character
+      ? `rehab:${milestoneResident.character.id}:${milestoneResident.threshold}`
+      : null;
+    const completed = db.transaction(`REPUTATION_EVENT:${eventType}`, (draft) => {
+      const meta = draft.gameplayMeta!;
+      const cooldownKey = `pr:${eventType}`;
+      if ((meta.cooldowns[cooldownKey] || 0) > meta.campaignDay) throw new Error('This campaign action is still on cooldown.');
+      if (eventType === 'resident_success') {
+        if (!milestoneResident?.character || !milestoneKey) throw new Error('No verified resident milestone is available.');
+        const freshPlan = draft.rehabilitationPlans.find(plan => plan.id === milestoneResident.plan.id);
+        const freshCharacter = draft.characters.find(character => character.id === milestoneResident.character?.id);
+        const freshThreshold = freshPlan ? Math.floor(RulesEngine.calculateRehabilitationProgress(freshPlan) / 10) * 10 : 0;
+        const freshKey = freshCharacter ? `rehab:${freshCharacter.id}:${freshThreshold}` : '';
+        if (!freshPlan || !freshCharacter || freshCharacter.status !== 'resident' || freshPlan.isRedeemedConfirmed || freshThreshold < 60 || freshKey !== milestoneKey) {
+          throw new Error('The selected rehabilitation milestone is no longer valid.');
+        }
+        if (meta.completedMilestones.includes(milestoneKey)) throw new Error('This resident milestone was already published.');
+        meta.completedMilestones.push(milestoneKey);
+      }
+      draft.reputation = RulesEngine.calculateReputationEvent(eventType, draft.reputation);
+      meta.cooldowns[cooldownKey] = meta.campaignDay + 1;
+    }, {
+      action: `REPUTATION_EVENT:${eventType}`,
+      details: `[${eventName}] - ${desc}${milestoneKey ? ` [milestone:${milestoneKey}]` : ''}`
+    });
+    if (!completed) {
+      setActionMessage(db.getStorageStatus().lastError?.message || 'Campaign action failed.');
+      return;
+    }
+    setActionMessage(`${eventName} completed. This campaign is available again next operational day.`);
     onStateChange();
   };
 
   // Filter reputation events from audit logs
-  const mediaEvents = auditLogs.filter((log: any) => 
-    log.action === 'REPUTATION_EVENT' || log.action === 'NARRATIVE_EVENT'
+  const mediaEvents = auditLogs.filter(log =>
+    log.action.startsWith('REPUTATION_EVENT') || log.action.startsWith('NARRATIVE_EVENT')
   );
+
+  const interviewBlockReason = getActionBlockReason('interview');
+  const successBlockReason = getActionBlockReason('resident_success');
+  const smearBlockReason = getActionBlockReason('vox_propaganda');
+  const brawlBlockReason = getActionBlockReason('public_brawl');
 
   return (
     <div className="page-container animate-fade-in">
@@ -164,17 +233,24 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {actionMessage && (
+                <div role="status" style={{ padding: '9px 10px', borderRadius: '4px', backgroundColor: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)', color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
+                  {actionMessage}
+                </div>
+              )}
               <button 
                 className="btn btn-primary" 
                 style={{ justifyContent: 'flex-start', width: '100%' }}
                 onClick={() => handleTriggerEvent('interview')}
                 id="pr-interview-btn"
+                disabled={Boolean(interviewBlockReason)}
+                title={interviewBlockReason || 'Conduct a monitored public interview'}
               >
                 <Radio size={16} />
                 Conduct Charlie Broadcast Interview
               </button>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '-8px', paddingLeft: '28px' }}>
-                Charlie goes on public radio. Increases sinner trust (+8), decreases media chaos (-5).
+                Sinner trust +8, media chaos -5, Vees surveillance +4. Once per campaign day.
               </span>
 
               <button 
@@ -182,12 +258,14 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
                 style={{ justifyContent: 'flex-start', width: '100%' }}
                 onClick={() => handleTriggerEvent('resident_success')}
                 id="pr-success-btn"
+                disabled={Boolean(successBlockReason)}
+                title={successBlockReason || `Publish ${milestoneResident?.character?.name || 'resident'}'s verified milestone`}
               >
                 <Award size={16} />
                 Publish Sinner Success story
               </button>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '-8px', paddingLeft: '28px' }}>
-                Broadcast logs showing resident rehabilitation milestones. Improves credibility (+10), internal trust (+10).
+                Requires a real 60% resident milestone. Credibility +10, internal trust +10, sinner trust +5.
               </span>
 
               <button 
@@ -195,12 +273,14 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
                 style={{ justifyContent: 'flex-start', width: '100%' }}
                 onClick={() => handleTriggerEvent('vox_propaganda')}
                 id="pr-smear-btn"
+                disabled={Boolean(smearBlockReason)}
+                title={smearBlockReason || 'Run a hostile-media response drill'}
               >
                 <Tv size={16} />
                 Simulate Voxtek TV Smear Campaign
               </button>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '-8px', paddingLeft: '28px' }}>
-                Vox launches smear ads. Reduces sinner trust (-12), increases media chaos (+20), Vees influence (+10).
+                Sinner trust -12, credibility -5, media chaos +20, Vees influence +10.
               </span>
 
               <button 
@@ -208,12 +288,14 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
                 style={{ justifyContent: 'flex-start', width: '100%' }}
                 onClick={() => handleTriggerEvent('public_brawl')}
                 id="pr-brawl-btn"
+                disabled={Boolean(brawlBlockReason)}
+                title={brawlBlockReason || 'Run a public-scandal response drill'}
               >
                 <AlertTriangle size={16} style={{ color: '#fd7e14' }} />
                 Simulate Public Street Brawl Scandal
               </button>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '-8px', paddingLeft: '28px' }}>
-                Fight leaks to the public. Reduces sinner trust (-8), increases media chaos (+12).
+                Sinner trust -8 and media chaos +12. Once per campaign day.
               </span>
             </div>
           </div>
@@ -231,7 +313,7 @@ export const Reputation: React.FC<ReputationProps> = ({ state, onStateChange }) 
                   No media events logged in current database.
                 </p>
               ) : (
-                mediaEvents.map((log: any) => (
+                mediaEvents.map(log => (
                   <div key={log.id} style={{ backgroundColor: 'rgba(0,0,0,0.15)', padding: '10px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.02)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-gold)', marginBottom: '4px' }}>
                       <span>{log.action}</span>
