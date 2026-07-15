@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Edit2, Trash2, HeartHandshake, ShieldAlert, FileText, UserPlus, Info, Images, X } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
@@ -504,7 +505,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
         </div>
       )}
 
-      {isSpriteGalleryOpen && (
+      {isSpriteGalleryOpen && createPortal(
         <div
           className="sprite-gallery-backdrop"
           onMouseDown={(event) => {
@@ -558,7 +559,8 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
               ))}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Add/Edit Modal */}
