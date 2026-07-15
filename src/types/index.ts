@@ -224,6 +224,38 @@ export interface GameplayMeta {
   staffFatigue: Record<string, number>;
 }
 
+export type ExtensionId = 'helluva_boss';
+export type HelluvaBossCampaignStatus = 'active' | 'victory' | 'collapse';
+export type HelluvaBossSpoilerScope = 'season_1' | 'season_2';
+
+/**
+ * Mutable save data for the optional Helluva Boss campaign. Canon profiles,
+ * lore citations and contract definitions live in code so content corrections
+ * never overwrite player progression.
+ */
+export interface HelluvaBossSaveState {
+  enabled: boolean;
+  dataVersion: number;
+  spoilerScope: HelluvaBossSpoilerScope;
+  campaignDay: number;
+  status: HelluvaBossCampaignStatus;
+  activeContractId: string | null;
+  activePhaseIndex: number;
+  completedContractIds: string[];
+  selectedChoiceIds: string[];
+  funds: number;
+  heat: number;
+  cohesion: number;
+  discretion: number;
+  reputation: number;
+  crewFatigue: Record<string, number>;
+  operationLog: string[];
+}
+
+export interface DatabaseExtensions {
+  helluvaBoss?: HelluvaBossSaveState;
+}
+
 // Campaign outcomes are simulation-only management states. They are never
 // presented as events from the series canon.
 export type CampaignResult = 'victory' | 'defeat';
@@ -259,6 +291,8 @@ export interface DatabaseState {
   resourceLedger: ResourceLedger[];
   auditLogs: AuditLog[];
   settings: AppSettings;
+  /** Optional content packs remain isolated from Hazbin hotel gameplay rules. */
+  extensions: DatabaseExtensions;
   /** Optional only for legacy in-memory seeds; LocalDb always normalizes it. */
   gameplayMeta?: GameplayMeta;
 }

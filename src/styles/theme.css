@@ -339,6 +339,27 @@ label {
   overflow-y: auto;
 }
 
+.sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-group + .sidebar-group {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.sidebar-group-title {
+  padding: 0 12px 5px;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .sidebar-link-btn {
   width: 100%;
   display: flex;
@@ -368,6 +389,18 @@ label {
   font-weight: 700;
   border-left-color: var(--color-gold);
   background: linear-gradient(90deg, rgba(168, 32, 42, 0.25), rgba(168, 32, 42, 0.05));
+}
+
+.sidebar-link-badge {
+  margin-left: auto;
+  padding: 2px 5px;
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 999px;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .sidebar-footer {

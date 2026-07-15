@@ -20,11 +20,22 @@ interface TopbarProps {
   budget: number;
   searchQuery: string;
   onSearchChange: (query: string) => void;
-  onNavigateToTimeline: () => void;
+  onNavigateToTimeline?: () => void;
   onMenuToggle: () => void;
   isSidebarOpen: boolean;
   searchResults: GlobalSearchResult[];
   onSelectSearchResult: (result: GlobalSearchResult) => void;
+  context?: {
+    currencyUnit?: string;
+    budgetTitle?: string;
+    timelineLabel?: string;
+    timelineTitle?: string;
+    spoilerLabel?: string;
+    spoilerTitle?: string;
+    searchLabel?: string;
+    searchPlaceholder?: string;
+    resultScope?: string;
+  };
 }
 
 const getTimelineLabel = (scope: TimelineScope) => {
@@ -57,6 +68,7 @@ export const Topbar: React.FC<TopbarProps> = ({
   isSidebarOpen,
   searchResults,
   onSelectSearchResult,
+  context,
 }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeResultIndex, setActiveResultIndex] = useState(0);
@@ -84,12 +96,12 @@ export const Topbar: React.FC<TopbarProps> = ({
         }}
       >
         <label className="sr-only" htmlFor="global-search-input">
-          Search all hotel records
+          {context?.searchLabel ?? 'Search all hotel records'}
         </label>
         <Search className="global-search-icon" size={16} aria-hidden="true" />
         <input
           type="search"
-          placeholder="Search guests, lore, rooms, incidents…"
+          placeholder={context?.searchPlaceholder ?? 'Search guests, lore, rooms, incidents…'}
           value={searchQuery}
           onChange={(event) => {
             onSearchChange(event.target.value);
@@ -130,8 +142,8 @@ export const Topbar: React.FC<TopbarProps> = ({
           <div className="global-search-results" id="global-search-results" role="listbox">
             <div className="global-search-summary" role="presentation">
               {searchResults.length > 0
-                ? `${searchResults.length} result${searchResults.length === 1 ? '' : 's'} across hotel records`
-                : 'No matching hotel record'}
+                ? `${searchResults.length} result${searchResults.length === 1 ? '' : 's'} across ${context?.resultScope ?? 'hotel records'}`
+                : `No matching ${context?.resultScope === 'I.M.P. records' ? 'I.M.P. record' : 'hotel record'}`}
             </div>
             {searchResults.map((result, index) => (
               <button
@@ -155,29 +167,38 @@ export const Topbar: React.FC<TopbarProps> = ({
       </div>
 
       <div className="topbar-controls">
-        <div className="topbar-budget" title="Total Cash Balance (Hellbound Notes)">
+        <div className="topbar-budget" title={context?.budgetTitle ?? 'Total Cash Balance (Hellbound Notes)'}>
           <Coins size={16} aria-hidden="true" />
-          <span>{budget.toLocaleString()} HN</span>
+          <span>{budget.toLocaleString()} {context?.currencyUnit ?? 'HN'}</span>
         </div>
 
-        <button
-          type="button"
-          onClick={onNavigateToTimeline}
-          title="Change active timeline settings"
-          className={`topbar-timeline-btn${currentView === 'timeline' ? ' is-active' : ''}`}
-        >
-          <Calendar size={16} aria-hidden="true" />
-          <span>
-            Timeline: <strong>{getTimelineLabel(timelineScope)}</strong>
-          </span>
-        </button>
+        {onNavigateToTimeline ? (
+          <button
+            type="button"
+            onClick={onNavigateToTimeline}
+            title={context?.timelineTitle ?? 'Change active timeline settings'}
+            className={`topbar-timeline-btn${currentView === 'timeline' ? ' is-active' : ''}`}
+          >
+            <Calendar size={16} aria-hidden="true" />
+            <span>
+              Timeline: <strong>{context?.timelineLabel ?? getTimelineLabel(timelineScope)}</strong>
+            </span>
+          </button>
+        ) : (
+          <div className="topbar-timeline-btn" title={context?.timelineTitle}>
+            <Calendar size={16} aria-hidden="true" />
+            <span>
+              Timeline: <strong>{context?.timelineLabel ?? getTimelineLabel(timelineScope)}</strong>
+            </span>
+          </div>
+        )}
 
         <div
           className={`topbar-spoiler-state${hideSpoilers ? ' is-safe' : ' is-visible'}`}
-          title={hideSpoilers ? `Spoilers hidden through ${spoilerLevel}` : 'All spoilers visible'}
+          title={context?.spoilerTitle ?? (hideSpoilers ? `Spoilers hidden through ${spoilerLevel}` : 'All spoilers visible')}
         >
           {hideSpoilers ? <EyeOff size={14} aria-hidden="true" /> : <ShieldCheck size={14} aria-hidden="true" />}
-          <span>{hideSpoilers ? `Hidden: ${spoilerLevel}` : 'Spoilers visible'}</span>
+          <span>{context?.spoilerLabel ?? (hideSpoilers ? `Hidden: ${spoilerLevel}` : 'Spoilers visible')}</span>
         </div>
       </div>
     </header>

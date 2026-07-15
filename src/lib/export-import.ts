@@ -1,7 +1,13 @@
-import { DatabaseState, GameplayMeta } from '../types';
+import { DatabaseState, GameplayMeta, HelluvaBossSaveState } from '../types';
 import { getSeedData } from '../db/seed';
+import {
+  HELLUVA_APPROACHES,
+  HELLUVA_BOSS_DATA_VERSION,
+  HELLUVA_CONTRACTS,
+  HELLUVA_CREW_IDS
+} from '../expansions/helluva-boss/data';
 
-export const BACKUP_SCHEMA_VERSION = 3;
+export const BACKUP_SCHEMA_VERSION = 4;
 export const INVENTORY_MAX = 50;
 export const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
 
@@ -441,6 +447,205 @@ function parseGameplayMeta(value: unknown): { value?: GameplayMeta; error?: stri
   };
 }
 
+function parseHelluvaBossState(value: unknown): { value?: HelluvaBossSaveState; error?: string } {
+  if (!isRecord(value)) return { error: 'extensions.helluvaBoss must be an object.' };
+  if (!Number.isInteger(value.dataVersion) || Number(value.dataVersion) < 1) {
+    return { error: 'extensions.helluvaBoss.dataVersion must be a positive integer.' };
+  }
+  if (Number(value.dataVersion) > HELLUVA_BOSS_DATA_VERSION) {
+    return { error: `extensions.helluvaBoss uses unsupported data version ${value.dataVersion}.` };
+  }
+
+  const context = 'extensions.helluvaBoss';
+  const scalarError = firstError([
+    requireBoolean(value, 'enabled', context),
+    requireEnum(value, 'spoilerScope', new Set(['season_1', 'season_2']), context),
+    requireNumber(value, 'campaignDay', context, 1),
+    requireEnum(value, 'status', new Set(['active', 'victory', 'collapse']), context),
+    requireNullableString(value, 'activeContractId', context),
+    requireNumber(value, 'activePhaseIndex', context, 0, 2),
+    requireNumber(value, 'funds', context, -100000, 1000000),
+    requireNumber(value, 'heat', context, 0, 100),
+    requireNumber(value, 'cohesion', context, 0, 100),
+    requireNumber(value, 'discretion', context, 0, 100),
+    requireNumber(value, 'reputation', context, 0, 100),
+    requireStringArray(value, 'completedContractIds', context),
+    requireStringArray(value, 'selectedChoiceIds', context),
+    requireStringArray(value, 'operationLog', context)
+  ]);
+  if (scalarError) return { error: scalarError };
+  const integerFields = [
+    'campaignDay',
+    'activePhaseIndex',
+    'funds',
+    'heat',
+    'cohesion',
+    'discretion',
+    'reputation'
+  ];
+  const nonIntegerField = integerFields.find(key => !Number.isInteger(value[key]));
+  if (nonIntegerField) {
+    return { error: `${context}.${nonIntegerField} must be an integer.` };
+  }
+
+  const completedContractIds = value.completedContractIds as string[];
+  const selectedChoiceIds = value.selectedChoiceIds as string[];
+  if (duplicateValue(completedContractIds) !== null) return { error: `${context}.completedContractIds must not contain duplicates.` };
+  if (duplicateValue(selectedChoiceIds) !== null) return { error: `${context}.selectedChoiceIds must not contain duplicates.` };
+
+  const orderedContractIds = HELLUVA_CONTRACTS.map(contract => contract.id);
+  if (completedContractIds.length > orderedContractIds.length
+    || completedContractIds.some((id, index) => id !== orderedContractIds[index])) {
+    return { error: `${context}.completedContractIds must be the exact ordered prefix of the contract chain.` };
+  }
+  const expectedCampaignDay = completedContractIds.length + 1;
+  if (Number(value.campaignDay) !== expectedCampaignDay) {
+    return { error: `${context}.campaignDay must equal completedContractIds.length + 1 (${expectedCampaignDay}).` };
+  }
+
+  const activeContractId = value.activeContractId as string | null;
+  if (activeContractId !== null) {
+    const expectedActiveContractId = orderedContractIds[completedContractIds.length];
+    if (!expectedActiveContractId) {
+      return { error: `${context} cannot keep an active contract after all contracts are completed.` };
+    }
+    if (activeContractId !== expectedActiveContractId) {
+      return { error: `${context}.activeContractId must be the next uncompleted contract '${expectedActiveContractId}'.` };
+    }
+  }
+  if (activeContractId === null && Number(value.activePhaseIndex) !== 0) {
+    return { error: `${context}.activePhaseIndex must be 0 when no contract is active.` };
+  }
+  if (value.status !== 'active' && activeContractId !== null) {
+    return { error: `${context} cannot keep an active contract after an ending.` };
+  }
+  if (value.status === 'victory' && completedContractIds.length !== orderedContractIds.length) {
+    return { error: `${context}.status victory requires all ${orderedContractIds.length} contracts to be completed.` };
+  }
+  if (value.status === 'active' && completedContractIds.length === orderedContractIds.length) {
+    return { error: `${context}.status cannot remain active after all contracts are completed.` };
+  }
+
+  const crewFatigue = parseIntegerRecord(value.crewFatigue, `${context}.crewFatigue`, 100);
+  if (crewFatigue.error) return { error: crewFatigue.error };
+  const fatigueIds = Object.keys(crewFatigue.value!);
+  if (fatigueIds.length !== HELLUVA_CREW_IDS.length
+    || HELLUVA_CREW_IDS.some(crewId => !Object.prototype.hasOwnProperty.call(crewFatigue.value!, crewId))) {
+    return { error: `${context}.crewFatigue must contain exactly the four stable I.M.P. crew IDs.` };
+  }
+  const averageFatigue = HELLUVA_CREW_IDS.reduce(
+    (total, crewId) => total + crewFatigue.value![crewId],
+    0
+  ) / HELLUVA_CREW_IDS.length;
+  const collapseThresholdReached = Number(value.heat) >= 100
+    || Number(value.cohesion) <= 0
+    || Number(value.funds) <= -500
+    || averageFatigue >= 100;
+  if (value.status === 'collapse' && !collapseThresholdReached) {
+    return { error: `${context}.status collapse requires a terminal heat, cohesion, funds, or fatigue threshold.` };
+  }
+  if (value.status !== 'collapse' && collapseThresholdReached) {
+    return { error: `${context} terminal heat, cohesion, funds, or fatigue requires status collapse.` };
+  }
+
+  const approachById = new Map(HELLUVA_APPROACHES.map(approach => [approach.id, approach]));
+  const expectedResolvedPhases = new Set<string>();
+  for (const contractId of completedContractIds) {
+    for (const phaseIndex of [0, 1, 2]) expectedResolvedPhases.add(`${contractId}:${phaseIndex}`);
+  }
+  if (activeContractId !== null) {
+    for (let phaseIndex = 0; phaseIndex < Number(value.activePhaseIndex); phaseIndex += 1) {
+      expectedResolvedPhases.add(`${activeContractId}:${phaseIndex}`);
+    }
+  }
+
+  const resolvedPhases = new Set<string>();
+  const resolvedPhaseDetails: Array<{ contractId: string; phaseIndex: number; phaseKey: string }> = [];
+  for (const selectedChoiceId of selectedChoiceIds) {
+    const parts = selectedChoiceId.split(':');
+    if (parts.length !== 3 || !/^(0|1|2)$/.test(parts[1])) {
+      return { error: `${context}.selectedChoiceIds contains malformed choice '${selectedChoiceId}'.` };
+    }
+    const [contractId, phaseText, choiceId] = parts;
+    const phaseIndex = Number(phaseText);
+    const approach = approachById.get(choiceId);
+    if (!approach || approach.phaseIndex !== phaseIndex) {
+      return { error: `${context}.selectedChoiceIds contains choice '${choiceId}' for the wrong or unsupported phase.` };
+    }
+    const phaseKey = `${contractId}:${phaseIndex}`;
+    if (resolvedPhases.has(phaseKey)) {
+      return { error: `${context}.selectedChoiceIds must contain exactly one choice per resolved phase.` };
+    }
+    resolvedPhases.add(phaseKey);
+    resolvedPhaseDetails.push({ contractId, phaseIndex, phaseKey });
+  }
+
+  if (value.status === 'collapse') {
+    const partialCollapsePhases = resolvedPhaseDetails.filter(({ phaseKey }) => !expectedResolvedPhases.has(phaseKey));
+    if (partialCollapsePhases.length > 0) {
+      const nextContractId = orderedContractIds[completedContractIds.length];
+      const isStrictPartialPrefix = Boolean(nextContractId)
+        && partialCollapsePhases.length <= 2
+        && partialCollapsePhases.every(({ contractId }) => contractId === nextContractId)
+        && Array.from({ length: partialCollapsePhases.length }, (_, phaseIndex) => (
+          resolvedPhases.has(`${nextContractId}:${phaseIndex}`)
+        )).every(Boolean);
+      if (!isStrictPartialPrefix) {
+        return { error: `${context}.selectedChoiceIds may only retain the phase prefix of the next contract that triggered collapse.` };
+      }
+      for (let phaseIndex = 0; phaseIndex < partialCollapsePhases.length; phaseIndex += 1) {
+        expectedResolvedPhases.add(`${nextContractId}:${phaseIndex}`);
+      }
+    }
+  }
+
+  const unexpectedResolvedPhase = resolvedPhaseDetails.find(({ phaseKey }) => !expectedResolvedPhases.has(phaseKey));
+  if (unexpectedResolvedPhase) {
+    return { error: `${context}.selectedChoiceIds contains unresolved or out-of-sequence phase '${unexpectedResolvedPhase.phaseKey}'.` };
+  }
+  const missingResolvedPhase = [...expectedResolvedPhases].find(phaseKey => !resolvedPhases.has(phaseKey));
+  if (missingResolvedPhase) {
+    return { error: `${context}.selectedChoiceIds is missing resolved phase '${missingResolvedPhase}'.` };
+  }
+
+  return {
+    value: {
+      enabled: Boolean(value.enabled),
+      dataVersion: Number(value.dataVersion),
+      spoilerScope: value.spoilerScope as HelluvaBossSaveState['spoilerScope'],
+      campaignDay: Number(value.campaignDay),
+      status: value.status as HelluvaBossSaveState['status'],
+      activeContractId,
+      activePhaseIndex: Number(value.activePhaseIndex),
+      completedContractIds: [...completedContractIds],
+      selectedChoiceIds: [...selectedChoiceIds],
+      funds: Number(value.funds),
+      heat: Number(value.heat),
+      cohesion: Number(value.cohesion),
+      discretion: Number(value.discretion),
+      reputation: Number(value.reputation),
+      crewFatigue: crewFatigue.value!,
+      operationLog: [...value.operationLog as string[]].slice(0, 60)
+    }
+  };
+}
+
+function parseExtensions(
+  value: unknown,
+  isLegacy: boolean
+): { value?: DatabaseState['extensions']; error?: string; migrated: boolean } {
+  if (value === undefined) {
+    return isLegacy
+      ? { value: {}, migrated: true }
+      : { error: `Invalid schema v${BACKUP_SCHEMA_VERSION} backup: missing required structure field 'extensions'.`, migrated: false };
+  }
+  if (!isRecord(value)) return { error: 'Invalid backup: extensions must be an object.', migrated: false };
+  if (value.helluvaBoss === undefined) return { value: {}, migrated: false };
+  const helluvaBoss = parseHelluvaBossState(value.helluvaBoss);
+  if (helluvaBoss.error || !helluvaBoss.value) return { error: `Invalid backup: ${helluvaBoss.error || 'Helluva Boss extension state is invalid.'}`, migrated: false };
+  return { value: { helluvaBoss: helluvaBoss.value }, migrated: false };
+}
+
 function resolveStorage(storage?: StorageLike): StorageLike | undefined {
   if (storage) return storage;
   return typeof localStorage !== 'undefined' ? localStorage : undefined;
@@ -545,6 +750,14 @@ export class ExportImport {
       migrated = true;
       warnings.push('Legacy gameplay cooldowns and milestones were initialized in durable gameplayMeta state.');
     }
+    const extensionsResult = parseExtensions(input.extensions, isLegacy);
+    if (extensionsResult.error || !extensionsResult.value) {
+      return { isValid: false, error: extensionsResult.error || 'Invalid backup: extensions are invalid.' };
+    }
+    if (extensionsResult.migrated) {
+      migrated = true;
+      warnings.push('Legacy backup migrated with optional content extensions disabled and no core data loss.');
+    }
     const state: DatabaseState = {
       characters: cloneJson(input.characters as DatabaseState['characters']),
       rooms: cloneJson(input.rooms as DatabaseState['rooms']),
@@ -566,6 +779,7 @@ export class ExportImport {
       settings: isLegacy
         ? { ...seed.settings, ...(input.settings as Partial<DatabaseState['settings']>) }
         : cloneJson(input.settings as DatabaseState['settings']),
+      extensions: cloneJson(extensionsResult.value),
       gameplayMeta: gameplayMetaResult.value
     };
     if (gameplayMetaResult.migrated) {
@@ -778,6 +992,7 @@ export class ExportImport {
       resourceLedger: cloneJson(state.resourceLedger),
       auditLogs: cloneJson(state.auditLogs),
       settings: cloneJson(state.settings),
+      extensions: cloneJson(state.extensions),
       gameplayMeta: cloneJson(state.gameplayMeta || DEFAULT_GAMEPLAY_META)
     };
   }

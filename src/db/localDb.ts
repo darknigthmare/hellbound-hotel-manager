@@ -8,7 +8,8 @@ import {
   LoreEntry,
   AuditLog,
   AppSettings,
-  GameplayMeta
+  GameplayMeta,
+  HelluvaBossSpoilerScope
 } from '../types';
 import { getSeedData } from './seed';
 import {
@@ -20,6 +21,13 @@ import {
   InventoryBackup,
   StorageLike
 } from '../lib/export-import';
+import {
+  createHelluvaBossSaveState,
+  resolveHelluvaChoice,
+  setHelluvaBossEnabled,
+  setHelluvaBossSpoilerScope,
+  startHelluvaContract
+} from '../expansions/helluva-boss/engine';
 
 const STORAGE_KEY = 'hellbound_hotel_db_state';
 const RECOVERY_PREFIX = `${STORAGE_KEY}_recovery_`;
@@ -632,6 +640,60 @@ export class LocalDb {
 
   public saveSettings(settings: AppSettings): boolean {
     return this.commit({ ...this.state, settings }, 'SETTINGS_SAVE');
+  }
+
+  public toggleHelluvaBossExtension(enabled: boolean): boolean {
+    return this.transaction('HELLUVA_EXTENSION_TOGGLE', (draft) => {
+      draft.extensions.helluvaBoss = setHelluvaBossEnabled(draft.extensions.helluvaBoss, enabled);
+    }, {
+      action: enabled ? 'HELLUVA_EXTENSION_ENABLED' : 'HELLUVA_EXTENSION_DISABLED',
+      details: enabled
+        ? 'Enabled the isolated Helluva Boss Simulation AU campaign.'
+        : 'Disabled the Helluva Boss extension while preserving its campaign progress.'
+    });
+  }
+
+  public setHelluvaBossSpoilers(spoilerScope: HelluvaBossSpoilerScope): boolean {
+    return this.transaction('HELLUVA_SPOILER_SCOPE', (draft) => {
+      const current = draft.extensions.helluvaBoss;
+      if (!current) throw new Error('Install the Helluva Boss extension before changing its spoiler scope.');
+      draft.extensions.helluvaBoss = setHelluvaBossSpoilerScope(current, spoilerScope);
+    }, {
+      action: 'HELLUVA_SPOILER_SCOPE_CHANGED',
+      details: `Helluva Boss reference visibility changed to ${spoilerScope}.`
+    });
+  }
+
+  public startHelluvaBossContract(contractId: string): boolean {
+    return this.transaction('HELLUVA_CONTRACT_START', (draft) => {
+      const current = draft.extensions.helluvaBoss;
+      if (!current) throw new Error('Install the Helluva Boss extension before accepting contracts.');
+      draft.extensions.helluvaBoss = startHelluvaContract(current, contractId);
+    }, {
+      action: 'HELLUVA_CONTRACT_STARTED',
+      details: `Accepted Helluva Boss Simulation AU contract '${contractId}'.`
+    });
+  }
+
+  public resolveHelluvaBossChoice(choiceId: string): boolean {
+    return this.transaction('HELLUVA_CONTRACT_CHOICE', (draft) => {
+      const current = draft.extensions.helluvaBoss;
+      if (!current) throw new Error('Install the Helluva Boss extension before resolving contract choices.');
+      draft.extensions.helluvaBoss = resolveHelluvaChoice(current, choiceId).state;
+    }, {
+      action: 'HELLUVA_CONTRACT_CHOICE_APPLIED',
+      details: `Applied Helluva Boss Simulation AU approach '${choiceId}'.`
+    });
+  }
+
+  public resetHelluvaBossCampaign(): boolean {
+    return this.transaction('HELLUVA_CAMPAIGN_RESET', (draft) => {
+      const enabled = draft.extensions.helluvaBoss?.enabled ?? true;
+      draft.extensions.helluvaBoss = createHelluvaBossSaveState(enabled);
+    }, {
+      action: 'HELLUVA_CAMPAIGN_RESET',
+      details: 'Reset only Helluva Boss campaign progress; Hazbin hotel records were preserved.'
+    });
   }
 }
 

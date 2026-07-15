@@ -1063,6 +1063,7 @@ export function getSeedData(): DatabaseState {
     relationships,
     resourceLedger,
     auditLogs,
-    settings
+    settings,
+    extensions: {}
   };
 }

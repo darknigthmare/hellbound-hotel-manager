@@ -2,26 +2,53 @@
 
 The source atlases use a fixed 6-column by 4-row layout. The first column is
 the neutral idle frame used by the directory UI; complete atlases remain
-available in the in-app sprite gallery.
+available in the in-app sprite gallery. Hazbin atlases are required, while the
+Helluva Boss content pack is skipped atomically until all four of its atlases
+are available.
 """
 
 from __future__ import annotations
 
+import argparse
 from collections import deque
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Sequence
 
 from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SHEET_DIR = ROOT / "public" / "assets" / "sprites" / "sheets"
-PORTRAIT_DIR = ROOT / "public" / "assets" / "sprites" / "portraits"
+SPRITE_DIR = ROOT / "public" / "assets" / "sprites"
 COLUMNS = 6
 ROWS = 4
 EXPECTED_SHEET_SIZE = (1536, 1024)
 MIN_CELL_ALPHA_RATIO = 0.05
 
-SHEETS: tuple[tuple[str, tuple[str, str, str, str]], ...] = (
+
+@dataclass(frozen=True)
+class SpriteCollection:
+    """One independently publishable set of atlases and portraits."""
+
+    name: str
+    sheet_dir: Path
+    portrait_dir: Path
+    sheets: tuple[tuple[str, tuple[str, ...]], ...]
+    required: bool
+
+
+@dataclass(frozen=True)
+class PreparedSheet:
+    """A validated atlas ready for portrait extraction."""
+
+    image: Image.Image
+    character_ids: tuple[str, ...]
+    cell_width: int
+    cell_height: int
+    portrait_dir: Path
+
+
+HAZBIN_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("core-a.png", ("charlie", "vaggie", "angeldust", "alastor")),
     ("core-b.png", ("husk", "niffty", "sirpentious", "lucifer")),
     ("hell-antagonists.png", ("cherribomb", "vox", "valentino", "velvette")),
@@ -29,6 +56,80 @@ SHEETS: tuple[tuple[str, tuple[str, str, str, str]], ...] = (
     ("overlords.png", ("carmilla", "rosie", "zestial", "zeezi")),
     ("season2-au.png", ("baxter", "abel", "sim_applicant_marlow", "sim_applicant_ember")),
 )
+
+HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("helluva-core.png", ("hb_blitzo", "hb_moxxie", "hb_millie", "hb_loona")),
+    ("helluva-allies.png", ("hb_stolas", "hb_octavia", "hb_fizzarolli", "hb_verosika")),
+    ("helluva-powers.png", ("hb_asmodeus", "hb_beelzebub", "hb_striker", "hb_stella")),
+    ("helluva-extended.png", ("hb_crimson", "hb_vortex", "hb_sallie_may", "hb_andrealphus")),
+)
+
+COLLECTIONS: tuple[SpriteCollection, ...] = (
+    SpriteCollection(
+        name="Hazbin Hotel",
+        sheet_dir=SPRITE_DIR / "sheets",
+        portrait_dir=SPRITE_DIR / "portraits",
+        sheets=HAZBIN_SHEETS,
+        required=True,
+    ),
+    SpriteCollection(
+        name="Helluva Boss",
+        sheet_dir=SPRITE_DIR / "helluva" / "sheets",
+        portrait_dir=SPRITE_DIR / "helluva" / "portraits",
+        sheets=HELLUVA_SHEETS,
+        required=False,
+    ),
+)
+
+
+def relative_to_root(path: Path) -> str:
+    """Return stable repository-relative paths in diagnostics."""
+
+    return path.relative_to(ROOT).as_posix()
+
+
+def validate_collection_definitions(collections: Sequence[SpriteCollection]) -> None:
+    """Reject unsafe paths, malformed row maps, and duplicate output IDs."""
+
+    sheet_paths: set[Path] = set()
+    portrait_paths: set[Path] = set()
+
+    for collection in collections:
+        if not collection.sheets:
+            raise ValueError(f"{collection.name} has no configured sprite atlases")
+
+        for sheet_name, character_ids in collection.sheets:
+            if Path(sheet_name).name != sheet_name or Path(sheet_name).suffix.lower() != ".png":
+                raise ValueError(
+                    f"{collection.name} has an invalid atlas filename: {sheet_name!r}"
+                )
+            if len(character_ids) != ROWS:
+                raise ValueError(
+                    f"{collection.name}/{sheet_name} maps {len(character_ids)} rows; "
+                    f"expected exactly {ROWS}"
+                )
+
+            sheet_path = collection.sheet_dir / sheet_name
+            if sheet_path in sheet_paths:
+                raise ValueError(f"Duplicate sprite atlas path: {relative_to_root(sheet_path)}")
+            sheet_paths.add(sheet_path)
+
+            for character_id in character_ids:
+                if (
+                    not character_id
+                    or Path(character_id).name != character_id
+                    or not all(character.isalnum() or character == "_" for character in character_id)
+                ):
+                    raise ValueError(
+                        f"{collection.name}/{sheet_name} has an unsafe character ID: "
+                        f"{character_id!r}"
+                    )
+                portrait_path = collection.portrait_dir / f"{character_id}.png"
+                if portrait_path in portrait_paths:
+                    raise ValueError(
+                        f"Duplicate portrait path: {relative_to_root(portrait_path)}"
+                    )
+                portrait_paths.add(portrait_path)
 
 
 def count_visible_pixels(alpha: Image.Image, threshold: int = 20) -> int:
@@ -218,34 +319,72 @@ def extract_idle_pose(
     return sheet.crop((0, top, cell_width, bottom)), allowed_centre_y
 
 
-def main() -> None:
-    PORTRAIT_DIR.mkdir(parents=True, exist_ok=True)
-    prepared: list[tuple[Image.Image, tuple[str, str, str, str], int, int]] = []
+def prepare_sheets(require_helluva: bool) -> list[PreparedSheet]:
+    """Load complete collections and validate every configured 6x4 cell."""
 
-    # Validate every atlas before touching a published portrait.
-    for sheet_name, character_ids in SHEETS:
-        sheet_path = SHEET_DIR / sheet_name
-        if not sheet_path.is_file():
-            raise FileNotFoundError(f"Missing sprite atlas: {sheet_path}")
-        with Image.open(sheet_path) as source:
-            sheet = source.convert("RGBA")
-        cell_width, cell_height = validate_sheet(sheet, sheet_name)
-        prepared.append((sheet, character_ids, cell_width, cell_height))
+    validate_collection_definitions(COLLECTIONS)
+    prepared: list[PreparedSheet] = []
+
+    # Validate every atlas before touching a published portrait. Optional packs
+    # are all-or-nothing so a partial generation pass cannot publish mixed rows.
+    for collection in COLLECTIONS:
+        missing_paths = [
+            collection.sheet_dir / sheet_name
+            for sheet_name, _ in collection.sheets
+            if not (collection.sheet_dir / sheet_name).is_file()
+        ]
+        if missing_paths:
+            diagnostic = ", ".join(relative_to_root(path) for path in missing_paths)
+            if collection.required or require_helluva:
+                raise FileNotFoundError(
+                    f"{collection.name} is missing {len(missing_paths)} sprite atlas(es): "
+                    f"{diagnostic}"
+                )
+            print(
+                f"Skipped optional {collection.name} portraits: missing "
+                f"{len(missing_paths)}/{len(collection.sheets)} atlases: {diagnostic}"
+            )
+            continue
+
+        for sheet_name, character_ids in collection.sheets:
+            sheet_path = collection.sheet_dir / sheet_name
+            with Image.open(sheet_path) as source:
+                sheet = source.convert("RGBA")
+            cell_width, cell_height = validate_sheet(
+                sheet,
+                relative_to_root(sheet_path),
+            )
+            prepared.append(
+                PreparedSheet(
+                    image=sheet,
+                    character_ids=character_ids,
+                    cell_width=cell_width,
+                    cell_height=cell_height,
+                    portrait_dir=collection.portrait_dir,
+                )
+            )
+
+    return prepared
+
+
+def write_portraits(prepared: Sequence[PreparedSheet]) -> int:
+    """Extract validated idle poses and publish them transactionally."""
 
     written = 0
     staged_portraits: list[tuple[Path, Path]] = []
     try:
-        for sheet, character_ids, cell_width, cell_height in prepared:
-            for row, character_id in enumerate(character_ids):
+        for prepared_sheet in prepared:
+            prepared_sheet.portrait_dir.mkdir(parents=True, exist_ok=True)
+            for row, character_id in enumerate(prepared_sheet.character_ids):
                 cell, allowed_centre_y = extract_idle_pose(
-                    sheet,
+                    prepared_sheet.image,
                     row,
-                    cell_width,
-                    cell_height,
+                    prepared_sheet.cell_width,
+                    prepared_sheet.cell_height,
                 )
                 portrait = fit_on_square(cell, allowed_centre_y=allowed_centre_y)
-                staged_path = PORTRAIT_DIR / f".{character_id}.tmp.png"
-                destination = PORTRAIT_DIR / f"{character_id}.png"
+                staged_path = prepared_sheet.portrait_dir / f".{character_id}.tmp.png"
+                destination = prepared_sheet.portrait_dir / f"{character_id}.png"
                 portrait.save(staged_path, optimize=True)
                 staged_portraits.append((staged_path, destination))
                 written += 1
@@ -256,7 +395,45 @@ def main() -> None:
         for staged_path, _ in staged_portraits:
             staged_path.unlink(missing_ok=True)
 
-    print(f"Wrote {written} character portraits to {PORTRAIT_DIR}")
+    return written
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Validate 6x4 sprite atlases and build square idle portraits."
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="validate available atlases and row mappings without writing portraits",
+    )
+    parser.add_argument(
+        "--require-helluva",
+        action="store_true",
+        help="fail when any Helluva Boss atlas is not available",
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    try:
+        prepared = prepare_sheets(require_helluva=args.require_helluva)
+    except (FileNotFoundError, ValueError) as error:
+        raise SystemExit(f"Sprite asset build failed: {error}") from None
+    atlas_count = len(prepared)
+    portrait_count = sum(len(sheet.character_ids) for sheet in prepared)
+    cell_count = atlas_count * COLUMNS * ROWS
+
+    if args.check:
+        print(
+            f"Validated {atlas_count} sprite atlases ({cell_count} cells); "
+            f"{portrait_count} portraits are ready to build."
+        )
+        return
+
+    written = write_portraits(prepared)
+    print(f"Wrote {written} character portraits across configured sprite collections.")
 
 
 if __name__ == "__main__":

@@ -8,11 +8,14 @@ import {
   Hourglass,
   LayoutDashboard,
   Network,
+  PackageOpen,
   Radio,
   Settings,
   ShieldAlert,
+  Target,
   Users,
   X,
+  type LucideIcon,
 } from 'lucide-react';
 
 export type ViewType =
@@ -27,6 +30,8 @@ export type ViewType =
   | 'lore'
   | 'relations'
   | 'resources'
+  | 'extensions'
+  | 'helluva'
   | 'settings';
 
 interface SidebarProps {
@@ -35,22 +40,57 @@ interface SidebarProps {
   appName: string;
   isOpen: boolean;
   onClose: () => void;
+  helluvaEnabled: boolean;
 }
 
-const menuItems = [
-  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'characters', label: 'Residents & Staff', icon: Users },
-  { id: 'rooms', label: 'Rooms Registry', icon: BedDouble },
-  { id: 'rehab', label: 'Rehabilitation', icon: HeartHandshake },
-  { id: 'incidents', label: 'Security Incidents', icon: ShieldAlert },
-  { id: 'staff', label: 'Staff Scheduler', icon: CalendarRange },
-  { id: 'reputation', label: 'Reputation & PR', icon: Radio },
-  { id: 'timeline', label: 'Timeline Selector', icon: Hourglass },
-  { id: 'lore', label: 'Lore Codex', icon: BookOpen },
-  { id: 'relations', label: 'Factions Graph', icon: Network },
-  { id: 'resources', label: 'Ledger & Supplies', icon: Coins },
-  { id: 'settings', label: 'Settings & Data', icon: Settings },
-] as const;
+interface MenuItem {
+  id: ViewType;
+  label: string;
+  icon: LucideIcon;
+  badge?: string;
+}
+
+interface MenuSection {
+  label: string;
+  items: MenuItem[];
+}
+
+const getMenuSections = (helluvaEnabled: boolean): MenuSection[] => [
+  {
+    label: 'Hotel operations',
+    items: [
+      { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+      { id: 'characters', label: 'Residents & Staff', icon: Users },
+      { id: 'rooms', label: 'Rooms Registry', icon: BedDouble },
+      { id: 'rehab', label: 'Rehabilitation', icon: HeartHandshake },
+      { id: 'incidents', label: 'Security Incidents', icon: ShieldAlert },
+      { id: 'staff', label: 'Staff Scheduler', icon: CalendarRange },
+      { id: 'reputation', label: 'Reputation & PR', icon: Radio },
+      { id: 'resources', label: 'Ledger & Supplies', icon: Coins }
+    ]
+  },
+  {
+    label: 'Lore & continuity',
+    items: [
+      { id: 'timeline', label: 'Timeline Selector', icon: Hourglass },
+      { id: 'lore', label: 'Lore Codex', icon: BookOpen },
+      { id: 'relations', label: 'Factions Graph', icon: Network }
+    ]
+  },
+  {
+    label: 'Content extensions',
+    items: [
+      { id: 'extensions', label: 'Manage Extensions', icon: PackageOpen },
+      ...(helluvaEnabled
+        ? [{ id: 'helluva' as const, label: 'Helluva Boss · I.M.P.', icon: Target, badge: 'DLC' }]
+        : [])
+    ]
+  },
+  {
+    label: 'System',
+    items: [{ id: 'settings', label: 'Settings & Data', icon: Settings }]
+  }
+];
 
 export const Sidebar: React.FC<SidebarProps> = ({
   currentView,
@@ -58,6 +98,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   appName,
   isOpen,
   onClose,
+  helluvaEnabled,
 }) => {
   const sidebarRef = useRef<HTMLElement>(null);
   const onCloseRef = useRef(onClose);
@@ -134,24 +175,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       <nav className="sidebar-navigation">
-        {menuItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = currentView === item.id;
+        {getMenuSections(helluvaEnabled).map((section) => (
+          <div className="sidebar-group" key={section.label}>
+            <span className="sidebar-group-title">{section.label}</span>
+            {section.items.map((item) => {
+              const Icon = item.icon;
+              const isActive = currentView === item.id;
 
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onViewChange(item.id)}
-              className={`sidebar-link-btn${isActive ? ' is-active' : ''}`}
-              id={`nav-${item.id}`}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              <Icon size={18} aria-hidden="true" />
-              <span>{item.label}</span>
-            </button>
-          );
-        })}
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => onViewChange(item.id)}
+                  className={`sidebar-link-btn${isActive ? ' is-active' : ''}`}
+                  id={`nav-${item.id}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  <Icon size={18} aria-hidden="true" />
+                  <span>{item.label}</span>
+                  {item.badge && <small className="sidebar-link-badge">{item.badge}</small>}
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </nav>
 
       <div className="sidebar-footer">

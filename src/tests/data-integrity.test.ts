@@ -116,7 +116,7 @@ describe('versioned backup integrity', () => {
     expect(ExportImport.validateBackup(JSON.stringify(exported), { requireInventory: true }).isValid).toBe(true);
   });
 
-  it('requires every schema-v3 section while migrating only older backups', () => {
+  it('requires every schema-v4 section while migrating only older backups', () => {
     const storage = new MemoryStorage();
     const complete = JSON.parse(ExportImport.exportToJson(getSeedData(), storage)) as Record<string, unknown>;
 
@@ -129,6 +129,11 @@ describe('versioned backup integrity', () => {
     delete missingMeta.gameplayMeta;
     expect(ExportImport.validateBackup(JSON.stringify(missingMeta), { requireInventory: true }).error)
       .toContain("missing required structure field 'gameplayMeta'");
+
+    const missingExtensions = { ...complete };
+    delete missingExtensions.extensions;
+    expect(ExportImport.validateBackup(JSON.stringify(missingExtensions), { requireInventory: true }).error)
+      .toContain("missing required structure field 'extensions'");
 
     const missingInventory = { ...complete };
     delete missingInventory.inventory;
@@ -143,14 +148,25 @@ describe('versioned backup integrity', () => {
     expect(ExportImport.validateBackup(JSON.stringify(incompleteReputation), { requireInventory: true }).error)
       .toContain('reputation.internalTrust');
 
+    const legacyV3: Record<string, unknown> = { ...complete, schemaVersion: 3 };
+    delete legacyV3.extensions;
+    const legacyResult = ExportImport.validateBackup(JSON.stringify(legacyV3), { requireInventory: true });
+    expect(legacyResult.isValid).toBe(true);
+    expect(legacyResult.migrated).toBe(true);
+    expect(legacyResult.parsedState?.extensions).toEqual({});
+    expect(legacyResult.warnings).toContain(
+      'Legacy backup migrated with optional content extensions disabled and no core data loss.'
+    );
+
     const legacyV2: Record<string, unknown> = { ...complete, schemaVersion: 2 };
+    delete legacyV2.extensions;
     delete legacyV2.gameplayMeta;
     delete legacyV2.inventory;
     delete legacyV2.incidents;
-    const legacyResult = ExportImport.validateBackup(JSON.stringify(legacyV2), { requireInventory: true });
-    expect(legacyResult.isValid).toBe(true);
-    expect(legacyResult.migrated).toBe(true);
-    expect(legacyResult.parsedState?.inventory).toEqual(DEFAULT_INVENTORY);
+    const olderLegacyResult = ExportImport.validateBackup(JSON.stringify(legacyV2), { requireInventory: true });
+    expect(olderLegacyResult.isValid).toBe(true);
+    expect(olderLegacyResult.migrated).toBe(true);
+    expect(olderLegacyResult.parsedState?.inventory).toEqual(DEFAULT_INVENTORY);
   });
 
   it('surfaces malformed stored inventory instead of silently using defaults', () => {

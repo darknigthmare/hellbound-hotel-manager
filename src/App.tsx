@@ -4,6 +4,11 @@ import { Sidebar, ViewType } from './components/Sidebar';
 import { GlobalSearchResult, Topbar } from './components/Topbar';
 import { LoreValidation } from './lib/lore-validation';
 import { RulesEngine } from './lib/rules-engine';
+import {
+  HELLUVA_CHARACTERS,
+  HELLUVA_CONTRACTS,
+  HELLUVA_LORE,
+} from './expansions/helluva-boss/data';
 import './styles/theme.css';
 
 const Dashboard = lazy(() => import('./pages/Dashboard').then(module => ({ default: module.Dashboard })));
@@ -18,6 +23,8 @@ const LoreCodex = lazy(() => import('./pages/LoreCodex').then(module => ({ defau
 const Relations = lazy(() => import('./pages/Relations').then(module => ({ default: module.Relations })));
 const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
 const Settings = lazy(() => import('./pages/Settings').then(module => ({ default: module.Settings })));
+const Extensions = lazy(() => import('./pages/Extensions').then(module => ({ default: module.Extensions })));
+const HelluvaBoss = lazy(() => import('./pages/HelluvaBoss').then(module => ({ default: module.HelluvaBoss })));
 
 export const App: React.FC = () => {
   // Navigation active view
@@ -38,6 +45,9 @@ export const App: React.FC = () => {
 
   // Core database state hook
   const [dbState, setDbState] = useState(() => db.getFullState());
+  const helluvaState = dbState.extensions.helluvaBoss;
+  const helluvaEnabled = Boolean(helluvaState?.enabled);
+  const isHelluvaView = currentView === 'helluva';
 
   const handleRefreshState = () => {
     setDbState(db.getFullState());
@@ -47,12 +57,12 @@ export const App: React.FC = () => {
     if (charId) {
       setSelectedCharacterId(charId);
     }
-    setCurrentView(view);
+    setCurrentView(view === 'helluva' && !helluvaEnabled ? 'extensions' : view);
     setIsSidebarOpen(false);
   };
 
   const handleViewChange = (view: ViewType) => {
-    setCurrentView(view);
+    setCurrentView(view === 'helluva' && !helluvaEnabled ? 'extensions' : view);
     setIsSidebarOpen(false);
   };
 
@@ -226,11 +236,61 @@ export const App: React.FC = () => {
       }
     });
 
+    if (helluvaEnabled && helluvaState) {
+      const spoilerVisible = (scope: 'season_1' | 'season_2') => (
+        helluvaState.spoilerScope === 'season_2' || scope === 'season_1'
+      );
+
+      HELLUVA_CHARACTERS.forEach((character) => {
+        if (!spoilerVisible(character.spoilerScope)) return;
+        if (includes(character.name, character.alias, character.species, character.role, character.affiliation, character.description)) {
+          results.push({
+            id: `helluva-character-${character.id}`,
+            label: character.name,
+            meta: `Helluva Boss • ${character.role} • ${character.affiliation}`,
+            view: 'helluva',
+            searchTerm: character.name,
+            targetId: `helluva-character-${character.id}`,
+          });
+        }
+      });
+
+      HELLUVA_CONTRACTS.forEach((contract) => {
+        if (includes(contract.title, contract.client, contract.location, contract.difficulty, contract.summary)) {
+          results.push({
+            id: `helluva-contract-${contract.id}`,
+            label: contract.title,
+            meta: `I.M.P. Simulation AU contract • Chapter ${contract.chapter} • ${contract.difficulty}`,
+            view: 'helluva',
+            searchTerm: contract.title,
+            targetId: `helluva-contract-${contract.id}`,
+          });
+        }
+      });
+
+      HELLUVA_LORE.forEach((entry) => {
+        if (!spoilerVisible(entry.spoilerScope)) return;
+        if (includes(entry.title, entry.category, entry.description, entry.sourceRef)) {
+          results.push({
+            id: `helluva-lore-${entry.id}`,
+            label: entry.title,
+            meta: `Helluva lore • ${entry.category} • ${entry.sourceRef}`,
+            view: 'helluva',
+            searchTerm: entry.title,
+            targetId: `helluva-lore-${entry.id}`,
+          });
+        }
+      });
+    }
+
+    if (isHelluvaView) {
+      return results.filter((result) => result.view === 'helluva').slice(0, 12);
+    }
     return results.slice(0, 12);
-  }, [dbState, searchQuery]);
+  }, [dbState, helluvaEnabled, helluvaState, isHelluvaView, searchQuery]);
 
   const handleSelectSearchResult = (result: GlobalSearchResult) => {
-    setCurrentView(result.view);
+    setCurrentView(result.view === 'helluva' && !helluvaEnabled ? 'extensions' : result.view);
     setSearchQuery(result.searchTerm ?? result.label);
     searchSequenceRef.current += 1;
     setPendingSearchTarget({ result, sequence: searchSequenceRef.current });
@@ -328,6 +388,22 @@ export const App: React.FC = () => {
             searchQuery={searchQuery}
           />
         );
+      case 'extensions':
+        return (
+          <Extensions
+            state={dbState}
+            onStateChange={handleRefreshState}
+            onOpenHelluva={() => handleViewChange('helluva')}
+          />
+        );
+      case 'helluva':
+        return (
+          <HelluvaBoss
+            state={dbState}
+            onStateChange={handleRefreshState}
+            onManageExtensions={() => handleViewChange('extensions')}
+          />
+        );
       case 'settings':
         return (
           <Settings 
@@ -355,6 +431,7 @@ export const App: React.FC = () => {
         appName={dbState.settings.appName}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
+        helluvaEnabled={helluvaEnabled}
       />
 
       {/* Main Panel */}
@@ -364,16 +441,27 @@ export const App: React.FC = () => {
         <Topbar 
           currentView={currentView}
           timelineScope={dbState.timeline.current}
-          hideSpoilers={dbState.timeline.hideSpoilers}
+          hideSpoilers={isHelluvaView ? helluvaState?.spoilerScope === 'season_1' : dbState.timeline.hideSpoilers}
           spoilerLevel={dbState.timeline.spoilerLevel}
-          budget={budgetBalance}
+          budget={isHelluvaView ? helluvaState?.funds ?? 0 : budgetBalance}
           searchQuery={searchQuery}
           onSearchChange={(q) => setSearchQuery(q)}
-          onNavigateToTimeline={() => setCurrentView('timeline')}
+          onNavigateToTimeline={isHelluvaView ? undefined : () => setCurrentView('timeline')}
           onMenuToggle={() => setIsSidebarOpen((open) => !open)}
           isSidebarOpen={isSidebarOpen}
           searchResults={globalSearchResults}
           onSelectSearchResult={handleSelectSearchResult}
+          context={isHelluvaView ? {
+            currencyUnit: 'cr',
+            budgetTitle: 'I.M.P. operational funds (Simulation AU credits)',
+            timelineLabel: helluvaState?.spoilerScope === 'season_1' ? 'Helluva Season 1' : 'Helluva Seasons 1–2',
+            timelineTitle: 'Helluva Boss spoiler scope is managed on this page',
+            spoilerLabel: helluvaState?.spoilerScope === 'season_1' ? 'Season 2 hidden' : 'Season 2 visible',
+            spoilerTitle: 'Helluva Boss reference visibility; campaign contracts remain Simulation AU',
+            searchLabel: 'Search I.M.P. contracts, characters and lore',
+            searchPlaceholder: 'Search I.M.P. contracts, cast, lore…',
+            resultScope: 'I.M.P. records',
+          } : undefined}
         />
 
         {/* Dynamic Page mount */}

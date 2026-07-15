@@ -4,11 +4,58 @@ import { useState } from 'react';
 import axe from 'axe-core';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { Sidebar } from '../components/Sidebar';
 import { GlobalSearchResult, Topbar } from '../components/Topbar';
+import { db } from '../db/localDb';
+import { getSeedData } from '../db/seed';
+import {
+  createHelluvaBossSaveState,
+  resolveHelluvaChoice,
+  startHelluvaContract,
+} from '../expansions/helluva-boss/engine';
+import { Extensions } from '../pages/Extensions';
+import { HelluvaBoss } from '../pages/HelluvaBoss';
+import { DatabaseState, HelluvaBossSpoilerScope } from '../types';
 
-afterEach(() => cleanup());
+beforeEach(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    configurable: true,
+    writable: true,
+    value: vi.fn().mockImplementation((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    })),
+  });
+});
+
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+});
+
+function createHelluvaState(
+  spoilerScope: HelluvaBossSpoilerScope = 'season_2',
+  enabled = true,
+): DatabaseState {
+  const state = getSeedData();
+  return {
+    ...state,
+    extensions: {
+      helluvaBoss: {
+        ...createHelluvaBossSaveState(enabled),
+        spoilerScope,
+      },
+    },
+  };
+}
 
 async function expectNoSeriousAccessibilityViolation(container: HTMLElement) {
   const result = await axe.run(container, {
@@ -81,5 +128,131 @@ describe('automated accessibility contracts', () => {
     await user.keyboard('{ArrowDown}{Enter}');
     expect(selected).toHaveBeenCalledWith(results[1]);
     await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('shows extension navigation only when its content pack is enabled', async () => {
+    const onViewChange = vi.fn();
+    const { container, rerender } = render(
+      <Sidebar
+        currentView="dashboard"
+        onViewChange={onViewChange}
+        appName="Hellbound Hotel Manager"
+        isOpen={false}
+        onClose={vi.fn()}
+        helluvaEnabled={false}
+      />,
+    );
+
+    expect(screen.getByRole('button', { name: 'Manage Extensions' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Helluva Boss/ })).toBeNull();
+    await expectNoSeriousAccessibilityViolation(container);
+
+    rerender(
+      <Sidebar
+        currentView="helluva"
+        onViewChange={onViewChange}
+        appName="Hellbound Hotel Manager"
+        isOpen={false}
+        onClose={vi.fn()}
+        helluvaEnabled
+      />,
+    );
+
+    const helluvaLink = screen.getByRole('button', { name: /Helluva Boss/ });
+    expect(helluvaLink.getAttribute('aria-current')).toBe('page');
+    await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('renders the extension manager with a unique, labelled content-pack switch', async () => {
+    const { container } = render(
+      <Extensions
+        state={createHelluvaState('season_2')}
+        onStateChange={vi.fn()}
+        onOpenHelluva={vi.fn()}
+      />,
+    );
+
+    const toggle = screen.getByRole('switch', { name: /Extension active/ }) as HTMLInputElement;
+    expect(toggle.id).toBe('helluva-boss-content-pack-toggle');
+    expect(toggle.checked).toBe(true);
+    expect(document.getElementById('helluva-boss-content-pack-title')).toBeTruthy();
+    expect((screen.getByRole('button', { name: /Open I\.M\.P\. campaign/ }) as HTMLButtonElement).disabled).toBe(false);
+    await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('keeps Season 2 profiles and their extended sprite atlas out of Season 1 rendering', async () => {
+    const { container } = render(
+      <HelluvaBoss
+        state={createHelluvaState('season_1')}
+        onStateChange={vi.fn()}
+        onManageExtensions={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { name: /Helluva Boss/ })).toBeTruthy();
+    expect(screen.getByText(/1 Season 2 atlas hidden/)).toBeTruthy();
+    expect(screen.queryByText(/Crimson/i)).toBeNull();
+    expect(screen.queryByText(/Andrealphus/i)).toBeNull();
+    expect(screen.queryByRole('img', { name: /Crimson|Andrealphus/i })).toBeNull();
+    expect(screen.getAllByRole('figure')).toHaveLength(3);
+    await expectNoSeriousAccessibilityViolation(container);
+  }, 15_000);
+
+  it('keeps the insolvency route playable by allowing the next contract on credit', () => {
+    const state = createHelluvaState('season_1');
+    state.extensions.helluvaBoss!.funds = 0;
+
+    render(
+      <HelluvaBoss
+        state={state}
+        onStateChange={vi.fn()}
+        onManageExtensions={vi.fn()}
+      />,
+    );
+
+    const creditButton = screen.getByRole('button', { name: /^Accept on credit$/ });
+    expect((creditButton as HTMLButtonElement).disabled).toBe(false);
+    expect(creditButton.getAttribute('title')).toMatch(/risks insolvency/i);
+  });
+
+  it('moves keyboard focus into an accepted contract and then to its next choice', async () => {
+    let currentState = createHelluvaState('season_1');
+    const replaceCampaign = (campaign: NonNullable<DatabaseState['extensions']['helluvaBoss']>) => {
+      currentState = {
+        ...currentState,
+        extensions: { ...currentState.extensions, helluvaBoss: campaign },
+      };
+    };
+
+    vi.spyOn(db, 'startHelluvaBossContract').mockImplementation((contractId) => {
+      replaceCampaign(startHelluvaContract(currentState.extensions.helluvaBoss!, contractId));
+      return true;
+    });
+    vi.spyOn(db, 'resolveHelluvaBossChoice').mockImplementation((choiceId) => {
+      replaceCampaign(resolveHelluvaChoice(currentState.extensions.helluvaBoss!, choiceId).state);
+      return true;
+    });
+
+    const renderController: { rerender?: () => void } = {};
+    const onStateChange = () => renderController.rerender?.();
+    const page = () => (
+      <HelluvaBoss
+        state={currentState}
+        onStateChange={onStateChange}
+        onManageExtensions={vi.fn()}
+      />
+    );
+    const rendered = render(page());
+    renderController.rerender = () => rendered.rerender(page());
+
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button', { name: /^Accept$/ }));
+    const activeContract = document.getElementById('helluva-active-contract');
+    await waitFor(() => expect(document.activeElement).toBe(activeContract));
+
+    await user.click(screen.getByRole('button', { name: /Buy verified intelligence/i }));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(screen.getByRole('button', { name: /Silent entry/i }));
+    });
   });
 });
