@@ -13,6 +13,7 @@ import {
   restoreSnapshot,
   shouldCaptureKey
 } from '../cloudAccount';
+import { CHARACTER_SPRITES, SPRITE_SHEETS } from '../lib/character-sprites';
 
 class MemoryStorage implements StorageLike {
   protected values = new Map<string, string>();
@@ -42,6 +43,23 @@ function runtimeDatabaseJson(): string {
   new LocalDb(storage);
   return storage.getItem('hellbound_hotel_db_state')!;
 }
+
+describe('generated character sprite coverage', () => {
+  it('maps every seeded character to one portrait and one documented atlas row', () => {
+    const seed = getSeedData();
+    const sheetPaths = new Set(SPRITE_SHEETS.map((sheet) => sheet.path));
+
+    expect(Object.keys(CHARACTER_SPRITES)).toHaveLength(seed.characters.length);
+    for (const character of seed.characters) {
+      const sprite = CHARACTER_SPRITES[character.id];
+      expect(sprite, `missing sprite mapping for ${character.id}`).toBeDefined();
+      expect(sprite.portrait).toBe(`/assets/sprites/portraits/${character.id}.png`);
+      expect(sheetPaths.has(sprite.sheet)).toBe(true);
+      expect(sprite.row).toBeGreaterThanOrEqual(0);
+      expect(sprite.row).toBeLessThan(4);
+    }
+  });
+});
 
 describe('versioned backup integrity', () => {
   it('exports the complete database and separately stored inventory', () => {

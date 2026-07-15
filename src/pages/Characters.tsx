@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Edit2, Trash2, HeartHandshake, ShieldAlert, FileText, UserPlus, Info } from 'lucide-react';
+import { Edit2, Trash2, HeartHandshake, ShieldAlert, FileText, UserPlus, Info, Images, X } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
 import { LoreValidation } from '../lib/lore-validation';
@@ -9,6 +9,7 @@ import { CanonBadge } from '../components/CanonBadge';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { ViewType } from '../components/Sidebar';
 import { useDialogFocus } from '../components/useDialogFocus';
+import { getCharacterSpriteAsset, SPRITE_SHEETS } from '../lib/character-sprites';
 
 interface CharactersProps {
   state: DatabaseState;
@@ -16,6 +17,14 @@ interface CharactersProps {
   searchQuery: string;
   onNavigate: (view: ViewType, targetId?: string) => void;
 }
+
+const getCharacterInitials = (name: string) => name
+  .trim()
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((part) => part[0] ?? '')
+  .join('')
+  .toUpperCase() || '?';
 
 export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, searchQuery, onNavigate }) => {
   const { characters, timeline } = state;
@@ -33,7 +42,14 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
   // Confirm Delete Dialog state
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
+  const [isSpriteGalleryOpen, setIsSpriteGalleryOpen] = useState(false);
+  const [failedSpriteIds, setFailedSpriteIds] = useState<Set<string>>(() => new Set());
   const modalRef = useDialogFocus(isModalOpen, () => setIsModalOpen(false), '#char-name');
+  const spriteGalleryRef = useDialogFocus(
+    isSpriteGalleryOpen,
+    () => setIsSpriteGalleryOpen(false),
+    '#close-sprite-gallery'
+  );
 
   // Form Fields
   const [formName, setFormName] = useState('');
@@ -198,6 +214,15 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
     }
   };
 
+  const markSpriteFailed = (characterId: string) => {
+    setFailedSpriteIds((current) => {
+      if (current.has(characterId)) return current;
+      const next = new Set(current);
+      next.add(characterId);
+      return next;
+    });
+  };
+
   // Filter logic
   const projectedCharacters = characters.map((char: Character) => ({
     ...char,
@@ -241,10 +266,16 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
             Register new sinners, organize security levels, and track redemption plans.
           </p>
         </div>
-        <button className="btn btn-primary" onClick={handleCreate} id="add-character-btn">
-          <UserPlus size={16} />
-          Register Guest/Staff
-        </button>
+        <div className="character-directory-actions">
+          <button type="button" className="btn btn-secondary" onClick={() => setIsSpriteGalleryOpen(true)} id="open-sprite-gallery">
+            <Images size={16} aria-hidden="true" />
+            Sprite Atlases
+          </button>
+          <button className="btn btn-primary" onClick={handleCreate} id="add-character-btn">
+            <UserPlus size={16} aria-hidden="true" />
+            Register Guest/Staff
+          </button>
+        </div>
       </div>
 
       {/* Filter Bar */}
@@ -330,6 +361,8 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
           {filteredCharacters.map((char: Character) => {
             const hasRehabPlan = state.rehabilitationPlans.some((plan) => plan.characterId === char.id);
             const isResidentType = char.status === 'resident' || char.status === 'applicant';
+            const spriteAsset = getCharacterSpriteAsset(char.id);
+            const hasSpritePortrait = Boolean(spriteAsset) && !failedSpriteIds.has(char.id);
 
             return (
               <div 
@@ -347,14 +380,31 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
               >
                 <div>
                   {/* Header row */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
-                    <div>
-                      <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text-main)' }}>{char.name}</h3>
-                      {char.alias && (
-                        <span style={{ fontSize: '0.75rem', color: 'var(--color-gold)', fontStyle: 'italic' }}>
-                          "{char.alias}"
-                        </span>
-                      )}
+                  <div className="character-profile-header">
+                    <div className="character-profile-identity">
+                      <div className="character-sprite-frame" aria-hidden="true">
+                        <span className="character-sprite-fallback">{getCharacterInitials(char.name)}</span>
+                        {spriteAsset && hasSpritePortrait && (
+                          <img
+                            className="character-sprite-portrait"
+                            src={spriteAsset.portrait}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            width={512}
+                            height={512}
+                            onError={() => markSpriteFailed(char.id)}
+                          />
+                        )}
+                      </div>
+                      <div>
+                        <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text-main)' }}>{char.name}</h3>
+                        {char.alias && (
+                          <span style={{ fontSize: '0.75rem', color: 'var(--color-gold)', fontStyle: 'italic' }}>
+                            "{char.alias}"
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-end' }}>
                       <RiskBadge level={char.riskLevel} />
@@ -451,6 +501,63 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
               </div>
             );
           })}
+        </div>
+      )}
+
+      {isSpriteGalleryOpen && (
+        <div
+          className="sprite-gallery-backdrop"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsSpriteGalleryOpen(false);
+          }}
+        >
+          <div
+            ref={spriteGalleryRef}
+            tabIndex={-1}
+            className="glass-panel art-deco-border sprite-gallery-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sprite-gallery-title"
+            aria-describedby="sprite-gallery-description"
+          >
+            <div className="sprite-gallery-heading">
+              <div>
+                <h2 id="sprite-gallery-title">Character Sprite Atlases</h2>
+                <p id="sprite-gallery-description">
+                  OpenAI-generated animation poses based on full-body series references. Canon designs and Simulation AU originals remain explicitly separated.
+                </p>
+              </div>
+              <button
+                type="button"
+                className="btn btn-secondary sprite-gallery-close"
+                id="close-sprite-gallery"
+                onClick={() => setIsSpriteGalleryOpen(false)}
+                aria-label="Close sprite atlas gallery"
+              >
+                <X size={18} aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="sprite-atlas-grid">
+              {SPRITE_SHEETS.map((sheet) => (
+                <figure className="sprite-atlas-card" key={sheet.id}>
+                  <div className="sprite-transparency-grid">
+                    <img
+                      src={sheet.path}
+                      alt={`${sheet.title}: ${sheet.characters.join(', ')}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption>
+                    <strong>{sheet.title}</strong>
+                    <span>{sheet.characters.join(' · ')}</span>
+                    <small>{sheet.continuity}</small>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
