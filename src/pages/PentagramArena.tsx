@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
-import { Box, Gamepad2, RotateCcw, Shield, ShieldCheck, Sparkles, Swords, Trophy, Zap } from 'lucide-react';
+import { Box, Gamepad2, ShieldCheck, Sparkles, Swords, Trophy } from 'lucide-react';
+import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
 import { LoreValidation } from '../lib/lore-validation';
+import type { CombatantDefinition } from '../lib/pentagram-combat';
 import { RulesEngine } from '../lib/rules-engine';
 import type { Character, CharacterStatus, DatabaseState, RiskLevel, TimelineScope } from '../types';
 import '../styles/pentagram-arena.css';
@@ -19,6 +21,7 @@ interface FighterProfile {
   guard: number;
   tensionGain: number;
   basicMove: string;
+  heavyMove: string;
   specialMove: string;
 }
 
@@ -32,23 +35,7 @@ interface FighterCardProps {
   onSelect: (fighterId: string) => void;
 }
 
-type PlayerSide = 'one' | 'two';
-
-interface CombatState {
-  active: boolean;
-  hpOne: number;
-  hpTwo: number;
-  tensionOne: number;
-  tensionTwo: number;
-  guardOne: boolean;
-  guardTwo: boolean;
-  positionOne: number;
-  positionTwo: number;
-  timer: number;
-  round: number;
-  log: string[];
-  winner: PlayerSide | null;
-}
+type ArenaPhase = 'select' | 'fight';
 
 const ARENA_STATUSES = new Set<CharacterStatus>(['staff', 'resident', 'applicant']);
 
@@ -69,6 +56,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 64,
     tensionGain: 16,
     basicMove: 'Royal jab string',
+    heavyMove: 'Hellborn roundhouse',
     specialMove: 'Happy Hotel rally',
   },
   vaggie: {
@@ -80,6 +68,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 76,
     tensionGain: 14,
     basicMove: 'Spear-line feint',
+    heavyMove: 'Spear-breaker arc',
     specialMove: 'Guardian intercept',
   },
   angeldust: {
@@ -91,6 +80,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 44,
     tensionGain: 18,
     basicMove: 'Web kick chain',
+    heavyMove: 'Crossfire heel',
     specialMove: 'Stage-wire flourish',
   },
   alastor: {
@@ -102,6 +92,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 72,
     tensionGain: 12,
     basicMove: 'Static cane snap',
+    heavyMove: 'Shadow cane sweep',
     specialMove: 'Broadcast blackout',
   },
   husk: {
@@ -113,6 +104,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 70,
     tensionGain: 17,
     basicMove: 'Bar-counter hook',
+    heavyMove: 'House-edge uppercut',
     specialMove: 'Loaded dice punish',
   },
   niffty: {
@@ -124,6 +116,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 38,
     tensionGain: 20,
     basicMove: 'Needle dash',
+    heavyMove: 'Needlewheel rush',
     specialMove: 'Spotless frenzy',
   },
   sirpentious: {
@@ -135,6 +128,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 58,
     tensionGain: 15,
     basicMove: 'Clockwork poke',
+    heavyMove: 'Coil launcher',
     specialMove: 'Egg-boi barrage',
   },
   baxter: {
@@ -146,6 +140,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 54,
     tensionGain: 16,
     basicMove: 'Volt probe',
+    heavyMove: 'Pressure pulse',
     specialMove: 'Tank discharge',
   },
   sim_applicant_marlow: {
@@ -157,6 +152,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 66,
     tensionGain: 14,
     basicMove: 'Glass-step strike',
+    heavyMove: 'Mirror shoulder',
     specialMove: 'Composure break',
   },
   sim_applicant_ember: {
@@ -168,6 +164,7 @@ const FIGHTER_PROFILES: Record<string, FighterProfile> = {
     guard: 48,
     tensionGain: 19,
     basicMove: 'Spark lunge',
+    heavyMove: 'Flashpoint hook',
     specialMove: 'Cinder burst',
   },
 };
@@ -181,6 +178,7 @@ const DEFAULT_PROFILE: FighterProfile = {
   guard: 52,
   tensionGain: 14,
   basicMove: 'Training strike',
+  heavyMove: 'Training breaker',
   specialMove: 'Limit rehearsal',
 };
 
@@ -204,10 +202,6 @@ function getInitials(name: string): string {
     .toUpperCase();
 }
 
-function clamp(value: number, min: number, max: number): number {
-  return Math.min(max, Math.max(min, value));
-}
-
 function getProfile(fighter: Character | undefined): FighterProfile {
   return fighter ? FIGHTER_PROFILES[fighter.id] ?? DEFAULT_PROFILE : DEFAULT_PROFILE;
 }
@@ -227,23 +221,17 @@ function getArenaFighters(state: DatabaseState): Character[] {
   });
 }
 
-function buildInitialCombatState(fighterOne?: Character, fighterTwo?: Character): CombatState {
+function buildCombatantDefinition(fighter: Character, profile: FighterProfile): CombatantDefinition {
   return {
-    active: Boolean(fighterOne && fighterTwo),
-    hpOne: 100,
-    hpTwo: 100,
-    tensionOne: 0,
-    tensionTwo: 0,
-    guardOne: false,
-    guardTwo: false,
-    positionOne: 22,
-    positionTwo: 78,
-    timer: 99,
-    round: 1,
-    log: fighterOne && fighterTwo
-      ? [`Round 1 ready: ${fighterOne.name} vs ${fighterTwo.name}.`]
-      : ['Select two eligible fighters to start an exhibition.'],
-    winner: null,
+    name: fighter.name,
+    power: RISK_PROFILE[fighter.riskLevel].power,
+    range: profile.range,
+    speed: profile.speed,
+    guard: profile.guard,
+    tensionGain: profile.tensionGain,
+    basicMove: profile.basicMove,
+    heavyMove: profile.heavyMove,
+    specialMove: profile.specialMove,
   };
 }
 
@@ -357,7 +345,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   const fighters = useMemo(() => getArenaFighters(state), [state]);
   const [fighterOneId, setFighterOneId] = useState(() => fighters[0]?.id ?? '');
   const [fighterTwoId, setFighterTwoId] = useState(() => fighters[1]?.id ?? '');
-  const [combat, setCombat] = useState<CombatState>(() => buildInitialCombatState(fighters[0], fighters[1]));
+  const [phase, setPhase] = useState<ArenaPhase>('select');
 
   const fighterOne = fighters.find(fighter => fighter.id === fighterOneId) ?? fighters[0];
   const fighterTwo = fighters.find(
@@ -366,119 +354,33 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   const matchupReady = Boolean(fighterOne && fighterTwo);
   const fighterOneProfile = getProfile(fighterOne);
   const fighterTwoProfile = getProfile(fighterTwo);
-  const fighterOneSprite = fighterOne ? getCharacterSpriteAsset(fighterOne.id) : undefined;
-  const fighterTwoSprite = fighterTwo ? getCharacterSpriteAsset(fighterTwo.id) : undefined;
-
-  const resetCombat = (nextFighterOne = fighterOne, nextFighterTwo = fighterTwo) => {
-    setCombat(buildInitialCombatState(nextFighterOne, nextFighterTwo));
-  };
+  const fighterOneDefinition = useMemo(
+    () => fighterOne ? buildCombatantDefinition(fighterOne, fighterOneProfile) : undefined,
+    [fighterOne, fighterOneProfile],
+  );
+  const fighterTwoDefinition = useMemo(
+    () => fighterTwo ? buildCombatantDefinition(fighterTwo, fighterTwoProfile) : undefined,
+    [fighterTwo, fighterTwoProfile],
+  );
 
   const selectFighterOne = (fighterId: string) => {
-    const nextOne = fighters.find(fighter => fighter.id === fighterId);
     const nextTwo = fighterTwo?.id !== fighterId
       ? fighterTwo
       : fighters.find(fighter => fighter.id !== fighterId);
     setFighterOneId(fighterId);
     setFighterTwoId(nextTwo?.id ?? '');
-    resetCombat(nextOne, nextTwo);
   };
 
   const selectFighterTwo = (fighterId: string) => {
-    const nextTwo = fighters.find(fighter => fighter.id === fighterId);
     const nextOne = fighterOne?.id !== fighterId
       ? fighterOne
       : fighters.find(fighter => fighter.id !== fighterId);
     setFighterTwoId(fighterId);
     setFighterOneId(nextOne?.id ?? '');
-    resetCombat(nextOne, nextTwo);
   };
 
-  const startMatch = () => resetCombat(fighterOne, fighterTwo);
-
-  const applyCombatAction = (side: PlayerSide, action: 'strike' | 'guard' | 'special' | 'step') => {
-    if (!fighterOne || !fighterTwo) return;
-
-    setCombat((current) => {
-      if (!current.active || current.winner) return current;
-
-      const attacker = side === 'one' ? fighterOne : fighterTwo;
-      const defender = side === 'one' ? fighterTwo : fighterOne;
-      const attackerProfile = side === 'one' ? fighterOneProfile : fighterTwoProfile;
-      const defenderProfile = side === 'one' ? fighterTwoProfile : fighterOneProfile;
-      const attackerRisk = RISK_PROFILE[attacker.riskLevel];
-      const isDefenderGuarding = side === 'one' ? current.guardTwo : current.guardOne;
-      const distance = Math.abs(current.positionOne - current.positionTwo);
-      const inRange = distance <= attackerProfile.range;
-      const next: CombatState = {
-        ...current,
-        guardOne: side === 'one' ? false : current.guardOne,
-        guardTwo: side === 'two' ? false : current.guardTwo,
-        timer: Math.max(0, current.timer - 1),
-      };
-      const log = [...current.log];
-
-      if (action === 'guard') {
-        if (side === 'one') next.guardOne = true;
-        else next.guardTwo = true;
-        if (side === 'one') next.tensionOne = clamp(next.tensionOne + 8, 0, 100);
-        else next.tensionTwo = clamp(next.tensionTwo + 8, 0, 100);
-        log.unshift(`${attacker.name} holds guard and builds tension.`);
-      }
-
-      if (action === 'step') {
-        const step = Math.max(3, Math.round(attackerProfile.speed / 16));
-        if (side === 'one') next.positionOne = clamp(next.positionOne + step, 8, next.positionTwo - 6);
-        else next.positionTwo = clamp(next.positionTwo - step, next.positionOne + 6, 92);
-        if (side === 'one') next.tensionOne = clamp(next.tensionOne + 6, 0, 100);
-        else next.tensionTwo = clamp(next.tensionTwo + 6, 0, 100);
-        log.unshift(`${attacker.name} shifts the 2.5D lane spacing.`);
-      }
-
-      if (action === 'strike') {
-        const rawDamage = attackerRisk.power + Math.round(attackerProfile.speed / 18);
-        const guardedDamage = Math.max(3, rawDamage - Math.round(defenderProfile.guard / 14));
-        const damage = !inRange ? 0 : isDefenderGuarding ? guardedDamage : rawDamage;
-        if (side === 'one') {
-          next.hpTwo = clamp(next.hpTwo - damage, 0, 100);
-          next.tensionOne = clamp(next.tensionOne + attackerProfile.tensionGain, 0, 100);
-          next.tensionTwo = clamp(next.tensionTwo + (isDefenderGuarding ? 10 : 4), 0, 100);
-        } else {
-          next.hpOne = clamp(next.hpOne - damage, 0, 100);
-          next.tensionTwo = clamp(next.tensionTwo + attackerProfile.tensionGain, 0, 100);
-          next.tensionOne = clamp(next.tensionOne + (isDefenderGuarding ? 10 : 4), 0, 100);
-        }
-        log.unshift(inRange
-          ? `${attacker.name} lands ${attackerProfile.basicMove} for ${damage} damage${isDefenderGuarding ? ' through guard' : ''}.`
-          : `${attacker.name} whiffs ${attackerProfile.basicMove}; ${defender.name} is outside range.`);
-      }
-
-      if (action === 'special') {
-        const tensionKey = side === 'one' ? 'tensionOne' : 'tensionTwo';
-        if (next[tensionKey] < 50) {
-          log.unshift(`${attacker.name} needs 50 tension before ${attackerProfile.specialMove}.`);
-        } else {
-          const rawDamage = attackerRisk.power + 16 + Math.round(attackerProfile.range / 16);
-          const damage = isDefenderGuarding ? Math.max(8, rawDamage - Math.round(defenderProfile.guard / 10)) : rawDamage;
-          next[tensionKey] = clamp(next[tensionKey] - 50, 0, 100);
-          if (side === 'one') next.hpTwo = clamp(next.hpTwo - damage, 0, 100);
-          else next.hpOne = clamp(next.hpOne - damage, 0, 100);
-          log.unshift(`${attacker.name} spends tension: ${attackerProfile.specialMove} hits for ${damage}.`);
-        }
-      }
-
-      const winner: PlayerSide | null = next.hpOne <= 0 ? 'two' : next.hpTwo <= 0 ? 'one' : null;
-      if (winner) {
-        next.winner = winner;
-        next.active = false;
-        log.unshift(`${winner === 'one' ? fighterOne.name : fighterTwo.name} wins the Simulation AU round.`);
-      } else if (next.timer <= 0) {
-        next.active = false;
-        next.winner = next.hpOne === next.hpTwo ? null : next.hpOne > next.hpTwo ? 'one' : 'two';
-        log.unshift(next.winner ? `${next.winner === 'one' ? fighterOne.name : fighterTwo.name} wins by HP lead.` : 'Time over: exhibition draw.');
-      }
-
-      return { ...next, log: log.slice(0, 6) };
-    });
+  const startMatch = () => {
+    if (matchupReady) setPhase('fight');
   };
 
   return (
@@ -509,7 +411,21 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         </div>
       </section>
 
-      <section className="arena-stage art-deco-border" aria-labelledby="arena-stage-title">
+      {phase === 'fight'
+        && fighterOne
+        && fighterTwo
+        && fighterOneDefinition
+        && fighterTwoDefinition ? (
+          <PentagramLiveFight
+            fighterOne={fighterOne}
+            fighterTwo={fighterTwo}
+            fighterOneDefinition={fighterOneDefinition}
+            fighterTwoDefinition={fighterTwoDefinition}
+            onExit={() => setPhase('select')}
+          />
+        ) : (
+          <>
+            <section className="arena-stage art-deco-border" aria-labelledby="arena-stage-title">
         <h2 id="arena-stage-title" className="sr-only">Exhibition matchup setup</h2>
         <div className="arena-stage__glow" aria-hidden="true" />
         <FighterCard
@@ -531,111 +447,30 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           blockedFighterId={fighterOne?.id}
           onSelect={selectFighterTwo}
         />
-      </section>
+            </section>
 
-      <div className="arena-action-row">
-        <div>
-          <strong>{fighterOne?.name ?? 'Fighter one'} vs {fighterTwo?.name ?? 'Fighter two'}</strong>
-          <span id="arena-launch-note">
-            {matchupReady
-              ? 'Matchup ready for local exhibition. Results stay inside this page.'
-              : 'At least two timeline-eligible hotel inhabitants are required to prepare a matchup.'}
-          </span>
-        </div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          disabled={!matchupReady}
-          aria-describedby="arena-launch-note"
-          onClick={startMatch}
-        >
-          <Gamepad2 size={17} aria-hidden="true" /> Start exhibition
-        </button>
-      </div>
-
-      <section className="arena-fight-panel" aria-labelledby="arena-fight-title">
-        <div className="arena-fight-panel__top">
-          <h2 id="arena-fight-title">2.5D exhibition prototype</h2>
-          <div className="arena-round-counter">
-            <span>Round {combat.round}</span>
-            <strong>{combat.timer}</strong>
-          </div>
-        </div>
-
-        <div className="arena-hud" aria-label="Combat status">
-          <div>
-            <strong>{fighterOne?.name ?? 'P1'}</strong>
-            <span className="arena-health"><span style={{ width: `${combat.hpOne}%` }} /></span>
-            <small>HP {combat.hpOne} · Tension {combat.tensionOne}</small>
-          </div>
-          <div>
-            <strong>{fighterTwo?.name ?? 'P2'}</strong>
-            <span className="arena-health is-p2"><span style={{ width: `${combat.hpTwo}%` }} /></span>
-            <small>HP {combat.hpTwo} · Tension {combat.tensionTwo}</small>
-          </div>
-        </div>
-
-        <div className="arena-combat-stage" role="group" aria-label="2.5D combat lane">
-          <div className="arena-lane-grid" aria-hidden="true" />
-          {fighterOne && (
-            <div className="arena-combatant is-one" style={{ left: `${combat.positionOne}%` }}>
-              <span className="arena-guard-badge">{combat.guardOne ? 'Guard' : fighterOneProfile.style}</span>
-              {fighterOneSprite ? <img src={fighterOneSprite.portrait} alt="" /> : <strong>{getInitials(fighterOne.name)}</strong>}
+            <div className="arena-action-row">
+              <div>
+                <strong>{fighterOne?.name ?? 'Fighter one'} vs {fighterTwo?.name ?? 'Fighter two'}</strong>
+                <span id="arena-launch-note">
+                  {matchupReady
+                    ? 'Matchup ready for a live local exhibition. Results stay inside this page.'
+                    : 'At least two timeline-eligible hotel inhabitants are required to prepare a matchup.'}
+                </span>
+              </div>
+              <button
+                type="button"
+                className="btn btn-primary"
+                disabled={!matchupReady}
+                aria-describedby="arena-launch-note"
+                onClick={startMatch}
+              >
+                <Gamepad2 size={17} aria-hidden="true" /> Start exhibition
+              </button>
             </div>
-          )}
-          {fighterTwo && (
-            <div className="arena-combatant is-two" style={{ left: `${combat.positionTwo}%` }}>
-              <span className="arena-guard-badge">{combat.guardTwo ? 'Guard' : fighterTwoProfile.style}</span>
-              {fighterTwoSprite ? <img src={fighterTwoSprite.portrait} alt="" /> : <strong>{getInitials(fighterTwo.name)}</strong>}
-            </div>
-          )}
-          {combat.winner && (
-            <div className="arena-ko" role="status">
-              {combat.winner === 'one' ? fighterOne?.name : fighterTwo?.name} wins
-            </div>
-          )}
-        </div>
 
-        <div className="arena-controls">
-          <div>
-            <h3>{fighterOne?.name ?? 'Fighter one'}</h3>
-            <button type="button" onClick={() => applyCombatAction('one', 'strike')} disabled={!combat.active}>
-              <Swords size={15} aria-hidden="true" /> Strike
-            </button>
-            <button type="button" onClick={() => applyCombatAction('one', 'guard')} disabled={!combat.active}>
-              <Shield size={15} aria-hidden="true" /> Guard
-            </button>
-            <button type="button" onClick={() => applyCombatAction('one', 'special')} disabled={!combat.active}>
-              <Zap size={15} aria-hidden="true" /> Special
-            </button>
-            <button type="button" onClick={() => applyCombatAction('one', 'step')} disabled={!combat.active}>
-              Step in
-            </button>
-          </div>
-          <div>
-            <h3>{fighterTwo?.name ?? 'Fighter two'}</h3>
-            <button type="button" onClick={() => applyCombatAction('two', 'strike')} disabled={!combat.active}>
-              <Swords size={15} aria-hidden="true" /> Strike
-            </button>
-            <button type="button" onClick={() => applyCombatAction('two', 'guard')} disabled={!combat.active}>
-              <Shield size={15} aria-hidden="true" /> Guard
-            </button>
-            <button type="button" onClick={() => applyCombatAction('two', 'special')} disabled={!combat.active}>
-              <Zap size={15} aria-hidden="true" /> Special
-            </button>
-            <button type="button" onClick={() => applyCombatAction('two', 'step')} disabled={!combat.active}>
-              Step in
-            </button>
-          </div>
-          <button type="button" className="arena-reset" onClick={() => resetCombat()}>
-            <RotateCcw size={16} aria-hidden="true" /> Reset round
-          </button>
-        </div>
-
-        <ol className="arena-combat-log" aria-label="Combat log">
-          {combat.log.map((entry, index) => <li key={`${entry}-${index}`}>{entry}</li>)}
-        </ol>
-      </section>
+          </>
+        )}
 
       <section className="arena-blueprint" aria-labelledby="arena-blueprint-title">
         <div className="arena-section-heading">

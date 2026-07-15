@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import axe from 'axe-core';
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ConfirmDialog } from '../components/ConfirmDialog';
@@ -174,7 +174,6 @@ describe('automated accessibility contracts', () => {
 
     expect(screen.getByRole('heading', { name: 'Pentagram Arena' })).toBeTruthy();
     expect(screen.getByText(/gameplay-only Simulation AU records/i)).toBeTruthy();
-    expect(screen.getByRole('heading', { name: '2.5D exhibition prototype' })).toBeTruthy();
 
     const fighterOne = screen.getByRole('combobox', { name: 'Choose fighter one' }) as HTMLSelectElement;
     const fighterTwo = screen.getByRole('combobox', { name: 'Choose fighter two' }) as HTMLSelectElement;
@@ -192,14 +191,36 @@ describe('automated accessibility contracts', () => {
     const launchButton = screen.getByRole('button', { name: /Start exhibition/i }) as HTMLButtonElement;
     expect(launchButton.disabled).toBe(false);
     await user.click(launchButton);
-    expect(screen.getByText(/Round 1 ready: Angel Dust vs Vaggie/i)).toBeTruthy();
 
-    const angelControls = screen.getAllByRole('heading', { name: 'Angel Dust' }).at(-1)?.closest('div');
-    const strike = angelControls?.querySelector('button');
-    expect(strike?.textContent).toMatch(/Strike/);
-    if (strike) await user.click(strike);
-    expect(screen.getByText(/Angel Dust .*Web kick chain/i)).toBeTruthy();
+    expect(screen.queryByRole('combobox', { name: 'Choose fighter one' })).toBeNull();
+    expect(screen.queryByRole('combobox', { name: 'Choose fighter two' })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Start exhibition/i })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Strike|Guard|Special|Step in/i })).toBeNull();
+
+    const liveStage = screen.getByRole('region', { name: /Live combat: Angel Dust versus Vaggie/i });
+    await waitFor(() => expect(document.activeElement).toBe(liveStage));
+    expect(screen.getByRole('heading', { name: /2\.5D combat — Angel Dust vs Vaggie/i })).toBeTruthy();
+    expect(screen.getAllByText(/Round 1 live: Angel Dust vs Vaggie/i).length).toBeGreaterThan(0);
+
+    const angelCombatant = container.querySelector<HTMLElement>('.arena-combatant.is-one');
+    const startPosition = Number(angelCombatant?.dataset.position);
+    fireEvent.keyDown(window, { code: 'KeyD' });
+    await waitFor(() => {
+      expect(Number(angelCombatant?.dataset.position)).toBeGreaterThan(startPosition);
+    });
+    fireEvent.keyUp(window, { code: 'KeyD' });
+
+    fireEvent.keyDown(window, { code: 'KeyF' });
+    fireEvent.keyUp(window, { code: 'KeyF' });
+    await waitFor(() => {
+      expect(screen.getAllByText(/Angel Dust .*Web kick chain/i).length).toBeGreaterThan(0);
+    });
     await expectNoSeriousAccessibilityViolation(container);
+
+    fireEvent.pointerDown(liveStage, { pointerId: 1, clientX: 30, clientY: 20 });
+    fireEvent.pointerMove(liveStage, { pointerId: 1, clientX: 30, clientY: 90 });
+    fireEvent.pointerUp(liveStage, { pointerId: 1, clientX: 30, clientY: 90 });
+    expect(screen.getByRole('combobox', { name: 'Choose fighter one' })).toBeTruthy();
   });
 
   it('keeps the Arena safe when no timeline-eligible fighter exists', async () => {
