@@ -1,28 +1,23 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Gamepad2, ShieldCheck, Sparkles, Swords, Trophy } from 'lucide-react';
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
+import {
+  COMBAT_AI_DIFFICULTY_LABELS,
+  type CombatAiDifficulty,
+} from '../lib/pentagram-ai';
+import {
+  buildCombatantDefinition,
+  FIGHTER_KIT_EVIDENCE_LABELS,
+  getFighterProfile,
+} from '../lib/pentagram-fighters';
 import { LoreValidation } from '../lib/lore-validation';
-import type { CombatantDefinition } from '../lib/pentagram-combat';
 import { RulesEngine } from '../lib/rules-engine';
 import type { Character, DatabaseState, RiskLevel, TimelineScope } from '../types';
 import '../styles/pentagram-arena.css';
 
 interface PentagramArenaProps {
   state: DatabaseState;
-}
-
-interface FighterProfile {
-  id: string;
-  style: string;
-  archetype: string;
-  range: number;
-  speed: number;
-  guard: number;
-  tensionGain: number;
-  basicMove: string;
-  heavyMove: string;
-  specialMove: string;
 }
 
 interface FighterCardProps {
@@ -36,155 +31,20 @@ interface FighterCardProps {
 }
 
 type ArenaPhase = 'select' | 'fight';
+type ArenaMatchMode = 'ai' | 'local';
 
-const RISK_PROFILE: Record<RiskLevel, { label: string; value: number; power: number }> = {
-  low: { label: 'Controlled', value: 32, power: 8 },
-  medium: { label: 'Volatile', value: 54, power: 11 },
-  high: { label: 'Dangerous', value: 76, power: 14 },
-  catastrophic: { label: 'Overlord-class', value: 96, power: 18 },
-};
-
-const FIGHTER_PROFILES: Record<string, FighterProfile> = {
-  charlie: {
-    id: 'charlie',
-    style: 'Hope rushdown',
-    archetype: 'Balanced morale pressure',
-    range: 58,
-    speed: 68,
-    guard: 64,
-    tensionGain: 16,
-    basicMove: 'Royal jab string',
-    heavyMove: 'Hellborn roundhouse',
-    specialMove: 'Happy Hotel rally',
-  },
-  vaggie: {
-    id: 'vaggie',
-    style: 'Discipline duelist',
-    archetype: 'Counter-hit security',
-    range: 66,
-    speed: 72,
-    guard: 76,
-    tensionGain: 14,
-    basicMove: 'Spear-line feint',
-    heavyMove: 'Spear-breaker arc',
-    specialMove: 'Guardian intercept',
-  },
-  angeldust: {
-    id: 'angeldust',
-    style: 'Trickster pressure',
-    archetype: 'Multi-angle mixup',
-    range: 74,
-    speed: 78,
-    guard: 44,
-    tensionGain: 18,
-    basicMove: 'Web kick chain',
-    heavyMove: 'Crossfire heel',
-    specialMove: 'Stage-wire flourish',
-  },
-  alastor: {
-    id: 'alastor',
-    style: 'Radio zoner',
-    archetype: 'Space control boss',
-    range: 92,
-    speed: 54,
-    guard: 72,
-    tensionGain: 12,
-    basicMove: 'Static cane snap',
-    heavyMove: 'Shadow cane sweep',
-    specialMove: 'Broadcast blackout',
-  },
-  husk: {
-    id: 'husk',
-    style: 'Grit grappler',
-    archetype: 'Brawler with reads',
-    range: 48,
-    speed: 56,
-    guard: 70,
-    tensionGain: 17,
-    basicMove: 'Bar-counter hook',
-    heavyMove: 'House-edge uppercut',
-    specialMove: 'Loaded dice punish',
-  },
-  niffty: {
-    id: 'niffty',
-    style: 'Tiny blender',
-    archetype: 'High-speed nuisance',
-    range: 36,
-    speed: 92,
-    guard: 38,
-    tensionGain: 20,
-    basicMove: 'Needle dash',
-    heavyMove: 'Needlewheel rush',
-    specialMove: 'Spotless frenzy',
-  },
-  sirpentious: {
-    id: 'sirpentious',
-    style: 'Gadget setplay',
-    archetype: 'Trap inventor',
-    range: 70,
-    speed: 42,
-    guard: 58,
-    tensionGain: 15,
-    basicMove: 'Clockwork poke',
-    heavyMove: 'Coil launcher',
-    specialMove: 'Egg-boi barrage',
-  },
-  baxter: {
-    id: 'baxter',
-    style: 'Lab control',
-    archetype: 'Projectile setup',
-    range: 76,
-    speed: 48,
-    guard: 54,
-    tensionGain: 16,
-    basicMove: 'Volt probe',
-    heavyMove: 'Pressure pulse',
-    specialMove: 'Tank discharge',
-  },
-  sim_applicant_marlow: {
-    id: 'sim_applicant_marlow',
-    style: 'Defensive footsies',
-    archetype: 'Starter-safe trainee',
-    range: 52,
-    speed: 52,
-    guard: 66,
-    tensionGain: 14,
-    basicMove: 'Glass-step strike',
-    heavyMove: 'Mirror shoulder',
-    specialMove: 'Composure break',
-  },
-  sim_applicant_ember: {
-    id: 'sim_applicant_ember',
-    style: 'Flare rush',
-    archetype: 'Momentum trainee',
-    range: 50,
-    speed: 70,
-    guard: 48,
-    tensionGain: 19,
-    basicMove: 'Spark lunge',
-    heavyMove: 'Flashpoint hook',
-    specialMove: 'Cinder burst',
-  },
-};
-
-const DEFAULT_PROFILE: FighterProfile = {
-  id: 'default',
-  style: 'Simulation custom',
-  archetype: 'Adaptive exhibition kit',
-  range: 52,
-  speed: 52,
-  guard: 52,
-  tensionGain: 14,
-  basicMove: 'Training strike',
-  heavyMove: 'Training breaker',
-  specialMove: 'Limit rehearsal',
+const RISK_PROFILE: Record<RiskLevel, { label: string; value: number }> = {
+  low: { label: 'Controlled', value: 32 },
+  medium: { label: 'Volatile', value: 54 },
+  high: { label: 'Dangerous', value: 76 },
+  catastrophic: { label: 'Extreme threat', value: 96 },
 };
 
 const ROADMAP = [
-  ['Roster shell', 'Fighter selection, timeline filtering and portrait support are ready.'],
-  ['Playable prototype', 'Local exhibition uses HP, guard, spacing, tension and Simulation AU moves.'],
-  ['Character kits', 'Next pass can add unique animations, hitboxes, cancels and air routes.'],
-  ['Long modes', 'Training AI, best-of-three sets and tournament brackets after the core loop is stable.'],
+  ['Roster complete', 'Every sprite-backed fighter has an explicit Simulation AU kit.'],
+  ['Active-frame combat', 'Damage lands on the animated impact window with hitstop and guard checks.'],
+  ['Sparring sets', 'CPU difficulty and best-of-three scoring are playable now.'],
+  ['Long modes', 'Tournament brackets, training data and air routes remain the next expansion layer.'],
 ] as const;
 
 function formatLabel(value: string): string {
@@ -200,10 +60,6 @@ function getInitials(name: string): string {
     .toUpperCase();
 }
 
-function getProfile(fighter: Character | undefined): FighterProfile {
-  return fighter ? FIGHTER_PROFILES[fighter.id] ?? DEFAULT_PROFILE : DEFAULT_PROFILE;
-}
-
 function getArenaFighters(state: DatabaseState): Character[] {
   return state.characters.flatMap((source) => {
     const snapshot = state.timeline.current !== 'custom'
@@ -214,23 +70,9 @@ function getArenaFighters(state: DatabaseState): Character[] {
       || LoreValidation.isAvailableAtTimeline(source.timelineScope, state.timeline.current);
 
     if (!availableAtTimeline || !RulesEngine.isContentVisible(source, state.timeline)) return [];
-    if (!getCharacterSpriteAsset(fighter.id)) return [];
+    if (!getCharacterSpriteAsset(fighter.id) || !getFighterProfile(fighter)) return [];
     return [fighter];
   });
-}
-
-function buildCombatantDefinition(fighter: Character, profile: FighterProfile): CombatantDefinition {
-  return {
-    name: fighter.name,
-    power: RISK_PROFILE[fighter.riskLevel].power,
-    range: profile.range,
-    speed: profile.speed,
-    guard: profile.guard,
-    tensionGain: profile.tensionGain,
-    basicMove: profile.basicMove,
-    heavyMove: profile.heavyMove,
-    specialMove: profile.specialMove,
-  };
 }
 
 function FighterCard({
@@ -244,7 +86,7 @@ function FighterCard({
 }: FighterCardProps) {
   const sprite = fighter ? getCharacterSpriteAsset(fighter.id) : undefined;
   const risk = fighter ? RISK_PROFILE[fighter.riskLevel] : RISK_PROFILE.low;
-  const profile = getProfile(fighter);
+  const profile = getFighterProfile(fighter);
   const titleId = `${selectId}-title`;
 
   return (
@@ -285,10 +127,10 @@ function FighterCard({
 
       <div className="arena-fighter__identity">
         <h2 id={titleId}>{fighter?.name ?? 'Roster pending'}</h2>
-        <p>{profile.style} · {profile.archetype}</p>
+        <p>{profile ? `${profile.style} · ${profile.archetype}` : 'Select a combatant'}</p>
       </div>
 
-      {fighter && (
+      {fighter && profile && (
         <>
           <dl className="arena-fighter__facts">
             <div><dt>Role</dt><dd>{formatLabel(fighter.role)}</dd></div>
@@ -299,6 +141,9 @@ function FighterCard({
             <span>{profile.basicMove}</span>
             <strong>{profile.specialMove}</strong>
           </div>
+          <small className={`arena-kit-evidence is-${profile.evidence}`}>
+            {FIGHTER_KIT_EVIDENCE_LABELS[profile.evidence]}
+          </small>
           <div
             className="arena-threat-meter"
             role="meter"
@@ -344,22 +189,35 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   const [fighterOneId, setFighterOneId] = useState(() => fighters[0]?.id ?? '');
   const [fighterTwoId, setFighterTwoId] = useState(() => fighters[1]?.id ?? '');
   const [phase, setPhase] = useState<ArenaPhase>('select');
+  const [matchMode, setMatchMode] = useState<ArenaMatchMode>('ai');
+  const [aiDifficulty, setAiDifficulty] = useState<CombatAiDifficulty>('standard');
+  const shouldRestoreFocusRef = useRef(false);
 
   const fighterOne = fighters.find(fighter => fighter.id === fighterOneId) ?? fighters[0];
   const fighterTwo = fighters.find(
     fighter => fighter.id === fighterTwoId && fighter.id !== fighterOne?.id,
   ) ?? fighters.find(fighter => fighter.id !== fighterOne?.id);
-  const matchupReady = Boolean(fighterOne && fighterTwo);
-  const fighterOneProfile = getProfile(fighterOne);
-  const fighterTwoProfile = getProfile(fighterTwo);
+  const fighterOneProfile = getFighterProfile(fighterOne);
+  const fighterTwoProfile = getFighterProfile(fighterTwo);
+  const matchupReady = Boolean(fighterOne && fighterTwo && fighterOneProfile && fighterTwoProfile);
   const fighterOneDefinition = useMemo(
-    () => fighterOne ? buildCombatantDefinition(fighterOne, fighterOneProfile) : undefined,
+    () => fighterOne && fighterOneProfile
+      ? buildCombatantDefinition(fighterOne, fighterOneProfile)
+      : undefined,
     [fighterOne, fighterOneProfile],
   );
   const fighterTwoDefinition = useMemo(
-    () => fighterTwo ? buildCombatantDefinition(fighterTwo, fighterTwoProfile) : undefined,
+    () => fighterTwo && fighterTwoProfile
+      ? buildCombatantDefinition(fighterTwo, fighterTwoProfile)
+      : undefined,
     [fighterTwo, fighterTwoProfile],
   );
+
+  useEffect(() => {
+    if (phase !== 'select' || !shouldRestoreFocusRef.current) return;
+    shouldRestoreFocusRef.current = false;
+    document.getElementById('arena-fighter-one')?.focus();
+  }, [phase]);
 
   const selectFighterOne = (fighterId: string) => {
     const nextTwo = fighterTwo?.id !== fighterId
@@ -381,6 +239,11 @@ export function PentagramArena({ state }: PentagramArenaProps) {
     if (matchupReady) setPhase('fight');
   };
 
+  const exitMatch = () => {
+    shouldRestoreFocusRef.current = true;
+    setPhase('select');
+  };
+
   return (
     <div className="page-container arena-page animate-fade-in">
       <header className="arena-hero">
@@ -389,11 +252,11 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           <h1>Pentagram Arena</h1>
           <p>
             Build a 2.5D exhibition match with timeline-visible fighters, fighter-card selection and
-            a local prototype loop inspired by anime fighting games.
+            active-frame combat inspired by anime fighting games.
           </p>
         </div>
         <div className="arena-status" aria-label="Development status">
-          <span>Playable prototype</span>
+          <span>Playable combat beta</span>
           <strong>{fighters.length} fighters indexed</strong>
         </div>
       </header>
@@ -419,7 +282,9 @@ export function PentagramArena({ state }: PentagramArenaProps) {
             fighterTwo={fighterTwo}
             fighterOneDefinition={fighterOneDefinition}
             fighterTwoDefinition={fighterTwoDefinition}
-            onExit={() => setPhase('select')}
+            matchMode={matchMode}
+            aiDifficulty={aiDifficulty}
+            onExit={exitMatch}
           />
         ) : (
           <>
@@ -452,9 +317,33 @@ export function PentagramArena({ state }: PentagramArenaProps) {
                 <strong>{fighterOne?.name ?? 'Fighter one'} vs {fighterTwo?.name ?? 'Fighter two'}</strong>
                 <span id="arena-launch-note">
                   {matchupReady
-                    ? 'Matchup ready for a live local exhibition. Results stay inside this page.'
+                    ? `${matchMode === 'ai' ? 'CPU sparring' : 'Local versus'} · first to two rounds. Results stay inside this page.`
                     : 'At least two timeline-eligible sprite fighters are required to prepare a matchup.'}
                 </span>
+              </div>
+              <div className="arena-match-options">
+                <label>
+                  Match mode
+                  <select
+                    value={matchMode}
+                    onChange={(event) => setMatchMode(event.target.value as ArenaMatchMode)}
+                  >
+                    <option value="ai">Sparring vs CPU</option>
+                    <option value="local">Two-player local</option>
+                  </select>
+                </label>
+                {matchMode === 'ai' && (
+                  <label>
+                    CPU difficulty
+                    <select
+                      value={aiDifficulty}
+                      onChange={(event) => setAiDifficulty(event.target.value as CombatAiDifficulty)}
+                    >
+                      {(Object.entries(COMBAT_AI_DIFFICULTY_LABELS) as [CombatAiDifficulty, string][])
+                        .map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                    </select>
+                  </label>
+                )}
               </div>
               <button
                 type="button"
@@ -487,7 +376,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           <article>
             <Trophy size={22} aria-hidden="true" />
             <h3>Exhibition first</h3>
-            <p>Local match loop first; AI sparring and longer tournament structures can layer on top.</p>
+            <p>CPU sparring and local versus now run as scored best-of-three sets.</p>
           </article>
           <article>
             <ShieldCheck size={22} aria-hidden="true" />
@@ -506,7 +395,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         </div>
         <ol>
           {ROADMAP.map(([title, description], index) => (
-            <li key={title} className={index <= 1 ? 'is-ready' : undefined}>
+            <li key={title} className={index <= 2 ? 'is-ready' : undefined}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div><strong>{title}</strong><p>{description}</p></div>
             </li>

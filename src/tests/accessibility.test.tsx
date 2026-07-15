@@ -189,6 +189,10 @@ describe('automated accessibility contracts', () => {
     expect(
       Array.from(fighterTwo.options).find(option => option.textContent === 'Angel Dust')?.disabled,
     ).toBe(true);
+    const matchMode = screen.getByRole('combobox', { name: 'Match mode' }) as HTMLSelectElement;
+    const cpuDifficulty = screen.getByRole('combobox', { name: 'CPU difficulty' }) as HTMLSelectElement;
+    expect(matchMode.value).toBe('ai');
+    expect(cpuDifficulty.value).toBe('standard');
 
     const launchButton = screen.getByRole('button', { name: /Start exhibition/i }) as HTMLButtonElement;
     expect(launchButton.disabled).toBe(false);
@@ -203,6 +207,8 @@ describe('automated accessibility contracts', () => {
     await waitFor(() => expect(document.activeElement).toBe(liveStage));
     expect(screen.getByRole('heading', { name: /2\.5D combat — Angel Dust vs Vaggie/i })).toBeTruthy();
     expect(screen.getAllByText(/Round 1 live: Angel Dust vs Vaggie/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/CPU sparring · Standard/i)).toBeTruthy();
+    expect(screen.getByLabelText(/Vaggie CPU status/i)).toBeTruthy();
 
     const angelCombatant = container.querySelector<HTMLElement>('.arena-combatant.is-one');
     const startPosition = Number(angelCombatant?.dataset.position);
@@ -215,14 +221,16 @@ describe('automated accessibility contracts', () => {
     fireEvent.keyDown(window, { code: 'KeyF' });
     fireEvent.keyUp(window, { code: 'KeyF' });
     await waitFor(() => {
-      expect(screen.getAllByText(/Angel Dust .*Web kick chain/i).length).toBeGreaterThan(0);
+      expect(screen.getAllByText(/Angel Dust starts Acrobat jab/i).length).toBeGreaterThan(0);
     });
     await expectNoSeriousAccessibilityViolation(container);
 
     fireEvent.pointerDown(liveStage, { pointerId: 1, clientX: 30, clientY: 20 });
     fireEvent.pointerMove(liveStage, { pointerId: 1, clientX: 30, clientY: 90 });
     fireEvent.pointerUp(liveStage, { pointerId: 1, clientX: 30, clientY: 90 });
-    expect(screen.getByRole('combobox', { name: 'Choose fighter one' })).toBeTruthy();
+    const restoredFighterSelect = screen.getByRole('combobox', { name: 'Choose fighter one' });
+    expect(restoredFighterSelect).toBeTruthy();
+    await waitFor(() => expect(document.activeElement).toBe(restoredFighterSelect));
   });
 
   it('keeps the Arena safe when no timeline-eligible fighter exists', async () => {

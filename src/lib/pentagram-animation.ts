@@ -10,7 +10,8 @@ export function getCombatPoseColumn(action: CombatAction, remainingMs: number): 
   if (action === 'victory') return 5;
 
   if (action === 'light') {
-    return ms > 110 ? 3 : 4;
+    if (ms > 250) return 2;
+    return ms > 80 ? 3 : 4;
   }
 
   if (action === 'heavy') {

@@ -9,7 +9,16 @@ import {
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
 import { getCombatPoseColumn } from '../lib/pentagram-animation';
 import {
+  COMBAT_AI_DIFFICULTY_LABELS,
+  decideCombatAi,
+  getCombatAiThinkInterval,
+  type CombatAiDifficulty,
+} from '../lib/pentagram-ai';
+import {
   createCombatState,
+  createNextCombatRound,
+  getCombatAttackDuration,
+  isCombatAttackAction,
   releaseCombatGuard,
   resolveCombatAttack,
   stepCombat,
@@ -26,6 +35,8 @@ interface PentagramLiveFightProps {
   fighterTwo: Character;
   fighterOneDefinition: CombatantDefinition;
   fighterTwoDefinition: CombatantDefinition;
+  matchMode: 'ai' | 'local';
+  aiDifficulty: CombatAiDifficulty;
   onExit: () => void;
 }
 
@@ -125,6 +136,8 @@ export function PentagramLiveFight({
   fighterTwo,
   fighterOneDefinition,
   fighterTwoDefinition,
+  matchMode,
+  aiDifficulty,
   onExit,
 }: PentagramLiveFightProps) {
   const [combat, setCombat] = useState(() => createCombatState(
@@ -136,11 +149,18 @@ export function PentagramLiveFight({
   const pointerInputsRef = useRef<CombatInputs>(createEmptyInputs());
   const pointerTrackersRef = useRef<Map<number, PointerTracker>>(new Map());
   const lastTapRef = useRef<Record<PlayerSide, number>>({ one: 0, two: 0 });
+  const aiInputRef = useRef(createEmptyInputs().two);
+  const aiThinkMsRef = useRef(0);
 
-  const readInputs = useCallback(() => mergeInputs(
-    getKeyboardInputs(pressedCodesRef.current),
-    pointerInputsRef.current,
-  ), []);
+  const readInputs = useCallback(() => {
+    const humanInputs = mergeInputs(
+      getKeyboardInputs(pressedCodesRef.current),
+      pointerInputsRef.current,
+    );
+    return matchMode === 'ai'
+      ? { ...humanInputs, two: aiInputRef.current }
+      : humanInputs;
+  }, [matchMode]);
 
   const applyInputSnapshot = useCallback(() => {
     setCombat(current => stepCombat(
@@ -157,6 +177,7 @@ export function PentagramLiveFight({
     attack: CombatAttack,
     allowLightCancel = false,
   ) => {
+    if (matchMode === 'ai' && side === 'two') return;
     setCombat(current => resolveCombatAttack(
       current,
       side,
@@ -165,12 +186,14 @@ export function PentagramLiveFight({
       fighterTwoDefinition,
       allowLightCancel,
     ));
-  }, [fighterOneDefinition, fighterTwoDefinition]);
+  }, [fighterOneDefinition, fighterTwoDefinition, matchMode]);
 
   const clearLiveInputs = useCallback(() => {
     pressedCodesRef.current.clear();
     pointerInputsRef.current = createEmptyInputs();
     pointerTrackersRef.current.clear();
+    aiInputRef.current = createEmptyInputs().two;
+    aiThinkMsRef.current = 0;
     setCombat(current => releaseCombatGuard(current));
   }, []);
 
@@ -207,19 +230,48 @@ export function PentagramLiveFight({
     const runFrame = (now: number) => {
       const elapsedMs = now - previousTime;
       previousTime = now;
-      setCombat(current => stepCombat(
-        current,
-        readInputs(),
-        elapsedMs,
-        fighterOneDefinition,
-        fighterTwoDefinition,
-      ));
+      setCombat((current) => {
+        let next = current;
+        if (matchMode === 'ai' && current.active) {
+          aiThinkMsRef.current -= elapsedMs;
+          if (aiThinkMsRef.current <= 0) {
+            const decision = decideCombatAi(
+              current,
+              'two',
+              fighterOneDefinition,
+              fighterTwoDefinition,
+              aiDifficulty,
+            );
+            aiInputRef.current = decision.input;
+            aiThinkMsRef.current = getCombatAiThinkInterval(aiDifficulty);
+            if (decision.attack) {
+              next = resolveCombatAttack(
+                next,
+                'two',
+                decision.attack,
+                fighterOneDefinition,
+                fighterTwoDefinition,
+              );
+            }
+          }
+        } else if (matchMode === 'ai') {
+          aiInputRef.current = createEmptyInputs().two;
+        }
+
+        return stepCombat(
+          next,
+          readInputs(),
+          elapsedMs,
+          fighterOneDefinition,
+          fighterTwoDefinition,
+        );
+      });
       frameId = requestFrame(runFrame);
     };
 
     frameId = requestFrame(runFrame);
     return () => cancelFrame(frameId);
-  }, [fighterOneDefinition, fighterTwoDefinition, readInputs]);
+  }, [aiDifficulty, fighterOneDefinition, fighterTwoDefinition, matchMode, readInputs]);
 
   useEffect(() => {
     const pressedCodes = pressedCodesRef.current;
@@ -236,9 +288,10 @@ export function PentagramLiveFight({
 
       if (event.code === 'Enter') {
         if (!event.repeat) {
+          aiThinkMsRef.current = 0;
           setCombat(current => current.active
             ? current
-            : createCombatState(fighterOneDefinition, fighterTwoDefinition, current.round + 1));
+            : createNextCombatRound(current, fighterOneDefinition, fighterTwoDefinition));
         }
         return;
       }
@@ -276,6 +329,7 @@ export function PentagramLiveFight({
   }, [applyInputSnapshot, clearLiveInputs, fighterOneDefinition, fighterTwoDefinition, onExit, performAttack]);
 
   const setPointerDirection = (side: PlayerSide, deltaX: number, guarding: boolean) => {
+    if (matchMode === 'ai' && side === 'two') return;
     const nextSide = {
       left: deltaX < -14,
       right: deltaX > 14,
@@ -290,7 +344,8 @@ export function PentagramLiveFight({
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
-    const side: PlayerSide = event.clientX - bounds.left < bounds.width / 2 ? 'one' : 'two';
+    const pointerHalf: PlayerSide = event.clientX - bounds.left < bounds.width / 2 ? 'one' : 'two';
+    const side: PlayerSide = matchMode === 'ai' && combat.active ? 'one' : pointerHalf;
     event.currentTarget.setPointerCapture?.(event.pointerId);
     pointerTrackersRef.current.set(event.pointerId, {
       side,
@@ -327,7 +382,8 @@ export function PentagramLiveFight({
     const elapsedMs = window.performance.now() - tracker.startedAt;
     if (!combat.active) {
       if (tracker.side === 'one') {
-        setCombat(createCombatState(fighterOneDefinition, fighterTwoDefinition, combat.round + 1));
+        aiThinkMsRef.current = 0;
+        setCombat(createNextCombatRound(combat, fighterOneDefinition, fighterTwoDefinition));
       } else {
         clearLiveInputs();
         onExit();
@@ -360,9 +416,26 @@ export function PentagramLiveFight({
   const winnerName = combat.winner === 'one'
     ? fighterOne.name
     : combat.winner === 'two' ? fighterTwo.name : null;
+  const matchWinnerName = combat.matchWinner === 'one'
+    ? fighterOne.name
+    : combat.matchWinner === 'two' ? fighterTwo.name : null;
+  const resultTitle = matchWinnerName
+    ? `${matchWinnerName} wins the match`
+    : winnerName ? `${winnerName} wins round ${combat.round}` : 'Round draw';
+  const nextFightLabel = matchWinnerName ? 'rematch' : 'next round';
   const latestEvent = combat.log[0]?.text ?? '';
-  const fighterOneStyle = { '--arena-x': `${combat.positionOne}%` } as CSSProperties;
-  const fighterTwoStyle = { '--arena-x': `${combat.positionTwo}%` } as CSSProperties;
+  const fighterOneStyle = {
+    '--arena-x': `${combat.positionOne}%`,
+    '--arena-action-ms': isCombatAttackAction(combat.actionOne)
+      ? `${getCombatAttackDuration(fighterOneDefinition, combat.actionOne)}ms`
+      : '340ms',
+  } as CSSProperties;
+  const fighterTwoStyle = {
+    '--arena-x': `${combat.positionTwo}%`,
+    '--arena-action-ms': isCombatAttackAction(combat.actionTwo)
+      ? `${getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)}ms`
+      : '340ms',
+  } as CSSProperties;
   const fighterOneSpriteStyle: CSSProperties | undefined = fighterOneSprite ? {
     backgroundImage: `url("${fighterOneSprite.sheet}")`,
     backgroundPosition: `${fighterOnePose * 20}% ${fighterOneSprite.row * (100 / 3)}%`,
@@ -376,11 +449,15 @@ export function PentagramLiveFight({
     <section className="arena-fight-panel arena-live-shell art-deco-border" aria-labelledby="arena-fight-title">
       <div className="arena-fight-panel__top">
         <div>
-          <span className="arena-live-kicker">Live local exhibition</span>
+          <span className="arena-live-kicker">
+            {matchMode === 'ai'
+              ? `CPU sparring · ${COMBAT_AI_DIFFICULTY_LABELS[aiDifficulty]}`
+              : 'Two-player local exhibition'}
+          </span>
           <h2 id="arena-fight-title">2.5D combat — {fighterOne.name} vs {fighterTwo.name}</h2>
         </div>
         <div className="arena-round-counter">
-          <span>Round {combat.round}</span>
+          <span>Round {combat.round} · first to 2</span>
           <strong aria-label={`${timerSeconds} seconds remaining`}>{timerSeconds}</strong>
         </div>
       </div>
@@ -388,6 +465,15 @@ export function PentagramLiveFight({
       <div className="arena-hud" aria-label="Combat status">
         <div className="arena-hud__fighter">
           <strong>{fighterOne.name}</strong>
+          <span
+            className="arena-round-wins"
+            role="img"
+            aria-label={`${fighterOne.name} has ${combat.roundWinsOne} round wins`}
+          >
+            {[0, 1].map(index => (
+              <i key={index} className={index < combat.roundWinsOne ? 'is-earned' : undefined} />
+            ))}
+          </span>
           <span
             className="arena-health"
             role="progressbar"
@@ -412,6 +498,15 @@ export function PentagramLiveFight({
         </div>
         <div className="arena-hud__fighter is-p2">
           <strong>{fighterTwo.name}</strong>
+          <span
+            className="arena-round-wins is-p2"
+            role="img"
+            aria-label={`${fighterTwo.name} has ${combat.roundWinsTwo} round wins`}
+          >
+            {[0, 1].map(index => (
+              <i key={index} className={index < combat.roundWinsTwo ? 'is-earned' : undefined} />
+            ))}
+          </span>
           <span
             className="arena-health is-p2"
             role="progressbar"
@@ -438,7 +533,7 @@ export function PentagramLiveFight({
 
       <div
         ref={stageRef}
-        className="arena-combat-stage"
+        className={`arena-combat-stage${combat.hitstopMs > 0 ? ' is-hitstop' : ''}`}
         role="region"
         tabIndex={0}
         aria-label={`Live combat: ${fighterOne.name} versus ${fighterTwo.name}`}
@@ -463,6 +558,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionOne)}</span>
           <span className="arena-fighter-shadow" />
           <span className="arena-action-trail" />
+          {combat.impactMsOne > 0 && <span className="arena-hit-spark" />}
           {fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -483,6 +579,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionTwo)}</span>
           <span className="arena-fighter-shadow" />
           <span className="arena-action-trail" />
+          {combat.impactMsTwo > 0 && <span className="arena-hit-spark" />}
           {fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (
@@ -493,10 +590,10 @@ export function PentagramLiveFight({
         </div>
 
         {!combat.active && (
-          <div className="arena-ko" role="status" aria-live="assertive">
-            <strong>{winnerName ? `${winnerName} wins` : 'Draw'}</strong>
-            <span>Press Enter for the next round · Escape for fighter select</span>
-            <span>Touch: tap the left half for next round · tap the right half for fighter select</span>
+          <div className="arena-ko" role="status">
+            <strong>{resultTitle}</strong>
+            <span>Press Enter for {nextFightLabel} · Escape for fighter select</span>
+            <span>Touch: tap the left half for {nextFightLabel} · tap the right half for fighter select</span>
           </div>
         )}
       </div>
@@ -509,13 +606,28 @@ export function PentagramLiveFight({
         </div>
         <p>
           The fight runs live while keys are held. <kbd>Esc</kbd> returns to fighter select;
-          <kbd>Enter</kbd> starts the next round after K.O.
-          <small>Touch: use each side — drag to move, hold to guard, tap for light, double-tap for a heavy cancel, swipe up for special, swipe down for fighter select.</small>
+          <kbd>Enter</kbd> continues the best-of-three set after a round.
+          <small>
+            Touch: drag to move, hold to guard, tap for light, double-tap for a heavy cancel,
+            swipe up for special, swipe down for fighter select.
+          </small>
         </p>
-        <div className="arena-keymap is-p2" aria-label={`${fighterTwo.name} controls`}>
-          <strong>P2 · {fighterTwo.name}</strong>
-          <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>↓</kbd> guard</span>
-          <span><kbd>J</kbd> light · <kbd>K</kbd> heavy · <kbd>L</kbd> special</span>
+        <div
+          className="arena-keymap is-p2"
+          aria-label={matchMode === 'ai' ? `${fighterTwo.name} CPU status` : `${fighterTwo.name} controls`}
+        >
+          <strong>{matchMode === 'ai' ? 'CPU' : 'P2'} · {fighterTwo.name}</strong>
+          {matchMode === 'ai' ? (
+            <>
+              <span>{COMBAT_AI_DIFFICULTY_LABELS[aiDifficulty]} reaction model</span>
+              <span>The CPU approaches, guards and spends tension without reading future input.</span>
+            </>
+          ) : (
+            <>
+              <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>↓</kbd> guard</span>
+              <span><kbd>J</kbd> light · <kbd>K</kbd> heavy · <kbd>L</kbd> special</span>
+            </>
+          )}
         </div>
       </div>
 
