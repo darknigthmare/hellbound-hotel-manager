@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Seventeen OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 44 optional Helluva Boss profiles: 408 validated animation cells and 68 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the eleven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases and four Wave 3 atlases are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Twenty-one OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 60 optional Helluva Boss profiles: 504 validated animation cells and 84 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the fifteen isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases, four Wave 3 atlases and four Wave 4 atlases are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
 The chroma-key generation masters are retained in `chroma/`. Full-body visual references used during generation are retained in `references/` for reproducibility.
 
@@ -10,7 +10,7 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 - Baxter and Abel use their official Season 2 designs and remain spoiler-scoped in the database.
 - Marlow Glass and Ember Vale are original, non-canon `Simulation AU` applicants. Their designs must never be presented as series canon.
 - Generated poses are original gameplay animation poses; the references anchor identity, silhouette, palette and costume.
-- Helluva Boss profiles never enter the hotel resident database. Their eleven atlases and 44 portraits belong only to the optional I.M.P. Simulation AU campaign.
+- Helluva Boss profiles never enter the hotel resident database. Their fifteen atlases and 60 portraits belong only to the optional I.M.P. Simulation AU campaign.
 
 ## Atlas order and references
 
@@ -33,6 +33,10 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 | `helluva/helluva-hauntings.png` | Rolando, Mrs. Mayberry, Martha, Tilla | [Rolando](https://hazbinhotel.fandom.com/wiki/Rolando), [Mrs. Mayberry](https://hazbinhotel.fandom.com/wiki/Mrs._Mayberry), [Martha](https://hazbinhotel.fandom.com/wiki/Martha), [Tilla](https://hazbinhotel.fandom.com/wiki/Tilla) |
 | `helluva/helluva-legacies.png` | Moxxie's mother, Loopty Goopty, Lyle Lipton, Deerie | [Moxxie's mother](https://hazbinhotel.fandom.com/wiki/Moxxie%27s_mother), [Loopty Goopty](https://hazbinhotel.fandom.com/wiki/Loopty_Goopty), [Lyle Lipton](https://hazbinhotel.fandom.com/wiki/Lyle_Lipton), [Deerie](https://hazbinhotel.fandom.com/wiki/Deerie) |
 | `helluva/helluva-powers-and-kin.png` | Joe, Lin, Leviathan, Belphegor | [Joe](https://hazbinhotel.fandom.com/wiki/Joe), [Lin](https://hazbinhotel.fandom.com/wiki/Lin), [Leviathan](https://hazbinhotel.fandom.com/wiki/Leviathan), [Belphegor](https://hazbinhotel.fandom.com/wiki/Belphegor) |
+| `helluva/helluva-secondary-underworld.png` | Alessio, Arick "Burnie" Burnz, Counselor Jimmy, Yogirt | [Alessio](https://hazbinhotel.fandom.com/wiki/Alessio), [Arick Burnz](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Imps), [Counselor Jimmy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans), [Yogirt](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Demons) |
+| `helluva/helluva-secondary-humans.png` | Emberlynn Pinkle, Kendra, Rita, Better Than Blitzo Guy | [Emberlynn Pinkle](https://hazbinhotel.fandom.com/wiki/Emberlynn_Pinkle), [Kendra](https://hazbinhotel.fandom.com/wiki/Barbie%27s_Bad_Day/Gallery), [Rita](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Demons), [Better Than Blitzo Guy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Succubi) |
+| `helluva/helluva-secondary-rides.png` | Loo Loo, Jesse, Miles, Bombproof | [Loo Loo](https://hazbinhotel.fandom.com/wiki/Loo_Loo), [Jesse](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Succubi), [Miles](https://hazbinhotel.fandom.com/wiki/Miles), [Bombproof](https://hazbinhotel.fandom.com/wiki/Bombproof) |
+| `helluva/helluva-secondary-nightlife.png` | Muffy, Dr. Somna, Vikki, Gigi | [Muffy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Baphomets), [Dr. Somna](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Baphomets), [Vikki](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Hellhounds), [Gigi](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Hellhounds) |
 
 ## Rebuild portraits
 
@@ -77,6 +81,12 @@ perfectly flat chroma-key background, with no text, labels, grid, shadows or
 cross-row character mixing. The references guide visual identity only; the
 new animation poses remain original Simulation AU material.
 
-The current strict pass validates all eleven Helluva atlases and all 44
-Helluva portraits. Across both collections, that is seventeen atlases, 408
-animation cells and 68 portraits.
+Wave 4 publishes `helluva-secondary-underworld.png`,
+`helluva-secondary-humans.png`, `helluva-secondary-rides.png`, and
+`helluva-secondary-nightlife.png`, plus sixteen secondary-character portraits.
+Emberlynn Pinkle and Kendra are scoped to the optional Helluva Shorts filter;
+the mixed atlas that contains them is hidden unless Shorts are enabled.
+
+The current strict pass validates all fifteen Helluva atlases and all 60
+Helluva portraits. Across both collections, that is twenty-one atlases, 504
+animation cells and 84 portraits.

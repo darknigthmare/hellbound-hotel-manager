@@ -458,45 +458,45 @@ describe('Helluva Boss campaign durability', () => {
 });
 
 describe('Helluva Boss static content integrity', () => {
-  it('defines 44 isolated, uniquely mapped profiles and all nine phase approaches', () => {
+  it('defines 60 isolated, uniquely mapped profiles and all nine phase approaches', () => {
     const profileIds = HELLUVA_CHARACTERS.map(profile => profile.id);
     const profileNames = HELLUVA_CHARACTERS.map(profile => profile.name);
     const portraitPaths = HELLUVA_CHARACTERS.map(profile => profile.portrait);
     const sheetNames = HELLUVA_SPRITE_SHEETS.flatMap(sheet => sheet.characters);
     const coreCharacterIds = new Set(getSeedData().characters.map(character => character.id));
 
-    expect(HELLUVA_CHARACTERS).toHaveLength(44);
-    expect(new Set(profileIds).size).toBe(44);
-    expect(new Set(profileNames).size).toBe(44);
-    expect(new Set(portraitPaths).size).toBe(44);
+    expect(HELLUVA_CHARACTERS).toHaveLength(60);
+    expect(new Set(profileIds).size).toBe(60);
+    expect(new Set(profileNames).size).toBe(60);
+    expect(new Set(portraitPaths).size).toBe(60);
     expect(profileIds.every(id => id.startsWith('hb_'))).toBe(true);
     expect(profileIds.every(id => !coreCharacterIds.has(id))).toBe(true);
     expect(portraitPaths).toEqual(profileIds.map(id => `/assets/sprites/helluva/portraits/${id}.png`));
     expect(sheetNames).toEqual(profileNames);
     expect(HELLUVA_SPRITE_SHEETS.slice(-4)).toEqual([
       {
-        id: 'helluva-operatives',
-        path: '/assets/sprites/helluva/sheets/helluva-operatives.png',
+        id: 'helluva-secondary-underworld',
+        path: '/assets/sprites/helluva/sheets/helluva-secondary-underworld.png',
         spoilerScope: 'season_2',
-        characters: ['Robo Fizz', 'Agent One', 'Agent Two', 'Satan']
+        characters: ['Alessio', 'Arick “Burnie” Burnz', 'Counselor Jimmy', 'Yogirt']
       },
       {
-        id: 'helluva-powers-and-kin',
-        path: '/assets/sprites/helluva/sheets/helluva-powers-and-kin.png',
-        spoilerScope: 'season_2',
-        characters: ['Joe', 'Lin', 'Leviathan', 'Belphegor']
+        id: 'helluva-secondary-humans',
+        path: '/assets/sprites/helluva/sheets/helluva-secondary-humans.png',
+        spoilerScope: 'specials',
+        characters: ['Emberlynn Pinkle', 'Kendra', 'Rita', 'Better Than Blitzo Guy']
       },
       {
-        id: 'helluva-hauntings',
-        path: '/assets/sprites/helluva/sheets/helluva-hauntings.png',
+        id: 'helluva-secondary-rides',
+        path: '/assets/sprites/helluva/sheets/helluva-secondary-rides.png',
         spoilerScope: 'season_2',
-        characters: ['Rolando', 'Mrs. Mayberry', 'Martha', 'Tilla']
+        characters: ['Loo Loo', 'Jesse', 'Miles', 'Bombproof']
       },
       {
-        id: 'helluva-legacies',
-        path: '/assets/sprites/helluva/sheets/helluva-legacies.png',
+        id: 'helluva-secondary-nightlife',
+        path: '/assets/sprites/helluva/sheets/helluva-secondary-nightlife.png',
         spoilerScope: 'season_2',
-        characters: ['Moxxie\'s mother', 'Loopty Goopty', 'Lyle Lipton', 'Deerie']
+        characters: ['Muffy', 'Dr. Somna', 'Vikki', 'Gigi']
       }
     ]);
     expect(HELLUVA_CHARACTERS.filter(profile => profile.playable).map(profile => profile.id))
@@ -529,7 +529,23 @@ describe('Helluva Boss static content integrity', () => {
       'hb_tilla',
       'hb_loopty_goopty',
       'hb_lyle_lipton',
-      'hb_deerie'
+      'hb_deerie',
+      'hb_alessio',
+      'hb_arick_burnz',
+      'hb_counselor_jimmy',
+      'hb_yogirt',
+      'hb_emberlynn_pinkle',
+      'hb_kendra',
+      'hb_rita',
+      'hb_better_than_blitzo_guy',
+      'hb_loo_loo',
+      'hb_jesse',
+      'hb_miles',
+      'hb_bombproof',
+      'hb_muffy',
+      'hb_dr_somna',
+      'hb_vikki',
+      'hb_gigi'
     ]));
 
     expect(HELLUVA_APPROACHES).toHaveLength(9);
@@ -575,8 +591,48 @@ describe('Helluva Boss static content integrity', () => {
     expect(profiles.get('hb_belphegor')?.species).toBe('Deadly Sin (Sloth)');
   });
 
-  it('publishes eleven 6x4 atlases and one transparent portrait per profile', () => {
-    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(11);
+  it('keeps Wave 4 scope, episode references and uncertain canon boundaries explicit', () => {
+    const seasonOneIds = ['hb_loo_loo', 'hb_jesse', 'hb_bombproof', 'hb_vikki', 'hb_gigi'];
+    const seasonTwoIds = [
+      'hb_alessio',
+      'hb_arick_burnz',
+      'hb_counselor_jimmy',
+      'hb_yogirt',
+      'hb_rita',
+      'hb_better_than_blitzo_guy',
+      'hb_miles',
+      'hb_muffy',
+      'hb_dr_somna'
+    ];
+    const profiles = new Map(HELLUVA_CHARACTERS.map(profile => [profile.id, profile]));
+
+    for (const id of seasonOneIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_1' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S1E\d+/);
+    }
+    for (const id of seasonTwoIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_2' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S2E\d+/);
+    }
+
+    expect(profiles.get('hb_emberlynn_pinkle')).toMatchObject({
+      spoilerScope: 'specials',
+      sourceRef: 'Helluva Shorts: Mission: Weeaboo-boo'
+    });
+    expect(profiles.get('hb_kendra')).toMatchObject({
+      spoilerScope: 'specials',
+      sourceRef: 'Helluva Shorts: Barbie\'s Bad Day'
+    });
+    expect(profiles.get('hb_alessio')?.species).toMatch(/exact species unspecified/i);
+    expect(profiles.get('hb_yogirt')?.species).toMatch(/exact species unspecified/i);
+    expect(profiles.get('hb_kendra')?.species).toMatch(/exact species unspecified/i);
+    expect(profiles.get('hb_arick_burnz')?.canonNote).toMatch(/dies.*never.*resurrected.*playable/i);
+    expect(profiles.get('hb_counselor_jimmy')?.canonNote).toMatch(/dies.*never.*recruitable/i);
+    expect(profiles.get('hb_better_than_blitzo_guy')?.canonNote).toMatch(/does not invent a name.*romance.*alliance/i);
+  });
+
+  it('publishes fifteen 6x4 atlases and one transparent portrait per profile', () => {
+    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(15);
     for (const sheet of HELLUVA_SPRITE_SHEETS) {
       expect(sheet.characters).toHaveLength(4);
       expect(publishedAsset(sheet.path)).toEqual({

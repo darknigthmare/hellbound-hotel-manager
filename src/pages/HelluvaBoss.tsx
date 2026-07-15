@@ -9,7 +9,6 @@ import {
   EyeOff,
   Flame,
   Gauge,
-  Images,
   LockKeyhole,
   MapPin,
   Play,
@@ -23,6 +22,8 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { HelluvaAtlasGallery } from '../components/HelluvaAtlasGallery';
+import { HelluvaRoster } from '../components/HelluvaRoster';
 import { db } from '../db/localDb';
 import {
   HELLUVA_CHARACTERS,
@@ -39,6 +40,11 @@ import {
   getHelluvaOutcome,
   HelluvaContractStatus,
 } from '../expansions/helluva-boss/engine';
+import {
+  HELLUVA_BOSS_SPOILER_SCOPES,
+  HELLUVA_BOSS_SPOILER_SCOPE_COPY,
+  isHelluvaBossSpoilerVisible,
+} from '../expansions/helluva-boss/spoilers';
 import { DatabaseState, HelluvaBossSpoilerScope } from '../types';
 import '../styles/helluva-boss.css';
 
@@ -68,14 +74,6 @@ type PendingFocusTarget = 'active_contract' | 'next_choice';
 const phaseLabels = ['Briefing', 'Field operation', 'Debrief'] as const;
 const numberFormatter = new Intl.NumberFormat('en-US');
 
-const getInitials = (name: string) => name
-  .trim()
-  .split(/\s+/)
-  .slice(0, 2)
-  .map((part) => part[0] || '')
-  .join('')
-  .toUpperCase() || '?';
-
 const helluvaCharacterById = new Map(
   HELLUVA_CHARACTERS.map((character) => [character.id, character] as const),
 );
@@ -84,7 +82,7 @@ const FeaturedCast: React.FC<FeaturedCastProps> = ({ characterIds, spoilerScope,
   const visibleProfiles = characterIds
     .map((characterId) => helluvaCharacterById.get(characterId))
     .filter((profile): profile is HelluvaCharacterProfile => Boolean(
-      profile && (spoilerScope === 'season_2' || profile.spoilerScope === 'season_1'),
+      profile && isHelluvaBossSpoilerVisible(spoilerScope, profile.spoilerScope),
     ));
   const hiddenCount = characterIds.length - visibleProfiles.length;
 
@@ -138,32 +136,9 @@ const ContractStatusIcon: React.FC<{ status: HelluvaContractStatus }> = ({ statu
   return <LockKeyhole size={15} aria-hidden="true" />;
 };
 
-const CharacterPortrait: React.FC<{
-  character: HelluvaCharacterProfile;
-  failed: boolean;
-  onFailure: () => void;
-}> = ({ character, failed, onFailure }) => (
-  <div className="helluva-character__portrait">
-    <span aria-hidden="true">{getInitials(character.name)}</span>
-    {!failed && (
-      <img
-        src={character.portrait}
-        alt={`OpenAI gameplay portrait of ${character.name}`}
-        loading="lazy"
-        decoding="async"
-        width={512}
-        height={512}
-        onError={onFailure}
-      />
-    )}
-  </div>
-);
-
 export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, onManageExtensions }) => {
   const campaign = state.extensions.helluvaBoss;
   const [notice, setNotice] = useState<string | null>(null);
-  const [failedPortraitIds, setFailedPortraitIds] = useState<Set<string>>(() => new Set());
-  const [failedSheetIds, setFailedSheetIds] = useState<Set<string>>(() => new Set());
   const [isResetOpen, setIsResetOpen] = useState(false);
   const activeContractRef = useRef<HTMLElement>(null);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
@@ -228,17 +203,14 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
   ) / HELLUVA_CREW_IDS.length;
   const completionPercent = (campaign.completedContractIds.length / HELLUVA_CONTRACTS.length) * 100;
   const outcome = getHelluvaOutcome(campaign);
+  const spoilerCopy = HELLUVA_BOSS_SPOILER_SCOPE_COPY[campaign.spoilerScope];
   const visibleCharacters = HELLUVA_CHARACTERS.filter((character) => (
-    campaign.spoilerScope === 'season_2' || character.spoilerScope === 'season_1'
+    isHelluvaBossSpoilerVisible(campaign.spoilerScope, character.spoilerScope)
   ));
   const visibleLore = HELLUVA_LORE.filter((entry) => (
-    campaign.spoilerScope === 'season_2' || entry.spoilerScope === 'season_1'
-  ));
-  const visibleSpriteSheets = HELLUVA_SPRITE_SHEETS.filter((sheet) => (
-    campaign.spoilerScope === 'season_2' || sheet.spoilerScope === 'season_1'
+    isHelluvaBossSpoilerVisible(campaign.spoilerScope, entry.spoilerScope)
   ));
   const hiddenProfileCount = HELLUVA_CHARACTERS.length - visibleCharacters.length;
-  const hiddenSpriteSheetCount = HELLUVA_SPRITE_SHEETS.length - visibleSpriteSheets.length;
 
   const reportFailure = (fallback: string) => {
     setNotice(db.getStorageStatus().lastError?.message || fallback);
@@ -249,9 +221,7 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
       reportFailure('The Helluva Boss spoiler scope could not be saved.');
       return;
     }
-    setNotice(spoilerScope === 'season_1'
-      ? 'Season 2 profiles and lore are now hidden.'
-      : 'Season 2 profiles and lore are now visible.');
+    setNotice(HELLUVA_BOSS_SPOILER_SCOPE_COPY[spoilerScope].changeNotice);
     onStateChange();
   };
 
@@ -286,14 +256,6 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
     onStateChange();
   };
 
-  const markPortraitFailed = (characterId: string) => {
-    setFailedPortraitIds((current) => new Set(current).add(characterId));
-  };
-
-  const markSheetFailed = (sheetId: string) => {
-    setFailedSheetIds((current) => new Set(current).add(sheetId));
-  };
-
   return (
     <div className="page-container animate-fade-in helluva-page">
       <header className="helluva-hero">
@@ -314,8 +276,11 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
             value={campaign.spoilerScope}
             onChange={(event) => changeSpoilers(event.target.value as HelluvaBossSpoilerScope)}
           >
-            <option value="season_1">Season 1 only</option>
-            <option value="season_2">Season 1 + Season 2</option>
+            {HELLUVA_BOSS_SPOILER_SCOPES.map((scope) => (
+              <option key={scope} value={scope}>
+                {HELLUVA_BOSS_SPOILER_SCOPE_COPY[scope].selectorLabel}
+              </option>
+            ))}
           </select>
           <small><EyeOff size={13} aria-hidden="true" /> Contract gameplay remains available; this only filters reference profiles and lore.</small>
           <button type="button" className="btn btn-secondary" onClick={onManageExtensions}>Manage content pack</button>
@@ -478,96 +443,19 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
         </div>
       </section>
 
-      <section aria-labelledby="helluva-roster-title">
-        <div className="helluva-section-header">
-          <div>
-            <span>Canon reference directory</span>
-            <h2 id="helluva-roster-title">Character profiles · {visibleCharacters.length}/{HELLUVA_CHARACTERS.length}</h2>
-            <p>{HELLUVA_CHARACTERS.length} gameplay portraits keep the extension visual without registering anyone as a hotel resident.</p>
-          </div>
-          {hiddenProfileCount > 0 && <span className="helluva-hidden-count"><EyeOff size={14} aria-hidden="true" /> {hiddenProfileCount} Season 2 profiles hidden</span>}
-        </div>
+      <HelluvaRoster
+        key={campaign.spoilerScope}
+        characters={visibleCharacters}
+        totalProfileCount={HELLUVA_CHARACTERS.length}
+        hiddenProfileCount={hiddenProfileCount}
+        hiddenContentLabel={spoilerCopy.hiddenContentLabel}
+      />
 
-        <div className="helluva-character-grid">
-          {visibleCharacters.map((character) => (
-            <article
-              key={character.id}
-              id={`helluva-character-${character.id}`}
-              className="helluva-character glass-panel"
-              aria-labelledby={`${character.id}-name`}
-            >
-              <CharacterPortrait
-                character={character}
-                failed={failedPortraitIds.has(character.id)}
-                onFailure={() => markPortraitFailed(character.id)}
-              />
-              <div className="helluva-character__body">
-                <div className="helluva-character__heading">
-                  <div>
-                    <h3 id={`${character.id}-name`}>{character.name}</h3>
-                    <span>{character.alias}</span>
-                  </div>
-                  <span className="helluva-canon-badge">Canon reference</span>
-                </div>
-                <p>{character.description}</p>
-                <dl>
-                  <div><dt>Demon type / rank</dt><dd>{character.species}</dd></div>
-                  <div><dt>Role</dt><dd>{character.role}</dd></div>
-                  <div><dt>Affiliation</dt><dd>{character.affiliation}</dd></div>
-                </dl>
-                <div className="helluva-character__note">
-                  <strong>Continuity note</strong>
-                  <p>{character.canonNote}</p>
-                  <small>{character.sourceRef}</small>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="helluva-sprites-title">
-        <div className="helluva-section-header">
-          <div>
-            <span>OpenAI-generated gameplay art</span>
-            <h2 id="helluva-sprites-title">Sprite atlases</h2>
-            <p>{visibleSpriteSheets.length} visible sheets cover the current reference profiles across six gameplay poses each.</p>
-          </div>
-          {hiddenSpriteSheetCount > 0 ? (
-            <span className="helluva-hidden-count">
-              <EyeOff size={14} aria-hidden="true" /> {hiddenSpriteSheetCount} Season 2 {hiddenSpriteSheetCount === 1 ? 'atlas' : 'atlases'} hidden
-            </span>
-          ) : (
-            <Images size={28} aria-hidden="true" />
-          )}
-        </div>
-        <div className="helluva-sprite-grid">
-          {visibleSpriteSheets.map((sheet) => (
-            <figure key={sheet.id} className="helluva-sprite-sheet glass-panel">
-              {!failedSheetIds.has(sheet.id) ? (
-                <img
-                  src={sheet.path}
-                  alt={`OpenAI sprite atlas featuring ${sheet.characters.join(', ')}`}
-                  loading="lazy"
-                  decoding="async"
-                  width={1536}
-                  height={1024}
-                  onError={() => markSheetFailed(sheet.id)}
-                />
-              ) : (
-                <div className="helluva-sprite-sheet__fallback" role="img" aria-label={`Sprite atlas pending for ${sheet.characters.join(', ')}`}>
-                  <Images size={30} aria-hidden="true" />
-                  <span>Atlas asset pending</span>
-                </div>
-              )}
-              <figcaption>
-                <strong>{sheet.characters.join(' · ')}</strong>
-                <span>6 poses per character</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      <HelluvaAtlasGallery
+        sheets={HELLUVA_SPRITE_SHEETS}
+        spoilerScope={campaign.spoilerScope}
+        hiddenContentLabel={spoilerCopy.hiddenContentLabel}
+      />
 
       <section aria-labelledby="helluva-lore-title">
         <div className="helluva-section-header">

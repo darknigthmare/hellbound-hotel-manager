@@ -81,6 +81,27 @@ HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
         "helluva-powers-and-kin.png",
         ("hb_joe", "hb_lin", "hb_leviathan", "hb_belphegor"),
     ),
+    (
+        "helluva-secondary-underworld.png",
+        ("hb_alessio", "hb_arick_burnz", "hb_counselor_jimmy", "hb_yogirt"),
+    ),
+    (
+        "helluva-secondary-humans.png",
+        (
+            "hb_emberlynn_pinkle",
+            "hb_kendra",
+            "hb_rita",
+            "hb_better_than_blitzo_guy",
+        ),
+    ),
+    (
+        "helluva-secondary-rides.png",
+        ("hb_loo_loo", "hb_jesse", "hb_miles", "hb_bombproof"),
+    ),
+    (
+        "helluva-secondary-nightlife.png",
+        ("hb_muffy", "hb_dr_somna", "hb_vikki", "hb_gigi"),
+    ),
 )
 
 COLLECTIONS: tuple[SpriteCollection, ...] = (

@@ -873,6 +873,100 @@
   text-align: right;
 }
 
+.helluva-roster-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 13px;
+}
+
+.helluva-roster-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.helluva-roster-filters button,
+.helluva-roster-pagination > div button {
+  min-height: 34px;
+  padding: 6px 10px;
+  color: var(--color-text-muted);
+  background: rgba(12, 8, 9, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.helluva-roster-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.helluva-roster-filters button > span {
+  min-width: 20px;
+  padding: 2px 5px;
+  color: var(--color-gold-dark);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 0.58rem;
+  text-align: center;
+}
+
+.helluva-roster-filters button:hover,
+.helluva-roster-filters button:focus-visible,
+.helluva-roster-pagination > div button:hover,
+.helluva-roster-pagination > div button:focus-visible,
+.helluva-roster-filters button.is-active,
+.helluva-roster-pagination > div button.is-active {
+  color: #fff2d4;
+  background: rgba(168, 32, 42, 0.2);
+  border-color: rgba(232, 185, 100, 0.46);
+}
+
+.helluva-roster-status {
+  margin: 0;
+  color: var(--color-gold-dark);
+  font-size: 0.65rem;
+  text-align: right;
+}
+
+.helluva-roster-empty {
+  padding: 22px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.helluva-roster-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.helluva-roster-pagination > .btn {
+  min-width: 88px;
+}
+
+.helluva-roster-pagination > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.helluva-roster-pagination > div button {
+  min-width: 34px;
+  padding-inline: 7px;
+}
+
 .helluva-character-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -925,10 +1019,42 @@
   font-size: 0.88rem;
 }
 
-.helluva-character__heading > div > span {
+.helluva-character__heading > div:first-child > span {
   color: var(--color-gold);
   font-size: 0.63rem;
   font-style: italic;
+}
+
+.helluva-character__badges {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.helluva-roster-tier {
+  padding: 3px 5px;
+  color: #ffdcb2;
+  background: rgba(180, 86, 34, 0.12);
+  border: 1px solid rgba(255, 169, 82, 0.22);
+  border-radius: 999px;
+  font-size: 0.53rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.helluva-roster-tier.is-primary {
+  color: #ffdb73;
+  background: rgba(177, 110, 16, 0.14);
+  border-color: rgba(255, 205, 80, 0.28);
+}
+
+.helluva-roster-tier.is-secondary {
+  color: #d9c8ff;
+  background: rgba(111, 75, 169, 0.15);
+  border-color: rgba(180, 145, 235, 0.25);
 }
 
 .helluva-canon-badge {
@@ -985,6 +1111,68 @@
   font-style: italic;
 }
 
+.helluva-atlas-accordion {
+  display: grid;
+  gap: 10px;
+}
+
+.helluva-atlas-group {
+  overflow: hidden;
+}
+
+.helluva-atlas-group > h3 {
+  margin: 0;
+}
+
+.helluva-atlas-group > h3 > button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  color: var(--color-text-main);
+  background: rgba(14, 8, 10, 0.56);
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.helluva-atlas-group > h3 > button:hover,
+.helluva-atlas-group > h3 > button:focus-visible {
+  background: rgba(168, 32, 42, 0.13);
+}
+
+.helluva-atlas-group > h3 > button > span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+}
+
+.helluva-atlas-group > h3 > button small {
+  color: var(--color-gold-dark);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.helluva-atlas-group > h3 > button svg {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.helluva-atlas-group > h3 > button[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.helluva-atlas-group > div:not([hidden]) {
+  padding: 0 13px 13px;
+}
+
 .helluva-sprite-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -993,6 +1181,10 @@
 
 .helluva-sprite-sheet {
   overflow: hidden;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
 }
 
 .helluva-sprite-sheet img,
@@ -1148,9 +1340,23 @@
   .content-pack-card__actions,
   .helluva-outcome,
   .extension-section-heading,
-  .helluva-section-header {
+  .helluva-section-header,
+  .helluva-roster-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .helluva-roster-status {
+    text-align: left;
+  }
+
+  .helluva-roster-pagination {
+    flex-wrap: wrap;
+  }
+
+  .helluva-roster-pagination > div {
+    order: -1;
+    width: 100%;
   }
 
   .content-pack-status {
@@ -1192,5 +1398,9 @@
   .helluva-choice:hover,
   .helluva-choice:focus-visible {
     transform: none;
+  }
+
+  .helluva-atlas-group > h3 > button svg {
+    transition: none;
   }
 }

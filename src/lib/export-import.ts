@@ -6,6 +6,7 @@ import {
   HELLUVA_CONTRACTS,
   HELLUVA_CREW_IDS
 } from '../expansions/helluva-boss/data';
+import { HELLUVA_BOSS_SPOILER_SCOPES } from '../expansions/helluva-boss/spoilers';
 
 export const BACKUP_SCHEMA_VERSION = 4;
 export const INVENTORY_MAX = 50;
@@ -36,6 +37,8 @@ export const DEFAULT_INVENTORY: InventoryBackup = {
   clean: 8,
   food: 15
 };
+
+const HELLUVA_BOSS_SPOILER_SCOPE_SET = new Set<string>(HELLUVA_BOSS_SPOILER_SCOPES);
 
 export interface InventoryBackup {
   bar: number;
@@ -459,7 +462,7 @@ function parseHelluvaBossState(value: unknown): { value?: HelluvaBossSaveState; 
   const context = 'extensions.helluvaBoss';
   const scalarError = firstError([
     requireBoolean(value, 'enabled', context),
-    requireEnum(value, 'spoilerScope', new Set(['season_1', 'season_2']), context),
+    requireEnum(value, 'spoilerScope', HELLUVA_BOSS_SPOILER_SCOPE_SET, context),
     requireNumber(value, 'campaignDay', context, 1),
     requireEnum(value, 'status', new Set(['active', 'victory', 'collapse']), context),
     requireNullableString(value, 'activeContractId', context),

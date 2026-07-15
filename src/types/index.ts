@@ -226,7 +226,7 @@ export interface GameplayMeta {
 
 export type ExtensionId = 'helluva_boss';
 export type HelluvaBossCampaignStatus = 'active' | 'victory' | 'collapse';
-export type HelluvaBossSpoilerScope = 'season_1' | 'season_2';
+export type HelluvaBossSpoilerScope = 'season_1' | 'season_2' | 'specials';
 
 /**
  * Mutable save data for the optional Helluva Boss campaign. Canon profiles,

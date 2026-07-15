@@ -190,7 +190,7 @@ describe('automated accessibility contracts', () => {
     );
 
     expect(screen.getByRole('heading', { name: /Helluva Boss/ })).toBeTruthy();
-    expect(screen.getByText(/8 Season 2 atlases hidden/)).toBeTruthy();
+    expect(screen.getByText(/Season 2 and Helluva Shorts atlases hidden/)).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Crimson' })).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Andrealphus' })).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Paimon' })).toBeNull();
@@ -201,9 +201,15 @@ describe('automated accessibility contracts', () => {
     expect(screen.queryByRole('heading', { name: 'Belphegor' })).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Rolando' })).toBeNull();
     expect(screen.queryByRole('img', { name: /Crimson|Andrealphus|Paimon|Mammon|Vassago|Satan|Leviathan|Belphegor|Rolando/i })).toBeNull();
+    expect(document.querySelectorAll('.helluva-character')).toHaveLength(12);
+
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button', { name: 'Next' }));
     expect(screen.getByRole('heading', { name: 'Wally Wackford' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: 'Cletus' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: 'Mrs. Mayberry' })).toBeTruthy();
+
+    await user.click(screen.getByRole('button', { name: 'Next' }));
     expect(screen.getByRole('heading', { name: 'Tilla' })).toBeTruthy();
     expect(screen.getAllByRole('figure')).toHaveLength(3);
     await expectNoSeriousAccessibilityViolation(container);

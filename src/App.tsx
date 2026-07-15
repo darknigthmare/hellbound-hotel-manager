@@ -9,6 +9,10 @@ import {
   HELLUVA_CONTRACTS,
   HELLUVA_LORE,
 } from './expansions/helluva-boss/data';
+import {
+  HELLUVA_BOSS_SPOILER_SCOPE_COPY,
+  isHelluvaBossSpoilerVisible,
+} from './expansions/helluva-boss/spoilers';
 import './styles/theme.css';
 
 const Dashboard = lazy(() => import('./pages/Dashboard').then(module => ({ default: module.Dashboard })));
@@ -48,6 +52,9 @@ export const App: React.FC = () => {
   const helluvaState = dbState.extensions.helluvaBoss;
   const helluvaEnabled = Boolean(helluvaState?.enabled);
   const isHelluvaView = currentView === 'helluva';
+  const helluvaSpoilerCopy = HELLUVA_BOSS_SPOILER_SCOPE_COPY[
+    helluvaState?.spoilerScope ?? 'season_1'
+  ];
 
   const handleRefreshState = () => {
     setDbState(db.getFullState());
@@ -237,12 +244,8 @@ export const App: React.FC = () => {
     });
 
     if (helluvaEnabled && helluvaState) {
-      const spoilerVisible = (scope: 'season_1' | 'season_2') => (
-        helluvaState.spoilerScope === 'season_2' || scope === 'season_1'
-      );
-
       HELLUVA_CHARACTERS.forEach((character) => {
-        if (!spoilerVisible(character.spoilerScope)) return;
+        if (!isHelluvaBossSpoilerVisible(helluvaState.spoilerScope, character.spoilerScope)) return;
         if (includes(character.name, character.alias, character.species, character.role, character.affiliation, character.description)) {
           results.push({
             id: `helluva-character-${character.id}`,
@@ -269,7 +272,7 @@ export const App: React.FC = () => {
       });
 
       HELLUVA_LORE.forEach((entry) => {
-        if (!spoilerVisible(entry.spoilerScope)) return;
+        if (!isHelluvaBossSpoilerVisible(helluvaState.spoilerScope, entry.spoilerScope)) return;
         if (includes(entry.title, entry.category, entry.description, entry.sourceRef)) {
           results.push({
             id: `helluva-lore-${entry.id}`,
@@ -441,7 +444,7 @@ export const App: React.FC = () => {
         <Topbar 
           currentView={currentView}
           timelineScope={dbState.timeline.current}
-          hideSpoilers={isHelluvaView ? helluvaState?.spoilerScope === 'season_1' : dbState.timeline.hideSpoilers}
+          hideSpoilers={isHelluvaView ? helluvaState?.spoilerScope !== 'specials' : dbState.timeline.hideSpoilers}
           spoilerLevel={dbState.timeline.spoilerLevel}
           budget={isHelluvaView ? helluvaState?.funds ?? 0 : budgetBalance}
           searchQuery={searchQuery}
@@ -454,9 +457,9 @@ export const App: React.FC = () => {
           context={isHelluvaView ? {
             currencyUnit: 'cr',
             budgetTitle: 'I.M.P. operational funds (Simulation AU credits)',
-            timelineLabel: helluvaState?.spoilerScope === 'season_1' ? 'Helluva Season 1' : 'Helluva Seasons 1–2',
+            timelineLabel: helluvaSpoilerCopy.timelineLabel,
             timelineTitle: 'Helluva Boss spoiler scope is managed on this page',
-            spoilerLabel: helluvaState?.spoilerScope === 'season_1' ? 'Season 2 hidden' : 'Season 2 visible',
+            spoilerLabel: helluvaSpoilerCopy.spoilerLabel,
             spoilerTitle: 'Helluva Boss reference visibility; campaign contracts remain Simulation AU',
             searchLabel: 'Search I.M.P. contracts, characters and lore',
             searchPlaceholder: 'Search I.M.P. contracts, cast, lore…',

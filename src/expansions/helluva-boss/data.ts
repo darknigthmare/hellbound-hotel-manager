@@ -2,6 +2,8 @@ import { HelluvaBossSpoilerScope } from '../../types';
 
 export const HELLUVA_BOSS_DATA_VERSION = 1;
 
+export type HelluvaRosterTier = 'primary' | 'supporting' | 'secondary';
+
 export interface HelluvaCharacterProfile {
   id: string;
   name: string;
@@ -10,6 +12,7 @@ export interface HelluvaCharacterProfile {
   role: string;
   affiliation: string;
   playable: boolean;
+  rosterTier: HelluvaRosterTier;
   spoilerScope: HelluvaBossSpoilerScope;
   description: string;
   canonNote: string;
@@ -68,9 +71,51 @@ export interface HelluvaApproachChoice {
   effects: HelluvaChoiceEffects;
 }
 
+export interface HelluvaSpriteSheet {
+  id: string;
+  path: string;
+  spoilerScope: HelluvaBossSpoilerScope;
+  characters: readonly string[];
+}
+
 const portrait = (id: string) => `/assets/sprites/helluva/portraits/${id}.png`;
 
-export const HELLUVA_CHARACTERS: readonly HelluvaCharacterProfile[] = [
+type HelluvaCharacterSeed = Omit<HelluvaCharacterProfile, 'rosterTier'>;
+
+const HELLUVA_PRIMARY_CHARACTER_IDS = new Set([
+  'hb_blitzo',
+  'hb_moxxie',
+  'hb_millie',
+  'hb_loona',
+  'hb_stolas',
+]);
+
+const HELLUVA_SECONDARY_CHARACTER_IDS = new Set([
+  'hb_alessio',
+  'hb_arick_burnz',
+  'hb_counselor_jimmy',
+  'hb_yogirt',
+  'hb_emberlynn_pinkle',
+  'hb_kendra',
+  'hb_rita',
+  'hb_better_than_blitzo_guy',
+  'hb_loo_loo',
+  'hb_jesse',
+  'hb_miles',
+  'hb_bombproof',
+  'hb_muffy',
+  'hb_dr_somna',
+  'hb_vikki',
+  'hb_gigi',
+]);
+
+const resolveHelluvaRosterTier = (characterId: string): HelluvaRosterTier => {
+  if (HELLUVA_PRIMARY_CHARACTER_IDS.has(characterId)) return 'primary';
+  if (HELLUVA_SECONDARY_CHARACTER_IDS.has(characterId)) return 'secondary';
+  return 'supporting';
+};
+
+export const HELLUVA_CHARACTERS: readonly HelluvaCharacterProfile[] = ([
   {
     id: 'hb_blitzo',
     name: 'Blitzø',
@@ -686,8 +731,235 @@ export const HELLUVA_CHARACTERS: readonly HelluvaCharacterProfile[] = [
     canonNote: 'Her ruling and celestial affiliation are canon; no alliance with I.M.P. is implied.',
     sourceRef: 'Helluva Boss S1E4',
     portrait: portrait('hb_deerie')
+  },
+  {
+    id: 'hb_alessio',
+    name: 'Alessio',
+    alias: 'Crimson\'s bodyguard',
+    species: 'Demon (shark-like; exact species unspecified)',
+    role: 'Personal bodyguard and syndicate enforcer',
+    affiliation: 'Crimson\'s syndicate',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'Crimson\'s calm personal bodyguard, carrying out his orders and surviving the confrontation surrounding Chaz\'s arranged wedding.',
+    canonNote: 'His loyalty to Crimson is canon; this profile never turns him into an I.M.P. recruit or assigns a more precise species.',
+    sourceRef: 'Helluva Boss S2E3',
+    portrait: portrait('hb_alessio')
+  },
+  {
+    id: 'hb_arick_burnz',
+    name: 'Arick “Burnie” Burnz',
+    alias: 'Burnie',
+    species: 'Imp',
+    role: 'Review blogger and obsessive former Fizzarolli fan',
+    affiliation: 'Independent',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'An obsessive fan turned hostile review blogger who confronts Fizzarolli during Mammon\'s clown pageant.',
+    canonNote: 'Arick dies during that confrontation; this archival profile never presents him as resurrected or playable.',
+    sourceRef: 'Helluva Boss S2E7',
+    portrait: portrait('hb_arick_burnz')
+  },
+  {
+    id: 'hb_counselor_jimmy',
+    name: 'Counselor Jimmy',
+    alias: 'Jimmy',
+    species: 'Human',
+    role: 'Camp counselor and criminal drug supplier',
+    affiliation: 'Camp Ivannakummore / Barbie Wire\'s supply line',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A Camp Ivannakummore counselor who supplies Barbie Wire\'s human-world drug operation and murders a coworker who discovers it.',
+    canonNote: 'Jimmy dies during the camp confrontation; he remains an archival threat profile, never a recruitable operative.',
+    sourceRef: 'Helluva Boss S2E5',
+    portrait: portrait('hb_counselor_jimmy')
+  },
+  {
+    id: 'hb_yogirt',
+    name: 'Yogirt',
+    alias: 'Satan\'s therapist',
+    species: 'Demon (exact species unspecified)',
+    role: 'Personal therapist and anger-management aide',
+    affiliation: 'Satan\'s staff / infernal court',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'Satan\'s personal therapist, present beside him during the infernal court proceeding to help regulate his anger.',
+    canonNote: 'His therapeutic role is canon; contract appearances are Simulation AU and do not grant him judicial authority.',
+    sourceRef: 'Helluva Boss S2E11',
+    portrait: portrait('hb_yogirt')
+  },
+  {
+    id: 'hb_emberlynn_pinkle',
+    name: 'Emberlynn Pinkle',
+    alias: 'Former I.M.P. target',
+    species: 'Sinner demon (former human)',
+    role: 'Former human target and obsessive demon fan',
+    affiliation: 'Independent',
+    playable: false,
+    spoilerScope: 'specials',
+    description: 'A human college student targeted by I.M.P. who later appears in Hell as a sinner while continuing her fixation on demons.',
+    canonNote: 'Her human target and sinner appearances share one profile; her fixation on Blitzø is unrequited and never reframed as a mutual relationship.',
+    sourceRef: 'Helluva Shorts: Mission: Weeaboo-boo',
+    portrait: portrait('hb_emberlynn_pinkle')
+  },
+  {
+    id: 'hb_kendra',
+    name: 'Kendra',
+    alias: 'Barbie Wire\'s girlfriend',
+    species: 'Hellborn demon (exact species unspecified)',
+    role: 'Barbie Wire\'s girlfriend and concerned support figure',
+    affiliation: 'Independent',
+    playable: false,
+    spoilerScope: 'specials',
+    description: 'Barbie Wire\'s girlfriend, shown trying to contact her and confronting the instability surrounding Barbie\'s work and recovery.',
+    canonNote: 'The short shows their relationship under strain; this profile does not invent a breakup, reconciliation or operational alliance.',
+    sourceRef: 'Helluva Shorts: Barbie\'s Bad Day',
+    portrait: portrait('hb_kendra')
+  },
+  {
+    id: 'hb_rita',
+    name: 'Rita',
+    alias: 'One Star Wonder victim',
+    species: 'Sinner demon (former human)',
+    role: 'Former human victim and witness to Rolando\'s attacks',
+    affiliation: 'Independent',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A sinner who tells Loona and Millie how Rolando killed her when she was human at the One Star Wonder.',
+    canonNote: 'Her account and former human identity are canon; any operational use of her testimony is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E10',
+    portrait: portrait('hb_rita')
+  },
+  {
+    id: 'hb_better_than_blitzo_guy',
+    name: 'Better Than Blitzo Guy',
+    alias: 'Anti-Blitzo partygoer',
+    species: 'Incubus demon',
+    role: 'Partygoer who dances with Stolas',
+    affiliation: 'Verosika\'s Anti-Blitzo party',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A partygoer who asks Stolas to dance after his performance at Verosika\'s Anti-Blitzo party.',
+    canonNote: 'The dance and kiss shown on screen are canon; this profile does not invent a name, lasting romance or alliance.',
+    sourceRef: 'Helluva Boss S2E9',
+    portrait: portrait('hb_better_than_blitzo_guy')
+  },
+  {
+    id: 'hb_loo_loo',
+    name: 'Loo Loo',
+    alias: 'Apple mascot',
+    species: 'Demon (exact species unspecified)',
+    role: 'Loo Loo Land mascot and greeter',
+    affiliation: 'Loo Loo Land',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'The performer inside Loo Loo Land\'s apple-themed mascot costume, greeting visitors and defending the park\'s reputation.',
+    canonNote: 'The performer\'s identity and exact species are unspecified; this profile does not merge Loo Loo with Lucifer\'s Lu Lu World.',
+    sourceRef: 'Helluva Boss S1E2',
+    portrait: portrait('hb_loo_loo')
+  },
+  {
+    id: 'hb_jesse',
+    name: 'Jesse',
+    alias: 'Ozzie\'s bouncer',
+    species: 'Incubus demon',
+    role: 'Door security and bouncer',
+    affiliation: 'Ozzie\'s',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'The incubus bouncer at Ozzie\'s who enforces the venue\'s couples-only entry rule when Blitzø arrives alone.',
+    canonNote: 'His employment and door policy are canon; any security coordination in a contract is Simulation AU.',
+    sourceRef: 'Helluva Boss S1E7',
+    portrait: portrait('hb_jesse')
+  },
+  {
+    id: 'hb_miles',
+    name: 'Miles',
+    alias: 'Fizzarolli fan',
+    species: 'Imp',
+    role: 'Young fan and aspiring clown',
+    affiliation: 'Independent',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A young deaf imp who communicates in sign language and shares an encouraging exchange with Fizzarolli at Mammon\'s clown pageant.',
+    canonNote: 'His fan interaction with Fizzarolli is canon; the extension does not turn him into an employee or field operative.',
+    sourceRef: 'Helluva Boss S2E7',
+    portrait: portrait('hb_miles')
+  },
+  {
+    id: 'hb_bombproof',
+    name: 'Bombproof',
+    alias: 'Striker\'s steed',
+    species: 'Hell Horse',
+    role: 'Striker\'s mount and companion animal',
+    affiliation: 'Striker',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'Striker\'s flame-maned hell horse, first seen carrying him during the Harvest Moon Festival.',
+    canonNote: 'Bombproof belongs with Striker; the extension never treats him as an I.M.P. vehicle or recruitable crew member.',
+    sourceRef: 'Helluva Boss S1E5',
+    portrait: portrait('hb_bombproof')
+  },
+  {
+    id: 'hb_muffy',
+    name: 'Muffy',
+    alias: 'St. An\'s receptionist',
+    species: 'Baphomet demon',
+    role: 'Hospital nurse and receptionist',
+    affiliation: 'St. An\'s Hospital',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A baphomet nurse and receptionist who checks Blitzø and Loona into St. An\'s Hospital for Loona\'s Hellbies shot.',
+    canonNote: 'Her hospital position is canon; any administrative assistance in contracts is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E4',
+    portrait: portrait('hb_muffy')
+  },
+  {
+    id: 'hb_dr_somna',
+    name: 'Dr. Somna',
+    alias: 'St. An\'s doctor',
+    species: 'Baphomet demon',
+    role: 'Hospital doctor',
+    affiliation: 'St. An\'s Hospital',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'The doctor at St. An\'s Hospital who administers Loona\'s required Hellbies vaccination.',
+    canonNote: 'His medical role is canon; this profile does not infer broader authority or I.M.P. membership.',
+    sourceRef: 'Helluva Boss S2E4',
+    portrait: portrait('hb_dr_somna')
+  },
+  {
+    id: 'hb_vikki',
+    name: 'Vikki',
+    alias: 'Queen Bee partygoer',
+    species: 'Poodle hellhound',
+    role: 'Partygoer and hostile acquaintance of Loona',
+    affiliation: 'Independent / Beelzebub\'s party circle',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'A poodle hellhound at Beelzebub\'s party whose mutual dislike with Loona is made clear.',
+    canonNote: 'Their hostility is canon; the extension does not invent its origin or turn Vikki into a permanent rival faction.',
+    sourceRef: 'Helluva Boss S1E8',
+    portrait: portrait('hb_vikki')
+  },
+  {
+    id: 'hb_gigi',
+    name: 'Gigi',
+    alias: 'Queen Bee partygoer',
+    species: 'Hellhound',
+    role: 'Friend and social contact of Loona',
+    affiliation: 'Independent / Beelzebub\'s party circle',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'A hellhound who befriends Loona at Beelzebub\'s party and becomes part of her social circle.',
+    canonNote: 'Their friendship is canon; mission support and campaign effects remain Simulation AU.',
+    sourceRef: 'Helluva Boss S1E8',
+    portrait: portrait('hb_gigi')
   }
-] as const;
+] as const satisfies readonly HelluvaCharacterSeed[]).map((profile) => ({
+  ...profile,
+  rosterTier: resolveHelluvaRosterTier(profile.id),
+}));
 
 export const HELLUVA_LORE: readonly HelluvaLoreProfile[] = [
   {
@@ -775,7 +1047,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Newly arrived sinner', location: 'Living world suburb', difficulty: 'routine',
     summary: 'Complete a straightforward revenge contract while teaching the crew how this campaign scores exposure and teamwork.',
     prerequisiteId: 'hb_contract_01_report', entryCost: 45, reward: 340, completionHeat: 2,
-    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_barbie_wire', 'hb_mrs_mayberry', 'hb_martha', 'hb_loopty_goopty', 'hb_lyle_lipton'],
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_barbie_wire', 'hb_mrs_mayberry', 'hb_martha', 'hb_loopty_goopty', 'hb_lyle_lipton', 'hb_emberlynn_pinkle'],
     phaseBriefs: ['Confirm the client, target and exit conditions.', 'Approach the target through a crowded neighborhood.', 'Remove the trail and settle the client invoice.'],
     tactics: [
       { id: 'neighborhood_ghost', label: 'Neighborhood ghost route', description: 'Use service alleys and empty houses to reach the target without becoming local gossip.' },
@@ -788,7 +1060,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Confidential sinner client', location: 'Living world media district', difficulty: 'risky',
     summary: 'A bystander recorded an infernal transformation. Recover the footage before it reaches a public feed.',
     prerequisiteId: 'hb_contract_02_clean', entryCost: 60, reward: 410, completionHeat: 4,
-    featuredCharacterIds: ['hb_loona', 'hb_verosika', 'hb_vortex', 'hb_barbie_wire', 'hb_wally_wackford', 'hb_robo_fizz', 'hb_rolando'],
+    featuredCharacterIds: ['hb_loona', 'hb_verosika', 'hb_vortex', 'hb_barbie_wire', 'hb_wally_wackford', 'hb_robo_fizz', 'hb_rolando', 'hb_rita', 'hb_better_than_blitzo_guy', 'hb_loo_loo', 'hb_vikki', 'hb_gigi'],
     phaseBriefs: ['Trace every copy of the recording.', 'Reach the witness and the backup server.', 'Decide whether to erase, replace or bury the evidence.'],
     tactics: [
       { id: 'cold_storage_sweep', label: 'Cold-storage sweep', description: 'Trace metadata and backups until every copy of the infernal footage has an owner.' },
@@ -801,7 +1073,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'High-risk sinner client', location: 'Living world hospital', difficulty: 'dangerous',
     summary: 'A protected target draws celestial interference, forcing I.M.P. to finish the job without turning the district into proof of Hell.',
     prerequisiteId: 'hb_contract_03_camera', entryCost: 75, reward: 500, completionHeat: 6,
-    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_cletus', 'hb_collin', 'hb_keenie', 'hb_deerie'],
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_cletus', 'hb_collin', 'hb_keenie', 'hb_deerie', 'hb_muffy', 'hb_dr_somna'],
     phaseBriefs: ['Map celestial patrol patterns and civilian traffic.', 'Separate the target from the protection detail.', 'Exit before the celestial response can establish a pattern.'],
     tactics: [
       { id: 'chapel_blind_clock', label: 'Chapel blind clock', description: 'Exploit the short interval when the ward, cameras and celestial patrol stop overlapping.' },
@@ -840,7 +1112,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Protected informant', location: 'Greed Ring', difficulty: 'dangerous',
     summary: 'A Greed Ring syndicate is pressuring an I.M.P. associate for operational intelligence. Extract the informant without forcing loyalty or reconciliation.',
     prerequisiteId: 'hb_contract_06_blindspot', entryCost: 90, reward: 610, completionHeat: 3,
-    featuredCharacterIds: ['hb_moxxie', 'hb_millie', 'hb_crimson', 'hb_chazwick_thurman', 'hb_barbie_wire', 'hb_sallie_may', 'hb_moxxies_mother'],
+    featuredCharacterIds: ['hb_moxxie', 'hb_millie', 'hb_crimson', 'hb_chazwick_thurman', 'hb_barbie_wire', 'hb_sallie_may', 'hb_moxxies_mother', 'hb_alessio', 'hb_counselor_jimmy', 'hb_kendra'],
     phaseBriefs: ['Let the informant define the operation\'s safety boundaries.', 'Move the informant past syndicate collectors.', 'Choose a protection plan that does not turn safety into another debt.'],
     tactics: [
       { id: 'boundary_first_extraction', label: 'Boundary-first extraction', description: 'Build the route around the informant\'s consent, safe contacts and absolute limits.' },
@@ -866,7 +1138,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. strategic operation', location: 'Greed Ring safehouse', difficulty: 'crisis',
     summary: 'Use the recovered ledger to cut criminal leverage, expose a network or buy a temporary ceasefire.',
     prerequisiteId: 'hb_contract_08_warehouse', entryCost: 115, reward: 760, completionHeat: 5,
-    featuredCharacterIds: ['hb_asmodeus', 'hb_mammon', 'hb_glitz', 'hb_glam', 'hb_crimson', 'hb_leviathan', 'hb_belphegor'],
+    featuredCharacterIds: ['hb_asmodeus', 'hb_mammon', 'hb_glitz', 'hb_glam', 'hb_crimson', 'hb_leviathan', 'hb_belphegor', 'hb_arick_burnz', 'hb_miles'],
     phaseBriefs: ['Verify which names can be acted on safely.', 'Reach the syndicate archive before it relocates.', 'Burn, expose or leverage the ledger without sacrificing the crew.'],
     tactics: [
       { id: 'quiet_leverage_map', label: 'Quiet leverage map', description: 'Verify every connection and cut only the links that cannot endanger protected names.' },
@@ -879,7 +1151,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. defensive operation', location: 'Wrath Ring badlands', difficulty: 'crisis',
     summary: 'A rival assassin hunts Blitzø and Stolas. Turn the pursuit into a controlled extraction rather than a fatal canon rewrite.',
     prerequisiteId: 'hb_contract_09_red_ledger', entryCost: 125, reward: 820, completionHeat: 4,
-    featuredCharacterIds: ['hb_blitzo', 'hb_stolas', 'hb_striker', 'hb_stella', 'hb_vassago', 'hb_sallie_may', 'hb_joe', 'hb_lin', 'hb_satan'],
+    featuredCharacterIds: ['hb_blitzo', 'hb_stolas', 'hb_striker', 'hb_stella', 'hb_vassago', 'hb_sallie_may', 'hb_joe', 'hb_lin', 'hb_satan', 'hb_bombproof'],
     phaseBriefs: ['Track the hunter without using Stolas as bait.', 'Choose a trap, duel or evacuation route.', 'Leave the badlands with every canon character alive.'],
     tactics: [
       { id: 'counter_hunter_trail', label: 'Counter-hunter trail', description: 'Read the assassin\'s spoor backward and prepare an exit before springing any trap.' },
@@ -905,7 +1177,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. final operation', location: 'Imp City and the living world', difficulty: 'crisis',
     summary: 'Contain a living-world breach and an infernal injunction at once. Cumulative funds, heat, cohesion, discretion, reputation and fatigue determine the shape of the final extraction.',
     prerequisiteId: 'hb_contract_11_open_door', entryCost: 150, reward: 1000, completionHeat: 10,
-    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_mammon'],
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_mammon', 'hb_yogirt', 'hb_jesse'],
     phaseBriefs: ['Divide the crew between the breach and the legal threat.', 'Hold the portal route while evidence and civilians converge.', 'Commit to the extraction plan earned by the campaign\'s cumulative metrics.'],
     tactics: [
       { id: 'metric_balanced_extraction', label: 'Metric-balanced extraction', description: 'Spend the campaign\'s remaining resources to reduce the weakest operational metric before the portal closes.' },
@@ -1055,5 +1327,29 @@ export const HELLUVA_SPRITE_SHEETS = [
     path: '/assets/sprites/helluva/sheets/helluva-legacies.png',
     spoilerScope: 'season_2',
     characters: ['Moxxie\'s mother', 'Loopty Goopty', 'Lyle Lipton', 'Deerie']
+  },
+  {
+    id: 'helluva-secondary-underworld',
+    path: '/assets/sprites/helluva/sheets/helluva-secondary-underworld.png',
+    spoilerScope: 'season_2',
+    characters: ['Alessio', 'Arick “Burnie” Burnz', 'Counselor Jimmy', 'Yogirt']
+  },
+  {
+    id: 'helluva-secondary-humans',
+    path: '/assets/sprites/helluva/sheets/helluva-secondary-humans.png',
+    spoilerScope: 'specials',
+    characters: ['Emberlynn Pinkle', 'Kendra', 'Rita', 'Better Than Blitzo Guy']
+  },
+  {
+    id: 'helluva-secondary-rides',
+    path: '/assets/sprites/helluva/sheets/helluva-secondary-rides.png',
+    spoilerScope: 'season_2',
+    characters: ['Loo Loo', 'Jesse', 'Miles', 'Bombproof']
+  },
+  {
+    id: 'helluva-secondary-nightlife',
+    path: '/assets/sprites/helluva/sheets/helluva-secondary-nightlife.png',
+    spoilerScope: 'season_2',
+    characters: ['Muffy', 'Dr. Somna', 'Vikki', 'Gigi']
   }
-] as const;
+] as const satisfies readonly HelluvaSpriteSheet[];
