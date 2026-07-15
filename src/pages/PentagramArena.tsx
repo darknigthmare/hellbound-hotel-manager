@@ -5,7 +5,7 @@ import { getCharacterSpriteAsset } from '../lib/character-sprites';
 import { LoreValidation } from '../lib/lore-validation';
 import type { CombatantDefinition } from '../lib/pentagram-combat';
 import { RulesEngine } from '../lib/rules-engine';
-import type { Character, CharacterStatus, DatabaseState, RiskLevel, TimelineScope } from '../types';
+import type { Character, DatabaseState, RiskLevel, TimelineScope } from '../types';
 import '../styles/pentagram-arena.css';
 
 interface PentagramArenaProps {
@@ -36,8 +36,6 @@ interface FighterCardProps {
 }
 
 type ArenaPhase = 'select' | 'fight';
-
-const ARENA_STATUSES = new Set<CharacterStatus>(['staff', 'resident', 'applicant']);
 
 const RISK_PROFILE: Record<RiskLevel, { label: string; value: number; power: number }> = {
   low: { label: 'Controlled', value: 32, power: 8 },
@@ -216,7 +214,7 @@ function getArenaFighters(state: DatabaseState): Character[] {
       || LoreValidation.isAvailableAtTimeline(source.timelineScope, state.timeline.current);
 
     if (!availableAtTimeline || !RulesEngine.isContentVisible(source, state.timeline)) return [];
-    if (!ARENA_STATUSES.has(fighter.status)) return [];
+    if (!getCharacterSpriteAsset(fighter.id)) return [];
     return [fighter];
   });
 }
@@ -390,7 +388,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           <div className="arena-kicker"><Swords size={16} aria-hidden="true" /> Simulation AU combat lab</div>
           <h1>Pentagram Arena</h1>
           <p>
-            Build a 2.5D exhibition match with hotel inhabitants, fighter-card selection and
+            Build a 2.5D exhibition match with timeline-visible fighters, fighter-card selection and
             a local prototype loop inspired by anime fighting games.
           </p>
         </div>
@@ -455,7 +453,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
                 <span id="arena-launch-note">
                   {matchupReady
                     ? 'Matchup ready for a live local exhibition. Results stay inside this page.'
-                    : 'At least two timeline-eligible hotel inhabitants are required to prepare a matchup.'}
+                    : 'At least two timeline-eligible sprite fighters are required to prepare a matchup.'}
                 </span>
               </div>
               <button

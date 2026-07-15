@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { getCombatPoseColumn } from '../lib/pentagram-animation';
 import {
   createCombatState,
   resolveCombatAttack,
@@ -191,5 +192,19 @@ describe('Pentagram Arena live combat engine', () => {
 
     expect(afterSlowFrame.timerMs).toBe(98_000);
     expect(afterSlowFrame.positionOne - initial.positionOne).toBeLessThan(2);
+  });
+
+  it('maps attacks through readable anticipation, strike and recovery sprite poses', () => {
+    expect(getCombatPoseColumn('idle', 0)).toBe(0);
+    expect(getCombatPoseColumn('walk', 0)).toBe(2);
+    expect(getCombatPoseColumn('light', 340)).toBe(3);
+    expect(getCombatPoseColumn('light', 80)).toBe(4);
+    expect(getCombatPoseColumn('heavy', 460)).toBe(2);
+    expect(getCombatPoseColumn('heavy', 220)).toBe(3);
+    expect(getCombatPoseColumn('heavy', 80)).toBe(4);
+    expect(getCombatPoseColumn('special', 700)).toBe(2);
+    expect(getCombatPoseColumn('special', 340)).toBe(3);
+    expect(getCombatPoseColumn('special', 100)).toBe(4);
+    expect(getCombatPoseColumn('victory', 0)).toBe(5);
   });
 });

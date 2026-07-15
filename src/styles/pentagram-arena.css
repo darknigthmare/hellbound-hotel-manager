@@ -541,6 +541,7 @@
 
 .arena-combat-stage {
   position: relative;
+  isolation: isolate;
   min-height: clamp(330px, 42vw, 520px);
   overflow: hidden;
   outline: none;
@@ -591,8 +592,8 @@
   z-index: 2;
   left: var(--arena-x);
   bottom: 9%;
-  width: clamp(132px, 21vw, 245px);
-  height: 78%;
+  width: clamp(168px, 25vw, 310px);
+  height: min(78%, 360px);
   transform: translate3d(-50%, 0, 0);
   transform-origin: center bottom;
   will-change: left, transform;
@@ -602,18 +603,23 @@
 .arena-sprite-frame,
 .arena-combatant strong {
   position: absolute;
-  inset: 22px 0 0;
+  left: 50%;
+  bottom: 0;
   width: 100%;
-  height: calc(100% - 22px);
+  height: auto;
+  aspect-ratio: 1;
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+  transform: translateX(-50%);
 }
 
 .arena-sprite-frame {
   display: block;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 600% 400%;
+  image-rendering: auto;
 }
 
 .arena-combatant strong {
@@ -626,7 +632,32 @@
 
 .arena-combatant.is-two img,
 .arena-combatant.is-two .arena-sprite-frame {
-  transform: scaleX(-1);
+  transform: translateX(-50%) scaleX(-1);
+}
+
+.arena-fighter-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 58%;
+  height: 11%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.58), transparent 68%);
+  transform: translateX(-50%);
+}
+
+.arena-action-trail {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 24%;
+  width: 52%;
+  height: 42%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 216, 111, 0.5), transparent);
+  border-radius: 50%;
+  filter: blur(7px);
+  transform: translateX(-50%) skewX(-12deg);
+  pointer-events: none;
 }
 
 .arena-combatant.is-guard .arena-sprite-frame,
@@ -639,6 +670,12 @@
   filter: drop-shadow(0 0 24px rgba(255, 214, 91, 0.9)) drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
 }
 
+.arena-combatant.is-light .arena-action-trail,
+.arena-combatant.is-heavy .arena-action-trail,
+.arena-combatant.is-special .arena-action-trail {
+  animation: arena-trail-flash 260ms ease-out;
+}
+
 .arena-combatant.is-hit {
   animation: arena-hit-shake 180ms steps(2, end);
 }
@@ -646,13 +683,41 @@
 .arena-combatant.is-one.is-light,
 .arena-combatant.is-one.is-heavy,
 .arena-combatant.is-one.is-special {
-  animation: arena-lunge-one 240ms ease-out;
+  animation: arena-lunge-one 340ms cubic-bezier(0.2, 0.86, 0.24, 1);
 }
 
 .arena-combatant.is-two.is-light,
 .arena-combatant.is-two.is-heavy,
 .arena-combatant.is-two.is-special {
-  animation: arena-lunge-two 240ms ease-out;
+  animation: arena-lunge-two 340ms cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-heavy {
+  animation-duration: 460ms;
+}
+
+.arena-combatant.is-special {
+  animation-duration: 700ms;
+}
+
+.arena-combatant.is-idle .arena-sprite-frame,
+.arena-combatant.is-idle img {
+  animation: arena-idle-breathe 1600ms ease-in-out infinite alternate;
+}
+
+.arena-combatant.is-walk .arena-sprite-frame,
+.arena-combatant.is-walk img {
+  animation: arena-walk-bob 420ms ease-in-out infinite alternate;
+}
+
+.arena-combatant.is-two.is-idle .arena-sprite-frame,
+.arena-combatant.is-two.is-idle img {
+  animation-name: arena-idle-breathe-two;
+}
+
+.arena-combatant.is-two.is-walk .arena-sprite-frame,
+.arena-combatant.is-two.is-walk img {
+  animation-name: arena-walk-bob-two;
 }
 
 .arena-combatant.is-victory {
@@ -809,12 +874,14 @@
 
 @keyframes arena-lunge-one {
   0%, 100% { transform: translate3d(-50%, 0, 0); }
-  45% { transform: translate3d(calc(-50% + 14px), -2px, 0) scale(1.025); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
 }
 
 @keyframes arena-lunge-two {
   0%, 100% { transform: translate3d(-50%, 0, 0); }
-  45% { transform: translate3d(calc(-50% - 14px), -2px, 0) scale(1.025); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
 }
 
 @keyframes arena-hit-shake {
@@ -826,6 +893,32 @@
 @keyframes arena-victory-pulse {
   from { filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.15)); }
   to { filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.62)); }
+}
+
+@keyframes arena-idle-breathe {
+  from { transform: translateX(-50%) translateY(0) scaleY(1); }
+  to { transform: translateX(-50%) translateY(-4px) scaleY(1.012); }
+}
+
+@keyframes arena-walk-bob {
+  from { transform: translateX(-50%) translateY(1px) rotate(-0.6deg); }
+  to { transform: translateX(-50%) translateY(-5px) rotate(0.6deg); }
+}
+
+@keyframes arena-idle-breathe-two {
+  from { transform: translateX(-50%) scaleX(-1) translateY(0) scaleY(1); }
+  to { transform: translateX(-50%) scaleX(-1) translateY(-4px) scaleY(1.012); }
+}
+
+@keyframes arena-walk-bob-two {
+  from { transform: translateX(-50%) scaleX(-1) translateY(1px) rotate(0.6deg); }
+  to { transform: translateX(-50%) scaleX(-1) translateY(-5px) rotate(-0.6deg); }
+}
+
+@keyframes arena-trail-flash {
+  0% { opacity: 0; transform: translateX(-62%) scaleX(0.65) skewX(-12deg); }
+  45% { opacity: 0.82; transform: translateX(-50%) scaleX(1.08) skewX(-12deg); }
+  100% { opacity: 0; transform: translateX(-38%) scaleX(1.35) skewX(-12deg); }
 }
 
 .arena-section-heading {
@@ -1006,7 +1099,7 @@
   }
 
   .arena-combatant {
-    width: clamp(104px, 34vw, 162px);
+    width: clamp(124px, 38vw, 190px);
   }
 
   .arena-fight-panel {
@@ -1057,7 +1150,7 @@
   }
 
   .arena-combatant {
-    width: clamp(96px, 19vw, 170px);
+    width: clamp(104px, 20vw, 190px);
   }
 }
 
@@ -1071,6 +1164,11 @@
   .arena-combatant.is-two.is-heavy,
   .arena-combatant.is-two.is-special,
   .arena-combatant.is-victory,
+  .arena-combatant.is-idle .arena-sprite-frame,
+  .arena-combatant.is-idle img,
+  .arena-combatant.is-walk .arena-sprite-frame,
+  .arena-combatant.is-walk img,
+  .arena-action-trail,
   .arena-health > span,
   .arena-tension > span {
     animation: none;

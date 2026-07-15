@@ -178,7 +178,9 @@ describe('automated accessibility contracts', () => {
     const fighterOne = screen.getByRole('combobox', { name: 'Choose fighter one' }) as HTMLSelectElement;
     const fighterTwo = screen.getByRole('combobox', { name: 'Choose fighter two' }) as HTMLSelectElement;
     expect(fighterOne.value).not.toBe(fighterTwo.value);
-    expect(screen.queryByRole('option', { name: 'Vox' })).toBeNull();
+    expect(screen.getAllByRole('option', { name: 'Vox' })).toHaveLength(2);
+    expect(screen.queryByRole('option', { name: 'Baxter' })).toBeNull();
+    expect(fighterOne.options).toHaveLength(22);
 
     await user.selectOptions(fighterOne, 'angeldust');
     expect(fighterOne.selectedOptions[0]?.textContent).toBe('Angel Dust');
@@ -229,7 +231,7 @@ describe('automated accessibility contracts', () => {
 
     expect(screen.getByText('0 fighters indexed')).toBeTruthy();
     expect(screen.getAllByRole('option', { name: 'No eligible fighters' })).toHaveLength(2);
-    expect(screen.getByText(/At least two timeline-eligible hotel inhabitants/i)).toBeTruthy();
+    expect(screen.getByText(/At least two timeline-eligible sprite fighters/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);
   });
 

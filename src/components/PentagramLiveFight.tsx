@@ -7,6 +7,7 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from 'react';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
+import { getCombatPoseColumn } from '../lib/pentagram-animation';
 import {
   createCombatState,
   releaseCombatGuard,
@@ -68,15 +69,6 @@ const ATTACK_CODES: Readonly<Record<string, readonly [PlayerSide, CombatAttack]>
 function isEditableTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
   return target.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA', 'BUTTON'].includes(target.tagName);
-}
-
-function getPoseColumn(action: CombatAction): number {
-  if (action === 'walk') return 2;
-  if (action === 'guard') return 2;
-  if (action === 'light' || action === 'heavy' || action === 'special') return 3;
-  if (action === 'hit' || action === 'ko') return 4;
-  if (action === 'victory') return 5;
-  return 0;
 }
 
 function getActionLabel(action: CombatAction): string {
@@ -362,8 +354,8 @@ export function PentagramLiveFight({
 
   const fighterOneSprite = getCharacterSpriteAsset(fighterOne.id);
   const fighterTwoSprite = getCharacterSpriteAsset(fighterTwo.id);
-  const fighterOnePose = getPoseColumn(combat.actionOne);
-  const fighterTwoPose = getPoseColumn(combat.actionTwo);
+  const fighterOnePose = getCombatPoseColumn(combat.actionOne, combat.actionMsOne);
+  const fighterTwoPose = getCombatPoseColumn(combat.actionTwo, combat.actionMsTwo);
   const timerSeconds = Math.ceil(combat.timerMs / 1000);
   const winnerName = combat.winner === 'one'
     ? fighterOne.name
@@ -465,9 +457,12 @@ export function PentagramLiveFight({
           style={fighterOneStyle}
           data-position={combat.positionOne.toFixed(2)}
           data-action={combat.actionOne}
+          data-pose-column={fighterOnePose}
           aria-hidden="true"
         >
           <span className="arena-guard-badge">{getActionLabel(combat.actionOne)}</span>
+          <span className="arena-fighter-shadow" />
+          <span className="arena-action-trail" />
           {fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -482,9 +477,12 @@ export function PentagramLiveFight({
           style={fighterTwoStyle}
           data-position={combat.positionTwo.toFixed(2)}
           data-action={combat.actionTwo}
+          data-pose-column={fighterTwoPose}
           aria-hidden="true"
         >
           <span className="arena-guard-badge">{getActionLabel(combat.actionTwo)}</span>
+          <span className="arena-fighter-shadow" />
+          <span className="arena-action-trail" />
           {fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (
