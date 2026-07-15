@@ -17,6 +17,7 @@ import {
 } from '../expansions/helluva-boss/engine';
 import { Extensions } from '../pages/Extensions';
 import { HelluvaBoss } from '../pages/HelluvaBoss';
+import { PentagramArena } from '../pages/PentagramArena';
 import { DatabaseState, HelluvaBossSpoilerScope } from '../types';
 
 beforeEach(() => {
@@ -144,7 +145,11 @@ describe('automated accessibility contracts', () => {
     );
 
     expect(screen.getByRole('button', { name: 'Manage Extensions' })).toBeTruthy();
+    const arenaLink = screen.getByRole('button', { name: /Pentagram Arena.*2\.5D/ });
+    expect(arenaLink).toBeTruthy();
     expect(screen.queryByRole('button', { name: /Helluva Boss/ })).toBeNull();
+    await userEvent.click(arenaLink);
+    expect(onViewChange).toHaveBeenCalledWith('arena');
     await expectNoSeriousAccessibilityViolation(container);
 
     rerender(
@@ -160,6 +165,41 @@ describe('automated accessibility contracts', () => {
 
     const helluvaLink = screen.getByRole('button', { name: /Helluva Boss/ });
     expect(helluvaLink.getAttribute('aria-current')).toBe('page');
+    await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('presents Pentagram Arena as a distinct, lore-safe future combat mode', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<PentagramArena state={getSeedData()} />);
+
+    expect(screen.getByRole('heading', { name: 'Pentagram Arena' })).toBeTruthy();
+    expect(screen.getByText(/gameplay-only Simulation AU records/i)).toBeTruthy();
+
+    const fighterOne = screen.getByRole('combobox', { name: 'Choose fighter one' }) as HTMLSelectElement;
+    const fighterTwo = screen.getByRole('combobox', { name: 'Choose fighter two' }) as HTMLSelectElement;
+    expect(fighterOne.value).not.toBe(fighterTwo.value);
+    expect(screen.queryByRole('option', { name: 'Vox' })).toBeNull();
+
+    await user.selectOptions(fighterOne, 'angeldust');
+    expect(fighterOne.selectedOptions[0]?.textContent).toBe('Angel Dust');
+    expect(fighterTwo.selectedOptions[0]?.textContent).toBe('Vaggie');
+    expect(screen.getByText('Angel Dust vs Vaggie')).toBeTruthy();
+    expect(
+      Array.from(fighterTwo.options).find(option => option.textContent === 'Angel Dust')?.disabled,
+    ).toBe(true);
+
+    const launchButton = screen.getByRole('button', { name: /Combat engine coming next/i }) as HTMLButtonElement;
+    expect(launchButton.disabled).toBe(true);
+    await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('keeps the Arena safe when no timeline-eligible fighter exists', async () => {
+    const emptyState = { ...getSeedData(), characters: [] };
+    const { container } = render(<PentagramArena state={emptyState} />);
+
+    expect(screen.getByText('0 fighters indexed')).toBeTruthy();
+    expect(screen.getAllByRole('option', { name: 'No eligible fighters' })).toHaveLength(2);
+    expect(screen.getByText(/At least two timeline-eligible hotel inhabitants/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);
   });
 

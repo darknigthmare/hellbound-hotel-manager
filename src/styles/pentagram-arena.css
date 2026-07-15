@@ -1,0 +1,498 @@
+.arena-page {
+  width: min(100%, 1480px);
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+.arena-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: -24px -24px 22px;
+  padding: 36px 32px 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(212, 175, 55, 0.14), transparent 30%),
+    linear-gradient(120deg, rgba(96, 9, 21, 0.78), rgba(18, 10, 13, 0.96) 65%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.34);
+}
+
+.arena-hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 360px;
+  height: 360px;
+  right: -95px;
+  bottom: -255px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(168, 32, 42, 0.08), 0 0 0 70px rgba(212, 175, 55, 0.04);
+}
+
+.arena-hero h1 {
+  margin: 4px 0 6px;
+  padding: 0;
+  border: 0;
+  color: #fff6df;
+  font-size: clamp(2rem, 4vw, 3.65rem);
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.arena-hero p {
+  max-width: 720px;
+  color: #d5c9ca;
+  font-size: 0.94rem;
+}
+
+.arena-kicker,
+.arena-status span,
+.arena-section-heading > div > span,
+.arena-fighter__slot {
+  color: var(--color-gold);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.arena-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.arena-status {
+  min-width: 185px;
+  padding: 13px 16px;
+  background: rgba(8, 5, 6, 0.58);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.arena-status span,
+.arena-status strong {
+  display: block;
+}
+
+.arena-status strong {
+  margin-top: 3px;
+  color: var(--color-text-main);
+  font-family: var(--font-title);
+}
+
+.arena-lore-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  color: #f4df9a;
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: var(--radius-md);
+}
+
+.arena-lore-notice svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.arena-lore-notice h2 {
+  margin-bottom: 2px;
+  color: var(--color-gold);
+  font-size: 0.88rem;
+}
+
+.arena-lore-notice p {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.arena-stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(14px, 3vw, 42px);
+  min-height: 520px;
+  padding: 28px clamp(18px, 4vw, 52px);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(10, 6, 8, 0.36), rgba(10, 6, 8, 0.94)),
+    radial-gradient(ellipse at center bottom, rgba(181, 27, 44, 0.36), transparent 58%),
+    linear-gradient(90deg, #160b0e, #311017 50%, #160b0e);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.54);
+}
+
+.arena-stage::before,
+.arena-stage::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  right: -8%;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 50%;
+}
+
+.arena-stage::before {
+  height: 180px;
+  bottom: -115px;
+  box-shadow: 0 -18px 75px rgba(168, 32, 42, 0.15);
+}
+
+.arena-stage::after {
+  height: 90px;
+  bottom: -55px;
+}
+
+.arena-stage__glow {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(transparent, rgba(212, 175, 55, 0.2), transparent);
+  box-shadow: 0 0 80px 30px rgba(168, 32, 42, 0.14);
+}
+
+.arena-fighter {
+  min-width: 0;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(28, 17, 19, 0.65), rgba(12, 8, 9, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.arena-fighter__slot {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.arena-fighter__portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(220px, 28vw, 330px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(212, 175, 55, 0.16), transparent 42%),
+    linear-gradient(135deg, rgba(168, 32, 42, 0.12), rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(168, 32, 42, 0.5);
+  border-radius: var(--radius-sm);
+}
+
+.arena-fighter__portrait > span {
+  color: rgba(212, 175, 55, 0.22);
+  font-family: var(--font-title);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+}
+
+.arena-fighter__portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.58));
+}
+
+.arena-fighter > label {
+  display: block;
+  margin: 12px 0 5px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arena-fighter select {
+  width: 100%;
+}
+
+.arena-fighter__identity {
+  margin-top: 13px;
+}
+
+.arena-fighter__identity h2 {
+  overflow: hidden;
+  color: #fff4d1;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-fighter__identity p {
+  overflow: hidden;
+  color: var(--color-gold);
+  font-size: 0.76rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-fighter__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.arena-fighter__facts div {
+  min-width: 0;
+  padding: 7px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 3px;
+}
+
+.arena-fighter__facts dt {
+  color: var(--color-text-muted);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arena-fighter__facts dd {
+  overflow: hidden;
+  color: var(--color-text-main);
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-threat-meter {
+  height: 5px;
+  margin-top: 11px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.arena-threat-meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold-dark), var(--color-primary-hover));
+}
+
+.arena-versus {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 8vw, 92px);
+  aspect-ratio: 1;
+  color: #fff4d1;
+  background: radial-gradient(circle, var(--color-primary) 0 48%, #5a111b 50% 64%, transparent 66%);
+  font-family: var(--font-title);
+  font-size: clamp(1.15rem, 2.5vw, 2rem);
+  font-weight: 800;
+  text-shadow: 0 2px 5px #000;
+  filter: drop-shadow(0 0 15px rgba(201, 44, 56, 0.55));
+}
+
+.arena-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 14px 0 26px;
+  padding: 14px 16px;
+  background: rgba(20, 13, 14, 0.8);
+  border: 1px solid rgba(168, 32, 42, 0.44);
+  border-radius: var(--radius-md);
+}
+
+.arena-action-row strong,
+.arena-action-row span {
+  display: block;
+}
+
+.arena-action-row strong {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+}
+
+.arena-action-row span {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+}
+
+.arena-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.arena-section-heading h2 {
+  margin-top: 2px;
+  color: var(--color-text-main);
+  font-size: 1.2rem;
+}
+
+.arena-section-heading > svg {
+  color: var(--color-gold);
+}
+
+.arena-blueprint__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.arena-blueprint__grid article {
+  padding: 18px;
+  background: var(--bg-card);
+  border: var(--border-crimson);
+  border-top-color: rgba(212, 175, 55, 0.45);
+  border-radius: var(--radius-md);
+}
+
+.arena-blueprint__grid svg {
+  color: var(--color-gold);
+}
+
+.arena-blueprint__grid h3 {
+  margin: 9px 0 5px;
+  color: #fff4d1;
+  font-size: 0.92rem;
+}
+
+.arena-blueprint__grid p {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.arena-roadmap {
+  margin-top: 22px;
+  padding: 20px;
+}
+
+.arena-roadmap ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+}
+
+.arena-roadmap li {
+  display: flex;
+  gap: 10px;
+  padding: 13px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+}
+
+.arena-roadmap li.is-ready {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.32);
+}
+
+.arena-roadmap li > span {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.arena-roadmap strong {
+  display: block;
+  color: var(--color-text-main);
+  font-size: 0.78rem;
+}
+
+.arena-roadmap p {
+  margin-top: 3px;
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+}
+
+@media (max-width: 980px) {
+  .arena-stage {
+    min-height: 450px;
+    padding-inline: 18px;
+  }
+
+  .arena-fighter__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .arena-blueprint__grid,
+  .arena-roadmap ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .arena-hero {
+    margin: -18px -18px 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .arena-hero,
+  .arena-action-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .arena-status {
+    min-width: 0;
+  }
+
+  .arena-stage {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .arena-versus {
+    justify-self: center;
+    width: 58px;
+  }
+
+  .arena-fighter__portrait {
+    height: 270px;
+  }
+
+  .arena-fighter__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .arena-action-row .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .arena-blueprint__grid,
+  .arena-roadmap ol {
+    grid-template-columns: 1fr;
+  }
+
+  .arena-fighter__facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .arena-hero {
+    margin: -14px -14px 22px;
+  }
+}

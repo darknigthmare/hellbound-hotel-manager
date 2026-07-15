@@ -26,6 +26,7 @@ const Timeline = lazy(() => import('./pages/Timeline').then(module => ({ default
 const LoreCodex = lazy(() => import('./pages/LoreCodex').then(module => ({ default: module.LoreCodex })));
 const Relations = lazy(() => import('./pages/Relations').then(module => ({ default: module.Relations })));
 const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
+const PentagramArena = lazy(() => import('./pages/PentagramArena').then(module => ({ default: module.PentagramArena })));
 const Settings = lazy(() => import('./pages/Settings').then(module => ({ default: module.Settings })));
 const Extensions = lazy(() => import('./pages/Extensions').then(module => ({ default: module.Extensions })));
 const HelluvaBoss = lazy(() => import('./pages/HelluvaBoss').then(module => ({ default: module.HelluvaBoss })));
@@ -391,6 +392,8 @@ export const App: React.FC = () => {
             searchQuery={searchQuery}
           />
         );
+      case 'arena':
+        return <PentagramArena state={dbState} />;
       case 'extensions':
         return (
           <Extensions

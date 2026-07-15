@@ -12,6 +12,7 @@ import {
   Radio,
   Settings,
   ShieldAlert,
+  Swords,
   Target,
   Users,
   X,
@@ -30,6 +31,7 @@ export type ViewType =
   | 'lore'
   | 'relations'
   | 'resources'
+  | 'arena'
   | 'extensions'
   | 'helluva'
   | 'settings';
@@ -75,6 +77,12 @@ const getMenuSections = (helluvaEnabled: boolean): MenuSection[] => [
       { id: 'timeline', label: 'Timeline Selector', icon: Hourglass },
       { id: 'lore', label: 'Lore Codex', icon: BookOpen },
       { id: 'relations', label: 'Factions Graph', icon: Network }
+    ]
+  },
+  {
+    label: 'Simulation modes',
+    items: [
+      { id: 'arena', label: 'Pentagram Arena', icon: Swords, badge: '2.5D' }
     ]
   },
   {
