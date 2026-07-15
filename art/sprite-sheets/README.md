@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Thirteen OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 28 optional Helluva Boss profiles. Hazbin finals live in `public/assets/sprites/sheets/`; the seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases and their twelve portraits are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Seventeen OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 44 optional Helluva Boss profiles: 408 validated animation cells and 68 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the eleven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases and four Wave 3 atlases are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
 The chroma-key generation masters are retained in `chroma/`. Full-body visual references used during generation are retained in `references/` for reproducibility.
 
@@ -10,7 +10,7 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 - Baxter and Abel use their official Season 2 designs and remain spoiler-scoped in the database.
 - Marlow Glass and Ember Vale are original, non-canon `Simulation AU` applicants. Their designs must never be presented as series canon.
 - Generated poses are original gameplay animation poses; the references anchor identity, silhouette, palette and costume.
-- Helluva Boss profiles never enter the hotel resident database. Their seven atlases and portraits belong only to the optional I.M.P. Simulation AU campaign.
+- Helluva Boss profiles never enter the hotel resident database. Their eleven atlases and 44 portraits belong only to the optional I.M.P. Simulation AU campaign.
 
 ## Atlas order and references
 
@@ -29,6 +29,10 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 | `helluva/helluva-origins.png` | Paimon, Barbie Wire, Cash Buckzo, Wally Wackford | [Paimon](https://hazbinhotel.fandom.com/wiki/Paimon), [Barbie Wire](https://hazbinhotel.fandom.com/wiki/Barbie_Wire), [Cash Buckzo](https://hazbinhotel.fandom.com/wiki/Cash_Buckzo), [Wally Wackford](https://hazbinhotel.fandom.com/wiki/Wally_Wackford) |
 | `helluva/helluva-rivals.png` | Mammon, Chazwick Thurman, Glitz, Glam | [Mammon](https://hazbinhotel.fandom.com/wiki/Mammon), [Chazwick Thurman](https://hazbinhotel.fandom.com/wiki/Chazwick_Thurman), [Glitz and Glam](https://hazbinhotel.fandom.com/wiki/Glitz_and_Glam) |
 | `helluva/helluva-celestial.png` | Cletus, Collin, Keenie, Vassago | [Cletus](https://hazbinhotel.fandom.com/wiki/Cletus), [Collin](https://hazbinhotel.fandom.com/wiki/Collin), [Keenie](https://hazbinhotel.fandom.com/wiki/Keenie), [Vassago](https://hazbinhotel.fandom.com/wiki/Vassago) |
+| `helluva/helluva-operatives.png` | Robo Fizz, Agent One, Agent Two, Satan | [Robo Fizz](https://hazbinhotel.fandom.com/wiki/Robo_Fizz), [Agent One](https://hazbinhotel.fandom.com/wiki/Agent_One), [Agent Two](https://hazbinhotel.fandom.com/wiki/Agent_Two), [Satan](https://hazbinhotel.fandom.com/wiki/Satan) |
+| `helluva/helluva-hauntings.png` | Rolando, Mrs. Mayberry, Martha, Tilla | [Rolando](https://hazbinhotel.fandom.com/wiki/Rolando), [Mrs. Mayberry](https://hazbinhotel.fandom.com/wiki/Mrs._Mayberry), [Martha](https://hazbinhotel.fandom.com/wiki/Martha), [Tilla](https://hazbinhotel.fandom.com/wiki/Tilla) |
+| `helluva/helluva-legacies.png` | Moxxie's mother, Loopty Goopty, Lyle Lipton, Deerie | [Moxxie's mother](https://hazbinhotel.fandom.com/wiki/Moxxie%27s_mother), [Loopty Goopty](https://hazbinhotel.fandom.com/wiki/Loopty_Goopty), [Lyle Lipton](https://hazbinhotel.fandom.com/wiki/Lyle_Lipton), [Deerie](https://hazbinhotel.fandom.com/wiki/Deerie) |
+| `helluva/helluva-powers-and-kin.png` | Joe, Lin, Leviathan, Belphegor | [Joe](https://hazbinhotel.fandom.com/wiki/Joe), [Lin](https://hazbinhotel.fandom.com/wiki/Lin), [Leviathan](https://hazbinhotel.fandom.com/wiki/Leviathan), [Belphegor](https://hazbinhotel.fandom.com/wiki/Belphegor) |
 
 ## Rebuild portraits
 
@@ -43,7 +47,7 @@ The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the
 Before replacing any portrait, the rebuild validates all required Hazbin
 atlases and every complete optional collection, including their exact 1536x1024
 dimensions and the visible content of every 6×4 cell. Strict Helluva validation
-covers all thirteen configured atlases. The idle extractor includes limited
+covers all seventeen configured atlases (408 animation cells). The idle extractor includes limited
 vertical bleed so tall silhouettes are not cut at row boundaries, while
 rejecting components centred in neighbouring rows.
 
@@ -60,5 +64,19 @@ after visual review found Octavia in Stolas's recovery cell.
 Wave 2 publishes `helluva-origins.png`, `helluva-rivals.png`, and
 `helluva-celestial.png`, plus their twelve `hb_*` portraits. The optional
 collection remains atomic: a normal validation skips Helluva if any configured
-atlas is absent, while `--require-helluva` rejects a partial publication. The
-current strict pass validates all seven Helluva atlases and all 28 portraits.
+atlas is absent, while `--require-helluva` rejects a partial publication. This
+same atomic publication rule remains active for later waves.
+
+Wave 3 publishes `helluva-operatives.png`, `helluva-hauntings.png`,
+`helluva-legacies.png`, and `helluva-powers-and-kin.png`, plus sixteen new
+`hb_*` portraits. The generation prompt supplied four full-body reference
+images in exact row order and requested a faithful silhouette, face, palette,
+costume and species read for each character. Each row contains six original
+gameplay poses (idle, conversation, alert, action, recovery and victory) on a
+perfectly flat chroma-key background, with no text, labels, grid, shadows or
+cross-row character mixing. The references guide visual identity only; the
+new animation poses remain original Simulation AU material.
+
+The current strict pass validates all eleven Helluva atlases and all 44
+Helluva portraits. Across both collections, that is seventeen atlases, 408
+animation cells and 68 portraits.

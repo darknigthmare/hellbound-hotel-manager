@@ -190,15 +190,21 @@ describe('automated accessibility contracts', () => {
     );
 
     expect(screen.getByRole('heading', { name: /Helluva Boss/ })).toBeTruthy();
-    expect(screen.getByText(/4 Season 2 atlases hidden/)).toBeTruthy();
-    expect(screen.queryByText(/Crimson/i)).toBeNull();
-    expect(screen.queryByText(/Andrealphus/i)).toBeNull();
-    expect(screen.queryByText(/Paimon/i)).toBeNull();
-    expect(screen.queryByText(/Mammon/i)).toBeNull();
-    expect(screen.queryByText(/Vassago/i)).toBeNull();
-    expect(screen.queryByRole('img', { name: /Crimson|Andrealphus|Paimon|Mammon|Vassago/i })).toBeNull();
+    expect(screen.getByText(/8 Season 2 atlases hidden/)).toBeTruthy();
+    expect(screen.queryByRole('heading', { name: 'Crimson' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Andrealphus' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Paimon' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Mammon' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Vassago' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Satan' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Leviathan' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Belphegor' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Rolando' })).toBeNull();
+    expect(screen.queryByRole('img', { name: /Crimson|Andrealphus|Paimon|Mammon|Vassago|Satan|Leviathan|Belphegor|Rolando/i })).toBeNull();
     expect(screen.getByRole('heading', { name: 'Wally Wackford' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: 'Cletus' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Mrs. Mayberry' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Tilla' })).toBeTruthy();
     expect(screen.getAllByRole('figure')).toHaveLength(3);
     await expectNoSeriousAccessibilityViolation(container);
   }, 15_000);
@@ -220,11 +226,17 @@ describe('automated accessibility contracts', () => {
 
     const activeContract = document.getElementById('helluva-active-contract');
     const firstContractCard = document.getElementById('helluva-contract-hb_contract_01_report');
+    const dhorksContractCard = document.getElementById('helluva-contract-hb_contract_05_dhorks');
+    const bountyContractCard = document.getElementById('helluva-contract-hb_contract_10_bounty');
     const goetiaContractCard = document.getElementById('helluva-contract-hb_contract_11_open_door');
 
     expect(activeContract?.textContent).toContain('Simulation AU featured cast');
     expect(activeContract?.textContent).toContain('Cash Buckzo');
+    expect(activeContract?.textContent).toContain('Tilla');
     expect(firstContractCard?.textContent).toContain('Wally Wackford');
+    expect(dhorksContractCard?.textContent).toContain('Agent One');
+    expect(dhorksContractCard?.textContent).toContain('Agent Two');
+    expect(bountyContractCard?.textContent).toContain('Satan');
     expect(goetiaContractCard?.textContent).toContain('Paimon');
     expect(goetiaContractCard?.textContent).toContain('Vassago');
   });

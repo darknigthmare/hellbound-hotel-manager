@@ -3,7 +3,7 @@
 The source atlases use a fixed 6-column by 4-row layout. The first column is
 the neutral idle frame used by the directory UI; complete atlases remain
 available in the in-app sprite gallery. Hazbin atlases are required, while the
-Helluva Boss content pack is skipped atomically until all seven of its atlases
+Helluva Boss content pack is skipped atomically until all eleven of its atlases
 are available.
 """
 
@@ -65,6 +65,22 @@ HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("helluva-origins.png", ("hb_paimon", "hb_barbie_wire", "hb_cash_buckzo", "hb_wally_wackford")),
     ("helluva-rivals.png", ("hb_mammon", "hb_chazwick_thurman", "hb_glitz", "hb_glam")),
     ("helluva-celestial.png", ("hb_cletus", "hb_collin", "hb_keenie", "hb_vassago")),
+    (
+        "helluva-operatives.png",
+        ("hb_robo_fizz", "hb_agent_one", "hb_agent_two", "hb_satan"),
+    ),
+    (
+        "helluva-hauntings.png",
+        ("hb_rolando", "hb_mrs_mayberry", "hb_martha", "hb_tilla"),
+    ),
+    (
+        "helluva-legacies.png",
+        ("hb_moxxies_mother", "hb_loopty_goopty", "hb_lyle_lipton", "hb_deerie"),
+    ),
+    (
+        "helluva-powers-and-kin.png",
+        ("hb_joe", "hb_lin", "hb_leviathan", "hb_belphegor"),
+    ),
 )
 
 COLLECTIONS: tuple[SpriteCollection, ...] = (
