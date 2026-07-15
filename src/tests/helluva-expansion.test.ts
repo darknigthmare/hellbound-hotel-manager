@@ -458,22 +458,22 @@ describe('Helluva Boss campaign durability', () => {
 });
 
 describe('Helluva Boss static content integrity', () => {
-  it('defines 60 isolated, uniquely mapped profiles and all nine phase approaches', () => {
+  it('defines 108 isolated, uniquely mapped profiles and all nine phase approaches', () => {
     const profileIds = HELLUVA_CHARACTERS.map(profile => profile.id);
     const profileNames = HELLUVA_CHARACTERS.map(profile => profile.name);
     const portraitPaths = HELLUVA_CHARACTERS.map(profile => profile.portrait);
     const sheetNames = HELLUVA_SPRITE_SHEETS.flatMap(sheet => sheet.characters);
     const coreCharacterIds = new Set(getSeedData().characters.map(character => character.id));
 
-    expect(HELLUVA_CHARACTERS).toHaveLength(60);
-    expect(new Set(profileIds).size).toBe(60);
-    expect(new Set(profileNames).size).toBe(60);
-    expect(new Set(portraitPaths).size).toBe(60);
+    expect(HELLUVA_CHARACTERS).toHaveLength(108);
+    expect(new Set(profileIds).size).toBe(108);
+    expect(new Set(profileNames).size).toBe(108);
+    expect(new Set(portraitPaths).size).toBe(108);
     expect(profileIds.every(id => id.startsWith('hb_'))).toBe(true);
     expect(profileIds.every(id => !coreCharacterIds.has(id))).toBe(true);
     expect(portraitPaths).toEqual(profileIds.map(id => `/assets/sprites/helluva/portraits/${id}.png`));
     expect(sheetNames).toEqual(profileNames);
-    expect(HELLUVA_SPRITE_SHEETS.slice(-4)).toEqual([
+    expect(HELLUVA_SPRITE_SHEETS.slice(-16, -12)).toEqual([
       {
         id: 'helluva-secondary-underworld',
         path: '/assets/sprites/helluva/sheets/helluva-secondary-underworld.png',
@@ -631,8 +631,218 @@ describe('Helluva Boss static content integrity', () => {
     expect(profiles.get('hb_better_than_blitzo_guy')?.canonNote).toMatch(/does not invent a name.*romance.*alliance/i);
   });
 
-  it('publishes fifteen 6x4 atlases and one transparent portrait per profile', () => {
-    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(15);
+  it('keeps Wave 5 scopes, exact sources and sensitive canon boundaries explicit', () => {
+    const seasonOneIds = ['hb_russ', 'hb_dennis', 'hb_ralphie', 'hb_catfish_monster'];
+    const seasonTwoIds = [
+      'hb_elder_jaws',
+      'hb_bethany_ghostfucker',
+      'hb_karen_client',
+      'hb_toledo_the_igor',
+      'hb_brennon_ragers',
+      'hb_uggie',
+      'hb_skips',
+      'hb_queef'
+    ];
+    const specialsIds = [
+      'hb_ace',
+      'hb_gerardo_velazquez',
+      'hb_frank_mctickly_wrigglers',
+      'hb_driveso',
+      'hb_joe_smoe',
+      'hb_paulie_paesano',
+      'hb_luigi_paesano',
+      'hb_william_diddle',
+      'hb_adrian',
+      'hb_mr_mayor',
+      'hb_gerald',
+      'hb_rick'
+    ];
+    const deceasedIds = [
+      'hb_ralphie',
+      'hb_catfish_monster',
+      'hb_brennon_ragers',
+      'hb_gerardo_velazquez',
+      'hb_frank_mctickly_wrigglers',
+      'hb_driveso',
+      'hb_joe_smoe',
+      'hb_paulie_paesano',
+      'hb_william_diddle'
+    ];
+    const profiles = new Map(HELLUVA_CHARACTERS.map(profile => [profile.id, profile]));
+
+    for (const id of seasonOneIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_1', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S1E\d+/);
+    }
+    for (const id of seasonTwoIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_2', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S2E\d+/);
+    }
+    for (const id of specialsIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'specials', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Shorts: /);
+    }
+    for (const id of deceasedIds) {
+      expect(profiles.get(id)?.canonNote).toMatch(/dies|deceased/i);
+      expect(profiles.get(id)?.canonNote).toMatch(/never.*(?:resurrected|playable)|not playable/i);
+    }
+
+    expect(profiles.get('hb_karen_client')).toMatchObject({
+      name: 'Karen Client',
+      alias: 'Unnamed Sinsmas client'
+    });
+    expect(profiles.get('hb_karen_client')?.canonNote).toMatch(/production label.*not a confirmed personal name/i);
+    expect(profiles.get('hb_toledo_the_igor')?.canonNote).toMatch(/presumed alive/i);
+    expect(profiles.get('hb_uggie')?.canonNote).toMatch(/status.*unknown/i);
+    expect(profiles.get('hb_queef')).toMatchObject({
+      species: 'Quieve',
+      affiliation: 'Fizzarolli\'s pets'
+    });
+    expect(profiles.get('hb_queef')?.canonNote).toMatch(/official name is Queef.*Precious.*obsolete/i);
+    expect(profiles.get('hb_ace')?.affiliation).toBe('Verosika Mayday\'s crew');
+    expect(profiles.get('hb_mr_mayor')?.species).toBe('Sasquatch');
+
+    expect(HELLUVA_SPRITE_SHEETS.slice(-12, -6)).toEqual([
+      {
+        id: 'helluva-friends-and-foes',
+        path: '/assets/sprites/helluva/sheets/helluva-friends-and-foes.png',
+        spoilerScope: 'season_1',
+        characters: ['Russ', 'Dennis', 'Ralphie', 'Catfish Monster']
+      },
+      {
+        id: 'helluva-greed-and-ghosts',
+        path: '/assets/sprites/helluva/sheets/helluva-greed-and-ghosts.png',
+        spoilerScope: 'season_2',
+        characters: ['Elder Jaws', 'Bethany Ghostfucker', 'Karen Client', 'Toledo the Igor']
+      },
+      {
+        id: 'helluva-stars-and-strays',
+        path: '/assets/sprites/helluva/sheets/helluva-stars-and-strays.png',
+        spoilerScope: 'season_2',
+        characters: ['Brennon Ragers', 'Uggie', 'Skips', 'Queef']
+      },
+      {
+        id: 'helluva-shorts-targets-a',
+        path: '/assets/sprites/helluva/sheets/helluva-shorts-targets-a.png',
+        spoilerScope: 'specials',
+        characters: ['Ace', 'Gerardo Velazquez', 'Frank McTickly Wrigglers', 'Driveso']
+      },
+      {
+        id: 'helluva-shorts-targets-b',
+        path: '/assets/sprites/helluva/sheets/helluva-shorts-targets-b.png',
+        spoilerScope: 'specials',
+        characters: ['Joe Smoe', 'Paulie Paesano', 'Luigi Paesano', 'William Diddle']
+      },
+      {
+        id: 'helluva-shorts-locals',
+        path: '/assets/sprites/helluva/sheets/helluva-shorts-locals.png',
+        spoilerScope: 'specials',
+        characters: ['Adrian', 'Mr. Mayor', 'Gerald', 'Rick']
+      }
+    ]);
+  });
+
+  it('keeps Wave 6 aliases, spoiler scopes and Simulation AU boundaries explicit', () => {
+    const seasonOneIds = [
+      'hb_coco',
+      'hb_apple',
+      'hb_kat',
+      'hb_milky',
+      'hb_kiki',
+      'hb_josh',
+      'hb_stolas_family_butler',
+      'hb_marthas_daughter',
+      'hb_marthas_son',
+      'hb_travis',
+      'hb_tour_guide_guy',
+      'hb_big_woobly',
+      'hb_rachel_cherub',
+      'hb_bea_cherub',
+      'hb_beau_cherub',
+      'hb_honey_cherub'
+    ];
+    const seasonTwoIds = [
+      'hb_mister_butler',
+      'hb_harold_patriot',
+      'hb_dolores',
+      'hb_hellhound_adoption_lady'
+    ];
+    const specialsIds = [
+      'hb_gerardos_wife',
+      'hb_diddle_secretary',
+      'hb_bigfoot_waiter',
+      'hb_gorilla_suit_guy'
+    ];
+    const waveSixIds = [...seasonOneIds, ...seasonTwoIds, ...specialsIds];
+    const profiles = new Map(HELLUVA_CHARACTERS.map(profile => [profile.id, profile]));
+    const featuredIds = new Set(HELLUVA_CONTRACTS.flatMap(contract => contract.featuredCharacterIds));
+
+    for (const id of seasonOneIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_1', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S1E\d+/);
+    }
+    for (const id of seasonTwoIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'season_2', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Boss S2E\d+/);
+    }
+    for (const id of specialsIds) {
+      expect(profiles.get(id)).toMatchObject({ spoilerScope: 'specials', playable: false, rosterTier: 'secondary' });
+      expect(profiles.get(id)?.sourceRef).toMatch(/^Helluva Shorts: /);
+    }
+    for (const id of waveSixIds) {
+      expect(profiles.get(id)?.canonNote).toMatch(/Simulation AU/i);
+      expect(featuredIds.has(id)).toBe(true);
+    }
+
+    expect(profiles.get('hb_chazwick_thurman')?.alias).toBe('Chaz / Zahc');
+    expect(profiles.get('hb_travis')?.canonNote).toMatch(/Hazbin-to-Helluva.*crossover/i);
+    expect(profiles.get('hb_big_woobly')).toMatchObject({
+      species: 'Dinosaur animatronic',
+      affiliation: 'Loo Loo Land'
+    });
+    expect(profiles.get('hb_big_woobly')?.canonNote).toMatch(/no independent sentience/i);
+    expect(HELLUVA_SPRITE_SHEETS.slice(-6)).toEqual([
+      {
+        id: 'helluva-verosika-crew-a',
+        path: '/assets/sprites/helluva/sheets/helluva-verosika-crew-a.png',
+        spoilerScope: 'season_1',
+        characters: ['Coco', 'Apple', 'Kat', 'Milky']
+      },
+      {
+        id: 'helluva-verosika-crew-b',
+        path: '/assets/sprites/helluva/sheets/helluva-verosika-crew-b.png',
+        spoilerScope: 'season_2',
+        characters: ['Kiki', 'Josh', 'Stolas\' Family Butler', 'Mister Butler']
+      },
+      {
+        id: 'helluva-family-fallout',
+        path: '/assets/sprites/helluva/sheets/helluva-family-fallout.png',
+        spoilerScope: 'season_2',
+        characters: ['Martha\'s Daughter', 'Martha\'s Son', 'Harold', 'Dolores']
+      },
+      {
+        id: 'helluva-turning-points',
+        path: '/assets/sprites/helluva/sheets/helluva-turning-points.png',
+        spoilerScope: 'season_2',
+        characters: ['Hellhound Adoption Center Lady', 'Travis', 'Tour Guide Guy', 'Big Woobly']
+      },
+      {
+        id: 'helluva-shorts-witnesses',
+        path: '/assets/sprites/helluva/sheets/helluva-shorts-witnesses.png',
+        spoilerScope: 'specials',
+        characters: ['Gerardo\'s Wife', 'William Diddle\'s Secretary', 'Bigfoot Waiter', 'Gorilla Suit Guy']
+      },
+      {
+        id: 'helluva-cherub-staff',
+        path: '/assets/sprites/helluva/sheets/helluva-cherub-staff.png',
+        spoilerScope: 'season_1',
+        characters: ['Rachel', 'Bea', 'Beau', 'Honey']
+      }
+    ]);
+  });
+
+  it('publishes twenty-seven 6x4 atlases and one transparent portrait per profile', () => {
+    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(27);
     for (const sheet of HELLUVA_SPRITE_SHEETS) {
       expect(sheet.characters).toHaveLength(4);
       expect(publishedAsset(sheet.path)).toEqual({

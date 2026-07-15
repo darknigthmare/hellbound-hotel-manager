@@ -33,7 +33,7 @@ describe('Helluva character directory scaling', () => {
     const supportingProfiles = HELLUVA_CHARACTERS.filter(({ rosterTier }) => rosterTier === 'supporting');
     const secondaryProfiles = HELLUVA_CHARACTERS.filter(({ rosterTier }) => rosterTier === 'secondary');
 
-    expect(HELLUVA_CHARACTERS).toHaveLength(60);
+    expect(HELLUVA_CHARACTERS).toHaveLength(108);
     expect(primaryProfiles.map(({ id }) => id)).toEqual([
       'hb_blitzo',
       'hb_moxxie',
@@ -59,6 +59,54 @@ describe('Helluva character directory scaling', () => {
       'hb_dr_somna',
       'hb_vikki',
       'hb_gigi',
+      'hb_russ',
+      'hb_dennis',
+      'hb_ralphie',
+      'hb_catfish_monster',
+      'hb_elder_jaws',
+      'hb_bethany_ghostfucker',
+      'hb_karen_client',
+      'hb_toledo_the_igor',
+      'hb_brennon_ragers',
+      'hb_uggie',
+      'hb_skips',
+      'hb_queef',
+      'hb_ace',
+      'hb_gerardo_velazquez',
+      'hb_frank_mctickly_wrigglers',
+      'hb_driveso',
+      'hb_joe_smoe',
+      'hb_paulie_paesano',
+      'hb_luigi_paesano',
+      'hb_william_diddle',
+      'hb_adrian',
+      'hb_mr_mayor',
+      'hb_gerald',
+      'hb_rick',
+      'hb_coco',
+      'hb_apple',
+      'hb_kat',
+      'hb_milky',
+      'hb_kiki',
+      'hb_josh',
+      'hb_stolas_family_butler',
+      'hb_mister_butler',
+      'hb_marthas_daughter',
+      'hb_marthas_son',
+      'hb_harold_patriot',
+      'hb_dolores',
+      'hb_hellhound_adoption_lady',
+      'hb_travis',
+      'hb_tour_guide_guy',
+      'hb_big_woobly',
+      'hb_gerardos_wife',
+      'hb_diddle_secretary',
+      'hb_bigfoot_waiter',
+      'hb_gorilla_suit_guy',
+      'hb_rachel_cherub',
+      'hb_bea_cherub',
+      'hb_beau_cherub',
+      'hb_honey_cherub',
     ]);
   });
 
@@ -78,11 +126,11 @@ describe('Helluva character directory scaling', () => {
     expect(screen.getAllByRole('article')).toHaveLength(HELLUVA_ROSTER_PAGE_SIZE);
     expect(screen.getByRole('button', { name: 'Page 1' }).getAttribute('aria-current')).toBe('page');
 
-    await user.click(screen.getByRole('button', { name: /Secondaires: 16 profiles/ }));
+    await user.click(screen.getByRole('button', { name: /Secondaires: 64 profiles/ }));
     expect(screen.getAllByRole('article')).toHaveLength(HELLUVA_ROSTER_PAGE_SIZE);
-    await user.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Page 6' }));
     expect(screen.getAllByRole('article')).toHaveLength(4);
-    expect(container.querySelector('.helluva-roster-status')?.textContent).toContain('Showing 13–16 of 16 profiles.');
+    expect(container.querySelector('.helluva-roster-status')?.textContent).toContain('Showing 61–64 of 64 profiles.');
 
     await user.click(screen.getByRole('button', { name: /Soutien: 39 profiles/ }));
     expect(screen.getByRole('button', { name: 'Page 1' }).getAttribute('aria-current')).toBe('page');
@@ -120,6 +168,10 @@ describe('Helluva sprite atlas accordion', () => {
     const user = userEvent.setup();
     const firstGroup = screen.getByRole('button', { name: /Core cast & first encounters/ });
     const secondGroup = screen.getByRole('button', { name: /Origins, rivals & operatives/ });
+    expect(screen.getByRole('button', { name: /Ghosts, strays & Shorts targets/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Locals, performers & families/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Turning points, witnesses & cherubs/ })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Atlas archive/ })).toBeNull();
 
     expect(firstGroup.getAttribute('aria-expanded')).toBe('true');
     expect(secondGroup.getAttribute('aria-expanded')).toBe('false');

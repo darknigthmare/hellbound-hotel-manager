@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Twenty-one OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 60 optional Helluva Boss profiles: 504 validated animation cells and 84 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the fifteen isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases, four Wave 3 atlases and four Wave 4 atlases are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Thirty-three OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 108 optional Helluva Boss profiles: 792 validated animation cells and 132 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
 The chroma-key generation masters are retained in `chroma/`. Full-body visual references used during generation are retained in `references/` for reproducibility.
 
@@ -10,9 +10,10 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 - Baxter and Abel use their official Season 2 designs and remain spoiler-scoped in the database.
 - Marlow Glass and Ember Vale are original, non-canon `Simulation AU` applicants. Their designs must never be presented as series canon.
 - Generated poses are original gameplay animation poses; the references anchor identity, silhouette, palette and costume.
-- Helluva Boss profiles never enter the hotel resident database. Their fifteen atlases and 60 portraits belong only to the optional I.M.P. Simulation AU campaign.
+- Helluva Boss profiles never enter the hotel resident database. Their twenty-seven atlases and 108 portraits belong only to the optional I.M.P. Simulation AU campaign.
+- Helluva coverage stops at published Seasons 1–2 and released Shorts. Unreleased Season 3 material, pilot-only characters, artist personas and anonymous decorative crowds are excluded.
 
-## Atlas order and references
+## Atlas catalogue and references
 
 | Atlas | Rows, top to bottom | Reference pages |
 | --- | --- | --- |
@@ -33,10 +34,22 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 | `helluva/helluva-hauntings.png` | Rolando, Mrs. Mayberry, Martha, Tilla | [Rolando](https://hazbinhotel.fandom.com/wiki/Rolando), [Mrs. Mayberry](https://hazbinhotel.fandom.com/wiki/Mrs._Mayberry), [Martha](https://hazbinhotel.fandom.com/wiki/Martha), [Tilla](https://hazbinhotel.fandom.com/wiki/Tilla) |
 | `helluva/helluva-legacies.png` | Moxxie's mother, Loopty Goopty, Lyle Lipton, Deerie | [Moxxie's mother](https://hazbinhotel.fandom.com/wiki/Moxxie%27s_mother), [Loopty Goopty](https://hazbinhotel.fandom.com/wiki/Loopty_Goopty), [Lyle Lipton](https://hazbinhotel.fandom.com/wiki/Lyle_Lipton), [Deerie](https://hazbinhotel.fandom.com/wiki/Deerie) |
 | `helluva/helluva-powers-and-kin.png` | Joe, Lin, Leviathan, Belphegor | [Joe](https://hazbinhotel.fandom.com/wiki/Joe), [Lin](https://hazbinhotel.fandom.com/wiki/Lin), [Leviathan](https://hazbinhotel.fandom.com/wiki/Leviathan), [Belphegor](https://hazbinhotel.fandom.com/wiki/Belphegor) |
-| `helluva/helluva-secondary-underworld.png` | Alessio, Arick "Burnie" Burnz, Counselor Jimmy, Yogirt | [Alessio](https://hazbinhotel.fandom.com/wiki/Alessio), [Arick Burnz](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Imps), [Counselor Jimmy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans), [Yogirt](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Demons) |
+| `helluva/helluva-secondary-underworld.png` | Alessio, Arick “Burnie” Burnz, Counselor Jimmy, Yogirt | [Alessio](https://hazbinhotel.fandom.com/wiki/Alessio), [Arick Burnz](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Imps), [Counselor Jimmy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans), [Yogirt](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Demons) |
 | `helluva/helluva-secondary-humans.png` | Emberlynn Pinkle, Kendra, Rita, Better Than Blitzo Guy | [Emberlynn Pinkle](https://hazbinhotel.fandom.com/wiki/Emberlynn_Pinkle), [Kendra](https://hazbinhotel.fandom.com/wiki/Barbie%27s_Bad_Day/Gallery), [Rita](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Demons), [Better Than Blitzo Guy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Succubi) |
 | `helluva/helluva-secondary-rides.png` | Loo Loo, Jesse, Miles, Bombproof | [Loo Loo](https://hazbinhotel.fandom.com/wiki/Loo_Loo), [Jesse](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Succubi), [Miles](https://hazbinhotel.fandom.com/wiki/Miles), [Bombproof](https://hazbinhotel.fandom.com/wiki/Bombproof) |
 | `helluva/helluva-secondary-nightlife.png` | Muffy, Dr. Somna, Vikki, Gigi | [Muffy](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Baphomets), [Dr. Somna](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Baphomets), [Vikki](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Hellhounds), [Gigi](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Hellhounds) |
+| `helluva/helluva-friends-and-foes.png` | Russ, Dennis, Ralphie, Catfish Monster | [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
+| `helluva/helluva-greed-and-ghosts.png` | Elder Jaws, Bethany Ghostfucker, Karen Client, Toledo the Igor | [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
+| `helluva/helluva-stars-and-strays.png` | Brennon Ragers, Uggie, Skips, Queef | [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
+| `helluva/helluva-shorts-targets-a.png` | Ace, Gerardo Velazquez, Frank McTickly Wrigglers, Driveso | [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
+| `helluva/helluva-shorts-targets-b.png` | Joe Smoe, Paulie Paesano, Luigi Paesano, William Diddle | [minor humans](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans) |
+| `helluva/helluva-shorts-locals.png` | Adrian, Mr. Mayor, Gerald, Rick | [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
+| `helluva/helluva-verosika-crew-a.png` | Coco, Apple, Kat, Milky | [Verosika's crew](https://hazbinhotel.fandom.com/wiki/Verosika%27s_crew) |
+| `helluva/helluva-verosika-crew-b.png` | Kiki, Josh, Stolas' Family Butler, Mister Butler | [Verosika's crew](https://hazbinhotel.fandom.com/wiki/Verosika%27s_crew), [minor imps](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Imps) |
+| `helluva/helluva-family-fallout.png` | Martha's Daughter, Martha's Son, Harold, Dolores | [Martha and Ralphie's children](https://hazbinhotel.fandom.com/wiki/Martha_and_Ralphie%27s_children), [minor humans](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans) |
+| `helluva/helluva-turning-points.png` | Hellhound Adoption Center Lady, Travis, Tour Guide Guy, Big Woobly | [minor hellhounds](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Hellhounds), [Travis](https://hazbinhotel.fandom.com/wiki/Travis), [minor humans](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans), [minor imps](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Imps) |
+| `helluva/helluva-shorts-witnesses.png` | Gerardo's Wife, William Diddle's Secretary, Bigfoot Waiter, Gorilla Suit Guy | [minor humans](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss/Humans) |
+| `helluva/helluva-cherub-staff.png` | Rachel, Bea, Beau, Honey | [C.H.E.R.U.B. employees](https://hazbinhotel.fandom.com/wiki/C.H.E.R.U.B._(group)), [minor characters](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Helluva_Boss) |
 
 ## Rebuild portraits
 
@@ -46,47 +59,18 @@ From the repository root:
 python scripts\build_sprite_assets.py --require-helluva
 ```
 
-The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every seeded `Character.id`.
+The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every seeded character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps and visible content in all cells. Strict Helluva validation covers twenty-seven atlases and 648 animation cells; across both collections it covers thirty-three atlases and 792 cells.
 
-Before replacing any portrait, the rebuild validates all required Hazbin
-atlases and every complete optional collection, including their exact 1536x1024
-dimensions and the visible content of every 6×4 cell. Strict Helluva validation
-covers all seventeen configured atlases (408 animation cells). The idle extractor includes limited
-vertical bleed so tall silhouettes are not cut at row boundaries, while
-rejecting components centred in neighbouring rows.
+Every Helluva sheet follows the same generation contract: four visual references in row order, six complete poses per row (idle, conversation, alert, action, recovery and victory), a removable chroma background, and no labels, grids, shadows or cross-row mixing. The optional collection remains atomic: `--require-helluva` rejects a partial publication.
 
-The `hell-antagonists` master received a second fidelity pass after validation
-found three missing body poses in the first version. The current atlas contains
-six complete poses for Cherri Bomb, Vox, Valentino, and Velvette.
+## Expansion waves
 
-The Helluva Boss sheets use the same generation contract: four reference images
-in row order, exactly six complete poses per row (idle, conversation, alert,
-action, recovery and victory), a flat removable chroma-key background, and no
-labels or grid lines. The allies sheet received a targeted identity correction
-after visual review found Octavia in Stolas's recovery cell.
+- Wave 2: `helluva-origins`, `helluva-rivals`, and `helluva-celestial` (12 portraits).
+- Wave 3: `helluva-operatives`, `helluva-hauntings`, `helluva-legacies`, and `helluva-powers-and-kin` (16 portraits).
+- Wave 4: four `helluva-secondary-*` atlases (16 portraits), with Shorts-only profiles hidden behind the Shorts visibility scope.
+- Wave 5: `helluva-friends-and-foes`, `helluva-greed-and-ghosts`, `helluva-stars-and-strays`, three Shorts atlases, and 24 portraits. Ace replaces non-canon pilot-only Eddie, Toledo replaces the Mr. Sudz mascot/location, and Queef uses the canon name rather than obsolete storyboard label Precious.
+- Wave 6: the two Verosika crew atlases, `helluva-family-fallout`, `helluva-turning-points`, `helluva-shorts-witnesses`, `helluva-cherub-staff`, and 24 portraits. Stolas' Family Butler and Mister Butler remain distinct, Martha's children stay canonically unnamed, Chaz records the Zahc alias without a duplicate profile, and Travis is marked as a physical Hazbin crossover.
 
-Wave 2 publishes `helluva-origins.png`, `helluva-rivals.png`, and
-`helluva-celestial.png`, plus their twelve `hb_*` portraits. The optional
-collection remains atomic: a normal validation skips Helluva if any configured
-atlas is absent, while `--require-helluva` rejects a partial publication. This
-same atomic publication rule remains active for later waves.
+Jarold Mayberry remains a lore-only mention because no unobstructed official design exists. The unnamed Sinsmas family remains mission context rather than a fake single-character sprite.
 
-Wave 3 publishes `helluva-operatives.png`, `helluva-hauntings.png`,
-`helluva-legacies.png`, and `helluva-powers-and-kin.png`, plus sixteen new
-`hb_*` portraits. The generation prompt supplied four full-body reference
-images in exact row order and requested a faithful silhouette, face, palette,
-costume and species read for each character. Each row contains six original
-gameplay poses (idle, conversation, alert, action, recovery and victory) on a
-perfectly flat chroma-key background, with no text, labels, grid, shadows or
-cross-row character mixing. The references guide visual identity only; the
-new animation poses remain original Simulation AU material.
-
-Wave 4 publishes `helluva-secondary-underworld.png`,
-`helluva-secondary-humans.png`, `helluva-secondary-rides.png`, and
-`helluva-secondary-nightlife.png`, plus sixteen secondary-character portraits.
-Emberlynn Pinkle and Kendra are scoped to the optional Helluva Shorts filter;
-the mixed atlas that contains them is hidden unless Shorts are enabled.
-
-The current strict pass validates all fifteen Helluva atlases and all 60
-Helluva portraits. Across both collections, that is twenty-one atlases, 504
-animation cells and 84 portraits.
+The current strict pass validates all twenty-seven Helluva atlases and all 108 Helluva portraits. Across both collections, that is thirty-three atlases, 792 animation cells and 132 portraits.

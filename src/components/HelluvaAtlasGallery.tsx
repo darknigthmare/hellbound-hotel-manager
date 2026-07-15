@@ -16,6 +16,9 @@ const ATLAS_GROUP_LABELS = [
   'Origins, rivals & operatives',
   'Powers, legacies & underworld',
   'Secondary encounters',
+  'Ghosts, strays & Shorts targets',
+  'Locals, performers & families',
+  'Turning points, witnesses & cherubs',
 ] as const;
 
 const createAtlasGroups = (sheets: readonly HelluvaSpriteSheet[]) => Array.from(

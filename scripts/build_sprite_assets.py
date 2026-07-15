@@ -102,6 +102,94 @@ HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
         "helluva-secondary-nightlife.png",
         ("hb_muffy", "hb_dr_somna", "hb_vikki", "hb_gigi"),
     ),
+    (
+        "helluva-friends-and-foes.png",
+        ("hb_russ", "hb_dennis", "hb_ralphie", "hb_catfish_monster"),
+    ),
+    (
+        "helluva-greed-and-ghosts.png",
+        (
+            "hb_elder_jaws",
+            "hb_bethany_ghostfucker",
+            "hb_karen_client",
+            "hb_toledo_the_igor",
+        ),
+    ),
+    (
+        "helluva-stars-and-strays.png",
+        ("hb_brennon_ragers", "hb_uggie", "hb_skips", "hb_queef"),
+    ),
+    (
+        "helluva-shorts-targets-a.png",
+        (
+            "hb_ace",
+            "hb_gerardo_velazquez",
+            "hb_frank_mctickly_wrigglers",
+            "hb_driveso",
+        ),
+    ),
+    (
+        "helluva-shorts-targets-b.png",
+        (
+            "hb_joe_smoe",
+            "hb_paulie_paesano",
+            "hb_luigi_paesano",
+            "hb_william_diddle",
+        ),
+    ),
+    (
+        "helluva-shorts-locals.png",
+        ("hb_adrian", "hb_mr_mayor", "hb_gerald", "hb_rick"),
+    ),
+    (
+        "helluva-verosika-crew-a.png",
+        ("hb_coco", "hb_apple", "hb_kat", "hb_milky"),
+    ),
+    (
+        "helluva-verosika-crew-b.png",
+        (
+            "hb_kiki",
+            "hb_josh",
+            "hb_stolas_family_butler",
+            "hb_mister_butler",
+        ),
+    ),
+    (
+        "helluva-family-fallout.png",
+        (
+            "hb_marthas_daughter",
+            "hb_marthas_son",
+            "hb_harold_patriot",
+            "hb_dolores",
+        ),
+    ),
+    (
+        "helluva-turning-points.png",
+        (
+            "hb_hellhound_adoption_lady",
+            "hb_travis",
+            "hb_tour_guide_guy",
+            "hb_big_woobly",
+        ),
+    ),
+    (
+        "helluva-shorts-witnesses.png",
+        (
+            "hb_gerardos_wife",
+            "hb_diddle_secretary",
+            "hb_bigfoot_waiter",
+            "hb_gorilla_suit_guy",
+        ),
+    ),
+    (
+        "helluva-cherub-staff.png",
+        (
+            "hb_rachel_cherub",
+            "hb_bea_cherub",
+            "hb_beau_cherub",
+            "hb_honey_cherub",
+        ),
+    ),
 )
 
 COLLECTIONS: tuple[SpriteCollection, ...] = (
