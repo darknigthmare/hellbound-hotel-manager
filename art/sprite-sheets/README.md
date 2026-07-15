@@ -31,3 +31,12 @@ C:\Python314\python.exe scripts\build_sprite_assets.py
 ```
 
 The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every seeded `Character.id`.
+
+Before replacing any portrait, the rebuild validates all six atlases, their exact
+1536x1024 dimensions, and the visible content of every one of the 24 cells. The
+idle extractor includes limited vertical bleed so tall silhouettes are not cut
+at row boundaries, while rejecting components centred in neighbouring rows.
+
+The `hell-antagonists` master received a second fidelity pass after validation
+found three missing body poses in the first version. The current atlas contains
+six complete poses for Cherri Bomb, Vox, Valentino, and Velvette.

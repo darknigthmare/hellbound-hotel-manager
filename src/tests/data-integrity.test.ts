@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 import { getSeedData } from '../db/seed';
 import { LocalDb } from '../db/localDb';
@@ -44,6 +46,17 @@ function runtimeDatabaseJson(): string {
   return storage.getItem('hellbound_hotel_db_state')!;
 }
 
+function readPngMetadata(publicPath: string) {
+  const absolutePath = resolve(process.cwd(), 'public', publicPath.replace(/^\//, ''));
+  const png = readFileSync(absolutePath);
+  expect(png.subarray(0, 8).toString('hex'), absolutePath).toBe('89504e470d0a1a0a');
+  return {
+    width: png.readUInt32BE(16),
+    height: png.readUInt32BE(20),
+    colorType: png[25]
+  };
+}
+
 describe('generated character sprite coverage', () => {
   it('maps every seeded character to one portrait and one documented atlas row', () => {
     const seed = getSeedData();
@@ -58,6 +71,33 @@ describe('generated character sprite coverage', () => {
       expect(sprite.row).toBeGreaterThanOrEqual(0);
       expect(sprite.row).toBeLessThan(4);
     }
+  });
+
+  it('keeps atlas rows unique and every published PNG present at its contract size', () => {
+    const rowKeys = new Set<string>();
+    expect(SPRITE_SHEETS).toHaveLength(6);
+
+    for (const sheet of SPRITE_SHEETS) {
+      expect(sheet.characters).toHaveLength(4);
+      expect(readPngMetadata(sheet.path)).toEqual({
+        width: 1536,
+        height: 1024,
+        colorType: 6
+      });
+    }
+
+    for (const [characterId, sprite] of Object.entries(CHARACTER_SPRITES)) {
+      const rowKey = `${sprite.sheet}:${sprite.row}`;
+      expect(rowKeys.has(rowKey), `duplicate atlas row for ${characterId}`).toBe(false);
+      rowKeys.add(rowKey);
+      expect(readPngMetadata(sprite.portrait)).toEqual({
+        width: 512,
+        height: 512,
+        colorType: 6
+      });
+    }
+
+    expect(rowKeys).toHaveLength(24);
   });
 });
 
