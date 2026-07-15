@@ -168,12 +168,13 @@ describe('automated accessibility contracts', () => {
     await expectNoSeriousAccessibilityViolation(container);
   });
 
-  it('presents Pentagram Arena as a distinct, lore-safe future combat mode', async () => {
+  it('presents Pentagram Arena as a distinct, lore-safe playable combat prototype', async () => {
     const user = userEvent.setup();
     const { container } = render(<PentagramArena state={getSeedData()} />);
 
     expect(screen.getByRole('heading', { name: 'Pentagram Arena' })).toBeTruthy();
     expect(screen.getByText(/gameplay-only Simulation AU records/i)).toBeTruthy();
+    expect(screen.getByRole('heading', { name: '2.5D exhibition prototype' })).toBeTruthy();
 
     const fighterOne = screen.getByRole('combobox', { name: 'Choose fighter one' }) as HTMLSelectElement;
     const fighterTwo = screen.getByRole('combobox', { name: 'Choose fighter two' }) as HTMLSelectElement;
@@ -188,8 +189,16 @@ describe('automated accessibility contracts', () => {
       Array.from(fighterTwo.options).find(option => option.textContent === 'Angel Dust')?.disabled,
     ).toBe(true);
 
-    const launchButton = screen.getByRole('button', { name: /Combat engine coming next/i }) as HTMLButtonElement;
-    expect(launchButton.disabled).toBe(true);
+    const launchButton = screen.getByRole('button', { name: /Start exhibition/i }) as HTMLButtonElement;
+    expect(launchButton.disabled).toBe(false);
+    await user.click(launchButton);
+    expect(screen.getByText(/Round 1 ready: Angel Dust vs Vaggie/i)).toBeTruthy();
+
+    const angelControls = screen.getAllByRole('heading', { name: 'Angel Dust' }).at(-1)?.closest('div');
+    const strike = angelControls?.querySelector('button');
+    expect(strike?.textContent).toMatch(/Strike/);
+    if (strike) await user.click(strike);
+    expect(screen.getByText(/Angel Dust .*Web kick chain/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);
   });
 
