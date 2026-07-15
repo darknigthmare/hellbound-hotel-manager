@@ -57,6 +57,12 @@ interface MetricCardProps {
   tone?: 'default' | 'danger' | 'positive';
 }
 
+interface FeaturedCastProps {
+  characterIds: readonly string[];
+  spoilerScope: HelluvaBossSpoilerScope;
+  compact?: boolean;
+}
+
 type PendingFocusTarget = 'active_contract' | 'next_choice';
 
 const phaseLabels = ['Briefing', 'Field operation', 'Debrief'] as const;
@@ -69,6 +75,31 @@ const getInitials = (name: string) => name
   .map((part) => part[0] || '')
   .join('')
   .toUpperCase() || '?';
+
+const helluvaCharacterById = new Map(
+  HELLUVA_CHARACTERS.map((character) => [character.id, character] as const),
+);
+
+const FeaturedCast: React.FC<FeaturedCastProps> = ({ characterIds, spoilerScope, compact = false }) => {
+  const visibleProfiles = characterIds
+    .map((characterId) => helluvaCharacterById.get(characterId))
+    .filter((profile): profile is HelluvaCharacterProfile => Boolean(
+      profile && (spoilerScope === 'season_2' || profile.spoilerScope === 'season_1'),
+    ));
+  const hiddenCount = characterIds.length - visibleProfiles.length;
+
+  return (
+    <div className={`helluva-featured-cast${compact ? ' is-compact' : ''}`}>
+      <span>Simulation AU featured cast</span>
+      <ul aria-label="Featured character profiles">
+        {visibleProfiles.map((profile) => <li key={profile.id}>{profile.name}</li>)}
+        {hiddenCount > 0 && (
+          <li className="is-hidden"><EyeOff size={12} aria-hidden="true" /> {hiddenCount} spoiler-hidden</li>
+        )}
+      </ul>
+    </div>
+  );
+};
 
 const MetricCard: React.FC<MetricCardProps> = ({ icon: Icon, label, value, detail, percent, tone = 'default' }) => (
   <article className={`helluva-metric glass-panel is-${tone}`}>
@@ -204,7 +235,7 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
     campaign.spoilerScope === 'season_2' || entry.spoilerScope === 'season_1'
   ));
   const visibleSpriteSheets = HELLUVA_SPRITE_SHEETS.filter((sheet) => (
-    campaign.spoilerScope === 'season_2' || sheet.id !== 'helluva-extended'
+    campaign.spoilerScope === 'season_2' || sheet.spoilerScope === 'season_1'
   ));
   const hiddenProfileCount = HELLUVA_CHARACTERS.length - visibleCharacters.length;
   const hiddenSpriteSheetCount = HELLUVA_SPRITE_SHEETS.length - visibleSpriteSheets.length;
@@ -352,6 +383,11 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
             ))}
           </ol>
 
+          <FeaturedCast
+            characterIds={activeContract.featuredCharacterIds}
+            spoilerScope={campaign.spoilerScope}
+          />
+
           <div className="helluva-choice-grid" aria-label={`Approaches for ${phaseLabels[activePhaseIndex]}`}>
             {availableApproaches.map((choice, index) => {
               const effects = describeHelluvaEffects(choice.effects);
@@ -411,6 +447,11 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
                 </div>
                 <h3 id={`${contract.id}-title`}>{contract.title}</h3>
                 <p>{contract.summary}</p>
+                <FeaturedCast
+                  characterIds={contract.featuredCharacterIds}
+                  spoilerScope={campaign.spoilerScope}
+                  compact
+                />
                 <dl>
                   <div><dt><MapPin size={13} aria-hidden="true" /> Location</dt><dd>{contract.location}</dd></div>
                   <div><dt>Client</dt><dd>{contract.client}</dd></div>
@@ -442,7 +483,7 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
           <div>
             <span>Canon reference directory</span>
             <h2 id="helluva-roster-title">Character profiles · {visibleCharacters.length}/{HELLUVA_CHARACTERS.length}</h2>
-            <p>Sixteen gameplay portraits keep the extension visual without registering anyone as a hotel resident.</p>
+            <p>{HELLUVA_CHARACTERS.length} gameplay portraits keep the extension visual without registering anyone as a hotel resident.</p>
           </div>
           {hiddenProfileCount > 0 && <span className="helluva-hidden-count"><EyeOff size={14} aria-hidden="true" /> {hiddenProfileCount} Season 2 profiles hidden</span>}
         </div>
@@ -494,7 +535,7 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
           </div>
           {hiddenSpriteSheetCount > 0 ? (
             <span className="helluva-hidden-count">
-              <EyeOff size={14} aria-hidden="true" /> {hiddenSpriteSheetCount} Season 2 atlas hidden
+              <EyeOff size={14} aria-hidden="true" /> {hiddenSpriteSheetCount} Season 2 {hiddenSpriteSheetCount === 1 ? 'atlas' : 'atlases'} hidden
             </span>
           ) : (
             <Images size={28} aria-hidden="true" />

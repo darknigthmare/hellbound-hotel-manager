@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Ten OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 16 optional Helluva Boss profiles. Hazbin finals live in `public/assets/sprites/sheets/`; the four isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Thirteen OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 28 optional Helluva Boss profiles. Hazbin finals live in `public/assets/sprites/sheets/`; the seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. The three Wave 2 atlases and their twelve portraits are generated and validated. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
 The chroma-key generation masters are retained in `chroma/`. Full-body visual references used during generation are retained in `references/` for reproducibility.
 
@@ -10,7 +10,7 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 - Baxter and Abel use their official Season 2 designs and remain spoiler-scoped in the database.
 - Marlow Glass and Ember Vale are original, non-canon `Simulation AU` applicants. Their designs must never be presented as series canon.
 - Generated poses are original gameplay animation poses; the references anchor identity, silhouette, palette and costume.
-- Helluva Boss profiles never enter the hotel resident database. Their four atlases and portraits belong only to the optional I.M.P. Simulation AU campaign.
+- Helluva Boss profiles never enter the hotel resident database. Their seven atlases and portraits belong only to the optional I.M.P. Simulation AU campaign.
 
 ## Atlas order and references
 
@@ -26,6 +26,9 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 | `helluva/helluva-allies.png` | Stolas, Octavia, Fizzarolli, Verosika Mayday | [Stolas](https://hazbinhotel.fandom.com/wiki/Stolas), [Octavia](https://hazbinhotel.fandom.com/wiki/Octavia), [Fizzarolli](https://hazbinhotel.fandom.com/wiki/Fizzarolli), [Verosika](https://hazbinhotel.fandom.com/wiki/Verosika_Mayday) |
 | `helluva/helluva-powers.png` | Asmodeus, Beelzebub, Striker, Stella | [Asmodeus](https://hazbinhotel.fandom.com/wiki/Asmodeus), [Beelzebub](https://hazbinhotel.fandom.com/wiki/Beelzebub), [Striker](https://hazbinhotel.fandom.com/wiki/Striker), [Stella](https://hazbinhotel.fandom.com/wiki/Stella) |
 | `helluva/helluva-extended.png` | Crimson, Vortex, Sallie May, Andrealphus | [Crimson](https://hazbinhotel.fandom.com/wiki/Crimson), [Vortex](https://hazbinhotel.fandom.com/wiki/Vortex), [Sallie May](https://hazbinhotel.fandom.com/wiki/Sallie_May), [Andrealphus](https://hazbinhotel.fandom.com/wiki/Andrealphus) |
+| `helluva/helluva-origins.png` | Paimon, Barbie Wire, Cash Buckzo, Wally Wackford | [Paimon](https://hazbinhotel.fandom.com/wiki/Paimon), [Barbie Wire](https://hazbinhotel.fandom.com/wiki/Barbie_Wire), [Cash Buckzo](https://hazbinhotel.fandom.com/wiki/Cash_Buckzo), [Wally Wackford](https://hazbinhotel.fandom.com/wiki/Wally_Wackford) |
+| `helluva/helluva-rivals.png` | Mammon, Chazwick Thurman, Glitz, Glam | [Mammon](https://hazbinhotel.fandom.com/wiki/Mammon), [Chazwick Thurman](https://hazbinhotel.fandom.com/wiki/Chazwick_Thurman), [Glitz and Glam](https://hazbinhotel.fandom.com/wiki/Glitz_and_Glam) |
+| `helluva/helluva-celestial.png` | Cletus, Collin, Keenie, Vassago | [Cletus](https://hazbinhotel.fandom.com/wiki/Cletus), [Collin](https://hazbinhotel.fandom.com/wiki/Collin), [Keenie](https://hazbinhotel.fandom.com/wiki/Keenie), [Vassago](https://hazbinhotel.fandom.com/wiki/Vassago) |
 
 ## Rebuild portraits
 
@@ -37,10 +40,12 @@ python scripts\build_sprite_assets.py --require-helluva
 
 The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every seeded `Character.id`.
 
-Before replacing any portrait, the rebuild validates all six atlases, their exact
-1536x1024 dimensions, and the visible content of every 6×4 cell. The
-idle extractor includes limited vertical bleed so tall silhouettes are not cut
-at row boundaries, while rejecting components centred in neighbouring rows.
+Before replacing any portrait, the rebuild validates all required Hazbin
+atlases and every complete optional collection, including their exact 1536x1024
+dimensions and the visible content of every 6×4 cell. Strict Helluva validation
+covers all thirteen configured atlases. The idle extractor includes limited
+vertical bleed so tall silhouettes are not cut at row boundaries, while
+rejecting components centred in neighbouring rows.
 
 The `hell-antagonists` master received a second fidelity pass after validation
 found three missing body poses in the first version. The current atlas contains
@@ -51,3 +56,9 @@ in row order, exactly six complete poses per row (idle, conversation, alert,
 action, recovery and victory), a flat removable chroma-key background, and no
 labels or grid lines. The allies sheet received a targeted identity correction
 after visual review found Octavia in Stolas's recovery cell.
+
+Wave 2 publishes `helluva-origins.png`, `helluva-rivals.png`, and
+`helluva-celestial.png`, plus their twelve `hb_*` portraits. The optional
+collection remains atomic: a normal validation skips Helluva if any configured
+atlas is absent, while `--require-helluva` rejects a partial publication. The
+current strict pass validates all seven Helluva atlases and all 28 portraits.

@@ -180,7 +180,7 @@ describe('automated accessibility contracts', () => {
     await expectNoSeriousAccessibilityViolation(container);
   });
 
-  it('keeps Season 2 profiles and their extended sprite atlas out of Season 1 rendering', async () => {
+  it('keeps Season 2 profiles and mixed-spoiler sprite atlases out of Season 1 rendering', async () => {
     const { container } = render(
       <HelluvaBoss
         state={createHelluvaState('season_1')}
@@ -190,13 +190,44 @@ describe('automated accessibility contracts', () => {
     );
 
     expect(screen.getByRole('heading', { name: /Helluva Boss/ })).toBeTruthy();
-    expect(screen.getByText(/1 Season 2 atlas hidden/)).toBeTruthy();
+    expect(screen.getByText(/4 Season 2 atlases hidden/)).toBeTruthy();
     expect(screen.queryByText(/Crimson/i)).toBeNull();
     expect(screen.queryByText(/Andrealphus/i)).toBeNull();
-    expect(screen.queryByRole('img', { name: /Crimson|Andrealphus/i })).toBeNull();
+    expect(screen.queryByText(/Paimon/i)).toBeNull();
+    expect(screen.queryByText(/Mammon/i)).toBeNull();
+    expect(screen.queryByText(/Vassago/i)).toBeNull();
+    expect(screen.queryByRole('img', { name: /Crimson|Andrealphus|Paimon|Mammon|Vassago/i })).toBeNull();
+    expect(screen.getByRole('heading', { name: 'Wally Wackford' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Cletus' })).toBeTruthy();
     expect(screen.getAllByRole('figure')).toHaveLength(3);
     await expectNoSeriousAccessibilityViolation(container);
   }, 15_000);
+
+  it('presents Simulation AU featured profiles in contract cards and the active contract', () => {
+    const state = createHelluvaState('season_2');
+    state.extensions.helluvaBoss = startHelluvaContract(
+      state.extensions.helluvaBoss!,
+      'hb_contract_01_report',
+    );
+
+    render(
+      <HelluvaBoss
+        state={state}
+        onStateChange={vi.fn()}
+        onManageExtensions={vi.fn()}
+      />,
+    );
+
+    const activeContract = document.getElementById('helluva-active-contract');
+    const firstContractCard = document.getElementById('helluva-contract-hb_contract_01_report');
+    const goetiaContractCard = document.getElementById('helluva-contract-hb_contract_11_open_door');
+
+    expect(activeContract?.textContent).toContain('Simulation AU featured cast');
+    expect(activeContract?.textContent).toContain('Cash Buckzo');
+    expect(firstContractCard?.textContent).toContain('Wally Wackford');
+    expect(goetiaContractCard?.textContent).toContain('Paimon');
+    expect(goetiaContractCard?.textContent).toContain('Vassago');
+  });
 
   it('keeps the insolvency route playable by allowing the next contract on credit', () => {
     const state = createHelluvaState('season_1');

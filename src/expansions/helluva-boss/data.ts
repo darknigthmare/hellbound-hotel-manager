@@ -39,6 +39,8 @@ export interface HelluvaContractDefinition {
   entryCost: number;
   reward: number;
   completionHeat: number;
+  /** Presentation-only Simulation AU cast; it never changes engine effects. */
+  featuredCharacterIds: readonly string[];
   phaseBriefs: readonly [string, string, string];
   tactics: readonly [HelluvaContractTactic, HelluvaContractTactic, HelluvaContractTactic];
 }
@@ -292,6 +294,174 @@ export const HELLUVA_CHARACTERS: readonly HelluvaCharacterProfile[] = [
     canonNote: 'He remains an external political threat, never an I.M.P. employee.',
     sourceRef: 'Helluva Boss Season 2',
     portrait: portrait('hb_andrealphus')
+  },
+  {
+    id: 'hb_paimon',
+    name: 'Paimon',
+    alias: 'Goetia patriarch',
+    species: 'Goetic demon',
+    role: 'King of the Ars Goetia and father of Stolas',
+    affiliation: 'Ars Goetia',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'Stolas\'s father, shown in a childhood flashback arranging his son\'s betrothal to Stella as part of Goetia family expectations.',
+    canonNote: 'His family role and the arranged betrothal are canon; any contract appearance is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E1',
+    portrait: portrait('hb_paimon')
+  },
+  {
+    id: 'hb_barbie_wire',
+    name: 'Barbie Wire',
+    alias: 'Barbie',
+    species: 'Imp',
+    role: 'Blitzø\'s twin sister and former circus performer',
+    affiliation: 'Former All-Imp Circus / independent',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'Blitzø\'s estranged twin sister, formerly part of the family circus and later encountered while pursuing a life apart from him.',
+    canonNote: 'Their estrangement and her refusal to reconcile on demand are canon; operational cooperation is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E5',
+    portrait: portrait('hb_barbie_wire')
+  },
+  {
+    id: 'hb_cash_buckzo',
+    name: 'Cash Buckzo',
+    alias: 'Cash',
+    species: 'Imp',
+    role: 'Circus proprietor and father of Blitzø and Barbie Wire',
+    affiliation: 'All-Imp Circus (disbanded)',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'The circus proprietor who raised Blitzø and Barbie Wire, portrayed in flashbacks as manipulative toward his son.',
+    canonNote: 'His family and circus history are canon; the extension does not soften or excuse his treatment of Blitzø.',
+    sourceRef: 'Helluva Boss S2E1',
+    portrait: portrait('hb_cash_buckzo')
+  },
+  {
+    id: 'hb_wally_wackford',
+    name: 'Wally Wackford',
+    alias: 'Entrepreneur',
+    species: 'Imp',
+    role: 'Showman and recurring entrepreneur',
+    affiliation: 'Independent ventures',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'An enthusiastic imp showman repeatedly seen promoting ventures, performing and inserting himself into public events.',
+    canonNote: 'His recurring self-promotion is canon; any contract sponsorship or assistance is Simulation AU.',
+    sourceRef: 'Helluva Boss Season 1',
+    portrait: portrait('hb_wally_wackford')
+  },
+  {
+    id: 'hb_mammon',
+    name: 'Mammon',
+    alias: 'Sin of Greed',
+    species: 'Deadly Sin (Greed)',
+    role: 'Sin of Greed and infernal business tycoon',
+    affiliation: 'Greed Ring / Mammon\'s brand',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'The Sin of Greed, whose entertainment empire and clown pageant exploit performers for profit and spectacle.',
+    canonNote: 'His authority and treatment of performers are canon; campaign leverage values are Simulation AU.',
+    sourceRef: 'Helluva Boss S2E7',
+    portrait: portrait('hb_mammon')
+  },
+  {
+    id: 'hb_chazwick_thurman',
+    name: 'Chazwick Thurman',
+    alias: 'Chaz',
+    species: 'Demon (shark-like; exact species unspecified)',
+    role: 'Con artist with ties to Moxxie and Millie\'s past',
+    affiliation: 'Independent / temporary Crimson associate',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A boastful con artist whose past relationships with Moxxie and Millie become part of a failed scheme involving Crimson.',
+    canonNote: 'Those past relationships and the scheme are canon; he is not treated as an I.M.P. recruit.',
+    sourceRef: 'Helluva Boss S2E3',
+    portrait: portrait('hb_chazwick_thurman')
+  },
+  {
+    id: 'hb_glitz',
+    name: 'Glitz',
+    alias: 'Pageant twin',
+    species: 'Demon (fish-like; exact species unspecified)',
+    role: 'Performer and clown-pageant contestant',
+    affiliation: 'Glitz and Glam / Mammon\'s pageant',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'One half of the performance duo Glitz and Glam, competing in Mammon\'s clown pageant with a polished, aggressive act.',
+    canonNote: 'Her pageant role and partnership with Glam are canon; contract involvement is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E7',
+    portrait: portrait('hb_glitz')
+  },
+  {
+    id: 'hb_glam',
+    name: 'Glam',
+    alias: 'Pageant twin',
+    species: 'Demon (fish-like; exact species unspecified)',
+    role: 'Performer and clown-pageant contestant',
+    affiliation: 'Glitz and Glam / Mammon\'s pageant',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'One half of the performance duo Glitz and Glam, matching her twin in a tightly coordinated bid for Mammon\'s approval.',
+    canonNote: 'Her pageant role and partnership with Glitz are canon; contract involvement is Simulation AU.',
+    sourceRef: 'Helluva Boss S2E7',
+    portrait: portrait('hb_glam')
+  },
+  {
+    id: 'hb_cletus',
+    name: 'Cletus',
+    alias: 'C.H.E.R.U.B. operative',
+    species: 'Cherub angel',
+    role: 'C.H.E.R.U.B. operative and spokesperson',
+    affiliation: 'Former C.H.E.R.U.B.',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'A member and prominent spokesperson of the cherub team that tries to protect a living human from I.M.P.',
+    canonNote: 'His celestial mission and conflict with I.M.P. are canon; later contract encounters are Simulation AU.',
+    sourceRef: 'Helluva Boss S1E4',
+    portrait: portrait('hb_cletus')
+  },
+  {
+    id: 'hb_collin',
+    name: 'Collin',
+    alias: 'C.H.E.R.U.B. operative',
+    species: 'Cherub angel',
+    role: 'Compassionate C.H.E.R.U.B. operative',
+    affiliation: 'Former C.H.E.R.U.B.',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'A comparatively hesitant member of the cherub team sent to preserve a human life against I.M.P.\'s contract.',
+    canonNote: 'His membership and role in the confrontation are canon; no alliance with I.M.P. is implied.',
+    sourceRef: 'Helluva Boss S1E4',
+    portrait: portrait('hb_collin')
+  },
+  {
+    id: 'hb_keenie',
+    name: 'Keenie',
+    alias: 'C.H.E.R.U.B. operative',
+    species: 'Cherub angel',
+    role: 'Combat-oriented C.H.E.R.U.B. operative',
+    affiliation: 'Former C.H.E.R.U.B.',
+    playable: false,
+    spoilerScope: 'season_1',
+    description: 'A forceful member of the cherub trio whose attempt to protect a human target brings the team into direct conflict with I.M.P.',
+    canonNote: 'Her membership and opposition to I.M.P. are canon; gameplay appearances remain Simulation AU.',
+    sourceRef: 'Helluva Boss S1E4',
+    portrait: portrait('hb_keenie')
+  },
+  {
+    id: 'hb_vassago',
+    name: 'Vassago',
+    alias: 'Goetia prince',
+    species: 'Goetic demon',
+    role: 'Prince of the Ars Goetia and court member',
+    affiliation: 'Ars Goetia',
+    playable: false,
+    spoilerScope: 'season_2',
+    description: 'A Goetia noble who questions proceedings when Stolas is absent and insists that his testimony should be heard.',
+    canonNote: 'His conduct in the proceeding is canon; the extension does not infer a standing alliance with I.M.P.',
+    sourceRef: 'Helluva Boss S2E11',
+    portrait: portrait('hb_vassago')
   }
 ] as const;
 
@@ -368,6 +538,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. internal review', location: 'Imp City office', difficulty: 'routine',
     summary: 'Reconstruct a dangerously incomplete client file before anyone opens a portal on the wrong coordinates.',
     prerequisiteId: null, entryCost: 20, reward: 260, completionHeat: 0,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_cash_buckzo', 'hb_wally_wackford'],
     phaseBriefs: ['Audit the client file and identify the missing facts.', 'Verify the target trail without exposing the company.', 'Choose what the final report admits and archive the evidence.'],
     tactics: [
       { id: 'red_thread_audit', label: 'Red-thread audit', description: 'Rebuild the file from receipts, portal timestamps and contradictions before anyone acts.' },
@@ -380,6 +551,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Newly arrived sinner', location: 'Living world suburb', difficulty: 'routine',
     summary: 'Complete a straightforward revenge contract while teaching the crew how this campaign scores exposure and teamwork.',
     prerequisiteId: 'hb_contract_01_report', entryCost: 45, reward: 340, completionHeat: 2,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_barbie_wire'],
     phaseBriefs: ['Confirm the client, target and exit conditions.', 'Approach the target through a crowded neighborhood.', 'Remove the trail and settle the client invoice.'],
     tactics: [
       { id: 'neighborhood_ghost', label: 'Neighborhood ghost route', description: 'Use service alleys and empty houses to reach the target without becoming local gossip.' },
@@ -392,6 +564,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Confidential sinner client', location: 'Living world media district', difficulty: 'risky',
     summary: 'A bystander recorded an infernal transformation. Recover the footage before it reaches a public feed.',
     prerequisiteId: 'hb_contract_02_clean', entryCost: 60, reward: 410, completionHeat: 4,
+    featuredCharacterIds: ['hb_loona', 'hb_verosika', 'hb_vortex', 'hb_barbie_wire', 'hb_wally_wackford'],
     phaseBriefs: ['Trace every copy of the recording.', 'Reach the witness and the backup server.', 'Decide whether to erase, replace or bury the evidence.'],
     tactics: [
       { id: 'cold_storage_sweep', label: 'Cold-storage sweep', description: 'Trace metadata and backups until every copy of the infernal footage has an owner.' },
@@ -404,6 +577,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'High-risk sinner client', location: 'Living world hospital', difficulty: 'dangerous',
     summary: 'A protected target draws celestial interference, forcing I.M.P. to finish the job without turning the district into proof of Hell.',
     prerequisiteId: 'hb_contract_03_camera', entryCost: 75, reward: 500, completionHeat: 6,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_cletus', 'hb_collin', 'hb_keenie'],
     phaseBriefs: ['Map celestial patrol patterns and civilian traffic.', 'Separate the target from the protection detail.', 'Exit before the celestial response can establish a pattern.'],
     tactics: [
       { id: 'chapel_blind_clock', label: 'Chapel blind clock', description: 'Exploit the short interval when the ward, cameras and celestial patrol stop overlapping.' },
@@ -416,6 +590,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. counter-intelligence', location: 'Living world government annex', difficulty: 'dangerous',
     summary: 'A surveillance team is rebuilding I.M.P.\'s movement pattern. Feed it a false route or destroy the trace.',
     prerequisiteId: 'hb_contract_04_cherub', entryCost: 85, reward: 560, completionHeat: 5,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona'],
     phaseBriefs: ['Identify the investigators and their collection point.', 'Enter the annex while a second team is watching.', 'Plant disinformation or erase the operational archive.'],
     tactics: [
       { id: 'paper_ghost', label: 'Paper ghost', description: 'Build a credible false identity that can walk through the annex without touching an alarm.' },
@@ -428,6 +603,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. survival contract', location: 'D.H.O.R.K.S. field facility', difficulty: 'crisis',
     summary: 'Break the first major surveillance net while choosing between evidence destruction, rescue and long-term misdirection.',
     prerequisiteId: 'hb_contract_05_dhorks', entryCost: 100, reward: 650, completionHeat: 8,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona'],
     phaseBriefs: ['Build a route through the facility\'s blind zones.', 'Secure the crew and the evidence room under pressure.', 'Choose which objective survives when the extraction window closes.'],
     tactics: [
       { id: 'dead_angle_crawl', label: 'Dead-angle crawl', description: 'Cross the facility only when its cameras and response teams are looking elsewhere.' },
@@ -440,6 +616,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Protected informant', location: 'Greed Ring', difficulty: 'dangerous',
     summary: 'A Greed Ring syndicate is pressuring an I.M.P. associate for operational intelligence. Extract the informant without forcing loyalty or reconciliation.',
     prerequisiteId: 'hb_contract_06_blindspot', entryCost: 90, reward: 610, completionHeat: 3,
+    featuredCharacterIds: ['hb_moxxie', 'hb_millie', 'hb_crimson', 'hb_chazwick_thurman', 'hb_barbie_wire', 'hb_sallie_may'],
     phaseBriefs: ['Let the informant define the operation\'s safety boundaries.', 'Move the informant past syndicate collectors.', 'Choose a protection plan that does not turn safety into another debt.'],
     tactics: [
       { id: 'boundary_first_extraction', label: 'Boundary-first extraction', description: 'Build the route around the informant\'s consent, safe contacts and absolute limits.' },
@@ -452,6 +629,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Independent Greed Ring broker', location: 'Greed Ring warehouse district', difficulty: 'dangerous',
     summary: 'Recover a syndicate ledger before it can be sold to every rival with a grudge against I.M.P.',
     prerequisiteId: 'hb_contract_07_family_debt', entryCost: 105, reward: 690, completionHeat: 4,
+    featuredCharacterIds: ['hb_moxxie', 'hb_millie', 'hb_crimson', 'hb_chazwick_thurman'],
     phaseBriefs: ['Survey the warehouse shifts and false ledgers.', 'Reach the vault without triggering a district-wide fight.', 'Extract the real ledger and decide what copies remain.'],
     tactics: [
       { id: 'shift_change_infiltration', label: 'Shift-change infiltration', description: 'Enter between warehouse crews, when every guard assumes someone else checked the manifest.' },
@@ -464,6 +642,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. strategic operation', location: 'Greed Ring safehouse', difficulty: 'crisis',
     summary: 'Use the recovered ledger to cut criminal leverage, expose a network or buy a temporary ceasefire.',
     prerequisiteId: 'hb_contract_08_warehouse', entryCost: 115, reward: 760, completionHeat: 5,
+    featuredCharacterIds: ['hb_asmodeus', 'hb_mammon', 'hb_glitz', 'hb_glam', 'hb_crimson'],
     phaseBriefs: ['Verify which names can be acted on safely.', 'Reach the syndicate archive before it relocates.', 'Burn, expose or leverage the ledger without sacrificing the crew.'],
     tactics: [
       { id: 'quiet_leverage_map', label: 'Quiet leverage map', description: 'Verify every connection and cut only the links that cannot endanger protected names.' },
@@ -476,6 +655,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. defensive operation', location: 'Wrath Ring badlands', difficulty: 'crisis',
     summary: 'A rival assassin hunts Blitzø and Stolas. Turn the pursuit into a controlled extraction rather than a fatal canon rewrite.',
     prerequisiteId: 'hb_contract_09_red_ledger', entryCost: 125, reward: 820, completionHeat: 4,
+    featuredCharacterIds: ['hb_blitzo', 'hb_stolas', 'hb_striker', 'hb_stella', 'hb_vassago', 'hb_sallie_may'],
     phaseBriefs: ['Track the hunter without using Stolas as bait.', 'Choose a trap, duel or evacuation route.', 'Leave the badlands with every canon character alive.'],
     tactics: [
       { id: 'counter_hunter_trail', label: 'Counter-hunter trail', description: 'Read the assassin\'s spoor backward and prepare an exit before springing any trap.' },
@@ -488,6 +668,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'Neutral Goetia intermediary', location: 'Pride Ring transit route', difficulty: 'dangerous',
     summary: 'Protect a courier carrying personal effects while respecting Octavia\'s right to distance, contact or silence.',
     prerequisiteId: 'hb_contract_10_bounty', entryCost: 110, reward: 790, completionHeat: 2,
+    featuredCharacterIds: ['hb_stolas', 'hb_octavia', 'hb_stella', 'hb_andrealphus', 'hb_vassago', 'hb_paimon'],
     phaseBriefs: ['Confirm the courier\'s consent and the delivery boundary.', 'Escort the package through political surveillance.', 'Deliver, defer or secure the message without forcing a response.'],
     tactics: [
       { id: 'unmarked_transit', label: 'Unmarked transit', description: 'Move the courier through ordinary routes that give Goetia observers nothing useful to catalogue.' },
@@ -500,6 +681,7 @@ export const HELLUVA_CONTRACTS: readonly HelluvaContractDefinition[] = [
     client: 'I.M.P. final operation', location: 'Imp City and the living world', difficulty: 'crisis',
     summary: 'Contain a living-world breach and an infernal injunction at once. Cumulative funds, heat, cohesion, discretion, reputation and fatigue determine the shape of the final extraction.',
     prerequisiteId: 'hb_contract_11_open_door', entryCost: 150, reward: 1000, completionHeat: 10,
+    featuredCharacterIds: ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_mammon'],
     phaseBriefs: ['Divide the crew between the breach and the legal threat.', 'Hold the portal route while evidence and civilians converge.', 'Commit to the extraction plan earned by the campaign\'s cumulative metrics.'],
     tactics: [
       { id: 'metric_balanced_extraction', label: 'Metric-balanced extraction', description: 'Spend the campaign\'s remaining resources to reduce the weakest operational metric before the portal closes.' },
@@ -587,21 +769,43 @@ export const HELLUVA_SPRITE_SHEETS = [
   {
     id: 'helluva-core',
     path: '/assets/sprites/helluva/sheets/helluva-core.png',
+    spoilerScope: 'season_1',
     characters: ['Blitzø', 'Moxxie', 'Millie', 'Loona']
   },
   {
     id: 'helluva-allies',
     path: '/assets/sprites/helluva/sheets/helluva-allies.png',
+    spoilerScope: 'season_1',
     characters: ['Stolas', 'Octavia', 'Fizzarolli', 'Verosika Mayday']
   },
   {
     id: 'helluva-powers',
     path: '/assets/sprites/helluva/sheets/helluva-powers.png',
+    spoilerScope: 'season_1',
     characters: ['Asmodeus', 'Beelzebub', 'Striker', 'Stella']
   },
   {
     id: 'helluva-extended',
     path: '/assets/sprites/helluva/sheets/helluva-extended.png',
+    spoilerScope: 'season_2',
     characters: ['Crimson', 'Vortex', 'Sallie May', 'Andrealphus']
+  },
+  {
+    id: 'helluva-origins',
+    path: '/assets/sprites/helluva/sheets/helluva-origins.png',
+    spoilerScope: 'season_2',
+    characters: ['Paimon', 'Barbie Wire', 'Cash Buckzo', 'Wally Wackford']
+  },
+  {
+    id: 'helluva-rivals',
+    path: '/assets/sprites/helluva/sheets/helluva-rivals.png',
+    spoilerScope: 'season_2',
+    characters: ['Mammon', 'Chazwick Thurman', 'Glitz', 'Glam']
+  },
+  {
+    id: 'helluva-celestial',
+    path: '/assets/sprites/helluva/sheets/helluva-celestial.png',
+    spoilerScope: 'season_2',
+    characters: ['Cletus', 'Collin', 'Keenie', 'Vassago']
   }
 ] as const;

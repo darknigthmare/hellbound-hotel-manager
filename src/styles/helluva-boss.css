@@ -642,6 +642,61 @@
   border-color: rgba(76, 224, 108, 0.24);
 }
 
+.helluva-featured-cast {
+  margin: 0 0 16px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(212, 175, 55, 0.13);
+  border-radius: var(--radius-sm);
+}
+
+.helluva-featured-cast > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--color-gold-dark);
+  font-size: 0.59rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.helluva-featured-cast ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.helluva-featured-cast li {
+  padding: 4px 7px;
+  color: var(--color-text-main);
+  background: rgba(168, 32, 42, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 999px;
+  font-size: 0.64rem;
+}
+
+.helluva-featured-cast li.is-hidden {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.helluva-featured-cast.is-compact {
+  margin: 10px 0 0;
+  padding: 8px;
+}
+
+.helluva-featured-cast.is-compact li {
+  padding: 3px 6px;
+  font-size: 0.59rem;
+}
+
 .helluva-choice-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

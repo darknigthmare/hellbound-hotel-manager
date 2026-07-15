@@ -458,23 +458,57 @@ describe('Helluva Boss campaign durability', () => {
 });
 
 describe('Helluva Boss static content integrity', () => {
-  it('defines 16 isolated, uniquely mapped profiles and all nine phase approaches', () => {
+  it('defines 28 isolated, uniquely mapped profiles and all nine phase approaches', () => {
     const profileIds = HELLUVA_CHARACTERS.map(profile => profile.id);
     const profileNames = HELLUVA_CHARACTERS.map(profile => profile.name);
     const portraitPaths = HELLUVA_CHARACTERS.map(profile => profile.portrait);
     const sheetNames = HELLUVA_SPRITE_SHEETS.flatMap(sheet => sheet.characters);
     const coreCharacterIds = new Set(getSeedData().characters.map(character => character.id));
 
-    expect(HELLUVA_CHARACTERS).toHaveLength(16);
-    expect(new Set(profileIds).size).toBe(16);
-    expect(new Set(profileNames).size).toBe(16);
-    expect(new Set(portraitPaths).size).toBe(16);
+    expect(HELLUVA_CHARACTERS).toHaveLength(28);
+    expect(new Set(profileIds).size).toBe(28);
+    expect(new Set(profileNames).size).toBe(28);
+    expect(new Set(portraitPaths).size).toBe(28);
     expect(profileIds.every(id => id.startsWith('hb_'))).toBe(true);
     expect(profileIds.every(id => !coreCharacterIds.has(id))).toBe(true);
     expect(portraitPaths).toEqual(profileIds.map(id => `/assets/sprites/helluva/portraits/${id}.png`));
     expect(sheetNames).toEqual(profileNames);
+    expect(HELLUVA_SPRITE_SHEETS.slice(-3)).toEqual([
+      {
+        id: 'helluva-origins',
+        path: '/assets/sprites/helluva/sheets/helluva-origins.png',
+        spoilerScope: 'season_2',
+        characters: ['Paimon', 'Barbie Wire', 'Cash Buckzo', 'Wally Wackford']
+      },
+      {
+        id: 'helluva-rivals',
+        path: '/assets/sprites/helluva/sheets/helluva-rivals.png',
+        spoilerScope: 'season_2',
+        characters: ['Mammon', 'Chazwick Thurman', 'Glitz', 'Glam']
+      },
+      {
+        id: 'helluva-celestial',
+        path: '/assets/sprites/helluva/sheets/helluva-celestial.png',
+        spoilerScope: 'season_2',
+        characters: ['Cletus', 'Collin', 'Keenie', 'Vassago']
+      }
+    ]);
     expect(HELLUVA_CHARACTERS.filter(profile => profile.playable).map(profile => profile.id))
       .toEqual([...HELLUVA_CREW_IDS]);
+    expect(profileIds).toEqual(expect.arrayContaining([
+      'hb_paimon',
+      'hb_barbie_wire',
+      'hb_cash_buckzo',
+      'hb_wally_wackford',
+      'hb_mammon',
+      'hb_chazwick_thurman',
+      'hb_glitz',
+      'hb_glam',
+      'hb_cletus',
+      'hb_collin',
+      'hb_keenie',
+      'hb_vassago'
+    ]));
 
     expect(HELLUVA_APPROACHES).toHaveLength(9);
     for (const phaseIndex of [0, 1, 2]) {
@@ -482,8 +516,8 @@ describe('Helluva Boss static content integrity', () => {
     }
   });
 
-  it('publishes four 6x4 atlases and one transparent portrait per profile', () => {
-    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(4);
+  it('publishes seven 6x4 atlases and one transparent portrait per profile', () => {
+    expect(HELLUVA_SPRITE_SHEETS).toHaveLength(7);
     for (const sheet of HELLUVA_SPRITE_SHEETS) {
       expect(sheet.characters).toHaveLength(4);
       expect(publishedAsset(sheet.path)).toEqual({
@@ -503,13 +537,22 @@ describe('Helluva Boss static content integrity', () => {
   });
 
   it('keeps the contract chain complete, ordered and internally referential', () => {
+    const profileIds = HELLUVA_CHARACTERS.map(profile => profile.id);
+    const knownProfileIds = new Set(profileIds);
+    const allFeaturedIds = HELLUVA_CONTRACTS.flatMap(contract => contract.featuredCharacterIds);
+
     expect(HELLUVA_CONTRACTS).toHaveLength(12);
     expect(new Set(HELLUVA_CONTRACTS.map(contract => contract.id)).size).toBe(12);
     for (const [index, contract] of HELLUVA_CONTRACTS.entries()) {
       expect(contract.order).toBe(index + 1);
       expect(contract.phaseBriefs).toHaveLength(3);
       expect(contract.prerequisiteId).toBe(index === 0 ? null : HELLUVA_CONTRACTS[index - 1].id);
+      expect(contract.featuredCharacterIds.length).toBeGreaterThan(0);
+      expect(new Set(contract.featuredCharacterIds).size).toBe(contract.featuredCharacterIds.length);
+      expect(contract.featuredCharacterIds.every(characterId => knownProfileIds.has(characterId))).toBe(true);
     }
+
+    expect([...new Set(allFeaturedIds)].sort()).toEqual([...profileIds].sort());
   });
 
   it('gives every contract and phase three unique narrative tactics with stable choice IDs', () => {
