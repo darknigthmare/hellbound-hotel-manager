@@ -211,6 +211,10 @@ describe('automated accessibility contracts', () => {
     expect(screen.getByLabelText(/Vaggie CPU status/i)).toBeTruthy();
 
     const angelCombatant = container.querySelector<HTMLElement>('.arena-combatant.is-one');
+    const vaggieCombatant = container.querySelector<HTMLElement>('.arena-combatant.is-two');
+    expect(Number(angelCombatant?.dataset.position)).toBeLessThan(Number(vaggieCombatant?.dataset.position));
+    expect(angelCombatant?.dataset.facing).toBe('right');
+    expect(vaggieCombatant?.dataset.facing).toBe('left');
     const startPosition = Number(angelCombatant?.dataset.position);
     fireEvent.keyDown(window, { code: 'KeyD' });
     await waitFor(() => {

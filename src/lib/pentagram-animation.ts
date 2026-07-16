@@ -24,5 +24,7 @@ export function getCombatPoseColumn(action: CombatAction, remainingMs: number): 
     return ms > 180 ? 3 : 4;
   }
 
-  return 0;
+  // Column 2 is the generated atlas' directional combat stance. Column 0 is
+  // portrait-like and can make a fighter appear to look away from the duel.
+  return 2;
 }

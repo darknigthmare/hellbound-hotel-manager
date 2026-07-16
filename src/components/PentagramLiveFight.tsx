@@ -551,6 +551,7 @@ export function PentagramLiveFight({
           className={`arena-combatant is-one is-${combat.actionOne}`}
           style={fighterOneStyle}
           data-position={combat.positionOne.toFixed(2)}
+          data-facing="right"
           data-action={combat.actionOne}
           data-pose-column={fighterOnePose}
           aria-hidden="true"
@@ -572,6 +573,7 @@ export function PentagramLiveFight({
           className={`arena-combatant is-two is-${combat.actionTwo}`}
           style={fighterTwoStyle}
           data-position={combat.positionTwo.toFixed(2)}
+          data-facing="left"
           data-action={combat.actionTwo}
           data-pose-column={fighterTwoPose}
           aria-hidden="true"

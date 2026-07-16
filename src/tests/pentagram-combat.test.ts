@@ -264,7 +264,7 @@ describe('Pentagram Arena live combat engine', () => {
   });
 
   it('maps attacks through readable anticipation, strike and recovery sprite poses', () => {
-    expect(getCombatPoseColumn('idle', 0)).toBe(0);
+    expect(getCombatPoseColumn('idle', 0)).toBe(2);
     expect(getCombatPoseColumn('walk', 0)).toBe(2);
     expect(getCombatPoseColumn('light', 340)).toBe(2);
     expect(getCombatPoseColumn('light', 220)).toBe(3);
