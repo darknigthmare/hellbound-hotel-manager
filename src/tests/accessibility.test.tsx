@@ -185,6 +185,10 @@ describe('automated accessibility contracts', () => {
     expect(screen.getAllByRole('option', { name: 'Vox' })).toHaveLength(2);
     expect(screen.queryByRole('option', { name: 'Baxter' })).toBeNull();
     expect(fighterOne.options).toHaveLength(fighterCount);
+    expect(container.querySelectorAll('.arena-fighter__portrait > span')).toHaveLength(0);
+    expect(container.querySelectorAll('.arena-roster-tile > span')).toHaveLength(0);
+    expect(container.querySelectorAll('.arena-fighter__portrait > img')).toHaveLength(2);
+    expect(container.querySelectorAll('.arena-roster-tile > img').length).toBeGreaterThan(0);
 
     const rosterSearch = screen.getByRole('searchbox', { name: 'Search fighter roster' });
     expect(screen.getByText(`1–12 of ${fighterCount}`)).toBeTruthy();

@@ -40,6 +40,11 @@ interface FighterCardProps {
   onSelect: (fighterId: string) => void;
 }
 
+interface ArenaPortraitProps {
+  src?: string;
+  fallback: string;
+}
+
 type ArenaPhase = 'select' | 'fight';
 type ArenaMatchMode = 'ai' | 'local';
 type ArenaPickerSlot = 'one' | 'two';
@@ -71,6 +76,20 @@ function getInitials(name: string): string {
     .map(part => part[0])
     .join('')
     .toUpperCase();
+}
+
+function ArenaPortrait({ src, fallback }: ArenaPortraitProps) {
+  const [failed, setFailed] = useState(false);
+
+  if (!src || failed) return <span>{fallback}</span>;
+
+  return (
+    <img
+      src={src}
+      alt=""
+      onError={() => setFailed(true)}
+    />
+  );
 }
 
 function getArenaFighters(state: DatabaseState): Character[] {
@@ -114,14 +133,11 @@ function FighterCard({
     <article className="arena-fighter" aria-labelledby={titleId}>
       <div className="arena-fighter__slot">{label}</div>
       <div className="arena-fighter__portrait" aria-hidden="true">
-        <span>{fighter ? getInitials(fighter.name) : '?'}</span>
-        {sprite && (
-          <img
-            src={sprite.portrait}
-            alt=""
-            onError={(event) => { event.currentTarget.style.display = 'none'; }}
-          />
-        )}
+        <ArenaPortrait
+          key={sprite?.portrait ?? fighter?.id ?? 'empty-fighter'}
+          src={sprite?.portrait}
+          fallback={fighter ? getInitials(fighter.name) : '?'}
+        />
       </div>
 
       <label htmlFor={selectId}>Choose {label.toLowerCase()}</label>
@@ -392,14 +408,11 @@ export function PentagramArena({ state }: PentagramArenaProps) {
                       aria-label={candidate.name}
                       title={candidate.name}
                     >
-                      <span>{getInitials(candidate.name)}</span>
-                      {candidateSprite && (
-                        <img
-                          src={candidateSprite.portrait}
-                          alt=""
-                          onError={(event) => { event.currentTarget.style.display = 'none'; }}
-                        />
-                      )}
+                      <ArenaPortrait
+                        key={candidateSprite?.portrait ?? candidate.id}
+                        src={candidateSprite?.portrait}
+                        fallback={getInitials(candidate.name)}
+                      />
                       <small>{candidate.name}</small>
                     </button>
                   );
