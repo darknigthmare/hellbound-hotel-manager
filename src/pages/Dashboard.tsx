@@ -591,11 +591,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
       </section>
 
       {/* Visual Hotel Banner */}
-      <div 
+      <section
         className="glass-panel art-deco-border"
+        aria-labelledby="dashboard-hotel-hero-title"
         style={{
           height: '220px',
-          backgroundImage: "linear-gradient(to bottom, rgba(12, 8, 9, 0.2), rgba(12, 8, 9, 0.95)), url('/assets/hotel_exterior.png')",
+          backgroundImage: "linear-gradient(to bottom, rgba(12, 8, 9, 0.2), rgba(12, 8, 9, 0.95)), url('/assets/openai/dashboard-hotel-exterior.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center 35%',
           borderRadius: 'var(--radius-lg)',
@@ -608,13 +609,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
           overflow: 'hidden'
         }}
       >
-        <h2 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-title)', color: 'var(--color-gold)', textShadow: '0 2px 10px rgba(0,0,0,0.95)' }}>
+        <h2 id="dashboard-hotel-hero-title" style={{ fontSize: '1.8rem', fontFamily: 'var(--font-title)', color: 'var(--color-gold)', textShadow: '0 2px 10px rgba(0,0,0,0.95)' }}>
           {settings.appName}
         </h2>
         <p style={{ color: 'var(--color-text-main)', textShadow: '0 1px 6px rgba(0,0,0,0.95)', maxWidth: '550px', fontSize: '0.85rem', fontStyle: 'italic', marginTop: '4px' }}>
           "Where a second chance isn't a dream... it's a structural hazard."
         </p>
-      </div>
+      </section>
 
       {/* Narrative event ticker */}
       <div

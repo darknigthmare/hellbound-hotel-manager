@@ -16,6 +16,10 @@ import {
   shouldCaptureKey
 } from '../cloudAccount';
 import { CHARACTER_SPRITES, SPRITE_SHEETS } from '../lib/character-sprites';
+import {
+  SPRITE_ANIMATION_SETS,
+  SPRITE_ATLAS_COLUMN_COUNT,
+} from '../lib/sprite-animation-registry';
 import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 
 class MemoryStorage implements StorageLike {
@@ -75,6 +79,7 @@ describe('generated character sprite coverage', () => {
       expect(sheetPaths.has(sprite.sheet)).toBe(true);
       expect(sprite.row).toBeGreaterThanOrEqual(0);
       expect(sprite.row).toBeLessThan(4);
+      expect(SPRITE_ANIMATION_SETS[sprite.animationSetId]).toBeDefined();
     }
   });
 
@@ -100,6 +105,8 @@ describe('generated character sprite coverage', () => {
         height: 512,
         colorType: 6
       });
+      expect(SPRITE_ANIMATION_SETS[sprite.animationSetId].columnRoles)
+        .toHaveLength(SPRITE_ATLAS_COLUMN_COUNT);
     }
 
     expect(rowKeys).toHaveLength(Object.keys(CHARACTER_SPRITES).length);

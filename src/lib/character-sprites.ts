@@ -1,4 +1,8 @@
 import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
+import {
+  DEFAULT_SPRITE_ANIMATION_SET_ID,
+  type SpriteAnimationSetId,
+} from './sprite-animation-registry';
 
 export interface SpriteSheetDefinition {
   id: string;
@@ -12,6 +16,7 @@ export interface CharacterSpriteAsset {
   portrait: string;
   sheet: string;
   row: number;
+  animationSetId: SpriteAnimationSetId;
 }
 
 export const SPRITE_SHEETS: readonly SpriteSheetDefinition[] = [
@@ -92,7 +97,8 @@ const OPERATIONAL_CHARACTER_SPRITES = Object.fromEntries(
     {
       portrait: `/assets/sprites/portraits/${characterId}.png`,
       sheet: `/assets/sprites/sheets/${sheet}.png`,
-      row
+      row,
+      animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
     }
   ])
 ) as Readonly<Record<string, CharacterSpriteAsset>>;
@@ -105,7 +111,12 @@ export function buildHazbinDirectorySpriteAssets(
     .filter(({ existingOperationalProfile, assetStatus }) => !existingOperationalProfile && assetStatus === 'ready')
     .map(({ id, portrait, sheetPath, sheetRow }) => [
       id,
-      { portrait, sheet: sheetPath, row: sheetRow },
+      {
+        portrait,
+        sheet: sheetPath,
+        row: sheetRow,
+        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
+      },
     ]),
   ) as Readonly<Record<string, CharacterSpriteAsset>>;
 }

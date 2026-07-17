@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { getCombatPoseColumn } from '../lib/pentagram-animation';
+import {
+  getCombatAnimationFrame,
+  getCombatPoseColumn,
+} from '../lib/pentagram-animation';
+import {
+  DEFAULT_SPRITE_ANIMATION_SET_ID,
+  SIX_POSE_COMBAT_ANIMATION_SET,
+} from '../lib/sprite-animation-registry';
 import {
   createCombatState,
   createNextCombatRound,
@@ -353,14 +360,77 @@ describe('Pentagram Arena live combat engine', () => {
     expect(getCombatPoseColumn('idle', 0)).toBe(2);
     expect(getCombatPoseColumn('walk', 0)).toBe(2);
     expect(getCombatPoseColumn('light', 340)).toBe(2);
-    expect(getCombatPoseColumn('light', 220)).toBe(3);
-    expect(getCombatPoseColumn('light', 80)).toBe(4);
+    expect(getCombatPoseColumn('light', 221)).toBe(3);
+    expect(getCombatPoseColumn('light', 220)).toBe(4);
+    expect(getCombatPoseColumn('light', 120)).toBe(2);
     expect(getCombatPoseColumn('heavy', 460)).toBe(2);
-    expect(getCombatPoseColumn('heavy', 220)).toBe(3);
-    expect(getCombatPoseColumn('heavy', 80)).toBe(4);
+    expect(getCombatPoseColumn('heavy', 241)).toBe(3);
+    expect(getCombatPoseColumn('heavy', 240)).toBe(4);
+    expect(getCombatPoseColumn('heavy', 100)).toBe(5);
     expect(getCombatPoseColumn('special', 700)).toBe(2);
-    expect(getCombatPoseColumn('special', 340)).toBe(3);
-    expect(getCombatPoseColumn('special', 100)).toBe(4);
+    expect(getCombatPoseColumn('special', 341)).toBe(3);
+    expect(getCombatPoseColumn('special', 340)).toBe(4);
+    expect(getCombatPoseColumn('special', 160)).toBe(5);
+    expect(getCombatPoseColumn('light', 20)).toBe(2);
+    expect(getCombatPoseColumn('heavy', 20)).toBe(5);
+    expect(getCombatPoseColumn('special', 20)).toBe(5);
     expect(getCombatPoseColumn('victory', 0)).toBe(5);
+  });
+
+  it('normalizes authored impact boundaries to style-scaled action durations', () => {
+    expect(getCombatPoseColumn('light', 199, { actionDurationMs: 306 })).toBe(3);
+    expect(getCombatPoseColumn('light', 198, { actionDurationMs: 306 })).toBe(4);
+
+    expect(getCombatPoseColumn('heavy', 265, { actionDurationMs: 506 })).toBe(3);
+    expect(getCombatPoseColumn('heavy', 264, { actionDurationMs: 506 })).toBe(4);
+
+    // 1.04 scaling rounds the 700 ms action to 728 ms and its 360 ms startup
+    // to 374 ms. This is the case where linear normalization drifts early.
+    expect(getCombatPoseColumn('special', 355, { actionDurationMs: 728 })).toBe(3);
+    expect(getCombatPoseColumn('special', 354, { actionDurationMs: 728 })).toBe(4);
+  });
+
+  it('resolves every combat state through the shared versioned animation registry', () => {
+    expect(SIX_POSE_COMBAT_ANIMATION_SET.id).toBe(DEFAULT_SPRITE_ANIMATION_SET_ID);
+    expect(DEFAULT_SPRITE_ANIMATION_SET_ID).toBe('six-pose-combat-v2');
+    expect(Object.keys(SIX_POSE_COMBAT_ANIMATION_SET.clips).sort()).toEqual([
+      'guard',
+      'heavy',
+      'hit',
+      'idle',
+      'ko',
+      'light',
+      'special',
+      'victory',
+      'walk',
+    ]);
+    expect(getCombatAnimationFrame('light', 220)).toEqual({
+      clip: 'light',
+      frameIndex: 2,
+      column: 4,
+    });
+    expect(getCombatAnimationFrame('heavy', 20)).toEqual({
+      clip: 'heavy',
+      frameIndex: 3,
+      column: 5,
+    });
+
+    const attackBoundaries = Object.fromEntries(
+      (['light', 'heavy', 'special'] as const).map((clipName) => {
+        const clip = SIX_POSE_COMBAT_ANIMATION_SET.clips[clipName];
+        const impactIndex = clip.frames.findIndex(({ column }) => column === 4);
+        return [clipName, {
+          totalMs: clip.frames.reduce((total, frame) => total + frame.durationMs, 0),
+          impactStartMs: clip.frames
+            .slice(0, impactIndex)
+            .reduce((total, frame) => total + frame.durationMs, 0),
+        }];
+      }),
+    );
+    expect(attackBoundaries).toEqual({
+      light: { totalMs: 340, impactStartMs: 120 },
+      heavy: { totalMs: 460, impactStartMs: 220 },
+      special: { totalMs: 700, impactStartMs: 360 },
+    });
   });
 });

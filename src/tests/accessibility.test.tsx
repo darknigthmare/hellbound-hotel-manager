@@ -189,6 +189,19 @@ describe('automated accessibility contracts', () => {
     expect(container.querySelectorAll('.arena-roster-tile > span')).toHaveLength(0);
     expect(container.querySelectorAll('.arena-fighter__portrait > img')).toHaveLength(2);
     expect(container.querySelectorAll('.arena-roster-tile > img').length).toBeGreaterThan(0);
+    expect(screen.getAllByRole('button', { name: /Select stage/i })).toHaveLength(8);
+    const carmineStage = screen.getByRole('button', { name: 'Select stage Carmine Industries' });
+    await user.click(carmineStage);
+    expect(carmineStage.getAttribute('aria-pressed')).toBe('true');
+    expect(screen.getByText('Steel-Toe Staccato')).toBeTruthy();
+    expect(screen.getByText(/Carmilla Carmine.+Overlords meet/i)).toBeTruthy();
+
+    const heavenStage = screen.getByRole('button', { name: 'Select stage Heaven Embassy & Clock Tower' });
+    await user.click(heavenStage);
+    expect(heavenStage.getAttribute('aria-pressed')).toBe('true');
+    expect(screen.getByText('Halo Clock Downbeat')).toBeTruthy();
+    expect(screen.getByText(/clock tower.+extermination schedule/i)).toBeTruthy();
+    expect(screen.getByRole('checkbox', { name: 'Soundtrack on' })).toBeTruthy();
 
     const rosterSearch = screen.getByRole('searchbox', { name: 'Search fighter roster' });
     expect(screen.getByText(`1–12 of ${fighterCount}`)).toBeTruthy();
@@ -219,10 +232,14 @@ describe('automated accessibility contracts', () => {
     expect(screen.queryByRole('combobox', { name: 'Choose fighter one' })).toBeNull();
     expect(screen.queryByRole('combobox', { name: 'Choose fighter two' })).toBeNull();
     expect(screen.queryByRole('button', { name: /Start exhibition/i })).toBeNull();
-    expect(screen.queryByRole('button', { name: /Strike|Guard|Special|Step in/i })).toBeNull();
+    expect(screen.queryByRole('button', { name: /^(Strike|Guard|Special|Step in)$/i })).toBeNull();
+    expect(screen.getByRole('group', { name: /P1 tactile controls for Angel Dust/i })).toBeTruthy();
+    expect(screen.queryByRole('group', { name: /P2 tactile controls/i })).toBeNull();
+    expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(6);
 
     const liveStage = screen.getByRole('region', { name: /Live combat: Angel Dust versus Vaggie/i });
     await waitFor(() => expect(document.activeElement).toBe(liveStage));
+    expect(liveStage.dataset.stage).toBe('heaven-embassy');
     expect(liveStage.dataset.phase).toBe('ready');
     expect(screen.getByRole('button', { name: 'Pause' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Quit' })).toBeTruthy();

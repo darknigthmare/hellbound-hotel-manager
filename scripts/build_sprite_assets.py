@@ -16,7 +16,7 @@ import json
 from pathlib import Path
 from typing import Sequence
 
-from PIL import Image
+from PIL import Image, ImageChops
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +31,69 @@ MIN_CELL_ALPHA_RATIO = 0.05
 MIN_CELL_ALPHA_MARGIN = 6
 MAX_EDGE_ALPHA_RATIO = 0.0025
 PORTRAIT_ALPHA_MARGIN = 16
+MIN_FRAME_ALPHA_DIFFERENCE_RATIO = 0.02
+ANIMATION_CONTRACT_ID = "six-pose-combat-v2"
+ANIMATION_COLUMN_ROLES = (
+    "portrait_idle",
+    "expression",
+    "combat_ready",
+    "attack_startup",
+    "attack_impact",
+    "victory_recovery",
+)
+ANIMATION_CLIPS = {
+    "idle": {
+        "loop": True,
+        "frames": ({"column": 2, "durationMs": 800},),
+    },
+    "walk": {
+        "loop": True,
+        "frames": ({"column": 2, "durationMs": 210},),
+    },
+    "guard": {
+        "loop": True,
+        "frames": ({"column": 2, "durationMs": 250},),
+    },
+    "light": {
+        "loop": False,
+        "frames": (
+            {"column": 2, "durationMs": 40},
+            {"column": 3, "durationMs": 80},
+            {"column": 4, "durationMs": 100},
+            {"column": 2, "durationMs": 120},
+        ),
+    },
+    "heavy": {
+        "loop": False,
+        "frames": (
+            {"column": 2, "durationMs": 80},
+            {"column": 3, "durationMs": 140},
+            {"column": 4, "durationMs": 140},
+            {"column": 5, "durationMs": 100},
+        ),
+    },
+    "special": {
+        "loop": False,
+        "frames": (
+            {"column": 2, "durationMs": 140},
+            {"column": 3, "durationMs": 220},
+            {"column": 4, "durationMs": 180},
+            {"column": 5, "durationMs": 160},
+        ),
+    },
+    "hit": {
+        "loop": False,
+        "frames": ({"column": 4, "durationMs": 210},),
+    },
+    "ko": {
+        "loop": False,
+        "frames": ({"column": 4, "durationMs": 1000},),
+    },
+    "victory": {
+        "loop": True,
+        "frames": ({"column": 5, "durationMs": 900},),
+    },
+}
 
 
 @dataclass(frozen=True)
@@ -208,6 +271,33 @@ HAZBIN_EXPANSION_ATLASES: tuple[NamedSpriteAtlas, ...] = (
             ("hz_ant_sinner", "Ant sinner"),
         ),
     ),
+    NamedSpriteAtlas(
+        "hazbin-vees-casino.png",
+        (
+            ("hz_kitty", "Kitty"),
+            ("hz_huskette_cat", "Huskette cat-like waitress"),
+            ("hz_huskette_spider", "Huskette spider-like waitress"),
+            ("hz_huskette_imp", "Huskette imp-like waitress"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-season2-voiced-locals.png",
+        (
+            ("hz_reporter_demon", "Reporter demon"),
+            ("hz_goldfish_sinner", "Goldfish sinner"),
+            ("hz_fangirl_goat", "Goat-like fangirl sinner"),
+            ("hz_fangirl_apple_tree", "Apple-tree fangirl sinner"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-recurring-patrons-ii.png",
+        (
+            ("hz_conjoined_twins", "Conjoined Twin sinners"),
+            ("hz_western_sinner", "Western sinner"),
+            ("hz_goth_bird_sinner", "Goth bird-like sinner"),
+            ("hz_rose_sinner", "Rose-like sinner"),
+        ),
+    ),
 )
 
 HAZBIN_EXPANSION_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = tuple(
@@ -250,6 +340,9 @@ def validate_hazbin_expansion_manifest() -> None:
             "HAZBIN_EXPANSION_ATLASES"
         )
 
+    if manifest.get("schemaVersion") != 2:
+        raise ValueError("Hazbin expansion manifest schemaVersion must be 2")
+
     canvas = manifest.get("canvas", {})
     expected_canvas = {
         "width": EXPECTED_SHEET_SIZE[0],
@@ -260,6 +353,23 @@ def validate_hazbin_expansion_manifest() -> None:
     }
     if any(canvas.get(key) != value for key, value in expected_canvas.items()):
         raise ValueError("Hazbin expansion manifest canvas contract is out of sync")
+
+    expected_animation_contract = {
+        "id": ANIMATION_CONTRACT_ID,
+        "facing": "screen_right",
+        "columnRoles": list(ANIMATION_COLUMN_ROLES),
+        "clips": {
+            clip_name: {
+                "loop": clip["loop"],
+                "frames": list(clip["frames"]),
+            }
+            for clip_name, clip in ANIMATION_CLIPS.items()
+        },
+    }
+    if manifest.get("animationContract") != expected_animation_contract:
+        raise ValueError(
+            "Hazbin expansion manifest animationContract is out of sync"
+        )
 
 HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("helluva-core.png", ("hb_blitzo", "hb_moxxie", "hb_millie", "hb_loona")),
@@ -523,6 +633,42 @@ def alpha_bounds(alpha: Image.Image, threshold: int = 20) -> tuple[int, int, int
     return thresholded.getbbox()
 
 
+def validate_row_frame_diversity(
+    cells: Sequence[Image.Image],
+    context: str,
+) -> None:
+    """Reject duplicated or nearly duplicated key poses in one character row."""
+
+    if len(cells) != COLUMNS:
+        raise ValueError(
+            f"{context} provides {len(cells)} animation cells; expected {COLUMNS}"
+        )
+
+    alpha_masks = [
+        cell.getchannel("A").point(lambda value: 255 if value > 20 else 0)
+        for cell in cells
+    ]
+    for left_index, left_mask in enumerate(alpha_masks):
+        for right_index in range(left_index + 1, len(alpha_masks)):
+            right_mask = alpha_masks[right_index]
+            union_pixels = count_visible_pixels(
+                ImageChops.lighter(left_mask, right_mask)
+            )
+            if union_pixels == 0:
+                continue
+            changed_pixels = count_visible_pixels(
+                ImageChops.difference(left_mask, right_mask)
+            )
+            difference_ratio = changed_pixels / union_pixels
+            if difference_ratio < MIN_FRAME_ALPHA_DIFFERENCE_RATIO:
+                raise ValueError(
+                    f"{context} has near-duplicate animation silhouettes in "
+                    f"columns {left_index + 1} and {right_index + 1}: "
+                    f"{difference_ratio:.2%} alpha difference, minimum "
+                    f"{MIN_FRAME_ALPHA_DIFFERENCE_RATIO:.0%}"
+                )
+
+
 def validate_cell_alpha_margin(cell: Image.Image, context: str) -> None:
     """Reject meaningful alpha in the grid gutter or a primary pose clipped by it."""
 
@@ -573,6 +719,7 @@ def validate_sheet(
     minimum_visible_pixels = round(cell_width * cell_height * MIN_CELL_ALPHA_RATIO)
 
     for row in range(ROWS):
+        row_cells: list[Image.Image] = []
         for column in range(COLUMNS):
             cell = sheet.crop((
                 column * cell_width,
@@ -580,6 +727,7 @@ def validate_sheet(
                 (column + 1) * cell_width,
                 (row + 1) * cell_height,
             ))
+            row_cells.append(cell)
             visible_pixels = count_visible_pixels(cell.getchannel("A"))
             if visible_pixels < minimum_visible_pixels:
                 raise ValueError(
@@ -591,6 +739,10 @@ def validate_sheet(
                     cell,
                     f"{sheet_name} row {row + 1}, column {column + 1}",
                 )
+        validate_row_frame_diversity(
+            row_cells,
+            f"{sheet_name} row {row + 1}",
+        )
 
     return cell_width, cell_height
 
@@ -598,8 +750,19 @@ def validate_sheet(
 def isolate_primary_sprite(
     image: Image.Image,
     allowed_centre_y: tuple[int, int] | None = None,
+    *,
+    minimum_attachment_pixels: int = 12,
+    minimum_attachment_ratio: float = 0.002,
 ) -> Image.Image:
-    """Keep the main body and nearby detached costume parts, but discard spill."""
+    """Keep the main body and meaningful nearby costume parts, but discard spill.
+
+    Defaults preserve the historical portrait and cross-collection behaviour.
+    Callers preparing newly generated atlases can opt into a stricter minimum
+    attachment size without changing extraction of existing portrait assets.
+    """
+
+    if minimum_attachment_pixels < 0 or minimum_attachment_ratio < 0:
+        raise ValueError("Attachment thresholds must be non-negative")
 
     alpha = image.getchannel("A")
     width, height = alpha.size
@@ -671,7 +834,10 @@ def isolate_primary_sprite(
         right + attachment_margin,
         bottom + attachment_margin,
     )
-    minimum_attachment_size = max(12, round(primary_size * 0.002))
+    minimum_attachment_size = max(
+        minimum_attachment_pixels,
+        round(primary_size * minimum_attachment_ratio),
+    )
     keep = list(primary_points)
 
     for size, bounds, points in eligible_components[1:]:
@@ -799,7 +965,12 @@ def prepare_sheets(
         for sheet_name, character_ids in collection.sheets:
             sheet_path = collection.sheet_dir / sheet_name
             with Image.open(sheet_path) as source:
-                sheet = source.convert("RGBA")
+                if source.mode != "RGBA":
+                    raise ValueError(
+                        f"{relative_to_root(sheet_path)} must be an RGBA PNG, "
+                        f"got mode {source.mode}"
+                    )
+                sheet = source.copy()
             cell_width, cell_height = validate_sheet(
                 sheet,
                 relative_to_root(sheet_path),

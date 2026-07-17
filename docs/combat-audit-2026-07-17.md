@@ -18,8 +18,8 @@ Le mode est jouable, sans crash ni dÃ©bordement horizontal, et les deux combat
 - Le cancel light vers heavy fonctionne de la mÃªme faÃ§on au clavier et au tactile.
 - Les pointeurs tactiles sont suivis indÃ©pendamment et une perte de capture libÃ¨re direction/garde sans laisser dâ€™entrÃ©e bloquÃ©e.
 - Les deux grilles dupliquÃ©es ont Ã©tÃ© remplacÃ©es par un roster unique recherchable et paginÃ© de 12 combattants, avec choix P1/P2 et statistiques de combat rÃ©elles.
-- Vingt-deux nouveaux profils Hazbin Ã©ligibles rejoignent automatiquement le roster lorsque leur art est validÃ©, sans entrer dans la sauvegarde opÃ©rationnelle et avec des kits explicitement Simulation AU.
-- Prick et Hatchet sont corrigÃ©s comme Overlords disponibles dÃ¨s la timeline S1, donc le sÃ©lecteur Season 1 affiche dÃ©sormais 26 combattants au total, dont 6 ajouts Hazbin art-ready.
+- Trente-quatre profils Hazbin illustrÃ©s rejoignent automatiquement le roster selon la timeline et les spoilers, sans entrer dans la sauvegarde opÃ©rationnelle et avec des kits gÃ©nÃ©riques explicitement Simulation AU.
+- Prick et Hatchet restent disponibles dÃ¨s la timeline S1 ; le sÃ©lecteur par dÃ©faut affiche dÃ©sormais 29 combattants, dont 7 ajouts Hazbin art-ready.
 - L'IA avance maintenant ses dÃ©cisions en sous-pas synchronisÃ©s au moteur ; une frame visible longue ne lui donne plus une dÃ©cision appliquÃ©e rÃ©troactivement Ã  tout l'intervalle.
 - Les boutons incrustÃ©s dans l'overlay de K.O. ne crÃ©ent plus de tracker tactile de scÃ¨ne, ce qui Ã©vite qu'un tap sur `Next round` soit interprÃ©tÃ© comme une commande de sortie.
 - Le validateur dâ€™atlas contrÃ´le dÃ©sormais les marges de cellules, le clipping et les portraits extraits.
@@ -28,9 +28,11 @@ Le mode est jouable, sans crash ni dÃ©bordement horizontal, et les deux combat
 
 ## Passe finale Hazbin et navigateur
 
-- Annuaire Hazbin : 81 profils au total, dont 57 fiches de rÃ©fÃ©rence hors sauvegarde opÃ©rationnelle.
-- Assets : 20 atlas Hazbin prÃªts cÃ´tÃ© annuaire ; l'extension OpenAI ajoute 14 feuilles, 336 cellules et 56 portraits, et garde Tiffany en entrÃ©e lore-only sans design inventÃ©.
-- Roster Arena : 22 nouveaux profils Hazbin deviennent Ã©ligibles selon la timeline et les spoilers. Les quatre nouveaux patrons sont limitÃ©s Ã  la Season 2 ; en Season 1 masquÃ©e, la liste reste inchangÃ©e avec Razzle, Dazzle, Clara, Odette, Prick et Hatchet disponibles aux cÃ´tÃ©s des 20 combattants dÃ©jÃ  actifs.
+- Annuaire Hazbin : 93 profils au total, dont 69 fiches de rÃ©fÃ©rence hors sauvegarde opÃ©rationnelle ; 92 ont un art validÃ©.
+- Assets : 23 atlas Hazbin, 552 cellules et 92 portraits cÃ´tÃ© annuaire. L'extension OpenAI reprÃ©sente 17 feuilles, 408 cellules et 68 portraits ; Tiffany reste lore-only, car aucun design canon n'est montrÃ©.
+- Roster Arena : 58 profils portent un flag d'Ã©ligibilitÃ© (24 opÃ©rationnels et 34 issus de l'annuaire). Le filtre Season 1 par dÃ©faut en expose 29 ; les autres dÃ©pendent de la timeline et des spoilers.
+- Combat : contrat d'atlas Ã  6 poses et 9 Ã©tats synchronisÃ©s. Les attaques lÃ©gÃ¨re, lourde et spÃ©ciale enchaÃ®nent plusieurs poses ; les autres Ã©tats partagent volontairement des poses.
+- Contenu de scÃ¨ne : 8 stages, 8 vignettes et 8 boucles procÃ©durales originales sans samples, dialogues ni mÃ©lodies de la franchise.
 - Mobile 390Ã—844 : sÃ©lection, annuaire et combat live vÃ©rifiÃ©s sans overflow ; le combat dÃ©marre directement Ã  la place du sÃ©lecteur.
 - Desktop 1440Ã—900 : annuaire, sÃ©lection paginÃ©e et combat Clara Carmine vs Dazzle vÃ©rifiÃ©s ; aprÃ¨s lancement, le sÃ©lecteur disparaÃ®t bien.
 - Orientation : P1 expose `data-facing="right"` et P2 `data-facing="left"`, avec transform miroir uniquement cÃ´tÃ© P2.

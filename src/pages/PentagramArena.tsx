@@ -1,9 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+} from 'react';
 import {
   Box,
   ChevronLeft,
   ChevronRight,
   Gamepad2,
+  MapPin,
+  Music,
   Search,
   ShieldCheck,
   Sparkles,
@@ -11,6 +20,7 @@ import {
   Trophy,
 } from 'lucide-react';
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
+import { usePentagramCombatSoundtrack } from '../components/usePentagramCombatSoundtrack';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
 import { getHazbinArenaFighters } from '../lib/hazbin-arena-fighters';
 import {
@@ -22,6 +32,13 @@ import {
   FIGHTER_KIT_EVIDENCE_LABELS,
   getFighterProfile,
 } from '../lib/pentagram-fighters';
+import {
+  DEFAULT_PENTAGRAM_STAGE,
+  getPentagramStage,
+  getPentagramStageVisualProperties,
+  PENTAGRAM_STAGES,
+  type PentagramStageId,
+} from '../lib/pentagram-stages';
 import { LoreValidation } from '../lib/lore-validation';
 import { RulesEngine } from '../lib/rules-engine';
 import type { Character, DatabaseState, RiskLevel, TimelineScope } from '../types';
@@ -226,7 +243,17 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   const [pickerSlot, setPickerSlot] = useState<ArenaPickerSlot>('one');
   const [rosterQuery, setRosterQuery] = useState('');
   const [rosterPage, setRosterPage] = useState(0);
+  const [stageId, setStageId] = useState<PentagramStageId>(DEFAULT_PENTAGRAM_STAGE.id);
+  const [soundtrackEnabled, setSoundtrackEnabled] = useState(true);
   const shouldRestoreFocusRef = useRef(false);
+  const {
+    status: soundtrackStatus,
+    start: startSoundtrack,
+    stop: stopSoundtrack,
+    release: releaseSoundtrack,
+    pause: pauseSoundtrack,
+    resume: resumeSoundtrack,
+  } = usePentagramCombatSoundtrack();
 
   const fighterOne = fighters.find(fighter => fighter.id === fighterOneId) ?? fighters[0];
   const fighterTwo = fighters.find(
@@ -234,6 +261,8 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   ) ?? fighters.find(fighter => fighter.id !== fighterOne?.id);
   const fighterOneProfile = getFighterProfile(fighterOne);
   const fighterTwoProfile = getFighterProfile(fighterTwo);
+  const selectedStage = getPentagramStage(stageId);
+  const selectedStageStyle = getPentagramStageVisualProperties(selectedStage) as CSSProperties;
   const matchupReady = Boolean(fighterOne && fighterTwo && fighterOneProfile && fighterTwoProfile);
   const fighterOneDefinition = useMemo(
     () => fighterOne && fighterOneProfile
@@ -287,7 +316,14 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   };
 
   const startMatch = () => {
-    if (matchupReady) setPhase('fight');
+    if (!matchupReady) return;
+    if (soundtrackEnabled) {
+      void startSoundtrack(selectedStage.soundtrack)
+        .then(result => {
+          if (result === 'unavailable') setSoundtrackEnabled(false);
+        });
+    }
+    setPhase('fight');
   };
 
   const selectFromRoster = (fighterId: string) => {
@@ -296,9 +332,37 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   };
 
   const exitMatch = () => {
+    releaseSoundtrack();
     shouldRestoreFocusRef.current = true;
     setPhase('select');
   };
+
+  const pauseArenaSoundtrack = useCallback(() => {
+    pauseSoundtrack();
+  }, [pauseSoundtrack]);
+
+  const resumeArenaSoundtrack = useCallback(() => {
+    resumeSoundtrack();
+  }, [resumeSoundtrack]);
+
+  const toggleArenaSoundtrack = useCallback((startPaused: boolean) => {
+    if (soundtrackEnabled) {
+      setSoundtrackEnabled(false);
+      stopSoundtrack();
+      return;
+    }
+
+    setSoundtrackEnabled(true);
+    void startSoundtrack(selectedStage.soundtrack, { paused: startPaused })
+      .then(result => {
+        if (result === 'unavailable') setSoundtrackEnabled(false);
+      });
+  }, [
+    selectedStage.soundtrack,
+    soundtrackEnabled,
+    startSoundtrack,
+    stopSoundtrack,
+  ]);
 
   return (
     <div className="page-container arena-page animate-fade-in">
@@ -340,6 +404,12 @@ export function PentagramArena({ state }: PentagramArenaProps) {
             fighterTwoDefinition={fighterTwoDefinition}
             matchMode={matchMode}
             aiDifficulty={aiDifficulty}
+            stage={selectedStage}
+            soundtrackEnabled={soundtrackEnabled}
+            soundtrackStatus={soundtrackStatus}
+            onSoundtrackToggle={toggleArenaSoundtrack}
+            onSoundtrackPause={pauseArenaSoundtrack}
+            onSoundtrackResume={resumeArenaSoundtrack}
             onExit={exitMatch}
           />
         ) : (
@@ -449,7 +519,74 @@ export function PentagramArena({ state }: PentagramArenaProps) {
               </div>
             </section>
 
-            <section className="arena-stage art-deco-border" aria-labelledby="arena-stage-title">
+            <section className="arena-stage-picker glass-panel" aria-labelledby="arena-stage-picker-title">
+              <div className="arena-stage-picker__header">
+                <div>
+                  <span><MapPin size={15} aria-hidden="true" /> Simulation stages</span>
+                  <h2 id="arena-stage-picker-title">Choose the exhibition venue</h2>
+                </div>
+                <p>
+                  Lore-based locations are reconstructed for gameplay only. They do not imply a canon fight.
+                </p>
+              </div>
+
+              <div className="arena-stage-grid" role="group" aria-label="Combat stage">
+                {PENTAGRAM_STAGES.map(stage => {
+                  const isSelected = stage.id === selectedStage.id;
+                  return (
+                    <button
+                      key={stage.id}
+                      type="button"
+                      className={`arena-stage-choice${isSelected ? ' is-selected' : ''}`}
+                      style={getPentagramStageVisualProperties(stage, 'thumbnail') as CSSProperties}
+                      aria-pressed={isSelected}
+                      aria-label={`Select stage ${stage.name}`}
+                      aria-describedby={`arena-stage-${stage.id}-description`}
+                      onClick={() => setStageId(stage.id)}
+                    >
+                      <span className="arena-stage-choice__district">{stage.district}</span>
+                      <span className="arena-stage-choice__copy">
+                        <strong>{stage.name}</strong>
+                        <small id={`arena-stage-${stage.id}-description`}>{stage.description}</small>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <p className="arena-stage-lore-note">
+                <ShieldCheck size={16} aria-hidden="true" />
+                <span><strong>Lore basis:</strong> {selectedStage.loreBasis} Combat remains a Simulation AU reconstruction.</span>
+              </p>
+
+              <div className="arena-soundtrack-option">
+                <Music size={20} aria-hidden="true" />
+                <div>
+                  <strong>{selectedStage.soundtrack.title}</strong>
+                  <span>
+                    Original procedural cabaret/jazz-electro · {selectedStage.soundtrack.bpm} BPM · no franchise samples
+                  </span>
+                </div>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={soundtrackEnabled}
+                    onChange={(event) => {
+                      setSoundtrackEnabled(event.target.checked);
+                      if (!event.target.checked) stopSoundtrack();
+                    }}
+                  />
+                  <span>{soundtrackEnabled ? 'Soundtrack on' : 'Start in silence'}</span>
+                </label>
+              </div>
+            </section>
+
+            <section
+              className="arena-stage art-deco-border"
+              style={selectedStageStyle}
+              data-stage={selectedStage.id}
+              aria-labelledby="arena-stage-title"
+            >
         <h2 id="arena-stage-title" className="sr-only">Exhibition matchup setup</h2>
         <div className="arena-stage__glow" aria-hidden="true" />
         <FighterCard
@@ -476,7 +613,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
                 <strong>{fighterOne?.name ?? 'Fighter one'} vs {fighterTwo?.name ?? 'Fighter two'}</strong>
                 <span id="arena-launch-note">
                   {matchupReady
-                    ? `${matchMode === 'ai' ? 'CPU sparring' : 'Local versus'} · first to two rounds. Results stay inside this page.`
+                    ? `${selectedStage.name} · ${matchMode === 'ai' ? 'CPU sparring' : 'Local versus'} · first to two rounds. Results stay inside this page.`
                     : 'At least two timeline-eligible sprite fighters are required to prepare a matchup.'}
                 </span>
               </div>

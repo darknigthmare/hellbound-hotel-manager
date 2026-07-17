@@ -6,6 +6,7 @@ import {
   type CSSProperties,
   type PointerEvent as ReactPointerEvent,
 } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
 import { getCombatPoseColumn } from '../lib/pentagram-animation';
 import {
@@ -28,7 +29,12 @@ import {
   type CombatantDefinition,
   type PlayerSide,
 } from '../lib/pentagram-combat';
+import {
+  getPentagramStageVisualProperties,
+  type PentagramStage,
+} from '../lib/pentagram-stages';
 import type { Character } from '../types';
+import type { PentagramSoundtrackStatus } from './usePentagramCombatSoundtrack';
 
 interface PentagramLiveFightProps {
   fighterOne: Character;
@@ -37,6 +43,12 @@ interface PentagramLiveFightProps {
   fighterTwoDefinition: CombatantDefinition;
   matchMode: 'ai' | 'local';
   aiDifficulty: CombatAiDifficulty;
+  stage: PentagramStage;
+  soundtrackEnabled: boolean;
+  soundtrackStatus: PentagramSoundtrackStatus;
+  onSoundtrackToggle: (startPaused: boolean) => void;
+  onSoundtrackPause: () => void;
+  onSoundtrackResume: () => void;
   onExit: () => void;
 }
 
@@ -51,6 +63,27 @@ interface PointerTracker {
 }
 
 type FightPhase = 'ready' | 'fight' | 'running' | 'paused';
+type HeldCombatInput = keyof CombatInputs['one'];
+
+const HELD_TOUCH_CONTROLS: readonly {
+  input: HeldCombatInput;
+  label: string;
+  glyph: string;
+}[] = [
+  { input: 'left', label: 'move left', glyph: '←' },
+  { input: 'guard', label: 'guard', glyph: '◆' },
+  { input: 'right', label: 'move right', glyph: '→' },
+];
+
+const ATTACK_TOUCH_CONTROLS: readonly {
+  attack: CombatAttack;
+  label: string;
+  glyph: string;
+}[] = [
+  { attack: 'light', label: 'light attack', glyph: 'L' },
+  { attack: 'heavy', label: 'heavy attack', glyph: 'H' },
+  { attack: 'special', label: 'special attack', glyph: 'S' },
+];
 
 const READY_COUNTDOWN_MS = 800;
 const FIGHT_COUNTDOWN_MS = 450;
@@ -152,6 +185,12 @@ export function PentagramLiveFight({
   fighterTwoDefinition,
   matchMode,
   aiDifficulty,
+  stage,
+  soundtrackEnabled,
+  soundtrackStatus,
+  onSoundtrackToggle,
+  onSoundtrackPause,
+  onSoundtrackResume,
   onExit,
 }: PentagramLiveFightProps) {
   const [combat, setCombat] = useState(() => createCombatState(
@@ -166,6 +205,9 @@ export function PentagramLiveFight({
   const countdownMsRef = useRef(READY_COUNTDOWN_MS);
   const pressedCodesRef = useRef<Set<string>>(new Set());
   const pointerInputsRef = useRef<CombatInputs>(createEmptyInputs());
+  const touchInputsRef = useRef<CombatInputs>(createEmptyInputs());
+  const touchKeyboardClicksRef = useRef<Set<string>>(new Set());
+  const [touchInputs, setTouchInputs] = useState<CombatInputs>(() => createEmptyInputs());
   const pointerTrackersRef = useRef<Map<number, PointerTracker>>(new Map());
   const lastTapRef = useRef<Record<PlayerSide, number>>({ one: 0, two: 0 });
   const aiInputRef = useRef(createEmptyInputs().two);
@@ -182,8 +224,11 @@ export function PentagramLiveFight({
 
   const readInputs = useCallback(() => {
     const humanInputs = mergeInputs(
-      getKeyboardInputs(pressedCodesRef.current),
-      pointerInputsRef.current,
+      mergeInputs(
+        getKeyboardInputs(pressedCodesRef.current),
+        pointerInputsRef.current,
+      ),
+      touchInputsRef.current,
     );
     return matchMode === 'ai'
       ? { ...humanInputs, two: aiInputRef.current }
@@ -221,6 +266,10 @@ export function PentagramLiveFight({
   const clearLiveInputs = useCallback(() => {
     pressedCodesRef.current.clear();
     pointerInputsRef.current = createEmptyInputs();
+    const clearedTouchInputs = createEmptyInputs();
+    touchInputsRef.current = clearedTouchInputs;
+    touchKeyboardClicksRef.current.clear();
+    setTouchInputs(clearedTouchInputs);
     pointerTrackersRef.current.clear();
     aiInputRef.current = createEmptyInputs().two;
     aiThinkMsRef.current = 0;
@@ -244,13 +293,15 @@ export function PentagramLiveFight({
     resumePhaseRef.current = currentPhase;
     clearLiveInputs();
     setFightPhase('paused');
-  }, [clearLiveInputs, setFightPhase]);
+    onSoundtrackPause();
+  }, [clearLiveInputs, onSoundtrackPause, setFightPhase]);
 
   const continueFight = useCallback(() => {
     if (fightPhaseRef.current !== 'paused') return;
     setFightPhase(resumePhaseRef.current);
+    onSoundtrackResume();
     stageRef.current?.focus({ preventScroll: true });
-  }, [setFightPhase]);
+  }, [onSoundtrackResume, setFightPhase]);
 
   const continueRound = useCallback(() => {
     clearLiveInputs();
@@ -459,6 +510,26 @@ export function PentagramLiveFight({
     quitFight,
   ]);
 
+  const setTouchInput = useCallback((
+    side: PlayerSide,
+    input: HeldCombatInput,
+    active: boolean,
+  ) => {
+    if (matchMode === 'ai' && side === 'two') return;
+    if (touchInputsRef.current[side][input] === active) return;
+
+    const nextInputs = {
+      ...touchInputsRef.current,
+      [side]: {
+        ...touchInputsRef.current[side],
+        [input]: active,
+      },
+    };
+    touchInputsRef.current = nextInputs;
+    setTouchInputs(nextInputs);
+    applyInputSnapshot();
+  }, [applyInputSnapshot, matchMode]);
+
   const setPointerDirection = (side: PlayerSide, deltaX: number, guarding: boolean) => {
     if (matchMode === 'ai' && side === 'two') return;
     const nextSide = {
@@ -559,8 +630,20 @@ export function PentagramLiveFight({
 
   const fighterOneSprite = getCharacterSpriteAsset(fighterOne.id);
   const fighterTwoSprite = getCharacterSpriteAsset(fighterTwo.id);
-  const fighterOnePose = getCombatPoseColumn(combat.actionOne, combat.actionMsOne);
-  const fighterTwoPose = getCombatPoseColumn(combat.actionTwo, combat.actionMsTwo);
+  const fighterOneActionDurationMs = isCombatAttackAction(combat.actionOne)
+    ? getCombatAttackDuration(fighterOneDefinition, combat.actionOne)
+    : undefined;
+  const fighterTwoActionDurationMs = isCombatAttackAction(combat.actionTwo)
+    ? getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)
+    : undefined;
+  const fighterOnePose = getCombatPoseColumn(combat.actionOne, combat.actionMsOne, {
+    animationSetId: fighterOneSprite?.animationSetId,
+    actionDurationMs: fighterOneActionDurationMs,
+  });
+  const fighterTwoPose = getCombatPoseColumn(combat.actionTwo, combat.actionMsTwo, {
+    animationSetId: fighterTwoSprite?.animationSetId,
+    actionDurationMs: fighterTwoActionDurationMs,
+  });
   const timerSeconds = Math.ceil(combat.timerMs / 1000);
   const winnerName = combat.winner === 'one'
     ? fighterOne.name
@@ -578,14 +661,14 @@ export function PentagramLiveFight({
     : fightPhase === 'fight' ? 'Fight!' : fightPhase === 'paused' ? 'Paused' : null;
   const fighterOneStyle = {
     '--arena-x': `${combat.positionOne}%`,
-    '--arena-action-ms': isCombatAttackAction(combat.actionOne)
-      ? `${getCombatAttackDuration(fighterOneDefinition, combat.actionOne)}ms`
+    '--arena-action-ms': fighterOneActionDurationMs !== undefined
+      ? `${fighterOneActionDurationMs}ms`
       : '340ms',
   } as CSSProperties;
   const fighterTwoStyle = {
     '--arena-x': `${combat.positionTwo}%`,
-    '--arena-action-ms': isCombatAttackAction(combat.actionTwo)
-      ? `${getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)}ms`
+    '--arena-action-ms': fighterTwoActionDurationMs !== undefined
+      ? `${fighterTwoActionDurationMs}ms`
       : '340ms',
   } as CSSProperties;
   const fighterOneSpriteStyle: CSSProperties | undefined = fighterOneSprite ? {
@@ -596,6 +679,22 @@ export function PentagramLiveFight({
     backgroundImage: `url("${fighterTwoSprite.sheet}")`,
     backgroundPosition: `${fighterTwoPose * 20}% ${fighterTwoSprite.row * (100 / 3)}%`,
   } : undefined;
+  const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
+  const soundtrackUnavailable = soundtrackStatus === 'unavailable';
+  const soundtrackButtonLabel = soundtrackUnavailable
+    ? 'Original soundtrack unavailable'
+    : soundtrackEnabled ? 'Turn off original soundtrack' : 'Turn on original soundtrack';
+  const touchControlsDisabled = fightPhase !== 'running' || !combat.active;
+  const touchControlPlayers: readonly {
+    side: PlayerSide;
+    shortLabel: 'P1' | 'P2';
+    fighterName: string;
+  }[] = matchMode === 'local'
+    ? [
+        { side: 'one', shortLabel: 'P1', fighterName: fighterOne.name },
+        { side: 'two', shortLabel: 'P2', fighterName: fighterTwo.name },
+      ]
+    : [{ side: 'one', shortLabel: 'P1', fighterName: fighterOne.name }];
 
   return (
     <section className="arena-fight-panel arena-live-shell art-deco-border" aria-labelledby="arena-fight-title">
@@ -605,6 +704,7 @@ export function PentagramLiveFight({
             {matchMode === 'ai'
               ? `CPU sparring · ${COMBAT_AI_DIFFICULTY_LABELS[aiDifficulty]}`
               : 'Two-player local exhibition'}
+            {' · '}{stage.name}
           </span>
           <h2 id="arena-fight-title">2.5D combat — {fighterOne.name} vs {fighterTwo.name}</h2>
         </div>
@@ -614,6 +714,21 @@ export function PentagramLiveFight({
             <strong aria-label={`${timerSeconds} seconds remaining`}>{timerSeconds}</strong>
           </div>
           <div className="arena-fight-actions" aria-label="Fight controls">
+            <button
+              type="button"
+              className="btn btn-secondary arena-soundtrack-toggle"
+              aria-label={soundtrackButtonLabel}
+              aria-pressed={soundtrackEnabled && !soundtrackUnavailable}
+              disabled={soundtrackUnavailable}
+              onClick={() => onSoundtrackToggle(fightPhase === 'paused')}
+            >
+              {soundtrackEnabled && !soundtrackUnavailable
+                ? <Volume2 size={15} aria-hidden="true" />
+                : <VolumeX size={15} aria-hidden="true" />}
+              {soundtrackUnavailable
+                ? 'Music unavailable'
+                : soundtrackStatus === 'paused' ? 'Music paused' : soundtrackEnabled ? 'Music on' : 'Music off'}
+            </button>
             {combat.active && (
               fightPhase === 'paused' ? (
                 <button type="button" className="btn btn-primary" onClick={continueFight}>
@@ -704,10 +819,12 @@ export function PentagramLiveFight({
       <div
         ref={stageRef}
         className={`arena-combat-stage${combat.hitstopMs > 0 ? ' is-hitstop' : ''}`}
+        style={stageStyle}
+        data-stage={stage.id}
         data-phase={combat.active ? fightPhase : 'finished'}
         role="region"
         tabIndex={0}
-        aria-label={`Live combat: ${fighterOne.name} versus ${fighterTwo.name}`}
+        aria-label={`Live combat: ${fighterOne.name} versus ${fighterTwo.name} at ${stage.name}`}
         aria-describedby="arena-live-instructions"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -786,6 +903,81 @@ export function PentagramLiveFight({
         )}
       </div>
 
+      <div
+        className={`arena-touch-controls${matchMode === 'ai' ? ' is-solo' : ''}`}
+        aria-label="On-screen combat controls"
+      >
+        {touchControlPlayers.map(({ side, shortLabel, fighterName }) => (
+          <div
+            key={side}
+            className={`arena-touch-controls__player is-${side}`}
+            role="group"
+            aria-label={`${shortLabel} tactile controls for ${fighterName}`}
+          >
+            <div className="arena-touch-controls__header">
+              <strong>{shortLabel} · {fighterName}</strong>
+              <span>Hold to move or guard · tap to attack</span>
+            </div>
+            <div className="arena-touch-controls__grid">
+              {HELD_TOUCH_CONTROLS.map(({ input, label, glyph }) => (
+                <button
+                  key={input}
+                  type="button"
+                  className="arena-touch-button is-held"
+                  aria-label={`${shortLabel} ${label}`}
+                  aria-pressed={touchInputs[side][input]}
+                  disabled={touchControlsDisabled}
+                  onPointerDown={(event) => {
+                    event.preventDefault();
+                    event.currentTarget.setPointerCapture?.(event.pointerId);
+                    setTouchInput(side, input, true);
+                  }}
+                  onPointerUp={() => setTouchInput(side, input, false)}
+                  onPointerCancel={() => setTouchInput(side, input, false)}
+                  onLostPointerCapture={() => setTouchInput(side, input, false)}
+                  onKeyDown={(event) => {
+                    if (![' ', 'Enter'].includes(event.key) || event.repeat) return;
+                    event.preventDefault();
+                    touchKeyboardClicksRef.current.add(`${side}:${input}`);
+                    setTouchInput(side, input, true);
+                  }}
+                  onKeyUp={(event) => {
+                    if (![' ', 'Enter'].includes(event.key)) return;
+                    event.preventDefault();
+                    setTouchInput(side, input, false);
+                  }}
+                  onClick={(event) => {
+                    if (touchKeyboardClicksRef.current.delete(`${side}:${input}`)) return;
+                    // Keyboard and assistive-technology activation has no
+                    // pointer click detail: toggle in that case so the same
+                    // control remains usable without a held pointer.
+                    if (event.detail === 0) {
+                      setTouchInput(side, input, !touchInputsRef.current[side][input]);
+                    }
+                  }}
+                >
+                  <span aria-hidden="true">{glyph}</span>
+                  <small>{label}</small>
+                </button>
+              ))}
+              {ATTACK_TOUCH_CONTROLS.map(({ attack, label, glyph }) => (
+                <button
+                  key={attack}
+                  type="button"
+                  className="arena-touch-button is-attack"
+                  aria-label={`${shortLabel} ${label}`}
+                  disabled={touchControlsDisabled}
+                  onClick={() => performAttack(side, attack, attack === 'heavy')}
+                >
+                  <span aria-hidden="true">{glyph}</span>
+                  <small>{label}</small>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div id="arena-live-instructions" className="arena-live-instructions">
         <div className="arena-keymap" aria-label={`${fighterOne.name} controls`}>
           <strong>P1 · {fighterOne.name}</strong>
@@ -796,8 +988,9 @@ export function PentagramLiveFight({
           The fight runs live while keys are held. <kbd>Esc</kbd> returns to fighter select;
           <kbd>P</kbd> pauses; <kbd>Enter</kbd> resumes or continues after a round.
           <small>
-            Touch: drag to move, hold to guard, tap for light, double-tap for a heavy cancel,
-            swipe up for special, swipe down for fighter select. Keyboard heavy also cancels an active light.
+            Touch: use the explicit controls above, or drag to move, hold the stage to guard,
+            tap for light, double-tap for a heavy cancel, swipe up for special, and swipe down
+            for fighter select. Keyboard heavy also cancels an active light.
           </small>
         </p>
         <div

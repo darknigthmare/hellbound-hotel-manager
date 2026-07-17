@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "collectionId": "hazbin-expanded-roster",
   "status": "art_ready",
   "atomic": true,
@@ -14,6 +14,83 @@
     "cellWidth": 256,
     "cellHeight": 256,
     "minimumAlphaMargin": 6
+  },
+  "animationContract": {
+    "id": "six-pose-combat-v2",
+    "facing": "screen_right",
+    "columnRoles": [
+      "portrait_idle",
+      "expression",
+      "combat_ready",
+      "attack_startup",
+      "attack_impact",
+      "victory_recovery"
+    ],
+    "clips": {
+      "idle": {
+        "loop": true,
+        "frames": [
+          { "column": 2, "durationMs": 800 }
+        ]
+      },
+      "walk": {
+        "loop": true,
+        "frames": [
+          { "column": 2, "durationMs": 210 }
+        ]
+      },
+      "guard": {
+        "loop": true,
+        "frames": [
+          { "column": 2, "durationMs": 250 }
+        ]
+      },
+      "light": {
+        "loop": false,
+        "frames": [
+          { "column": 2, "durationMs": 40 },
+          { "column": 3, "durationMs": 80 },
+          { "column": 4, "durationMs": 100 },
+          { "column": 2, "durationMs": 120 }
+        ]
+      },
+      "heavy": {
+        "loop": false,
+        "frames": [
+          { "column": 2, "durationMs": 80 },
+          { "column": 3, "durationMs": 140 },
+          { "column": 4, "durationMs": 140 },
+          { "column": 5, "durationMs": 100 }
+        ]
+      },
+      "special": {
+        "loop": false,
+        "frames": [
+          { "column": 2, "durationMs": 140 },
+          { "column": 3, "durationMs": 220 },
+          { "column": 4, "durationMs": 180 },
+          { "column": 5, "durationMs": 160 }
+        ]
+      },
+      "hit": {
+        "loop": false,
+        "frames": [
+          { "column": 4, "durationMs": 210 }
+        ]
+      },
+      "ko": {
+        "loop": false,
+        "frames": [
+          { "column": 4, "durationMs": 1000 }
+        ]
+      },
+      "victory": {
+        "loop": true,
+        "frames": [
+          { "column": 5, "durationMs": 900 }
+        ]
+      }
+    }
   },
   "promptTemplate": "Using the four clean full-body character references in the exact row order below, create one 1536x1024 gameplay sprite atlas on a perfectly flat, opaque chroma background: use #00ff00 green by default, or #ff00ff magenta when a character contains green that must be preserved. Use exactly one of these two key colours for the entire atlas. Use a strict 6-column by 4-row layout with exactly one character identity per row and six complete full-body poses per character. Columns: neutral idle portrait; expressive conversation; directional combat-ready stance facing screen-right; attack anticipation or light strike; strong impact pose readable both as an attack finish and hit reaction; victory or recovery. Preserve each referenced on-screen silhouette, facial traits, palette, costume and proportions. Keep every silhouette at least 6 px inside its 256x256 cell. No text, labels, visible grid, floor, shadow, scenery, cropped anatomy, duplicate limbs, mixed identities, spill between cells, gradient or background variation. Do not invent details hidden by or absent from the references.",
   "atlases": [
@@ -155,6 +232,36 @@
         { "id": "hz_eel_sinner", "name": "Eel sinner" },
         { "id": "hz_egyptian_sinner", "name": "Egyptian sinner" },
         { "id": "hz_ant_sinner", "name": "Ant sinner" }
+      ]
+    },
+    {
+      "id": "vees-casino",
+      "filename": "hazbin-vees-casino.png",
+      "rows": [
+        { "id": "hz_kitty", "name": "Kitty" },
+        { "id": "hz_huskette_cat", "name": "Huskette cat-like waitress" },
+        { "id": "hz_huskette_spider", "name": "Huskette spider-like waitress" },
+        { "id": "hz_huskette_imp", "name": "Huskette imp-like waitress" }
+      ]
+    },
+    {
+      "id": "season2-voiced-locals",
+      "filename": "hazbin-season2-voiced-locals.png",
+      "rows": [
+        { "id": "hz_reporter_demon", "name": "Reporter demon" },
+        { "id": "hz_goldfish_sinner", "name": "Goldfish sinner" },
+        { "id": "hz_fangirl_goat", "name": "Goat-like fangirl sinner" },
+        { "id": "hz_fangirl_apple_tree", "name": "Apple-tree fangirl sinner" }
+      ]
+    },
+    {
+      "id": "recurring-patrons-ii",
+      "filename": "hazbin-recurring-patrons-ii.png",
+      "rows": [
+        { "id": "hz_conjoined_twins", "name": "Conjoined Twin sinners" },
+        { "id": "hz_western_sinner", "name": "Western sinner" },
+        { "id": "hz_goth_bird_sinner", "name": "Goth bird-like sinner" },
+        { "id": "hz_rose_sinner", "name": "Rose-like sinner" }
       ]
     }
   ]

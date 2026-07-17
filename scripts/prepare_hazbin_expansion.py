@@ -4,7 +4,7 @@ Image generation is intentionally kept separate from deterministic asset
 preparation. This pass removes a green or magenta chroma screen, isolates the
 primary pose in each fixed cell, scales down only when a silhouette enters the
 safety gutter,
-and publishes all fourteen transparent atlases atomically.
+and publishes every manifest-backed transparent atlas atomically.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from collections import deque
 from pathlib import Path
 from typing import Literal
 
-from PIL import Image, ImageFilter
+from PIL import Image, ImageChops, ImageFilter
 
 from build_sprite_assets import (
     COLUMNS,
@@ -35,6 +35,8 @@ PUBLIC_SHEET_DIR = ROOT / "public" / "assets" / "sprites" / "hazbin" / "sheets"
 CELL_WIDTH = EXPECTED_SHEET_SIZE[0] // COLUMNS
 CELL_HEIGHT = EXPECTED_SHEET_SIZE[1] // ROWS
 NORMALIZED_MARGIN = MIN_CELL_ALPHA_MARGIN + 4
+NORMALIZED_MIN_ATTACHMENT_PIXELS = 24
+NORMALIZED_MIN_ATTACHMENT_RATIO = 0.005
 CHROMA_SEED_MIN_CHANNEL = 110
 CHROMA_SEED_MIN_DOMINANCE = 35
 CHROMA_DETECTION_MIN_CHANNEL = 145
@@ -43,6 +45,11 @@ CHROMA_MAGENTA_MAX_IMBALANCE = 96
 CHROMA_SPILL_RADIUS = 2
 CHROMA_SPILL_MIN_DOMINANCE = 16
 CHROMA_SPILL_RETAINED_DOMINANCE = 8
+CHROMA_RESIDUAL_MIN_CHANNEL = 220
+CHROMA_RESIDUAL_MAX_OTHER_CHANNEL = 60
+CHROMA_RESIDUAL_MIN_DOMINANCE = 165
+CHROMA_RESIDUAL_MAX_IMBALANCE = 50
+MAX_VISIBLE_MAGENTA_RESIDUAL_PIXELS = 32
 PATRONS_ATLAS_FILENAME = "hazbin-hotel-patrons.png"
 PATRONS_SOURCE_ROW_BOUNDARIES = (
     (0, 278, 510, 770, EXPECTED_SHEET_SIZE[1]),
@@ -188,6 +195,33 @@ def connected_chroma_mask(image: Image.Image, plate: ChromaPlate) -> Image.Image
     )
 
 
+def residual_magenta_mask(image: Image.Image) -> Image.Image:
+    """Find enclosed pixels that still match the generated magenta plate.
+
+    Flood filling from the canvas edge intentionally protects pink costume
+    regions, but it cannot reach background pockets enclosed by limbs, hair or
+    a tail. The residual threshold is deliberately much stricter than the edge
+    key so authored reds and pinks remain intact.
+    """
+
+    mask = Image.new("L", image.size, 0)
+    source_pixels = image.load()
+    mask_pixels = mask.load()
+    for y in range(image.height):
+        for x in range(image.width):
+            red, green, blue, alpha = source_pixels[x, y]
+            if (
+                alpha > 20
+                and min(red, blue) >= CHROMA_RESIDUAL_MIN_CHANNEL
+                and green <= CHROMA_RESIDUAL_MAX_OTHER_CHANNEL
+                and abs(red - blue) <= CHROMA_RESIDUAL_MAX_IMBALANCE
+                and chroma_dominance(red, green, blue, "magenta")
+                >= CHROMA_RESIDUAL_MIN_DOMINANCE
+            ):
+                mask_pixels[x, y] = 255
+    return mask
+
+
 def neutralise_chroma_spill(
     red: int,
     green: int,
@@ -240,6 +274,13 @@ def remove_chroma_screen(source: Image.Image) -> Image.Image:
         return remove_legacy_green_screen(image)
 
     background_mask = connected_chroma_mask(image, plate)
+    if plate == "magenta":
+        # Generated poses can surround small pockets of the flat screen. Merge
+        # those exact plate-colour islands into the removable background.
+        background_mask = ImageChops.lighter(
+            background_mask,
+            residual_magenta_mask(image),
+        )
     spill_zone = background_mask.filter(
         ImageFilter.MaxFilter((CHROMA_SPILL_RADIUS * 2) + 1)
     )
@@ -264,8 +305,12 @@ def remove_chroma_screen(source: Image.Image) -> Image.Image:
     return image
 
 
-def validate_no_visible_green_chroma(image: Image.Image, context: str) -> None:
-    """Reject any historical green-key pixel left visible after preparation."""
+def validate_no_visible_chroma(
+    image: Image.Image,
+    context: str,
+    plate: ChromaPlate,
+) -> None:
+    """Reject any supported key-colour pixel left visible after preparation."""
 
     pixels = image.load()
     contaminated_pixels = 0
@@ -275,25 +320,37 @@ def validate_no_visible_green_chroma(image: Image.Image, context: str) -> None:
             red, green, blue, alpha = pixels[x, y]
             if alpha <= 20:
                 continue
-            if (
+            is_contaminated = (
                 green >= CHROMA_DETECTION_MIN_CHANNEL
                 and green - max(red, blue) >= CHROMA_DETECTION_MIN_DOMINANCE
-            ):
+            ) if plate == "green" else (
+                min(red, blue) >= CHROMA_RESIDUAL_MIN_CHANNEL
+                and green <= CHROMA_RESIDUAL_MAX_OTHER_CHANNEL
+                and abs(red - blue) <= CHROMA_RESIDUAL_MAX_IMBALANCE
+                and chroma_dominance(red, green, blue, plate)
+                >= CHROMA_RESIDUAL_MIN_DOMINANCE
+            )
+            if is_contaminated:
                 contaminated_pixels += 1
                 if first_coordinate is None:
                     first_coordinate = (x, y)
 
-    if contaminated_pixels:
+    allowed_pixels = MAX_VISIBLE_MAGENTA_RESIDUAL_PIXELS if plate == "magenta" else 0
+    if contaminated_pixels > allowed_pixels:
         raise ValueError(
-            f"{context} retains {contaminated_pixels} visible green chroma pixels; "
-            f"first occurrence at {first_coordinate}"
+            f"{context} retains {contaminated_pixels} visible {plate} chroma pixels; "
+            f"maximum {allowed_pixels}, first occurrence at {first_coordinate}"
         )
 
 
 def normalise_cell(cell: Image.Image, context: str) -> Image.Image:
     """Keep the cell's primary pose and guarantee a transparent safety gutter."""
 
-    isolated = isolate_primary_sprite(cell)
+    isolated = isolate_primary_sprite(
+        cell,
+        minimum_attachment_pixels=NORMALIZED_MIN_ATTACHMENT_PIXELS,
+        minimum_attachment_ratio=NORMALIZED_MIN_ATTACHMENT_RATIO,
+    )
     bounds = alpha_bounds(isolated.getchannel("A"))
     if bounds is None:
         raise ValueError(f"{context} has no visible primary pose after chroma removal")
@@ -375,14 +432,17 @@ def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
         f"prepared/{final_filename}",
         strict_alpha_margins=True,
     )
-    if plate == "green":
-        validate_no_visible_green_chroma(atlas, f"prepared/{final_filename}")
+    validate_no_visible_chroma(
+        atlas,
+        f"prepared/{final_filename}",
+        plate,
+    )
     return atlas
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Chroma-key and atomically publish the 14 generated Hazbin atlases."
+        description="Chroma-key and atomically publish the generated Hazbin atlases."
     )
     parser.add_argument(
         "--check",

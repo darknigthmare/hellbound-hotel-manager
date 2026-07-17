@@ -29,13 +29,13 @@ async function expectNoSeriousAccessibilityViolation(container: HTMLElement) {
 }
 
 describe('Hazbin directory data boundary', () => {
-  it('keeps 24 operational references and 57 new directory-only profiles', () => {
-    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(81);
+  it('keeps 24 operational references and 69 new directory-only profiles', () => {
+    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(93);
     expect(HAZBIN_EXISTING_PROFILE_COUNT).toBe(24);
-    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(57);
+    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(69);
     expect(HAZBIN_PLANNED_PROFILE_COUNT).toBe(0);
     expect(HAZBIN_REFERENCE_UNAVAILABLE_PROFILE_COUNT).toBe(1);
-    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(81);
+    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(93);
 
     const seed = getSeedData();
     expect(seed.characters).toHaveLength(24);
@@ -98,6 +98,45 @@ describe('Hazbin directory data boundary', () => {
     expect(hotelPatrons.every(({ sourceLabel }) => /Hazbin Hotel S2E0[1358]/.test(sourceLabel))).toBe(true);
     expect(hotelPatrons.every(({ bio }) => /hotel/i.test(bio))).toBe(true);
 
+    const newWaveIds = [
+      'hz_kitty',
+      'hz_huskette_cat',
+      'hz_huskette_spider',
+      'hz_huskette_imp',
+      'hz_reporter_demon',
+      'hz_goldfish_sinner',
+      'hz_fangirl_goat',
+      'hz_fangirl_apple_tree',
+      'hz_conjoined_twins',
+      'hz_western_sinner',
+      'hz_goth_bird_sinner',
+      'hz_rose_sinner',
+    ];
+    const newWaveProfiles = HAZBIN_DIRECTORY_PROFILES.filter(({ id }) => newWaveIds.includes(id));
+    expect(newWaveProfiles).toHaveLength(12);
+    expect(newWaveProfiles.every(({ canonStatus }) => canonStatus === 'canon')).toBe(true);
+    expect(newWaveProfiles.every(({ fighterEligible }) => fighterEligible)).toBe(true);
+    expect(newWaveProfiles.every(({ existingOperationalProfile }) => !existingOperationalProfile)).toBe(true);
+    expect(newWaveProfiles.every(({ sourceLabel }) => /Hazbin Hotel/.test(sourceLabel))).toBe(true);
+
+    const kitty = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_kitty');
+    expect(kitty?.timeline).toBe('season_1');
+    expect(kitty?.spoilerLevel).toBe('season_1');
+    expect(kitty?.alias).toMatch(/Robo Fizz/i);
+    expect(kitty?.sourceLabel).toMatch(/S1E02.*S2E08/);
+    expect(kitty?.bio).toMatch(/distinct from.*Helluva Boss/i);
+    expect(kitty?.sharedHelluvaProfileId).toBeUndefined();
+
+    const newSeasonTwoProfiles = newWaveProfiles.filter(({ id }) => id !== 'hz_kitty');
+    expect(newSeasonTwoProfiles).toHaveLength(11);
+    expect(newSeasonTwoProfiles.every(({ timeline, spoilerLevel }) => (
+      timeline === 'season_2' && spoilerLevel === 'season_2'
+    ))).toBe(true);
+    expect(HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_reporter_demon')?.alias)
+      .toBe('666 News reporter');
+    expect(HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_reporter_demon')?.bio)
+      .toMatch(/production nickname rather than a confirmed personal name/i);
+
     const tiffany = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_tiffany_titfucker');
     expect(tiffany?.assetStatus).toBe('reference_unavailable');
     expect(tiffany?.sourceLabel).toMatch(/mentioned only/i);
@@ -108,9 +147,9 @@ describe('Hazbin directory data boundary', () => {
     ))).toBe(true);
   });
 
-  it('maps twenty ready four-character atlases without row collisions', () => {
-    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(20);
-    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(20);
+  it('maps twenty-three ready four-character atlases without row collisions', () => {
+    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(23);
+    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(23);
     expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'planned')).toHaveLength(0);
 
     for (const sheet of HAZBIN_SPRITE_SHEETS) {
@@ -148,7 +187,7 @@ describe('Hazbin roster and atlas accessibility', () => {
 
     expect(screen.getAllByRole('article')).toHaveLength(HAZBIN_ROSTER_PAGE_SIZE);
     expect(screen.getByRole('button', { name: 'Page 1' }).getAttribute('aria-current')).toBe('page');
-    await user.click(screen.getByRole('button', { name: 'Page 7' }));
+    await user.click(screen.getByRole('button', { name: 'Page 8' }));
     expect(screen.getAllByRole('article')).toHaveLength(
       HAZBIN_DIRECTORY_PROFILES.length % HAZBIN_ROSTER_PAGE_SIZE,
     );
@@ -172,7 +211,7 @@ describe('Hazbin roster and atlas accessibility', () => {
 
     expect(firstGroup.getAttribute('aria-expanded')).toBe('true');
     expect(secondGroup.getAttribute('aria-expanded')).toBe('false');
-    expect(screen.getByText('20 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
+    expect(screen.getByText('23 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
     expect(screen.getAllByRole('img')).toHaveLength(4);
     for (const image of screen.getAllByRole('img')) {
       expect(image.getAttribute('loading')).toBe('lazy');
@@ -211,8 +250,8 @@ describe('Hazbin roster and atlas accessibility', () => {
     expect(directoryTab.getAttribute('aria-selected')).toBe('true');
     expect(document.activeElement).toBe(directoryTab);
     expect(screen.queryByRole('button', { name: 'Register Guest/Staff' })).toBeNull();
-    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 81 profils' })).toBeTruthy();
-    expect(screen.getByText(/57 nouvelles fiches/)).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 93 profils' })).toBeTruthy();
+    expect(screen.getByText(/69 nouvelles fiches/)).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Lilith Morningstar' })).toBeNull();
     expect(screen.getAllByText(/masqués par le filtre spoilers/)).toHaveLength(2);
     await expectNoSeriousAccessibilityViolation(container);

@@ -8,6 +8,7 @@ import {
   CHARACTER_SPRITES,
   getCharacterSpriteAsset,
 } from '../lib/character-sprites';
+import { DEFAULT_SPRITE_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
 import {
   getHazbinArenaFighters,
   isHazbinDirectoryFighterVisible,
@@ -43,7 +44,7 @@ describe('Hazbin Arena directory adapter', () => {
     );
 
     expect(fighters.map(({ id }) => id).sort()).toEqual(expectedIds);
-    expect(fighters).toHaveLength(22);
+    expect(fighters).toHaveLength(34);
     expect(fighters.every(({ id }) => id.startsWith('hz_'))).toBe(true);
     expect(fighters.every(({ operationalDataStatus }) => operationalDataStatus === 'simulation_au')).toBe(true);
   });
@@ -95,16 +96,22 @@ describe('Hazbin Arena directory adapter', () => {
     const fighters = getHazbinArenaFighters(seasonOneTimeline, allExpansionArtReady);
     const prick = fighters.find(({ id }) => id === 'hz_prick');
     const hatchet = fighters.find(({ id }) => id === 'hz_hatchet');
+    const kitty = fighters.find(({ id }) => id === 'hz_kitty');
 
     expect(prick?.type).toBe('unknown');
     expect(prick?.timelineScope).toBe('season_1_start');
     expect(prick?.sourceRef).toMatch(/S1E03/i);
     expect(hatchet?.type).toBe('unknown');
     expect(hatchet?.timelineScope).toBe('season_1_start');
+    expect(kitty?.type).toBe('unknown');
+    expect(kitty?.timelineScope).toBe('season_1_start');
+    expect(kitty?.sourceRef).toMatch(/S1E02/i);
+    expect(kitty?.operationalDataStatus).toBe('simulation_au');
     expect(fighters.map(({ id }) => id).sort()).toEqual([
       'hz_clara_carmine',
       'hz_dazzle',
       'hz_hatchet',
+      'hz_kitty',
       'hz_odette_carmine',
       'hz_prick',
       'hz_razzle',
@@ -123,6 +130,7 @@ describe('Hazbin Arena directory adapter', () => {
         portrait: profile.portrait,
         sheet: profile.sheetPath,
         row: profile.sheetRow,
+        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
       });
     }
 
@@ -130,12 +138,13 @@ describe('Hazbin Arena directory adapter', () => {
     const allReadyFighterProfiles = allExpansionArtReady.filter(({ existingOperationalProfile, fighterEligible }) => (
       !existingOperationalProfile && fighterEligible
     ));
-    expect(allReadyFighterProfiles).toHaveLength(22);
+    expect(allReadyFighterProfiles).toHaveLength(34);
     for (const profile of allReadyFighterProfiles) {
       expect(allReadySprites[profile.id]).toEqual({
         portrait: profile.portrait,
         sheet: profile.sheetPath,
         row: profile.sheetRow,
+        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
       });
     }
   });
