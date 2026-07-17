@@ -1,17 +1,20 @@
 """Prepare generated Hazbin chroma masters for the public 6x4 atlas contract.
 
 Image generation is intentionally kept separate from deterministic asset
-preparation. This pass removes the green screen, isolates the primary pose in
-each fixed cell, scales down only when a silhouette enters the safety gutter,
-and publishes all thirteen transparent atlases atomically.
+preparation. This pass removes a green or magenta chroma screen, isolates the
+primary pose in each fixed cell, scales down only when a silhouette enters the
+safety gutter,
+and publishes all fourteen transparent atlases atomically.
 """
 
 from __future__ import annotations
 
 import argparse
+from collections import deque
 from pathlib import Path
+from typing import Literal
 
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from build_sprite_assets import (
     COLUMNS,
@@ -32,6 +35,26 @@ PUBLIC_SHEET_DIR = ROOT / "public" / "assets" / "sprites" / "hazbin" / "sheets"
 CELL_WIDTH = EXPECTED_SHEET_SIZE[0] // COLUMNS
 CELL_HEIGHT = EXPECTED_SHEET_SIZE[1] // ROWS
 NORMALIZED_MARGIN = MIN_CELL_ALPHA_MARGIN + 4
+CHROMA_SEED_MIN_CHANNEL = 110
+CHROMA_SEED_MIN_DOMINANCE = 35
+CHROMA_DETECTION_MIN_CHANNEL = 145
+CHROMA_DETECTION_MIN_DOMINANCE = 62
+CHROMA_MAGENTA_MAX_IMBALANCE = 96
+CHROMA_SPILL_RADIUS = 2
+CHROMA_SPILL_MIN_DOMINANCE = 16
+CHROMA_SPILL_RETAINED_DOMINANCE = 8
+PATRONS_ATLAS_FILENAME = "hazbin-hotel-patrons.png"
+PATRONS_SOURCE_ROW_BOUNDARIES = (
+    (0, 278, 510, 770, EXPECTED_SHEET_SIZE[1]),
+    (0, 278, 512, 772, EXPECTED_SHEET_SIZE[1]),
+    (0, 278, 512, 770, EXPECTED_SHEET_SIZE[1]),
+    (0, 278, 512, 770, EXPECTED_SHEET_SIZE[1]),
+    (0, 278, 514, 770, EXPECTED_SHEET_SIZE[1]),
+    (0, 278, 522, 770, EXPECTED_SHEET_SIZE[1]),
+)
+PATRONS_SOURCE_COLUMN_BLEED = 20
+
+ChromaPlate = Literal["green", "magenta"]
 
 
 def chroma_master_path(final_filename: str) -> Path:
@@ -39,25 +62,232 @@ def chroma_master_path(final_filename: str) -> Path:
     return CHROMA_DIR / f"{stem}-chroma.png"
 
 
-def remove_green_screen(source: Image.Image) -> Image.Image:
-    """Remove the generated green screen and neutralise green edge spill."""
+def chroma_dominance(red: int, green: int, blue: int, plate: ChromaPlate) -> int:
+    """Measure how strongly a pixel resembles one supported chroma plate."""
 
-    image = source.convert("RGBA")
+    if plate == "green":
+        return green - max(red, blue)
+    return min(red, blue) - green
+
+
+def is_chroma_pixel(
+    red: int,
+    green: int,
+    blue: int,
+    plate: ChromaPlate,
+    *,
+    minimum_channel: int,
+    minimum_dominance: int,
+) -> bool:
+    """Match plate-like pixels while rejecting unrelated saturated colours."""
+
+    if plate == "green":
+        return (
+            green >= minimum_channel
+            and chroma_dominance(red, green, blue, plate) >= minimum_dominance
+        )
+    return (
+        min(red, blue) >= minimum_channel
+        and abs(red - blue) <= CHROMA_MAGENTA_MAX_IMBALANCE
+        and chroma_dominance(red, green, blue, plate) >= minimum_dominance
+    )
+
+
+def detect_chroma_plate(image: Image.Image) -> ChromaPlate:
+    """Detect the green or magenta plate from the uncontested outer border."""
+
+    pixels = image.load()
+    green_support = 0
+    magenta_support = 0
+    samples = chroma_seed_points(image.width, image.height)
+
+    for x, y in samples:
+        red, green, blue, _ = pixels[x, y]
+        green_support += is_chroma_pixel(
+            red,
+            green,
+            blue,
+            "green",
+            minimum_channel=CHROMA_DETECTION_MIN_CHANNEL,
+            minimum_dominance=CHROMA_DETECTION_MIN_DOMINANCE,
+        )
+        magenta_support += is_chroma_pixel(
+            red,
+            green,
+            blue,
+            "magenta",
+            minimum_channel=CHROMA_DETECTION_MIN_CHANNEL,
+            minimum_dominance=CHROMA_DETECTION_MIN_DOMINANCE,
+        )
+
+    required_support = max(8, round(len(samples) * 0.25))
+    strongest_support = max(green_support, magenta_support)
+    if strongest_support < required_support:
+        raise ValueError(
+            "Cannot identify a supported green or magenta chroma plate from "
+            f"the fixed-cell boundaries (green={green_support}, "
+            f"magenta={magenta_support}, required={required_support})"
+        )
+    return "green" if green_support > magenta_support else "magenta"
+
+
+def chroma_seed_points(width: int, height: int) -> list[tuple[int, int]]:
+    """Seed only the outer plate so internal magenta costume parts survive."""
+
+    seeds: set[tuple[int, int]] = set()
+    seeds.update((x, 0) for x in range(width))
+    seeds.update((x, height - 1) for x in range(width))
+    seeds.update((0, y) for y in range(height))
+    seeds.update((width - 1, y) for y in range(height))
+    return list(seeds)
+
+
+def connected_chroma_mask(image: Image.Image, plate: ChromaPlate) -> Image.Image:
+    """Flood only plate-connected pixels, preserving enclosed costume colours."""
+
+    width, height = image.size
+    pixels = image.load()
+    visited = bytearray(width * height)
+    queue: deque[tuple[int, int]] = deque()
+
+    def enqueue_if_chroma(x: int, y: int) -> None:
+        index = y * width + x
+        if visited[index]:
+            return
+        red, green, blue, _ = pixels[x, y]
+        if not is_chroma_pixel(
+            red,
+            green,
+            blue,
+            plate,
+            minimum_channel=CHROMA_SEED_MIN_CHANNEL,
+            minimum_dominance=CHROMA_SEED_MIN_DOMINANCE,
+        ):
+            return
+        visited[index] = 1
+        queue.append((x, y))
+
+    for x, y in chroma_seed_points(width, height):
+        enqueue_if_chroma(x, y)
+
+    while queue:
+        x, y = queue.popleft()
+        if x > 0:
+            enqueue_if_chroma(x - 1, y)
+        if x + 1 < width:
+            enqueue_if_chroma(x + 1, y)
+        if y > 0:
+            enqueue_if_chroma(x, y - 1)
+        if y + 1 < height:
+            enqueue_if_chroma(x, y + 1)
+
+    return Image.frombytes(
+        "L",
+        (width, height),
+        bytes(255 if value else 0 for value in visited),
+    )
+
+
+def neutralise_chroma_spill(
+    red: int,
+    green: int,
+    blue: int,
+    plate: ChromaPlate,
+) -> tuple[int, int, int]:
+    """Suppress only residual key colour beside the removed background."""
+
+    dominance = chroma_dominance(red, green, blue, plate)
+    if dominance < CHROMA_SPILL_MIN_DOMINANCE:
+        return red, green, blue
+
+    if plate == "green":
+        green = min(green, max(red, blue) + CHROMA_SPILL_RETAINED_DOMINANCE)
+        return red, green, blue
+
+    correction = dominance - CHROMA_SPILL_RETAINED_DOMINANCE
+    return max(0, red - correction), green, max(0, blue - correction)
+
+
+def remove_legacy_green_screen(image: Image.Image) -> Image.Image:
+    """Retain the proven global green key used by the original thirteen atlases."""
+
     pixels = image.load()
     for y in range(image.height):
         for x in range(image.width):
             red, green, blue, alpha = pixels[x, y]
             strongest_other = max(red, blue)
-            if green >= 145 and green - strongest_other >= 62:
+            if (
+                green >= CHROMA_DETECTION_MIN_CHANNEL
+                and green - strongest_other >= CHROMA_DETECTION_MIN_DOMINANCE
+            ):
                 pixels[x, y] = (0, 0, 0, 0)
                 continue
 
-            # Antialiased borders mix costume colours with the chroma plate.
-            # Suppress only a strong residual green cast on visible pixels.
+            # Match the historical spill suppression exactly so rebuilding the
+            # green masters remains visually and byte-level compatible.
             if green - strongest_other >= 24:
                 green = min(green, strongest_other + 10)
             pixels[x, y] = (red, green, blue, alpha)
     return image
+
+
+def remove_chroma_screen(source: Image.Image) -> Image.Image:
+    """Remove an automatically detected plate without global recolouring."""
+
+    image = source.convert("RGBA")
+    plate = detect_chroma_plate(image)
+    if plate == "green":
+        return remove_legacy_green_screen(image)
+
+    background_mask = connected_chroma_mask(image, plate)
+    spill_zone = background_mask.filter(
+        ImageFilter.MaxFilter((CHROMA_SPILL_RADIUS * 2) + 1)
+    )
+    pixels = image.load()
+    background_pixels = background_mask.load()
+    spill_pixels = spill_zone.load()
+
+    for y in range(image.height):
+        for x in range(image.width):
+            if background_pixels[x, y]:
+                pixels[x, y] = (0, 0, 0, 0)
+                continue
+            red, green, blue, alpha = pixels[x, y]
+            if spill_pixels[x, y]:
+                red, green, blue = neutralise_chroma_spill(
+                    red,
+                    green,
+                    blue,
+                    plate,
+                )
+            pixels[x, y] = (red, green, blue, alpha)
+    return image
+
+
+def validate_no_visible_green_chroma(image: Image.Image, context: str) -> None:
+    """Reject any historical green-key pixel left visible after preparation."""
+
+    pixels = image.load()
+    contaminated_pixels = 0
+    first_coordinate: tuple[int, int] | None = None
+    for y in range(image.height):
+        for x in range(image.width):
+            red, green, blue, alpha = pixels[x, y]
+            if alpha <= 20:
+                continue
+            if (
+                green >= CHROMA_DETECTION_MIN_CHANNEL
+                and green - max(red, blue) >= CHROMA_DETECTION_MIN_DOMINANCE
+            ):
+                contaminated_pixels += 1
+                if first_coordinate is None:
+                    first_coordinate = (x, y)
+
+    if contaminated_pixels:
+        raise ValueError(
+            f"{context} retains {contaminated_pixels} visible green chroma pixels; "
+            f"first occurrence at {first_coordinate}"
+        )
 
 
 def normalise_cell(cell: Image.Image, context: str) -> Image.Image:
@@ -88,6 +318,28 @@ def normalise_cell(cell: Image.Image, context: str) -> Image.Image:
     return canvas
 
 
+def source_cell_bounds(
+    final_filename: str,
+    row: int,
+    column: int,
+) -> tuple[int, int, int, int]:
+    """Return a fixed cell or a reviewed overlapping source window."""
+
+    if final_filename != PATRONS_ATLAS_FILENAME:
+        left = column * CELL_WIDTH
+        top = row * CELL_HEIGHT
+        return left, top, left + CELL_WIDTH, top + CELL_HEIGHT
+
+    row_boundaries = PATRONS_SOURCE_ROW_BOUNDARIES[column]
+    top, bottom = row_boundaries[row], row_boundaries[row + 1]
+    left = max(0, (column * CELL_WIDTH) - PATRONS_SOURCE_COLUMN_BLEED)
+    right = min(
+        EXPECTED_SHEET_SIZE[0],
+        ((column + 1) * CELL_WIDTH) + PATRONS_SOURCE_COLUMN_BLEED,
+    )
+    return left, top, right, bottom
+
+
 def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
     with Image.open(master_path) as source:
         if source.size != EXPECTED_SHEET_SIZE:
@@ -95,31 +347,42 @@ def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
                 f"{master_path.name} must be {EXPECTED_SHEET_SIZE[0]}x"
                 f"{EXPECTED_SHEET_SIZE[1]}, got {source.width}x{source.height}"
             )
-        transparent = remove_green_screen(source)
+        plate = detect_chroma_plate(source.convert("RGBA"))
+        transparent = remove_chroma_screen(source)
 
     atlas = Image.new("RGBA", EXPECTED_SHEET_SIZE, (0, 0, 0, 0))
     for row in range(ROWS):
         for column in range(COLUMNS):
-            left = column * CELL_WIDTH
-            top = row * CELL_HEIGHT
-            cell = transparent.crop((left, top, left + CELL_WIDTH, top + CELL_HEIGHT))
+            source_bounds = source_cell_bounds(final_filename, row, column)
+            cell = transparent.crop(source_bounds)
             normalised = normalise_cell(
                 cell,
                 f"{master_path.name} row {row + 1}, column {column + 1}",
             )
-            atlas.alpha_composite(normalised, (left, top))
+            target_left = column * CELL_WIDTH
+            target_top = row * CELL_HEIGHT
+            atlas.alpha_composite(normalised, (target_left, target_top))
+
+    if plate == "green":
+        # LANCZOS can recreate a handful of strongly green edge pixels while
+        # shrinking a keyed silhouette. Reapply the historical key after cell
+        # normalisation so generated interpolation cannot leak the plate back
+        # into the published atlas.
+        remove_legacy_green_screen(atlas)
 
     validate_sheet(
         atlas,
         f"prepared/{final_filename}",
         strict_alpha_margins=True,
     )
+    if plate == "green":
+        validate_no_visible_green_chroma(atlas, f"prepared/{final_filename}")
     return atlas
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Chroma-key and atomically publish the 13 generated Hazbin atlases."
+        description="Chroma-key and atomically publish the 14 generated Hazbin atlases."
     )
     parser.add_argument(
         "--check",

@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Forty-six OpenAI-generated animation atlases cover 24 seeded Hazbin profiles, 52 expanded Hazbin directory profiles and 108 optional Helluva Boss profiles: 1,104 validated animation cells and 184 extracted portraits in total. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Forty-seven OpenAI-generated animation atlases cover 24 seeded Hazbin profiles, 56 expanded Hazbin directory profiles and 108 optional Helluva Boss profiles: 1,128 validated animation cells and 188 extracted portraits in total. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
 The chroma-key generation masters are retained in `chroma/`. Local third-party visual reference files remain ignored under `references/`, while the tracked provenance index in `references/hazbin/references.json` records the source pages and image URLs used to guide the original generated assets.
 
@@ -35,10 +35,11 @@ The machine-readable generation contract is [`hazbin-expansion-manifest.json`](.
 | `hazbin-legacy-history.png` | `hz_roo` — Roo; `hz_eve` — Eve; `hz_british_gentleman` — British Gentleman; `hz_female_victim` — Female Victim |
 | `hazbin-human-history.png` | `hz_the_killer` — The Killer; `hz_human_hunter` — Human Hunter; `hz_harry` — Harry; `hz_carrie` — Carrie |
 | `hazbin-human-crossovers.png` | `hz_larry` — Larry; `hz_robert_bob_sinclaire` — Robert “Bob” Sinclaire; `hz_crying_exorcist` — Crying Exorcist; `hz_travis` — Travis |
+| `hazbin-hotel-patrons.png` | `hz_la_catrina_sinner` — La Catrina sinner; `hz_eel_sinner` — Eel sinner; `hz_egyptian_sinner` — Egyptian sinner; `hz_ant_sinner` — Ant sinner |
 
 Tiffany Titfucker remains a lore-only directory mention: no canon design has been published, so the atlas does not invent one. The collective Egg Boiz occupies the first `city-names-b` row using the verified standard design from their character page.
 
-Before generation, retain a clean full-body reference for every ID under `art/sprite-sheets/references/hazbin/`. Do not infer a design from the display name alone. Each finished 6×4 atlas must keep meaningful alpha at least 6 px away from every cell edge; the build rejects grid-gutter spill, clipped primary poses, sparse/empty cells and portraits whose post-resize alpha margin falls below 16 px.
+Before generation, retain a clean full-body reference for every ID under `art/sprite-sheets/references/hazbin/`. Do not infer a design from the display name alone. The `hazbin-hotel-patrons` generation master uses a magenta chroma plate so Eel sinner's green palette survives keying intact. Each finished 6×4 atlas must keep meaningful alpha at least 6 px away from every cell edge; the build rejects grid-gutter spill, clipped primary poses, sparse/empty cells and portraits whose post-resize alpha margin falls below 16 px.
 
 ## Atlas catalogue and references
 
@@ -50,6 +51,7 @@ Before generation, retain a clean full-body reference for every ID under `art/sp
 | `heaven.png` | Adam, Emily, Sera, Lute | [Adam](https://hazbinhotel.fandom.com/wiki/Adam), [Emily](https://hazbinhotel.fandom.com/wiki/Emily), [Sera](https://hazbinhotel.fandom.com/wiki/Sera), [Lute](https://hazbinhotel.fandom.com/wiki/Lute) |
 | `overlords.png` | Carmilla, Rosie, Zestial, Zeezi | [Carmilla](https://hazbinhotel.fandom.com/wiki/Carmilla_Carmine), [Rosie](https://hazbinhotel.fandom.com/wiki/Rosie), [Zestial](https://hazbinhotel.fandom.com/wiki/Zestial), [Zeezi](https://hazbinhotel.fandom.com/wiki/Zeezi) |
 | `season2-au.png` | Baxter, Abel, Marlow Glass, Ember Vale | [Baxter](https://hazbinhotel.fandom.com/wiki/Baxter), [Abel](https://hazbinhotel.fandom.com/wiki/Abel); Marlow and Ember are original Simulation AU designs |
+| `hazbin/hazbin-hotel-patrons.png` | La Catrina sinner, Eel sinner, Egyptian sinner, Ant sinner | [Hazbin Hotel sinners](https://hazbinhotel.fandom.com/wiki/Minor_Characters/Hazbin_Hotel/Sinners) |
 | `helluva/helluva-core.png` | Blitzø, Moxxie, Millie, Loona | [Blitzø](https://hazbinhotel.fandom.com/wiki/Blitzo), [Moxxie](https://hazbinhotel.fandom.com/wiki/Moxxie), [Millie](https://hazbinhotel.fandom.com/wiki/Millie), [Loona](https://hazbinhotel.fandom.com/wiki/Loona) |
 | `helluva/helluva-allies.png` | Stolas, Octavia, Fizzarolli, Verosika Mayday | [Stolas](https://hazbinhotel.fandom.com/wiki/Stolas), [Octavia](https://hazbinhotel.fandom.com/wiki/Octavia), [Fizzarolli](https://hazbinhotel.fandom.com/wiki/Fizzarolli), [Verosika](https://hazbinhotel.fandom.com/wiki/Verosika_Mayday) |
 | `helluva/helluva-powers.png` | Asmodeus, Beelzebub, Striker, Stella | [Asmodeus](https://hazbinhotel.fandom.com/wiki/Asmodeus), [Beelzebub](https://hazbinhotel.fandom.com/wiki/Beelzebub), [Striker](https://hazbinhotel.fandom.com/wiki/Striker), [Stella](https://hazbinhotel.fandom.com/wiki/Stella) |
@@ -89,7 +91,7 @@ python scripts\prepare_hazbin_expansion.py
 python scripts\build_sprite_assets.py --require-hazbin-expansion
 ```
 
-The first command rebuilds the historical Hazbin and Helluva portraits. The preparation check requires all thirteen OpenAI chroma masters, removes the green plate, isolates every fixed cell and proves the 6 px gutter without publishing. The following preparation command atomically publishes the transparent atlases; the final strict build validates all 312 new cells and writes the 52 portraits. The portrait builder reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every configured character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps, display-name coverage, safe public output paths and visible content in all cells. The expanded Hazbin collection also enforces per-cell alpha gutters and post-resize portrait margins.
+The first command rebuilds the historical Hazbin and Helluva portraits. The preparation check requires all fourteen OpenAI chroma masters, removes each configured chroma plate, isolates every fixed cell and proves the 6 px gutter without publishing. The following preparation command atomically publishes the transparent atlases; the final strict build validates all 336 new cells and writes the 56 portraits. The portrait builder reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every configured character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps, display-name coverage, safe public output paths and visible content in all cells. The expanded Hazbin collection also enforces per-cell alpha gutters and post-resize portrait margins.
 
 Every Helluva sheet follows the same generation contract: four visual references in row order, six complete poses per row (idle, conversation, alert, action, recovery and victory), a removable chroma background, and no labels, grids, shadows or cross-row mixing. The optional collection remains atomic: `--require-helluva` rejects a partial publication.
 
@@ -103,4 +105,4 @@ Every Helluva sheet follows the same generation contract: four visual references
 
 Jarold Mayberry remains a lore-only mention because no unobstructed official design exists. The unnamed Sinsmas family remains mission context rather than a fake single-character sprite.
 
-The current strict published-art pass validates all forty-six atlases, 1,104 animation cells and 184 portraits.
+The current strict published-art pass validates all forty-seven atlases, 1,128 animation cells and 188 portraits. The expanded Hazbin subset accounts for fourteen atlases, 336 animation cells and 56 portraits.

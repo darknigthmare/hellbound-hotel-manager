@@ -43,7 +43,7 @@ describe('Hazbin Arena directory adapter', () => {
     );
 
     expect(fighters.map(({ id }) => id).sort()).toEqual(expectedIds);
-    expect(fighters).toHaveLength(18);
+    expect(fighters).toHaveLength(22);
     expect(fighters.every(({ id }) => id.startsWith('hz_'))).toBe(true);
     expect(fighters.every(({ operationalDataStatus }) => operationalDataStatus === 'simulation_au')).toBe(true);
   });
@@ -52,12 +52,18 @@ describe('Hazbin Arena directory adapter', () => {
     const razzle = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_razzle');
     const lilith = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_lilith');
     const crymini = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_crymini');
-    expect(razzle && lilith && crymini).toBeTruthy();
+    const laCatrina = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_la_catrina_sinner');
+    expect(razzle && lilith && crymini && laCatrina).toBeTruthy();
 
     expect(isHazbinDirectoryFighterVisible({ ...razzle!, assetStatus: 'planned' }, seasonOneTimeline)).toBe(false);
     expect(isHazbinDirectoryFighterVisible({ ...razzle!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(true);
     expect(isHazbinDirectoryFighterVisible({ ...lilith!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
     expect(isHazbinDirectoryFighterVisible({ ...crymini!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
+    expect(isHazbinDirectoryFighterVisible({ ...laCatrina!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
+    expect(isHazbinDirectoryFighterVisible(
+      { ...laCatrina!, assetStatus: 'ready' },
+      { ...seasonOneTimeline, current: 'custom', hideSpoilers: false, spoilerLevel: 'season_2' },
+    )).toBe(true);
     expect(getHazbinArenaFighters(
       { ...seasonOneTimeline, spoilerLevel: 'none' },
       allExpansionArtReady,
@@ -124,7 +130,7 @@ describe('Hazbin Arena directory adapter', () => {
     const allReadyFighterProfiles = allExpansionArtReady.filter(({ existingOperationalProfile, fighterEligible }) => (
       !existingOperationalProfile && fighterEligible
     ));
-    expect(allReadyFighterProfiles).toHaveLength(18);
+    expect(allReadyFighterProfiles).toHaveLength(22);
     for (const profile of allReadyFighterProfiles) {
       expect(allReadySprites[profile.id]).toEqual({
         portrait: profile.portrait,

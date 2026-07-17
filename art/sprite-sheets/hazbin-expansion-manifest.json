@@ -15,7 +15,7 @@
     "cellHeight": 256,
     "minimumAlphaMargin": 6
   },
-  "promptTemplate": "Using the four clean full-body character references in the exact row order below, create one 1536x1024 gameplay sprite atlas on a perfectly flat, opaque #00ff00 chroma-green background. Use a strict 6-column by 4-row layout with exactly one character identity per row and six complete full-body poses per character. Columns: neutral idle portrait; expressive conversation; directional combat-ready stance facing screen-right; attack anticipation or light strike; strong impact pose readable both as an attack finish and hit reaction; victory or recovery. Preserve each referenced on-screen silhouette, facial traits, palette, costume and proportions. Keep every silhouette at least 6 px inside its 256x256 cell. No text, labels, visible grid, floor, shadow, scenery, cropped anatomy, duplicate limbs, mixed identities, spill between cells, gradient or background variation. Do not invent details hidden by or absent from the references.",
+  "promptTemplate": "Using the four clean full-body character references in the exact row order below, create one 1536x1024 gameplay sprite atlas on a perfectly flat, opaque chroma background: use #00ff00 green by default, or #ff00ff magenta when a character contains green that must be preserved. Use exactly one of these two key colours for the entire atlas. Use a strict 6-column by 4-row layout with exactly one character identity per row and six complete full-body poses per character. Columns: neutral idle portrait; expressive conversation; directional combat-ready stance facing screen-right; attack anticipation or light strike; strong impact pose readable both as an attack finish and hit reaction; victory or recovery. Preserve each referenced on-screen silhouette, facial traits, palette, costume and proportions. Keep every silhouette at least 6 px inside its 256x256 cell. No text, labels, visible grid, floor, shadow, scenery, cropped anatomy, duplicate limbs, mixed identities, spill between cells, gradient or background variation. Do not invent details hidden by or absent from the references.",
   "atlases": [
     {
       "id": "family-media",
@@ -145,6 +145,16 @@
         { "id": "hz_robert_bob_sinclaire", "name": "Robert “Bob” Sinclaire" },
         { "id": "hz_crying_exorcist", "name": "Crying Exorcist" },
         { "id": "hz_travis", "name": "Travis" }
+      ]
+    },
+    {
+      "id": "hotel-patrons",
+      "filename": "hazbin-hotel-patrons.png",
+      "rows": [
+        { "id": "hz_la_catrina_sinner", "name": "La Catrina sinner" },
+        { "id": "hz_eel_sinner", "name": "Eel sinner" },
+        { "id": "hz_egyptian_sinner", "name": "Egyptian sinner" },
+        { "id": "hz_ant_sinner", "name": "Ant sinner" }
       ]
     }
   ]

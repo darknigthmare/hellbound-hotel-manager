@@ -29,13 +29,13 @@ async function expectNoSeriousAccessibilityViolation(container: HTMLElement) {
 }
 
 describe('Hazbin directory data boundary', () => {
-  it('keeps 24 operational references and 53 new directory-only profiles', () => {
-    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(77);
+  it('keeps 24 operational references and 57 new directory-only profiles', () => {
+    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(81);
     expect(HAZBIN_EXISTING_PROFILE_COUNT).toBe(24);
-    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(53);
+    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(57);
     expect(HAZBIN_PLANNED_PROFILE_COUNT).toBe(0);
     expect(HAZBIN_REFERENCE_UNAVAILABLE_PROFILE_COUNT).toBe(1);
-    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(77);
+    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(81);
 
     const seed = getSeedData();
     expect(seed.characters).toHaveLength(24);
@@ -81,6 +81,23 @@ describe('Hazbin directory data boundary', () => {
     expect(HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_tom_trench')?.canonStatus).toBe('canon');
     expect(HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_tom_trench')?.timeline).toBe('season_1');
 
+    const hotelPatronIds = [
+      'hz_la_catrina_sinner',
+      'hz_eel_sinner',
+      'hz_egyptian_sinner',
+      'hz_ant_sinner',
+    ];
+    const hotelPatrons = HAZBIN_DIRECTORY_PROFILES.filter(({ id }) => hotelPatronIds.includes(id));
+    expect(hotelPatrons).toHaveLength(4);
+    expect(hotelPatrons.map(({ sheetRow }) => sheetRow).sort()).toEqual([0, 1, 2, 3]);
+    expect(hotelPatrons.every(({ category }) => category === 'hotel')).toBe(true);
+    expect(hotelPatrons.every(({ canonStatus }) => canonStatus === 'canon')).toBe(true);
+    expect(hotelPatrons.every(({ timeline, spoilerLevel }) => (
+      timeline === 'season_2' && spoilerLevel === 'season_2'
+    ))).toBe(true);
+    expect(hotelPatrons.every(({ sourceLabel }) => /Hazbin Hotel S2E0[1358]/.test(sourceLabel))).toBe(true);
+    expect(hotelPatrons.every(({ bio }) => /hotel/i.test(bio))).toBe(true);
+
     const tiffany = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_tiffany_titfucker');
     expect(tiffany?.assetStatus).toBe('reference_unavailable');
     expect(tiffany?.sourceLabel).toMatch(/mentioned only/i);
@@ -91,9 +108,9 @@ describe('Hazbin directory data boundary', () => {
     ))).toBe(true);
   });
 
-  it('maps nineteen ready four-character atlases without row collisions', () => {
-    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(19);
-    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(19);
+  it('maps twenty ready four-character atlases without row collisions', () => {
+    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(20);
+    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(20);
     expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'planned')).toHaveLength(0);
 
     for (const sheet of HAZBIN_SPRITE_SHEETS) {
@@ -155,7 +172,7 @@ describe('Hazbin roster and atlas accessibility', () => {
 
     expect(firstGroup.getAttribute('aria-expanded')).toBe('true');
     expect(secondGroup.getAttribute('aria-expanded')).toBe('false');
-    expect(screen.getByText('19 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
+    expect(screen.getByText('20 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
     expect(screen.getAllByRole('img')).toHaveLength(4);
     for (const image of screen.getAllByRole('img')) {
       expect(image.getAttribute('loading')).toBe('lazy');
@@ -194,8 +211,8 @@ describe('Hazbin roster and atlas accessibility', () => {
     expect(directoryTab.getAttribute('aria-selected')).toBe('true');
     expect(document.activeElement).toBe(directoryTab);
     expect(screen.queryByRole('button', { name: 'Register Guest/Staff' })).toBeNull();
-    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 77 profils' })).toBeTruthy();
-    expect(screen.getByText(/53 nouvelles fiches/)).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 81 profils' })).toBeTruthy();
+    expect(screen.getByText(/57 nouvelles fiches/)).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Lilith Morningstar' })).toBeNull();
     expect(screen.getAllByText(/masqués par le filtre spoilers/)).toHaveLength(2);
     await expectNoSeriousAccessibilityViolation(container);

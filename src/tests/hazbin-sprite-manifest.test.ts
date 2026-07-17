@@ -19,11 +19,11 @@ const manifest = JSON.parse(readFileSync(
 )) as HazbinExpansionManifest;
 
 describe('Hazbin expansion manifest parity', () => {
-  it('maps the same 13 atlases and 52 art-capable profiles as the TypeScript directory', () => {
-    expect(manifest.atlases).toHaveLength(13);
+  it('maps the same 14 atlases and 56 art-capable profiles as the TypeScript directory', () => {
+    expect(manifest.atlases).toHaveLength(14);
     const manifestRows = manifest.atlases.flatMap(({ rows }) => rows);
-    expect(manifestRows).toHaveLength(52);
-    expect(new Set(manifestRows.map(({ id }) => id)).size).toBe(52);
+    expect(manifestRows).toHaveLength(56);
+    expect(new Set(manifestRows.map(({ id }) => id)).size).toBe(56);
 
     for (const atlas of manifest.atlases) {
       const directorySheet = HAZBIN_SPRITE_SHEETS.find(({ id }) => id === atlas.id);
@@ -36,6 +36,13 @@ describe('Hazbin expansion manifest parity', () => {
       expect(directoryRows.map(({ id, name }) => ({ id, name }))).toEqual(atlas.rows);
       expect(directoryRows.every(({ assetStatus }) => assetStatus !== 'reference_unavailable')).toBe(true);
     }
+
+    expect(manifest.atlases.find(({ id }) => id === 'hotel-patrons')?.rows).toEqual([
+      { id: 'hz_la_catrina_sinner', name: 'La Catrina sinner' },
+      { id: 'hz_eel_sinner', name: 'Eel sinner' },
+      { id: 'hz_egyptian_sinner', name: 'Egyptian sinner' },
+      { id: 'hz_ant_sinner', name: 'Ant sinner' },
+    ]);
   });
 
   it('keeps Tiffany out of the art manifest because she has no published design', () => {

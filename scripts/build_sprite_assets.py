@@ -199,6 +199,15 @@ HAZBIN_EXPANSION_ATLASES: tuple[NamedSpriteAtlas, ...] = (
             ("hz_travis", "Travis"),
         ),
     ),
+    NamedSpriteAtlas(
+        "hazbin-hotel-patrons.png",
+        (
+            ("hz_la_catrina_sinner", "La Catrina sinner"),
+            ("hz_eel_sinner", "Eel sinner"),
+            ("hz_egyptian_sinner", "Egyptian sinner"),
+            ("hz_ant_sinner", "Ant sinner"),
+        ),
+    ),
 )
 
 HAZBIN_EXPANSION_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = tuple(
