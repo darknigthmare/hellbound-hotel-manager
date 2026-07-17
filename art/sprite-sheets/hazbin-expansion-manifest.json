@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "collectionId": "hazbin-expanded-roster",
+  "status": "art_ready",
+  "atomic": true,
+  "referenceDirectory": "art/sprite-sheets/references/hazbin",
+  "publicSheetDirectory": "/assets/sprites/hazbin/sheets",
+  "publicPortraitDirectory": "/assets/sprites/hazbin/portraits",
+  "canvas": {
+    "width": 1536,
+    "height": 1024,
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "minimumAlphaMargin": 6
+  },
+  "promptTemplate": "Using the four clean full-body character references in the exact row order below, create one 1536x1024 gameplay sprite atlas on a perfectly flat, opaque #00ff00 chroma-green background. Use a strict 6-column by 4-row layout with exactly one character identity per row and six complete full-body poses per character. Columns: neutral idle portrait; expressive conversation; directional combat-ready stance facing screen-right; attack anticipation or light strike; strong impact pose readable both as an attack finish and hit reaction; victory or recovery. Preserve each referenced on-screen silhouette, facial traits, palette, costume and proportions. Keep every silhouette at least 6 px inside its 256x256 cell. No text, labels, visible grid, floor, shadow, scenery, cropped anatomy, duplicate limbs, mixed identities, spill between cells, gradient or background variation. Do not invent details hidden by or absent from the references.",
+  "atlases": [
+    {
+      "id": "family-media",
+      "filename": "hazbin-family-media.png",
+      "rows": [
+        { "id": "hz_lilith", "name": "Lilith Morningstar" },
+        { "id": "hz_mimzy", "name": "Mimzy" },
+        { "id": "hz_katie_killjoy", "name": "Katie Killjoy" },
+        { "id": "hz_tom_trench", "name": "Tom Trench" }
+      ]
+    },
+    {
+      "id": "companions",
+      "filename": "hazbin-companions.png",
+      "rows": [
+        { "id": "hz_frank_egg_boi", "name": "Frank" },
+        { "id": "hz_razzle", "name": "Razzle" },
+        { "id": "hz_dazzle", "name": "Dazzle" },
+        { "id": "hz_keekee", "name": "KeeKee" }
+      ]
+    },
+    {
+      "id": "heaven-pets",
+      "filename": "hazbin-heaven-pets.png",
+      "rows": [
+        { "id": "hz_fat_nuggets", "name": "Fat Nuggets" },
+        { "id": "hz_st_peter", "name": "St. Peter" },
+        { "id": "hz_speaker_of_god", "name": "Speaker of God" },
+        { "id": "hz_molly", "name": "Molly" }
+      ]
+    },
+    {
+      "id": "carmine-overlords",
+      "filename": "hazbin-carmine-overlords.png",
+      "rows": [
+        { "id": "hz_clara_carmine", "name": "Clara Carmine" },
+        { "id": "hz_odette_carmine", "name": "Odette Carmine" },
+        { "id": "hz_maestro", "name": "Maestro" },
+        { "id": "hz_prick", "name": "Prick" }
+      ]
+    },
+    {
+      "id": "overlord-fringe",
+      "filename": "hazbin-overlord-fringe.png",
+      "rows": [
+        { "id": "hz_hatchet", "name": "Hatchet" },
+        { "id": "hz_shok_wav", "name": "Shok.wav" },
+        { "id": "hz_susan", "name": "Susan" },
+        { "id": "hz_rooster", "name": "Rooster" }
+      ]
+    },
+    {
+      "id": "season2-network",
+      "filename": "hazbin-season2-network.png",
+      "rows": [
+        { "id": "hz_ethan", "name": "Ethan" },
+        { "id": "hz_melissa", "name": "Melissa" },
+        { "id": "hz_salina", "name": "Salina" },
+        { "id": "hz_zack_rabbit", "name": "Zack Rabbit" }
+      ]
+    },
+    {
+      "id": "city-names-a",
+      "filename": "hazbin-city-names-a.png",
+      "rows": [
+        { "id": "hz_myk_mic_guy", "name": "Myk the Mic Guy" },
+        { "id": "hz_man_meat", "name": "Man Meat" },
+        { "id": "hz_buddy_mcsluggy", "name": "Buddy McSluggy" },
+        { "id": "hz_bryrin", "name": "Bryrin" }
+      ]
+    },
+    {
+      "id": "city-names-b",
+      "filename": "hazbin-city-names-b.png",
+      "rows": [
+        { "id": "hz_egg_boiz", "name": "Egg Boiz" },
+        { "id": "hz_rocky", "name": "Rocky" },
+        { "id": "hz_dia", "name": "Dia" },
+        { "id": "hz_summer", "name": "Summer" }
+      ]
+    },
+    {
+      "id": "angel-family",
+      "filename": "hazbin-angel-family.png",
+      "rows": [
+        { "id": "hz_arackniss", "name": "Arackniss" },
+        { "id": "hz_angel_father", "name": "Angel Dust’s father" },
+        { "id": "hz_crymini", "name": "Crymini" },
+        { "id": "hz_villa", "name": "Villa" }
+      ]
+    },
+    {
+      "id": "eldritch-legacy",
+      "filename": "hazbin-eldritch-legacy.png",
+      "rows": [
+        { "id": "hz_hellsa_von_eldritch", "name": "Helsa von Eldritch" },
+        { "id": "hz_seviathan_von_eldritch", "name": "Seviathan von Eldritch" },
+        { "id": "hz_frederick_von_eldritch", "name": "Frederick von Eldritch" },
+        { "id": "hz_bethesda_von_eldritch", "name": "Bethesda von Eldritch" }
+      ]
+    },
+    {
+      "id": "legacy-history",
+      "filename": "hazbin-legacy-history.png",
+      "rows": [
+        { "id": "hz_roo", "name": "Roo" },
+        { "id": "hz_eve", "name": "Eve" },
+        { "id": "hz_british_gentleman", "name": "British Gentleman" },
+        { "id": "hz_female_victim", "name": "Female Victim" }
+      ]
+    },
+    {
+      "id": "human-history",
+      "filename": "hazbin-human-history.png",
+      "rows": [
+        { "id": "hz_the_killer", "name": "The Killer" },
+        { "id": "hz_human_hunter", "name": "Human Hunter" },
+        { "id": "hz_harry", "name": "Harry" },
+        { "id": "hz_carrie", "name": "Carrie" }
+      ]
+    },
+    {
+      "id": "human-crossovers",
+      "filename": "hazbin-human-crossovers.png",
+      "rows": [
+        { "id": "hz_larry", "name": "Larry" },
+        { "id": "hz_robert_bob_sinclaire", "name": "Robert “Bob” Sinclaire" },
+        { "id": "hz_crying_exorcist", "name": "Crying Exorcist" },
+        { "id": "hz_travis", "name": "Travis" }
+      ]
+    }
+  ]
+}

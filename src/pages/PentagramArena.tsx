@@ -1,7 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Box, Gamepad2, ShieldCheck, Sparkles, Swords, Trophy } from 'lucide-react';
+import {
+  Box,
+  ChevronLeft,
+  ChevronRight,
+  Gamepad2,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Swords,
+  Trophy,
+} from 'lucide-react';
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { getCharacterSpriteAsset } from '../lib/character-sprites';
+import { getHazbinArenaFighters } from '../lib/hazbin-arena-fighters';
 import {
   COMBAT_AI_DIFFICULTY_LABELS,
   type CombatAiDifficulty,
@@ -25,13 +36,15 @@ interface FighterCardProps {
   label: string;
   selectId: string;
   fighters: Character[];
-  activeFighterId: string;
   blockedFighterId?: string;
   onSelect: (fighterId: string) => void;
 }
 
 type ArenaPhase = 'select' | 'fight';
 type ArenaMatchMode = 'ai' | 'local';
+type ArenaPickerSlot = 'one' | 'two';
+
+const ROSTER_PAGE_SIZE = 12;
 
 const RISK_PROFILE: Record<RiskLevel, { label: string; value: number }> = {
   low: { label: 'Controlled', value: 32 },
@@ -61,7 +74,7 @@ function getInitials(name: string): string {
 }
 
 function getArenaFighters(state: DatabaseState): Character[] {
-  return state.characters.flatMap((source) => {
+  const operationalFighters = state.characters.flatMap((source) => {
     const snapshot = state.timeline.current !== 'custom'
       ? source.timelineStates?.[state.timeline.current as Exclude<TimelineScope, 'custom'>]
       : undefined;
@@ -73,6 +86,15 @@ function getArenaFighters(state: DatabaseState): Character[] {
     if (!getCharacterSpriteAsset(fighter.id) || !getFighterProfile(fighter)) return [];
     return [fighter];
   });
+  const operationalIds = new Set(operationalFighters.map(({ id }) => id));
+  const directoryFighters = getHazbinArenaFighters(state.timeline)
+    .filter(fighter => (
+      !operationalIds.has(fighter.id)
+      && Boolean(getCharacterSpriteAsset(fighter.id))
+      && Boolean(getFighterProfile(fighter))
+    ));
+
+  return [...operationalFighters, ...directoryFighters];
 }
 
 function FighterCard({
@@ -80,7 +102,6 @@ function FighterCard({
   label,
   selectId,
   fighters,
-  activeFighterId,
   blockedFighterId,
   onSelect,
 }: FighterCardProps) {
@@ -154,32 +175,27 @@ function FighterCard({
           >
             <span style={{ width: `${risk.value}%` }} />
           </div>
+          <dl className="arena-combat-stats" aria-label={`${fighter.name} combat statistics`}>
+            {([
+              ['Power', profile.power],
+              ['Range', profile.range],
+              ['Speed', profile.speed],
+              ['Guard', profile.guard],
+            ] as const).map(([stat, value]) => {
+              const meterValue = stat === 'Power' ? Math.min(100, value * 5) : value;
+              return (
+                <div key={stat}>
+                  <dt>{stat}</dt>
+                  <dd>
+                    <span aria-hidden="true"><i style={{ width: `${meterValue}%` }} /></span>
+                    <strong>{value}</strong>
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
         </>
       )}
-
-      <div className="arena-mini-roster" role="group" aria-label={`${label} quick select`}>
-        {fighters.map((candidate) => {
-          const candidateSprite = getCharacterSpriteAsset(candidate.id);
-          const isBlocked = candidate.id === blockedFighterId;
-          const isSelected = candidate.id === activeFighterId;
-
-          return (
-            <button
-              key={candidate.id}
-              type="button"
-              className={`arena-roster-tile${isSelected ? ' is-selected' : ''}`}
-              onClick={() => onSelect(candidate.id)}
-              disabled={isBlocked}
-              aria-pressed={isSelected}
-              title={candidate.name}
-            >
-              <span>{getInitials(candidate.name)}</span>
-              {candidateSprite && <img src={candidateSprite.portrait} alt="" />}
-              <small>{candidate.name}</small>
-            </button>
-          );
-        })}
-      </div>
     </article>
   );
 }
@@ -191,6 +207,9 @@ export function PentagramArena({ state }: PentagramArenaProps) {
   const [phase, setPhase] = useState<ArenaPhase>('select');
   const [matchMode, setMatchMode] = useState<ArenaMatchMode>('ai');
   const [aiDifficulty, setAiDifficulty] = useState<CombatAiDifficulty>('standard');
+  const [pickerSlot, setPickerSlot] = useState<ArenaPickerSlot>('one');
+  const [rosterQuery, setRosterQuery] = useState('');
+  const [rosterPage, setRosterPage] = useState(0);
   const shouldRestoreFocusRef = useRef(false);
 
   const fighterOne = fighters.find(fighter => fighter.id === fighterOneId) ?? fighters[0];
@@ -211,6 +230,22 @@ export function PentagramArena({ state }: PentagramArenaProps) {
       ? buildCombatantDefinition(fighterTwo, fighterTwoProfile)
       : undefined,
     [fighterTwo, fighterTwoProfile],
+  );
+  const filteredFighters = useMemo(() => {
+    const query = rosterQuery.trim().toLocaleLowerCase();
+    if (!query) return fighters;
+    return fighters.filter((fighter) => {
+      const profile = getFighterProfile(fighter);
+      return [fighter.name, fighter.role, fighter.type, profile?.style, profile?.archetype]
+        .filter(Boolean)
+        .some(value => String(value).toLocaleLowerCase().includes(query));
+    });
+  }, [fighters, rosterQuery]);
+  const rosterPageCount = Math.max(1, Math.ceil(filteredFighters.length / ROSTER_PAGE_SIZE));
+  const safeRosterPage = Math.min(rosterPage, rosterPageCount - 1);
+  const visibleFighters = filteredFighters.slice(
+    safeRosterPage * ROSTER_PAGE_SIZE,
+    (safeRosterPage + 1) * ROSTER_PAGE_SIZE,
   );
 
   useEffect(() => {
@@ -237,6 +272,11 @@ export function PentagramArena({ state }: PentagramArenaProps) {
 
   const startMatch = () => {
     if (matchupReady) setPhase('fight');
+  };
+
+  const selectFromRoster = (fighterId: string) => {
+    if (pickerSlot === 'one') selectFighterOne(fighterId);
+    else selectFighterTwo(fighterId);
   };
 
   const exitMatch = () => {
@@ -288,6 +328,114 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           />
         ) : (
           <>
+            <section className="arena-roster-picker glass-panel" aria-labelledby="arena-roster-title">
+              <div className="arena-roster-picker__header">
+                <div>
+                  <span>Guilty Gear-style roster</span>
+                  <h2 id="arena-roster-title">Choose a side, then a fighter</h2>
+                </div>
+                <div className="arena-roster-picker__slots" role="group" aria-label="Fighter slot to edit">
+                  <button
+                    type="button"
+                    className={pickerSlot === 'one' ? 'is-active' : undefined}
+                    aria-pressed={pickerSlot === 'one'}
+                    onClick={() => {
+                      setPickerSlot('one');
+                      setRosterPage(0);
+                    }}
+                  >
+                    P1 · {fighterOne?.name ?? 'Choose'}
+                  </button>
+                  <button
+                    type="button"
+                    className={pickerSlot === 'two' ? 'is-active' : undefined}
+                    aria-pressed={pickerSlot === 'two'}
+                    onClick={() => {
+                      setPickerSlot('two');
+                      setRosterPage(0);
+                    }}
+                  >
+                    P2 · {fighterTwo?.name ?? 'Choose'}
+                  </button>
+                </div>
+                <label className="arena-roster-search">
+                  <span className="sr-only">Search fighter roster</span>
+                  <Search size={16} aria-hidden="true" />
+                  <input
+                    type="search"
+                    value={rosterQuery}
+                    placeholder="Search name, role or style"
+                    onChange={(event) => {
+                      setRosterQuery(event.target.value);
+                      setRosterPage(0);
+                    }}
+                  />
+                </label>
+              </div>
+
+              <div className="arena-mini-roster" role="group" aria-label={`Quick select fighter ${pickerSlot}`}>
+                {visibleFighters.map((candidate) => {
+                  const candidateSprite = getCharacterSpriteAsset(candidate.id);
+                  const selectedId = pickerSlot === 'one' ? fighterOne?.id : fighterTwo?.id;
+                  const blockedId = pickerSlot === 'one' ? fighterTwo?.id : fighterOne?.id;
+                  const isBlocked = candidate.id === blockedId;
+                  const isSelected = candidate.id === selectedId;
+
+                  return (
+                    <button
+                      key={candidate.id}
+                      type="button"
+                      className={`arena-roster-tile${isSelected ? ' is-selected' : ''}`}
+                      onClick={() => selectFromRoster(candidate.id)}
+                      disabled={isBlocked}
+                      aria-pressed={isSelected}
+                      aria-label={candidate.name}
+                      title={candidate.name}
+                    >
+                      <span>{getInitials(candidate.name)}</span>
+                      {candidateSprite && (
+                        <img
+                          src={candidateSprite.portrait}
+                          alt=""
+                          onError={(event) => { event.currentTarget.style.display = 'none'; }}
+                        />
+                      )}
+                      <small>{candidate.name}</small>
+                    </button>
+                  );
+                })}
+                {visibleFighters.length === 0 && (
+                  <p className="arena-roster-empty">No fighter matches “{rosterQuery.trim()}”.</p>
+                )}
+              </div>
+
+              <div className="arena-roster-pagination" aria-label="Fighter roster pages">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  disabled={safeRosterPage === 0}
+                  aria-label="Previous fighter page"
+                  onClick={() => setRosterPage(page => Math.max(0, page - 1))}
+                >
+                  <ChevronLeft size={16} aria-hidden="true" />
+                </button>
+                <span aria-live="polite">
+                  {filteredFighters.length === 0
+                    ? '0 fighters'
+                    : `${safeRosterPage * ROSTER_PAGE_SIZE + 1}–${Math.min((safeRosterPage + 1) * ROSTER_PAGE_SIZE, filteredFighters.length)} of ${filteredFighters.length}`}
+                </span>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  disabled={safeRosterPage >= rosterPageCount - 1}
+                  aria-label="Next fighter page"
+                  onClick={() => setRosterPage(Math.min(rosterPageCount - 1, safeRosterPage + 1))}
+                >
+                  <ChevronRight size={16} aria-hidden="true" />
+                </button>
+              </div>
+            </section>
+
             <section className="arena-stage art-deco-border" aria-labelledby="arena-stage-title">
         <h2 id="arena-stage-title" className="sr-only">Exhibition matchup setup</h2>
         <div className="arena-stage__glow" aria-hidden="true" />
@@ -296,7 +444,6 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           label="Fighter one"
           selectId="arena-fighter-one"
           fighters={fighters}
-          activeFighterId={fighterOne?.id ?? ''}
           blockedFighterId={fighterTwo?.id}
           onSelect={selectFighterOne}
         />
@@ -306,7 +453,6 @@ export function PentagramArena({ state }: PentagramArenaProps) {
           label="Fighter two"
           selectId="arena-fighter-two"
           fighters={fighters}
-          activeFighterId={fighterTwo?.id ?? ''}
           blockedFighterId={fighterOne?.id}
           onSelect={selectFighterTwo}
         />

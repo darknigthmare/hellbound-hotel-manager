@@ -16,6 +16,7 @@ import {
   shouldCaptureKey
 } from '../cloudAccount';
 import { CHARACTER_SPRITES, SPRITE_SHEETS } from '../lib/character-sprites';
+import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 
 class MemoryStorage implements StorageLike {
   protected values = new Map<string, string>();
@@ -62,7 +63,11 @@ describe('generated character sprite coverage', () => {
     const seed = getSeedData();
     const sheetPaths = new Set(SPRITE_SHEETS.map((sheet) => sheet.path));
 
-    expect(Object.keys(CHARACTER_SPRITES)).toHaveLength(seed.characters.length);
+    const readyDirectorySpriteCount = HAZBIN_DIRECTORY_PROFILES.filter(({ existingOperationalProfile, assetStatus }) => (
+      !existingOperationalProfile && assetStatus === 'ready'
+    )).length;
+
+    expect(Object.keys(CHARACTER_SPRITES)).toHaveLength(seed.characters.length + readyDirectorySpriteCount);
     for (const character of seed.characters) {
       const sprite = CHARACTER_SPRITES[character.id];
       expect(sprite, `missing sprite mapping for ${character.id}`).toBeDefined();
@@ -97,7 +102,7 @@ describe('generated character sprite coverage', () => {
       });
     }
 
-    expect(rowKeys).toHaveLength(24);
+    expect(rowKeys).toHaveLength(Object.keys(CHARACTER_SPRITES).length);
   });
 });
 

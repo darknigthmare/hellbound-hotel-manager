@@ -110,7 +110,8 @@ interface CombatStyleTuning {
 const STAGE_MIN = 7;
 const STAGE_MAX = 93;
 const MIN_FIGHTER_GAP = 7;
-const MAX_GAME_FRAME_MS = 100;
+const MAX_GAME_FRAME_MS = 1_000;
+const COMBAT_SIMULATION_STEP_MS = 16;
 const IMPACT_EFFECT_MS = 220;
 const HITSTOP_MS = 58;
 const GLOBAL_DAMAGE_SCALE = 0.66;
@@ -510,6 +511,19 @@ function hasReachedImpact(
   return previousActionMs > activeAtRemainingMs && nextActionMs <= activeAtRemainingMs;
 }
 
+function getTimeToPendingImpact(
+  actionMs: number,
+  definition: CombatantDefinition,
+  attack: CombatAttack | null,
+): number {
+  if (!attack) return Number.POSITIVE_INFINITY;
+  const attackData = getAttackData(definition, attack);
+  const activeAtRemainingMs = attackData.actionMs - attackData.startupMs;
+  return actionMs > activeAtRemainingMs
+    ? actionMs - activeAtRemainingMs
+    : Number.POSITIVE_INFINITY;
+}
+
 function applyAttackImpact(
   state: CombatState,
   side: PlayerSide,
@@ -541,10 +555,13 @@ function applyAttackImpact(
       ? Math.max(2, Math.round(baseDamage * guardMultiplier))
       : baseDamage;
   const attackerTuning = getStyleTuning(attacker);
+  // Tension is earned through contact, never by swinging or guarding in empty space.
   const attackerTensionGain = inRange
     ? attacker.tensionGain + attackerTuning.tensionBonus
-    : Math.max(2, Math.round(attacker.tensionGain * 0.3));
-  const defenderTensionGain = defenderGuardingAtImpact ? 10 : damage > 0 ? 5 : 0;
+    : 0;
+  const defenderTensionGain = inRange
+    ? defenderGuardingAtImpact ? 10 : damage > 0 ? 5 : 0
+    : 0;
   const next: CombatState = {
     ...state,
     pendingAttackOne: side === 'one' ? null : state.pendingAttackOne,
@@ -598,7 +615,7 @@ function applyAttackImpact(
   return { ...next, ...appendLog(next, resultText) };
 }
 
-export function stepCombat(
+function stepCombatSlice(
   state: CombatState,
   inputs: CombatInputs,
   elapsedMs: number,
@@ -607,8 +624,7 @@ export function stepCombat(
 ): CombatState {
   if (!state.active) return state;
 
-  const requestedElapsedMs = Number.isFinite(elapsedMs) ? Math.max(0, elapsedMs) : 0;
-  const gameElapsedMs = Math.min(requestedElapsedMs, MAX_GAME_FRAME_MS);
+  const gameElapsedMs = Math.max(0, elapsedMs);
   if (state.hitstopMs > 0 && gameElapsedMs > 0) {
     return {
       ...state,
@@ -621,16 +637,18 @@ export function stepCombat(
   const actionMsTwo = Math.max(0, state.actionMsTwo - gameElapsedMs);
   const cooldownMsOne = Math.max(0, state.cooldownMsOne - gameElapsedMs);
   const cooldownMsTwo = Math.max(0, state.cooldownMsTwo - gameElapsedMs);
-  const lockedOne = isCombatActionLocked(state.actionOne, actionMsOne);
-  const lockedTwo = isCombatActionLocked(state.actionTwo, actionMsTwo);
-  const directionOne = lockedOne || inputs.one.guard
+  const lockedOneBeforeSlice = isCombatActionLocked(state.actionOne, state.actionMsOne);
+  const lockedTwoBeforeSlice = isCombatActionLocked(state.actionTwo, state.actionMsTwo);
+  const lockedOneAfterSlice = isCombatActionLocked(state.actionOne, actionMsOne);
+  const lockedTwoAfterSlice = isCombatActionLocked(state.actionTwo, actionMsTwo);
+  const directionOne = lockedOneBeforeSlice || inputs.one.guard
     ? 0
     : Number(inputs.one.right) - Number(inputs.one.left);
-  const directionTwo = lockedTwo || inputs.two.guard
+  const directionTwo = lockedTwoBeforeSlice || inputs.two.guard
     ? 0
     : Number(inputs.two.right) - Number(inputs.two.left);
-  const guardOne = inputs.one.guard && !lockedOne;
-  const guardTwo = inputs.two.guard && !lockedTwo;
+  const guardOne = inputs.one.guard && !lockedOneAfterSlice;
+  const guardTwo = inputs.two.guard && !lockedTwoAfterSlice;
 
   let positionOne = clamp(
     state.positionOne + directionOne * getMoveSpeed(fighterOne) * frameSeconds,
@@ -686,8 +704,8 @@ export function stepCombat(
     cooldownMsTwo,
     impactMsOne: Math.max(0, state.impactMsOne - gameElapsedMs),
     impactMsTwo: Math.max(0, state.impactMsTwo - gameElapsedMs),
-    actionOne: lockedOne ? state.actionOne : getIdleAction(guardOne, directionOne),
-    actionTwo: lockedTwo ? state.actionTwo : getIdleAction(guardTwo, directionTwo),
+    actionOne: lockedOneAfterSlice ? state.actionOne : getIdleAction(guardOne, directionOne),
+    actionTwo: lockedTwoAfterSlice ? state.actionTwo : getIdleAction(guardTwo, directionTwo),
     pendingAttackOne: actionMsOne > 0 ? state.pendingAttackOne : null,
     pendingAttackTwo: actionMsTwo > 0 ? state.pendingAttackTwo : null,
   };
@@ -733,4 +751,67 @@ export function stepCombat(
   }
 
   return timerMs <= 0 ? resolveWinnerByTime(next, fighterOne, fighterTwo) : next;
+}
+
+export function stepCombat(
+  state: CombatState,
+  inputs: CombatInputs,
+  elapsedMs: number,
+  fighterOne: CombatantDefinition,
+  fighterTwo: CombatantDefinition,
+): CombatState {
+  const requestedElapsedMs = Number.isFinite(elapsedMs) ? Math.max(0, elapsedMs) : 0;
+  let remainingMs = Math.min(requestedElapsedMs, MAX_GAME_FRAME_MS);
+
+  // A zero-time snapshot still updates held movement/guard state immediately.
+  if (remainingMs === 0) {
+    return stepCombatSlice(state, inputs, 0, fighterOne, fighterTwo);
+  }
+
+  let next = state;
+  while (remainingMs > 0.0001 && next.active) {
+    // Fixed-size slices keep movement, startup windows and hitstop deterministic
+    // when requestAnimationFrame falls from 60 fps to a much lower cadence.
+    const hitstopSlice = next.hitstopMs > 0 ? next.hitstopMs : Number.POSITIVE_INFINITY;
+    // Never simulate movement or an active frame past time-over. Without this
+    // boundary, a 16 ms slice could let an attack due in 8 ms land even when
+    // only 1 ms remained on the round clock.
+    const timerSlice = next.hitstopMs > 0
+      ? Number.POSITIVE_INFINITY
+      : Math.max(0, next.timerMs);
+    if (timerSlice === 0) {
+      next = stepCombatSlice(next, inputs, 0, fighterOne, fighterTwo);
+      continue;
+    }
+    const actionSliceOne = isCombatActionLocked(next.actionOne, next.actionMsOne)
+      ? next.actionMsOne
+      : Number.POSITIVE_INFINITY;
+    const actionSliceTwo = isCombatActionLocked(next.actionTwo, next.actionMsTwo)
+      ? next.actionMsTwo
+      : Number.POSITIVE_INFINITY;
+    const impactSliceOne = getTimeToPendingImpact(
+      next.actionMsOne,
+      fighterOne,
+      next.pendingAttackOne,
+    );
+    const impactSliceTwo = getTimeToPendingImpact(
+      next.actionMsTwo,
+      fighterTwo,
+      next.pendingAttackTwo,
+    );
+    const sliceMs = Math.min(
+      COMBAT_SIMULATION_STEP_MS,
+      remainingMs,
+      hitstopSlice,
+      timerSlice,
+      actionSliceOne,
+      actionSliceTwo,
+      impactSliceOne,
+      impactSliceTwo,
+    );
+    next = stepCombatSlice(next, inputs, sliceMs, fighterOne, fighterTwo);
+    remainingMs -= sliceMs;
+  }
+
+  return next;
 }

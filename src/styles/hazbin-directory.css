@@ -1,0 +1,642 @@
+.character-directory-tabs {
+  display: inline-flex;
+  gap: 6px;
+  margin: 0 0 20px;
+  padding: 5px;
+  background: rgba(12, 8, 9, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.character-directory-tabs button {
+  min-height: 38px;
+  padding: 7px 13px;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 0.73rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.character-directory-tabs button:hover,
+.character-directory-tabs button:focus-visible,
+.character-directory-tabs button[aria-selected='true'] {
+  color: #fff2d4;
+  background: rgba(168, 32, 42, 0.2);
+  border-color: rgba(232, 185, 100, 0.4);
+}
+
+.hazbin-directory {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 36px;
+}
+
+.hazbin-directory-intro {
+  padding: 16px 18px;
+  color: var(--color-text-muted);
+  background:
+    radial-gradient(circle at 90% 15%, rgba(212, 175, 55, 0.1), transparent 25%),
+    linear-gradient(115deg, rgba(168, 32, 42, 0.13), rgba(20, 13, 14, 0.82));
+  border-color: rgba(212, 175, 55, 0.24);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.hazbin-directory-intro strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hazbin-directory-section {
+  min-width: 0;
+}
+
+.hazbin-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.hazbin-section-header > div > span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-gold-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.hazbin-section-header h2 {
+  color: var(--color-text-main);
+  font-size: 1.22rem;
+}
+
+.hazbin-section-header p {
+  margin-top: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.hazbin-section-header > svg {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+}
+
+.hazbin-directory-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 5px 9px;
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hazbin-roster-toolbar {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr) auto;
+  align-items: end;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding: 13px;
+}
+
+.hazbin-roster-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.hazbin-roster-filters button,
+.hazbin-roster-pagination > div button {
+  min-height: 34px;
+  padding: 6px 10px;
+  color: var(--color-text-muted);
+  background: rgba(12, 8, 9, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.hazbin-roster-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hazbin-roster-filters button > span {
+  min-width: 20px;
+  padding: 2px 5px;
+  color: var(--color-gold-dark);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 0.58rem;
+  text-align: center;
+}
+
+.hazbin-roster-filters button:hover,
+.hazbin-roster-filters button:focus-visible,
+.hazbin-roster-pagination > div button:hover,
+.hazbin-roster-pagination > div button:focus-visible,
+.hazbin-roster-filters button.is-active,
+.hazbin-roster-pagination > div button.is-active {
+  color: #fff2d4;
+  background: rgba(168, 32, 42, 0.2);
+  border-color: rgba(232, 185, 100, 0.46);
+}
+
+.hazbin-roster-selects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.hazbin-roster-selects label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-gold-dark);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hazbin-roster-selects select {
+  width: 100%;
+  min-height: 34px;
+  padding-block: 5px;
+  font-size: 0.68rem;
+}
+
+.hazbin-roster-status {
+  margin: 0;
+  color: var(--color-gold-dark);
+  font-size: 0.65rem;
+  text-align: right;
+}
+
+.hazbin-character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.hazbin-character {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hazbin-character__portrait {
+  position: relative;
+  aspect-ratio: 1 / 0.72;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--color-gold-dark);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(168, 32, 42, 0.3), transparent 42%),
+    linear-gradient(145deg, #1d1012, #0c0809);
+  border-bottom: 1px solid var(--color-primary-light);
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.hazbin-character__portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.hazbin-character__asset-state {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  z-index: 1;
+  padding: 3px 6px;
+  color: #ffe0a4;
+  background: rgba(12, 8, 9, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.53rem;
+  text-transform: uppercase;
+}
+
+.hazbin-character__asset-state.is-unavailable {
+  max-width: calc(100% - 14px);
+  color: #ffd6d9;
+  border-color: rgba(241, 92, 108, 0.42);
+}
+
+.hazbin-character__body {
+  padding: 13px;
+}
+
+.hazbin-character__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.hazbin-character__heading h3 {
+  font-size: 0.88rem;
+}
+
+.hazbin-character__heading > div:first-child > span {
+  color: var(--color-gold);
+  font-size: 0.63rem;
+  font-style: italic;
+}
+
+.hazbin-character__badges {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hazbin-roster-tier,
+.hazbin-canon-badge {
+  padding: 3px 5px;
+  border-radius: 999px;
+  font-size: 0.53rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hazbin-roster-tier {
+  color: #ffdcb2;
+  background: rgba(180, 86, 34, 0.12);
+  border: 1px solid rgba(255, 169, 82, 0.22);
+}
+
+.hazbin-roster-tier.is-primary {
+  color: #ffdb73;
+  background: rgba(177, 110, 16, 0.14);
+  border-color: rgba(255, 205, 80, 0.28);
+}
+
+.hazbin-roster-tier.is-secondary {
+  color: #d9c8ff;
+  background: rgba(111, 75, 169, 0.15);
+  border-color: rgba(180, 145, 235, 0.25);
+}
+
+.hazbin-canon-badge {
+  color: #9bf0ad;
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(76, 224, 108, 0.2);
+}
+
+.hazbin-canon-badge.is-semi_canon,
+.hazbin-canon-badge.is-pilot_legacy {
+  color: #ffdb9b;
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.22);
+}
+
+.hazbin-canon-badge.is-simulation_au {
+  color: #d9c8ff;
+  background: rgba(111, 75, 169, 0.14);
+  border-color: rgba(180, 145, 235, 0.24);
+}
+
+.hazbin-character__body > p {
+  min-height: 76px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.hazbin-character dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin: 10px 0;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hazbin-character dl > div:last-child {
+  grid-column: 1 / -1;
+}
+
+.hazbin-character dt,
+.hazbin-character__source strong {
+  color: var(--color-text-muted);
+  font-size: 0.59rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hazbin-character dd {
+  margin-top: 2px;
+  color: var(--color-text-main);
+  font-size: 0.68rem;
+}
+
+.hazbin-character__source small {
+  display: block;
+  margin-top: 3px;
+  color: var(--color-gold-dark);
+  font-size: 0.64rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.hazbin-fighter-eligibility {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px 7px;
+  color: #ffdcb2;
+  background: rgba(168, 32, 42, 0.12);
+  border: 1px solid rgba(255, 169, 82, 0.2);
+  border-radius: 999px;
+  font-size: 0.59rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hazbin-roster-empty {
+  padding: 22px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.hazbin-roster-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.hazbin-roster-pagination > .btn {
+  min-width: 88px;
+}
+
+.hazbin-roster-pagination > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.hazbin-roster-pagination > div button {
+  min-width: 34px;
+  padding-inline: 7px;
+}
+
+.hazbin-atlas-accordion {
+  display: grid;
+  gap: 10px;
+}
+
+.hazbin-atlas-group {
+  overflow: hidden;
+}
+
+.hazbin-atlas-group > h3 {
+  margin: 0;
+}
+
+.hazbin-atlas-group > h3 > button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  color: var(--color-text-main);
+  background: rgba(14, 8, 10, 0.56);
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hazbin-atlas-group > h3 > button:hover,
+.hazbin-atlas-group > h3 > button:focus-visible {
+  background: rgba(168, 32, 42, 0.13);
+}
+
+.hazbin-atlas-group > h3 > button > span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+}
+
+.hazbin-atlas-group > h3 > button small {
+  color: var(--color-gold-dark);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.hazbin-atlas-group > h3 > button svg {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.hazbin-atlas-group > h3 > button[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.hazbin-atlas-group > div:not([hidden]) {
+  padding: 0 13px 13px;
+}
+
+.hazbin-sprite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.hazbin-sprite-sheet {
+  overflow: hidden;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.hazbin-sprite-sheet img,
+.hazbin-sprite-sheet__fallback {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  display: block;
+  object-fit: contain;
+  background: #0a0607;
+}
+
+.hazbin-sprite-sheet__fallback {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  color: var(--color-gold-dark);
+}
+
+.hazbin-sprite-sheet figcaption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 13px 6px;
+}
+
+.hazbin-sprite-sheet figcaption > div {
+  min-width: 0;
+}
+
+.hazbin-sprite-sheet figcaption strong,
+.hazbin-sprite-sheet figcaption span {
+  display: block;
+}
+
+.hazbin-sprite-sheet figcaption strong {
+  color: var(--color-text-main);
+  font-size: 0.69rem;
+}
+
+.hazbin-sprite-sheet figcaption span {
+  margin-top: 3px;
+  color: var(--color-gold-dark);
+  font-size: 0.62rem;
+}
+
+.hazbin-sprite-sheet figcaption small {
+  flex: 0 0 auto;
+  padding: 3px 5px;
+  color: #ffdb9b;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 999px;
+  font-size: 0.54rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hazbin-sprite-sheet figcaption small.is-ready {
+  color: #9bf0ad;
+  background: rgba(40, 167, 69, 0.1);
+  border-color: rgba(76, 224, 108, 0.2);
+}
+
+.hazbin-sprite-sheet > p {
+  margin: 0;
+  padding: 0 13px 11px;
+  color: var(--color-text-muted);
+  font-size: 0.61rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1180px) {
+  .hazbin-roster-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hazbin-roster-status {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .hazbin-character-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .hazbin-character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .character-directory-tabs {
+    width: 100%;
+  }
+
+  .character-directory-tabs button {
+    flex: 1;
+  }
+
+  .hazbin-section-header,
+  .hazbin-roster-toolbar {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .hazbin-section-header {
+    flex-direction: column;
+  }
+
+  .hazbin-directory-count {
+    align-self: flex-start;
+  }
+
+  .hazbin-roster-selects,
+  .hazbin-character-grid,
+  .hazbin-sprite-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hazbin-roster-status {
+    grid-column: auto;
+  }
+
+  .hazbin-roster-pagination {
+    flex-wrap: wrap;
+  }
+
+  .hazbin-roster-pagination > div {
+    order: -1;
+    width: 100%;
+  }
+
+  .hazbin-character__body > p {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hazbin-atlas-group > h3 > button svg {
+    transition: none;
+  }
+}

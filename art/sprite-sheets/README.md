@@ -1,8 +1,8 @@
 # Character sprite atlases
 
-Thirty-three OpenAI-generated animation atlases cover 24 seeded Hazbin profiles and 108 optional Helluva Boss profiles: 792 validated animation cells and 132 extracted portraits in total. Hazbin finals live in `public/assets/sprites/sheets/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+Forty-six OpenAI-generated animation atlases cover 24 seeded Hazbin profiles, 52 expanded Hazbin directory profiles and 108 optional Helluva Boss profiles: 1,104 validated animation cells and 184 extracted portraits in total. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
 
-The chroma-key generation masters are retained in `chroma/`. Full-body visual references used during generation are retained in `references/` for reproducibility.
+The chroma-key generation masters are retained in `chroma/`. Local third-party visual reference files remain ignored under `references/`, while the tracked provenance index in `references/hazbin/references.json` records the source pages and image URLs used to guide the original generated assets.
 
 ## Continuity rules
 
@@ -12,6 +12,33 @@ The chroma-key generation masters are retained in `chroma/`. Full-body visual re
 - Generated poses are original gameplay animation poses; the references anchor identity, silhouette, palette and costume.
 - Helluva Boss profiles never enter the hotel resident database. Their twenty-seven atlases and 108 portraits belong only to the optional I.M.P. Simulation AU campaign.
 - Helluva coverage stops at published Seasons 1–2 and released Shorts. Unreleased Season 3 material, pilot-only characters, artist personas and anonymous decorative crowds are excluded.
+- The expanded Hazbin roster intentionally mixes series, pilot/legacy, historical-human and named-background scopes. Its directory metadata must preserve those distinctions; inclusion in an atlas never upgrades a profile to series canon.
+
+## Extended Hazbin roster (published)
+
+This collection is all-or-nothing. Final atlases publish to `/assets/sprites/hazbin/sheets/<atlas>.png`; the row IDs below publish as `/assets/sprites/hazbin/portraits/<id>.png`. The `hz_` prefix keeps this directory roster separate from the 24 historical database IDs.
+
+The machine-readable generation contract is [`hazbin-expansion-manifest.json`](./hazbin-expansion-manifest.json). It fixes canvas geometry, pose semantics, row order, IDs, names and public destinations for every ImageGen pass.
+
+| Final atlas | Rows, top to bottom (`id` — display name) |
+| --- | --- |
+| `hazbin-family-media.png` | `hz_lilith` — Lilith Morningstar; `hz_mimzy` — Mimzy; `hz_katie_killjoy` — Katie Killjoy; `hz_tom_trench` — Tom Trench |
+| `hazbin-companions.png` | `hz_frank_egg_boi` — Frank; `hz_razzle` — Razzle; `hz_dazzle` — Dazzle; `hz_keekee` — KeeKee |
+| `hazbin-heaven-pets.png` | `hz_fat_nuggets` — Fat Nuggets; `hz_st_peter` — St. Peter; `hz_speaker_of_god` — Speaker of God; `hz_molly` — Molly |
+| `hazbin-carmine-overlords.png` | `hz_clara_carmine` — Clara Carmine; `hz_odette_carmine` — Odette Carmine; `hz_maestro` — Maestro; `hz_prick` — Prick |
+| `hazbin-overlord-fringe.png` | `hz_hatchet` — Hatchet; `hz_shok_wav` — Shok.wav; `hz_susan` — Susan; `hz_rooster` — Rooster |
+| `hazbin-season2-network.png` | `hz_ethan` — Ethan; `hz_melissa` — Melissa; `hz_salina` — Salina; `hz_zack_rabbit` — Zack Rabbit |
+| `hazbin-city-names-a.png` | `hz_myk_mic_guy` — Myk the Mic Guy; `hz_man_meat` — Man Meat; `hz_buddy_mcsluggy` — Buddy McSluggy; `hz_bryrin` — Bryrin |
+| `hazbin-city-names-b.png` | `hz_egg_boiz` — Egg Boiz; `hz_rocky` — Rocky; `hz_dia` — Dia; `hz_summer` — Summer |
+| `hazbin-angel-family.png` | `hz_arackniss` — Arackniss; `hz_angel_father` — Angel Dust’s father; `hz_crymini` — Crymini; `hz_villa` — Villa |
+| `hazbin-eldritch-legacy.png` | `hz_hellsa_von_eldritch` — Helsa von Eldritch; `hz_seviathan_von_eldritch` — Seviathan von Eldritch; `hz_frederick_von_eldritch` — Frederick von Eldritch; `hz_bethesda_von_eldritch` — Bethesda von Eldritch |
+| `hazbin-legacy-history.png` | `hz_roo` — Roo; `hz_eve` — Eve; `hz_british_gentleman` — British Gentleman; `hz_female_victim` — Female Victim |
+| `hazbin-human-history.png` | `hz_the_killer` — The Killer; `hz_human_hunter` — Human Hunter; `hz_harry` — Harry; `hz_carrie` — Carrie |
+| `hazbin-human-crossovers.png` | `hz_larry` — Larry; `hz_robert_bob_sinclaire` — Robert “Bob” Sinclaire; `hz_crying_exorcist` — Crying Exorcist; `hz_travis` — Travis |
+
+Tiffany Titfucker remains a lore-only directory mention: no canon design has been published, so the atlas does not invent one. The collective Egg Boiz occupies the first `city-names-b` row using the verified standard design from their character page.
+
+Before generation, retain a clean full-body reference for every ID under `art/sprite-sheets/references/hazbin/`. Do not infer a design from the display name alone. Each finished 6×4 atlas must keep meaningful alpha at least 6 px away from every cell edge; the build rejects grid-gutter spill, clipped primary poses, sparse/empty cells and portraits whose post-resize alpha margin falls below 16 px.
 
 ## Atlas catalogue and references
 
@@ -57,9 +84,12 @@ From the repository root:
 
 ```powershell
 python scripts\build_sprite_assets.py --require-helluva
+python scripts\prepare_hazbin_expansion.py --check
+python scripts\prepare_hazbin_expansion.py
+python scripts\build_sprite_assets.py --require-hazbin-expansion
 ```
 
-The script reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every seeded character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps and visible content in all cells. Strict Helluva validation covers twenty-seven atlases and 648 animation cells; across both collections it covers thirty-three atlases and 792 cells.
+The first command rebuilds the historical Hazbin and Helluva portraits. The preparation check requires all thirteen OpenAI chroma masters, removes the green plate, isolates every fixed cell and proves the 6 px gutter without publishing. The following preparation command atomically publishes the transparent atlases; the final strict build validates all 312 new cells and writes the 52 portraits. The portrait builder reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every configured character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps, display-name coverage, safe public output paths and visible content in all cells. The expanded Hazbin collection also enforces per-cell alpha gutters and post-resize portrait margins.
 
 Every Helluva sheet follows the same generation contract: four visual references in row order, six complete poses per row (idle, conversation, alert, action, recovery and victory), a removable chroma background, and no labels, grids, shadows or cross-row mixing. The optional collection remains atomic: `--require-helluva` rejects a partial publication.
 
@@ -73,4 +103,4 @@ Every Helluva sheet follows the same generation contract: four visual references
 
 Jarold Mayberry remains a lore-only mention because no unobstructed official design exists. The unnamed Sinsmas family remains mission context rather than a fake single-character sprite.
 
-The current strict pass validates all twenty-seven Helluva atlases and all 108 Helluva portraits. Across both collections, that is thirty-three atlases, 792 animation cells and 132 portraits.
+The current strict published-art pass validates all forty-six atlases, 1,104 animation cells and 184 portraits.

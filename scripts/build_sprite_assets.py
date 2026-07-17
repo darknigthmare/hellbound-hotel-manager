@@ -2,9 +2,9 @@
 
 The source atlases use a fixed 6-column by 4-row layout. The first column is
 the neutral idle frame used by the directory UI; complete atlases remain
-available in the in-app sprite gallery. Hazbin atlases are required, while the
-Helluva Boss content pack is skipped atomically until all eleven of its atlases
-are available.
+available in the in-app sprite gallery. The original Hazbin atlases are
+required. The extended Hazbin roster and Helluva Boss packs are each skipped
+atomically until every atlas in that collection is available.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 from collections import deque
 from dataclasses import dataclass
+import json
 from pathlib import Path
 from typing import Sequence
 
@@ -20,10 +21,16 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SPRITE_DIR = ROOT / "public" / "assets" / "sprites"
+HAZBIN_EXPANSION_MANIFEST_PATH = (
+    ROOT / "art" / "sprite-sheets" / "hazbin-expansion-manifest.json"
+)
 COLUMNS = 6
 ROWS = 4
 EXPECTED_SHEET_SIZE = (1536, 1024)
 MIN_CELL_ALPHA_RATIO = 0.05
+MIN_CELL_ALPHA_MARGIN = 6
+MAX_EDGE_ALPHA_RATIO = 0.0025
+PORTRAIT_ALPHA_MARGIN = 16
 
 
 @dataclass(frozen=True)
@@ -35,6 +42,20 @@ class SpriteCollection:
     portrait_dir: Path
     sheets: tuple[tuple[str, tuple[str, ...]], ...]
     required: bool
+    display_names: tuple[tuple[str, str], ...] = ()
+    strict_alpha_margins: bool = False
+
+
+@dataclass(frozen=True)
+class NamedSpriteAtlas:
+    """An atlas whose row IDs and user-facing names share one source of truth."""
+
+    filename: str
+    characters: tuple[tuple[str, str], ...]
+
+    @property
+    def character_ids(self) -> tuple[str, ...]:
+        return tuple(character_id for character_id, _ in self.characters)
 
 
 @dataclass(frozen=True)
@@ -56,6 +77,180 @@ HAZBIN_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("overlords.png", ("carmilla", "rosie", "zestial", "zeezi")),
     ("season2-au.png", ("baxter", "abel", "sim_applicant_marlow", "sim_applicant_ember")),
 )
+
+# This optional, atomic collection mirrors the expanded Hazbin directory. It
+# deliberately uses an isolated public subtree so the historical 24-profile
+# bundle and its stable URLs remain untouched while new art is generated.
+HAZBIN_EXPANSION_ATLASES: tuple[NamedSpriteAtlas, ...] = (
+    NamedSpriteAtlas(
+        "hazbin-family-media.png",
+        (
+            ("hz_lilith", "Lilith Morningstar"),
+            ("hz_mimzy", "Mimzy"),
+            ("hz_katie_killjoy", "Katie Killjoy"),
+            ("hz_tom_trench", "Tom Trench"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-companions.png",
+        (
+            ("hz_frank_egg_boi", "Frank"),
+            ("hz_razzle", "Razzle"),
+            ("hz_dazzle", "Dazzle"),
+            ("hz_keekee", "KeeKee"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-heaven-pets.png",
+        (
+            ("hz_fat_nuggets", "Fat Nuggets"),
+            ("hz_st_peter", "St. Peter"),
+            ("hz_speaker_of_god", "Speaker of God"),
+            ("hz_molly", "Molly"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-carmine-overlords.png",
+        (
+            ("hz_clara_carmine", "Clara Carmine"),
+            ("hz_odette_carmine", "Odette Carmine"),
+            ("hz_maestro", "Maestro"),
+            ("hz_prick", "Prick"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-overlord-fringe.png",
+        (
+            ("hz_hatchet", "Hatchet"),
+            ("hz_shok_wav", "Shok.wav"),
+            ("hz_susan", "Susan"),
+            ("hz_rooster", "Rooster"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-season2-network.png",
+        (
+            ("hz_ethan", "Ethan"),
+            ("hz_melissa", "Melissa"),
+            ("hz_salina", "Salina"),
+            ("hz_zack_rabbit", "Zack Rabbit"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-city-names-a.png",
+        (
+            ("hz_myk_mic_guy", "Myk the Mic Guy"),
+            ("hz_man_meat", "Man Meat"),
+            ("hz_buddy_mcsluggy", "Buddy McSluggy"),
+            ("hz_bryrin", "Bryrin"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-city-names-b.png",
+        (
+            ("hz_egg_boiz", "Egg Boiz"),
+            ("hz_rocky", "Rocky"),
+            ("hz_dia", "Dia"),
+            ("hz_summer", "Summer"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-angel-family.png",
+        (
+            ("hz_arackniss", "Arackniss"),
+            ("hz_angel_father", "Angel Dust’s father"),
+            ("hz_crymini", "Crymini"),
+            ("hz_villa", "Villa"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-eldritch-legacy.png",
+        (
+            ("hz_hellsa_von_eldritch", "Helsa von Eldritch"),
+            ("hz_seviathan_von_eldritch", "Seviathan von Eldritch"),
+            ("hz_frederick_von_eldritch", "Frederick von Eldritch"),
+            ("hz_bethesda_von_eldritch", "Bethesda von Eldritch"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-legacy-history.png",
+        (
+            ("hz_roo", "Roo"),
+            ("hz_eve", "Eve"),
+            ("hz_british_gentleman", "British Gentleman"),
+            ("hz_female_victim", "Female Victim"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-human-history.png",
+        (
+            ("hz_the_killer", "The Killer"),
+            ("hz_human_hunter", "Human Hunter"),
+            ("hz_harry", "Harry"),
+            ("hz_carrie", "Carrie"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-human-crossovers.png",
+        (
+            ("hz_larry", "Larry"),
+            ("hz_robert_bob_sinclaire", "Robert “Bob” Sinclaire"),
+            ("hz_crying_exorcist", "Crying Exorcist"),
+            ("hz_travis", "Travis"),
+        ),
+    ),
+)
+
+HAZBIN_EXPANSION_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = tuple(
+    (atlas.filename, atlas.character_ids) for atlas in HAZBIN_EXPANSION_ATLASES
+)
+HAZBIN_EXPANSION_DISPLAY_NAMES: tuple[tuple[str, str], ...] = tuple(
+    character
+    for atlas in HAZBIN_EXPANSION_ATLASES
+    for character in atlas.characters
+)
+
+
+def validate_hazbin_expansion_manifest() -> None:
+    """Keep the reviewed JSON art contract and Python extraction map identical."""
+
+    try:
+        manifest = json.loads(HAZBIN_EXPANSION_MANIFEST_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(
+            f"Cannot read {relative_to_root(HAZBIN_EXPANSION_MANIFEST_PATH)}: {error}"
+        ) from error
+
+    try:
+        manifest_atlases = tuple(
+            (
+                atlas["filename"],
+                tuple((row["id"], row["name"]) for row in atlas["rows"]),
+            )
+            for atlas in manifest["atlases"]
+        )
+    except (KeyError, TypeError) as error:
+        raise ValueError("Hazbin expansion manifest has an invalid atlas schema") from error
+
+    configured_atlases = tuple(
+        (atlas.filename, atlas.characters) for atlas in HAZBIN_EXPANSION_ATLASES
+    )
+    if manifest_atlases != configured_atlases:
+        raise ValueError(
+            "Hazbin expansion manifest is out of sync with "
+            "HAZBIN_EXPANSION_ATLASES"
+        )
+
+    canvas = manifest.get("canvas", {})
+    expected_canvas = {
+        "width": EXPECTED_SHEET_SIZE[0],
+        "height": EXPECTED_SHEET_SIZE[1],
+        "columns": COLUMNS,
+        "rows": ROWS,
+        "minimumAlphaMargin": MIN_CELL_ALPHA_MARGIN,
+    }
+    if any(canvas.get(key) != value for key, value in expected_canvas.items()):
+        raise ValueError("Hazbin expansion manifest canvas contract is out of sync")
 
 HELLUVA_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("helluva-core.png", ("hb_blitzo", "hb_moxxie", "hb_millie", "hb_loona")),
@@ -201,6 +396,15 @@ COLLECTIONS: tuple[SpriteCollection, ...] = (
         required=True,
     ),
     SpriteCollection(
+        name="Hazbin Hotel extended roster",
+        sheet_dir=SPRITE_DIR / "hazbin" / "sheets",
+        portrait_dir=SPRITE_DIR / "hazbin" / "portraits",
+        sheets=HAZBIN_EXPANSION_SHEETS,
+        required=False,
+        display_names=HAZBIN_EXPANSION_DISPLAY_NAMES,
+        strict_alpha_margins=True,
+    ),
+    SpriteCollection(
         name="Helluva Boss",
         sheet_dir=SPRITE_DIR / "helluva" / "sheets",
         portrait_dir=SPRITE_DIR / "helluva" / "portraits",
@@ -217,14 +421,40 @@ def relative_to_root(path: Path) -> str:
 
 
 def validate_collection_definitions(collections: Sequence[SpriteCollection]) -> None:
-    """Reject unsafe paths, malformed row maps, and duplicate output IDs."""
+    """Reject unsafe paths, malformed row maps, and duplicate public outputs."""
 
+    validate_hazbin_expansion_manifest()
     sheet_paths: set[Path] = set()
     portrait_paths: set[Path] = set()
+    sprite_root = SPRITE_DIR.resolve()
 
     for collection in collections:
         if not collection.sheets:
             raise ValueError(f"{collection.name} has no configured sprite atlases")
+
+        for output_dir in (collection.sheet_dir, collection.portrait_dir):
+            try:
+                output_dir.resolve().relative_to(sprite_root)
+            except ValueError:
+                raise ValueError(
+                    f"{collection.name} publishes outside public/assets/sprites: "
+                    f"{output_dir}"
+                ) from None
+
+        display_names: dict[str, str] = {}
+        for character_id, display_name in collection.display_names:
+            if character_id in display_names:
+                raise ValueError(
+                    f"{collection.name} defines more than one name for {character_id!r}"
+                )
+            if not display_name or display_name.strip() != display_name:
+                raise ValueError(
+                    f"{collection.name} has an invalid display name for {character_id!r}: "
+                    f"{display_name!r}"
+                )
+            display_names[character_id] = display_name
+
+        configured_ids: set[str] = set()
 
         for sheet_name, character_ids in collection.sheets:
             if Path(sheet_name).name != sheet_name or Path(sheet_name).suffix.lower() != ".png":
@@ -252,12 +482,22 @@ def validate_collection_definitions(collections: Sequence[SpriteCollection]) -> 
                         f"{collection.name}/{sheet_name} has an unsafe character ID: "
                         f"{character_id!r}"
                     )
+                configured_ids.add(character_id)
                 portrait_path = collection.portrait_dir / f"{character_id}.png"
                 if portrait_path in portrait_paths:
                     raise ValueError(
                         f"Duplicate portrait path: {relative_to_root(portrait_path)}"
                     )
                 portrait_paths.add(portrait_path)
+
+        if display_names:
+            missing_names = sorted(configured_ids - display_names.keys())
+            orphan_names = sorted(display_names.keys() - configured_ids)
+            if missing_names or orphan_names:
+                raise ValueError(
+                    f"{collection.name} display-name manifest is out of sync; "
+                    f"missing={missing_names}, orphaned={orphan_names}"
+                )
 
 
 def count_visible_pixels(alpha: Image.Image, threshold: int = 20) -> int:
@@ -267,7 +507,50 @@ def count_visible_pixels(alpha: Image.Image, threshold: int = 20) -> int:
     return sum(histogram[threshold + 1:])
 
 
-def validate_sheet(sheet: Image.Image, sheet_name: str) -> tuple[int, int]:
+def alpha_bounds(alpha: Image.Image, threshold: int = 20) -> tuple[int, int, int, int] | None:
+    """Return bounds for meaningful alpha while ignoring resampling speckles."""
+
+    thresholded = alpha.point(lambda value: 255 if value > threshold else 0)
+    return thresholded.getbbox()
+
+
+def validate_cell_alpha_margin(cell: Image.Image, context: str) -> None:
+    """Reject meaningful alpha in the grid gutter or a primary pose clipped by it."""
+
+    alpha = cell.getchannel("A")
+    visible_pixels = count_visible_pixels(alpha)
+    inner_alpha = alpha.crop((
+        MIN_CELL_ALPHA_MARGIN,
+        MIN_CELL_ALPHA_MARGIN,
+        cell.width - MIN_CELL_ALPHA_MARGIN,
+        cell.height - MIN_CELL_ALPHA_MARGIN,
+    ))
+    edge_pixels = visible_pixels - count_visible_pixels(inner_alpha)
+    allowed_edge_pixels = max(8, round(visible_pixels * MAX_EDGE_ALPHA_RATIO))
+    if edge_pixels > allowed_edge_pixels:
+        raise ValueError(
+            f"{context} spills into its {MIN_CELL_ALPHA_MARGIN}px alpha gutter: "
+            f"{edge_pixels} edge pixels, maximum {allowed_edge_pixels}"
+        )
+
+    primary = isolate_primary_sprite(cell)
+    bounds = alpha_bounds(primary.getchannel("A"))
+    if bounds is None:
+        raise ValueError(f"{context} has no primary sprite")
+    left, top, right, bottom = bounds
+    margins = (left, top, cell.width - right, cell.height - bottom)
+    if min(margins) < MIN_CELL_ALPHA_MARGIN:
+        raise ValueError(
+            f"{context} clips its primary pose: alpha margins "
+            f"left/top/right/bottom={margins}, minimum {MIN_CELL_ALPHA_MARGIN}px"
+        )
+
+
+def validate_sheet(
+    sheet: Image.Image,
+    sheet_name: str,
+    strict_alpha_margins: bool = False,
+) -> tuple[int, int]:
     """Reject malformed or visibly incomplete fixed-grid atlases."""
 
     if sheet.size != EXPECTED_SHEET_SIZE:
@@ -293,6 +576,11 @@ def validate_sheet(sheet: Image.Image, sheet_name: str) -> tuple[int, int]:
                 raise ValueError(
                     f"{sheet_name} row {row + 1}, column {column + 1} looks incomplete: "
                     f"{visible_pixels} visible pixels, minimum {minimum_visible_pixels}"
+                )
+            if strict_alpha_margins:
+                validate_cell_alpha_margin(
+                    cell,
+                    f"{sheet_name} row {row + 1}, column {column + 1}",
                 )
 
     return cell_width, cell_height
@@ -426,6 +714,21 @@ def fit_on_square(
     return canvas
 
 
+def validate_portrait_alpha_margin(image: Image.Image, character_id: str) -> None:
+    """Ensure portrait resizing did not clip antialiased costume details."""
+
+    bounds = alpha_bounds(image.getchannel("A"))
+    if bounds is None:
+        raise ValueError(f"Portrait for {character_id} is fully transparent")
+    left, top, right, bottom = bounds
+    margins = (left, top, image.width - right, image.height - bottom)
+    if min(margins) < PORTRAIT_ALPHA_MARGIN:
+        raise ValueError(
+            f"Portrait for {character_id} clips after resizing: alpha margins "
+            f"left/top/right/bottom={margins}, minimum {PORTRAIT_ALPHA_MARGIN}px"
+        )
+
+
 def extract_idle_pose(
     sheet: Image.Image,
     row: int,
@@ -447,7 +750,10 @@ def extract_idle_pose(
     return sheet.crop((0, top, cell_width, bottom)), allowed_centre_y
 
 
-def prepare_sheets(require_helluva: bool) -> list[PreparedSheet]:
+def prepare_sheets(
+    require_helluva: bool,
+    require_hazbin_expansion: bool,
+) -> list[PreparedSheet]:
     """Load complete collections and validate every configured 6x4 cell."""
 
     validate_collection_definitions(COLLECTIONS)
@@ -456,6 +762,13 @@ def prepare_sheets(require_helluva: bool) -> list[PreparedSheet]:
     # Validate every atlas before touching a published portrait. Optional packs
     # are all-or-nothing so a partial generation pass cannot publish mixed rows.
     for collection in COLLECTIONS:
+        force_optional_collection = (
+            (collection.name == "Helluva Boss" and require_helluva)
+            or (
+                collection.name == "Hazbin Hotel extended roster"
+                and require_hazbin_expansion
+            )
+        )
         missing_paths = [
             collection.sheet_dir / sheet_name
             for sheet_name, _ in collection.sheets
@@ -463,7 +776,7 @@ def prepare_sheets(require_helluva: bool) -> list[PreparedSheet]:
         ]
         if missing_paths:
             diagnostic = ", ".join(relative_to_root(path) for path in missing_paths)
-            if collection.required or require_helluva:
+            if collection.required or force_optional_collection:
                 raise FileNotFoundError(
                     f"{collection.name} is missing {len(missing_paths)} sprite atlas(es): "
                     f"{diagnostic}"
@@ -481,6 +794,7 @@ def prepare_sheets(require_helluva: bool) -> list[PreparedSheet]:
             cell_width, cell_height = validate_sheet(
                 sheet,
                 relative_to_root(sheet_path),
+                strict_alpha_margins=collection.strict_alpha_margins,
             )
             prepared.append(
                 PreparedSheet(
@@ -511,6 +825,7 @@ def write_portraits(prepared: Sequence[PreparedSheet]) -> int:
                     prepared_sheet.cell_height,
                 )
                 portrait = fit_on_square(cell, allowed_centre_y=allowed_centre_y)
+                validate_portrait_alpha_margin(portrait, character_id)
                 staged_path = prepared_sheet.portrait_dir / f".{character_id}.tmp.png"
                 destination = prepared_sheet.portrait_dir / f"{character_id}.png"
                 portrait.save(staged_path, optimize=True)
@@ -540,13 +855,21 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="fail when any Helluva Boss atlas is not available",
     )
+    parser.add_argument(
+        "--require-hazbin-expansion",
+        action="store_true",
+        help="fail when any extended Hazbin roster atlas is not available",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     try:
-        prepared = prepare_sheets(require_helluva=args.require_helluva)
+        prepared = prepare_sheets(
+            require_helluva=args.require_helluva,
+            require_hazbin_expansion=args.require_hazbin_expansion,
+        )
     except (FileNotFoundError, ValueError) as error:
         raise SystemExit(f"Sprite asset build failed: {error}") from None
     atlas_count = len(prepared)

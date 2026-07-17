@@ -1,3 +1,5 @@
+import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
+
 export interface SpriteSheetDefinition {
   id: string;
   title: string;
@@ -84,7 +86,7 @@ const CHARACTER_ROWS: readonly (readonly [string, string, number])[] = [
   ['sim_applicant_ember', 'season2-au', 3]
 ] as const;
 
-export const CHARACTER_SPRITES: Readonly<Record<string, CharacterSpriteAsset>> = Object.fromEntries(
+const OPERATIONAL_CHARACTER_SPRITES = Object.fromEntries(
   CHARACTER_ROWS.map(([characterId, sheet, row]) => [
     characterId,
     {
@@ -93,7 +95,27 @@ export const CHARACTER_SPRITES: Readonly<Record<string, CharacterSpriteAsset>> =
       row
     }
   ])
-);
+) as Readonly<Record<string, CharacterSpriteAsset>>;
+
+export function buildHazbinDirectorySpriteAssets(
+  profiles = HAZBIN_DIRECTORY_PROFILES,
+): Readonly<Record<string, CharacterSpriteAsset>> {
+  return Object.fromEntries(
+    profiles
+    .filter(({ existingOperationalProfile, assetStatus }) => !existingOperationalProfile && assetStatus === 'ready')
+    .map(({ id, portrait, sheetPath, sheetRow }) => [
+      id,
+      { portrait, sheet: sheetPath, row: sheetRow },
+    ]),
+  ) as Readonly<Record<string, CharacterSpriteAsset>>;
+}
+
+const DIRECTORY_CHARACTER_SPRITES = buildHazbinDirectorySpriteAssets();
+
+export const CHARACTER_SPRITES: Readonly<Record<string, CharacterSpriteAsset>> = {
+  ...OPERATIONAL_CHARACTER_SPRITES,
+  ...DIRECTORY_CHARACTER_SPRITES,
+};
 
 export function getCharacterSpriteAsset(characterId: string): CharacterSpriteAsset | undefined {
   return CHARACTER_SPRITES[characterId];

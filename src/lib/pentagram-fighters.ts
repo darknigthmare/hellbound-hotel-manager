@@ -388,8 +388,48 @@ export const FIGHTER_PROFILES: Readonly<Record<string, FighterProfile>> = {
   },
 };
 
+const HAZBIN_DIRECTORY_PROFILE_CACHE = new Map<string, FighterProfile>();
+
+function getHazbinDirectoryFighterProfile(fighter: Character): FighterProfile | undefined {
+  if (!fighter.id.startsWith('hz_')) return undefined;
+
+  const cached = HAZBIN_DIRECTORY_PROFILE_CACHE.get(fighter.id);
+  if (cached) return cached;
+
+  const riskPower: Readonly<Record<Character['riskLevel'], number>> = {
+    low: 9,
+    medium: 11,
+    high: 13,
+    catastrophic: 15,
+  };
+  const riskGuard: Readonly<Record<Character['riskLevel'], number>> = {
+    low: 56,
+    medium: 60,
+    high: 66,
+    catastrophic: 72,
+  };
+  const profile: FighterProfile = {
+    id: fighter.id,
+    style: 'Simulation AU fundamentals',
+    archetype: 'Limited-evidence training all-rounder',
+    combatStyle: 'balanced',
+    evidence: 'simulation',
+    power: riskPower[fighter.riskLevel],
+    range: 56,
+    speed: 60,
+    guard: riskGuard[fighter.riskLevel],
+    tensionGain: 15,
+    basicMove: 'Training jab',
+    heavyMove: 'Training sweep',
+    specialMove: 'Simulation drive',
+  };
+  HAZBIN_DIRECTORY_PROFILE_CACHE.set(fighter.id, profile);
+  return profile;
+}
+
 export function getFighterProfile(fighter: Character | undefined): FighterProfile | undefined {
-  return fighter ? FIGHTER_PROFILES[fighter.id] : undefined;
+  if (!fighter) return undefined;
+  return FIGHTER_PROFILES[fighter.id] ?? getHazbinDirectoryFighterProfile(fighter);
 }
 
 export function buildCombatantDefinition(

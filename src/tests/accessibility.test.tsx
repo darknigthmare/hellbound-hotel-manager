@@ -10,6 +10,7 @@ import { Sidebar } from '../components/Sidebar';
 import { GlobalSearchResult, Topbar } from '../components/Topbar';
 import { db } from '../db/localDb';
 import { getSeedData } from '../db/seed';
+import { getHazbinArenaFighters } from '../lib/hazbin-arena-fighters';
 import {
   createHelluvaBossSaveState,
   resolveHelluvaChoice,
@@ -170,7 +171,10 @@ describe('automated accessibility contracts', () => {
 
   it('presents Pentagram Arena as a distinct, lore-safe playable combat prototype', async () => {
     const user = userEvent.setup();
-    const { container } = render(<PentagramArena state={getSeedData()} />);
+    const state = getSeedData();
+    const directoryFighters = getHazbinArenaFighters(state.timeline);
+    const fighterCount = 22 + directoryFighters.length;
+    const { container } = render(<PentagramArena state={state} />);
 
     expect(screen.getByRole('heading', { name: 'Pentagram Arena' })).toBeTruthy();
     expect(screen.getByText(/gameplay-only Simulation AU records/i)).toBeTruthy();
@@ -180,7 +184,17 @@ describe('automated accessibility contracts', () => {
     expect(fighterOne.value).not.toBe(fighterTwo.value);
     expect(screen.getAllByRole('option', { name: 'Vox' })).toHaveLength(2);
     expect(screen.queryByRole('option', { name: 'Baxter' })).toBeNull();
-    expect(fighterOne.options).toHaveLength(22);
+    expect(fighterOne.options).toHaveLength(fighterCount);
+
+    const rosterSearch = screen.getByRole('searchbox', { name: 'Search fighter roster' });
+    expect(screen.getByText(`1–12 of ${fighterCount}`)).toBeTruthy();
+    await user.type(rosterSearch, 'Vox');
+    expect(screen.getByRole('button', { name: 'Vox' })).toBeTruthy();
+    expect(screen.getByText('1–1 of 1')).toBeTruthy();
+    await user.clear(rosterSearch);
+    await user.click(screen.getByRole('button', { name: 'Next fighter page' }));
+    expect(screen.getByText(`13–${Math.min(24, fighterCount)} of ${fighterCount}`)).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Previous fighter page' }));
 
     await user.selectOptions(fighterOne, 'angeldust');
     expect(fighterOne.selectedOptions[0]?.textContent).toBe('Angel Dust');
@@ -205,6 +219,9 @@ describe('automated accessibility contracts', () => {
 
     const liveStage = screen.getByRole('region', { name: /Live combat: Angel Dust versus Vaggie/i });
     await waitFor(() => expect(document.activeElement).toBe(liveStage));
+    expect(liveStage.dataset.phase).toBe('ready');
+    expect(screen.getByRole('button', { name: 'Pause' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Quit' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: /2\.5D combat — Angel Dust vs Vaggie/i })).toBeTruthy();
     expect(screen.getAllByText(/Round 1 live: Angel Dust vs Vaggie/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/CPU sparring · Standard/i)).toBeTruthy();
@@ -215,6 +232,26 @@ describe('automated accessibility contracts', () => {
     expect(Number(angelCombatant?.dataset.position)).toBeLessThan(Number(vaggieCombatant?.dataset.position));
     expect(angelCombatant?.dataset.facing).toBe('right');
     expect(vaggieCombatant?.dataset.facing).toBe('left');
+    await waitFor(() => expect(liveStage.dataset.phase).toBe('running'), { timeout: 2_000 });
+
+    await user.click(screen.getByRole('button', { name: 'Pause' }));
+    expect(liveStage.dataset.phase).toBe('paused');
+    await user.click(screen.getByRole('button', { name: 'Continue' }));
+    expect(liveStage.dataset.phase).toBe('running');
+
+    const focusedPauseButton = screen.getByRole('button', { name: 'Pause' });
+    focusedPauseButton.focus();
+    fireEvent.keyDown(focusedPauseButton, { code: 'KeyP' });
+    expect(liveStage.dataset.phase).toBe('paused');
+    const focusedContinueButton = screen.getByRole('button', { name: 'Continue' });
+    fireEvent.keyDown(focusedContinueButton, { code: 'KeyP' });
+    expect(liveStage.dataset.phase).toBe('running');
+
+    fireEvent(window, new Event('blur'));
+    await waitFor(() => expect(liveStage.dataset.phase).toBe('paused'));
+    await user.click(screen.getByRole('button', { name: 'Continue' }));
+    expect(liveStage.dataset.phase).toBe('running');
+
     const startPosition = Number(angelCombatant?.dataset.position);
     fireEvent.keyDown(window, { code: 'KeyD' });
     await waitFor(() => {
@@ -227,6 +264,11 @@ describe('automated accessibility contracts', () => {
     await waitFor(() => {
       expect(screen.getAllByText(/Angel Dust starts Acrobat jab/i).length).toBeGreaterThan(0);
     });
+    fireEvent.keyDown(window, { code: 'KeyG' });
+    fireEvent.keyUp(window, { code: 'KeyG' });
+    await waitFor(() => {
+      expect(screen.getAllByText(/Angel Dust cancels into Crossfire sweep/i).length).toBeGreaterThan(0);
+    });
     await expectNoSeriousAccessibilityViolation(container);
 
     fireEvent.pointerDown(liveStage, { pointerId: 1, clientX: 30, clientY: 20 });
@@ -238,7 +280,12 @@ describe('automated accessibility contracts', () => {
   });
 
   it('keeps the Arena safe when no timeline-eligible fighter exists', async () => {
-    const emptyState = { ...getSeedData(), characters: [] };
+    const seed = getSeedData();
+    const emptyState = {
+      ...seed,
+      characters: [],
+      timeline: { ...seed.timeline, spoilerLevel: 'none' as const },
+    };
     const { container } = render(<PentagramArena state={emptyState} />);
 
     expect(screen.getByText('0 fighters indexed')).toBeTruthy();

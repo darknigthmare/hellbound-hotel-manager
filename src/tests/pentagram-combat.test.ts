@@ -108,8 +108,16 @@ describe('Pentagram Arena live combat engine', () => {
     const initial = createCombatState(fighterOne, fighterTwo);
     const startedWhiff = resolveCombatAttack(initial, 'one', 'light', fighterOne, fighterTwo);
     const whiff = advance(startedWhiff, idleInputs, 8);
+    const guardedWhiff = advance(startedWhiff, {
+      ...idleInputs,
+      two: { left: false, right: false, guard: true },
+    }, 8);
 
     expect(whiff.hpTwo).toBe(100);
+    expect(whiff.tensionOne).toBe(0);
+    expect(whiff.tensionTwo).toBe(0);
+    expect(guardedWhiff.tensionOne).toBe(0);
+    expect(guardedWhiff.tensionTwo).toBe(0);
     expect(whiff.log[0].text).toMatch(/escaped before impact/i);
 
     const inRange = { ...initial, positionOne: 44, positionTwo: 51 };
@@ -246,7 +254,7 @@ describe('Pentagram Arena live combat engine', () => {
     expect(rematch.roundWinsTwo).toBe(0);
   });
 
-  it('ends on time and clamps long suspended frames for fair play', () => {
+  it('ends on time and retains a visible one-second low-FPS frame', () => {
     const almostTimedOut = { ...createCombatState(fighterOne, fighterTwo), timerMs: 32 };
     const timedOut = stepCombat(almostTimedOut, idleInputs, 64, fighterOne, fighterTwo);
     expect(timedOut.active).toBe(false);
@@ -259,8 +267,86 @@ describe('Pentagram Arena live combat engine', () => {
     };
     const afterSuspendedFrame = stepCombat(initial, movingInputs, 1_000, fighterOne, fighterTwo);
 
-    expect(afterSuspendedFrame.timerMs).toBe(98_900);
-    expect(afterSuspendedFrame.positionOne - initial.positionOne).toBeLessThan(3);
+    expect(afterSuspendedFrame.timerMs).toBe(98_000);
+    expect(afterSuspendedFrame.positionOne - initial.positionOne).toBeGreaterThan(10);
+    expect(afterSuspendedFrame.positionOne).toBeLessThan(afterSuspendedFrame.positionTwo);
+  });
+
+  it('stops exactly at time-over instead of granting a late low-FPS impact', () => {
+    const inRange = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const started = resolveCombatAttack(inRange, 'one', 'light', fighterOne, fighterTwo);
+    const justBeforeImpact = advance(started, idleInputs, 7);
+    const oneMillisecondLeft = { ...justBeforeImpact, timerMs: 1 };
+    const timedOut = stepCombat(oneMillisecondLeft, idleInputs, 480, fighterOne, fighterTwo);
+
+    expect(timedOut.active).toBe(false);
+    expect(timedOut.timerMs).toBe(0);
+    expect(timedOut.hpTwo).toBe(100);
+    expect(timedOut.tensionOne).toBe(0);
+    expect(timedOut.winner).toBe('draw');
+    expect(timedOut.log[0].text).toMatch(/time over/i);
+  });
+
+  it('produces the same active-frame result at low and high render cadence', () => {
+    const inRange = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const started = resolveCombatAttack(inRange, 'one', 'light', fighterOne, fighterTwo);
+    const primed = advance(started, idleInputs, 2);
+    const lowFpsStep = stepCombat(primed, idleInputs, 96, fighterOne, fighterTwo);
+    const highFpsSteps = advance(primed, idleInputs, 6);
+
+    expect(lowFpsStep.hpTwo).toBe(highFpsSteps.hpTwo);
+    expect(lowFpsStep.tensionOne).toBe(highFpsSteps.tensionOne);
+    expect(lowFpsStep.tensionTwo).toBe(highFpsSteps.tensionTwo);
+    expect(lowFpsStep.actionMsOne).toBe(highFpsSteps.actionMsOne);
+    expect(lowFpsStep.hitstopMs).toBe(highFpsSteps.hitstopMs);
+    expect(lowFpsStep.log[0].text).toBe(highFpsSteps.log[0].text);
+  });
+
+  it('unlocks hit stun at the same instant across uneven render partitions', () => {
+    const recovering: CombatState = {
+      ...createCombatState(fighterOne, fighterTwo),
+      actionOne: 'hit',
+      actionMsOne: 21,
+    };
+    const movingInputs: CombatInputs = {
+      ...idleInputs,
+      one: { left: false, right: true, guard: false },
+    };
+    const singleFrame = stepCombat(recovering, movingInputs, 32, fighterOne, fighterTwo);
+    const firstPartition = stepCombat(recovering, movingInputs, 10, fighterOne, fighterTwo);
+    const unevenFrames = stepCombat(firstPartition, movingInputs, 22, fighterOne, fighterTwo);
+
+    expect(singleFrame.positionOne).toBeCloseTo(unevenFrames.positionOne, 8);
+    expect(singleFrame.actionMsOne).toBe(0);
+    expect(unevenFrames.actionMsOne).toBe(0);
+    expect(singleFrame.actionOne).toBe('walk');
+    expect(unevenFrames.actionOne).toBe('walk');
+  });
+
+  it('keeps a complete attack synchronized across a 480 ms render frame', () => {
+    const inRange = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const started = resolveCombatAttack(inRange, 'one', 'light', fighterOne, fighterTwo);
+    const lowFpsStep = stepCombat(started, idleInputs, 480, fighterOne, fighterTwo);
+    const highFpsSteps = advance(started, idleInputs, 30);
+
+    expect(lowFpsStep.hpTwo).toBe(highFpsSteps.hpTwo);
+    expect(lowFpsStep.tensionOne).toBe(highFpsSteps.tensionOne);
+    expect(lowFpsStep.tensionTwo).toBe(highFpsSteps.tensionTwo);
+    expect(lowFpsStep.actionMsOne).toBe(highFpsSteps.actionMsOne);
+    expect(lowFpsStep.cooldownMsOne).toBe(highFpsSteps.cooldownMsOne);
+    expect(lowFpsStep.log.map(({ text }) => text)).toEqual(highFpsSteps.log.map(({ text }) => text));
   });
 
   it('maps attacks through readable anticipation, strike and recovery sprite poses', () => {

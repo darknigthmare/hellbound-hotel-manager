@@ -11,6 +11,15 @@ import { ConfirmDialog } from '../components/ConfirmDialog';
 import { ViewType } from '../components/Sidebar';
 import { useDialogFocus } from '../components/useDialogFocus';
 import { getCharacterSpriteAsset, SPRITE_SHEETS } from '../lib/character-sprites';
+import { HazbinAtlasGallery } from '../components/HazbinAtlasGallery';
+import { HazbinRoster } from '../components/HazbinRoster';
+import {
+  HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT,
+  HAZBIN_DIRECTORY_PROFILES,
+  HAZBIN_SPRITE_SHEETS,
+  isHazbinSpoilerVisible,
+} from '../data/hazbin-directory';
+import '../styles/hazbin-directory.css';
 
 interface CharactersProps {
   state: DatabaseState;
@@ -29,6 +38,14 @@ const getCharacterInitials = (name: string) => name
 
 export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, searchQuery, onNavigate }) => {
   const { characters, timeline } = state;
+  const visibleHazbinProfiles = HAZBIN_DIRECTORY_PROFILES.filter((profile) => (
+    isHazbinSpoilerVisible(timeline.hideSpoilers, timeline.spoilerLevel, profile.spoilerLevel)
+  ));
+  const visibleHazbinSheets = HAZBIN_SPRITE_SHEETS.filter((sheet) => (
+    isHazbinSpoilerVisible(timeline.hideSpoilers, timeline.spoilerLevel, sheet.spoilerLevel)
+  ));
+
+  const [activeDirectoryTab, setActiveDirectoryTab] = useState<'operations' | 'hazbin'>('operations');
 
   // Filter states
   const [roleFilter, setRoleFilter] = useState<string>('all');
@@ -258,26 +275,78 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
     return true;
   });
 
+  const handleDirectoryTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    const tabOrder = ['operations', 'hazbin'] as const;
+    const currentIndex = tabOrder.indexOf(activeDirectoryTab);
+    let nextIndex: number;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabOrder.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabOrder.length) % tabOrder.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = tabOrder.length - 1;
+    else return;
+
+    event.preventDefault();
+    const nextTab = tabOrder[nextIndex];
+    setActiveDirectoryTab(nextTab);
+    document.getElementById(`character-${nextTab}-tab`)?.focus();
+  };
+
   return (
     <div className="page-container animate-fade-in">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', gap: '16px' }}>
         <div>
-          <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Residents & Staff Directory</h1>
+          <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>
+            {activeDirectoryTab === 'operations' ? 'Residents & Staff Directory' : 'Hazbin Character Directory'}
+          </h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Register new sinners, organize security levels, and track redemption plans.
+            {activeDirectoryTab === 'operations'
+              ? 'Register new sinners, organize security levels, and track redemption plans.'
+              : 'Browse canon, legacy and Simulation AU references without changing the hotel save.'}
           </p>
         </div>
-        <div className="character-directory-actions">
-          <button type="button" className="btn btn-secondary" onClick={() => setIsSpriteGalleryOpen(true)} id="open-sprite-gallery">
-            <Images size={16} aria-hidden="true" />
-            Sprite Atlases
-          </button>
-          <button className="btn btn-primary" onClick={handleCreate} id="add-character-btn">
-            <UserPlus size={16} aria-hidden="true" />
-            Register Guest/Staff
-          </button>
-        </div>
+        {activeDirectoryTab === 'operations' && (
+          <div className="character-directory-actions">
+            <button type="button" className="btn btn-secondary" onClick={() => setIsSpriteGalleryOpen(true)} id="open-sprite-gallery">
+              <Images size={16} aria-hidden="true" />
+              Sprite Atlases
+            </button>
+            <button className="btn btn-primary" onClick={handleCreate} id="add-character-btn">
+              <UserPlus size={16} aria-hidden="true" />
+              Register Guest/Staff
+            </button>
+          </div>
+        )}
       </div>
+
+      <div className="character-directory-tabs" role="tablist" aria-label="Choisir le type d’annuaire">
+        <button
+          id="character-operations-tab"
+          type="button"
+          role="tab"
+          aria-selected={activeDirectoryTab === 'operations'}
+          aria-controls="character-operations-panel"
+          tabIndex={activeDirectoryTab === 'operations' ? 0 : -1}
+          onKeyDown={handleDirectoryTabKeyDown}
+          onClick={() => setActiveDirectoryTab('operations')}
+        >
+          Opérations hôtel
+        </button>
+        <button
+          id="character-hazbin-tab"
+          type="button"
+          role="tab"
+          aria-selected={activeDirectoryTab === 'hazbin'}
+          aria-controls="character-hazbin-panel"
+          tabIndex={activeDirectoryTab === 'hazbin' ? 0 : -1}
+          onKeyDown={handleDirectoryTabKeyDown}
+          onClick={() => setActiveDirectoryTab('hazbin')}
+        >
+          Annuaire Hazbin
+        </button>
+      </div>
+
+      {activeDirectoryTab === 'operations' ? (
+        <div id="character-operations-panel" role="tabpanel" aria-labelledby="character-operations-tab">
 
       {/* Filter Bar */}
       <div 
@@ -756,6 +825,32 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
         onConfirm={confirmDelete} 
         onCancel={() => setIsConfirmOpen(false)} 
       />
+        </div>
+      ) : (
+        <div
+          id="character-hazbin-panel"
+          className="hazbin-directory"
+          role="tabpanel"
+          aria-labelledby="character-hazbin-tab"
+        >
+          <div className="hazbin-directory-intro glass-panel">
+            <strong>Frontière de données</strong>
+            Cet annuaire étend la distribution de référence, mais ses {HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT} nouvelles fiches ne deviennent ni des résidents
+            ni des recrues automatiques. Seules les fiches marquées éligibles dont l’art a été validé rejoignent
+            Pentagram Arena comme projections de combat Simulation AU, sans modifier la sauvegarde de l’hôtel.
+          </div>
+          <HazbinRoster
+            profiles={visibleHazbinProfiles}
+            totalProfileCount={HAZBIN_DIRECTORY_PROFILES.length}
+            hiddenProfileCount={HAZBIN_DIRECTORY_PROFILES.length - visibleHazbinProfiles.length}
+            searchQuery={searchQuery}
+          />
+          <HazbinAtlasGallery
+            sheets={visibleHazbinSheets}
+            hiddenSheetCount={HAZBIN_SPRITE_SHEETS.length - visibleHazbinSheets.length}
+          />
+        </div>
+      )}
     </div>
   );
 };

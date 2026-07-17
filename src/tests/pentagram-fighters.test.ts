@@ -10,7 +10,9 @@ import {
 describe('Pentagram Arena fighter kits', () => {
   it('defines an explicit kit for every sprite-backed Hazbin combatant', () => {
     const charactersById = new Map(getSeedData().characters.map(character => [character.id, character]));
-    const spriteIds = Object.keys(CHARACTER_SPRITES).sort();
+    const spriteIds = Object.keys(CHARACTER_SPRITES)
+      .filter(fighterId => charactersById.has(fighterId))
+      .sort();
     const profileIds = Object.keys(FIGHTER_PROFILES).sort();
 
     expect(profileIds).toEqual(spriteIds);
