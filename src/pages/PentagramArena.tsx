@@ -78,6 +78,7 @@ const RISK_PROFILE: Record<RiskLevel, { label: string; value: number }> = {
 const ROADMAP = [
   ['Roster complete', 'Every sprite-backed fighter has an explicit Simulation AU kit.'],
   ['Four-bank animation', 'Each illustrated identity now has 18 supplementary movement, offense and reaction poses.'],
+  ['Living stage crowds', 'All 100 illustrated identities rotate through timeline-safe parallax venue pools.'],
   ['Active-frame combat', 'Damage lands on the animated impact window with hitstop and guard checks.'],
   ['Sparring sets', 'CPU difficulty and best-of-three scoring are playable now.'],
   ['Long modes', 'Tournament brackets, training data and air routes remain the next expansion layer.'],

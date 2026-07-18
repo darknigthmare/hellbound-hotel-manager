@@ -61,8 +61,12 @@ describe('Hazbin supplementary animation banks', () => {
       .toEqual(HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS);
 
     const rows = manifest.baseAtlases.flatMap(({ rows }) => rows);
+    const illustratedProfileIds = HAZBIN_DIRECTORY_PROFILES
+      .filter(({ assetStatus }) => assetStatus === 'ready')
+      .map(({ id }) => id);
     expect(rows).toHaveLength(100);
     expect(new Set(rows).size).toBe(100);
+    expect([...rows].sort()).toEqual([...illustratedProfileIds].sort());
     expect(new Set(manifest.baseAtlases.map(({ stem }) => stem)).size).toBe(25);
     expect(Object.keys(CHARACTER_SPRITES)).toHaveLength(100);
 
