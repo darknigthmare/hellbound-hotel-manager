@@ -60,6 +60,20 @@ PATRONS_SOURCE_ROW_BOUNDARIES = (
     (0, 278, 522, 770, EXPECTED_SHEET_SIZE[1]),
 )
 PATRONS_SOURCE_COLUMN_BLEED = 20
+REVIEWED_SOURCE_WINDOWS: dict[
+    tuple[str, int],
+    tuple[int, int, int],
+] = {
+    # Image generation kept the Cactus row visually complete, but a few hair
+    # spikes sit just above the nominal y=768 split. The reviewed overlap lets
+    # the primary-component isolator retain those tips without importing the
+    # Shark row above it.
+    ("hazbin-tertiary-locals-a.png", 3): (744, EXPECTED_SHEET_SIZE[1], 0),
+    # The Jack-in-the-box spring and feet extend below the nominal first row,
+    # and one expressive arm reaches across a vertical split. A small reviewed
+    # overlap preserves the complete silhouettes before normalisation.
+    ("hazbin-tertiary-locals-b.png", 0): (0, 280, 20),
+}
 
 ChromaPlate = Literal["green", "magenta"]
 
@@ -381,6 +395,16 @@ def source_cell_bounds(
     column: int,
 ) -> tuple[int, int, int, int]:
     """Return a fixed cell or a reviewed overlapping source window."""
+
+    reviewed_window = REVIEWED_SOURCE_WINDOWS.get((final_filename, row))
+    if reviewed_window is not None:
+        top, bottom, column_bleed = reviewed_window
+        left = max(0, (column * CELL_WIDTH) - column_bleed)
+        right = min(
+            EXPECTED_SHEET_SIZE[0],
+            ((column + 1) * CELL_WIDTH) + column_bleed,
+        )
+        return left, top, right, bottom
 
     if final_filename != PATRONS_ATLAS_FILENAME:
         left = column * CELL_WIDTH

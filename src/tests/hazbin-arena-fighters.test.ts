@@ -44,7 +44,7 @@ describe('Hazbin Arena directory adapter', () => {
     );
 
     expect(fighters.map(({ id }) => id).sort()).toEqual(expectedIds);
-    expect(fighters).toHaveLength(34);
+    expect(fighters).toHaveLength(36);
     expect(fighters.every(({ id }) => id.startsWith('hz_'))).toBe(true);
     expect(fighters.every(({ operationalDataStatus }) => operationalDataStatus === 'simulation_au')).toBe(true);
   });
@@ -115,6 +115,7 @@ describe('Hazbin Arena directory adapter', () => {
       'hz_odette_carmine',
       'hz_prick',
       'hz_razzle',
+      'hz_shark_gang_leader',
     ]);
   });
 
@@ -138,7 +139,7 @@ describe('Hazbin Arena directory adapter', () => {
     const allReadyFighterProfiles = allExpansionArtReady.filter(({ existingOperationalProfile, fighterEligible }) => (
       !existingOperationalProfile && fighterEligible
     ));
-    expect(allReadyFighterProfiles).toHaveLength(34);
+    expect(allReadyFighterProfiles).toHaveLength(36);
     for (const profile of allReadyFighterProfiles) {
       expect(allReadySprites[profile.id]).toEqual({
         portrait: profile.portrait,

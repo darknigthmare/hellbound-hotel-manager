@@ -298,6 +298,24 @@ HAZBIN_EXPANSION_ATLASES: tuple[NamedSpriteAtlas, ...] = (
             ("hz_rose_sinner", "Rose-like sinner"),
         ),
     ),
+    NamedSpriteAtlas(
+        "hazbin-tertiary-locals-a.png",
+        (
+            ("hz_gator_sinner", "Gator sinner"),
+            ("hz_velvette_assistant", "Velvette's assistant"),
+            ("hz_shark_gang_leader", "Shark Gang Leader"),
+            ("hz_cactus_sinner", "Cactus sinner"),
+        ),
+    ),
+    NamedSpriteAtlas(
+        "hazbin-tertiary-locals-b.png",
+        (
+            ("hz_jack_in_box_sinner", "Jack-in-the-box sinner"),
+            ("hz_orphan_imp", "Orphan Imp"),
+            ("hz_top_hat_demon", "Top Hat Demon"),
+            ("hz_roadkill_sinner", "Roadkill sinner"),
+        ),
+    ),
 )
 
 HAZBIN_EXPANSION_SHEETS: tuple[tuple[str, tuple[str, ...]], ...] = tuple(

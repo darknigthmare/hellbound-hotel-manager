@@ -55,11 +55,11 @@ describe('Hazbin expansion manifest parity', () => {
     expect(manifest.animationContract.id).toBe('six-pose-combat-v2');
   });
 
-  it('maps the same 17 atlases and 68 art-capable profiles as the TypeScript directory', () => {
-    expect(manifest.atlases).toHaveLength(17);
+  it('maps the same 19 atlases and 76 art-capable profiles as the TypeScript directory', () => {
+    expect(manifest.atlases).toHaveLength(19);
     const manifestRows = manifest.atlases.flatMap(({ rows }) => rows);
-    expect(manifestRows).toHaveLength(68);
-    expect(new Set(manifestRows.map(({ id }) => id)).size).toBe(68);
+    expect(manifestRows).toHaveLength(76);
+    expect(new Set(manifestRows.map(({ id }) => id)).size).toBe(76);
 
     for (const atlas of manifest.atlases) {
       const directorySheet = HAZBIN_SPRITE_SHEETS.find(({ id }) => id === atlas.id);
@@ -97,6 +97,18 @@ describe('Hazbin expansion manifest parity', () => {
       { id: 'hz_goth_bird_sinner', name: 'Goth bird-like sinner' },
       { id: 'hz_rose_sinner', name: 'Rose-like sinner' },
     ]);
+    expect(manifest.atlases.find(({ id }) => id === 'tertiary-locals-a')?.rows).toEqual([
+      { id: 'hz_gator_sinner', name: 'Gator sinner' },
+      { id: 'hz_velvette_assistant', name: "Velvette's assistant" },
+      { id: 'hz_shark_gang_leader', name: 'Shark Gang Leader' },
+      { id: 'hz_cactus_sinner', name: 'Cactus sinner' },
+    ]);
+    expect(manifest.atlases.find(({ id }) => id === 'tertiary-locals-b')?.rows).toEqual([
+      { id: 'hz_jack_in_box_sinner', name: 'Jack-in-the-box sinner' },
+      { id: 'hz_orphan_imp', name: 'Orphan Imp' },
+      { id: 'hz_top_hat_demon', name: 'Top Hat Demon' },
+      { id: 'hz_roadkill_sinner', name: 'Roadkill sinner' },
+    ]);
   });
 
   it('keeps Tiffany out of the art manifest because she has no published design', () => {
@@ -108,8 +120,8 @@ describe('Hazbin expansion manifest parity', () => {
 
   it('keeps one sourced visual reference per art-capable expansion profile', () => {
     const manifestRows = manifest.atlases.flatMap(({ rows }) => rows);
-    expect(referenceIndex.references).toHaveLength(68);
-    expect(new Set(referenceIndex.references.map(({ id }) => id)).size).toBe(68);
+    expect(referenceIndex.references).toHaveLength(76);
+    expect(new Set(referenceIndex.references.map(({ id }) => id)).size).toBe(76);
     expect(referenceIndex.references.map(({ id }) => id).sort())
       .toEqual(manifestRows.map(({ id }) => id).sort());
 
@@ -118,7 +130,7 @@ describe('Hazbin expansion manifest parity', () => {
       expect(reference.name).toBe(manifestRow?.name);
       expect(reference.sourcePage).toMatch(/^https:\/\/hazbinhotel\.fandom\.com\/wiki\//);
       expect(reference.imageUrl).toMatch(/^https:\/\/static\.wikia\.nocookie\.net\/hazbinhotel\/images\//);
-      expect(reference.file).toMatch(new RegExp(`^${reference.id}\\.(png|webp)$`));
+      expect(reference.file).toMatch(new RegExp(`^${reference.id}\\.(jpe?g|png|webp)$`));
     }
 
     for (const id of [
@@ -135,7 +147,23 @@ describe('Hazbin expansion manifest parity', () => {
       'hz_goth_bird_sinner',
       'hz_rose_sinner',
     ]) {
-      expect(referenceIndex.references.find((reference) => reference.id === id)?.file).toBe(`${id}.png`);
+      expect(referenceIndex.references.find((reference) => reference.id === id)?.file)
+        .toBe(`${id}.png`);
+    }
+
+    const tertiaryReferenceFiles = {
+      hz_gator_sinner: 'hz_gator_sinner.jpeg',
+      hz_velvette_assistant: 'hz_velvette_assistant.jpeg',
+      hz_shark_gang_leader: 'hz_shark_gang_leader.jpeg',
+      hz_cactus_sinner: 'hz_cactus_sinner.png',
+      hz_jack_in_box_sinner: 'hz_jack_in_box_sinner.png',
+      hz_orphan_imp: 'hz_orphan_imp.png',
+      hz_top_hat_demon: 'hz_top_hat_demon.jpg',
+      hz_roadkill_sinner: 'hz_roadkill_sinner.png',
+    } as const;
+    for (const [id, filename] of Object.entries(tertiaryReferenceFiles)) {
+      expect(referenceIndex.references.find((reference) => reference.id === id)?.file)
+        .toBe(filename);
     }
   });
 });

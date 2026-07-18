@@ -28,9 +28,9 @@ Le mode est jouable, sans crash ni dÃ©bordement horizontal, et les deux combat
 
 ## Passe finale Hazbin et navigateur
 
-- Annuaire Hazbin : 93 profils au total, dont 69 fiches de rÃ©fÃ©rence hors sauvegarde opÃ©rationnelle ; 92 ont un art validÃ©.
-- Assets : 23 atlas Hazbin, 552 cellules et 92 portraits cÃ´tÃ© annuaire. L'extension OpenAI reprÃ©sente 17 feuilles, 408 cellules et 68 portraits ; Tiffany reste lore-only, car aucun design canon n'est montrÃ©.
-- Roster Arena : 58 profils portent un flag d'Ã©ligibilitÃ© (24 opÃ©rationnels et 34 issus de l'annuaire). Le filtre Season 1 par dÃ©faut en expose 29 ; les autres dÃ©pendent de la timeline et des spoilers.
+- Mise Ã  jour du 18 juillet : 101 profils Hazbin au total, dont 77 fiches de rÃ©fÃ©rence hors sauvegarde opÃ©rationnelle ; 100 ont un art validÃ©.
+- Assets : 25 atlas Hazbin, 600 cellules et 100 portraits cÃ´tÃ© annuaire. L'extension OpenAI reprÃ©sente 19 feuilles, 456 cellules et 76 portraits ; Tiffany reste lore-only, car aucun design canon n'est montrÃ©.
+- Roster Arena : 60 profils portent un flag d'Ã©ligibilitÃ© (24 opÃ©rationnels et 36 issus de l'annuaire). Le filtre Season 1 par dÃ©faut en expose 30 ; les autres dÃ©pendent de la timeline et des spoilers.
 - Combat : contrat d'atlas Ã  6 poses et 9 Ã©tats synchronisÃ©s. Les attaques lÃ©gÃ¨re, lourde et spÃ©ciale enchaÃ®nent plusieurs poses ; les autres Ã©tats partagent volontairement des poses.
 - Contenu de scÃ¨ne : 8 stages, 8 vignettes et 8 boucles procÃ©durales originales sans samples, dialogues ni mÃ©lodies de la franchise.
 - Mobile 390Ã—844 : sÃ©lection, annuaire et combat live vÃ©rifiÃ©s sans overflow ; le combat dÃ©marre directement Ã  la place du sÃ©lecteur.

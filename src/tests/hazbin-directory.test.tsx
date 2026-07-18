@@ -29,13 +29,13 @@ async function expectNoSeriousAccessibilityViolation(container: HTMLElement) {
 }
 
 describe('Hazbin directory data boundary', () => {
-  it('keeps 24 operational references and 69 new directory-only profiles', () => {
-    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(93);
+  it('keeps 24 operational references and 77 new directory-only profiles', () => {
+    expect(HAZBIN_DIRECTORY_PROFILES).toHaveLength(101);
     expect(HAZBIN_EXISTING_PROFILE_COUNT).toBe(24);
-    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(69);
+    expect(HAZBIN_DIRECTORY_ONLY_PROFILE_COUNT).toBe(77);
     expect(HAZBIN_PLANNED_PROFILE_COUNT).toBe(0);
     expect(HAZBIN_REFERENCE_UNAVAILABLE_PROFILE_COUNT).toBe(1);
-    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(93);
+    expect(new Set(HAZBIN_DIRECTORY_PROFILES.map(({ id }) => id)).size).toBe(101);
 
     const seed = getSeedData();
     expect(seed.characters).toHaveLength(24);
@@ -137,6 +137,23 @@ describe('Hazbin directory data boundary', () => {
     expect(HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_reporter_demon')?.bio)
       .toMatch(/production nickname rather than a confirmed personal name/i);
 
+    const tertiaryIds = [
+      'hz_gator_sinner',
+      'hz_velvette_assistant',
+      'hz_shark_gang_leader',
+      'hz_cactus_sinner',
+      'hz_jack_in_box_sinner',
+      'hz_orphan_imp',
+      'hz_top_hat_demon',
+      'hz_roadkill_sinner',
+    ];
+    const tertiaryProfiles = HAZBIN_DIRECTORY_PROFILES.filter(({ id }) => tertiaryIds.includes(id));
+    expect(tertiaryProfiles).toHaveLength(8);
+    expect(tertiaryProfiles.map(({ sheetRow }) => sheetRow).sort()).toEqual([0, 0, 1, 1, 2, 2, 3, 3]);
+    expect(tertiaryProfiles.filter(({ canonStatus }) => canonStatus === 'pilot_legacy').map(({ id }) => id).sort())
+      .toEqual(['hz_roadkill_sinner', 'hz_top_hat_demon']);
+    expect(tertiaryProfiles.filter(({ canonStatus }) => canonStatus === 'canon')).toHaveLength(6);
+
     const tiffany = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_tiffany_titfucker');
     expect(tiffany?.assetStatus).toBe('reference_unavailable');
     expect(tiffany?.sourceLabel).toMatch(/mentioned only/i);
@@ -147,9 +164,9 @@ describe('Hazbin directory data boundary', () => {
     ))).toBe(true);
   });
 
-  it('maps twenty-three ready four-character atlases without row collisions', () => {
-    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(23);
-    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(23);
+  it('maps twenty-five ready four-character atlases without row collisions', () => {
+    expect(HAZBIN_SPRITE_SHEETS).toHaveLength(25);
+    expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'ready')).toHaveLength(25);
     expect(HAZBIN_SPRITE_SHEETS.filter(({ assetStatus }) => assetStatus === 'planned')).toHaveLength(0);
 
     for (const sheet of HAZBIN_SPRITE_SHEETS) {
@@ -187,9 +204,10 @@ describe('Hazbin roster and atlas accessibility', () => {
 
     expect(screen.getAllByRole('article')).toHaveLength(HAZBIN_ROSTER_PAGE_SIZE);
     expect(screen.getByRole('button', { name: 'Page 1' }).getAttribute('aria-current')).toBe('page');
-    await user.click(screen.getByRole('button', { name: 'Page 8' }));
+    const lastPage = Math.ceil(HAZBIN_DIRECTORY_PROFILES.length / HAZBIN_ROSTER_PAGE_SIZE);
+    await user.click(screen.getByRole('button', { name: `Page ${lastPage}` }));
     expect(screen.getAllByRole('article')).toHaveLength(
-      HAZBIN_DIRECTORY_PROFILES.length % HAZBIN_ROSTER_PAGE_SIZE,
+      HAZBIN_DIRECTORY_PROFILES.length - ((lastPage - 1) * HAZBIN_ROSTER_PAGE_SIZE),
     );
 
     const secondaryCount = HAZBIN_DIRECTORY_PROFILES.filter(({ rosterTier }) => rosterTier === 'secondary').length;
@@ -211,7 +229,7 @@ describe('Hazbin roster and atlas accessibility', () => {
 
     expect(firstGroup.getAttribute('aria-expanded')).toBe('true');
     expect(secondGroup.getAttribute('aria-expanded')).toBe('false');
-    expect(screen.getByText('23 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
+    expect(screen.getByText('25 atlas disponibles dans ce filtre, avec portraits et poses de combat publiés.')).toBeTruthy();
     expect(screen.getAllByRole('img')).toHaveLength(4);
     for (const image of screen.getAllByRole('img')) {
       expect(image.getAttribute('loading')).toBe('lazy');
@@ -250,8 +268,8 @@ describe('Hazbin roster and atlas accessibility', () => {
     expect(directoryTab.getAttribute('aria-selected')).toBe('true');
     expect(document.activeElement).toBe(directoryTab);
     expect(screen.queryByRole('button', { name: 'Register Guest/Staff' })).toBeNull();
-    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 93 profils' })).toBeTruthy();
-    expect(screen.getByText(/69 nouvelles fiches/)).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 2, name: 'Annuaire Hazbin · 101 profils' })).toBeTruthy();
+    expect(screen.getByText(/77 nouvelles fiches/)).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Lilith Morningstar' })).toBeNull();
     expect(screen.getAllByText(/masqués par le filtre spoilers/)).toHaveLength(2);
     await expectNoSeriousAccessibilityViolation(container);
