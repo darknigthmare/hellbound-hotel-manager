@@ -406,6 +406,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
             matchMode={matchMode}
             aiDifficulty={aiDifficulty}
             stage={selectedStage}
+            timeline={state.timeline}
             soundtrackEnabled={soundtrackEnabled}
             soundtrackStatus={soundtrackStatus}
             onSoundtrackToggle={toggleArenaSoundtrack}

@@ -36,7 +36,8 @@ import {
   getPentagramStageVisualProperties,
   type PentagramStage,
 } from '../lib/pentagram-stages';
-import type { Character } from '../types';
+import type { Character, TimelineState } from '../types';
+import { PentagramStageSpectators } from './PentagramStageSpectators';
 import type { PentagramSoundtrackStatus } from './usePentagramCombatSoundtrack';
 
 interface PentagramLiveFightProps {
@@ -47,6 +48,7 @@ interface PentagramLiveFightProps {
   matchMode: 'ai' | 'local';
   aiDifficulty: CombatAiDifficulty;
   stage: PentagramStage;
+  timeline: TimelineState;
   soundtrackEnabled: boolean;
   soundtrackStatus: PentagramSoundtrackStatus;
   onSoundtrackToggle: (startPaused: boolean) => void;
@@ -189,6 +191,7 @@ export function PentagramLiveFight({
   matchMode,
   aiDifficulty,
   stage,
+  timeline,
   soundtrackEnabled,
   soundtrackStatus,
   onSoundtrackToggle,
@@ -856,6 +859,13 @@ export function PentagramLiveFight({
         <div className="arena-stage__glow" aria-hidden="true" />
         <div className="arena-lane-grid" aria-hidden="true" />
         <div className="arena-crowd-lights" aria-hidden="true" />
+        <PentagramStageSpectators
+          stageId={stage.id}
+          timeline={timeline}
+          fighterOneId={fighterOne.id}
+          fighterTwoId={fighterTwo.id}
+          cameraFocus={(combat.positionOne + combat.positionTwo) / 2}
+        />
 
         {combat.active && phaseLabel && (
           <div className={`arena-fight-state is-${fightPhase}`} role="status" aria-live="assertive">

@@ -46,6 +46,15 @@ export function isHazbinDirectoryFighterVisible(
     return false;
   }
 
+  return isHazbinDirectoryProfileVisible(profile, timeline);
+}
+
+export function isHazbinDirectoryProfileVisible(
+  profile: HazbinDirectoryProfile,
+  timeline: TimelineState,
+): boolean {
+  if (profile.assetStatus !== 'ready') return false;
+
   const timelineScope = DIRECTORY_TIMELINE_SCOPE[profile.timeline];
   return LoreValidation.isAvailableAtTimeline(timelineScope, timeline.current)
     && isHazbinSpoilerVisible(timeline.hideSpoilers, timeline.spoilerLevel, profile.spoilerLevel);

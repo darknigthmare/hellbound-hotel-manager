@@ -36,6 +36,7 @@ describe('Pentagram Arena live input lifecycle', () => {
         matchMode="ai"
         aiDifficulty="standard"
         stage={DEFAULT_PENTAGRAM_STAGE}
+        timeline={state.timeline}
         soundtrackEnabled
         soundtrackStatus="playing"
         onSoundtrackToggle={onSoundtrackToggle}
@@ -46,6 +47,25 @@ describe('Pentagram Arena live input lifecycle', () => {
     );
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
+    const spectatorNodes = Array.from(
+      stage.querySelectorAll<HTMLElement>('[data-stage-spectator-id]'),
+    );
+    const spectatorIds = spectatorNodes.map(node => node.dataset.stageSpectatorId);
+    expect(spectatorNodes).toHaveLength(4);
+    expect(spectatorIds).not.toContain(fighterOne.id);
+    expect(spectatorIds).not.toContain(fighterTwo.id);
+    expect(new Set(spectatorIds).size).toBe(spectatorIds.length);
+    expect(new Set(spectatorNodes.map(node => node.dataset.parallaxLayer)).size)
+      .toBeGreaterThan(1);
+    spectatorNodes.forEach((node) => {
+      expect(node.dataset.action).toBe('idle');
+      expect(node.dataset.animationBank).toBe('movement');
+      expect(node.getAttribute('aria-hidden')).toBe('true');
+      expect(
+        node.querySelector<HTMLElement>('.arena-stage-spectator__sprite')
+          ?.style.backgroundImage,
+      ).toContain('/assets/sprites/hazbin/animation/v1/movement/');
+    });
     await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
 
     const pauseButton = screen.getByRole('button', { name: 'Pause' });
@@ -114,6 +134,7 @@ describe('Pentagram Arena live input lifecycle', () => {
         matchMode="ai"
         aiDifficulty="standard"
         stage={DEFAULT_PENTAGRAM_STAGE}
+        timeline={state.timeline}
         soundtrackEnabled={false}
         soundtrackStatus="idle"
         onSoundtrackToggle={onSoundtrackToggle}
@@ -154,6 +175,7 @@ describe('Pentagram Arena live input lifecycle', () => {
         matchMode="ai"
         aiDifficulty="standard"
         stage={DEFAULT_PENTAGRAM_STAGE}
+        timeline={state.timeline}
         soundtrackEnabled={false}
         soundtrackStatus="idle"
         onSoundtrackToggle={vi.fn()}
@@ -230,6 +252,7 @@ describe('Pentagram Arena live input lifecycle', () => {
         matchMode="local"
         aiDifficulty="standard"
         stage={DEFAULT_PENTAGRAM_STAGE}
+        timeline={state.timeline}
         soundtrackEnabled={false}
         soundtrackStatus="idle"
         onSoundtrackToggle={vi.fn()}
@@ -287,6 +310,7 @@ describe('Pentagram Arena live input lifecycle', () => {
         matchMode="local"
         aiDifficulty="standard"
         stage={DEFAULT_PENTAGRAM_STAGE}
+        timeline={state.timeline}
         soundtrackEnabled={false}
         soundtrackStatus="idle"
         onSoundtrackToggle={vi.fn()}

@@ -1118,6 +1118,51 @@
   background-size: 42px 42px;
 }
 
+.arena-stage-spectators {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.arena-stage-spectator {
+  position: absolute;
+  left: var(--arena-spectator-x);
+  bottom: var(--arena-spectator-bottom);
+  width: clamp(82px, 12vw, 154px);
+  aspect-ratio: 1;
+  transform: translate3d(-50%, 0, 0) scale(var(--arena-spectator-scale, 1));
+  transform-origin: center bottom;
+  transition: left 90ms linear;
+  animation: arena-spectator-support 2100ms ease-in-out infinite alternate;
+  will-change: left, transform, translate;
+}
+
+.arena-stage-spectator.is-far {
+  z-index: 0;
+  opacity: 0.5;
+  filter: saturate(0.72) brightness(0.68) blur(0.35px);
+}
+
+.arena-stage-spectator.is-mid {
+  z-index: 1;
+  opacity: 0.72;
+  filter: saturate(0.82) brightness(0.78);
+}
+
+.arena-stage-spectator__sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: 0% var(--arena-spectator-row);
+  background-repeat: no-repeat;
+  background-size: 600% 400%;
+  filter: drop-shadow(0 10px 9px rgba(0, 0, 0, 0.55));
+  transform: scaleX(var(--arena-spectator-facing, 1));
+  animation: arena-spectator-idle-frames 940ms steps(1, end) infinite;
+}
+
 .arena-combatant {
   --arena-facing-scale: 1;
   position: absolute;
@@ -1219,7 +1264,9 @@
 
 .arena-combat-stage.is-hitstop .arena-combatant,
 .arena-combat-stage.is-hitstop .arena-sprite-frame,
-.arena-combat-stage.is-hitstop .arena-combatant img {
+.arena-combat-stage.is-hitstop .arena-combatant img,
+.arena-combat-stage.is-hitstop .arena-stage-spectator,
+.arena-combat-stage.is-hitstop .arena-stage-spectator__sprite {
   animation-play-state: paused;
 }
 
@@ -1227,7 +1274,9 @@
 .arena-combat-stage[data-phase="paused"] .arena-sprite-frame,
 .arena-combat-stage[data-phase="paused"] .arena-combatant img,
 .arena-combat-stage[data-phase="paused"] .arena-action-trail,
-.arena-combat-stage[data-phase="paused"] .arena-hit-spark {
+.arena-combat-stage[data-phase="paused"] .arena-hit-spark,
+.arena-combat-stage[data-phase="paused"] .arena-stage-spectator,
+.arena-combat-stage[data-phase="paused"] .arena-stage-spectator__sprite {
   animation-play-state: paused !important;
 }
 
@@ -1851,6 +1900,10 @@
     width: clamp(124px, 38vw, 190px);
   }
 
+  .arena-stage-spectator {
+    width: clamp(68px, 18vw, 116px);
+  }
+
   .arena-fight-panel {
     min-height: 560px;
   }
@@ -1929,6 +1982,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .arena-stage-spectator,
+  .arena-stage-spectator__sprite,
   .arena-combatant,
   .arena-combatant.is-hit,
   .arena-combatant.is-one.is-light,
@@ -1948,5 +2003,26 @@
   .arena-tension > span {
     animation: none;
     transition: none;
+  }
+}
+
+@keyframes arena-spectator-support {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes arena-spectator-idle-frames {
+  0%,
+  48%,
+  100% {
+    background-position: 0% var(--arena-spectator-row);
+  }
+  50%,
+  98% {
+    background-position: 20% var(--arena-spectator-row);
   }
 }
