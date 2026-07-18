@@ -309,7 +309,7 @@ describe('automated accessibility contracts', () => {
     };
     const { container } = render(<PentagramArena state={emptyState} />);
 
-    expect(screen.getByText('0 fighters indexed')).toBeTruthy();
+    expect(screen.getByText('0 fighters · 24 poses each')).toBeTruthy();
     expect(screen.getAllByRole('option', { name: 'No eligible fighters' })).toHaveLength(2);
     expect(screen.getByText(/At least two timeline-eligible sprite fighters/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);

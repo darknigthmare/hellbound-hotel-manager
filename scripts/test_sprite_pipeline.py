@@ -8,10 +8,18 @@ from PIL import Image, ImageDraw
 
 from scripts.build_sprite_assets import (
     COLUMNS,
+    ROWS,
     isolate_primary_sprite,
     validate_hazbin_expansion_manifest,
     validate_row_frame_diversity,
+    validate_sheet,
 )
+from scripts.prepare_hazbin_animations import (
+    BANK_IDS,
+    build_jobs,
+    load_animation_manifest,
+)
+from scripts.prepare_hazbin_expansion import remove_small_border_components
 
 
 def make_pose(horizontal_offset: int) -> Image.Image:
@@ -40,6 +48,60 @@ def make_pose_with_detached_parts() -> Image.Image:
 class SpritePipelineValidationTests(unittest.TestCase):
     def test_manifest_matches_the_runtime_animation_contract(self) -> None:
         validate_hazbin_expansion_manifest()
+
+    def test_supplementary_manifest_builds_exactly_75_unique_jobs(self) -> None:
+        atlases = load_animation_manifest()
+        jobs = build_jobs(atlases)
+
+        self.assertEqual(len(atlases), 25)
+        self.assertEqual(len(jobs), 75)
+        self.assertEqual({job.bank for job in jobs}, set(BANK_IDS))
+        self.assertEqual(len({job.output_path() for job in jobs}), 75)
+        self.assertEqual(
+            len({character_id for atlas in atlases for character_id in atlas.rows}),
+            100,
+        )
+
+    def test_supplementary_jobs_never_target_portrait_directories(self) -> None:
+        jobs = build_jobs(load_animation_manifest())
+        for job in jobs:
+            self.assertNotIn("portraits", job.output_path().parts)
+            self.assertTrue(job.output_path().name.endswith(f"-{job.bank}.png"))
+
+    def test_supplementary_cleanup_removes_only_small_neighbour_cell_spill(
+        self,
+    ) -> None:
+        cell = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(cell)
+        draw.rectangle((72, 40, 172, 226), fill=(255, 255, 255, 255))
+        draw.rectangle((8, 100, 28, 118), fill=(255, 255, 255, 255))
+
+        cleaned = remove_small_border_components(cell)
+
+        self.assertGreater(cleaned.getpixel((100, 100))[3], 0)
+        self.assertEqual(cleaned.getpixel((18, 109))[3], 0)
+
+    def test_reaction_threshold_accepts_readable_horizontal_ko_silhouettes(
+        self,
+    ) -> None:
+        atlas = Image.new("RGBA", (1536, 1024), (0, 0, 0, 0))
+        for row in range(ROWS):
+            for column in range(COLUMNS):
+                cell = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+                draw = ImageDraw.Draw(cell)
+                draw.rectangle(
+                    (24, 96, 68 + (column * 2), 155),
+                    fill=(255, 255, 255, 255),
+                )
+                atlas.alpha_composite(cell, (column * 256, row * 256))
+
+        with self.assertRaisesRegex(ValueError, "looks incomplete"):
+            validate_sheet(atlas, "default synthetic atlas")
+        validate_sheet(
+            atlas,
+            "reaction synthetic atlas",
+            minimum_cell_alpha_ratio=0.04,
+        )
 
     def test_six_distinct_pose_silhouettes_are_accepted(self) -> None:
         cells = [make_pose(index * 12) for index in range(COLUMNS)]

@@ -16,18 +16,34 @@ from typing import Literal
 
 from PIL import Image, ImageChops, ImageFilter
 
-from build_sprite_assets import (
-    COLUMNS,
-    EXPECTED_SHEET_SIZE,
-    HAZBIN_EXPANSION_ATLASES,
-    MIN_CELL_ALPHA_MARGIN,
-    ROOT,
-    ROWS,
-    alpha_bounds,
-    isolate_primary_sprite,
-    validate_hazbin_expansion_manifest,
-    validate_sheet,
-)
+try:
+    from .build_sprite_assets import (
+        COLUMNS,
+        EXPECTED_SHEET_SIZE,
+        HAZBIN_EXPANSION_ATLASES,
+        MIN_CELL_ALPHA_MARGIN,
+        MIN_CELL_ALPHA_RATIO,
+        ROOT,
+        ROWS,
+        alpha_bounds,
+        isolate_primary_sprite,
+        validate_hazbin_expansion_manifest,
+        validate_sheet,
+    )
+except ImportError:
+    from build_sprite_assets import (
+        COLUMNS,
+        EXPECTED_SHEET_SIZE,
+        HAZBIN_EXPANSION_ATLASES,
+        MIN_CELL_ALPHA_MARGIN,
+        MIN_CELL_ALPHA_RATIO,
+        ROOT,
+        ROWS,
+        alpha_bounds,
+        isolate_primary_sprite,
+        validate_hazbin_expansion_manifest,
+        validate_sheet,
+    )
 
 
 CHROMA_DIR = ROOT / "art" / "sprite-sheets" / "chroma"
@@ -357,13 +373,98 @@ def validate_no_visible_chroma(
         )
 
 
-def normalise_cell(cell: Image.Image, context: str) -> Image.Image:
+def remove_small_border_components(
+    image: Image.Image,
+    *,
+    border_tolerance: int = 36,
+    maximum_primary_ratio: float = 0.45,
+) -> Image.Image:
+    """Discard detached neighbour-pose fragments entering a fixed cell edge.
+
+    Image generation can place a long weapon a few pixels beyond its intended
+    256 px cell. The body in the source cell remains the largest component,
+    while the neighbouring cell receives only a detached tip. Removing only
+    smaller edge-touching components preserves multi-part costumes near the
+    body and prevents those tips from surviving normalisation as visual debris.
+    """
+
+    alpha = image.getchannel("A")
+    width, height = alpha.size
+    pixels = alpha.load()
+    visited = bytearray(width * height)
+    components: list[tuple[int, bool, list[tuple[int, int]]]] = []
+
+    for y in range(height):
+        for x in range(width):
+            index = (y * width) + x
+            if visited[index] or pixels[x, y] <= 20:
+                continue
+
+            queue = deque([(x, y)])
+            visited[index] = 1
+            points: list[tuple[int, int]] = []
+            touches_border = False
+            while queue:
+                current_x, current_y = queue.popleft()
+                points.append((current_x, current_y))
+                touches_border = touches_border or (
+                    current_x <= border_tolerance
+                    or current_y <= border_tolerance
+                    or current_x >= width - border_tolerance - 1
+                    or current_y >= height - border_tolerance - 1
+                )
+                for offset_x, offset_y in (
+                    (-1, -1), (0, -1), (1, -1),
+                    (-1, 0), (1, 0),
+                    (-1, 1), (0, 1), (1, 1),
+                ):
+                    neighbour_x = current_x + offset_x
+                    neighbour_y = current_y + offset_y
+                    if not (0 <= neighbour_x < width and 0 <= neighbour_y < height):
+                        continue
+                    neighbour_index = (neighbour_y * width) + neighbour_x
+                    if (
+                        visited[neighbour_index]
+                        or pixels[neighbour_x, neighbour_y] <= 20
+                    ):
+                        continue
+                    visited[neighbour_index] = 1
+                    queue.append((neighbour_x, neighbour_y))
+            components.append((len(points), touches_border, points))
+
+    if not components:
+        return image
+
+    primary_size = max(size for size, _, _ in components)
+    cleaned_alpha = alpha.copy()
+    cleaned_pixels = cleaned_alpha.load()
+    for size, touches_border, points in components:
+        if not touches_border or size >= primary_size * maximum_primary_ratio:
+            continue
+        for x, y in points:
+            cleaned_pixels[x, y] = 0
+
+    cleaned = image.copy()
+    cleaned.putalpha(cleaned_alpha)
+    return cleaned
+
+
+def normalise_cell(
+    cell: Image.Image,
+    context: str,
+    *,
+    attachment_margin: int = 40,
+    drop_border_spill: bool = False,
+) -> Image.Image:
     """Keep the cell's primary pose and guarantee a transparent safety gutter."""
 
+    if drop_border_spill:
+        cell = remove_small_border_components(cell)
     isolated = isolate_primary_sprite(
         cell,
         minimum_attachment_pixels=NORMALIZED_MIN_ATTACHMENT_PIXELS,
         minimum_attachment_ratio=NORMALIZED_MIN_ATTACHMENT_RATIO,
+        attachment_margin=attachment_margin,
     )
     bounds = alpha_bounds(isolated.getchannel("A"))
     if bounds is None:
@@ -421,7 +522,14 @@ def source_cell_bounds(
     return left, top, right, bottom
 
 
-def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
+def prepare_atlas(
+    master_path: Path,
+    final_filename: str,
+    *,
+    attachment_margin: int = 40,
+    drop_border_spill: bool = False,
+    minimum_cell_alpha_ratio: float = MIN_CELL_ALPHA_RATIO,
+) -> Image.Image:
     with Image.open(master_path) as source:
         if source.size != EXPECTED_SHEET_SIZE:
             raise ValueError(
@@ -439,6 +547,8 @@ def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
             normalised = normalise_cell(
                 cell,
                 f"{master_path.name} row {row + 1}, column {column + 1}",
+                attachment_margin=attachment_margin,
+                drop_border_spill=drop_border_spill,
             )
             target_left = column * CELL_WIDTH
             target_top = row * CELL_HEIGHT
@@ -455,6 +565,7 @@ def prepare_atlas(master_path: Path, final_filename: str) -> Image.Image:
         atlas,
         f"prepared/{final_filename}",
         strict_alpha_margins=True,
+        minimum_cell_alpha_ratio=minimum_cell_alpha_ratio,
     )
     validate_no_visible_chroma(
         atlas,

@@ -65,12 +65,24 @@ describe('Pentagram Arena live input lifecycle', () => {
     expect(onSoundtrackToggle).toHaveBeenCalledWith(false);
 
     const fighterOneNode = document.querySelector<HTMLElement>('.arena-combatant.is-one');
+    const fighterOneFrame = fighterOneNode?.querySelector<HTMLElement>('.arena-sprite-frame');
+    expect(fighterOneNode?.dataset.animationBank).toBe('movement');
+    expect(fighterOneFrame?.style.backgroundImage)
+      .toContain('/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png');
     fireEvent.pointerDown(stage, { pointerId: 1, clientX: 20, clientY: 100 });
     fireEvent.pointerMove(stage, { pointerId: 1, clientX: 70, clientY: 100 });
-    await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('walk'));
+    await waitFor(() => {
+      expect(fighterOneNode?.dataset.action).toBe('walk');
+      expect(fighterOneNode?.dataset.animationBank).toBe('movement');
+    });
 
     fireEvent.pointerDown(stage, { pointerId: 2, clientX: 30, clientY: 100 });
-    await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('guard'));
+    await waitFor(() => {
+      expect(fighterOneNode?.dataset.action).toBe('guard');
+      expect(fighterOneNode?.dataset.animationBank).toBe('reaction');
+      expect(fighterOneFrame?.style.backgroundImage)
+        .toContain('/assets/sprites/hazbin/animation/v1/reaction/core-a-reaction.png');
+    });
 
     fireEvent.pointerCancel(stage, { pointerId: 2, clientX: 30, clientY: 100 });
     await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('walk'));
@@ -189,7 +201,12 @@ describe('Pentagram Arena live input lifecycle', () => {
     });
 
     await userEvent.click(screen.getByRole('button', { name: 'P1 light attack' }));
-    await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('light'));
+    await waitFor(() => {
+      expect(fighterOneNode?.dataset.action).toBe('light');
+      expect(fighterOneNode?.dataset.animationBank).toBe('offense');
+      expect(fighterOneNode?.querySelector<HTMLElement>('.arena-sprite-frame')?.style.backgroundImage)
+        .toContain('/assets/sprites/hazbin/animation/v1/offense/core-a-offense.png');
+    });
   });
 
   it('exposes independent P2 touch controls locally and clears them on pause', async () => {

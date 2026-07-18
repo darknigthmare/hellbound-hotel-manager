@@ -7,8 +7,11 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
-import { getCharacterSpriteAsset } from '../lib/character-sprites';
-import { getCombatPoseColumn } from '../lib/pentagram-animation';
+import {
+  getCharacterSpriteAsset,
+  getCharacterSpriteSheet,
+} from '../lib/character-sprites';
+import { getCombatAnimationFrame } from '../lib/pentagram-animation';
 import {
   COMBAT_AI_DIFFICULTY_LABELS,
   decideCombatAi,
@@ -198,6 +201,7 @@ export function PentagramLiveFight({
     fighterTwoDefinition,
   ));
   const [fightPhase, setFightPhaseState] = useState<FightPhase>('ready');
+  const [animationClockMs, setAnimationClockMs] = useState(0);
   const stageRef = useRef<HTMLDivElement>(null);
   const combatRef = useRef(combat);
   const fightPhaseRef = useRef<FightPhase>('ready');
@@ -279,6 +283,7 @@ export function PentagramLiveFight({
   const beginRoundCountdown = useCallback(() => {
     countdownMsRef.current = READY_COUNTDOWN_MS;
     resumePhaseRef.current = 'ready';
+    setAnimationClockMs(0);
     setFightPhase('ready');
   }, [setFightPhase]);
 
@@ -350,6 +355,9 @@ export function PentagramLiveFight({
       previousTime = now;
 
       const currentPhase = fightPhaseRef.current;
+      if (currentPhase !== 'paused' && combatRef.current.hitstopMs <= 0) {
+        setAnimationClockMs(current => current + elapsedMs);
+      }
       if (currentPhase === 'ready' || currentPhase === 'fight') {
         countdownMsRef.current = Math.max(0, countdownMsRef.current - elapsedMs);
         if (countdownMsRef.current === 0) {
@@ -630,19 +638,32 @@ export function PentagramLiveFight({
 
   const fighterOneSprite = getCharacterSpriteAsset(fighterOne.id);
   const fighterTwoSprite = getCharacterSpriteAsset(fighterTwo.id);
+  useEffect(() => {
+    if (typeof window.Image !== 'function') return;
+    const animationUrls = [fighterOneSprite, fighterTwoSprite].flatMap(sprite => (
+      sprite ? Object.values(sprite.animationSheets) : []
+    ));
+    animationUrls.forEach((url) => {
+      const preload = new window.Image();
+      preload.src = url;
+    });
+  }, [fighterOneSprite, fighterTwoSprite]);
+
   const fighterOneActionDurationMs = isCombatAttackAction(combat.actionOne)
     ? getCombatAttackDuration(fighterOneDefinition, combat.actionOne)
     : undefined;
   const fighterTwoActionDurationMs = isCombatAttackAction(combat.actionTwo)
     ? getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)
     : undefined;
-  const fighterOnePose = getCombatPoseColumn(combat.actionOne, combat.actionMsOne, {
+  const fighterOneFrame = getCombatAnimationFrame(combat.actionOne, combat.actionMsOne, {
     animationSetId: fighterOneSprite?.animationSetId,
     actionDurationMs: fighterOneActionDurationMs,
+    loopElapsedMs: animationClockMs,
   });
-  const fighterTwoPose = getCombatPoseColumn(combat.actionTwo, combat.actionMsTwo, {
+  const fighterTwoFrame = getCombatAnimationFrame(combat.actionTwo, combat.actionMsTwo, {
     animationSetId: fighterTwoSprite?.animationSetId,
     actionDurationMs: fighterTwoActionDurationMs,
+    loopElapsedMs: animationClockMs,
   });
   const timerSeconds = Math.ceil(combat.timerMs / 1000);
   const winnerName = combat.winner === 'one'
@@ -672,12 +693,12 @@ export function PentagramLiveFight({
       : '340ms',
   } as CSSProperties;
   const fighterOneSpriteStyle: CSSProperties | undefined = fighterOneSprite ? {
-    backgroundImage: `url("${fighterOneSprite.sheet}")`,
-    backgroundPosition: `${fighterOnePose * 20}% ${fighterOneSprite.row * (100 / 3)}%`,
+    backgroundImage: `url("${getCharacterSpriteSheet(fighterOneSprite, fighterOneFrame.bank)}")`,
+    backgroundPosition: `${fighterOneFrame.column * 20}% ${fighterOneSprite.row * (100 / 3)}%`,
   } : undefined;
   const fighterTwoSpriteStyle: CSSProperties | undefined = fighterTwoSprite ? {
-    backgroundImage: `url("${fighterTwoSprite.sheet}")`,
-    backgroundPosition: `${fighterTwoPose * 20}% ${fighterTwoSprite.row * (100 / 3)}%`,
+    backgroundImage: `url("${getCharacterSpriteSheet(fighterTwoSprite, fighterTwoFrame.bank)}")`,
+    backgroundPosition: `${fighterTwoFrame.column * 20}% ${fighterTwoSprite.row * (100 / 3)}%`,
   } : undefined;
   const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
   const soundtrackUnavailable = soundtrackStatus === 'unavailable';
@@ -853,7 +874,9 @@ export function PentagramLiveFight({
           data-position={combat.positionOne.toFixed(2)}
           data-facing="right"
           data-action={combat.actionOne}
-          data-pose-column={fighterOnePose}
+          data-animation-bank={fighterOneFrame.bank}
+          data-frame-index={fighterOneFrame.frameIndex}
+          data-pose-column={fighterOneFrame.column}
           aria-hidden="true"
         >
           <span className="arena-guard-badge">{getActionLabel(combat.actionOne)}</span>
@@ -875,7 +898,9 @@ export function PentagramLiveFight({
           data-position={combat.positionTwo.toFixed(2)}
           data-facing="left"
           data-action={combat.actionTwo}
-          data-pose-column={fighterTwoPose}
+          data-animation-bank={fighterTwoFrame.bank}
+          data-frame-index={fighterTwoFrame.frameIndex}
+          data-pose-column={fighterTwoFrame.column}
           aria-hidden="true"
         >
           <span className="arena-guard-badge">{getActionLabel(combat.actionTwo)}</span>

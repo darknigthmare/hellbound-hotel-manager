@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-Fifty OpenAI-generated animation atlases cover 24 seeded Hazbin profiles, 68 expanded Hazbin directory profiles and 108 optional Helluva Boss profiles: 1,200 validated animation cells and 200 extracted portraits in total. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG, and neutral poses extracted by `scripts/build_sprite_assets.py` are published in the matching `portraits/` directory.
+One hundred twenty-seven OpenAI-generated animation atlases cover 100 illustrated Hazbin profiles and 108 optional Helluva Boss profiles: 3,048 validated animation cells and 208 extracted portraits in total. Hazbin has 25 identity/base atlases plus 75 supplementary movement, offense and reaction atlases. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG. Only neutral poses from base atlases are extracted by `scripts/build_sprite_assets.py`; supplementary banks never create duplicate portraits.
 
 The chroma-key generation masters are retained in `chroma/`. Local third-party visual reference files remain ignored under `references/`, while the tracked provenance index in `references/hazbin/references.json` records the source pages and image URLs used to guide the original generated assets.
 
@@ -20,13 +20,12 @@ This collection is all-or-nothing. Final atlases publish to `/assets/sprites/haz
 
 The machine-readable generation contract is [`hazbin-expansion-manifest.json`](./hazbin-expansion-manifest.json). It fixes canvas geometry, pose semantics, row order, IDs, names and public destinations for every ImageGen pass.
 
-## Six-pose combat animation contract
+## Base six-pose compatibility contract
 
-Every published character sprite now resolves through the versioned
-`six-pose-combat-v2` animation set. `CharacterSpriteAsset.animationSetId`
-keeps the existing atlas URLs and row indices backwards-compatible while
-allowing a later character or regenerated pack to select another animation
-set without changing the fighter roster.
+Every base atlas remains compatible with the versioned
+`six-pose-combat-v2` animation set. The legacy contract keeps the existing
+atlas URLs and row indices stable for galleries, portrait extraction and
+collections that do not yet have supplementary art.
 
 The six authored atlas columns retain their reviewed meaning:
 
@@ -56,6 +55,36 @@ using them there can make a fighter appear to look away from the opponent.
 This is deliberately honest about the current art: idle, walk and guard are
 single-key-pose sprite clips augmented by motion effects, not invented
 multi-frame drawings.
+
+## Hazbin four-bank combat contract
+
+All 100 illustrated Hazbin identities select `four-bank-combat-v3`. The
+machine-readable contract is
+[`hazbin-animation-banks-manifest.json`](./hazbin-animation-banks-manifest.json):
+25 authoritative base atlases multiplied by 3 supplementary banks produces
+75 generated files and 1,800 new cells. Each character receives 18 new poses,
+for 24 authored poses total when the six base cells are included.
+
+| Bank | Six authored columns |
+| --- | --- |
+| `movement` | Stable idle; weight shift; walk contact A; walk passing; walk contact B; dash/brake |
+| `offense` | Light startup; light contact; light recovery; heavy/signature startup; heavy/signature contact; heavy/signature recovery |
+| `reaction` | Guard entry; guard impact; light hit; heavy hit; knockdown; K.O./disabled |
+
+The live renderer changes both bank and column while preserving the base
+atlas row. It preloads only the three banks belonging to the two active
+fighters. Loop time comes from the paused, hitstop-aware round clock, so real
+idle, walk and guard frames advance without continuing in a paused tab.
+Fighter two still mirrors a source pose authored facing screen-right, keeping
+both opponents oriented toward each other.
+
+ImageGen chroma masters live under
+`art/sprite-sheets/chroma/hazbin-animation/<bank>/`. Run
+`python -m scripts.prepare_hazbin_animations` to key and publish all 75 files
+atomically under `/assets/sprites/hazbin/animation/v1/`, then run the same
+module with `--check` to reopen and validate every 6×4 RGBA output. The pass
+removes small neighbouring-cell fragments before normalisation, enforces a
+6 px alpha gutter and never extracts supplementary portraits.
 
 The live fight passes each sprite's `animationSetId` and the fighter-style
 scaled `actionDurationMs` into the resolver. The resolver normalizes startup
@@ -151,6 +180,8 @@ python scripts\build_sprite_assets.py --require-helluva
 python scripts\prepare_hazbin_expansion.py --check
 python scripts\prepare_hazbin_expansion.py
 python scripts\build_sprite_assets.py --require-hazbin-expansion
+python -m scripts.prepare_hazbin_animations
+python -m scripts.prepare_hazbin_animations --check
 ```
 
 The first command rebuilds the historical Hazbin and Helluva portraits. The preparation check requires all nineteen OpenAI chroma masters, removes each configured chroma plate, isolates every fixed cell and proves the 6 px gutter without publishing. The following preparation command atomically publishes the transparent atlases; the final strict build validates all 456 expanded-Hazbin cells and writes the 76 matching portraits. The portrait builder reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every configured character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps, display-name coverage, safe public output paths and visible content in all cells. The expanded Hazbin collection also enforces per-cell alpha gutters and post-resize portrait margins.
@@ -167,4 +198,4 @@ Every Helluva sheet follows the same generation contract: four visual references
 
 Jarold Mayberry remains a lore-only mention because no unobstructed official design exists. The unnamed Sinsmas family remains mission context rather than a fake single-character sprite.
 
-The current strict published-art pass validates all fifty-two atlases, 1,248 animation cells and 208 portraits. The expanded Hazbin subset accounts for nineteen atlases, 456 animation cells and 76 portraits.
+The current strict published-art pass validates all 127 atlases, 3,048 animation cells and 208 portraits. Hazbin accounts for 100 atlases, 2,400 cells and 100 portraits; Helluva Boss accounts for 27 atlases, 648 cells and 108 portraits.

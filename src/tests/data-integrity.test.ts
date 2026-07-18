@@ -15,8 +15,13 @@ import {
   restoreSnapshot,
   shouldCaptureKey
 } from '../cloudAccount';
-import { CHARACTER_SPRITES, SPRITE_SHEETS } from '../lib/character-sprites';
 import {
+  CHARACTER_SPRITES,
+  HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS,
+  SPRITE_SHEETS,
+} from '../lib/character-sprites';
+import {
+  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
   SPRITE_ANIMATION_SETS,
   SPRITE_ATLAS_COLUMN_COUNT,
 } from '../lib/sprite-animation-registry';
@@ -85,6 +90,7 @@ describe('generated character sprite coverage', () => {
 
   it('keeps atlas rows unique and every published PNG present at its contract size', () => {
     const rowKeys = new Set<string>();
+    const animationSheetPaths = new Set<string>();
     expect(SPRITE_SHEETS).toHaveLength(6);
 
     for (const sheet of SPRITE_SHEETS) {
@@ -105,11 +111,24 @@ describe('generated character sprite coverage', () => {
         height: 512,
         colorType: 6
       });
-      expect(SPRITE_ANIMATION_SETS[sprite.animationSetId].columnRoles)
-        .toHaveLength(SPRITE_ATLAS_COLUMN_COUNT);
+      expect(sprite.animationSetId).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
+      for (const bank of HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS) {
+        const animationSheet = sprite.animationSheets[bank];
+        animationSheetPaths.add(animationSheet);
+        expect(SPRITE_ANIMATION_SETS[sprite.animationSetId].bankColumnRoles?.[bank])
+          .toHaveLength(SPRITE_ATLAS_COLUMN_COUNT);
+      }
     }
 
     expect(rowKeys).toHaveLength(Object.keys(CHARACTER_SPRITES).length);
+    expect(animationSheetPaths).toHaveLength(75);
+    for (const animationSheet of animationSheetPaths) {
+      expect(readPngMetadata(animationSheet)).toEqual({
+        width: 1536,
+        height: 1024,
+        colorType: 6,
+      });
+    }
   });
 });
 

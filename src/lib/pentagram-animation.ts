@@ -3,6 +3,7 @@ import {
   DEFAULT_SPRITE_ANIMATION_SET_ID,
   getSpriteAnimationSet,
   type CombatSpriteClipName,
+  type SpriteAnimationBankId,
   type SpriteAnimationClip,
   type SpriteAnimationSetId,
   type SpriteAtlasColumn,
@@ -13,6 +14,7 @@ export type CombatPoseColumn = SpriteAtlasColumn;
 export interface CombatAnimationFrame {
   clip: CombatSpriteClipName;
   frameIndex: number;
+  bank: SpriteAnimationBankId;
   column: CombatPoseColumn;
 }
 
@@ -61,6 +63,7 @@ function getFrameAtElapsedMs(
       return {
         clip: clipName,
         frameIndex,
+        bank: clip.frames[frameIndex].bank ?? 'base',
         column: clip.frames[frameIndex].column,
       };
     }
@@ -70,18 +73,19 @@ function getFrameAtElapsedMs(
   return {
     clip: clipName,
     frameIndex,
+    bank: clip.frames[frameIndex].bank ?? 'base',
     column: clip.frames[frameIndex].column,
   };
 }
 
-function getFirstColumnStartMs(
+function getFrameStartMs(
   clip: SpriteAnimationClip,
-  column: number,
+  targetFrameIndex: number,
 ): number | undefined {
   let elapsedMs = 0;
-  for (const frame of clip.frames) {
-    if (frame.column === column) return elapsedMs;
-    elapsedMs += frame.durationMs;
+  for (let frameIndex = 0; frameIndex < clip.frames.length; frameIndex += 1) {
+    if (frameIndex === targetFrameIndex) return elapsedMs;
+    elapsedMs += clip.frames[frameIndex].durationMs;
   }
   return undefined;
 }
@@ -91,7 +95,7 @@ function getNormalizedActionElapsedMs(
   clipDurationMs: number,
   remainingMs: number,
   actionDurationMs: number | undefined,
-  impactColumn: number,
+  impactFrameIndex: number | undefined,
 ): number {
   const durationMs = Number.isFinite(actionDurationMs) && (actionDurationMs ?? 0) > 0
     ? actionDurationMs as number
@@ -102,7 +106,9 @@ function getNormalizedActionElapsedMs(
   const elapsedMs = durationMs - safeRemainingMs;
   if (durationMs === clipDurationMs) return elapsedMs;
 
-  const clipImpactStartMs = getFirstColumnStartMs(clip, impactColumn);
+  const clipImpactStartMs = impactFrameIndex === undefined
+    ? undefined
+    : getFrameStartMs(clip, impactFrameIndex);
   if (
     clipImpactStartMs === undefined
     || clipImpactStartMs <= 0
@@ -139,6 +145,17 @@ export function getCombatAnimationFrame(
   );
   const clip = animationSet.clips[clipName];
   const clipDurationMs = getClipDuration(clip);
+  const legacyImpactColumn = animationSet.columnRoles?.indexOf('attack_impact');
+  const legacyImpactFrameIndex = legacyImpactColumn === undefined
+    ? undefined
+    : clip.frames.findIndex(frame => (
+        (frame.bank === undefined || frame.bank === 'base')
+        && frame.column === legacyImpactColumn
+      ));
+  const impactFrameIndex = clip.impactFrameIndex
+    ?? (legacyImpactFrameIndex !== undefined && legacyImpactFrameIndex >= 0
+      ? legacyImpactFrameIndex
+      : undefined);
   const elapsedMs = clip.loop
     ? options.loopElapsedMs ?? 0
     : getNormalizedActionElapsedMs(
@@ -146,7 +163,7 @@ export function getCombatAnimationFrame(
         clipDurationMs,
         remainingMs,
         options.actionDurationMs,
-        animationSet.columnRoles.indexOf('attack_impact'),
+        impactFrameIndex,
       );
 
   return getFrameAtElapsedMs(clipName, clip, elapsedMs);

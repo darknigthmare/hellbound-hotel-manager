@@ -4,11 +4,12 @@ import {
   type HazbinDirectoryProfile,
 } from '../data/hazbin-directory';
 import {
+  buildHazbinAnimationSheetPaths,
   buildHazbinDirectorySpriteAssets,
   CHARACTER_SPRITES,
   getCharacterSpriteAsset,
 } from '../lib/character-sprites';
-import { DEFAULT_SPRITE_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
+import { HAZBIN_FOUR_BANK_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
 import {
   getHazbinArenaFighters,
   isHazbinDirectoryFighterVisible,
@@ -131,7 +132,8 @@ describe('Hazbin Arena directory adapter', () => {
         portrait: profile.portrait,
         sheet: profile.sheetPath,
         row: profile.sheetRow,
-        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
+        animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
+        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       });
     }
 
@@ -145,7 +147,8 @@ describe('Hazbin Arena directory adapter', () => {
         portrait: profile.portrait,
         sheet: profile.sheetPath,
         row: profile.sheetRow,
-        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
+        animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
+        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       });
     }
   });

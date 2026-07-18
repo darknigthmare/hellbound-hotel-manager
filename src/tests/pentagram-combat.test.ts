@@ -5,6 +5,8 @@ import {
 } from '../lib/pentagram-animation';
 import {
   DEFAULT_SPRITE_ANIMATION_SET_ID,
+  FOUR_BANK_COMBAT_ANIMATION_SET,
+  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
   SIX_POSE_COMBAT_ANIMATION_SET,
 } from '../lib/sprite-animation-registry';
 import {
@@ -390,9 +392,52 @@ describe('Pentagram Arena live combat engine', () => {
     expect(getCombatPoseColumn('special', 354, { actionDurationMs: 728 })).toBe(4);
   });
 
+  it('selects authored movement, offense and reaction banks in the v3 contract', () => {
+    const options = { animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID } as const;
+
+    expect(getCombatAnimationFrame('idle', 0, { ...options, loopElapsedMs: 0 }))
+      .toMatchObject({ bank: 'movement', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('idle', 0, { ...options, loopElapsedMs: 520 }))
+      .toMatchObject({ bank: 'movement', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('walk', 0, { ...options, loopElapsedMs: 115 }))
+      .toMatchObject({ bank: 'movement', column: 3, frameIndex: 1 });
+    expect(getCombatAnimationFrame('walk', 0, { ...options, loopElapsedMs: 220 }))
+      .toMatchObject({ bank: 'movement', column: 4, frameIndex: 2 });
+
+    expect(getCombatAnimationFrame('light', 340, options))
+      .toMatchObject({ bank: 'offense', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('light', 220, options))
+      .toMatchObject({ bank: 'offense', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('light', 120, options))
+      .toMatchObject({ bank: 'offense', column: 2, frameIndex: 2 });
+
+    expect(getCombatAnimationFrame('guard', 0, { ...options, loopElapsedMs: 150 }))
+      .toMatchObject({ bank: 'reaction', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('hit', 115, options))
+      .toMatchObject({ bank: 'reaction', column: 3, frameIndex: 1 });
+    expect(getCombatAnimationFrame('ko', 1_000, options))
+      .toMatchObject({ bank: 'reaction', column: 5, frameIndex: 1 });
+    expect(getCombatAnimationFrame('victory', 0, { ...options, loopElapsedMs: 0 }))
+      .toMatchObject({ bank: 'base', column: 5, frameIndex: 0 });
+  });
+
+  it('keeps v3 impact timing aligned after combat-style duration scaling', () => {
+    const options = {
+      animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+      actionDurationMs: 306,
+    } as const;
+
+    expect(getCombatAnimationFrame('light', 199, options))
+      .toMatchObject({ bank: 'offense', column: 0 });
+    expect(getCombatAnimationFrame('light', 198, options))
+      .toMatchObject({ bank: 'offense', column: 1 });
+  });
+
   it('resolves every combat state through the shared versioned animation registry', () => {
     expect(SIX_POSE_COMBAT_ANIMATION_SET.id).toBe(DEFAULT_SPRITE_ANIMATION_SET_ID);
     expect(DEFAULT_SPRITE_ANIMATION_SET_ID).toBe('six-pose-combat-v2');
+    expect(FOUR_BANK_COMBAT_ANIMATION_SET.id).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
+    expect(HAZBIN_FOUR_BANK_ANIMATION_SET_ID).toBe('four-bank-combat-v3');
     expect(Object.keys(SIX_POSE_COMBAT_ANIMATION_SET.clips).sort()).toEqual([
       'guard',
       'heavy',
@@ -407,11 +452,13 @@ describe('Pentagram Arena live combat engine', () => {
     expect(getCombatAnimationFrame('light', 220)).toEqual({
       clip: 'light',
       frameIndex: 2,
+      bank: 'base',
       column: 4,
     });
     expect(getCombatAnimationFrame('heavy', 20)).toEqual({
       clip: 'heavy',
       frameIndex: 3,
+      bank: 'base',
       column: 5,
     });
 

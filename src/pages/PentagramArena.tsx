@@ -77,6 +77,7 @@ const RISK_PROFILE: Record<RiskLevel, { label: string; value: number }> = {
 
 const ROADMAP = [
   ['Roster complete', 'Every sprite-backed fighter has an explicit Simulation AU kit.'],
+  ['Four-bank animation', 'Each illustrated identity now has 18 supplementary movement, offense and reaction poses.'],
   ['Active-frame combat', 'Damage lands on the animated impact window with hitstop and guard checks.'],
   ['Sparring sets', 'CPU difficulty and best-of-three scoring are playable now.'],
   ['Long modes', 'Tournament brackets, training data and air routes remain the next expansion layer.'],
@@ -377,7 +378,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         </div>
         <div className="arena-status" aria-label="Development status">
           <span>Playable combat beta</span>
-          <strong>{fighters.length} fighters indexed</strong>
+          <strong>{fighters.length} fighters · 24 poses each</strong>
         </div>
       </header>
 
@@ -691,7 +692,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         </div>
         <ol>
           {ROADMAP.map(([title, description], index) => (
-            <li key={title} className={index <= 2 ? 'is-ready' : undefined}>
+            <li key={title} className={index <= 3 ? 'is-ready' : undefined}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div><strong>{title}</strong><p>{description}</p></div>
             </li>

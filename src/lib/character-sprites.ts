@@ -1,7 +1,9 @@
 import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 import {
-  DEFAULT_SPRITE_ANIMATION_SET_ID,
+  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+  type SpriteAnimationBankId,
   type SpriteAnimationSetId,
+  type SupplementalSpriteAnimationBankId,
 } from './sprite-animation-registry';
 
 export interface SpriteSheetDefinition {
@@ -16,7 +18,41 @@ export interface CharacterSpriteAsset {
   portrait: string;
   sheet: string;
   row: number;
+  animationSheets: Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
   animationSetId: SpriteAnimationSetId;
+}
+
+export const HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS = [
+  'movement',
+  'offense',
+  'reaction',
+] as const satisfies readonly SupplementalSpriteAnimationBankId[];
+
+function getSheetStem(sheetPath: string): string {
+  const filename = sheetPath.split('/').at(-1);
+  if (!filename?.endsWith('.png')) {
+    throw new Error(`Hazbin sprite sheet must be a PNG path: ${sheetPath}`);
+  }
+  return filename.slice(0, -4);
+}
+
+export function buildHazbinAnimationSheetPaths(
+  baseSheetPath: string,
+): Readonly<Record<SupplementalSpriteAnimationBankId, string>> {
+  const stem = getSheetStem(baseSheetPath);
+  return Object.fromEntries(
+    HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS.map(bank => [
+      bank,
+      `/assets/sprites/hazbin/animation/v1/${bank}/${stem}-${bank}.png`,
+    ]),
+  ) as Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
+}
+
+export function getCharacterSpriteSheet(
+  sprite: CharacterSpriteAsset,
+  bank: SpriteAnimationBankId,
+): string {
+  return bank === 'base' ? sprite.sheet : sprite.animationSheets[bank];
 }
 
 export const SPRITE_SHEETS: readonly SpriteSheetDefinition[] = [
@@ -98,7 +134,10 @@ const OPERATIONAL_CHARACTER_SPRITES = Object.fromEntries(
       portrait: `/assets/sprites/portraits/${characterId}.png`,
       sheet: `/assets/sprites/sheets/${sheet}.png`,
       row,
-      animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
+      animationSheets: buildHazbinAnimationSheetPaths(
+        `/assets/sprites/sheets/${sheet}.png`,
+      ),
+      animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
     }
   ])
 ) as Readonly<Record<string, CharacterSpriteAsset>>;
@@ -115,7 +154,8 @@ export function buildHazbinDirectorySpriteAssets(
         portrait,
         sheet: sheetPath,
         row: sheetRow,
-        animationSetId: DEFAULT_SPRITE_ANIMATION_SET_ID,
+        animationSheets: buildHazbinAnimationSheetPaths(sheetPath),
+        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       },
     ]),
   ) as Readonly<Record<string, CharacterSpriteAsset>>;

@@ -723,9 +723,12 @@ def validate_sheet(
     sheet: Image.Image,
     sheet_name: str,
     strict_alpha_margins: bool = False,
+    minimum_cell_alpha_ratio: float = MIN_CELL_ALPHA_RATIO,
 ) -> tuple[int, int]:
     """Reject malformed or visibly incomplete fixed-grid atlases."""
 
+    if not 0 < minimum_cell_alpha_ratio <= 1:
+        raise ValueError("minimum_cell_alpha_ratio must be within (0, 1]")
     if sheet.size != EXPECTED_SHEET_SIZE:
         raise ValueError(
             f"{sheet_name} must be {EXPECTED_SHEET_SIZE[0]}x{EXPECTED_SHEET_SIZE[1]}, "
@@ -734,7 +737,9 @@ def validate_sheet(
 
     cell_width = sheet.width // COLUMNS
     cell_height = sheet.height // ROWS
-    minimum_visible_pixels = round(cell_width * cell_height * MIN_CELL_ALPHA_RATIO)
+    minimum_visible_pixels = round(
+        cell_width * cell_height * minimum_cell_alpha_ratio
+    )
 
     for row in range(ROWS):
         row_cells: list[Image.Image] = []
@@ -771,6 +776,7 @@ def isolate_primary_sprite(
     *,
     minimum_attachment_pixels: int = 12,
     minimum_attachment_ratio: float = 0.002,
+    attachment_margin: int = 40,
 ) -> Image.Image:
     """Keep the main body and meaningful nearby costume parts, but discard spill.
 
@@ -779,7 +785,11 @@ def isolate_primary_sprite(
     attachment size without changing extraction of existing portrait assets.
     """
 
-    if minimum_attachment_pixels < 0 or minimum_attachment_ratio < 0:
+    if (
+        minimum_attachment_pixels < 0
+        or minimum_attachment_ratio < 0
+        or attachment_margin < 0
+    ):
         raise ValueError("Attachment thresholds must be non-negative")
 
     alpha = image.getchannel("A")
@@ -845,7 +855,6 @@ def isolate_primary_sprite(
     eligible_components.sort(key=lambda component: component[0], reverse=True)
     primary_size, primary_bounds, primary_points = eligible_components[0]
     left, top, right, bottom = primary_bounds
-    attachment_margin = 40
     attachment_bounds = (
         left - attachment_margin,
         top - attachment_margin,
