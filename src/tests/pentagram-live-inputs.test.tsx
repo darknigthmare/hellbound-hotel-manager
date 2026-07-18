@@ -66,7 +66,16 @@ describe('Pentagram Arena live input lifecycle', () => {
           ?.style.backgroundImage,
       ).toContain('/assets/sprites/hazbin/animation/v1/movement/');
     });
-    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+
+    const fighterOneNode = document.querySelector<HTMLElement>('.arena-combatant.is-one');
+    const fighterOneFrame = fighterOneNode?.querySelector<HTMLElement>('.arena-sprite-frame');
+    expect(stage.dataset.phase).toBe('intro');
+    expect(fighterOneNode?.dataset.action).toBe('intro');
+    expect(fighterOneNode?.dataset.animationBank).toBe('intro');
+    expect(fighterOneFrame?.style.backgroundImage)
+      .toContain('/assets/sprites/hazbin/cinematics/v1/intro/core-a-intro.png');
+
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
 
     const pauseButton = screen.getByRole('button', { name: 'Pause' });
     pauseButton.focus();
@@ -84,8 +93,6 @@ describe('Pentagram Arena live input lifecycle', () => {
     expect(onSoundtrackToggle).toHaveBeenCalledTimes(1);
     expect(onSoundtrackToggle).toHaveBeenCalledWith(false);
 
-    const fighterOneNode = document.querySelector<HTMLElement>('.arena-combatant.is-one');
-    const fighterOneFrame = fighterOneNode?.querySelector<HTMLElement>('.arena-sprite-frame');
     expect(fighterOneNode?.dataset.animationBank).toBe('movement');
     expect(fighterOneFrame?.style.backgroundImage)
       .toContain('/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png');
@@ -145,7 +152,7 @@ describe('Pentagram Arena live input lifecycle', () => {
     );
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
-    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
     await userEvent.click(screen.getByRole('button', { name: 'Pause' }));
     expect(stage.dataset.phase).toBe('paused');
 
@@ -190,7 +197,7 @@ describe('Pentagram Arena live input lifecycle', () => {
     expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(6);
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
-    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
     const fighterOneNode = document.querySelector<HTMLElement>('.arena-combatant.is-one');
     const moveRight = screen.getByRole('button', { name: 'P1 move right' });
 
@@ -267,7 +274,7 @@ describe('Pentagram Arena live input lifecycle', () => {
     expect(screen.getAllByRole('button', { name: /^P2 /i })).toHaveLength(6);
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
-    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
     const fighterTwoNode = document.querySelector<HTMLElement>('.arena-combatant.is-two');
     const moveLeft = screen.getByRole('button', { name: 'P2 move left' });
 
@@ -321,11 +328,11 @@ describe('Pentagram Arena live input lifecycle', () => {
     );
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
-    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
 
     fireEvent.keyDown(window, { code: 'KeyF' });
     const nextRoundButton = await screen.findByRole('button', { name: 'Next round' });
-    expect(stage.dataset.phase).toBe('finished');
+    expect(stage.dataset.phase).toBe('results');
 
     fireEvent.pointerDown(nextRoundButton, { pointerId: 31, clientX: 8, clientY: 8 });
     fireEvent.pointerUp(nextRoundButton, { pointerId: 31, clientX: 8, clientY: 8 });
@@ -334,5 +341,18 @@ describe('Pentagram Arena live input lifecycle', () => {
     await userEvent.click(nextRoundButton);
     await waitFor(() => expect(stage.dataset.phase).toBe('ready'));
     expect(onExit).not.toHaveBeenCalled();
-  });
+
+    await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    fireEvent.keyDown(window, { code: 'KeyF' });
+    await waitFor(() => expect(stage.dataset.phase).toBe('outro'));
+
+    const winnerNode = document.querySelector<HTMLElement>('.arena-combatant.is-one');
+    const winnerFrame = winnerNode?.querySelector<HTMLElement>('.arena-sprite-frame');
+    expect(winnerNode?.dataset.animationBank).toBe('victory');
+    expect(winnerFrame?.style.backgroundImage)
+      .toContain('/assets/sprites/hazbin/cinematics/v1/victory/core-a-victory.png');
+
+    await waitFor(() => expect(stage.dataset.phase).toBe('results'), { timeout: 4_000 });
+    expect(screen.getByRole('button', { name: 'Rematch' })).toBeTruthy();
+  }, 12_000);
 });

@@ -5,6 +5,7 @@ import {
 } from '../data/hazbin-directory';
 import {
   buildHazbinAnimationSheetPaths,
+  buildHazbinCinematicSheetPaths,
   buildHazbinDirectorySpriteAssets,
   CHARACTER_SPRITES,
   getCharacterSpriteAsset,
@@ -12,6 +13,7 @@ import {
 import { HAZBIN_FOUR_BANK_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
 import {
   getHazbinArenaFighters,
+  isHazbinDirectoryProfileVisible,
   isHazbinDirectoryFighterVisible,
   toHazbinArenaCharacter,
 } from '../lib/hazbin-arena-fighters';
@@ -32,10 +34,10 @@ const seasonOneTimeline: TimelineState = {
 };
 
 describe('Hazbin Arena directory adapter', () => {
-  it('projects every art-ready eligible expansion profile without duplicating the 24 operational fighters', () => {
+  it('projects every art-ready expansion profile without duplicating the 24 operational fighters', () => {
     const expectedIds = allExpansionArtReady
-      .filter(({ existingOperationalProfile, fighterEligible, assetStatus }) => (
-        !existingOperationalProfile && fighterEligible && assetStatus === 'ready'
+      .filter(({ existingOperationalProfile, assetStatus }) => (
+        !existingOperationalProfile && assetStatus === 'ready'
       ))
       .map(({ id }) => id)
       .sort();
@@ -45,7 +47,7 @@ describe('Hazbin Arena directory adapter', () => {
     );
 
     expect(fighters.map(({ id }) => id).sort()).toEqual(expectedIds);
-    expect(fighters).toHaveLength(36);
+    expect(fighters).toHaveLength(76);
     expect(fighters.every(({ id }) => id.startsWith('hz_'))).toBe(true);
     expect(fighters.every(({ operationalDataStatus }) => operationalDataStatus === 'simulation_au')).toBe(true);
   });
@@ -55,10 +57,12 @@ describe('Hazbin Arena directory adapter', () => {
     const lilith = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_lilith');
     const crymini = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_crymini');
     const laCatrina = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_la_catrina_sinner');
-    expect(razzle && lilith && crymini && laCatrina).toBeTruthy();
+    const mimzy = HAZBIN_DIRECTORY_PROFILES.find(({ id }) => id === 'hz_mimzy');
+    expect(razzle && lilith && crymini && laCatrina && mimzy).toBeTruthy();
 
     expect(isHazbinDirectoryFighterVisible({ ...razzle!, assetStatus: 'planned' }, seasonOneTimeline)).toBe(false);
     expect(isHazbinDirectoryFighterVisible({ ...razzle!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(true);
+    expect(isHazbinDirectoryFighterVisible({ ...mimzy!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(true);
     expect(isHazbinDirectoryFighterVisible({ ...lilith!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
     expect(isHazbinDirectoryFighterVisible({ ...crymini!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
     expect(isHazbinDirectoryFighterVisible({ ...laCatrina!, assetStatus: 'ready' }, seasonOneTimeline)).toBe(false);
@@ -95,6 +99,14 @@ describe('Hazbin Arena directory adapter', () => {
 
   it('does not project Prick or Hatchet as angels after lore correction', () => {
     const fighters = getHazbinArenaFighters(seasonOneTimeline, allExpansionArtReady);
+    const expectedSeasonOneIds = allExpansionArtReady
+      .filter(profile => (
+        !profile.existingOperationalProfile
+        && profile.assetStatus === 'ready'
+        && isHazbinDirectoryProfileVisible(profile, seasonOneTimeline)
+      ))
+      .map(({ id }) => id)
+      .sort();
     const prick = fighters.find(({ id }) => id === 'hz_prick');
     const hatchet = fighters.find(({ id }) => id === 'hz_hatchet');
     const kitty = fighters.find(({ id }) => id === 'hz_kitty');
@@ -108,16 +120,7 @@ describe('Hazbin Arena directory adapter', () => {
     expect(kitty?.timelineScope).toBe('season_1_start');
     expect(kitty?.sourceRef).toMatch(/S1E02/i);
     expect(kitty?.operationalDataStatus).toBe('simulation_au');
-    expect(fighters.map(({ id }) => id).sort()).toEqual([
-      'hz_clara_carmine',
-      'hz_dazzle',
-      'hz_hatchet',
-      'hz_kitty',
-      'hz_odette_carmine',
-      'hz_prick',
-      'hz_razzle',
-      'hz_shark_gang_leader',
-    ]);
+    expect(fighters.map(({ id }) => id).sort()).toEqual(expectedSeasonOneIds);
   });
 
   it('keeps the original sprite registry intact and registers only directory art marked ready', () => {
@@ -133,21 +136,23 @@ describe('Hazbin Arena directory adapter', () => {
         sheet: profile.sheetPath,
         row: profile.sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
+        cinematicSheets: buildHazbinCinematicSheetPaths(profile.sheetPath),
         animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       });
     }
 
     const allReadySprites = buildHazbinDirectorySpriteAssets(allExpansionArtReady);
-    const allReadyFighterProfiles = allExpansionArtReady.filter(({ existingOperationalProfile, fighterEligible }) => (
-      !existingOperationalProfile && fighterEligible
+    const allReadyArenaProfiles = allExpansionArtReady.filter(({ existingOperationalProfile, assetStatus }) => (
+      !existingOperationalProfile && assetStatus === 'ready'
     ));
-    expect(allReadyFighterProfiles).toHaveLength(36);
-    for (const profile of allReadyFighterProfiles) {
+    expect(allReadyArenaProfiles).toHaveLength(76);
+    for (const profile of allReadyArenaProfiles) {
       expect(allReadySprites[profile.id]).toEqual({
         portrait: profile.portrait,
         sheet: profile.sheetPath,
         row: profile.sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
+        cinematicSheets: buildHazbinCinematicSheetPaths(profile.sheetPath),
         animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       });
     }

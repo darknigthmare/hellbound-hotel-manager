@@ -5,6 +5,10 @@ import {
   type SpriteAnimationSetId,
   type SupplementalSpriteAnimationBankId,
 } from './sprite-animation-registry';
+import {
+  PENTAGRAM_CINEMATIC_BANKS,
+  type PentagramCinematicKind,
+} from './pentagram-cinematics';
 
 export interface SpriteSheetDefinition {
   id: string;
@@ -19,6 +23,7 @@ export interface CharacterSpriteAsset {
   sheet: string;
   row: number;
   animationSheets: Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
+  cinematicSheets: Readonly<Record<PentagramCinematicKind, string>>;
   animationSetId: SpriteAnimationSetId;
 }
 
@@ -48,11 +53,30 @@ export function buildHazbinAnimationSheetPaths(
   ) as Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
 }
 
+export function buildHazbinCinematicSheetPaths(
+  baseSheetPath: string,
+): Readonly<Record<PentagramCinematicKind, string>> {
+  const stem = getSheetStem(baseSheetPath);
+  return Object.fromEntries(
+    PENTAGRAM_CINEMATIC_BANKS.map(bank => [
+      bank,
+      `/assets/sprites/hazbin/cinematics/v1/${bank}/${stem}-${bank}.png`,
+    ]),
+  ) as Readonly<Record<PentagramCinematicKind, string>>;
+}
+
 export function getCharacterSpriteSheet(
   sprite: CharacterSpriteAsset,
   bank: SpriteAnimationBankId,
 ): string {
   return bank === 'base' ? sprite.sheet : sprite.animationSheets[bank];
+}
+
+export function getCharacterCinematicSpriteSheet(
+  sprite: CharacterSpriteAsset,
+  kind: PentagramCinematicKind,
+): string {
+  return sprite.cinematicSheets[kind];
 }
 
 export const SPRITE_SHEETS: readonly SpriteSheetDefinition[] = [
@@ -137,6 +161,9 @@ const OPERATIONAL_CHARACTER_SPRITES = Object.fromEntries(
       animationSheets: buildHazbinAnimationSheetPaths(
         `/assets/sprites/sheets/${sheet}.png`,
       ),
+      cinematicSheets: buildHazbinCinematicSheetPaths(
+        `/assets/sprites/sheets/${sheet}.png`,
+      ),
       animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
     }
   ])
@@ -155,6 +182,7 @@ export function buildHazbinDirectorySpriteAssets(
         sheet: sheetPath,
         row: sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(sheetPath),
+        cinematicSheets: buildHazbinCinematicSheetPaths(sheetPath),
         animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
       },
     ]),

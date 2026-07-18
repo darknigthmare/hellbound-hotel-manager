@@ -1,6 +1,6 @@
 # Character sprite atlases
 
-One hundred twenty-seven OpenAI-generated animation atlases cover 100 illustrated Hazbin profiles and 108 optional Helluva Boss profiles: 3,048 validated animation cells and 208 extracted portraits in total. Hazbin has 25 identity/base atlases plus 75 supplementary movement, offense and reaction atlases. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG. Only neutral poses from base atlases are extracted by `scripts/build_sprite_assets.py`; supplementary banks never create duplicate portraits.
+Two hundred two OpenAI-generated animation atlases cover 100 illustrated Hazbin profiles and 108 optional Helluva Boss profiles: 4,848 validated animation cells and 208 extracted portraits in total. Hazbin has 25 identity/base atlases, 75 supplementary movement/offense/reaction atlases, and 75 new intro/victory/draw cinematic atlases. Existing Hazbin finals live in `public/assets/sprites/sheets/`; the expanded Hazbin roster publishes under `public/assets/sprites/hazbin/`; the twenty-seven isolated Helluva Boss finals live in `public/assets/sprites/helluva/sheets/`. Every final atlas is a transparent 1536×1024 PNG. Only neutral poses from base atlases are extracted by `scripts/build_sprite_assets.py`; supplementary banks never create duplicate portraits.
 
 The chroma-key generation masters are retained in `chroma/`. Local third-party visual reference files remain ignored under `references/`, while the tracked provenance index in `references/hazbin/references.json` records the source pages and image URLs used to guide the original generated assets.
 
@@ -90,6 +90,29 @@ The live fight passes each sprite's `animationSetId` and the fighter-style
 scaled `actionDurationMs` into the resolver. The resolver normalizes startup
 and recovery around the rounded impact boundary, so rushdown, zoner, bruiser
 and boss timing all enter column 4 on the same frame that damage is resolved.
+
+## Hazbin three-bank cinematic contract
+
+All 100 illustrated Hazbin identities also select
+`three-bank-cinematics-v1`. The machine-readable contract is
+[`hazbin-cinematic-banks-manifest.json`](./hazbin-cinematic-banks-manifest.json):
+25 identity atlases multiplied by the `intro`, `victory`, and `draw` banks
+produces 75 additional files and 1,800 genuinely new cells. No cinematic bank
+falls back to or copies a base/combat pose. Each character therefore has 18
+new cinematic poses and 42 authored poses in total.
+
+| Bank | Six authored columns |
+| --- | --- |
+| `intro` | Entrance; arrival; stance; signature flourish; challenge; ready pose |
+| `victory` | Win reaction; confidence; celebration; peak triumph; flourish; winner pose |
+| `draw` | Exhaustion; recovery; opponent check; acknowledgement; breath; unresolved pose |
+
+ImageGen chroma masters live under
+`art/sprite-sheets/chroma/hazbin-cinematics/<bank>/`. Run
+`python scripts/prepare_hazbin_cinematics.py` to isolate, normalize, validate,
+and atomically publish all 75 transparent atlases under
+`/assets/sprites/hazbin/cinematics/v1/`. The `--check` pass reopens every
+published RGBA atlas and validates all 1,800 cells.
 
 `scripts/build_sprite_assets.py --check` validates the contract before it
 extracts any portrait. In addition to dimensions, row maps, RGBA output,
@@ -182,6 +205,8 @@ python scripts\prepare_hazbin_expansion.py
 python scripts\build_sprite_assets.py --require-hazbin-expansion
 python -m scripts.prepare_hazbin_animations
 python -m scripts.prepare_hazbin_animations --check
+python scripts\prepare_hazbin_cinematics.py
+python scripts\prepare_hazbin_cinematics.py --check
 ```
 
 The first command rebuilds the historical Hazbin and Helluva portraits. The preparation check requires all nineteen OpenAI chroma masters, removes each configured chroma plate, isolates every fixed cell and proves the 6 px gutter without publishing. The following preparation command atomically publishes the transparent atlases; the final strict build validates all 456 expanded-Hazbin cells and writes the 76 matching portraits. The portrait builder reads the neutral pose from column 1 of each 6×4 atlas, isolates the primary connected sprite from any neighbouring-cell spill, and writes a transparent 512×512 portrait for every configured character ID. Before replacing portraits it validates exact 1536×1024 dimensions, row maps, display-name coverage, safe public output paths and visible content in all cells. The expanded Hazbin collection also enforces per-cell alpha gutters and post-resize portrait margins.
@@ -198,4 +223,4 @@ Every Helluva sheet follows the same generation contract: four visual references
 
 Jarold Mayberry remains a lore-only mention because no unobstructed official design exists. The unnamed Sinsmas family remains mission context rather than a fake single-character sprite.
 
-The current strict published-art pass validates all 127 atlases, 3,048 animation cells and 208 portraits. Hazbin accounts for 100 atlases, 2,400 cells and 100 portraits; Helluva Boss accounts for 27 atlases, 648 cells and 108 portraits.
+The current strict published-art pass validates all 202 atlases, 4,848 animation cells and 208 portraits. Hazbin accounts for 175 atlases, 4,200 cells and 100 portraits; Helluva Boss accounts for 27 atlases, 648 cells and 108 portraits.

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "collectionId": "hazbin-match-cinematics",
+  "status": "art_ready",
+  "atomic": true,
+  "animationContractId": "three-bank-cinematics-v1",
+  "identityManifest": "hazbin-animation-banks-manifest.json",
+  "masterDirectory": "art/sprite-sheets/chroma/hazbin-cinematics",
+  "publicDirectory": "/assets/sprites/hazbin/cinematics/v1",
+  "canvas": {
+    "width": 1536,
+    "height": 1024,
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "minimumAlphaMargin": 6
+  },
+  "banks": [
+    {
+      "id": "intro",
+      "columnRoles": [
+        "entrance",
+        "settle",
+        "flourish_start",
+        "flourish_climax",
+        "recovery",
+        "combat_ready"
+      ]
+    },
+    {
+      "id": "victory",
+      "columnRoles": [
+        "win_realization",
+        "celebration_start",
+        "flourish_build",
+        "celebration_climax",
+        "winner_hold",
+        "victory_settle"
+      ]
+    },
+    {
+      "id": "draw",
+      "columnRoles": [
+        "exhausted_stop",
+        "draw_realization",
+        "reaction_start",
+        "reaction_climax",
+        "regain_composure",
+        "wary_end"
+      ]
+    }
+  ]
+}

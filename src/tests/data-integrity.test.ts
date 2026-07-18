@@ -25,6 +25,7 @@ import {
   SPRITE_ANIMATION_SETS,
   SPRITE_ATLAS_COLUMN_COUNT,
 } from '../lib/sprite-animation-registry';
+import { PENTAGRAM_CINEMATIC_BANKS } from '../lib/pentagram-cinematics';
 import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 
 class MemoryStorage implements StorageLike {
@@ -91,6 +92,7 @@ describe('generated character sprite coverage', () => {
   it('keeps atlas rows unique and every published PNG present at its contract size', () => {
     const rowKeys = new Set<string>();
     const animationSheetPaths = new Set<string>();
+    const cinematicSheetPaths = new Set<string>();
     expect(SPRITE_SHEETS).toHaveLength(6);
 
     for (const sheet of SPRITE_SHEETS) {
@@ -118,12 +120,23 @@ describe('generated character sprite coverage', () => {
         expect(SPRITE_ANIMATION_SETS[sprite.animationSetId].bankColumnRoles?.[bank])
           .toHaveLength(SPRITE_ATLAS_COLUMN_COUNT);
       }
+      for (const bank of PENTAGRAM_CINEMATIC_BANKS) {
+        cinematicSheetPaths.add(sprite.cinematicSheets[bank]);
+      }
     }
 
     expect(rowKeys).toHaveLength(Object.keys(CHARACTER_SPRITES).length);
     expect(animationSheetPaths).toHaveLength(75);
     for (const animationSheet of animationSheetPaths) {
       expect(readPngMetadata(animationSheet)).toEqual({
+        width: 1536,
+        height: 1024,
+        colorType: 6,
+      });
+    }
+    expect(cinematicSheetPaths).toHaveLength(75);
+    for (const cinematicSheet of cinematicSheetPaths) {
+      expect(readPngMetadata(cinematicSheet)).toEqual({
         width: 1536,
         height: 1024,
         colorType: 6,

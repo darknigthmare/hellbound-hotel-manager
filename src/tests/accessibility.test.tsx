@@ -189,19 +189,7 @@ describe('automated accessibility contracts', () => {
     expect(container.querySelectorAll('.arena-roster-tile > span')).toHaveLength(0);
     expect(container.querySelectorAll('.arena-fighter__portrait > img')).toHaveLength(2);
     expect(container.querySelectorAll('.arena-roster-tile > img').length).toBeGreaterThan(0);
-    expect(screen.getAllByRole('button', { name: /Select stage/i })).toHaveLength(8);
-    const carmineStage = screen.getByRole('button', { name: 'Select stage Carmine Industries' });
-    await user.click(carmineStage);
-    expect(carmineStage.getAttribute('aria-pressed')).toBe('true');
-    expect(screen.getByText('Steel-Toe Staccato')).toBeTruthy();
-    expect(screen.getByText(/Carmilla Carmine.+Overlords meet/i)).toBeTruthy();
-
-    const heavenStage = screen.getByRole('button', { name: 'Select stage Heaven Embassy & Clock Tower' });
-    await user.click(heavenStage);
-    expect(heavenStage.getAttribute('aria-pressed')).toBe('true');
-    expect(screen.getByText('Halo Clock Downbeat')).toBeTruthy();
-    expect(screen.getByText(/clock tower.+extermination schedule/i)).toBeTruthy();
-    expect(screen.getByRole('checkbox', { name: 'Soundtrack on' })).toBeTruthy();
+    expect(screen.queryAllByRole('button', { name: /Select stage/i })).toHaveLength(0);
 
     const rosterSearch = screen.getByRole('searchbox', { name: 'Search fighter roster' });
     expect(screen.getByText(`1–12 of ${fighterCount}`)).toBeTruthy();
@@ -232,6 +220,24 @@ describe('automated accessibility contracts', () => {
     expect(screen.queryByRole('combobox', { name: 'Choose fighter one' })).toBeNull();
     expect(screen.queryByRole('combobox', { name: 'Choose fighter two' })).toBeNull();
     expect(screen.queryByRole('button', { name: /Start exhibition/i })).toBeNull();
+    expect(screen.getByRole('heading', { name: 'Choose the exhibition venue' })).toBeTruthy();
+    expect(screen.getAllByRole('button', { name: /Select stage/i })).toHaveLength(8);
+    expect(screen.queryByRole('region', { name: /Live combat/i })).toBeNull();
+
+    const carmineStage = screen.getByRole('button', { name: 'Select stage Carmine Industries' });
+    await user.click(carmineStage);
+    expect(carmineStage.getAttribute('aria-pressed')).toBe('true');
+    expect(screen.getByText('Steel-Toe Staccato')).toBeTruthy();
+    expect(screen.getByText(/Carmilla Carmine.+Overlords meet/i)).toBeTruthy();
+
+    const heavenStage = screen.getByRole('button', { name: 'Select stage Heaven Embassy & Clock Tower' });
+    await user.click(heavenStage);
+    expect(heavenStage.getAttribute('aria-pressed')).toBe('true');
+    expect(screen.getByText('Halo Clock Downbeat')).toBeTruthy();
+    expect(screen.getByText(/clock tower.+extermination schedule/i)).toBeTruthy();
+    expect(screen.getByRole('checkbox', { name: 'Soundtrack on' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: /Fight at Heaven Embassy/i }));
+
     expect(screen.queryByRole('button', { name: /^(Strike|Guard|Special|Step in)$/i })).toBeNull();
     expect(screen.getByRole('group', { name: /P1 tactile controls for Angel Dust/i })).toBeTruthy();
     expect(screen.queryByRole('group', { name: /P2 tactile controls/i })).toBeNull();
@@ -240,7 +246,7 @@ describe('automated accessibility contracts', () => {
     const liveStage = screen.getByRole('region', { name: /Live combat: Angel Dust versus Vaggie/i });
     await waitFor(() => expect(document.activeElement).toBe(liveStage));
     expect(liveStage.dataset.stage).toBe('heaven-embassy');
-    expect(liveStage.dataset.phase).toBe('ready');
+    expect(liveStage.dataset.phase).toBe('intro');
     expect(screen.getByRole('button', { name: 'Pause' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Quit' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: /2\.5D combat — Angel Dust vs Vaggie/i })).toBeTruthy();
@@ -253,7 +259,7 @@ describe('automated accessibility contracts', () => {
     expect(Number(angelCombatant?.dataset.position)).toBeLessThan(Number(vaggieCombatant?.dataset.position));
     expect(angelCombatant?.dataset.facing).toBe('right');
     expect(vaggieCombatant?.dataset.facing).toBe('left');
-    await waitFor(() => expect(liveStage.dataset.phase).toBe('running'), { timeout: 2_000 });
+    await waitFor(() => expect(liveStage.dataset.phase).toBe('running'), { timeout: 4_000 });
 
     await user.click(screen.getByRole('button', { name: 'Pause' }));
     expect(liveStage.dataset.phase).toBe('paused');
@@ -309,7 +315,7 @@ describe('automated accessibility contracts', () => {
     };
     const { container } = render(<PentagramArena state={emptyState} />);
 
-    expect(screen.getByText('0 fighters · 24 poses each')).toBeTruthy();
+    expect(screen.getByText('0 fighters · 42 poses each')).toBeTruthy();
     expect(screen.getAllByRole('option', { name: 'No eligible fighters' })).toHaveLength(2);
     expect(screen.getByText(/At least two timeline-eligible sprite fighters/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);

@@ -42,7 +42,7 @@ export function isHazbinDirectoryFighterVisible(
   profile: HazbinDirectoryProfile,
   timeline: TimelineState,
 ): boolean {
-  if (profile.existingOperationalProfile || !profile.fighterEligible || profile.assetStatus !== 'ready') {
+  if (profile.existingOperationalProfile || profile.assetStatus !== 'ready') {
     return false;
   }
 
