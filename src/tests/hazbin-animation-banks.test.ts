@@ -7,8 +7,9 @@ import {
   HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS,
 } from '../lib/character-sprites';
 import {
-  FOUR_BANK_COMBAT_ANIMATION_SET,
-  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+  EIGHT_BANK_COMBAT_ANIMATION_SET,
+  EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
+  type SupplementalSpriteAnimationBankId,
 } from '../lib/sprite-animation-registry';
 
 interface AnimationBankManifest {
@@ -26,7 +27,7 @@ interface AnimationBankManifest {
     minimumAlphaMargin: number;
   };
   banks: Array<{
-    id: 'movement' | 'offense' | 'reaction';
+    id: SupplementalSpriteAnimationBankId;
     columnRoles: string[];
   }>;
   baseAtlases: Array<{
@@ -42,11 +43,11 @@ const manifest = JSON.parse(readFileSync(
 )) as AnimationBankManifest;
 
 describe('Hazbin supplementary animation banks', () => {
-  it('maps 25 base atlases and three banks to all 100 illustrated identities', () => {
-    expect(manifest.schemaVersion).toBe(1);
+  it('maps 25 base atlases and seven banks to all 100 illustrated identities', () => {
+    expect(manifest.schemaVersion).toBe(2);
     expect(manifest.status).toBe('art_ready');
     expect(manifest.atomic).toBe(true);
-    expect(manifest.animationContractId).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
+    expect(manifest.animationContractId).toBe(EIGHT_BANK_COMBAT_ANIMATION_SET_ID);
     expect(manifest.canvas).toEqual({
       width: 1536,
       height: 1024,
@@ -77,7 +78,7 @@ describe('Hazbin supplementary animation banks', () => {
         expect(sprite, `missing animation sprite for ${characterId}`).toBeDefined();
         expect(sprite.sheet).toBe(atlas.baseSheet);
         expect(sprite.row).toBe(row);
-        expect(sprite.animationSetId).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
+        expect(sprite.animationSetId).toBe(EIGHT_BANK_COMBAT_ANIMATION_SET_ID);
 
         for (const bank of HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS) {
           const publicPath = `/assets/sprites/hazbin/animation/v1/${bank}/${atlas.stem}-${bank}.png`;
@@ -92,19 +93,22 @@ describe('Hazbin supplementary animation banks', () => {
     }
   });
 
-  it('keeps the manifest roles identical to the runtime v3 animation set', () => {
+  it('keeps all seven manifest roles identical to the runtime v4 animation set', () => {
     for (const bank of manifest.banks) {
       expect(bank.columnRoles)
-        .toEqual(FOUR_BANK_COMBAT_ANIMATION_SET.bankColumnRoles?.[bank.id]);
+        .toEqual(EIGHT_BANK_COMBAT_ANIMATION_SET.bankColumnRoles?.[bank.id]);
     }
-    expect(Object.keys(FOUR_BANK_COMBAT_ANIMATION_SET.clips).sort()).toEqual([
+    expect(Object.keys(EIGHT_BANK_COMBAT_ANIMATION_SET.clips).sort()).toEqual([
+      'crouch',
       'guard',
       'heavy',
       'hit',
       'idle',
+      'jump',
       'ko',
       'light',
       'special',
+      'taunt',
       'victory',
       'walk',
     ]);

@@ -28,13 +28,17 @@ import {
   createCombatState,
   createNextCombatRound,
   getCombatAttackDuration,
+  getCombatPoseActionDuration,
   isCombatAttackAction,
+  isCombatPoseAction,
   releaseCombatGuard,
   resolveCombatAttack,
+  resolveCombatPoseAction,
   stepCombat,
   type CombatAction,
   type CombatAttack,
   type CombatInputs,
+  type CombatPoseAction,
   type CombatState,
   type CombatantDefinition,
   type PlayerSide,
@@ -83,6 +87,7 @@ const HELD_TOUCH_CONTROLS: readonly {
   glyph: string;
 }[] = [
   { input: 'left', label: 'move left', glyph: '←' },
+  { input: 'crouch', label: 'crouch', glyph: '▼' },
   { input: 'guard', label: 'guard', glyph: '◆' },
   { input: 'right', label: 'move right', glyph: '→' },
 ];
@@ -97,6 +102,15 @@ const ATTACK_TOUCH_CONTROLS: readonly {
   { attack: 'special', label: 'special attack', glyph: 'S' },
 ];
 
+const POSE_TOUCH_CONTROLS: readonly {
+  action: CombatPoseAction;
+  label: string;
+  glyph: string;
+}[] = [
+  { action: 'jump', label: 'jump', glyph: '▲' },
+  { action: 'taunt', label: 'taunt', glyph: 'T' },
+];
+
 const READY_COUNTDOWN_MS = 800;
 const FIGHT_COUNTDOWN_MS = 450;
 // Hidden/blurred tabs pause explicitly. While visible, retain up to one second
@@ -108,15 +122,23 @@ const MANAGED_CODES = new Set([
   'KeyQ',
   'KeyD',
   'KeyS',
+  'KeyE',
+  'KeyW',
+  'KeyZ',
+  'KeyR',
   'KeyF',
   'KeyG',
   'KeyH',
   'ArrowLeft',
   'ArrowRight',
+  'ArrowUp',
   'ArrowDown',
+  'Slash',
+  'ShiftRight',
   'KeyJ',
   'KeyK',
   'KeyL',
+  'KeyU',
   'Enter',
   'Escape',
   'KeyP',
@@ -129,6 +151,16 @@ const ATTACK_CODES: Readonly<Record<string, readonly [PlayerSide, CombatAttack]>
   KeyJ: ['two', 'light'],
   KeyK: ['two', 'heavy'],
   KeyL: ['two', 'special'],
+};
+
+const POSE_ACTION_CODES: Readonly<
+  Record<string, readonly [PlayerSide, CombatPoseAction]>
+> = {
+  KeyW: ['one', 'jump'],
+  KeyZ: ['one', 'jump'],
+  KeyR: ['one', 'taunt'],
+  ArrowUp: ['two', 'jump'],
+  KeyU: ['two', 'taunt'],
 };
 
 function isEditableTarget(target: EventTarget | null): boolean {
@@ -148,6 +180,9 @@ function getActionLabel(action: CombatAction): string {
   if (action === 'hit') return 'Hit stun';
   if (action === 'ko') return 'K.O.';
   if (action === 'victory') return 'Victory';
+  if (action === 'jump') return 'Jumping';
+  if (action === 'crouch') return 'Crouching';
+  if (action === 'taunt') return 'Taunting';
   if (action === 'walk') return 'Moving';
   if (action === 'guard') return 'Guard';
   return 'Ready';
@@ -158,12 +193,14 @@ function getKeyboardInputs(codes: ReadonlySet<string>): CombatInputs {
     one: {
       left: codes.has('KeyQ') || codes.has('KeyA'),
       right: codes.has('KeyD'),
-      guard: codes.has('KeyS'),
+      crouch: codes.has('KeyS'),
+      guard: codes.has('KeyE'),
     },
     two: {
       left: codes.has('ArrowLeft'),
       right: codes.has('ArrowRight'),
-      guard: codes.has('ArrowDown'),
+      crouch: codes.has('ArrowDown'),
+      guard: codes.has('Slash') || codes.has('ShiftRight'),
     },
   };
 }
@@ -174,19 +211,21 @@ function mergeInputs(keyboard: CombatInputs, pointer: CombatInputs): CombatInput
       left: keyboard.one.left || pointer.one.left,
       right: keyboard.one.right || pointer.one.right,
       guard: keyboard.one.guard || pointer.one.guard,
+      crouch: keyboard.one.crouch || pointer.one.crouch,
     },
     two: {
       left: keyboard.two.left || pointer.two.left,
       right: keyboard.two.right || pointer.two.right,
       guard: keyboard.two.guard || pointer.two.guard,
+      crouch: keyboard.two.crouch || pointer.two.crouch,
     },
   };
 }
 
 function createEmptyInputs(): CombatInputs {
   return {
-    one: { left: false, right: false, guard: false },
-    two: { left: false, right: false, guard: false },
+    one: { left: false, right: false, guard: false, crouch: false },
+    two: { left: false, right: false, guard: false, crouch: false },
   };
 }
 
@@ -309,6 +348,30 @@ export function PentagramLiveFight({
       fighterOneDefinition,
       fighterTwoDefinition,
       allowLightCancel,
+    );
+    commitCombat(next);
+    finishCombatIfNeeded(current, next);
+  }, [
+    commitCombat,
+    fighterOneDefinition,
+    fighterTwoDefinition,
+    finishCombatIfNeeded,
+    matchMode,
+  ]);
+
+  const performPoseAction = useCallback((
+    side: PlayerSide,
+    action: CombatPoseAction,
+  ) => {
+    if (fightPhaseRef.current !== 'running') return;
+    if (matchMode === 'ai' && side === 'two') return;
+    const current = combatRef.current;
+    const next = resolveCombatPoseAction(
+      current,
+      side,
+      action,
+      fighterOneDefinition,
+      fighterTwoDefinition,
     );
     commitCombat(next);
     finishCombatIfNeeded(current, next);
@@ -568,8 +631,12 @@ export function PentagramLiveFight({
       }
 
       pressedCodesRef.current.add(event.code);
+      const poseBinding = POSE_ACTION_CODES[event.code];
       const attackBinding = ATTACK_CODES[event.code];
-      if (attackBinding && !event.repeat) {
+      if (poseBinding && !event.repeat) {
+        performPoseAction(poseBinding[0], poseBinding[1]);
+      }
+      else if (attackBinding && !event.repeat) {
         performAttack(
           attackBinding[0],
           attackBinding[1],
@@ -609,6 +676,7 @@ export function PentagramLiveFight({
     continueRound,
     pauseFight,
     performAttack,
+    performPoseAction,
     quitFight,
   ]);
 
@@ -638,6 +706,7 @@ export function PentagramLiveFight({
       left: deltaX < -14,
       right: deltaX > 14,
       guard: guarding,
+      crouch: false,
     };
     pointerInputsRef.current = {
       ...pointerInputsRef.current,
@@ -752,10 +821,14 @@ export function PentagramLiveFight({
 
   const fighterOneActionDurationMs = isCombatAttackAction(combat.actionOne)
     ? getCombatAttackDuration(fighterOneDefinition, combat.actionOne)
-    : undefined;
+    : isCombatPoseAction(combat.actionOne)
+      ? getCombatPoseActionDuration(combat.actionOne)
+      : undefined;
   const fighterTwoActionDurationMs = isCombatAttackAction(combat.actionTwo)
     ? getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)
-    : undefined;
+    : isCombatPoseAction(combat.actionTwo)
+      ? getCombatPoseActionDuration(combat.actionTwo)
+      : undefined;
   const fighterOneCombatFrame = getCombatAnimationFrame(combat.actionOne, combat.actionMsOne, {
     animationSetId: fighterOneSprite?.animationSetId,
     actionDurationMs: fighterOneActionDurationMs,
@@ -1114,7 +1187,7 @@ export function PentagramLiveFight({
           >
             <div className="arena-touch-controls__header">
               <strong>{shortLabel} · {fighterName}</strong>
-              <span>Hold to move or guard · tap to attack</span>
+              <span>Hold movement, crouch or guard · tap actions</span>
             </div>
             <div className="arena-touch-controls__grid">
               {HELD_TOUCH_CONTROLS.map(({ input, label, glyph }) => (
@@ -1171,6 +1244,19 @@ export function PentagramLiveFight({
                   <small>{label}</small>
                 </button>
               ))}
+              {POSE_TOUCH_CONTROLS.map(({ action, label, glyph }) => (
+                <button
+                  key={action}
+                  type="button"
+                  className="arena-touch-button is-pose"
+                  aria-label={`${shortLabel} ${label}`}
+                  disabled={touchControlsDisabled}
+                  onClick={() => performPoseAction(side, action)}
+                >
+                  <span aria-hidden="true">{glyph}</span>
+                  <small>{label}</small>
+                </button>
+              ))}
             </div>
           </div>
         ))}
@@ -1179,8 +1265,9 @@ export function PentagramLiveFight({
       <div id="arena-live-instructions" className="arena-live-instructions">
         <div className="arena-keymap" aria-label={`${fighterOne.name} controls`}>
           <strong>P1 · {fighterOne.name}</strong>
-          <span><kbd>Q</kbd>/<kbd>A</kbd> <kbd>D</kbd> move · <kbd>S</kbd> guard</span>
+          <span><kbd>Q</kbd>/<kbd>A</kbd> <kbd>D</kbd> move · <kbd>S</kbd> crouch · <kbd>E</kbd> guard</span>
           <span><kbd>F</kbd> light · <kbd>G</kbd> heavy · <kbd>H</kbd> special</span>
+          <span><kbd>Z</kbd>/<kbd>W</kbd> jump · <kbd>R</kbd> taunt</span>
         </div>
         <p>
           The fight runs live while keys are held. <kbd>Esc</kbd> returns to fighter select;
@@ -1203,8 +1290,9 @@ export function PentagramLiveFight({
             </>
           ) : (
             <>
-              <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>↓</kbd> guard</span>
+              <span><kbd>←</kbd> <kbd>→</kbd> move · <kbd>↓</kbd> crouch · <kbd>/</kbd> guard</span>
               <span><kbd>J</kbd> light · <kbd>K</kbd> heavy · <kbd>L</kbd> special</span>
+              <span><kbd>↑</kbd> jump · <kbd>U</kbd> taunt</span>
             </>
           )}
         </div>

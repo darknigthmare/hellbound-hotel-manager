@@ -10,7 +10,7 @@ import {
   CHARACTER_SPRITES,
   getCharacterSpriteAsset,
 } from '../lib/character-sprites';
-import { HAZBIN_FOUR_BANK_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
+import { EIGHT_BANK_COMBAT_ANIMATION_SET_ID } from '../lib/sprite-animation-registry';
 import {
   getHazbinArenaFighters,
   isHazbinDirectoryProfileVisible,
@@ -137,7 +137,7 @@ describe('Hazbin Arena directory adapter', () => {
         row: profile.sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
         cinematicSheets: buildHazbinCinematicSheetPaths(profile.sheetPath),
-        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+        animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
       });
     }
 
@@ -153,7 +153,7 @@ describe('Hazbin Arena directory adapter', () => {
         row: profile.sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(profile.sheetPath),
         cinematicSheets: buildHazbinCinematicSheetPaths(profile.sheetPath),
-        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+        animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
       });
     }
   });

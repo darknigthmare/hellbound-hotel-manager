@@ -1,9 +1,10 @@
 """Prepare and atomically publish Hazbin's supplementary animation banks.
 
 The 25 base atlases remain the identity and row-order authority. ImageGen
-masters live on a flat chroma plate; this deterministic pass keys, recentres,
-validates and publishes their 75 transparent 6x4 derivatives as one release.
-No portraits are extracted from supplementary animation banks.
+masters and identity-preserving motion derivatives live on flat chroma
+plates; this deterministic pass keys, recentres, validates and publishes
+their 175 transparent 6x4 derivatives as one release. No portraits are
+extracted from supplementary animation banks.
 """
 
 from __future__ import annotations
@@ -30,6 +31,12 @@ try:
         validate_sheet,
     )
     from .prepare_hazbin_expansion import prepare_atlas
+    from .generate_motion_bank_masters import (
+        HAZBIN_NEW_BANKS,
+        HAZBIN_TRANSFORMS,
+        expected_hazbin_atlases,
+        render_derived_transparent,
+    )
 except ImportError:
     from build_sprite_assets import (
         COLUMNS,
@@ -43,6 +50,12 @@ except ImportError:
         validate_sheet,
     )
     from prepare_hazbin_expansion import prepare_atlas
+    from generate_motion_bank_masters import (
+        HAZBIN_NEW_BANKS,
+        HAZBIN_TRANSFORMS,
+        expected_hazbin_atlases,
+        render_derived_transparent,
+    )
 
 
 MANIFEST_PATH = (
@@ -56,9 +69,22 @@ PUBLIC_RELEASE_ROOT = (
 )
 STAGING_ROOT = PUBLIC_RELEASE_ROOT.parent / ".v1.tmp"
 BACKUP_ROOT = PUBLIC_RELEASE_ROOT.parent / ".v1.backup"
-BANK_IDS = ("movement", "offense", "reaction")
-ANIMATION_CONTRACT_ID = "four-bank-combat-v3"
-REACTION_MIN_CELL_ALPHA_RATIO = 0.04
+BANK_IDS = (
+    "movement",
+    "offense",
+    "reaction",
+    "taunt",
+    "jump",
+    "crouch",
+    "recoil",
+)
+ANIMATION_CONTRACT_ID = "eight-bank-combat-v4"
+BANK_MIN_CELL_ALPHA_RATIOS = {
+    "reaction": 0.04,
+    "jump": 0.025,
+    "crouch": 0.025,
+    "recoil": 0.025,
+}
 
 
 @dataclass(frozen=True)
@@ -72,7 +98,7 @@ class AnimationAtlas:
 
 @dataclass(frozen=True)
 class AnimationJob:
-    """One of the 75 generated atlas transformations."""
+    """One of the 175 generated atlas transformations."""
 
     atlas: AnimationAtlas
     bank: str
@@ -119,8 +145,8 @@ def load_animation_manifest() -> tuple[AnimationAtlas, ...]:
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"Cannot read {MANIFEST_PATH.name}: {error}") from error
 
-    if manifest.get("schemaVersion") != 1:
-        raise ValueError("Hazbin animation manifest schemaVersion must be 1")
+    if manifest.get("schemaVersion") != 2:
+        raise ValueError("Hazbin animation manifest schemaVersion must be 2")
     if manifest.get("animationContractId") != ANIMATION_CONTRACT_ID:
         raise ValueError("Hazbin animation manifest has the wrong animation contract")
     if manifest.get("atomic") is not True:
@@ -196,9 +222,63 @@ def build_jobs(atlases: Iterable[AnimationAtlas]) -> tuple[AnimationJob, ...]:
         for atlas in atlases
     )
     output_paths = [job.output_path() for job in jobs]
-    if len(jobs) != 75 or len(set(output_paths)) != 75:
-        raise ValueError("Hazbin animation product must contain 75 unique atlas jobs")
+    if len(jobs) != 175 or len(set(output_paths)) != 175:
+        raise ValueError("Hazbin animation product must contain 175 unique atlas jobs")
     return jobs
+
+
+def minimum_alpha_ratio(bank: str) -> float:
+    return BANK_MIN_CELL_ALPHA_RATIOS.get(bank, MIN_CELL_ALPHA_RATIO)
+
+
+def prepare_animation_job(job: AnimationJob) -> tuple[Image.Image, str]:
+    """Reuse reviewed v1 banks and preserve exact alpha for new derivatives."""
+
+    existing_path = job.output_path(PUBLIC_RELEASE_ROOT)
+    if job.bank not in HAZBIN_NEW_BANKS and existing_path.is_file():
+        with Image.open(existing_path) as source:
+            prepared = source.convert("RGBA")
+        validate_sheet(
+            prepared,
+            f"animation/{job.bank}/{job.filename}",
+            strict_alpha_margins=True,
+            minimum_cell_alpha_ratio=minimum_alpha_ratio(job.bank),
+        )
+        return prepared, "reused"
+
+    if job.atlas.stem == "core-a" and job.bank in HAZBIN_NEW_BANKS:
+        return (
+            prepare_atlas(
+                job.master_path,
+                job.filename,
+                attachment_margin=40,
+                drop_border_spill=True,
+                minimum_cell_alpha_ratio=minimum_alpha_ratio(job.bank),
+            ),
+            "keyed ImageGen",
+        )
+
+    atlas_by_stem = {
+        atlas.stem: atlas
+        for atlas in expected_hazbin_atlases()
+    }
+    motion_atlas = atlas_by_stem.get(job.atlas.stem)
+    if motion_atlas is None or job.bank not in HAZBIN_TRANSFORMS:
+        raise ValueError(
+            f"No deterministic alpha source for {job.bank}/{job.filename}"
+        )
+    prepared = render_derived_transparent(
+        motion_atlas,
+        job.bank,
+        HAZBIN_TRANSFORMS[job.bank],
+    )
+    validate_sheet(
+        prepared,
+        f"animation/{job.bank}/{job.filename}",
+        strict_alpha_margins=True,
+        minimum_cell_alpha_ratio=minimum_alpha_ratio(job.bank),
+    )
+    return prepared, "derived"
 
 
 def safe_remove_release_tree(path: Path) -> None:
@@ -231,11 +311,7 @@ def validate_published_jobs(jobs: Iterable[AnimationJob], root: Path) -> int:
             atlas,
             f"animation/{job.bank}/{job.filename}",
             strict_alpha_margins=True,
-            minimum_cell_alpha_ratio=(
-                REACTION_MIN_CELL_ALPHA_RATIO
-                if job.bank == "reaction"
-                else MIN_CELL_ALPHA_RATIO
-            ),
+            minimum_cell_alpha_ratio=minimum_alpha_ratio(job.bank),
         )
         validated += 1
     return validated
@@ -249,7 +325,7 @@ def publish_animation_banks(jobs: tuple[AnimationJob, ...]) -> None:
         preview = ", ".join(path.relative_to(ROOT).as_posix() for path in missing[:8])
         remainder = "" if len(missing) <= 8 else f", plus {len(missing) - 8} more"
         raise FileNotFoundError(
-            f"Missing {len(missing)}/75 Hazbin animation master(s): "
+            f"Missing {len(missing)}/175 Hazbin animation master(s): "
             f"{preview}{remainder}"
         )
 
@@ -260,27 +336,18 @@ def publish_animation_banks(jobs: tuple[AnimationJob, ...]) -> None:
         preparation_failures: list[str] = []
         for index, job in enumerate(jobs, start=1):
             try:
-                prepared = prepare_atlas(
-                    job.master_path,
-                    job.filename,
-                    attachment_margin=40,
-                    drop_border_spill=True,
-                    minimum_cell_alpha_ratio=(
-                        REACTION_MIN_CELL_ALPHA_RATIO
-                        if job.bank == "reaction"
-                        else MIN_CELL_ALPHA_RATIO
-                    ),
-                )
+                prepared, preparation_kind = prepare_animation_job(job)
                 destination = job.output_path(STAGING_ROOT)
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 prepared.save(destination, optimize=True)
             except (OSError, ValueError) as error:
                 failure = f"{job.bank}/{job.filename}: {error}"
                 preparation_failures.append(failure)
-                print(f"[{index:02d}/75] rejected {failure}", flush=True)
+                print(f"[{index:03d}/175] rejected {failure}", flush=True)
                 continue
             print(
-                f"[{index:02d}/75] prepared {job.bank}/{job.filename}",
+                f"[{index:03d}/175] {preparation_kind} "
+                f"{job.bank}/{job.filename}",
                 flush=True,
             )
 
@@ -309,12 +376,12 @@ def publish_animation_banks(jobs: tuple[AnimationJob, ...]) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Prepare or validate the 75 Hazbin supplementary animation atlases."
+        description="Prepare or validate the 175 Hazbin supplementary animation atlases."
     )
     parser.add_argument(
         "--check",
         action="store_true",
-        help="validate the already-published 75-atlas release without writing",
+        help="validate the already-published 175-atlas release without writing",
     )
     return parser.parse_args()
 
@@ -328,7 +395,7 @@ def main() -> None:
             count = validate_published_jobs(jobs, PUBLIC_RELEASE_ROOT)
             print(
                 f"Validated {count} supplementary Hazbin atlases "
-                f"({count * COLUMNS * ROWS} cells, 100 characters x 3 banks)."
+                f"({count * COLUMNS * ROWS} cells, 100 characters x 7 banks)."
             )
             return
         publish_animation_banks(jobs)
@@ -336,8 +403,8 @@ def main() -> None:
         raise SystemExit(f"Hazbin animation preparation failed: {error}") from None
 
     print(
-        "Published 75 supplementary Hazbin atlases atomically "
-        "(1,800 cells, 18 new poses for each of 100 characters)."
+        "Published 175 supplementary Hazbin atlases atomically "
+        "(4,200 cells, 42 new poses for each of 100 characters)."
     )
 
 

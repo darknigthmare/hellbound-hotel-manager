@@ -1,9 +1,9 @@
 {
-  "schemaVersion": 1,
-  "collectionId": "hazbin-four-bank-combat",
+  "schemaVersion": 2,
+  "collectionId": "hazbin-eight-bank-combat",
   "status": "art_ready",
   "atomic": true,
-  "animationContractId": "four-bank-combat-v3",
+  "animationContractId": "eight-bank-combat-v4",
   "masterDirectory": "art/sprite-sheets/chroma/hazbin-animation",
   "publicDirectory": "/assets/sprites/hazbin/animation/v1",
   "canvas": {
@@ -47,6 +47,50 @@
         "heavy_hit",
         "knockdown",
         "ko_disabled"
+      ]
+    },
+    {
+      "id": "taunt",
+      "columnRoles": [
+        "taunt_entry",
+        "taunt_gesture",
+        "taunt_flourish",
+        "taunt_peak",
+        "taunt_settle",
+        "taunt_return"
+      ]
+    },
+    {
+      "id": "jump",
+      "columnRoles": [
+        "jump_takeoff",
+        "jump_launch",
+        "jump_rise",
+        "jump_apex",
+        "jump_descend",
+        "jump_land"
+      ]
+    },
+    {
+      "id": "crouch",
+      "columnRoles": [
+        "crouch_transition",
+        "crouch_idle_a",
+        "crouch_idle_b",
+        "crouch_guard",
+        "crouch_attack_ready",
+        "crouch_stand"
+      ]
+    },
+    {
+      "id": "recoil",
+      "columnRoles": [
+        "recoil_impact",
+        "recoil_snap",
+        "recoil_stagger",
+        "recoil_airborne",
+        "recoil_skid",
+        "recoil_recover"
       ]
     }
   ],

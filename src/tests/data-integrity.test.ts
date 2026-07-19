@@ -21,7 +21,7 @@ import {
   SPRITE_SHEETS,
 } from '../lib/character-sprites';
 import {
-  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+  EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
   SPRITE_ANIMATION_SETS,
   SPRITE_ATLAS_COLUMN_COUNT,
 } from '../lib/sprite-animation-registry';
@@ -113,7 +113,7 @@ describe('generated character sprite coverage', () => {
         height: 512,
         colorType: 6
       });
-      expect(sprite.animationSetId).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
+      expect(sprite.animationSetId).toBe(EIGHT_BANK_COMBAT_ANIMATION_SET_ID);
       for (const bank of HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS) {
         const animationSheet = sprite.animationSheets[bank];
         animationSheetPaths.add(animationSheet);
@@ -126,7 +126,7 @@ describe('generated character sprite coverage', () => {
     }
 
     expect(rowKeys).toHaveLength(Object.keys(CHARACTER_SPRITES).length);
-    expect(animationSheetPaths).toHaveLength(75);
+    expect(animationSheetPaths).toHaveLength(175);
     for (const animationSheet of animationSheetPaths) {
       expect(readPngMetadata(animationSheet)).toEqual({
         width: 1536,

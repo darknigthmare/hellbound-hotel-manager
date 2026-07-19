@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "collectionId": "helluva-eight-bank-combat",
+  "status": "art_ready",
+  "atomic": true,
+  "animationContractId": "eight-bank-combat-v4",
+  "masterDirectory": "art/sprite-sheets/chroma/helluva-animation",
+  "publicDirectory": "/assets/sprites/helluva/animation/v1",
+  "canvas": {
+    "width": 1536,
+    "height": 1024,
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "minimumAlphaMargin": 6
+  },
+  "banks": [
+    {
+      "id": "movement",
+      "columnRoles": [
+        "idle_stable",
+        "idle_weight_shift",
+        "walk_contact_a",
+        "walk_passing",
+        "walk_contact_b",
+        "dash_brake"
+      ]
+    },
+    {
+      "id": "offense",
+      "columnRoles": [
+        "light_startup",
+        "light_contact",
+        "light_recovery",
+        "heavy_startup",
+        "heavy_contact",
+        "heavy_recovery"
+      ]
+    },
+    {
+      "id": "reaction",
+      "columnRoles": [
+        "guard_entry",
+        "guard_impact",
+        "light_hit",
+        "heavy_hit",
+        "knockdown",
+        "ko_disabled"
+      ]
+    },
+    {
+      "id": "taunt",
+      "columnRoles": [
+        "taunt_entry",
+        "taunt_gesture",
+        "taunt_flourish",
+        "taunt_peak",
+        "taunt_settle",
+        "taunt_return"
+      ]
+    },
+    {
+      "id": "jump",
+      "columnRoles": [
+        "jump_takeoff",
+        "jump_launch",
+        "jump_rise",
+        "jump_apex",
+        "jump_descend",
+        "jump_land"
+      ]
+    },
+    {
+      "id": "crouch",
+      "columnRoles": [
+        "crouch_transition",
+        "crouch_idle_a",
+        "crouch_idle_b",
+        "crouch_guard",
+        "crouch_attack_ready",
+        "crouch_stand"
+      ]
+    },
+    {
+      "id": "recoil",
+      "columnRoles": [
+        "recoil_impact",
+        "recoil_snap",
+        "recoil_stagger",
+        "recoil_airborne",
+        "recoil_skid",
+        "recoil_recover"
+      ]
+    }
+  ],
+  "baseAtlases": [
+    {
+      "stem": "helluva-core",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-core.png",
+      "rows": ["hb_blitzo", "hb_moxxie", "hb_millie", "hb_loona"]
+    },
+    {
+      "stem": "helluva-allies",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-allies.png",
+      "rows": ["hb_stolas", "hb_octavia", "hb_fizzarolli", "hb_verosika"]
+    },
+    {
+      "stem": "helluva-powers",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-powers.png",
+      "rows": ["hb_asmodeus", "hb_beelzebub", "hb_striker", "hb_stella"]
+    },
+    {
+      "stem": "helluva-extended",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "rows": ["hb_crimson", "hb_vortex", "hb_sallie_may", "hb_andrealphus"]
+    },
+    {
+      "stem": "helluva-origins",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-origins.png",
+      "rows": ["hb_paimon", "hb_barbie_wire", "hb_cash_buckzo", "hb_wally_wackford"]
+    },
+    {
+      "stem": "helluva-rivals",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "rows": ["hb_mammon", "hb_chazwick_thurman", "hb_glitz", "hb_glam"]
+    },
+    {
+      "stem": "helluva-celestial",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-celestial.png",
+      "rows": ["hb_cletus", "hb_collin", "hb_keenie", "hb_vassago"]
+    },
+    {
+      "stem": "helluva-operatives",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-operatives.png",
+      "rows": ["hb_robo_fizz", "hb_agent_one", "hb_agent_two", "hb_satan"]
+    },
+    {
+      "stem": "helluva-hauntings",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-hauntings.png",
+      "rows": ["hb_rolando", "hb_mrs_mayberry", "hb_martha", "hb_tilla"]
+    },
+    {
+      "stem": "helluva-legacies",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-legacies.png",
+      "rows": ["hb_moxxies_mother", "hb_loopty_goopty", "hb_lyle_lipton", "hb_deerie"]
+    },
+    {
+      "stem": "helluva-powers-and-kin",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-powers-and-kin.png",
+      "rows": ["hb_joe", "hb_lin", "hb_leviathan", "hb_belphegor"]
+    },
+    {
+      "stem": "helluva-secondary-underworld",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-secondary-underworld.png",
+      "rows": ["hb_alessio", "hb_arick_burnz", "hb_counselor_jimmy", "hb_yogirt"]
+    },
+    {
+      "stem": "helluva-secondary-humans",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-secondary-humans.png",
+      "rows": ["hb_emberlynn_pinkle", "hb_kendra", "hb_rita", "hb_better_than_blitzo_guy"]
+    },
+    {
+      "stem": "helluva-secondary-rides",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-secondary-rides.png",
+      "rows": ["hb_loo_loo", "hb_jesse", "hb_miles", "hb_bombproof"]
+    },
+    {
+      "stem": "helluva-secondary-nightlife",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-secondary-nightlife.png",
+      "rows": ["hb_muffy", "hb_dr_somna", "hb_vikki", "hb_gigi"]
+    },
+    {
+      "stem": "helluva-friends-and-foes",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-friends-and-foes.png",
+      "rows": ["hb_russ", "hb_dennis", "hb_ralphie", "hb_catfish_monster"]
+    },
+    {
+      "stem": "helluva-greed-and-ghosts",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-greed-and-ghosts.png",
+      "rows": ["hb_elder_jaws", "hb_bethany_ghostfucker", "hb_karen_client", "hb_toledo_the_igor"]
+    },
+    {
+      "stem": "helluva-stars-and-strays",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-stars-and-strays.png",
+      "rows": ["hb_brennon_ragers", "hb_uggie", "hb_skips", "hb_queef"]
+    },
+    {
+      "stem": "helluva-shorts-targets-a",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-shorts-targets-a.png",
+      "rows": ["hb_ace", "hb_gerardo_velazquez", "hb_frank_mctickly_wrigglers", "hb_driveso"]
+    },
+    {
+      "stem": "helluva-shorts-targets-b",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-shorts-targets-b.png",
+      "rows": ["hb_joe_smoe", "hb_paulie_paesano", "hb_luigi_paesano", "hb_william_diddle"]
+    },
+    {
+      "stem": "helluva-shorts-locals",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-shorts-locals.png",
+      "rows": ["hb_adrian", "hb_mr_mayor", "hb_gerald", "hb_rick"]
+    },
+    {
+      "stem": "helluva-verosika-crew-a",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-verosika-crew-a.png",
+      "rows": ["hb_coco", "hb_apple", "hb_kat", "hb_milky"]
+    },
+    {
+      "stem": "helluva-verosika-crew-b",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-verosika-crew-b.png",
+      "rows": ["hb_kiki", "hb_josh", "hb_stolas_family_butler", "hb_mister_butler"]
+    },
+    {
+      "stem": "helluva-family-fallout",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-family-fallout.png",
+      "rows": ["hb_marthas_daughter", "hb_marthas_son", "hb_harold_patriot", "hb_dolores"]
+    },
+    {
+      "stem": "helluva-turning-points",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-turning-points.png",
+      "rows": ["hb_hellhound_adoption_lady", "hb_travis", "hb_tour_guide_guy", "hb_big_woobly"]
+    },
+    {
+      "stem": "helluva-shorts-witnesses",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-shorts-witnesses.png",
+      "rows": ["hb_gerardos_wife", "hb_diddle_secretary", "hb_bigfoot_waiter", "hb_gorilla_suit_guy"]
+    },
+    {
+      "stem": "helluva-cherub-staff",
+      "baseSheet": "/assets/sprites/helluva/sheets/helluva-cherub-staff.png",
+      "rows": ["hb_rachel_cherub", "hb_bea_cherub", "hb_beau_cherub", "hb_honey_cherub"]
+    }
+  ]
+}

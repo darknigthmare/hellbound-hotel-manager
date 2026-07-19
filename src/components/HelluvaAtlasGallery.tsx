@@ -59,7 +59,7 @@ export function HelluvaAtlasGallery({
         <div>
           <span>OpenAI-generated gameplay art</span>
           <h2 id="helluva-sprites-title">Sprite atlases</h2>
-          <p>{visibleSheets.length} visible sheets cover the current reference profiles across six gameplay poses each.</p>
+          <p>{visibleSheets.length} visible identity sheets anchor 48 combat poses per profile: six base poses plus 42 frames across seven motion banks.</p>
         </div>
         {hiddenSheetCount > 0 ? (
           <span className="helluva-hidden-count">
@@ -120,7 +120,7 @@ export function HelluvaAtlasGallery({
                         )}
                         <figcaption>
                           <strong>{sheet.characters.join(' · ')}</strong>
-                          <span>6 poses per character</span>
+                          <span>48 combat poses per character</span>
                         </figcaption>
                       </figure>
                     ))}

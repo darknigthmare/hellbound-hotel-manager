@@ -6,6 +6,9 @@ export type CombatAction =
   | 'idle'
   | 'walk'
   | 'guard'
+  | 'crouch'
+  | 'jump'
+  | 'taunt'
   | 'light'
   | 'heavy'
   | 'special'
@@ -14,6 +17,7 @@ export type CombatAction =
   | 'victory';
 
 export type CombatAttack = 'light' | 'heavy' | 'special';
+export type CombatPoseAction = 'jump' | 'taunt';
 
 export type CombatStyle =
   | 'balanced'
@@ -42,6 +46,7 @@ export interface CombatDirectionalInput {
   left: boolean;
   right: boolean;
   guard: boolean;
+  crouch?: boolean;
 }
 
 export interface CombatInputs {
@@ -115,6 +120,14 @@ const COMBAT_SIMULATION_STEP_MS = 16;
 const IMPACT_EFFECT_MS = 220;
 const HITSTOP_MS = 58;
 const GLOBAL_DAMAGE_SCALE = 0.66;
+const POSE_ACTION_DURATION_MS: Readonly<Record<CombatPoseAction, number>> = {
+  jump: 680,
+  taunt: 1_000,
+};
+const POSE_ACTION_COOLDOWN_MS: Readonly<Record<CombatPoseAction, number>> = {
+  jump: 420,
+  taunt: 1_250,
+};
 
 export const COMBAT_MATCH_WINS_REQUIRED = 2;
 
@@ -267,16 +280,33 @@ export function getCombatAttackDuration(
   return getAttackData(definition, attack).actionMs;
 }
 
+export function getCombatPoseActionDuration(action: CombatPoseAction): number {
+  return POSE_ACTION_DURATION_MS[action];
+}
+
 export function isCombatAttackAction(action: CombatAction): action is CombatAttack {
   return action === 'light' || action === 'heavy' || action === 'special';
 }
 
-export function isCombatActionLocked(action: CombatAction, actionMs: number): boolean {
-  return actionMs > 0 && (isCombatAttackAction(action) || action === 'hit');
+export function isCombatPoseAction(action: CombatAction): action is CombatPoseAction {
+  return action === 'jump' || action === 'taunt';
 }
 
-function getIdleAction(guarding: boolean, direction: number): CombatAction {
+export function isCombatActionLocked(action: CombatAction, actionMs: number): boolean {
+  return actionMs > 0 && (
+    isCombatAttackAction(action)
+    || action === 'hit'
+    || isCombatPoseAction(action)
+  );
+}
+
+function getIdleAction(
+  guarding: boolean,
+  crouching: boolean,
+  direction: number,
+): CombatAction {
   if (guarding) return 'guard';
+  if (crouching) return 'crouch';
   return direction === 0 ? 'idle' : 'walk';
 }
 
@@ -410,6 +440,55 @@ export function releaseCombatGuard(state: CombatState): CombatState {
     guardTwo: false,
     actionOne: state.actionOne === 'guard' ? 'idle' : state.actionOne,
     actionTwo: state.actionTwo === 'guard' ? 'idle' : state.actionTwo,
+  };
+}
+
+export function resolveCombatPoseAction(
+  state: CombatState,
+  side: PlayerSide,
+  action: CombatPoseAction,
+  fighterOne: CombatantDefinition,
+  fighterTwo: CombatantDefinition,
+): CombatState {
+  if (!state.active || state.hitstopMs > 0) return state;
+
+  const currentAction = side === 'one' ? state.actionOne : state.actionTwo;
+  const currentActionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
+  const cooldownMs = side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo;
+  if (cooldownMs > 0 || isCombatActionLocked(currentAction, currentActionMs)) {
+    return state;
+  }
+
+  const fighter = side === 'one' ? fighterOne : fighterTwo;
+  const durationMs = POSE_ACTION_DURATION_MS[action];
+  const cooldown = POSE_ACTION_COOLDOWN_MS[action];
+  const tensionGain = action === 'taunt' ? 8 : 0;
+  const actionLog = appendLog(
+    state,
+    action === 'taunt'
+      ? `${fighter.name} taunts and builds 8 tension.`
+      : `${fighter.name} jumps clear of the floor.`,
+  );
+
+  return {
+    ...state,
+    guardOne: side === 'one' ? false : state.guardOne,
+    guardTwo: side === 'two' ? false : state.guardTwo,
+    actionOne: side === 'one' ? action : state.actionOne,
+    actionTwo: side === 'two' ? action : state.actionTwo,
+    actionMsOne: side === 'one' ? durationMs : state.actionMsOne,
+    actionMsTwo: side === 'two' ? durationMs : state.actionMsTwo,
+    cooldownMsOne: side === 'one' ? cooldown : state.cooldownMsOne,
+    cooldownMsTwo: side === 'two' ? cooldown : state.cooldownMsTwo,
+    pendingAttackOne: side === 'one' ? null : state.pendingAttackOne,
+    pendingAttackTwo: side === 'two' ? null : state.pendingAttackTwo,
+    tensionOne: side === 'one'
+      ? clamp(state.tensionOne + tensionGain, 0, 100)
+      : state.tensionOne,
+    tensionTwo: side === 'two'
+      ? clamp(state.tensionTwo + tensionGain, 0, 100)
+      : state.tensionTwo,
+    ...actionLog,
   };
 }
 
@@ -641,10 +720,12 @@ function stepCombatSlice(
   const lockedTwoBeforeSlice = isCombatActionLocked(state.actionTwo, state.actionMsTwo);
   const lockedOneAfterSlice = isCombatActionLocked(state.actionOne, actionMsOne);
   const lockedTwoAfterSlice = isCombatActionLocked(state.actionTwo, actionMsTwo);
-  const directionOne = lockedOneBeforeSlice || inputs.one.guard
+  const crouchOne = Boolean(inputs.one.crouch) && !lockedOneAfterSlice;
+  const crouchTwo = Boolean(inputs.two.crouch) && !lockedTwoAfterSlice;
+  const directionOne = lockedOneBeforeSlice || inputs.one.guard || crouchOne
     ? 0
     : Number(inputs.one.right) - Number(inputs.one.left);
-  const directionTwo = lockedTwoBeforeSlice || inputs.two.guard
+  const directionTwo = lockedTwoBeforeSlice || inputs.two.guard || crouchTwo
     ? 0
     : Number(inputs.two.right) - Number(inputs.two.left);
   const guardOne = inputs.one.guard && !lockedOneAfterSlice;
@@ -704,8 +785,12 @@ function stepCombatSlice(
     cooldownMsTwo,
     impactMsOne: Math.max(0, state.impactMsOne - gameElapsedMs),
     impactMsTwo: Math.max(0, state.impactMsTwo - gameElapsedMs),
-    actionOne: lockedOneAfterSlice ? state.actionOne : getIdleAction(guardOne, directionOne),
-    actionTwo: lockedTwoAfterSlice ? state.actionTwo : getIdleAction(guardTwo, directionTwo),
+    actionOne: lockedOneAfterSlice
+      ? state.actionOne
+      : getIdleAction(guardOne, crouchOne, directionOne),
+    actionTwo: lockedTwoAfterSlice
+      ? state.actionTwo
+      : getIdleAction(guardTwo, crouchTwo, directionTwo),
     pendingAttackOne: actionMsOne > 0 ? state.pendingAttackOne : null,
     pendingAttackTwo: actionMsTwo > 0 ? state.pendingAttackTwo : null,
   };

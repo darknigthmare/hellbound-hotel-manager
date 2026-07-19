@@ -1,6 +1,10 @@
 import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 import {
-  HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+  HELLUVA_CHARACTERS,
+  HELLUVA_SPRITE_SHEETS,
+} from '../expansions/helluva-boss/data';
+import {
+  EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
   type SpriteAnimationBankId,
   type SpriteAnimationSetId,
   type SupplementalSpriteAnimationBankId,
@@ -27,10 +31,22 @@ export interface CharacterSpriteAsset {
   animationSetId: SpriteAnimationSetId;
 }
 
+export interface HelluvaCharacterSpriteAsset {
+  portrait: string;
+  sheet: string;
+  row: number;
+  animationSheets: Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
+  animationSetId: SpriteAnimationSetId;
+}
+
 export const HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS = [
   'movement',
   'offense',
   'reaction',
+  'taunt',
+  'jump',
+  'crouch',
+  'recoil',
 ] as const satisfies readonly SupplementalSpriteAnimationBankId[];
 
 function getSheetStem(sheetPath: string): string {
@@ -44,11 +60,24 @@ function getSheetStem(sheetPath: string): string {
 export function buildHazbinAnimationSheetPaths(
   baseSheetPath: string,
 ): Readonly<Record<SupplementalSpriteAnimationBankId, string>> {
+  return buildSupplementalAnimationSheetPaths(baseSheetPath, 'hazbin');
+}
+
+export function buildHelluvaAnimationSheetPaths(
+  baseSheetPath: string,
+): Readonly<Record<SupplementalSpriteAnimationBankId, string>> {
+  return buildSupplementalAnimationSheetPaths(baseSheetPath, 'helluva');
+}
+
+function buildSupplementalAnimationSheetPaths(
+  baseSheetPath: string,
+  collection: 'hazbin' | 'helluva',
+): Readonly<Record<SupplementalSpriteAnimationBankId, string>> {
   const stem = getSheetStem(baseSheetPath);
   return Object.fromEntries(
     HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS.map(bank => [
       bank,
-      `/assets/sprites/hazbin/animation/v1/${bank}/${stem}-${bank}.png`,
+      `/assets/sprites/${collection}/animation/v1/${bank}/${stem}-${bank}.png`,
     ]),
   ) as Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
 }
@@ -164,7 +193,7 @@ const OPERATIONAL_CHARACTER_SPRITES = Object.fromEntries(
       cinematicSheets: buildHazbinCinematicSheetPaths(
         `/assets/sprites/sheets/${sheet}.png`,
       ),
-      animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+      animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
     }
   ])
 ) as Readonly<Record<string, CharacterSpriteAsset>>;
@@ -183,7 +212,7 @@ export function buildHazbinDirectorySpriteAssets(
         row: sheetRow,
         animationSheets: buildHazbinAnimationSheetPaths(sheetPath),
         cinematicSheets: buildHazbinCinematicSheetPaths(sheetPath),
-        animationSetId: HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
+        animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
       },
     ]),
   ) as Readonly<Record<string, CharacterSpriteAsset>>;
@@ -198,4 +227,39 @@ export const CHARACTER_SPRITES: Readonly<Record<string, CharacterSpriteAsset>> =
 
 export function getCharacterSpriteAsset(characterId: string): CharacterSpriteAsset | undefined {
   return CHARACTER_SPRITES[characterId];
+}
+
+export function buildHelluvaCharacterSpriteAssets(
+  profiles = HELLUVA_CHARACTERS,
+  sheets = HELLUVA_SPRITE_SHEETS,
+): Readonly<Record<string, HelluvaCharacterSpriteAsset>> {
+  const profilesByName = new Map(profiles.map(profile => [profile.name, profile]));
+  return Object.fromEntries(
+    sheets.flatMap(sheet => sheet.characters.map((characterName, row) => {
+      const profile = profilesByName.get(characterName);
+      if (!profile) {
+        throw new Error(
+          `Helluva sprite sheet ${sheet.id} references unknown profile ${characterName}`,
+        );
+      }
+      return [
+        profile.id,
+        {
+          portrait: profile.portrait,
+          sheet: sheet.path,
+          row,
+          animationSheets: buildHelluvaAnimationSheetPaths(sheet.path),
+          animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
+        },
+      ] as const;
+    })),
+  ) as Readonly<Record<string, HelluvaCharacterSpriteAsset>>;
+}
+
+export const HELLUVA_CHARACTER_SPRITES = buildHelluvaCharacterSpriteAssets();
+
+export function getHelluvaCharacterSpriteAsset(
+  characterId: string,
+): HelluvaCharacterSpriteAsset | undefined {
+  return HELLUVA_CHARACTER_SPRITES[characterId];
 }

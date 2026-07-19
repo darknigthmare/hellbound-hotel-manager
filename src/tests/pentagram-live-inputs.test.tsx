@@ -116,6 +116,15 @@ describe('Pentagram Arena live input lifecycle', () => {
 
     fireEvent.lostPointerCapture(stage, { pointerId: 1, clientX: 70, clientY: 100 });
     await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('idle'));
+
+    fireEvent.keyDown(window, { code: 'KeyR' });
+    await waitFor(() => {
+      expect(fighterOneNode?.dataset.action).toBe('taunt');
+      expect(fighterOneNode?.dataset.animationBank).toBe('taunt');
+      expect(fighterOneFrame?.style.backgroundImage)
+        .toContain('/assets/sprites/hazbin/animation/v1/taunt/core-a-taunt.png');
+    });
+    fireEvent.keyUp(window, { code: 'KeyR' });
   });
 
   it('requests an atomic paused soundtrack start when music is enabled from pause', async () => {
@@ -194,7 +203,7 @@ describe('Pentagram Arena live input lifecycle', () => {
 
     expect(screen.getByRole('group', { name: /P1 tactile controls/i })).toBeTruthy();
     expect(screen.queryByRole('group', { name: /P2 tactile controls/i })).toBeNull();
-    expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(9);
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
     await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
@@ -218,6 +227,16 @@ describe('Pentagram Arena live input lifecycle', () => {
     fireEvent.pointerCancel(guard, { pointerId: 42 });
     await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('idle'));
 
+    const crouch = screen.getByRole('button', { name: 'P1 crouch' });
+    fireEvent.pointerDown(crouch, { pointerId: 43 });
+    await waitFor(() => {
+      expect(crouch.getAttribute('aria-pressed')).toBe('true');
+      expect(fighterOneNode?.dataset.action).toBe('crouch');
+      expect(fighterOneNode?.dataset.animationBank).toBe('crouch');
+    });
+    fireEvent.pointerUp(crouch, { pointerId: 43 });
+    await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('idle'));
+
     fireEvent.keyDown(moveRight, { key: 'Enter' });
     await waitFor(() => {
       expect(moveRight.getAttribute('aria-pressed')).toBe('true');
@@ -228,6 +247,18 @@ describe('Pentagram Arena live input lifecycle', () => {
       expect(moveRight.getAttribute('aria-pressed')).toBe('false');
       expect(fighterOneNode?.dataset.action).toBe('idle');
     });
+
+    await userEvent.click(screen.getByRole('button', { name: 'P1 jump' }));
+    await waitFor(() => {
+      expect(fighterOneNode?.dataset.action).toBe('jump');
+      expect(fighterOneNode?.dataset.animationBank).toBe('jump');
+      expect(fighterOneNode?.querySelector<HTMLElement>('.arena-sprite-frame')?.style.backgroundImage)
+        .toContain('/assets/sprites/hazbin/animation/v1/jump/core-a-jump.png');
+    });
+    await waitFor(
+      () => expect(fighterOneNode?.dataset.action).toBe('idle'),
+      { timeout: 2_000 },
+    );
 
     await userEvent.click(screen.getByRole('button', { name: 'P1 light attack' }));
     await waitFor(() => {
@@ -271,7 +302,7 @@ describe('Pentagram Arena live input lifecycle', () => {
 
     expect(screen.getByRole('group', { name: /P1 tactile controls/i })).toBeTruthy();
     expect(screen.getByRole('group', { name: /P2 tactile controls/i })).toBeTruthy();
-    expect(screen.getAllByRole('button', { name: /^P2 /i })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: /^P2 /i })).toHaveLength(9);
 
     const stage = screen.getByRole('region', { name: /Live combat/i });
     await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });

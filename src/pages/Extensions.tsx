@@ -14,6 +14,7 @@ interface ExtensionsProps {
 
 const HELLUVA_PACK_STATS = [
   { label: 'Profiles', value: String(HELLUVA_CHARACTERS.length) },
+  { label: 'Combat poses / profile', value: '48' },
   { label: 'Contracts', value: String(HELLUVA_CONTRACTS.length) },
   { label: 'Decision phases', value: String(HELLUVA_CONTRACTS.length * 3) },
   { label: 'Lore records', value: String(HELLUVA_LORE.length) },

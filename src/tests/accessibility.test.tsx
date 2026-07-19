@@ -241,7 +241,7 @@ describe('automated accessibility contracts', () => {
     expect(screen.queryByRole('button', { name: /^(Strike|Guard|Special|Step in)$/i })).toBeNull();
     expect(screen.getByRole('group', { name: /P1 tactile controls for Angel Dust/i })).toBeTruthy();
     expect(screen.queryByRole('group', { name: /P2 tactile controls/i })).toBeNull();
-    expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: /^P1 /i })).toHaveLength(9);
 
     const liveStage = screen.getByRole('region', { name: /Live combat: Angel Dust versus Vaggie/i });
     await waitFor(() => expect(document.activeElement).toBe(liveStage));
@@ -315,7 +315,7 @@ describe('automated accessibility contracts', () => {
     };
     const { container } = render(<PentagramArena state={emptyState} />);
 
-    expect(screen.getByText('0 fighters · 42 poses each')).toBeTruthy();
+    expect(screen.getByText('0 fighters · 48 combat poses each')).toBeTruthy();
     expect(screen.getAllByRole('option', { name: 'No eligible fighters' })).toHaveLength(2);
     expect(screen.getByText(/At least two timeline-eligible sprite fighters/i)).toBeTruthy();
     await expectNoSeriousAccessibilityViolation(container);

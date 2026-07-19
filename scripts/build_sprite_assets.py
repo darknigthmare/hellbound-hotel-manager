@@ -54,6 +54,26 @@ ANIMATION_CLIPS = {
         "loop": True,
         "frames": ({"column": 2, "durationMs": 250},),
     },
+    "crouch": {
+        "loop": True,
+        "frames": ({"column": 2, "durationMs": 260},),
+    },
+    "jump": {
+        "loop": False,
+        "frames": (
+            {"column": 2, "durationMs": 180},
+            {"column": 3, "durationMs": 220},
+            {"column": 5, "durationMs": 280},
+        ),
+    },
+    "taunt": {
+        "loop": False,
+        "frames": (
+            {"column": 1, "durationMs": 360},
+            {"column": 5, "durationMs": 420},
+            {"column": 2, "durationMs": 220},
+        ),
+    },
     "light": {
         "loop": False,
         "frames": (

@@ -5,6 +5,8 @@ import {
 } from '../lib/pentagram-animation';
 import {
   DEFAULT_SPRITE_ANIMATION_SET_ID,
+  EIGHT_BANK_COMBAT_ANIMATION_SET,
+  EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
   FOUR_BANK_COMBAT_ANIMATION_SET,
   HAZBIN_FOUR_BANK_ANIMATION_SET_ID,
   SIX_POSE_COMBAT_ANIMATION_SET,
@@ -13,6 +15,7 @@ import {
   createCombatState,
   createNextCombatRound,
   resolveCombatAttack,
+  resolveCombatPoseAction,
   stepCombat,
   type CombatInputs,
   type CombatantDefinition,
@@ -79,6 +82,54 @@ describe('Pentagram Arena live combat engine', () => {
     const stopped = advance(moving, idleInputs, 2);
     expect(stopped.positionOne).toBe(moving.positionOne);
     expect(stopped.actionOne).toBe('idle');
+  });
+
+  it('holds a real crouch pose without sliding and releases cleanly', () => {
+    const initial = createCombatState(fighterOne, fighterTwo);
+    const crouching = advance(initial, {
+      ...idleInputs,
+      one: { left: false, right: true, guard: false, crouch: true },
+    }, 4);
+
+    expect(crouching.positionOne).toBe(initial.positionOne);
+    expect(crouching.actionOne).toBe('crouch');
+    expect(crouching.guardOne).toBe(false);
+
+    const released = advance(crouching, idleInputs, 1);
+    expect(released.actionOne).toBe('idle');
+    expect(released.positionOne).toBe(initial.positionOne);
+  });
+
+  it('runs jump and taunt as cooldown-gated live actions', () => {
+    const initial = createCombatState(fighterOne, fighterTwo);
+    const jump = resolveCombatPoseAction(
+      initial,
+      'one',
+      'jump',
+      fighterOne,
+      fighterTwo,
+    );
+
+    expect(jump.actionOne).toBe('jump');
+    expect(jump.actionMsOne).toBe(680);
+    expect(jump.cooldownMsOne).toBe(420);
+    expect(jump.tensionOne).toBe(0);
+    expect(jump.log[0].text).toMatch(/jumps clear/i);
+    expect(resolveCombatPoseAction(jump, 'one', 'taunt', fighterOne, fighterTwo))
+      .toBe(jump);
+
+    const taunt = resolveCombatPoseAction(
+      initial,
+      'two',
+      'taunt',
+      fighterOne,
+      fighterTwo,
+    );
+    expect(taunt.actionTwo).toBe('taunt');
+    expect(taunt.actionMsTwo).toBe(1_000);
+    expect(taunt.cooldownMsTwo).toBe(1_250);
+    expect(taunt.tensionTwo).toBe(8);
+    expect(taunt.log[0].text).toMatch(/taunts and builds 8 tension/i);
   });
 
   it('keeps both fighters inside the lane and prevents crossing', () => {
@@ -433,19 +484,57 @@ describe('Pentagram Arena live combat engine', () => {
       .toMatchObject({ bank: 'offense', column: 1 });
   });
 
+  it('selects every dedicated motion bank in the shared v4 contract', () => {
+    const options = { animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID } as const;
+
+    expect(getCombatAnimationFrame('crouch', 0, { ...options, loopElapsedMs: 0 }))
+      .toMatchObject({ bank: 'crouch', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('crouch', 0, { ...options, loopElapsedMs: 130 }))
+      .toMatchObject({ bank: 'crouch', column: 1, frameIndex: 1 });
+
+    expect(getCombatAnimationFrame('jump', 680, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('jump', 580, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('jump', 480, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 2, frameIndex: 2 });
+    expect(getCombatAnimationFrame('jump', 350, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 3, frameIndex: 3 });
+    expect(getCombatAnimationFrame('jump', 200, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 4, frameIndex: 4 });
+    expect(getCombatAnimationFrame('jump', 100, { ...options, actionDurationMs: 680 }))
+      .toMatchObject({ bank: 'jump', column: 5, frameIndex: 5 });
+
+    expect(getCombatAnimationFrame('taunt', 1_000, { ...options, actionDurationMs: 1_000 }))
+      .toMatchObject({ bank: 'taunt', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('taunt', 500, { ...options, actionDurationMs: 1_000 }))
+      .toMatchObject({ bank: 'taunt', column: 3, frameIndex: 3 });
+    expect(getCombatAnimationFrame('hit', 480, options))
+      .toMatchObject({ bank: 'recoil', column: 0, frameIndex: 0 });
+    expect(getCombatAnimationFrame('hit', 400, options))
+      .toMatchObject({ bank: 'recoil', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('victory', 0, { ...options, loopElapsedMs: 800 }))
+      .toMatchObject({ bank: 'taunt', column: 4, frameIndex: 1 });
+  });
+
   it('resolves every combat state through the shared versioned animation registry', () => {
     expect(SIX_POSE_COMBAT_ANIMATION_SET.id).toBe(DEFAULT_SPRITE_ANIMATION_SET_ID);
     expect(DEFAULT_SPRITE_ANIMATION_SET_ID).toBe('six-pose-combat-v2');
     expect(FOUR_BANK_COMBAT_ANIMATION_SET.id).toBe(HAZBIN_FOUR_BANK_ANIMATION_SET_ID);
     expect(HAZBIN_FOUR_BANK_ANIMATION_SET_ID).toBe('four-bank-combat-v3');
+    expect(EIGHT_BANK_COMBAT_ANIMATION_SET.id).toBe(EIGHT_BANK_COMBAT_ANIMATION_SET_ID);
+    expect(EIGHT_BANK_COMBAT_ANIMATION_SET_ID).toBe('eight-bank-combat-v4');
     expect(Object.keys(SIX_POSE_COMBAT_ANIMATION_SET.clips).sort()).toEqual([
+      'crouch',
       'guard',
       'heavy',
       'hit',
       'idle',
+      'jump',
       'ko',
       'light',
       'special',
+      'taunt',
       'victory',
       'walk',
     ]);

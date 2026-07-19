@@ -378,7 +378,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         </div>
         <div className="arena-status" aria-label="Development status">
           <span>Playable combat beta</span>
-          <strong>{fighters.length} fighters · 42 poses each</strong>
+          <strong>{fighters.length} fighters · 48 combat poses each</strong>
         </div>
       </header>
 
