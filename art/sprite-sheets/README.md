@@ -80,7 +80,8 @@ poses, for 48 authored combat poses when the six base cells are included.
 
 The live renderer changes both bank and column while preserving the base
 atlas row. It preloads only the seven banks belonging to the two active
-fighters. Loop time comes from the paused, hitstop-aware round clock, so real
+fighters, deduplicates shared atlases, and stages the less frequent poses after
+the movement/offense/recoil set to avoid a single decode spike. Loop time comes from the paused, hitstop-aware round clock, so real
 idle, walk, crouch and guard frames advance without continuing in a paused tab.
 Fighter two still mirrors a source pose authored facing screen-right, keeping
 both opponents oriented toward each other.
@@ -111,7 +112,8 @@ All 100 illustrated Hazbin identities also select
 25 identity atlases multiplied by the `intro`, `victory`, and `draw` banks
 produces 75 additional files and 1,800 genuinely new cells. No cinematic bank
 falls back to or copies a base/combat pose. Each character therefore has 18
-new cinematic poses and 42 authored poses in total.
+new cinematic poses and 66 published poses in total: 6 base, 42 supplementary
+combat poses and 18 cinematic poses.
 
 | Bank | Six authored columns |
 | --- | --- |

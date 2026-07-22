@@ -27,10 +27,6 @@ import {
 import {
   createCombatState,
   createNextCombatRound,
-  getCombatAttackDuration,
-  getCombatPoseActionDuration,
-  isCombatAttackAction,
-  isCombatPoseAction,
   releaseCombatGuard,
   resolveCombatAttack,
   resolveCombatPoseAction,
@@ -252,6 +248,10 @@ export function PentagramLiveFight({
   const [fightPhase, setFightPhaseState] = useState<FightPhase>('intro');
   const [activeCinematic, setActiveCinematic] = useState<PentagramCinematicKind>('intro');
   const [animationClockMs, setAnimationClockMs] = useState(0);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => (
+    typeof window.matchMedia === 'function'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ));
   const stageRef = useRef<HTMLDivElement>(null);
   const combatRef = useRef(combat);
   const fightPhaseRef = useRef<FightPhase>('intro');
@@ -291,7 +291,7 @@ export function PentagramLiveFight({
     nextCombat: CombatState,
   ) => {
     if (!previousCombat.active || nextCombat.active) return;
-    if (nextCombat.matchWinner !== null) {
+    if (nextCombat.winner === 'one' || nextCombat.winner === 'two') {
       beginCinematic('victory');
     } else if (nextCombat.winner === 'draw') {
       beginCinematic('draw');
@@ -446,6 +446,15 @@ export function PentagramLiveFight({
   ]);
 
   useEffect(() => {
+    if (typeof window.matchMedia !== 'function') return undefined;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    updatePreference();
+    mediaQuery.addEventListener('change', updatePreference);
+    return () => mediaQuery.removeEventListener('change', updatePreference);
+  }, []);
+
+  useEffect(() => {
     const hasAnimationFrame = typeof window.requestAnimationFrame === 'function';
     const requestFrame = (callback: FrameRequestCallback) => (
       hasAnimationFrame
@@ -480,7 +489,12 @@ export function PentagramLiveFight({
       previousTime = now;
 
       const currentPhase = fightPhaseRef.current;
-      if (currentPhase !== 'paused' && combatRef.current.hitstopMs <= 0) {
+      if (
+        !prefersReducedMotion
+        && currentPhase !== 'paused'
+        && currentPhase !== 'results'
+        && combatRef.current.hitstopMs <= 0
+      ) {
         setAnimationClockMs(current => current + elapsedMs);
       }
       if (currentPhase === 'intro' || currentPhase === 'outro') {
@@ -587,6 +601,7 @@ export function PentagramLiveFight({
     fighterTwoDefinition,
     finishCombatIfNeeded,
     matchMode,
+    prefersReducedMotion,
     readInputs,
     setFightPhase,
   ]);
@@ -805,30 +820,40 @@ export function PentagramLiveFight({
   const fighterTwoSprite = getCharacterSpriteAsset(fighterTwo.id);
   useEffect(() => {
     if (typeof window.Image !== 'function') return;
-    const animationUrls = [fighterOneSprite, fighterTwoSprite].flatMap(sprite => (
-      sprite
-        ? [
-            ...Object.values(sprite.animationSheets),
-            ...Object.values(sprite.cinematicSheets),
-          ]
-        : []
-    ));
-    animationUrls.forEach((url) => {
+    const activeSprites = [fighterOneSprite, fighterTwoSprite].filter(
+      (sprite): sprite is NonNullable<typeof sprite> => sprite !== undefined,
+    );
+    const priorityUrls = new Set(activeSprites.flatMap(sprite => (
+      [
+        sprite.animationSheets.movement,
+        sprite.animationSheets.offense,
+        sprite.animationSheets.recoil,
+        sprite.cinematicSheets.intro,
+        sprite.cinematicSheets.victory,
+      ]
+    )));
+    const deferredUrls = new Set(activeSprites.flatMap(sprite => [
+      sprite.animationSheets.reaction,
+      sprite.animationSheets.taunt,
+      sprite.animationSheets.jump,
+      sprite.animationSheets.crouch,
+      sprite.cinematicSheets.draw,
+    ]));
+    const preload = (urls: ReadonlySet<string>) => urls.forEach((url) => {
       const preload = new window.Image();
       preload.src = url;
     });
+    preload(priorityUrls);
+    const deferredPreload = window.setTimeout(() => preload(deferredUrls), 900);
+    return () => window.clearTimeout(deferredPreload);
   }, [fighterOneSprite, fighterTwoSprite]);
 
-  const fighterOneActionDurationMs = isCombatAttackAction(combat.actionOne)
-    ? getCombatAttackDuration(fighterOneDefinition, combat.actionOne)
-    : isCombatPoseAction(combat.actionOne)
-      ? getCombatPoseActionDuration(combat.actionOne)
-      : undefined;
-  const fighterTwoActionDurationMs = isCombatAttackAction(combat.actionTwo)
-    ? getCombatAttackDuration(fighterTwoDefinition, combat.actionTwo)
-    : isCombatPoseAction(combat.actionTwo)
-      ? getCombatPoseActionDuration(combat.actionTwo)
-      : undefined;
+  const fighterOneActionDurationMs = combat.actionDurationMsOne > 0
+    ? combat.actionDurationMsOne
+    : undefined;
+  const fighterTwoActionDurationMs = combat.actionDurationMsTwo > 0
+    ? combat.actionDurationMsTwo
+    : undefined;
   const fighterOneCombatFrame = getCombatAnimationFrame(combat.actionOne, combat.actionMsOne, {
     animationSetId: fighterOneSprite?.animationSetId,
     actionDurationMs: fighterOneActionDurationMs,
@@ -859,14 +884,14 @@ export function PentagramLiveFight({
     ? 'intro'
     : fightPhase === 'outro' && activeCinematic === 'draw'
       ? 'draw'
-      : fightPhase === 'outro' && combat.matchWinner === 'one'
+      : fightPhase === 'outro' && combat.winner === 'one'
         ? 'victory'
         : null;
   const fighterTwoCinematicKind: PentagramCinematicKind | null = fightPhase === 'intro'
     ? 'intro'
     : fightPhase === 'outro' && activeCinematic === 'draw'
       ? 'draw'
-      : fightPhase === 'outro' && combat.matchWinner === 'two'
+      : fightPhase === 'outro' && combat.winner === 'two'
         ? 'victory'
         : null;
   const fighterOneBank = fighterOneCinematicKind ?? fighterOneCombatFrame.bank;

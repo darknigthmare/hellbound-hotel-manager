@@ -162,6 +162,11 @@ describe('Pentagram Arena live combat engine', () => {
     expect(atImpact.log[0].text).toMatch(/lands Acrobat jab/i);
     expect(atImpact.impactMsTwo).toBeGreaterThan(0);
     expect(atImpact.hitstopMs).toBeGreaterThan(0);
+    expect(atImpact.actionDurationMsTwo).toBe(210);
+    expect(getCombatAnimationFrame(atImpact.actionTwo, atImpact.actionMsTwo, {
+      animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
+      actionDurationMs: atImpact.actionDurationMsTwo,
+    })).toMatchObject({ bank: 'recoil', column: 0, frameIndex: 0 });
   });
 
   it('checks range at impact and cannot deal repeated damage from key repeat', () => {

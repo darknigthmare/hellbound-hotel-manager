@@ -1419,16 +1419,28 @@
     drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
 }
 
-.arena-combatant.is-one.is-light,
-.arena-combatant.is-one.is-heavy,
-.arena-combatant.is-one.is-special {
-  animation: arena-lunge-one var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+.arena-combatant.is-one.is-light {
+  animation: arena-lunge-one-light var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
 }
 
-.arena-combatant.is-two.is-light,
-.arena-combatant.is-two.is-heavy,
+.arena-combatant.is-one.is-heavy {
+  animation: arena-lunge-one-heavy var(--arena-action-ms, 460ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-one.is-special {
+  animation: arena-lunge-one-special var(--arena-action-ms, 700ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-two.is-light {
+  animation: arena-lunge-two-light var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-two.is-heavy {
+  animation: arena-lunge-two-heavy var(--arena-action-ms, 460ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
 .arena-combatant.is-two.is-special {
-  animation: arena-lunge-two var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+  animation: arena-lunge-two-special var(--arena-action-ms, 700ms) cubic-bezier(0.2, 0.86, 0.24, 1);
 }
 
 .arena-combatant.is-heavy {
@@ -1740,13 +1752,37 @@
   font-size: 0.74rem;
 }
 
-@keyframes arena-lunge-one {
+@keyframes arena-lunge-one-light {
   0%, 100% { transform: translate3d(-50%, 0, 0); }
   24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
   56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
 }
 
-@keyframes arena-lunge-two {
+@keyframes arena-lunge-one-heavy {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-one-special {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-light {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-heavy {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-special {
   0%, 100% { transform: translate3d(-50%, 0, 0); }
   24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
   56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }

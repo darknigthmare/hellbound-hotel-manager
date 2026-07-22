@@ -362,7 +362,16 @@ describe('Pentagram Arena live input lifecycle', () => {
     await waitFor(() => expect(stage.dataset.phase).toBe('running'), { timeout: 4_000 });
 
     fireEvent.keyDown(window, { code: 'KeyF' });
-    const nextRoundButton = await screen.findByRole('button', { name: 'Next round' });
+    await waitFor(() => expect(stage.dataset.phase).toBe('outro'));
+
+    const firstRoundWinner = document.querySelector<HTMLElement>('.arena-combatant.is-one');
+    expect(firstRoundWinner?.dataset.animationBank).toBe('victory');
+
+    const nextRoundButton = await screen.findByRole(
+      'button',
+      { name: 'Next round' },
+      { timeout: 4_000 },
+    );
     expect(stage.dataset.phase).toBe('results');
 
     fireEvent.pointerDown(nextRoundButton, { pointerId: 31, clientX: 8, clientY: 8 });

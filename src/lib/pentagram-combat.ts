@@ -78,6 +78,8 @@ export interface CombatState {
   actionTwo: CombatAction;
   actionMsOne: number;
   actionMsTwo: number;
+  actionDurationMsOne: number;
+  actionDurationMsTwo: number;
   cooldownMsOne: number;
   cooldownMsTwo: number;
   pendingAttackOne: CombatAttack | null;
@@ -348,6 +350,8 @@ function finishRound(
     actionTwo: winner === 'two' ? 'victory' : winner === 'one' ? 'ko' : 'idle',
     actionMsOne: 0,
     actionMsTwo: 0,
+    actionDurationMsOne: 0,
+    actionDurationMsTwo: 0,
     cooldownMsOne: 0,
     cooldownMsTwo: 0,
     pendingAttackOne: null,
@@ -403,6 +407,8 @@ export function createCombatState(
     actionTwo: 'idle',
     actionMsOne: 0,
     actionMsTwo: 0,
+    actionDurationMsOne: 0,
+    actionDurationMsTwo: 0,
     cooldownMsOne: 0,
     cooldownMsTwo: 0,
     pendingAttackOne: null,
@@ -478,6 +484,8 @@ export function resolveCombatPoseAction(
     actionTwo: side === 'two' ? action : state.actionTwo,
     actionMsOne: side === 'one' ? durationMs : state.actionMsOne,
     actionMsTwo: side === 'two' ? durationMs : state.actionMsTwo,
+    actionDurationMsOne: side === 'one' ? durationMs : state.actionDurationMsOne,
+    actionDurationMsTwo: side === 'two' ? durationMs : state.actionDurationMsTwo,
     cooldownMsOne: side === 'one' ? cooldown : state.cooldownMsOne,
     cooldownMsTwo: side === 'two' ? cooldown : state.cooldownMsTwo,
     pendingAttackOne: side === 'one' ? null : state.pendingAttackOne,
@@ -568,6 +576,8 @@ export function resolveCombatAttack(
     actionTwo: side === 'two' ? attack : state.actionTwo,
     actionMsOne: side === 'one' ? attackData.actionMs : state.actionMsOne,
     actionMsTwo: side === 'two' ? attackData.actionMs : state.actionMsTwo,
+    actionDurationMsOne: side === 'one' ? attackData.actionMs : state.actionDurationMsOne,
+    actionDurationMsTwo: side === 'two' ? attackData.actionMs : state.actionDurationMsTwo,
     cooldownMsOne: side === 'one' ? attackData.cooldownMs : state.cooldownMsOne,
     cooldownMsTwo: side === 'two' ? attackData.cooldownMs : state.cooldownMsTwo,
     pendingAttackOne: side === 'one' ? attack : state.pendingAttackOne,
@@ -668,6 +678,7 @@ function applyAttackImpact(
     if (damage > 0 && !defenderGuardingAtImpact) {
       next.actionTwo = 'hit';
       next.actionMsTwo = attackData.hitstunMs;
+      next.actionDurationMsTwo = attackData.hitstunMs;
       next.pendingAttackTwo = null;
       next.guardTwo = false;
     }
@@ -683,6 +694,7 @@ function applyAttackImpact(
     if (damage > 0 && !defenderGuardingAtImpact) {
       next.actionOne = 'hit';
       next.actionMsOne = attackData.hitstunMs;
+      next.actionDurationMsOne = attackData.hitstunMs;
       next.pendingAttackOne = null;
       next.guardOne = false;
     }
@@ -781,6 +793,8 @@ function stepCombatSlice(
     guardTwo,
     actionMsOne,
     actionMsTwo,
+    actionDurationMsOne: lockedOneAfterSlice ? state.actionDurationMsOne : 0,
+    actionDurationMsTwo: lockedTwoAfterSlice ? state.actionDurationMsTwo : 0,
     cooldownMsOne,
     cooldownMsTwo,
     impactMsOne: Math.max(0, state.impactMsOne - gameElapsedMs),

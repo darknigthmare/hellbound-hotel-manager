@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --maxWorkers=1",
     "test:accessibility": "vitest run src/tests/accessibility.test.tsx",
     "test:watch": "vitest",
     "qa": "npm run typecheck && npm run lint && npm run test && npm run build"
