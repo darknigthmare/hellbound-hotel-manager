@@ -80,6 +80,8 @@ export interface CombatState {
   actionMsTwo: number;
   actionDurationMsOne: number;
   actionDurationMsTwo: number;
+  lastHitAttackOne: CombatAttack | null;
+  lastHitAttackTwo: CombatAttack | null;
   cooldownMsOne: number;
   cooldownMsTwo: number;
   pendingAttackOne: CombatAttack | null;
@@ -352,6 +354,8 @@ function finishRound(
     actionMsTwo: 0,
     actionDurationMsOne: 0,
     actionDurationMsTwo: 0,
+    lastHitAttackOne: null,
+    lastHitAttackTwo: null,
     cooldownMsOne: 0,
     cooldownMsTwo: 0,
     pendingAttackOne: null,
@@ -409,6 +413,8 @@ export function createCombatState(
     actionMsTwo: 0,
     actionDurationMsOne: 0,
     actionDurationMsTwo: 0,
+    lastHitAttackOne: null,
+    lastHitAttackTwo: null,
     cooldownMsOne: 0,
     cooldownMsTwo: 0,
     pendingAttackOne: null,
@@ -679,6 +685,7 @@ function applyAttackImpact(
       next.actionTwo = 'hit';
       next.actionMsTwo = attackData.hitstunMs;
       next.actionDurationMsTwo = attackData.hitstunMs;
+      next.lastHitAttackTwo = attack;
       next.pendingAttackTwo = null;
       next.guardTwo = false;
     }
@@ -695,6 +702,7 @@ function applyAttackImpact(
       next.actionOne = 'hit';
       next.actionMsOne = attackData.hitstunMs;
       next.actionDurationMsOne = attackData.hitstunMs;
+      next.lastHitAttackOne = attack;
       next.pendingAttackOne = null;
       next.guardOne = false;
     }
@@ -795,6 +803,12 @@ function stepCombatSlice(
     actionMsTwo,
     actionDurationMsOne: lockedOneAfterSlice ? state.actionDurationMsOne : 0,
     actionDurationMsTwo: lockedTwoAfterSlice ? state.actionDurationMsTwo : 0,
+    lastHitAttackOne: lockedOneAfterSlice && state.actionOne === 'hit'
+      ? state.lastHitAttackOne
+      : null,
+    lastHitAttackTwo: lockedTwoAfterSlice && state.actionTwo === 'hit'
+      ? state.lastHitAttackTwo
+      : null,
     cooldownMsOne,
     cooldownMsTwo,
     impactMsOne: Math.max(0, state.impactMsOne - gameElapsedMs),

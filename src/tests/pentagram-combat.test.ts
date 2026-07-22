@@ -166,7 +166,12 @@ describe('Pentagram Arena live combat engine', () => {
     expect(getCombatAnimationFrame(atImpact.actionTwo, atImpact.actionMsTwo, {
       animationSetId: EIGHT_BANK_COMBAT_ANIMATION_SET_ID,
       actionDurationMs: atImpact.actionDurationMsTwo,
-    })).toMatchObject({ bank: 'recoil', column: 0, frameIndex: 0 });
+      hitAttack: atImpact.lastHitAttackTwo ?? undefined,
+    })).toMatchObject({ bank: 'reaction', column: 2, frameIndex: 0 });
+
+    const recovered = advance(atImpact, idleInputs, 20);
+    expect(recovered.actionTwo).toBe('idle');
+    expect(recovered.lastHitAttackTwo).toBeNull();
   });
 
   it('checks range at impact and cannot deal repeated damage from key repeat', () => {
@@ -253,6 +258,8 @@ describe('Pentagram Arena live combat engine', () => {
     expect(guardedHit.hpTwo).toBeGreaterThan(openHit.hpTwo);
     expect(guardedHit.tensionTwo).toBeGreaterThan(0);
     expect(guardedHit.log[0].text).toMatch(/through guard/i);
+    expect(guardedHit.lastHitAttackTwo).toBeNull();
+    expect(openHit.lastHitAttackTwo).toBe('heavy');
   });
 
   it('requires and spends special tension on launch, then damages on impact', () => {
@@ -518,6 +525,21 @@ describe('Pentagram Arena live combat engine', () => {
       .toMatchObject({ bank: 'recoil', column: 0, frameIndex: 0 });
     expect(getCombatAnimationFrame('hit', 400, options))
       .toMatchObject({ bank: 'recoil', column: 1, frameIndex: 1 });
+    expect(getCombatAnimationFrame('hit', 210, {
+      ...options,
+      actionDurationMs: 210,
+      hitAttack: 'light',
+    })).toMatchObject({ bank: 'reaction', column: 2, frameIndex: 0 });
+    expect(getCombatAnimationFrame('hit', 330, {
+      ...options,
+      actionDurationMs: 330,
+      hitAttack: 'heavy',
+    })).toMatchObject({ bank: 'reaction', column: 3, frameIndex: 0 });
+    expect(getCombatAnimationFrame('hit', 470, {
+      ...options,
+      actionDurationMs: 470,
+      hitAttack: 'special',
+    })).toMatchObject({ bank: 'reaction', column: 4, frameIndex: 0 });
     expect(getCombatAnimationFrame('victory', 0, { ...options, loopElapsedMs: 800 }))
       .toMatchObject({ bank: 'taunt', column: 4, frameIndex: 1 });
   });

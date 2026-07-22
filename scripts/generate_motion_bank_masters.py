@@ -1,9 +1,10 @@
 """Generate the complete Hazbin and Helluva supplementary motion masters.
 
-Eight reviewed ImageGen atlases anchor the four new motions for ``core-a`` and
-``helluva-core``.  The remaining rows are identity-preserving derivatives of
-the already-reviewed OpenAI base/combat poses: this keeps all 208 character
-designs stable while giving every row the same fixed 6x4 animation contract.
+Twelve reviewed ImageGen motion masters anchor complete and partial new bank
+sets for four Hazbin identity atlases plus ``helluva-core``. The remaining
+rows are identity-preserving derivatives of the already-reviewed OpenAI
+base/combat poses: this keeps all 208 character designs stable while giving
+every row the same fixed 6x4 animation contract.
 
 The generated files are chroma masters, not public runtime assets.  Run
 ``prepare_hazbin_animations`` and ``prepare_helluva_animations`` afterwards to
@@ -46,6 +47,13 @@ except ImportError:
 CELL_WIDTH = EXPECTED_SHEET_SIZE[0] // COLUMNS
 CELL_HEIGHT = EXPECTED_SHEET_SIZE[1] // ROWS
 HAZBIN_NEW_BANKS = ("taunt", "jump", "crouch", "recoil")
+HAZBIN_IMAGEGEN_ANCHOR_BANKS = {
+    "core-a": HAZBIN_NEW_BANKS,
+    "hell-antagonists": ("taunt", "crouch"),
+    "overlords": ("recoil",),
+    "hazbin-companions": ("taunt",),
+}
+HELLUVA_IMAGEGEN_ANCHOR_STEMS = ("helluva-core",)
 HELLUVA_BANKS = (
     "movement",
     "offense",
@@ -439,7 +447,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--force-derived",
         action="store_true",
-        help="regenerate derived masters while preserving the eight ImageGen anchors",
+        help="regenerate derived masters while preserving the 12 ImageGen anchors",
     )
     return parser.parse_args()
 
@@ -472,8 +480,14 @@ def main() -> None:
     for index, (atlas, bank, transforms) in enumerate(jobs, start=1):
         destination = atlas.master_path(bank)
         is_imagegen_anchor = (
-            (atlas.collection == "hazbin" and atlas.stem == "core-a")
-            or (atlas.collection == "helluva" and atlas.stem == "helluva-core")
+            (
+                atlas.collection == "hazbin"
+                and bank in HAZBIN_IMAGEGEN_ANCHOR_BANKS.get(atlas.stem, ())
+            )
+            or (
+                atlas.collection == "helluva"
+                and atlas.stem in HELLUVA_IMAGEGEN_ANCHOR_STEMS
+            )
         ) and bank in HAZBIN_NEW_BANKS
         if is_imagegen_anchor:
             validate_master(destination)

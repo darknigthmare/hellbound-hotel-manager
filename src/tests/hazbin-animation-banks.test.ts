@@ -17,6 +17,7 @@ interface AnimationBankManifest {
   status: string;
   atomic: boolean;
   animationContractId: string;
+  imageGenAnchorBanks: Record<string, SupplementalSpriteAnimationBankId[]>;
   canvas: {
     width: number;
     height: number;
@@ -48,6 +49,12 @@ describe('Hazbin supplementary animation banks', () => {
     expect(manifest.status).toBe('art_ready');
     expect(manifest.atomic).toBe(true);
     expect(manifest.animationContractId).toBe(EIGHT_BANK_COMBAT_ANIMATION_SET_ID);
+    expect(manifest.imageGenAnchorBanks).toEqual({
+      'core-a': ['taunt', 'jump', 'crouch', 'recoil'],
+      'hell-antagonists': ['taunt', 'crouch'],
+      overlords: ['recoil'],
+      'hazbin-companions': ['taunt'],
+    });
     expect(manifest.canvas).toEqual({
       width: 1536,
       height: 1024,

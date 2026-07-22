@@ -857,11 +857,13 @@ export function PentagramLiveFight({
   const fighterOneCombatFrame = getCombatAnimationFrame(combat.actionOne, combat.actionMsOne, {
     animationSetId: fighterOneSprite?.animationSetId,
     actionDurationMs: fighterOneActionDurationMs,
+    hitAttack: combat.lastHitAttackOne ?? undefined,
     loopElapsedMs: animationClockMs,
   });
   const fighterTwoCombatFrame = getCombatAnimationFrame(combat.actionTwo, combat.actionMsTwo, {
     animationSetId: fighterTwoSprite?.animationSetId,
     actionDurationMs: fighterTwoActionDurationMs,
+    hitAttack: combat.lastHitAttackTwo ?? undefined,
     loopElapsedMs: animationClockMs,
   });
   const timerSeconds = Math.ceil(combat.timerMs / 1000);

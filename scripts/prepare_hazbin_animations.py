@@ -32,6 +32,7 @@ try:
     )
     from .prepare_hazbin_expansion import prepare_atlas
     from .generate_motion_bank_masters import (
+        HAZBIN_IMAGEGEN_ANCHOR_BANKS,
         HAZBIN_NEW_BANKS,
         HAZBIN_TRANSFORMS,
         expected_hazbin_atlases,
@@ -51,6 +52,7 @@ except ImportError:
     )
     from prepare_hazbin_expansion import prepare_atlas
     from generate_motion_bank_masters import (
+        HAZBIN_IMAGEGEN_ANCHOR_BANKS,
         HAZBIN_NEW_BANKS,
         HAZBIN_TRANSFORMS,
         expected_hazbin_atlases,
@@ -151,6 +153,12 @@ def load_animation_manifest() -> tuple[AnimationAtlas, ...]:
         raise ValueError("Hazbin animation manifest has the wrong animation contract")
     if manifest.get("atomic") is not True:
         raise ValueError("Hazbin animation banks must publish atomically")
+    expected_anchor_banks = {
+        stem: list(banks)
+        for stem, banks in HAZBIN_IMAGEGEN_ANCHOR_BANKS.items()
+    }
+    if manifest.get("imageGenAnchorBanks") != expected_anchor_banks:
+        raise ValueError("Hazbin ImageGen anchor registry is out of sync")
 
     expected_canvas = {
         "width": EXPECTED_SHEET_SIZE[0],
@@ -232,7 +240,7 @@ def minimum_alpha_ratio(bank: str) -> float:
 
 
 def prepare_animation_job(job: AnimationJob) -> tuple[Image.Image, str]:
-    """Reuse reviewed v1 banks and preserve exact alpha for new derivatives."""
+    """Reuse reviewed v1 banks and key every registered ImageGen anchor."""
 
     existing_path = job.output_path(PUBLIC_RELEASE_ROOT)
     if job.bank not in HAZBIN_NEW_BANKS and existing_path.is_file():
@@ -246,7 +254,7 @@ def prepare_animation_job(job: AnimationJob) -> tuple[Image.Image, str]:
         )
         return prepared, "reused"
 
-    if job.atlas.stem == "core-a" and job.bank in HAZBIN_NEW_BANKS:
+    if job.bank in HAZBIN_IMAGEGEN_ANCHOR_BANKS.get(job.atlas.stem, ()):
         return (
             prepare_atlas(
                 job.master_path,
@@ -317,6 +325,24 @@ def validate_published_jobs(jobs: Iterable[AnimationJob], root: Path) -> int:
     return validated
 
 
+def activate_staged_animation_banks(jobs: tuple[AnimationJob, ...]) -> int:
+    """Validate a complete staging tree and swap it into place atomically."""
+
+    validated = validate_published_jobs(jobs, STAGING_ROOT)
+    safe_remove_release_tree(BACKUP_ROOT)
+    had_previous_release = PUBLIC_RELEASE_ROOT.exists()
+    if had_previous_release:
+        PUBLIC_RELEASE_ROOT.replace(BACKUP_ROOT)
+    try:
+        STAGING_ROOT.replace(PUBLIC_RELEASE_ROOT)
+    except OSError:
+        if had_previous_release and BACKUP_ROOT.exists():
+            BACKUP_ROOT.replace(PUBLIC_RELEASE_ROOT)
+        raise
+    safe_remove_release_tree(BACKUP_ROOT)
+    return validated
+
+
 def publish_animation_banks(jobs: tuple[AnimationJob, ...]) -> None:
     """Prepare all masters to disk, then swap the versioned release once."""
 
@@ -358,18 +384,47 @@ def publish_animation_banks(jobs: tuple[AnimationJob, ...]) -> None:
                 f"failure(s):\n - {preview}"
             )
 
-        validate_published_jobs(jobs, STAGING_ROOT)
+        activate_staged_animation_banks(jobs)
+    finally:
+        safe_remove_release_tree(STAGING_ROOT)
 
-        had_previous_release = PUBLIC_RELEASE_ROOT.exists()
-        if had_previous_release:
-            PUBLIC_RELEASE_ROOT.replace(BACKUP_ROOT)
-        try:
-            STAGING_ROOT.replace(PUBLIC_RELEASE_ROOT)
-        except OSError:
-            if had_previous_release and BACKUP_ROOT.exists():
-                BACKUP_ROOT.replace(PUBLIC_RELEASE_ROOT)
-            raise
-        safe_remove_release_tree(BACKUP_ROOT)
+
+def refresh_animation_jobs(
+    jobs: tuple[AnimationJob, ...],
+    selectors: list[str],
+) -> int:
+    """Refresh selected atlases inside a copy of the current atomic release."""
+
+    if not PUBLIC_RELEASE_ROOT.is_dir():
+        raise FileNotFoundError("Cannot refresh before the v1 release exists")
+    jobs_by_selector = {
+        f"{job.atlas.stem}:{job.bank}": job
+        for job in jobs
+    }
+    selected: list[AnimationJob] = []
+    for selector in dict.fromkeys(selectors):
+        job = jobs_by_selector.get(selector)
+        if job is None:
+            raise ValueError(
+                f"Unknown animation refresh selector {selector!r}; "
+                "expected STEM:BANK"
+            )
+        selected.append(job)
+
+    safe_remove_release_tree(STAGING_ROOT)
+    safe_remove_release_tree(BACKUP_ROOT)
+    shutil.copytree(PUBLIC_RELEASE_ROOT, STAGING_ROOT)
+    try:
+        for index, job in enumerate(selected, start=1):
+            prepared, preparation_kind = prepare_animation_job(job)
+            destination = job.output_path(STAGING_ROOT)
+            prepared.save(destination, optimize=True)
+            print(
+                f"[{index:03d}/{len(selected):03d}] {preparation_kind} "
+                f"{job.bank}/{job.filename}",
+                flush=True,
+            )
+        return activate_staged_animation_banks(jobs)
     finally:
         safe_remove_release_tree(STAGING_ROOT)
 
@@ -378,10 +433,22 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Prepare or validate the 175 Hazbin supplementary animation atlases."
     )
-    parser.add_argument(
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
         "--check",
         action="store_true",
         help="validate the already-published 175-atlas release without writing",
+    )
+    mode.add_argument(
+        "--resume-staging",
+        action="store_true",
+        help="validate and atomically activate an existing complete staging tree",
+    )
+    mode.add_argument(
+        "--refresh-job",
+        action="append",
+        metavar="STEM:BANK",
+        help="refresh one atlas in a copied release; repeat for multiple atlases",
     )
     return parser.parse_args()
 
@@ -396,6 +463,20 @@ def main() -> None:
             print(
                 f"Validated {count} supplementary Hazbin atlases "
                 f"({count * COLUMNS * ROWS} cells, 100 characters x 7 banks)."
+            )
+            return
+        if args.resume_staging:
+            count = activate_staged_animation_banks(jobs)
+            print(
+                f"Activated {count} staged Hazbin animation atlases "
+                f"({count * COLUMNS * ROWS} validated cells)."
+            )
+            return
+        if args.refresh_job:
+            count = refresh_animation_jobs(jobs, args.refresh_job)
+            print(
+                f"Refreshed {len(set(args.refresh_job))} Hazbin atlas jobs "
+                f"inside a {count}-atlas validated atomic release."
             )
             return
         publish_animation_banks(jobs)

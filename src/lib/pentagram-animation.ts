@@ -1,4 +1,4 @@
-import type { CombatAction } from './pentagram-combat';
+import type { CombatAction, CombatAttack } from './pentagram-combat';
 import {
   DEFAULT_SPRITE_ANIMATION_SET_ID,
   getSpriteAnimationSet,
@@ -26,7 +26,38 @@ export interface CombatAnimationOptions {
    * semantic startup/impact boundaries for every combat style.
    */
   actionDurationMs?: number;
+  hitAttack?: CombatAttack;
   loopElapsedMs?: number;
+}
+
+const HIT_REACTION_COLUMN: Readonly<Record<CombatAttack, SpriteAtlasColumn>> = {
+  light: 2,
+  heavy: 3,
+  special: 4,
+};
+
+const HIT_REACTION_DURATION_MS: Readonly<Record<CombatAttack, number>> = {
+  light: 60,
+  heavy: 85,
+  special: 120,
+};
+
+function withAttackSpecificHitReaction(
+  clip: SpriteAnimationClip,
+  attack: CombatAttack | undefined,
+): SpriteAnimationClip {
+  if (!attack) return clip;
+  return {
+    ...clip,
+    frames: [
+      {
+        bank: 'reaction',
+        column: HIT_REACTION_COLUMN[attack],
+        durationMs: HIT_REACTION_DURATION_MS[attack],
+      },
+      ...clip.frames,
+    ],
+  };
 }
 
 const ACTION_CLIPS: Readonly<Record<CombatAction, CombatSpriteClipName>> = {
@@ -146,7 +177,9 @@ export function getCombatAnimationFrame(
   const animationSet = getSpriteAnimationSet(
     options.animationSetId ?? DEFAULT_SPRITE_ANIMATION_SET_ID,
   );
-  const clip = animationSet.clips[clipName];
+  const clip = clipName === 'hit'
+    ? withAttackSpecificHitReaction(animationSet.clips[clipName], options.hitAttack)
+    : animationSet.clips[clipName];
   const clipDurationMs = getClipDuration(clip);
   const legacyImpactColumn = animationSet.columnRoles?.indexOf('attack_impact');
   const legacyImpactFrameIndex = legacyImpactColumn === undefined

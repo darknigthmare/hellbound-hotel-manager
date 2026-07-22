@@ -87,11 +87,16 @@ Fighter two still mirrors a source pose authored facing screen-right, keeping
 both opponents oriented toward each other.
 
 ImageGen chroma masters live under
-`art/sprite-sheets/chroma/<collection>-animation/<bank>/`. Eight new anchor
-masters cover taunt, jump, crouch and recoil for Hazbin `core-a` and Helluva
-`helluva-core`; the remaining families are deterministic, identity-preserving
-motion derivatives of the already reviewed OpenAI base/combat art. This keeps
-all 208 identities complete without substituting a generic silhouette.
+`art/sprite-sheets/chroma/<collection>-animation/<bank>/`. Twelve visually
+reviewed anchor masters cover all four new banks for Hazbin `core-a` and
+Helluva `helluva-core`, taunt plus crouch for `hell-antagonists`, recoil for
+`overlords`, and taunt for `hazbin-companions`. The remaining families are
+deterministic, identity-preserving motion derivatives of the already reviewed
+OpenAI base/combat art. This gives four Hazbin fighters fully redrawn
+supplementary motion and twelve more fighters at least one original new bank,
+while keeping all 208 identities complete without substituting a generic
+silhouette. ImageGen candidates with visible cell-edge clipping are rejected
+and remain on their validated derivatives.
 Run `python -m scripts.generate_motion_bank_masters` to rebuild or validate all
 289 motion masters. Then run `python -m scripts.prepare_hazbin_animations` and
 `python -m scripts.prepare_helluva_animations` to key and atomically publish
@@ -103,6 +108,8 @@ The live fight passes each sprite's `animationSetId` and the fighter-style
 scaled `actionDurationMs` into the resolver. The resolver normalizes startup
 and recovery around the rounded impact boundary, so rushdown, zoner, bruiser
 and boss timing all enter column 4 on the same frame that damage is resolved.
+Incoming light, heavy and special attacks then begin on reaction columns 2, 3
+and 4 respectively before flowing through the six-frame recoil sequence.
 
 ## Hazbin three-bank cinematic contract
 
