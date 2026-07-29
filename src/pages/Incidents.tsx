@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldAlert, Plus, Calendar, Users, Info, CheckCircle } from 'lucide-react';
+import { ShieldAlert, Plus, Calendar, Users, Info } from 'lucide-react';
 import { db } from '../db/localDb';
 import { RulesEngine } from '../lib/rules-engine';
 import { Incident, Character, Room, IncidentType, IncidentSeverity, IncidentStatus, DatabaseState } from '../types';
@@ -127,29 +127,6 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange, sear
     onStateChange();
   };
 
-  const handleResolveIncident = (inc: Incident, resolutionDetails: string) => {
-    const actionTaken = resolutionDetails.trim() || 'Resolved by staff.';
-    const resolved = db.transaction('INCIDENT_RESOLVED', (draft) => {
-      const current = draft.incidents.find(candidate => candidate.id === inc.id);
-      if (!current || current.status === 'resolved' || current.status === 'archived' || draft.gameplayMeta!.resolvedIncidentIds.includes(inc.id)) {
-        throw new Error('This incident was already resolved; recovery cannot be applied twice.');
-      }
-      current.status = 'resolved';
-      current.actionTaken = actionTaken;
-      current.resolvedDay = draft.gameplayMeta!.campaignDay;
-      draft.reputation = RulesEngine.calculateIncidentResolutionImpact(current, draft.reputation);
-      draft.gameplayMeta!.resolvedIncidentIds.push(current.id);
-    }, {
-      action: 'INCIDENT_RESOLVED',
-      details: `Incident ${inc.id} resolved: ${actionTaken}`
-    });
-    if (!resolved) {
-      window.alert(db.getStorageStatus().lastError?.message || 'Incident resolution failed.');
-      return;
-    }
-    onStateChange();
-  };
-
   // Filter list
   const normalizedSearch = searchQuery.trim().toLocaleLowerCase();
   const filteredIncidents = incidents.filter((inc: Incident) => {
@@ -169,7 +146,7 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange, sear
         <div>
           <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Security Incident Center</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Document containment events, property damages, relapses, and media smear campaigns.
+            Report and prepare containment here; active resolution must be accomplished in Hotel Shift.
           </p>
         </div>
         <button className="btn btn-primary" onClick={() => {
@@ -367,23 +344,16 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange, sear
                   </div>
                 </div>
 
-                {/* Action button if open */}
+                {/* Active resolution is deliberately reserved for gameplay. */}
                 {!isResolved && (
                   <div style={{ display: 'flex', justifyContent: 'flex-end', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px', marginTop: '10px' }}>
-                    <button 
-                      className="btn btn-gold" 
-                      style={{ padding: '6px 12px', fontSize: '0.75rem' }}
-                      onClick={() => {
-                        const action = window.prompt(`Log incident resolution action for ${inc.location}:`);
-                        if (action !== null) {
-                          handleResolveIncident(inc, action);
-                        }
-                      }}
-                      id={`resolve-${inc.id}`}
+                    <span
+                      id={`hotel-shift-required-${inc.id}`}
+                      role="status"
+                      style={{ padding: '6px 10px', fontSize: '0.75rem', color: 'var(--color-gold)', border: '1px solid var(--color-gold-dark)', borderRadius: '4px' }}
                     >
-                      <CheckCircle size={12} />
-                      Log Containment & Resolve
-                    </button>
+                      À accomplir dans Hotel Shift
+                    </span>
                   </div>
                 )}
               </div>
@@ -554,14 +524,14 @@ export const Incidents: React.FC<IncidentsProps> = ({ state, onStateChange, sear
               </div>
 
               <div>
-                <label htmlFor="inc-action">Staff Containment / Actions Taken</label>
+                <label htmlFor="inc-action">Initial Staff Containment / Preparation Notes</label>
                 <textarea 
                   id="inc-action" 
                   rows={2} 
                   value={formActionTaken} 
                   onChange={(e) => setFormActionTaken(e.target.value)} 
                   style={{ width: '100%', resize: 'vertical' }} 
-                  placeholder="Details of actions taken by Vaggie, Husk, or other staff to resolve the breach..." 
+                  placeholder="Record provisional containment and preparation by Vaggie, Husk, or other staff before active Hotel Shift resolution..."
                 />
               </div>
 

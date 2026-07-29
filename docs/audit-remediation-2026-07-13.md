@@ -7,7 +7,7 @@ This document records the implementation pass performed after the read-only audi
 - Strict schema-v3 backup validation, legacy-only migration defaults, 2 MiB input limit, confirmation before replacement, atomic rollback and raw recovery download.
 - Exact four-key optional cloud scope, validated snapshots, safe session rotation/refresh/revocation, owner-only Supabase RLS migration and honest privacy wording.
 - Durable campaign days, cooldowns, inventory/upkeep costs, staff fatigue, delayed tasks, threat thresholds, deterministic events and explicit victory/defeat/end states.
-- Multi-day redemption requirements, exactly-once rewards, generic Simulation AU plan templates and trauma-informed Angel Dust dialogue.
+- Multi-day Simulation AU evidence-dossier requirements, exactly-once milestone rewards, generic plan templates and trauma-informed Angel Dust dialogue. Finalizing a dossier never declares celestial redemption or changes a resident's soul/status.
 - Enforced room capacity/restrictions, shared occupancy, incident/repair accounting and atomic database/inventory gameplay transactions.
 - Timeline and spoiler filtering without destructive canon mutations; canon rank/species separation and expanded source-labelled roster/codex data.
 - Responsive navigation, targeted global search, high-contrast theme, focus-contained dialogs, keyboard tabs and live error announcements.

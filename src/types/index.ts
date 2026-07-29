@@ -72,6 +72,11 @@ export interface RehabilitationPlan {
   charlieNotes: string;
   vaggieNotes: string;
   staffPrivateNotes: string;
+  /**
+   * Legacy persisted field name kept for schema compatibility.
+   * True now means that a Simulation AU program-evidence dossier was finalized;
+   * it never confirms celestial redemption or changes the resident's soul.
+   */
   isRedeemedConfirmed: boolean;
 }
 
@@ -216,7 +221,9 @@ export interface GameplayMeta {
   completedMilestones: string[];
   appliedTaskIds: string[];
   resolvedIncidentIds: string[];
+  /** Legacy name: exactly-once character IDs for finalized AU evidence dossiers. */
   rewardedRedemptionIds: string[];
+  /** Legacy name: finalized AU dossiers already shared as resident-authorized summaries. */
   broadcastRedemptionIds: string[];
   narrativeFlags: string[];
   dailySessionCounts: Record<string, number>;

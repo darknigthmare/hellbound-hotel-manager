@@ -790,10 +790,9 @@ export class ExportImport {
       state.gameplayMeta!.resolvedIncidentIds = state.incidents
         .filter(incident => incident.status === 'resolved' || incident.status === 'archived')
         .map(incident => incident.id);
-      const confirmedCharacterIds = new Set(state.rehabilitationPlans.filter(plan => plan.isRedeemedConfirmed).map(plan => plan.characterId));
-      state.gameplayMeta!.rewardedRedemptionIds = state.characters
-        .filter(character => character.status === 'redeemed' && confirmedCharacterIds.has(character.id))
-        .map(character => character.id);
+      state.gameplayMeta!.rewardedRedemptionIds = state.rehabilitationPlans
+        .filter(plan => plan.isRedeemedConfirmed)
+        .map(plan => plan.characterId);
     }
 
     const arrayError = firstError([
@@ -872,10 +871,6 @@ export class ExportImport {
     }
     for (const plan of state.rehabilitationPlans) {
       if (!characterIds.has(plan.characterId)) return { isValid: false, error: `Invalid backup: plan '${plan.id}' references missing character '${plan.characterId}'.` };
-      const character = state.characters.find(candidate => candidate.id === plan.characterId)!;
-      if (plan.isRedeemedConfirmed && (character.status !== 'redeemed' || character.type !== 'redeemed_soul')) {
-        return { isValid: false, error: `Invalid backup: confirmed plan '${plan.id}' does not reference a redeemed soul.` };
-      }
     }
     for (const session of state.rehabilitationSessions) {
       if (!planIds.has(session.planId)) return { isValid: false, error: `Invalid backup: session '${session.id}' references missing plan '${session.planId}'.` };
@@ -908,13 +903,15 @@ export class ExportImport {
       }
     }
 
-    const confirmedPlanByCharacter = new Map(state.rehabilitationPlans.map(plan => [plan.characterId, plan]));
     for (const character of state.characters) {
       if ((character.type === 'redeemed_soul') !== (character.status === 'redeemed')) {
         return { isValid: false, error: `Invalid backup: character '${character.id}' has inconsistent redeemed type and status.` };
       }
-      if (character.status === 'redeemed' && !confirmedPlanByCharacter.get(character.id)?.isRedeemedConfirmed) {
-        return { isValid: false, error: `Invalid backup: redeemed character '${character.id}' lacks a confirmed rehabilitation plan.` };
+      if (
+        character.status === 'redeemed'
+        && (character.canonStatus !== 'canon' || character.sourceRef.trim().length === 0)
+      ) {
+        return { isValid: false, error: `Invalid backup: redeemed character '${character.id}' lacks a sourced canon record.` };
       }
     }
 
@@ -936,13 +933,14 @@ export class ExportImport {
     }
     for (const characterId of state.gameplayMeta!.rewardedRedemptionIds) {
       const character = state.characters.find(candidate => candidate.id === characterId);
-      if (!character || character.status !== 'redeemed') return { isValid: false, error: `Invalid backup: redemption reward marker '${characterId}' is inconsistent.` };
+      const finalizedPlan = state.rehabilitationPlans.find(plan => plan.characterId === characterId && plan.isRedeemedConfirmed);
+      if (!character || !finalizedPlan) return { isValid: false, error: `Invalid backup: evidence-dossier marker '${characterId}' is inconsistent.` };
     }
-    if (state.characters.some(character => character.status === 'redeemed' && !state.gameplayMeta!.rewardedRedemptionIds.includes(character.id))) {
-      return { isValid: false, error: 'Invalid backup: a redeemed soul lacks its exactly-once reward marker.' };
+    if (state.rehabilitationPlans.some(plan => plan.isRedeemedConfirmed && !state.gameplayMeta!.rewardedRedemptionIds.includes(plan.characterId))) {
+      return { isValid: false, error: 'Invalid backup: a finalized evidence dossier lacks its exactly-once marker.' };
     }
     if (state.gameplayMeta!.broadcastRedemptionIds.some(characterId => !state.gameplayMeta!.rewardedRedemptionIds.includes(characterId))) {
-      return { isValid: false, error: 'Invalid backup: a redemption broadcast marker lacks its workflow reward marker.' };
+      return { isValid: false, error: 'Invalid backup: an evidence-summary marker lacks its finalized-dossier marker.' };
     }
 
     if (!isLegacy && options.requireInventory && input.inventory === undefined) {

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Plus, CheckCircle, Calendar, Trash2, ShieldAlert, Smile, Play } from 'lucide-react';
+import { Plus, Calendar, Trash2, ShieldAlert, Smile, Play } from 'lucide-react';
 import { db } from '../db/localDb';
-import { RulesEngine } from '../lib/rules-engine';
 import { StaffTask, Character, TaskType, TaskStatus, DatabaseState } from '../types';
-import { InventoryBackup } from '../lib/export-import';
 import { useDialogFocus } from '../components/useDialogFocus';
 
 interface StaffProps {
@@ -125,151 +123,17 @@ export const Staff: React.FC<StaffProps> = ({ state, onStateChange, searchQuery 
     onStateChange();
   };
 
-  const applyTaskCompletionEffect = (task: StaffTask, draft: DatabaseState, inventory: InventoryBackup): { ok: boolean; message: string } => {
-    const staffName = draft.characters.find((character: Character) => character.id === task.assignedTo)?.name || task.assignedTo;
-
-    switch (task.type) {
-      case 'room_inspection': {
-        const room = draft.rooms.find(candidate => candidate.number === task.targetId && candidate.status === 'messy')
-          || (!task.targetId ? draft.rooms.find(candidate => candidate.status === 'messy') : undefined);
-        if (!room) return { ok: true, message: `${staffName} completed an inspection; no messy room required cleaning.` };
-        if (inventory.clean < 1) {
-          return { ok: false, message: 'Cleaning supplies are depleted. Restock before completing this inspection.' };
-        }
-        inventory.clean -= 1;
-        room.status = 'clean';
-        room.lastInspectionDate = `Campaign Day ${draft.gameplayMeta!.campaignDay}`;
-        room.lastInspectedBy = task.assignedTo;
-        room.maintenanceNotes = `${room.maintenanceNotes}\nCleaned during staff task ${task.id}.`;
-        return { ok: true, message: `${staffName} inspected and cleaned Room ${room.number}; 1 cleaning supply consumed.` };
-      }
-      case 'repair_work': {
-        const room = draft.rooms.find(candidate => candidate.number === task.targetId && candidate.status === 'damaged')
-          || (!task.targetId ? draft.rooms.find(candidate => candidate.status === 'damaged') : undefined);
-        if (!room) return { ok: true, message: `${staffName} verified that no damaged room required repair.` };
-        const balance = draft.resourceLedger.reduce((sum, entry) => sum + (entry.type === 'income' ? entry.amount : -entry.amount), 0);
-        if (balance < room.repairCost) {
-          return { ok: false, message: `Repair requires ${room.repairCost} HN, but only ${balance} HN is available.` };
-        }
-        if (room.repairCost > 0) {
-          draft.resourceLedger.push({
-            id: `task_repair_${task.id}`,
-            date: `Campaign Day ${draft.gameplayMeta!.campaignDay}`,
-            type: 'expense',
-            category: 'repair',
-            amount: room.repairCost,
-            description: `Staff repair task completed for Room ${room.number}.`
-          });
-        }
-        room.status = 'clean';
-        room.repairCost = 0;
-        room.maintenanceNotes = `${room.maintenanceNotes}\nRepaired by ${staffName} under task ${task.id}.`;
-        return { ok: true, message: `${staffName} repaired Room ${room.number}.` };
-      }
-      case 'rehab_prep': {
-        const plan = draft.rehabilitationPlans.find(candidate => candidate.id === task.targetId && !candidate.isRedeemedConfirmed)
-          || (!task.targetId ? draft.rehabilitationPlans.filter(candidate => !candidate.isRedeemedConfirmed)
-            .sort((a, b) => RulesEngine.calculateRehabilitationProgress(a) - RulesEngine.calculateRehabilitationProgress(b))[0] : undefined);
-        if (!plan) return { ok: true, message: `${staffName} prepared curriculum files; no active plan needed assistance.` };
-        if (inventory.food < 1) {
-          return { ok: false, message: 'Workshop supplies are depleted. Restock food/workshop inventory first.' };
-        }
-        inventory.food -= 1;
-        plan.cooperationScore = Math.min(100, plan.cooperationScore + 2);
-        const resident = draft.characters.find(character => character.id === plan.characterId);
-        if (resident) {
-          resident.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
-        }
-        return { ok: true, message: `${staffName} prepared ${resident?.name || plan.characterId}'s curriculum; cooperation +2 and 1 workshop supply consumed.` };
-      }
-      case 'media_response': {
-        draft.reputation.sinnerReputation = Math.min(100, draft.reputation.sinnerReputation + 2);
-        draft.reputation.mediaChaos = Math.max(0, draft.reputation.mediaChaos - 5);
-        draft.reputation.veesInfluence = Math.max(0, draft.reputation.veesInfluence - 2);
-        return { ok: true, message: `${staffName} issued a media response: sinner reputation +2, chaos -5, Vees influence -2.` };
-      }
-      case 'heaven_watch': {
-        draft.reputation.heavenAttention = Math.max(0, draft.reputation.heavenAttention - 3);
-        draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 1);
-        return { ok: true, message: `${staffName} completed counter-surveillance: Heaven attention -3, internal trust +1.` };
-      }
-      case 'vees_watch': {
-        draft.reputation.veesInfluence = Math.max(0, draft.reputation.veesInfluence - 4);
-        return { ok: true, message: `${staffName} disrupted a Vees signal relay: influence -4.` };
-      }
-      case 'conflict_resolution': {
-        if (inventory.bar < 1) {
-          return { ok: false, message: 'Bar supplies are depleted. Restock before running conflict mediation.' };
-        }
-        inventory.bar -= 1;
-        draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 4);
-        draft.reputation.mediaChaos = Math.max(0, draft.reputation.mediaChaos - 2);
-        return { ok: true, message: `${staffName} mediated a bar conflict: internal trust +4, media chaos -2, 1 bar supply consumed.` };
-      }
-      case 'new_sinner_intake': {
-        const applicant = draft.characters.find(character => character.id === task.targetId && character.status === 'applicant' && character.type === 'sinner')
-          || (!task.targetId ? draft.characters.find(character => character.status === 'applicant' && character.type === 'sinner') : undefined);
-        if (!applicant) return { ok: false, message: 'No applicant is waiting for an intake interview.' };
-        const housed = draft.rooms.some(room => room.occupantId === applicant.id || room.occupantIds?.includes(applicant.id));
-        if (!housed) {
-          const room = draft.rooms.find(candidate => {
-            const occupants = candidate.occupantIds?.length ?? (candidate.occupantId ? 1 : 0);
-            return occupants < candidate.capacity && candidate.status === 'clean'
-              && !candidate.restrictions.includes('staff_only') && !candidate.restrictions.includes('no_entry');
-          });
-          if (!room) return { ok: false, message: 'Admission blocked: no safe bed is available for this applicant.' };
-          const occupants = room.occupantIds ? [...room.occupantIds] : (room.occupantId ? [room.occupantId] : []);
-          occupants.push(applicant.id);
-          room.occupantIds = occupants;
-          room.occupantId = room.occupantId || applicant.id;
-        }
-        applicant.status = 'resident';
-        applicant.role = 'resident';
-        applicant.charlieTrust = Math.min(100, applicant.charlieTrust + 5);
-        return { ok: true, message: `${staffName} admitted ${applicant.name} as an active resident; Charlie trust +5.` };
-      }
-      case 'staff_briefing': {
-        draft.reputation.internalTrust = Math.min(100, draft.reputation.internalTrust + 3);
-        return { ok: true, message: `${staffName} completed the briefing; internal trust +3.` };
-      }
-      case 'custom':
-        return { ok: true, message: `${staffName} completed the documented custom duty.` };
-      default:
-        return { ok: true, message: `${staffName} completed the assigned duty.` };
-    }
-  };
-
-  // Toggle Task Status
-  const handleToggleTaskStatus = (task: StaffTask, newStatus: TaskStatus) => {
-    let completionMessage = '';
-    const saved = db.transaction(newStatus === 'completed' ? 'TASK_COMPLETED' : 'TASK_STATUS_CHANGE', (draft, inventory) => {
+  // Starting a duty is administrative preparation. Its effect can only be
+  // earned by completing the corresponding active Hotel Shift mission.
+  const handleStartTask = (task: StaffTask) => {
+    const saved = db.transaction('TASK_STATUS_CHANGE', (draft) => {
       const current = draft.staffTasks.find(candidate => candidate.id === task.id);
       if (!current) throw new Error('Task no longer exists.');
-      if (newStatus === 'in_progress') {
-        if (current.status !== 'pending') throw new Error('Only a pending task can be started.');
-        current.status = 'in_progress';
-        return;
-      }
-      if (newStatus === 'completed') {
-        const meta = draft.gameplayMeta!;
-        if (current.status !== 'in_progress') throw new Error('Start the duty before completing it.');
-        if (!draft.characters.some(character => character.id === current.assignedTo && character.status === 'staff')) {
-          throw new Error('The assigned character is no longer active hotel staff.');
-        }
-        if ((current.availableOnDay || meta.campaignDay) > meta.campaignDay) {
-          throw new Error(`This duty requires work until Campaign Day ${current.availableOnDay}.`);
-        }
-        if (meta.appliedTaskIds.includes(current.id)) throw new Error('This task effect was already applied.');
-        const effect = applyTaskCompletionEffect(current, draft, inventory);
-        if (!effect.ok) throw new Error(effect.message);
-        completionMessage = effect.message;
-        meta.appliedTaskIds.push(current.id);
-        meta.staffFatigue[current.assignedTo] = Math.min(100, (meta.staffFatigue[current.assignedTo] || 0) + Math.max(1, Math.ceil(current.mentalWorkload / 3)));
-        current.status = 'completed';
-      }
+      if (current.status !== 'pending') throw new Error('Only a pending task can be started.');
+      current.status = 'in_progress';
     }, {
-      action: newStatus === 'completed' ? 'TASK_COMPLETED' : 'TASK_STARTED',
-      details: newStatus === 'completed' ? `Staff task "${task.title}" completed with its exactly-once effect.` : `Staff task "${task.title}" started.`
+      action: 'TASK_STARTED',
+      details: `Staff task "${task.title}" started; active completion remains in Hotel Shift.`
     });
     if (!saved) {
       const message = db.getStorageStatus().lastError?.message || 'Task status change failed.';
@@ -277,7 +141,7 @@ export const Staff: React.FC<StaffProps> = ({ state, onStateChange, searchQuery 
       window.alert(message);
       return;
     }
-    if (completionMessage) setValidationError(null);
+    setValidationError(null);
     onStateChange();
   };
 
@@ -337,7 +201,7 @@ export const Staff: React.FC<StaffProps> = ({ state, onStateChange, searchQuery 
         <div>
           <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Staff & Operations Scheduler</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Dispatch tasks, balance workloads, and track staff performance ratings.
+            Dispatch and assign duties here, then complete their active work through Hotel Shift gameplay.
           </p>
         </div>
         <button className="btn btn-primary" onClick={() => {
@@ -476,22 +340,20 @@ export const Staff: React.FC<StaffProps> = ({ state, onStateChange, searchQuery 
                         <button 
                           className="btn btn-secondary" 
                           style={{ padding: '6px 12px', fontSize: '0.7rem' }}
-                          onClick={() => handleToggleTaskStatus(task, 'in_progress')}
+                          onClick={() => handleStartTask(task)}
                           id={`start-${task.id}`}
                         >
                           <Play size={10} /> Start
                         </button>
                       ) : (
-                        <button 
-                          className="btn btn-gold" 
-                          style={{ padding: '6px 12px', fontSize: '0.7rem' }}
-                          onClick={() => handleToggleTaskStatus(task, 'completed')}
-                          id={`complete-${task.id}`}
-                          disabled={(task.availableOnDay || (state.gameplayMeta || db.getGameplayMeta()).campaignDay) > (state.gameplayMeta || db.getGameplayMeta()).campaignDay}
-                          title={`Available on Campaign Day ${task.availableOnDay || (state.gameplayMeta || db.getGameplayMeta()).campaignDay}`}
+                        <span
+                          id={`hotel-shift-required-${task.id}`}
+                          role="status"
+                          style={{ padding: '6px 10px', fontSize: '0.7rem', color: 'var(--color-gold)', border: '1px solid var(--color-gold-dark)', borderRadius: '4px' }}
+                          title={`Active completion is available in Hotel Shift on Campaign Day ${task.availableOnDay || (state.gameplayMeta || db.getGameplayMeta()).campaignDay}.`}
                         >
-                          <CheckCircle size={10} /> Complete
-                        </button>
+                          À accomplir dans Hotel Shift
+                        </span>
                       )}
                       <button 
                         type="button"
@@ -640,7 +502,7 @@ export const Staff: React.FC<StaffProps> = ({ state, onStateChange, searchQuery 
                   <option value="in_progress">Active / In Progress</option>
                 </select>
                 <span style={{ display: 'block', marginTop: '4px', fontSize: '0.68rem', color: 'var(--color-text-muted)' }}>
-                  Completion applies the selected duty's room, resource, rehabilitation, or reputation effect.
+                  Hotel Shift gameplay applies the duty's room, resource, rehabilitation, or reputation effect exactly once.
                 </span>
               </div>
 

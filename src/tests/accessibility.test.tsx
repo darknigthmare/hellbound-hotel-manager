@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import axe from 'axe-core';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ConfirmDialog } from '../components/ConfirmDialog';
@@ -18,6 +18,7 @@ import {
 } from '../expansions/helluva-boss/engine';
 import { Extensions } from '../pages/Extensions';
 import { HelluvaBoss } from '../pages/HelluvaBoss';
+import { HotelShift } from '../pages/HotelShift';
 import { PentagramArena } from '../pages/PentagramArena';
 import { DatabaseState, HelluvaBossSpoilerScope } from '../types';
 
@@ -146,9 +147,16 @@ describe('automated accessibility contracts', () => {
     );
 
     expect(screen.getByRole('button', { name: 'Manage Extensions' })).toBeTruthy();
+    const playableCampaign = screen.getByText('Playable campaign').closest('.sidebar-group');
+    expect(playableCampaign).not.toBeNull();
+    const hotelShiftLink = within(playableCampaign as HTMLElement)
+      .getByRole('button', { name: /Hotel Shift.*LIVE/ });
+    expect(within(playableCampaign as HTMLElement).getAllByRole('button')[0]).toBe(hotelShiftLink);
     const arenaLink = screen.getByRole('button', { name: /Pentagram Arena.*2\.5D/ });
     expect(arenaLink).toBeTruthy();
     expect(screen.queryByRole('button', { name: /Helluva Boss/ })).toBeNull();
+    await userEvent.click(hotelShiftLink);
+    expect(onViewChange).toHaveBeenCalledWith('shift');
     await userEvent.click(arenaLink);
     expect(onViewChange).toHaveBeenCalledWith('arena');
     await expectNoSeriousAccessibilityViolation(container);
@@ -166,6 +174,42 @@ describe('automated accessibility contracts', () => {
 
     const helluvaLink = screen.getByRole('button', { name: /Helluva Boss/ });
     expect(helluvaLink.getAttribute('aria-current')).toBe('page');
+    await expectNoSeriousAccessibilityViolation(container);
+  });
+
+  it('exposes Hotel Shift as live lore-safe play without button-driven core actions', async () => {
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation(() => 1);
+    vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => undefined);
+    const state = getSeedData();
+    const { container } = render(
+      <HotelShift state={state} onStateChange={vi.fn()} />,
+    );
+
+    expect(screen.getByRole('heading', { name: 'Hotel Shift' })).toBeTruthy();
+    expect(screen.getByText(/MAIN PLAYABLE CAMPAIGN.*SIMULATION AU/i)).toBeTruthy();
+    const loreGuard = screen.getByRole('note');
+    expect(within(loreGuard).getByText('Lore-safe campaign reconstruction')).toBeTruthy();
+    expect(
+      within(loreGuard).getByText(/never rewrite an episode, declare a soul redeemed or invent a canon death/i),
+    ).toBeTruthy();
+
+    const playableRegion = screen.getByRole('region', { name: /Playable .*Move with/i });
+    expect(playableRegion.getAttribute('data-game-phase')).toBe('playing');
+    expect(within(container).queryAllByRole('button')).toHaveLength(0);
+
+    const playerId = playableRegion.getAttribute('data-player-id');
+    const partnerId = playableRegion.getAttribute('data-partner-id');
+    const ambientIds = Array.from(
+      playableRegion.querySelectorAll<HTMLElement>('[data-ambient-id]'),
+      element => element.dataset.ambientId,
+    );
+    expect(playerId).toBeTruthy();
+    expect(partnerId).toBeTruthy();
+    expect(playerId).not.toBe(partnerId);
+    expect(ambientIds.length).toBeGreaterThan(0);
+    expect(ambientIds).not.toContain(playerId);
+    expect(ambientIds).not.toContain(partnerId);
+    expect(new Set(ambientIds).size).toBe(ambientIds.length);
     await expectNoSeriousAccessibilityViolation(container);
   });
 

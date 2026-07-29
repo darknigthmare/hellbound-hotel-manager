@@ -18,9 +18,6 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
   const [typeFilter, setTypeFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
-  // Niffty sweep animation states
-  const [cleaningRooms, setCleaningRooms] = useState<Record<string, boolean>>({});
-
   // Edit / Assign Modal state
   const [isAssignModalOpen, setIsAssignModalOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -55,6 +52,7 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
   const handleSaveRoom = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRoom) return;
+    const requiresHotelShift = selectedRoom.status === 'messy' || selectedRoom.status === 'damaged';
 
     const restrictionsArray = formRestrictions
       .split(',')
@@ -64,7 +62,7 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
     const updatedRoom: Room = {
       ...selectedRoom,
       occupantId: formOccupant === '' ? null : formOccupant,
-      status: formStatus,
+      status: requiresHotelShift ? selectedRoom.status : formStatus,
       type: formType,
       dangerLevel: formDanger,
       restrictions: restrictionsArray,
@@ -138,97 +136,6 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
     onStateChange();
   };
 
-  // Quick Action: Clean Room
-  const handleCleanRoom = (room: Room, cleanerId: string) => {
-    if (room.status === 'damaged' || room.status === 'under_repair') {
-      // Cannot clean damaged room directly without repairing it
-      return;
-    }
-    if (room.status === 'cursed' || room.status === 'locked') {
-      window.alert(`Room ${room.number} requires security clearance before normal cleaning can begin.`);
-      return;
-    }
-
-    const cleaningStock = db.getInventory().clean;
-    if (cleaningStock < 1) {
-      window.alert('Cleaning supplies are depleted. Restock them in Ledger & Facility Supplies before sending Niffty.');
-      return;
-    }
-
-    // Set cleaning status to trigger animation overlay
-    setCleaningRooms(prev => ({ ...prev, [room.number]: true }));
-
-    setTimeout(() => {
-      const cleaned = db.transaction('ROOM_CLEAN', (draft, inventory) => {
-        const target = draft.rooms.find(candidate => candidate.number === room.number);
-        if (!target || target.status === 'damaged' || target.status === 'under_repair' || target.status === 'locked' || target.status === 'cursed') {
-          throw new Error('Room condition changed before cleaning completed.');
-        }
-        if (inventory.clean < 1) throw new Error('Cleaning supplies were consumed by another operation.');
-        inventory.clean -= 1;
-        target.status = 'clean';
-        target.lastInspectionDate = `Campaign Day ${draft.gameplayMeta!.campaignDay}`;
-        target.lastInspectedBy = cleanerId;
-        target.maintenanceNotes = `${target.maintenanceNotes}\nInspected & cleaned by staff.`;
-      }, {
-        action: 'ROOM_CLEAN',
-        details: `Staff inspected/cleaned room ${room.number}; consumed 1 cleaning supply.`
-      });
-      setCleaningRooms(prev => ({ ...prev, [room.number]: false }));
-      if (!cleaned) {
-        window.alert(db.getStorageStatus().lastError?.message || 'Cleaning failed atomically.');
-        return;
-      }
-      onStateChange();
-    }, 1200);
-  };
-
-  // Quick Action: Repair Room
-  const handleRepairRoom = (room: Room) => {
-    // 1. Calculate budget impact
-    const totalExpenses = state.resourceLedger
-      .filter(l => l.type === 'expense')
-      .reduce((sum, item) => sum + item.amount, 0);
-    const totalIncome = state.resourceLedger
-      .filter(l => l.type === 'income')
-      .reduce((sum, item) => sum + item.amount, 0);
-    const currentBalance = totalIncome - totalExpenses;
-
-    if (currentBalance < room.repairCost) {
-      alert(`Ledger Alert: Insufficient hotel budget to repair Room ${room.number}. Cost is ${room.repairCost} HN; available is ${currentBalance} HN.`);
-      return;
-    }
-
-    const repaired = db.transaction('ROOM_REPAIR', (draft) => {
-      const target = draft.rooms.find(candidate => candidate.number === room.number);
-      if (!target || target.status !== 'damaged') throw new Error('This room is no longer awaiting repair.');
-      const freshBalance = draft.resourceLedger.reduce((sum, entry) => sum + (entry.type === 'income' ? entry.amount : -entry.amount), 0);
-      if (freshBalance < target.repairCost) throw new Error(`Only ${freshBalance} HN remains for a ${target.repairCost} HN repair.`);
-      const chargedCost = target.repairCost;
-      if (chargedCost > 0) {
-        draft.resourceLedger.push({
-          id: `rep_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-          date: `Campaign Day ${draft.gameplayMeta!.campaignDay}`,
-          type: 'expense',
-          category: 'repair',
-          amount: chargedCost,
-          description: `Structural repairs conducted on Room ${room.number}.`
-        });
-      }
-      target.status = 'clean';
-      target.repairCost = 0;
-      target.maintenanceNotes = `${target.maintenanceNotes}\nStructural repairs completed. Cleaned and set to active.`;
-    }, {
-      action: 'ROOM_REPAIR',
-      details: `Completed structural repairs on room ${room.number} for ${room.repairCost} HN.`
-    });
-    if (!repaired) {
-      alert(db.getStorageStatus().lastError?.message || 'Repair failed atomically.');
-      return;
-    }
-    onStateChange();
-  };
-
   // Quick Action: Vacate Room
   const handleVacateRoom = (room: Room) => {
     const vacated = db.transaction('ROOM_VACATE', (draft) => {
@@ -268,7 +175,7 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
         <div>
           <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Rooms Registry</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Inspect structural conditions, manage guest allocations, and coordinate maintenance shifts.
+            Report structural conditions and manage allocations here; cleaning and repairs are played in Hotel Shift.
           </p>
         </div>
       </div>
@@ -365,8 +272,7 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                   const safetyCheck = RulesEngine.validateRoomAssignment(room, tenant);
                   
                   const isDamaged = room.status === 'damaged';
-                  const isClean = room.status === 'clean';
-                  const isCleaning = cleaningRooms[room.number];
+                  const requiresHotelShift = isDamaged || room.status === 'messy';
                   const hasTenant = occupantIds.length > 0;
 
                   // Get initials
@@ -378,29 +284,19 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                       id={`room-card-${room.number}`}
                       className={`blueprint-room-slot ${room.status}`}
                       role="button"
-                      tabIndex={isCleaning ? -1 : 0}
+                      tabIndex={0}
                       aria-label={`Configure Ward ${room.number}, ${tenant?.name || 'vacant'}, status ${room.status}`}
-                      aria-disabled={isCleaning}
                       onClick={() => handleOpenAssign(room)}
                       onKeyDown={(event) => {
-                        if (event.target !== event.currentTarget || isCleaning || (event.key !== 'Enter' && event.key !== ' ')) return;
+                        if (event.target !== event.currentTarget || (event.key !== 'Enter' && event.key !== ' ')) return;
                         event.preventDefault();
                         handleOpenAssign(room);
                       }}
                       style={{ 
                         opacity: isMatchingFilter ? 1 : 0.25,
-                        boxShadow: isCleaning ? '0 0 15px rgba(212, 175, 55, 0.6)' : 'var(--shadow-card)',
-                        pointerEvents: isCleaning ? 'none' : 'auto'
+                        boxShadow: 'var(--shadow-card)'
                       }}
                     >
-                      {/* Cleaning Overlay */}
-                      {isCleaning && (
-                        <div className="sweep-overlay">
-                          <span className="niffty-broom-sweep" style={{ fontSize: '1.2rem', marginRight: '4px' }}>🧹</span>
-                          <span>Sweeping...</span>
-                        </div>
-                      )}
-
                       {/* Header */}
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontWeight: 'bold', fontSize: '0.85rem', color: 'var(--color-gold)' }}>
@@ -443,7 +339,7 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                           Status: {room.status}
                         </span>
                         
-                        {/* Quick clean/repair hooks */}
+                        {/* Occupancy stays administrative; active maintenance is gameplay. */}
                         <div onClick={(e) => e.stopPropagation()} style={{ display: 'flex', gap: '4px' }}>
                           {hasTenant && (
                             <button
@@ -455,24 +351,15 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                               Vacate
                             </button>
                           )}
-                          {isDamaged ? (
-                            <button 
-                              onClick={() => handleRepairRoom(room)} 
-                              style={{ background: 'none', border: 'none', color: '#ff6b7a', cursor: 'pointer', padding: 0, fontWeight: 'bold' }}
-                              title={`Repair room for ${room.repairCost} HN`}
+                          {requiresHotelShift && (
+                            <span
+                              id={`hotel-shift-required-room-${room.number}`}
+                              role="status"
+                              style={{ color: 'var(--color-gold)', fontWeight: 700 }}
+                              title={`${isDamaged ? 'Repair' : 'Cleaning'} must be completed through active Hotel Shift play.`}
                             >
-                              Repair
-                            </button>
-                          ) : (
-                            !isClean && (
-                              <button 
-                                onClick={() => handleCleanRoom(room, 'niffty')} 
-                                style={{ background: 'none', border: 'none', color: 'var(--color-gold)', cursor: 'pointer', padding: 0 }}
-                                title="Send Niffty to clean room"
-                              >
-                                Clean
-                              </button>
-                            )
+                              Hotel Shift
+                            </span>
                           )}
                         </div>
                       </div>
@@ -518,6 +405,10 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                     id="room-status" 
                     value={formStatus} 
                     onChange={(e) => setFormStatus(e.target.value as RoomStatus)}
+                    disabled={selectedRoom.status === 'messy' || selectedRoom.status === 'damaged'}
+                    title={selectedRoom.status === 'messy' || selectedRoom.status === 'damaged'
+                      ? 'Active cleaning and repair must be completed in Hotel Shift.'
+                      : 'Report the room condition'}
                     style={{ width: '100%' }}
                   >
                     <option value="clean">Clean</option>
@@ -527,6 +418,11 @@ export const Rooms: React.FC<RoomsProps> = ({ state, onStateChange, searchQuery 
                     <option value="under_repair">Under Repair</option>
                     <option value="locked">Locked</option>
                   </select>
+                  {(selectedRoom.status === 'messy' || selectedRoom.status === 'damaged') && (
+                    <span style={{ display: 'block', marginTop: '4px', color: 'var(--color-gold)', fontSize: '0.68rem' }}>
+                      À accomplir dans Hotel Shift
+                    </span>
+                  )}
                 </div>
 
                 <div>

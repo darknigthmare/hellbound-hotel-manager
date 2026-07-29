@@ -44,14 +44,14 @@ class FragileStorage extends MemoryStorage {
 }
 
 describe('durable gameplay safety', () => {
-  it('rejects a manual redeemed status outside the rehabilitation workflow', () => {
+  it('rejects inventing a redeemed status outside a sourced canon timeline', () => {
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined);
     const database = new LocalDb(new MemoryStorage());
     const resident = database.getCharacters().find(character => character.status === 'resident')!;
 
     expect(database.saveCharacter({ ...resident, status: 'redeemed', type: 'redeemed_soul' })).toBe(false);
     expect(database.getCharacter(resident.id)?.status).toBe('resident');
-    expect(database.getStorageStatus().lastError?.message).toContain('rehabilitation confirmation workflow');
+    expect(database.getStorageStatus().lastError?.message).toContain('sourced canon timeline projection');
     consoleError.mockRestore();
   });
 
@@ -200,9 +200,27 @@ describe('backup gameplay validation', () => {
     };
     expect(ExportImport.validateState(invalidTimeline).error).toContain('timelineStates.season_1_start.status');
   });
+
+  it('accepts a finalized AU evidence dossier without changing the resident soul, status, or room', () => {
+    const finalized = currentState();
+    const plan = finalized.rehabilitationPlans[0];
+    const character = finalized.characters.find(candidate => candidate.id === plan.characterId)!;
+    const occupiedRoom = finalized.rooms.find(room => (
+      room.occupantId === character.id || room.occupantIds?.includes(character.id)
+    ));
+    plan.isRedeemedConfirmed = true;
+    finalized.gameplayMeta.rewardedRedemptionIds.push(character.id);
+
+    const result = ExportImport.validateState(finalized);
+
+    expect(result.isValid).toBe(true);
+    expect(character.type).toBe('sinner');
+    expect(character.status).toBe('resident');
+    expect(occupiedRoom).toBeDefined();
+  });
 });
 
-describe('redemption pacing', () => {
+describe('Simulation AU evidence-dossier pacing', () => {
   it('requires qualifying sessions across at least three campaign days', () => {
     const plan: RehabilitationPlan = {
       id: 'plan_pacing',
@@ -238,7 +256,7 @@ describe('redemption pacing', () => {
       conductedBy: 'charlie'
     }));
 
-    const result = RulesEngine.evaluateRedemptionEligibility(plan, sessions);
+    const result = RulesEngine.evaluateEvidenceDossierReadiness(plan, sessions);
     expect(result.isEligible).toBe(false);
     expect(result.reasons).toEqual(expect.arrayContaining([
       expect.stringContaining('at least 3 campaign days')

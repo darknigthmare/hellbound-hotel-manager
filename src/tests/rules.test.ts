@@ -186,7 +186,7 @@ describe('Rules Engine Tests', () => {
     expect(repAfterCrisis.veesInfluence).toBe(55); // 40 + 15
   });
 
-  it('should require sustained and varied rehabilitation before redemption', () => {
+  it('should require sustained and varied documentation before finalizing an AU evidence dossier', () => {
     const plan: RehabilitationPlan = {
       id: 'plan_test',
       characterId: 'resident_test',
@@ -215,7 +215,7 @@ describe('Rules Engine Tests', () => {
       conductedBy: 'charlie'
     });
 
-    const insufficient = RulesEngine.evaluateRedemptionEligibility(plan, [
+    const insufficient = RulesEngine.evaluateEvidenceDossierReadiness(plan, [
       makeSession(0, 'empathy_workshop'),
       makeSession(1, 'empathy_workshop'),
       makeSession(2, 'empathy_workshop')
@@ -226,7 +226,7 @@ describe('Rules Engine Tests', () => {
       expect.stringContaining('2 different session formats')
     ]));
 
-    const eligible = RulesEngine.evaluateRedemptionEligibility(plan, [
+    const eligible = RulesEngine.evaluateEvidenceDossierReadiness(plan, [
       makeSession(0, 'empathy_workshop'),
       makeSession(1, 'accountability_session'),
       makeSession(2, 'empathy_workshop'),
@@ -234,14 +234,14 @@ describe('Rules Engine Tests', () => {
     ]);
     expect(eligible).toMatchObject({ isEligible: true, averageScore: 83 });
 
-    const completed = RulesEngine.evaluateRedemptionEligibility({ ...plan, isRedeemedConfirmed: true }, [
+    const completed = RulesEngine.evaluateEvidenceDossierReadiness({ ...plan, isRedeemedConfirmed: true }, [
       makeSession(0, 'empathy_workshop'),
       makeSession(1, 'accountability_session'),
       makeSession(2, 'empathy_workshop'),
       makeSession(3, 'accountability_session')
     ]);
     expect(completed.isEligible).toBe(false);
-    expect(completed.reasons[0]).toContain('already confirmed');
+    expect(completed.reasons[0]).toContain('evidence dossier is already finalized');
   });
 
   it('should restore only part of incident damage when an incident is resolved', () => {
@@ -311,10 +311,15 @@ describe('Rules Engine Tests', () => {
     const victory = getSeedData();
     victory.gameplayMeta = JSON.parse(JSON.stringify(DEFAULT_GAMEPLAY_META));
     victory.gameplayMeta!.campaignDay = 15;
-    victory.gameplayMeta!.rewardedRedemptionIds = ['redeemed_a', 'redeemed_b', 'redeemed_c'];
+    // Legacy marker IDs alone never prove celestial outcomes or satisfy victory.
+    victory.gameplayMeta!.rewardedRedemptionIds = ['marker_a', 'marker_b', 'marker_c'];
     victory.reputation.redemptionCredibility = 90;
     victory.reputation.internalTrust = 70;
     victory.reputation.sinnerReputation = 65;
+    expect(RulesEngine.evaluateCampaignOutcome(victory).phase).toBe('active');
+    victory.rehabilitationPlans.slice(0, 3).forEach(plan => {
+      plan.isRedeemedConfirmed = true;
+    });
     expect(RulesEngine.evaluateCampaignOutcome(victory)).toMatchObject({
       phase: 'victory',
       result: 'victory',

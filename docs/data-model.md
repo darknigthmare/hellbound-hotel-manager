@@ -27,7 +27,7 @@ Inventory (`h_inv_bar`, `h_inv_clean`, `h_inv_food`) is kept in separate local k
 ## Referential rules
 
 - Character deletion cascades through rooms, plans, sessions, incidents, tasks and relationships.
-- Deleting a session cannot silently reverse previously applied progress, and redemptions or other one-time rewards remain guarded outside the purgeable audit log.
+- Deleting a session cannot silently reverse previously applied progress, and finalized Simulation AU evidence dossiers or other one-time rewards remain guarded outside the purgeable audit log. The persisted `isRedeemedConfirmed` and `rewardedRedemptionIds` names are legacy schema keys; neither declares celestial redemption.
 - A character cannot occupy multiple rooms, and room capacity/restrictions are enforced before assignment.
 - Schema-v3 import rejects missing required sections/structures, duplicate IDs, missing references, invalid enum-like values, non-finite numbers and unsupported future versions. Migration defaults are limited to unversioned/version-1/version-2 payloads.
 - Repository writes validate the complete candidate state first. Multi-key gameplay transactions restore both database and inventory if any persistence step fails.

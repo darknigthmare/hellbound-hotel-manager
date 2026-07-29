@@ -16,6 +16,7 @@ import {
 import './styles/theme.css';
 
 const Dashboard = lazy(() => import('./pages/Dashboard').then(module => ({ default: module.Dashboard })));
+const HotelShift = lazy(() => import('./pages/HotelShift').then(module => ({ default: module.HotelShift })));
 const Characters = lazy(() => import('./pages/Characters').then(module => ({ default: module.Characters })));
 const Rooms = lazy(() => import('./pages/Rooms').then(module => ({ default: module.Rooms })));
 const Rehabilitation = lazy(() => import('./pages/Rehabilitation').then(module => ({ default: module.Rehabilitation })));
@@ -33,7 +34,7 @@ const HelluvaBoss = lazy(() => import('./pages/HelluvaBoss').then(module => ({ d
 
 export const App: React.FC = () => {
   // Navigation active view
-  const [currentView, setCurrentView] = useState<ViewType>('dashboard');
+  const [currentView, setCurrentView] = useState<ViewType>('shift');
   
   // Search query
   const [searchQuery, setSearchQuery] = useState('');
@@ -305,6 +306,13 @@ export const App: React.FC = () => {
   // Page Routing dispatcher
   const renderActivePage = () => {
     switch (currentView) {
+      case 'shift':
+        return (
+          <HotelShift
+            state={dbState}
+            onStateChange={handleRefreshState}
+          />
+        );
       case 'dashboard':
         return (
           <Dashboard 

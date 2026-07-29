@@ -666,7 +666,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                     <option value="hellborn">Hellborn</option>
                     <option value="angel">Angel</option>
                     <option value="fallen_angel">Fallen Angel</option>
-                    {editingChar?.status === 'redeemed' && <option value="redeemed_soul">Redeemed Soul (workflow confirmed)</option>}
+                    {editingChar?.status === 'redeemed' && <option value="redeemed_soul">Redeemed Soul (sourced canon record)</option>}
                     <option value="unknown">Unknown</option>
                   </select>
                 </div>
@@ -709,7 +709,7 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                     <option value="resident">Active Resident</option>
                     <option value="applicant">Applicant</option>
                     <option value="banned">Banned</option>
-                    {editingChar?.status === 'redeemed' && <option value="redeemed">Redeemed (confirmed, read-only)</option>}
+                    {editingChar?.status === 'redeemed' && <option value="redeemed">Redeemed (sourced, read-only)</option>}
                     <option value="external">External</option>
                     <option value="deceased">Deceased</option>
                     <option value="unknown">Unknown</option>

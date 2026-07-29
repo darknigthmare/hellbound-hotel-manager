@@ -16,11 +16,14 @@ import {
   RelationshipType
 } from '../types';
 
-export interface RedemptionEligibility {
+export interface EvidenceDossierReadiness {
   isEligible: boolean;
   averageScore: number;
   reasons: string[];
 }
+
+/** @deprecated Use EvidenceDossierReadiness. Kept for public API compatibility. */
+export type RedemptionEligibility = EvidenceDossierReadiness;
 
 export interface CounselingApproach {
   id: string;
@@ -54,8 +57,8 @@ export interface FactionOperation {
 const CAMPAIGN_ENDINGS: Record<CampaignEndingId, { result: CampaignResult; title: string; summary: string }> = {
   redemption_program_proven: {
     result: 'victory',
-    title: 'Victory Ready: Redemption Program Proven',
-    summary: 'The simulation has sustained three confirmed redemptions while preserving trust and public credibility.'
+    title: 'Victory Ready: Program Evidence Sustained',
+    summary: 'The Simulation AU campaign has finalized three sustained program-evidence dossiers while preserving trust and public credibility. This does not declare any soul redeemed.'
   },
   celestial_shutdown: {
     result: 'defeat',
@@ -255,7 +258,7 @@ export class RulesEngine {
 
   /** Derives explicit, deterministic campaign victory/defeat/end states. */
   public static evaluateCampaignOutcome(state: Pick<DatabaseState,
-    'reputation' | 'incidents' | 'resourceLedger' | 'gameplayMeta'
+    'reputation' | 'incidents' | 'resourceLedger' | 'rehabilitationPlans' | 'gameplayMeta'
   >): CampaignOutcome {
     const meta = state.gameplayMeta;
     const completedFlag = meta?.narrativeFlags.find(flag => flag.startsWith('campaign_ended:'));
@@ -302,16 +305,18 @@ export class RulesEngine {
       };
     }
 
-    const confirmedRedemptions = meta?.rewardedRedemptionIds.length || 0;
+    const finalizedEvidenceDossiers = state.rehabilitationPlans
+      .filter(plan => plan.isRedeemedConfirmed)
+      .length;
     const victoryRequirements = [
       `Reach Campaign Day 15 (${Math.min(day, 15)}/15).`,
-      `Confirm 3 distinct redemptions (${Math.min(confirmedRedemptions, 3)}/3).`,
+      `Finalize 3 sustained Simulation AU evidence dossiers (${Math.min(finalizedEvidenceDossiers, 3)}/3).`,
       `Reach 85 redemption credibility (${state.reputation.redemptionCredibility}/85).`,
       `Maintain 60 internal trust (${state.reputation.internalTrust}/60).`,
       `Maintain 55 sinner reputation (${state.reputation.sinnerReputation}/55).`
     ];
     const victoryReady = day >= 15
-      && confirmedRedemptions >= 3
+      && finalizedEvidenceDossiers >= 3
       && state.reputation.redemptionCredibility >= 85
       && state.reputation.internalTrust >= 60
       && state.reputation.sinnerReputation >= 55;
@@ -444,13 +449,14 @@ export class RulesEngine {
   }
 
   /**
-   * Redemption is a campaign milestone, not an administrative shortcut.
-   * A resident needs sustained, varied work and no critically weak metric.
+   * Determines whether the Simulation AU program has enough sustained,
+   * varied documentation to finalize an evidence dossier. This is never a
+   * celestial-redemption decision.
    */
-  public static evaluateRedemptionEligibility(
+  public static evaluateEvidenceDossierReadiness(
     plan: RehabilitationPlan,
     sessions: RehabilitationSession[]
-  ): RedemptionEligibility {
+  ): EvidenceDossierReadiness {
     const scores = [
       plan.empathyScore,
       plan.accountabilityScore,
@@ -461,7 +467,7 @@ export class RulesEngine {
     const reasons: string[] = [];
 
     if (plan.isRedeemedConfirmed) {
-      reasons.push('Redemption is already confirmed for this rehabilitation plan.');
+      reasons.push('The Simulation AU evidence dossier is already finalized for this rehabilitation plan.');
     }
 
     if (sessions.length < 4) {
@@ -495,6 +501,14 @@ export class RulesEngine {
       averageScore,
       reasons
     };
+  }
+
+  /** @deprecated Compatibility wrapper; no current UI treats this as redemption. */
+  public static evaluateRedemptionEligibility(
+    plan: RehabilitationPlan,
+    sessions: RehabilitationSession[]
+  ): EvidenceDossierReadiness {
+    return this.evaluateEvidenceDossierReadiness(plan, sessions);
   }
 
   /**
@@ -621,12 +635,19 @@ export class RulesEngine {
         updated.sinnerReputation = Math.min(100, updated.sinnerReputation + 5);
         break;
       case 'proof_of_redemption':
-        // Sir Pentious ascends (or a sinner officially redeems)
+        // Reserved for a sourced/scripted canon proof such as Sir Pentious.
         updated.redemptionCredibility = Math.min(100, updated.redemptionCredibility + 30);
         updated.sinnerReputation = Math.min(100, updated.sinnerReputation + 15);
         updated.heavenAttention = Math.min(100, updated.heavenAttention + 25);
         updated.veesInfluence = Math.min(100, updated.veesInfluence + 15);
         updated.internalTrust = Math.min(100, updated.internalTrust + 15);
+        break;
+      case 'evidence_dossier':
+        // Simulation AU documentation milestone; this is not proof of ascension.
+        updated.redemptionCredibility = Math.min(100, updated.redemptionCredibility + 12);
+        updated.sinnerReputation = Math.min(100, updated.sinnerReputation + 4);
+        updated.heavenAttention = Math.min(100, updated.heavenAttention + 4);
+        updated.internalTrust = Math.min(100, updated.internalTrust + 5);
         break;
       case 'public_brawl':
         // Group fight in public

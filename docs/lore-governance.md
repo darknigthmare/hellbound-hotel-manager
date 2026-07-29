@@ -73,6 +73,7 @@ Unknown is preferable to an invented taxonomy. For example, the registry can con
 
 - Niffty is summoned by Alastor to work at the hotel, but no episode confirms that he owns her soul. Do not create a `contract_bound` relationship without new official evidence.
 - Rehabilitation percentages, Charlie trust, danger ratings, room numbers, budgets and staff workloads are gameplay metrics. Profiles mark them as `operationalDataStatus: simulation_au`.
+- The persisted `isRedeemedConfirmed` field is a legacy schema name. In current gameplay it means only that a sustained **Simulation AU evidence dossier** was finalized. It never changes a character into a redeemed soul, removes their room or asserts an ascension. Actual redemption remains a sourced timeline projection such as Sir Pentious after S1E08.
 - A non-participant uses `rehabTracked: false`; numeric `0` then means “not tracked,” not “canonically failed rehabilitation.”
 - A sourced episode fact and an AU operational consequence belong in separate records.
 

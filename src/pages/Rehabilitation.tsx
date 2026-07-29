@@ -54,7 +54,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   targetCharacterId, 
   onClearTargetId 
 }) => {
-  const { characters, rehabilitationPlans, rehabilitationSessions, incidents, relationships } = state;
+  const { characters, rehabilitationPlans, rehabilitationSessions, incidents } = state;
 
   // Active resident selector
   const residents = characters.filter((c: Character) => c.status === 'resident' || c.status === 'applicant');
@@ -91,8 +91,8 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
   const sessionsToday = sessionCounterKey ? (gameplayMeta.dailySessionCounts[sessionCounterKey] || 0) : 0;
   const dailySessionLimitReached = sessionsToday >= MAX_DAILY_SESSIONS;
 
-  const baseRedemptionEligibility = selectedPlan
-    ? RulesEngine.evaluateRedemptionEligibility(selectedPlan, sessions)
+  const evidenceDossierReadiness = selectedPlan
+    ? RulesEngine.evaluateEvidenceDossierReadiness(selectedPlan, sessions)
     : null;
   const hasBlockingIncident = selectedChar
     ? incidents.some((incident: Incident) => (
@@ -112,27 +112,18 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
         )
       ))
     : false;
-  const hasBindingRelationship = selectedChar
-    ? relationships.some(relationship => relationship.type === 'contract_bound'
-      && (relationship.charAId === selectedChar.id || relationship.charBId === selectedChar.id))
-    : false;
-  const redemptionReasons = [
-    ...(baseRedemptionEligibility?.reasons || []),
-    ...(selectedPlan?.isRedeemedConfirmed && selectedChar?.status !== 'redeemed' ? ['This plan is already marked as redeemed and needs an administrative state review.'] : []),
-    ...(selectedChar && selectedChar.status !== 'resident' ? ['Only an admitted active resident can be considered for redemption.'] : []),
-    ...(selectedChar && selectedChar.type !== 'sinner' ? ['Only a sinner soul is eligible for the hotel redemption protocol.'] : []),
-    ...(selectedChar?.contracts.length ? ['Resolve all active binding contracts before celestial confirmation.'] : []),
-    ...(hasBindingRelationship ? ['Resolve all contract-bound relationship records before celestial confirmation.'] : []),
+  const evidenceDossierReasons = [
+    ...(evidenceDossierReadiness?.reasons || []),
+    ...(selectedChar && selectedChar.status !== 'resident' ? ['Only an admitted active resident can finalize a program-evidence dossier.'] : []),
+    ...(selectedChar && selectedChar.type !== 'sinner' ? ['This Simulation AU dossier workflow currently tracks sinner residents.'] : []),
     ...(hasBlockingIncident ? ['Resolve the active Heaven alert or all high-risk, violent, relapse, and contract incidents involving this resident.'] : [])
   ];
-  const canConfirmRedemption = Boolean(
+  const canFinalizeEvidenceDossier = Boolean(
     selectedPlan
     && selectedChar
     && selectedChar.status === 'resident'
     && selectedChar.type === 'sinner'
-    && selectedChar.contracts.length === 0
-    && !hasBindingRelationship
-    && baseRedemptionEligibility?.isEligible
+    && evidenceDossierReadiness?.isEligible
     && !hasBlockingIncident
   );
 
@@ -222,8 +213,12 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
 
   const handleOpenSessionModal = () => {
     if (!selectedPlan || !selectedChar) return;
-    if (selectedChar.status === 'redeemed' || selectedPlan.isRedeemedConfirmed) {
-      window.alert('Redeemed records are read-only.');
+    if (selectedPlan.isRedeemedConfirmed) {
+      window.alert('This Simulation AU evidence dossier is finalized. Its session history is read-only.');
+      return;
+    }
+    if (selectedChar.status === 'redeemed') {
+      window.alert('This sourced or legacy redeemed-soul record is read-only.');
       return;
     }
     if (dailySessionLimitReached) {
@@ -292,8 +287,12 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     if (e) e.preventDefault();
     if (!selectedPlan || !selectedChar) return;
 
-    if (selectedChar.status === 'redeemed' || selectedPlan.isRedeemedConfirmed) {
-      window.alert('This resident is already redeemed. Their rehabilitation record is now read-only.');
+    if (selectedPlan.isRedeemedConfirmed) {
+      window.alert('This Simulation AU evidence dossier is already finalized. Its rehabilitation record is read-only.');
+      return;
+    }
+    if (selectedChar.status === 'redeemed') {
+      window.alert('This sourced or legacy redeemed-soul record is read-only.');
       return;
     }
 
@@ -317,7 +316,7 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
       const character = draft.characters.find(item => item.id === selectedChar.id);
       const conductor = draft.characters.find(item => item.id === sessionConductedBy && item.status === 'staff');
       if (!plan || !character || plan.isRedeemedConfirmed || character.status === 'redeemed') {
-        throw new Error('The rehabilitation record is no longer active.');
+        throw new Error('The rehabilitation record is no longer active or its AU evidence dossier is finalized.');
       }
       if (!conductor) throw new Error('The selected counselor is no longer on active staff duty.');
       const meta = draft.gameplayMeta!;
@@ -385,26 +384,26 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
     window.alert('Session records are immutable because their metric changes have already been applied. Add a corrective session instead of deleting history.');
   };
 
-  // REDEMPTION TRIGGER
-  const handleConfirmRedemption = () => {
+  // Legacy schema field, lore-safe meaning: finalize an AU evidence dossier.
+  const handleFinalizeEvidenceDossier = () => {
     if (!selectedPlan || !selectedChar) return;
 
-    if (!canConfirmRedemption) {
-      window.alert(`Redemption requirements are not met:\n- ${redemptionReasons.join('\n- ')}`);
+    if (!canFinalizeEvidenceDossier) {
+      window.alert(`Evidence-dossier requirements are not met:\n- ${evidenceDossierReasons.join('\n- ')}`);
       return;
     }
 
-    const consent = window.confirm(`CONFIRM CELESTIAL REDEMPTION: Are you sure you want to mark '${selectedChar.name}' as fully redeemed? Under the hotel protocols, this will update their status to 'redeemed', remove them from room registers, and trigger a public ascension event.`);
+    const consent = window.confirm(`FINALIZE SIMULATION AU EVIDENCE DOSSIER: Record '${selectedChar.name}'s sustained program milestone? This does not confirm celestial redemption, change their soul or status, remove their room, or announce an ascension.`);
     if (!consent) return;
 
-    const confirmed = db.transaction('SOUL_REDEMPTION', (draft) => {
+    const finalized = db.transaction('EVIDENCE_DOSSIER_FINALIZED', (draft) => {
       const character = draft.characters.find(item => item.id === selectedChar.id);
       const plan = draft.rehabilitationPlans.find(item => item.id === selectedPlan.id);
-      if (!character || !plan || character.status !== 'resident' || character.type !== 'sinner' || character.contracts.length > 0) {
-        throw new Error('The resident status or contract state changed before confirmation.');
+      if (!character || !plan || character.status !== 'resident' || character.type !== 'sinner') {
+        throw new Error('The resident or plan state changed before dossier finalization.');
       }
       const residentSessions = draft.rehabilitationSessions.filter(session => session.planId === plan.id);
-      const eligibility = RulesEngine.evaluateRedemptionEligibility(plan, residentSessions);
+      const readiness = RulesEngine.evaluateEvidenceDossierReadiness(plan, residentSessions);
       const blockingIncident = draft.incidents.some(incident => (
         (incident.status === 'open' || incident.status === 'contained')
         && (
@@ -415,36 +414,21 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
           )
         )
       ));
-      const bindingRelationship = draft.relationships.some(relationship => relationship.type === 'contract_bound'
-        && (relationship.charAId === character.id || relationship.charBId === character.id));
-      if (!eligibility.isEligible || blockingIncident || bindingRelationship) throw new Error('Redemption requirements are no longer satisfied.');
+      if (!readiness.isEligible || blockingIncident) throw new Error('Evidence-dossier requirements are no longer satisfied.');
       const meta = draft.gameplayMeta!;
-      if (meta.rewardedRedemptionIds.includes(character.id)) throw new Error('This redemption reward was already applied.');
+      if (meta.rewardedRedemptionIds.includes(character.id)) throw new Error('This evidence-dossier milestone was already applied.');
 
-      character.type = 'redeemed_soul';
-      character.status = 'redeemed';
-      character.role = 'external';
-      character.riskLevel = 'low';
       character.rehabProgress = RulesEngine.calculateRehabilitationProgress(plan);
-      character.rehabTracked = false;
       plan.isRedeemedConfirmed = true;
-      draft.rooms = draft.rooms.map(room => {
-        const occupantIds = room.occupantIds?.filter(id => id !== character.id);
-        return {
-          ...room,
-          ...(room.occupantIds ? { occupantIds } : {}),
-          occupantId: room.occupantId === character.id ? occupantIds?.[0] || null : room.occupantId
-        };
-      });
-      draft.reputation = RulesEngine.calculateReputationEvent('proof_of_redemption', draft.reputation);
+      draft.reputation = RulesEngine.calculateReputationEvent('evidence_dossier', draft.reputation);
       meta.rewardedRedemptionIds.push(character.id);
-      meta.completedMilestones.push(`redemption:${character.id}`);
+      meta.completedMilestones.push(`evidence-dossier:${character.id}`);
     }, {
-      action: 'SOUL_REDEMPTION',
-      details: `Sinner '${selectedChar.name}' achieved celestial redemption; the exactly-once ascension reward was applied.`
+      action: 'EVIDENCE_DOSSIER_FINALIZED',
+      details: `Finalized '${selectedChar.name}'s sustained Simulation AU program-evidence dossier; no celestial outcome was asserted.`
     });
-    if (!confirmed) {
-      window.alert(db.getStorageStatus().lastError?.message || 'Redemption could not be confirmed atomically.');
+    if (!finalized) {
+      window.alert(db.getStorageStatus().lastError?.message || 'The evidence dossier could not be finalized atomically.');
       return;
     }
     onStateChange();
@@ -546,29 +530,29 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                     Curriculum active. Overall rehabilitation score: <strong>{selectedChar.rehabProgress}%</strong>
                   </span>
                 </div>
-                {selectedChar.status !== 'redeemed' ? (
+                {!selectedPlan.isRedeemedConfirmed ? (
                   <button
                     className="btn btn-gold"
-                    onClick={handleConfirmRedemption}
+                    onClick={handleFinalizeEvidenceDossier}
                     id="confirm-redemption-btn"
-                    disabled={!canConfirmRedemption}
-                    title={canConfirmRedemption ? 'All redemption requirements are met.' : redemptionReasons.join(' ')}
+                    disabled={!canFinalizeEvidenceDossier}
+                    title={canFinalizeEvidenceDossier ? 'All sustained evidence requirements are met.' : evidenceDossierReasons.join(' ')}
                   >
                     <Award size={16} />
-                    Confirm Redemption
+                    Finalize AU Evidence Dossier
                   </button>
                 ) : (
                   <span style={{ color: '#4ce06c', fontWeight: 'bold', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Sparkles size={16} /> REDEEMED SOUL
+                    <Sparkles size={16} /> AU EVIDENCE DOSSIER FINALIZED
                   </span>
                 )}
               </div>
 
-              {selectedChar.status !== 'redeemed' && redemptionReasons.length > 0 && (
+              {!selectedPlan.isRedeemedConfirmed && evidenceDossierReasons.length > 0 && (
                 <div style={{ marginBottom: '16px', padding: '10px 12px', border: '1px solid rgba(212,175,55,0.25)', borderRadius: '6px', backgroundColor: 'rgba(212,175,55,0.06)', fontSize: '0.75rem' }}>
-                  <strong style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '4px' }}>Redemption review pending</strong>
+                  <strong style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '4px' }}>Simulation AU evidence review pending</strong>
                   <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--color-text-muted)' }}>
-                    {redemptionReasons.map(reason => <li key={reason}>{reason}</li>)}
+                    {evidenceDossierReasons.map(reason => <li key={reason}>{reason}</li>)}
                   </ul>
                 </div>
               )}
@@ -684,8 +668,12 @@ export const Rehabilitation: React.FC<RehabilitationProps> = ({
                 style={{ width: '100%', justifyContent: 'center' }} 
                 onClick={handleOpenSessionModal}
                 id="log-session-btn"
-                disabled={selectedChar.status === 'redeemed' || dailySessionLimitReached}
-                title={dailySessionLimitReached ? `Daily limit reached (${sessionsToday}/${MAX_DAILY_SESSIONS})` : 'Start a documented rehabilitation session'}
+                disabled={selectedChar.status === 'redeemed' || selectedPlan.isRedeemedConfirmed || dailySessionLimitReached}
+                title={selectedPlan.isRedeemedConfirmed
+                  ? 'The Simulation AU evidence dossier is finalized.'
+                  : dailySessionLimitReached
+                    ? `Daily limit reached (${sessionsToday}/${MAX_DAILY_SESSIONS})`
+                    : 'Start a documented rehabilitation session'}
               >
                 <Plus size={16} />
                 Log Rehabilitation Session

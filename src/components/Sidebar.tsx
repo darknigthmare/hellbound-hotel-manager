@@ -4,6 +4,7 @@ import {
   BookOpen,
   CalendarRange,
   Coins,
+  Gamepad2,
   HeartHandshake,
   Hourglass,
   LayoutDashboard,
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react';
 
 export type ViewType =
+  | 'shift'
   | 'dashboard'
   | 'characters'
   | 'rooms'
@@ -59,6 +61,13 @@ interface MenuSection {
 
 const getMenuSections = (helluvaEnabled: boolean): MenuSection[] => [
   {
+    label: 'Playable campaign',
+    items: [
+      { id: 'shift', label: 'Hotel Shift', icon: Gamepad2, badge: 'LIVE' },
+      { id: 'arena', label: 'Pentagram Arena', icon: Swords, badge: '2.5D' }
+    ]
+  },
+  {
     label: 'Hotel operations',
     items: [
       { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -77,12 +86,6 @@ const getMenuSections = (helluvaEnabled: boolean): MenuSection[] => [
       { id: 'timeline', label: 'Timeline Selector', icon: Hourglass },
       { id: 'lore', label: 'Lore Codex', icon: BookOpen },
       { id: 'relations', label: 'Factions Graph', icon: Network }
-    ]
-  },
-  {
-    label: 'Simulation modes',
-    items: [
-      { id: 'arena', label: 'Pentagram Arena', icon: Swords, badge: '2.5D' }
     ]
   },
   {

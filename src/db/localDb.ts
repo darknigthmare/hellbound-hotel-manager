@@ -28,6 +28,7 @@ import {
   setHelluvaBossSpoilerScope,
   startHelluvaContract
 } from '../expansions/helluva-boss/engine';
+import { applyCampaignDayAdvance } from '../lib/campaign-day';
 
 const STORAGE_KEY = 'hellbound_hotel_db_state';
 const RECOVERY_PREFIX = `${STORAGE_KEY}_recovery_`;
@@ -85,10 +86,9 @@ function normalizedSeed(): DatabaseState {
   gameplayMeta.resolvedIncidentIds = seed.incidents
     .filter(incident => incident.status === 'resolved' || incident.status === 'archived')
     .map(incident => incident.id);
-  const confirmedCharacterIds = new Set(seed.rehabilitationPlans.filter(plan => plan.isRedeemedConfirmed).map(plan => plan.characterId));
-  gameplayMeta.rewardedRedemptionIds = seed.characters
-    .filter(character => character.status === 'redeemed' && confirmedCharacterIds.has(character.id))
-    .map(character => character.id);
+  gameplayMeta.rewardedRedemptionIds = seed.rehabilitationPlans
+    .filter(plan => plan.isRedeemedConfirmed)
+    .map(plan => plan.characterId);
   return { ...seed, gameplayMeta };
 }
 
@@ -366,80 +366,7 @@ export class LocalDb {
   public advanceCampaignDay(): boolean {
     const nextDay = this.getGameplayMeta().campaignDay + 1;
     return this.transaction('CAMPAIGN_DAY_ADVANCE', (draft) => {
-      const meta = draft.gameplayMeta!;
-      meta.campaignDay = nextDay;
-      const oldestRetainedDay = Math.max(1, nextDay - 30);
-      for (const key of Object.keys(meta.dailyDonationAmounts)) {
-        if (Number(key) < oldestRetainedDay) delete meta.dailyDonationAmounts[key];
-      }
-      for (const key of Object.keys(meta.dailySessionCounts)) {
-        const day = Number(key.split(':', 1)[0]);
-        if (Number.isInteger(day) && day < oldestRetainedDay) delete meta.dailySessionCounts[key];
-      }
-      for (const [staffId, fatigue] of Object.entries(meta.staffFatigue)) {
-        meta.staffFatigue[staffId] = Math.max(0, fatigue - 2);
-      }
-
-      const activeResidents = draft.characters.filter(character => character.status === 'resident').length;
-      const occupiedBeds = draft.rooms.reduce((total, room) => total + (room.occupantIds?.length ?? (room.occupantId ? 1 : 0)), 0);
-      const upkeep = 40 + activeResidents * 12 + occupiedBeds * 4;
-      draft.resourceLedger.push({
-        id: `daily_upkeep_${nextDay}`,
-        date: `Campaign Day ${nextDay}`,
-        type: 'expense',
-        category: 'food_beverage',
-        amount: upkeep,
-        description: `Day ${nextDay} wages, utilities, meals, and occupied-room upkeep.`
-      });
-
-      if (draft.reputation.veesInfluence >= 70 || draft.reputation.mediaChaos >= 70) {
-        draft.reputation.sinnerReputation = Math.max(0, draft.reputation.sinnerReputation - 8);
-        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 3);
-      }
-      if (draft.reputation.overlordHostility >= 70) {
-        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 4);
-        draft.resourceLedger.push({
-          id: `overlord_security_${nextDay}`,
-          date: `Campaign Day ${nextDay}`,
-          type: 'expense',
-          category: 'security',
-          amount: 120,
-          description: 'Emergency wards and patrols caused by high Overlord hostility.'
-        });
-      }
-      const activeResidentIds = new Set(draft.characters.filter(character => character.status === 'resident').map(character => character.id));
-      const bindingContracts = draft.relationships.filter(relationship => relationship.type === 'contract_bound'
-        && (activeResidentIds.has(relationship.charAId) || activeResidentIds.has(relationship.charBId))).length;
-      if (bindingContracts > 0) {
-        draft.reputation.overlordHostility = Math.min(100, draft.reputation.overlordHostility + Math.min(5, bindingContracts));
-        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - Math.min(3, bindingContracts));
-      }
-      if (draft.reputation.heavenAttention >= 80
-        && !draft.incidents.some(incident => incident.type === 'heaven_threat' && (incident.status === 'open' || incident.status === 'contained'))) {
-        draft.incidents.push({
-          id: `auto_heaven_${nextDay}`,
-          date: `Campaign Day ${nextDay}`,
-          location: 'Hotel airspace',
-          residentsInvolved: [],
-          type: 'heaven_threat',
-          severity: draft.reputation.heavenAttention >= 95 ? 'crisis' : 'high',
-          summary: 'Celestial surveillance escalated after sustained Heaven attention.',
-          consequences: 'Operations are under direct observation; redemption confirmations are blocked until resolved.',
-          repairCost: 0,
-          reputationImpact: -10,
-          trustImpact: -8,
-          actionTaken: '',
-          status: 'open',
-          loreLink: null,
-          tags: ['simulation_au', 'campaign_pressure']
-        });
-        draft.reputation.internalTrust = Math.max(0, draft.reputation.internalTrust - 8);
-      }
-      if (draft.reputation.internalTrust <= 25) {
-        for (const staff of draft.characters.filter(character => character.status === 'staff')) {
-          meta.staffFatigue[staff.id] = Math.min(100, (meta.staffFatigue[staff.id] || 0) + 2);
-        }
-      }
+      applyCampaignDayAdvance(draft, nextDay);
     }, {
       action: 'CAMPAIGN_DAY_ADVANCED',
       details: `Advanced operations to Campaign Day ${nextDay}; upkeep and threat thresholds were processed.`
@@ -501,15 +428,15 @@ export class LocalDb {
   public saveCharacter(character: Character): boolean {
     const previous = this.state.characters.find(item => item.id === character.id);
     if ((character.type === 'redeemed_soul') !== (character.status === 'redeemed')) {
-      this.reportError('CHARACTER_SAVE', new Error('Redeemed soul type and redeemed status must be granted together by the rehabilitation workflow.'));
+      this.reportError('CHARACTER_SAVE', new Error('Redeemed soul type and redeemed status must remain paired in sourced canon records.'));
       return false;
     }
     if ((!previous || previous.status !== 'redeemed') && character.status === 'redeemed') {
-      this.reportError('CHARACTER_SAVE', new Error('Redemption can only be granted through the rehabilitation confirmation workflow.'));
+      this.reportError('CHARACTER_SAVE', new Error('A redeemed-soul outcome cannot be invented in the profile editor; use a sourced canon timeline projection.'));
       return false;
     }
     if (previous?.status === 'redeemed' && character.status !== 'redeemed') {
-      this.reportError('CHARACTER_SAVE', new Error('A confirmed redeemed soul cannot be reverted from the profile editor.'));
+      this.reportError('CHARACTER_SAVE', new Error('A sourced redeemed-soul record cannot be reverted from the profile editor.'));
       return false;
     }
     const plan = this.state.rehabilitationPlans.find(item => item.characterId === character.id);

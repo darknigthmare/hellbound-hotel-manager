@@ -29,7 +29,7 @@ interface NarrativeEvent {
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNavigate }) => {
-  const [tickerMessage, setTickerMessage] = useState<string>('All systems operational. Redeeming process active.');
+  const [tickerMessage, setTickerMessage] = useState<string>('All systems operational. Simulation AU support program active.');
 
   // Destructure state
   const { characters, rooms, incidents, staffTasks, reputation, settings } = state;
@@ -123,9 +123,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
     const angelPlan = state.rehabilitationPlans.find(plan => plan.characterId === 'angeldust');
     const angel = characters.find(character => character.id === 'angeldust');
     const damagedRoom = rooms.find(room => room.status === 'damaged');
-    const unbroadcastRedeemedCharacter = characters.find(character => (
-      character.status === 'redeemed'
-      && !gameplayMeta.broadcastRedemptionIds.includes(character.id)
+    const unbroadcastEvidencePlan = state.rehabilitationPlans.find(plan => (
+      plan.isRedeemedConfirmed
+      && gameplayMeta.rewardedRedemptionIds.includes(plan.characterId)
+      && !gameplayMeta.broadcastRedemptionIds.includes(plan.characterId)
+    ));
+    const unbroadcastEvidenceCharacter = characters.find(character => (
+      character.id === unbroadcastEvidencePlan?.characterId
     ));
     const barSessionKey = angelPlan ? `${gameplayMeta.campaignDay}:${angelPlan.id}` : '';
     const inventory = db.getInventory();
@@ -432,23 +436,24 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
       },
       {
         id: 'redemption_broadcast',
-        title: 'Redemption Proof Broadcast',
-        message: `${unbroadcastRedeemedCharacter?.name || 'A redeemed soul'} is presented as verified proof of Charlie's program.`,
+        title: 'Resident-Authorized Evidence Briefing',
+        message: `${unbroadcastEvidenceCharacter?.name || 'A resident'} authorizes a summary of their sustained Simulation AU program evidence. It is not presented as proof of ascension.`,
         cooldownDays: 5,
-        isAvailable: () => Boolean(unbroadcastRedeemedCharacter),
+        isAvailable: () => Boolean(unbroadcastEvidenceCharacter),
         apply: (draft) => {
-          const character = draft.characters.find(candidate => candidate.id === unbroadcastRedeemedCharacter?.id);
-          if (!character || character.status !== 'redeemed'
+          const character = draft.characters.find(candidate => candidate.id === unbroadcastEvidenceCharacter?.id);
+          const plan = draft.rehabilitationPlans.find(candidate => candidate.characterId === character?.id);
+          if (!character || !plan?.isRedeemedConfirmed
             || !draft.gameplayMeta!.rewardedRedemptionIds.includes(character.id)
             || draft.gameplayMeta!.broadcastRedemptionIds.includes(character.id)) {
-            throw new Error('This redemption is not an unbroadcast, workflow-confirmed result.');
+            throw new Error('This dossier is not a finalized, unshared Simulation AU evidence record.');
           }
           draft.gameplayMeta!.broadcastRedemptionIds.push(character.id);
           draft.reputation.sinnerReputation = Math.min(100, draft.reputation.sinnerReputation + 3);
           draft.reputation.mediaChaos = Math.max(0, draft.reputation.mediaChaos - 8);
           draft.reputation.heavenAttention = Math.min(100, draft.reputation.heavenAttention + 5);
           draft.reputation.veesInfluence = Math.min(100, draft.reputation.veesInfluence + 5);
-          return `The already-rewarded redemption of ${character.name} was broadcast once without duplicating the ascension reward.`;
+          return `${character.name}'s resident-authorized evidence summary was shared once without claiming celestial confirmation.`;
         }
       }
     ];
@@ -482,19 +487,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
       return;
     }
     setTickerMessage(`[SIMULATION AU EVENT] ${selectedEvent.title}: ${resultText} Repeats no earlier than Day ${gameplayMeta.campaignDay + selectedEvent.cooldownDays}.`);
-    onStateChange();
-  };
-
-  const advanceCampaignDay = () => {
-    if (campaignLocked) {
-      setTickerMessage(`${campaignOutcome.title}. Campaign time is locked pending finalization.`);
-      return;
-    }
-    if (!db.advanceCampaignDay()) {
-      setTickerMessage(db.getStorageStatus().lastError?.message || 'Campaign day could not advance.');
-      return;
-    }
-    setTickerMessage(`Campaign Day ${gameplayMeta.campaignDay + 1} started. Upkeep, fatigue recovery, and threat thresholds were processed.`);
     onStateChange();
   };
 
@@ -544,14 +536,17 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
         <div>
           <h1 style={{ marginBottom: '4px', borderBottom: 'none', paddingBottom: 0 }}>Hotel Dashboard</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-            Active Operations Overseer — Management of residents, security, and redemption paths.
+            Strategic overview of residents, security and Charlie's voluntary support program.
           </p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
           <strong style={{ color: 'var(--color-gold)', fontSize: '0.8rem' }}>Day {gameplayMeta.campaignDay}</strong>
-          <button type="button" className="btn btn-secondary" onClick={advanceCampaignDay} id="advance-campaign-day-btn" disabled={campaignLocked}>
-            Advance Day
-          </button>
+          <span
+            role="status"
+            style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', maxWidth: '170px', textAlign: 'right' }}
+          >
+            Complete the playable Hotel Shift patrol to advance time.
+          </span>
           <button
             type="button"
             className="btn btn-gold"
