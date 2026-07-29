@@ -6,6 +6,7 @@ import { LoreEntry, CanonStatus, SourceType, SpoilerLevel, TimelineScope, LoreCa
 import { CanonBadge } from '../components/CanonBadge';
 import { SpoilerBadge } from '../components/SpoilerBadge';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ProgressiveText } from '../components/ProgressiveText';
 import { useDialogFocus } from '../components/useDialogFocus';
 
 interface LoreCodexProps {
@@ -373,9 +374,9 @@ export const LoreCodex: React.FC<LoreCodexProps> = ({ state, onStateChange, sear
                       )}
                     </div>
 
-                    <p style={{ fontSize: '0.82rem', color: 'var(--color-text-main)', lineHeight: 1.5, marginBottom: '12px' }}>
+                    <ProgressiveText className="lore-card-copy">
                       {entry.description}
-                    </p>
+                    </ProgressiveText>
                   </div>
 
                   {/* Actions footer */}

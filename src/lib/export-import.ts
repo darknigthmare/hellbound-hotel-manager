@@ -1,5 +1,10 @@
-import { DatabaseState, GameplayMeta, HelluvaBossSaveState } from '../types';
+import { DatabaseState, GameplayMeta, HelluvaBossSaveState, OnboardingState } from '../types';
 import { getSeedData } from '../db/seed';
+import {
+  createCompletedOnboardingState,
+  createFreshOnboardingState,
+  ONBOARDING_DATA_VERSION
+} from './onboarding';
 import {
   HELLUVA_APPROACHES,
   HELLUVA_BOSS_DATA_VERSION,
@@ -23,7 +28,8 @@ export const DEFAULT_GAMEPLAY_META: GameplayMeta = {
   narrativeFlags: [],
   dailySessionCounts: {},
   dailyDonationAmounts: {},
-  staffFatigue: {}
+  staffFatigue: {},
+  onboarding: createFreshOnboardingState()
 };
 
 export const INVENTORY_KEYS = {
@@ -405,8 +411,144 @@ function parseIntegerRecord(value: unknown, context: string, max = Number.MAX_SA
   return { value: parsed };
 }
 
+function parseOnboardingCampaignDay(
+  value: unknown,
+  key: string,
+  campaignDay: number
+): { value?: number | null; error?: string } {
+  if (value === null) return { value: null };
+  if (!Number.isInteger(value) || Number(value) < 1 || Number(value) > campaignDay) {
+    return { error: `gameplayMeta.onboarding.${key} must be null or an integer between 1 and the current campaign day.` };
+  }
+  return { value: Number(value) };
+}
+
+function parseOnboardingState(
+  value: unknown,
+  campaignDay: number
+): { value?: OnboardingState; error?: string; migrated: boolean } {
+  if (value === undefined) {
+    return {
+      value: createCompletedOnboardingState(campaignDay, 'legacy_save'),
+      migrated: true
+    };
+  }
+  if (!isRecord(value)) {
+    return { error: 'gameplayMeta.onboarding must be an object.', migrated: false };
+  }
+  if (!Number.isInteger(value.dataVersion) || Number(value.dataVersion) < 1) {
+    return { error: 'gameplayMeta.onboarding.dataVersion must be a positive integer.', migrated: false };
+  }
+  if (Number(value.dataVersion) > ONBOARDING_DATA_VERSION) {
+    return {
+      error: `gameplayMeta.onboarding uses unsupported data version ${value.dataVersion}.`,
+      migrated: false
+    };
+  }
+
+  const context = 'gameplayMeta.onboarding';
+  const scalarError = firstError([
+    requireEnum(value, 'phase', new Set(['intro', 'prologue', 'tutorial', 'complete']), context),
+    requireEnum(value, 'status', new Set(['not_started', 'in_progress', 'completed']), context),
+    requireNullableString(value, 'currentSceneId', context),
+    requireStringArray(value, 'completedSceneIds', context),
+    requireNullableString(value, 'activeObjectiveId', context),
+    requireStringArray(value, 'completedObjectiveIds', context),
+    value.completionReason === null
+      ? null
+      : requireEnum(value, 'completionReason', new Set(['played', 'skipped', 'legacy_save']), context)
+  ]);
+  if (scalarError) return { error: scalarError, migrated: false };
+
+  const startedCampaignDay = parseOnboardingCampaignDay(
+    value.startedCampaignDay,
+    'startedCampaignDay',
+    campaignDay
+  );
+  const completedCampaignDay = parseOnboardingCampaignDay(
+    value.completedCampaignDay,
+    'completedCampaignDay',
+    campaignDay
+  );
+  const dayError = startedCampaignDay.error || completedCampaignDay.error;
+  if (dayError) return { error: dayError, migrated: false };
+
+  const completedSceneIds = value.completedSceneIds as string[];
+  const completedObjectiveIds = value.completedObjectiveIds as string[];
+  if (duplicateValue(completedSceneIds) !== null) {
+    return { error: `${context}.completedSceneIds must not contain duplicates.`, migrated: false };
+  }
+  if (duplicateValue(completedObjectiveIds) !== null) {
+    return { error: `${context}.completedObjectiveIds must not contain duplicates.`, migrated: false };
+  }
+  if (
+    completedSceneIds.some(id => id.trim().length === 0)
+    || completedObjectiveIds.some(id => id.trim().length === 0)
+    || (typeof value.currentSceneId === 'string' && value.currentSceneId.trim().length === 0)
+    || (typeof value.activeObjectiveId === 'string' && value.activeObjectiveId.trim().length === 0)
+  ) {
+    return { error: `${context} scene and objective IDs must not be empty.`, migrated: false };
+  }
+
+  const phase = value.phase as OnboardingState['phase'];
+  const status = value.status as OnboardingState['status'];
+  const completionReason = value.completionReason as OnboardingState['completionReason'];
+  if (status === 'not_started') {
+    if (
+      phase !== 'intro'
+      || startedCampaignDay.value !== null
+      || completedCampaignDay.value !== null
+      || completionReason !== null
+      || value.activeObjectiveId !== null
+    ) {
+      return { error: `${context} has inconsistent not-started progress.`, migrated: false };
+    }
+  } else if (status === 'in_progress') {
+    if (
+      phase === 'complete'
+      || startedCampaignDay.value === null
+      || completedCampaignDay.value !== null
+      || completionReason !== null
+      || (phase === 'tutorial' && value.activeObjectiveId === null)
+      || (phase !== 'tutorial' && value.activeObjectiveId !== null)
+    ) {
+      return { error: `${context} has inconsistent in-progress data.`, migrated: false };
+    }
+  } else if (
+    phase !== 'complete'
+    || startedCampaignDay.value === null
+    || completedCampaignDay.value === null
+    || Number(completedCampaignDay.value) < Number(startedCampaignDay.value)
+    || completionReason === null
+    || value.currentSceneId !== null
+    || value.activeObjectiveId !== null
+  ) {
+    return { error: `${context} has inconsistent completion data.`, migrated: false };
+  }
+
+  return {
+    value: {
+      dataVersion: Number(value.dataVersion),
+      phase,
+      status,
+      currentSceneId: value.currentSceneId as string | null,
+      completedSceneIds: [...completedSceneIds],
+      activeObjectiveId: value.activeObjectiveId as string | null,
+      completedObjectiveIds: [...completedObjectiveIds],
+      startedCampaignDay: startedCampaignDay.value!,
+      completedCampaignDay: completedCampaignDay.value!,
+      completionReason
+    },
+    migrated: Number(value.dataVersion) < ONBOARDING_DATA_VERSION
+  };
+}
+
 function parseGameplayMeta(value: unknown): { value?: GameplayMeta; error?: string; migrated: boolean } {
-  if (value === undefined) return { value: cloneJson(DEFAULT_GAMEPLAY_META), migrated: true };
+  if (value === undefined) {
+    const legacy = cloneJson(DEFAULT_GAMEPLAY_META);
+    legacy.onboarding = createCompletedOnboardingState(legacy.campaignDay, 'legacy_save');
+    return { value: legacy, migrated: true };
+  }
   if (!isRecord(value)) return { error: 'gameplayMeta must be an object.', migrated: false };
   if (!Number.isInteger(value.campaignDay) || Number(value.campaignDay) < 1) {
     return { error: 'gameplayMeta.campaignDay must be a positive integer.', migrated: false };
@@ -431,6 +573,10 @@ function parseGameplayMeta(value: unknown): { value?: GameplayMeta; error?: stri
   const staffFatigue = parseIntegerRecord(value.staffFatigue, 'gameplayMeta.staffFatigue', 100);
   const error = cooldowns.error || dailySessionCounts.error || dailyDonationAmounts.error || staffFatigue.error;
   if (error) return { error, migrated: false };
+  const onboarding = parseOnboardingState(value.onboarding, Number(value.campaignDay));
+  if (onboarding.error || !onboarding.value) {
+    return { error: onboarding.error || 'gameplayMeta.onboarding is invalid.', migrated: false };
+  }
 
   return {
     value: {
@@ -444,9 +590,10 @@ function parseGameplayMeta(value: unknown): { value?: GameplayMeta; error?: stri
       narrativeFlags: [...value.narrativeFlags as string[]],
       dailySessionCounts: dailySessionCounts.value!,
       dailyDonationAmounts: dailyDonationAmounts.value!,
-      staffFatigue: staffFatigue.value!
+      staffFatigue: staffFatigue.value!,
+      onboarding: onboarding.value
     },
-    migrated: false
+    migrated: onboarding.migrated
   };
 }
 

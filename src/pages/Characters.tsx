@@ -8,6 +8,7 @@ import { Character, CharacterType, CharacterRank, CharacterRole, CharacterStatus
 import { RiskBadge } from '../components/RiskBadge';
 import { CanonBadge } from '../components/CanonBadge';
 import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ProgressiveText } from '../components/ProgressiveText';
 import { ViewType } from '../components/Sidebar';
 import { useDialogFocus } from '../components/useDialogFocus';
 import { getCharacterSpriteAsset, SPRITE_SHEETS } from '../lib/character-sprites';
@@ -505,9 +506,9 @@ export const Characters: React.FC<CharactersProps> = ({ state, onStateChange, se
                     )}
                   </div>
 
-                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '14px', lineHeight: 1.5 }}>
+                  <ProgressiveText className="character-card-copy">
                     {char.description}
-                  </p>
+                  </ProgressiveText>
 
                   {/* Progress logs (Charlie Trust & Rehab Progress) */}
                   {isResidentType && char.rehabTracked !== false && (

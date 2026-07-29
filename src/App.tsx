@@ -1,8 +1,19 @@
 import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { db } from './db/localDb';
+import { HotelOpening } from './components/HotelOpening';
+import { MissionCompass } from './components/MissionCompass';
 import { Sidebar, ViewType } from './components/Sidebar';
 import { GlobalSearchResult, Topbar } from './components/Topbar';
+import { HOTEL_PROLOGUE_SCENES } from './lib/hotel-prologue';
 import { LoreValidation } from './lib/lore-validation';
+import { DEFAULT_GAMEPLAY_META } from './lib/export-import';
+import {
+  advanceOnboardingScene,
+  beginOnboardingTutorial,
+  FIRST_SHIFT_OBJECTIVE_IDS,
+  restartOnboarding,
+  startOnboarding,
+} from './lib/onboarding';
 import { RulesEngine } from './lib/rules-engine';
 import {
   HELLUVA_CHARACTERS,
@@ -17,6 +28,7 @@ import './styles/theme.css';
 
 const Dashboard = lazy(() => import('./pages/Dashboard').then(module => ({ default: module.Dashboard })));
 const HotelShift = lazy(() => import('./pages/HotelShift').then(module => ({ default: module.HotelShift })));
+const FirstArrivalTutorial = lazy(() => import('./pages/FirstArrivalTutorial').then(module => ({ default: module.FirstArrivalTutorial })));
 const Characters = lazy(() => import('./pages/Characters').then(module => ({ default: module.Characters })));
 const Rooms = lazy(() => import('./pages/Rooms').then(module => ({ default: module.Rooms })));
 const Rehabilitation = lazy(() => import('./pages/Rehabilitation').then(module => ({ default: module.Rehabilitation })));
@@ -33,6 +45,7 @@ const Extensions = lazy(() => import('./pages/Extensions').then(module => ({ def
 const HelluvaBoss = lazy(() => import('./pages/HelluvaBoss').then(module => ({ default: module.HelluvaBoss })));
 
 export const App: React.FC = () => {
+  const [showTitle, setShowTitle] = useState(true);
   // Navigation active view
   const [currentView, setCurrentView] = useState<ViewType>('shift');
   
@@ -51,6 +64,8 @@ export const App: React.FC = () => {
 
   // Core database state hook
   const [dbState, setDbState] = useState(() => db.getFullState());
+  const onboarding = dbState.gameplayMeta?.onboarding
+    ?? DEFAULT_GAMEPLAY_META.onboarding;
   const helluvaState = dbState.extensions.helluvaBoss;
   const helluvaEnabled = Boolean(helluvaState?.enabled);
   const isHelluvaView = currentView === 'helluva';
@@ -303,6 +318,117 @@ export const App: React.FC = () => {
     setIsSidebarOpen(false);
   };
 
+  const firstOpeningSceneId = HOTEL_PROLOGUE_SCENES.find(
+    scene => scene.kind === 'cinematic',
+  )?.id ?? HOTEL_PROLOGUE_SCENES[0]!.id;
+
+  const handleBeginStory = () => {
+    if (onboarding.status === 'not_started') {
+      const saved = db.transaction('ONBOARDING_STARTED', (draft) => {
+        if (!draft.gameplayMeta) throw new Error('Gameplay metadata is unavailable.');
+        draft.gameplayMeta.onboarding = startOnboarding(
+          draft.gameplayMeta.onboarding,
+          firstOpeningSceneId,
+          draft.gameplayMeta.campaignDay,
+        );
+      }, {
+        action: 'ONBOARDING_STARTED',
+        details: 'The first-arrival story was started from the title screen.',
+      });
+      if (!saved) return;
+      handleRefreshState();
+    }
+    setShowTitle(false);
+  };
+
+  const handleReplayStory = () => {
+    const saved = db.transaction('ONBOARDING_RESTARTED', (draft) => {
+      if (!draft.gameplayMeta) throw new Error('Gameplay metadata is unavailable.');
+      draft.gameplayMeta.onboarding = restartOnboarding(
+        draft.gameplayMeta.campaignDay,
+        firstOpeningSceneId,
+      );
+    }, {
+      action: 'ONBOARDING_RESTARTED',
+      details: 'The intro and first-arrival tutorial were restarted without resetting the campaign.',
+    });
+    if (!saved) return;
+    handleRefreshState();
+    setShowTitle(false);
+  };
+
+  const handleAdvanceOpeningScene = (
+    sceneId: string,
+    nextSceneId: string | null,
+    nextPhase: 'intro' | 'prologue' | 'tutorial' | 'complete',
+  ) => {
+    const saved = db.transaction('ONBOARDING_SCENE_COMPLETED', (draft) => {
+      if (!draft.gameplayMeta) throw new Error('Gameplay metadata is unavailable.');
+      draft.gameplayMeta.onboarding = advanceOnboardingScene(
+        draft.gameplayMeta.onboarding,
+        sceneId,
+        {
+          nextSceneId,
+          nextPhase,
+          campaignDay: draft.gameplayMeta.campaignDay,
+        },
+      );
+    }, {
+      action: 'ONBOARDING_SCENE_COMPLETED',
+      details: `Opening scene completed: ${sceneId}.`,
+    });
+    if (saved) handleRefreshState();
+  };
+
+  const handleBeginTutorial = (finalOpeningSceneId: string) => {
+    const saved = db.transaction('ONBOARDING_TUTORIAL_STARTED', (draft) => {
+      if (!draft.gameplayMeta) throw new Error('Gameplay metadata is unavailable.');
+      const advanced = advanceOnboardingScene(
+        draft.gameplayMeta.onboarding,
+        finalOpeningSceneId,
+        {
+          nextPhase: 'tutorial',
+          nextSceneId: null,
+          firstObjectiveId: FIRST_SHIFT_OBJECTIVE_IDS[0],
+          campaignDay: draft.gameplayMeta.campaignDay,
+        },
+      );
+      draft.gameplayMeta.onboarding = beginOnboardingTutorial(
+        advanced,
+        draft.gameplayMeta.campaignDay,
+        FIRST_SHIFT_OBJECTIVE_IDS[0],
+      );
+    }, {
+      action: 'ONBOARDING_TUTORIAL_STARTED',
+      details: 'The cinematic opening handed control to the playable first-arrival tutorial.',
+    });
+    if (saved) handleRefreshState();
+  };
+
+  const handleSkipOpening = () => {
+    const saved = db.transaction('ONBOARDING_STORY_SKIPPED', (draft) => {
+      if (!draft.gameplayMeta) throw new Error('Gameplay metadata is unavailable.');
+      const current = draft.gameplayMeta.onboarding;
+      current.completedSceneIds = [
+        ...new Set([
+          ...current.completedSceneIds,
+          ...HOTEL_PROLOGUE_SCENES
+            .filter(scene => scene.kind === 'cinematic')
+            .map(scene => scene.id),
+        ]),
+      ];
+      draft.gameplayMeta.onboarding = beginOnboardingTutorial(
+        current,
+        draft.gameplayMeta.campaignDay,
+        FIRST_SHIFT_OBJECTIVE_IDS[0],
+      );
+    }, {
+      action: 'ONBOARDING_STORY_SKIPPED',
+      details: 'Only the cinematic story was skipped; the playable tutorial remains required.',
+    });
+    if (saved) handleRefreshState();
+  };
+
   // Page Routing dispatcher
   const renderActivePage = () => {
     switch (currentView) {
@@ -436,6 +562,39 @@ export const App: React.FC = () => {
     }
   };
 
+  const titleVisible = showTitle || onboarding.status === 'not_started';
+
+  if (titleVisible || onboarding.phase === 'intro' || onboarding.phase === 'prologue') {
+    return (
+      <HotelOpening
+        key={onboarding.currentSceneId ?? `opening-${onboarding.status}`}
+        onboarding={onboarding}
+        showTitle={titleVisible}
+        onContinueCampaign={() => setShowTitle(false)}
+        onBeginStory={handleBeginStory}
+        onReplayStory={handleReplayStory}
+        onAdvanceScene={handleAdvanceOpeningScene}
+        onBeginTutorial={handleBeginTutorial}
+        onSkipStory={handleSkipOpening}
+      />
+    );
+  }
+
+  if (onboarding.phase === 'tutorial') {
+    return (
+      <Suspense fallback={<div className="page-loading" role="status">Preparing the hotel lobby…</div>}>
+        <FirstArrivalTutorial
+          state={dbState}
+          onStateChange={handleRefreshState}
+          onComplete={() => {
+            setCurrentView('shift');
+            setShowTitle(false);
+          }}
+        />
+      </Suspense>
+    );
+  }
+
   return (
     <div className="app-container">
       {/* Sidebar Navigation */}
@@ -480,7 +639,14 @@ export const App: React.FC = () => {
 
         {/* Dynamic Page mount */}
         <main className="app-page-scroll" ref={pageScrollRef} tabIndex={-1}>
-          <Suspense fallback={<div className="page-loading" role="status">Loading hotel recordsâ€¦</div>}>
+          <div className="mission-compass-dock">
+            <MissionCompass
+              state={dbState}
+              onNavigate={(view) => handleViewChange(view)}
+              initiallyOpen={currentView === 'dashboard'}
+            />
+          </div>
+          <Suspense fallback={<div className="page-loading" role="status">Loading hotel records…</div>}>
             {renderActivePage()}
           </Suspense>
         </main>

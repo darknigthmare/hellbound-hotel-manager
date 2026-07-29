@@ -211,6 +211,27 @@ export interface AppSettings {
   theme: string;
 }
 
+export type OnboardingPhase = 'intro' | 'prologue' | 'tutorial' | 'complete';
+export type OnboardingStatus = 'not_started' | 'in_progress' | 'completed';
+export type OnboardingCompletionReason = 'played' | 'skipped' | 'legacy_save' | null;
+
+/**
+ * Durable first-arrival progress. Narrative scene definitions remain in code;
+ * the save only stores stable IDs so copy and staging can evolve safely.
+ */
+export interface OnboardingState {
+  dataVersion: number;
+  phase: OnboardingPhase;
+  status: OnboardingStatus;
+  currentSceneId: string | null;
+  completedSceneIds: string[];
+  activeObjectiveId: string | null;
+  completedObjectiveIds: string[];
+  startedCampaignDay: number | null;
+  completedCampaignDay: number | null;
+  completionReason: OnboardingCompletionReason;
+}
+
 /**
  * Durable rule state. Audit logs are display history and must never be used as
  * cooldowns or exactly-once markers because the user is allowed to purge them.
@@ -229,6 +250,7 @@ export interface GameplayMeta {
   dailySessionCounts: Record<string, number>;
   dailyDonationAmounts: Record<string, number>;
   staffFatigue: Record<string, number>;
+  onboarding: OnboardingState;
 }
 
 export type ExtensionId = 'helluva_boss';

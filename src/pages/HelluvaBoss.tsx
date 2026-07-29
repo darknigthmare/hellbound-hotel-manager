@@ -24,6 +24,7 @@ import {
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { HelluvaAtlasGallery } from '../components/HelluvaAtlasGallery';
 import { HelluvaRoster } from '../components/HelluvaRoster';
+import { ProgressiveText } from '../components/ProgressiveText';
 import { db } from '../db/localDb';
 import {
   HELLUVA_CHARACTERS,
@@ -471,7 +472,7 @@ export const HelluvaBoss: React.FC<HelluvaBossProps> = ({ state, onStateChange, 
             <article key={entry.id} id={`helluva-lore-${entry.id}`} className="helluva-lore-card glass-panel">
               <div><span>{entry.category.replace('_', ' ')}</span><span>{entry.spoilerScope.replace('_', ' ')}</span></div>
               <h3>{entry.title}</h3>
-              <p>{entry.description}</p>
+              <ProgressiveText>{entry.description}</ProgressiveText>
               <small>{entry.sourceRef}</small>
             </article>
           ))}

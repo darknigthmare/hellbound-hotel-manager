@@ -260,6 +260,32 @@ button:disabled,
   box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.18), var(--shadow-card) !important;
 }
 
+.page-disclosure {
+  margin-top: 9px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+.page-disclosure summary {
+  width: max-content;
+  max-width: 100%;
+  color: var(--color-gold);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.page-disclosure summary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.page-disclosure ul {
+  display: grid;
+  gap: 3px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
 label {
   display: block;
   font-size: 0.85rem;

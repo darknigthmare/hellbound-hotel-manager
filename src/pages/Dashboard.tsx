@@ -579,9 +579,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ state, onStateChange, onNa
           <span style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', textTransform: 'uppercase' }}>Non-canon Simulation AU</span>
         </div>
         {campaignOutcome.requirements.length > 0 && (
-          <ul style={{ margin: '8px 0 0', paddingLeft: '18px', color: 'var(--color-text-muted)', fontSize: '0.72rem', display: 'grid', gap: '3px' }}>
-            {campaignOutcome.requirements.map(requirement => <li key={requirement}>{requirement}</li>)}
-          </ul>
+          <details className="page-disclosure">
+            <summary>View remaining campaign requirements ({campaignOutcome.requirements.length})</summary>
+            <ul>
+              {campaignOutcome.requirements.map(requirement => <li key={requirement}>{requirement}</li>)}
+            </ul>
+          </details>
         )}
       </section>
 

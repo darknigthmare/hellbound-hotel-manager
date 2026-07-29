@@ -1,0 +1,64 @@
+.progressive-text {
+  display: grid;
+  gap: 5px;
+}
+
+.character-card-copy {
+  margin-bottom: 14px;
+}
+
+.lore-card-copy {
+  margin-bottom: 12px;
+}
+
+.progressive-text > p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.progressive-text > p.is-collapsed {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--progressive-lines, 2);
+}
+
+.progressive-text > button {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  color: var(--color-gold);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.progressive-text > button:hover {
+  color: var(--color-gold-hover);
+}
+
+.progressive-text > button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.progressive-text > button svg {
+  transition: transform 150ms ease;
+}
+
+.progressive-text > button svg.is-expanded {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressive-text > button svg {
+    transition: none;
+  }
+}
