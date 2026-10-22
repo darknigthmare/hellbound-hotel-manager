@@ -29,6 +29,8 @@ export interface CharacterSpriteAsset {
   animationSheets: Readonly<Record<SupplementalSpriteAnimationBankId, string>>;
   cinematicSheets: Readonly<Record<PentagramCinematicKind, string>>;
   animationSetId: SpriteAnimationSetId;
+  /** Uses the authored base stance/victory pose instead of a cinematic bank. */
+  cinematicFallback?: boolean;
 }
 
 export interface HelluvaCharacterSpriteAsset {
@@ -257,6 +259,19 @@ export function buildHelluvaCharacterSpriteAssets(
 }
 
 export const HELLUVA_CHARACTER_SPRITES = buildHelluvaCharacterSpriteAssets();
+
+const HELLUVA_COMBAT_SPRITES: Readonly<Record<string, CharacterSpriteAsset>> = Object.fromEntries(
+  Object.entries(HELLUVA_CHARACTER_SPRITES).map(([id, sprite]) => [id, {
+    ...sprite,
+    cinematicSheets: { intro: sprite.sheet, victory: sprite.sheet, draw: sprite.sheet },
+    cinematicFallback: true,
+  }]),
+);
+
+/** Shared combat renderer; hotel-only registry remains unchanged. */
+export function getCombatSpriteAsset(characterId: string): CharacterSpriteAsset | undefined {
+  return CHARACTER_SPRITES[characterId] ?? HELLUVA_COMBAT_SPRITES[characterId];
+}
 
 export function getHelluvaCharacterSpriteAsset(
   characterId: string,
