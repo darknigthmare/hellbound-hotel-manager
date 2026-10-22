@@ -371,6 +371,7 @@ export function PentagramArena({ state }: PentagramArenaProps) {
         <div>
           <div className="arena-kicker"><Swords size={16} aria-hidden="true" /> Simulation AU combat lab</div>
           <h1>Pentagram Arena</h1>
+          <a className="btn btn-secondary" href="/combat.html">Infernal Versus · jeu de combat autonome</a>
           <p>
             Build a 2.5D exhibition match with timeline-visible fighters, fighter-card selection and
             active-frame combat inspired by anime fighting games.

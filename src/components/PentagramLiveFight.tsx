@@ -9,7 +9,7 @@ import {
 import { Volume2, VolumeX } from 'lucide-react';
 import {
   getCharacterCinematicSpriteSheet,
-  getCharacterSpriteAsset,
+  getCombatSpriteAsset,
   getCharacterSpriteSheet,
 } from '../lib/character-sprites';
 import { getCombatAnimationFrame } from '../lib/pentagram-animation';
@@ -62,6 +62,12 @@ interface PentagramLiveFightProps {
   onSoundtrackPause: () => void;
   onSoundtrackResume: () => void;
   onExit: () => void;
+  training?: boolean;
+  trainingGuard?: boolean;
+  reducedMotion?: boolean;
+  onMatchComplete?: (result: CombatState) => void;
+  onNextMatch?: () => void;
+  nextMatchLabel?: string;
 }
 
 interface PointerTracker {
@@ -240,6 +246,12 @@ export function PentagramLiveFight({
   onSoundtrackPause,
   onSoundtrackResume,
   onExit,
+  training = false,
+  trainingGuard = false,
+  reducedMotion = false,
+  onMatchComplete,
+  onNextMatch,
+  nextMatchLabel,
 }: PentagramLiveFightProps) {
   const [combat, setCombat] = useState(() => createCombatState(
     fighterOneDefinition,
@@ -267,11 +279,19 @@ export function PentagramLiveFight({
   const lastTapRef = useRef<Record<PlayerSide, number>>({ one: 0, two: 0 });
   const aiInputRef = useRef(createEmptyInputs().two);
   const aiThinkMsRef = useRef(0);
+  const reportedMatchRef = useRef(false);
 
   const commitCombat = useCallback((nextCombat: CombatState) => {
-    combatRef.current = nextCombat;
-    setCombat(nextCombat);
-  }, []);
+    let next = nextCombat;
+    if (training) {
+      if (!next.active) {
+        next = { ...createCombatState(fighterOneDefinition, fighterTwoDefinition), log: next.log, nextLogId: next.nextLogId };
+      }
+      next = { ...next, timerMs: 60_000, tensionOne: 100, tensionTwo: 100, hpOne: 100 };
+    }
+    combatRef.current = next;
+    setCombat(next);
+  }, [fighterOneDefinition, fighterTwoDefinition, training]);
 
   const setFightPhase = useCallback((phase: FightPhase) => {
     fightPhaseRef.current = phase;
@@ -290,6 +310,7 @@ export function PentagramLiveFight({
     previousCombat: CombatState,
     nextCombat: CombatState,
   ) => {
+    if (training) return;
     if (!previousCombat.active || nextCombat.active) return;
     if (nextCombat.winner === 'one' || nextCombat.winner === 'two') {
       beginCinematic('victory');
@@ -298,7 +319,14 @@ export function PentagramLiveFight({
     } else {
       setFightPhase('results');
     }
-  }, [beginCinematic, setFightPhase]);
+  }, [beginCinematic, setFightPhase, training]);
+
+  useEffect(() => {
+    if (!training && combat.matchWinner && !reportedMatchRef.current) {
+      reportedMatchRef.current = true;
+      onMatchComplete?.(combat);
+    }
+  }, [combat, onMatchComplete, training]);
 
   const readInputs = useCallback(() => {
     const humanInputs = mergeInputs(
@@ -308,10 +336,11 @@ export function PentagramLiveFight({
       ),
       touchInputsRef.current,
     );
+    if (training) return { ...humanInputs, two: { left: false, right: false, crouch: false, guard: trainingGuard } };
     return matchMode === 'ai'
       ? { ...humanInputs, two: aiInputRef.current }
       : humanInputs;
-  }, [matchMode]);
+  }, [matchMode, training, trainingGuard]);
 
   const applyInputSnapshot = useCallback(() => {
     if (fightPhaseRef.current !== 'running') return;
@@ -426,6 +455,12 @@ export function PentagramLiveFight({
 
   const continueRound = useCallback(() => {
     const startsNewMatch = combatRef.current.matchWinner !== null;
+    if (startsNewMatch && onNextMatch) {
+      clearLiveInputs();
+      onNextMatch();
+      return;
+    }
+    if (startsNewMatch) reportedMatchRef.current = false;
     clearLiveInputs();
     aiThinkMsRef.current = 0;
     commitCombat(createNextCombatRound(
@@ -443,7 +478,16 @@ export function PentagramLiveFight({
     commitCombat,
     fighterOneDefinition,
     fighterTwoDefinition,
+    onNextMatch,
   ]);
+
+  const resetTraining = useCallback(() => {
+    clearLiveInputs();
+    commitCombat(createCombatState(fighterOneDefinition, fighterTwoDefinition));
+    beginRoundCountdown();
+    onSoundtrackResume();
+    stageRef.current?.focus({ preventScroll: true });
+  }, [beginRoundCountdown, clearLiveInputs, commitCombat, fighterOneDefinition, fighterTwoDefinition, onSoundtrackResume]);
 
   useEffect(() => {
     if (typeof window.matchMedia !== 'function') return undefined;
@@ -490,7 +534,7 @@ export function PentagramLiveFight({
 
       const currentPhase = fightPhaseRef.current;
       if (
-        !prefersReducedMotion
+        !prefersReducedMotion && !reducedMotion
         && currentPhase !== 'paused'
         && currentPhase !== 'results'
         && combatRef.current.hitstopMs <= 0
@@ -535,7 +579,7 @@ export function PentagramLiveFight({
 
       const currentCombat = combatRef.current;
       let nextCombat: CombatState;
-      if (matchMode === 'ai' && currentCombat.active) {
+      if (matchMode === 'ai' && !training && currentCombat.active) {
         let next = currentCombat;
         let remainingMs = elapsedMs;
         while (remainingMs > 0 && next.active) {
@@ -602,6 +646,8 @@ export function PentagramLiveFight({
     finishCombatIfNeeded,
     matchMode,
     prefersReducedMotion,
+    reducedMotion,
+    training,
     readInputs,
     setFightPhase,
   ]);
@@ -816,8 +862,8 @@ export function PentagramLiveFight({
     }
   };
 
-  const fighterOneSprite = getCharacterSpriteAsset(fighterOne.id);
-  const fighterTwoSprite = getCharacterSpriteAsset(fighterTwo.id);
+  const fighterOneSprite = getCombatSpriteAsset(fighterOne.id);
+  const fighterTwoSprite = getCombatSpriteAsset(fighterTwo.id);
   useEffect(() => {
     if (typeof window.Image !== 'function') return;
     const activeSprites = [fighterOneSprite, fighterTwoSprite].filter(
@@ -876,7 +922,7 @@ export function PentagramLiveFight({
   const resultTitle = matchWinnerName
     ? `${matchWinnerName} wins the match`
     : winnerName ? `${winnerName} wins round ${combat.round}` : 'Round draw';
-  const nextFightLabel = matchWinnerName ? 'rematch' : 'next round';
+  const nextFightLabel = matchWinnerName ? nextMatchLabel ?? 'rematch' : 'next round';
   const latestEvent = combat.log[0]?.text ?? '';
   const cinematicFrame = getPentagramCinematicFrame(
     activeCinematic,
@@ -905,10 +951,10 @@ export function PentagramLiveFight({
     ? cinematicFrame.frameIndex
     : fighterTwoCombatFrame.frameIndex;
   const fighterOneColumn = fighterOneCinematicKind
-    ? cinematicFrame.column
+    ? fighterOneSprite?.cinematicFallback ? fighterOneCinematicKind === 'victory' ? 5 : 2 : cinematicFrame.column
     : fighterOneCombatFrame.column;
   const fighterTwoColumn = fighterTwoCinematicKind
-    ? cinematicFrame.column
+    ? fighterTwoSprite?.cinematicFallback ? fighterTwoCinematicKind === 'victory' ? 5 : 2 : cinematicFrame.column
     : fighterTwoCombatFrame.column;
   const fighterOneAction = fighterOneCinematicKind ?? combat.actionOne;
   const fighterTwoAction = fighterTwoCinematicKind ?? combat.actionTwo;
@@ -961,11 +1007,11 @@ export function PentagramLiveFight({
     : [{ side: 'one', shortLabel: 'P1', fighterName: fighterOne.name }];
 
   return (
-    <section className="arena-fight-panel arena-live-shell art-deco-border" aria-labelledby="arena-fight-title">
+    <section className="arena-fight-panel arena-live-shell art-deco-border" aria-labelledby="arena-fight-title" data-reduced-motion={prefersReducedMotion || reducedMotion}>
       <div className="arena-fight-panel__top">
         <div>
           <span className="arena-live-kicker">
-            {matchMode === 'ai'
+            {training ? 'Entraînement · mannequin' : matchMode === 'ai'
               ? `CPU sparring · ${COMBAT_AI_DIFFICULTY_LABELS[aiDifficulty]}`
               : 'Two-player local exhibition'}
             {' · '}{stage.name}
@@ -974,10 +1020,11 @@ export function PentagramLiveFight({
         </div>
         <div className="arena-fight-toolbar">
           <div className="arena-round-counter">
-            <span>Round {combat.round} · first to 2</span>
-            <strong aria-label={`${timerSeconds} seconds remaining`}>{timerSeconds}</strong>
+            <span>{training ? 'Entraînement libre' : `Round ${combat.round} · first to 2`}</span>
+            <strong aria-label={training ? 'Unlimited training time' : `${timerSeconds} seconds remaining`}>{training ? '∞' : timerSeconds}</strong>
           </div>
           <div className="arena-fight-actions" aria-label="Fight controls">
+            {training && <button type="button" className="btn btn-secondary" onClick={resetTraining}>Réinitialiser l’entraînement</button>}
             <button
               type="button"
               className="btn btn-secondary arena-soundtrack-toggle"
@@ -1195,7 +1242,7 @@ export function PentagramLiveFight({
             <span>Press Enter for {nextFightLabel} · Escape for fighter select</span>
             <span>Touch: tap the left half for {nextFightLabel} · tap the right half for fighter select</span>
             <button type="button" className="btn btn-primary" onClick={continueRound}>
-              {matchWinnerName ? 'Rematch' : 'Next round'}
+              {matchWinnerName ? nextMatchLabel ?? 'Rematch' : 'Next round'}
             </button>
           </div>
         )}

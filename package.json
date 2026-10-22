@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:standalone": "tsc && vite build --mode standalone && node scripts/finalize-standalone.mjs",
+    "check:standalone": "node scripts/check-standalone.mjs",
     "preview": "vite preview",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --maxWorkers=1",
     "test:accessibility": "vitest run src/tests/accessibility.test.tsx",
     "test:watch": "vitest",
-    "qa": "npm run typecheck && npm run lint && npm run test && npm run build"
+    "qa": "npm run typecheck && npm run lint && npm run test && npm run build && npm run build:standalone && npm run check:standalone"
   },
   "dependencies": {
     "lucide-react": "^0.395.0",
