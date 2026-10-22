@@ -1,6 +1,8 @@
 # Livraison — Hellbound : Infernal Versus V1
 
-Le code, le classeur Excel et les validations sont prêts. La [branche GitHub `feat/infernal-versus-standalone-20261021`](https://github.com/darknigthmare/hellbound-hotel-manager/tree/feat/infernal-versus-standalone-20261021) a été créée à partir du commit de base. Le [classeur Excel sur Google Drive](https://docs.google.com/spreadsheets/d/16kAZgcsTuPPq1DALMuVxZ4j7cymVk34_/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) a été téléversé et ses métadonnées vérifiées. L'envoi des modifications de code et la création de la PR restent en attente.
+Le code et le classeur Excel ont été publiés sur la [branche GitHub `feat/infernal-versus-standalone-20261021`](https://github.com/darknigthmare/hellbound-hotel-manager/tree/feat/infernal-versus-standalone-20261021). La [PR #1](https://github.com/darknigthmare/hellbound-hotel-manager/pull/1), créée le 22 octobre 2026 à 06:56:12 UTC, est ouverte, prête à relire et non fusionnée. Le [classeur Excel sur Google Drive](https://docs.google.com/spreadsheets/d/16kAZgcsTuPPq1DALMuVxZ4j7cymVk34_/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) a également été téléversé et ses métadonnées vérifiées.
+
+Le [commit de livraison du code `907af4a`](https://github.com/darknigthmare/hellbound-hotel-manager/commit/907af4a1e6a209862eebdc93db684955cb548b9d) contient 35 fichiers modifiés ou ajoutés. Son arbre GitHub a été comparé exactement à l'arbre local validé (`a95339dbb8958277f11374d697f762114f736c90`). Ce commit identifie le lot de code vérifié; les mises à jour ultérieures du statut dans la documentation peuvent former des commits supplémentaires.
 
 Le fichier Excel se trouve dans le [dossier Hazbin Hotel — Infernal Versus](https://drive.google.com/drive/folders/1iU5o5IO2L6T9L1hLzqqFtHoYn95CKose).
 
@@ -21,7 +23,20 @@ python -m http.server 8080 --bind 127.0.0.1 --directory jeu
 
 Ouvrir ensuite `http://localhost:8080/`. Sur les systèmes où Python 3 est nommé `python3`, remplacer `python` par `python3`. Servir le dossier `jeu` comme racine HTTP : le double-clic sur `index.html` et un sous-chemin arbitraire ne sont pas pris en charge.
 
-## Appliquer les modifications dans le dépôt
+## Récupérer la branche publiée
+
+Pour récupérer directement le code et l'Excel de la PR dans un nouveau dossier :
+
+```bash
+git clone --branch feat/infernal-versus-standalone-20261021 --single-branch https://github.com/darknigthmare/hellbound-hotel-manager.git hellbound-infernal-versus
+cd hellbound-infernal-versus
+npm ci
+npm run qa
+```
+
+La PR vise `master`; elle n'est pas fusionnée. Le classeur versionné se trouve à `docs/standalone/HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx`.
+
+## Appliquer le patch dans une copie de la base
 
 Base exacte utilisée : dépôt `darknigthmare/hellbound-hotel-manager`, branche `master`, commit `2c19dd42a4f7cdfad7a7b93a06df01c636d8e578`.
 
@@ -37,7 +52,7 @@ npm run qa
 
 Le chemin `/chemin/vers/INFERNAL_VERSUS_V1.patch` doit désigner le patch extrait. Cette procédure suppose un espace de travail propre. Si la branche cible a évolué depuis la base indiquée, réconcilier ces évolutions avant publication.
 
-Après application, le classeur à publier sur GitHub se trouve à `docs/standalone/HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx`. `docs/standalone/PR_BODY.md` contient la description prête pour la PR vers `master`. Le même fichier Excel est déjà disponible sur Google Drive, au format `.xlsx`, sans conversion en Google Sheets.
+Après application, le classeur se trouve à `docs/standalone/HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx`. `docs/standalone/PR_BODY.md` contient la description du lot soumis dans la PR vers `master`. Le même fichier Excel est disponible sur Google Drive, au format `.xlsx`, sans conversion en Google Sheets.
 
 ## Validation obtenue
 
