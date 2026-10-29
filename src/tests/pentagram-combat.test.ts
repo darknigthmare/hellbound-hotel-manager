@@ -391,6 +391,29 @@ describe('Pentagram Arena live combat engine', () => {
     expect(finished.pendingAttackTwo).toBeNull();
   });
 
+  it('starts the next round with clean actions and no lingering effects', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+      hpTwo: 3,
+    };
+    const started = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const finished = advance(started, idleInputs, 8);
+    const next = createNextCombatRound(finished, fighterOne, fighterTwo);
+    expect(next.round).toBe(2);
+    expect(next.active).toBe(true);
+    expect(next.actionOne).toBe('idle');
+    expect(next.actionTwo).toBe('idle');
+    expect(next.pendingAttackOne).toBeNull();
+    expect(next.pendingAttackTwo).toBeNull();
+    expect(next.impactMsOne).toBe(0);
+    expect(next.impactMsTwo).toBe(0);
+    expect(next.hitstopMs).toBe(0);
+    expect(next.cooldownMsOne).toBe(0);
+    expect(next.cooldownMsTwo).toBe(0);
+  });
+
   it('tracks a best-of-three set and resets cleanly for a rematch', () => {
     const firstVulnerable = {
       ...createCombatState(fighterOne, fighterTwo),
