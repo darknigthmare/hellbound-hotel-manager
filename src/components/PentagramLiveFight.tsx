@@ -962,8 +962,8 @@ export function PentagramLiveFight({
     ? 'Ready'
     : fightPhase === 'fight' ? 'Fight!' : fightPhase === 'paused' ? 'Paused' : null;
   // Use the last attack that hit this defender to select its impact shape.
-  const impactOneKind = combat.lastHitAttackOne ?? 'light';
-  const impactTwoKind = combat.lastHitAttackTwo ?? 'light';
+  const impactOneKind = combat.guardOne ? 'guard' : combat.lastHitAttackOne ?? 'light';
+  const impactTwoKind = combat.guardTwo ? 'guard' : combat.lastHitAttackTwo ?? 'light';
   const fighterOneStyle = {
     '--arena-x': `${combat.positionOne}%`,
     '--arena-action-ms': fighterOneActionDurationMs !== undefined
