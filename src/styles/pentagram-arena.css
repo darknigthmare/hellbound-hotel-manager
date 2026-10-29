@@ -1380,6 +1380,15 @@
   pointer-events: none;
 }
 
+.arena-combatant.is-hit .arena-hit-spark {
+  filter: drop-shadow(0 0 12px #ffca55) brightness(1.2);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-hit-spark,
+.arena-combat-stage[data-phase="outro"] .arena-hit-spark {
+  display: none;
+}
+
 .arena-combatant.is-two .arena-hit-spark {
   right: 76%;
   left: auto;
