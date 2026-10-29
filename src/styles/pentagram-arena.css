@@ -1369,27 +1369,6 @@
   filter: blur(9px);
 }
 
-/* A weapon-like slash reads differently from a magical burst. */
-.arena-hit-spark.is-guard {
-  background:
-    radial-gradient(circle, transparent 28%, rgba(122, 210, 255, 0.95) 31% 39%, transparent 43%),
-    linear-gradient(90deg, transparent 46%, rgba(184, 230, 255, 0.85) 49% 51%, transparent 54%);
-  filter: drop-shadow(0 0 9px rgba(122, 210, 255, 0.65));
-}
-
-.arena-hit-spark.is-heavy {
-  background:
-    linear-gradient(35deg, transparent 39%, #fff0b0 40% 52%, transparent 53%),
-    linear-gradient(-35deg, transparent 39%, #ff9a4a 40% 52%, transparent 53%);
-}
-
-.arena-hit-spark.is-special {
-  background:
-    radial-gradient(circle, #fff3cc 0 12%, #b96aff 18% 36%, transparent 65%),
-    conic-gradient(from 20deg, transparent, #f6c35d, transparent, #a35aff, transparent);
-  filter: drop-shadow(0 0 13px rgba(184, 106, 255, 0.8));
-}
-
 .arena-combatant.is-special .arena-action-trail {
   background: linear-gradient(90deg, transparent, rgba(180, 93, 255, 0.78), rgba(255, 216, 111, 0.42), transparent);
   filter: blur(11px);
@@ -1411,7 +1390,28 @@
   pointer-events: none;
 }
 
-.arena-combatant.is-hit .arena-hit-spark {
+/* A weapon-like slash reads differently from a magical burst. */
+.arena-hit-spark.is-guard {
+  background:
+    radial-gradient(circle, transparent 28%, rgba(122, 210, 255, 0.95) 31% 39%, transparent 43%),
+    linear-gradient(90deg, transparent 46%, rgba(184, 230, 255, 0.85) 49% 51%, transparent 54%);
+  filter: drop-shadow(0 0 9px rgba(122, 210, 255, 0.65));
+}
+
+.arena-hit-spark.is-heavy {
+  background:
+    linear-gradient(35deg, transparent 39%, #fff0b0 40% 52%, transparent 53%),
+    linear-gradient(-35deg, transparent 39%, #ff9a4a 40% 52%, transparent 53%);
+}
+
+.arena-hit-spark.is-special {
+  background:
+    radial-gradient(circle, #fff3cc 0 12%, #b96aff 18% 36%, transparent 65%),
+    conic-gradient(from 20deg, transparent, #f6c35d, transparent, #a35aff, transparent);
+  filter: drop-shadow(0 0 13px rgba(184, 106, 255, 0.8));
+}
+
+.arena-combatant.is-hit .arena-hit-spark:not(.is-guard):not(.is-special) {
   filter: drop-shadow(0 0 12px #ffca55) brightness(1.2);
 }
 
