@@ -1091,6 +1091,9 @@ export function PentagramLiveFight({
             <span style={{ width: `${combat.tensionOne}%` }} />
           </span>
           <small>HP {combat.hpOne} · Tension {combat.tensionOne} · {getActionLabel(combat.actionOne)}</small>
+          {combat.comboOne >= 2 && <strong className="arena-combo-count" aria-label={`${fighterOne.name}: ${combat.comboOne} hit combo`}>
+            {combat.comboOne} HIT COMBO
+          </strong>}
         </div>
         <div className="arena-hud__fighter is-p2">
           <strong>{fighterTwo.name}</strong>
@@ -1124,6 +1127,9 @@ export function PentagramLiveFight({
             <span style={{ width: `${combat.tensionTwo}%` }} />
           </span>
           <small>HP {combat.hpTwo} · Tension {combat.tensionTwo} · {getActionLabel(combat.actionTwo)}</small>
+          {combat.comboTwo >= 2 && <strong className="arena-combo-count" aria-label={`${fighterTwo.name}: ${combat.comboTwo} hit combo`}>
+            {combat.comboTwo} HIT COMBO
+          </strong>}
         </div>
       </div>
 
