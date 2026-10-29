@@ -371,6 +371,26 @@ describe('Pentagram Arena live combat engine', () => {
     expect(trade.log[0].text).toMatch(/double K\.O\./i);
   });
 
+  it('clears lingering impact effects when a round finishes by K.O.', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+      hpTwo: 3,
+      impactMsOne: 180,
+      impactMsTwo: 180,
+    };
+    const started = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const finished = advance(started, idleInputs, 8);
+    expect(finished.active).toBe(false);
+    expect(finished.winner).toBe('one');
+    expect(finished.impactMsOne).toBe(0);
+    expect(finished.impactMsTwo).toBe(0);
+    expect(finished.hitstopMs).toBe(0);
+    expect(finished.pendingAttackOne).toBeNull();
+    expect(finished.pendingAttackTwo).toBeNull();
+  });
+
   it('tracks a best-of-three set and resets cleanly for a rematch', () => {
     const firstVulnerable = {
       ...createCombatState(fighterOne, fighterTwo),

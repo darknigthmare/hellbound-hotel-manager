@@ -360,6 +360,8 @@ function finishRound(
     cooldownMsTwo: 0,
     pendingAttackOne: null,
     pendingAttackTwo: null,
+    impactMsOne: 0,
+    impactMsTwo: 0,
     hitstopMs: 0,
     ...matchLog,
   };
