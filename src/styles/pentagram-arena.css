@@ -1499,6 +1499,21 @@
   animation: arena-victory-pulse 900ms ease-in-out infinite alternate;
 }
 
+/* Keep result poses legible while preserving the existing sprite animations. */
+.arena-combatant.is-victory .arena-sprite-frame,
+.arena-combatant.is-victory img {
+  filter: drop-shadow(0 0 15px rgba(255, 216, 111, 0.55));
+}
+
+.arena-combatant.is-ko .arena-sprite-frame,
+.arena-combatant.is-ko img {
+  filter: grayscale(0.55) brightness(0.82);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-combatant {
+  animation-play-state: paused;
+}
+
 .arena-combatant.is-cinematic .arena-guard-badge {
   display: none;
 }
