@@ -1018,6 +1018,31 @@
   font-size: 0.7rem;
 }
 
+.arena-hud .arena-combo-count {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 216, 111, 0.65);
+  border-radius: 6px;
+  background: rgba(45, 10, 28, 0.88);
+  color: #ffe4a0;
+  font-family: var(--font-title);
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.055em;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  animation: arena-combo-appear 180ms ease-out both;
+}
+
+.arena-hud__fighter.is-p2 .arena-combo-count {
+  margin-left: auto;
+}
+
+@keyframes arena-combo-appear {
+  from { opacity: 0; transform: translateY(5px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .arena-health {
   display: block;
   height: 12px;
@@ -2110,7 +2135,8 @@
   .arena-action-trail,
   .arena-hit-spark,
   .arena-health > span,
-  .arena-tension > span {
+  .arena-tension > span,
+  .arena-combo-count {
     animation: none;
     transition: none;
   }
