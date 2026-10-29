@@ -125,9 +125,19 @@ describe('Pentagram Arena CPU sparring', () => {
     const base = createCombatState(fighterOne, fighterTwo);
     const cornered = { ...base, positionOne: 7, positionTwo: 14 };
     const decision = decideCombatAi(
-      cornered, 'one', fighterOne, fighterTwo, 'overlord', () => 0,
+      cornered, 'one', fighterOne, fighterTwo, 'overlord', () => 0.5,
     );
     expect(decision.input.left).toBe(false);
+    expect(decision.attack).not.toBeNull();
+  });
+
+  it('respects the right arena boundary for player two', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const cornered = { ...base, positionOne: 86, positionTwo: 93 };
+    const decision = decideCombatAi(
+      cornered, 'two', fighterOne, fighterTwo, 'overlord', () => 0.5,
+    );
+    expect(decision.input.right).toBe(false);
     expect(decision.attack).not.toBeNull();
   });
 
