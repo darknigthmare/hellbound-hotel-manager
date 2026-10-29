@@ -1391,6 +1391,11 @@
 }
 
 /* A weapon-like slash reads differently from a magical burst. */
+/* Gameplay style themes are visual adaptations, not canon power claims. */
+.arena-hit-spark.is-arcane:not(.is-guard) {
+  box-shadow: 0 0 14px 5px rgba(172, 102, 255, 0.32);
+}
+
 .arena-hit-spark.is-guard {
   background:
     radial-gradient(circle, transparent 28%, rgba(122, 210, 255, 0.95) 31% 39%, transparent 43%),
