@@ -121,7 +121,9 @@ export function decideCombatAi(
     return { input: towardOpponent, attack: null };
   }
 
-  if (distance <= 8.2 && random() < tuning.retreatChance) {
+  const position = side === 'one' ? state.positionOne : state.positionTwo;
+  const canRetreat = side === 'one' ? position > 7 : position < 93;
+  if (canRetreat && distance <= 8.2 && random() < tuning.retreatChance) {
     return { input: awayFromOpponent, attack: null };
   }
 

@@ -121,6 +121,26 @@ describe('Pentagram Arena CPU sparring', () => {
     }
   });
 
+  it('does not retreat into an arena boundary when cornered', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const cornered = { ...base, positionOne: 7, positionTwo: 14 };
+    const decision = decideCombatAi(
+      cornered, 'one', fighterOne, fighterTwo, 'overlord', () => 0,
+    );
+    expect(decision.input.left).toBe(false);
+    expect(decision.attack).not.toBeNull();
+  });
+
+  it('still permits tactical retreat when space is available', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const open = { ...base, positionOne: 44, positionTwo: 51 };
+    const decision = decideCombatAi(
+      open, 'one', fighterOne, fighterTwo, 'overlord', () => 0,
+    );
+    expect(decision.input.left).toBe(true);
+    expect(decision.attack).toBeNull();
+  });
+
   it('uses slower reaction intervals at lower difficulties', () => {
     expect(getCombatAiThinkInterval('rookie')).toBeGreaterThan(
       getCombatAiThinkInterval('standard'),
