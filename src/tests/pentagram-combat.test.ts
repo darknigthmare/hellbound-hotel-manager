@@ -271,6 +271,22 @@ describe('Pentagram Arena live combat engine', () => {
     expect(heavyImpact.hpTwo).toBeLessThan(100);
   });
 
+  it('does not cancel a light attack after its impact has resolved', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const landed = advance(light, idleInputs, 8);
+    expect(landed.pendingAttackOne).toBeNull();
+    const denied = resolveCombatAttack(
+      landed, 'one', 'heavy', fighterOne, fighterTwo, true,
+    );
+    expect(denied).toBe(landed);
+    expect(denied.actionOne).toBe('light');
+  });
+
   it('uses the defender guard state at impact instead of at button press', () => {
     const inRange = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
     const guardingInputs: CombatInputs = {
