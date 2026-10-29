@@ -525,7 +525,10 @@ export function canStartCombatAttack(
     && action === 'light'
     && actionMs > 0
     && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0;
+    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
+    // Only the early startup phase can be cancelled; the impact is not yet active.
+    && actionMs > getAttackData(definition, 'light').actionMs
+      - getAttackData(definition, 'light').startupMs;
 
   return tension >= getAttackData(definition, attack).tensionCost
     && (canCancelLight || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
@@ -549,7 +552,9 @@ export function resolveCombatAttack(
     && action === 'light'
     && actionMs > 0
     && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0;
+    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
+    && actionMs > getAttackData(attacker, 'light').actionMs
+      - getAttackData(attacker, 'light').startupMs;
   const attackData = getAttackData(attacker, attack);
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
 

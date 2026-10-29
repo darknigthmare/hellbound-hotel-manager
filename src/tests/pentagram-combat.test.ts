@@ -286,6 +286,19 @@ describe('Pentagram Arena live combat engine', () => {
     expect(denied.pendingAttackOne).toBe('light');
   });
 
+  it('rejects late light-to-heavy cancels after the startup window', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    // An inconsistent snapshot must not allow a late cancel even if pending remains set.
+    const late = { ...light, actionMsOne: 200 };
+    const denied = resolveCombatAttack(late, 'one', 'heavy', fighterOne, fighterTwo, true);
+    expect(denied).toBe(late);
+  });
+
   it('does not cancel a light attack after its impact has resolved', () => {
     const base = {
       ...createCombatState(fighterOne, fighterTwo),
