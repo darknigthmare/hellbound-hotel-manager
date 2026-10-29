@@ -85,12 +85,13 @@ export function decideCombatAi(
   const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
   const opponentAction = side === 'one' ? state.actionTwo : state.actionOne;
   const opponentActionMs = side === 'one' ? state.actionMsTwo : state.actionMsOne;
+  const opponentPendingAttack = side === 'one' ? state.pendingAttackTwo : state.pendingAttackOne;
   const distance = Math.abs(state.positionTwo - state.positionOne);
   const opponentThreatening = (
     opponentAction === 'light'
     || opponentAction === 'heavy'
     || opponentAction === 'special'
-  ) && opponentActionMs > 0;
+  ) && opponentActionMs > 0 && opponentPendingAttack === opponentAction;
 
   if (isCombatActionLocked(action, actionMs)) {
     return { input: IDLE_INPUT, attack: null };

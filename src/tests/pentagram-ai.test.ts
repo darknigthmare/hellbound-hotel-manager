@@ -73,6 +73,22 @@ describe('Pentagram Arena CPU sparring', () => {
     expect(decision.attack).toBeNull();
   });
 
+  it('does not reactively guard an attack whose impact has already resolved', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const recovering = {
+      ...base,
+      positionOne: 44,
+      positionTwo: 51,
+      actionOne: 'heavy' as const,
+      actionMsOne: 120,
+      pendingAttackOne: null,
+    };
+    const decision = decideCombatAi(
+      recovering, 'two', fighterOne, fighterTwo, 'standard', () => 0,
+    );
+    expect(decision.input.guard).toBe(false);
+  });
+
   it('spends a charged special at range but never invents missing tension', () => {
     const close = {
       ...createCombatState(fighterOne, fighterTwo),
