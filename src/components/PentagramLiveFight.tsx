@@ -961,6 +961,9 @@ export function PentagramLiveFight({
   const phaseLabel = fightPhase === 'ready'
     ? 'Ready'
     : fightPhase === 'fight' ? 'Fight!' : fightPhase === 'paused' ? 'Paused' : null;
+  // Use the last attack that hit this defender to select its impact shape.
+  const impactOneKind = combat.lastHitAttackOne ?? 'light';
+  const impactTwoKind = combat.lastHitAttackTwo ?? 'light';
   const fighterOneStyle = {
     '--arena-x': `${combat.positionOne}%`,
     '--arena-action-ms': fighterOneActionDurationMs !== undefined
@@ -1208,7 +1211,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionOne)}</span>
           <span className="arena-fighter-shadow" />
           {!fighterOneCinematicKind && <span className="arena-action-trail" />}
-          {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className="arena-hit-spark" />}
+          {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className={`arena-hit-spark is-${impactOneKind}`} />}
           {fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -1232,7 +1235,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionTwo)}</span>
           <span className="arena-fighter-shadow" />
           {!fighterTwoCinematicKind && <span className="arena-action-trail" />}
-          {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className="arena-hit-spark" />}
+          {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className={`arena-hit-spark is-${impactTwoKind}`} />}
           {fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (

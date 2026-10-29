@@ -1370,13 +1370,13 @@
 }
 
 /* A weapon-like slash reads differently from a magical burst. */
-.arena-combatant.is-heavy .arena-hit-spark {
+.arena-hit-spark.is-heavy {
   background:
     linear-gradient(35deg, transparent 39%, #fff0b0 40% 52%, transparent 53%),
     linear-gradient(-35deg, transparent 39%, #ff9a4a 40% 52%, transparent 53%);
 }
 
-.arena-combatant.is-special .arena-hit-spark {
+.arena-hit-spark.is-special {
   background:
     radial-gradient(circle, #fff3cc 0 12%, #b96aff 18% 36%, transparent 65%),
     conic-gradient(from 20deg, transparent, #f6c35d, transparent, #a35aff, transparent);
