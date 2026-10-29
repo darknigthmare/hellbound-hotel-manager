@@ -157,6 +157,20 @@ describe('Pentagram Arena CPU sparring', () => {
     expect(decision.attack).not.toBeNull();
   });
 
+  it('avoids futile retreat commands within two lane units of either wall', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    for (const [side, positionOne, positionTwo] of [
+      ['one', 8, 15],
+      ['two', 85, 92],
+    ] as const) {
+      const state = { ...base, positionOne, positionTwo };
+      const decision = decideCombatAi(
+        state, side, fighterOne, fighterTwo, 'overlord', () => 0.5,
+      );
+      expect(side === 'one' ? decision.input.left : decision.input.right).toBe(false);
+    }
+  });
+
   it('still permits tactical retreat when space is available', () => {
     const base = createCombatState(fighterOne, fighterTwo);
     const open = { ...base, positionOne: 44, positionTwo: 51 };

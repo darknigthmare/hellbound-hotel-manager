@@ -135,7 +135,9 @@ export function decideCombatAi(
   }
 
   const position = side === 'one' ? state.positionOne : state.positionTwo;
-  const canRetreat = side === 'one' ? position > 7 : position < 93;
+  // Require a small movement buffer: a decision should produce visible retreat,
+  // not repeatedly request movement into a nearly reached wall.
+  const canRetreat = side === 'one' ? position >= 9 : position <= 91;
   if (canRetreat && distance <= 8.2 && random() < tuning.retreatChance) {
     return { input: awayFromOpponent, attack: null };
   }
