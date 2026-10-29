@@ -524,7 +524,8 @@ export function canStartCombatAttack(
     && attack === 'heavy'
     && action === 'light'
     && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light';
+    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
+    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0;
 
   return tension >= getAttackData(definition, attack).tensionCost
     && (canCancelLight || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
@@ -547,7 +548,8 @@ export function resolveCombatAttack(
     && attack === 'heavy'
     && action === 'light'
     && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light';
+    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
+    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0;
   const attackData = getAttackData(attacker, attack);
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
 

@@ -271,6 +271,21 @@ describe('Pentagram Arena live combat engine', () => {
     expect(heavyImpact.hpTwo).toBeLessThan(100);
   });
 
+  it('does not permit a light cancel when its cooldown has expired', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const inconsistent = { ...light, cooldownMsOne: 0 };
+    const denied = resolveCombatAttack(
+      inconsistent, 'one', 'heavy', fighterOne, fighterTwo, true,
+    );
+    expect(denied).toBe(inconsistent);
+    expect(denied.pendingAttackOne).toBe('light');
+  });
+
   it('does not cancel a light attack after its impact has resolved', () => {
     const base = {
       ...createCombatState(fighterOne, fighterTwo),
