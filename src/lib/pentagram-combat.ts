@@ -89,6 +89,10 @@ export interface CombatState {
   impactMsOne: number;
   impactMsTwo: number;
   hitstopMs: number;
+  comboOne: number;
+  comboTwo: number;
+  comboWindowMsOne: number;
+  comboWindowMsTwo: number;
   log: CombatLogEntry[];
   nextLogId: number;
   winner: CombatWinner;
@@ -123,6 +127,7 @@ const MAX_GAME_FRAME_MS = 1_000;
 const COMBAT_SIMULATION_STEP_MS = 16;
 const IMPACT_EFFECT_MS = 220;
 const HITSTOP_MS = 58;
+const COMBO_WINDOW_MS = 1_200;
 const GLOBAL_DAMAGE_SCALE = 0.66;
 const POSE_ACTION_DURATION_MS: Readonly<Record<CombatPoseAction, number>> = {
   jump: 680,
@@ -363,6 +368,10 @@ function finishRound(
     impactMsOne: 0,
     impactMsTwo: 0,
     hitstopMs: 0,
+    comboOne: 0,
+    comboTwo: 0,
+    comboWindowMsOne: 0,
+    comboWindowMsTwo: 0,
     ...matchLog,
   };
 }
@@ -424,6 +433,10 @@ export function createCombatState(
     impactMsOne: 0,
     impactMsTwo: 0,
     hitstopMs: 0,
+    comboOne: 0,
+    comboTwo: 0,
+    comboWindowMsOne: 0,
+    comboWindowMsTwo: 0,
     log: [{ id: 0, text: `Round ${round} live: ${fighterOne.name} vs ${fighterTwo.name}.` }],
     nextLogId: 1,
     winner: null,
@@ -722,6 +735,21 @@ function applyAttackImpact(
     }
   }
 
+  // Track consecutive clean hits for the HUD; blocks and misses break the chain.
+  if (side === 'one') {
+    next.comboTwo = 0;
+    next.comboWindowMsTwo = 0;
+    next.comboOne = inRange && !defenderGuardingAtImpact
+      ? (state.comboWindowMsOne > 0 ? state.comboOne : 0) + 1 : 0;
+    next.comboWindowMsOne = next.comboOne > 0 ? COMBO_WINDOW_MS : 0;
+  } else {
+    next.comboOne = 0;
+    next.comboWindowMsOne = 0;
+    next.comboTwo = inRange && !defenderGuardingAtImpact
+      ? (state.comboWindowMsTwo > 0 ? state.comboTwo : 0) + 1 : 0;
+    next.comboWindowMsTwo = next.comboTwo > 0 ? COMBO_WINDOW_MS : 0;
+  }
+
   const resultText = !inRange
     ? `${attacker.name} whiffs ${moveName}; ${defender.name} escaped before impact.`
     : `${attacker.name} lands ${moveName} for ${damage} damage${defenderGuardingAtImpact ? ' through guard' : ''}.`;
@@ -825,6 +853,10 @@ function stepCombatSlice(
       : null,
     cooldownMsOne,
     cooldownMsTwo,
+    comboWindowMsOne: Math.max(0, state.comboWindowMsOne - gameElapsedMs),
+    comboWindowMsTwo: Math.max(0, state.comboWindowMsTwo - gameElapsedMs),
+    comboOne: state.comboWindowMsOne > gameElapsedMs ? state.comboOne : 0,
+    comboTwo: state.comboWindowMsTwo > gameElapsedMs ? state.comboTwo : 0,
     impactMsOne: Math.max(0, state.impactMsOne - gameElapsedMs),
     impactMsTwo: Math.max(0, state.impactMsTwo - gameElapsedMs),
     actionOne: lockedOneAfterSlice

@@ -202,6 +202,18 @@ describe('Pentagram Arena live combat engine', () => {
     expect(counter.actionTwo).toBe('hit');
   });
 
+  it('tracks clean hit combos and resets them on a whiff', () => {
+    const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
+    const first = advance(resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(first.comboOne).toBe(1);
+    const ready = advance(first, idleInputs, 32);
+    const second = advance(resolveCombatAttack(ready, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(second.comboOne).toBe(2);
+    const missed = { ...second, positionOne: 7, positionTwo: 93, hitstopMs: 0, cooldownMsOne: 0, actionOne: 'idle' as const, actionMsOne: 0 };
+    const whiff = advance(resolveCombatAttack(missed, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(whiff.comboOne).toBe(0);
+  });
+
   it('checks range at impact and cannot deal repeated damage from key repeat', () => {
     const initial = createCombatState(fighterOne, fighterTwo);
     const startedWhiff = resolveCombatAttack(initial, 'one', 'light', fighterOne, fighterTwo);
