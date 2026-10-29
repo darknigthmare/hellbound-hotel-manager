@@ -688,6 +688,8 @@ function applyAttackImpact(
       next.lastHitAttackTwo = attack;
       next.pendingAttackTwo = null;
       next.guardTwo = false;
+      // A clean hit interrupts the defender's current recovery/attack.
+      next.cooldownMsTwo = Math.max(next.cooldownMsTwo, attackData.hitstunMs);
     }
   } else {
     next.hpOne = clamp(next.hpOne - damage, 0, 100);
@@ -705,6 +707,7 @@ function applyAttackImpact(
       next.lastHitAttackOne = attack;
       next.pendingAttackOne = null;
       next.guardOne = false;
+      next.cooldownMsOne = Math.max(next.cooldownMsOne, attackData.hitstunMs);
     }
   }
 

@@ -174,6 +174,20 @@ describe('Pentagram Arena live combat engine', () => {
     expect(recovered.lastHitAttackTwo).toBeNull();
   });
 
+  it('interrupts pending attacks on an unguarded hit and preserves recovery', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const defenderAttack = resolveCombatAttack(base, 'two', 'heavy', fighterOne, fighterTwo);
+    const both = resolveCombatAttack(defenderAttack, 'one', 'light', fighterOne, fighterTwo);
+    const impact = advance(both, idleInputs, 8);
+    expect(impact.actionTwo).toBe('hit');
+    expect(impact.pendingAttackTwo).toBeNull();
+    expect(impact.cooldownMsTwo).toBeGreaterThan(0);
+  });
+
   it('checks range at impact and cannot deal repeated damage from key repeat', () => {
     const initial = createCombatState(fighterOne, fighterTwo);
     const startedWhiff = resolveCombatAttack(initial, 'one', 'light', fighterOne, fighterTwo);
