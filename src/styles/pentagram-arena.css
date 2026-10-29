@@ -1364,6 +1364,16 @@
   pointer-events: none;
 }
 
+.arena-combatant.is-heavy .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(255, 174, 79, 0.72), transparent);
+  filter: blur(9px);
+}
+
+.arena-combatant.is-special .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(180, 93, 255, 0.78), rgba(255, 216, 111, 0.42), transparent);
+  filter: blur(11px);
+}
+
 .arena-hit-spark {
   position: absolute;
   z-index: 4;
