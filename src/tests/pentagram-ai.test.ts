@@ -167,6 +167,40 @@ describe('Pentagram Arena CPU sparring', () => {
     expect(decision.attack).toBeNull();
   });
 
+  it('punishes an opponent in hitstun on standard and overlord', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const vulnerable = {
+      ...base,
+      positionOne: 44,
+      positionTwo: 51,
+      actionOne: 'hit' as const,
+      actionMsOne: 180,
+    };
+    for (const difficulty of ['standard', 'overlord'] as const) {
+      const decision = decideCombatAi(
+        vulnerable, 'two', fighterOne, fighterTwo, difficulty, () => 0,
+      );
+      expect(decision.attack).toBe('heavy');
+      expect(decision.input.guard).toBe(false);
+    }
+  });
+
+  it('does not punish hitstun outside heavy attack range', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const distant = {
+      ...base,
+      positionOne: 30,
+      positionTwo: 70,
+      actionOne: 'hit' as const,
+      actionMsOne: 180,
+    };
+    const decision = decideCombatAi(
+      distant, 'two', fighterOne, fighterTwo, 'overlord', () => 0,
+    );
+    expect(decision.attack).toBeNull();
+    expect(decision.input.left).toBe(true);
+  });
+
   it('uses slower reaction intervals at lower difficulties', () => {
     expect(getCombatAiThinkInterval('rookie')).toBeGreaterThan(
       getCombatAiThinkInterval('standard'),

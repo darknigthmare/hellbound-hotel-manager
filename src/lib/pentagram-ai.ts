@@ -122,6 +122,18 @@ export function decideCombatAi(
     return { input: towardOpponent, attack: null };
   }
 
+  // Higher difficulties punish a nearby opponent's recovery instead of
+  // randomly retreating. Keep all attack eligibility checks in the combat engine.
+  if (
+    difficulty !== 'rookie'
+    && opponentAction === 'hit'
+    && opponentActionMs > 0
+    && distance <= heavyReach
+    && canStartCombatAttack(state, side, 'heavy', fighterOne, fighterTwo)
+  ) {
+    return { input: IDLE_INPUT, attack: 'heavy' };
+  }
+
   const position = side === 'one' ? state.positionOne : state.positionTwo;
   const canRetreat = side === 'one' ? position > 7 : position < 93;
   if (canRetreat && distance <= 8.2 && random() < tuning.retreatChance) {
