@@ -85,12 +85,13 @@ export function decideCombatAi(
   const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
   const opponentAction = side === 'one' ? state.actionTwo : state.actionOne;
   const opponentActionMs = side === 'one' ? state.actionMsTwo : state.actionMsOne;
+  const opponentPendingAttack = side === 'one' ? state.pendingAttackTwo : state.pendingAttackOne;
   const distance = Math.abs(state.positionTwo - state.positionOne);
   const opponentThreatening = (
     opponentAction === 'light'
     || opponentAction === 'heavy'
     || opponentAction === 'special'
-  ) && opponentActionMs > 0;
+  ) && opponentActionMs > 0 && opponentPendingAttack === opponentAction;
 
   if (isCombatActionLocked(action, actionMs)) {
     return { input: IDLE_INPUT, attack: null };
@@ -121,7 +122,23 @@ export function decideCombatAi(
     return { input: towardOpponent, attack: null };
   }
 
-  if (distance <= 8.2 && random() < tuning.retreatChance) {
+  // Higher difficulties punish a nearby opponent's recovery instead of
+  // randomly retreating. Keep all attack eligibility checks in the combat engine.
+  if (
+    difficulty !== 'rookie'
+    && opponentAction === 'hit'
+    && opponentActionMs > 0
+    && distance <= heavyReach
+    && canStartCombatAttack(state, side, 'heavy', fighterOne, fighterTwo)
+  ) {
+    return { input: IDLE_INPUT, attack: 'heavy' };
+  }
+
+  const position = side === 'one' ? state.positionOne : state.positionTwo;
+  // Require a small movement buffer: a decision should produce visible retreat,
+  // not repeatedly request movement into a nearly reached wall.
+  const canRetreat = side === 'one' ? position >= 9 : position <= 91;
+  if (canRetreat && distance <= 8.2 && random() < tuning.retreatChance) {
     return { input: awayFromOpponent, attack: null };
   }
 

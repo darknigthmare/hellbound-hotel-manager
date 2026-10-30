@@ -1018,6 +1018,31 @@
   font-size: 0.7rem;
 }
 
+.arena-hud .arena-combo-count {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 216, 111, 0.65);
+  border-radius: 6px;
+  background: rgba(45, 10, 28, 0.88);
+  color: #ffe4a0;
+  font-family: var(--font-title);
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.055em;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  animation: arena-combo-appear 180ms ease-out both;
+}
+
+.arena-hud__fighter.is-p2 .arena-combo-count {
+  margin-left: auto;
+}
+
+@keyframes arena-combo-appear {
+  from { opacity: 0; transform: translateY(5px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .arena-health {
   display: block;
   height: 12px;
@@ -1339,6 +1364,16 @@
   pointer-events: none;
 }
 
+.arena-combatant.is-heavy .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(255, 174, 79, 0.72), transparent);
+  filter: blur(9px);
+}
+
+.arena-combatant.is-special .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(180, 93, 255, 0.78), rgba(255, 216, 111, 0.42), transparent);
+  filter: blur(11px);
+}
+
 .arena-hit-spark {
   position: absolute;
   z-index: 4;
@@ -1353,6 +1388,41 @@
   filter: drop-shadow(0 0 8px #ffca55);
   animation: arena-hit-spark 220ms steps(3, end) both;
   pointer-events: none;
+}
+
+/* A weapon-like slash reads differently from a magical burst. */
+/* Gameplay style themes are visual adaptations, not canon power claims. */
+.arena-hit-spark.is-arcane:not(.is-guard) {
+  box-shadow: 0 0 14px 5px rgba(172, 102, 255, 0.32);
+}
+
+.arena-hit-spark.is-guard {
+  background:
+    radial-gradient(circle, transparent 28%, rgba(122, 210, 255, 0.95) 31% 39%, transparent 43%),
+    linear-gradient(90deg, transparent 46%, rgba(184, 230, 255, 0.85) 49% 51%, transparent 54%);
+  filter: drop-shadow(0 0 9px rgba(122, 210, 255, 0.65));
+}
+
+.arena-hit-spark.is-heavy {
+  background:
+    linear-gradient(35deg, transparent 39%, #fff0b0 40% 52%, transparent 53%),
+    linear-gradient(-35deg, transparent 39%, #ff9a4a 40% 52%, transparent 53%);
+}
+
+.arena-hit-spark.is-special {
+  background:
+    radial-gradient(circle, #fff3cc 0 12%, #b96aff 18% 36%, transparent 65%),
+    conic-gradient(from 20deg, transparent, #f6c35d, transparent, #a35aff, transparent);
+  filter: drop-shadow(0 0 13px rgba(184, 106, 255, 0.8));
+}
+
+.arena-combatant.is-hit .arena-hit-spark:not(.is-guard):not(.is-special) {
+  filter: drop-shadow(0 0 12px #ffca55) brightness(1.2);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-hit-spark,
+.arena-combat-stage[data-phase="outro"] .arena-hit-spark {
+  display: none;
 }
 
 .arena-combatant.is-two .arena-hit-spark {
@@ -1463,6 +1533,21 @@
 
 .arena-combatant.is-victory {
   animation: arena-victory-pulse 900ms ease-in-out infinite alternate;
+}
+
+/* Keep result poses legible while preserving the existing sprite animations. */
+.arena-combatant.is-victory .arena-sprite-frame,
+.arena-combatant.is-victory img {
+  filter: drop-shadow(0 0 15px rgba(255, 216, 111, 0.55));
+}
+
+.arena-combatant.is-ko .arena-sprite-frame,
+.arena-combatant.is-ko img {
+  filter: grayscale(0.55) brightness(0.82);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-combatant {
+  animation-play-state: paused;
 }
 
 .arena-combatant.is-cinematic .arena-guard-badge {
@@ -2110,7 +2195,8 @@
   .arena-action-trail,
   .arena-hit-spark,
   .arena-health > span,
-  .arena-tension > span {
+  .arena-tension > span,
+  .arena-combo-count {
     animation: none;
     transition: none;
   }

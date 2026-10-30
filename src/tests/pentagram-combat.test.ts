@@ -174,6 +174,46 @@ describe('Pentagram Arena live combat engine', () => {
     expect(recovered.lastHitAttackTwo).toBeNull();
   });
 
+  it('interrupts pending attacks on an unguarded hit and preserves recovery', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const defenderAttack = resolveCombatAttack(base, 'two', 'heavy', fighterOne, fighterTwo);
+    const both = resolveCombatAttack(defenderAttack, 'one', 'light', fighterOne, fighterTwo);
+    const impact = advance(both, idleInputs, 8);
+    expect(impact.actionTwo).toBe('hit');
+    expect(impact.pendingAttackTwo).toBeNull();
+    expect(impact.cooldownMsTwo).toBeGreaterThan(0);
+  });
+
+  it('prevents a stunned defender from immediately counterattacking', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const started = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const impact = advance(started, idleInputs, 8);
+    const counter = resolveCombatAttack(impact, 'two', 'light', fighterOne, fighterTwo);
+    expect(counter).toBe(impact);
+    expect(counter.pendingAttackTwo).toBeNull();
+    expect(counter.actionTwo).toBe('hit');
+  });
+
+  it('tracks clean hit combos and resets them on a whiff', () => {
+    const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
+    const first = advance(resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(first.comboOne).toBe(1);
+    const ready = advance(first, idleInputs, 32);
+    const second = advance(resolveCombatAttack(ready, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(second.comboOne).toBe(2);
+    const missed = { ...second, positionOne: 7, positionTwo: 93, hitstopMs: 0, cooldownMsOne: 0, actionOne: 'idle' as const, actionMsOne: 0 };
+    const whiff = advance(resolveCombatAttack(missed, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
+    expect(whiff.comboOne).toBe(0);
+  });
+
   it('checks range at impact and cannot deal repeated damage from key repeat', () => {
     const initial = createCombatState(fighterOne, fighterTwo);
     const startedWhiff = resolveCombatAttack(initial, 'one', 'light', fighterOne, fighterTwo);
@@ -243,6 +283,50 @@ describe('Pentagram Arena live combat engine', () => {
     expect(heavyImpact.hpTwo).toBeLessThan(100);
   });
 
+  it('does not permit a light cancel when its cooldown has expired', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const inconsistent = { ...light, cooldownMsOne: 0 };
+    const denied = resolveCombatAttack(
+      inconsistent, 'one', 'heavy', fighterOne, fighterTwo, true,
+    );
+    expect(denied).toBe(inconsistent);
+    expect(denied.pendingAttackOne).toBe('light');
+  });
+
+  it('rejects late light-to-heavy cancels after the startup window', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    // An inconsistent snapshot must not allow a late cancel even if pending remains set.
+    const late = { ...light, actionMsOne: 200 };
+    const denied = resolveCombatAttack(late, 'one', 'heavy', fighterOne, fighterTwo, true);
+    expect(denied).toBe(late);
+  });
+
+  it('does not cancel a light attack after its impact has resolved', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+    };
+    const light = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const landed = advance(light, idleInputs, 8);
+    expect(landed.pendingAttackOne).toBeNull();
+    const denied = resolveCombatAttack(
+      landed, 'one', 'heavy', fighterOne, fighterTwo, true,
+    );
+    expect(denied).toBe(landed);
+    expect(denied.actionOne).toBe('light');
+  });
+
   it('uses the defender guard state at impact instead of at button press', () => {
     const inRange = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
     const guardingInputs: CombatInputs = {
@@ -297,6 +381,49 @@ describe('Pentagram Arena live combat engine', () => {
     expect(trade.hpTwo).toBe(0);
     expect(trade.winner).toBe('draw');
     expect(trade.log[0].text).toMatch(/double K\.O\./i);
+  });
+
+  it('clears lingering impact effects when a round finishes by K.O.', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+      hpTwo: 3,
+      impactMsOne: 180,
+      impactMsTwo: 180,
+    };
+    const started = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const finished = advance(started, idleInputs, 8);
+    expect(finished.active).toBe(false);
+    expect(finished.winner).toBe('one');
+    expect(finished.impactMsOne).toBe(0);
+    expect(finished.impactMsTwo).toBe(0);
+    expect(finished.hitstopMs).toBe(0);
+    expect(finished.pendingAttackOne).toBeNull();
+    expect(finished.pendingAttackTwo).toBeNull();
+  });
+
+  it('starts the next round with clean actions and no lingering effects', () => {
+    const base = {
+      ...createCombatState(fighterOne, fighterTwo),
+      positionOne: 44,
+      positionTwo: 51,
+      hpTwo: 3,
+    };
+    const started = resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo);
+    const finished = advance(started, idleInputs, 8);
+    const next = createNextCombatRound(finished, fighterOne, fighterTwo);
+    expect(next.round).toBe(2);
+    expect(next.active).toBe(true);
+    expect(next.actionOne).toBe('idle');
+    expect(next.actionTwo).toBe('idle');
+    expect(next.pendingAttackOne).toBeNull();
+    expect(next.pendingAttackTwo).toBeNull();
+    expect(next.impactMsOne).toBe(0);
+    expect(next.impactMsTwo).toBe(0);
+    expect(next.hitstopMs).toBe(0);
+    expect(next.cooldownMsOne).toBe(0);
+    expect(next.cooldownMsTwo).toBe(0);
   });
 
   it('tracks a best-of-three set and resets cleanly for a rematch', () => {

@@ -73,6 +73,22 @@ describe('Pentagram Arena CPU sparring', () => {
     expect(decision.attack).toBeNull();
   });
 
+  it('does not reactively guard an attack whose impact has already resolved', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const recovering = {
+      ...base,
+      positionOne: 44,
+      positionTwo: 51,
+      actionOne: 'heavy' as const,
+      actionMsOne: 120,
+      pendingAttackOne: null,
+    };
+    const decision = decideCombatAi(
+      recovering, 'two', fighterOne, fighterTwo, 'standard', () => 0,
+    );
+    expect(decision.input.guard).toBe(false);
+  });
+
   it('spends a charged special at range but never invents missing tension', () => {
     const close = {
       ...createCombatState(fighterOne, fighterTwo),
@@ -119,6 +135,84 @@ describe('Pentagram Arena CPU sparring', () => {
       expect(decision.attack).toBeNull();
       expect(decision.input).toEqual({ left: false, right: false, guard: false });
     }
+  });
+
+  it('does not retreat into an arena boundary when cornered', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const cornered = { ...base, positionOne: 7, positionTwo: 14 };
+    const decision = decideCombatAi(
+      cornered, 'one', fighterOne, fighterTwo, 'overlord', () => 0.5,
+    );
+    expect(decision.input.left).toBe(false);
+    expect(decision.attack).not.toBeNull();
+  });
+
+  it('respects the right arena boundary for player two', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const cornered = { ...base, positionOne: 86, positionTwo: 93 };
+    const decision = decideCombatAi(
+      cornered, 'two', fighterOne, fighterTwo, 'overlord', () => 0.5,
+    );
+    expect(decision.input.right).toBe(false);
+    expect(decision.attack).not.toBeNull();
+  });
+
+  it('avoids futile retreat commands within two lane units of either wall', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    for (const [side, positionOne, positionTwo] of [
+      ['one', 8, 15],
+      ['two', 85, 92],
+    ] as const) {
+      const state = { ...base, positionOne, positionTwo };
+      const decision = decideCombatAi(
+        state, side, fighterOne, fighterTwo, 'overlord', () => 0.5,
+      );
+      expect(side === 'one' ? decision.input.left : decision.input.right).toBe(false);
+    }
+  });
+
+  it('still permits tactical retreat when space is available', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const open = { ...base, positionOne: 44, positionTwo: 51 };
+    const decision = decideCombatAi(
+      open, 'one', fighterOne, fighterTwo, 'overlord', () => 0,
+    );
+    expect(decision.input.left).toBe(true);
+    expect(decision.attack).toBeNull();
+  });
+
+  it('punishes an opponent in hitstun on standard and overlord', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const vulnerable = {
+      ...base,
+      positionOne: 44,
+      positionTwo: 51,
+      actionOne: 'hit' as const,
+      actionMsOne: 180,
+    };
+    for (const difficulty of ['standard', 'overlord'] as const) {
+      const decision = decideCombatAi(
+        vulnerable, 'two', fighterOne, fighterTwo, difficulty, () => 0,
+      );
+      expect(decision.attack).toBe('heavy');
+      expect(decision.input.guard).toBe(false);
+    }
+  });
+
+  it('does not punish hitstun outside heavy attack range', () => {
+    const base = createCombatState(fighterOne, fighterTwo);
+    const distant = {
+      ...base,
+      positionOne: 30,
+      positionTwo: 70,
+      actionOne: 'hit' as const,
+      actionMsOne: 180,
+    };
+    const decision = decideCombatAi(
+      distant, 'two', fighterOne, fighterTwo, 'overlord', () => 0,
+    );
+    expect(decision.attack).toBeNull();
+    expect(decision.input.left).toBe(true);
   });
 
   it('uses slower reaction intervals at lower difficulties', () => {

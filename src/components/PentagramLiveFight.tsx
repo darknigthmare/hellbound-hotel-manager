@@ -961,6 +961,11 @@ export function PentagramLiveFight({
   const phaseLabel = fightPhase === 'ready'
     ? 'Ready'
     : fightPhase === 'fight' ? 'Fight!' : fightPhase === 'paused' ? 'Paused' : null;
+  // Use the last attack that hit this defender to select its impact shape.
+  const impactOneKind = combat.guardOne ? 'guard' : combat.lastHitAttackOne ?? 'light';
+  const impactTwoKind = combat.guardTwo ? 'guard' : combat.lastHitAttackTwo ?? 'light';
+  const impactOneTheme = fighterTwoDefinition.style === 'zoner' ? 'arcane' : 'physical';
+  const impactTwoTheme = fighterOneDefinition.style === 'zoner' ? 'arcane' : 'physical';
   const fighterOneStyle = {
     '--arena-x': `${combat.positionOne}%`,
     '--arena-action-ms': fighterOneActionDurationMs !== undefined
@@ -1091,6 +1096,9 @@ export function PentagramLiveFight({
             <span style={{ width: `${combat.tensionOne}%` }} />
           </span>
           <small>HP {combat.hpOne} · Tension {combat.tensionOne} · {getActionLabel(combat.actionOne)}</small>
+          {combat.active && combat.comboOne >= 2 && <strong className="arena-combo-count" aria-label={`${fighterOne.name}: ${combat.comboOne} hit combo`}>
+            {combat.comboOne} HIT COMBO
+          </strong>}
         </div>
         <div className="arena-hud__fighter is-p2">
           <strong>{fighterTwo.name}</strong>
@@ -1124,6 +1132,9 @@ export function PentagramLiveFight({
             <span style={{ width: `${combat.tensionTwo}%` }} />
           </span>
           <small>HP {combat.hpTwo} · Tension {combat.tensionTwo} · {getActionLabel(combat.actionTwo)}</small>
+          {combat.active && combat.comboTwo >= 2 && <strong className="arena-combo-count" aria-label={`${fighterTwo.name}: ${combat.comboTwo} hit combo`}>
+            {combat.comboTwo} HIT COMBO
+          </strong>}
         </div>
       </div>
 
@@ -1202,7 +1213,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionOne)}</span>
           <span className="arena-fighter-shadow" />
           {!fighterOneCinematicKind && <span className="arena-action-trail" />}
-          {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className="arena-hit-spark" />}
+          {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className={`arena-hit-spark is-${impactOneKind} is-${impactOneTheme}`} />}
           {fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -1226,7 +1237,7 @@ export function PentagramLiveFight({
           <span className="arena-guard-badge">{getActionLabel(combat.actionTwo)}</span>
           <span className="arena-fighter-shadow" />
           {!fighterTwoCinematicKind && <span className="arena-action-trail" />}
-          {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className="arena-hit-spark" />}
+          {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className={`arena-hit-spark is-${impactTwoKind} is-${impactTwoTheme}`} />}
           {fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (
