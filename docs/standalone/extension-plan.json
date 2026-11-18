@@ -11760,5 +11760,812 @@
       "evidence": "onscreen",
       "source": "SRC-PR-01"
     }
-  ]
+  ],
+  "productionBible": {
+    "edition": "2026-11-18",
+    "baseCommit": "2f65b8d4ec90f22cda83979f926df5f6afe3c220",
+    "fighterDesign": [
+      {
+        "fighter": "charlie",
+        "signature": "Porte ouverte",
+        "input": "Quart avant + léger",
+        "effect": "Pose un seuil immobile. Si l’adversaire avance dessus, Charlie gagne une reprise courte.",
+        "counter": "Le seuil apparaît sous la porte et disparaît après une activation. Arrêter l’avancée ou l’enjamber.",
+        "finisher": "La seconde clé",
+        "storyboard": "Charlie intercepte le dernier coup, remet l’adversaire debout et lui laisse une clé de chambre.",
+        "lastImage": "L’adversaire regarde la clé. Charlie ouvre la porte de l’hôtel."
+      },
+      {
+        "fighter": "vaggie",
+        "signature": "Ligne de défense",
+        "input": "Avant + lourd",
+        "effect": "Estoc court puis retour en garde. La pointe contrôle le pas suivant après une avancée imprudente.",
+        "counter": "L’épaule descend avant l’estoc. Faire manquer à mi-portée puis entrer sur le retrait.",
+        "finisher": "Fin de ronde",
+        "storyboard": "La hampe bloque la sortie. Vaggie désarme l’adversaire d’un revers et désigne la porte.",
+        "lastImage": "La lance revient à la verticale. Le vaincu sort du cadre."
+      },
+      {
+        "fighter": "angeldust",
+        "signature": "Changement de prise",
+        "input": "Quart arrière + léger",
+        "effect": "Un premier bras feinte haut. Une seconde paire frappe si le joueur retarde la touche.",
+        "counter": "Les poignets changent de hauteur. Attendre le second temps ou interrompre la feinte.",
+        "finisher": "Dernier projecteur",
+        "storyboard": "Les projecteurs découpent trois silhouettes. Angel tourne sous le dernier faisceau et laisse tomber l’accessoire adverse.",
+        "lastImage": "Il prend congé de la scène en choisissant lui-même sa sortie."
+      },
+      {
+        "fighter": "alastor",
+        "signature": "Larsen",
+        "input": "Quart arrière + spécial",
+        "effect": "Dépose un poste qui répète une frappe une fois. Un seul poste peut sonner à l’écran.",
+        "counter": "Le cadran monte avant la reprise. S’éloigner du poste ou interrompre sa pose.",
+        "finisher": "Fin des ondes",
+        "storyboard": "La canne touche le plancher. Une ombre ferme les volets du studio, puis la porte absorbe la silhouette vaincue.",
+        "lastImage": "L’aiguille du poste revient à zéro, sourire d’Alastor en contre-jour."
+      },
+      {
+        "fighter": "husk",
+        "signature": "Carte retournée",
+        "input": "Arrière + lourd",
+        "effect": "Lance une carte en cloche. Son rebond fixe invite à avancer derrière elle.",
+        "counter": "Le verso brille à l’apogée. Passer sous la carte tôt ou garder le rebond.",
+        "finisher": "Maison fermée",
+        "storyboard": "Un éventail de cartes dirige l’adversaire jusqu’à la dernière chaise du bar. Le tabouret tourne et s’arrête.",
+        "lastImage": "Husk retourne un sous-verre et range son jeu."
+      },
+      {
+        "fighter": "niffty",
+        "signature": "Ras du tapis",
+        "input": "Bas, avant + léger",
+        "effect": "Glisse au sol sur une courte distance. Une collision termine la glissade et laisse Niffty visible.",
+        "counter": "Le dos se tasse avant le départ. Reculer puis punir le temps de redressement.",
+        "finisher": "Grand nettoyage",
+        "storyboard": "Niffty fond sur une tache au pied du rival. Un nuage de poussière retombe sur le tapis roulé.",
+        "lastImage": "Deux chaussures dépassent du tapis. Elle inspecte le sol."
+      },
+      {
+        "fighter": "sirpentious",
+        "signature": "Rappel mécanique",
+        "input": "Quart avant + lourd",
+        "effect": "Un petit dispositif roule en ligne. Une seconde pression l’arrête sur place avant son extinction.",
+        "counter": "Le voyant change lorsque la roue se bloque. Rester hors de la zone ou gagner le contact.",
+        "finisher": "Inspection de bord",
+        "storyboard": "Le levier déclenche un filet de démonstration à l’arrivée du rival. Pentious salue, puis cherche le bouton pour le libérer.",
+        "lastImage": "Un Egg Boi indique le bon bouton."
+      },
+      {
+        "fighter": "lucifer",
+        "signature": "Tour de piste",
+        "input": "Quart arrière + spécial",
+        "effect": "Déplacement court entre deux marques illuminées. L’arrivée reste attaquable.",
+        "counter": "Les deux marques s’allument ensemble. Couvrir la sortie au lieu de poursuivre l’entrée.",
+        "finisher": "Rappel du maître de piste",
+        "storyboard": "La canne commande une trappe de scène. Un bouquet de plumes monte pendant que le rival tombe sur une pile de coussins.",
+        "lastImage": "Un canard en caoutchouc atterrit dans sa main."
+      },
+      {
+        "fighter": "cherribomb",
+        "signature": "Rebond peint",
+        "input": "Quart avant + léger",
+        "effect": "L’objet rebondit une fois. Une marque au sol montre l’endroit de l’effet et autorise un passage rapproché.",
+        "counter": "Observer le premier rebond, avancer derrière lui ou quitter le marquage.",
+        "finisher": "Dernière mèche",
+        "storyboard": "Cherri fait rouler son accessoire sous une rampe de spectacle. L’impact projette le rival derrière un panneau.",
+        "lastImage": "Le panneau tombe et révèle sa signature peinte."
+      },
+      {
+        "fighter": "vox",
+        "signature": "Image décalée",
+        "input": "Quart arrière + lourd",
+        "effect": "Une image retardée reprend un pas du combattant. Seule la silhouette pleine peut toucher.",
+        "counter": "Les lignes de balayage trahissent l’image secondaire. Garder l’original en vue.",
+        "finisher": "Coupure régie",
+        "storyboard": "L’image du perdant se multiplie sur les moniteurs. Vox ferme les écrans un par un, puis coupe le plateau.",
+        "lastImage": "Une unique mire reste allumée."
+      },
+      {
+        "fighter": "valentino",
+        "signature": "Rideau de fumée",
+        "input": "Quart arrière + léger",
+        "effect": "Fait progresser un nuage lent qui révèle une seule frappe à sa dissipation. La silhouette reste détourée.",
+        "counter": "Le bord violet avance avant l’impact. Reculer ou couper la pose.",
+        "finisher": "Hors champ",
+        "storyboard": "Valentino rabat un rideau sur la scène. Le vaincu en ressort en silhouette, sonné, pendant qu’un néon s’éteint.",
+        "lastImage": "Le fauteuil pivote vers un plateau vide."
+      },
+      {
+        "fighter": "velvette",
+        "signature": "Changement de look",
+        "input": "Avant + spécial",
+        "effect": "Change la durée d’une feinte de pose. Le pas final est toujours visible, même en mode réduit.",
+        "counter": "La hanche pivote avant le pas. Attendre cette pose commune et garder.",
+        "finisher": "Couverture du soir",
+        "storyboard": "Un cadre photo se referme sur le rival. Velvette redresse le cadrage et balaye le cliché hors écran.",
+        "lastImage": "Une vignette froissée tombe au sol."
+      },
+      {
+        "fighter": "adam",
+        "signature": "Accord suspendu",
+        "input": "Quart avant + lourd",
+        "effect": "Un accord vertical couvre une entrée tardive. La zone au sol reste libre après la montée.",
+        "counter": "Le manche se lève et la bande lumineuse précède l’attaque. Rester au sol et attendre la retombée.",
+        "finisher": "Extinction des amplis",
+        "storyboard": "Un dernier accord rabat la silhouette sur le rideau derrière la scène. Les amplis s’éteignent en cascade.",
+        "lastImage": "Adam tient la pose devant un micro désormais muet."
+      },
+      {
+        "fighter": "emily",
+        "signature": "Interlude",
+        "input": "Arrière + spécial",
+        "effect": "Un cercle bref protège une seule approche. Il disparaît si Emily avance ou rate sa lecture.",
+        "counter": "Les mains se rejoignent avant le cercle. Attendre son extinction ou feinter l’approche.",
+        "finisher": "La place accordée",
+        "storyboard": "Emily suspend la dispute par un geste ouvert. Deux sièges s’abaissent, l’adversaire accepte de s’asseoir.",
+        "lastImage": "Elle se met à sa hauteur et baisse les ailes."
+      },
+      {
+        "fighter": "sera",
+        "signature": "Clôture d’audience",
+        "input": "Quart avant + spécial",
+        "effect": "Une limite descend à distance fixe. Elle retarde l’entrée d’un côté et laisse une ouverture à ses pieds.",
+        "counter": "L’ombre du cadre précède sa descente. Passer avant la fermeture ou attendre.",
+        "finisher": "Audience levée",
+        "storyboard": "Les pans du décor se referment entre les duellistes. Sera reste face à une salle silencieuse.",
+        "lastImage": "La lumière de la tribune s’éteint."
+      },
+      {
+        "fighter": "lute",
+        "signature": "Rupture de ligne",
+        "input": "Avant + lourd",
+        "effect": "Percée directe, sensible à une esquive préalable. L’allonge récompense une lecture du recul.",
+        "counter": "La lance se place à hauteur d’épaule. Quitter l’axe puis punir la fin de course.",
+        "finisher": "Dernière sommation",
+        "storyboard": "Lute fixe l’accessoire adverse au décor d’un coup sec. L’ombre du vaincu tombe à genoux derrière une aile.",
+        "lastImage": "La lance se redresse dans le silence."
+      },
+      {
+        "fighter": "carmilla",
+        "signature": "Pointe d’appui",
+        "input": "Bas, avant + lourd",
+        "effect": "Pivot sur une jambe puis coup ascendant. La rotation crée un angle mort au départ.",
+        "counter": "Le talon se lève avant la rotation. Interrompre tôt ou attendre le retour au sol.",
+        "finisher": "Dernière révérence",
+        "storyboard": "Deux tracés de pointe encerclent le rival. Carmilla le déséquilibre, puis arrête sa lame avant le contact final.",
+        "lastImage": "Une révérence clôt la scène."
+      },
+      {
+        "fighter": "rosie",
+        "signature": "Pas de réception",
+        "input": "Arrière + léger",
+        "effect": "Un pas d’accueil attire à portée de riposte. La riposte exige un contact pendant la pose.",
+        "counter": "Le poignet s’incline. Feinter le contact puis attaquer à la sortie.",
+        "finisher": "Table réservée",
+        "storyboard": "Les chaises de la place se rangent derrière l’adversaire. Rosie l’invite à s’asseoir au centre du cercle.",
+        "lastImage": "Un couvert est posé. Les rideaux du restaurant se ferment."
+      },
+      {
+        "fighter": "zestial",
+        "signature": "Longue attente",
+        "input": "Arrière + spécial",
+        "effect": "Maintient une pose intimidante. Relâcher donne un balayage lent dont la portée croît une seule fois.",
+        "counter": "Le manteau s’ouvre au deuxième temps. Entrer au premier ou rester hors de portée.",
+        "finisher": "Silence de la galerie",
+        "storyboard": "L’ombre du manteau grandit sur le mur. Le rival abandonne la scène lorsque le dernier lampion s’éteint.",
+        "lastImage": "Seul un profil immobile reste éclairé."
+      },
+      {
+        "fighter": "zeezi",
+        "signature": "Pas de basse",
+        "input": "Bas + lourd",
+        "effect": "Piétinement de proximité. Un deuxième rythme retardé couvre les pas courts, avec une pause entre les deux.",
+        "counter": "Le genou pointe vers l’extérieur. Reculer ou sauter l’onde si le saut physique est disponible.",
+        "finisher": "Le dernier temps",
+        "storyboard": "Le sol de scène clignote sous le dernier pas et l’estrade adverse s’abaisse dans les coulisses.",
+        "lastImage": "Le rythme revient au calme sur la scène vide."
+      },
+      {
+        "fighter": "baxter",
+        "signature": "Flacon témoin",
+        "input": "Quart avant + léger",
+        "effect": "Lance un marqueur coloré qui révèle une zone d’échantillonnage. Une seule zone active à la fois.",
+        "counter": "Le flacon change de main. Traverser avant que le cercle se stabilise.",
+        "finisher": "Essai terminé",
+        "storyboard": "Un écran de laboratoire descend entre les duellistes. Une silhouette brouillée laisse une empreinte sur la vitre.",
+        "lastImage": "Baxter étiquette l’échantillon et referme son carnet."
+      },
+      {
+        "fighter": "abel",
+        "signature": "Repli ordonné",
+        "input": "Arrière + spécial",
+        "effect": "Recule sous une garde brève. La récupération est plus longue lorsqu’aucun coup ne l’atteint.",
+        "counter": "Le talon recule avant le mouvement. Marcher derrière lui sans frapper.",
+        "finisher": "La consigne",
+        "storyboard": "Abel siffle l’arrêt. Le rival lâche son accessoire et sort entre deux faisceaux de lumière.",
+        "lastImage": "Il range son insigne et attend que la porte se referme."
+      },
+      {
+        "fighter": "hb_blitzo",
+        "signature": "Sortie de service",
+        "input": "Quart arrière + léger",
+        "effect": "Fait mine de battre en retraite puis bondit d’un pas vers l’angle mort. Le pas reste punissable à vide.",
+        "counter": "La queue change d’appui avant le retour. Couvrir le point d’arrivée.",
+        "finisher": "Devis signé",
+        "storyboard": "Blitzø chasse le rival vers la porte du bureau, la referme et colle la facture dessus.",
+        "lastImage": "Une main repousse la facture sous la porte."
+      },
+      {
+        "fighter": "hb_moxxie",
+        "signature": "Temps mesuré",
+        "input": "Arrière + lourd",
+        "effect": "Maintient une visée de jeu sur une ligne unique. Relâcher tôt sacrifie de la portée pour reprendre la garde.",
+        "counter": "Le point de visée apparaît avant toute touche. Avancer pendant la mise en place.",
+        "finisher": "Point final",
+        "storyboard": "Trois impacts stylisés perforent un décor en carton autour de la silhouette. Moxxie vérifie sa partition puis salue.",
+        "lastImage": "Le carton bascule et dévoile le rival assis, dépité."
+      },
+      {
+        "fighter": "hb_millie",
+        "signature": "Retour de balancier",
+        "input": "Quart avant + lourd",
+        "effect": "Large arc de hache suivi d’un retour retardé si le premier geste rencontre la garde.",
+        "counter": "La main arrière glisse sur le manche. Reculer hors du second arc puis entrer.",
+        "finisher": "Le ruban bleu",
+        "storyboard": "Millie sectionne les attaches d’une bannière de foire. Le tissu s’abat autour du rival comme un paquet.",
+        "lastImage": "Elle noue le ruban et prend la pose."
+      },
+      {
+        "fighter": "hb_loona",
+        "signature": "Crochet de poursuite",
+        "input": "Avant, avant + léger",
+        "effect": "Bond court avec réception vers l’avant. La trajectoire se fixe au départ.",
+        "counter": "Les oreilles s’abaissent avant l’impulsion. Se décaler à l’envol ou garder la réception.",
+        "finisher": "Service terminé",
+        "storyboard": "Loona bondit dans le contre-jour. Un téléphone vibre pendant que la silhouette adverse glisse hors du bureau.",
+        "lastImage": "Elle décroche et retourne à son comptoir."
+      },
+      {
+        "fighter": "hb_stolas",
+        "signature": "Fenêtre astrale",
+        "input": "Quart arrière + spécial",
+        "effect": "Ouvre deux fenêtres dont la sortie est visible. Le déplacement consomme la marque et empêche un enchaînement en boucle.",
+        "counter": "Des étoiles dessinent la sortie avant le passage. Préparer une riposte à cet endroit.",
+        "finisher": "Page tournée",
+        "storyboard": "Une page du grimoire encadre le rival et le dépose hors de l’arène. Stolas observe le cadre se replier.",
+        "lastImage": "Le livre se ferme sous une petite constellation."
+      },
+      {
+        "fighter": "hb_striker",
+        "signature": "Marque du chasseur",
+        "input": "Avant + lourd",
+        "effect": "Fixe une marque de duel à mi-distance. Le coup suivant couvre le point marqué après un délai.",
+        "counter": "Le regard et le pied visent la même marque. Changer de distance avant la reprise.",
+        "finisher": "Dernier avis",
+        "storyboard": "Le rival recule sur une marque blanche. Une corde de spectacle arrache son accessoire et un avis se déroule au premier plan.",
+        "lastImage": "Striker décroche l’avis et s’éloigne."
+      },
+      {
+        "fighter": "hb_verosika",
+        "signature": "Contretemps",
+        "input": "Quart arrière + léger",
+        "effect": "Un pas chanté retarde la reprise. Le second appui, visible sans son, déclenche une poussée courte.",
+        "counter": "Observer les deux appuis. Punir après la dernière note ou interrompre au premier appui.",
+        "finisher": "Bis refusé",
+        "storyboard": "Verosika passe le micro au rival. Les projecteurs le cherchent, le rideau l’escamote et le public rappelle la chanteuse.",
+        "lastImage": "Elle quitte la scène avant le rappel."
+      },
+      {
+        "fighter": "hb_fizzarolli",
+        "signature": "Bras à ressort",
+        "input": "Quart avant + lourd",
+        "effect": "Étend un bras jusqu’à une marque. Le retrait augmente la vulnérabilité à mesure que l’allonge augmente.",
+        "counter": "Le coude se replie en accordéon. Passer sous le bras ou punir le retrait.",
+        "finisher": "Numéro de sortie",
+        "storyboard": "Le bras articulé saisit un anneau. Une balançoire enlève le rival hors du cercle lumineux.",
+        "lastImage": "Fizz retombe sur les deux pieds et salue."
+      },
+      {
+        "fighter": "hb_asmodeus",
+        "signature": "Lever de rideau",
+        "input": "Quart avant + spécial",
+        "effect": "Une frontière s’ouvre à mi-distance puis se referme. L’effet est symétrique pour garder une lecture stable.",
+        "counter": "La lumière au sol dessine le cadre. Sortir du contour ou passer pendant l’ouverture.",
+        "finisher": "Salle comble",
+        "storyboard": "Des flammes de scène dessinent un arc autour du rival et l’orientent vers les coulisses. Un bras ramène le micro au centre.",
+        "lastImage": "Le cabaret reprend son souffle."
+      },
+      {
+        "fighter": "hb_beelzebub",
+        "signature": "Rebond de fête",
+        "input": "Avant + léger",
+        "effect": "Se déplace suivant deux appuis, avec une seule zone de touche au deuxième temps.",
+        "counter": "La couleur de la traînée change au deuxième appui. Garder jusque-là ou punir entre les pas.",
+        "finisher": "Dernier toast",
+        "storyboard": "Le comptoir tourne, le rival glisse sur un coussin géant et la foule lève ses verres au-dessus de lui.",
+        "lastImage": "Bee rend le verre tombé et relance la fête."
+      },
+      {
+        "fighter": "hb_crimson",
+        "signature": "Porte dérobée",
+        "input": "Quart arrière + lourd",
+        "effect": "Ouvre un passage de décor qui produit une frappe retardée à distance fixe. Un seul signal à l’écran.",
+        "counter": "La poignée tourne avant la frappe. Rester de l’autre côté de la marque.",
+        "finisher": "Réunion ajournée",
+        "storyboard": "Le dossier d’un fauteuil masque le rival. Crimson claque des doigts et deux portes se referment autour du siège.",
+        "lastImage": "Une enveloppe reste seule sur la table."
+      },
+      {
+        "fighter": "hb_andrealphus",
+        "signature": "Arc de givre",
+        "input": "Quart avant + lourd",
+        "effect": "Une arche de glace se forme à distance moyenne. Sa base matérialise la seule zone active.",
+        "counter": "Le givre dessine la base avant de monter. Entrer très tôt ou se retirer avant la fermeture.",
+        "finisher": "Vitrine d’hiver",
+        "storyboard": "Le contour du rival se fige dans un cadre de glace stylisé. Une plume en dessine le dernier angle.",
+        "lastImage": "Le cadre pivote vers un jardin silencieux."
+      }
+    ],
+    "stageDesign": [
+      {
+        "id": "hotel-lobby",
+        "name": "Hall de l’hôtel",
+        "back": "Fenêtres hautes, ville rouge lointaine",
+        "middle": "Escalier central, mezzanine et comptoir",
+        "floor": "Double liseré du tapis sur une ligne de sol continue",
+        "ambient": "Pompon du rideau, poussière au-dessus des lampes",
+        "composition": "Accueil. Garder deux issues visibles de part et d’autre de l’escalier.",
+        "reference": "Comparer l’hôtel de la période retenue. Éviter de mélanger façade d’origine et reconstruction."
+      },
+      {
+        "id": "hotel-bar",
+        "name": "Bar de Husk",
+        "back": "Étagères sombres derrière les bouteilles",
+        "middle": "Comptoir et ligne de tabourets",
+        "floor": "Bord de table et sous-verres sous la ligne des pieds",
+        "ambient": "Reflet sur un verre pendant le repos uniquement",
+        "composition": "Rapproché intime. Conserver la silhouette d’un personnage noir sur le comptoir.",
+        "reference": "S1E4 pour les rapports Husk / Angel. Repérer séparément le plan exact du bar."
+      },
+      {
+        "id": "hotel-exterior",
+        "name": "Perron de l’hôtel",
+        "back": "Ciel et toits inclinés de Pentagram City",
+        "middle": "Façade, porte et marches de l’hôtel",
+        "floor": "Bord horizontal de la marche jouable",
+        "ambient": "Drapeau en hauteur, poussière sur les côtés",
+        "composition": "Confrontation publique. La porte reste lisible derrière le joueur central.",
+        "reference": "Annoter la version du bâtiment. S1E8 comprend des états très différents."
+      },
+      {
+        "id": "pentagram-rooftops",
+        "name": "Toits de Pentagram City",
+        "back": "Silhouette urbaine à plusieurs hauteurs",
+        "middle": "Antennes et panneaux derrière les combattants",
+        "floor": "Corniche rectiligne en façade",
+        "ambient": "Câbles souples aux extrémités",
+        "composition": "Conserver le ciel libre autour des silhouettes en l’air.",
+        "reference": "L’agencement du toit est une composition du jeu."
+      },
+      {
+        "id": "cannibal-town-square",
+        "name": "Place de Cannibal Town",
+        "back": "Rangée de toitures, horizon de la place",
+        "middle": "Vitrines à auvents et devantures",
+        "floor": "Pavage horizontal dégagé",
+        "ambient": "Store en tissu, silhouettes en retrait",
+        "composition": "Créer un trottoir assez large pour la garde de deux grands personnages.",
+        "reference": "Repérage S1E7 et comparaison des devantures avant validation."
+      },
+      {
+        "id": "carmine-industries",
+        "name": "Quai de Carmilla",
+        "back": "Charpente et poutrelles en perspective",
+        "middle": "Caisses et travées d’entrepôt",
+        "floor": "Bande de quai à hauteur constante",
+        "ambient": "Chaîne haute, voyant feutré",
+        "composition": "Ligne de duel nette pour la lecture des pointes de Carmilla.",
+        "reference": "Séparer l’identité industrielle de la chorégraphie inventée pour le duel."
+      },
+      {
+        "id": "vee-broadcast-studio",
+        "name": "Studio des Vees",
+        "back": "Baie au-dessus de la ville et moniteurs lointains",
+        "middle": "Plateau central, table de régie",
+        "floor": "Bord de plateau et marques de caméra",
+        "ambient": "Mire hors centre avec changement lent",
+        "composition": "Mettre en valeur l’opposition radio / télévision en laissant libre la zone des visages.",
+        "reference": "S1E2 pour le conflit entre médias. Version du plateau à repérer."
+      },
+      {
+        "id": "heaven-embassy",
+        "name": "Ambassade et tour",
+        "back": "Ville et contours lumineux de la tour",
+        "middle": "Grille, balcon, cadran",
+        "floor": "Dalles claires avec zone de combat contrastée",
+        "ambient": "Aiguille du cadran, lumière continue",
+        "composition": "L’aile d’un combattant clair doit rester lisible à droite comme à gauche.",
+        "reference": "Le tribunal céleste et l’ambassade sont des lieux distincts."
+      },
+      {
+        "id": "imp-reception",
+        "name": "Réception I.M.P.",
+        "back": "Pièce et fenêtres de la réception",
+        "middle": "Comptoir de la réception, détouré",
+        "floor": "Lampe détourée au premier plan, sol tenu fixe",
+        "ambient": "Enseigne et objets légers hors zone de frappe",
+        "composition": "Préserver la circulation entre guichet et porte. L’entrée reste reconnaissable à chaque extrémité.",
+        "reference": "Relier au chantier historique imp-office. Examen du décor à partir des scènes de bureau."
+      },
+      {
+        "id": "wrath-ranch",
+        "name": "Ranch de Wrath",
+        "back": "Collines et ciel sec en strates",
+        "middle": "Ferme et clôture du ranch",
+        "floor": "Rail bas et terre battue",
+        "ambient": "Foin qui roule derrière les combattants",
+        "composition": "Couloir long. Un projectile doit rester visible devant les poteaux.",
+        "reference": "Repérage Helluva S1E5."
+      },
+      {
+        "id": "ozzies",
+        "name": "Cabaret d’Ozzie",
+        "back": "Étage supérieur du club",
+        "middle": "Scène, rideaux, tables disposées en gradins",
+        "floor": "Bord rectiligne du parquet",
+        "ambient": "Deux projecteurs hors de l’axe des joueurs",
+        "composition": "Rythme lisible en jeu muet. Stabiliser l’éclairage derrière les têtes.",
+        "reference": "Repérage Helluva S1E7."
+      },
+      {
+        "id": "looloo-land",
+        "name": "Loo Loo Land",
+        "back": "Manèges et montagnes silhouettés",
+        "middle": "Kiosque et façade de piste",
+        "floor": "Tapis de cirque et deux petits fanions latéraux",
+        "ambient": "Grande roue lente, programmes qui flottent",
+        "composition": "La palette du parc s’atténue au centre pour distinguer Fizzarolli.",
+        "reference": "Repérage Helluva S1E2. Identifier l’incarnation locale de l’animatronique."
+      }
+    ],
+    "modeDesign": [
+      {
+        "name": "Versus CPU",
+        "status": "Socle V1",
+        "selection": "Choisir J1, adversaire, arène et difficulté.",
+        "rules": "Deux manches gagnantes. Une revanche crée un nouveau résultat.",
+        "progress": "Progression locale et historique borné.",
+        "check": "Relancer le même duel puis changer d’arène. Les compteurs progressent une fois par match."
+      },
+      {
+        "name": "Versus local",
+        "status": "Socle V1",
+        "selection": "Deux joueurs choisissent leurs combattants sur un appareil partagé.",
+        "rules": "Mêmes règles que le CPU. Les commandes de chacun doivent rester distinctes.",
+        "progress": "Le résultat est attribué à l’orientation J1 retenue par le palmarès.",
+        "check": "Tester le miroir de personnages et les pressions simultanées."
+      },
+      {
+        "name": "Entraînement",
+        "status": "Socle V1",
+        "selection": "Choisir un mannequin immobile ou en garde.",
+        "rules": "Tension illimitée, remise en état après K.-O. et réinitialisation.",
+        "progress": "Le dojo reste hors du palmarès.",
+        "check": "Dépenser la jauge, terminer un duel, réinitialiser puis vérifier le palmarès."
+      },
+      {
+        "name": "Arcade",
+        "status": "Socle V1",
+        "selection": "Choisir son combattant et le périmètre du roster.",
+        "rules": "Cinq duels successifs. Les PV sont restaurés au suivant.",
+        "progress": "La graine et l’index permettent de reprendre entre deux duels.",
+        "check": "Quitter avant le quatrième duel, revenir et retrouver l’adversaire attendu."
+      },
+      {
+        "name": "Survie",
+        "status": "Socle V1",
+        "selection": "Lancer un parcours à partir du roster filtré.",
+        "rules": "Vingt duels. Les PV repartent à plein dans cette version.",
+        "progress": "Le record de survie se lit dans la progression locale.",
+        "check": "Perdre puis réessayer et contrôler le record sans le doubler."
+      },
+      {
+        "name": "Boss Rush",
+        "status": "Socle V1",
+        "selection": "Choisir le héros. Tirer dans les identifiants de boss autorisés.",
+        "rules": "Rencontres avec les kits de boss de l’arène.",
+        "progress": "Conserver la suite tirée à la reprise.",
+        "check": "Comparer tous les adversaires au sous-ensemble filtré des boss."
+      },
+      {
+        "name": "Histoire",
+        "status": "Lot du 18 novembre",
+        "selection": "Sélectionner un héros dont les trois adversaires sont disponibles dans le filtre.",
+        "rules": "Prologue, trois duels scénarisés, scène de rivalité finale, épilogue écrit. Le scénario reste une fiction de l’arène.",
+        "progress": "Reprise entre duels. La dernière victoire débloque l’épilogue dans le Codex, y compris après un nouveau parcours et après export / import.",
+        "check": "Depuis une sauvegarde neuve, terminer puis relire le dernier écran. Parcourir les filtres qui excluent un rival."
+      },
+      {
+        "name": "Tournoi",
+        "status": "Lot du 18 novembre",
+        "selection": "Choisir le participant et conserver les filtres pour le tirage.",
+        "rules": "Tableau à élimination directe de 8, 4 ou 2. Les autres branches sont simulées à partir de la graine.",
+        "progress": "Reconstituer le tableau de la même graine et conserver le chemin du joueur.",
+        "check": "Vérifier qu’aucun éliminé ne réapparaît, puis terminer la finale et reprendre à chaque tour."
+      },
+      {
+        "name": "Défis de combos",
+        "status": "Proposition",
+        "selection": "Choisir une fiche par technique et sa démonstration.",
+        "rules": "Afficher les entrées, mesurer contact et annulation, réinitialiser un échec sans chargement.",
+        "progress": "Mémoriser l’exercice réussi par combattant et sa version de règles.",
+        "check": "Une commande exécutée hors de portée échoue au défi de touche."
+      },
+      {
+        "name": "Dojo avancé",
+        "status": "Proposition",
+        "selection": "Enregistrer trois réponses du mannequin et choisir un côté.",
+        "rules": "Lecture du dernier essai, pas à pas, boîtes de frappe et garde après le premier contact.",
+        "progress": "Garder les réglages du mannequin séparés des statistiques.",
+        "check": "L’affichage indique la même frame de contact à la vitesse normale et au ralenti."
+      },
+      {
+        "name": "Équipe relais",
+        "status": "Proposition",
+        "selection": "Choisir deux membres par côté et confirmer leur ordre.",
+        "rules": "Une entrée sur demande et un temps de rappel. Conserver PV et jauge de chaque membre.",
+        "progress": "Versionner les sauvegardes avant l’ajout d’une équipe.",
+        "check": "Un membre mis K.-O. ne peut pas rappeler un partenaire hors combat."
+      },
+      {
+        "name": "Relecture",
+        "status": "Proposition",
+        "selection": "Sélectionner un match enregistré régi par la même version des règles.",
+        "rules": "Rejouer la graine et les entrées horodatées. Contrôler l’état final par empreinte.",
+        "progress": "Conserver version moteur, deux kits, arène, options et graine.",
+        "check": "Deux lectures du même flux donnent les mêmes PV, vainqueur et index de manche."
+      },
+      {
+        "name": "Jeu réseau",
+        "status": "Proposition",
+        "selection": "Un duel privé invite deux appareils à charger la même version.",
+        "rules": "Entrées datées, prédiction des commandes et restauration des états. Requiert déterminisme vérifié.",
+        "progress": "Journal de session versionné, hors du tournoi local.",
+        "check": "Introduire du retard et des pertes sur un réseau de test. Comparer les états des deux joueurs."
+      }
+    ],
+    "workshop": [
+      {
+        "type": "Système",
+        "subject": "Manche et temps",
+        "status": "Socle V1",
+        "spec": "100 PV par combattant, zéro tension au départ, 99 s, deux manches gagnantes. Un double K.-O. produit une manche nulle.",
+        "acceptance": "Mesurer une égalité à zéro seconde. Vérifier l’absence de double résultat et que le match continue tant qu’aucun côté n’a ses deux manches."
+      },
+      {
+        "type": "Système",
+        "subject": "Impact",
+        "status": "Socle V1",
+        "spec": "Une attaque teste la distance au premier instant actif. Un contact fige la simulation 58 ms. Le combo se lit dans une fenêtre de 1 200 ms.",
+        "acceptance": "Au départ, laisser les combattants aux positions 22 et 78. Un léger manque, puis touche à la distance indiquée dans Données moteur."
+      },
+      {
+        "type": "Système",
+        "subject": "Garde et tension",
+        "status": "Socle V1",
+        "spec": "La garde réduit les dégâts au contact. Le spécial consomme 50 sur 100. Toucher donne de la tension, même sur garde. Frapper dans le vide n’en donne aucune.",
+        "acceptance": "Observer la jauge sur trois essais identiques, l’un à vide, l’un en garde et l’autre en touche nette."
+      },
+      {
+        "type": "Système",
+        "subject": "Annulations",
+        "status": "Socle et extension",
+        "spec": "Le léger accepte une annulation vers lourd avant l’impact. La suite lourd → spécial de l’extension exige une touche nette et la tension requise.",
+        "acceptance": "Tester au seuil de tension, sur garde, à vide, en hitstop et sans relâcher la touche."
+      },
+      {
+        "type": "Système",
+        "subject": "Coup commandé",
+        "status": "Proposition",
+        "spec": "Normaliser avant et arrière selon le regard, garder un tampon de huit images à 60 Hz et accepter une diagonale manquante en mode assisté.",
+        "acceptance": "Saisir le même quart de cercle des deux côtés et sur tactile. Une direction maintenue seule ne valide pas le mouvement."
+      },
+      {
+        "type": "Système",
+        "subject": "Projection et déchope",
+        "status": "Proposition",
+        "spec": "Aux distances courtes, léger + lourd tente une saisie. Une déchope laisse les deux adversaires à distance neutre. Le dojo affiche la fenêtre proposée de six images.",
+        "acceptance": "Au-delà de la portée de contact, vérifier l’animation manquée et la vulnérabilité de fin."
+      },
+      {
+        "type": "Système",
+        "subject": "Garde haute et basse",
+        "status": "Proposition",
+        "spec": "Séparer la hauteur d’attaque du visuel de crouch. Un coup bas exige une garde basse et un saut physique passe au-dessus des frappes au sol.",
+        "acceptance": "Tester un coup de chaque hauteur sur garde debout, basse et saut. Inclure deux tailles extrêmes."
+      },
+      {
+        "type": "Système",
+        "subject": "Projectiles et plafond de combos",
+        "status": "Proposition",
+        "spec": "Donner aux projectiles une durée et une zone de collision propres. Diminuer les dégâts à chaque touche d’une chaîne et rétablir une sortie après une limite testée.",
+        "acceptance": "Deux projectiles et deux combattants restent identifiables. Tester la sortie du coin et les doubles impacts."
+      },
+      {
+        "type": "Système",
+        "subject": "Fin de manche",
+        "status": "Direction à animer",
+        "spec": "Premier gain de manche, le gagnant relâche la tension et le perdant se redresse. Dernière manche, maintenir la pose avant résultat. Égalité, deux poses neutres.",
+        "acceptance": "Ne jamais proposer un finisher à l’entraînement, à l’égalité ou après une manche intermédiaire. La variante statique reste lisible."
+      },
+      {
+        "type": "Production",
+        "subject": "Portrait de sélection",
+        "status": "Critère artistique",
+        "spec": "Portrait en buste, regard lisible en vignette et contraste de fond contrôlé. Utiliser le costume et la période retenus par la fiche du personnage.",
+        "acceptance": "Comparer sur la grille réelle, aux tailles ordinateur et téléphone. Vérifier yeux, asymétries et accessoires."
+      },
+      {
+        "type": "Production",
+        "subject": "Sprite de duel",
+        "status": "Critère artistique",
+        "spec": "Une image source par pose, fond transparent. Corps entier en garde latérale face à l’ennemi, pieds alignés sur le pivot du moteur. La garde dédiée de Charlie est disponible dans /assets/sprites/stances/charlie.webp.",
+        "acceptance": "Superposer garde et retour au repos. Contrôler ancrage des pieds, taille relative, bord alpha et arme tenue du bon côté."
+      },
+      {
+        "type": "Production",
+        "subject": "Animation offensive",
+        "status": "Critère artistique",
+        "spec": "Anticipation visible, pose de contact au timing de Données moteur, passage à travers la pose puis retour en garde. Réutiliser les banques prévues dans le registre du moteur.",
+        "acceptance": "Tester en miroir et à vitesse réduite. Un membre supplémentaire, une aile ou une lance ne disparaît pas entre deux poses."
+      },
+      {
+        "type": "Production",
+        "subject": "Réaction et défaite",
+        "status": "Critère artistique",
+        "spec": "Prévoir trois réactions de force différente, le K.-O., le redressement intermédiaire et le dernier arrêt. Le contact fort doit se distinguer sans secousse de caméra.",
+        "acceptance": "Vérifier entrée, silhouette au sommet, retombée et position sur le sol en symétrie gauche / droite."
+      },
+      {
+        "type": "Production",
+        "subject": "Illustration narrative",
+        "status": "Critère artistique",
+        "spec": "Une composition par image. Prologue, rival et épilogue occupent trois fichiers indépendants. Garder le tiers inférieur disponible pour le sous-titrage du jeu.",
+        "acceptance": "Afficher au format du navigateur et sur écran étroit. Comparer le protagoniste à son portrait et la pièce à l’arène associée."
+      },
+      {
+        "type": "Production",
+        "subject": "Présentation des finitions",
+        "status": "Critère artistique",
+        "spec": "Appliquer le choix du joueur après le K.-O. final. La version courte réemploie une pose lisible et le bilan. Les storyboards individuels identifient la version longue à animer.",
+        "acceptance": "L’issue du duel est identique avec passage, lecture complète, pause ou mouvements réduits."
+      },
+      {
+        "type": "Production",
+        "subject": "Plans d’arène",
+        "status": "Cible de production",
+        "spec": "Préparer fond opaque, médian détouré, sol / avant-plan détouré en fichiers séparés. À la réception I.M.P., rapports mesurés dans le composant de scène : 0,20 pour la salle, 0,65 pour le comptoir et 1,20 pour la lampe.",
+        "acceptance": "Placer les joueurs aux deux extrémités, tester 16:9 et mobile. L’horizon, le sol et les pieds coïncident dans chaque position."
+      },
+      {
+        "type": "Production",
+        "subject": "Musique et SFX",
+        "status": "Cible de production",
+        "spec": "Conserver les partitions originales du projet. Prévoir couches d’ambiance, garde, touche légère, lourde et spéciale. Éviter qu’une cadence sonore masque la phase active.",
+        "acceptance": "À volume musical bas puis jeu muet, reconnaître garde, interruption et fin de manche. Tester pause et reprise sans doublage de piste."
+      },
+      {
+        "type": "Production",
+        "subject": "Mouvements et flashes réduits",
+        "status": "Socle et extension",
+        "spec": "Stopper le déplacement différentiel pour la parallaxe et diminuer les flashes. Conserver textes et silhouettes pour action, résultat et signature.",
+        "acceptance": "Comparer les deux réglages sur une même fin de manche et sur le stage I.M.P. Tenir le réglage à la reprise."
+      },
+      {
+        "type": "Production",
+        "subject": "Chronologie et référence",
+        "status": "Critère artistique",
+        "spec": "Enregistrer série, saison, épisode, plan et incarnation par asset. Valider les accessoires asymétriques et les transformations sur les deux orientations.",
+        "acceptance": "Pour Stolas, contrôler l’époque avant Mastermind. Dater l’hôtel, Adam et l’incarnation de Pentious selon les critères du dépôt."
+      },
+      {
+        "type": "Production",
+        "subject": "Grille de fidélité",
+        "status": "Critère artistique",
+        "spec": "Comparer silhouette de profil, proportions, palette sous lumière neutre, costume et placement des accessoires. Conserver un résultat par axe avec référence et relecteur.",
+        "acceptance": "Toute divergence ouverte reste listée comme retouche. Les images nouvelles restent à valider sur images sources datées."
+      },
+      {
+        "type": "Recette",
+        "subject": "Lisibilité et entrées",
+        "status": "À exécuter",
+        "spec": "Tester petit écran, clavier partagé et commandes tactiles. Interrompre le geste en cours par mise en arrière-plan ou pause.",
+        "acceptance": "Aucun déplacement bloqué à la reprise. Les personnages, pieds et barres restent visibles en orientation paysage."
+      },
+      {
+        "type": "Recette",
+        "subject": "Reprise d’un tournoi",
+        "status": "À exécuter",
+        "spec": "Fixer une graine, noter les paires. Fermer pendant un duel, reprendre, terminer le tour. Renouveler après la finale.",
+        "acceptance": "Même tableau à la reprise, gagnant unique, aucune nouvelle attribution au rechargement."
+      },
+      {
+        "type": "Recette",
+        "subject": "Sauvegarde et migration",
+        "status": "À exécuter",
+        "spec": "Importer une sauvegarde V1 sans tournoi. Tester un parcours inconnu puis une donnée corrompue.",
+        "acceptance": "Les statistiques antérieures restent lisibles. Une donnée invalide laisse la sauvegarde précédemment valide disponible."
+      },
+      {
+        "type": "Recette",
+        "subject": "Scènes et filtre spoilers",
+        "status": "À exécuter",
+        "spec": "Activer la saison 1. Lire le prologue, les confrontations et le bilan des routes disponibles. Simuler l’exclusion d’un rival.",
+        "acceptance": "Le chapitre annoncé et le portrait concordent. Un rival filtré empêche de lancer la route concernée."
+      },
+      {
+        "type": "Recette",
+        "subject": "Ambiance et performance",
+        "status": "À exécuter",
+        "spec": "Mesurer un duel de trente secondes sur appareil cible, scène calme puis scène animée. Répéter après changement d’arène.",
+        "acceptance": "Consigner appareil, résolution, médiane et 95e percentile du temps d’image. Budget proposé de 16,7 ms à 60 Hz, à valider sur appareil réel."
+      }
+    ],
+    "sources": [
+      [
+        "Séries",
+        "Hazbin Hotel",
+        "A24 · prémisse de Charlie et mission de réhabilitation",
+        "https://a24films.com/television/hazbin-hotel"
+      ],
+      [
+        "Séries",
+        "Hazbin Hotel, saison 1",
+        "Prime Video · épisodes et descriptifs. Sert au repérage, puis au contrôle image par image.",
+        "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE"
+      ],
+      [
+        "Séries",
+        "Helluva Boss, Queen Bee",
+        "Vivziepop · S1E8, référence de scène à consulter pour Beelzebub.",
+        "https://www.youtube.com/watch?v=D-2799Y07Zc"
+      ],
+      [
+        "Dépôt",
+        "Système de simulation",
+        "Timings et portée du jeu. Les valeurs de conception restent propres au jeu.",
+        "src/lib/pentagram-combat.ts"
+      ],
+      [
+        "Dépôt",
+        "Sélection de combat",
+        "Identifiants, noms, styles, univers et validité pour les 34 combattants.",
+        "src/standalone/roster.ts"
+      ],
+      [
+        "Dépôt",
+        "Scénarios des campagnes",
+        "Texte des prologues, des trois rencontres et des épilogues. Créations du jeu.",
+        "src/standalone/campaign.ts"
+      ],
+      [
+        "Dépôt",
+        "Continuité et événements",
+        "Règles de séparation entre pilote et série, saisons et Simulation AU.",
+        "docs/lore-governance.md"
+      ],
+      [
+        "Dépôt",
+        "Classeur de production V1",
+        "11 onglets historiques, jalons et références du 21 octobre 2026.",
+        "docs/standalone/HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx"
+      ],
+      [
+        "Dépôt",
+        "Progression et sauvegardes",
+        "Graine, résultat, reprise et historique du standalone.",
+        "src/standalone/progression.ts"
+      ]
+    ]
+  }
 }

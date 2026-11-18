@@ -1,6 +1,6 @@
 # Hellbound — Infernal Versus
 
-Standalone de combat Hazbin Hotel × Helluva Boss, préparé à partir de `darknigthmare/hellbound-hotel-manager`, branche `master`, commit `2c19dd42a4f7cdfad7a7b93a06df01c636d8e578`.
+Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
 ## Lancer et construire
 
@@ -22,13 +22,17 @@ Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun ch
 - 34 combattants : 22 kits Hazbin existants et 12 nouveaux kits Helluva.
 - Helluva : Blitzø, Moxxie, Millie, Loona, Stolas, Striker, Verosika, Fizzarolli, Asmodeus, Beelzebub, Crimson et Andrealphus.
 - 102 actions nommées accessibles : trois attaques par combattant. Le tableau de production recense aussi les six actions des deux kits AU existants exclus de ce roster.
-- 8 arènes Hazbin réutilisées, leurs musiques originales et leurs spectateurs.
-- Versus CPU, Versus local, entraînement, Arcade cinq duels, Survie vingt duels et Boss Rush.
+- Huit arènes Hazbin avec leurs spectateurs, plus la réception d’I.M.P. Cette neuvième arène dispose d’une partition originale et de trois plans peints. Le mur, le comptoir et la lampe suivent le centre du combat à des vitesses différentes. La réduction des mouvements fixe la caméra.
+- Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush.
+- Histoire propose une route par combattant. Le prologue introduit trois rencontres écrites, dont un rival au troisième duel. La victoire finale débloque un épilogue à revoir dans le Codex. Les filtres de saison et d’univers déterminent les routes disponibles.
+- En tournoi, le joueur dispute les matchs de son combattant. Le tirage reproductible remplit un tableau de huit, quatre ou deux participants selon l’effectif disponible. Les duels CPU sont simulés et une défaite élimine le joueur.
+- Le carnet de coups détaille touches, démarrage, récupération, délai entre attaques, portée et tension. Un lourd touchant sans garde peut être suivi d’un spécial dès la fin de l’arrêt sur impact, pendant sa récupération. Il consomme 50 de tension.
+- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes. Le vainqueur presse H (J1), L (J2) ou le bouton **Fatalité**. La finition dure 1,5 seconde avant la pose de victoire. **Passer** enchaîne directement sur la victoire. Le chrono, le double K.-O. et le dojo suivent leurs règles habituelles.
 - Trois difficultés; sélection des deux univers ou d'un seul; recherche; filtre Saison 1/Saisons 1–2 appliqué également aux spectateurs.
 - Palmarès, parcours reproductibles à partir d'une seed, reprise entre combats, export/import validés et confirmation avant remplacement.
 - Clavier partagé et contrôles tactiles, pause, relâchement des commandes lors d'une perte de focus, réduction des mouvements et flashes.
 
-L'entraînement propose un mannequin immobile ou en garde, une jauge illimitée et une réinitialisation. Il n'enregistre aucun résultat. Les parcours mémorisent le prochain adversaire; quitter pendant un duel fait reprendre ce duel depuis son début. Les PV sont restaurés entre les duels, y compris en Survie. Une défaite interrompt le parcours et demande une reprise explicite. Les réessais sont enregistrés dans le parcours.
+L'entraînement propose un mannequin immobile ou en garde, une jauge illimitée et une réinitialisation. Il n'enregistre aucun résultat. Les parcours mémorisent le prochain adversaire; quitter pendant un duel fait reprendre ce duel depuis son début. Les PV sont restaurés entre les duels, y compris en Survie. Une défaite en tournoi élimine le joueur. Les autres parcours proposent une reprise explicite. Les réessais sont enregistrés dans le parcours.
 
 ## Sauvegarde séparée
 
@@ -42,9 +46,15 @@ Les noms et motifs des personnages sont issus des sources du projet; statistique
 
 Les kits Fizzarolli, Verosika, Crimson et certaines figures puissantes sont signalés comme interprétations de leurs motifs. Stolas correspond à une incarnation avant *Mastermind*. Les états chronologiques alternatifs sont des chantiers distincts du classeur.
 
-Les cinématiques Helluva utilisent la pose de garde ou de victoire de leur atlas existant; aucune banque cinématique nouvelle n'est revendiquée. Le Boss Rush utilise les combattants définis, pas des boss géants multiphases. Le réseau, le rollback, les équipes relais, les replays déterministes, les grandes campagnes et les nouvelles arènes Helluva restent à développer.
+Les cinq illustrations narratives couvrent les prologue et épilogue de Charlie, saisis à l’hôtel, la rivalité Alastor/Vox, le prologue de Blitzø chez I.M.P. et sa confrontation avec Striker. Les autres scènes composent les portraits du jeu sur le décor du duel. Les finitions disposent de 34 titres et de huit traitements visuels partagés. Charlie et Blitzø ont chacun un sprite d’impact dédié et détouré. La posture de repos de Charlie utilise également un dessin latéral orienté vers son adversaire. Les combats et les récits sont des fictions d’exposition. Le jeu en réseau avec rollback, les replays déterministes, le relais et les boss multiphases restent des chantiers de production.
 
-## Excel et sources
+La référence de décor pour I.M.P. est *Murder Family*, saison 1 de Helluva Boss. La composition jouable élargit la réception pour laisser la piste libre. [Épisode officiel](https://www.youtube.com/watch?v=el_PChGfJN8)
+
+## Bible de production
+
+[Ouvrir le classeur V2](INFERNAL_VERSUS_BIBLE_V2.xlsx). Il rassemble les routes et leurs combats, les valeurs des coups issues du moteur, les finitions, les stages, les illustrations et les propositions à produire. Le registre de conception est dans `extension-plan.json`. Pour reconstruire le classeur avec les dépendances d’auteur, exécuter `node docs/standalone/build-production-bible.mjs` à la racine du projet.
+
+## Excel et sources du premier lot
 
 `HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx` contient onze onglets : Synthèse, Chantiers, Parité CQC, Personnages, Kits combat, Variantes, Techniques, Arènes, Parcours, Recette et Sources.
 
@@ -60,4 +70,4 @@ Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884
 
 ## Vérifications
 
-`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. Les tests standalone couvrent la progression, l'isolation des sauvegardes, les imports, les assets, le dojo, les callbacks de match et les parcours d'interface. `QA_RESULTS.json` contient le résultat final réellement obtenu, distinct des scénarios planifiés dans l'Excel.
+`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. Les tests standalone couvrent la progression, l'isolation des sauvegardes, les imports, les assets, le dojo, les callbacks de match et les parcours d'interface. `QA_RESULTS.json` conserve le rapport historique de la première livraison.

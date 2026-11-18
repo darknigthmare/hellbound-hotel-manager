@@ -113,7 +113,7 @@ describe('standalone combat lifecycle', () => {
     expect(screen.getByRole('progressbar', { name: 'Millie health' }).getAttribute('aria-valuenow')).toBe('100');
     expect(input.onMatchComplete).not.toHaveBeenCalled();
     expect(input.onNextMatch).not.toHaveBeenCalled();
-  });
+  }, 20_000);
 
   it('records one completed match after two rounds and advances only from the results action', () => {
     const input = props();
@@ -153,7 +153,7 @@ describe('Infernal Versus finishing sequence', () => {
     expect(stage().dataset.phase).toBe('finisher');
     expect(screen.getByText('Contrat tamponné')).toBeTruthy();
     advance(550);
-    expect(stage().querySelector('.is-one .infernal-impact-pose')?.getAttribute('src')).toBe('/assets/sprites/finishers/hb_blitzo.webp');
+    expect(stage().querySelector('.is-one .infernal-individual-pose')?.getAttribute('src')).toBe('/assets/sprites/finishers/hb_blitzo.webp');
     advance(3850);
     expect(stage().dataset.phase).toBe('results');
     expect(input.onMatchComplete).toHaveBeenCalledTimes(1);

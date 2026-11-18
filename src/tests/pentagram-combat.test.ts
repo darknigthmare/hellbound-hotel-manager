@@ -206,7 +206,9 @@ describe('Pentagram Arena live combat engine', () => {
     const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
     const first = advance(resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
     expect(first.comboOne).toBe(1);
-    const ready = advance(first, idleInputs, 32);
+    // Walk back into jab range after the first hit pushes the defender away.
+    const approach = { ...idleInputs, one: { ...idleInputs.one, right: true } };
+    const ready = advance(first, approach, 32);
     const second = advance(resolveCombatAttack(ready, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
     expect(second.comboOne).toBe(2);
     const missed = { ...second, positionOne: 7, positionTwo: 93, hitstopMs: 0, cooldownMsOne: 0, actionOne: 'idle' as const, actionMsOne: 0 };

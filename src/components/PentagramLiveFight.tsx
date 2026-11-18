@@ -1040,6 +1040,13 @@ export function PentagramLiveFight({
     }")`,
     backgroundPosition: `${fighterTwoColumn * 20}% ${fighterTwoSprite.row * (100 / 3)}%`,
   } : undefined;
+  function individualPose(side: PlayerSide, fighterId: string, action: CombatAction, cinematic: PentagramCinematicKind | null) {
+    if (finishWinner === side && impactPose) return impactPose;
+    if (infernalRules && fighterId === 'charlie' && !cinematic && action === 'idle') return '/assets/sprites/stances/charlie.webp';
+    return undefined;
+  }
+  const poseOne = individualPose('one', fighterOne.id, combat.actionOne, fighterOneCinematicKind);
+  const poseTwo = individualPose('two', fighterTwo.id, combat.actionTwo, fighterTwoCinematicKind);
   const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
   const soundtrackUnavailable = soundtrackStatus === 'unavailable';
   const soundtrackButtonLabel = soundtrackUnavailable
@@ -1276,8 +1283,8 @@ export function PentagramLiveFight({
           <span className="arena-fighter-shadow" />
           {!fighterOneCinematicKind && <span className="arena-action-trail" />}
           {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className={`arena-hit-spark is-${impactOneKind} is-${impactOneTheme}`} />}
-          {finishWinner === 'one' && impactPose ? (
-            <img className="infernal-impact-pose" src={impactPose} alt="" />
+          {poseOne ? (
+            <img className="infernal-individual-pose" src={poseOne} alt="" />
           ) : fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -1302,8 +1309,8 @@ export function PentagramLiveFight({
           <span className="arena-fighter-shadow" />
           {!fighterTwoCinematicKind && <span className="arena-action-trail" />}
           {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className={`arena-hit-spark is-${impactTwoKind} is-${impactTwoTheme}`} />}
-          {finishWinner === 'two' && impactPose ? (
-            <img className="infernal-impact-pose" src={impactPose} alt="" />
+          {poseTwo ? (
+            <img className="infernal-individual-pose" src={poseTwo} alt="" />
           ) : fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (
