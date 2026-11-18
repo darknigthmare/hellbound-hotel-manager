@@ -1,8 +1,9 @@
+import { STORY_ROUTES, storyAvailable } from './campaign';
 import type { CombatAiDifficulty } from '../lib/pentagram-ai';
 
 /** Pure progression. Browser storage is injected; hotel data is never imported. */
-export type StandaloneMode = 'versus' | 'local' | 'training' | 'arcade' | 'survival' | 'boss-rush';
-export type RunMode = Extract<StandaloneMode, 'arcade' | 'survival' | 'boss-rush'>;
+export type StandaloneMode = 'versus' | 'local' | 'training' | 'arcade' | 'survival' | 'boss-rush' | 'story' | 'tournament';
+export type RunMode = Extract<StandaloneMode, 'arcade' | 'survival' | 'boss-rush' | 'story' | 'tournament'>;
 export type MatchOutcome = 'won' | 'lost' | 'draw';
 
 export const STANDALONE_STORAGE_KEY = 'hellbound_infernal_versus_v1';
@@ -10,8 +11,8 @@ export const MAX_SAVED_MATCHES = 10_000;
 export const MAX_IMPORT_LENGTH = 1_500_000;
 const MAX_ROSTER_SIZE = 512;
 const RECENT_LIMIT = 30;
-const MODES: readonly StandaloneMode[] = ['versus', 'local', 'training', 'arcade', 'survival', 'boss-rush'];
-const RUN_MODES: readonly RunMode[] = ['arcade', 'survival', 'boss-rush'];
+const MODES: readonly StandaloneMode[] = ['versus', 'local', 'training', 'arcade', 'survival', 'boss-rush', 'story', 'tournament'];
+const RUN_MODES: readonly RunMode[] = ['arcade', 'survival', 'boss-rush', 'story', 'tournament'];
 const DIFFICULTIES: readonly CombatAiDifficulty[] = ['rookie', 'standard', 'overlord'];
 
 export interface StandaloneOptions {
@@ -59,6 +60,8 @@ export interface StandaloneSave {
   version: 1;
   options: StandaloneOptions;
   stats: StandaloneStats;
+  /** Completed story routes, retained after the current run is replaced. */
+  storyEndings: string[];
   /** Newest first; complete duplicate protection is kept in the separate ledger. */
   recentResults: StandaloneMatchResult[];
   /** Oldest first; never silently evicted. */
@@ -133,12 +136,53 @@ function shuffled(source: readonly string[], random: () => number): string[] {
   return result;
 }
 
+
+export interface TournamentBout {
+  left: string;
+  right: string;
+  winner: string;
+}
+
+export interface TournamentTable {
+  rounds: TournamentBout[][];
+  opponentIds: string[];
+  champion: string;
+}
+
+/** A seeded draw keeps the same entrants, CPU winners and bracket after a reload. */
+export function tournamentTable(fighterId: string, rosterIds: readonly string[], seed: number, eliminatedAt?: number): TournamentTable {
+  const random = randomSource(seed);
+  const rivals = [...new Set(rosterIds)].filter(id => id !== fighterId).sort();
+  ensure(rivals.length > 0, 'Le tournoi demande au moins deux participants.');
+  const size = rivals.length >= 7 ? 8 : rivals.length >= 3 ? 4 : 2;
+  let entrants = shuffled([fighterId, ...shuffled(rivals, random).slice(0, size - 1)], random);
+  const rounds: TournamentBout[][] = [];
+  const opponentIds: string[] = [];
+  while (entrants.length > 1) {
+    const bouts: TournamentBout[] = [];
+    for (let index = 0; index < entrants.length; index += 2) {
+      const left = entrants[index];
+      const right = entrants[index + 1];
+      // Reserve one roll for every bout. Other branches remain stable after a player defeat.
+      const cpuWinner = random() < 0.5 ? left : right;
+      const playerBout = left === fighterId || right === fighterId;
+      const rival = left === fighterId ? right : left;
+      if (playerBout) opponentIds.push(rival);
+      const winner = playerBout ? (rounds.length === eliminatedAt ? rival : fighterId) : cpuWinner;
+      bouts.push({ left, right, winner });
+    }
+    rounds.push(bouts);
+    entrants = bouts.map(bout => bout.winner);
+  }
+  return { rounds, opponentIds, champion: entrants[0] };
+}
+
 export function createDefaultSave(): StandaloneSave {
   return {
     version: 1,
     options: { soundtrack: true, reducedMotion: false, difficulty: 'standard' },
     stats: { matches: 0, wins: 0, losses: 0, draws: 0, streak: 0, bestStreak: 0, bestSurvival: 0, completedArcades: 0 },
-    recentResults: [], processedResultIds: [], run: null,
+    storyEndings: [], recentResults: [], processedResultIds: [], run: null,
   };
 }
 
@@ -154,13 +198,21 @@ export function buildRun(mode: RunMode, fighterId: string, candidateIds: readonl
   const availableBosses = [...new Set(requestedBosses)].filter(id => rosterIds.includes(id)).sort();
   const pool = (mode === 'boss-rush' ? availableBosses : rosterIds).filter(id => id !== fighterId);
   ensure(pool.length > 0, 'Aucun adversaire compatible disponible pour ce parcours.');
-  const random = randomSource(seed);
-  const length = mode === 'arcade' ? 5 : mode === 'survival' ? 20 : pool.length;
-  const opponentIds: string[] = [];
-  while (opponentIds.length < length) {
-    const deck = shuffled(pool, random);
-    if (deck.length > 1 && deck[0] === opponentIds[opponentIds.length - 1]) [deck[0], deck[1]] = [deck[1], deck[0]];
-    opponentIds.push(...deck.slice(0, length - opponentIds.length));
+  let opponentIds: string[];
+  if (mode === 'story') {
+    ensure(storyAvailable(fighterId, rosterIds), 'Cette histoire demande des adversaires absents des filtres sélectionnés.');
+    opponentIds = STORY_ROUTES[fighterId].chapters.map(chapter => chapter.opponent);
+  } else if (mode === 'tournament') {
+    opponentIds = tournamentTable(fighterId, rosterIds, seed).opponentIds;
+  } else {
+    const random = randomSource(seed);
+    const length = mode === 'arcade' ? 5 : mode === 'survival' ? 20 : pool.length;
+    opponentIds = [];
+    while (opponentIds.length < length) {
+      const deck = shuffled(pool, random);
+      if (deck.length > 1 && deck[0] === opponentIds[opponentIds.length - 1]) [deck[0], deck[1]] = [deck[1], deck[0]];
+      opponentIds.push(...deck.slice(0, length - opponentIds.length));
+    }
   }
   return { mode, fighterId, seed, rosterIds, bossIds: availableBosses, opponentIds, index: 0, wins: 0, retries: 0, status: 'active' };
 }
@@ -175,6 +227,7 @@ export function advanceRun(run: StandaloneRun, outcome: MatchOutcome): Standalon
 
 export function retryRun(run: StandaloneRun): StandaloneRun {
   ensure(run.status === 'failed', 'Seul un duel interrompu peut être repris.');
+  ensure(run.mode !== 'tournament', 'Une élimination clôt le tournoi.');
   ensure(run.retries < MAX_SAVED_MATCHES, 'Limite de reprises atteinte.');
   return { ...run, status: 'active', retries: run.retries + 1 };
 }
@@ -211,7 +264,9 @@ export function applyMatchResult(save: StandaloneSave, value: StandaloneMatchRes
     bestSurvival: result.mode === 'survival' && won && run ? Math.max(save.stats.bestSurvival, run.wins) : save.stats.bestSurvival,
     completedArcades: save.stats.completedArcades + Number(result.mode === 'arcade' && won && run?.status === 'complete'),
   };
-  return { ...save, stats, run, recentResults: [result, ...save.recentResults].slice(0, RECENT_LIMIT), processedResultIds: [...save.processedResultIds, result.id] };
+  const unlockEnding = result.mode === 'story' && won && run?.status === 'complete' && !save.storyEndings.includes(result.fighterId);
+  const storyEndings = unlockEnding ? [...save.storyEndings, result.fighterId] : save.storyEndings;
+  return { ...save, stats, run, storyEndings, recentResults: [result, ...save.recentResults].slice(0, RECENT_LIMIT), processedResultIds: [...save.processedResultIds, result.id] };
 }
 
 function parseRun(value: unknown, knownIds: ReadonlySet<string>, stats: StandaloneStats): StandaloneRun | null {
@@ -230,6 +285,7 @@ function parseRun(value: unknown, knownIds: ReadonlySet<string>, stats: Standalo
   ensure((entry.status === 'complete') === (entry.index === opponentIds.length), 'État final du parcours incohérent.');
   ensure(entry.wins <= stats.wins && entry.retries <= stats.losses, 'Parcours sans résultats correspondants.');
   if (entry.status === 'failed') ensure(stats.losses > entry.retries, 'Échec sans défaite enregistrée.');
+  if (entry.mode === 'tournament') ensure(entry.retries === 0, 'Un participant éliminé ne peut pas reprendre le tournoi.');
   if (entry.mode === 'survival') ensure(entry.wins <= stats.bestSurvival, 'Record de survie incohérent.');
   if (entry.mode === 'arcade' && entry.status === 'complete') ensure(stats.completedArcades > 0, 'Parcours Arcade non comptabilisé.');
   return { ...expected, index: entry.index, wins: entry.wins, retries: entry.retries, status: entry.status as StandaloneRun['status'] };
@@ -237,7 +293,10 @@ function parseRun(value: unknown, knownIds: ReadonlySet<string>, stats: Standalo
 
 /** Strict schema and bounded data; this is validation, not anti-cheat signing. */
 export function validateSave(value: unknown, rosterIds: readonly string[]): StandaloneSave {
-  const entry = record(value, ['version', 'options', 'stats', 'recentResults', 'processedResultIds', 'run'], 'Sauvegarde');
+  const keys = ['version', 'options', 'stats', 'recentResults', 'processedResultIds', 'run'];
+  // Earlier version-1 saves predate the gallery. Keep the original storage key and recover them on read.
+  if (value && typeof value === 'object' && Object.hasOwn(value, 'storyEndings')) keys.push('storyEndings');
+  const entry = record(value, keys, 'Sauvegarde');
   ensure(entry.version === 1, 'Version de sauvegarde incompatible.');
   const knownIds = new Set(uniqueIds(rosterIds, MAX_ROSTER_SIZE, 'Catalogue connu'));
   const options = record(entry.options, ['soundtrack', 'reducedMotion', 'difficulty'], 'Options');
@@ -260,10 +319,16 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   ensure(firstNonWin >= 0 || recentResults.length === stats.matches
     ? stats.streak === recentStreak
     : stats.streak >= recentStreak, 'Série de victoires incompatible avec l’historique.');
+  const run = parseRun(entry.run, knownIds, stats);
+  const legacyEndings = run?.mode === 'story' && run.status === 'complete' ? [run.fighterId] : [];
+  const storyEndings = entry.storyEndings === undefined ? legacyEndings : uniqueIds(entry.storyEndings, MAX_ROSTER_SIZE, 'Épilogues');
+  ensure(storyEndings.every(id => knownIds.has(id) && Object.hasOwn(STORY_ROUTES, id)), 'Épilogue inconnu.');
+  ensure(storyEndings.length * 3 + stats.completedArcades * 5 <= stats.wins, 'Épilogues sans les victoires correspondantes.');
+  ensure(!legacyEndings.length || storyEndings.includes(legacyEndings[0]), 'Épilogue du parcours terminé absent.');
   return {
     version: 1,
     options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty },
-    stats, recentResults, processedResultIds: [...processedResultIds], run: parseRun(entry.run, knownIds, stats),
+    stats, storyEndings: [...storyEndings], recentResults, processedResultIds: [...processedResultIds], run,
   };
 }
 

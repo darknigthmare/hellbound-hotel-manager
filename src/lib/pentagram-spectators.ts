@@ -269,7 +269,7 @@ export const PENTAGRAM_STAGE_SPECTATOR_POOLS = {
       'hz_speaker_of_god',
     ],
   },
-} as const satisfies Record<PentagramStageId, PentagramStageSpectatorPool>;
+} as const satisfies Record<Exclude<PentagramStageId, 'imp-reception'>, PentagramStageSpectatorPool>;
 
 export const MAX_PENTAGRAM_STAGE_SPECTATORS = 4;
 const PENTAGRAM_SPECTATOR_SLOTS: readonly PentagramSpectatorSlot[] = [

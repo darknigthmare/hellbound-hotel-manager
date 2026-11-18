@@ -724,3 +724,26 @@ describe('Pentagram Arena live combat engine', () => {
     });
   });
 });
+
+describe('Infernal Versus heavy confirm', () => {
+  it.each(['one', 'two'] as const)('lets %s cancel only a confirmed heavy after hit-stop', side => {
+    const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 46, positionTwo: 53, tensionOne: 75, tensionTwo: 75 };
+    const launched = resolveCombatAttack(base, side, 'heavy', fighterOne, fighterTwo);
+    const special = (state: CombatState) => resolveCombatAttack(state, side, 'special', fighterOne, fighterTwo, true);
+    const hit = stepCombat(launched, idleInputs, 220, fighterOne, fighterTwo);
+    expect(hit.hitstopMs).toBeGreaterThan(0);
+    expect(special(launched)).toBe(launched);
+    expect(special(hit)).toBe(hit);
+    const recovery = stepCombat(hit, idleInputs, hit.hitstopMs + 1, fighterOne, fighterTwo);
+    const result = special(recovery);
+    expect(side === 'one' ? result.actionOne : result.actionTwo).toBe('special');
+    expect(side === 'one' ? result.tensionOne : result.tensionTwo)
+      .toBe((side === 'one' ? recovery.tensionOne : recovery.tensionTwo) - 50);
+    expect(resolveCombatAttack(recovery, side, 'special', fighterOne, fighterTwo)).toBe(recovery);
+    const guard = { ...idleInputs, [side === 'one' ? 'two' : 'one']: { left: false, right: false, guard: true } };
+    const blocked = stepCombat(launched, guard, 310, fighterOne, fighterTwo);
+    expect(special(blocked)).toBe(blocked);
+    const missed = stepCombat({ ...launched, positionOne: 16, positionTwo: 84 }, idleInputs, 310, fighterOne, fighterTwo);
+    expect(special(missed)).toBe(missed);
+  });
+});

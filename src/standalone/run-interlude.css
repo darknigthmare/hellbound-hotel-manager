@@ -1,0 +1,58 @@
+.iv-story-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(270px, 1fr);
+  align-items: center;
+  gap: clamp(20px, 4vw, 64px);
+  margin: 20px 0 40px;
+}
+.iv-story-art {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #261b24;
+  border: 1px solid var(--iv-edge);
+  border-radius: 8px;
+}
+.iv-story-location { width: 100%; height: 100%; object-fit: cover; }
+.iv-story-cast {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background: linear-gradient(transparent 25%, #150718bd);
+}
+.iv-story-cast img { max-width: 47%; max-height: 80%; object-fit: contain; }
+.iv-story-copy h1, .iv-tableau h1 { line-height: 1.05; margin: 0 0 20px; }
+.iv-story-copy p { line-height: 1.55; }
+.iv-story-copy h2 { margin: 18px 0 4px; font-size: 1.15rem; }
+.iv-story-copy .iv-story-stage { color: var(--iv-gold); font-weight: bold; }
+.iv-bracket {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.iv-bracket-round { display: flex; flex-direction: column; gap: 10px; }
+.iv-bracket-round h2 { font-size: 1.1rem; color: var(--iv-gold); }
+.iv-bracket-bout {
+  padding: 6px 12px;
+  background: #231822;
+  border: 1px solid var(--iv-edge);
+  border-radius: 5px;
+}
+.iv-bracket-bout > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 0; }
+.iv-bracket-bout > div + div { border-top: 1px solid var(--iv-edge); }
+.iv-bracket-bout svg, .iv-player-seed { color: var(--iv-gold); }
+.iv-player-seed { font-weight: bold; }
+@media (max-width: 740px) {
+  .iv-story-layout { grid-template-columns: 1fr; gap: 18px; }
+  .iv-bracket { grid-template-columns: 1fr; }
+}
+.iv-gallery { margin: 20px 0; }
+.iv-gallery h2 { margin: 0; }
+.iv-gallery details { border-top: 1px solid var(--iv-edge); padding: 12px 0; }
+.iv-gallery summary { color: var(--iv-gold); cursor: pointer; }
+.iv-gallery details p { max-width: 64ch; line-height: 1.6; }
+.iv-gallery details img { display: block; max-width: min(100%, 42rem); height: auto; margin-top: 12px; }

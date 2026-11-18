@@ -6,7 +6,8 @@ export type PentagramStageId =
   | 'cannibal-town-square'
   | 'carmine-industries'
   | 'heaven-embassy'
-  | 'vee-broadcast-studio';
+  | 'vee-broadcast-studio'
+  | 'imp-reception';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -29,6 +30,7 @@ export interface PentagramStage {
   loreBasis: string;
   imagePath: string;
   thumbnailPath: string;
+  scenery?: { middle: string; near: string };
   imagePosition: string;
   accent: string;
   shadow: string;
@@ -319,10 +321,34 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
   },
 ] as const;
 
+const IMP_RECEPTION = '/assets/stages/helluva/imp-reception';
+
+export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
+  id: 'imp-reception',
+  name: 'I.M.P. · Réception',
+  district: 'Imp City',
+  description: 'Le comptoir de la réception borde une piste entre la porte et les fenêtres de l’agence.',
+  loreBasis: 'Les bureaux d’I.M.P. apparaissent dans Helluva Boss, S1 E1, Murder Family. La piste et son mobilier sont une adaptation de jeu.',
+  imagePath: `${IMP_RECEPTION}/room.webp`,
+  thumbnailPath: `${IMP_RECEPTION}/thumb.webp`,
+  scenery: { middle: `${IMP_RECEPTION}/desk.webp`, near: `${IMP_RECEPTION}/lamp.webp` },
+  imagePosition: 'center 58%',
+  accent: '#f39ba5',
+  shadow: '#33152b',
+  floor: '#301626',
+  soundtrack: {
+    id: 'imp-office-hours', title: 'Standard occupé', bpm: 134, rootMidi: 38,
+    swing: 0.57, drive: 0.8, seed: 1334,
+    chordProgression: [[0, 3, 7, 10], [1, 5, 8, 11], [5, 8, 12, 15], [7, 11, 14, 17]],
+    bassPattern: [0, 0, 7, 10, 12, 7, 5, 1],
+    leadPattern: [12, null, 15, 13, null, 10, 7, null, 13, 12, null, 8, 7, null, 1, null],
+  },
+}];
+
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];
 
 export function getPentagramStage(stageId: string): PentagramStage {
-  return PENTAGRAM_STAGES.find(stage => stage.id === stageId) ?? DEFAULT_PENTAGRAM_STAGE;
+  return STANDALONE_STAGES.find(stage => stage.id === stageId) ?? DEFAULT_PENTAGRAM_STAGE;
 }
 
 export function getPentagramStageVisualProperties(

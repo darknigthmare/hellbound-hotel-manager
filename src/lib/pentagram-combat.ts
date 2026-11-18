@@ -521,13 +521,44 @@ export function resolveCombatPoseAction(
   };
 }
 
+function canCancelInto(
+  state: CombatState, side: PlayerSide, attack: CombatAttack, definition: CombatantDefinition,
+): boolean {
+  const isOne = side === 'one';
+  const action = isOne ? state.actionOne : state.actionTwo;
+  const remaining = isOne ? state.actionMsOne : state.actionMsTwo;
+  const pending = isOne ? state.pendingAttackOne : state.pendingAttackTwo;
+  if (remaining <= 0) return false;
+  if (action === 'light' && attack === 'heavy' && pending === 'light') {
+    const light = getAttackData(definition, 'light');
+    return remaining > light.actionMs - light.startupMs;
+  }
+  // An impact clears pending; only an unblocked contact keeps the attacker's combo.
+  return action === 'heavy' && attack === 'special' && pending === null
+    && (isOne ? state.comboOne : state.comboTwo) > 0;
+}
+
+export function getCombatMoveInfo(definition: CombatantDefinition, attack: CombatAttack) {
+  const data = getAttackData(definition, attack);
+  return {
+    name: getMoveName(definition, attack),
+    startupMs: data.startupMs,
+    actionMs: data.actionMs,
+    recoveryMs: data.actionMs - data.startupMs,
+    cooldownMs: data.cooldownMs,
+    reach: getCombatAttackReach(definition, attack),
+    tensionCost: data.tensionCost,
+    hitstunMs: data.hitstunMs,
+  };
+}
+
 export function canStartCombatAttack(
   state: CombatState,
   side: PlayerSide,
   attack: CombatAttack,
   fighterOne: CombatantDefinition,
   fighterTwo: CombatantDefinition,
-  allowLightCancel = false,
+  allowCancel = false,
 ): boolean {
   if (!state.active || state.hitstopMs > 0) return false;
   const definition = side === 'one' ? fighterOne : fighterTwo;
@@ -535,18 +566,9 @@ export function canStartCombatAttack(
   const action = side === 'one' ? state.actionOne : state.actionTwo;
   const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
-  const canCancelLight = allowLightCancel
-    && attack === 'heavy'
-    && action === 'light'
-    && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
-    // Only the early startup phase can be cancelled; the impact is not yet active.
-    && actionMs > getAttackData(definition, 'light').actionMs
-      - getAttackData(definition, 'light').startupMs;
-
   return tension >= getAttackData(definition, attack).tensionCost
-    && (canCancelLight || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
+    && ((allowCancel && cooldown > 0 && canCancelInto(state, side, attack, definition))
+      || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
 }
 
 export function resolveCombatAttack(
@@ -555,21 +577,11 @@ export function resolveCombatAttack(
   attack: CombatAttack,
   fighterOne: CombatantDefinition,
   fighterTwo: CombatantDefinition,
-  allowLightCancel = false,
+  allowCancel = false,
 ): CombatState {
   if (!state.active) return state;
 
   const attacker = side === 'one' ? fighterOne : fighterTwo;
-  const action = side === 'one' ? state.actionOne : state.actionTwo;
-  const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
-  const canCancelLight = allowLightCancel
-    && attack === 'heavy'
-    && action === 'light'
-    && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
-    && actionMs > getAttackData(attacker, 'light').actionMs
-      - getAttackData(attacker, 'light').startupMs;
   const attackData = getAttackData(attacker, attack);
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
 
@@ -587,13 +599,13 @@ export function resolveCombatAttack(
     attack,
     fighterOne,
     fighterTwo,
-    allowLightCancel,
+    allowCancel,
   )) return state;
 
   const moveName = getMoveName(attacker, attack);
   const launchLog = appendLog(
     state,
-    canCancelLight
+    allowCancel && canCancelInto(state, side, attack, attacker)
       ? `${attacker.name} cancels into ${moveName}.`
       : `${attacker.name} starts ${moveName}.`,
   );

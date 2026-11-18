@@ -134,3 +134,35 @@ describe('standalone combat lifecycle', () => {
     expect(input.onNextMatch).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Infernal Versus finishing sequence', () => {
+  function decisiveKo() {
+    start(); knockOut(); advance(3000);
+    fireEvent.click(screen.getByRole('button', { name: 'Next round' }));
+    advance(1500); knockOut();
+    expect(stage().dataset.phase).toBe('finish-window');
+  }
+  it('allows only the local winner to trigger the finish and preserves a single result', () => {
+    const input = props({ infernalRules: true });
+    render(<PentagramLiveFight {...input} />);
+    decisiveKo();
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+    key('KeyL'); expect(stage().dataset.phase).toBe('finish-window');
+    key('KeyP'); advance(4200); expect(stage().dataset.phase).toBe('paused');
+    key('KeyP'); key('KeyH');
+    expect(stage().dataset.phase).toBe('finisher');
+    expect(screen.getByText('Contrat tamponné')).toBeTruthy();
+    advance(550);
+    expect(stage().querySelector('.is-one .infernal-impact-pose')?.getAttribute('src')).toBe('/assets/sprites/finishers/hb_blitzo.webp');
+    advance(3850);
+    expect(stage().dataset.phase).toBe('results');
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+  });
+  it('skips a finisher on request and continues the match normally', () => {
+    render(<PentagramLiveFight {...props({ infernalRules: true, reducedMotion: true })} />);
+    decisiveKo();
+    fireEvent.click(screen.getByRole('button', { name: 'Passer' }));
+    expect(stage().dataset.phase).toBe('outro');
+    advance(3200); expect(stage().dataset.phase).toBe('results');
+  });
+});
