@@ -2,16 +2,16 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { createRequire } from 'node:module';
+import { createRequire, registerHooks } from 'node:module';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 // Run from an npm ci checkout with the Codex primary runtime, or install
-// @oai/artifact-tool alongside this script. Optional second argument holds QA images.
+// @oai/artifact-tool alongside this script. The optional argument sets the output directory.
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../..');
 const destination = process.argv[2] ?? here;
-const previews = process.argv[3];
 const require = createRequire(import.meta.url);
 const artifactPath = require.resolve('@oai/artifact-tool', {
   paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, here].filter(Boolean),
@@ -19,79 +19,100 @@ const artifactPath = require.resolve('@oai/artifact-tool', {
 
 const design = JSON.parse(await fs.readFile(path.join(here, 'extension-plan.json'), 'utf8')).productionBible;
 async function collectRuntimeTables(){
-const { createServer } = await import('vite');
-const server = await createServer({ root, configFile: false, logLevel: 'error', appType: 'custom', server: { middlewareMode: true, hmr: false } });
-let runtime;
-try {
-  const modules = await Promise.all([
-    'standalone/roster', 'standalone/campaign', 'lib/pentagram-fighters',
-    'lib/pentagram-combat', 'lib/pentagram-stages', 'lib/infernal-finishers',
-  ].map(module => server.ssrLoadModule('/src/' + module + '.ts')));
-  runtime = Object.assign({}, ...modules);
-} finally {
-  await server.close();
-}
-const fighters = runtime.STANDALONE_ROSTER;
-const stages = new Map(runtime.STANDALONE_STAGES.map(stage => [stage.id, stage]));
-const names = new Map(fighters.map(fighter => [fighter.character.id, fighter.character.name]));
-const actions = { light: 'Léger', heavy: 'Lourd', special: 'Spécial' };
-const inputs = { light: 'F / J', heavy: 'G / K', special: 'H / L' };
-const kinds = { intro: 'Prologue', rival: 'Rivalité', ending: 'Épilogue' };
-const effects = { radio:'Radio', signal:'Signal vidéo', halo:'Halo', embers:'Braises', blade:'Lame', frost:'Givre', curtain:'Rideau', shadow:'Ombre' };
-const routes = [], chapters = [], moves = [], signatures = [], finishes = [], pictures = [];
-for (const fighter of fighters) {
-  const {character: {id, name}, profile} = fighter;
-  const route = runtime.STORY_ROUTES[id];
-  const card = design.fighterDesign.find(entry => entry.fighter === id);
-  assert(route && card && runtime.INFERNAL_FINISHES[id], 'Fiche incomplète pour ' + id);
-  const { title, intro, ending } = route;
-  const rival = names.get(route.chapters[2].opponent);
-  routes.push([name, fighter.franchise, title, intro, rival, ending]);
-  for (const [index, chapter] of route.chapters.entries()) {
-    assert(names.has(chapter.opponent) && stages.has(chapter.stage), 'Chapitre invalide pour ' + id);
-    chapters.push([name, index + 1, index === 2 ? 'Rival' : 'Rencontre', names.get(chapter.opponent), stages.get(chapter.stage).name, chapter.scene]);
+  // Read the exact TypeScript tables without starting a Vite server or loading
+  // assets. The project compiler removes type-only imports, including legacy
+  // syntax still present in the shared Helluva data.
+  const ts = require('typescript');
+  const src = pathToFileURL(path.join(root, 'src') + path.sep).href;
+  const hooks = registerHooks({
+    resolve(specifier, context, next) {
+      if (context.parentURL?.startsWith(src) && specifier.startsWith('.') && !path.extname(specifier)) {
+        const file = new URL(specifier + '.ts', context.parentURL);
+        return next(existsSync(file) ? file.href : specifier + '/index.ts', context);
+      }
+      return next(specifier, context);
+    },
+    load(url, context, next) {
+      if (!url.startsWith(src) || !url.endsWith('.ts')) return next(url, context);
+      const text = readFileSync(new URL(url), 'utf8');
+      const result = ts.transpileModule(text, {
+        compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext },
+      });
+      return { format: 'module', source: result.outputText, shortCircuit: true };
+    },
+  });
+  let runtime;
+  try {
+    const modules = await Promise.all([
+      'standalone/roster', 'standalone/campaign', 'lib/pentagram-fighters',
+      'lib/pentagram-combat', 'lib/pentagram-stages', 'lib/infernal-finishers',
+    ].map(module => import(src + module + '.ts')));
+    runtime = Object.assign({}, ...modules);
+  } finally {
+    hooks.deregister();
   }
-  const definition = runtime.buildCombatantDefinition(fighter.character, profile);
-  for (const [action, label] of Object.entries(actions)) {
-    const spec = runtime.getCombatMoveInfo(definition, action);
-    moves.push([name, label, spec.name, inputs[action], spec.startupMs, null, spec.actionMs, spec.recoveryMs, spec.cooldownMs, spec.hitstunMs, spec.reach, spec.tensionCost]);
+  const fighters = runtime.STANDALONE_ROSTER;
+  const stages = new Map(runtime.STANDALONE_STAGES.map(stage => [stage.id, stage]));
+  const names = new Map(fighters.map(fighter => [fighter.character.id, fighter.character.name]));
+  const actions = { light: 'Léger', heavy: 'Lourd', special: 'Spécial' };
+  const inputs = { light: 'F / J', heavy: 'G / K', special: 'H / L' };
+  const kinds = { intro: 'Prologue', rival: 'Rivalité', ending: 'Épilogue' };
+  const effects = { radio:'Radio', signal:'Signal vidéo', halo:'Halo', embers:'Braises', blade:'Lame', frost:'Givre', curtain:'Rideau', shadow:'Ombre' };
+  const routes = [], chapters = [], moves = [], signatures = [], finishes = [], pictures = [];
+  for (const fighter of fighters) {
+    const {character: {id, name}, profile} = fighter;
+    const route = runtime.STORY_ROUTES[id];
+    const card = design.fighterDesign.find(entry => entry.fighter === id);
+    assert(route && card && runtime.INFERNAL_FINISHES[id], 'Fiche incomplète pour ' + id);
+    const { title, intro, ending } = route;
+    const rival = names.get(route.chapters[2].opponent);
+    routes.push([name, fighter.franchise, title, intro, rival, ending]);
+    for (const [index, chapter] of route.chapters.entries()) {
+      assert(names.has(chapter.opponent) && stages.has(chapter.stage), 'Chapitre invalide pour ' + id);
+      chapters.push([name, index + 1, index === 2 ? 'Rival' : 'Rencontre', names.get(chapter.opponent), stages.get(chapter.stage).name, chapter.scene]);
+    }
+    const definition = runtime.buildCombatantDefinition(fighter.character, profile);
+    for (const [action, label] of Object.entries(actions)) {
+      const spec = runtime.getCombatMoveInfo(definition, action);
+      moves.push([name, label, spec.name, inputs[action], spec.startupMs, null, spec.actionMs, spec.recoveryMs, spec.cooldownMs, spec.hitstunMs, spec.reach, spec.tensionCost]);
+    }
+    signatures.push([name, card.signature, card.input, card.effect, card.counter, 'À prototyper']);
+    const finish = runtime.INFERNAL_FINISHES[id];
+    const pose='/assets/sprites/finishers/'+id+'.webp';
+    const poseExists=await fs.access(path.join(root, 'public', pose)).then(()=>true,()=>false);
+    finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer',poseExists?pose:'']);
+    for (const [kind, label] of Object.entries(kinds)) {
+      const image = runtime.storyIllustration(id, kind);
+      if (image) await fs.access(path.join(root, 'public', image));
+      const brief = kind === 'intro' ? intro : kind === 'rival' ? route.chapters[2].scene : ending;
+      pictures.push([name, label, kind === 'rival' ? rival : name, brief, image ? 'Illustration dédiée' : 'Décor et portraits', image ?? '']);
+    }
   }
-  signatures.push([name, card.signature, card.input, card.effect, card.counter, 'À prototyper']);
-  const finish = runtime.INFERNAL_FINISHES[id];
-  const pose='/assets/sprites/finishers/'+id+'.webp';
-  const poseExists=await fs.access(path.join(root, 'public', pose)).then(()=>true,()=>false);
-  finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer',poseExists?pose:'']);
-  for (const [kind, label] of Object.entries(kinds)) {
-    const image = runtime.storyIllustration(id, kind);
-    if (image) await fs.access(path.join(root, 'public', image));
-    const brief = kind === 'intro' ? intro : kind === 'rival' ? route.chapters[2].scene : ending;
-    pictures.push([name, label, kind === 'rival' ? rival : name, brief, image ? 'Illustration dédiée' : 'Décor et portraits', image ?? '']);
-  }
-}
-const sets = [
-  ['Modes V2', 'Règles des modes de jeu', 'Les modes proposés constituent une spécification. Les filtres et le choix du combattant déterminent les parcours accessibles.', ['Mode','État','Sélection','Règles et déroulé','Progression','Critère de recette'], [24,24,44,58,46,65], design.modeDesign.map(r=>[r.name,r.status,r.selection,r.rules,r.progress,r.check])],
-  ['Histoires', 'Histoires des combattants', 'Texte du jeu. Chaque parcours est une fiction originale d’Infernal Versus.', ['Combattant','Univers','Titre du parcours','Prologue','Rival final','Épilogue'], [27,21,38,62,25,62], routes],
-  ['Duels de campagne','Déroulé des confrontations','Les rencontres apparaissent dans leur ordre de jeu. Le troisième duel conclut la rivalité.', ['Protagoniste','Duel','Rencontre','Adversaire','Arène','Mise en scène jouable'],[27,12,16,26,35,72],chapters],
-  ['Données moteur','Temps, portée et tension des attaques','Le moteur mesure en millisecondes. L’équivalent à 60 Hz est arrondi au supérieur. L’impact est évalué une fois. La portée est un pourcentage de la largeur de l’arène.', ['Combattant','Attaque','Nom en jeu','Touche J1 / J2','Départ → impact (ms)','Impact à 60 Hz (images)','Action totale (ms)','Après impact (ms)','Recharge depuis départ (ms)','Étourdissement (ms)','Portée (% de largeur)','Coût tension'],[26,15,33,18,19,22,18,18,23,22,17,16],moves],
-  ['Techniques à produire','Techniques signatures à prototyper','Les commandes sont des intentions de design. Avant et arrière sont relatifs au regard du combattant.', ['Combattant','Nouvelle technique','Commande proposée','Effet et rôle','Indice visuel et réponse','État'],[27,33,31,68,67,19],signatures],
-  ['Finitions','Finitions en jeu et storyboards individuels','K.-O. décisif. Fenêtre de commande ' + runtime.FINISH_INPUT_MS + ' ms, mise en scène ' + runtime.FINISH_CINEMATIC_MS + ' ms. Les colonnes D à G détaillent une variante longue à produire.', ['Combattant','Finition en jeu','Effet en jeu','Variante longue proposée','Découpage proposé','Dernier plan proposé','État variante','Pose clé dédiée disponible'],[27,37,21,38,65,52,19,48],finishes],
-  ['Plans des arènes','Arènes et profondeur de champ','Les fichiers existants sont relevés dans le registre des arènes. Les compositions de plans sont des indications pour la production.', ['Arène','État en jeu','Fond · direction','Médian · direction','Avant-plan / sol · direction','Animation proposée','Composition du duel','Repérage critique','Ressources en jeu'],[27,29,42,42,44,44,55,56,65],design.stageDesign.map(r=>{
-    const stage=stages.get(r.id);
-    const scenery=stage?.scenery;
-    return [r.name,scenery?'Trois plans en jeu':stage?'Fond en jeu, calques à produire':'À produire',r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
-  })],
-  ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
-  ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les cibles d’animation et de performance doivent être mesurées dans le jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance])],
-  ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],design.sources],
-];
+  const sets = [
+    ['Modes V2', 'Règles des modes de jeu', 'Les modes proposés constituent une spécification. Les filtres et le choix du combattant déterminent les parcours accessibles.', ['Mode','État','Sélection','Règles et déroulé','Progression','Critère de recette'], [24,24,44,58,46,65], design.modeDesign.map(r=>[r.name,r.status,r.selection,r.rules,r.progress,r.check])],
+    ['Histoires', 'Histoires des combattants', 'Texte du jeu. Chaque parcours est une fiction originale d’Infernal Versus.', ['Combattant','Univers','Titre du parcours','Prologue','Rival final','Épilogue'], [27,21,38,62,25,62], routes],
+    ['Duels de campagne','Déroulé des confrontations','Les rencontres apparaissent dans leur ordre de jeu. Le troisième duel conclut la rivalité.', ['Protagoniste','Duel','Rencontre','Adversaire','Arène','Mise en scène jouable'],[27,12,16,26,35,72],chapters],
+    ['Données moteur','Temps, portée et tension des attaques','Le moteur mesure en millisecondes. L’équivalent à 60 Hz est arrondi au supérieur. L’impact est évalué une fois. La portée est un pourcentage de la largeur de l’arène.', ['Combattant','Attaque','Nom en jeu','Touche J1 / J2','Départ → impact (ms)','Impact à 60 Hz (images)','Action totale (ms)','Après impact (ms)','Recharge depuis départ (ms)','Étourdissement (ms)','Portée (% de largeur)','Coût tension'],[26,15,33,18,19,22,18,18,23,22,17,16],moves],
+    ['Techniques à produire','Techniques signatures à prototyper','Les commandes sont des intentions de design. Avant et arrière sont relatifs au regard du combattant.', ['Combattant','Nouvelle technique','Commande proposée','Effet et rôle','Indice visuel et réponse','État'],[27,33,31,68,67,19],signatures],
+    ['Finitions','Finitions en jeu et storyboards individuels','K.-O. décisif. Fenêtre de commande ' + runtime.FINISH_INPUT_MS + ' ms, mise en scène ' + runtime.FINISH_CINEMATIC_MS + ' ms. Les colonnes D à G détaillent une variante longue à produire.', ['Combattant','Finition en jeu','Effet en jeu','Variante longue proposée','Découpage proposé','Dernier plan proposé','État variante','Pose clé dédiée disponible'],[27,37,21,38,65,52,19,48],finishes],
+    ['Plans des arènes','Arènes et profondeur de champ','Les fichiers existants sont relevés dans le registre des arènes. Les compositions de plans sont des indications pour la production.', ['Arène','État en jeu','Fond · direction','Médian · direction','Avant-plan / sol · direction','Animation proposée','Composition du duel','Repérage critique','Ressources en jeu'],[27,29,42,42,44,44,55,56,65],design.stageDesign.map(r=>{
+      const stage=stages.get(r.id);
+      const scenery=stage?.scenery;
+      return [r.name,scenery?'Trois plans en jeu':stage?'Fond en jeu, calques à produire':'À produire',r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
+    })],
+    ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
+    ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les cibles d’animation et de performance doivent être mesurées dans le jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance])],
+    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],design.sources],
+  ];
 
-return {sets, fighterCount:fighters.length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
+  return {sets, fighterCount:fighters.length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
 }
 if(process.argv[2]==='--read-game'){
-  process.stdout.write(JSON.stringify(await collectRuntimeTables()));
+  const payload=JSON.stringify(await collectRuntimeTables());
+  await new Promise(resolve=>process.stdout.write(payload,resolve));
   process.exit(0);
 }
-const child=process.env.IV_BIBLE_RUNTIME_SNAPSHOT ? {status:0,stdout:await fs.readFile(process.env.IV_BIBLE_RUNTIME_SNAPSHOT,'utf8')} : spawnSync(process.execPath,[fileURLToPath(import.meta.url),'--read-game'],{encoding:'utf8',maxBuffer:4*1024*1024});
+const child=spawnSync(process.execPath,[fileURLToPath(import.meta.url),'--read-game'],{encoding:'utf8',maxBuffer:4*1024*1024});
 if(child.status!==0)throw Error(child.stderr||'Lecture du code interrompue.');
 const {sets,fighterCount,expectedFrames}=JSON.parse(child.stdout);
 process.env.DOTNET_PROCESSOR_COUNT ??= '2';
@@ -187,10 +208,3 @@ const joined=spawnSync('python3',[path.join(here,'attach-legacy-registers.py'),b
 if(joined.status!==0) throw Error(joined.stderr);
 
 await fs.rm(working,{recursive:true,force:true});
-if(previews){
-  await fs.mkdir(previews,{recursive:true});
-  for(const sheet of [guide,...sheets.values()]) {
-    const png=await wb.render({sheetName:sheet.name,range:'A1:D9',scale:0.8});
-    await fs.writeFile(path.join(previews,sheet.name+'.png'),new Uint8Array(await png.arrayBuffer()));
-  }
-}
