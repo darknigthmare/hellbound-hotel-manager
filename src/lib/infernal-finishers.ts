@@ -10,10 +10,12 @@ export interface InfernalFinish {
 
 // Original exhibition endings. Titles and stage effects describe the simulation.
 export const INFERNAL_FINISHES: Readonly<Record<string, InfernalFinish>> = {
+  hz_mimzy: { title: 'Un dernier huit pour la salle', effect: 'curtain', impactSprite: '/assets/sprites/finishers/hz_mimzy.webp' },
+  hb_sallie_may: { title: 'La barrière se referme', effect: 'blade', impactSprite: '/assets/sprites/finishers/hb_sallie_may.webp' },
   charlie: { title: 'Le rideau de l’aube', effect: 'embers', impactSprite: '/assets/sprites/finishers/charlie.webp' },
   vaggie: { title: 'La dernière sentinelle', effect: 'blade' },
   angeldust: { title: 'Salut en six temps', effect: 'curtain' },
-  alastor: { title: 'Plus rien sur les ondes', effect: 'radio' },
+  alastor: { title: 'Plus rien sur les ondes', effect: 'radio', impactSprite: '/assets/sprites/finishers/alastor.webp' },
   husk: { title: 'La banque ferme', effect: 'curtain' },
   niffty: { title: 'Dernier point de couture', effect: 'blade' },
   sirpentious: { title: 'Compte à rebours du dirigeable', effect: 'embers' },

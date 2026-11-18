@@ -11763,7 +11763,7 @@
   ],
   "productionBible": {
     "edition": "2026-11-18",
-    "baseCommit": "2f65b8d4ec90f22cda83979f926df5f6afe3c220",
+    "baseCommit": "544e780e24edb276b5cc6b0c7d7d6d1d57fe706e",
     "fighterDesign": [
       {
         "fighter": "charlie",
@@ -11778,7 +11778,7 @@
       {
         "fighter": "vaggie",
         "signature": "Ligne de défense",
-        "input": "Avant + lourd",
+        "input": "T / I",
         "effect": "Estoc court puis retour en garde. La pointe contrôle le pas suivant après une avancée imprudente.",
         "counter": "L’épaule descend avant l’estoc. Faire manquer à mi-portée puis entrer sur le retrait.",
         "finisher": "Fin de ronde",
@@ -11988,7 +11988,7 @@
       {
         "fighter": "hb_blitzo",
         "signature": "Sortie de service",
-        "input": "Quart arrière + léger",
+        "input": "T / I",
         "effect": "Fait mine de battre en retraite puis bondit d’un pas vers l’angle mort. Le pas reste punissable à vide.",
         "counter": "La queue change d’appui avant le retour. Couvrir le point d’arrivée.",
         "finisher": "Devis signé",
@@ -12104,6 +12104,26 @@
         "finisher": "Vitrine d’hiver",
         "storyboard": "Le contour du rival se fige dans un cadre de glace stylisé. Une plume en dessine le dernier angle.",
         "lastImage": "Le cadre pivote vers un jardin silencieux."
+      },
+      {
+        "fighter": "hz_mimzy",
+        "signature": "Talon de rappel",
+        "input": "T / I",
+        "effect": "Le talon enchaîne sur une attaque légère pendant la récupération si l’adversaire subit une touche franche.",
+        "counter": "Garder le talon pour refuser la suite en léger. À distance, attendre son retour avant de reprendre le centre.",
+        "finisher": "Le dernier rappel",
+        "storyboard": "Le projecteur isole Mimzy et son rival. Elle enchaîne deux pas chassés et arrête le troisième, les mains ouvertes. Le rideau descend entre les deux silhouettes.",
+        "lastImage": "Ses talons dépassent sous le rideau, puis rentrent un à un."
+      },
+      {
+        "fighter": "hb_sallie_may",
+        "signature": "Tenir la barrière",
+        "input": "T / I",
+        "effect": "Sur la garde adverse, Sallie May repousse la ligne de contact plus loin. Une touche franche conserve le recul ordinaire du coup.",
+        "counter": "Éviter de tenir le coin. Laisser manquer le coup et avancer pendant que le pied revient en place.",
+        "finisher": "Dernière cloche",
+        "storyboard": "Sallie May dégage le passage d’un coup d’épaule. Le battant d’une cloche oscille au premier plan tandis que le rival franchit la barrière.",
+        "lastImage": "Elle retient le battant dans sa paume pour en couper la résonance."
       }
     ],
     "stageDesign": [
@@ -12171,8 +12191,8 @@
         "id": "vee-broadcast-studio",
         "name": "Studio des Vees",
         "back": "Baie au-dessus de la ville et moniteurs lointains",
-        "middle": "Plateau central, table de régie",
-        "floor": "Bord de plateau et marques de caméra",
+        "middle": "Caméra de plateau détourée en plan médian.",
+        "floor": "Moniteur de contrôle détouré au premier plan, sur le fond existant du studio.",
         "ambient": "Mire hors centre avec changement lent",
         "composition": "Mettre en valeur l’opposition radio / télévision en laissant libre la zone des visages.",
         "reference": "S1E2 pour le conflit entre médias. Version du plateau à repérer."
@@ -12208,14 +12228,14 @@
         "reference": "Repérage Helluva S1E5."
       },
       {
-        "id": "ozzies",
+        "id": "ozzies-cabaret",
         "name": "Cabaret d’Ozzie",
-        "back": "Étage supérieur du club",
-        "middle": "Scène, rideaux, tables disposées en gradins",
-        "floor": "Bord rectiligne du parquet",
+        "back": "Salle du dîner-spectacle et scène du cabaret dans l’anneau de la Luxure.",
+        "middle": "Table de cabaret en cœur au bord de la piste.",
+        "floor": "Rideau de premier plan. La piste reste dégagée entre les deux combattants.",
         "ambient": "Deux projecteurs hors de l’axe des joueurs",
         "composition": "Rythme lisible en jeu muet. Stabiliser l’éclairage derrière les têtes.",
-        "reference": "Repérage Helluva S1E7."
+        "reference": "Helluva Boss, Ozzie’s, S1E7. Comparer la palette, les tables et les rideaux à l’épisode officiel."
       },
       {
         "id": "looloo-land",
@@ -12409,7 +12429,7 @@
         "type": "Production",
         "subject": "Sprite de duel",
         "status": "Critère artistique",
-        "spec": "Une image source par pose, fond transparent. Corps entier en garde latérale face à l’ennemi, pieds alignés sur le pivot du moteur. La garde dédiée de Charlie est disponible dans /assets/sprites/stances/charlie.webp.",
+        "spec": "Une image par pose dédiée, silhouette entière lisible de profil, pieds alignés sur le pivot. L’onglet Tenues et gardes relie les apparences du jeu à leurs fichiers.",
         "acceptance": "Superposer garde et retour au repos. Contrôler ancrage des pieds, taille relative, bord alpha et arme tenue du bon côté."
       },
       {
@@ -12444,7 +12464,7 @@
         "type": "Production",
         "subject": "Plans d’arène",
         "status": "Cible de production",
-        "spec": "Préparer fond opaque, médian détouré, sol / avant-plan détouré en fichiers séparés. À la réception I.M.P., rapports mesurés dans le composant de scène : 0,20 pour la salle, 0,65 pour le comptoir et 1,20 pour la lampe.",
+        "spec": "Fond, médian et avant-plan indépendants. À la réception I.M.P. et chez Ozzie, les rapports de déplacement sont 0,20 / 0,65 / 1,20. Contrôler les raccords sur les bords du champ.",
         "acceptance": "Placer les joueurs aux deux extrémités, tester 16:9 et mobile. L’horizon, le sol et les pieds coïncident dans chaque position."
       },
       {
@@ -12509,6 +12529,13 @@
         "status": "À exécuter",
         "spec": "Mesurer un duel de trente secondes sur appareil cible, scène calme puis scène animée. Répéter après changement d’arène.",
         "acceptance": "Consigner appareil, résolution, médiane et 95e percentile du temps d’image. Budget proposé de 16,7 ms à 60 Hz, à valider sur appareil réel."
+      },
+      {
+        "type": "Recette",
+        "subject": "Garde-robe locale",
+        "status": "Scénario de recette",
+        "spec": "Choisir deux tenues séparément, jouer les deux côtés, puis relancer le standalone. Tester garde, léger, lourd et réaction.",
+        "acceptance": "Chaque côté conserve la tenue choisie pour le bon personnage. L’impact et les cinématiques respectent son apparence."
       }
     ],
     "sources": [
@@ -12521,7 +12548,7 @@
       [
         "Séries",
         "Hazbin Hotel, saison 1",
-        "Prime Video · épisodes et descriptifs. Sert au repérage, puis au contrôle image par image.",
+        "Repérage de Mimzy dans Dad Beat Dad (E5) et de l’uniforme passé de Vaggie dans Welcome to Heaven (E6).",
         "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE"
       ],
       [
@@ -12539,7 +12566,7 @@
       [
         "Dépôt",
         "Sélection de combat",
-        "Identifiants, noms, styles, univers et validité pour les 34 combattants.",
+        "Identifiants, noms, styles, univers et disponibilité des combattants de l’Exhibition.",
         "src/standalone/roster.ts"
       ],
       [
@@ -12565,6 +12592,30 @@
         "Progression et sauvegardes",
         "Graine, résultat, reprise et historique du standalone.",
         "src/standalone/progression.ts"
+      ],
+      [
+        "Séries",
+        "Helluva Boss · Ozzie’s",
+        "Décor et silhouettes de scène du dîner-spectacle, saison 1, épisode 7.",
+        "https://www.youtube.com/watch?v=8zyGQquL8VM"
+      ],
+      [
+        "Séries",
+        "Helluva Boss · Spring Broken",
+        "Apparence humaine de Loona, saison 1, épisode 3.",
+        "https://www.youtube.com/watch?v=RghsgkZKedg"
+      ],
+      [
+        "Séries",
+        "Helluva Shorts · Hell’s Belles",
+        "Sallie May et Millie, apparences et relation des deux sœurs.",
+        "https://www.youtube.com/watch?v=_38dtqdR5V4"
+      ],
+      [
+        "Dépôt",
+        "Apparences de combat",
+        "Costumes, images indépendantes et gardes de profil utilisés par le jeu.",
+        "src/lib/infernal-appearances.ts"
       ]
     ]
   }

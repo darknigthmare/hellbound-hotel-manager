@@ -1,3 +1,4 @@
+import { INFERNAL_STANCES, costumePose, getInfernalCostume } from '../lib/infernal-appearances';
 import {
   useCallback,
   useEffect,
@@ -28,6 +29,7 @@ import {
   type CombatAiDifficulty,
 } from '../lib/pentagram-ai';
 import {
+  INFERNAL_SIGNATURES,
   createCombatState,
   createNextCombatRound,
   releaseCombatGuard,
@@ -66,6 +68,8 @@ interface PentagramLiveFightProps {
   onSoundtrackResume: () => void;
   onExit: () => void;
   infernalRules?: boolean;
+  costumeOne?: string;
+  costumeTwo?: string;
   training?: boolean;
   trainingGuard?: boolean;
   reducedMotion?: boolean;
@@ -135,6 +139,7 @@ const MANAGED_CODES = new Set([
   'KeyF',
   'KeyG',
   'KeyH',
+  'KeyT',
   'ArrowLeft',
   'ArrowRight',
   'ArrowUp',
@@ -144,6 +149,7 @@ const MANAGED_CODES = new Set([
   'KeyJ',
   'KeyK',
   'KeyL',
+  'KeyI',
   'KeyU',
   'Enter',
   'Escape',
@@ -154,9 +160,11 @@ const ATTACK_CODES: Readonly<Record<string, readonly [PlayerSide, CombatAttack]>
   KeyF: ['one', 'light'],
   KeyG: ['one', 'heavy'],
   KeyH: ['one', 'special'],
+  KeyT: ['one', 'signature'],
   KeyJ: ['two', 'light'],
   KeyK: ['two', 'heavy'],
   KeyL: ['two', 'special'],
+  KeyI: ['two', 'signature'],
 };
 
 const POSE_ACTION_CODES: Readonly<
@@ -183,6 +191,7 @@ function getActionLabel(action: CombatAction): string {
   if (action === 'light') return 'Light attack';
   if (action === 'heavy') return 'Heavy attack';
   if (action === 'special') return 'Special attack';
+  if (action === 'signature') return 'Technique signature';
   if (action === 'hit') return 'Hit stun';
   if (action === 'ko') return 'K.O.';
   if (action === 'victory') return 'Victory';
@@ -251,6 +260,8 @@ export function PentagramLiveFight({
   onSoundtrackResume,
   onExit,
   infernalRules = false,
+  costumeOne,
+  costumeTwo,
   training = false,
   trainingGuard = false,
   reducedMotion = false,
@@ -385,6 +396,7 @@ export function PentagramLiveFight({
   ) => {
     if (fightPhaseRef.current !== 'running') return;
     if (matchMode === 'ai' && side === 'two') return;
+    if (attack === 'signature' && !infernalRules) return;
     const current = combatRef.current;
     const next = resolveCombatAttack(
       current,
@@ -392,7 +404,7 @@ export function PentagramLiveFight({
       attack,
       fighterOneDefinition,
       fighterTwoDefinition,
-      allowLightCancel || (infernalRules && attack === 'special'),
+      allowLightCancel || (infernalRules && (attack === 'special' || attack === 'light')),
     );
     commitCombat(next);
     finishCombatIfNeeded(current, next);
@@ -629,6 +641,7 @@ export function PentagramLiveFight({
                 decision.attack,
                 fighterOneDefinition,
                 fighterTwoDefinition,
+                infernalRules && decision.attack === 'light',
               );
             }
             continue;
@@ -675,6 +688,7 @@ export function PentagramLiveFight({
     finishCombatIfNeeded,
     beginCinematic,
     beginFinish,
+    infernalRules,
     matchMode,
     prefersReducedMotion,
     reducedMotion,
@@ -686,8 +700,13 @@ export function PentagramLiveFight({
   useEffect(() => {
     const pressedCodes = pressedCodesRef.current;
     const pointerTrackers = pointerTrackersRef.current;
+    const acceptsCode = (code: string) => {
+      if (code === 'KeyT') return infernalRules && Boolean(fighterOneDefinition.signature);
+      if (code === 'KeyI') return infernalRules && matchMode === 'local' && Boolean(fighterTwoDefinition.signature);
+      return MANAGED_CODES.has(code);
+    };
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!MANAGED_CODES.has(event.code)) return;
+      if (!acceptsCode(event.code)) return;
 
       const isGlobalFightCommand = ['Escape', 'KeyP', 'Enter'].includes(event.code);
       const editableTarget = isEditableTarget(event.target);
@@ -745,7 +764,7 @@ export function PentagramLiveFight({
     };
 
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (!MANAGED_CODES.has(event.code)) return;
+      if (!acceptsCode(event.code)) return;
       if (!isEditableTarget(event.target)) event.preventDefault();
       pressedCodesRef.current.delete(event.code);
       applyInputSnapshot();
@@ -770,6 +789,9 @@ export function PentagramLiveFight({
     };
   }, [
     applyInputSnapshot,
+    fighterOneDefinition.signature,
+    fighterTwoDefinition.signature,
+    infernalRules,
     beginFinish,
     matchMode,
     continueFight,
@@ -949,12 +971,16 @@ export function PentagramLiveFight({
   const fighterOneCombatFrame = getCombatAnimationFrame(finishWinner === 'one' ? 'special' : combat.actionOne, finishWinner === 'one' ? finishFrameMs : combat.actionMsOne, {
     animationSetId: fighterOneSprite?.animationSetId,
     actionDurationMs: finishWinner === 'one' ? FINISH_CINEMATIC_MS : fighterOneActionDurationMs,
+    impactAtMs: !finishWinner && combat.actionOne === 'signature' && fighterOneDefinition.signature
+      ? INFERNAL_SIGNATURES[fighterOneDefinition.signature].startupMs : undefined,
     hitAttack: combat.lastHitAttackOne ?? undefined,
     loopElapsedMs: animationClockMs,
   });
   const fighterTwoCombatFrame = getCombatAnimationFrame(finishWinner === 'two' ? 'special' : combat.actionTwo, finishWinner === 'two' ? finishFrameMs : combat.actionMsTwo, {
     animationSetId: fighterTwoSprite?.animationSetId,
     actionDurationMs: finishWinner === 'two' ? FINISH_CINEMATIC_MS : fighterTwoActionDurationMs,
+    impactAtMs: !finishWinner && combat.actionTwo === 'signature' && fighterTwoDefinition.signature
+      ? INFERNAL_SIGNATURES[fighterTwoDefinition.signature].startupMs : undefined,
     hitAttack: combat.lastHitAttackTwo ?? undefined,
     loopElapsedMs: animationClockMs,
   });
@@ -1041,8 +1067,11 @@ export function PentagramLiveFight({
     backgroundPosition: `${fighterTwoColumn * 20}% ${fighterTwoSprite.row * (100 / 3)}%`,
   } : undefined;
   function individualPose(side: PlayerSide, fighterId: string, action: CombatAction, cinematic: PentagramCinematicKind | null) {
+    if (!infernalRules) return undefined;
+    const outfit = getInfernalCostume(fighterId, side === 'one' ? costumeOne : costumeTwo);
+    if (outfit) return costumePose(outfit, action, cinematic, finishWinner === side && fightPhase === 'finisher');
     if (finishWinner === side && impactPose) return impactPose;
-    if (infernalRules && fighterId === 'charlie' && !cinematic && action === 'idle') return '/assets/sprites/stances/charlie.webp';
+    if (!cinematic && action === 'idle') return INFERNAL_STANCES[fighterId];
     return undefined;
   }
   const poseOne = individualPose('one', fighterOne.id, combat.actionOne, fighterOneCinematicKind);
@@ -1402,6 +1431,14 @@ export function PentagramLiveFight({
                   <small>{label}</small>
                 </button>
               ))}
+              {infernalRules && (side === 'one' ? fighterOneDefinition.signature : fighterTwoDefinition.signature) && (
+                <button type="button" className="arena-touch-button is-attack"
+                  aria-label={`${shortLabel} technique signature`} disabled={touchControlsDisabled}
+                  onClick={() => performAttack(side, 'signature')}>
+                  <span aria-hidden="true">{side === 'one' ? 'T' : 'I'}</span>
+                  <small>Technique</small>
+                </button>
+              )}
               {POSE_TOUCH_CONTROLS.map(({ action, label, glyph }) => (
                 <button
                   key={action}

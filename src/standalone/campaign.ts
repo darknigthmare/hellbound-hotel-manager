@@ -19,6 +19,26 @@ function duel(opponent: string, stage: PentagramStageId, scene: string): StoryCh
 
 // Original exhibition fiction. The scenes use the locations available to the standalone.
 export const STORY_ROUTES: Readonly<Record<string, StoryRoute>> = {
+  hz_mimzy: {
+    title: 'La recette du rappel',
+    intro: 'Mimzy promet une soirée au bénéfice de l’hôtel. Quand la recette disparaît, personne ne s’étonne de la voir déjà près de la sortie. Elle pose son manteau et revient sur scène.',
+    chapters: [
+      duel('husk', 'hotel-bar', 'Husk a trouvé une pièce dans le piano. Il ferme le comptoir et met Mimzy au défi de refaire son numéro, pas à pas, jusqu’au moment où le couvercle a claqué.'),
+      duel('velvette', 'vee-broadcast-studio', 'Sur une vidéo de Velvette, deux mains emportent la caisse derrière le rideau. Mimzy entre sur le plateau au beau milieu de la rediffusion pour faire reculer l’image.'),
+      duel('alastor', 'hotel-lobby', 'Alastor a racheté la dette de la soirée. Il lui tend la caisse et allume son micro pour recueillir ses remerciements. Mimzy veut rendre l’argent sans lui devoir un autre rappel.'),
+    ],
+    ending: 'Husk compte jusqu’à la dernière pièce. Mimzy glisse son propre cachet dans le bocal. Du bar, elle entend Charlie annoncer son nom une seconde fois. Cette fois elle y retourne les mains vides.',
+  },
+  hb_sallie_may: {
+    title: 'La cloche des deux sœurs',
+    intro: 'La vieille cloche du ranch arrive chez I.M.P. dans un carton adressé à Millie. Sallie May avait demandé qu’on répare le battant. Le bon de livraison porte déjà la mention « accessoire de tournage ».',
+    chapters: [
+      duel('hb_moxxie', 'imp-reception', 'Moxxie a rangé le battant dans un étui et répète son entrée musicale. Sallie May lui propose une seule prise pour lui faire entendre la différence entre un tintement et l’appel du troupeau.'),
+      duel('hb_blitzo', 'pentagram-rooftops', 'Blitzø a suspendu la cloche au-dessus du décor pour sa publicité. Sallie May monte avant la prise. Il veut conserver sa dernière cascade, elle veut conserver la cloche entière.'),
+      duel('hb_millie', 'imp-reception', 'Millie a peint leurs initiales sous le bronze. Devant la porte du bureau, les sœurs reprennent leur vieux jeu du ranch. Celle qui tient le seuil décidera où accrocher la cloche.'),
+    ],
+    ending: 'Les deux sœurs la rapportent au ranch. Sallie May laisse à Millie la ficelle du battant et une longue seconde de silence. Au premier coup, leur père ouvre la porte avant même de les voir.',
+  },
   charlie: {
     title: 'Une place à la table',
     intro: 'Charlie prépare une soirée portes ouvertes. Elle a dressé la table pour douze. Le premier visiteur vient vérifier si la porte résistera à une charge.',
@@ -315,7 +335,7 @@ export const STORY_ROUTES: Readonly<Record<string, StoryRoute>> = {
     chapters: [
       duel('hb_blitzo', 'hotel-exterior', 'Blitzø propose une improvisation à deux. Fizz lui demande de refaire leur entrée sur des marches beaucoup plus courtes.'),
       duel('hb_verosika', 'vee-broadcast-studio', 'Verosika répète sur la même marque. Les deux artistes essaient de traverser le plateau sans jamais se voler leur lumière.'),
-      duel('hb_asmodeus', 'hotel-bar', 'Asmodeus veut annuler le numéro trop risqué. Fizz lui présente une version où c’est lui qui décide quand lâcher prise.'),
+      duel('hb_asmodeus', 'ozzies-cabaret', 'De retour chez Ozzie’s pour la première, Asmodeus veut annuler le numéro trop risqué. Fizz lui présente une version où c’est lui qui décide quand lâcher prise.'),
     ],
     ending: 'Fizz entre les mains vides. Au premier rire, il aperçoit Asmodeus qui laisse enfin retomber le filet derrière le rideau.',
   },
@@ -325,7 +345,7 @@ export const STORY_ROUTES: Readonly<Record<string, StoryRoute>> = {
     chapters: [
       duel('hb_verosika', 'vee-broadcast-studio', 'Verosika connaît l’autre entrée. Elle lui fait refaire son passage pour vérifier que les techniciens pourront aussi l’emprunter.'),
       duel('hb_blitzo', 'hotel-exterior', 'Blitzø prétend pouvoir tenir seul le cordon de sécurité. Asmodeus vient tester la promesse en personne.'),
-      duel('hb_fizzarolli', 'hotel-bar', 'Fizz attend dans la petite salle et demande le dernier mot sur sa sortie. Asmodeus accepte de suivre son rythme.'),
+      duel('hb_fizzarolli', 'ozzies-cabaret', 'Au terme de la tournée, Fizz attend chez Ozzie’s, dans le cercle de la Luxure. Il demande le dernier mot sur sa sortie. Asmodeus accepte de suivre son rythme.'),
     ],
     ending: 'Asmodeus fait poser un loquet à l’intérieur de la loge. La prochaine entrée en scène commencera quand l’artiste l’aura choisi.',
   },
@@ -370,7 +390,14 @@ type StoryBeat = 'intro' | 'rival' | 'ending';
 
 const illustrations: Readonly<Record<string, Partial<Record<StoryBeat, string>>>> = {
   charlie: { intro: 'charlie-intro', ending: 'charlie-ending' },
-  alastor: { rival: 'alastor-vox-rival' },
+  hz_mimzy: { intro: 'mimzy-intro' },
+  hb_sallie_may: { intro: 'sallie-intro' },
+  hb_loona: { intro: 'loona-intro', rival: 'loona-blitzo-rival', ending: 'loona-ending' },
+  alastor: { intro: 'alastor-intro', rival: 'alastor-vox-rival', ending: 'alastor-ending' },
+  vaggie: { intro: 'vaggie-intro', rival: 'vaggie-lute-rival', ending: 'vaggie-ending' },
+  lute: { rival: 'vaggie-lute-rival' },
+  hb_fizzarolli: { intro: 'fizz-intro', rival: 'fizz-rival', ending: 'fizz-ending' },
+  hb_asmodeus: { intro: 'ozzie-intro', rival: 'fizz-rival', ending: 'ozzie-ending' },
   vox: { rival: 'alastor-vox-rival' },
   hb_blitzo: { intro: 'blitzo-intro', rival: 'blitzo-striker-rival' },
   hb_striker: { rival: 'blitzo-striker-rival' },

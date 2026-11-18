@@ -21,6 +21,10 @@ ET.register_namespace("r", R[1:-1])
 
 
 def xml(element):
+    # OPC readers expect the default namespace on package metadata parts.
+    for namespace in (P, C):
+        if element.tag.startswith(namespace):
+            ET.register_namespace("", namespace[1:-1])
     return ET.tostring(element, encoding="utf-8", xml_declaration=True)
 
 

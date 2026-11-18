@@ -19,10 +19,11 @@ Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun ch
 
 ## Contenu de cette version
 
-- 34 combattants : 22 kits Hazbin existants et 12 nouveaux kits Helluva.
-- Helluva : Blitzø, Moxxie, Millie, Loona, Stolas, Striker, Verosika, Fizzarolli, Asmodeus, Beelzebub, Crimson et Andrealphus.
-- 102 actions nommées accessibles : trois attaques par combattant. Le tableau de production recense aussi les six actions des deux kits AU existants exclus de ce roster.
-- Huit arènes Hazbin avec leurs spectateurs, plus la réception d’I.M.P. Cette neuvième arène dispose d’une partition originale et de trois plans peints. Le mur, le comptoir et la lampe suivent le centre du combat à des vitesses différentes. La réduction des mouvements fixe la caméra.
+- 36 combattants jouables, dont 23 de *Hazbin Hotel* et 13 de *Helluva Boss*. Mimzy et Sallie May rejoignent la sélection avec leurs trois attaques, leur technique signature, leur campagne et leur finition.
+- 112 attaques nommées, dont 108 légers, lourds et spéciaux et quatre signatures. La touche T pour J1 ou I pour J2 utilise la technique du personnage disponible. Le carnet indique le coût en tension, les temps et la portée.
+- Vaggie se couvre après une estocade qui touche. Blitzø recule puis revient au contact. Mimzy peut enchaîner un léger après son coup de talon. Sallie May gagne du terrain lorsque son coup d’épaule est bloqué.
+- La garde-robe de la sélection permet à chaque côté de choisir l’uniforme d’exorciste de Vaggie ou l’apparence humaine de Loona. Chaque costume dispose de quatre poses individuelles, pour la garde, le léger, le lourd et la réaction.
+- Dix arènes, dont la réception d’I.M.P. et le cabaret d’Ozzie. Chez Ozzie, la salle, la table et le rideau se déplacent à des vitesses distinctes. Au studio des Vees, une caméra et un moniteur ajoutent deux plans indépendants au décor du plateau. La réduction des mouvements fixe la caméra.
 - Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush.
 - Histoire propose une route par combattant. Le prologue introduit trois rencontres écrites, dont un rival au troisième duel. La victoire finale débloque un épilogue à revoir dans le Codex. Les filtres de saison et d’univers déterminent les routes disponibles.
 - En tournoi, le joueur dispute les matchs de son combattant. Le tirage reproductible remplit un tableau de huit, quatre ou deux participants selon l’effectif disponible. Les duels CPU sont simulés et une défaite élimine le joueur.
@@ -42,11 +43,11 @@ Chaque résultat porte un identifiant unique, empêchant les doubles récompense
 
 ## Portée de la fidélité
 
-Les noms et motifs des personnages sont issus des sources du projet; statistiques, dégâts, timings, attaques et confrontations sont des adaptations de jeu. Les kits reposent sur le moteur existant à trois attaques : un nom de tir ou de glace ne signifie pas qu'une simulation de projectile ou une altération spécifique a été ajoutée.
+Les noms et motifs des personnages proviennent des sources du projet. Les statistiques, les timings et les confrontations ont été conçus pour le jeu. Les trois attaques de base utilisent les règles de portée et d’impact du moteur. Les quatre signatures disposent en plus de leurs propriétés de déplacement, de garde ou d’enchaînement.
 
 Les kits Fizzarolli, Verosika, Crimson et certaines figures puissantes sont signalés comme interprétations de leurs motifs. Stolas correspond à une incarnation avant *Mastermind*. Les états chronologiques alternatifs sont des chantiers distincts du classeur.
 
-Les cinq illustrations narratives couvrent les prologue et épilogue de Charlie, saisis à l’hôtel, la rivalité Alastor/Vox, le prologue de Blitzø chez I.M.P. et sa confrontation avec Striker. Les autres scènes composent les portraits du jeu sur le décor du duel. Les finitions disposent de 34 titres et de huit traitements visuels partagés. Charlie et Blitzø ont chacun un sprite d’impact dédié et détouré. La posture de repos de Charlie utilise également un dessin latéral orienté vers son adversaire. Les combats et les récits sont des fictions d’exposition. Le jeu en réseau avec rollback, les replays déterministes, le relais et les boss multiphases restent des chantiers de production.
+Les onglets **Illustrations** et **Tenues et gardes** donnent le fichier exact utilisé pour chaque scène et apparence. Les scènes encore à illustrer associent les portraits au décor de la rencontre. Les finitions disposent de 36 titres et de huit traitements visuels partagés. Les storyboards de leur version longue se trouvent dans **Finitions**. Les campagnes et les duels sont des histoires originales d’Exhibition. Le réseau avec rollback, les replays déterministes, le relais et les boss multiphases restent à produire.
 
 La référence de décor pour I.M.P. est *Murder Family*, saison 1 de Helluva Boss. La composition jouable élargit la réception pour laisser la piste libre. [Épisode officiel](https://www.youtube.com/watch?v=el_PChGfJN8)
 
@@ -58,7 +59,7 @@ La référence de décor pour I.M.P. est *Murder Family*, saison 1 de Helluva Bo
 
 `HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx` contient onze onglets : Synthèse, Chantiers, Parité CQC, Personnages, Kits combat, Variantes, Techniques, Arènes, Parcours, Recette et Sources.
 
-Les statuts distinguent Existant, Ajout PR, Partiel, À produire et À vérifier. « Ajout PR » décrit le lot de code soumis dans la [PR #1](https://github.com/darknigthmare/hellbound-hotel-manager/pull/1), ouverte et non fusionnée. Le code et le classeur sont publiés sur la [branche GitHub](https://github.com/darknigthmare/hellbound-hotel-manager/tree/feat/infernal-versus-standalone-20261021). Le [commit de livraison `907af4a`](https://github.com/darknigthmare/hellbound-hotel-manager/commit/907af4a1e6a209862eebdc93db684955cb548b9d) a été vérifié par comparaison exacte de son arbre avec le lot local validé; les mises à jour de cette documentation peuvent être postérieures à ce commit.
+Les statuts distinguent Existant, Ajout PR, Partiel, À produire et À vérifier. « Ajout PR » décrit le lot de code soumis dans la [PR #1](https://github.com/darknigthmare/hellbound-hotel-manager/pull/1), dans son état à la livraison initiale. Le code et le classeur sont publiés sur la [branche GitHub](https://github.com/darknigthmare/hellbound-hotel-manager/tree/feat/infernal-versus-standalone-20261021). Le [commit de livraison `907af4a`](https://github.com/darknigthmare/hellbound-hotel-manager/commit/907af4a1e6a209862eebdc93db684955cb548b9d) a été vérifié par comparaison exacte de son arbre avec le lot local validé; les mises à jour de cette documentation peuvent être postérieures à ce commit.
 
 Le [classeur Excel sur Google Drive](https://docs.google.com/spreadsheets/d/16kAZgcsTuPPq1DALMuVxZ4j7cymVk34_/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) a été téléversé au format `.xlsx` et ses métadonnées ont été vérifiées. Il est rangé dans le [dossier Infernal Versus](https://drive.google.com/drive/folders/1iU5o5IO2L6T9L1hLzqqFtHoYn95CKose).
 

@@ -15,8 +15,18 @@ export interface StandaloneFighter {
 
 // These are original, balanced exhibition kits. Names and motifs refer to the
 // series; damage, range, timing and match outcomes are game-design adaptations.
+const HAZBIN_EXHIBITION_PROFILES: Readonly<Record<string, FighterProfile>> = {
+  ...FIGHTER_PROFILES,
+  vaggie: { ...FIGHTER_PROFILES.vaggie, signature: 'line-guard' },
+  hz_mimzy: {
+    id: 'hz_mimzy', signature: 'encore-heel', style: 'Charleston à contretemps', archetype: 'Feinte et reprise de rythme',
+    combatStyle: 'trickster', evidence: 'motif', power: 10, range: 55, speed: 83, guard: 48,
+    tensionGain: 20, basicMove: 'Talonnade syncopée', heavyMove: 'Tour de piste', specialMove: 'Rappel à contretemps',
+  },
+};
+
 export const HELLUVA_COMBAT_PROFILES: Readonly<Record<string, FighterProfile>> = {
-  hb_blitzo: { id: 'hb_blitzo', style: 'Improvisation I.M.P.', archetype: 'Pression polyvalente', combatStyle: 'balanced', evidence: 'onscreen', power: 13, range: 68, speed: 78, guard: 54, tensionGain: 16, basicMove: 'Coup de crosse', heavyMove: 'Rafale de couverture', specialMove: 'Assaut I.M.P.' },
+  hb_blitzo: { id: 'hb_blitzo', signature: 'service-exit', style: 'Improvisation I.M.P.', archetype: 'Pression polyvalente', combatStyle: 'balanced', evidence: 'onscreen', power: 13, range: 68, speed: 78, guard: 54, tensionGain: 16, basicMove: 'Coup de crosse', heavyMove: 'Rafale de couverture', specialMove: 'Assaut I.M.P.' },
   hb_moxxie: { id: 'hb_moxxie', style: 'Arsenal de précision', archetype: 'Contrôle à distance', combatStyle: 'zoner', evidence: 'onscreen', power: 12, range: 88, speed: 54, guard: 62, tensionGain: 16, basicMove: 'Riposte au pistolet', heavyMove: 'Tir de précision', specialMove: 'Plan de tir croisé' },
   hb_millie: { id: 'hb_millie', style: 'Fureur de Wrath', archetype: 'Combat rapproché', combatStyle: 'rushdown', evidence: 'onscreen', power: 15, range: 48, speed: 88, guard: 52, tensionGain: 18, basicMove: 'Taille rapide', heavyMove: 'Revers de hache', specialMove: 'Déchaînement de Wrath' },
   hb_loona: { id: 'hb_loona', style: 'Poursuite hellhound', archetype: 'Mobilité et griffes', combatStyle: 'rushdown', evidence: 'onscreen', power: 14, range: 52, speed: 90, guard: 48, tensionGain: 17, basicMove: 'Griffe courte', heavyMove: 'Bond prédateur', specialMove: 'Traque hellhound' },
@@ -27,6 +37,11 @@ export const HELLUVA_COMBAT_PROFILES: Readonly<Record<string, FighterProfile>> =
   hb_asmodeus: { id: 'hb_asmodeus', style: 'Maître du cabaret', archetype: 'Pression de boss', combatStyle: 'boss', evidence: 'motif', power: 18, range: 80, speed: 48, guard: 78, tensionGain: 12, basicMove: 'Balayage royal', heavyMove: 'Entrée théâtrale', specialMove: 'Rideau d’Ozzie' },
   hb_beelzebub: { id: 'hb_beelzebub', style: 'Reine de la fête', archetype: 'Mobilité de boss', combatStyle: 'boss', evidence: 'motif', power: 16, range: 74, speed: 76, guard: 58, tensionGain: 14, basicMove: 'Élan festif', heavyMove: 'Tourbillon royal', specialMove: 'Apogée de la fête' },
   hb_crimson: { id: 'hb_crimson', style: 'Patron de Greed', archetype: 'Pression méthodique', combatStyle: 'bruiser', evidence: 'motif', power: 15, range: 66, speed: 44, guard: 76, tensionGain: 14, basicMove: 'Coup d’intimidation', heavyMove: 'Revers du parrain', specialMove: 'Embuscade de Greed' },
+  hb_sallie_may: {
+    id: 'hb_sallie_may', signature: 'ranch-gate', style: 'Aplomb du ranch', archetype: 'Contrôle au sol et punition',
+    combatStyle: 'bruiser', evidence: 'motif', power: 16, range: 57, speed: 56, guard: 77,
+    tensionGain: 14, basicMove: 'Coup de botte', heavyMove: 'Barrière du ranch', specialMove: 'Dernière cloche de Wrath',
+  },
   hb_andrealphus: { id: 'hb_andrealphus', style: 'Noblesse de glace', archetype: 'Contrôle de boss', combatStyle: 'zoner', evidence: 'onscreen', power: 17, range: 88, speed: 50, guard: 68, tensionGain: 12, basicMove: 'Pointe de glace', heavyMove: 'Arche de givre', specialMove: 'Domaine gelé' },
 };
 
@@ -46,9 +61,9 @@ function helluvaCharacter(id: string): Character {
 
 export const STANDALONE_ROSTER: readonly StandaloneFighter[] = [
   ...HAZBIN_DIRECTORY_PROFILES
-    .filter(source => source.fighterEligible && source.assetStatus === 'ready' && source.id in FIGHTER_PROFILES && !source.id.startsWith('sim_'))
+    .filter(source => source.assetStatus === 'ready' && source.id in HAZBIN_EXHIBITION_PROFILES && !source.id.startsWith('sim_'))
     .map(source => ({
-      character: toHazbinArenaCharacter(source), profile: FIGHTER_PROFILES[source.id],
+      character: toHazbinArenaCharacter(source), profile: HAZBIN_EXHIBITION_PROFILES[source.id],
       franchise: 'Hazbin Hotel' as const, source: source.sourceLabel,
       spoiler: source.timeline === 'season_2' ? 'season_2' as const : 'season_1' as const,
     })),

@@ -1,4 +1,4 @@
-export type PentagramStageId =
+export type HotelStageId =
   | 'hotel-lobby'
   | 'hotel-bar'
   | 'hotel-exterior'
@@ -6,8 +6,9 @@ export type PentagramStageId =
   | 'cannibal-town-square'
   | 'carmine-industries'
   | 'heaven-embassy'
-  | 'vee-broadcast-studio'
-  | 'imp-reception';
+  | 'vee-broadcast-studio';
+
+export type PentagramStageId = HotelStageId | 'imp-reception' | 'ozzies-cabaret';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -259,6 +260,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'Vox and the Vees operate through Pentagram City’s television and media network.',
     imagePath: '/assets/stages/hazbin/vee-broadcast-studio.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/vee-broadcast-studio.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/vee-broadcast-studio/camera.webp',
+      near: '/assets/stages/hazbin/vee-broadcast-studio/monitor.webp',
+    },
     imagePosition: 'center 48%',
     accent: '#4de1ff',
     shadow: '#120b3a',
@@ -322,6 +327,7 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
 ] as const;
 
 const IMP_RECEPTION = '/assets/stages/helluva/imp-reception';
+const OZZIES_CABARET = '/assets/stages/helluva/ozzies-cabaret';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -342,6 +348,26 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 3, 7, 10], [1, 5, 8, 11], [5, 8, 12, 15], [7, 11, 14, 17]],
     bassPattern: [0, 0, 7, 10, 12, 7, 5, 1],
     leadPattern: [12, null, 15, 13, null, 10, 7, null, 13, 12, null, 8, 7, null, 1, null],
+  },
+}, {
+  id: 'ozzies-cabaret',
+  name: 'Ozzie’s · Cabaret',
+  district: 'Anneau de la Luxure',
+  description: 'La piste du dîner-spectacle se prolonge entre les tables en cœur et le rideau de scène.',
+  loreBasis: 'Helluva Boss, S1 E7, Ozzie’s. La salle de spectacle d’Asmodeus accueille Fizzarolli et le numéro de Moxxie. La largeur de la piste est adaptée au duel.',
+  imagePath: `${OZZIES_CABARET}/room.webp`,
+  thumbnailPath: `${OZZIES_CABARET}/thumb.webp`,
+  scenery: { middle: `${OZZIES_CABARET}/table.webp`, near: `${OZZIES_CABARET}/curtain.webp` },
+  imagePosition: 'center 48%',
+  accent: '#f79adb',
+  shadow: '#24153c',
+  floor: '#301543',
+  soundtrack: {
+    id: 'ozzies-after-hours', title: 'Après le rappel', bpm: 108, rootMidi: 39,
+    swing: 0.64, drive: 0.7, seed: 7108,
+    chordProgression: [[0, 3, 7, 10], [5, 8, 12, 15], [2, 5, 8, 12], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 10, 8, 7, 5, 3, 1],
+    leadPattern: [null, 10, 12, null, 15, 14, 12, null, 8, null, 10, 7, 5, null, 3, null],
   },
 }];
 

@@ -46,6 +46,7 @@ async function collectRuntimeTables(){
     const modules = await Promise.all([
       'standalone/roster', 'standalone/campaign', 'lib/pentagram-fighters',
       'lib/pentagram-combat', 'lib/pentagram-stages', 'lib/infernal-finishers',
+      'lib/infernal-appearances', 'lib/character-sprites',
     ].map(module => import(src + module + '.ts')));
     runtime = Object.assign({}, ...modules);
   } finally {
@@ -55,10 +56,17 @@ async function collectRuntimeTables(){
   const stages = new Map(runtime.STANDALONE_STAGES.map(stage => [stage.id, stage]));
   const names = new Map(fighters.map(fighter => [fighter.character.id, fighter.character.name]));
   const actions = { light: 'Léger', heavy: 'Lourd', special: 'Spécial' };
-  const inputs = { light: 'F / J', heavy: 'G / K', special: 'H / L' };
+  const inputs = { light: 'F / J', heavy: 'G / K', special: 'H / L', signature: 'T / I' };
   const kinds = { intro: 'Prologue', rival: 'Rivalité', ending: 'Épilogue' };
   const effects = { radio:'Radio', signal:'Signal vidéo', halo:'Halo', embers:'Braises', blade:'Lame', frost:'Givre', curtain:'Rideau', shadow:'Ombre' };
-  const routes = [], chapters = [], moves = [], signatures = [], finishes = [], pictures = [];
+  const routes = [], chapters = [], moves = [], signatures = [], finishes = [], pictures = [], appearances = [];
+  const assetPaths = new Set();
+  for (const stage of stages.values()) {
+    assert(design.stageDesign.some(entry => entry.id === stage.id), 'Arène absente du registre : ' + stage.id);
+    for (const file of [stage.imagePath, stage.thumbnailPath, stage.scenery?.middle, stage.scenery?.near]) {
+      if (file) assetPaths.add(file);
+    }
+  }
   for (const fighter of fighters) {
     const {character: {id, name}, profile} = fighter;
     const route = runtime.STORY_ROUTES[id];
@@ -72,28 +80,42 @@ async function collectRuntimeTables(){
       chapters.push([name, index + 1, index === 2 ? 'Rival' : 'Rencontre', names.get(chapter.opponent), stages.get(chapter.stage).name, chapter.scene]);
     }
     const definition = runtime.buildCombatantDefinition(fighter.character, profile);
-    for (const [action, label] of Object.entries(actions)) {
+    const technique = definition.signature && runtime.INFERNAL_SIGNATURES[definition.signature];
+    const commands = technique ? {...actions, signature: 'Signature'} : actions;
+    for (const [action, label] of Object.entries(commands)) {
       const spec = runtime.getCombatMoveInfo(definition, action);
       moves.push([name, label, spec.name, inputs[action], spec.startupMs, null, spec.actionMs, spec.recoveryMs, spec.cooldownMs, spec.hitstunMs, spec.reach, spec.tensionCost]);
     }
-    signatures.push([name, card.signature, card.input, card.effect, card.counter, 'À prototyper']);
+    signatures.push([name, technique?.name ?? card.signature, technique ? inputs.signature : card.input,
+      technique?.description ?? card.effect, card.counter, technique ? 'Jouable' : 'À prototyper']);
     const finish = runtime.INFERNAL_FINISHES[id];
-    const pose='/assets/sprites/finishers/'+id+'.webp';
-    const poseExists=await fs.access(path.join(root, 'public', pose)).then(()=>true,()=>false);
-    finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer',poseExists?pose:'']);
+    if (finish.impactSprite) assetPaths.add(finish.impactSprite);
+    finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer', finish.impactSprite ?? '']);
+    const sprite = runtime.getCombatSpriteAsset(id);
+    const stance = runtime.INFERNAL_STANCES[id];
+    assetPaths.add(sprite.portrait);
+    assetPaths.add(sprite.sheet);
+    if (stance) assetPaths.add(stance);
+    appearances.push([name, 'Habituelle', fighter.source, sprite.portrait, stance ?? '', sprite.sheet, '', '', '']);
+    for (const outfit of runtime.INFERNAL_COSTUMES[id] ?? []) {
+      for (const file of [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil]) assetPaths.add(file);
+      appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil]);
+    }
     for (const [kind, label] of Object.entries(kinds)) {
       const image = runtime.storyIllustration(id, kind);
-      if (image) await fs.access(path.join(root, 'public', image));
+      if (image) assetPaths.add(image);
       const brief = kind === 'intro' ? intro : kind === 'rival' ? route.chapters[2].scene : ending;
       pictures.push([name, label, kind === 'rival' ? rival : name, brief, image ? 'Illustration dédiée' : 'Décor et portraits', image ?? '']);
     }
   }
+  await Promise.all([...assetPaths].map(file => fs.access(path.join(root, 'public', file))));
   const sets = [
     ['Modes V2', 'Règles des modes de jeu', 'Les modes proposés constituent une spécification. Les filtres et le choix du combattant déterminent les parcours accessibles.', ['Mode','État','Sélection','Règles et déroulé','Progression','Critère de recette'], [24,24,44,58,46,65], design.modeDesign.map(r=>[r.name,r.status,r.selection,r.rules,r.progress,r.check])],
     ['Histoires', 'Histoires des combattants', 'Texte du jeu. Chaque parcours est une fiction originale d’Infernal Versus.', ['Combattant','Univers','Titre du parcours','Prologue','Rival final','Épilogue'], [27,21,38,62,25,62], routes],
     ['Duels de campagne','Déroulé des confrontations','Les rencontres apparaissent dans leur ordre de jeu. Le troisième duel conclut la rivalité.', ['Protagoniste','Duel','Rencontre','Adversaire','Arène','Mise en scène jouable'],[27,12,16,26,35,72],chapters],
     ['Données moteur','Temps, portée et tension des attaques','Le moteur mesure en millisecondes. L’équivalent à 60 Hz est arrondi au supérieur. L’impact est évalué une fois. La portée est un pourcentage de la largeur de l’arène.', ['Combattant','Attaque','Nom en jeu','Touche J1 / J2','Départ → impact (ms)','Impact à 60 Hz (images)','Action totale (ms)','Après impact (ms)','Recharge depuis départ (ms)','Étourdissement (ms)','Portée (% de largeur)','Coût tension'],[26,15,33,18,19,22,18,18,23,22,17,16],moves],
-    ['Techniques à produire','Techniques signatures à prototyper','Les commandes sont des intentions de design. Avant et arrière sont relatifs au regard du combattant.', ['Combattant','Nouvelle technique','Commande proposée','Effet et rôle','Indice visuel et réponse','État'],[27,33,31,68,67,19],signatures],
+    ['Techniques signatures','Techniques signatures des combattants','Les techniques jouables utilisent les touches J1 / J2. Les commandes des prototypes sont proposées en directions relatives au combattant.', ['Combattant','Technique','Commande','Effet et rôle','Indice visuel et réponse','État'],[27,33,31,68,67,19],signatures],
+    ['Tenues et gardes','Apparences en sélection et en duel','Une ligne par apparence. Les poses individuelles complètent les planches du jeu. Les chemins sont relatifs au dossier public.', ['Combattant','Tenue','Référence ou incarnation','Visuel de sélection','Garde individuelle','Planche de base','Pose légère','Pose lourde','Pose de réaction'],[26,29,48,56,55,58,56,56,56],appearances],
     ['Finitions','Finitions en jeu et storyboards individuels','K.-O. décisif. Fenêtre de commande ' + runtime.FINISH_INPUT_MS + ' ms, mise en scène ' + runtime.FINISH_CINEMATIC_MS + ' ms. Les colonnes D à G détaillent une variante longue à produire.', ['Combattant','Finition en jeu','Effet en jeu','Variante longue proposée','Découpage proposé','Dernier plan proposé','État variante','Pose clé dédiée disponible'],[27,37,21,38,65,52,19,48],finishes],
     ['Plans des arènes','Arènes et profondeur de champ','Les fichiers existants sont relevés dans le registre des arènes. Les compositions de plans sont des indications pour la production.', ['Arène','État en jeu','Fond · direction','Médian · direction','Avant-plan / sol · direction','Animation proposée','Composition du duel','Repérage critique','Ressources en jeu'],[27,29,42,42,44,44,55,56,65],design.stageDesign.map(r=>{
       const stage=stages.get(r.id);
@@ -105,7 +127,7 @@ async function collectRuntimeTables(){
     ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],design.sources],
   ];
 
-  return {sets, fighterCount:fighters.length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
+  return {sets, fighterCount:fighters.length, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
 }
 if(process.argv[2]==='--read-game'){
   const payload=JSON.stringify(await collectRuntimeTables());
@@ -114,7 +136,7 @@ if(process.argv[2]==='--read-game'){
 }
 const child=spawnSync(process.execPath,[fileURLToPath(import.meta.url),'--read-game'],{encoding:'utf8',maxBuffer:4*1024*1024});
 if(child.status!==0)throw Error(child.stderr||'Lecture du code interrompue.');
-const {sets,fighterCount,expectedFrames}=JSON.parse(child.stdout);
+const {sets,fighterCount,signatureCount,expectedFrames}=JSON.parse(child.stdout);
 process.env.DOTNET_PROCESSOR_COUNT ??= '2';
 process.env.COMPlus_gcServer ??= '0';
 process.env.DOTNET_GCHeapHardLimit ??= '20000000';
@@ -169,9 +191,12 @@ const guideRows=[
   ['Histoires','Routes scénarisées',null,'Lire le prologue et l’épilogue, puis consulter les trois rencontres dans Duels de campagne.'],
   ['Duels de campagne','Confrontations',null,'Trier par protagoniste et numéro. Le rival occupe le dernier chapitre.'],
   ['Données moteur','Attaques paramétrées',null,'Contrôler départ, contact, récupération et recharge. La simulation utilise des millisecondes.'],
-  ['Techniques à produire','Techniques proposées',null,'Lire la commande, le rôle et le moyen de contrer la signature avant de l’animer.'],
+  ['Techniques signatures','Signatures jouables',null,'Retrouver chaque commande et la réaction propre au coup. Les valeurs de combat figurent dans Données moteur.'],
+  ['Techniques signatures','Signatures à prototyper',null,'Le prototype décrit la commande envisagée, son rôle et la réponse adverse à tester.'],
+  ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable avec ses poses de garde, légère, lourde et de réaction.'],
   ['Finitions','Variantes longues à dessiner',null,'Les colonnes B et C identifient l’effet en jeu. Les autres colonnes décrivent une séquence en projet.'],
   ['Plans des arènes','Lieux détaillés',null,'Les fichiers en jeu et le travail de découpe artistique sont renseignés pour chaque lieu.'],
+  ['Plans des arènes','Arènes à trois plans jouables',null,'Les fichiers de fond et les deux plans détourés sont chargés par le jeu.'],
   ['Illustrations','Affectations de scène',null,'Compter les affectations des prologues, rivalités et épilogues. Une illustration partagée apparaît sur plusieurs lignes.'],
   ['Illustrations','Affectations dédiées',null,'Une image dédiée existe. La revue du dessin, de la saison et du costume reste une étape distincte.'],
   ['Illustrations','Affectations à illustrer',null,'Le jeu compose actuellement un décor et les portraits existants pour ces scènes.'],
@@ -180,24 +205,38 @@ const guideRows=[
 ];
 drawnTable(guide,'Infernal Versus · Guide de la V2','18 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
+const guideFilters = {
+  'Signatures jouables': ['F', 'Jouable'],
+  'Signatures à prototyper': ['F', 'À prototyper'],
+  'Tenues alternatives': ['B', '<>Habituelle'],
+  'Arènes à trois plans jouables': ['B', 'Trois plans en jeu'],
+  'Affectations dédiées': ['E', 'Illustration dédiée'],
+  'Affectations à illustrer': ['E', 'Décor et portraits'],
+};
 for(const [i,row] of guideRows.entries()){
-  const condition=i===8?'Illustration dédiée':i===9?'Décor et portraits':null;
+  const filter = guideFilters[row[1]];
   const rowCount=sets.find(([name])=>name===row[0])[5].length;
   const end=rowCount+5;
-  const formula=condition?`=COUNTIF('Illustrations'!$E$6:$E${end},"${condition}")`:`=COUNTA('${row[0]}'!$A$6:$A${end})`;
+  const formula = filter
+    ? `=COUNTIF('${row[0]}'!$${filter[0]}$6:$${filter[0]}${end},"${filter[1]}")`
+    : `=COUNTA('${row[0]}'!$A$6:$A${end})`;
   guide.getCell(i+5,2).formulas=[[formula]];
 }
 console.log('Recalcul.');
 wb.recalculate();
-assert.equal(guide.getRange('C7').values[0][0],fighterCount);
-assert.equal(guide.getRange('C9').values[0][0],fighterCount*3);
-assert.equal(guide.getRange('C14').values[0][0]+guide.getRange('C15').values[0][0],pictures.length);
+const summaryCount = label => guide.getCell(guideRows.findIndex(row => row[1] === label) + 5, 2).values[0][0];
+assert.equal(summaryCount('Routes scénarisées'),fighterCount);
+assert.equal(summaryCount('Attaques paramétrées'),fighterCount*3 + signatureCount);
+assert.equal(summaryCount('Signatures jouables'),signatureCount);
+assert.equal(summaryCount('Signatures à prototyper') + signatureCount,fighterCount);
+assert.equal(summaryCount('Tenues alternatives'),sets.find(([name]) => name === 'Tenues et gardes')[5].length - fighterCount);
+assert.equal(summaryCount('Affectations dédiées') + summaryCount('Affectations à illustrer'),pictures.length);
 
 assert.equal(dataSheet.getRange('F'+(moves.length+5)).values[0][0],expectedFrames);
 console.log('Inspection.');
 const issues=await wb.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:60},summary:'Vérification des cellules'});
 if (issues.ndjson.includes('"kind":"match"')) throw Error('Erreur de formule : '+issues.ndjson);
-console.log((await wb.inspect({kind:'region',sheetId:'Guide V2',range:'A6:C17',maxChars:2700})).ndjson);
+console.log((await wb.inspect({kind:'region',sheetId:'Guide V2',range:'A6:C'+(guideRows.length+5),maxChars:3200})).ndjson);
 await fs.mkdir(destination,{recursive:true});
 if(global.gc)global.gc();
 console.log('Export Excel',Math.round(process.memoryUsage().rss/1024/1024)+' Mio');

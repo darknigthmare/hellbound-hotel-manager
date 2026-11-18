@@ -2223,7 +2223,7 @@
   }
 }
 
-/* I.M.P. uses separate painted plates, all driven by the fighters' midpoint. */
+/* Three illustrated layers follow the midpoint between the fighters. */
 .infernal-room-plane, .infernal-desk-plane, .infernal-near-plane {
   position: absolute;
   pointer-events: none;
@@ -2236,7 +2236,25 @@
 }
 .infernal-desk-plane { width: 33%; left: 69%; bottom: 16%; }
 .infernal-near-plane { z-index: 3; width: 23%; top: 1%; left: -4%; }
-.arena-combat-stage[data-stage="imp-reception"] :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
+.arena-combat-stage:is([data-stage="imp-reception"],[data-stage="ozzies-cabaret"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
+.arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-desk-plane { width: 28%; left: 1%; bottom: 17%; }
+.arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-near-plane {
+  width: auto;
+  height: 83%;
+  max-width: 24%;
+  object-fit: contain;
+  object-position: right top;
+  top: -3%;
+  right: -5%;
+  left: auto;
+}
+
+.arena-combat-stage[data-stage="vee-broadcast-studio"] .infernal-desk-plane {
+  width: auto; height: 37%; right: 5%; left: auto; bottom: 23%;
+}
+.arena-combat-stage[data-stage="vee-broadcast-studio"] .infernal-near-plane {
+  width: auto; height: 25%; left: 1%; top: -3%;
+}
 
 .infernal-finish-choice {
   position: absolute;

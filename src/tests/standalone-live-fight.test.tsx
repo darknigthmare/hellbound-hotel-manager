@@ -65,6 +65,29 @@ function start() { advance(4_000); expect(stage().getAttribute('data-phase')).to
 function knockOut() { key('KeyG'); advance(1_000); }
 
 describe('standalone combat lifecycle', () => {
+  it('plays each authored technique with its own keyboard and touch commands', () => {
+    const vaggie = getStandaloneFighter('vaggie')!;
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true, fighterTwo: vaggie.character,
+      fighterTwoDefinition: buildCombatantDefinition(vaggie.character, vaggie.profile),
+    })} />);
+    start();
+    advance(100);
+    const one = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
+    const two = document.querySelector<HTMLElement>('.arena-combatant.is-two')!;
+    const touchOne = screen.getByRole('button', { name: 'P1 technique signature' });
+    const touchTwo = screen.getByRole('button', { name: 'P2 technique signature' });
+    key('KeyT');
+    fireEvent.click(touchTwo);
+    expect(one.dataset.action).toBe('signature');
+    expect(two.dataset.action).toBe('signature');
+    advance(1200);
+    fireEvent.click(touchOne);
+    key('KeyI');
+    expect(one.dataset.action).toBe('signature');
+    expect(two.dataset.action).toBe('signature');
+  });
+
   it('renders Helluva intros on a real base stance rather than invented cinematic assets', () => {
     render(<PentagramLiveFight {...props()} />);
     const fighter = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;

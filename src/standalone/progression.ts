@@ -1,3 +1,4 @@
+import { getInfernalCostume } from '../lib/infernal-appearances';
 import { STORY_ROUTES, storyAvailable } from './campaign';
 import type { CombatAiDifficulty } from '../lib/pentagram-ai';
 
@@ -58,6 +59,7 @@ export interface StandaloneMatchResult {
 
 export interface StandaloneSave {
   version: 1;
+  wardrobe?: Partial<Record<'one' | 'two', Record<string, string>>>;
   options: StandaloneOptions;
   stats: StandaloneStats;
   /** Completed story routes, retained after the current run is replaced. */
@@ -296,9 +298,26 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   const keys = ['version', 'options', 'stats', 'recentResults', 'processedResultIds', 'run'];
   // Earlier version-1 saves predate the gallery. Keep the original storage key and recover them on read.
   if (value && typeof value === 'object' && Object.hasOwn(value, 'storyEndings')) keys.push('storyEndings');
+  if (value && typeof value === 'object' && Object.hasOwn(value, 'wardrobe')) keys.push('wardrobe');
   const entry = record(value, keys, 'Sauvegarde');
   ensure(entry.version === 1, 'Version de sauvegarde incompatible.');
   const knownIds = new Set(uniqueIds(rosterIds, MAX_ROSTER_SIZE, 'Catalogue connu'));
+  let wardrobe: StandaloneSave['wardrobe'];
+  if (entry.wardrobe !== undefined) {
+    ensure(entry.wardrobe && typeof entry.wardrobe === 'object' && !Array.isArray(entry.wardrobe), 'Vestiaire invalide.');
+    wardrobe = {};
+    for (const [side, selections] of Object.entries(entry.wardrobe)) {
+      ensure((side === 'one' || side === 'two') && selections && typeof selections === 'object' && !Array.isArray(selections), 'Sélection de tenues invalide.');
+      const outfits = Object.entries(selections);
+      ensure(outfits.length <= knownIds.size, 'Trop de tenues enregistrées.');
+      const validated: Record<string, string> = {};
+      for (const [id, choice] of outfits) {
+        ensure(knownIds.has(id) && typeof choice === 'string' && getInfernalCostume(id, choice), 'Tenue inconnue.');
+        validated[id] = choice;
+      }
+      wardrobe[side] = validated;
+    }
+  }
   const options = record(entry.options, ['soundtrack', 'reducedMotion', 'difficulty'], 'Options');
   ensure(typeof options.soundtrack === 'boolean' && typeof options.reducedMotion === 'boolean' && DIFFICULTIES.includes(options.difficulty as CombatAiDifficulty), 'Options incompatibles.');
   const counters = record(entry.stats, ['matches', 'wins', 'losses', 'draws', 'streak', 'bestStreak', 'bestSurvival', 'completedArcades'], 'Statistiques');
@@ -328,6 +347,7 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   return {
     version: 1,
     options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty },
+    ...(wardrobe ? { wardrobe } : {}),
     stats, storyEndings: [...storyEndings], recentResults, processedResultIds: [...processedResultIds], run,
   };
 }
