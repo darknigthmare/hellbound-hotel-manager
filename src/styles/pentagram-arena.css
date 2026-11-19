@@ -2236,7 +2236,7 @@
 }
 .infernal-desk-plane { width: 33%; left: 69%; bottom: 16%; }
 .infernal-near-plane { z-index: 3; width: 23%; top: 1%; left: -4%; }
-.arena-combat-stage:is([data-stage="imp-reception"],[data-stage="ozzies-cabaret"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
+.arena-combat-stage:is([data-stage="imp-reception"],[data-stage="ozzies-cabaret"],[data-stage="hotel-lobby"],[data-stage="hotel-bar"],[data-stage="cannibal-town-square"],[data-stage="carmine-industries"],[data-stage="wrath-ranch"],[data-stage="heaven-court"],[data-stage="pentious-workshop"],[data-stage="looloo-land"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
 .arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-desk-plane { width: 28%; left: 1%; bottom: 17%; }
 .arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-near-plane {
   width: auto;
@@ -2254,6 +2254,52 @@
 }
 .arena-combat-stage[data-stage="vee-broadcast-studio"] .infernal-near-plane {
   width: auto; height: 25%; left: 1%; top: -3%;
+}
+
+.arena-combat-stage[data-stage="hotel-lobby"] .infernal-desk-plane {
+  width: auto; height: 42%; right: -1%; left: auto; bottom: 14%;
+}
+.arena-combat-stage[data-stage="hotel-lobby"] .infernal-near-plane {
+  width: 38%; height: auto; left: -3%; top: -10%;
+}
+.arena-combat-stage[data-stage="hotel-bar"] .infernal-desk-plane {
+  width: auto; height: 29%; left: 80%; bottom: 13%;
+}
+.arena-combat-stage[data-stage="hotel-bar"] .infernal-near-plane {
+  width: auto; height: 33%; left: 6%; top: -3%;
+}
+.arena-combat-stage[data-stage="cannibal-town-square"] .infernal-near-plane {
+  width: 48%; height: auto; left: -3%; top: -3%;
+}
+.arena-combat-stage[data-stage="wrath-ranch"] .infernal-desk-plane {
+  width: 24%; left: 1%; bottom: 14%;
+}
+.arena-combat-stage[data-stage="wrath-ranch"] .infernal-near-plane {
+  width: 72%; left: 20%; top: -5%;
+}
+.arena-combat-stage[data-stage="heaven-court"] .infernal-desk-plane {
+  width: auto; height: 39%; left: 3%; bottom: 15%;
+}
+.arena-combat-stage[data-stage="heaven-court"] .infernal-near-plane {
+  width: auto; height: 35%; right: -1%; left: auto; top: -4%;
+}
+.arena-combat-stage[data-stage="pentious-workshop"] .infernal-desk-plane {
+  width: 34%; right: 1%; left: auto; bottom: 18%;
+}
+.arena-combat-stage[data-stage="pentious-workshop"] .infernal-near-plane {
+  width: auto; height: 48%; left: 1%; top: -10%;
+}
+.arena-combat-stage[data-stage="looloo-land"] .infernal-desk-plane {
+  width: auto; height: 51%; left: -1%; bottom: 15%;
+}
+.arena-combat-stage[data-stage="looloo-land"] .infernal-near-plane {
+  width: 72%; left: 19%; top: -5%;
+}
+.arena-combat-stage[data-stage="carmine-industries"] .infernal-desk-plane {
+  width: auto; height: 44%; left: 1%; bottom: 14%;
+}
+.arena-combat-stage[data-stage="carmine-industries"] .infernal-near-plane {
+  width: 25%; right: -3%; left: auto; top: auto; bottom: -1%;
 }
 
 .infernal-finish-choice {

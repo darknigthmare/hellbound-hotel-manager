@@ -6,6 +6,7 @@ import {
   getPentagramStage,
   getPentagramStageVisualProperties,
   PENTAGRAM_STAGES,
+  STANDALONE_STAGES,
 } from '../lib/pentagram-stages';
 import { renderPentagramScore } from '../lib/pentagram-soundtrack';
 
@@ -22,8 +23,11 @@ describe('Pentagram Arena stages and original soundtrack', () => {
 
     for (const stage of PENTAGRAM_STAGES) {
       expect(stage.imagePath).toMatch(/^\/assets\//);
-      expect(stage.thumbnailPath)
-        .toBe(`/assets/stages/hazbin/thumbs/${stage.id}.webp`);
+      expect(stage.thumbnailPath).toMatch(/^\/assets\/stages\/hazbin\//);
+      expect(
+        existsSync(resolve(process.cwd(), 'public', stage.thumbnailPath.replace(/^\//, ''))),
+        stage.thumbnailPath,
+      ).toBe(true);
       expect(
         existsSync(resolve(process.cwd(), 'public', stage.imagePath.replace(/^\//, ''))),
         stage.imagePath,
@@ -48,7 +52,7 @@ describe('Pentagram Arena stages and original soundtrack', () => {
       .toBe('/assets/stages/hazbin/hotel-lobby.webp');
     expect(getPentagramStage('carmine-industries')).toMatchObject({
       name: 'Carmine Industries',
-      imagePath: '/assets/stages/hazbin/carmine-industries.webp',
+      imagePath: '/assets/stages/hazbin/carmine-industries/room.webp',
     });
     expect(getPentagramStage('heaven-embassy')).toMatchObject({
       name: 'Heaven Embassy & Clock Tower',
@@ -74,6 +78,20 @@ describe('Pentagram Arena stages and original soundtrack', () => {
     expect(checkpoints.map(index => first.left[index]))
       .toEqual(checkpoints.map(index => second.left[index]));
     expect(first.left.some((sample, index) => sample !== first.right[index])).toBe(true);
+  });
+
+  it('resolves standalone arenas and each available illustrated plane without empty image sources', () => {
+    expect(new Set(STANDALONE_STAGES.map(stage => stage.id)).size).toBe(STANDALONE_STAGES.length);
+    for (const id of ['wrath-ranch', 'heaven-court', 'pentious-workshop', 'looloo-land']) {
+      expect(getPentagramStage(id).id).toBe(id);
+    }
+    for (const stage of STANDALONE_STAGES) {
+      const paths = [stage.imagePath, stage.thumbnailPath, ...Object.values(stage.scenery ?? {})];
+      for (const path of paths) {
+        expect(path, stage.id).toMatch(/^\/assets\//);
+        expect(existsSync(resolve(process.cwd(), 'public', path.replace(/^\//, ''))), path).toBe(true);
+      }
+    }
   });
 
   it('renders a distinct original motif for every stage', () => {

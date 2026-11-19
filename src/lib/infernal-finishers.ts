@@ -6,6 +6,7 @@ export interface InfernalFinish {
   title: string;
   effect: FinishEffect;
   impactSprite?: string;
+  detachedProp?: string;
 }
 
 // Original exhibition endings. Titles and stage effects describe the simulation.
@@ -19,7 +20,7 @@ export const INFERNAL_FINISHES: Readonly<Record<string, InfernalFinish>> = {
   husk: { title: 'La banque ferme', effect: 'curtain' },
   niffty: { title: 'Dernier point de couture', effect: 'blade' },
   sirpentious: { title: 'Compte à rebours du dirigeable', effect: 'embers' },
-  lucifer: { title: 'Rappel du roi', effect: 'halo' },
+  lucifer: { title: 'Rappel du roi', effect: 'halo', detachedProp: '/assets/sprites/parts/lucifer-apple-cane.webp' },
   cherribomb: { title: 'Bouquet de minuit', effect: 'embers' },
   vox: { title: 'Extinction du signal', effect: 'signal' },
   valentino: { title: 'Fumée de fin de bobine', effect: 'shadow' },

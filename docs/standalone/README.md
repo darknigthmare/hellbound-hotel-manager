@@ -15,20 +15,21 @@ npm run check:standalone
 # Servir dist-combat/ comme racine d'un serveur HTTP statique.
 ```
 
-Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets existants du dépôt, environ 441 Mio; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
+Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
 ## Contenu de cette version
 
 - 36 combattants jouables, dont 23 de *Hazbin Hotel* et 13 de *Helluva Boss*. Mimzy et Sallie May rejoignent la sélection avec leurs trois attaques, leur technique signature, leur campagne et leur finition.
 - 112 attaques nommées, dont 108 légers, lourds et spéciaux et quatre signatures. La touche T pour J1 ou I pour J2 utilise la technique du personnage disponible. Le carnet indique le coût en tension, les temps et la portée.
 - Vaggie se couvre après une estocade qui touche. Blitzø recule puis revient au contact. Mimzy peut enchaîner un léger après son coup de talon. Sallie May gagne du terrain lorsque son coup d’épaule est bloqué.
-- La garde-robe de la sélection permet à chaque côté de choisir l’uniforme d’exorciste de Vaggie ou l’apparence humaine de Loona. Chaque costume dispose de quatre poses individuelles, pour la garde, le léger, le lourd et la réaction.
-- Dix arènes, dont la réception d’I.M.P. et le cabaret d’Ozzie. Chez Ozzie, la salle, la table et le rideau se déplacent à des vitesses distinctes. Au studio des Vees, une caméra et un moniteur ajoutent deux plans indépendants au décor du plateau. La réduction des mouvements fixe la caméra.
+- La garde-robe de la sélection propose trois costumes : l’uniforme d’exorciste de Vaggie et les apparences humaines de Loona et de Stolas. Chacun dispose de six poses individuelles : attente/garde, léger, lourd, réaction, accroupissement et saut, soit 18 images de costume.
+- Les poses individuelles d’Angel Dust et de Striker couvrent l’attente, le contact du léger et la réaction. Millie dispose de l’attente et du contact léger; Husk, de l’attente et d’une garde distincte. Ces images complètent les banques d’animation existantes des 36 combattants.
+- Quatorze arènes, dont Wrath Ranch, Heaven Court, Pentious Workshop et Loo Loo Land. Dix utilisent trois plans illustrés, Cannibal Town en utilise deux, et trois gardent un fond unique. Le lobby dispose d’un chariot et d’une valance; le bar utilise sa salle retrouvée avec tabouret et lampe; Carmine Industries possède une salle, un râtelier et une caisse. La réduction des mouvements fixe la caméra.
 - Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush.
 - Histoire propose une route par combattant. Le prologue introduit trois rencontres écrites, dont un rival au troisième duel. La victoire finale débloque un épilogue à revoir dans le Codex. Les filtres de saison et d’univers déterminent les routes disponibles.
 - En tournoi, le joueur dispute les matchs de son combattant. Le tirage reproductible remplit un tableau de huit, quatre ou deux participants selon l’effectif disponible. Les duels CPU sont simulés et une défaite élimine le joueur.
 - Le carnet de coups détaille touches, démarrage, récupération, délai entre attaques, portée et tension. Un lourd touchant sans garde peut être suivi d’un spécial dès la fin de l’arrêt sur impact, pendant sa récupération. Il consomme 50 de tension.
-- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes. Le vainqueur presse H (J1), L (J2) ou le bouton **Fatalité**. La finition dure 1,5 seconde avant la pose de victoire. **Passer** enchaîne directement sur la victoire. Le chrono, le double K.-O. et le dojo suivent leurs règles habituelles.
+- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes. Le vainqueur presse H (J1), L (J2) ou le bouton **Fatalité**. La finition dure 1,5 seconde avant la pose de victoire. **Passer** enchaîne directement sur la victoire. La canne à pomme de Lucifer est un objet séparé utilisé pendant sa finition. Le chrono, le double K.-O. et le dojo suivent leurs règles habituelles.
 - Trois difficultés; sélection des deux univers ou d'un seul; recherche; filtre Saison 1/Saisons 1–2 appliqué également aux spectateurs.
 - Palmarès, parcours reproductibles à partir d'une seed, reprise entre combats, export/import validés et confirmation avant remplacement.
 - Clavier partagé et contrôles tactiles, pause, relâchement des commandes lors d'une perte de focus, réduction des mouvements et flashes.
@@ -51,9 +52,28 @@ Les onglets **Illustrations** et **Tenues et gardes** donnent le fichier exact u
 
 La référence de décor pour I.M.P. est *Murder Family*, saison 1 de Helluva Boss. La composition jouable élargit la réception pour laisser la piste libre. [Épisode officiel](https://www.youtube.com/watch?v=el_PChGfJN8)
 
+## Couverture des assets au 19 novembre 2026
+
+Le relevé issu des registres contient 231 chemins d’assets distincts, tous présents. Les détails par personnage et par arène se trouvent dans [ASSET_COVERAGE.json](ASSET_COVERAGE.json). Les poses individuelles ci-dessous concernent l’apparence habituelle; les 18 poses de costumes sont comptées séparément.
+
+| Élément | Disponible | Complément à produire pour couvrir les 36 combattants |
+| --- | ---: | ---: |
+| Pose individuelle d’attente | 8 | 28 |
+| Pose individuelle de garde distincte | 1 | 35 |
+| Pose individuelle de contact léger | 3 | 33 |
+| Pose individuelle de réaction | 2 | 34 |
+| Pose clé de finition | 5 | 31 |
+| Illustrations affectées aux introductions, rivalités et épilogues | 24 sur 108 | 84 affectations |
+
+Les 24 affectations narratives utilisent 20 illustrations distinctes. Les autres scènes utilisent encore décor et portraits. Les 36 combattants restent jouables grâce à leurs atlas et banques d’animation; une pose clé disponible ne constitue pas un cycle animé complet. Le haut de Millie, le nœud papillon de Moxxie, la lance de Vaggie et la canne microphone d’Alastor sont conservés comme pièces de production, sans assemblage articulé en jeu. La lanterne de Wrath et les variantes Carmine sont disponibles comme alternatives.
+
+Le [rapport de production du 19 novembre](PRODUCTION_2026-11-19.md) distingue les originaux récupérés, les nouveaux dessins et les exports retrouvés sans master. Le lot contient 46 masters PNG et trois œuvres disponibles uniquement en WebP, soit 49 œuvres, ainsi que 14 exports alternatifs préservés. Le [manifeste de livraison](../../art/infernal-versus/production/delivery-2026-11-19.json) recense 117 fichiers d’image : 46 PNG, 57 WebP publics et 14 WebP archivés. Parmi les 57 exports publics, 50 sont branchés dans les registres et sept sont préparés pour la production. La [galerie du lot](ASSET_GALLERY_2026-11-19.md) permet de parcourir les images.
+
+Les dessins sont des adaptations pour le jeu. La fidélité à une référence, la fluidité des transitions et l’alignement des points d’appui restent à vérifier dans le jeu. La validation visuelle dans le navigateur n’a pas pu être achevée pour ce lot.
+
 ## Bible de production
 
-[Ouvrir le classeur V2](INFERNAL_VERSUS_BIBLE_V2.xlsx). Il rassemble les routes et leurs combats, les valeurs des coups issues du moteur, les finitions, les stages, les illustrations et les propositions à produire. Le registre de conception est dans `extension-plan.json`. Pour reconstruire le classeur avec les dépendances d’auteur, exécuter `node docs/standalone/build-production-bible.mjs` à la racine du projet.
+[Ouvrir le classeur V2](INFERNAL_VERSUS_BIBLE_V2.xlsx). Ses 23 feuilles rassemblent les routes et leurs combats, les valeurs des coups issues du moteur, les finitions, les stages, les illustrations et les propositions à produire. Le registre de conception est dans `extension-plan.json`. Pour reconstruire le classeur avec les dépendances d’auteur, exécuter `node docs/standalone/build-production-bible.mjs` à la racine du projet.
 
 ## Excel et sources du premier lot
 
@@ -71,4 +91,6 @@ Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884
 
 ## Vérifications
 
-`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. Les tests standalone couvrent la progression, l'isolation des sauvegardes, les imports, les assets, le dojo, les callbacks de match et les parcours d'interface. `QA_RESULTS.json` conserve le rapport historique de la première livraison.
+`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. La passe finale du 19 novembre 2026 a réussi : TypeScript, ESLint, 41 suites et 310 tests, les deux builds et 823 empreintes SHA-256 de la distribution standalone. Cette distribution contient 823 fichiers pour 458,6 Mio; cela n’implique pas un téléchargement initial de toutes les images dans le navigateur. L’audit des registres trouve 231 chemins d’assets et aucune référence absente.
+
+Les tests standalone couvrent la progression, l'isolation des sauvegardes, les imports, les assets, le dojo, les callbacks de match et les parcours d'interface. Le [rapport du 19 novembre](PRODUCTION_2026-11-19.md#vérifications-et-publication) conserve les résultats et le statut de publication. La validation visuelle dans le navigateur reste non réalisée. `QA_RESULTS.json` conserve le rapport historique de la première livraison.

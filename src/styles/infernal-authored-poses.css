@@ -1,0 +1,37 @@
+.arena-combatant img.infernal-individual-pose.infernal-individual-pose--portrait {
+  width: 66.6667%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  bottom: -3%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.infernal-detached-prop {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  left: var(--prop-x);
+  bottom: 11%;
+  width: clamp(46px, 9vw, 112px);
+  height: 56%;
+  object-fit: contain;
+  transform-origin: center 85%;
+  animation: infernal-cane-flourish 1.5s ease-in-out both;
+  filter: drop-shadow(0 0 8px #ffe6a280);
+}
+
+@keyframes infernal-cane-flourish {
+  0%, 100% { opacity: 0; transform: translateX(-50%) scaleX(var(--prop-facing)) rotate(-18deg); }
+  25%, 75% { opacity: 1; transform: translateX(-50%) scaleX(var(--prop-facing)) rotate(12deg); }
+}
+
+[data-reduced-motion="true"] .infernal-detached-prop {
+  animation: none;
+  opacity: 1;
+  transform: translateX(-50%) scaleX(var(--prop-facing));
+}
+
+.arena-combat-stage[data-phase="paused"] .infernal-detached-prop {
+  animation-play-state: paused;
+}

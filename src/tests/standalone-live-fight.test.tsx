@@ -65,6 +65,29 @@ function start() { advance(4_000); expect(stage().getAttribute('data-phase')).to
 function knockOut() { key('KeyG'); advance(1_000); }
 
 describe('standalone combat lifecycle', () => {
+  it.each([
+    ['husk', false, 'husk-guard'],
+    ['hb_millie', true, 'hb_millie-ready'],
+  ] as const)('keeps the recovered %s pose format through a held guard', (id, portrait, guardPose) => {
+    const fighter = getStandaloneFighter(id)!;
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true, fighterOne: fighter.character,
+      fighterOneDefinition: buildCombatantDefinition(fighter.character, fighter.profile),
+    })} />);
+    start();
+    const combatant = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
+    const idleImage = combatant.querySelector<HTMLImageElement>('img.infernal-individual-pose')!;
+    expect(idleImage.getAttribute('src')).toBe(`/assets/sprites/individual/${id}-ready.webp`);
+    expect(idleImage.classList.contains('infernal-individual-pose--portrait')).toBe(portrait);
+    fireEvent.keyDown(stage(), { code: 'KeyE' });
+    advance(100);
+    expect(combatant.dataset.action).toBe('guard');
+    const guardImage = combatant.querySelector<HTMLImageElement>('img.infernal-individual-pose')!;
+    expect(guardImage.getAttribute('src')).toBe(`/assets/sprites/individual/${guardPose}.webp`);
+    expect(guardImage.classList.contains('infernal-individual-pose--portrait')).toBe(portrait);
+    fireEvent.keyUp(stage(), { code: 'KeyE' });
+  });
+
   it('plays each authored technique with its own keyboard and touch commands', () => {
     const vaggie = getStandaloneFighter('vaggie')!;
     render(<PentagramLiveFight {...props({
@@ -165,6 +188,26 @@ describe('Infernal Versus finishing sequence', () => {
     advance(1500); knockOut();
     expect(stage().dataset.phase).toBe('finish-window');
   }
+  it('keeps the separated cane mounted at the same finishing frame through pause and resume', () => {
+    const lucifer = getStandaloneFighter('lucifer')!;
+    const input = props({ infernalRules: true, fighterOne: lucifer.character,
+      fighterOneDefinition: { ...buildCombatantDefinition(lucifer.character, lucifer.profile), power: 1000, range: 1000 } });
+    render(<PentagramLiveFight {...input} />);
+    decisiveKo();
+    key('KeyH'); advance(500);
+    const cane = stage().querySelector('.infernal-detached-prop');
+    expect(cane?.getAttribute('src')).toBe('/assets/sprites/parts/lucifer-apple-cane.webp');
+    const frame = stage().querySelector('.is-one')?.getAttribute('data-frame-index');
+    key('KeyP'); advance(4000);
+    expect(stage().dataset.phase).toBe('paused');
+    expect(stage().querySelector('.infernal-detached-prop')).toBe(cane);
+    expect(stage().querySelector('.is-one')?.getAttribute('data-frame-index')).toBe(frame);
+    key('KeyP');
+    expect(stage().querySelector('.infernal-detached-prop')).toBe(cane);
+    advance(1100);
+    expect(stage().querySelector('.infernal-detached-prop')).toBeNull();
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+  });
   it('allows only the local winner to trigger the finish and preserves a single result', () => {
     const input = props({ infernalRules: true });
     render(<PentagramLiveFight {...input} />);

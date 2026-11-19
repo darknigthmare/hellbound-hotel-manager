@@ -21,7 +21,7 @@ describe('Infernal Versus production assets', () => {
     const room = getPentagramStage('imp-reception');
     expect(STANDALONE_STAGES).toContain(room);
     const { middle, near } = room.scenery!;
-    for (const path of [...paths, room.imagePath, room.thumbnailPath, middle, near]) {
+    for (const path of [...paths, room.imagePath, room.thumbnailPath, middle!, near!]) {
       expect(existsSync(join(process.cwd(), 'public', path)), path).toBe(true);
     }
   });

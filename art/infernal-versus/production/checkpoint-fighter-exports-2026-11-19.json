@@ -1,0 +1,536 @@
+{
+  "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+  "reviewScope": "Local PNG visual inspection and alpha/dimension analysis; ten lossless WebP conversions copied to repository. No code edits, no master edits, no new generation, no browser render.",
+  "fidelity": "Gameplay adaptations; not source-validated 1:1.",
+  "pivots": "All pivots are proposed integration coordinates, not author-supplied bones.",
+  "runtimeIntegrationPlan": "Current registrations are recorded in docs/standalone/ASSET_COVERAGE.json; detached clothing and diagonal finisher props remain prepared outside the rig.",
+  "count": 10,
+  "totalRuntimeBytes": 2401260,
+  "assets": [
+    {
+      "file": "stances/hb_millie.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.74185,
+      "opaqueBounds": [
+        85,
+        122,
+        825,
+        1431
+      ],
+      "sha256": "b592dfcb142644bf4607e1f208166c6701574e66cff942bb94215b28fdad3645",
+      "decision": "runtime_candidate",
+      "layout": "portrait",
+      "pivotPx": [
+        512,
+        1432
+      ],
+      "actions": [
+        "idle",
+        "guard"
+      ],
+      "note": "Coherent with light-contact; retain canvas. Pair does not supply recoil.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/stances/hb_millie.png",
+      "sourceBlobSha": "41be713c74df5c30a3600b553ae9ad09cc8fe7d6",
+      "sourceSha256": "b592dfcb142644bf4607e1f208166c6701574e66cff942bb94215b28fdad3645",
+      "runtimeRepoPath": "public/assets/sprites/individual/hb_millie-ready.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_millie-ready.webp",
+      "runtimeSha256": "0355fb449376d858cd169125d0fc887b2802c379758e7f878e927a2adfab67fc",
+      "runtimeBytes": 393990,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "poses/hb_millie-light-contact.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.72879,
+      "opaqueBounds": [
+        84,
+        119,
+        990,
+        1432
+      ],
+      "sha256": "0b5c58c7730ba2a7cb921d2d037bc0407df0212a8eef72b4cd8168bc0b4bbc4f",
+      "decision": "runtime_candidate",
+      "layout": "portrait",
+      "pivotPx": [
+        512,
+        1432
+      ],
+      "actions": [
+        "light_contact"
+      ],
+      "note": "Same design and feet baseline as ready; use only after engine startup, keep atlas for unsupported actions.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/poses/hb_millie-light-contact.png",
+      "sourceBlobSha": "6eb10a6a06dfd2af3e3c67c4096ad3f0b031f218",
+      "sourceSha256": "0b5c58c7730ba2a7cb921d2d037bc0407df0212a8eef72b4cd8168bc0b4bbc4f",
+      "runtimeRepoPath": "public/assets/sprites/individual/hb_millie-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_millie-strike.webp",
+      "runtimeSha256": "88b358a3cb66d1bf03a490f53f99492d6fa566eed03839daaaca351fbc1e4b53",
+      "runtimeBytes": 405928,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "stances/husk.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.79847,
+      "opaqueBounds": [
+        342,
+        13,
+        1051,
+        995
+      ],
+      "sha256": "7320ec810b157377d629469f0a3c2e7554fad1fc8e8c6f8f684bfa20fcc54e95",
+      "decision": "runtime_candidate",
+      "layout": "landscape",
+      "pivotPx": [
+        768,
+        994
+      ],
+      "actions": [
+        "idle"
+      ],
+      "note": "Coherent with guard. Top margin only 13 px; no visible clipping.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/stances/husk.png",
+      "sourceBlobSha": "4a8cccd01584e9e76c636ec4f65c144e2dec3ba0",
+      "sourceSha256": "7320ec810b157377d629469f0a3c2e7554fad1fc8e8c6f8f684bfa20fcc54e95",
+      "runtimeRepoPath": "public/assets/sprites/individual/husk-ready.webp",
+      "runtimeUrl": "/assets/sprites/individual/husk-ready.webp",
+      "runtimeSha256": "aa62d647673d0b4e73aa75f8380942828b0f04e9c14f39adb7cd54a3b48a2e29",
+      "runtimeBytes": 331822,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "guard/husk.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.79884,
+      "opaqueBounds": [
+        342,
+        23,
+        1047,
+        993
+      ],
+      "sha256": "6e08ce078abb85c2dae9b453cd77fdc758ce83cef10a23d677821461902aa3c2",
+      "decision": "runtime_candidate",
+      "layout": "landscape",
+      "pivotPx": [
+        768,
+        994
+      ],
+      "actions": [
+        "guard"
+      ],
+      "note": "Distinct raised guard, same design and feet baseline as ready; not an attack or hit reaction.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/guard/husk.png",
+      "sourceBlobSha": "63440596a9ae52bfd3e5d254aa06c5bc5d03781a",
+      "sourceSha256": "6e08ce078abb85c2dae9b453cd77fdc758ce83cef10a23d677821461902aa3c2",
+      "runtimeRepoPath": "public/assets/sprites/individual/husk-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/husk-guard.webp",
+      "runtimeSha256": "f5e4c59930681c10d32aadddd5d944dece4235cb89a19ef100a4361df1839de9",
+      "runtimeBytes": 325424,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "costumes/hb_stolas-human-disguise-crouch.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.91536,
+      "opaqueBounds": [
+        518,
+        372,
+        1008,
+        978
+      ],
+      "sha256": "18758de9bd5a606e321ceab78b15944209ddcfa329c35a2156b400ba2f459f5d",
+      "decision": "production_only_incomplete_costume",
+      "layout": "landscape",
+      "pivotPx": [
+        768,
+        978
+      ],
+      "actions": [
+        "crouch"
+      ],
+      "note": "Only two poses recovered. Keep human-disguise out of selectable costume registry until ready/strike/recoil/heavy complete and compatible.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/costumes/hb_stolas-human-disguise-crouch.png",
+      "sourceBlobSha": "6ef1ad8b49140e7b894a41d0b220ade2e31e477a",
+      "sourceSha256": "18758de9bd5a606e321ceab78b15944209ddcfa329c35a2156b400ba2f459f5d",
+      "runtimeRepoPath": "public/assets/sprites/costumes/hb_stolas-human-disguise-crouch.webp",
+      "runtimeUrl": "/assets/sprites/costumes/hb_stolas-human-disguise-crouch.webp",
+      "runtimeSha256": "7aa7f7686d01425e890720e74dc02f168f89e402d7203630514a3aab1752c884",
+      "runtimeBytes": 156290,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "costumes/hb_stolas-human-disguise-jump.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.92282,
+      "opaqueBounds": [
+        504,
+        56,
+        995,
+        790
+      ],
+      "sha256": "1778041d73e98a250f89277a1984e72c8188edcdef593ac9e24008e18090f64a",
+      "decision": "production_only_incomplete_costume",
+      "layout": "landscape",
+      "pivotPx": [
+        768,
+        978
+      ],
+      "actions": [
+        "jump"
+      ],
+      "note": "Pair visually coherent; drawn feet are already 188 px above crouch floor. Do not crop or normalize feet to floor; calibrate future jump motion.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/costumes/hb_stolas-human-disguise-jump.png",
+      "sourceBlobSha": "fe8398242a1fd199ad7954dbd27d881019ffff07",
+      "sourceSha256": "1778041d73e98a250f89277a1984e72c8188edcdef593ac9e24008e18090f64a",
+      "runtimeRepoPath": "public/assets/sprites/costumes/hb_stolas-human-disguise-jump.webp",
+      "runtimeUrl": "/assets/sprites/costumes/hb_stolas-human-disguise-jump.webp",
+      "runtimeSha256": "20ece6d4b0e5f46b04db8631d35d04aa69c150e4cc865db696d5ca6acfd8ce39",
+      "runtimeBytes": 148818,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "registered"
+    },
+    {
+      "file": "parts/hb_moxxie-bowtie.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "zeroFraction": 0.67426,
+      "opaqueBounds": [
+        167,
+        237,
+        1276,
+        861
+      ],
+      "sha256": "ab4679ee93ac0e538deb9926fd68a83153115a799d93bc6c1f3072c265a77cf8",
+      "decision": "production_component",
+      "layout": "landscape_4_3",
+      "previewPivotPx": [
+        724,
+        543
+      ],
+      "attachmentPivotPxApprox": [
+        720,
+        587
+      ],
+      "note": "Isolated front-view bowtie with no body; suitable component or inventory preview, requires rig attachment calibration for 3/4 fighter.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
+      "sourceBlobSha": "f67dcbcca055e1650c49dbab074e2a26729e2c19",
+      "sourceSha256": "ab4679ee93ac0e538deb9926fd68a83153115a799d93bc6c1f3072c265a77cf8",
+      "runtimeRepoPath": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
+      "runtimeUrl": "/assets/sprites/parts/hb_moxxie-bowtie.webp",
+      "runtimeSha256": "827008b5c7df640cb78758c7bdc6c2de3ed1b070c60bbbc8db482bc29ac40ec2",
+      "runtimeBytes": 311698,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "prepared_not_registered"
+    },
+    {
+      "file": "parts/hb_millie-top.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "zeroFraction": 0.8323,
+      "opaqueBounds": [
+        308,
+        298,
+        943,
+        957
+      ],
+      "sha256": "f1167206269b0354ffc4e603626d6334839e5d161f82072c357573e9f63cfdce",
+      "decision": "production_component",
+      "layout": "square",
+      "previewPivotPx": [
+        627,
+        627
+      ],
+      "note": "Isolated front-view top, visually matches black/gold-button design in Millie poses. Not a complete costume or directly rigged overlay.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/parts/hb_millie-top.png",
+      "sourceBlobSha": "41d7b50bc8fd4ea2b1a4ae42f2e6bbda524537a0",
+      "sourceSha256": "f1167206269b0354ffc4e603626d6334839e5d161f82072c357573e9f63cfdce",
+      "runtimeRepoPath": "public/assets/sprites/parts/hb_millie-top.webp",
+      "runtimeUrl": "/assets/sprites/parts/hb_millie-top.webp",
+      "runtimeSha256": "34dad225cff728e102690c5e0c8e73f2f17e2420598429b29f050d135d31055c",
+      "runtimeBytes": 168858,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "prepared_not_registered"
+    },
+    {
+      "file": "props/finishers/alastor-microphone-cane.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.95332,
+      "opaqueBounds": [
+        151,
+        130,
+        1426,
+        947
+      ],
+      "sha256": "55d6c88176ec82199ed517ec62013c31083f415fb7bcb747ea444de436ef2096",
+      "decision": "production_prop_requires_runtime_transform",
+      "layout": "landscape",
+      "attachmentPivotPxApprox": [
+        768,
+        585
+      ],
+      "shaftAngleDegreesApprox": -30,
+      "note": "Full isolated diagonal cane. Lucifer vertical narrow-box CSS would shrink it severely. Needs landscape dimensions, hand anchoring and dedicated transform.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
+      "sourceBlobSha": "7f10e3de2254cfd48aef08535d67bae7d9d71f99",
+      "sourceSha256": "55d6c88176ec82199ed517ec62013c31083f415fb7bcb747ea444de436ef2096",
+      "runtimeRepoPath": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+      "runtimeUrl": "/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+      "runtimeSha256": "e6dbcf80da1cc5d90ef04613ce9b35555c7ddadd47dd6788372b92ba8f93636b",
+      "runtimeBytes": 85410,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "prepared_not_registered"
+    },
+    {
+      "file": "props/finishers/vaggie-exorcist-spear.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "zeroFraction": 0.9633,
+      "opaqueBounds": [
+        74,
+        118,
+        1473,
+        944
+      ],
+      "sha256": "f802f1142f0ad180b80e70578980e544be1fa9ea590e9f4b227b8a7dc508b024",
+      "decision": "production_prop_requires_runtime_transform",
+      "layout": "landscape",
+      "attachmentPivotPxApprox": [
+        768,
+        529
+      ],
+      "shaftAngleDegreesApprox": -30,
+      "note": "Full isolated diagonal spear. Same landscape/canonical-source/hand-anchoring validation required; no duplicated hands or silhouette.",
+      "sourceCommit": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "sourceRepoPath": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
+      "sourceBlobSha": "5356127a0902e3bc096a45cf124889857aaaad68",
+      "sourceSha256": "f802f1142f0ad180b80e70578980e544be1fa9ea590e9f4b227b8a7dc508b024",
+      "runtimeRepoPath": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+      "runtimeUrl": "/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+      "runtimeSha256": "4594c794aab6a9d2005f06e52bd1faefff94cbf57715696965f8ac6cab5a2229",
+      "runtimeBytes": 73022,
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 80,
+        "method": 4,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sameDimensions": true,
+        "sameAlphaBytes": true,
+        "sameVisibleRGBA": true
+      },
+      "visualReview": "Local PNG inspection completed. No clipped anatomy/prop; see per-asset note. Browser rendering not verified.",
+      "status": "prepared_not_registered"
+    }
+  ]
+}

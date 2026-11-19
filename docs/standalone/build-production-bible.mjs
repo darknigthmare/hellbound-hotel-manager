@@ -7,14 +7,15 @@ import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
-// Run from an npm ci checkout with the Codex primary runtime, or install
-// @oai/artifact-tool alongside this script. The optional argument sets the output directory.
+// Run with CODEX_PRIMARY_RUNTIME_NODE from an isolated authoring directory.
+// The game checkout supplies TypeScript; the primary runtime supplies Artifact Tool.
+// The optional argument sets the output directory, outside the tracked source tree.
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../..');
-const destination = process.argv[2] ?? here;
+const outputDir = path.resolve(process.argv[2] ?? path.join(root, '..', 'outputs', 'infernal-bible'));
 const require = createRequire(import.meta.url);
 const artifactPath = require.resolve('@oai/artifact-tool', {
-  paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, here].filter(Boolean),
+  paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES].filter(Boolean),
 });
 
 const design = JSON.parse(await fs.readFile(path.join(here, 'extension-plan.json'), 'utf8')).productionBible;
@@ -90,16 +91,20 @@ async function collectRuntimeTables(){
       technique?.description ?? card.effect, card.counter, technique ? 'Jouable' : 'À prototyper']);
     const finish = runtime.INFERNAL_FINISHES[id];
     if (finish.impactSprite) assetPaths.add(finish.impactSprite);
-    finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer', finish.impactSprite ?? '']);
+    if (finish.detachedProp) assetPaths.add(finish.detachedProp);
+    finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer', finish.impactSprite ?? '', finish.detachedProp ?? '']);
     const sprite = runtime.getCombatSpriteAsset(id);
-    const stance = runtime.INFERNAL_STANCES[id];
+    const poses = runtime.INFERNAL_ACTION_POSES[id];
+    const stance = poses?.ready ?? runtime.INFERNAL_STANCES[id];
     assetPaths.add(sprite.portrait);
     assetPaths.add(sprite.sheet);
+    for (const file of Object.values(sprite.animationSheets ?? {})) if (file) assetPaths.add(file);
     if (stance) assetPaths.add(stance);
-    appearances.push([name, 'Habituelle', fighter.source, sprite.portrait, stance ?? '', sprite.sheet, '', '', '']);
+    if (poses) for (const file of [poses.ready, poses.guard, poses.strike, poses.recoil]) if (file) assetPaths.add(file);
+    appearances.push([name, 'Habituelle', fighter.source, sprite.portrait, stance ?? '', sprite.sheet, poses?.strike ?? '', '', poses?.recoil ?? '', '', '', poses?.guard ?? '']);
     for (const outfit of runtime.INFERNAL_COSTUMES[id] ?? []) {
-      for (const file of [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil]) assetPaths.add(file);
-      appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil]);
+      for (const file of [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump]) if (file) assetPaths.add(file);
+      appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump, '']);
     }
     for (const [kind, label] of Object.entries(kinds)) {
       const image = runtime.storyIllustration(id, kind);
@@ -109,25 +114,32 @@ async function collectRuntimeTables(){
     }
   }
   await Promise.all([...assetPaths].map(file => fs.access(path.join(root, 'public', file))));
+  assert.equal(assetPaths.size, design.assetBatch.runtime.referencedAssets, 'Le registre de production doit refléter les références runtime actuelles.');
+  // Preserved components are checked separately: they are not loaded by the game.
+  for (const component of design.assetBatch.retainedComponents) {
+    for (const file of [component.master, component.export].filter(Boolean)) await fs.access(path.join(root, file));
+  }
   const sets = [
     ['Modes V2', 'Règles des modes de jeu', 'Les modes proposés constituent une spécification. Les filtres et le choix du combattant déterminent les parcours accessibles.', ['Mode','État','Sélection','Règles et déroulé','Progression','Critère de recette'], [24,24,44,58,46,65], design.modeDesign.map(r=>[r.name,r.status,r.selection,r.rules,r.progress,r.check])],
     ['Histoires', 'Histoires des combattants', 'Texte du jeu. Chaque parcours est une fiction originale d’Infernal Versus.', ['Combattant','Univers','Titre du parcours','Prologue','Rival final','Épilogue'], [27,21,38,62,25,62], routes],
     ['Duels de campagne','Déroulé des confrontations','Les rencontres apparaissent dans leur ordre de jeu. Le troisième duel conclut la rivalité.', ['Protagoniste','Duel','Rencontre','Adversaire','Arène','Mise en scène jouable'],[27,12,16,26,35,72],chapters],
     ['Données moteur','Temps, portée et tension des attaques','Le moteur mesure en millisecondes. L’équivalent à 60 Hz est arrondi au supérieur. L’impact est évalué une fois. La portée est un pourcentage de la largeur de l’arène.', ['Combattant','Attaque','Nom en jeu','Touche J1 / J2','Départ → impact (ms)','Impact à 60 Hz (images)','Action totale (ms)','Après impact (ms)','Recharge depuis départ (ms)','Étourdissement (ms)','Portée (% de largeur)','Coût tension'],[26,15,33,18,19,22,18,18,23,22,17,16],moves],
     ['Techniques signatures','Techniques signatures des combattants','Les techniques jouables utilisent les touches J1 / J2. Les commandes des prototypes sont proposées en directions relatives au combattant.', ['Combattant','Technique','Commande','Effet et rôle','Indice visuel et réponse','État'],[27,33,31,68,67,19],signatures],
-    ['Tenues et gardes','Apparences en sélection et en duel','Une ligne par apparence. Les poses individuelles complètent les planches du jeu. Les chemins sont relatifs au dossier public.', ['Combattant','Tenue','Référence ou incarnation','Visuel de sélection','Garde individuelle','Planche de base','Pose légère','Pose lourde','Pose de réaction'],[26,29,48,56,55,58,56,56,56],appearances],
-    ['Finitions','Finitions en jeu et storyboards individuels','K.-O. décisif. Fenêtre de commande ' + runtime.FINISH_INPUT_MS + ' ms, mise en scène ' + runtime.FINISH_CINEMATIC_MS + ' ms. Les colonnes D à G détaillent une variante longue à produire.', ['Combattant','Finition en jeu','Effet en jeu','Variante longue proposée','Découpage proposé','Dernier plan proposé','État variante','Pose clé dédiée disponible'],[27,37,21,38,65,52,19,48],finishes],
+    ['Tenues et gardes','Apparences en sélection et en duel','Une ligne par apparence. Les poses absentes utilisent les banques existantes. La garde active distincte est séparée du repos. Chemins relatifs au dossier public.', ['Combattant','Tenue','Référence ou incarnation','Visuel de sélection','Repos individuel','Planche de base','Pose légère','Pose lourde','Pose de réaction','Pose accroupie','Pose de saut','Garde active distincte'],[26,29,48,56,55,58,56,56,56,56,56,56],appearances],
+    ['Finitions','Finitions en jeu et storyboards individuels','K.-O. décisif. Fenêtre de commande ' + runtime.FINISH_INPUT_MS + ' ms, mise en scène ' + runtime.FINISH_CINEMATIC_MS + ' ms. Les colonnes D à G détaillent une variante longue à produire.', ['Combattant','Finition en jeu','Effet en jeu','Variante longue proposée','Découpage proposé','Dernier plan proposé','État variante','Pose clé dédiée disponible','Pièce séparée en jeu'],[27,37,21,38,65,52,19,48,56],finishes],
     ['Plans des arènes','Arènes et profondeur de champ','Les fichiers existants sont relevés dans le registre des arènes. Les compositions de plans sont des indications pour la production.', ['Arène','État en jeu','Fond · direction','Médian · direction','Avant-plan / sol · direction','Animation proposée','Composition du duel','Repérage critique','Ressources en jeu'],[27,29,42,42,44,44,55,56,65],design.stageDesign.map(r=>{
       const stage=stages.get(r.id);
       const scenery=stage?.scenery;
-      return [r.name,scenery?'Trois plans en jeu':stage?'Fond en jeu, calques à produire':'À produire',r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
+      const layers=[scenery?.middle,scenery?.near].filter(Boolean).length;
+      const status=!stage?'À produire':layers===2?'Trois plans en jeu':layers===1?'Deux plans en jeu':'Fond en jeu, calques à produire';
+      return [r.name,status,r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
     })],
     ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
     ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les cibles d’animation et de performance doivent être mesurées dans le jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance])],
     ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],design.sources],
   ];
 
-  return {sets, fighterCount:fighters.length, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
+  return {sets, fighterCount:fighters.length, stageCount:stages.size, threePlanCount:[...stages.values()].filter(stage=>stage.scenery?.middle && stage.scenery?.near).length, twoPlanCount:[...stages.values()].filter(stage=>Number(Boolean(stage.scenery?.middle))+Number(Boolean(stage.scenery?.near))===1).length, onePlanCount:[...stages.values()].filter(stage=>!stage.scenery?.middle && !stage.scenery?.near).length, detachedPropCount:finishes.filter(row=>row[8]).length, guardPoseCount:appearances.filter(row=>row[11]).length, costumePoseCount:appearances.filter(row=>row[1]!=='Habituelle').reduce((sum,row)=>sum+[row[4],...row.slice(6,11)].filter(Boolean).length,0), referencedAssetCount:assetPaths.size, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
 }
 if(process.argv[2]==='--read-game'){
   const payload=JSON.stringify(await collectRuntimeTables());
@@ -136,7 +148,7 @@ if(process.argv[2]==='--read-game'){
 }
 const child=spawnSync(process.execPath,[fileURLToPath(import.meta.url),'--read-game'],{encoding:'utf8',maxBuffer:4*1024*1024});
 if(child.status!==0)throw Error(child.stderr||'Lecture du code interrompue.');
-const {sets,fighterCount,signatureCount,expectedFrames}=JSON.parse(child.stdout);
+const {sets,fighterCount,stageCount,threePlanCount,twoPlanCount,onePlanCount,detachedPropCount,guardPoseCount,costumePoseCount,referencedAssetCount,signatureCount,expectedFrames}=JSON.parse(child.stdout);
 process.env.DOTNET_PROCESSOR_COUNT ??= '2';
 process.env.COMPlus_gcServer ??= '0';
 process.env.DOTNET_GCHeapHardLimit ??= '20000000';
@@ -193,23 +205,30 @@ const guideRows=[
   ['Données moteur','Attaques paramétrées',null,'Contrôler départ, contact, récupération et recharge. La simulation utilise des millisecondes.'],
   ['Techniques signatures','Signatures jouables',null,'Retrouver chaque commande et la réaction propre au coup. Les valeurs de combat figurent dans Données moteur.'],
   ['Techniques signatures','Signatures à prototyper',null,'Le prototype décrit la commande envisagée, son rôle et la réponse adverse à tester.'],
-  ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable avec ses poses de garde, légère, lourde et de réaction.'],
-  ['Finitions','Variantes longues à dessiner',null,'Les colonnes B et C identifient l’effet en jeu. Les autres colonnes décrivent une séquence en projet.'],
+  ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable avec les poses de garde, légère, lourde, réaction, accroupissement et saut.'],
+  ['Tenues et gardes','Poses des tenues alternatives',null,'Six poses pour chaque costume complet : repos, léger, lourd, réaction, accroupissement et saut. Les pivots et la fluidité restent à vérifier en jeu.'],
+  ['Tenues et gardes','Gardes actives distinctes',null,'La colonne L recense uniquement une image de garde distincte du repos. Une cellule vide conserve le comportement existant.'],
+  ['Finitions','Variantes longues à dessiner',null,'Les colonnes B et C identifient l’effet en jeu ; D à G décrivent la séquence longue proposée. H et I indiquent les fichiers dédiés.'],
   ['Plans des arènes','Lieux détaillés',null,'Les fichiers en jeu et le travail de découpe artistique sont renseignés pour chaque lieu.'],
   ['Plans des arènes','Arènes à trois plans jouables',null,'Les fichiers de fond et les deux plans détourés sont chargés par le jeu.'],
+  ['Plans des arènes','Arènes à deux plans jouables',null,'Un fond et un calque détouré sont intégrés. Le deuxième calque reste à produire.'],
+  ['Plans des arènes','Arènes avec fond seul',null,'Le fond est intégré ; les deux calques indépendants restent à produire.'],
+  ['Finitions','Pièces séparées intégrées',null,'Un fichier indépendant est utilisé pendant la finition. Une pièce isolée ne constitue pas une animation complète.'],
   ['Illustrations','Affectations de scène',null,'Compter les affectations des prologues, rivalités et épilogues. Une illustration partagée apparaît sur plusieurs lignes.'],
   ['Illustrations','Affectations dédiées',null,'Une image dédiée existe. La revue du dessin, de la saison et du costume reste une étape distincte.'],
   ['Illustrations','Affectations à illustrer',null,'Le jeu compose actuellement un décor et les portraits existants pour ces scènes.'],
   ['Atelier et recette','Fiches de travail',null,'Faire valider silhouettes, pieds, plans d’arène, effets de fin et lisibilité sur téléphone.'],
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
 ];
-drawnTable(guide,'Infernal Versus · Guide de la V2','18 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
+drawnTable(guide,'Infernal Versus · Guide de la V2','19 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
 const guideFilters = {
   'Signatures jouables': ['F', 'Jouable'],
   'Signatures à prototyper': ['F', 'À prototyper'],
   'Tenues alternatives': ['B', '<>Habituelle'],
   'Arènes à trois plans jouables': ['B', 'Trois plans en jeu'],
+  'Arènes à deux plans jouables': ['B', 'Deux plans en jeu'],
+  'Arènes avec fond seul': ['B', 'Fond en jeu, calques à produire'],
   'Affectations dédiées': ['E', 'Illustration dédiée'],
   'Affectations à illustrer': ['E', 'Décor et portraits'],
 };
@@ -217,7 +236,12 @@ for(const [i,row] of guideRows.entries()){
   const filter = guideFilters[row[1]];
   const rowCount=sets.find(([name])=>name===row[0])[5].length;
   const end=rowCount+5;
-  const formula = filter
+  const nonEmptyColumn = row[1] === 'Pièces séparées intégrées' ? 'I' : row[1] === 'Gardes actives distinctes' ? 'L' : null;
+  const formula = nonEmptyColumn
+    ? `=ROWS('${row[0]}'!$${nonEmptyColumn}$6:$${nonEmptyColumn}${end})-COUNTBLANK('${row[0]}'!$${nonEmptyColumn}$6:$${nonEmptyColumn}${end})`
+    : row[1] === 'Poses des tenues alternatives'
+    ? `=COUNTIF('${row[0]}'!$B$6:$B${end},"<>Habituelle")*6`
+    : filter
     ? `=COUNTIF('${row[0]}'!$${filter[0]}$6:$${filter[0]}${end},"${filter[1]}")`
     : `=COUNTA('${row[0]}'!$A$6:$A${end})`;
   guide.getCell(i+5,2).formulas=[[formula]];
@@ -230,6 +254,14 @@ assert.equal(summaryCount('Attaques paramétrées'),fighterCount*3 + signatureCo
 assert.equal(summaryCount('Signatures jouables'),signatureCount);
 assert.equal(summaryCount('Signatures à prototyper') + signatureCount,fighterCount);
 assert.equal(summaryCount('Tenues alternatives'),sets.find(([name]) => name === 'Tenues et gardes')[5].length - fighterCount);
+assert.equal(summaryCount('Arènes à trois plans jouables'),threePlanCount);
+assert.equal(summaryCount('Arènes à deux plans jouables'),twoPlanCount);
+assert.equal(summaryCount('Arènes avec fond seul'),onePlanCount);
+assert.equal(summaryCount('Pièces séparées intégrées'),detachedPropCount);
+assert.equal(summaryCount('Gardes actives distinctes'),guardPoseCount);
+assert.equal(summaryCount('Poses des tenues alternatives'),costumePoseCount);
+assert.equal(referencedAssetCount,design.assetBatch.runtime.referencedAssets);
+assert(summaryCount('Lieux détaillés')>=stageCount);
 assert.equal(summaryCount('Affectations dédiées') + summaryCount('Affectations à illustrer'),pictures.length);
 
 assert.equal(dataSheet.getRange('F'+(moves.length+5)).values[0][0],expectedFrames);
@@ -237,13 +269,13 @@ console.log('Inspection.');
 const issues=await wb.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:60},summary:'Vérification des cellules'});
 if (issues.ndjson.includes('"kind":"match"')) throw Error('Erreur de formule : '+issues.ndjson);
 console.log((await wb.inspect({kind:'region',sheetId:'Guide V2',range:'A6:C'+(guideRows.length+5),maxChars:3200})).ndjson);
-await fs.mkdir(destination,{recursive:true});
+await fs.mkdir(outputDir,{recursive:true});
 if(global.gc)global.gc();
 console.log('Export Excel',Math.round(process.memoryUsage().rss/1024/1024)+' Mio');
 const blob=await SpreadsheetFile.exportXlsx(wb);
 const generated=path.join(working,'generated.xlsx');
 await blob.save(generated);
-const joined=spawnSync('python3',[path.join(here,'attach-legacy-registers.py'),baseline,generated,path.join(destination,'INFERNAL_VERSUS_BIBLE_V2.xlsx')],{encoding:'utf8'});
+const joined=spawnSync(process.env.CODEX_PRIMARY_RUNTIME_PYTHON ?? 'python3',[path.join(here,'attach-legacy-registers.py'),baseline,generated,path.join(outputDir,'INFERNAL_VERSUS_BIBLE_V2.xlsx')],{encoding:'utf8'});
 if(joined.status!==0) throw Error(joined.stderr);
 
 await fs.rm(working,{recursive:true,force:true});
