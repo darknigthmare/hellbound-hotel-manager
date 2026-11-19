@@ -22,9 +22,9 @@ Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun ch
 - 36 combattants jouables, dont 23 de *Hazbin Hotel* et 13 de *Helluva Boss*. Mimzy et Sallie May rejoignent la sélection avec leurs trois attaques, leur technique signature, leur campagne et leur finition.
 - 112 attaques nommées, dont 108 légers, lourds et spéciaux et quatre signatures. La touche T pour J1 ou I pour J2 utilise la technique du personnage disponible. Le carnet indique le coût en tension, les temps et la portée.
 - Vaggie se couvre après une estocade qui touche. Blitzø recule puis revient au contact. Mimzy peut enchaîner un léger après son coup de talon. Sallie May gagne du terrain lorsque son coup d’épaule est bloqué.
-- La garde-robe de la sélection propose trois costumes : l’uniforme d’exorciste de Vaggie et les apparences humaines de Loona et de Stolas. Chacun dispose de six poses individuelles : attente/garde, léger, lourd, réaction, accroupissement et saut, soit 18 images de costume.
-- Les poses individuelles d’Angel Dust et de Striker couvrent l’attente, le contact du léger et la réaction. Millie dispose de l’attente et du contact léger; Husk, de l’attente et d’une garde distincte. Ces images complètent les banques d’animation existantes des 36 combattants.
-- Quatorze arènes, dont Wrath Ranch, Heaven Court, Pentious Workshop et Loo Loo Land. Dix utilisent trois plans illustrés, Cannibal Town en utilise deux, et trois gardent un fond unique. Le lobby dispose d’un chariot et d’une valance; le bar utilise sa salle retrouvée avec tabouret et lampe; Carmine Industries possède une salle, un râtelier et une caisse. La réduction des mouvements fixe la caméra.
+- La garde-robe de la sélection propose quatre costumes : l’uniforme d’exorciste de Vaggie, les apparences humaines de Loona et de Stolas, et la tenue du festival des moissons de Moxxie. Chacun dispose de six poses individuelles : attente/garde, léger, lourd, réaction, accroupissement et saut, soit 24 images de costume. Le costume de Moxxie utilise un format portrait déclaré, conservé sur les deux combattants et pendant ses poses.
+- Les poses individuelles d’Angel Dust et de Striker couvrent l’attente, le contact du léger et la réaction. Millie dispose de l’attente et du contact léger; Husk, de l’attente et d’une garde distincte. Lucifer et Moxxie disposent chacun d’une attente, d’une garde distincte, d’un contact léger et d’une réaction. Ces images complètent les banques d’animation existantes des 36 combattants.
+- Quatorze arènes, dont Wrath Ranch, Heaven Court, Pentious Workshop et Loo Loo Land. Toutes utilisent trois plans illustrés. Cannibal Town, Hotel Front Steps, Pentagram Rooftops et Heaven Embassy disposent désormais de leurs calques manquants; la façade de l’hôtel utilise une nouvelle illustration Hazbin. Le lobby dispose d’un chariot et d’une valance; le bar utilise sa salle retrouvée avec tabouret et lampe; Carmine Industries possède une salle, un râtelier et une caisse. La réduction des mouvements fixe la caméra.
 - Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush.
 - Histoire propose une route par combattant. Le prologue introduit trois rencontres écrites, dont un rival au troisième duel. La victoire finale débloque un épilogue à revoir dans le Codex. Les filtres de saison et d’univers déterminent les routes disponibles.
 - En tournoi, le joueur dispute les matchs de son combattant. Le tirage reproductible remplit un tableau de huit, quatre ou deux participants selon l’effectif disponible. Les duels CPU sont simulés et une défaite élimine le joueur.
@@ -52,24 +52,28 @@ Les onglets **Illustrations** et **Tenues et gardes** donnent le fichier exact u
 
 La référence de décor pour I.M.P. est *Murder Family*, saison 1 de Helluva Boss. La composition jouable élargit la réception pour laisser la piste libre. [Épisode officiel](https://www.youtube.com/watch?v=el_PChGfJN8)
 
-## Couverture des assets au 19 novembre 2026
+## Couverture des assets au 19 novembre 2026 — vague B
 
-Le relevé issu des registres contient 231 chemins d’assets distincts, tous présents. Les détails par personnage et par arène se trouvent dans [ASSET_COVERAGE.json](ASSET_COVERAGE.json). Les poses individuelles ci-dessous concernent l’apparence habituelle; les 18 poses de costumes sont comptées séparément.
+Le relevé issu des registres contient **254 chemins d’assets distincts**, tous présents. Les détails par personnage et par arène se trouvent dans [ASSET_COVERAGE.json](ASSET_COVERAGE.json). Les poses individuelles ci-dessous concernent l’apparence habituelle ; les **24 poses des quatre costumes** sont comptées séparément.
 
 | Élément | Disponible | Complément à produire pour couvrir les 36 combattants |
 | --- | ---: | ---: |
-| Pose individuelle d’attente | 8 | 28 |
-| Pose individuelle de garde distincte | 1 | 35 |
-| Pose individuelle de contact léger | 3 | 33 |
-| Pose individuelle de réaction | 2 | 34 |
+| Pose individuelle d’attente | 10 | 26 |
+| Pose individuelle de garde distincte | 3 | 33 |
+| Pose individuelle de contact léger | 5 | 31 |
+| Pose individuelle de réaction | 4 | 32 |
 | Pose clé de finition | 5 | 31 |
-| Illustrations affectées aux introductions, rivalités et épilogues | 24 sur 108 | 84 affectations |
+| Illustrations affectées aux introductions, rivalités et épilogues | 26 sur 108 | 82 affectations |
 
-Les 24 affectations narratives utilisent 20 illustrations distinctes. Les autres scènes utilisent encore décor et portraits. Les 36 combattants restent jouables grâce à leurs atlas et banques d’animation; une pose clé disponible ne constitue pas un cycle animé complet. Le haut de Millie, le nœud papillon de Moxxie, la lance de Vaggie et la canne microphone d’Alastor sont conservés comme pièces de production, sans assemblage articulé en jeu. La lanterne de Wrath et les variantes Carmine sont disponibles comme alternatives.
+Les 26 affectations narratives utilisent **22 illustrations distinctes**. Les autres scènes utilisent encore décor et portraits. Les 36 combattants restent jouables grâce à leurs atlas et banques d’animation ; une pose clé disponible ne constitue pas un cycle animé complet. Les quatorze arènes disposent toutes de trois plans enregistrés.
 
-Le [rapport de production du 19 novembre](PRODUCTION_2026-11-19.md) distingue les originaux récupérés, les nouveaux dessins et les exports retrouvés sans master. Le lot contient 46 masters PNG et trois œuvres disponibles uniquement en WebP, soit 49 œuvres, ainsi que 14 exports alternatifs préservés. Le [manifeste de livraison](../../art/infernal-versus/production/delivery-2026-11-19.json) recense 117 fichiers d’image : 46 PNG, 57 WebP publics et 14 WebP archivés. Parmi les 57 exports publics, 50 sont branchés dans les registres et sept sont préparés pour la production. La [galerie du lot](ASSET_GALLERY_2026-11-19.md) permet de parcourir les images.
+Le haut de Millie, le nœud papillon de Moxxie, la lance de Vaggie et la canne microphone d’Alastor sont conservés comme pièces de production. Le chapeau de Lucifer et la queue de Moxxie rejoignent cette réserve, sans assemblage articulé en jeu. La lanterne de Wrath et les variantes Carmine restent disponibles comme alternatives.
 
-Les dessins sont des adaptations pour le jeu. La fidélité à une référence, la fluidité des transitions et l’alignement des points d’appui restent à vérifier dans le jeu. La validation visuelle dans le navigateur n’a pas pu être achevée pour ce lot.
+Le [rapport de la vague B](PRODUCTION_WAVE_B_2026-11-19.md) recense **24 nouveaux dessins, 11 sources retrouvées et 12 variantes d’export préservées**, soit **74 fichiers d’image supplémentaires**. Ses 27 nouveaux fichiers publics comprennent 25 références du jeu et deux composants préparés. La [galerie de la vague B](ASSET_GALLERY_WAVE_B_2026-11-19.md) permet de parcourir les fichiers individuels ; les dimensions, empreintes et statuts figurent dans le [manifeste de livraison](../../art/infernal-versus/production/delivery-wave-b-2026-11-19.json).
+
+Le [rapport du lot précédent](PRODUCTION_2026-11-19.md) conserve son bilan historique de 49 œuvres et 117 fichiers. Les variantes retrouvées ne remplacent pas les poses de Stolas déjà intégrées.
+
+Les dessins sont des adaptations pour le jeu. La fidélité à une référence, la fluidité des transitions et l’alignement des points d’appui restent à vérifier dans le jeu. Les contrôles visuels de cette vague portent sur des images individuelles et des compositions statiques ; la recette navigateur est restée indisponible.
 
 ## Bible de production
 
@@ -91,6 +95,8 @@ Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884
 
 ## Vérifications
 
-`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. La passe finale du 19 novembre 2026 a réussi : TypeScript, ESLint, 41 suites et 310 tests, les deux builds et 823 empreintes SHA-256 de la distribution standalone. Cette distribution contient 823 fichiers pour 458,6 Mio; cela n’implique pas un téléchargement initial de toutes les images dans le navigateur. L’audit des registres trouve 231 chemins d’assets et aucune référence absente.
+`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. La vague B du 19 novembre 2026 a réussi : **41 suites et 313 tests**, deux builds et **850 empreintes SHA-256**. Le relevé runtime trouve **254 chemins d’assets**, tous présents.
 
-Les tests standalone couvrent la progression, l'isolation des sauvegardes, les imports, les assets, le dojo, les callbacks de match et les parcours d'interface. Le [rapport du 19 novembre](PRODUCTION_2026-11-19.md#vérifications-et-publication) conserve les résultats et le statut de publication. La validation visuelle dans le navigateur reste non réalisée. `QA_RESULTS.json` conserve le rapport historique de la première livraison.
+Le [rapport de la vague B](PRODUCTION_WAVE_B_2026-11-19.md), sa [galerie](ASSET_GALLERY_WAVE_B_2026-11-19.md) et son [manifeste de livraison](../../art/infernal-versus/production/delivery-wave-b-2026-11-19.json) détaillent les nouveaux dessins, fichiers retrouvés, intégrations et manques. La recette du jeu dans le navigateur est restée indisponible : les images ont été examinées individuellement et dans des compositions statiques, sans validation dynamique ni certification de fidélité 1:1.
+
+Le [rapport du lot précédent](PRODUCTION_2026-11-19.md) et `QA_RESULTS.json` sont conservés comme preuves historiques. Les nouveaux fichiers du classeur et des assets sont destinés à la [PR nº 3](https://github.com/darknigthmare/hellbound-hotel-manager/pull/3).

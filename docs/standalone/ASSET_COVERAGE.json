@@ -2,22 +2,22 @@
   "schemaVersion": 1,
   "summary": {
     "fighters": 36,
-    "individualReady": 8,
-    "individualGuard": 1,
-    "individualLightContact": 3,
-    "individualHit": 2,
-    "costumes": 3,
-    "costumeKeyPoses": 18,
+    "individualReady": 10,
+    "individualGuard": 3,
+    "individualLightContact": 5,
+    "individualHit": 4,
+    "costumes": 4,
+    "costumeKeyPoses": 24,
     "finisherKeyPoses": 5,
     "separatedFinishProps": 1,
     "storyAssignments": 108,
-    "illustratedStoryAssignments": 24,
-    "uniqueStoryIllustrations": 20,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
     "stages": 14,
-    "threePlaneStages": 10,
-    "twoPlaneStages": 1,
-    "onePlaneStages": 3,
-    "referencedAssets": 231,
+    "threePlaneStages": 14,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "referencedAssets": 254,
     "brokenReferences": []
   },
   "fighters": [
@@ -260,16 +260,16 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/lucifer-ready.webp",
+        "guard": "/assets/sprites/individual/lucifer-guard.webp",
+        "lightContact": "/assets/sprites/individual/lucifer-strike.webp",
+        "hit": "/assets/sprites/individual/lucifer-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
       "separatedFinishProp": "/assets/sprites/parts/lucifer-apple-cane.webp",
       "story": {
-        "intro": null,
+        "intro": "/assets/story/infernal-versus/lucifer-charlie-hotel-stage-plan-wave-b.webp",
         "rival": null,
         "ending": null
       }
@@ -751,7 +751,7 @@
       "story": {
         "intro": "/assets/story/infernal-versus/blitzo-intro.webp",
         "rival": "/assets/story/infernal-versus/blitzo-striker-rival.webp",
-        "ending": null
+        "ending": "/assets/story/infernal-versus/blitzo-imp-file-wave-b.webp"
       }
     },
     {
@@ -770,12 +770,25 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/hb_moxxie-ready.webp",
+        "guard": "/assets/sprites/individual/hb_moxxie-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_moxxie-strike.webp",
+        "hit": "/assets/sprites/individual/hb_moxxie-recoil.webp"
       },
-      "costumes": [],
+      "costumes": [
+        {
+          "id": "hb_moxxie-harvest-festival",
+          "name": "Tenue du festival des moissons",
+          "poses": {
+            "ready": "/assets/sprites/costumes/hb_moxxie-harvest-festival.webp",
+            "strike": "/assets/sprites/costumes/hb_moxxie-harvest-festival-strike.webp",
+            "heavy": "/assets/sprites/costumes/hb_moxxie-harvest-festival-heavy.webp",
+            "recoil": "/assets/sprites/costumes/hb_moxxie-harvest-festival-recoil.webp",
+            "crouch": "/assets/sprites/costumes/hb_moxxie-harvest-festival-crouch.webp",
+            "jump": "/assets/sprites/costumes/hb_moxxie-harvest-festival-jump.webp"
+          }
+        }
+      ],
       "finisherKeyPose": null,
       "separatedFinishProp": null,
       "story": {
@@ -1168,18 +1181,22 @@
       "id": "hotel-exterior",
       "name": "Hotel Front Steps",
       "planes": [
-        "/assets/hotel_exterior.png"
+        "/assets/stages/hazbin/hotel-exterior/room-wave-b.webp",
+        "/assets/stages/hazbin/hotel-exterior/planter-wave-b.webp",
+        "/assets/stages/hazbin/hotel-exterior/lantern-wave-b.webp"
       ],
-      "planeCount": 1,
-      "thumbnail": "/assets/stages/hazbin/thumbs/hotel-exterior.webp"
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/hotel-exterior/thumb-wave-b.webp"
     },
     {
       "id": "pentagram-rooftops",
       "name": "Pentagram Rooftops",
       "planes": [
-        "/assets/stages/hazbin/pentagram-rooftops.webp"
+        "/assets/stages/hazbin/pentagram-rooftops.webp",
+        "/assets/stages/hazbin/pentagram-rooftops/vent-wave-b.webp",
+        "/assets/stages/hazbin/pentagram-rooftops/finial-wave-b.webp"
       ],
-      "planeCount": 1,
+      "planeCount": 3,
       "thumbnail": "/assets/stages/hazbin/thumbs/pentagram-rooftops.webp"
     },
     {
@@ -1187,9 +1204,10 @@
       "name": "Cannibal Town Square",
       "planes": [
         "/assets/stages/hazbin/cannibal-town-square.webp",
+        "/assets/stages/hazbin/cannibal-town-square/flower-cart-wave-b.webp",
         "/assets/stages/hazbin/cannibal-town-square/awning.webp"
       ],
-      "planeCount": 2,
+      "planeCount": 3,
       "thumbnail": "/assets/stages/hazbin/thumbs/cannibal-town-square.webp"
     },
     {
@@ -1218,9 +1236,11 @@
       "id": "heaven-embassy",
       "name": "Heaven Embassy & Clock Tower",
       "planes": [
-        "/assets/stages/hazbin/heaven-embassy.webp"
+        "/assets/stages/hazbin/heaven-embassy.webp",
+        "/assets/stages/hazbin/heaven-embassy/railing-wave-b.webp",
+        "/assets/stages/hazbin/heaven-embassy/pendant-wave-b.webp"
       ],
-      "planeCount": 1,
+      "planeCount": 3,
       "thumbnail": "/assets/stages/hazbin/thumbs/heaven-embassy.webp"
     },
     {

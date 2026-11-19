@@ -1,5 +1,8 @@
 # Infernal Versus — production du 19 novembre 2026
 
+> Rapport historique du lot publié sous `1f026b7`. Le [rapport de la vague B](PRODUCTION_WAVE_B_2026-11-19.md) décrit les récupérations et intégrations ultérieures, ainsi que la couverture courante.
+
+
 Ce lot rassemble la récupération des fichiers accessibles, la conservation du checkpoint distant retrouvé et la production des images encore nécessaires à l’intégration immédiate. Il porte sur la [PR #3](https://github.com/darknigthmare/hellbound-hotel-manager/pull/3), branche `feat/infernal-versus-story-tournament`.
 
 Le bilan du lot est de **46 masters PNG, 49 œuvres et 117 fichiers d’image ajoutés ou modifiés par rapport à la base**. Les registres actifs décrivent **36 combattants, 14 arènes, trois costumes avec six poses chacun et 231 chemins d’assets distincts présents**. Ces comptes décrivent des fichiers et des branchements dans le jeu; ils ne certifient ni des animations complètes, ni une fidélité visuelle à l’identique.

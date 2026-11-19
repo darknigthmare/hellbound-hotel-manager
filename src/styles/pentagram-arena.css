@@ -2269,8 +2269,31 @@
   width: auto; height: 33%; left: 6%; top: -3%;
 }
 .arena-combat-stage[data-stage="cannibal-town-square"] .infernal-near-plane {
-  width: 48%; height: auto; left: -3%; top: -3%;
+  width: auto; height: 28%; max-width: 40%; left: -3%; top: -3%;
+  object-fit: contain; object-position: left top;
 }
+.arena-combat-stage[data-stage="cannibal-town-square"] .infernal-desk-plane {
+  width: auto; height: 39%; right: 2%; left: auto; bottom: 17%;
+}
+.arena-combat-stage[data-stage="hotel-exterior"] .infernal-desk-plane {
+  width: auto; height: 32%; right: 2%; left: auto; bottom: 16%;
+}
+.arena-combat-stage[data-stage="hotel-exterior"] .infernal-near-plane {
+  width: auto; height: 37%; left: 1%; top: -4%;
+}
+.arena-combat-stage[data-stage="pentagram-rooftops"] .infernal-desk-plane {
+  width: auto; height: 28%; right: 2%; left: auto; bottom: 19%;
+}
+.arena-combat-stage[data-stage="pentagram-rooftops"] .infernal-near-plane {
+  width: auto; height: 37%; left: -2%; top: auto; bottom: -5%;
+}
+.arena-combat-stage[data-stage="heaven-embassy"] .infernal-desk-plane {
+  width: 29%; right: 1%; left: auto; bottom: 19%;
+}
+.arena-combat-stage[data-stage="heaven-embassy"] .infernal-near-plane {
+  width: auto; height: 34%; left: 1%; top: -5%;
+}
+.arena-combat-stage:is([data-stage="hotel-exterior"],[data-stage="pentagram-rooftops"],[data-stage="heaven-embassy"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
 .arena-combat-stage[data-stage="wrath-ranch"] .infernal-desk-plane {
   width: 24%; left: 1%; bottom: 14%;
 }

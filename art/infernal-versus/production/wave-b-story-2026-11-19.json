@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "scope": "Two recovered story illustrations connected to existing campaign beats. Existing story texts and existing Blitzø intro/rival preserved.",
+  "assets": [
+    {
+      "fighter": "lucifer",
+      "beat": "intro",
+      "sourcePath": "art/infernal-versus/recovered-sources/2026-11-19-wave-b/story/lucifer-charlie-hotel-stage-plan.png",
+      "sourceSha256": "5974806ca11b279990036ecb27cf33afac2c8bbbc713d35a97d34cf853606852",
+      "exportPath": "public/assets/story/infernal-versus/lucifer-charlie-hotel-stage-plan-wave-b.webp",
+      "runtimeUrl": "/assets/story/infernal-versus/lucifer-charlie-hotel-stage-plan-wave-b.webp",
+      "exportSha256": "c5b8aa894aad8e20119a86dae74148881673854f1c9bf16b848080d6e5fde664",
+      "exportBytes": 1647340,
+      "size": [
+        1672,
+        941
+      ],
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 100,
+        "method": 6,
+        "exact": true,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sourceBytesPreserved": true,
+        "sameDimensions": true,
+        "sameDecodedRGBA": true
+      },
+      "visualReview": "Lucifer présente le plan de son estrade, la scène montée apparaît derrière lui, et Charlie indique les portes de l’hôtel. Le texte existant lui demande d’aider les invités à trouver l’entrée.",
+      "status": "connected_in_campaign_registry",
+      "storyClassification": "simulation_au",
+      "fidelity": "not_verified_against_official_reference",
+      "browserReview": "not_performed_in_this_step"
+    },
+    {
+      "fighter": "hb_blitzo",
+      "beat": "ending",
+      "sourcePath": "art/infernal-versus/recovered-sources/2026-11-19-wave-b/story/blitzo-imp-file.png",
+      "sourceSha256": "357678ebeeac9c7aa2f55d1c0581b6fe5b872ae7d0d471d54ec609f386e12efc",
+      "exportPath": "public/assets/story/infernal-versus/blitzo-imp-file-wave-b.webp",
+      "runtimeUrl": "/assets/story/infernal-versus/blitzo-imp-file-wave-b.webp",
+      "exportSha256": "c88f40fd985d68a126ae763d735fe7ce72c464991a3ed2606b31c50b0fc6cab0",
+      "exportBytes": 1275114,
+      "size": [
+        1672,
+        941
+      ],
+      "encoding": {
+        "format": "WebP",
+        "lossless": true,
+        "quality": 100,
+        "method": 6,
+        "exact": true,
+        "resized": false,
+        "cropped": false
+      },
+      "checks": {
+        "sourceBytesPreserved": true,
+        "sameDimensions": true,
+        "sameDecodedRGBA": true
+      },
+      "visualReview": "Blitzø tient une photo de camionnette au-dessus du dossier ; trois marques et une radio évoquent le bilan avec son équipe. Le texte existant parle de ranger la photo et de noter les trois voix.",
+      "status": "connected_in_campaign_registry",
+      "storyClassification": "simulation_au",
+      "fidelity": "not_verified_against_official_reference",
+      "browserReview": "not_performed_in_this_step"
+    }
+  ],
+  "count": 2,
+  "totalExportBytes": 2922454,
+  "validation": "Local visual comparison to existing campaign text; PNG source hash preserved; WebP decoded RGBA and dimensions identical. Gameplay and browser verification reported separately.",
+  "automatedVerification": {
+    "command": "npm test -- src/tests/infernal-production.test.ts",
+    "exitCode": 0,
+    "suitesPassed": 1,
+    "testsPassed": 2,
+    "scope": "Existing production suite resolves all registered story illustration files and finish assets."
+  }
+}

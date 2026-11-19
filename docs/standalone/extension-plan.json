@@ -12150,19 +12150,19 @@
       {
         "id": "hotel-exterior",
         "name": "Perron de l’hôtel",
-        "back": "Ciel et toits inclinés de Pentagram City",
-        "middle": "Façade, porte et marches de l’hôtel",
-        "floor": "Bord horizontal de la marche jouable",
+        "back": "Nouveau fond de l’entrée de l’hôtel d’origine, période saison 1. Le fichier historique hotel_exterior.png reste conservé séparément.",
+        "middle": "Jardinière indépendante de la vague B, en retrait de la ligne de duel.",
+        "floor": "Lanterne détourée de la vague B en avant-plan ; la zone des pieds reste dégagée.",
         "ambient": "Drapeau en hauteur, poussière sur les côtés",
         "composition": "Confrontation publique. La porte reste lisible derrière le joueur central.",
-        "reference": "Annoter la version du bâtiment. S1E8 comprend des états très différents."
+        "reference": "Trailer officiel Prime Video S1, repères 00:16 et 00:18 pour l’architecture. Composition jouable originale ; aucune fidélité 1:1 certifiée."
       },
       {
         "id": "pentagram-rooftops",
         "name": "Toits de Pentagram City",
         "back": "Silhouette urbaine à plusieurs hauteurs",
-        "middle": "Antennes et panneaux derrière les combattants",
-        "floor": "Corniche rectiligne en façade",
+        "middle": "Ventilation indépendante de la vague B derrière les combattants.",
+        "floor": "Épi de toiture détouré de la vague B en avant-plan ; corniche de combat dégagée.",
         "ambient": "Câbles souples aux extrémités",
         "composition": "Conserver le ciel libre autour des silhouettes en l’air.",
         "reference": "L’agencement du toit est une composition du jeu."
@@ -12171,8 +12171,8 @@
         "id": "cannibal-town-square",
         "name": "Place de Cannibal Town",
         "back": "Rangée de toitures, horizon de la place",
-        "middle": "Vitrines à auvents et devantures",
-        "floor": "Store détouré récupéré au premier plan. Le médian reste à produire.",
+        "middle": "Chariot de fleurs de la vague B, nouvelle adaptation générée pour le plan médian. L’ancien PNG manquant n’a pas été récupéré.",
+        "floor": "Store détouré récupéré conservé en avant-plan ; les trois plans sont maintenant référencés.",
         "ambient": "Store en tissu, silhouettes en retrait",
         "composition": "Créer un trottoir assez large pour la garde de deux grands personnages.",
         "reference": "Repérage S1E7 et comparaison des devantures avant validation."
@@ -12201,8 +12201,8 @@
         "id": "heaven-embassy",
         "name": "Ambassade et tour",
         "back": "Ville et contours lumineux de la tour",
-        "middle": "Grille, balcon, cadran",
-        "floor": "Dalles claires avec zone de combat contrastée",
+        "middle": "Balustrade indépendante de la vague B derrière les combattants.",
+        "floor": "Suspension détourée de la vague B au premier plan, hors axe des têtes.",
         "ambient": "Aiguille du cadran, lumière continue",
         "composition": "L’aile d’un combattant clair doit rester lisible à droite comme à gauche.",
         "reference": "Le tribunal céleste et l’ambassade sont des lieux distincts."
@@ -12554,90 +12554,90 @@
         "type": "Recette",
         "subject": "Garde-robe locale",
         "status": "Scénario de recette",
-        "spec": "Choisir deux tenues séparément. Tester repos, léger, lourd, réaction, accroupissement et saut pour Vaggie exorciste, Loona humaine et Stolas humain, puis relancer le standalone.",
-        "acceptance": "Trois costumes complets et dix-huit poses sont référencés. Vérifier chaque côté, les sauvegardes, les pivots et les transitions. Aucun pivot normalisé ni fluidité n’est certifié."
+        "spec": "Choisir deux tenues séparément. Tester repos, léger, lourd, réaction, accroupissement et saut pour Vaggie exorciste, Loona humaine, Stolas humain et Moxxie au festival des moissons, puis relancer le standalone.",
+        "acceptance": "Quatre costumes complets et vingt-quatre poses sont référencés. Vérifier chaque côté, les sauvegardes, les pivots et les transitions. Aucun pivot normalisé ni fluidité n’est certifié."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Décors locaux récupérés",
-        "status": "Récupéré et intégré",
+        "status": "Avant vague B · Récupéré et intégré",
         "spec": "Douze masters originaux ont été retrouvés par empreinte Git. Le checkpoint e260968 apporte aussi des exports originaux, dont la salle du bar, le lambrequin du hall et la lanterne de Wrath sans master retrouvé.",
         "acceptance": "Distinguer les octets originaux des réexports. Le hall passe à trois plans, le bar utilise la salle récupérée ; la lanterne de Wrath reste une variante hors scène active."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Quatre arènes supplémentaires",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Ranch de Wrath, tribunal céleste, atelier de Sir Pentious et Loo Loo Land rejoignent le standalone. Quatre nouveaux fonds complètent les calques récupérés.",
         "acceptance": "Jouer les deux côtés, sauter et activer les mouvements réduits. Vérifier lisibilité des pieds, premier plan et chargement des fichiers."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Armurerie Carmine",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Nouveau fond, râtelier et caisse sont intégrés. Deux masters de caisse restent conservés : carmine-industries-crate.png (checkpoint) et carmine-industries-crate-20261119.png (nouvelle génération). La chaîne et la caisse du checkpoint sont des variantes exportées non affichées.",
         "acceptance": "Contrôler l’échelle et l’alpha des deux props sur l’arène. Les angles et distances relèvent d’une adaptation de jeu."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Angel Dust et Striker",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Six sprites individuels : garde, frappe légère et réaction pour chaque personnage. Les autres actions continuent d’utiliser leurs banques animées.",
         "acceptance": "Vérifier les deux orientations, le contact au démarrage moteur et la réaction. Trois poses clés ne constituent pas une nouvelle animation complète."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Accroupissement et saut des costumes",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Quatre nouvelles poses isolées pour Vaggie exorciste et Loona humaine. Chaque tenue dispose de six images dédiées.",
         "acceptance": "Comparer proportions et pivots aux quatre poses existantes. Inspecter les transitions accroupissement, saut et retour au repos."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Canne séparée de Lucifer",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Canne-pomme indépendante ajoutée au traitement de finition de Lucifer. Le sprite reste réutilisable comme pièce détachée.",
         "acceptance": "Contrôler le placement et l’absence de halo parasite sur fond clair et sombre. La finition longue reste à animer."
       },
       {
-        "type": "Lot du 19/11",
+        "type": "Historique · lot précédent",
         "subject": "Productions locales non récupérées",
-        "status": "À récupérer",
+        "status": "Avant vague B · À récupérer",
         "spec": "Les anciens fichiers encore absents restent exclus des livraisons : poses de Lucifer et Moxxie, finition de Moxxie, autres illustrations et accessoires non retrouvés. Le costume humain de Stolas est désormais complété et sélectionnable.",
         "acceptance": "Retrouver le fichier source ou une empreinte exploitable. Une nouvelle génération doit être enregistrée séparément de la récupération."
       },
       {
-        "type": "Lot réconcilié",
+        "type": "Historique · lot précédent",
         "subject": "Checkpoint retrouvé et provenance",
-        "status": "Conservé et distingué",
+        "status": "Avant vague B · Conservé et distingué",
         "spec": "46 masters : 12 originaux récupérés, 12 productions antérieures retrouvées dans e260968, 22 nouvelles générations dans ce lot. Trois œuvres supplémentaires existent uniquement comme exports récupérés, soit 49 œuvres conservées.",
         "acceptance": "Ne pas compter un PNG et son WebP comme deux œuvres. Les 22 générations nouvelles comprennent les quatre poses ajoutées de Stolas ; elles ne sont pas des octets récupérés."
       },
       {
-        "type": "Lot réconcilié",
+        "type": "Historique · lot précédent",
         "subject": "Husk et Millie : poses partielles",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Husk : repos et garde active distincte, format paysage. Millie : repos et contact léger, format portrait. Les autres actions utilisent les banques existantes ; aucune pose manquante n’est annoncée comme produite.",
         "acceptance": "Contrôler les deux orientations et les retours aux banques. Les références optionnelles absentes doivent être ignorées par le préchargement et l’audit."
       },
       {
-        "type": "Lot réconcilié",
+        "type": "Historique · lot précédent",
         "subject": "Stolas humain : costume complété",
-        "status": "Intégré, recette à faire",
+        "status": "Avant vague B · Intégré, recette à faire",
         "spec": "Troisième costume sélectionnable. Accroupissement et saut proviennent du checkpoint ; repos, frappe légère, frappe lourde et réaction sont quatre générations nouvelles fondées sur ces deux images.",
         "acceptance": "Même identité et tenue inspectées, six fichiers référencés. Les pieds des nouvelles poses varient de 7 à 21 pixels par rapport à l’accroupissement sur un canvas de 1024 pixels de haut. Vérifier les pivots et transitions dans le navigateur ; aucune fidélité 1:1 certifiée."
       },
       {
-        "type": "Audit",
+        "type": "Historique · vérification",
         "subject": "Couverture du registre runtime",
-        "status": "Audit de fichiers validé",
+        "status": "Avant vague B · Audit de fichiers validé",
         "spec": "231 références d’assets pour 36 combattants. Repos individuels : 8 ; garde active distincte : 1 ; contacts légers : 3 ; réactions : 2. Trois costumes, dix-huit poses ; quatorze arènes : dix à trois plans, une à deux plans et trois avec fond seul.",
         "acceptance": "Audit final : 231 références et zéro fichier absent. Les sept composants ou variantes conservés hors rig ne sont pas des éléments jouables. Les contrôles automatiques ne certifient pas le rendu visuel."
       },
       {
-        "type": "Recette",
+        "type": "Historique · vérification",
         "subject": "Revue navigateur du lot réconcilié",
-        "status": "Bloqué : navigateur indisponible",
+        "status": "Avant vague B · Bloqué : navigateur indisponible",
         "spec": "La revue interactive finale n’a pas pu être exécutée dans cette session. Les contrôles de fichiers et les tests automatisés ne remplacent pas l’observation du rendu et des transitions.",
         "acceptance": "Reprendre le contrôle du sol, des pivots, des halos, du miroir, des sauts et des couches d’arène dès que le navigateur est disponible. Ne pas déclarer de validation visuelle finale."
       },
@@ -12691,11 +12691,81 @@
         "acceptance": "Fichier conservé et export disponible ; aucun assemblage au rig ou affichage en jeu n’est revendiqué. Contrôler placement, échelle et transparence avant intégration."
       },
       {
-        "type": "Recette",
+        "type": "Historique · vérification",
         "subject": "QA automatique après réconciliation",
-        "status": "Testé automatiquement",
+        "status": "Avant vague B · Testé automatiquement",
         "spec": "npm run qa termine avec le code 0 : typecheck, lint, 41 suites et 310 tests réussis, deux builds. Le standalone exporté contient 823 empreintes vérifiées et pèse 458,6 Mio.",
         "acceptance": "Résultat de la passe finale runtime après intégration. Le classeur conserve séparément le blocage navigateur : aucune validation des pivots, halos, transitions ou fidélité 1:1 n’est déduite de ces tests."
+      },
+      {
+        "type": "Vague B · production",
+        "subject": "Provenance et décompte du lot",
+        "status": "Fichiers livrés et distingués",
+        "spec": "24 nouvelles œuvres : 8 poses Lucifer/Moxxie, 8 dessins de décor, 6 poses du costume de Moxxie et 2 composants séparés. 11 sources PNG retrouvées et 12 anciens WebP sont archivés. Total du lot : 74 fichiers image ; le lot précédent de 49 œuvres / 117 fichiers reste historique.",
+        "acceptance": "Un dessin et ses exports comptent pour une œuvre. Les 2 exports narratifs issus des sources retrouvées et la miniature du perron ne sont pas de nouvelles générations. Contrôler les empreintes du manifeste de livraison."
+      },
+      {
+        "type": "Vague B · récupération",
+        "subject": "Sources et variantes préservées",
+        "status": "23 archives originales",
+        "spec": "Onze PNG conservés avec leurs octets et empreintes, plus douze WebP antérieurs distincts des versions actives. Les variantes de Lucifer, de Stolas humain et les deux anciens fonds restent des sources archivées. Les 22 générations déjà présentes dans le lot précédent ne sont pas dupliquées.",
+        "acceptance": "Consulter wave-b-recovery-2026-11-19.json pour SHA-256, transparence, provenance et comparaison. Aucune restauration à l’identique d’une œuvre introuvable n’est revendiquée."
+      },
+      {
+        "type": "Vague B · combattants",
+        "subject": "Lucifer et Moxxie : quatre poses",
+        "status": "Référencé par le jeu",
+        "spec": "Repos, garde active, frappe légère et réaction : huit nouvelles images indépendantes. Les autres actions continuent d’utiliser les banques existantes. Les silhouettes et accessoires ont une vérification de fichier et une revue statique.",
+        "acceptance": "Tester échelle, appuis, miroir et changements de pose en duel. Quatre poses clés ne constituent pas un cycle animé complet ni une validation canonique 1:1."
+      },
+      {
+        "type": "Vague B · décors",
+        "subject": "Quatorze arènes à trois plans",
+        "status": "Référencé par le jeu",
+        "spec": "Sept nouveaux calques indépendants terminent Cannibal Town, le perron, les toits et l’ambassade. Un nouveau fond du perron, avec sa miniature dérivée, conserve séparément l’ancien fichier du bâtiment. Les 14 arènes disposent désormais d’un fond, d’un médian et d’un premier plan.",
+        "acceptance": "Contrôler les occultations, les pieds, le contraste et les mouvements réduits. Le chariot de fleurs est une nouvelle génération. Les plans sont des compositions de jeu, sans reproduction 1:1 certifiée."
+      },
+      {
+        "type": "Vague B · costume",
+        "subject": "Moxxie : festival des moissons",
+        "status": "Quatrième costume sélectionnable",
+        "spec": "Six poses indépendantes : repos, léger, lourd, réaction, accroupissement et saut. Tenue adaptée de captures republiées de The Harvest Moon Festival (S1E5), sans chapeau de cowboy. La page de l’épisode officiel a été identifiée ; ses images n’ont pas été visionnées dans cette passe.",
+        "acceptance": "Comparer le gilet à trois boutons, les poignets larges, le ruban et les bottes sur les deux orientations. Garder ouverte la validation officielle plan par plan, ainsi que les pivots et transitions."
+      },
+      {
+        "type": "Vague B · histoires",
+        "subject": "Lucifer prologue et Blitzø épilogue",
+        "status": "Deux exports reliés aux campagnes",
+        "spec": "Deux PNG retrouvés ont été exportés en WebP sans altérer les pixels visibles : plan de scène à l’hôtel pour le prologue de Lucifer ; dossier I.M.P. pour l’épilogue de Blitzø. Les textes de campagne et l’introduction existante de Blitzø sont conservés.",
+        "acceptance": "26 affectations illustrées sur 108, pour 22 images distinctes. Les scènes sont des fictions originales du jeu ; l’intégration narrative ne transforme pas ces images en scènes canoniques."
+      },
+      {
+        "type": "Vague B · audit",
+        "subject": "Couverture runtime actuelle",
+        "status": "254 références, aucune absente",
+        "spec": "36 combattants ; 10 repos individuels, 3 gardes actives distinctes, 5 contacts légers et 4 réactions. 4 costumes / 24 poses. 14 arènes à trois plans. 26 affectations narratives sur 108, avec 22 images distinctes. Une pièce de finition est intégrée.",
+        "acceptance": "Compteurs tirés du registre runtime et de ASSET_COVERAGE.json. Les 9 composants ou variantes conservés hors rig/scène ne sont pas ajoutés aux éléments jouables. La conformité de fichier ne certifie pas le rendu dans le navigateur."
+      },
+      {
+        "type": "Vague B · recette",
+        "subject": "Vérifications automatiques du lot",
+        "status": "QA globale réussie",
+        "spec": "npm run qa termine avec le code 0 : TypeScript et ESLint réussis, 41 suites / 313 tests réussis, deux builds. Le standalone contient 850 fichiers et empreintes vérifiés, pour 482,6 Mio. L’audit des 254 références ne signale aucun fichier manquant.",
+        "acceptance": "Résultat de la vague B, distinct des 310 tests / 823 empreintes historiques. La revue interactive est indisponible ; les composites statiques ne sont pas des captures du jeu et ne certifient ni pivots ni fluidité."
+      },
+      {
+        "type": "Accessoire séparé",
+        "subject": "Chapeau de Lucifer",
+        "status": "Réserve, hors rig",
+        "spec": "art/infernal-versus/masters/parts/lucifer-top-hat.png\npublic/assets/sprites/parts/lucifer-top-hat.webp",
+        "acceptance": "Nouvelle pièce en réserve. Aucun assemblage au rig, affichage en combat ou remplacement automatique de costume n’est revendiqué. Vérifier échelle, pivot et attache avant intégration."
+      },
+      {
+        "type": "Partie séparée",
+        "subject": "Queue de Moxxie",
+        "status": "Réserve, hors rig",
+        "spec": "art/infernal-versus/masters/parts/hb_moxxie-tail.png\npublic/assets/sprites/parts/hb_moxxie-tail.webp",
+        "acceptance": "Nouvelle pièce en réserve. Aucun assemblage au rig, affichage en combat ou remplacement automatique de costume n’est revendiqué. Vérifier échelle, pivot et attache avant intégration."
       }
     ],
     "sources": [
@@ -12816,66 +12886,142 @@
       [
         "Dépôt",
         "Couverture runtime auditée",
-        "231 références du registre actuel ; les composants conservés hors rig ne sont pas assimilés à des éléments jouables.",
+        "État actuel de la vague B : 254 références, zéro fichier absent. Les composants conservés hors rig restent séparés des éléments jouables.",
         "docs/standalone/ASSET_COVERAGE.json"
+      ],
+      [
+        "Dépôt",
+        "Base publiée avant vague B",
+        "Arbre identique au commit local 59b0839 ; comparaison des productions précédentes.",
+        "https://github.com/darknigthmare/hellbound-hotel-manager/commit/1f026b7303d3be06193095b376054705d00c43e9"
+      ],
+      [
+        "Dépôt",
+        "Livraison consolidée vague B",
+        "74 fichiers image ; nouveaux dessins, sources retrouvées, variantes et fichiers reliés au runtime distingués.",
+        "art/infernal-versus/production/delivery-wave-b-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Récupération vague B",
+        "11 sources PNG et 12 variantes WebP archivées avec empreintes et comparaison des exports actifs.",
+        "art/infernal-versus/production/wave-b-recovery-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Poses Lucifer et Moxxie",
+        "Huit nouvelles poses individuelles ; sources PNG, exports WebP et contrôles de fichier.",
+        "art/infernal-versus/production/wave-b-fighters-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Décors et calques vague B",
+        "Huit nouveaux dessins : sept calques et un fond. Références, prompts, alpha et distinction des adaptations.",
+        "art/infernal-versus/production/wave-b-stages-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Costume Moxxie festival",
+        "Six poses ; provenance des captures republiées et limites du contrôle officiel explicitement consignées.",
+        "art/infernal-versus/production/wave-b-costume-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Illustrations retrouvées intégrées",
+        "Deux exports narratifs dérivés, pixels conservés et liens vers les scènes originales du jeu.",
+        "art/infernal-versus/production/wave-b-story-2026-11-19.json"
+      ],
+      [
+        "Dépôt",
+        "Composants séparés vague B",
+        "Chapeau de Lucifer et queue de Moxxie ; réserve hors rig, aucun affichage en jeu.",
+        "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+      ],
+      [
+        "Séries",
+        "Hazbin Hotel · trailer S1",
+        "Repères 00:16 et 00:18 inspectés pour l’architecture de l’entrée. Le nouveau fond reste une composition de jeu.",
+        "https://www.youtube.com/watch?v=OLSWVCwy88g"
+      ],
+      [
+        "Séries",
+        "Helluva Boss · The Harvest Moon Festival",
+        "S1E5 identifié pour le costume de Moxxie. Lecture vidéo officielle bloquée ; captures republiées utilisées et tracées dans le manifeste.",
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8"
       ]
     ],
     "assetBatch": {
       "date": "2026-11-19",
-      "comparisonCommit": "06f960ffbf62618b4068d3513978ab9d9de716e1",
-      "reconciledCheckpoint": "e260968b27f1192a86e31aab585b197276f39b8c",
+      "batchId": "wave-b-2026-11-19",
+      "comparisonCommit": "1f026b7303d3be06193095b376054705d00c43e9",
+      "equivalentLocalCommit": "59b08395621b612e916d4b4366a763a51ec26987",
+      "comparisonTree": "6f03ce8a524e0fed4bb417db52a3dc2907df53de",
       "branch": "feat/infernal-versus-story-tournament",
+      "manifest": "art/infernal-versus/production/delivery-wave-b-2026-11-19.json",
       "recovery": {
-        "originalMastersRecoveredByGitSHA": 12,
-        "priorProductionMastersRecoveredFromCheckpoint": 12,
-        "artworksRecoveredAsExportOnly": 3,
-        "exportOnlyArtworkIds": [
-          "hotel-bar-room",
-          "hotel-lobby-valance",
-          "wrath-ranch-lantern"
-        ],
-        "unrecoveredLocalFiles": "Not counted as delivered; see recovery audit. Recovered Stolas crouch/jump have been completed with four new poses."
+        "sourcePNGArtworksRecovered": 11,
+        "earlierWebPExportVariantsPreserved": 12,
+        "archivedOriginalImageFiles": 23,
+        "integratedStoryExportsFromRecoveredSources": 2,
+        "sourceArchive": "art/infernal-versus/recovered-sources/2026-11-19-wave-b",
+        "exportArchive": "art/infernal-versus/recovered-exports/2026-11-19-wave-b",
+        "sourceBytesPreserved": true,
+        "interpretation": "Les onze PNG retrouvés sont des sources archivées. Les douze WebP antérieurs sont des variantes de fichiers, sans nouvelle œuvre comptée. Les deux exports narratifs intégrés dérivent de ces sources et ne sont pas de nouvelles générations.",
+        "remainingUnrecovered": "Les productions historiques non retrouvées restent exclues de la livraison. Le chariot de Cannibal Town et les poses jouables de Lucifer/Moxxie de cette vague sont de nouvelles générations, sans prétention de restauration des originaux manquants.",
+        "manifest": "art/infernal-versus/production/wave-b-recovery-2026-11-19.json"
       },
       "newProduction": {
-        "stageBackgrounds": 5,
-        "foregroundProps": 2,
-        "detachedParts": 1,
-        "costumePoses": 8,
-        "fighterPoses": 6,
-        "totalNewGenerations": 22
+        "fighterPoses": 8,
+        "stageBackgrounds": 1,
+        "foregroundProps": 7,
+        "costumePoses": 6,
+        "detachedParts": 2,
+        "totalNewGenerations": 24,
+        "derivedStoryExports": 2,
+        "derivedThumbnails": 1
       },
       "totals": {
-        "masters": 46,
-        "exportOnlyArtworks": 3,
-        "artworks": 49,
-        "imageFiles": 117,
-        "masterFiles": 46,
-        "publicImageFiles": 57,
-        "archivedImageFiles": 14,
-        "boundPublicImageFiles": 50,
-        "preparedPublicImageFiles": 7
+        "newGeneratedArtworks": 24,
+        "recoveredSourceArtworks": 11,
+        "preservedEarlierExportVariants": 12,
+        "newMasterFiles": 24,
+        "recoveredArchiveFiles": 23,
+        "publicImageFiles": 27,
+        "registeredPublicImageFiles": 25,
+        "preparedPublicImageFiles": 2,
+        "totalImageFiles": 74
       },
       "runtime": {
         "fighters": 36,
-        "referencedAssets": 231,
+        "individualReady": 10,
+        "individualGuard": 3,
+        "individualLightContact": 5,
+        "individualHit": 4,
+        "costumes": 4,
+        "costumeKeyPoses": 24,
+        "finisherKeyPoses": 5,
+        "separatedFinishProps": 1,
+        "storyAssignments": 108,
+        "illustratedStoryAssignments": 26,
+        "uniqueStoryIllustrations": 22,
+        "stages": 14,
+        "threePlaneStages": 14,
+        "twoPlaneStages": 0,
+        "onePlaneStages": 0,
+        "referencedAssets": 254,
+        "brokenReferences": [],
         "standaloneStages": 14,
-        "threePlaneStages": 10,
-        "twoPlaneStages": 1,
-        "onePlaneStages": 3,
-        "individualReady": 8,
-        "individualGuard": 1,
-        "individualLightContact": 3,
-        "individualHit": 2,
-        "costumes": 3,
-        "costumeKeyPoses": 18,
         "individualPoseFighters": [
           "angeldust",
-          "hb_striker",
+          "husk",
+          "lucifer",
+          "hb_moxxie",
           "hb_millie",
-          "husk"
+          "hb_striker"
         ],
         "extendedCostumes": [
           "vaggie-exorcist",
+          "hb_moxxie-harvest-festival",
           "hb_loona-human-disguise",
           "hb_stolas-human-disguise"
         ],
@@ -12937,6 +13083,24 @@
           "master": null,
           "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
           "status": "Export récupéré, hors scène active"
+        },
+        {
+          "id": "lucifer-top-hat",
+          "name": "Chapeau de Lucifer",
+          "kind": "Accessoire séparé",
+          "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
+          "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
+          "status": "Réserve, hors rig",
+          "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+        },
+        {
+          "id": "hb_moxxie-tail",
+          "name": "Queue de Moxxie",
+          "kind": "Partie séparée",
+          "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
+          "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
+          "status": "Réserve, hors rig",
+          "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
         }
       ],
       "carmineCrateVariants": {
@@ -12946,25 +13110,181 @@
         "retainedExport": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp"
       },
       "verification": {
-        "assetProvenance": "Original recovered masters, earlier checkpoint productions and newly generated source PNGs are counted separately.",
-        "runtimeQA": "npm run qa : sortie 0, typecheck et lint réussis, 41 suites et 310 tests réussis, deux builds et 823 empreintes du standalone vérifiées. Recette navigateur non exécutée.",
-        "browserReview": "Bloquée : navigateur indisponible ; aucune recette visuelle finale revendiquée.",
-        "oneToOneFidelity": "Non vérifiée plan par plan contre les épisodes officiels.",
-        "pivots": "Non certifiés normalisés ; écarts de placement à contrôler en jeu.",
-        "animationCompleteness": "Poses clés, composants et calques. Animations longues individuelles encore à produire.",
+        "assetProvenance": "Vague B : 24 œuvres générées, 11 sources retrouvées, 12 variantes d’export préservées. Le lot précédent de 49 œuvres / 117 fichiers reste un instantané historique distinct.",
+        "runtimeAssetAudit": {
+          "status": "passed",
+          "referencedAssets": 254,
+          "missingReferences": 0,
+          "evidence": "docs/standalone/ASSET_COVERAGE.json"
+        },
+        "runtimeQA": "npm run qa : sortie 0 ; TypeScript et ESLint réussis ; 41 suites / 313 tests réussis ; deux builds ; 850 fichiers et empreintes du standalone vérifiés, 482,6 Mio. Résultat de la vague B ; aucune recette navigateur revendiquée.",
         "automatedQA": {
           "command": "npm run qa",
           "exitCode": 0,
           "suites": 41,
-          "tests": 310,
+          "tests": 313,
           "typecheck": "passed",
           "lint": "passed",
           "builds": 2,
-          "standaloneHashesVerified": 823,
-          "standaloneMiB": 458.6,
-          "runtimeReferences": 231,
+          "standaloneFiles": 850,
+          "standaloneHashesVerified": 850,
+          "standaloneMiB": 482.6,
+          "runtimeReferences": 254,
           "missingRuntimeReferences": 0,
-          "evidence": "Final runtime QA reported by the integration agent after reconciliation; browser review remains pending."
+          "evidence": "QA finale vague B communiquée par l’agent d’intégration ; journal qa-wave-b.log vérifié."
+        },
+        "browserReview": "Unavailable: Chromium local launch blocked by socket EPERM; shared browser transport disconnected. Static composites and automated component tests are recorded separately and are not browser screenshots.",
+        "oneToOneFidelity": "Non certifiée. Les images sont des adaptations de jeu ; les captures republiées du costume et les repères du trailer ne valent pas validation officielle plan par plan.",
+        "pivots": "Non certifiés normalisés ; échelle, appuis, miroir et transitions restent à vérifier en jeu.",
+        "animationCompleteness": "Poses clés et calques indépendants. Les animations longues individuelles et les deux nouveaux composants hors rig ne sont pas déclarés jouables.",
+        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_B_2026-11-19.json"
+      },
+      "priorBatch": {
+        "date": "2026-11-19",
+        "comparisonCommit": "06f960ffbf62618b4068d3513978ab9d9de716e1",
+        "reconciledCheckpoint": "e260968b27f1192a86e31aab585b197276f39b8c",
+        "branch": "feat/infernal-versus-story-tournament",
+        "recovery": {
+          "originalMastersRecoveredByGitSHA": 12,
+          "priorProductionMastersRecoveredFromCheckpoint": 12,
+          "artworksRecoveredAsExportOnly": 3,
+          "exportOnlyArtworkIds": [
+            "hotel-bar-room",
+            "hotel-lobby-valance",
+            "wrath-ranch-lantern"
+          ],
+          "unrecoveredLocalFiles": "Not counted as delivered; see recovery audit. Recovered Stolas crouch/jump have been completed with four new poses."
+        },
+        "newProduction": {
+          "stageBackgrounds": 5,
+          "foregroundProps": 2,
+          "detachedParts": 1,
+          "costumePoses": 8,
+          "fighterPoses": 6,
+          "totalNewGenerations": 22
+        },
+        "totals": {
+          "masters": 46,
+          "exportOnlyArtworks": 3,
+          "artworks": 49,
+          "imageFiles": 117,
+          "masterFiles": 46,
+          "publicImageFiles": 57,
+          "archivedImageFiles": 14,
+          "boundPublicImageFiles": 50,
+          "preparedPublicImageFiles": 7
+        },
+        "runtime": {
+          "fighters": 36,
+          "referencedAssets": 231,
+          "standaloneStages": 14,
+          "threePlaneStages": 10,
+          "twoPlaneStages": 1,
+          "onePlaneStages": 3,
+          "individualReady": 8,
+          "individualGuard": 1,
+          "individualLightContact": 3,
+          "individualHit": 2,
+          "costumes": 3,
+          "costumeKeyPoses": 18,
+          "individualPoseFighters": [
+            "angeldust",
+            "hb_striker",
+            "hb_millie",
+            "husk"
+          ],
+          "extendedCostumes": [
+            "vaggie-exorcist",
+            "hb_loona-human-disguise",
+            "hb_stolas-human-disguise"
+          ],
+          "detachedProp": "/assets/sprites/parts/lucifer-apple-cane.webp"
+        },
+        "retainedComponents": [
+          {
+            "id": "hb_moxxie-bowtie",
+            "name": "Nœud papillon de Moxxie",
+            "kind": "Pièce de costume",
+            "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
+            "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
+            "status": "Conservé, hors rig"
+          },
+          {
+            "id": "hb_millie-top",
+            "name": "Haut de Millie",
+            "kind": "Pièce de costume",
+            "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
+            "export": "public/assets/sprites/parts/hb_millie-top.webp",
+            "status": "Conservé, hors rig"
+          },
+          {
+            "id": "alastor-microphone-cane",
+            "name": "Canne-micro d’Alastor",
+            "kind": "Accessoire séparé",
+            "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
+            "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+            "status": "Conservé, hors animation"
+          },
+          {
+            "id": "vaggie-exorcist-spear",
+            "name": "Lance d’exorciste de Vaggie",
+            "kind": "Accessoire séparé",
+            "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
+            "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+            "status": "Conservé, hors animation"
+          },
+          {
+            "id": "carmine-industries-crate-variant",
+            "name": "Caisse Carmine du checkpoint",
+            "kind": "Variante de décor",
+            "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
+            "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
+            "status": "Conservé, hors scène active"
+          },
+          {
+            "id": "carmine-industries-chain",
+            "name": "Chaîne Carmine du checkpoint",
+            "kind": "Variante de décor",
+            "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
+            "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
+            "status": "Conservé, hors scène active"
+          },
+          {
+            "id": "wrath-ranch-lantern",
+            "name": "Lanterne de Wrath",
+            "kind": "Variante de décor",
+            "master": null,
+            "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
+            "status": "Export récupéré, hors scène active"
+          }
+        ],
+        "carmineCrateVariants": {
+          "recoveredMaster": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
+          "newMaster": "art/infernal-versus/masters/stages/carmine-industries-crate-20261119.png",
+          "activeExport": "public/assets/stages/hazbin/carmine-industries/crate.webp",
+          "retainedExport": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp"
+        },
+        "verification": {
+          "assetProvenance": "Original recovered masters, earlier checkpoint productions and newly generated source PNGs are counted separately.",
+          "runtimeQA": "npm run qa : sortie 0, typecheck et lint réussis, 41 suites et 310 tests réussis, deux builds et 823 empreintes du standalone vérifiées. Recette navigateur non exécutée.",
+          "browserReview": "Bloquée : navigateur indisponible ; aucune recette visuelle finale revendiquée.",
+          "oneToOneFidelity": "Non vérifiée plan par plan contre les épisodes officiels.",
+          "pivots": "Non certifiés normalisés ; écarts de placement à contrôler en jeu.",
+          "animationCompleteness": "Poses clés, composants et calques. Animations longues individuelles encore à produire.",
+          "automatedQA": {
+            "command": "npm run qa",
+            "exitCode": 0,
+            "suites": 41,
+            "tests": 310,
+            "typecheck": "passed",
+            "lint": "passed",
+            "builds": 2,
+            "standaloneHashesVerified": 823,
+            "standaloneMiB": 458.6,
+            "runtimeReferences": 231,
+            "missingRuntimeReferences": 0,
+            "evidence": "Final runtime QA reported by the integration agent after reconciliation; browser review remains pending."
+          }
         }
       }
     }

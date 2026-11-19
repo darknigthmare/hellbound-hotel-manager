@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "timezone": "Europe/Paris",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "pullRequest": 3,
+  "comparisonCommit": "1f026b7303d3be06193095b376054705d00c43e9",
+  "automated": {
+    "command": "npm run qa",
+    "exitCode": 0,
+    "testFiles": 41,
+    "tests": 313,
+    "failed": 0,
+    "standaloneFiles": 850,
+    "standaloneMiB": 482.6,
+    "standaloneHashesVerified": 850,
+    "typecheck": "passed",
+    "eslint": "passed",
+    "mainBuild": "passed",
+    "standaloneBuild": "passed",
+    "standaloneHashes": "passed",
+    "runtimeAssets": 254,
+    "missingRuntimeAssets": [],
+    "hotelAndCloudPersistenceExcluded": true
+  },
+  "sourceHashesAtVerification": {
+    "src/components/PentagramLiveFight.tsx": "bc89b0f7c3c9a20d4966bc835e5eb1156b2fa267bf9051b3ca8b5712893f9294",
+    "src/lib/infernal-appearances.ts": "8795f27821d211b13ed7a856f18aae36e9dfd84d07d6190c4ff27d1298d88d44",
+    "src/lib/pentagram-stages.ts": "bcb7ca93d7f4c556051a4a0fefa1cb02d2bf86a8f178396fa5f801b2facdec19",
+    "src/standalone/campaign.ts": "0f6bf9e7336523000bb8ab369303367145f5b65161d83d0660b0d920ff0dde19",
+    "src/styles/pentagram-arena.css": "d53d2d805916e56446b8b01a0b0917087812bbf0555defc16aa70bce93c40ac3",
+    "src/tests/standalone-live-fight.test.tsx": "6780ac88ce4f92b2eaaab9a7523a0111fb2caff68aa52b8aa01e1bf376a3edc2"
+  },
+  "assetDeliveryCounts": {
+    "newGeneratedArtworks": 24,
+    "recoveredSourceArtworks": 11,
+    "preservedEarlierExportVariants": 12,
+    "newMasterFiles": 24,
+    "recoveredArchiveFiles": 23,
+    "publicImageFiles": 27,
+    "registeredPublicImageFiles": 25,
+    "preparedPublicImageFiles": 2,
+    "totalImageFiles": 74
+  },
+  "targetedChecks": [
+    "Held distinct guard keeps portrait framing for Lucifer and Moxxie.",
+    "Portrait costume renders on both players; crouch and jump preserve the portrait class.",
+    "Native alpha and decoded lossless exports verified in production manifests.",
+    "Recovered files copied without changing source SHA-256."
+  ],
+  "visualReview": {
+    "individualAssets": "inspected",
+    "checkerboardPartsAndCostume": "inspected",
+    "stageCompositions": "static Pillow inspection at 1100x520 and 390x300, not browser output",
+    "cannibalAwning": "corrected from width48% to height28% / max-width40%; static recheck shows left face clear",
+    "costumeFootBaselinePixels": {
+      "canvasHeight": 1536,
+      "minimum": 1439,
+      "maximum": 1463
+    },
+    "animationCycles": "not validated as complete",
+    "canonicalOneToOneFidelity": "not certified"
+  },
+  "browserReview": {
+    "status": "unavailable",
+    "localHeadless": "Chromium launch failed: process singleton socket EPERM. Local HTTP server itself started in its process.",
+    "sharedBrowser": "CUA transport disconnected during game-review initialization; no live game-review tab available. A separate reference session opened the official costume episode page but could not play the video.",
+    "interpretation": "Automated DOM tests and static composites are not a dynamic browser verification."
+  },
+  "remainingVisualReview": [
+    "In-browser movement, jump timing, pivot alignment and silhouette transitions.",
+    "Desktop cover crop of upper hotel sign.",
+    "Official frame-by-frame comparison, especially the costume whose inspected captures are secondary reposts."
+  ],
+  "publication": "This report records local validation; verify the final PR head and its tree separately."
+}

@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "wave": "B",
+  "status": "passed",
+  "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V2.xlsx",
+  "builder": "docs/standalone/build-production-bible.mjs",
+  "builderModified": false,
+  "authoringEngine": "@oai/artifact-tool in CODEX_PRIMARY_RUNTIME_NODE",
+  "sheetCount": 23,
+  "sheetNames": [
+    "Guide V2",
+    "Modes V2",
+    "Histoires",
+    "Duels de campagne",
+    "Données moteur",
+    "Techniques signatures",
+    "Tenues et gardes",
+    "Finitions",
+    "Plans des arènes",
+    "Illustrations",
+    "Atelier et recette",
+    "Références V2",
+    "Synthèse",
+    "Chantiers",
+    "Parité CQC",
+    "Personnages",
+    "Kits combat",
+    "Variantes",
+    "Techniques",
+    "Arènes",
+    "Parcours",
+    "Recette",
+    "Sources"
+  ],
+  "v1Preservation": {
+    "historicalSheets": 11,
+    "worksheetXmlByteIdentical": true,
+    "tablesAndSheetRelationshipsByteIdentical": true,
+    "preservedParts": [
+      "xl/worksheets/sheet1.xml",
+      "xl/worksheets/sheet2.xml",
+      "xl/worksheets/sheet3.xml",
+      "xl/worksheets/sheet4.xml",
+      "xl/worksheets/sheet5.xml",
+      "xl/worksheets/sheet6.xml",
+      "xl/worksheets/sheet7.xml",
+      "xl/worksheets/sheet8.xml",
+      "xl/worksheets/sheet9.xml",
+      "xl/worksheets/sheet10.xml",
+      "xl/worksheets/sheet11.xml",
+      "xl/tables/table1.xml",
+      "xl/tables/table2.xml",
+      "xl/tables/table3.xml",
+      "xl/tables/table4.xml",
+      "xl/tables/table5.xml",
+      "xl/tables/table6.xml",
+      "xl/tables/table7.xml",
+      "xl/tables/table8.xml",
+      "xl/tables/table9.xml",
+      "xl/tables/table10.xml",
+      "xl/worksheets/_rels/sheet10.xml.rels",
+      "xl/worksheets/_rels/sheet11.xml.rels",
+      "xl/worksheets/_rels/sheet2.xml.rels",
+      "xl/worksheets/_rels/sheet3.xml.rels",
+      "xl/worksheets/_rels/sheet4.xml.rels",
+      "xl/worksheets/_rels/sheet5.xml.rels",
+      "xl/worksheets/_rels/sheet6.xml.rels",
+      "xl/worksheets/_rels/sheet7.xml.rels",
+      "xl/worksheets/_rels/sheet8.xml.rels",
+      "xl/worksheets/_rels/sheet9.xml.rels"
+    ],
+    "originalStyleAndSharedStringPrefixesPreserved": true,
+    "v1WorkbookSHA256": "e4e870fd1add60aaef72a41d06ea496009f134907854fda18f0fa144a89d631b"
+  },
+  "unchangedV2ValuesAndFormulas": [
+    "Modes V2",
+    "Histoires",
+    "Duels de campagne",
+    "Données moteur",
+    "Techniques signatures",
+    "Finitions"
+  ],
+  "formulas": {
+    "totalWithCachedResults": 186,
+    "newEditionFormulaCount": 132,
+    "motorTimingFormulasChecked": 112,
+    "guideFormulasChecked": 20,
+    "errorCells": [],
+    "recalculation": "Builder recalculated and asserted live runtime counters before export."
+  },
+  "guideCounts": {
+    "Modes décrits": 13,
+    "Routes scénarisées": 36,
+    "Confrontations": 108,
+    "Attaques paramétrées": 112,
+    "Signatures jouables": 4,
+    "Signatures à prototyper": 32,
+    "Tenues alternatives": 4,
+    "Poses des tenues alternatives": 24,
+    "Gardes actives distinctes": 3,
+    "Variantes longues à dessiner": 36,
+    "Lieux détaillés": 14,
+    "Arènes à trois plans jouables": 14,
+    "Arènes à deux plans jouables": 0,
+    "Arènes avec fond seul": 0,
+    "Pièces séparées intégrées": 1,
+    "Affectations de scène": 108,
+    "Affectations dédiées": 26,
+    "Affectations à illustrer": 82,
+    "Fiches de travail": 56,
+    "Sources de travail": 30
+  },
+  "runtime": {
+    "fighters": 36,
+    "individualReady": 10,
+    "individualGuard": 3,
+    "individualLightContact": 5,
+    "individualHit": 4,
+    "costumes": 4,
+    "costumeKeyPoses": 24,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 14,
+    "threePlaneStages": 14,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "referencedAssets": 254,
+    "brokenReferences": []
+  },
+  "waveBCounts": {
+    "newGeneratedArtworks": 24,
+    "recoveredSourceArtworks": 11,
+    "preservedEarlierExportVariants": 12,
+    "newMasterFiles": 24,
+    "recoveredArchiveFiles": 23,
+    "publicImageFiles": 27,
+    "registeredPublicImageFiles": 25,
+    "preparedPublicImageFiles": 2,
+    "totalImageFiles": 74
+  },
+  "priorBatchPreserved": {
+    "artworks": 49,
+    "imageFiles": 117,
+    "snapshotExactlyMatchesPreviousAssetBatch": true,
+    "location": "productionBible.assetBatch.priorBatch"
+  },
+  "planOutsideProductionBibleUnchanged": true,
+  "qaGlobal": {
+    "command": "npm run qa",
+    "exitCode": 0,
+    "suites": 41,
+    "tests": 313,
+    "typecheck": "passed",
+    "lint": "passed",
+    "builds": 2,
+    "standaloneFiles": 850,
+    "standaloneHashesVerified": 850,
+    "standaloneMiB": 482.6,
+    "runtimeReferences": 254,
+    "missingRuntimeReferences": 0,
+    "evidence": "QA finale vague B communiquée par l’agent d’intégration ; journal qa-wave-b.log vérifié."
+  },
+  "workbookSHA256": "0ca94a86278326d90325d0e1b78e712eb03a842a164d5e0e82972827d1e0b6f2",
+  "workbookBytes": 205805,
+  "limits": [
+    "Aucune certification canonique 1:1.",
+    "La vérification du classeur ne vaut pas recette interactive du jeu.",
+    "Chapeau de Lucifer et queue de Moxxie : réserve hors rig."
+  ],
+  "recalculationSensitivity": {
+    "status": "passed",
+    "scope": "Disposable in-memory copy; final workbook bytes unchanged",
+    "checks": [
+      {
+        "input": "Données moteur!E6",
+        "output": "Données moteur!F6",
+        "perturbedInput": 137,
+        "perturbedOutput": 9,
+        "restoredInput": 120,
+        "restoredOutput": 8
+      },
+      {
+        "input": "Illustrations!E27",
+        "outputs": [
+          "Guide V2!C22",
+          "Guide V2!C23"
+        ],
+        "perturbedOutputs": [
+          25,
+          83
+        ],
+        "restoredOutputs": [
+          26,
+          82
+        ]
+      }
+    ]
+  },
+  "visualReview": {
+    "status": "passed",
+    "beforeRangesReviewed": [
+      "Guide V2!A1:D25",
+      "Plans des arènes!A1:D19",
+      "Atelier et recette!A1:E12"
+    ],
+    "changedViews": [
+      {
+        "name": "guide",
+        "sheet": "Guide V2",
+        "range": "A1:D25",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/guide.png",
+        "reviewed": true
+      },
+      {
+        "name": "arenes-principales",
+        "sheet": "Plans des arènes",
+        "range": "A5:E13",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/arenes-principales.png",
+        "reviewed": true
+      },
+      {
+        "name": "atelier-vague-b",
+        "sheet": "Atelier et recette",
+        "range": "A52:E61",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/atelier-vague-b.png",
+        "reviewed": true
+      },
+      {
+        "name": "references-vague-b",
+        "sheet": "Références V2",
+        "range": "A25:D35",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/references-vague-b.png",
+        "reviewed": true
+      },
+      {
+        "name": "tenue-lucifer",
+        "sheet": "Tenues et gardes",
+        "range": "A14:F14",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/tenue-lucifer.png",
+        "reviewed": true
+      },
+      {
+        "name": "tenue-lucifer-poses",
+        "sheet": "Tenues et gardes",
+        "range": "G14:L14",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/tenue-lucifer-poses.png",
+        "reviewed": true
+      },
+      {
+        "name": "tenue-moxxie",
+        "sheet": "Tenues et gardes",
+        "range": "A31:F32",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/tenue-moxxie.png",
+        "reviewed": true
+      },
+      {
+        "name": "tenue-moxxie-poses",
+        "sheet": "Tenues et gardes",
+        "range": "G31:L32",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/tenue-moxxie-poses.png",
+        "reviewed": true
+      },
+      {
+        "name": "story-lucifer",
+        "sheet": "Illustrations",
+        "range": "A27:F29",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/story-lucifer.png",
+        "reviewed": true
+      },
+      {
+        "name": "story-blitzo",
+        "sheet": "Illustrations",
+        "range": "A75:F77",
+        "render": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after/story-blitzo.png",
+        "reviewed": true
+      }
+    ],
+    "observations": [
+      "Couleurs, police, structure de table et gel des en-têtes conservés.",
+      "Les compteurs actuels sont lisibles et les lignes de la vague B sont séparées des résultats historiques.",
+      "Aucun chevauchement ni texte coupé observé dans les dix vues de contrôle.",
+      "Les chemins des six poses de costume et les deux affectations narratives sont visibles dans les lignes concernées."
+    ],
+    "evidenceDirectory": "/workspace/scratch/b55d7e9b60dc/bible-wave-b/after"
+  },
+  "sourceEvidence": {
+    "docs/standalone/extension-plan.json": {
+      "sha256": "0df157d9e966a78eb54ee4f81864f7529e53902e429ad56dc63dc06d844f3c50",
+      "bytes": 551604
+    },
+    "docs/standalone/ASSET_COVERAGE.json": {
+      "sha256": "e53abba862b0e12599f672ee048adb167b4669bccc9f578541a572238267d251",
+      "bytes": 53591
+    },
+    "docs/standalone/build-production-bible.mjs": {
+      "sha256": "473d646cc0df247c6016b9d2910c543cfe0a0e55722cac5a0eed368d72c88947",
+      "bytes": 24051
+    },
+    "art/infernal-versus/production/delivery-wave-b-2026-11-19.json": {
+      "sha256": "5dadd86763dc4178a19a43e4659219fe396ac67d230b20e66f8f95780700764f",
+      "bytes": 40451
+    }
+  },
+  "scope": "Contrôle de structure, formules et lecture du classeur. Les résultats de QA du jeu sont consignés avec leur provenance ; aucune recette navigateur supplémentaire effectuée."
+}

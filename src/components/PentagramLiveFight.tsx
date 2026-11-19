@@ -1101,6 +1101,10 @@ export function PentagramLiveFight({
   }
   const poseOne = individualPose('one', fighterOne.id, combat.actionOne, fighterOneCinematicKind);
   const poseTwo = individualPose('two', fighterTwo.id, combat.actionTwo, fighterTwoCinematicKind);
+  const portraitPoseOne = getInfernalCostume(fighterOne.id, costumeOne)?.layout === 'portrait'
+    || (poseOne?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterOne.id]?.layout === 'portrait');
+  const portraitPoseTwo = getInfernalCostume(fighterTwo.id, costumeTwo)?.layout === 'portrait'
+    || (poseTwo?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterTwo.id]?.layout === 'portrait');
   const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
   const soundtrackUnavailable = soundtrackStatus === 'unavailable';
   const soundtrackButtonLabel = soundtrackUnavailable
@@ -1339,7 +1343,7 @@ export function PentagramLiveFight({
           {!fighterOneCinematicKind && <span className="arena-action-trail" />}
           {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className={`arena-hit-spark is-${impactOneKind} is-${impactOneTheme}`} />}
           {poseOne ? (
-            <img className={`infernal-individual-pose${poseOne.includes('/individual/') && INFERNAL_ACTION_POSES[fighterOne.id]?.layout === 'portrait' ? ' infernal-individual-pose--portrait' : ''}`} src={poseOne} alt="" />
+            <img className={`infernal-individual-pose${portraitPoseOne ? ' infernal-individual-pose--portrait' : ''}`} src={poseOne} alt="" />
           ) : fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -1365,7 +1369,7 @@ export function PentagramLiveFight({
           {!fighterTwoCinematicKind && <span className="arena-action-trail" />}
           {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className={`arena-hit-spark is-${impactTwoKind} is-${impactTwoTheme}`} />}
           {poseTwo ? (
-            <img className={`infernal-individual-pose${poseTwo.includes('/individual/') && INFERNAL_ACTION_POSES[fighterTwo.id]?.layout === 'portrait' ? ' infernal-individual-pose--portrait' : ''}`} src={poseTwo} alt="" />
+            <img className={`infernal-individual-pose${portraitPoseTwo ? ' infernal-individual-pose--portrait' : ''}`} src={poseTwo} alt="" />
           ) : fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (

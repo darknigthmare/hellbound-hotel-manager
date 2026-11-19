@@ -25,6 +25,8 @@ function actionPoses(id: string): InfernalActionPoses {
 export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>> = {
   angeldust: actionPoses('angeldust'),
   hb_striker: actionPoses('hb_striker'),
+  lucifer: { ...actionPoses('lucifer'), guard: '/assets/sprites/individual/lucifer-guard.webp' },
+  hb_moxxie: { ...actionPoses('hb_moxxie'), guard: '/assets/sprites/individual/hb_moxxie-guard.webp' },
   hb_millie: {
     ready: '/assets/sprites/individual/hb_millie-ready.webp',
     strike: '/assets/sprites/individual/hb_millie-strike.webp',
@@ -61,6 +63,7 @@ export interface InfernalCostume {
   id: string;
   name: string;
   appearance: string;
+  layout?: 'portrait' | 'landscape';
   ready: string;
   strike: string;
   recoil: string;
@@ -77,6 +80,10 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
   vaggie: [costume('vaggie-exorcist', 'Uniforme d’exorciste', 'Hazbin Hotel · Welcome to Heaven, saison 1, épisode 6')],
   hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3')],
   hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2')],
+  hb_moxxie: [{
+    ...costume('hb_moxxie-harvest-festival', 'Tenue du festival des moissons', 'Helluva Boss · The Harvest Moon Festival, saison 1, épisode 5'),
+    layout: 'portrait',
+  }],
 };
 export const getInfernalCostume = (fighterId: string, costumeId?: string) =>
   INFERNAL_COSTUMES[fighterId]?.find(entry => entry.id === costumeId);

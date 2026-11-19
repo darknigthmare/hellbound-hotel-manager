@@ -68,6 +68,8 @@ describe('standalone combat lifecycle', () => {
   it.each([
     ['husk', false, 'husk-guard'],
     ['hb_millie', true, 'hb_millie-ready'],
+    ['lucifer', true, 'lucifer-guard'],
+    ['hb_moxxie', true, 'hb_moxxie-guard'],
   ] as const)('keeps the recovered %s pose format through a held guard', (id, portrait, guardPose) => {
     const fighter = getStandaloneFighter(id)!;
     render(<PentagramLiveFight {...props({
@@ -86,6 +88,33 @@ describe('standalone combat lifecycle', () => {
     expect(guardImage.getAttribute('src')).toBe(`/assets/sprites/individual/${guardPose}.webp`);
     expect(guardImage.classList.contains('infernal-individual-pose--portrait')).toBe(portrait);
     fireEvent.keyUp(stage(), { code: 'KeyE' });
+  });
+
+  it('keeps a portrait costume on both fighters and through crouch and jump', () => {
+    const fighter = getStandaloneFighter('hb_moxxie')!;
+    const definition = buildCombatantDefinition(fighter.character, fighter.profile);
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true,
+      fighterOne: fighter.character, fighterTwo: fighter.character,
+      fighterOneDefinition: definition, fighterTwoDefinition: definition,
+      costumeOne: 'hb_moxxie-harvest-festival', costumeTwo: 'hb_moxxie-harvest-festival',
+    })} />);
+    start();
+    const pose = (side: 'one' | 'two') => document.querySelector<HTMLImageElement>(`.arena-combatant.is-${side} img.infernal-individual-pose`)!;
+    for (const side of ['one', 'two'] as const) {
+      expect(pose(side).src).toContain('/costumes/hb_moxxie-harvest-festival.webp');
+      expect(pose(side).classList.contains('infernal-individual-pose--portrait')).toBe(true);
+    }
+    fireEvent.keyDown(stage(), { code: 'KeyS' });
+    advance(100);
+    expect(pose('one').src).toContain('/costumes/hb_moxxie-harvest-festival-crouch.webp');
+    expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
+    fireEvent.keyUp(stage(), { code: 'KeyS' });
+    advance(100);
+    key('KeyW');
+    advance(100);
+    expect(pose('one').src).toContain('/costumes/hb_moxxie-harvest-festival-jump.webp');
+    expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
   });
 
   it('plays each authored technique with its own keyboard and touch commands', () => {

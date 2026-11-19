@@ -394,12 +394,13 @@ const illustrations: Readonly<Record<string, Partial<Record<StoryBeat, string>>>
   hb_sallie_may: { intro: 'sallie-intro' },
   hb_loona: { intro: 'loona-intro', rival: 'loona-blitzo-rival', ending: 'loona-ending' },
   alastor: { intro: 'alastor-intro', rival: 'alastor-vox-rival', ending: 'alastor-ending' },
+  lucifer: { intro: 'lucifer-charlie-hotel-stage-plan-wave-b' },
   vaggie: { intro: 'vaggie-intro', rival: 'vaggie-lute-rival', ending: 'vaggie-ending' },
   lute: { rival: 'vaggie-lute-rival' },
   hb_fizzarolli: { intro: 'fizz-intro', rival: 'fizz-rival', ending: 'fizz-ending' },
   hb_asmodeus: { intro: 'ozzie-intro', rival: 'fizz-rival', ending: 'ozzie-ending' },
   vox: { rival: 'alastor-vox-rival' },
-  hb_blitzo: { intro: 'blitzo-intro', rival: 'blitzo-striker-rival' },
+  hb_blitzo: { intro: 'blitzo-intro', rival: 'blitzo-striker-rival', ending: 'blitzo-imp-file-wave-b' },
   hb_striker: { rival: 'blitzo-striker-rival' },
 };
 
