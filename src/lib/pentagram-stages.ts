@@ -1,4 +1,4 @@
-export type PentagramStageId =
+export type HotelStageId =
   | 'hotel-lobby'
   | 'hotel-bar'
   | 'hotel-exterior'
@@ -7,6 +7,14 @@ export type PentagramStageId =
   | 'carmine-industries'
   | 'heaven-embassy'
   | 'vee-broadcast-studio';
+
+export type PentagramStageId = HotelStageId
+  | 'imp-reception'
+  | 'ozzies-cabaret'
+  | 'wrath-ranch'
+  | 'heaven-court'
+  | 'pentious-workshop'
+  | 'looloo-land';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -29,6 +37,7 @@ export interface PentagramStage {
   loreBasis: string;
   imagePath: string;
   thumbnailPath: string;
+  scenery?: { middle?: string; near?: string };
   imagePosition: string;
   accent: string;
   shadow: string;
@@ -53,6 +62,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'The hotel lobby is the residents’ shared reception and meeting space.',
     imagePath: '/assets/stages/hazbin/hotel-lobby.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/hotel-lobby.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/hotel-lobby/luggage-cart.webp',
+      near: '/assets/stages/hazbin/hotel-lobby/valance.webp',
+    },
     imagePosition: 'center 52%',
     accent: '#f2c94c',
     shadow: '#5b0718',
@@ -85,8 +98,12 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     district: 'Hazbin Hotel',
     description: 'A close-quarters cabaret lane built around the hotel’s bar.',
     loreBasis: 'The hotel bar is Husk’s usual post and a recurring resident gathering place.',
-    imagePath: '/assets/hotel_bar.png',
+    imagePath: '/assets/stages/hazbin/hotel-bar/room.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/hotel-bar.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/hotel-bar/stool.webp',
+      near: '/assets/stages/hazbin/hotel-bar/lamp.webp',
+    },
     imagePosition: 'center 55%',
     accent: '#ffb35c',
     shadow: '#3d0712',
@@ -119,8 +136,12 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     district: 'Pentagram City',
     description: 'A broad night-time lane beneath the hotel sign and city glow.',
     loreBasis: 'The hotel exterior anchors the project’s central location in Pentagram City.',
-    imagePath: '/assets/hotel_exterior.png',
-    thumbnailPath: '/assets/stages/hazbin/thumbs/hotel-exterior.webp',
+    imagePath: '/assets/stages/hazbin/hotel-exterior/room-wave-b.webp',
+    thumbnailPath: '/assets/stages/hazbin/hotel-exterior/thumb-wave-b.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/hotel-exterior/planter-wave-b.webp',
+      near: '/assets/stages/hazbin/hotel-exterior/lantern-wave-b.webp',
+    },
     imagePosition: 'center 48%',
     accent: '#ff596f',
     shadow: '#310611',
@@ -155,6 +176,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'Pentagram City is the principal urban setting around the hotel.',
     imagePath: '/assets/stages/hazbin/pentagram-rooftops.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/pentagram-rooftops.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/pentagram-rooftops/vent-wave-b.webp',
+      near: '/assets/stages/hazbin/pentagram-rooftops/finial-wave-b.webp',
+    },
     imagePosition: 'center 44%',
     accent: '#ff4f9a',
     shadow: '#25051f',
@@ -189,6 +214,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'Cannibal Town is Rosie’s distinct Pentagram City community.',
     imagePath: '/assets/stages/hazbin/cannibal-town-square.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/cannibal-town-square.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/cannibal-town-square/flower-cart-wave-b.webp',
+      near: '/assets/stages/hazbin/cannibal-town-square/awning.webp',
+    },
     imagePosition: 'center 54%',
     accent: '#f5d58b',
     shadow: '#421019',
@@ -221,9 +250,13 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     district: 'Pentagram City',
     description: 'A steel-and-crimson showroom reconstructed as a precise footwork arena.',
     loreBasis: 'Carmilla Carmine’s weapons enterprise includes the offices where Hell’s Overlords meet.',
-    imagePath: '/assets/stages/hazbin/carmine-industries.webp',
-    thumbnailPath: '/assets/stages/hazbin/thumbs/carmine-industries.webp',
-    imagePosition: 'center 50%',
+    imagePath: '/assets/stages/hazbin/carmine-industries/room.webp',
+    thumbnailPath: '/assets/stages/hazbin/carmine-industries/thumb.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/carmine-industries/rack.webp',
+      near: '/assets/stages/hazbin/carmine-industries/crate.webp',
+    },
+    imagePosition: 'center 58%',
     accent: '#ff6b6b',
     shadow: '#27080d',
     floor: '#241015',
@@ -257,6 +290,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'Vox and the Vees operate through Pentagram City’s television and media network.',
     imagePath: '/assets/stages/hazbin/vee-broadcast-studio.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/vee-broadcast-studio.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/vee-broadcast-studio/camera.webp',
+      near: '/assets/stages/hazbin/vee-broadcast-studio/monitor.webp',
+    },
     imagePosition: 'center 48%',
     accent: '#4de1ff',
     shadow: '#120b3a',
@@ -291,6 +328,10 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
     loreBasis: 'Heaven’s embassy and clock tower are Pentagram City landmarks tied to the extermination schedule.',
     imagePath: '/assets/stages/hazbin/heaven-embassy.webp',
     thumbnailPath: '/assets/stages/hazbin/thumbs/heaven-embassy.webp',
+    scenery: {
+      middle: '/assets/stages/hazbin/heaven-embassy/railing-wave-b.webp',
+      near: '/assets/stages/hazbin/heaven-embassy/pendant-wave-b.webp',
+    },
     imagePosition: 'center 46%',
     accent: '#ffe8a3',
     shadow: '#171531',
@@ -319,10 +360,139 @@ export const PENTAGRAM_STAGES: readonly PentagramStage[] = [
   },
 ] as const;
 
+const IMP_RECEPTION = '/assets/stages/helluva/imp-reception';
+const OZZIES_CABARET = '/assets/stages/helluva/ozzies-cabaret';
+const WRATH_RANCH = '/assets/stages/helluva/wrath-ranch';
+const HEAVEN_COURT = '/assets/stages/hazbin/heaven-court';
+const PENTIOUS_WORKSHOP = '/assets/stages/hazbin/pentious-workshop';
+const LOOLOO_LAND = '/assets/stages/helluva/looloo-land';
+
+export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
+  id: 'imp-reception',
+  name: 'I.M.P. · Réception',
+  district: 'Imp City',
+  description: 'Le comptoir de la réception borde une piste entre la porte et les fenêtres de l’agence.',
+  loreBasis: 'Les bureaux d’I.M.P. apparaissent dans Helluva Boss, S1 E1, Murder Family. La piste et son mobilier sont une adaptation de jeu.',
+  imagePath: `${IMP_RECEPTION}/room.webp`,
+  thumbnailPath: `${IMP_RECEPTION}/thumb.webp`,
+  scenery: { middle: `${IMP_RECEPTION}/desk.webp`, near: `${IMP_RECEPTION}/lamp.webp` },
+  imagePosition: 'center 58%',
+  accent: '#f39ba5',
+  shadow: '#33152b',
+  floor: '#301626',
+  soundtrack: {
+    id: 'imp-office-hours', title: 'Standard occupé', bpm: 134, rootMidi: 38,
+    swing: 0.57, drive: 0.8, seed: 1334,
+    chordProgression: [[0, 3, 7, 10], [1, 5, 8, 11], [5, 8, 12, 15], [7, 11, 14, 17]],
+    bassPattern: [0, 0, 7, 10, 12, 7, 5, 1],
+    leadPattern: [12, null, 15, 13, null, 10, 7, null, 13, 12, null, 8, 7, null, 1, null],
+  },
+}, {
+  id: 'ozzies-cabaret',
+  name: 'Ozzie’s · Cabaret',
+  district: 'Anneau de la Luxure',
+  description: 'La piste du dîner-spectacle se prolonge entre les tables en cœur et le rideau de scène.',
+  loreBasis: 'Helluva Boss, S1 E7, Ozzie’s. La salle de spectacle d’Asmodeus accueille Fizzarolli et le numéro de Moxxie. La largeur de la piste est adaptée au duel.',
+  imagePath: `${OZZIES_CABARET}/room.webp`,
+  thumbnailPath: `${OZZIES_CABARET}/thumb.webp`,
+  scenery: { middle: `${OZZIES_CABARET}/table.webp`, near: `${OZZIES_CABARET}/curtain.webp` },
+  imagePosition: 'center 48%',
+  accent: '#f79adb',
+  shadow: '#24153c',
+  floor: '#301543',
+  soundtrack: {
+    id: 'ozzies-after-hours', title: 'Après le rappel', bpm: 108, rootMidi: 39,
+    swing: 0.64, drive: 0.7, seed: 7108,
+    chordProgression: [[0, 3, 7, 10], [5, 8, 12, 15], [2, 5, 8, 12], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 10, 8, 7, 5, 3, 1],
+    leadPattern: [null, 10, 12, null, 15, 14, 12, null, 8, null, 10, 7, 5, null, 3, null],
+  },
+}, {
+  id: 'wrath-ranch',
+  name: 'Wrath · Ranch',
+  district: 'Anneau de la Colère',
+  description: 'Une cour poussiéreuse entre la grange, les clôtures et les mesas du ranch.',
+  loreBasis: 'Reconstruction AU inspirée des fermes de l’anneau de la Colère dans Helluva Boss. La piste de duel et le placement du mobilier sont des adaptations de jeu.',
+  imagePath: `${WRATH_RANCH}/room.webp`,
+  thumbnailPath: `${WRATH_RANCH}/thumb.webp`,
+  scenery: { middle: `${WRATH_RANCH}/hay.webp`, near: `${WRATH_RANCH}/pennant.webp` },
+  imagePosition: 'center 63%',
+  accent: '#f6b267',
+  shadow: '#4a1820',
+  floor: '#6b3627',
+  soundtrack: {
+    id: 'wrath-dust-reel', title: 'Poussière de Wrath', bpm: 132, rootMidi: 36,
+    swing: 0.63, drive: 0.82, seed: 15132,
+    chordProgression: [[0, 3, 7, 10], [5, 8, 12, 15], [0, 3, 7, 10], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 12, 7, 5, 12, 7, 10],
+    leadPattern: [7, 12, null, 15, 12, 10, null, 7, 5, null, 8, 12, 14, 10, null, 7],
+  },
+}, {
+  id: 'heaven-court',
+  name: 'Paradis · Cour céleste',
+  district: 'Paradis',
+  description: 'Une salle d’audience claire sous les voûtes dorées et les galeries célestes.',
+  loreBasis: 'Reconstruction AU inspirée de l’architecture céleste de Hazbin Hotel. La piste, les proportions et l’affrontement ne reproduisent pas une scène canonique.',
+  imagePath: `${HEAVEN_COURT}/room.webp`,
+  thumbnailPath: `${HEAVEN_COURT}/thumb.webp`,
+  scenery: { middle: `${HEAVEN_COURT}/lectern.webp`, near: `${HEAVEN_COURT}/crystal.webp` },
+  imagePosition: 'center 56%',
+  accent: '#f7e6a8',
+  shadow: '#3a244f',
+  floor: '#a18daa',
+  soundtrack: {
+    id: 'ivory-hearing', title: 'Audience d’ivoire', bpm: 110, rootMidi: 45,
+    swing: 0.38, drive: 0.64, seed: 6110,
+    chordProgression: [[0, 4, 7, 11], [5, 9, 12, 16], [2, 5, 9, 12], [7, 11, 14, 18]],
+    bassPattern: [0, 12, 7, 4, 5, 12, 9, 7],
+    leadPattern: [19, null, 16, 12, null, 14, 16, 19, 21, null, 19, 16, 14, null, 11, 12],
+  },
+}, {
+  id: 'pentious-workshop',
+  name: 'Sir Pentious · Atelier',
+  district: 'Pentagram City',
+  description: 'Un atelier de cuivre et de machines où les inventions entourent une piste dégagée.',
+  loreBasis: 'Atelier original de simulation AU fondé sur l’imagerie d’inventeur de Sir Pentious. Cette salle n’est pas présentée comme une pièce attestée de la série.',
+  imagePath: `${PENTIOUS_WORKSHOP}/room.webp`,
+  thumbnailPath: `${PENTIOUS_WORKSHOP}/thumb.webp`,
+  scenery: { middle: `${PENTIOUS_WORKSHOP}/bench.webp`, near: `${PENTIOUS_WORKSHOP}/hoist.webp` },
+  imagePosition: 'center 58%',
+  accent: '#e8b455',
+  shadow: '#2b1720',
+  floor: '#372123',
+  soundtrack: {
+    id: 'brass-coil-combo', title: 'Bobines de cuivre', bpm: 138, rootMidi: 37,
+    swing: 0.46, drive: 0.88, seed: 13827,
+    chordProgression: [[0, 3, 7, 10], [2, 5, 8, 12], [6, 9, 13, 16], [7, 11, 14, 17]],
+    bassPattern: [0, 0, 7, 12, 2, 8, 6, 13],
+    leadPattern: [12, 15, null, 13, 18, null, 15, 10, 7, 12, null, 19, 18, 13, null, 10],
+  },
+}, {
+  id: 'looloo-land',
+  name: 'Loo Loo Land · Allée centrale',
+  district: 'Anneau de l’Avarice',
+  description: 'Une allée de fête foraine entre les attractions, les stands et les fanions défraîchis.',
+  loreBasis: 'Reconstruction AU inspirée du parc Loo Loo Land de Helluva Boss. L’allée et les distances entre attractions sont adaptées au duel.',
+  imagePath: `${LOOLOO_LAND}/room.webp`,
+  thumbnailPath: `${LOOLOO_LAND}/thumb.webp`,
+  scenery: { middle: `${LOOLOO_LAND}/booth.webp`, near: `${LOOLOO_LAND}/pennants.webp` },
+  imagePosition: 'center 61%',
+  accent: '#e8b84a',
+  shadow: '#40351f',
+  floor: '#64513c',
+  soundtrack: {
+    id: 'midway-misstep', title: 'Dernier tour de manège', bpm: 144, rootMidi: 40,
+    swing: 0.7, drive: 0.9, seed: 2144,
+    chordProgression: [[0, 3, 7, 10], [3, 6, 10, 13], [8, 11, 15, 18], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 12, 10, 3, 10, 8, 7],
+    leadPattern: [12, 15, 19, null, 18, 15, 13, null, 10, 12, 15, null, 13, 10, 7, null],
+  },
+}];
+
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];
 
 export function getPentagramStage(stageId: string): PentagramStage {
-  return PENTAGRAM_STAGES.find(stage => stage.id === stageId) ?? DEFAULT_PENTAGRAM_STAGE;
+  return STANDALONE_STAGES.find(stage => stage.id === stageId) ?? DEFAULT_PENTAGRAM_STAGE;
 }
 
 export function getPentagramStageVisualProperties(

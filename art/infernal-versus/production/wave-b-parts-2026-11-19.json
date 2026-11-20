@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "wave": "B",
+  "artworkCount": 2,
+  "imageFileCount": 4,
+  "entries": [
+    {
+      "id": "lucifer-top-hat",
+      "category": "separated-character-part",
+      "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
+      "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 1204422,
+      "alphaBoundingBox": [
+        39,
+        80,
+        1224,
+        1230
+      ],
+      "masterSha256": "c3757c0a80daf1c01f77394300d0815ea9997489f0f3ae6aa6f9f5d33086e088",
+      "exportSha256": "7efd4f99a4458d4bd274a9e82aaf67e7af46c7c9632b780b27e5430ae9e7fc84",
+      "masterBytes": 620399,
+      "exportBytes": 347844,
+      "generationTool": "image_gen integrated",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate costume part for Infernal Versus 2D fighting game. Input image 1 is the EXISTING Lucifer Morningstar portrait used only as identity/design reference. Generate ONLY Lucifer's iconic WHITE TOP HAT, detached, no head, no person, no mannequin. Hazbin Hotel season 1 design: tall white crown, broad asymmetrical curved brim with rich red underside, deep red hatband, small red apple and golden serpent/crown ornament. Match the recognizable palette and crisp black ink contours of the reference, high quality flat cel shaded 2D animation, three-quarter side view readable facing right, object entirely visible centered with wide transparent margins, portrait or square canvas. White materials must remain opaque. True transparent outside-object background, clean silhouette, no gray haze, no glow, no cast floor shadow, no checkerboard, no scene, no lettering, no labels, no collage, no extra hats. Single complete separate hat asset.",
+      "reference": "public/assets/sprites/portraits/lucifer.png",
+      "sourceReferences": [
+        "https://www.youtube.com/watch?v=jNUTxvki_d0"
+      ],
+      "editPrompt": null,
+      "verification": {
+        "nativeAlpha": true,
+        "decodedPixelsPreservedByExport": true,
+        "reviewedOnCheckerboard": true,
+        "singlePartAndCompleteSilhouette": true,
+        "canonicalPixelComparison": false,
+        "articulatedRigInGame": false
+      },
+      "status": "prepared-production-part; not assembled into a playable rig"
+    },
+    {
+      "id": "hb_moxxie-tail",
+      "category": "separated-character-part",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "transparentPixels": 1417368,
+      "alphaBoundingBox": [
+        29,
+        19,
+        1510,
+        992
+      ],
+      "masterSha256": "a2a8dd382f6ad77d44b1b471c85655dba8b53a9f349927e6e1f7d44d4ef8b3ae",
+      "exportSha256": "b54aa0015244c5c44287089cbceabb16d45a5cdab5c160314d2440e57f6d5247",
+      "masterBytes": 1053564,
+      "exportBytes": 621986,
+      "generationTool": "image_gen integrated",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate character part for Infernal Versus 2D fighting game. Input image 1 is the existing MOXXIE portrait as identity and color reference. Generate ONLY Moxxie's detached long slender red IMP TAIL with the narrow black band near its sharp red arrowhead tip as shown in the portrait. No body, no torso, no hand, no severed flesh, no blood: a clean modular cartoon rig part with a smoothly rounded hidden attachment root. One continuous elegant U curve sweeping down and toward the right and curling up so the arrowhead points upper-right, readable in side-view game animation. Match red hue and near-black ink contour, flat cel shading and controlled thin black linework of official Helluva Boss style. Entire single tail visible centered with ample empty margins. True fully transparent outside-object background. No haze, no glow, no shadow, no scenery, no lettering, no labels, no collage, no duplicate shapes. White or transparent gaps inside the U must be actual transparency.",
+      "reference": "public/assets/sprites/helluva/portraits/hb_moxxie.png",
+      "sourceReferences": [
+        "https://www.youtube.com/watch?v=el_PChGfJN8"
+      ],
+      "editPrompt": "Edit the supplied Moxxie tail game asset. Keep exactly the SAME single continuous red tail silhouette, red fill, narrow black stripe by the arrowhead, black outline, shape and proportions. The only change: COMPLETELY REMOVE ALL red glow, ALL blur, ALL translucent fog or aura surrounding the tail. Make every pixel outside the hard black contour fully transparent, including the entire inner U-shaped empty area. No floor shadow. The actual red tail and black outline should be fully opaque solid flat cartoon cel art, with only 1-2 pixel normal antialiasing at the silhouette edge. This is a clean rig sprite part on true transparent alpha, never a luminous effect. No checkerboard and no background color. Preserve the existing canvas and placement.",
+      "verification": {
+        "nativeAlpha": true,
+        "decodedPixelsPreservedByExport": true,
+        "reviewedOnCheckerboard": true,
+        "singlePartAndCompleteSilhouette": true,
+        "canonicalPixelComparison": false,
+        "articulatedRigInGame": false
+      },
+      "status": "prepared-production-part; not assembled into a playable rig"
+    }
+  ],
+  "scope": "Two separate parts for future rigging. No gameplay attachment or automatic costume swap is claimed.",
+  "visualReview": "Inspected on an opaque checkerboard at reduced game scale. Transparent surrounds and opaque colored silhouette are preserved; embedded RGB under fully transparent pixels is not visible in correct alpha compositing."
+}

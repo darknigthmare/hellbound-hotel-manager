@@ -202,3 +202,72 @@ describe('Infernal Versus application flow', () => {
     expect(saved().stats.matches).toBe(0);
   });
 });
+
+describe('playable stories and elimination cups', () => {
+  function press(label: string | RegExp) {
+    fireEvent.click(screen.getByText(label, { selector: 'button, .iv-mode .iv-eyebrow' }));
+  }
+
+  it('loads the Charlie prologue, saves each duel, presents Adam as rival and reopens the ending', () => {
+    const initial = render(<InfernalVersus />);
+    press(/HISTOIRE/);
+    press('Démarrer le parcours');
+    expect(screen.getByRole('heading', { name: 'Une place à la table' })).toBeTruthy();
+    expect(screen.getByText(/PROLOGUE · Charlie/)).toBeTruthy();
+    press('Entrer en combat');
+    expect(runtime.last!.fighterTwo.id).toBe('vaggie');
+    press('Fixture win');
+    press('Fixture next');
+    expect(screen.getByText(/INTERLUDE · Charlie/)).toBeTruthy();
+    initial.unmount();
+    render(<InfernalVersus />);
+    press('Continuer');
+    press('Entrer en combat');
+    expect(runtime.last!.fighterTwo.id).toBe('alastor');
+    press('Fixture win');
+    press('Fixture next');
+    expect(screen.getByRole('heading', { name: 'Rival · Adam' })).toBeTruthy();
+    press('Entrer en combat');
+    press('Fixture win');
+    press('Fixture next');
+    expect(screen.getByText(/ÉPILOGUE · Charlie/)).toBeTruthy();
+    press('Retour aux modes');
+    press('Revoir l’épilogue');
+    expect(saved().stats.matches).toBe(3);
+    expect(screen.getByText(/ÉPILOGUE · Charlie/)).toBeTruthy();
+    press('Retour aux modes');
+    press('ARCADE');
+    press('Démarrer le parcours');
+    press('Fixture quit');
+    press('Combattants');
+    const entry = screen.getByText('Charlie Morningstar · Une place à la table');
+    fireEvent.click(entry);
+    expect(entry.closest('details')?.open).toBe(true);
+    expect(screen.getByText(/Elle rouvre le registre/)).toBeTruthy();
+  }, 30_000);
+
+  it('keeps a drawn cup through reload, shows CPU results and ends the cup on defeat', () => {
+    const first = render(<InfernalVersus />);
+    press(/TOURNOI/);
+    press('Démarrer le parcours');
+    expect(screen.getAllByText('À déterminer')).toHaveLength(6);
+    const opponents = saved().run!.opponentIds;
+    press('Disputer le match');
+    press('Fixture win');
+    first.unmount();
+    render(<InfernalVersus />);
+    press('Continuer');
+    expect(screen.getByRole('heading', { name: 'Demi-finales', level: 1 })).toBeTruthy();
+    expect(screen.getAllByLabelText('Victoire')).toHaveLength(4);
+    press('Disputer le match');
+    expect(runtime.last!.fighterTwo.id).toBe(opponents[1]);
+    press('Fixture loss');
+    press('Fixture next');
+    expect(screen.getByRole('heading', { name: 'Palmarès du tournoi' })).toBeTruthy();
+    expect(screen.getAllByLabelText('Victoire')).toHaveLength(7);
+    press('Retour aux modes');
+    expect(screen.queryByRole('button', { name: 'Réessayer le duel' })).toBeNull();
+    press('Voir le tableau final');
+    expect(screen.getByRole('heading', { name: 'Palmarès du tournoi' })).toBeTruthy();
+  }, 30_000);
+});

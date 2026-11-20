@@ -65,6 +65,81 @@ function start() { advance(4_000); expect(stage().getAttribute('data-phase')).to
 function knockOut() { key('KeyG'); advance(1_000); }
 
 describe('standalone combat lifecycle', () => {
+  it.each([
+    ['husk', false, 'husk-guard'],
+    ['hb_millie', true, 'hb_millie-ready'],
+    ['lucifer', true, 'lucifer-guard'],
+    ['hb_moxxie', true, 'hb_moxxie-guard'],
+  ] as const)('keeps the recovered %s pose format through a held guard', (id, portrait, guardPose) => {
+    const fighter = getStandaloneFighter(id)!;
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true, fighterOne: fighter.character,
+      fighterOneDefinition: buildCombatantDefinition(fighter.character, fighter.profile),
+    })} />);
+    start();
+    const combatant = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
+    const idleImage = combatant.querySelector<HTMLImageElement>('img.infernal-individual-pose')!;
+    expect(idleImage.getAttribute('src')).toBe(`/assets/sprites/individual/${id}-ready.webp`);
+    expect(idleImage.classList.contains('infernal-individual-pose--portrait')).toBe(portrait);
+    fireEvent.keyDown(stage(), { code: 'KeyE' });
+    advance(100);
+    expect(combatant.dataset.action).toBe('guard');
+    const guardImage = combatant.querySelector<HTMLImageElement>('img.infernal-individual-pose')!;
+    expect(guardImage.getAttribute('src')).toBe(`/assets/sprites/individual/${guardPose}.webp`);
+    expect(guardImage.classList.contains('infernal-individual-pose--portrait')).toBe(portrait);
+    fireEvent.keyUp(stage(), { code: 'KeyE' });
+  });
+
+  it('keeps a portrait costume on both fighters and through crouch and jump', () => {
+    const fighter = getStandaloneFighter('hb_moxxie')!;
+    const definition = buildCombatantDefinition(fighter.character, fighter.profile);
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true,
+      fighterOne: fighter.character, fighterTwo: fighter.character,
+      fighterOneDefinition: definition, fighterTwoDefinition: definition,
+      costumeOne: 'hb_moxxie-harvest-festival', costumeTwo: 'hb_moxxie-harvest-festival',
+    })} />);
+    start();
+    const pose = (side: 'one' | 'two') => document.querySelector<HTMLImageElement>(`.arena-combatant.is-${side} img.infernal-individual-pose`)!;
+    for (const side of ['one', 'two'] as const) {
+      expect(pose(side).src).toContain('/costumes/hb_moxxie-harvest-festival.webp');
+      expect(pose(side).classList.contains('infernal-individual-pose--portrait')).toBe(true);
+    }
+    fireEvent.keyDown(stage(), { code: 'KeyS' });
+    advance(100);
+    expect(pose('one').src).toContain('/costumes/hb_moxxie-harvest-festival-crouch.webp');
+    expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
+    fireEvent.keyUp(stage(), { code: 'KeyS' });
+    advance(100);
+    key('KeyW');
+    advance(100);
+    expect(pose('one').src).toContain('/costumes/hb_moxxie-harvest-festival-jump.webp');
+    expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
+  });
+
+  it('plays each authored technique with its own keyboard and touch commands', () => {
+    const vaggie = getStandaloneFighter('vaggie')!;
+    render(<PentagramLiveFight {...props({
+      training: true, infernalRules: true, fighterTwo: vaggie.character,
+      fighterTwoDefinition: buildCombatantDefinition(vaggie.character, vaggie.profile),
+    })} />);
+    start();
+    advance(100);
+    const one = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
+    const two = document.querySelector<HTMLElement>('.arena-combatant.is-two')!;
+    const touchOne = screen.getByRole('button', { name: 'P1 technique signature' });
+    const touchTwo = screen.getByRole('button', { name: 'P2 technique signature' });
+    key('KeyT');
+    fireEvent.click(touchTwo);
+    expect(one.dataset.action).toBe('signature');
+    expect(two.dataset.action).toBe('signature');
+    advance(1200);
+    fireEvent.click(touchOne);
+    key('KeyI');
+    expect(one.dataset.action).toBe('signature');
+    expect(two.dataset.action).toBe('signature');
+  });
+
   it('renders Helluva intros on a real base stance rather than invented cinematic assets', () => {
     render(<PentagramLiveFight {...props()} />);
     const fighter = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
@@ -113,7 +188,7 @@ describe('standalone combat lifecycle', () => {
     expect(screen.getByRole('progressbar', { name: 'Millie health' }).getAttribute('aria-valuenow')).toBe('100');
     expect(input.onMatchComplete).not.toHaveBeenCalled();
     expect(input.onNextMatch).not.toHaveBeenCalled();
-  });
+  }, 20_000);
 
   it('records one completed match after two rounds and advances only from the results action', () => {
     const input = props();
@@ -132,5 +207,57 @@ describe('standalone combat lifecycle', () => {
     expect(repeatedCallback).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole('button', { name: 'Combat suivant' }));
     expect(input.onNextMatch).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Infernal Versus finishing sequence', () => {
+  function decisiveKo() {
+    start(); knockOut(); advance(3000);
+    fireEvent.click(screen.getByRole('button', { name: 'Next round' }));
+    advance(1500); knockOut();
+    expect(stage().dataset.phase).toBe('finish-window');
+  }
+  it('keeps the separated cane mounted at the same finishing frame through pause and resume', () => {
+    const lucifer = getStandaloneFighter('lucifer')!;
+    const input = props({ infernalRules: true, fighterOne: lucifer.character,
+      fighterOneDefinition: { ...buildCombatantDefinition(lucifer.character, lucifer.profile), power: 1000, range: 1000 } });
+    render(<PentagramLiveFight {...input} />);
+    decisiveKo();
+    key('KeyH'); advance(500);
+    const cane = stage().querySelector('.infernal-detached-prop');
+    expect(cane?.getAttribute('src')).toBe('/assets/sprites/parts/lucifer-apple-cane.webp');
+    const frame = stage().querySelector('.is-one')?.getAttribute('data-frame-index');
+    key('KeyP'); advance(4000);
+    expect(stage().dataset.phase).toBe('paused');
+    expect(stage().querySelector('.infernal-detached-prop')).toBe(cane);
+    expect(stage().querySelector('.is-one')?.getAttribute('data-frame-index')).toBe(frame);
+    key('KeyP');
+    expect(stage().querySelector('.infernal-detached-prop')).toBe(cane);
+    advance(1100);
+    expect(stage().querySelector('.infernal-detached-prop')).toBeNull();
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+  });
+  it('allows only the local winner to trigger the finish and preserves a single result', () => {
+    const input = props({ infernalRules: true });
+    render(<PentagramLiveFight {...input} />);
+    decisiveKo();
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+    key('KeyL'); expect(stage().dataset.phase).toBe('finish-window');
+    key('KeyP'); advance(4200); expect(stage().dataset.phase).toBe('paused');
+    key('KeyP'); key('KeyH');
+    expect(stage().dataset.phase).toBe('finisher');
+    expect(screen.getByText('Contrat tamponné')).toBeTruthy();
+    advance(550);
+    expect(stage().querySelector('.is-one .infernal-individual-pose')?.getAttribute('src')).toBe('/assets/sprites/finishers/hb_blitzo.webp');
+    advance(3850);
+    expect(stage().dataset.phase).toBe('results');
+    expect(input.onMatchComplete).toHaveBeenCalledTimes(1);
+  });
+  it('skips a finisher on request and continues the match normally', () => {
+    render(<PentagramLiveFight {...props({ infernalRules: true, reducedMotion: true })} />);
+    decisiveKo();
+    fireEvent.click(screen.getByRole('button', { name: 'Passer' }));
+    expect(stage().dataset.phase).toBe('outro');
+    advance(3200); expect(stage().dataset.phase).toBe('results');
   });
 });

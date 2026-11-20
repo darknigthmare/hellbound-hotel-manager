@@ -206,7 +206,9 @@ describe('Pentagram Arena live combat engine', () => {
     const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 44, positionTwo: 51 };
     const first = advance(resolveCombatAttack(base, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
     expect(first.comboOne).toBe(1);
-    const ready = advance(first, idleInputs, 32);
+    // Walk back into jab range after the first hit pushes the defender away.
+    const approach = { ...idleInputs, one: { ...idleInputs.one, right: true } };
+    const ready = advance(first, approach, 32);
     const second = advance(resolveCombatAttack(ready, 'one', 'light', fighterOne, fighterTwo), idleInputs, 8);
     expect(second.comboOne).toBe(2);
     const missed = { ...second, positionOne: 7, positionTwo: 93, hitstopMs: 0, cooldownMsOne: 0, actionOne: 'idle' as const, actionMsOne: 0 };
@@ -722,5 +724,28 @@ describe('Pentagram Arena live combat engine', () => {
       heavy: { totalMs: 460, impactStartMs: 220 },
       special: { totalMs: 700, impactStartMs: 360 },
     });
+  });
+});
+
+describe('Infernal Versus heavy confirm', () => {
+  it.each(['one', 'two'] as const)('lets %s cancel only a confirmed heavy after hit-stop', side => {
+    const base = { ...createCombatState(fighterOne, fighterTwo), positionOne: 46, positionTwo: 53, tensionOne: 75, tensionTwo: 75 };
+    const launched = resolveCombatAttack(base, side, 'heavy', fighterOne, fighterTwo);
+    const special = (state: CombatState) => resolveCombatAttack(state, side, 'special', fighterOne, fighterTwo, true);
+    const hit = stepCombat(launched, idleInputs, 220, fighterOne, fighterTwo);
+    expect(hit.hitstopMs).toBeGreaterThan(0);
+    expect(special(launched)).toBe(launched);
+    expect(special(hit)).toBe(hit);
+    const recovery = stepCombat(hit, idleInputs, hit.hitstopMs + 1, fighterOne, fighterTwo);
+    const result = special(recovery);
+    expect(side === 'one' ? result.actionOne : result.actionTwo).toBe('special');
+    expect(side === 'one' ? result.tensionOne : result.tensionTwo)
+      .toBe((side === 'one' ? recovery.tensionOne : recovery.tensionTwo) - 50);
+    expect(resolveCombatAttack(recovery, side, 'special', fighterOne, fighterTwo)).toBe(recovery);
+    const guard = { ...idleInputs, [side === 'one' ? 'two' : 'one']: { left: false, right: false, guard: true } };
+    const blocked = stepCombat(launched, guard, 310, fighterOne, fighterTwo);
+    expect(special(blocked)).toBe(blocked);
+    const missed = stepCombat({ ...launched, positionOne: 16, positionTwo: 84 }, idleInputs, 310, fighterOne, fighterTwo);
+    expect(special(missed)).toBe(missed);
   });
 });

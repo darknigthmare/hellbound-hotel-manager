@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-19",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "pullRequest": 3,
+  "baseBeforeFinalIntegration": "7bcb83b",
+  "commands": [
+    {
+      "command": "npm run qa",
+      "exitCode": 0,
+      "typecheck": "passed",
+      "eslint": "passed",
+      "testFiles": 41,
+      "tests": 310,
+      "testsFailed": 0,
+      "mainBuild": "passed",
+      "standaloneBuild": "passed",
+      "standaloneDistributionFiles": 823,
+      "standaloneHashVerification": "passed",
+      "hotelAndCloudPersistenceExcluded": true
+    },
+    {
+      "command": "node scripts/audit-infernal-assets.mjs",
+      "exitCode": 0,
+      "referencedAssets": 231,
+      "missingAssets": 0
+    },
+    {
+      "command": "delivery image/provenance validation",
+      "exitCode": 0,
+      "imageFiles": 117,
+      "artworks": 49,
+      "originalExportVariantsVerifiedAgainstUpstream": 14
+    }
+  ],
+  "browserReview": {
+    "status": "not_completed",
+    "reason": "Local preview unreachable; headless Chromium could not open a socket. No visual browser result claimed."
+  },
+  "limits": [
+    "Authored poses are key drawings, not complete animation cycles.",
+    "Source lore and visual references do not establish 1:1 canon certification.",
+    "Stolas feet baseline differs by up to 21 pixels on the 1024px canvas; transition pivots remain to be checked in browser."
+  ],
+  "workbookVerification": {
+    "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V2.xlsx",
+    "sha256": "404f0d1e9544665a70c6b3eb1e97251be46ab0185dff69e5ea8e9e5d077645af",
+    "bytes": 202616,
+    "sheets": 23,
+    "originalV1SheetsPreserved": 11,
+    "originalV1XmlPartsByteIdentical": 31,
+    "unchangedV2SheetsValuesAndFormulasPreserved": 7,
+    "changedViewsVisuallyInspected": 9,
+    "formulas": "recalculated and checked without errors; temporary mutations exercised counters, then restored",
+    "coverageConsistency": {
+      "assetReferences": 231,
+      "costumeKeyPoses": 18,
+      "threePlaneStages": 10,
+      "twoPlaneStages": 1,
+      "onePlaneStages": 3
+    }
+  }
+}

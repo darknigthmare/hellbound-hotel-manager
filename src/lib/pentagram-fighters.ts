@@ -1,5 +1,5 @@
 import type { Character } from '../types';
-import type { CombatantDefinition, CombatStyle } from './pentagram-combat';
+import type { CombatantDefinition, CombatStyle, InfernalSignatureId } from './pentagram-combat';
 
 export type FighterKitEvidence = 'onscreen' | 'motif' | 'simulation';
 
@@ -17,6 +17,7 @@ export interface FighterProfile {
   basicMove: string;
   heavyMove: string;
   specialMove: string;
+  signature?: InfernalSignatureId;
 }
 
 export const FIGHTER_KIT_EVIDENCE_LABELS: Readonly<Record<FighterKitEvidence, string>> = {
@@ -447,5 +448,6 @@ export function buildCombatantDefinition(
     heavyMove: profile.heavyMove,
     specialMove: profile.specialMove,
     style: profile.combatStyle,
+    signature: profile.signature,
   };
 }

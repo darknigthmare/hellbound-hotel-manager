@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "set": "infernal-versus-wave-b-stages",
+  "baseCommit": "59b08395621b612e916d4b4366a763a51ec26987",
+  "summary": {
+    "newArtworks": 8,
+    "transparentSceneryLayers": 7,
+    "opaqueStageBackgrounds": 1,
+    "masters": 8,
+    "runtimeExports": 8,
+    "thumbnails": 1
+  },
+  "classification": "simulation_au",
+  "references": [
+    {
+      "id": "official-prime-season1-trailer",
+      "url": "https://www.youtube.com/watch?v=OLSWVCwy88g",
+      "publisher": "Prime Video",
+      "title": "Hazbin Hotel - Season 1 Trailer",
+      "timestamps": [
+        "00:16",
+        "00:18"
+      ],
+      "access": "Public official YouTube trailer with playability status OK; public storyboard stills inspected. No sign-in or protected access used.",
+      "frameResolution": [
+        320,
+        180
+      ],
+      "usage": "Entrance architecture and 2D palette reference only. Storyboard files are temporary reference material, not distributed with game assets."
+    },
+    {
+      "id": "official-cannibal-world-context",
+      "url": "https://www.youtube.com/watch?v=y1yNk8VeqqI",
+      "publisher": "Prime Video",
+      "title": "Ready For This Sing-Along | Hazbin Hotel",
+      "usage": "Official location context; not verification of the newly designed flower cart."
+    },
+    {
+      "id": "series-primary-index",
+      "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+      "usage": "Series index only; not a prop model sheet."
+    }
+  ],
+  "preservation": {
+    "oldHotelExterior": "public/assets/hotel_exterior.png",
+    "oldFileChanged": false,
+    "reasonForSiblingBackground": "Existing old file depicts a human Victorian Scarlet Cabaret hotel. New sibling background references the original season-one Hazbin entrance.",
+    "oldCannibalCartRecovered": false
+  },
+  "newAssets": [
+    {
+      "id": "cannibal-town-square-flower-cart-wave-b",
+      "stageId": "cannibal-town-square",
+      "layer": "middle",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/cannibal-town-square-flower-cart-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/cannibal-town-square/flower-cart-wave-b.webp",
+      "masterSHA256": "4bb643a51296e97aa3396cd9403f4a2d3258440a156fc16422412cf87ed41fd0",
+      "runtimeSHA256": "55d872927763520e40411ddfe97903a9a01ef8798b19adc06ec679541eccccb8",
+      "masterBytes": 2236489,
+      "runtimeBytes": 1509216,
+      "image": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 929799,
+        "partialAlphaPixels": 643065,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 566084,
+        "visibleBounds": [
+          0,
+          20,
+          1504,
+          1024
+        ],
+        "nearOpaqueBounds": [
+          84,
+          45,
+          1308,
+          1005
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 929799,
+        "partialAlphaPixels": 643065,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 566084,
+        "visibleBounds": [
+          0,
+          20,
+          1504,
+          1024
+        ],
+        "nearOpaqueBounds": [
+          84,
+          45,
+          1308,
+          1005
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "36%",
+        "right": "1%",
+        "left": "auto",
+        "bottom": "14%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "public/assets/stages/hazbin/cannibal-town-square.webp",
+      "recoveryNote": "Freshly generated replacement for the missing flower-cart role. Not a recovery of the unavailable historical original PNG."
+    },
+    {
+      "id": "hotel-exterior-planter-wave-b",
+      "stageId": "hotel-exterior",
+      "layer": "middle",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/hotel-exterior-planter-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/hotel-exterior/planter-wave-b.webp",
+      "masterSHA256": "f78106589e2213343fa7e5ae53abacd63690c4b8f59d87763bce37e49b0f1f60",
+      "runtimeSHA256": "75f7595d24676f38fe28a524572ab38dd7e239d0ecc5dbc8464d908709cec46b",
+      "masterBytes": 1076663,
+      "runtimeBytes": 672218,
+      "image": {
+        "width": 1199,
+        "height": 1312,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPixels": 781193,
+        "partialAlphaPixels": 790790,
+        "opaquePixels": 1105,
+        "nearOpaquePixels": 772765,
+        "visibleBounds": [
+          43,
+          65,
+          1125,
+          1264
+        ],
+        "nearOpaqueBounds": [
+          79,
+          88,
+          1121,
+          1224
+        ],
+        "edgeMaxAlpha": 0,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1199,
+        "height": 1312,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPixels": 781193,
+        "partialAlphaPixels": 790790,
+        "opaquePixels": 1105,
+        "nearOpaquePixels": 772765,
+        "visibleBounds": [
+          43,
+          65,
+          1125,
+          1264
+        ],
+        "nearOpaqueBounds": [
+          79,
+          88,
+          1121,
+          1224
+        ],
+        "edgeMaxAlpha": 0,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "32%",
+        "left": "1%",
+        "bottom": "14%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "art/infernal-versus/masters/stages/hotel-exterior-room-wave-b.png"
+    },
+    {
+      "id": "hotel-exterior-lantern-wave-b",
+      "stageId": "hotel-exterior",
+      "layer": "near",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/hotel-exterior-lantern-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/hotel-exterior/lantern-wave-b.webp",
+      "masterSHA256": "4b706c3983a59c3357d0669b1cda76de71da5f259bcd091b221a9fb4339aa74e",
+      "runtimeSHA256": "f04a05a0bf116b5faa119359a3463e13b7f7185a819efbde6035a8094466dabb",
+      "masterBytes": 1148318,
+      "runtimeBytes": 753750,
+      "image": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1313163,
+        "partialAlphaPixels": 259701,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 198830,
+        "visibleBounds": [
+          27,
+          7,
+          986,
+          1536
+        ],
+        "nearOpaqueBounds": [
+          192,
+          42,
+          807,
+          1420
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1313163,
+        "partialAlphaPixels": 259701,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 198830,
+        "visibleBounds": [
+          27,
+          7,
+          986,
+          1536
+        ],
+        "nearOpaqueBounds": [
+          192,
+          42,
+          807,
+          1420
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "39%",
+        "right": "0%",
+        "left": "auto",
+        "top": "-6%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "art/infernal-versus/masters/stages/hotel-exterior-room-wave-b.png"
+    },
+    {
+      "id": "pentagram-rooftops-vent-wave-b",
+      "stageId": "pentagram-rooftops",
+      "layer": "middle",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/pentagram-rooftops-vent-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/pentagram-rooftops/vent-wave-b.webp",
+      "masterSHA256": "d22a75fc8c0f9399a3c626ed94bb676a62e989e21c9202b1002ad2aa39c8f945",
+      "runtimeSHA256": "681fbb3c15b8112cb525fd31731d1c9b1b3cf2ef36904e39be50fffe85cecd8c",
+      "masterBytes": 1486902,
+      "runtimeBytes": 963218,
+      "image": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1011417,
+        "partialAlphaPixels": 561447,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 538495,
+        "visibleBounds": [
+          0,
+          26,
+          1496,
+          1006
+        ],
+        "nearOpaqueBounds": [
+          303,
+          31,
+          1229,
+          975
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1011417,
+        "partialAlphaPixels": 561447,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 538495,
+        "visibleBounds": [
+          0,
+          26,
+          1496,
+          1006
+        ],
+        "nearOpaqueBounds": [
+          303,
+          31,
+          1229,
+          975
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "29%",
+        "right": "2%",
+        "left": "auto",
+        "bottom": "18%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "public/assets/stages/hazbin/pentagram-rooftops.webp"
+    },
+    {
+      "id": "pentagram-rooftops-finial-wave-b",
+      "stageId": "pentagram-rooftops",
+      "layer": "near",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/pentagram-rooftops-finial-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/pentagram-rooftops/finial-wave-b.webp",
+      "masterSHA256": "9137796f173bd72700b521847ad4da52786ec39619cf48ad25b5be38bca8b242",
+      "runtimeSHA256": "abb7f4ab08c8fe1456fa97263b371b26940783a2aee57b8c0d32167a834ebe31",
+      "masterBytes": 1161629,
+      "runtimeBytes": 752822,
+      "image": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1360101,
+        "partialAlphaPixels": 212763,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 169807,
+        "visibleBounds": [
+          0,
+          7,
+          1000,
+          1521
+        ],
+        "nearOpaqueBounds": [
+          364,
+          18,
+          660,
+          1518
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1360101,
+        "partialAlphaPixels": 212763,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 169807,
+        "visibleBounds": [
+          0,
+          7,
+          1000,
+          1521
+        ],
+        "nearOpaqueBounds": [
+          364,
+          18,
+          660,
+          1518
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "43%",
+        "left": "-4%",
+        "top": "auto",
+        "bottom": "-3%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "public/assets/stages/hazbin/pentagram-rooftops.webp"
+    },
+    {
+      "id": "heaven-embassy-railing-wave-b",
+      "stageId": "heaven-embassy",
+      "layer": "middle",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/heaven-embassy-railing-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/heaven-embassy/railing-wave-b.webp",
+      "masterSHA256": "78a6dc9324894711455162f7f3508bcbd5eed67630c725be8f27cb14b395d1b6",
+      "runtimeSHA256": "9ed35899ee3ccd420fbbf365d77880a7de6dfe7c062ebc0e78dc31c8dee7ed2e",
+      "masterBytes": 2074817,
+      "runtimeBytes": 1420592,
+      "image": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 984145,
+        "partialAlphaPixels": 588719,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 477543,
+        "visibleBounds": [
+          0,
+          9,
+          1492,
+          1024
+        ],
+        "nearOpaqueBounds": [
+          58,
+          130,
+          1479,
+          896
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 984145,
+        "partialAlphaPixels": 588719,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 477543,
+        "visibleBounds": [
+          0,
+          9,
+          1492,
+          1024
+        ],
+        "nearOpaqueBounds": [
+          58,
+          130,
+          1479,
+          896
+        ],
+        "edgeMaxAlpha": 1,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "width": "30%",
+        "right": "-1%",
+        "left": "auto",
+        "bottom": "17%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "public/assets/stages/hazbin/heaven-embassy.webp"
+    },
+    {
+      "id": "heaven-embassy-pendant-wave-b",
+      "stageId": "heaven-embassy",
+      "layer": "near",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/heaven-embassy-pendant-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/heaven-embassy/pendant-wave-b.webp",
+      "masterSHA256": "7dc06f4142f41e6d6d3e5304983145ff2f70bf9ddcc71bfb7de515ddc4824ed3",
+      "runtimeSHA256": "c09382c0042b7d5808b132f1024d0f55798bbce99b6638e438fcc5cd3cfca41e",
+      "masterBytes": 1565179,
+      "runtimeBytes": 1038810,
+      "image": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 840913,
+        "partialAlphaPixels": 731951,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 117364,
+        "visibleBounds": [
+          0,
+          6,
+          1024,
+          1536
+        ],
+        "nearOpaqueBounds": [
+          61,
+          14,
+          963,
+          1518
+        ],
+        "edgeMaxAlpha": 2,
+        "edgeNearOpaquePixels": 0
+      },
+      "export": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 840913,
+        "partialAlphaPixels": 731951,
+        "opaquePixels": 0,
+        "nearOpaquePixels": 117364,
+        "visibleBounds": [
+          0,
+          6,
+          1024,
+          1536
+        ],
+        "nearOpaqueBounds": [
+          61,
+          14,
+          963,
+          1518
+        ],
+        "edgeMaxAlpha": 2,
+        "edgeNearOpaquePixels": 0
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "height": "35%",
+        "left": "1%",
+        "top": "-6%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": true,
+        "noNearOpaqueEdgeClipping": true,
+        "completeBackground": false,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialShotComparison": false
+      },
+      "sourceReference": "public/assets/stages/hazbin/heaven-embassy.webp"
+    },
+    {
+      "id": "hotel-exterior-room-wave-b",
+      "stageId": "hotel-exterior",
+      "layer": "background",
+      "classification": "new-generated-gameplay-adaptation",
+      "tool": "image_gen.imagegen",
+      "master": "art/infernal-versus/masters/stages/hotel-exterior-room-wave-b.png",
+      "runtime": "public/assets/stages/hazbin/hotel-exterior/room-wave-b.webp",
+      "masterSHA256": "e4c8b5ded3ffd2a67d6864ddb60b927618de83cb9fc6ce0d60d59131f2db580d",
+      "runtimeSHA256": "d5009bb7517b0cd58fa115fddf2c130012aac2e9cd4c2f4bb5c02014e17c551c",
+      "masterBytes": 2184623,
+      "runtimeBytes": 1743930,
+      "image": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB"
+      },
+      "export": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB"
+      },
+      "alphaPreserved": true,
+      "exportOperation": "Lossless WebP format conversion; no cropping, compositing, recoloring, alpha editing or redraw.",
+      "proposedLayout": {
+        "backgroundPosition": "center 56%"
+      },
+      "runtimeRegistered": false,
+      "qa": {
+        "visuallyReviewed": true,
+        "singleDrawable": true,
+        "nativeTransparentBackground": false,
+        "noNearOpaqueEdgeClipping": null,
+        "completeBackground": true,
+        "styleMatchesReferencedStage": true,
+        "runtimeVerified": false,
+        "fidelityStatus": "simulation_au adaptation; not certified 1:1",
+        "officialArchitecturalFrameComparison": true,
+        "comparisonLimit": "The entrance eye, marquee, balcony, pale-gold trim and radio structure were compared with official 00:16/00:18 trailer frames at 320x180 each. Forecourt width, framing and exact geometry are adapted for the game; not a pixel-identical reconstruction."
+      },
+      "thumbnail": {
+        "path": "public/assets/stages/hazbin/hotel-exterior/thumb-wave-b.webp",
+        "sha256": "65a84b0203afe57d961371bbf96f67f9a74bdac2180b5ebed8e5736018085fa0",
+        "bytes": 31000,
+        "image": {
+          "width": 419,
+          "height": 236,
+          "mode": "RGB"
+        },
+        "operation": "Aspect-preserving Lanczos resize to fit 420x236, WebP quality 90."
+      },
+      "sourceReference": "official-prime-season1-trailer"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "cannibal-town-square-flower-cart-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D fighting-game scenery prop, transparent PNG cutout, to be layered over the supplied stage reference. Reference image is ONLY for palette, line work, light direction and architecture. Do not reproduce its buildings, floor or sky. Clean hand-drawn 2D animation background art, precise dark contour lines, rich flat/cel shading, game production quality. One coherent object only, entirely visible with modest transparent margin on every side. Native alpha transparency outside object and through open cutouts. No cast shadow plane, no ground, no frame, no labels, no words, no characters, no collage, no contact sheet. This is a new AU game adaptation prop and must not pretend to be a screenshot of the show. Create a complete ornate flower seller's pushcart for the Cannibal Town square. A compact antique burgundy and ivory wooden pushcart with two large thin iron spoked wheels, long push handles, pale brass scrollwork, several lush bunches of crimson and pale cream roses with dark desaturated leaves, all attached in one cart. No canopy, no text. Full object in restrained three-quarter side view suitable for right-side middle depth scenery in a horizontal arena, wheels on a level baseline. Match the warm maroon Victorian palette and painterly detail of the reference. Landscape 3:2 composition, centered object, transparent background.",
+      "transparent_background": true,
+      "reference": "public/assets/stages/hazbin/cannibal-town-square.webp"
+    },
+    {
+      "id": "hotel-exterior-planter-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate scenery prop for a 2D fighting-game foreground over the supplied Hazbin Hotel exterior. The supplied reference is ONLY for line work, materials, palette and motifs. Output only the object described below, not a background or a screenshot. Precisely match the reference's clean hand-drawn 2D television animation look, strong dark maroon outlines, restrained flat cel shading, burgundy crimson and pale warm gold palette; no painterly realism, no stone texture noise. Entire object visible with modest margin. Native alpha transparency outside the object and in all cutouts. One object, no characters, no text, no montage, no floor, no contact shadow plane, no wall or building. Create one short decorative entrance planter matching this original season-one Hazbin Hotel forecourt. A compact red-burgundy angular trapezoid planter on a shallow pedestal, thin pale-gold edge trim and one small stylized golden eye-shaped decorative inset; holds one dense bush of dark plum pointed leaves and a handful of crimson roses. Its base is flat, front elevation with only slight top view, strong simple cartoon shapes. This is an AU game prop, not a copied episode object. Portrait composition, transparent background.",
+      "transparent_background": true,
+      "reference": "art/infernal-versus/masters/stages/hotel-exterior-room-wave-b.png"
+    },
+    {
+      "id": "hotel-exterior-lantern-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate scenery prop for a 2D fighting-game foreground over the supplied Hazbin Hotel exterior. The supplied reference is ONLY for line work, materials, palette and motifs. Output only the object described below, not a background or a screenshot. Precisely match the reference's clean hand-drawn 2D television animation look, strong dark maroon outlines, restrained flat cel shading, burgundy crimson and pale warm gold palette; no painterly realism, no stone texture noise. Entire object visible with modest margin. Native alpha transparency outside the object and in all cutouts. One object, no characters, no text, no montage, no floor, no contact shadow plane, no wall or building. Create one slim hanging entrance lantern matching the supplied Hazbin Hotel facade lamps. A narrow black-maroon iron lamp with warm amber elongated pointed teardrop-shaped glass, a small gold diamond cap, a dark curved pointed hood and tiny lower finial. The lamp hangs from a short chain on a simple curled dark red iron bracket. Keep the entire bracket, chain and lamp visible. Simple sharp animation shapes, no realistic etched iron or texture. Glow only inside the glass with a very subtle semitransparent outer glow. This is an AU game prop based on the facade motifs. Tall portrait composition, native transparent background.",
+      "transparent_background": true,
+      "reference": "art/infernal-versus/masters/stages/hotel-exterior-room-wave-b.png"
+    },
+    {
+      "id": "pentagram-rooftops-vent-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D fighting-game scenery prop, transparent PNG cutout, to be layered over the supplied stage reference. Reference image is ONLY for palette, line work, light direction and architecture. Do not reproduce its buildings, floor or sky. Clean hand-drawn 2D animation background art, precise dark contour lines, rich flat/cel shading, game production quality. One coherent object only, entirely visible with modest transparent margin on every side. Native alpha transparency outside object and through open cutouts. No cast shadow plane, no ground, no frame, no labels, no words, no characters, no collage, no contact sheet. This is a new AU game adaptation prop and must not pretend to be a screenshot of the show. Create one complete squat Gothic rooftop chimney ventilation stack for the supplied Pentagram City rooftop at night. Dark plum brick base with a broad shallow octagonal iron rain cap, pointed small Gothic arch vents and a low stepped base. Rich dark maroon and black surfaces with narrow hot-magenta edge light on one side. Compact unobtrusive object for right-side middle-depth scenery behind fighters, front-facing with a subtle three-quarter view and level base. No smoke, no building, no roof slab, no floor. Landscape 3:2 composition, native transparent background.",
+      "transparent_background": true,
+      "reference": "public/assets/stages/hazbin/pentagram-rooftops.webp"
+    },
+    {
+      "id": "pentagram-rooftops-finial-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D fighting-game scenery prop, transparent PNG cutout, to be layered over the supplied stage reference. Reference image is ONLY for palette, line work, light direction and architecture. Do not reproduce its buildings, floor or sky. Clean hand-drawn 2D animation background art, precise dark contour lines, rich flat/cel shading, game production quality. One coherent object only, entirely visible with modest transparent margin on every side. Native alpha transparency outside object and through open cutouts. No cast shadow plane, no ground, no frame, no labels, no words, no characters, no collage, no contact sheet. This is a new AU game adaptation prop and must not pretend to be a screenshot of the show. Create one complete slim Gothic rooftop iron finial attached to a small square plum-stone mounting pedestal, designed as a foreground corner prop. Tall spear-shaped pointed ornament, four restrained pointed-arch supports around its lower half, two thin decorative iron curls, black plum metal with crisp magenta and faint cyan rim light matching the rooftop reference. Clean strong silhouette. Entire freestanding object visible, perspective close to side-on rather than isometric. No sign, no text, no building, no floor. Tall portrait 2:3 composition, native transparent background.",
+      "transparent_background": true,
+      "reference": "public/assets/stages/hazbin/pentagram-rooftops.webp"
+    },
+    {
+      "id": "heaven-embassy-railing-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D fighting-game scenery prop, transparent PNG cutout, to be layered over the supplied stage reference. Reference image is ONLY for palette, line work, light direction and architecture. Do not reproduce its buildings, floor or sky. Clean hand-drawn 2D animation background art, precise dark contour lines, rich flat/cel shading, game production quality. One coherent object only, entirely visible with modest transparent margin on every side. Native alpha transparency outside object and through open cutouts. No cast shadow plane, no ground, no frame, no labels, no words, no characters, no collage, no contact sheet. This is a new AU game adaptation prop and must not pretend to be a screenshot of the show. Create one complete short isolated section of the ivory-and-gold embassy terrace balustrade from the reference. A low pale marble plinth with three elegant open Gothic arches, slender gold tracery, small gold star on central arch and two short pointed end posts; a coherent low wide structure, not a huge wall. Cream stone reflects warm ivory light, gold edges contrast crimson environment. Front-facing elevation with subtle top surface, horizontal base, all open areas genuinely transparent. Wide landscape 3:2 canvas; entire railing section visible. No floor, no scene and no characters.",
+      "transparent_background": true,
+      "reference": "public/assets/stages/hazbin/heaven-embassy.webp"
+    },
+    {
+      "id": "heaven-embassy-pendant-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D fighting-game scenery prop, transparent PNG cutout, to be layered over the supplied stage reference. Reference image is ONLY for palette, line work, light direction and architecture. Do not reproduce its buildings, floor or sky. Clean hand-drawn 2D animation background art, precise dark contour lines, rich flat/cel shading, game production quality. One coherent object only, entirely visible with modest transparent margin on every side. Native alpha transparency outside object and through open cutouts. No cast shadow plane, no ground, no frame, no labels, no words, no characters, no collage, no contact sheet. This is a new AU game adaptation prop and must not pretend to be a screenshot of the show. Create one complete suspended celestial gold ornament for the ivory-and-gold embassy. A single fine gold chain suspends a thin luminous gold circular halo with a tapered four-point star hanging inside its center, small white-ivory inlay and elegant delicate gold structure. Match the gilded halo-and-star architectural motifs in the supplied reference. The ring is slightly elliptical in perspective, but the star reads clearly from the side-on arena camera. All spaces within the ornament genuinely transparent. Entire chain and ornament visible with clear margin. Tall portrait 2:3 composition, no people, no text, no backdrop, minimal contained glow.",
+      "transparent_background": true,
+      "reference": "public/assets/stages/hazbin/heaven-embassy.webp"
+    },
+    {
+      "id": "hotel-exterior-room-wave-b",
+      "prompt": "Use case: stylized-concept. Asset type: a single wide 16:9 2D fighting game stage background, fully opaque, no characters. References are two official Prime Video Hazbin Hotel season-one trailer storyboard images. Use ONLY the building in the BOTTOM RIGHT frame of reference 1 (trailer 00:16) and the TOP LEFT frame of reference 2 (00:18) as the actual architectural reference; all other storyboard panels, characters, captions and storyboards are irrelevant and must not appear. Create a wide front-entrance arena of the ORIGINAL season-one Hazbin Hotel before its destruction. Preserve the recognizable maroon/red asymmetrical hotel architecture, warm pale-gold trim, dark narrow arches and windows, the central entrance with its tall red gold-framed VACANCY arch and eye motif, black-and-cream triangular decorative frieze, rooftop red-bulb HAZBIN HOTEL sign and crooked radio structure. It must look like the Hazbin Hotel shown by the official frames, never a generic cathedral, never a human Victorian hotel or Scarlet Cabaret. Hand-drawn 2D animation style with clean strong dark outlines and controlled flat cel-shaded colors matching the show, no photorealism, no 3D. Composition: level side-on fighting-game camera across the forecourt; long continuous unobstructed horizontal red-brown paved fighting lane spans the bottom 30% of the image, hotel façade and its steps occupy middle distance, infernal crimson sky and distant Pentagram city at edges. The broad front combat lane is the deliberate gameplay adaptation; keep architectural motifs faithful to the references. No pedestrians, no people, no characters, no vehicles, no statues of characters, no detached foreground props. Text allowed only on actual building signs: 'HAZBIN HOTEL' and 'VACANCY'. No caption, no subtitles, no trailer UI, no extra branding, no watermark. ONE completed arena image filling a wide landscape canvas, not a grid or montage.",
+      "transparent_background": false,
+      "reference": "official-trailer-16s-18s"
+    }
+  ],
+  "deliveryNotes": [
+    "All generated masters remain unchanged. WebP scenery exports preserve native alpha byte-for-byte.",
+    "Seven independent scenery layers cover the previously missing layer roles, pending root runtime registration and in-game checks.",
+    "The hotel exterior background is based on inspected official trailer frames; expanded forecourt and props remain AU gameplay adaptations.",
+    "No 1:1 visual fidelity, complete animation, or in-game verification is claimed by this asset production task."
+  ]
+}

@@ -7,14 +7,14 @@ import { HELLUVA_CHARACTERS } from '../expansions/helluva-boss/data';
 import { getCharacterSpriteAsset, getCombatSpriteAsset, HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS } from '../lib/character-sprites';
 import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, HELLUVA_COMBAT_PROFILES } from '../standalone/roster';
 
-const hazbinIds = ['charlie', 'vaggie', 'angeldust', 'alastor', 'husk', 'niffty', 'sirpentious', 'lucifer', 'cherribomb', 'vox', 'valentino', 'velvette', 'adam', 'emily', 'sera', 'lute', 'carmilla', 'rosie', 'zestial', 'zeezi', 'baxter', 'abel'];
-const helluvaIds = ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_striker', 'hb_verosika', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_crimson', 'hb_andrealphus'];
+const hazbinIds = ['charlie', 'vaggie', 'angeldust', 'alastor', 'husk', 'niffty', 'sirpentious', 'lucifer', 'cherribomb', 'vox', 'valentino', 'velvette', 'adam', 'emily', 'sera', 'lute', 'carmilla', 'rosie', 'zestial', 'zeezi', 'baxter', 'abel', 'hz_mimzy'];
+const helluvaIds = ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_striker', 'hb_verosika', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_crimson', 'hb_andrealphus', 'hb_sallie_may'];
 
 describe('standalone exhibition roster', () => {
-  it('offers exactly 22 existing Hazbin and 12 explicitly authored Helluva kits', () => {
+  it('offers exactly 23 authored Hazbin and 13 explicitly authored Helluva kits', () => {
     expect(STANDALONE_ROSTER.filter(fighter => fighter.franchise === 'Hazbin Hotel').map(fighter => fighter.character.id).sort()).toEqual([...hazbinIds].sort());
     expect(STANDALONE_ROSTER.filter(fighter => fighter.franchise === 'Helluva Boss').map(fighter => fighter.character.id).sort()).toEqual([...helluvaIds].sort());
-    expect(new Set(STANDALONE_FIGHTER_IDS).size).toBe(34);
+    expect(new Set(STANDALONE_FIGHTER_IDS).size).toBe(36);
     expect(Object.keys(HELLUVA_COMBAT_PROFILES).sort()).toEqual([...helluvaIds].sort());
     for (const fighter of STANDALONE_ROSTER) {
       const source = fighter.franchise === 'Hazbin Hotel'

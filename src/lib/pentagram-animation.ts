@@ -26,6 +26,7 @@ export interface CombatAnimationOptions {
    * semantic startup/impact boundaries for every combat style.
    */
   actionDurationMs?: number;
+  impactAtMs?: number;
   hitAttack?: CombatAttack;
   loopElapsedMs?: number;
 }
@@ -34,12 +35,14 @@ const HIT_REACTION_COLUMN: Readonly<Record<CombatAttack, SpriteAtlasColumn>> = {
   light: 2,
   heavy: 3,
   special: 4,
+  signature: 3,
 };
 
 const HIT_REACTION_DURATION_MS: Readonly<Record<CombatAttack, number>> = {
   light: 60,
   heavy: 85,
   special: 120,
+  signature: 90,
 };
 
 function withAttackSpecificHitReaction(
@@ -70,6 +73,7 @@ const ACTION_CLIPS: Readonly<Record<CombatAction, CombatSpriteClipName>> = {
   light: 'light',
   heavy: 'heavy',
   special: 'special',
+  signature: 'heavy',
   hit: 'hit',
   ko: 'ko',
   victory: 'victory',
@@ -130,6 +134,7 @@ function getNormalizedActionElapsedMs(
   remainingMs: number,
   actionDurationMs: number | undefined,
   impactFrameIndex: number | undefined,
+  impactAtMs: number | undefined,
 ): number {
   const durationMs = Number.isFinite(actionDurationMs) && (actionDurationMs ?? 0) > 0
     ? actionDurationMs as number
@@ -138,7 +143,7 @@ function getNormalizedActionElapsedMs(
     ? Math.min(durationMs, Math.max(0, remainingMs))
     : 0;
   const elapsedMs = durationMs - safeRemainingMs;
-  if (durationMs === clipDurationMs) return elapsedMs;
+  if (durationMs === clipDurationMs && impactAtMs === undefined) return elapsedMs;
 
   const clipImpactStartMs = impactFrameIndex === undefined
     ? undefined
@@ -154,7 +159,7 @@ function getNormalizedActionElapsedMs(
   // The engine rounds scaled action and startup durations independently.
   // Mapping the two phases around the rounded impact boundary keeps column 4
   // entering on the exact damage frame instead of drifting by one render tick.
-  const actionImpactStartMs = Math.round(
+  const actionImpactStartMs = impactAtMs ?? Math.round(
     (clipImpactStartMs / clipDurationMs) * durationMs,
   );
   if (elapsedMs < actionImpactStartMs) {
@@ -200,6 +205,7 @@ export function getCombatAnimationFrame(
         remainingMs,
         options.actionDurationMs,
         impactFrameIndex,
+        options.impactAtMs,
       );
 
   return getFrameAtElapsedMs(clipName, clip, elapsedMs);

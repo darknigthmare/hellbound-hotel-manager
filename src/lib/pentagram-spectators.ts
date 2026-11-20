@@ -8,7 +8,7 @@ import {
   type CharacterSpriteAsset,
 } from './character-sprites';
 import { isHazbinDirectoryProfileVisible } from './hazbin-arena-fighters';
-import type { PentagramStageId } from './pentagram-stages';
+import type { HotelStageId, PentagramStageId } from './pentagram-stages';
 
 export type PentagramSpectatorDepth = 'far' | 'mid';
 export type PentagramSpectatorFacing = 'left' | 'right';
@@ -269,7 +269,7 @@ export const PENTAGRAM_STAGE_SPECTATOR_POOLS = {
       'hz_speaker_of_god',
     ],
   },
-} as const satisfies Record<PentagramStageId, PentagramStageSpectatorPool>;
+} as const satisfies Record<HotelStageId, PentagramStageSpectatorPool>;
 
 export const MAX_PENTAGRAM_STAGE_SPECTATORS = 4;
 const PENTAGRAM_SPECTATOR_SLOTS: readonly PentagramSpectatorSlot[] = [

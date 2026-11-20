@@ -1,6 +1,8 @@
 import {
   canStartCombatAttack,
+  isCombatAttackAction,
   getCombatAttackReach,
+  getSignatureStartReach,
   isCombatActionLocked,
   type CombatAttack,
   type CombatDirectionalInput,
@@ -87,11 +89,14 @@ export function decideCombatAi(
   const opponentActionMs = side === 'one' ? state.actionMsTwo : state.actionMsOne;
   const opponentPendingAttack = side === 'one' ? state.pendingAttackTwo : state.pendingAttackOne;
   const distance = Math.abs(state.positionTwo - state.positionOne);
-  const opponentThreatening = (
-    opponentAction === 'light'
-    || opponentAction === 'heavy'
-    || opponentAction === 'special'
-  ) && opponentActionMs > 0 && opponentPendingAttack === opponentAction;
+  const opponentThreatening = isCombatAttackAction(opponentAction)
+    && opponentActionMs > 0 && opponentPendingAttack === opponentAction;
+
+  if (action === 'signature' && fighter.signature === 'encore-heel'
+    && distance <= getCombatAttackReach(fighter, 'light')
+    && canStartCombatAttack(state, side, 'light', fighterOne, fighterTwo, true)) {
+    return { input: IDLE_INPUT, attack: 'light' };
+  }
 
   if (isCombatActionLocked(action, actionMs)) {
     return { input: IDLE_INPUT, attack: null };
@@ -118,7 +123,9 @@ export function decideCombatAi(
   const heavyReach = getCombatAttackReach(fighter, 'heavy');
   const specialReach = getCombatAttackReach(fighter, 'special');
 
-  if (distance > Math.max(heavyReach + 1.5, lightReach + 2.5)) {
+  const position = side === 'one' ? state.positionOne : state.positionTwo;
+  const signatureReach = getSignatureStartReach(fighter, side, position);
+  if (distance > Math.max(heavyReach + 1.5, lightReach + 2.5, signatureReach)) {
     return { input: towardOpponent, attack: null };
   }
 
@@ -134,12 +141,17 @@ export function decideCombatAi(
     return { input: IDLE_INPUT, attack: 'heavy' };
   }
 
-  const position = side === 'one' ? state.positionOne : state.positionTwo;
   // Require a small movement buffer: a decision should produce visible retreat,
   // not repeatedly request movement into a nearly reached wall.
   const canRetreat = side === 'one' ? position >= 9 : position <= 91;
   if (canRetreat && distance <= 8.2 && random() < tuning.retreatChance) {
     return { input: awayFromOpponent, attack: null };
+  }
+
+  if (fighter.signature && canStartCombatAttack(state, side, 'signature', fighterOne, fighterTwo)) {
+    if (distance <= signatureReach && random() < tuning.specialChance / 2) {
+      return { input: IDLE_INPUT, attack: 'signature' };
+    }
   }
 
   if (

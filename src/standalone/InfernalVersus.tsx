@@ -1,30 +1,36 @@
+import { INFERNAL_COSTUMES, getInfernalCostume } from '../lib/infernal-appearances';
+import { INFERNAL_SIGNATURES } from '../lib/pentagram-combat';
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, Download, Flame, Gamepad2, Settings, Shield, Skull, Sparkles, Swords, Trophy, Upload, Users } from 'lucide-react';
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { usePentagramCombatSoundtrack } from '../components/usePentagramCombatSoundtrack';
 import { getCombatSpriteAsset } from '../lib/character-sprites';
 import { buildCombatantDefinition } from '../lib/pentagram-fighters';
-import { PENTAGRAM_STAGES, getPentagramStage, type PentagramStageId } from '../lib/pentagram-stages';
+import { STANDALONE_STAGES as PENTAGRAM_STAGES, getPentagramStage, type PentagramStageId } from '../lib/pentagram-stages';
 import type { CombatState } from '../lib/pentagram-combat';
 import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, STANDALONE_TIMELINE, getStandaloneFighter } from './roster';
 import { applyMatchResult, buildRun, exportSave, importSave, loadSave, retryRun, saveProgress, MAX_IMPORT_LENGTH, type RunMode, type StandaloneMode, type StandaloneOptions, type StandaloneRun, type StandaloneSave } from './progression';
 import '../styles/theme.css';
 import '../styles/pentagram-arena.css';
 import './infernal-versus.css';
+import { STORY_ROUTES, storyAvailable, storyIllustration } from './campaign';
+import { RunInterlude } from './RunInterlude';
 
-type Screen = 'home' | 'setup' | 'fight' | 'codex' | 'options';
+type Screen = 'home' | 'setup' | 'interlude' | 'fight' | 'codex' | 'options';
 interface Match { id: string; one: string; two: string; mode: StandaloneMode; stageId: PentagramStageId; allowSeasonTwo: boolean; runIndex?: number }
 const MODES = [
   { id: 'versus', title: 'Duel infernal', label: 'VERSUS CPU', description: 'Choisissez librement les deux combattants et votre arène.', icon: Swords },
   { id: 'local', title: 'Rivalité locale', label: '2 JOUEURS', description: 'Deux joueurs, un écran. Clavier partagé ou commandes tactiles.', icon: Users },
   { id: 'training', title: 'Salle d’entraînement', label: 'DOJO', description: 'Travaillez les distances, la garde et vos trois attaques.', icon: Shield },
+  { id: 'story', title: 'Chroniques infernales', label: 'HISTOIRE', description: 'Suivez votre combattant du prologue à sa confrontation avec son rival.', icon: BookOpen },
+  { id: 'tournament', title: 'La coupe de Pentagram', label: 'TOURNOI', description: 'Consultez le tableau et décrochez la coupe à élimination directe.', icon: Trophy },
   { id: 'arcade', title: 'Les cinq épreuves', label: 'ARCADE', description: 'Cinq duels pour traverser un parcours tiré au sort.', icon: Flame },
   { id: 'survival', title: 'Dernier debout', label: 'SURVIE', description: 'Une série de vingt duels. Chaque défaite interrompt le parcours.', icon: Trophy },
   { id: 'boss-rush', title: 'Le cercle des puissants', label: 'BOSS RUSH', description: 'Affrontez successivement les boss du roster disponible.', icon: Skull },
 ] as const;
 const DIFFICULTIES = { rookie: 'Découverte', standard: 'Standard', overlord: 'Overlord' } as const;
 const modeTitle = (id: StandaloneMode) => MODES.find(mode => mode.id === id)?.title ?? id;
-const isRunMode = (mode: StandaloneMode): mode is RunMode => ['arcade', 'survival', 'boss-rush'].includes(mode);
+const isRunMode = (mode: StandaloneMode): mode is RunMode => ['arcade', 'survival', 'boss-rush', 'story', 'tournament'].includes(mode);
 function browserStorage() { try { return window.localStorage; } catch { return null; } }
 function identifier() { return globalThis.crypto?.randomUUID?.() ?? `match-${Date.now()}-${Math.random().toString(36).slice(2)}`; }
 function randomSeed() { return globalThis.crypto?.getRandomValues(new Uint32Array(1))[0] ?? Date.now() >>> 0; }
@@ -60,9 +66,16 @@ export function InfernalVersus() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const soundtrack = usePentagramCombatSoundtrack();
   const eligibleRoster = STANDALONE_ROSTER.filter(fighter => (franchise === 'all' || fighter.franchise === franchise) && (scope === 'all' || fighter.spoiler === 'season_1'));
-  const displayedRoster = eligibleRoster.filter(fighter => `${fighter.character.name} ${fighter.profile.style}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
+  const eligibleIds = eligibleRoster.map(fighter => fighter.character.id);
+  const playableRoster = mode === 'story' ? eligibleRoster.filter(fighter => storyAvailable(fighter.character.id, eligibleIds)) : eligibleRoster;
+  const displayedRoster = playableRoster.filter(fighter => `${fighter.character.name} ${fighter.profile.style}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
   const selectedOne = getStandaloneFighter(oneId)!;
   const selectedTwo = getStandaloneFighter(twoId)!;
+  const activeSide = isRunMode(mode) ? 'one' : slot;
+  const selected = activeSide === 'one' ? selectedOne : selectedTwo;
+  const selectedId = selected.character.id;
+  const outfits = INFERNAL_COSTUMES[selectedId] ?? [];
+  const worn = getInfernalCostume(selectedId, save.wardrobe?.[activeSide]?.[selectedId]);
   const stage = getPentagramStage(match?.stageId ?? stageId);
   const combatants = useMemo(() => {
     if (!match) return null;
@@ -85,6 +98,13 @@ export function InfernalVersus() {
     setStorageNotice(result.ok ? '' : result.message ?? 'Progression conservée pour cette session seulement.');
   }, []);
   const changeOption = <K extends keyof StandaloneOptions>(key: K, value: StandaloneOptions[K]) => updateSave({ ...saveRef.current, options: { ...saveRef.current.options, [key]: value } });
+  const chooseCostume = (choice: string) => {
+    const current = saveRef.current;
+    const selections = { ...current.wardrobe?.[activeSide] };
+    if (choice) selections[selectedId] = choice;
+    else delete selections[selectedId];
+    updateSave({ ...current, wardrobe: { ...current.wardrobe, [activeSide]: selections } });
+  };
   const launch = (next: Match) => {
     setNotice('');
     setMatch(next);
@@ -93,14 +113,20 @@ export function InfernalVersus() {
   };
   const launchRun = (run: StandaloneRun) => {
     if (run.status !== 'active') return;
-    launch({ id: identifier(), one: run.fighterId, two: run.opponentIds[run.index], mode: run.mode, stageId: PENTAGRAM_STAGES[run.index % PENTAGRAM_STAGES.length].id, runIndex: run.index, allowSeasonTwo: run.rosterIds.some(id => getStandaloneFighter(id)?.spoiler === 'season_2') });
+    launch({ id: identifier(), one: run.fighterId, two: run.opponentIds[run.index], mode: run.mode, stageId: run.mode === 'story' ? STORY_ROUTES[run.fighterId].chapters[run.index].stage : PENTAGRAM_STAGES[run.index % PENTAGRAM_STAGES.length].id, runIndex: run.index, allowSeasonTwo: run.rosterIds.some(id => getStandaloneFighter(id)?.spoiler === 'season_2') });
+  };
+  const enterRun = (next: StandaloneRun) => {
+    if (next.mode === 'story' || next.mode === 'tournament') {
+      setMatch(null);
+      setScreen('interlude');
+    } else launchRun(next);
   };
   const startMatch = () => {
     try {
       if (isRunMode(mode)) {
         const run = buildRun(mode, oneId, eligibleRoster.map(fighter => fighter.character.id), STANDALONE_BOSS_IDS, randomSeed());
         updateSave({ ...saveRef.current, run });
-        launchRun(run);
+        enterRun(run);
       } else {
         updateSave(saveRef.current);
         launch({ id: identifier(), one: oneId, two: twoId, mode, stageId, allowSeasonTwo: scope === 'all' });
@@ -121,8 +147,10 @@ export function InfernalVersus() {
   const nextMatch = () => {
     soundtrack.release();
     if (match && isRunMode(match.mode)) {
-      if (saveRef.current.run?.status === 'active') launchRun(saveRef.current.run);
-      else exitMatch();
+      const currentRun = saveRef.current.run;
+      if (currentRun && (currentRun.status === 'active' || currentRun.mode === 'tournament' || (currentRun.mode === 'story' && currentRun.status === 'complete'))) {
+        enterRun(currentRun);
+      } else exitMatch();
     } else if (match) launch({ ...match, id: identifier() });
   };
   const toggleSoundtrack = (paused: boolean) => {
@@ -131,12 +159,23 @@ export function InfernalVersus() {
     if (enabled) void soundtrack.start(stage.soundtrack, { paused });
     else soundtrack.stop();
   };
-  const openSetup = (nextMode: StandaloneMode) => { setMode(nextMode); setNotice(''); setScreen('setup'); };
+  const openSetup = (nextMode: StandaloneMode) => {
+    if (nextMode === 'story' && !storyAvailable(oneId, eligibleIds)) {
+      const firstStory = eligibleRoster.find(fighter => storyAvailable(fighter.character.id, eligibleIds));
+      if (firstStory) setOneId(firstStory.character.id);
+    }
+    setSlot('one');
+    setMode(nextMode);
+    setNotice('');
+    setScreen('setup');
+  };
   const updateFranchise = (value: string, nextScope = scope) => {
     setFranchise(value);
     setScope(nextScope);
     const valid = STANDALONE_ROSTER.filter(fighter => (value === 'all' || fighter.franchise === value) && (nextScope === 'all' || fighter.spoiler === 'season_1'));
-    if (!valid.some(fighter => fighter.character.id === oneId)) setOneId(valid[0].character.id);
+    const ids = valid.map(fighter => fighter.character.id);
+    const heroes = mode === 'story' ? valid.filter(fighter => storyAvailable(fighter.character.id, ids)) : valid;
+    if (heroes.length && !heroes.some(fighter => fighter.character.id === oneId)) setOneId(heroes[0].character.id);
     if (!valid.some(fighter => fighter.character.id === twoId)) setTwoId((valid[1] ?? valid[0]).character.id);
   };
   const downloadSave = () => {
@@ -183,14 +222,14 @@ export function InfernalVersus() {
             <h1 ref={titleRef} tabIndex={-1}>Tous les démons<br /><em>ont leurs rivaux.</em></h1>
             <p className="iv-hero-copy">Les résidents de l’hôtel et les figures de Helluva Boss se retrouvent dans l’arène. Choisissez votre camp. Faites monter la tension.</p>
             <button className="iv-primary" onClick={() => openSetup('versus')}>Entrer dans l’arène <ArrowRight size={18} /></button>
-            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.length}</strong> combattants</span><span><strong>{PENTAGRAM_STAGES.length}</strong> arènes</span><span><strong>6</strong> modes</span></div>
+            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.length}</strong> combattants</span><span><strong>{PENTAGRAM_STAGES.length}</strong> arènes</span><span><strong>{MODES.length}</strong> modes</span></div>
           </div>
           <div className="iv-hero-cast" aria-hidden="true"><Portrait id="charlie" /><Portrait id="hb_blitzo" /><span>LET’S MAKE<br />A SCENE.</span></div>
         </section>
         <div className="iv-section-heading"><div><p className="iv-eyebrow">À VOUS DE CHOISIR</p><h2>Votre prochaine confrontation</h2></div><span>Clavier & commandes tactiles</span></div>
         <section className="iv-mode-grid" aria-label="Modes de jeu">{MODES.map(item => <button className="iv-mode" key={item.id} onClick={() => openSetup(item.id)}><item.icon size={24} /><span className="iv-eyebrow">{item.label}</span><strong>{item.title}</strong><p>{item.description}</p><ArrowRight className="iv-mode-arrow" size={18} /></button>)}</section>
         <section className="iv-bottom-grid">
-          <article className="iv-panel"><p className="iv-eyebrow">VOTRE PARCOURS</p><h2>{run ? modeTitle(run.mode) : 'Une nouvelle histoire de rivalité'}</h2>{run ? <><p>{getStandaloneFighter(run.fighterId)?.character.name} · {run.wins}/{run.opponentIds.length} victoires · {run.status === 'active' ? 'en cours' : run.status === 'complete' ? 'terminé' : 'interrompu'}</p><div className="iv-inline-actions">{run.status === 'active' && <button className="iv-primary" onClick={() => launchRun(run)}>Continuer <ArrowRight size={16} /></button>}{run.status === 'failed' && <button className="iv-primary" onClick={() => { const next = retryRun(run); updateSave({ ...save, run: next }); launchRun(next); }}>Réessayer le duel</button>}<button className="iv-secondary" onClick={() => updateSave({ ...save, run: null })}>Clore le parcours</button></div><small>Reprise au début du duel en cours. Les PV sont restaurés à chaque nouveau duel.</small></> : <p>Arcade, Survie et Boss Rush mémorisent votre avancée entre les combats.</p>}</article>
+          <article className="iv-panel"><p className="iv-eyebrow">VOTRE PARCOURS</p><h2>{run ? modeTitle(run.mode) : 'Une nouvelle histoire de rivalité'}</h2>{run ? <><p>{getStandaloneFighter(run.fighterId)?.character.name} · {run.wins}/{run.opponentIds.length} victoires · {run.status === 'active' ? 'en cours' : run.status === 'complete' ? 'terminé' : 'interrompu'}</p><div className="iv-inline-actions">{run.status === 'active' && <button className="iv-primary" onClick={() => enterRun(run)}>Continuer <ArrowRight size={16} /></button>}{run.status === 'failed' && run.mode !== 'tournament' && <button className="iv-primary" onClick={() => { const next = retryRun(run); updateSave({ ...save, run: next }); enterRun(next); }}>Réessayer le duel</button>}{((run.mode === 'story' && run.status === 'complete') || (run.mode === 'tournament' && run.status !== 'active')) && <button className="iv-primary" onClick={() => enterRun(run)}>{run.mode === 'story' ? 'Revoir l’épilogue' : 'Voir le tableau final'}</button>}<button className="iv-secondary" onClick={() => updateSave({ ...save, run: null })}>Clore le parcours</button></div><small>Reprise au début du duel en cours. Les PV sont restaurés à chaque nouveau duel.</small></> : <p>Votre progression en histoire, tournoi, arcade, survie et boss rush est sauvegardée entre les duels.</p>}</article>
           <article className="iv-panel"><p className="iv-eyebrow">VOTRE PALMARÈS</p><div className="iv-records"><div><strong>{save.stats.matches}</strong><span>duels joués</span></div><div><strong>{save.stats.wins}</strong><span>victoires J1</span></div><div><strong>{save.stats.bestStreak}</strong><span>meilleure série</span></div></div><small>Le dojo ne modifie pas le palmarès.</small></article>
         </section>
       </>}
@@ -204,32 +243,49 @@ export function InfernalVersus() {
             <div className="iv-roster-grid" aria-label="Choix du combattant">{displayedRoster.map(fighter => <button className={`iv-fighter-tile ${fighter.character.id === oneId ? 'is-one' : ''} ${!isRunMode(mode) && fighter.character.id === twoId ? 'is-two' : ''}`} key={fighter.character.id} onClick={() => slot === 'one' || isRunMode(mode) ? setOneId(fighter.character.id) : setTwoId(fighter.character.id)} aria-pressed={fighter.character.id === (slot === 'one' || isRunMode(mode) ? oneId : twoId)}><Portrait id={fighter.character.id} /><strong>{fighter.character.name}</strong><small>{fighter.franchise === 'Hazbin Hotel' ? 'HAZBIN' : 'HELLUVA'}</small></button>)}</div>
             {displayedRoster.length === 0 && <p className="iv-empty">Aucun combattant ne correspond à cette recherche.</p>}
           </section>
-          <aside className="iv-panel iv-match-card"><p className="iv-eyebrow">VOTRE COMBATTANT</p><Portrait id={oneId} key={oneId} className="iv-selected-portrait" /><h2>{selectedOne.character.name}</h2><p>{selectedOne.profile.style}</p><dl className="iv-kit"><div><dt>Léger</dt><dd>{selectedOne.profile.basicMove}</dd></div><div><dt>Lourd</dt><dd>{selectedOne.profile.heavyMove}</dd></div><div><dt>Spécial</dt><dd>{selectedOne.profile.specialMove}</dd></div></dl>
+          <aside className="iv-panel iv-match-card"><p className="iv-eyebrow">{activeSide === 'one' ? 'JOUEUR 1' : mode === 'local' ? 'JOUEUR 2' : 'ADVERSAIRE'}</p>
+            {worn ? <img className="iv-selected-portrait" src={worn.ready} alt={worn.name} /> : <Portrait id={selectedId} key={selectedId} className="iv-selected-portrait" />}
+            <h2>{selected.character.name}</h2><p>{selected.profile.style}</p>
+            {outfits.length > 0 && <><label>Tenue de {selected.character.name}<select value={worn?.id ?? ''} onChange={event => chooseCostume(event.target.value)}><option value="">Tenue habituelle</option>{outfits.map(outfit => <option key={outfit.id} value={outfit.id}>{outfit.name}</option>)}</select></label>{worn && <small>{worn.appearance}</small>}</>}
+            <dl className="iv-kit"><div><dt>Léger</dt><dd>{selected.profile.basicMove}</dd></div><div><dt>Lourd</dt><dd>{selected.profile.heavyMove}</dd></div><div><dt>Spécial</dt><dd>{selected.profile.specialMove}</dd></div>{selected.profile.signature && <div><dt>Signature</dt><dd>{INFERNAL_SIGNATURES[selected.profile.signature].name}</dd></div>}</dl>
             {mode !== 'local' && mode !== 'training' && <label>Difficulté<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label>}
             {mode === 'training' && <label>Mannequin<select value={trainingGuard ? 'guard' : 'idle'} onChange={event => setTrainingGuard(event.target.value === 'guard')}><option value="idle">Immobile</option><option value="guard">Garde permanente</option></select></label>}
-            {isRunMode(mode) && <p className="iv-small">Le parcours utilise le filtre d’univers et alterne les arènes. {run?.status === 'active' && 'Démarrer remplacera le parcours en cours.'}</p>}
-            <button className="iv-primary" onClick={startMatch}>{isRunMode(mode) ? 'Démarrer le parcours' : 'Lancer le combat'} <Swords size={18} /></button>
+            {mode === 'story' && playableRoster.length > 0 && <p><strong>{STORY_ROUTES[oneId]?.title}</strong></p>}
+            {isRunMode(mode) && <p className="iv-small">{mode === 'story' ? 'Trois combats scénarisés. Les filtres conservent les histoires dont tous les adversaires sont disponibles.' : mode === 'tournament' ? 'Le tirage utilise les combattants des filtres sélectionnés. Une défaite vous élimine de la coupe.' : 'Le parcours utilise le filtre d’univers et alterne les arènes.'} {run?.status === 'active' && 'Démarrer remplacera le parcours en cours.'}</p>}
+            <button className="iv-primary" onClick={startMatch} disabled={mode === 'story' && !storyAvailable(oneId, eligibleIds)}>{isRunMode(mode) ? 'Démarrer le parcours' : 'Lancer le combat'} <Swords size={18} /></button>
           </aside>
         </div>
         {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{getPentagramStage(stageId).name}</span></div><div className="iv-stage-grid">{PENTAGRAM_STAGES.map(arena => <button key={arena.id} onClick={() => setStageId(arena.id)} aria-pressed={stageId === arena.id}><img src={arena.thumbnailPath} alt="" loading="lazy" /><span>{arena.name}</span></button>)}</div></section>}
       </>}
 
+      {screen === 'interlude' && run && <RunInterlude run={run} titleRef={titleRef} onHome={exitMatch} onFight={() => launchRun(run)} />}
+
       {screen === 'fight' && match && combatants && <div className="iv-live-wrap">
         {isRunMode(match.mode) && run && <div className="iv-run-strip"><strong>{modeTitle(match.mode)}</strong><span>Duel {Math.min((match.runIndex ?? 0) + 1, run.opponentIds.length)} / {run.opponentIds.length} · {run.wins} victoires</span></div>}
         {match.mode === 'training' && <p className="iv-practice-note">Mannequin {trainingGuard ? 'en garde' : 'immobile'} · tension illimitée · récupération après K.O. · aucun score enregistré</p>}
-        <PentagramLiveFight key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
+        <PentagramLiveFight infernalRules costumeOne={save.wardrobe?.one?.[match.one]} costumeTwo={save.wardrobe?.two?.[match.two]} key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={match.mode === 'tournament' ? 'Tableau du tournoi' : match.mode === 'story' && run?.status === 'complete' ? 'Voir l’épilogue' : isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
       </div>}
 
       {screen === 'codex' && <>
         <p className="iv-eyebrow">IDENTITÉS & TECHNIQUES</p><h1 ref={titleRef} tabIndex={-1}>Les combattants</h1><p className="iv-lead">{STANDALONE_ROSTER.length} profils sélectionnables. Les techniques, statistiques et confrontations sont des adaptations d’exhibition.</p>
-        <div className="iv-codex-grid">{STANDALONE_ROSTER.map(fighter => <article className="iv-panel iv-dossier" key={fighter.character.id}><Portrait id={fighter.character.id} /><div><p className="iv-eyebrow">{fighter.franchise}</p><h2>{fighter.character.name}</h2><p>{fighter.profile.style}</p><ul><li>{fighter.profile.basicMove}</li><li>{fighter.profile.heavyMove}</li><li>{fighter.profile.specialMove}</li></ul><small>{fighter.profile.evidence === 'onscreen' ? 'Gestes inspirés de l’écran' : fighter.profile.evidence === 'motif' ? 'Kit inspiré des motifs du personnage' : 'Kit de simulation, capacités peu documentées'}. Référence : {fighter.source}. {fighter.character.id === 'hb_stolas' && 'Incarnation avant Mastermind.'}</small></div></article>)}</div>
+        <section className="iv-panel iv-gallery" aria-label="Galerie des épilogues">
+          <h2>Galerie des épilogues</h2>
+          <p>{save.storyEndings.length} / {Object.keys(STORY_ROUTES).length} histoires terminées</p>
+          {save.storyEndings.length === 0 && <p className="iv-small">Battez le rival d’une histoire pour conserver son épilogue ici.</p>}
+          {save.storyEndings.map(id => <details key={id}>
+            <summary>{getStandaloneFighter(id)?.character.name} · {STORY_ROUTES[id].title}</summary>
+            {storyIllustration(id, 'ending') && <img src={storyIllustration(id, 'ending')} alt="" loading="lazy" />}
+            <p>{STORY_ROUTES[id].ending}</p>
+          </details>)}
+        </section>
+        <div className="iv-codex-grid">{STANDALONE_ROSTER.map(fighter => <article className="iv-panel iv-dossier" key={fighter.character.id}><Portrait id={fighter.character.id} /><div><p className="iv-eyebrow">{fighter.franchise}</p><h2>{fighter.character.name}</h2><p>{fighter.profile.style}</p><ul><li>{fighter.profile.basicMove}</li><li>{fighter.profile.heavyMove}</li><li>{fighter.profile.specialMove}</li>{fighter.profile.signature && <li>{INFERNAL_SIGNATURES[fighter.profile.signature].name} · signature</li>}</ul><small>{fighter.profile.evidence === 'onscreen' ? 'Gestes inspirés de l’écran' : fighter.profile.evidence === 'motif' ? 'Kit inspiré des motifs du personnage' : 'Kit de simulation, capacités peu documentées'}. Référence : {fighter.source}. {fighter.character.id === 'hb_stolas' && 'Incarnation avant Mastermind.'}</small></div></article>)}</div>
       </>}
 
       {screen === 'options' && <>
         <p className="iv-eyebrow">À VOTRE MESURE</p><h1 ref={titleRef} tabIndex={-1}>Options & progression</h1>
         <div className="iv-options-grid"><section className="iv-panel"><h2>Confort de jeu</h2><label className="iv-check"><input type="checkbox" checked={save.options.soundtrack} onChange={event => changeOption('soundtrack', event.target.checked)} /> Musique originale des arènes</label><label className="iv-check"><input type="checkbox" checked={save.options.reducedMotion} onChange={event => changeOption('reducedMotion', event.target.checked)} /> Réduire mouvements et flashes</label><label>Difficulté par défaut<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label><p className="iv-small">Les réglages de réduction des mouvements du système sont également respectés.</p></section>
           <section className="iv-panel"><h2>Sauvegarde</h2><p>Votre palmarès, vos options et le parcours en cours sont enregistrés automatiquement sur cet appareil.</p><div className="iv-inline-actions"><button className="iv-secondary" onClick={downloadSave}><Download size={16} /> Exporter</button><label className="iv-file-label"><Upload size={16} /> Importer<input type="file" accept=".json,application/json" onChange={event => void prepareImport(event)} /></label></div>{initial.status === 'invalid' && !canPersist && <button className="iv-secondary" onClick={() => { const raw = browserStorage()?.getItem('hellbound_infernal_versus_v1'); if (raw) { const url = URL.createObjectURL(new Blob([raw], { type: 'application/json' })); const a = document.createElement('a'); a.href = url; a.download = 'infernal-versus-recovery.json'; a.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000); } }}>Exporter la donnée à récupérer</button>}{pendingImport && <div className="iv-import-confirm" role="group" aria-label="Confirmer l’import"><p>{pendingImport.stats.matches} duels · {pendingImport.stats.wins} victoires. Cette sauvegarde remplacera votre progression Infernal Versus.</p><button className="iv-primary" onClick={() => { updateSave(pendingImport); setPendingImport(null); setNotice('Sauvegarde importée.'); }}>Confirmer l’import</button><button className="iv-secondary" onClick={() => setPendingImport(null)}>Annuler</button></div>}</section>
-          <section className="iv-panel iv-controls"><h2>Commandes</h2><table><thead><tr><th>Action</th><th>Joueur 1</th><th>Joueur 2</th></tr></thead><tbody><tr><td>Déplacement</td><td>Q / A · D</td><td>← · →</td></tr><tr><td>Garde / accroupi</td><td>E · S</td><td>Maj. droite · ↓</td></tr><tr><td>Saut / provocation</td><td>Z / W · R</td><td>↑ · U</td></tr><tr><td>Léger / lourd / spécial</td><td>F · G · H</td><td>J · K · L</td></tr><tr><td>Pause / quitter</td><td colSpan={2}>P · Échap</td></tr><tr><td>Manche suivante</td><td colSpan={2}>Entrée</td></tr></tbody></table><p className="iv-small">Les boutons tactiles sont disponibles pendant chaque combat. Le spécial consomme la jauge de tension.</p></section>
+          <section className="iv-panel iv-controls"><h2>Commandes</h2><table><thead><tr><th>Action</th><th>Joueur 1</th><th>Joueur 2</th></tr></thead><tbody><tr><td>Déplacement</td><td>Q / A · D</td><td>← · →</td></tr><tr><td>Garde / accroupi</td><td>E · S</td><td>Maj. droite · ↓</td></tr><tr><td>Saut / provocation</td><td>Z / W · R</td><td>↑ · U</td></tr><tr><td>Léger / lourd / spécial</td><td>F · G · H</td><td>J · K · L</td></tr><tr><td>Signature (Vaggie et Blitzø)</td><td>T</td><td>I</td></tr><tr><td>Pause / quitter</td><td colSpan={2}>P · Échap</td></tr><tr><td>Manche suivante</td><td colSpan={2}>Entrée</td></tr></tbody></table><p className="iv-small">Les boutons tactiles sont disponibles pendant chaque combat. Le spécial consomme la jauge de tension.</p></section>
           <section className="iv-panel"><h2>Derniers duels</h2>{save.recentResults.length === 0 ? <p>Aucun résultat enregistré.</p> : <ol className="iv-history">{save.recentResults.slice(0, 8).map(result => <li key={result.id}><span>{getStandaloneFighter(result.fighterId)?.character.name} / {getStandaloneFighter(result.opponentId)?.character.name}</span><strong>{result.outcome === 'won' ? 'Victoire J1' : result.outcome === 'lost' ? 'Défaite J1' : 'Égalité'}</strong></li>)}</ol>}</section>
         </div>
       </>}

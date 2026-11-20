@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-b-fighters-2026-11-19",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "59b08395621b612e916d4b4366a763a51ec26987",
+  "date": "2026-11-19",
+  "generationMode": "built-in image_gen, one call per pose",
+  "scope": {
+    "fighters": 2,
+    "uniqueDrawings": 8,
+    "pngMasters": 8,
+    "losslessWebpExports": 8
+  },
+  "status": "generated-and-file-verified",
+  "note": "Each PNG and matching WebP represent one drawing. These are individual key poses supplementing existing animation banks, not complete animation cycles. No canonical 1:1 certification.",
+  "assets": [
+    {
+      "id": "lucifer-ready",
+      "fighterId": "lucifer",
+      "pose": "ready",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/lucifer-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/lucifer-ready.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-1cedd79f-012f-4140-9247-3db43a4e3ce8.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7585646311442057,
+        "bboxNonzero": [
+          0,
+          45,
+          980,
+          1516
+        ],
+        "bboxAlphaAtLeast8": [
+          166,
+          58,
+          780,
+          1446
+        ],
+        "lowAlphaNonzeroFraction": 0.010387420654296875
+      },
+      "files": {
+        "master": {
+          "bytes": 1375690,
+          "sha256": "9d4514151b0b379eb4244dbe55690ad6016e8475bfbd83429fcde4749676cc74"
+        },
+        "export": {
+          "bytes": 892690,
+          "sha256": "d08dadec5d10914e6c65fc5356cc9f3e06f996f77d23537138eb2526bf08c707"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/portraits/lucifer.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=yzLnk2W0qN4",
+          "title": "Hell’s Greatest Dad Sing-Along w/ Lucifer — Prime Video"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Asset: ONE independent full-body 2D fighting-game sprite of Lucifer Morningstar from Hazbin Hotel, standard white ringmaster outfit. Reference image is the existing game's character portrait; preserve his identity, pale white face, red cheek circles, swept-back blond hair, yellow eyes with red irises, white top hat with red band and small gold snake/apple decoration, white tailcoat with red lapels and red lining, striped pale-red vest, black bowtie, black gloves, slim white trousers, long black boots. Repose this one character into a side-view fighting ready stance facing RIGHT: feet apart on the same ground baseline, knees softly bent, shoulders mostly in profile, face in subtle three-quarter view, both gloved fists at chest height, no weapon. Confident half-smile. Slim compact canonical body proportions; do not make him muscular, do not lengthen limbs into adult realistic anatomy. Crisp clean 2D cel animation lines, flat solid colors, restrained one-step shadow only. Entire hat and both boots fully visible with safe transparent margin. Portrait canvas approximately 1024x1536, character centered, feet around 93% height, hat around 5% height. Actual transparent alpha background, no floor, no glow, no cast shadow, no label, no text, no collage, no multiple poses or figures. Preserve every costume element and character color from the reference.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "lucifer-guard",
+      "fighterId": "lucifer",
+      "pose": "guard",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/lucifer-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/lucifer-guard.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-49067a53-58e3-4392-863c-421283c71624.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7339941660563151,
+        "bboxNonzero": [
+          121,
+          119,
+          1010,
+          1512
+        ],
+        "bboxAlphaAtLeast8": [
+          126,
+          147,
+          793,
+          1424
+        ],
+        "lowAlphaNonzeroFraction": 0.00891876220703125
+      },
+      "files": {
+        "master": {
+          "bytes": 1400460,
+          "sha256": "a71230587ac08dc099b998b76b1c272ebab5c1b8273bbaa29336aac745ca0d33"
+        },
+        "export": {
+          "bytes": 905944,
+          "sha256": "f7114207ba4cfe3b0683abba27063663465e5fa89a87c638f5f17c925eafbdd6"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/portraits/lucifer.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=yzLnk2W0qN4",
+          "title": "Hell’s Greatest Dad Sing-Along w/ Lucifer — Prime Video"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Lucifer Morningstar from Hazbin Hotel. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with a clearly distinct defensive blocking pose facing RIGHT: elbows tucked, forearms raised and crossed diagonally in front of upper chest, both fists near face, knees flexed deeper. Keep the character's face visible. Feet firmly planted on the same baseline. Concentrated defensive expression. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep the white top hat with red band and golden snake/apple ornament attached, white tailcoat with red lapels, striped pink vest, black bowtie, black gloves and boots. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "lucifer-strike",
+      "fighterId": "lucifer",
+      "pose": "strike",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/lucifer-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/lucifer-strike.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-f19bc772-b465-4432-b1e5-021b7d032a98.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7497323354085287,
+        "bboxNonzero": [
+          29,
+          37,
+          993,
+          1514
+        ],
+        "bboxAlphaAtLeast8": [
+          133,
+          60,
+          991,
+          1441
+        ],
+        "lowAlphaNonzeroFraction": 0.014005661010742188
+      },
+      "files": {
+        "master": {
+          "bytes": 1411212,
+          "sha256": "b40435aae6835c30b6c7e7e320306db67afe405c9d02b07ff93590806614278d"
+        },
+        "export": {
+          "bytes": 919390,
+          "sha256": "7c13dc4638f6b45175a612b68c367c698ebc212ec4a68962f7b627d425388cd5"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/portraits/lucifer.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=yzLnk2W0qN4",
+          "title": "Hell’s Greatest Dad Sing-Along w/ Lucifer — Prime Video"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Lucifer Morningstar from Hazbin Hotel. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with the contact keyframe of a quick unarmed straight jab facing RIGHT: lead arm extended horizontally to the right at chest height, closed fist at the end, rear fist protecting the chin, small forward weight shift and slight torso twist. Keep both feet on the same ground baseline, entire extended fist fully visible. No motion trail, no impact effect, no enemy. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep the white top hat with red band and golden snake/apple ornament attached, white tailcoat with red lapels, striped pink vest, black bowtie, black gloves and boots. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "lucifer-recoil",
+      "fighterId": "lucifer",
+      "pose": "recoil",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/lucifer-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/lucifer-recoil.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-99dfac39-034c-4d63-9dc7-32313000032b.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7193743387858073,
+        "bboxNonzero": [
+          21,
+          32,
+          1004,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          82,
+          103,
+          883,
+          1432
+        ],
+        "lowAlphaNonzeroFraction": 0.018973032633463543
+      },
+      "files": {
+        "master": {
+          "bytes": 1512841,
+          "sha256": "a2f25626c0ae65886963e5b1de7586ca8ed2941c0867e3c90b072c39461eb4a3"
+        },
+        "export": {
+          "bytes": 994282,
+          "sha256": "17a8f18b8910153a4e671034acedb89a370a2943595d20c50a927d145f6f842f"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/portraits/lucifer.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=yzLnk2W0qN4",
+          "title": "Hell’s Greatest Dad Sing-Along w/ Lucifer — Prime Video"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Lucifer Morningstar from Hazbin Hotel. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with a clear hit-reaction keyframe: character still faces RIGHT but upper torso bends back toward LEFT, chin drawn back, mouth briefly open, brows tense, arms recoiling apart and hands open, knees bent to absorb the impact. Both feet remain on the same baseline and all limbs are intact. No injury, blood, bruises, opponent or impact effect. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep the white top hat with red band and golden snake/apple ornament attached, white tailcoat with red lapels, striped pink vest, black bowtie, black gloves and boots. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "hb_moxxie-ready",
+      "fighterId": "hb_moxxie",
+      "pose": "ready",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/hb_moxxie-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_moxxie-ready.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-1b5c2b62-f71d-4d45-b4d0-b660e6f5117a.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7484874725341797,
+        "bboxNonzero": [
+          35,
+          9,
+          1006,
+          1494
+        ],
+        "bboxAlphaAtLeast8": [
+          74,
+          127,
+          846,
+          1410
+        ],
+        "lowAlphaNonzeroFraction": 0.010637283325195312
+      },
+      "files": {
+        "master": {
+          "bytes": 1345733,
+          "sha256": "89326ba1eaa57a480c8ada297ac3cc37bdec09c7d98d0650266e5a681f48baae"
+        },
+        "export": {
+          "bytes": 874152,
+          "sha256": "00391ec3e381a6c25e9a2a5bc642d12fbf14ae8c71b8aec286fb5bd931f7b393"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/helluva/portraits/hb_moxxie.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "title": "HELLUVA BOSS - Murder Family // S1: Episode 1 — Vivziepop"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Asset: ONE independent full-body 2D fighting-game sprite of Moxxie from Helluva Boss in his standard I.M.P outfit. Reference is the existing game's character portrait; preserve his exact identity: small slim red-skinned imp, large angular yellow eyes with narrow black pupils, small black freckles, tousled white hair, two backwards-curving horns with broad alternating black and white bands, red bow tie, very dark navy tuxedo tailcoat with two red buttons, white cuffs and white pointed shirt insert, dark trousers, slim red clawed hands, red cloven pointed feet, long thin red tail ending in red arrowhead. Repose him into a side-view fighting ready stance facing RIGHT, small slim body, head a little oversized in the original cartoon's proportions, knees softly bent, feet apart, two fists cautiously held in front of chest, alert focused expression. Tail curls behind toward LEFT, fully inside frame. No gun, no other weapon. Clean expressive 2D cel-animation linework, solid flat colors and restrained single-step shadows. Portrait canvas approximately 1024x1536, one character centered; horns around 5% height, both feet around 93% height. Actual transparent alpha background, no floor, no glow, no shadow, no labels, no text, no panels, no multiple characters or poses. Entire horns, feet and tail tip visible with safe margins.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "hb_moxxie-guard",
+      "fighterId": "hb_moxxie",
+      "pose": "guard",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/hb_moxxie-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_moxxie-guard.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-b1d8e932-b8fb-4c89-8a0c-6c65ab3cb326.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7186133066813151,
+        "bboxNonzero": [
+          0,
+          57,
+          1010,
+          1520
+        ],
+        "bboxAlphaAtLeast8": [
+          73,
+          190,
+          850,
+          1409
+        ],
+        "lowAlphaNonzeroFraction": 0.009230295817057291
+      },
+      "files": {
+        "master": {
+          "bytes": 1353575,
+          "sha256": "e9af1a2153a6d6c79977c41685bb38e11afa877c6796dcaa9345a4858b729fef"
+        },
+        "export": {
+          "bytes": 880966,
+          "sha256": "2b396265a59ec7a03a27112ff5349b5b55791e7109af21edfc5e0b78685580d8"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/helluva/portraits/hb_moxxie.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "title": "HELLUVA BOSS - Murder Family // S1: Episode 1 — Vivziepop"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Moxxie from Helluva Boss. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with a clearly distinct defensive blocking pose facing RIGHT: elbows tucked, forearms raised and crossed diagonally in front of upper chest, both fists near face, knees flexed deeper. Keep the character's face visible. Feet firmly planted on the same baseline. Concentrated defensive expression. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep his red arrowhead tail fully within frame, dark tail markings, backward striped horns, tiny black cheek freckles, white hair, red bowtie, navy coat with two red buttons and red cloven feet. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "hb_moxxie-strike",
+      "fighterId": "hb_moxxie",
+      "pose": "strike",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/hb_moxxie-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_moxxie-strike.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-5d6889c6-bac0-4b53-bcc0-59e2bcc98bda.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7400385538736979,
+        "bboxNonzero": [
+          35,
+          37,
+          998,
+          1510
+        ],
+        "bboxAlphaAtLeast8": [
+          46,
+          127,
+          996,
+          1397
+        ],
+        "lowAlphaNonzeroFraction": 0.007731119791666667
+      },
+      "files": {
+        "master": {
+          "bytes": 1341525,
+          "sha256": "60cbcfade677483129b69abfda9d86ff42956b2e2a7b280c6fcc3103ce24d0f5"
+        },
+        "export": {
+          "bytes": 874250,
+          "sha256": "880dfaee580b9ed8c98a344302ee0f0e6d40c5e6ebd53a7bb37f5e247d132c7a"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/helluva/portraits/hb_moxxie.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "title": "HELLUVA BOSS - Murder Family // S1: Episode 1 — Vivziepop"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Moxxie from Helluva Boss. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with the contact keyframe of a quick unarmed straight jab facing RIGHT: lead arm extended horizontally to the right at chest height, closed fist at the end, rear fist protecting the chin, small forward weight shift and slight torso twist. Keep both feet on the same ground baseline, entire extended fist fully visible. No motion trail, no impact effect, no enemy. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep his red arrowhead tail fully within frame, dark tail markings, backward striped horns, tiny black cheek freckles, white hair, red bowtie, navy coat with two red buttons and red cloven feet. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    },
+    {
+      "id": "hb_moxxie-recoil",
+      "fighterId": "hb_moxxie",
+      "pose": "recoil",
+      "kind": "individual-fighter-key-pose",
+      "master": "art/infernal-versus/masters/poses/hb_moxxie-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_moxxie-recoil.webp",
+      "sourceGeneratedPath": "/workspace/scratch/b55d7e9b60dc/generated_images/exec-6a1dd975-da5f-4617-a0f7-683f30e9fb25.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7358589172363281,
+        "bboxNonzero": [
+          23,
+          29,
+          1008,
+          1486
+        ],
+        "bboxAlphaAtLeast8": [
+          26,
+          206,
+          888,
+          1409
+        ],
+        "lowAlphaNonzeroFraction": 0.010526657104492188
+      },
+      "files": {
+        "master": {
+          "bytes": 1346540,
+          "sha256": "d76756c2e9d027b5a8dbdccd900ab4715be21b131485b1f80011570c81e5b399"
+        },
+        "export": {
+          "bytes": 880984,
+          "sha256": "9b83e75bb8e4a7bae5487a98909897774a8369f9e725b95be65bd002f6a2162c"
+        }
+      },
+      "exportMethod": "PNG RGBA converted to lossless WebP with exact=True; identical decoded pixels and alpha, no redraw, crop or alpha correction",
+      "references": [
+        {
+          "role": "identity-reference",
+          "path": "public/assets/sprites/helluva/portraits/hb_moxxie.png"
+        },
+        {
+          "role": "official-episode-reference-not-frame-by-frame-validation",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "title": "HELLUVA BOSS - Murder Family // S1: Episode 1 — Vivziepop"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Edit target: the supplied ready-pose sprite, character Moxxie from Helluva Boss. Produce exactly ONE new full-body 2D fighting-game sprite. Replace the ready pose with a clear hit-reaction keyframe: character still faces RIGHT but upper torso bends back toward LEFT, chin drawn back, mouth briefly open, brows tense, arms recoiling apart and hands open, knees bent to absorb the impact. Both feet remain on the same baseline and all limbs are intact. No injury, blood, bruises, opponent or impact effect. Preserve character identity, proportions, all clothing details, palette, face shape, horns or hat and hair, clean animation outlines, and the flat cel-shaded drawing style of the reference. Same portrait canvas 1024x1536 and same character scale as reference. Preserve the approximate baseline and enough margins for the complete silhouette. Keep his red arrowhead tail fully within frame, dark tail markings, backward striped horns, tiny black cheek freckles, white hair, red bowtie, navy coat with two red buttons and red cloven feet. Actual transparent alpha background. Only the character, with hard clean silhouette edges and subtle antialiasing. No painted backdrop, no checkerboard, no glow, no floor or shadow, no labels/text/watermark, no extra character, no montage. This is one pose, not an animation sheet.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete fighter",
+          "facing right",
+          "recognizable regular costume",
+          "independent pose",
+          "hands/feet/head/tail within visible frame",
+          "transparent alpha verified"
+        ],
+        "limitations": [
+          "new game adaptation pose, not traced official frame",
+          "frame-by-frame canonical comparison pending",
+          "in-game baseline and transition verification pending",
+          "subtle alpha noise below 8/255 preserved from generator"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-registry"
+    }
+  ]
+}

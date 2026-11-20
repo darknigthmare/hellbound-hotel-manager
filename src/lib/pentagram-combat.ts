@@ -12,11 +12,12 @@ export type CombatAction =
   | 'light'
   | 'heavy'
   | 'special'
+  | 'signature'
   | 'hit'
   | 'ko'
   | 'victory';
 
-export type CombatAttack = 'light' | 'heavy' | 'special';
+export type CombatAttack = 'light' | 'heavy' | 'special' | 'signature';
 export type CombatPoseAction = 'jump' | 'taunt';
 
 export type CombatStyle =
@@ -40,6 +41,7 @@ export interface CombatantDefinition {
   heavyMove: string;
   specialMove: string;
   style?: CombatStyle;
+  signature?: InfernalSignatureId;
 }
 
 export interface CombatDirectionalInput {
@@ -123,6 +125,8 @@ interface CombatStyleTuning {
 const STAGE_MIN = 7;
 const STAGE_MAX = 93;
 const MIN_FIGHTER_GAP = 7;
+const SERVICE_EXIT_RETREAT = 3;
+const SERVICE_EXIT_ADVANCE = 8;
 const MAX_GAME_FRAME_MS = 1_000;
 const COMBAT_SIMULATION_STEP_MS = 16;
 const IMPACT_EFFECT_MS = 220;
@@ -140,7 +144,36 @@ const POSE_ACTION_COOLDOWN_MS: Readonly<Record<CombatPoseAction, number>> = {
 
 export const COMBAT_MATCH_WINS_REQUIRED = 2;
 
-const ATTACK_DATA: Record<CombatAttack, CombatAttackData> = {
+export const INFERNAL_SIGNATURES = {
+  'encore-heel': {
+    name: 'Talon de rappel',
+    description: 'Après un coup de talon qui touche sans garde, lancez un léger dès la fin de l’arrêt sur impact. Mimzy peut alors interrompre sa propre récupération pour continuer le charleston.',
+    actionMs: 480, startupMs: 190, cooldownMs: 610, hitstunMs: 245,
+    reachBonus: 0.6, damageBonus: 1, knockback: 0.3, tensionCost: 25,
+  },
+  'ranch-gate': {
+    name: 'Tenir la barrière',
+    description: 'Sallie May cale ses bottes et donne un coup d’épaule. Sur garde, elle repousse l’adversaire de six unités et reprend le seuil. Dans le vide, son flanc reste exposé.',
+    actionMs: 570, startupMs: 240, cooldownMs: 720, hitstunMs: 210,
+    reachBonus: 1.4, damageBonus: 3, knockback: 1.8, tensionCost: 25,
+  },
+  'line-guard': {
+    name: 'Ligne de défense',
+    description: 'Une estocade. Si elle touche sans garde, Vaggie protège automatiquement sa récupération. Une garde adverse ou un coup dans le vide laisse sa récupération ouverte.',
+    actionMs: 440, startupMs: 160, cooldownMs: 600, hitstunMs: 155,
+    reachBonus: 4, damageBonus: 2, knockback: 2.6, tensionCost: 20,
+  },
+  'service-exit': {
+    name: 'Sortie de service',
+    description: 'Blitzø recule de trois unités, puis parcourt jusqu’à huit unités vers son adversaire avant le contact. Il peut être interrompu pendant le retour.',
+    actionMs: 510, startupMs: 270, cooldownMs: 720, hitstunMs: 230,
+    reachBonus: 0, damageBonus: 3, knockback: 1.6, tensionCost: 25,
+  },
+} as const satisfies Record<string, CombatAttackData & { name: string; description: string }>;
+
+export type InfernalSignatureId = keyof typeof INFERNAL_SIGNATURES;
+
+const ATTACK_DATA: Record<Exclude<CombatAttack, 'signature'>, CombatAttackData> = {
   light: {
     actionMs: 340,
     startupMs: 120,
@@ -255,6 +288,10 @@ function getStyleTuning(definition: CombatantDefinition): CombatStyleTuning {
 }
 
 function getAttackData(definition: CombatantDefinition, attack: CombatAttack): CombatAttackData {
+  if (attack === 'signature') {
+    if (!definition.signature) throw new Error(`Aucune technique signature pour ${definition.name}.`);
+    return INFERNAL_SIGNATURES[definition.signature];
+  }
   const base = ATTACK_DATA[attack];
   const tuning = getStyleTuning(definition);
   return {
@@ -282,6 +319,15 @@ export function getCombatAttackReach(
   );
 }
 
+// The arena wall can shorten Blitzø’s initial backstep, increasing his starting reach.
+export function getSignatureStartReach(fighter: CombatantDefinition, side: PlayerSide, position: number): number {
+  if (!fighter.signature) return 0;
+  const contactReach = getCombatAttackReach(fighter, 'signature');
+  if (fighter.signature !== 'service-exit') return contactReach;
+  const spaceBehind = side === 'one' ? position - STAGE_MIN : STAGE_MAX - position;
+  return contactReach + SERVICE_EXIT_ADVANCE - clamp(spaceBehind, 0, SERVICE_EXIT_RETREAT);
+}
+
 export function getCombatAttackDuration(
   definition: CombatantDefinition,
   attack: CombatAttack,
@@ -294,7 +340,7 @@ export function getCombatPoseActionDuration(action: CombatPoseAction): number {
 }
 
 export function isCombatAttackAction(action: CombatAction): action is CombatAttack {
-  return action === 'light' || action === 'heavy' || action === 'special';
+  return action === 'light' || action === 'heavy' || action === 'special' || action === 'signature';
 }
 
 export function isCombatPoseAction(action: CombatAction): action is CombatPoseAction {
@@ -320,6 +366,7 @@ function getIdleAction(
 }
 
 function getMoveName(definition: CombatantDefinition, attack: CombatAttack): string {
+  if (attack === 'signature' && definition.signature) return INFERNAL_SIGNATURES[definition.signature].name;
   if (attack === 'light') return definition.basicMove;
   return attack === 'heavy' ? definition.heavyMove : definition.specialMove;
 }
@@ -463,8 +510,8 @@ export function releaseCombatGuard(state: CombatState): CombatState {
   if (!state.guardOne && !state.guardTwo) return state;
   return {
     ...state,
-    guardOne: false,
-    guardTwo: false,
+    guardOne: state.actionOne === 'signature' && state.guardOne,
+    guardTwo: state.actionTwo === 'signature' && state.guardTwo,
     actionOne: state.actionOne === 'guard' ? 'idle' : state.actionOne,
     actionTwo: state.actionTwo === 'guard' ? 'idle' : state.actionTwo,
   };
@@ -521,32 +568,56 @@ export function resolveCombatPoseAction(
   };
 }
 
+function canCancelInto(
+  state: CombatState, side: PlayerSide, attack: CombatAttack, definition: CombatantDefinition,
+): boolean {
+  const isOne = side === 'one';
+  const action = isOne ? state.actionOne : state.actionTwo;
+  const remaining = isOne ? state.actionMsOne : state.actionMsTwo;
+  const pending = isOne ? state.pendingAttackOne : state.pendingAttackTwo;
+  if (remaining <= 0) return false;
+  if (action === 'light' && attack === 'heavy' && pending === 'light') {
+    const light = getAttackData(definition, 'light');
+    return remaining > light.actionMs - light.startupMs;
+  }
+  // An impact clears pending. Only a clean contact leaves an active combo.
+  if (pending !== null || (isOne ? state.comboOne : state.comboTwo) === 0) return false;
+  if (action === 'signature' && definition.signature === 'encore-heel') return attack === 'light';
+  return action === 'heavy' && attack === 'special';
+}
+
+export function getCombatMoveInfo(definition: CombatantDefinition, attack: CombatAttack) {
+  const data = getAttackData(definition, attack);
+  return {
+    name: getMoveName(definition, attack),
+    startupMs: data.startupMs,
+    actionMs: data.actionMs,
+    recoveryMs: data.actionMs - data.startupMs,
+    cooldownMs: data.cooldownMs,
+    reach: getCombatAttackReach(definition, attack),
+    tensionCost: data.tensionCost,
+    hitstunMs: data.hitstunMs,
+  };
+}
+
 export function canStartCombatAttack(
   state: CombatState,
   side: PlayerSide,
   attack: CombatAttack,
   fighterOne: CombatantDefinition,
   fighterTwo: CombatantDefinition,
-  allowLightCancel = false,
+  allowCancel = false,
 ): boolean {
   if (!state.active || state.hitstopMs > 0) return false;
   const definition = side === 'one' ? fighterOne : fighterTwo;
+  if (attack === 'signature' && !definition.signature) return false;
   const cooldown = side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo;
   const action = side === 'one' ? state.actionOne : state.actionTwo;
   const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
-  const canCancelLight = allowLightCancel
-    && attack === 'heavy'
-    && action === 'light'
-    && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
-    // Only the early startup phase can be cancelled; the impact is not yet active.
-    && actionMs > getAttackData(definition, 'light').actionMs
-      - getAttackData(definition, 'light').startupMs;
-
   return tension >= getAttackData(definition, attack).tensionCost
-    && (canCancelLight || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
+    && ((allowCancel && cooldown > 0 && canCancelInto(state, side, attack, definition))
+      || (cooldown <= 0 && !isCombatActionLocked(action, actionMs)));
 }
 
 export function resolveCombatAttack(
@@ -555,28 +626,19 @@ export function resolveCombatAttack(
   attack: CombatAttack,
   fighterOne: CombatantDefinition,
   fighterTwo: CombatantDefinition,
-  allowLightCancel = false,
+  allowCancel = false,
 ): CombatState {
   if (!state.active) return state;
 
   const attacker = side === 'one' ? fighterOne : fighterTwo;
-  const action = side === 'one' ? state.actionOne : state.actionTwo;
-  const actionMs = side === 'one' ? state.actionMsOne : state.actionMsTwo;
-  const canCancelLight = allowLightCancel
-    && attack === 'heavy'
-    && action === 'light'
-    && actionMs > 0
-    && (side === 'one' ? state.pendingAttackOne : state.pendingAttackTwo) === 'light'
-    && (side === 'one' ? state.cooldownMsOne : state.cooldownMsTwo) > 0
-    && actionMs > getAttackData(attacker, 'light').actionMs
-      - getAttackData(attacker, 'light').startupMs;
+  if (attack === 'signature' && !attacker.signature) return state;
   const attackData = getAttackData(attacker, attack);
   const tension = side === 'one' ? state.tensionOne : state.tensionTwo;
 
   if (tension < attackData.tensionCost) {
     const nextLog = appendLog(
       state,
-      `${attacker.name} needs ${attackData.tensionCost} tension before ${attacker.specialMove}.`,
+      `${attacker.name} needs ${attackData.tensionCost} tension before ${getMoveName(attacker, attack)}.`,
     );
     return { ...state, ...nextLog };
   }
@@ -587,19 +649,22 @@ export function resolveCombatAttack(
     attack,
     fighterOne,
     fighterTwo,
-    allowLightCancel,
+    allowCancel,
   )) return state;
 
   const moveName = getMoveName(attacker, attack);
   const launchLog = appendLog(
     state,
-    canCancelLight
+    allowCancel && canCancelInto(state, side, attack, attacker)
       ? `${attacker.name} cancels into ${moveName}.`
       : `${attacker.name} starts ${moveName}.`,
   );
 
+  const retreat = attack === 'signature' && attacker.signature === 'service-exit' ? SERVICE_EXIT_RETREAT : 0;
   return {
     ...state,
+    positionOne: side === 'one' ? Math.max(STAGE_MIN, state.positionOne - retreat) : state.positionOne,
+    positionTwo: side === 'two' ? Math.min(STAGE_MAX, state.positionTwo + retreat) : state.positionTwo,
     guardOne: side === 'one' ? false : state.guardOne,
     guardTwo: side === 'two' ? false : state.guardTwo,
     actionOne: side === 'one' ? attack : state.actionOne,
@@ -657,6 +722,8 @@ function applyAttackImpact(
   const attackData = getAttackData(attacker, attack);
   const moveName = getMoveName(attacker, attack);
   const inRange = impactDistance <= getCombatAttackReach(attacker, attack);
+  const knockback = attack === 'signature' && attacker.signature === 'ranch-gate' && defenderGuardingAtImpact
+    ? 6 : attackData.knockback;
   const defenderTuning = getStyleTuning(defender);
   const baseDamage = Math.max(1, Math.round((
     attacker.power
@@ -700,7 +767,7 @@ function applyAttackImpact(
     next.hpTwo = clamp(next.hpTwo - damage, 0, 100);
     if (damage > 0) {
       next.positionTwo = clamp(
-        next.positionTwo + attackData.knockback,
+        next.positionTwo + knockback,
         next.positionOne + MIN_FIGHTER_GAP,
         STAGE_MAX,
       );
@@ -719,7 +786,7 @@ function applyAttackImpact(
     next.hpOne = clamp(next.hpOne - damage, 0, 100);
     if (damage > 0) {
       next.positionOne = clamp(
-        next.positionOne - attackData.knockback,
+        next.positionOne - knockback,
         STAGE_MIN,
         next.positionTwo - MIN_FIGHTER_GAP,
       );
@@ -733,6 +800,12 @@ function applyAttackImpact(
       next.guardOne = false;
       next.cooldownMsOne = Math.max(next.cooldownMsOne, attackData.hitstunMs);
     }
+  }
+
+  if (attack === 'signature' && attacker.signature === 'line-guard' && inRange && !defenderGuardingAtImpact) {
+    // A simultaneous clean hit still interrupts the stance.
+    if (side === 'one' && next.actionOne === 'signature') next.guardOne = true;
+    if (side === 'two' && next.actionTwo === 'signature') next.guardTwo = true;
   }
 
   // Track consecutive clean hits for the HUD; blocks and misses break the chain.
@@ -754,6 +827,18 @@ function applyAttackImpact(
     ? `${attacker.name} whiffs ${moveName}; ${defender.name} escaped before impact.`
     : `${attacker.name} lands ${moveName} for ${damage} damage${defenderGuardingAtImpact ? ' through guard' : ''}.`;
   return { ...next, ...appendLog(next, resultText) };
+}
+
+function serviceExitAdvance(
+  fighter: CombatantDefinition, pending: CombatAttack | null, remaining: number, nextRemaining: number,
+): number {
+  if (fighter.signature !== 'service-exit' || pending !== 'signature') return 0;
+  const move = INFERNAL_SIGNATURES['service-exit'];
+  const remainingAtImpact = move.actionMs - move.startupMs;
+  const advanceWindowMs = 160;
+  const before = clamp(remaining - remainingAtImpact, 0, advanceWindowMs);
+  const after = clamp(nextRemaining - remainingAtImpact, 0, advanceWindowMs);
+  return (before - after) * SERVICE_EXIT_ADVANCE / advanceWindowMs;
 }
 
 function stepCombatSlice(
@@ -790,16 +875,22 @@ function stepCombatSlice(
   const directionTwo = lockedTwoBeforeSlice || inputs.two.guard || crouchTwo
     ? 0
     : Number(inputs.two.right) - Number(inputs.two.left);
-  const guardOne = inputs.one.guard && !lockedOneAfterSlice;
-  const guardTwo = inputs.two.guard && !lockedTwoAfterSlice;
+  const guardOne = lockedOneAfterSlice
+    ? state.actionOne === 'signature' && fighterOne.signature === 'line-guard' && state.guardOne
+    : inputs.one.guard;
+  const guardTwo = lockedTwoAfterSlice
+    ? state.actionTwo === 'signature' && fighterTwo.signature === 'line-guard' && state.guardTwo
+    : inputs.two.guard;
 
   let positionOne = clamp(
-    state.positionOne + directionOne * getMoveSpeed(fighterOne) * frameSeconds,
+    state.positionOne + directionOne * getMoveSpeed(fighterOne) * frameSeconds
+      + serviceExitAdvance(fighterOne, state.pendingAttackOne, state.actionMsOne, actionMsOne),
     STAGE_MIN,
     STAGE_MAX,
   );
   let positionTwo = clamp(
-    state.positionTwo + directionTwo * getMoveSpeed(fighterTwo) * frameSeconds,
+    state.positionTwo + directionTwo * getMoveSpeed(fighterTwo) * frameSeconds
+      - serviceExitAdvance(fighterTwo, state.pendingAttackTwo, state.actionMsTwo, actionMsTwo),
     STAGE_MIN,
     STAGE_MAX,
   );
