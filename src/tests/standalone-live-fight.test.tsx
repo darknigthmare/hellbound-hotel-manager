@@ -70,6 +70,9 @@ describe('standalone combat lifecycle', () => {
     ['hb_millie', true, 'hb_millie-ready'],
     ['lucifer', true, 'lucifer-guard'],
     ['hb_moxxie', true, 'hb_moxxie-guard'],
+    ['hz_katie_killjoy', true, 'hz_katie_killjoy-guard'],
+    ['hz_tom_trench', true, 'hz_tom_trench-guard'],
+    ['hb_mammon', true, 'hb_mammon-guard'],
   ] as const)('keeps the recovered %s pose format through a held guard', (id, portrait, guardPose) => {
     const fighter = getStandaloneFighter(id)!;
     render(<PentagramLiveFight {...props({
@@ -116,6 +119,58 @@ describe('standalone combat lifecycle', () => {
     expect(pose('one').src).toContain('/costumes/hb_moxxie-harvest-festival-jump.webp');
     expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
   });
+
+  it.each(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon', 'hb_stella'])(
+    'keeps damaged %s atlas cells hidden through intro, movement, crouch and attack on both sides', id => {
+      const fighter = getStandaloneFighter(id)!;
+      const definition = buildCombatantDefinition(fighter.character, fighter.profile);
+      render(<PentagramLiveFight {...props({
+        infernalRules: true,
+        fighterOne: fighter.character, fighterTwo: fighter.character,
+        fighterOneDefinition: definition, fighterTwoDefinition: definition,
+      })} />);
+      const cleanPoses = id === 'hb_stella'
+        ? ['/assets/sprites/helluva/portraits/hb_stella.png']
+        : ['ready', 'guard', 'strike', 'recoil'].map(pose => `/assets/sprites/individual/${id}-${pose}.webp`);
+      const assertClean = () => {
+        for (const side of ['one', 'two']) {
+          const fighterElement = document.querySelector<HTMLElement>(`.arena-combatant.is-${side}`)!;
+          expect(fighterElement.querySelector('.arena-sprite-frame')).toBeNull();
+          expect(cleanPoses).toContain(fighterElement.querySelector('img.infernal-individual-pose')?.getAttribute('src'));
+        }
+      };
+      assertClean();
+      start();
+      const first = document.querySelector<HTMLElement>('.arena-combatant.is-one')!;
+      const second = document.querySelector<HTMLElement>('.arena-combatant.is-two')!;
+      const positions = [Number(first.dataset.position), Number(second.dataset.position)];
+      fireEvent.keyDown(stage(), { code: 'KeyA' });
+      fireEvent.keyDown(stage(), { code: 'ArrowRight' });
+      advance(100);
+      expect(first.dataset.action).toBe('walk');
+      expect(second.dataset.action).toBe('walk');
+      expect(Number(first.dataset.position)).toBeLessThan(positions[0]);
+      expect(Number(second.dataset.position)).toBeGreaterThan(positions[1]);
+      assertClean();
+      fireEvent.keyUp(stage(), { code: 'KeyA' });
+      fireEvent.keyUp(stage(), { code: 'ArrowRight' });
+      fireEvent.keyDown(stage(), { code: 'KeyS' });
+      fireEvent.keyDown(stage(), { code: 'ArrowDown' });
+      advance(100);
+      expect(first.dataset.action).toBe('crouch');
+      expect(second.dataset.action).toBe('crouch');
+      assertClean();
+      fireEvent.keyUp(stage(), { code: 'KeyS' });
+      fireEvent.keyUp(stage(), { code: 'ArrowDown' });
+      advance(100);
+      key('KeyG'); key('KeyK');
+      expect(first.dataset.action).toBe('heavy');
+      expect(second.dataset.action).toBe('heavy');
+      assertClean();
+      advance(100);
+      assertClean();
+    },
+  );
 
   it('plays each authored technique with its own keyboard and touch commands', () => {
     const vaggie = getStandaloneFighter('vaggie')!;
@@ -217,6 +272,27 @@ describe('Infernal Versus finishing sequence', () => {
     advance(1500); knockOut();
     expect(stage().dataset.phase).toBe('finish-window');
   }
+  it('keeps clean Katie and Tom art during knockout, shared finisher and victory', () => {
+    const katie = getStandaloneFighter('hz_katie_killjoy')!;
+    const tom = getStandaloneFighter('hz_tom_trench')!;
+    render(<PentagramLiveFight {...props({
+      infernalRules: true, fighterOne: katie.character, fighterTwo: tom.character,
+      fighterOneDefinition: { ...buildCombatantDefinition(katie.character, katie.profile), power: 1000, range: 1000 },
+      fighterTwoDefinition: buildCombatantDefinition(tom.character, tom.profile),
+    })} />);
+    decisiveKo();
+    const assertClean = () => {
+      expect(stage().querySelector('.arena-sprite-frame')).toBeNull();
+      expect(stage().querySelectorAll('img.infernal-individual-pose')).toHaveLength(2);
+    };
+    assertClean();
+    key('KeyH'); advance(500);
+    expect(stage().dataset.phase).toBe('finisher');
+    assertClean();
+    advance(1100);
+    expect(stage().dataset.phase).toBe('outro');
+    assertClean();
+  });
   it('keeps the separated cane mounted at the same finishing frame through pause and resume', () => {
     const lucifer = getStandaloneFighter('lucifer')!;
     const input = props({ infernalRules: true, fighterOne: lucifer.character,

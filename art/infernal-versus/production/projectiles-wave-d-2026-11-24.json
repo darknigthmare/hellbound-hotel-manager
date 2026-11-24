@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 2,
+  "batchId": "projectiles-wave-d-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+  "date": "2026-11-24",
+  "generationMode": "Built-in image_gen; one call per new asset; transparent_background=true; no API/CLI generation; no retries.",
+  "scope": {
+    "requestedCandidates": 6,
+    "uniqueDrawings": 5,
+    "pngMasters": 5,
+    "losslessWebpExports": 5,
+    "newPublicImages": 5,
+    "reusedUniqueImages": 1,
+    "reusedFighterMappings": 3,
+    "newAssetAttackMappings": 6,
+    "reusedAssetAttackMappings": 5,
+    "deferredCandidates": 1
+  },
+  "classification": "simulation_au",
+  "status": "integrated-and-targeted-tests-passed",
+  "fidelity1to1Certified": false,
+  "note": "Source-guided visual candidates, not certified episode replicas. Every original move reach, damage, collision, startup and recovery remains engine-owned; these visuals do not create independent projectile entities.",
+  "assets": [
+    {
+      "id": "husk-card",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-65474c4c-d375-4fcc-ba59-7efdf52a36f0.png",
+      "master": "art/infernal-versus/masters/vfx/husk-card.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/husk-card.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentPixels": 1331983,
+        "opaquePixels": 0,
+        "partialPixels": 240881,
+        "transparentFraction": 0.8468519846598307,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          33,
+          68,
+          1402,
+          976
+        ],
+        "bboxAlphaAtLeast16": [
+          339,
+          264,
+          1256,
+          785
+        ],
+        "edgeMax": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "files": {
+        "original": {
+          "bytes": 828577,
+          "sha256": "89c27c1e4573f284d8f1c81b228dbf4124ce28cfa1c966bafbec8657059a80bb"
+        },
+        "master": {
+          "bytes": 828577,
+          "sha256": "89c27c1e4573f284d8f1c81b228dbf4124ce28cfa1c966bafbec8657059a80bb"
+        },
+        "export": {
+          "bytes": 500970,
+          "sha256": "c6e8e744af0976897bba6f7c50fc0c9f916d7be3b62691f6e30c63ecc36350a1"
+        }
+      },
+      "decodedRgbaIdentical": true,
+      "originalPngByteIdentical": true,
+      "fighter": "husk",
+      "attacks": [
+        "light",
+        "special"
+      ],
+      "moveNames": [
+        "Card toss",
+        "Loaded deck"
+      ],
+      "sources": [
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=9sVoglgJjRg&t=128s",
+          "videoId": "9sVoglgJjRg",
+          "title": "Loser, Baby Sing-Along | Hazbin Hotel | Prime Video",
+          "publisher": "Prime Video",
+          "episode": "Hazbin Hotel S1E4",
+          "timestampSeconds": 128,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/husk-cards-primary-128s.png",
+          "referenceFile": {
+            "bytes": 77857,
+            "sha256": "8989d546f5d914fac4e382d2f97c83feb03ab88a9e7d8afcbcf028be2cf0aa3e"
+          },
+          "observation": "A large red playing-card face with a dark rim and black club symbols is visible in the musical imagery. This supplies the red/black card motif, not the exact design of every thrown card.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        },
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=eGlaDpnbCPM&t=182s",
+          "videoId": "eGlaDpnbCPM",
+          "title": "Husk and Angel Sing Loser Baby | Hazbin Hotel",
+          "publisher": "Amazon Prime Video UK & IE",
+          "episode": "Hazbin Hotel S1E4",
+          "timestampSeconds": 182,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/husk-throw-primary-182s.png",
+          "referenceFile": {
+            "bytes": 85258,
+            "sha256": "f51f808c71daafab95133f0f550846bfa5f2e3f8c77966d1a8e5f591562bcdd8"
+          },
+          "observation": "Husk uses small rectangular cards during the street fight. Light reverse faces are visible; the preview does not resolve a complete suit/rank on those thrown cards.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        }
+      ],
+      "auAdaptation": "The red/black musical card motif is selected for a single readable card, given a full inferred rectangular outline and a rightward three-quarter flight. Exact thrown-card front, perspective, scale and trajectory are not certified.",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D combat effect sprite for Infernal Versus. Primary request: create ONE flying playing card inspired by the clearly visible red playing card at the left of the supplied official Hazbin Hotel reference frame. Input image 1 is only a visual reference, not a scene to reproduce. Subject: a single thin rectangular crimson-red playing card, dark near-black rim, subtle inset red border and two simple black club suit symbols arranged diagonally as in the reference; no letters, no numbers, no character illustration on the card. Show the whole card in a readable three-quarter side view, long edge angled gently upward toward the RIGHT, with its leading right corner clear. No motion trail is needed. Art direction: clean flat cel colors, crisp dark angular outlines, restrained shading, same 2D animated graphic language as the reference, no photorealism or paper texture. Composition: exactly one card, centrally framed on a transparent landscape 1536x1024 canvas, all corners fully visible with generous transparent padding, card occupies about 60 percent of the canvas width. This is a source-guided AU game adaptation of the motif and trajectory, not a certified replica. Exclude Husk, Angel Dust, hands, wings, other cards, fans of cards, background, scenery, labels, watermark, text, drop shadow, glow, duplicate objects. True transparent background; retain clean antialiased alpha edges.",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "generationCalls": 1,
+      "transparentBackgroundRequested": true,
+      "exportMethod": "Original PNG copied byte-for-byte; Pillow WebP lossless=True exact=True quality=100 method=6; decoded RGBA checked identical. No crop, resize, recoloring, alpha repair or redraw of production files.",
+      "visualReview": {
+        "status": "inspected-original-and-light-dark-alpha-preview",
+        "checks": [
+          "one isolated object/effect",
+          "complete visible silhouette",
+          "distinct source-guided palette/motif",
+          "genuine alpha",
+          "decoded PNG/WebP pixels identical"
+        ],
+        "limitations": [
+          "rightward pose, isolated outline and timing are AU adaptations",
+          "sampled source previews limit fine-detail comparison",
+          "low-alpha generator residue and original canvas are preserved",
+          "no browser or in-game visual certification"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "mapped-to-existing-attacks; targeted-logic-and-React-tests-passed"
+    },
+    {
+      "id": "adam-light",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffba4232-8ade-4323-bfbe-d4882e677892.png",
+      "master": "art/infernal-versus/masters/vfx/adam-light.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/adam-light.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentPixels": 1404375,
+        "opaquePixels": 0,
+        "partialPixels": 168489,
+        "transparentFraction": 0.8928775787353516,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          22,
+          1516,
+          992
+        ],
+        "bboxAlphaAtLeast16": [
+          90,
+          469,
+          1441,
+          556
+        ],
+        "edgeMax": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "files": {
+        "original": {
+          "bytes": 831074,
+          "sha256": "b69486965f62485c31c8f9cc335132b89fdf94bc860333c355605cdcf44cc2c3"
+        },
+        "master": {
+          "bytes": 831074,
+          "sha256": "b69486965f62485c31c8f9cc335132b89fdf94bc860333c355605cdcf44cc2c3"
+        },
+        "export": {
+          "bytes": 578084,
+          "sha256": "2b5f6bef6d16828d411743c1b977bad7d47e07d15d45f3c1905f9298d450cd67"
+        }
+      },
+      "decodedRgbaIdentical": true,
+      "originalPngByteIdentical": true,
+      "fighter": "adam",
+      "attacks": [
+        "heavy"
+      ],
+      "moveNames": [
+        "Light burst"
+      ],
+      "sources": [
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=U3Q9MEsqnkY&t=270s",
+          "videoId": "U3Q9MEsqnkY",
+          "title": "Lucifer Morningstar Fights Adam | Hazbin Hotel | Prime Video",
+          "publisher": "Prime Video",
+          "episode": "Hazbin Hotel S1E8",
+          "timestampSeconds": 270,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/adam-light-primary-270s.png",
+          "referenceFile": {
+            "bytes": 80416,
+            "sha256": "3b7e45486225fbbaddfe4f086dac344e9ffc3428c8593ebff374deb7f3f1008f"
+          },
+          "observation": "A straight narrow ray has a near-white core and yellow luminous edge. The source ray runs diagonally across the frame.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        }
+      ],
+      "auAdaptation": "The ray is isolated, rotated horizontally, bounded to the current heavy move reach and given a rounded leading end. Its length, timing and impact endpoint are gameplay presentation.",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated 2D combat energy effect sprite for Infernal Versus. Primary request: a single straight horizontal ray of Adam's light, using the white-hot core and yellow luminous edge visibly shown in the supplied official Hazbin Hotel reference frame. Input image 1 is only a color and ray-shape reference. Subject: ONE clean narrow continuous light ray directed LEFT TO RIGHT, warm near-white center, thin bright yellow-gold border and only a restrained soft yellow halo. Preserve the simple smooth beam silhouette; no lightning forks, no magical runes, no arrows, no weapon, no halo ring. A small slightly brighter rounded leading tip on the right, naturally tapering luminous tail on the left. Style: crisp flat 2D cel-animation effect, limited clean color layers, no texture, no painterly flames, no photorealism. Composition: transparent landscape 1536x1024, ray centered horizontally, length about 82 percent of canvas width, compact thickness about 8 percent of canvas height plus small halo, ample transparent padding so all glow remains inside the frame. The horizontal orientation, bounded length and gameplay timing are an AU adaptation; this is not a certified frame reproduction. Exclude all characters, buildings, sky, impact explosion, scene, symbols, lettering, watermark, duplicate beams. True transparent background outside the single luminous beam.",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "generationCalls": 1,
+      "transparentBackgroundRequested": true,
+      "exportMethod": "Original PNG copied byte-for-byte; Pillow WebP lossless=True exact=True quality=100 method=6; decoded RGBA checked identical. No crop, resize, recoloring, alpha repair or redraw of production files.",
+      "visualReview": {
+        "status": "inspected-original-and-light-dark-alpha-preview",
+        "checks": [
+          "one isolated object/effect",
+          "complete visible silhouette",
+          "distinct source-guided palette/motif",
+          "genuine alpha",
+          "decoded PNG/WebP pixels identical"
+        ],
+        "limitations": [
+          "rightward pose, isolated outline and timing are AU adaptations",
+          "sampled source previews limit fine-detail comparison",
+          "low-alpha generator residue and original canvas are preserved",
+          "no browser or in-game visual certification"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "mapped-to-existing-attacks; targeted-logic-and-React-tests-passed"
+    },
+    {
+      "id": "stolas-portal",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-b5223434-8091-469b-9605-8f2ba83a7d41.png",
+      "master": "art/infernal-versus/masters/vfx/stolas-portal.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/stolas-portal.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentPixels": 1150430,
+        "opaquePixels": 1525,
+        "partialPixels": 420561,
+        "transparentFraction": 0.7315855609736245,
+        "opaqueFraction": 0.0009697834553034755,
+        "bboxNonzero": [
+          0,
+          19,
+          1224,
+          1254
+        ],
+        "bboxAlphaAtLeast16": [
+          245,
+          39,
+          994,
+          1195
+        ],
+        "edgeMax": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "centerPixel": 0,
+        "centralOpeningSample": {
+          "box": [
+            560,
+            500,
+            710,
+            750
+          ],
+          "alphaRange": [
+            0,
+            1
+          ],
+          "note": "Sample of the open center, not an assertion about every glow pixel near the rim."
+        }
+      },
+      "files": {
+        "original": {
+          "bytes": 611925,
+          "sha256": "379c8b579adfcc6121b515c7ac935c7bfbfad57641d69675ecb7e39ab002a305"
+        },
+        "master": {
+          "bytes": 611925,
+          "sha256": "379c8b579adfcc6121b515c7ac935c7bfbfad57641d69675ecb7e39ab002a305"
+        },
+        "export": {
+          "bytes": 378776,
+          "sha256": "c2278e781cfde4bd185fa4496fbb6090c4ebaa81147bb13c8e356ee6fdd557a4"
+        }
+      },
+      "decodedRgbaIdentical": true,
+      "originalPngByteIdentical": true,
+      "fighter": "hb_stolas",
+      "attacks": [
+        "heavy"
+      ],
+      "moveNames": [
+        "Sceau de passage"
+      ],
+      "sources": [
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=1230s",
+          "videoId": "yXErLiSbxXQ",
+          "title": "HELLUVA BOSS - Truth Seekers // S1: Episode 6",
+          "publisher": "Vivziepop / SpindleHorse",
+          "episode": "Helluva Boss S1E6",
+          "timestampSeconds": 1230,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/stolas-portal-primary-1230s.png",
+          "referenceFile": {
+            "bytes": 81357,
+            "sha256": "9798d8d90d48ab940270a05d66e010cebec3d6ba047b4994b8e58afe075c410b"
+          },
+          "observation": "A portal rim has irregular rounded lavender-white lobes, violet/blue edges and small light speckles. The scene visible inside the portal is not part of the effect sprite. No runes are visible in the sampled rim.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        }
+      ],
+      "auAdaptation": "One inferred complete oval rim is isolated and slightly oriented to the right. Its center stays visually open. The existing sweep presentation changes its scale/position during a heavy move; no teleportation or new collision is implemented.",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D portal-rim visual effect sprite for Infernal Versus. Input image 1 is a reference frame from the official Helluva Boss episode Truth Seekers, used only for the portal edge's colors and irregular rounded flame/cloud shapes. Primary request: isolate and redraw ONE complete oval portal RIM, no characters and no view through it. The entire center opening MUST be completely empty and transparent, alpha zero, exactly like the space outside the rim. No colored disk, glass, fill, landscape or star field inside the hole. Subject: an upright oval ring viewed at a shallow three-quarter angle toward the RIGHT, broad readable lavender-white irregular cloudlike flame lobes along the rim, saturated violet-blue outer edge, very restrained tiny light speckles confined ONLY to the rim. The lower and upper edges must form one continuous unbroken ring. Style: clean crisp 2D cel animation, limited lavender/white/blue/violet color shapes matching the reference, not photorealistic, no runes or symbols. Composition: square 1024x1024 transparent canvas; whole ring centered, about 72 percent of canvas height and 54 percent of its width, generous transparent margins on every side. One effect only, no other rings, no streaks, no added projectile. This is an AU game presentation of an observed portal motif; it does not certify a teleporting attack or a canonical combat trajectory. Exclude Stolas, people, creatures, bodies, eyes, costumes, background, text, watermark. True transparent outer background AND true transparent portal center.",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "generationCalls": 1,
+      "transparentBackgroundRequested": true,
+      "exportMethod": "Original PNG copied byte-for-byte; Pillow WebP lossless=True exact=True quality=100 method=6; decoded RGBA checked identical. No crop, resize, recoloring, alpha repair or redraw of production files.",
+      "visualReview": {
+        "status": "inspected-original-and-light-dark-alpha-preview",
+        "checks": [
+          "one isolated object/effect",
+          "complete visible silhouette",
+          "distinct source-guided palette/motif",
+          "genuine alpha",
+          "decoded PNG/WebP pixels identical"
+        ],
+        "limitations": [
+          "rightward pose, isolated outline and timing are AU adaptations",
+          "sampled source previews limit fine-detail comparison",
+          "low-alpha generator residue and original canvas are preserved",
+          "no browser or in-game visual certification"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "mapped-to-existing-attacks; targeted-logic-and-React-tests-passed"
+    },
+    {
+      "id": "asmodeus-smoke",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-b9d5dbd8-9684-4bf9-adce-e171013ed286.png",
+      "master": "art/infernal-versus/masters/vfx/asmodeus-smoke.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/asmodeus-smoke.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentPixels": 1168222,
+        "opaquePixels": 0,
+        "partialPixels": 404642,
+        "transparentFraction": 0.7427355448404948,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          39,
+          1522,
+          960
+        ],
+        "bboxAlphaAtLeast16": [
+          84,
+          276,
+          1468,
+          772
+        ],
+        "edgeMax": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "files": {
+        "original": {
+          "bytes": 1175866,
+          "sha256": "3a3ffd45351b77e723c7bde2aadba58fb9a36c943e5112dce0753421831e32f0"
+        },
+        "master": {
+          "bytes": 1175866,
+          "sha256": "3a3ffd45351b77e723c7bde2aadba58fb9a36c943e5112dce0753421831e32f0"
+        },
+        "export": {
+          "bytes": 750410,
+          "sha256": "abba9ccf6d31ff13a8e3a01d278c458c65a00e5faba7eff3eacb2a00ec76ffe4"
+        }
+      },
+      "decodedRgbaIdentical": true,
+      "originalPngByteIdentical": true,
+      "fighter": "hb_asmodeus",
+      "attacks": [
+        "special"
+      ],
+      "moveNames": [
+        "Rideau d’Ozzie"
+      ],
+      "sources": [
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=8zyGQquL8VM&t=580s",
+          "videoId": "8zyGQquL8VM",
+          "title": "HELLUVA BOSS - OZZIE'S // S1: Episode 7 - FINALE",
+          "publisher": "Vivziepop / SpindleHorse",
+          "episode": "Helluva Boss S1E7",
+          "timestampSeconds": 580,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/asmodeus-smoke-primary-580s.png",
+          "referenceFile": {
+            "bytes": 110868,
+            "sha256": "99735d04d35cbce3ca0a4aecb7107d37e86334244a0154906def86379a1b56a1"
+          },
+          "observation": "Stage-entrance smoke forms broad rounded cyan billows with pale mint contours and violet shadow lobes. This is recorded as smoke rather than an assumed flame projectile.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        }
+      ],
+      "auAdaptation": "The stage-wide smoke is condensed into one connected rightward plume. Its role during the existing special, size, timing and lane placement are AU.",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D theatrical smoke effect sprite for Infernal Versus. Input image 1 is only a shape and color reference from Asmodeus's stage entrance in the official Helluva Boss episode Ozzie's. Primary request: create one compact connected plume of the observed CYAN SMOKE, flowing horizontally toward the RIGHT. Use large rounded billowing lobes, bright aqua/cyan flat fills, thin pale mint-white curling contour lines and restrained violet shadow lobes, as clearly shown in the reference. The plume widens toward its rounded right leading end and narrows into a short curling left tail. This is smoke, not fire: no sharp flame spikes, no lightning, no glowing magical orb, no symbols. Art direction: crisp flat 2D cel animation with smooth bold simple cloud contours; exact limited palette reference, no realistic fog, no painterly noise, no photorealism. Composition: transparent landscape 1536x1024 canvas; one complete connected plume about 75 percent of canvas width and 36 percent of its height, centered with generous transparent padding, no clipped lobes. This source-guided horizontal silhouette and combat timing are an AU adaptation, not an episode replica. Exclude Asmodeus, Fizzarolli, characters, microphone, stage, floor, signs, hearts, letters, watermark, scene or separate duplicate plumes. Real transparent background with clean antialiased edges.",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "generationCalls": 1,
+      "transparentBackgroundRequested": true,
+      "exportMethod": "Original PNG copied byte-for-byte; Pillow WebP lossless=True exact=True quality=100 method=6; decoded RGBA checked identical. No crop, resize, recoloring, alpha repair or redraw of production files.",
+      "visualReview": {
+        "status": "inspected-original-and-light-dark-alpha-preview",
+        "checks": [
+          "one isolated object/effect",
+          "complete visible silhouette",
+          "distinct source-guided palette/motif",
+          "genuine alpha",
+          "decoded PNG/WebP pixels identical"
+        ],
+        "limitations": [
+          "rightward pose, isolated outline and timing are AU adaptations",
+          "sampled source previews limit fine-detail comparison",
+          "low-alpha generator residue and original canvas are preserved",
+          "no browser or in-game visual certification"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "mapped-to-existing-attacks; targeted-logic-and-React-tests-passed"
+    },
+    {
+      "id": "beelzebub-ribbon",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-95d939c5-f9df-48cd-86cc-9d3d36e8d456.png",
+      "master": "art/infernal-versus/masters/vfx/beelzebub-ribbon.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/beelzebub-ribbon.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentPixels": 1385748,
+        "opaquePixels": 0,
+        "partialPixels": 187116,
+        "transparentFraction": 0.8810348510742188,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          19,
+          1516,
+          942
+        ],
+        "bboxAlphaAtLeast16": [
+          112,
+          276,
+          1447,
+          683
+        ],
+        "edgeMax": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "files": {
+        "original": {
+          "bytes": 1087251,
+          "sha256": "f609a7c47c30913f0bb84ab5bb92ca19576a1bbb21aab0883174d3e3540be770"
+        },
+        "master": {
+          "bytes": 1087251,
+          "sha256": "f609a7c47c30913f0bb84ab5bb92ca19576a1bbb21aab0883174d3e3540be770"
+        },
+        "export": {
+          "bytes": 696000,
+          "sha256": "352185c91d0143e684fd5fee4fca859caa575a0b62aefb84c41c26a9aac4df96"
+        }
+      },
+      "decodedRgbaIdentical": true,
+      "originalPngByteIdentical": true,
+      "fighter": "hb_beelzebub",
+      "attacks": [
+        "heavy"
+      ],
+      "moveNames": [
+        "Tourbillon royal"
+      ],
+      "sources": [
+        {
+          "type": "official_video_storyboard_frame",
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=300s",
+          "videoId": "D-2799Y07Zc",
+          "title": "HELLUVA BOSS - QUEEN BEE // S1: Episode 8",
+          "publisher": "Vivziepop / SpindleHorse",
+          "episode": "Helluva Boss S1E8",
+          "timestampSeconds": 300,
+          "inspected": true,
+          "retrieval": "Public YouTube ytInitialPlayerResponse storyboard metadata; native preview tile downloaded and visually inspected. Per-frame crop only for reference inspection.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "localReference": "/workspace/scratch/eed3bf2e772a/reference-work-wave-d/beelzebub-ribbon-primary-300s.png",
+          "referenceFile": {
+            "bytes": 85162,
+            "sha256": "ef5e243752be70b3dd7a2261e4aca8284e70d8c6a0f2a70874bd80bbc32e5a0a"
+          },
+          "observation": "Flowing warm yellow/golden ribbons with rounded tips curl around Beelzebub. The material or substance of these ribbons is not inferred from this frame.",
+          "limits": "Preview frames are low resolution and sampled, not a frame-by-frame viewing of the complete clip."
+        }
+      ],
+      "auAdaptation": "A single continuous S-curve is isolated and composed to sweep right. This is a motif-based heavy-attack accent, not a claim that the source shows a damaging honey projectile.",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated 2D flowing golden-ribbon effect sprite for Infernal Versus. Input image 1 is a shape/color reference showing the golden yellow flowing ribbons around Beelzebub in the official Helluva Boss episode Queen Bee; do not reproduce the character or scenery. Primary request: one continuous curling ribbon of warm bright yellow-gold energy/fluid, a broad smooth tapering S-curve sweeping LEFT TO RIGHT. Match the reference's soft rounded tips, lemon-yellow luminous front face and warmer translucent golden folds, with one broad rounded leading end on the RIGHT and a thinner trailing curl to the LEFT. Preserve simple flowing rounded contours; do not add honeycombs, insects, sweets, bottles, hearts or symbols. Do not label the substance as honey or fire; this is just the observed golden ribbon motif. Style: clear flat 2D animation, clean warm yellow layers and minimal smooth translucent highlights, no texture, no photorealism, no realistic liquid splashes. Composition: landscape 1536x1024, true transparent background; one whole isolated ribbon occupying about 77 percent of width and 40 percent of height, centered and padded well within every edge. The isolated horizontal sweep and gameplay timing are AU adaptations, not a certified canonical attack. Exclude Beelzebub, any character, any body part, stage, background, text, watermark, multiple separate ribbons or decorative particles.",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "generationCalls": 1,
+      "transparentBackgroundRequested": true,
+      "exportMethod": "Original PNG copied byte-for-byte; Pillow WebP lossless=True exact=True quality=100 method=6; decoded RGBA checked identical. No crop, resize, recoloring, alpha repair or redraw of production files.",
+      "visualReview": {
+        "status": "inspected-original-and-light-dark-alpha-preview",
+        "checks": [
+          "one isolated object/effect",
+          "complete visible silhouette",
+          "distinct source-guided palette/motif",
+          "genuine alpha",
+          "decoded PNG/WebP pixels identical"
+        ],
+        "limitations": [
+          "rightward pose, isolated outline and timing are AU adaptations",
+          "sampled source previews limit fine-detail comparison",
+          "low-alpha generator residue and original canvas are preserved",
+          "no browser or in-game visual certification"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "mapped-to-existing-attacks; targeted-logic-and-React-tests-passed"
+    }
+  ],
+  "reusedAssets": [
+    {
+      "fighter": "angeldust",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "moveNames": [
+        "Crossfire sweep",
+        "Multi-angle barrage"
+      ],
+      "visualSourceUrl": "https://www.youtube.com/watch?v=eGlaDpnbCPM&t=186s",
+      "observation": "Angel Dust carries/fires guns in the official street-fight clip; no separate uniquely shaped bullet was established.",
+      "effectId": "moxxie-bullet",
+      "runtimeExport": "public/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "file": {
+        "bytes": 499720,
+        "sha256": "146fc291e284ed74dc644b7ac9d8fa5afc77c66d7f2a551c9d14920c4d98219e"
+      },
+      "newGeneration": false,
+      "copiedFile": false,
+      "classification": "simulation_au",
+      "note": "Shared existing AU bullet artwork. This reuse does not assert identical canonical ammunition across characters."
+    },
+    {
+      "fighter": "hb_blitzo",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "moveNames": [
+        "Rafale de couverture",
+        "Assaut I.M.P."
+      ],
+      "visualSourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+      "observation": "The official episode and existing profile support firearm attacks, not a uniquely shaped projectile in the inspected samples.",
+      "effectId": "moxxie-bullet",
+      "runtimeExport": "public/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "file": {
+        "bytes": 499720,
+        "sha256": "146fc291e284ed74dc644b7ac9d8fa5afc77c66d7f2a551c9d14920c4d98219e"
+      },
+      "newGeneration": false,
+      "copiedFile": false,
+      "classification": "simulation_au",
+      "note": "Shared existing AU bullet artwork. This reuse does not assert identical canonical ammunition across characters."
+    },
+    {
+      "fighter": "hb_striker",
+      "attacks": [
+        "heavy"
+      ],
+      "moveNames": [
+        "Ligne de mire"
+      ],
+      "visualSourceUrl": "https://www.youtube.com/watch?v=h2ZmVAdezF8&t=820s",
+      "observation": "The inspected official frame shows the decorated rifle. Weapon ornament does not establish a distinct angelic bullet shape or color.",
+      "effectId": "moxxie-bullet",
+      "runtimeExport": "public/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "file": {
+        "bytes": 499720,
+        "sha256": "146fc291e284ed74dc644b7ac9d8fa5afc77c66d7f2a551c9d14920c4d98219e"
+      },
+      "newGeneration": false,
+      "copiedFile": false,
+      "classification": "simulation_au",
+      "note": "Shared existing AU bullet artwork. This reuse does not assert identical canonical ammunition across characters."
+    }
+  ],
+  "deferred": [
+    {
+      "id": "lucifer-flame",
+      "fighter": "lucifer",
+      "generationAttempted": false,
+      "status": "deferred-insufficient-separated-effect-reference",
+      "sourcesInspected": [
+        "https://www.youtube.com/watch?v=U3Q9MEsqnkY&t=295s",
+        "https://www.youtube.com/watch?v=1Sd5OhC916I&t=410s",
+        "https://www.youtube.com/watch?v=yzLnk2W0qN4&t=8s"
+      ],
+      "reason": "Sampled official frames clearly show crown flame, a brief flame near a fist and staged background flames, but do not resolve an autonomous flame projectile well enough to define its silhouette. No sixth image was fabricated or counted."
+    }
+  ],
+  "validation": {
+    "files": "5/5 PNG originals byte-identical and 5/5 decoded lossless WebP RGBA identical; alpha measurements stored per asset.",
+    "targetedTests": {
+      "command": "npm exec vitest -- run src/tests/infernal-attack-effects.test.ts src/tests/infernal-attack-effects-live.test.tsx --maxWorkers=1",
+      "exitCode": 0,
+      "suites": 2,
+      "tests": 27
+    },
+    "targetedLint": {
+      "command": "npm exec eslint -- src/lib/infernal-attack-effects.ts src/tests/infernal-attack-effects.test.ts --max-warnings=0",
+      "exitCode": 0
+    },
+    "preview": "/tmp/infernal-wave-d-projectiles/projectiles-alpha-preview.jpg",
+    "browser": "Not validated; root reported standard browser launch blocked by socket EPERM. No workaround or claim of in-game visual fidelity.",
+    "globalQa": "Owned by root; not represented by the targeted test result above."
+  }
+}

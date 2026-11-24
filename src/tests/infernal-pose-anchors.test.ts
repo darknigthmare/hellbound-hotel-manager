@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getInfernalPoseGroundOffsetPercent } from '../lib/infernal-pose-anchors';
+import { getInfernalPoseGroundOffsetPercent, getInfernalPosePlacement } from '../lib/infernal-pose-anchors';
 
 const costume = 'lute-pre-injury';
 // Independently inspected lower edges of the boots at alpha >= 16.
@@ -33,6 +33,31 @@ describe('Lute S1 ground contacts', () => {
       expect(getInfernalPoseGroundOffsetPercent(undefined, url)).toBeUndefined();
       expect(getInfernalPoseGroundOffsetPercent('another-costume', url)).toBeUndefined();
     }
+  });
+});
+
+describe('Mammon wide portraits', () => {
+  // Foot contacts measured on each PNG, rather than inferred from pose names.
+  const contacts = { ready: 1351, guard: 1351, strike: 1352, recoil: 1353 };
+  it.each([168, 250, 310])('meets the atlas floor at combatant width %i without stretching', width => {
+    for (const [pose, contact] of Object.entries(contacts)) {
+      const placement = getInfernalPosePlacement(undefined, `/assets/sprites/individual/hb_mammon-${pose}.webp`)!;
+      expect(placement.groundReference).toBe('canvas-bottom');
+      const renderedWidth = width * 2 / 3 * placement.renderScale;
+      const renderedHeight = renderedWidth * 1536 / 1024;
+      const bottomGap = renderedHeight * (1536 - contact) / 1536;
+      const correction = renderedHeight * placement.groundOffsetPercent / 100;
+      expect(correction - bottomGap).toBeCloseTo(0, 10);
+      // READY silhouette is ~94% of the legacy combatant width, rather than
+      // the ~67% produced by applying the narrow portrait defaults unchanged.
+      if (pose === 'ready') expect(renderedHeight * (1351 - 315) / 1536 / width).toBeCloseTo(0.94427, 4);
+    }
+  });
+
+  it('does not transfer wide placement to a costume or an unauthored action', () => {
+    expect(getInfernalPosePlacement('another-costume', '/assets/sprites/individual/hb_mammon-ready.webp')).toBeUndefined();
+    expect(getInfernalPosePlacement(undefined, '/assets/sprites/individual/hb_mammon-jump.webp')).toBeUndefined();
+    expect(getInfernalPosePlacement(undefined, '/assets/sprites/helluva/portraits/hb_mammon.png')).toBeUndefined();
   });
 });
 

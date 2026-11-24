@@ -1,5 +1,5 @@
-import { INFERNAL_ACTION_POSES, INFERNAL_STANCES, costumePose, getInfernalCostume, infernalActionPose } from '../lib/infernal-appearances';
-import { getInfernalPoseGroundOffsetPercent } from '../lib/infernal-pose-anchors';
+import { INFERNAL_ACTION_POSES, INFERNAL_STANCES, costumePose, getInfernalCostume, infernalActionPose, infernalFallbackPose } from '../lib/infernal-appearances';
+import { getInfernalPosePlacement } from '../lib/infernal-pose-anchors';
 import '../styles/infernal-authored-poses.css';
 import {
   useCallback,
@@ -1091,16 +1091,20 @@ export function PentagramLiveFight({
     const outfit = getInfernalCostume(fighterId, side === 'one' ? costumeOne : costumeTwo);
     if (outfit) return costumePose(outfit, action, cinematic, finishWinner === side && displayingFinish);
     if (finishWinner === side && impactPose) return impactPose;
-    if (finishWinner === side) return undefined;
+    if (finishWinner === side) return infernalFallbackPose(fighterId, 'victory', cinematic);
     if (INFERNAL_ACTION_POSES[fighterId]) {
       const definition = side === 'one' ? fighterOneDefinition : fighterTwoDefinition;
       const duration = side === 'one' ? combat.actionDurationMsOne : combat.actionDurationMsTwo;
       const remaining = side === 'one' ? combat.actionMsOne : combat.actionMsTwo;
-      const authored = infernalActionPose(fighterId, action, cinematic, duration - remaining, getCombatMoveInfo(definition, 'light').startupMs);
+      const elapsed = duration - remaining;
+      const fallbackStartup = action === 'heavy' || action === 'special' || action === 'signature'
+        ? getCombatMoveInfo(definition, action).startupMs : 0;
+      const authored = infernalActionPose(fighterId, action, cinematic, elapsed, getCombatMoveInfo(definition, 'light').startupMs)
+        ?? infernalFallbackPose(fighterId, action, cinematic, elapsed, fallbackStartup);
       if (authored) return authored;
     }
-    if (!cinematic && action === 'idle') return INFERNAL_STANCES[fighterId];
-    return undefined;
+    return infernalFallbackPose(fighterId, action, cinematic)
+      ?? (!cinematic && action === 'idle' ? INFERNAL_STANCES[fighterId] : undefined);
   }
   const poseOne = individualPose('one', fighterOne.id, combat.actionOne, fighterOneCinematicKind);
   const poseTwo = individualPose('two', fighterTwo.id, combat.actionTwo, fighterTwoCinematicKind);
@@ -1110,13 +1114,15 @@ export function PentagramLiveFight({
     || (poseOne?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterOne.id]?.layout === 'portrait');
   const portraitPoseTwo = outfitTwo?.layout === 'portrait'
     || (poseTwo?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterTwo.id]?.layout === 'portrait');
-  const poseOneGroundOffset = getInfernalPoseGroundOffsetPercent(costumeOne, poseOne);
-  const poseTwoGroundOffset = getInfernalPoseGroundOffsetPercent(costumeTwo, poseTwo);
-  const poseOneAnchorStyle = poseOneGroundOffset === undefined ? undefined : {
-    '--infernal-pose-ground-offset': `${poseOneGroundOffset}%`,
+  const poseOnePlacement = getInfernalPosePlacement(costumeOne, poseOne);
+  const poseTwoPlacement = getInfernalPosePlacement(costumeTwo, poseTwo);
+  const poseOneAnchorStyle = !poseOnePlacement ? undefined : {
+    '--infernal-pose-ground-offset': `${poseOnePlacement.groundOffsetPercent}%`,
+    '--infernal-pose-width': `${200 / 3 * poseOnePlacement.renderScale}%`,
   } as CSSProperties;
-  const poseTwoAnchorStyle = poseTwoGroundOffset === undefined ? undefined : {
-    '--infernal-pose-ground-offset': `${poseTwoGroundOffset}%`,
+  const poseTwoAnchorStyle = !poseTwoPlacement ? undefined : {
+    '--infernal-pose-ground-offset': `${poseTwoPlacement.groundOffsetPercent}%`,
+    '--infernal-pose-width': `${200 / 3 * poseTwoPlacement.renderScale}%`,
   } as CSSProperties;
   const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
   const soundtrackUnavailable = soundtrackStatus === 'unavailable';
@@ -1369,7 +1375,7 @@ export function PentagramLiveFight({
               className={`infernal-individual-pose${portraitPoseOne ? ' infernal-individual-pose--portrait' : ''}`}
               src={poseOne}
               style={poseOneAnchorStyle}
-              data-ground-anchor={poseOneAnchorStyle ? 'ready-relative' : undefined}
+              data-ground-anchor={poseOnePlacement?.groundReference}
               alt=""
             />
           ) : fighterOneSpriteStyle ? (
@@ -1401,7 +1407,7 @@ export function PentagramLiveFight({
               className={`infernal-individual-pose${portraitPoseTwo ? ' infernal-individual-pose--portrait' : ''}`}
               src={poseTwo}
               style={poseTwoAnchorStyle}
-              data-ground-anchor={poseTwoAnchorStyle ? 'ready-relative' : undefined}
+              data-ground-anchor={poseTwoPlacement?.groundReference}
               alt=""
             />
           ) : fighterTwoSpriteStyle ? (

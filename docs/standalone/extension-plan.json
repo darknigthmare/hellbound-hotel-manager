@@ -64,11 +64,26 @@
     },
     "latestDelivery": {
       "date": "2026-11-24",
-      "batchId": "wave-c-2026-11-24",
+      "batchId": "wave-d-2026-11-24",
       "branch": "feat/infernal-versus-assets-20261124",
-      "baseCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
-      "manifest": "art/infernal-versus/production/delivery-wave-c-2026-11-24.json",
-      "scope": "21 poses d’action individuelles, 5 nouvelles poses Lute S1 avec READY réutilisé, 3 arènes à trois plans. Corrections de marges verticales ciblées ; poses clés, pas cycles complets."
+      "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json",
+      "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+      "scope": "Quatre kits autonomes, douze poses de trois personnages, trois arènes à trois plans et cinq images VFX ; fidélité documentée sans certification 1:1."
+    },
+    "currentRuntime": {
+      "date": "2026-11-24",
+      "batchId": "wave-d-2026-11-24",
+      "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+      "fighters": 40,
+      "bossCandidates": 9,
+      "runtimeKits": 40,
+      "runtimeBaseAttacks": 120,
+      "note": "Le bloc meta.implementation et les onze feuilles V1 restent un historique. Les tables V2 sont calculées depuis le runtime actuel.",
+      "stages": 22,
+      "threePlaneStages": 22,
+      "attackEffectImages": 11,
+      "attackEffectAssignments": 24,
+      "referencedAssets": 377
     }
   },
   "sources": [
@@ -911,6 +926,38 @@
       "2026-11-24",
       "Sources primaires et secondaires distinguées ; masters et format d’export.",
       "art/infernal-versus/production/stages-wave-c-2026-11-24.json"
+    ],
+    [
+      "SRC-WAVE-D-CODE",
+      "Dépôt / provenance",
+      "Quatre profils Exhibition et leurs routes",
+      "2026-11-24",
+      "Synchronisation des profils et valeurs de coups depuis le runtime ; données Simulation AU.",
+      "src/standalone/roster.ts"
+    ],
+    [
+      "SRC-WAVE-D-CHARACTERS",
+      "Dépôt / provenance",
+      "Katie, Tom, Mammon et statut Stella",
+      "2026-11-24",
+      "Sources, poses, candidats écartés et refus de génération consignés.",
+      "art/infernal-versus/production/characters-wave-d-2026-11-24.json"
+    ],
+    [
+      "SRC-WAVE-D-STAGES",
+      "Dépôt / provenance",
+      "Trois décors à trois plans",
+      "2026-11-24",
+      "Références de scène, peintures de production, compositions et marges.",
+      "art/infernal-versus/production/stages-wave-d-2026-11-24.json"
+    ],
+    [
+      "SRC-WAVE-D-PROJECTILES",
+      "Dépôt / provenance",
+      "Cinq nouveaux effets et trois réemplois",
+      "2026-11-24",
+      "Motifs observés séparés des trajectoires et associations de jeu.",
+      "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json"
     ]
   ],
   "tasks": [
@@ -3581,14 +3628,15 @@
       "reference": "Hazbin Hotel S1E01",
       "source": "SRC-HH-01; HH-CAST",
       "asset": "Atlas référencé",
-      "kit": "Support ou codex",
-      "target": "PNJ / présentatrice",
-      "status": "Partiel",
-      "next": "Conserver rôle narratif/spectateur; ne pas inventer pouvoirs. Rôle conseillé par catalogue: PNJ / présentatrice.",
-      "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+      "kit": "Kit Exhibition dédié (motifs, Simulation AU)",
+      "target": "Combattant Exhibition",
+      "status": "Ajout PR",
+      "next": "Compléter les cycles animés et contrôler transitions, proportions et appuis dans le jeu.",
+      "validation": "Identité issue du catalogue. Poses individuelles et références visuelles consignées dans la vague D ; aucune certification 1:1.",
       "loreFacts": "Identité repérée dans la distribution.",
-      "proposedKit": "Habillage de tournoi et bulletins de campagne.",
-      "loreEvidence": "Repérage secondaire; validation primaire requise"
+      "proposedKit": "Trois attaques abstraites du moteur, route de trois duels et finition partagée ; statistiques de jeu, aucun nouveau pouvoir canon.",
+      "loreEvidence": "Repérage secondaire; validation primaire requise",
+      "runtime": "Oui"
     },
     {
       "id": "hz_tom_trench",
@@ -3601,14 +3649,15 @@
       "reference": "Hazbin Hotel pilot, Season 1 and Season 2",
       "source": "SRC-HH-01; INDEX",
       "asset": "Atlas référencé",
-      "kit": "Support ou codex",
-      "target": "PNJ / présentateur",
-      "status": "Partiel",
-      "next": "Conserver rôle narratif/spectateur; ne pas inventer pouvoirs. Rôle conseillé par catalogue: PNJ / présentateur.",
-      "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+      "kit": "Kit Exhibition dédié (motifs, Simulation AU)",
+      "target": "Combattant Exhibition",
+      "status": "Ajout PR",
+      "next": "Compléter les cycles animés et contrôler transitions, proportions et appuis dans le jeu.",
+      "validation": "Identité issue du catalogue. Poses individuelles et références visuelles consignées dans la vague D ; aucune certification 1:1.",
       "loreFacts": "Identité repérée.",
-      "proposedKit": "Commentaire optionnel et duo de télévision.",
-      "loreEvidence": "Repérage secondaire; validation primaire requise"
+      "proposedKit": "Trois attaques abstraites du moteur, route de trois duels et finition partagée ; statistiques de jeu, aucun nouveau pouvoir canon.",
+      "loreEvidence": "Repérage secondaire; validation primaire requise",
+      "runtime": "Oui"
     },
     {
       "id": "hz_frank_egg_boi",
@@ -5301,14 +5350,15 @@
       "reference": "Helluva Boss S1E2",
       "source": "SRC-HH-02; INDEX; HB-S3",
       "asset": "Atlas référencé",
-      "kit": "Aucun kit combat dédié",
-      "target": "PNJ / commanditaire",
-      "status": "Partiel",
-      "next": "Définir rôle combat, support ou PNJ selon preuves de scène. Rôle conseillé par catalogue: PNJ / commanditaire.",
-      "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+      "kit": "Kit Exhibition dédié (motifs, Simulation AU)",
+      "target": "Combattant Exhibition",
+      "status": "Ajout PR",
+      "next": "Compléter les cycles animés et contrôler transitions, proportions et appuis dans le jeu.",
+      "validation": "Identité issue du catalogue. Poses individuelles et références visuelles consignées dans la vague D ; aucune certification 1:1.",
       "loreFacts": "Identité repérée; magie non retenue sans preuve.",
-      "proposedKit": "Intrigue de contrats et enchères; aucun moveset inventé.",
-      "loreEvidence": "Repérage secondaire; validation primaire requise"
+      "proposedKit": "Trois attaques abstraites du moteur, route de trois duels et finition partagée ; statistiques de jeu, aucun nouveau pouvoir canon.",
+      "loreEvidence": "Repérage secondaire; validation primaire requise",
+      "runtime": "Oui"
     },
     {
       "id": "hb_crimson",
@@ -5481,14 +5531,15 @@
       "reference": "Helluva Boss S2E7",
       "source": "SRC-HH-02; SINS; HB-S2",
       "asset": "Atlas référencé",
-      "kit": "Aucun kit combat dédié",
-      "target": "Candidat / PNJ à qualifier",
-      "status": "Partiel",
-      "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
-      "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+      "kit": "Kit Exhibition dédié (motifs, Simulation AU)",
+      "target": "Combattant Exhibition",
+      "status": "Ajout PR",
+      "next": "Compléter les cycles animés et contrôler transitions, proportions et appuis dans le jeu.",
+      "validation": "Identité issue du catalogue. Poses individuelles et références visuelles consignées dans la vague D ; aucune certification 1:1.",
       "loreFacts": "Identité de Péché repérée.",
-      "proposedKit": "Boss de spectacle; obstacles de scène désactivables en Versus.",
-      "loreEvidence": "Repérage secondaire; validation primaire requise"
+      "proposedKit": "Trois attaques abstraites du moteur, route de trois duels et finition partagée ; statistiques de jeu, aucun nouveau pouvoir canon.",
+      "loreEvidence": "Repérage secondaire; validation primaire requise",
+      "runtime": "Oui"
     },
     {
       "id": "hb_chazwick_thurman",
@@ -8233,7 +8284,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 7.5,
       "durationMs": 340
     },
@@ -8248,7 +8299,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 10.18888888888889,
       "durationMs": 460
     },
@@ -8263,7 +8314,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 15.38888888888889,
       "durationMs": 700
     },
@@ -8278,7 +8329,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 7.5,
       "durationMs": 306
     },
@@ -8293,7 +8344,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 8.777777777777779,
       "durationMs": 414
     },
@@ -8308,7 +8359,7 @@
       "source": "SRC-HH-03; SRC-HH-04",
       "reference": "Nom et paramètres de gameplay du dépôt.",
       "next": "Valider portée/animation, puis étendre sans présenter ce nom comme technique canon.",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "reach": 15.277777777777779,
       "durationMs": 630
     },
@@ -8851,6 +8902,276 @@
       "runtime": "Oui",
       "reach": 22.38888888888889,
       "durationMs": 728
+    },
+    {
+      "id": "MOVE-hz_mimzy-light",
+      "fighter": "hz_mimzy",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Talonnade syncopée",
+      "slot": "Léger",
+      "style": "Charleston à contretemps",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 7.555555555555555,
+      "durationMs": 340
+    },
+    {
+      "id": "MOVE-hz_mimzy-heavy",
+      "fighter": "hz_mimzy",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Tour de piste",
+      "slot": "Lourd",
+      "style": "Charleston à contretemps",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 9.355555555555556,
+      "durationMs": 460
+    },
+    {
+      "id": "MOVE-hz_mimzy-special",
+      "fighter": "hz_mimzy",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Rappel à contretemps",
+      "slot": "Spécial",
+      "style": "Charleston à contretemps",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 17.555555555555557,
+      "durationMs": 700
+    },
+    {
+      "id": "MOVE-hz_katie_killjoy-light",
+      "fighter": "hz_katie_killjoy",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Revers d’antenne",
+      "slot": "Léger",
+      "style": "Interruption d’antenne",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 7.833333333333334,
+      "durationMs": 340
+    },
+    {
+      "id": "MOVE-hz_katie_killjoy-heavy",
+      "fighter": "hz_katie_killjoy",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Coupure de plateau",
+      "slot": "Lourd",
+      "style": "Interruption d’antenne",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 9.633333333333335,
+      "durationMs": 460
+    },
+    {
+      "id": "MOVE-hz_katie_killjoy-special",
+      "fighter": "hz_katie_killjoy",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Dernière réplique",
+      "slot": "Spécial",
+      "style": "Interruption d’antenne",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 17.833333333333336,
+      "durationMs": 700
+    },
+    {
+      "id": "MOVE-hz_tom_trench-light",
+      "fighter": "hz_tom_trench",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Poussée gantée",
+      "slot": "Léger",
+      "style": "Repli de régie",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 7.5,
+      "durationMs": 340
+    },
+    {
+      "id": "MOVE-hz_tom_trench-heavy",
+      "fighter": "hz_tom_trench",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Contretemps de régie",
+      "slot": "Lourd",
+      "style": "Repli de régie",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 10.3,
+      "durationMs": 460
+    },
+    {
+      "id": "MOVE-hz_tom_trench-special",
+      "fighter": "hz_tom_trench",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Reprise du direct",
+      "slot": "Spécial",
+      "style": "Repli de régie",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 15.5,
+      "durationMs": 700
+    },
+    {
+      "id": "MOVE-hb_sallie_may-light",
+      "fighter": "hb_sallie_may",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Coup de botte",
+      "slot": "Léger",
+      "style": "Aplomb du ranch",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 7.666666666666666,
+      "durationMs": 374
+    },
+    {
+      "id": "MOVE-hb_sallie_may-heavy",
+      "fighter": "hb_sallie_may",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Barrière du ranch",
+      "slot": "Lourd",
+      "style": "Aplomb du ranch",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 9.466666666666667,
+      "durationMs": 506
+    },
+    {
+      "id": "MOVE-hb_sallie_may-special",
+      "fighter": "hb_sallie_may",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Dernière cloche de Wrath",
+      "slot": "Spécial",
+      "style": "Aplomb du ranch",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 15.666666666666666,
+      "durationMs": 770
+    },
+    {
+      "id": "MOVE-hb_stella-light",
+      "fighter": "hb_stella",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Revers de paume",
+      "slot": "Léger",
+      "style": "Aplomb du salon",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 8.055555555555555,
+      "durationMs": 374
+    },
+    {
+      "id": "MOVE-hb_stella-heavy",
+      "fighter": "hb_stella",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Pas impérieux",
+      "slot": "Lourd",
+      "style": "Aplomb du salon",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 9.855555555555556,
+      "durationMs": 506
+    },
+    {
+      "id": "MOVE-hb_stella-special",
+      "fighter": "hb_stella",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Éclat du salon",
+      "slot": "Spécial",
+      "style": "Aplomb du salon",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 16.055555555555557,
+      "durationMs": 770
+    },
+    {
+      "id": "MOVE-hb_mammon-light",
+      "fighter": "hb_mammon",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Paume de rappel",
+      "slot": "Léger",
+      "style": "Promoteur du spectacle",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 8.61111111111111,
+      "durationMs": 354
+    },
+    {
+      "id": "MOVE-hb_mammon-heavy",
+      "fighter": "hb_mammon",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Balayage du promoteur",
+      "slot": "Lourd",
+      "style": "Promoteur du spectacle",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 11.411111111111111,
+      "durationMs": 478
+    },
+    {
+      "id": "MOVE-hb_mammon-special",
+      "fighter": "hb_mammon",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "reference": "Registre actuel du moteur partagé. Valeurs de jeu, pas niveaux de puissance canoniques.",
+      "next": "Compléter les cycles animés et contrôler la présentation des contacts dans le jeu.",
+      "name": "Final du promoteur",
+      "slot": "Spécial",
+      "style": "Promoteur du spectacle",
+      "evidence": "motif",
+      "runtime": "Oui",
+      "reach": 18.61111111111111,
+      "durationMs": 728
     }
   ],
   "stages": [
@@ -9098,17 +9419,17 @@
     },
     {
       "id": "western-lair",
-      "name": "Repaire de Striker",
+      "name": "Repaire de Striker · Mine",
       "franchise": "Helluva Boss",
-      "place": "Wrath",
-      "status": "À produire",
+      "place": "Mine de Striker",
+      "status": "Ajout PR",
       "priority": "P1",
-      "lot": "V3",
-      "source": "SRC-DESIGN; STRIKER",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique. Repérage S2E4",
-      "design": "Espace minier et éléments western.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "lot": "Vague D · 2026-11-24",
+      "source": "WAVE-D-STAGES",
+      "reference": "Helluva Boss · Western Energy, S2E4, Vivziepop (KJy7T24rhg0). Deux frames de l’épisode inspectées via rehébergement identifié ; détails de commande du petit radio interprétés. Fidélité 1:1 non certifiée.",
+      "design": "Mine intacte avant le crash du van. Piste frontale élargie, radio et rail déplacés pour la simulation AU. Fond entier en contain, centré en bas ; bandes teintées selon le format.",
+      "asset": "public/assets/stages/helluva/western-lair/ — room, prop-middle, prop-near, thumb",
+      "acceptance": "Fichiers et cadrages statiques contrôlés ; fidélité 1:1, placement des personnages et lisibilité dynamique à confirmer en jeu."
     },
     {
       "id": "mammon-show",
@@ -9141,17 +9462,17 @@
     },
     {
       "id": "goetia-court",
-      "name": "Tribunal infernal",
+      "name": "Tribunal infernal · Mastermind",
       "franchise": "Helluva Boss",
-      "place": "Enfer",
-      "status": "À produire",
+      "place": "Tribunal infernal",
+      "status": "Ajout PR",
       "priority": "P2",
-      "lot": "V3",
-      "source": "SRC-DESIGN; HB-MASTERMIND",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique. Repérage S2E11",
-      "design": "Arène d’exhibition AU dans cadre du tribunal.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "lot": "Vague D · 2026-11-24",
+      "source": "WAVE-D-STAGES",
+      "reference": "Helluva Boss · Mastermind, S2E11, Vivziepop (IoVB5Hn2m_k), décors de production Jasper Luu (jasperluu.com/helluvaboss, 211_00004/00005/00006). Motif de balustrade simplifié ; pas de certification 1:1.",
+      "design": "Tribunal infernal S2E11 intact et vidé ; ID interne conservé, sans en faire une institution exclusivement Goetia. Balcon frontal ajouté/élargi et props déplacés pour la simulation AU. Fond contain entier, bas-centre.",
+      "asset": "public/assets/stages/helluva/goetia-court/ — room, prop-middle, prop-near, thumb",
+      "acceptance": "Fichiers et cadrages statiques contrôlés ; fidélité 1:1, placement des personnages et lisibilité dynamique à confirmer en jeu."
     },
     {
       "id": "sloth-hospital",
@@ -9269,17 +9590,17 @@
     },
     {
       "id": "hh-heaven-gates",
-      "name": "Portes du Paradis",
+      "name": "Paradis · Portes célestes",
       "franchise": "Hazbin Hotel",
-      "place": "Hazbin / lieu à relever",
-      "status": "À produire",
+      "place": "Paradis",
+      "status": "Ajout PR",
       "priority": "P2",
-      "lot": "V3",
-      "source": "HH-EPISODES",
-      "reference": "Référence de décor à relever",
-      "design": "Hub de campagne et entraînement aérien proposé",
-      "asset": "À créer",
-      "acceptance": "Épisode exact et proportions relevés avant art. Géométrie et gameplay originales indiquées."
+      "lot": "Vague D · 2026-11-24",
+      "source": "WAVE-D-STAGES",
+      "reference": "Hazbin Hotel · Welcome to Heaven, S1E6. Clip officiel Prime Video Philippines RFiEU6ZXyWg et plan couleur Prime Video/A24 publié par VFX Voice le 16/07/2024. Repère de production S1, pas état S2 ni comparaison en jeu certifiée.",
+      "design": "Portes intactes de S1E6 avant l’entrée. Approche élargie, pupitre et grille extraits/repositionnés pour la simulation AU. Contain bas-centre conserve le motif à trois yeux ; bandes teintées aux formats divergents.",
+      "asset": "public/assets/stages/hazbin/hh-heaven-gates/ — room, prop-middle, prop-near, thumb",
+      "acceptance": "Fichiers et cadrages statiques contrôlés ; fidélité 1:1, placement des personnages et lisibilité dynamique à confirmer en jeu."
     },
     {
       "id": "hh-pentious-airship",
@@ -10304,6 +10625,62 @@
       "source": "HB-OFFICIAL",
       "design": "Aucune avant publication et revue.",
       "acceptance": "Futur au 21/10/2026; aucun personnage ou pouvoir extrapolé.; pas de combat imposé si scène non combattante."
+    },
+    {
+      "id": "iv_story_hz_katie_killjoy",
+      "franchise": "Hazbin Hotel",
+      "title": "Le dernier mot",
+      "kind": "Route Exhibition originale",
+      "cast": "hz_katie_killjoy, hz_tom_trench, charlie, vox",
+      "context": "vee-broadcast-studio → hotel-exterior → vee-broadcast-studio",
+      "status": "Ajout PR",
+      "priority": "P1",
+      "lot": "V3",
+      "source": "SRC-WAVE-D-CODE",
+      "design": "Un sujet préparé par Katie revient du montage avec sa dernière phrase coupée. Elle quitte le bureau de 666 News avec la bande originale et exige une place dans le prochain direct.",
+      "acceptance": "Trois duels, prologue et épilogue en jeu ; illustration dédiée non produite. Fiction Simulation AU."
+    },
+    {
+      "id": "iv_story_hz_tom_trench",
+      "franchise": "Hazbin Hotel",
+      "title": "Trente secondes de direct",
+      "kind": "Route Exhibition originale",
+      "cast": "hz_tom_trench, velvette, husk, hz_katie_killjoy",
+      "context": "vee-broadcast-studio → hotel-bar → vee-broadcast-studio",
+      "status": "Ajout PR",
+      "priority": "P1",
+      "lot": "V3",
+      "source": "SRC-WAVE-D-CODE",
+      "design": "Tom reçoit un conducteur où toutes ses interventions tiennent dans la marge. Une panne de retour lui laisse trente secondes à remplir seul. Il part chercher sa bande avant qu’on lui retire aussi ce créneau.",
+      "acceptance": "Trois duels, prologue et épilogue en jeu ; illustration dédiée non produite. Fiction Simulation AU."
+    },
+    {
+      "id": "iv_story_hb_stella",
+      "franchise": "Helluva Boss",
+      "title": "Le carton sans nom",
+      "kind": "Route Exhibition originale",
+      "cast": "hb_stella, hb_striker, hb_andrealphus, hb_stolas",
+      "context": "stolas-palace → stolas-palace → stolas-palace",
+      "status": "Ajout PR",
+      "priority": "P1",
+      "lot": "V3",
+      "source": "SRC-WAVE-D-CODE",
+      "design": "Au palais, Stella découvre un carton d’invitation qui ne porte aucun nom. Tous les invités prétendent l’avoir reçu d’un autre. Elle traverse les salons pour trouver qui a décidé de la place des convives.",
+      "acceptance": "Trois duels, prologue et épilogue en jeu ; illustration dédiée non produite. Fiction Simulation AU."
+    },
+    {
+      "id": "iv_story_hb_mammon",
+      "franchise": "Helluva Boss",
+      "title": "Les frais du rappel",
+      "kind": "Route Exhibition originale",
+      "cast": "hb_mammon, hb_crimson, hb_fizzarolli, hb_asmodeus",
+      "context": "crimson-mansion → mammon-show → ozzies-cabaret",
+      "status": "Ajout PR",
+      "priority": "P1",
+      "lot": "V3",
+      "source": "SRC-WAVE-D-CODE",
+      "design": "Le tableau de caisse de Mammon affiche un rappel gratuit. Persuadé qu’une clause a disparu, il descend de sa tribune avec le contrat et veut reprendre chaque numéro depuis le début.",
+      "acceptance": "Trois duels, prologue et épilogue en jeu ; illustration dédiée non produite. Fiction Simulation AU."
     }
   ],
   "qa": [
@@ -11692,7 +12069,7 @@
       "style": "Defensive footsies",
       "archetype": "Starter-safe guardian",
       "status": "Existant",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "power": 11,
       "range": 52,
       "speed": 52,
@@ -11708,7 +12085,7 @@
       "style": "Flare rush",
       "archetype": "Momentum trainee",
       "status": "Existant",
-      "runtime": "Non, original AU hors V1",
+      "runtime": "Non",
       "power": 11,
       "range": 50,
       "speed": 72,
@@ -11908,11 +12285,107 @@
       "tensionGain": 12,
       "evidence": "onscreen",
       "source": "SRC-PR-01"
+    },
+    {
+      "id": "hz_mimzy",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Mimzy",
+      "franchise": "Hazbin Hotel",
+      "runtime": "Oui",
+      "style": "Charleston à contretemps",
+      "archetype": "Feinte et reprise de rythme",
+      "power": 10,
+      "range": 55,
+      "speed": 83,
+      "guard": 48,
+      "tensionGain": 20,
+      "evidence": "motif"
+    },
+    {
+      "id": "hz_katie_killjoy",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Katie Killjoy",
+      "franchise": "Hazbin Hotel",
+      "runtime": "Oui",
+      "style": "Interruption d’antenne",
+      "archetype": "Feinte et reprise courte",
+      "power": 11,
+      "range": 60,
+      "speed": 74,
+      "guard": 50,
+      "tensionGain": 18,
+      "evidence": "motif"
+    },
+    {
+      "id": "hz_tom_trench",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Tom Trench",
+      "franchise": "Hazbin Hotel",
+      "runtime": "Oui",
+      "style": "Repli de régie",
+      "archetype": "Garde et riposte courte",
+      "power": 10,
+      "range": 54,
+      "speed": 55,
+      "guard": 76,
+      "tensionGain": 16,
+      "evidence": "motif"
+    },
+    {
+      "id": "hb_sallie_may",
+      "status": "Existant",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Sallie May",
+      "franchise": "Helluva Boss",
+      "runtime": "Oui",
+      "style": "Aplomb du ranch",
+      "archetype": "Contrôle au sol et punition",
+      "power": 16,
+      "range": 57,
+      "speed": 56,
+      "guard": 77,
+      "tensionGain": 14,
+      "evidence": "motif"
+    },
+    {
+      "id": "hb_stella",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Stella",
+      "franchise": "Helluva Boss",
+      "runtime": "Oui",
+      "style": "Aplomb du salon",
+      "archetype": "Pression au sol et revers",
+      "power": 14,
+      "range": 64,
+      "speed": 50,
+      "guard": 70,
+      "tensionGain": 14,
+      "evidence": "motif"
+    },
+    {
+      "id": "hb_mammon",
+      "status": "Ajout PR",
+      "source": "SRC-WAVE-D-CODE",
+      "name": "Mammon",
+      "franchise": "Helluva Boss",
+      "runtime": "Oui",
+      "style": "Promoteur du spectacle",
+      "archetype": "Pression large et lente",
+      "power": 17,
+      "range": 74,
+      "speed": 40,
+      "guard": 80,
+      "tensionGain": 12,
+      "evidence": "motif"
     }
   ],
   "productionBible": {
-    "edition": "2026-11-24 · vague C",
-    "baseCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+    "edition": "2026-11-24 · vague D",
+    "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
     "fighterDesign": [
       {
         "fighter": "charlie",
@@ -12273,6 +12746,46 @@
         "finisher": "Dernière cloche",
         "storyboard": "Sallie May dégage le passage d’un coup d’épaule. Le battant d’une cloche oscille au premier plan tandis que le rival franchit la barrière.",
         "lastImage": "Elle retient le battant dans sa paume pour en couper la résonance."
+      },
+      {
+        "fighter": "hz_katie_killjoy",
+        "signature": "Cession de parole",
+        "input": "À prototyper",
+        "effect": "Proposition : feinte de revers suivie d’une reprise courte si le joueur retarde sa touche. Aucun pouvoir d’antenne ajouté.",
+        "counter": "Attendre le revers puis entrer pendant le retour du bras. Prototype et fenêtres restent à mesurer.",
+        "finisher": "Coupure d’antenne",
+        "storyboard": "Katie rejoint la marque centrale, remet son col en place et tourne vers une caméra hors champ pendant que le signal se ferme.",
+        "lastImage": "Elle garde le dernier mot au centre du plateau. La version actuelle utilise le traitement signal partagé."
+      },
+      {
+        "fighter": "hz_tom_trench",
+        "signature": "Retour de régie",
+        "input": "À prototyper",
+        "effect": "Proposition : parade compacte suivie d’une courte poussée. Le masque est un élément visuel ; aucune attaque chimique n’est attribuée au personnage.",
+        "counter": "Retarder le coup ou frapper après la poussée. La garde n’est pas une invulnérabilité.",
+        "finisher": "Retour à la régie",
+        "storyboard": "Tom recule d’un pas, récupère son conducteur et se replace devant la table. La mire occupe le champ.",
+        "lastImage": "Il remet les feuilles en ordre. La version actuelle utilise le traitement signal partagé."
+      },
+      {
+        "fighter": "hb_stella",
+        "signature": "Priorité de passage",
+        "input": "À prototyper",
+        "effect": "Proposition : pas court avec revers de paume pour reprendre le centre. Les coups et statistiques sont une adaptation de duel sans magie ajoutée.",
+        "counter": "Faire manquer le revers puis punir le retrait. La robe ne modifie pas la collision du moteur.",
+        "finisher": "L’audience est terminée",
+        "storyboard": "Stella indique la sortie d’un geste, ramène la main contre sa robe et conserve sa place devant le rideau.",
+        "lastImage": "Elle détourne le regard lorsque le rideau tombe. Version actuelle : effet rideau partagé, storyboard long non animé."
+      },
+      {
+        "fighter": "hb_mammon",
+        "signature": "Rappel surtaxé",
+        "input": "À prototyper",
+        "effect": "Proposition : paume lente qui invite une réponse puis seconde poussée retardée. Quatre bras conservés dans le dessin, sans collision indépendante ni transformation géante.",
+        "counter": "Entrer après la première poussée manquée ou garder à distance. Les quatre bras ne produisent pas quatre impacts automatiques.",
+        "finisher": "Le rappel est payant",
+        "storyboard": "Mammon écarte deux mains vers le public et garde les deux autres contre sa silhouette. Le rideau referme son espace de spectacle.",
+        "lastImage": "Il réclame le rappel devant le rideau fermé. Version actuelle : effet rideau partagé, storyboard long non animé."
       }
     ],
     "stageDesign": [
@@ -12465,6 +12978,36 @@
         "ambient": "Lumières fixes, partition procédurale originale, aucun emprunt aux chansons de l’épisode.",
         "composition": "Salle de concours S2E7 vidée pour la simulation AU. Motifs circulaires simplifiés ; fixation du projecteur et base adaptées au jeu.",
         "reference": "Helluva Boss · Mammon’s Magnificent Musical Mid-Season Special, S2E7, Vivziepop (rRymSi8SmqA). Décors Anna Grellenort (ArtStation zPRrRL) inspectés ; aucun plan exact ni 1:1 certifié."
+      },
+      {
+        "id": "western-lair",
+        "name": "Repaire de Striker · Mine",
+        "back": "Caverne bleu-gris et mauve, voies courbes superposées, traverses rouges et petites lampes cyan au sol.",
+        "middle": "Radiocassette gris et rose entier, détouré, sur le bord gauche du sol illustré.",
+        "floor": "Court tronçon de rail à cinq traverses en avant-plan droit ; piste de pierre centrale libre.",
+        "ambient": "Reflets cyan et orange fixes, partition procédurale originale La voie bleue ; parallaxe désactivée en mouvements réduits.",
+        "composition": "Mine intacte avant le crash du van. Piste frontale élargie, radio et rail déplacés pour la simulation AU. Fond entier en contain, centré en bas ; bandes teintées selon le format.",
+        "reference": "Helluva Boss · Western Energy, S2E4, Vivziepop (KJy7T24rhg0). Deux frames de l’épisode inspectées via rehébergement identifié ; détails de commande du petit radio interprétés. Fidélité 1:1 non certifiée."
+      },
+      {
+        "id": "goetia-court",
+        "name": "Tribunal infernal · Mastermind",
+        "back": "Gradins judiciaires pourpres, yeux noirs, trônes vides, braseros suspendus et fosse lumineuse orange.",
+        "middle": "Tribune flottante du témoin, garde-corps et pointe rocheuse entiers, au bord gauche.",
+        "floor": "Court panneau de balustrade à pommes et serpent en avant-plan droit ; balcon central libre.",
+        "ambient": "Lueur orange fixe, partition procédurale originale Audience sur les braises ; aucune reprise de chanson.",
+        "composition": "Tribunal infernal S2E11 intact et vidé ; ID interne conservé, sans en faire une institution exclusivement Goetia. Balcon frontal ajouté/élargi et props déplacés pour la simulation AU. Fond contain entier, bas-centre.",
+        "reference": "Helluva Boss · Mastermind, S2E11, Vivziepop (IoVB5Hn2m_k), décors de production Jasper Luu (jasperluu.com/helluvaboss, 211_00004/00005/00006). Motif de balustrade simplifié ; pas de certification 1:1."
+      },
+      {
+        "id": "hh-heaven-gates",
+        "name": "Paradis · Portes célestes",
+        "back": "Double porte d’or fermée, piliers solaires, trois yeux lumineux et nuages pêche, blancs et lavande.",
+        "middle": "Petit pupitre bleu pâle facetté avec couronne dorée, entier et détouré, au bord droit.",
+        "floor": "Segment de grille dorée à cinq pointes de flèche en avant-plan gauche ; approche claire dégagée.",
+        "ambient": "Lumière céleste fixe, partition procédurale originale Le seuil doré ; aucun personnage ajouté.",
+        "composition": "Portes intactes de S1E6 avant l’entrée. Approche élargie, pupitre et grille extraits/repositionnés pour la simulation AU. Contain bas-centre conserve le motif à trois yeux ; bandes teintées aux formats divergents.",
+        "reference": "Hazbin Hotel · Welcome to Heaven, S1E6. Clip officiel Prime Video Philippines RFiEU6ZXyWg et plan couleur Prime Video/A24 publié par VFX Voice le 16/07/2024. Repère de production S1, pas état S2 ni comparaison en jeu certifiée."
       }
     ],
     "modeDesign": [
@@ -12510,9 +13053,9 @@
       },
       {
         "name": "Boss Rush",
-        "status": "Socle V1",
+        "status": "Étendu vague D",
         "selection": "Choisir le héros. Tirer dans les identifiants de boss autorisés.",
-        "rules": "Rencontres avec les kits de boss de l’arène.",
+        "rules": "Neuf adversaires possibles dans le catalogue complet, dont Mammon ; huit si le héros fait partie des boss. Les filtres d’univers/saison réduisent ce groupe. Les sauvegardes conservent leur propre groupe initial.",
         "progress": "Conserver la suite tirée à la reprise.",
         "check": "Comparer tous les adversaires au sous-ensemble filtré des boss."
       },
@@ -13070,6 +13613,48 @@
         "status": "Tests et builds validés",
         "spec": "npm run qa : sortie 0 ; TypeScript et ESLint, 44 suites /341 tests réussis ; deux builds ; 932 fichiers et empreintes du standalone contrôlés (542,0 Mio). Les 1083 fichiers sources hachés sont inchangés pendant le run.",
         "acceptance": "336 références, zéro absente. Preuve : QA_RUNTIME_WAVE_C_2026-11-24.json et son journal. Revue navigateur indisponible, aucune certification sur appareil réel."
+      },
+      {
+        "type": "Personnages",
+        "subject": "Katie, Tom, Stella et Mammon — vague D",
+        "status": "Ajout PR",
+        "spec": "Quatre profils de duel autonomes à trois attaques, routes originales et effets de finition partagés. Les motifs physiques restent distincts des pouvoirs canoniques. Leur signature est une proposition de la bible, pas une commande disponible.",
+        "acceptance": "Vérifier les quatre sélections et les trois adversaires de chaque route ; conserver les profils du manager et ses données de sauvegarde."
+      },
+      {
+        "type": "Vague D · poses",
+        "subject": "Katie, Tom, Mammon et attente Stella",
+        "status": "12 poses individuelles intégrées",
+        "spec": "12 poses clés de Katie, Tom et Mammon, bas du corps de Katie/Tom reconstruit. Stella : READY refusée sans relance, aucune dérivée tentée. Les banques historiques des quatre nouveaux jouables contiennent des cellules contaminées ou tronquées. Le standalone utilise provisoirement les poses propres de Katie, Tom et Mammon pour les actions non redessinées et les cinématiques, et le portrait historique intact de Stella pour tous ses états. Le déplacement et les règles de combat restent actifs ; ce repli statique ne constitue aucun nouveau cycle ni pose dédiée.",
+        "acceptance": "Contrôles PNG/RGBA et appuis intra-famille ≤2 px. Vérifier la continuité des dessins propres sur les deux joueurs, y compris marche, garde, accroupissement, attaque, K.-O. et finition. Remplacer ultérieurement ce repli par des cycles complets de référence."
+      },
+      {
+        "type": "Vague D · placement",
+        "subject": "Mammon : largeur et appui",
+        "status": "Correction explicite de quatre images",
+        "spec": "Échelle uniforme 1,4 et contact bas de canvas pour les quatre portraits uniquement. Mesures numériques et composition statique ; pas de certification de taille canonique ou transition animée.",
+        "acceptance": "Vérifier l’absence de dérive d’appui aux trois largeurs testées et la silhouette dans les deux orientations ; rendu navigateur encore indisponible."
+      },
+      {
+        "type": "Vague D · décors",
+        "subject": "Mine, tribunal et portes du Paradis",
+        "status": "Trois arènes intégrées",
+        "spec": "9 images sources, 3 miniatures ; les 22 arènes standalone utilisent trois plans. Trois scènes à trois plans, props séparés et pistes AU. Contain bas-centre protège le fond entier, avec bandes teintées selon le ratio. Pas de validation dynamique de chaque occultation.",
+        "acceptance": "54 projections de props et 27 cadrages statiques contrôlés. Conserver la distinction avec les huit arènes du manager et avec la recette sur appareil."
+      },
+      {
+        "type": "Vague D · VFX",
+        "subject": "Cartes, lumière, portail, fumée et ruban",
+        "status": "5 images et 11 associations supplémentaires",
+        "spec": "Cinq images et cinq réemplois de tirs : habillage synchronisé des coups existants, sans nouvelle physique, collision, dégât ou portée. Projectile de flamme différé faute de référence isolée suffisamment lisible ; aucune génération tentée.",
+        "acceptance": "24 associations utilisant 11 images pour 14 combattants. Les tirs partagés restent une interprétation AU ; aucun nouvel objet balistique autonome."
+      },
+      {
+        "type": "Vague D · audit",
+        "subject": "Registres de jeu et bible synchronisés",
+        "status": "Audit des fichiers validé",
+        "spec": "40 combattants, 37 READY, 13 gardes, 15 contacts légers, 14 réactions ; 6 costumes / 35 poses ; 22 arènes à trois plans ; 40 routes / 120 duels AU.",
+        "acceptance": "377 références, zéro absente. Les onze onglets V1 et le bloc meta.implementation restent historiques ; les tables V2 reflètent le runtime."
       }
     ],
     "sources": [
@@ -13378,51 +13963,73 @@
         "Trois arènes · neuf plans",
         "Sources primaires et secondaires distinguées ; masters et format d’export.",
         "art/infernal-versus/production/stages-wave-c-2026-11-24.json"
+      ],
+      [
+        "Dépôt",
+        "Katie, Tom, Mammon et statut Stella",
+        "Sources, poses, candidats écartés et refus de génération consignés.",
+        "art/infernal-versus/production/characters-wave-d-2026-11-24.json"
+      ],
+      [
+        "Dépôt",
+        "Trois décors à trois plans",
+        "Références de scène, peintures de production, compositions et marges.",
+        "art/infernal-versus/production/stages-wave-d-2026-11-24.json"
+      ],
+      [
+        "Dépôt",
+        "Cinq nouveaux effets et trois réemplois",
+        "Motifs observés séparés des trajectoires et associations de jeu.",
+        "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json"
       ]
     ],
     "assetBatch": {
       "date": "2026-11-24",
-      "batchId": "wave-c-2026-11-24",
-      "comparisonCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+      "batchId": "wave-d-2026-11-24",
+      "comparisonCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-c-2026-11-24.json",
+      "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json",
       "newProduction": {
-        "fighterPoses": 21,
+        "playableFighters": 4,
+        "fighterPoses": 12,
         "stageBackgrounds": 3,
         "foregroundProps": 6,
-        "costumePoses": 5,
-        "totalNewArtworks": 35,
+        "attackEffectImages": 5,
+        "totalNewArtworks": 26,
         "derivedThumbnails": 3,
-        "reusedExistingReady": 1
+        "newAttackEffectAssignments": 11,
+        "sharedExistingShotAssignments": 5,
+        "newStoryRoutes": 4,
+        "newStoryDuels": 12
       },
       "totals": {
-        "newGeneratedArtworks": 35,
-        "newMasterFiles": 35,
-        "publicImageFiles": 38,
-        "registeredPublicImageFiles": 38,
-        "totalImageFiles": 73,
-        "reusedExistingPublicFilesActivated": 1
+        "newGeneratedArtworks": 26,
+        "newMasterFiles": 26,
+        "publicImageFiles": 29,
+        "registeredPublicImageFiles": 29,
+        "totalImageFiles": 55,
+        "derivedThumbnails": 3
       },
       "runtime": {
-        "fighters": 36,
-        "individualReady": 34,
-        "individualGuard": 10,
-        "individualLightContact": 12,
-        "individualHit": 11,
+        "fighters": 40,
+        "individualReady": 37,
+        "individualGuard": 13,
+        "individualLightContact": 15,
+        "individualHit": 14,
         "costumes": 6,
         "costumeKeyPoses": 35,
         "finisherKeyPoses": 5,
         "separatedFinishProps": 1,
-        "storyAssignments": 108,
+        "storyAssignments": 120,
         "illustratedStoryAssignments": 26,
         "uniqueStoryIllustrations": 22,
-        "stages": 19,
-        "threePlaneStages": 19,
+        "stages": 22,
+        "threePlaneStages": 22,
         "twoPlaneStages": 0,
         "onePlaneStages": 0,
-        "attackEffectImages": 6,
-        "attackEffectAssignments": 13,
-        "referencedAssets": 336,
+        "attackEffectImages": 11,
+        "attackEffectAssignments": 24,
+        "referencedAssets": 377,
         "brokenReferences": []
       },
       "retainedComponents": [
@@ -13504,7 +14111,7 @@
       "verification": {
         "runtimeAssetAudit": {
           "status": "passed",
-          "referencedAssets": 336,
+          "referencedAssets": 377,
           "missingReferences": 0,
           "evidence": "docs/standalone/ASSET_COVERAGE.json"
         },
@@ -13513,24 +14120,37 @@
           "command": "npm run qa",
           "exitCode": 0,
           "suites": 44,
-          "tests": 341,
+          "tests": 363,
           "typecheck": "passed",
           "lint": "passed",
           "builds": 2,
-          "standaloneFiles": 932,
-          "standaloneHashesVerified": 932,
-          "standaloneMiB": 542.0,
-          "runtimeReferences": 336,
+          "standaloneFiles": 961,
+          "standaloneHashesVerified": 961,
+          "standaloneBytes": 586517302,
+          "standaloneMiB": 559.35,
+          "runtimeReferences": 377,
           "missingRuntimeReferences": 0,
-          "sourceFilesHashed": 1083,
+          "sourceFilesHashed": 1114,
           "sourceMutationsDuringQA": [],
-          "evidence": "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.json"
+          "evidence": "docs/standalone/QA_RUNTIME_WAVE_D_2026-11-24.json"
         },
-        "browserReview": "Indisponible : Chromium local bloqué par socket EPERM. Les montages statiques et tests automatiques ne sont pas des captures en jeu.",
-        "oneToOneFidelity": "Non certifiée. Sources officielles, portfolios de production, captures republiées et READY historiques distingués.",
-        "pivots": "Marges verticales corrigées pour Lute S1, Vox, Velvette et Carmilla relativement à leur READY ; aucune certification des pivots horizontaux, tailles relatives, transitions ou rendu navigateur.",
-        "animationCompleteness": "Poses clés et plans séparés ; pas de nouveaux cycles complets.",
-        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_C_2026-11-24.json"
+        "browserReview": "Chromium ne démarre pas : socket() EPERM avant création de page. Montages statiques et tests de composants ne sont pas des captures du jeu.",
+        "oneToOneFidelity": "Non certifiée. Références primaires, cartes sous licence photographiées sur un hébergement secondaire, captures republiées et reconstructions AU sont distinguées dans les manifestes.",
+        "pivots": "Échelle uniforme 1,4 et contact bas de canvas pour les quatre portraits uniquement. Mesures numériques et composition statique ; pas de certification de taille canonique ou transition animée.",
+        "animationCompleteness": "Les banques historiques des quatre nouveaux jouables contiennent des cellules contaminées ou tronquées. Le standalone utilise provisoirement les poses propres de Katie, Tom et Mammon pour les actions non redessinées et les cinématiques, et le portrait historique intact de Stella pour tous ses états. Le déplacement et les règles de combat restent actifs ; ce repli statique ne constitue aucun nouveau cycle ni pose dédiée.",
+        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_D_2026-11-24.json",
+        "workbookQA": {
+          "status": "passed",
+          "sheetCount": 23,
+          "historicalSheetsPreserved": 11,
+          "historicalXmlByteIdentical": true,
+          "formulas": 200,
+          "runtimeCellsChecked": 5361,
+          "recalculationProbes": 8,
+          "visualViews": 21,
+          "workbookSha256": "c72712eb6919b7c80028d1c56a945b5cb559822a10217db2ae20093eac322b1d",
+          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_D_2026-11-24.json"
+        }
       },
       "unrecoveredPreviousClaims": {
         "date": "2026-11-20",
@@ -13543,512 +14163,48 @@
       },
       "priorBatch": {
         "date": "2026-11-24",
-        "batchId": "assets-2026-11-24",
-        "comparisonCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+        "batchId": "wave-c-2026-11-24",
+        "comparisonCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
         "branch": "feat/infernal-versus-assets-20261124",
-        "manifest": "art/infernal-versus/production/delivery-2026-11-24.json",
+        "manifest": "art/infernal-versus/production/delivery-wave-c-2026-11-24.json",
         "newProduction": {
-          "fighterPoses": 25,
-          "stageBackgrounds": 2,
-          "foregroundProps": 4,
+          "fighterPoses": 21,
+          "stageBackgrounds": 3,
+          "foregroundProps": 6,
           "costumePoses": 5,
-          "attackEffectImages": 6,
-          "totalNewArtworks": 42,
-          "derivedThumbnails": 2,
-          "registeredFighterPoses": 24,
-          "candidateFighterPoses": 1
+          "totalNewArtworks": 35,
+          "derivedThumbnails": 3,
+          "reusedExistingReady": 1
         },
         "totals": {
-          "newGeneratedArtworks": 42,
-          "newMasterFiles": 42,
-          "publicImageFiles": 44,
-          "registeredPublicImageFiles": 43,
-          "totalImageFiles": 86,
-          "preparedPublicImageFiles": 1
+          "newGeneratedArtworks": 35,
+          "newMasterFiles": 35,
+          "publicImageFiles": 38,
+          "registeredPublicImageFiles": 38,
+          "totalImageFiles": 73,
+          "reusedExistingPublicFilesActivated": 1
         },
         "runtime": {
           "fighters": 36,
           "individualReady": 34,
-          "individualGuard": 3,
-          "individualLightContact": 5,
-          "individualHit": 4,
-          "costumes": 5,
-          "costumeKeyPoses": 29,
+          "individualGuard": 10,
+          "individualLightContact": 12,
+          "individualHit": 11,
+          "costumes": 6,
+          "costumeKeyPoses": 35,
           "finisherKeyPoses": 5,
           "separatedFinishProps": 1,
           "storyAssignments": 108,
           "illustratedStoryAssignments": 26,
           "uniqueStoryIllustrations": 22,
-          "stages": 16,
-          "threePlaneStages": 16,
+          "stages": 19,
+          "threePlaneStages": 19,
           "twoPlaneStages": 0,
           "onePlaneStages": 0,
           "attackEffectImages": 6,
           "attackEffectAssignments": 13,
-          "referencedAssets": 297,
+          "referencedAssets": 336,
           "brokenReferences": []
-        },
-        "retainedComponents": [
-          {
-            "id": "hb_moxxie-bowtie",
-            "name": "Nœud papillon de Moxxie",
-            "kind": "Pièce de costume",
-            "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
-            "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
-            "status": "Conservé, hors rig"
-          },
-          {
-            "id": "hb_millie-top",
-            "name": "Haut de Millie",
-            "kind": "Pièce de costume",
-            "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
-            "export": "public/assets/sprites/parts/hb_millie-top.webp",
-            "status": "Conservé, hors rig"
-          },
-          {
-            "id": "alastor-microphone-cane",
-            "name": "Canne-micro d’Alastor",
-            "kind": "Accessoire séparé",
-            "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
-            "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
-            "status": "Conservé, hors animation"
-          },
-          {
-            "id": "vaggie-exorcist-spear",
-            "name": "Lance d’exorciste de Vaggie",
-            "kind": "Accessoire séparé",
-            "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
-            "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
-            "status": "Conservé, hors animation"
-          },
-          {
-            "id": "carmine-industries-crate-variant",
-            "name": "Caisse Carmine du checkpoint",
-            "kind": "Variante de décor",
-            "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
-            "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
-            "status": "Conservé, hors scène active"
-          },
-          {
-            "id": "carmine-industries-chain",
-            "name": "Chaîne Carmine du checkpoint",
-            "kind": "Variante de décor",
-            "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
-            "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
-            "status": "Conservé, hors scène active"
-          },
-          {
-            "id": "wrath-ranch-lantern",
-            "name": "Lanterne de Wrath",
-            "kind": "Variante de décor",
-            "master": null,
-            "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
-            "status": "Export récupéré, hors scène active"
-          },
-          {
-            "id": "lucifer-top-hat",
-            "name": "Chapeau de Lucifer",
-            "kind": "Accessoire séparé",
-            "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
-            "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
-            "status": "Réserve, hors rig",
-            "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
-          },
-          {
-            "id": "hb_moxxie-tail",
-            "name": "Queue de Moxxie",
-            "kind": "Partie séparée",
-            "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
-            "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
-            "status": "Réserve, hors rig",
-            "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
-          },
-          {
-            "id": "lute-ready-s1",
-            "name": "Lute S1 avant blessure · repos à deux bras normaux",
-            "kind": "Pose candidate",
-            "master": "art/infernal-versus/masters/poses/lute-ready.png",
-            "export": "public/assets/sprites/individual/lute-ready.webp",
-            "status": "En réserve : anciennes banques au bras doré à harmoniser",
-            "manifest": "art/infernal-versus/production/poses-support-2026-11-24.json"
-          }
-        ],
-        "verification": {
-          "runtimeAssetAudit": {
-            "status": "passed",
-            "referencedAssets": 297,
-            "missingReferences": 0,
-            "evidence": "docs/standalone/ASSET_COVERAGE.json"
-          },
-          "automatedQA": {
-            "status": "passed",
-            "command": "npm run qa",
-            "exitCode": 0,
-            "suites": 43,
-            "tests": 331,
-            "typecheck": "passed",
-            "lint": "passed",
-            "builds": 2,
-            "standaloneFiles": 894,
-            "standaloneHashesVerified": 894,
-            "standaloneMiB": 515.4,
-            "runtimeReferences": 297,
-            "missingRuntimeReferences": 0,
-            "finalCssRebuild": "Both builds and standalone hash verification passed again after the 32 px stool margin correction.",
-            "evidence": "docs/standalone/QA_RUNTIME_2026-11-24.json"
-          },
-          "browserReview": "Unavailable: local Chromium launch blocked by socket EPERM. Static composites and automated component tests are not browser screenshots.",
-          "oneToOneFidelity": "Non certifiée. Portraits historiques du projet et repères officiels distingués dans les manifestes.",
-          "pivots": "Non certifiés normalisés ; ancrage des pieds, échelle, miroir et transitions à vérifier en jeu.",
-          "animationCompleteness": "Poses clés et couches indépendantes ; pas de nouveaux cycles complets. Six VFX sans simulation balistique autonome.",
-          "workbookReport": "docs/standalone/QA_WORKBOOK_2026-11-24.json"
-        },
-        "unrecoveredPreviousClaims": {
-          "date": "2026-11-20",
-          "claimedFighters": 50,
-          "claimedStages": 25,
-          "claimedCostumes": 7,
-          "claimedRecoveredDrawings": 111,
-          "restoredByThisBatch": false,
-          "note": "Archives correspondantes non retrouvées ; nombres non repris comme état réel du dépôt."
-        },
-        "priorBatch": {
-          "date": "2026-11-19",
-          "batchId": "wave-b-2026-11-19",
-          "comparisonCommit": "1f026b7303d3be06193095b376054705d00c43e9",
-          "equivalentLocalCommit": "59b08395621b612e916d4b4366a763a51ec26987",
-          "comparisonTree": "6f03ce8a524e0fed4bb417db52a3dc2907df53de",
-          "branch": "feat/infernal-versus-story-tournament",
-          "manifest": "art/infernal-versus/production/delivery-wave-b-2026-11-19.json",
-          "recovery": {
-            "sourcePNGArtworksRecovered": 11,
-            "earlierWebPExportVariantsPreserved": 12,
-            "archivedOriginalImageFiles": 23,
-            "integratedStoryExportsFromRecoveredSources": 2,
-            "sourceArchive": "art/infernal-versus/recovered-sources/2026-11-19-wave-b",
-            "exportArchive": "art/infernal-versus/recovered-exports/2026-11-19-wave-b",
-            "sourceBytesPreserved": true,
-            "interpretation": "Les onze PNG retrouvés sont des sources archivées. Les douze WebP antérieurs sont des variantes de fichiers, sans nouvelle œuvre comptée. Les deux exports narratifs intégrés dérivent de ces sources et ne sont pas de nouvelles générations.",
-            "remainingUnrecovered": "Les productions historiques non retrouvées restent exclues de la livraison. Le chariot de Cannibal Town et les poses jouables de Lucifer/Moxxie de cette vague sont de nouvelles générations, sans prétention de restauration des originaux manquants.",
-            "manifest": "art/infernal-versus/production/wave-b-recovery-2026-11-19.json"
-          },
-          "newProduction": {
-            "fighterPoses": 8,
-            "stageBackgrounds": 1,
-            "foregroundProps": 7,
-            "costumePoses": 6,
-            "detachedParts": 2,
-            "totalNewGenerations": 24,
-            "derivedStoryExports": 2,
-            "derivedThumbnails": 1
-          },
-          "totals": {
-            "newGeneratedArtworks": 24,
-            "recoveredSourceArtworks": 11,
-            "preservedEarlierExportVariants": 12,
-            "newMasterFiles": 24,
-            "recoveredArchiveFiles": 23,
-            "publicImageFiles": 27,
-            "registeredPublicImageFiles": 25,
-            "preparedPublicImageFiles": 2,
-            "totalImageFiles": 74
-          },
-          "runtime": {
-            "fighters": 36,
-            "individualReady": 10,
-            "individualGuard": 3,
-            "individualLightContact": 5,
-            "individualHit": 4,
-            "costumes": 4,
-            "costumeKeyPoses": 24,
-            "finisherKeyPoses": 5,
-            "separatedFinishProps": 1,
-            "storyAssignments": 108,
-            "illustratedStoryAssignments": 26,
-            "uniqueStoryIllustrations": 22,
-            "stages": 14,
-            "threePlaneStages": 14,
-            "twoPlaneStages": 0,
-            "onePlaneStages": 0,
-            "referencedAssets": 254,
-            "brokenReferences": [],
-            "standaloneStages": 14,
-            "individualPoseFighters": [
-              "angeldust",
-              "husk",
-              "lucifer",
-              "hb_moxxie",
-              "hb_millie",
-              "hb_striker"
-            ],
-            "extendedCostumes": [
-              "vaggie-exorcist",
-              "hb_moxxie-harvest-festival",
-              "hb_loona-human-disguise",
-              "hb_stolas-human-disguise"
-            ],
-            "detachedProp": "/assets/sprites/parts/lucifer-apple-cane.webp"
-          },
-          "retainedComponents": [
-            {
-              "id": "hb_moxxie-bowtie",
-              "name": "Nœud papillon de Moxxie",
-              "kind": "Pièce de costume",
-              "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
-              "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
-              "status": "Conservé, hors rig"
-            },
-            {
-              "id": "hb_millie-top",
-              "name": "Haut de Millie",
-              "kind": "Pièce de costume",
-              "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
-              "export": "public/assets/sprites/parts/hb_millie-top.webp",
-              "status": "Conservé, hors rig"
-            },
-            {
-              "id": "alastor-microphone-cane",
-              "name": "Canne-micro d’Alastor",
-              "kind": "Accessoire séparé",
-              "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
-              "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
-              "status": "Conservé, hors animation"
-            },
-            {
-              "id": "vaggie-exorcist-spear",
-              "name": "Lance d’exorciste de Vaggie",
-              "kind": "Accessoire séparé",
-              "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
-              "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
-              "status": "Conservé, hors animation"
-            },
-            {
-              "id": "carmine-industries-crate-variant",
-              "name": "Caisse Carmine du checkpoint",
-              "kind": "Variante de décor",
-              "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
-              "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
-              "status": "Conservé, hors scène active"
-            },
-            {
-              "id": "carmine-industries-chain",
-              "name": "Chaîne Carmine du checkpoint",
-              "kind": "Variante de décor",
-              "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
-              "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
-              "status": "Conservé, hors scène active"
-            },
-            {
-              "id": "wrath-ranch-lantern",
-              "name": "Lanterne de Wrath",
-              "kind": "Variante de décor",
-              "master": null,
-              "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
-              "status": "Export récupéré, hors scène active"
-            },
-            {
-              "id": "lucifer-top-hat",
-              "name": "Chapeau de Lucifer",
-              "kind": "Accessoire séparé",
-              "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
-              "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
-              "status": "Réserve, hors rig",
-              "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
-            },
-            {
-              "id": "hb_moxxie-tail",
-              "name": "Queue de Moxxie",
-              "kind": "Partie séparée",
-              "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
-              "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
-              "status": "Réserve, hors rig",
-              "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
-            }
-          ],
-          "carmineCrateVariants": {
-            "recoveredMaster": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
-            "newMaster": "art/infernal-versus/masters/stages/carmine-industries-crate-20261119.png",
-            "activeExport": "public/assets/stages/hazbin/carmine-industries/crate.webp",
-            "retainedExport": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp"
-          },
-          "verification": {
-            "assetProvenance": "Vague B : 24 œuvres générées, 11 sources retrouvées, 12 variantes d’export préservées. Le lot précédent de 49 œuvres / 117 fichiers reste un instantané historique distinct.",
-            "runtimeAssetAudit": {
-              "status": "passed",
-              "referencedAssets": 254,
-              "missingReferences": 0,
-              "evidence": "docs/standalone/ASSET_COVERAGE.json"
-            },
-            "runtimeQA": "npm run qa : sortie 0 ; TypeScript et ESLint réussis ; 41 suites / 313 tests réussis ; deux builds ; 850 fichiers et empreintes du standalone vérifiés, 482,6 Mio. Résultat de la vague B ; aucune recette navigateur revendiquée.",
-            "automatedQA": {
-              "command": "npm run qa",
-              "exitCode": 0,
-              "suites": 41,
-              "tests": 313,
-              "typecheck": "passed",
-              "lint": "passed",
-              "builds": 2,
-              "standaloneFiles": 850,
-              "standaloneHashesVerified": 850,
-              "standaloneMiB": 482.6,
-              "runtimeReferences": 254,
-              "missingRuntimeReferences": 0,
-              "evidence": "QA finale vague B communiquée par l’agent d’intégration ; journal qa-wave-b.log vérifié."
-            },
-            "browserReview": "Unavailable: Chromium local launch blocked by socket EPERM; shared browser transport disconnected. Static composites and automated component tests are recorded separately and are not browser screenshots.",
-            "oneToOneFidelity": "Non certifiée. Les images sont des adaptations de jeu ; les captures republiées du costume et les repères du trailer ne valent pas validation officielle plan par plan.",
-            "pivots": "Non certifiés normalisés ; échelle, appuis, miroir et transitions restent à vérifier en jeu.",
-            "animationCompleteness": "Poses clés et calques indépendants. Les animations longues individuelles et les deux nouveaux composants hors rig ne sont pas déclarés jouables.",
-            "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_B_2026-11-19.json"
-          },
-          "priorBatch": {
-            "date": "2026-11-19",
-            "comparisonCommit": "06f960ffbf62618b4068d3513978ab9d9de716e1",
-            "reconciledCheckpoint": "e260968b27f1192a86e31aab585b197276f39b8c",
-            "branch": "feat/infernal-versus-story-tournament",
-            "recovery": {
-              "originalMastersRecoveredByGitSHA": 12,
-              "priorProductionMastersRecoveredFromCheckpoint": 12,
-              "artworksRecoveredAsExportOnly": 3,
-              "exportOnlyArtworkIds": [
-                "hotel-bar-room",
-                "hotel-lobby-valance",
-                "wrath-ranch-lantern"
-              ],
-              "unrecoveredLocalFiles": "Not counted as delivered; see recovery audit. Recovered Stolas crouch/jump have been completed with four new poses."
-            },
-            "newProduction": {
-              "stageBackgrounds": 5,
-              "foregroundProps": 2,
-              "detachedParts": 1,
-              "costumePoses": 8,
-              "fighterPoses": 6,
-              "totalNewGenerations": 22
-            },
-            "totals": {
-              "masters": 46,
-              "exportOnlyArtworks": 3,
-              "artworks": 49,
-              "imageFiles": 117,
-              "masterFiles": 46,
-              "publicImageFiles": 57,
-              "archivedImageFiles": 14,
-              "boundPublicImageFiles": 50,
-              "preparedPublicImageFiles": 7
-            },
-            "runtime": {
-              "fighters": 36,
-              "referencedAssets": 231,
-              "standaloneStages": 14,
-              "threePlaneStages": 10,
-              "twoPlaneStages": 1,
-              "onePlaneStages": 3,
-              "individualReady": 8,
-              "individualGuard": 1,
-              "individualLightContact": 3,
-              "individualHit": 2,
-              "costumes": 3,
-              "costumeKeyPoses": 18,
-              "individualPoseFighters": [
-                "angeldust",
-                "hb_striker",
-                "hb_millie",
-                "husk"
-              ],
-              "extendedCostumes": [
-                "vaggie-exorcist",
-                "hb_loona-human-disguise",
-                "hb_stolas-human-disguise"
-              ],
-              "detachedProp": "/assets/sprites/parts/lucifer-apple-cane.webp"
-            },
-            "retainedComponents": [
-              {
-                "id": "hb_moxxie-bowtie",
-                "name": "Nœud papillon de Moxxie",
-                "kind": "Pièce de costume",
-                "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
-                "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
-                "status": "Conservé, hors rig"
-              },
-              {
-                "id": "hb_millie-top",
-                "name": "Haut de Millie",
-                "kind": "Pièce de costume",
-                "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
-                "export": "public/assets/sprites/parts/hb_millie-top.webp",
-                "status": "Conservé, hors rig"
-              },
-              {
-                "id": "alastor-microphone-cane",
-                "name": "Canne-micro d’Alastor",
-                "kind": "Accessoire séparé",
-                "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
-                "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
-                "status": "Conservé, hors animation"
-              },
-              {
-                "id": "vaggie-exorcist-spear",
-                "name": "Lance d’exorciste de Vaggie",
-                "kind": "Accessoire séparé",
-                "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
-                "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
-                "status": "Conservé, hors animation"
-              },
-              {
-                "id": "carmine-industries-crate-variant",
-                "name": "Caisse Carmine du checkpoint",
-                "kind": "Variante de décor",
-                "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
-                "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
-                "status": "Conservé, hors scène active"
-              },
-              {
-                "id": "carmine-industries-chain",
-                "name": "Chaîne Carmine du checkpoint",
-                "kind": "Variante de décor",
-                "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
-                "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
-                "status": "Conservé, hors scène active"
-              },
-              {
-                "id": "wrath-ranch-lantern",
-                "name": "Lanterne de Wrath",
-                "kind": "Variante de décor",
-                "master": null,
-                "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
-                "status": "Export récupéré, hors scène active"
-              }
-            ],
-            "carmineCrateVariants": {
-              "recoveredMaster": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
-              "newMaster": "art/infernal-versus/masters/stages/carmine-industries-crate-20261119.png",
-              "activeExport": "public/assets/stages/hazbin/carmine-industries/crate.webp",
-              "retainedExport": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp"
-            },
-            "verification": {
-              "assetProvenance": "Original recovered masters, earlier checkpoint productions and newly generated source PNGs are counted separately.",
-              "runtimeQA": "npm run qa : sortie 0, typecheck et lint réussis, 41 suites et 310 tests réussis, deux builds et 823 empreintes du standalone vérifiées. Recette navigateur non exécutée.",
-              "browserReview": "Bloquée : navigateur indisponible ; aucune recette visuelle finale revendiquée.",
-              "oneToOneFidelity": "Non vérifiée plan par plan contre les épisodes officiels.",
-              "pivots": "Non certifiés normalisés ; écarts de placement à contrôler en jeu.",
-              "animationCompleteness": "Poses clés, composants et calques. Animations longues individuelles encore à produire.",
-              "automatedQA": {
-                "command": "npm run qa",
-                "exitCode": 0,
-                "suites": 41,
-                "tests": 310,
-                "typecheck": "passed",
-                "lint": "passed",
-                "builds": 2,
-                "standaloneHashesVerified": 823,
-                "standaloneMiB": 458.6,
-                "runtimeReferences": 231,
-                "missingRuntimeReferences": 0,
-                "evidence": "Final runtime QA reported by the integration agent after reconciliation; browser review remains pending."
-              }
-            }
-          }
         }
       }
     }

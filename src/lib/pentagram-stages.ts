@@ -19,7 +19,10 @@ export type PentagramStageId = HotelStageId
   | 'bee-party'
   | 'dhorks'
   | 'crimson-mansion'
-  | 'mammon-show';
+  | 'mammon-show'
+  | 'western-lair'
+  | 'goetia-court'
+  | 'hh-heaven-gates';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -376,6 +379,9 @@ const BEE_PARTY = '/assets/stages/helluva/bee-party';
 const DHORKS = '/assets/stages/helluva/dhorks';
 const CRIMSON_MANSION = '/assets/stages/helluva/crimson-mansion';
 const MAMMON_SHOW = '/assets/stages/helluva/mammon-show';
+const WESTERN_LAIR = '/assets/stages/helluva/western-lair';
+const GOETIA_COURT = '/assets/stages/helluva/goetia-court';
+const HH_HEAVEN_GATES = '/assets/stages/hazbin/hh-heaven-gates';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -596,6 +602,66 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 4, 7, 10], [3, 7, 10, 14], [8, 12, 15, 18], [7, 11, 14, 17]],
     bassPattern: [0, 12, 7, 3, 10, 8, 15, 7],
     leadPattern: [16, null, 19, 22, 14, null, 15, 19, 20, 18, null, 15, 17, null, 14, 12],
+  },
+}, {
+  id: 'western-lair',
+  name: 'Repaire de Striker · Mine',
+  district: 'Anneau de la Colère',
+  description: 'Des rails courbes et de petites lampes cyan traversent une caverne bleu-gris, avec une piste de pierre dégagée.',
+  loreBasis: 'Helluva Boss, Western Energy, S2 E4. Mine intacte avant l’arrivée du van. La piste frontale élargie, le radiocassette et le tronçon de rail repositionnés sont une adaptation de simulation AU.',
+  imagePath: `${WESTERN_LAIR}/room.webp`,
+  thumbnailPath: `${WESTERN_LAIR}/thumb.webp`,
+  scenery: { middle: `${WESTERN_LAIR}/prop-middle.webp`, near: `${WESTERN_LAIR}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#73e6f5',
+  shadow: '#222b45',
+  floor: '#354f6d',
+  soundtrack: {
+    id: 'cyan-track-reel', title: 'La voie bleue', bpm: 132, rootMidi: 36,
+    swing: 0.62, drive: 0.82, seed: 261124204,
+    chordProgression: [[0, 3, 7, 10], [5, 8, 12, 15], [2, 5, 9, 12], [7, 10, 14, 17]],
+    bassPattern: [0, 7, 12, 3, 5, 12, 2, 10],
+    leadPattern: [12, null, 7, 15, 14, null, 10, 12, 17, 15, null, 9, 14, null, 7, 10],
+  },
+}, {
+  id: 'goetia-court',
+  name: 'Tribunal infernal · Mastermind',
+  district: 'Tribunal de l’Enfer',
+  description: 'Les gradins pourpres et les yeux noirs surplombent une fosse orange, derrière le balcon du duel.',
+  loreBasis: 'Helluva Boss, Mastermind, S2 E11. Tribunal infernal intact et vidé, distinct d’une institution exclusivement Goetia. Balcon frontal élargi, tribune flottante et balustrade déplacées pour la simulation AU.',
+  imagePath: `${GOETIA_COURT}/room.webp`,
+  thumbnailPath: `${GOETIA_COURT}/thumb.webp`,
+  scenery: { middle: `${GOETIA_COURT}/prop-middle.webp`, near: `${GOETIA_COURT}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#ff7145',
+  shadow: '#270b2d',
+  floor: '#650c35',
+  soundtrack: {
+    id: 'verdict-over-embers', title: 'Audience sur les braises', bpm: 114, rootMidi: 33,
+    swing: 0.3, drive: 0.85, seed: 261124211,
+    chordProgression: [[0, 3, 6, 10], [6, 9, 12, 15], [5, 8, 11, 15], [7, 10, 13, 17]],
+    bassPattern: [0, 0, 6, 12, 5, 11, 7, 13],
+    leadPattern: [12, null, 18, 15, null, 10, 9, null, 17, 15, 11, null, 13, 10, null, 7],
+  },
+}, {
+  id: 'hh-heaven-gates',
+  name: 'Paradis · Portes célestes',
+  district: 'Paradis',
+  description: 'Les portes d’or fermées se dressent sous trois yeux lumineux, au bout d’une approche claire et réfléchissante.',
+  loreBasis: 'Hazbin Hotel, Welcome to Heaven, S1 E6. Portes intactes et fermées de la saison 1, d’après le plan couleur de production et le clip officiel. Approche élargie, pupitre et grille repositionnés pour la simulation AU.',
+  imagePath: `${HH_HEAVEN_GATES}/room.webp`,
+  thumbnailPath: `${HH_HEAVEN_GATES}/thumb.webp`,
+  scenery: { middle: `${HH_HEAVEN_GATES}/prop-middle.webp`, near: `${HH_HEAVEN_GATES}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#f4cd68',
+  shadow: '#ad9dc2',
+  floor: '#f9e3b4',
+  soundtrack: {
+    id: 'gilded-threshold', title: 'Le seuil doré', bpm: 108, rootMidi: 46,
+    swing: 0.4, drive: 0.6, seed: 261124106,
+    chordProgression: [[0, 4, 7, 11], [4, 7, 11, 14], [9, 12, 16, 19], [7, 11, 14, 18]],
+    bassPattern: [0, 12, 4, 11, 9, 16, 7, 14],
+    leadPattern: [19, null, 16, 23, 21, null, 16, 14, 24, 21, null, 19, 18, null, 14, 12],
   },
 }];
 

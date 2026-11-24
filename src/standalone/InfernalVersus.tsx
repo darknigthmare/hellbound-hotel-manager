@@ -4,11 +4,10 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } f
 import { ArrowLeft, ArrowRight, BookOpen, Download, Flame, Gamepad2, Settings, Shield, Skull, Sparkles, Swords, Trophy, Upload, Users } from 'lucide-react';
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { usePentagramCombatSoundtrack } from '../components/usePentagramCombatSoundtrack';
-import { getCombatSpriteAsset } from '../lib/character-sprites';
 import { buildCombatantDefinition } from '../lib/pentagram-fighters';
 import { STANDALONE_STAGES as PENTAGRAM_STAGES, getPentagramStage, type PentagramStageId } from '../lib/pentagram-stages';
 import type { CombatState } from '../lib/pentagram-combat';
-import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, STANDALONE_TIMELINE, getStandaloneFighter } from './roster';
+import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, STANDALONE_TIMELINE, getStandaloneFighter, getStandalonePortrait } from './roster';
 import { applyMatchResult, buildRun, exportSave, importSave, loadSave, retryRun, saveProgress, MAX_IMPORT_LENGTH, type RunMode, type StandaloneMode, type StandaloneOptions, type StandaloneRun, type StandaloneSave } from './progression';
 import '../styles/theme.css';
 import '../styles/pentagram-arena.css';
@@ -37,7 +36,7 @@ function randomSeed() { return globalThis.crypto?.getRandomValues(new Uint32Arra
 
 function Portrait({ id, className = '' }: { id: string; className?: string }) {
   const [failed, setFailed] = useState(false);
-  const src = getCombatSpriteAsset(id)?.portrait;
+  const src = getStandalonePortrait(id);
   return src && !failed
     ? <img className={className} src={src} alt="" loading="lazy" onError={() => setFailed(true)} />
     : <span className={`iv-portrait-fallback ${className}`} aria-hidden="true">{getStandaloneFighter(id)?.character.name.slice(0, 2) ?? '?'}</span>;

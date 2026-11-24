@@ -2383,6 +2383,64 @@
   object-fit: contain; object-position: right bottom;
 }
 
+/* Wave D preserves complete room art with contain and a bottom anchor.
+   Wide arenas have tinted side bands; narrow arenas may have a top band.
+   Room padding reserves 10px per side for its 7.9px parallax maximum.
+   Props keep their full square alpha canvases. Their independent vertical
+   translate compensates transparent padding without replacing parallax.
+   Margins include the 25.675px middle / 47.4px near horizontal extremes. */
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  height: auto;
+  top: auto;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-desk-plane {
+  z-index: 1;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-desk-plane {
+  width: clamp(90px, 20%, 210px);
+  left: clamp(18px, 18%, 220px); right: auto; bottom: 14%;
+  translate: 0 26%;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(48px, 5%, 72px); left: auto; bottom: 4px;
+  translate: 0 34%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-desk-plane {
+  width: clamp(100px, 24%, 230px);
+  left: clamp(20px, 18%, 220px); right: auto; bottom: 26%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(46px, 4%, 64px); left: auto; bottom: 4px;
+  translate: 0 28.3%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-desk-plane {
+  width: clamp(60px, 20%, 170px);
+  right: clamp(48px, 17%, 204px); left: auto; bottom: 14%;
+  translate: 0 9.5%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  left: clamp(40px, 4%, 64px); right: auto; bottom: 4px;
+  translate: 0 26.5%;
+}
+
 .infernal-finish-choice {
   position: absolute;
   z-index: 5;

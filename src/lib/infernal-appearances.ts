@@ -14,6 +14,8 @@ export interface InfernalActionPoses {
   strike?: string;
   recoil?: string;
   layout: 'portrait' | 'landscape';
+  /** Temporary key-pose rendering while the legacy atlas contains damaged cells. */
+  fallbackToKeyPoses?: boolean;
 }
 
 function actionPoses(id: string): InfernalActionPoses {
@@ -48,6 +50,8 @@ export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>
   baxter: readyPose('baxter'),
   abel: readyPose('abel'),
   hz_mimzy: readyPose('hz_mimzy'),
+  hz_katie_killjoy: { ...guardedActionPoses('hz_katie_killjoy'), fallbackToKeyPoses: true },
+  hz_tom_trench: { ...guardedActionPoses('hz_tom_trench'), fallbackToKeyPoses: true },
   hb_blitzo: guardedActionPoses('hb_blitzo'),
   hb_stolas: guardedActionPoses('hb_stolas'),
   hb_verosika: readyPose('hb_verosika'),
@@ -57,6 +61,7 @@ export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>
   hb_crimson: readyPose('hb_crimson'),
   hb_sallie_may: readyPose('hb_sallie_may'),
   hb_andrealphus: readyPose('hb_andrealphus'),
+  hb_mammon: { ...guardedActionPoses('hb_mammon'), fallbackToKeyPoses: true },
   angeldust: actionPoses('angeldust'),
   hb_striker: actionPoses('hb_striker'),
   lucifer: { ...actionPoses('lucifer'), guard: '/assets/sprites/individual/lucifer-guard.webp' },
@@ -91,6 +96,31 @@ export function infernalActionPose(
     return elapsedMs >= startupMs && elapsedMs < startupMs + 110 ? poses.strike : poses.ready;
   }
   return undefined;
+}
+
+/**
+ * Damaged legacy cells must not reappear between the new key poses. This is
+ * deliberately a temporary static fallback, not a new animation bank. Stella
+ * has no accepted new drawing and uses her intact historical portrait.
+ */
+export function infernalFallbackPose(
+  fighterId: string,
+  action: CombatAction,
+  cinematic: PentagramCinematicKind | null,
+  elapsedMs = 0,
+  startupMs = 0,
+): string | undefined {
+  if (fighterId === 'hb_stella') return '/assets/sprites/helluva/portraits/hb_stella.png';
+  const poses = INFERNAL_ACTION_POSES[fighterId];
+  if (!poses?.fallbackToKeyPoses) return undefined;
+  if (cinematic) return poses.ready;
+  if (action === 'ko' || action === 'hit') return poses.recoil ?? poses.ready;
+  if (action === 'guard' || action === 'crouch') return poses.guard ?? poses.ready;
+  if (action === 'light' || action === 'heavy' || action === 'special' || action === 'signature') {
+    return elapsedMs >= startupMs && elapsedMs < startupMs + 110
+      ? poses.strike ?? poses.ready : poses.ready;
+  }
+  return poses.ready;
 }
 
 export interface InfernalCostume {

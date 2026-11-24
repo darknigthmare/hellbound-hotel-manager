@@ -94,14 +94,16 @@ async function collectRuntimeTables(){
     if (finish.detachedProp) assetPaths.add(finish.detachedProp);
     finishes.push([name, finish.title, effects[finish.effect], card.finisher, card.storyboard, card.lastImage, 'À animer', finish.impactSprite ?? '', finish.detachedProp ?? '']);
     const sprite = runtime.getCombatSpriteAsset(id);
+    const portrait = runtime.getStandalonePortrait(id);
     const poses = runtime.INFERNAL_ACTION_POSES[id];
     const stance = poses?.ready ?? runtime.INFERNAL_STANCES[id];
     assetPaths.add(sprite.portrait);
+    assetPaths.add(portrait);
     assetPaths.add(sprite.sheet);
     for (const file of Object.values(sprite.animationSheets ?? {})) if (file) assetPaths.add(file);
     if (stance) assetPaths.add(stance);
     if (poses) for (const file of [poses.ready, poses.guard, poses.strike, poses.recoil]) if (file) assetPaths.add(file);
-    appearances.push([name, 'Habituelle', fighter.source, sprite.portrait, stance ?? '', sprite.sheet, poses?.strike ?? '', '', poses?.recoil ?? '', '', '', poses?.guard ?? '']);
+    appearances.push([name, 'Habituelle', fighter.source, portrait, stance ?? '', sprite.sheet, poses?.strike ?? '', '', poses?.recoil ?? '', '', '', poses?.guard ?? '']);
     for (const outfit of runtime.INFERNAL_COSTUMES[id] ?? []) {
       for (const file of [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump]) if (file) assetPaths.add(file);
       appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch ?? '', outfit.jump, '']);
@@ -119,11 +121,13 @@ async function collectRuntimeTables(){
     const name = names.get(fighterId);
     assert(name && effect.canonStatus === 'simulation_au', 'VFX sans combattant ou périmètre AU : ' + fighterId);
     assetPaths.add(effect.image);
-    vfxImages.set(effect.image, [
-      'Image VFX', effect.id,
-      name + ' · ' + vfxKinds[effect.kind] + '. Adaptation AU des coups existants ; fidélité 1:1 non certifiée.',
-      'public' + effect.image,
-    ]);
+    let image = vfxImages.get(effect.image);
+    if (!image) {
+      image = { id: effect.id, users: new Set(), kinds: new Set() };
+      vfxImages.set(effect.image, image);
+    }
+    image.users.add(name);
+    image.kinds.add(vfxKinds[effect.kind]);
     for (const attack of effect.attacks) {
       const move = moves.find(row => row[0] === name && row[1] === actions[attack]);
       assert(move, 'Association VFX sans attaque : ' + fighterId + '/' + attack);
@@ -136,6 +140,11 @@ async function collectRuntimeTables(){
       ]);
     }
   }
+  const vfxImageRows = [...vfxImages].map(([file, image]) => [
+    'Image VFX', image.id,
+    [...image.users].join(', ') + ' · ' + [...image.kinds].join(', ') + '. Adaptation AU des coups existants ; fidélité 1:1 non certifiée.',
+    'public' + file,
+  ]);
   await Promise.all([...assetPaths].map(file => fs.access(path.join(root, 'public', file))));
   assert.equal(assetPaths.size, design.assetBatch.runtime.referencedAssets, 'Le registre de production doit refléter les références runtime actuelles.');
   // Preserved components are checked separately: they are not loaded by the game.
@@ -159,7 +168,7 @@ async function collectRuntimeTables(){
     })],
     ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
     ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les VFX habillent les coups existants ; leur présence ne certifie pas une recette visuelle en jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],[...design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance]),...vfxRows]],
-    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],[...design.sources,...vfxImages.values()]],
+    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],[...design.sources,...vfxImageRows]],
   ];
 
   return {sets, fighterCount:fighters.length, stageCount:stages.size, threePlanCount:[...stages.values()].filter(stage=>stage.scenery?.middle && stage.scenery?.near).length, twoPlanCount:[...stages.values()].filter(stage=>Number(Boolean(stage.scenery?.middle))+Number(Boolean(stage.scenery?.near))===1).length, onePlanCount:[...stages.values()].filter(stage=>!stage.scenery?.middle && !stage.scenery?.near).length, detachedPropCount:finishes.filter(row=>row[8]).length, guardPoseCount:appearances.filter(row=>row[11]).length, costumePoseCount:appearances.filter(row=>row[1]!=='Habituelle').reduce((sum,row)=>sum+[row[4],...row.slice(6,11)].filter(Boolean).length,0), vfxImageCount:vfxImages.size, vfxAttackCount:vfxRows.length, referencedAssetCount:assetPaths.size, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
@@ -242,10 +251,10 @@ const guideRows=[
   ['Illustrations','Affectations à illustrer',null,'Le jeu compose actuellement un décor et les portraits existants pour ces scènes.'],
   ['Atelier et recette','Fiches de travail',null,'Faire valider silhouettes, pieds, plans d’arène, effets de fin et lisibilité sur téléphone.'],
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
-  ['Références V2','Sprites VFX uniques',null,'Six images détourées du premier lot du 24 novembre, conservées dans la vague C. Adaptations AU ; sources, prompts et contrôles alpha dans projectiles-2026-11-24.json.'],
+  ['Références V2','Sprites VFX uniques',null,'Images distinctes du registre actif, y compris les réemplois entre combattants. Adaptations AU ; sources, prompts et contrôles alpha dans les manifestes projectiles du 24 novembre.'],
   ['Atelier et recette','Attaques avec VFX',null,'Une ligne par association entre combattant, attaque et image. Les effets suivent le contact existant ; ils n’ajoutent ni collision autonome, ni dégâts, ni portée.'],
 ];
-drawnTable(guide,'Infernal Versus · Guide de la V2','24 novembre 2026 · Vague C · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
+drawnTable(guide,'Infernal Versus · Guide de la V2',`${design.edition} · Les onze derniers onglets conservent intégralement les registres de la V1.`, ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
 const guideFilters = {
   'Signatures jouables': ['F', 'Jouable'],

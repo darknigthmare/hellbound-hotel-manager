@@ -57,7 +57,9 @@ const fighters = runtime.STANDALONE_ROSTER.map(({ character, franchise }) => {
     poses: Object.fromEntries(['ready', 'strike', 'heavy', 'recoil', 'crouch', 'jump'].map(pose => [pose, asset(outfit[pose])])),
   }));
   const story = Object.fromEntries(['intro', 'rival', 'ending'].map(kind => [kind, asset(runtime.storyIllustration(id, kind))]));
-  return { id, name: character.name, franchise, portrait: asset(sprite?.portrait), atlas: asset(sprite?.sheet),
+  return { id, name: character.name, franchise, portrait: asset(runtime.getStandalonePortrait(id)),
+    fallbackPortrait: asset(sprite?.portrait), atlas: asset(sprite?.sheet),
+    temporaryStaticFallback: asset(runtime.infernalFallbackPose(id, 'walk', null)),
     animationBanks: Object.fromEntries(Object.entries(sprite?.animationSheets ?? {}).map(([bank, url]) => [bank, asset(url)])),
     individual, costumes, finisherKeyPose: asset(finish?.impactSprite), separatedFinishProp: asset(finish?.detachedProp), story };
 });

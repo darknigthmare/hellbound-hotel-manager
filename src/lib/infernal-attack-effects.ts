@@ -13,7 +13,12 @@ export type InfernalAttackEffectId =
   | 'andrealphus-ice'
   | 'vox-electric'
   | 'sirpentious-ray'
-  | 'alastor-shadow';
+  | 'alastor-shadow'
+  | 'husk-card'
+  | 'adam-light'
+  | 'stolas-portal'
+  | 'asmodeus-smoke'
+  | 'beelzebub-ribbon';
 
 export interface InfernalAttackEffectDefinition {
   id: InfernalAttackEffectId;
@@ -69,6 +74,50 @@ export const INFERNAL_ATTACK_EFFECTS: Readonly<Record<string, InfernalAttackEffe
     id: 'alastor-shadow', image: effectImage('alastor-shadow'), attacks: ['heavy', 'special'],
     kind: 'sweep', leadMs: 135, lingerMs: 160, width: 0, height: 0.4,
     elevation: 0.2, canonStatus: 'simulation_au',
+  },
+  // Source frames and the observed-motif/AU distinction are recorded in
+  // art/infernal-versus/production/projectiles-wave-d-2026-11-24.json.
+  husk: {
+    id: 'husk-card', image: effectImage('husk-card'), attacks: ['light', 'special'],
+    kind: 'projectile', leadMs: 105, lingerMs: 120, width: 9, height: 0.3,
+    elevation: 0.48, arc: 0.04, canonStatus: 'simulation_au',
+  },
+  adam: {
+    id: 'adam-light', image: effectImage('adam-light'), attacks: ['heavy'],
+    kind: 'beam', leadMs: 110, lingerMs: 140, width: 0, height: 0.24,
+    elevation: 0.53, canonStatus: 'simulation_au',
+  },
+  hb_stolas: {
+    id: 'stolas-portal', image: effectImage('stolas-portal'), attacks: ['heavy'],
+    kind: 'sweep', leadMs: 130, lingerMs: 160, width: 0, height: 0.75,
+    elevation: 0.48, canonStatus: 'simulation_au',
+  },
+  hb_asmodeus: {
+    id: 'asmodeus-smoke', image: effectImage('asmodeus-smoke'), attacks: ['special'],
+    kind: 'sweep', leadMs: 140, lingerMs: 180, width: 0, height: 0.45,
+    elevation: 0.28, canonStatus: 'simulation_au',
+  },
+  hb_beelzebub: {
+    id: 'beelzebub-ribbon', image: effectImage('beelzebub-ribbon'), attacks: ['heavy'],
+    kind: 'sweep', leadMs: 125, lingerMs: 150, width: 0, height: 0.42,
+    elevation: 0.45, canonStatus: 'simulation_au',
+  },
+  // Ordinary gunfire reuses the existing AU bullet. This does not assert a
+  // character-specific canonical ammunition shape or an angelic bullet design.
+  angeldust: {
+    id: 'moxxie-bullet', image: effectImage('moxxie-bullet'), attacks: ['heavy', 'special'],
+    kind: 'projectile', leadMs: 85, lingerMs: 100, width: 7, height: 0.18,
+    elevation: 0.52, canonStatus: 'simulation_au',
+  },
+  hb_blitzo: {
+    id: 'moxxie-bullet', image: effectImage('moxxie-bullet'), attacks: ['heavy', 'special'],
+    kind: 'projectile', leadMs: 85, lingerMs: 100, width: 7, height: 0.18,
+    elevation: 0.46, canonStatus: 'simulation_au',
+  },
+  hb_striker: {
+    id: 'moxxie-bullet', image: effectImage('moxxie-bullet'), attacks: ['heavy'],
+    kind: 'projectile', leadMs: 85, lingerMs: 100, width: 7, height: 0.18,
+    elevation: 0.52, canonStatus: 'simulation_au',
   },
 };
 

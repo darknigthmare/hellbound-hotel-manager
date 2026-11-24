@@ -5,12 +5,16 @@ export interface InfernalPoseGroundAnchor {
   readonly readyPose: string;
   /** Omitted for default appearances; those must have no costume selected. */
   readonly costumeId?: string;
+  /** A wide portrait may need to meet the atlas floor instead of its READY padding. */
+  readonly groundReference?: 'canvas-bottom';
+  readonly renderScale?: number;
 }
 
 const LUTE_READY = '/assets/sprites/individual/lute-ready.webp';
 const VOX_READY = '/assets/sprites/individual/vox-ready.webp';
 const VELVETTE_READY = '/assets/sprites/individual/velvette-ready.webp';
 const CARMILLA_READY = '/assets/sprites/individual/carmilla-ready.webp';
+const MAMMON_READY = '/assets/sprites/individual/hb_mammon-ready.webp';
 
 /**
  * Alpha >= 16 bounds visually checked against Lute S1 and the default Vox,
@@ -18,9 +22,10 @@ const CARMILLA_READY = '/assets/sprites/individual/carmilla-ready.webp';
  * Measurements use the exclusive bottom edge (last visible row + 1); source
  * assets are documented in the costumes/poses-main-wave-c-2026-11-24 manifests.
  *
- * Jump intentionally has no ground anchor. This only corrects transparent
- * bottom padding relative to READY; it does not normalize size, horizontal
- * pivots or animation cycles, and is not a browser/fidelity certification.
+ * Those legacy sets only correct bottom padding relative to READY. Mammon's
+ * four wide portraits additionally use the explicit placement below. Jump has
+ * no ground anchor. Horizontal pivots and animation cycles remain untouched;
+ * these measured placements are not a browser/fidelity certification.
  */
 export const INFERNAL_POSE_ANCHORS: Readonly<Record<string, InfernalPoseGroundAnchor>> = {
   [LUTE_READY]: { canvasHeight: 1536, groundContactY: 1517, readyPose: LUTE_READY, costumeId: 'lute-pre-injury' },
@@ -40,18 +45,45 @@ export const INFERNAL_POSE_ANCHORS: Readonly<Record<string, InfernalPoseGroundAn
   '/assets/sprites/individual/carmilla-guard.webp': { canvasHeight: 1536, groundContactY: 1496, readyPose: CARMILLA_READY },
   '/assets/sprites/individual/carmilla-strike.webp': { canvasHeight: 1536, groundContactY: 1493, readyPose: CARMILLA_READY },
   '/assets/sprites/individual/carmilla-recoil.webp': { canvasHeight: 1536, groundContactY: 1492, readyPose: CARMILLA_READY },
+  // Mammon's width leaves substantial portrait padding. A uniform 1.4 scale
+  // keeps his visible height close to the existing square atlas (~94% of the
+  // combatant width); canvas-bottom removes the 183–185px transparent foot gap.
+  // This is an explicit four-image placement, not a canonical size assertion.
+  [MAMMON_READY]: { canvasHeight: 1536, groundContactY: 1351, readyPose: MAMMON_READY, groundReference: 'canvas-bottom', renderScale: 1.4 },
+  '/assets/sprites/individual/hb_mammon-guard.webp': { canvasHeight: 1536, groundContactY: 1351, readyPose: MAMMON_READY, groundReference: 'canvas-bottom', renderScale: 1.4 },
+  '/assets/sprites/individual/hb_mammon-strike.webp': { canvasHeight: 1536, groundContactY: 1352, readyPose: MAMMON_READY, groundReference: 'canvas-bottom', renderScale: 1.4 },
+  '/assets/sprites/individual/hb_mammon-recoil.webp': { canvasHeight: 1536, groundContactY: 1353, readyPose: MAMMON_READY, groundReference: 'canvas-bottom', renderScale: 1.4 },
 };
 
-/** Positive percentages move down by a fraction of the rendered image height. */
-export function getInfernalPoseGroundOffsetPercent(
+export interface InfernalPosePlacement {
+  readonly groundOffsetPercent: number;
+  readonly groundReference: 'ready-relative' | 'canvas-bottom';
+  readonly renderScale: number;
+}
+
+export function getInfernalPosePlacement(
   costumeId: string | undefined,
   poseUrl: string | undefined,
-): number | undefined {
+): InfernalPosePlacement | undefined {
   if (!poseUrl || !Object.hasOwn(INFERNAL_POSE_ANCHORS, poseUrl)) {
     return undefined;
   }
   const anchor = INFERNAL_POSE_ANCHORS[poseUrl];
   if (anchor.costumeId !== costumeId) return undefined;
   const baseline = INFERNAL_POSE_ANCHORS[anchor.readyPose];
-  return 100 * (baseline.groundContactY / baseline.canvasHeight - anchor.groundContactY / anchor.canvasHeight);
+  const reference = anchor.groundReference === 'canvas-bottom'
+    ? 1 : baseline.groundContactY / baseline.canvasHeight;
+  return {
+    groundOffsetPercent: 100 * (reference - anchor.groundContactY / anchor.canvasHeight),
+    groundReference: anchor.groundReference ?? 'ready-relative',
+    renderScale: anchor.renderScale ?? 1,
+  };
+}
+
+/** Positive percentages move down by a fraction of the rendered image height. */
+export function getInfernalPoseGroundOffsetPercent(
+  costumeId: string | undefined,
+  poseUrl: string | undefined,
+): number | undefined {
+  return getInfernalPosePlacement(costumeId, poseUrl)?.groundOffsetPercent;
 }

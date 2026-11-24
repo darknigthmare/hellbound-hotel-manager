@@ -1,10 +1,9 @@
 import type { Ref } from 'react';
 import { ArrowLeft, ArrowRight, Trophy } from 'lucide-react';
-import { getCombatSpriteAsset } from '../lib/character-sprites';
 import { getPentagramStage } from '../lib/pentagram-stages';
 import { STORY_ROUTES, storyIllustration } from './campaign';
 import { tournamentTable, type StandaloneRun } from './progression';
-import { getStandaloneFighter } from './roster';
+import { getStandaloneFighter, getStandalonePortrait } from './roster';
 import './run-interlude.css';
 
 function name(id: string) {
@@ -68,7 +67,7 @@ export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludePro
         <img className="iv-story-location" src={illustration ?? stage.imagePath} alt="" />
         {!illustration && <div className="iv-story-cast" aria-hidden="true">
           {(ending ? [run.fighterId] : [run.fighterId, chapter.opponent]).map(id =>
-            <img key={id} src={getCombatSpriteAsset(id)?.portrait} alt="" />)}
+            <img key={id} src={getStandalonePortrait(id)} alt="" />)}
         </div>}
       </div>
       <div className="iv-story-copy">

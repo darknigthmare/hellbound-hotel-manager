@@ -19,6 +19,46 @@ function duel(opponent: string, stage: PentagramStageId, scene: string): StoryCh
 
 // Original exhibition fiction. The scenes use the locations available to the standalone.
 export const STORY_ROUTES: Readonly<Record<string, StoryRoute>> = {
+  hz_katie_killjoy: {
+    title: 'Le dernier mot',
+    intro: 'Un sujet préparé par Katie revient du montage avec sa dernière phrase coupée. Elle quitte le bureau de 666 News avec la bande originale et exige une place dans le prochain direct.',
+    chapters: [
+      duel('hz_tom_trench', 'vee-broadcast-studio', 'Tom répète déjà la transition vers la publicité sur un plateau loué. Katie lui dispute la marque au sol pour récupérer les secondes qui lui manquent.'),
+      duel('charlie', 'hotel-exterior', 'Charlie refuse de refaire l’entrée spectaculaire demandée par la présentatrice. Katie descend sur le perron et tente d’imposer elle-même le cadrage de son reportage.'),
+      duel('vox', 'vee-broadcast-studio', 'Vox a remplacé le sujet par un écran publicitaire. Le voyant rouge s’allume avant que Katie ait regagné son siège. Elle garde la bande en main et avance vers le centre du plateau.'),
+    ],
+    ending: 'Le sujet passe enfin sans coupe. Katie attend que le voyant s’éteigne pour barrer le nom du monteur. Sur son conducteur, elle réserve déjà deux fois plus de temps au bulletin suivant.',
+  },
+  hz_tom_trench: {
+    title: 'Trente secondes de direct',
+    intro: 'Tom reçoit un conducteur où toutes ses interventions tiennent dans la marge. Une panne de retour lui laisse trente secondes à remplir seul. Il part chercher sa bande avant qu’on lui retire aussi ce créneau.',
+    chapters: [
+      duel('velvette', 'vee-broadcast-studio', 'Velvette a découpé son essai en une série de réactions muettes. Tom vient récupérer la version avec le son pendant qu’elle teste le rythme du montage.'),
+      duel('husk', 'hotel-bar', 'La cassette a été laissée au bar avec une facture impayée. Husk dégage le comptoir et demande au présentateur de tenir sa place le temps de retrouver le bon reçu.'),
+      duel('hz_katie_killjoy', 'vee-broadcast-studio', 'Katie a déplacé sa chaise juste hors du champ. Le compte à rebours démarre. Tom pose son conducteur sur la table et se remet sur sa marque avant le générique.'),
+    ],
+    ending: 'Tom termine sa phrase pendant que le voyant est encore rouge. Il ne reste qu’une seconde avant la coupure. Il la garde, assis bien droit, puis range lui-même sa cassette.',
+  },
+  hb_stella: {
+    title: 'Le carton sans nom',
+    intro: 'Au palais, Stella découvre un carton d’invitation qui ne porte aucun nom. Tous les invités prétendent l’avoir reçu d’un autre. Elle traverse les salons pour trouver qui a décidé de la place des convives.',
+    chapters: [
+      duel('hb_striker', 'stolas-palace', 'Striker attend dans une galerie avec le pli cacheté. Stella veut le reprendre avant qu’il ne réclame des frais pour une livraison qu’elle ne reconnaît pas.'),
+      duel('hb_andrealphus', 'stolas-palace', 'Andrealphus a disposé les sièges selon son propre plan. Stella repousse le premier fauteuil pour lui rappeler que la réception porte encore son nom.'),
+      duel('hb_stolas', 'stolas-palace', 'Stolas tient la liste originale à l’entrée du salon. Stella exige qu’il lise le dernier nom. Entre eux, le carton vide occupe déjà toute la table.'),
+    ],
+    ending: 'Stella déchire le carton et fait déplacer sa chaise au bout de la table. La réception commence avec un couvert de moins. Elle attend que chacun remarque lequel.',
+  },
+  hb_mammon: {
+    title: 'Les frais du rappel',
+    intro: 'Le tableau de caisse de Mammon affiche un rappel gratuit. Persuadé qu’une clause a disparu, il descend de sa tribune avec le contrat et veut reprendre chaque numéro depuis le début.',
+    chapters: [
+      duel('hb_crimson', 'crimson-mansion', 'Crimson conserve le reçu de location du matériel. Mammon réclame la colonne des suppléments avant qu’une autre signature ne vienne la recouvrir.'),
+      duel('hb_fizzarolli', 'mammon-show', 'Fizzarolli a laissé une marque vide au milieu du plateau. Mammon s’y installe pour refaire lui-même le passage dont il conteste la durée.'),
+      duel('hb_asmodeus', 'ozzies-cabaret', 'Asmodeus a accueilli les artistes après le spectacle. Mammon se présente avec sa facture, décidé à faire compter les applaudissements dans le prix de la salle.'),
+    ],
+    ending: 'Mammon ressort avec sa facture intacte et aucune signature. De retour au guichet, il ajoute une ligne « frais de réclamation » au prochain contrat. Le panneau du rappel gratuit reste visible derrière lui.',
+  },
   hz_mimzy: {
     title: 'La recette du rappel',
     intro: 'Mimzy promet une soirée au bénéfice de l’hôtel. Quand la recette disparaît, personne ne s’étonne de la voir déjà près de la sortie. Elle pose son manteau et revient sur scène.',

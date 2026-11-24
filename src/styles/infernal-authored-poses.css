@@ -1,5 +1,5 @@
 .arena-combatant img.infernal-individual-pose.infernal-individual-pose--portrait {
-  width: 66.6667%;
+  width: var(--infernal-pose-width, 66.6667%);
   height: auto;
   aspect-ratio: 2 / 3;
   bottom: -3%;
@@ -10,6 +10,10 @@
 /* Image-relative ground correction composes with facing/bob transforms. */
 .arena-combatant img.infernal-individual-pose[data-ground-anchor] {
   translate: 0 var(--infernal-pose-ground-offset, 0%);
+}
+
+.arena-combatant img.infernal-individual-pose[data-ground-anchor="canvas-bottom"] {
+  bottom: 0;
 }
 
 .infernal-detached-prop {

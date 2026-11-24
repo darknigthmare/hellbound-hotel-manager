@@ -6,15 +6,16 @@ import { HAZBIN_DIRECTORY_PROFILES } from '../data/hazbin-directory';
 import { HELLUVA_CHARACTERS } from '../expansions/helluva-boss/data';
 import { getCharacterSpriteAsset, getCombatSpriteAsset, HAZBIN_SUPPLEMENTAL_ANIMATION_BANKS } from '../lib/character-sprites';
 import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, HELLUVA_COMBAT_PROFILES } from '../standalone/roster';
+import { FIGHTER_PROFILES } from '../lib/pentagram-fighters';
 
-const hazbinIds = ['charlie', 'vaggie', 'angeldust', 'alastor', 'husk', 'niffty', 'sirpentious', 'lucifer', 'cherribomb', 'vox', 'valentino', 'velvette', 'adam', 'emily', 'sera', 'lute', 'carmilla', 'rosie', 'zestial', 'zeezi', 'baxter', 'abel', 'hz_mimzy'];
-const helluvaIds = ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_striker', 'hb_verosika', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_crimson', 'hb_andrealphus', 'hb_sallie_may'];
+const hazbinIds = ['charlie', 'vaggie', 'angeldust', 'alastor', 'husk', 'niffty', 'sirpentious', 'lucifer', 'cherribomb', 'vox', 'valentino', 'velvette', 'adam', 'emily', 'sera', 'lute', 'carmilla', 'rosie', 'zestial', 'zeezi', 'baxter', 'abel', 'hz_mimzy', 'hz_katie_killjoy', 'hz_tom_trench'];
+const helluvaIds = ['hb_blitzo', 'hb_moxxie', 'hb_millie', 'hb_loona', 'hb_stolas', 'hb_striker', 'hb_verosika', 'hb_fizzarolli', 'hb_asmodeus', 'hb_beelzebub', 'hb_crimson', 'hb_andrealphus', 'hb_sallie_may', 'hb_stella', 'hb_mammon'];
 
 describe('standalone exhibition roster', () => {
-  it('offers exactly 23 authored Hazbin and 13 explicitly authored Helluva kits', () => {
+  it('offers exactly 25 authored Hazbin and 15 explicitly authored Helluva kits', () => {
     expect(STANDALONE_ROSTER.filter(fighter => fighter.franchise === 'Hazbin Hotel').map(fighter => fighter.character.id).sort()).toEqual([...hazbinIds].sort());
     expect(STANDALONE_ROSTER.filter(fighter => fighter.franchise === 'Helluva Boss').map(fighter => fighter.character.id).sort()).toEqual([...helluvaIds].sort());
-    expect(new Set(STANDALONE_FIGHTER_IDS).size).toBe(36);
+    expect(new Set(STANDALONE_FIGHTER_IDS).size).toBe(40);
     expect(Object.keys(HELLUVA_COMBAT_PROFILES).sort()).toEqual([...helluvaIds].sort());
     for (const fighter of STANDALONE_ROSTER) {
       const source = fighter.franchise === 'Hazbin Hotel'
@@ -27,6 +28,21 @@ describe('standalone exhibition roster', () => {
       expect(fighter.character.rehabTracked).toBe(false);
       for (const value of [fighter.profile.power, fighter.profile.range, fighter.profile.speed, fighter.profile.guard, fighter.profile.tensionGain]) expect(Number.isFinite(value)).toBe(true);
       for (const value of [fighter.profile.basicMove, fighter.profile.heavyMove, fighter.profile.specialMove]) expect(value.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it('isolates the four new exhibition kits from hotel profiles and canon power claims', () => {
+    for (const id of ['hz_katie_killjoy', 'hz_tom_trench', 'hb_stella', 'hb_mammon']) {
+      const fighter = STANDALONE_ROSTER.find(entry => entry.character.id === id)!;
+      expect(fighter.profile.evidence).toBe('motif');
+      expect(FIGHTER_PROFILES[id]).toBeUndefined();
+      expect(fighter.character.operationalDataStatus).toBe('simulation_au');
+      expect(fighter.profile.signature).toBeUndefined();
+    }
+    for (const id of ['hz_katie_killjoy', 'hz_tom_trench']) {
+      const directory = HAZBIN_DIRECTORY_PROFILES.find(entry => entry.id === id)!;
+      expect(directory.fighterEligible).toBe(false);
+      expect(directory.existingOperationalProfile).toBe(false);
     }
   });
 

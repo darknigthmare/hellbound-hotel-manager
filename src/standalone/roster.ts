@@ -3,6 +3,7 @@ import { HELLUVA_CHARACTERS } from '../expansions/helluva-boss/data';
 import { getCombatSpriteAsset } from '../lib/character-sprites';
 import { toHazbinArenaCharacter } from '../lib/hazbin-arena-fighters';
 import { FIGHTER_PROFILES, type FighterProfile } from '../lib/pentagram-fighters';
+import { INFERNAL_ACTION_POSES } from '../lib/infernal-appearances';
 import type { Character, TimelineState } from '../types';
 
 export interface StandaloneFighter {
@@ -23,6 +24,21 @@ const HAZBIN_EXHIBITION_PROFILES: Readonly<Record<string, FighterProfile>> = {
     combatStyle: 'trickster', evidence: 'motif', power: 10, range: 55, speed: 83, guard: 48,
     tensionGain: 20, basicMove: 'Talonnade syncopée', heavyMove: 'Tour de piste', specialMove: 'Rappel à contretemps',
   },
+  hz_katie_killjoy: {
+    id: 'hz_katie_killjoy', style: 'Interruption d’antenne', archetype: 'Feinte et reprise courte',
+    combatStyle: 'trickster', evidence: 'motif', power: 11, range: 60, speed: 74, guard: 50,
+    tensionGain: 18, basicMove: 'Revers d’antenne', heavyMove: 'Coupure de plateau', specialMove: 'Dernière réplique',
+  },
+  hz_tom_trench: {
+    id: 'hz_tom_trench', style: 'Repli de régie', archetype: 'Garde et riposte courte',
+    combatStyle: 'guardian', evidence: 'motif', power: 10, range: 54, speed: 55, guard: 76,
+    tensionGain: 16, basicMove: 'Poussée gantée', heavyMove: 'Contretemps de régie', specialMove: 'Reprise du direct',
+  },
+};
+
+const HAZBIN_EXHIBITION_SOURCES: Readonly<Record<string, string>> = {
+  hz_katie_killjoy: 'Hazbin Hotel · série, saison 1 — 666 News',
+  hz_tom_trench: 'Hazbin Hotel · série, saison 1 — 666 News',
 };
 
 export const HELLUVA_COMBAT_PROFILES: Readonly<Record<string, FighterProfile>> = {
@@ -43,6 +59,16 @@ export const HELLUVA_COMBAT_PROFILES: Readonly<Record<string, FighterProfile>> =
     tensionGain: 14, basicMove: 'Coup de botte', heavyMove: 'Barrière du ranch', specialMove: 'Dernière cloche de Wrath',
   },
   hb_andrealphus: { id: 'hb_andrealphus', style: 'Noblesse de glace', archetype: 'Contrôle de boss', combatStyle: 'zoner', evidence: 'onscreen', power: 17, range: 88, speed: 50, guard: 68, tensionGain: 12, basicMove: 'Pointe de glace', heavyMove: 'Arche de givre', specialMove: 'Domaine gelé' },
+  hb_stella: {
+    id: 'hb_stella', style: 'Aplomb du salon', archetype: 'Pression au sol et revers',
+    combatStyle: 'bruiser', evidence: 'motif', power: 14, range: 64, speed: 50, guard: 70,
+    tensionGain: 14, basicMove: 'Revers de paume', heavyMove: 'Pas impérieux', specialMove: 'Éclat du salon',
+  },
+  hb_mammon: {
+    id: 'hb_mammon', style: 'Promoteur du spectacle', archetype: 'Pression large et lente',
+    combatStyle: 'boss', evidence: 'motif', power: 17, range: 74, speed: 40, guard: 80,
+    tensionGain: 12, basicMove: 'Paume de rappel', heavyMove: 'Balayage du promoteur', specialMove: 'Final du promoteur',
+  },
 };
 
 function helluvaCharacter(id: string): Character {
@@ -64,7 +90,7 @@ export const STANDALONE_ROSTER: readonly StandaloneFighter[] = [
     .filter(source => source.assetStatus === 'ready' && source.id in HAZBIN_EXHIBITION_PROFILES && !source.id.startsWith('sim_'))
     .map(source => ({
       character: toHazbinArenaCharacter(source), profile: HAZBIN_EXHIBITION_PROFILES[source.id],
-      franchise: 'Hazbin Hotel' as const, source: source.sourceLabel,
+      franchise: 'Hazbin Hotel' as const, source: HAZBIN_EXHIBITION_SOURCES[source.id] ?? source.sourceLabel,
       spoiler: source.timeline === 'season_2' ? 'season_2' as const : 'season_1' as const,
     })),
   ...Object.values(HELLUVA_COMBAT_PROFILES).map(profile => {
@@ -74,8 +100,16 @@ export const STANDALONE_ROSTER: readonly StandaloneFighter[] = [
 ].filter(fighter => Boolean(getCombatSpriteAsset(fighter.character.id)));
 
 export const STANDALONE_FIGHTER_IDS = STANDALONE_ROSTER.map(fighter => fighter.character.id);
-export const STANDALONE_BOSS_IDS = ['alastor', 'lucifer', 'adam', 'vox', 'hb_striker', 'hb_asmodeus', 'hb_beelzebub', 'hb_andrealphus'];
+export const STANDALONE_BOSS_IDS = ['alastor', 'lucifer', 'adam', 'vox', 'hb_striker', 'hb_asmodeus', 'hb_beelzebub', 'hb_andrealphus', 'hb_mammon'];
 export const STANDALONE_TIMELINE: TimelineState = { current: 'custom', hideSpoilers: false, spoilerLevel: 'season_2', hotelState: 'rebuilt' };
 export function getStandaloneFighter(id: string): StandaloneFighter | undefined {
   return STANDALONE_ROSTER.find(fighter => fighter.character.id === id);
+}
+
+const AUTHORED_PORTRAIT_IDS = new Set(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon']);
+
+/** Reuse the reviewed full-body READY without changing the hotel portrait registry. */
+export function getStandalonePortrait(id: string): string | undefined {
+  return (AUTHORED_PORTRAIT_IDS.has(id) ? INFERNAL_ACTION_POSES[id]?.ready : undefined)
+    ?? getCombatSpriteAsset(id)?.portrait;
 }

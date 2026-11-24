@@ -60,20 +60,22 @@ describe('Infernal attack artwork synchronized with existing combat', () => {
   });
 
   it('mirrors both players and keeps every image inside its actual reach and the viewport', () => {
-    for (const id of Object.keys(INFERNAL_ATTACK_EFFECTS)) {
-      const one = attack(id, 'one');
-      const two = attack(id, 'two');
-      const first = one.frame(one.tick(one.started, one.move.startupMs))!;
-      const second = two.frame(two.tick(two.started, two.move.startupMs))!;
-      expect(first.facing).toBe(1);
-      expect(second.facing).toBe(-1);
-      expect(first.x + second.x).toBeCloseTo(100, 8);
-      expect(first.x + first.width / 2).toBeLessThanOrEqual(first.rangeEndX + 0.00001);
-      expect(second.x - second.width / 2).toBeGreaterThanOrEqual(second.rangeEndX - 0.00001);
-      const atRightWall = one.frame(one.tick({ ...one.started, positionOne: 86, positionTwo: 93 }, one.move.startupMs))!;
-      expect(atRightWall.x + atRightWall.width / 2).toBeLessThanOrEqual(100);
-      const atLeftWall = two.frame(two.tick({ ...two.started, positionOne: 7, positionTwo: 14 }, two.move.startupMs))!;
-      expect(atLeftWall.x - atLeftWall.width / 2).toBeGreaterThanOrEqual(0);
+    for (const [id, effect] of Object.entries(INFERNAL_ATTACK_EFFECTS)) {
+      for (const action of effect.attacks) {
+        const one = attack(id, 'one', action);
+        const two = attack(id, 'two', action);
+        const first = one.frame(one.tick(one.started, one.move.startupMs))!;
+        const second = two.frame(two.tick(two.started, two.move.startupMs))!;
+        expect(first.facing).toBe(1);
+        expect(second.facing).toBe(-1);
+        expect(first.x + second.x).toBeCloseTo(100, 8);
+        expect(first.x + first.width / 2).toBeLessThanOrEqual(first.rangeEndX + 0.00001);
+        expect(second.x - second.width / 2).toBeGreaterThanOrEqual(second.rangeEndX - 0.00001);
+        const atRightWall = one.frame(one.tick({ ...one.started, positionOne: 86, positionTwo: 93 }, one.move.startupMs))!;
+        expect(atRightWall.x + atRightWall.width / 2).toBeLessThanOrEqual(100);
+        const atLeftWall = two.frame(two.tick({ ...two.started, positionOne: 7, positionTwo: 14 }, two.move.startupMs))!;
+        expect(atLeftWall.x - atLeftWall.width / 2).toBeGreaterThanOrEqual(0);
+      }
     }
   });
 
@@ -141,5 +143,25 @@ describe('Infernal attack artwork synchronized with existing combat', () => {
     // The ray belongs to Clockwork launcher, not the separate Egg Boiz barrage.
     const pentious = attack('sirpentious', 'one', 'special');
     expect(pentious.frame(pentious.tick(pentious.started, pentious.move.startupMs))).toBeNull();
+    // Cards do not replace Wing rake; borrowed gunfire does not decorate
+    // jabs, knife strikes or Blitzø's separate movement signature.
+    for (const [fighterId, action] of [
+      ['husk', 'heavy'], ['angeldust', 'light'], ['hb_blitzo', 'light'],
+      ['hb_blitzo', 'signature'], ['hb_striker', 'light'], ['hb_striker', 'special'],
+      ['adam', 'light'], ['adam', 'special'], ['hb_stolas', 'special'],
+      ['hb_asmodeus', 'heavy'], ['hb_beelzebub', 'special'], ['lucifer', 'special'],
+    ] as const) {
+      const scene = attack(fighterId, 'one', action);
+      expect(scene.frame(scene.tick(scene.started, scene.move.startupMs)), `${fighterId}/${action}`).toBeNull();
+    }
+  });
+
+  it('reuses one existing bullet image for ordinary gunfire without a duplicate export', () => {
+    const original = INFERNAL_ATTACK_EFFECTS.hb_moxxie;
+    for (const fighterId of ['angeldust', 'hb_blitzo', 'hb_striker']) {
+      const scene = attack(fighterId);
+      const released = scene.frame(scene.tick(scene.started, scene.move.startupMs));
+      expect(released).toMatchObject({ id: original.id, image: original.image });
+    }
   });
 });
