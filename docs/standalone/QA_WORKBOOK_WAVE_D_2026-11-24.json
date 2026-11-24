@@ -1230,8 +1230,8 @@
   },
   "sourceEvidence": {
     "docs/standalone/extension-plan.json": {
-      "sha256": "570291a29d6a368144b37a3d8806a0890356e46724dfc054fa406decfb630bdc",
-      "bytes": 604453
+      "sha256": "aa7d7efb857105634948278a63567d1872e01bf1cabc6c7453f54213dd82fb9c",
+      "bytes": 605435
     },
     "docs/standalone/build-production-bible.mjs": {
       "sha256": "8724a551f8999bcc30f7e40d97457f903badb944fd5c1e785cde4f880fc77051",
@@ -1290,8 +1290,8 @@
       "bytes": 108929
     },
     "art/infernal-versus/production/delivery-wave-d-2026-11-24.json": {
-      "sha256": "15337c41fe9effe8fbe46a92dc5c7de013bbe5ae73843591edaa7c33afdb9822",
-      "bytes": 41834
+      "sha256": "0ec0ac1264b9b7af7d70bcdca549914b0c8464b45e61e44d81d3311cec02d734",
+      "bytes": 43207
     },
     "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json": {
       "sha256": "bb40481a7e3875d27269ebca4d9a3629acc66c2a7019a043df0289b9594fcce4",
@@ -1310,5 +1310,35 @@
     "Le motif de flamme de Lucifer reste différé faute de référence isolée suffisamment lisible ; aucune génération tentée.",
     "Recalcul et réimport vérifiés dans Artifact Tool ; aucune validation dans Excel natif revendiquée.",
     "La conformité du classeur ne certifie ni fluidité ni rendu visuel dans un navigateur."
-  ]
+  ],
+  "sourceEvidenceAtCollection": {
+    "docs/standalone/extension-plan.json": {
+      "sha256": "570291a29d6a368144b37a3d8806a0890356e46724dfc054fa406decfb630bdc",
+      "bytes": 604453
+    },
+    "art/infernal-versus/production/delivery-wave-d-2026-11-24.json": {
+      "sha256": "15337c41fe9effe8fbe46a92dc5c7de013bbe5ae73843591edaa7c33afdb9822",
+      "bytes": 41834
+    }
+  },
+  "finalMetadataReconciliation": {
+    "completedAtUtc": "2026-11-24T13:43:14.458907+00:00",
+    "changedFiles": [
+      "docs/standalone/extension-plan.json",
+      "art/infernal-versus/production/delivery-wave-d-2026-11-24.json"
+    ],
+    "onlyQaEvidenceChanged": true,
+    "proof": "Restoring pending automatedQA/workbookQA and removing the final regression-test/code-review evidence reproduces the exact collected source hashes. No table, game source, image or workbook cell changed.",
+    "sourceEvidenceNowMatchesPublishedFiles": true,
+    "workbookRebuildRequired": false,
+    "runtimeTablesRecollectedAfterEvidenceUpdate": {
+      "byteIdenticalToWorkbookInput": true,
+      "bytes": 190858,
+      "sha256": "912e3e6d5a7e9fe1f73e0ef4889c277940d5054479d95fb4974088a573370871",
+      "dataTables": 11,
+      "dataRows": 731,
+      "cells": 5361,
+      "command": "node docs/standalone/build-production-bible.mjs --read-game"
+    }
+  }
 }
