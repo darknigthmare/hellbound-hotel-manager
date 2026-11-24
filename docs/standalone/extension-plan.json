@@ -64,26 +64,26 @@
     },
     "latestDelivery": {
       "date": "2026-11-24",
-      "batchId": "wave-d-2026-11-24",
+      "batchId": "wave-f-2026-11-24",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json",
-      "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
-      "scope": "Quatre kits autonomes, douze poses de trois personnages, trois arènes à trois plans et cinq images VFX ; fidélité documentée sans certification 1:1."
+      "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json",
+      "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+      "scope": "Trois nouveaux combattants, treize poses, trois arènes à trois plans et trois VFX. Références documentées ; fidélité 1:1 non certifiée."
     },
     "currentRuntime": {
       "date": "2026-11-24",
-      "batchId": "wave-d-2026-11-24",
-      "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
-      "fighters": 40,
+      "batchId": "wave-f-2026-11-24",
+      "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+      "fighters": 43,
       "bossCandidates": 9,
-      "runtimeKits": 40,
-      "runtimeBaseAttacks": 120,
-      "note": "Le bloc meta.implementation et les onze feuilles V1 restent un historique. Les tables V2 sont calculées depuis le runtime actuel.",
-      "stages": 22,
-      "threePlaneStages": 22,
-      "attackEffectImages": 11,
-      "attackEffectAssignments": 24,
-      "referencedAssets": 377
+      "runtimeKits": 43,
+      "runtimeBaseAttacks": 129,
+      "note": "Le bloc meta.implementation et les onze feuilles V1 restent historiques. Les tables V2 sont calculées depuis le runtime actuel.",
+      "stages": 25,
+      "threePlaneStages": 25,
+      "attackEffectImages": 14,
+      "attackEffectAssignments": 28,
+      "referencedAssets": 408
     }
   },
   "sources": [
@@ -12384,8 +12384,8 @@
     }
   ],
   "productionBible": {
-    "edition": "2026-11-24 · vague D",
-    "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+    "edition": "2026-11-24 · vague F",
+    "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
     "fighterDesign": [
       {
         "fighter": "charlie",
@@ -12786,6 +12786,36 @@
         "finisher": "Le rappel est payant",
         "storyboard": "Mammon écarte deux mains vers le public et garde les deux autres contre sa silhouette. Le rideau referme son espace de spectacle.",
         "lastImage": "Il réclame le rappel devant le rideau fermé. Version actuelle : effet rideau partagé, storyboard long non animé."
+      },
+      {
+        "fighter": "hb_vortex",
+        "signature": "Passage réservé",
+        "input": "À prototyper",
+        "effect": "Proposition AU : pas de côté puis poussée qui libère une sortie. Aucun pouvoir surnaturel supplémentaire attribué au personnage.",
+        "counter": "Attendre la poussée puis reprendre la ligne extérieure. La signature proposée reste hors du moteur.",
+        "finisher": "La sortie reste libre",
+        "storyboard": "Vortex se place au bord du plateau et indique le passage. Le rideau partagé tombe après le résultat.",
+        "lastImage": "Il reste de garde près de la sortie. Variante longue à animer ; aucune nouvelle pose de finition."
+      },
+      {
+        "fighter": "hb_glitz",
+        "signature": "Dernier accent",
+        "input": "À prototyper",
+        "effect": "Proposition AU : changement de rythme suivi d’un geste de scène. Les timings et contacts relèvent du jeu.",
+        "counter": "Attendre l’accent final avant de reprendre le centre. Signature non implémentée.",
+        "finisher": "Le salut choisi",
+        "storyboard": "Glitz reprend sa marque et termine le salut au centre. Le rideau existant ferme le plateau.",
+        "lastImage": "Le salut se termine sans nouvel accessoire. Variante longue à produire."
+      },
+      {
+        "fighter": "hb_glam",
+        "signature": "Un temps de plus",
+        "input": "À prototyper",
+        "effect": "Proposition AU : arrêt de danse puis reprise sur un temps retardé. Aucun effet magique canonique affirmé.",
+        "counter": "Conserver sa garde durant l’arrêt et répondre après la reprise. Signature non implémentée.",
+        "finisher": "Jusqu’au dernier temps",
+        "storyboard": "Glam achève son mouvement avant le salut. Le rideau partagé accompagne la fin de la manche.",
+        "lastImage": "Elle tient sa marque jusqu’au noir. Frappe distincte refusée à la génération ; aucune pose de remplacement comptée."
       }
     ],
     "stageDesign": [
@@ -13008,6 +13038,36 @@
         "ambient": "Lumière céleste fixe, partition procédurale originale Le seuil doré ; aucun personnage ajouté.",
         "composition": "Portes intactes de S1E6 avant l’entrée. Approche élargie, pupitre et grille extraits/repositionnés pour la simulation AU. Contain bas-centre conserve le motif à trois yeux ; bandes teintées aux formats divergents.",
         "reference": "Hazbin Hotel · Welcome to Heaven, S1E6. Clip officiel Prime Video Philippines RFiEU6ZXyWg et plan couleur Prime Video/A24 publié par VFX Voice le 16/07/2024. Repère de production S1, pas état S2 ni comparaison en jeu certifiée."
+      },
+      {
+        "id": "imp-exterior",
+        "name": "I.M.P. · Façade extérieure",
+        "back": "Façade, fenêtres et accès de l’immeuble I.M.P. dans Imp City ; rue vidée de personnages.",
+        "middle": "Bloc indépendant de six fenêtres, fixé dans le cadre du fond contenu.",
+        "floor": "Deux affiches murales détourées ; couloir de duel dégagé.",
+        "ambient": "Partition procédurale originale ; aucune bande originale reprise.",
+        "composition": "Master complet au ratio natif, contain bas-centre. Fenêtres et affiches sont des éléments indépendants ; leur placement et la piste sont adaptés à la simulation AU.",
+        "reference": "Murder Family S1E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=el_PChGfJN8 ; repère extérieur vers 02:05. Comparaison en jeu et fidélité 1:1 non certifiées."
+      },
+      {
+        "id": "oops-warehouse",
+        "name": "Entrepôt · Oops",
+        "back": "Entrepôt industriel sombre, stockage et cage ; espace frontal libéré pour le duel.",
+        "middle": "Groupe cohérent de cinq caisses détourées au bord du décor.",
+        "floor": "Cage vide indépendante ; placée derrière les combattants pour conserver leur lisibilité.",
+        "ambient": "Partition procédurale originale et teinte fixe, sans reprise de chanson.",
+        "composition": "Master entier en contain bas-centre. Les deux props constituent des plans de présentation distincts ; les placements ne reproduisent pas un plan de caméra exact.",
+        "reference": "Oops S2E6, épisode officiel Vivziepop : https://www.youtube.com/watch?v=y1sF6ZeASU0. Motifs repérés ; composition de duel AU et fidélité 1:1 non certifiée."
+      },
+      {
+        "id": "sinsmas-balcony",
+        "name": "Balcon de Blitzø · Sinsmas",
+        "back": "Balcon nocturne de l’appartement, façade et décorations de Sinsmas.",
+        "middle": "Segment de garde-corps détouré, au bord de la composition.",
+        "floor": "Guirlande multicolore indépendante, alignée au haut de l’image contenue.",
+        "ambient": "Lumières fixes et partition procédurale originale ; aucune musique de l’épisode.",
+        "composition": "Fond entier, sans déformation. La piste et les éléments sont réorganisés pour le duel AU ; les bandes de ratio restent teintées.",
+        "reference": "Sinsmas S2E12, épisode officiel Vivziepop : https://www.youtube.com/watch?v=GisSNuVpbkM. Références documentées dans SOURCES_QA.md ; fidélité 1:1 non certifiée."
       }
     ],
     "modeDesign": [
@@ -13655,6 +13715,34 @@
         "status": "Audit des fichiers validé",
         "spec": "40 combattants, 37 READY, 13 gardes, 15 contacts légers, 14 réactions ; 6 costumes / 35 poses ; 22 arènes à trois plans ; 40 routes / 120 duels AU.",
         "acceptance": "377 références, zéro absente. Les onze onglets V1 et le bloc meta.implementation restent historiques ; les tables V2 reflètent le runtime."
+      },
+      {
+        "type": "Vague F · personnages",
+        "subject": "Vortex, Glitz, Glam et Alastor",
+        "status": "13 poses intégrées",
+        "spec": "Vortex et Glitz : quatre poses clés chacun. Glam : repos, garde, recul. Alastor : nouvelle garde et nouveau recul, repos conservé. Les actions non dessinées utilisent le repli existant ; aucun cycle complet ni nouvelle finition animée.",
+        "acceptance": "Contrôler appuis, deux orientations, garde, recul et transitions. Frappe Glam et frappe Alastor restent absentes après refus, sans nouvelle tentative."
+      },
+      {
+        "type": "Vague F · décors",
+        "subject": "Façade I.M.P., entrepôt Oops, balcon Sinsmas",
+        "status": "3 arènes intégrées",
+        "spec": "3 fonds, 6 props et 3 miniatures. Fond contain au ratio natif, props alignés à l’image contenue. Cage placée derrière les combattants.",
+        "acceptance": "Compositions statiques portrait, paysage et bureau ; recette navigateur indisponible. Les huit arènes du manager conservent leur périmètre."
+      },
+      {
+        "type": "Vague F · VFX",
+        "subject": "Flèche Velvette, lasso Striker, fumée Valentino",
+        "status": "3 images, 4 associations supplémentaires",
+        "spec": "Flèche sur lourd et spécial de Velvette ; lasso sur spécial de Striker ; fumée sur spécial de Valentino. Le tir lourd de Striker est conservé. Habillage sans nouvelle physique ni portée.",
+        "acceptance": "Vérifier portée visuelle, annulation, pause, arrêt sur impact, K.-O. et mouvement réduit. Aucun projectile autonome ajouté."
+      },
+      {
+        "type": "Vague F · audit",
+        "subject": "Registre et bible V2",
+        "status": "408 références présentes",
+        "spec": "43 combattants, 40 READY, 17 gardes, 17 contacts légers, 18 reculs ; 25 arènes à trois plans ; 14 images VFX pour 28 associations ; 43 routes / 129 duels AU.",
+        "acceptance": "Recalcul du classeur à partir du runtime, conservation des onze onglets V1. Ne pas confondre contrôles de fichiers et fidélité en jeu."
       }
     ],
     "sources": [
@@ -13981,55 +14069,72 @@
         "Cinq nouveaux effets et trois réemplois",
         "Motifs observés séparés des trajectoires et associations de jeu.",
         "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json"
+      ],
+      [
+        "Dépôt · vague F",
+        "Treize poses et trois combattants",
+        "Sources, prompts, exports et limites de validation ; adaptations AU.",
+        "art/infernal-versus/production/characters-wave-f-2026-11-24.json"
+      ],
+      [
+        "Dépôt · vague F",
+        "Trois décors et six éléments séparés",
+        "Sources, prompts, exports et limites de validation ; adaptations AU.",
+        "art/infernal-versus/production/stages-wave-f-2026-11-24.json"
+      ],
+      [
+        "Dépôt · vague F",
+        "Trois effets visuels",
+        "Sources, prompts, exports et limites de validation ; adaptations AU.",
+        "art/infernal-versus/production/projectiles-wave-f-2026-11-24.json"
       ]
     ],
     "assetBatch": {
       "date": "2026-11-24",
-      "batchId": "wave-d-2026-11-24",
-      "comparisonCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+      "batchId": "wave-f-2026-11-24",
+      "comparisonCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json",
+      "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json",
       "newProduction": {
-        "playableFighters": 4,
-        "fighterPoses": 12,
+        "playableFighters": 3,
+        "fighterPoses": 13,
         "stageBackgrounds": 3,
         "foregroundProps": 6,
-        "attackEffectImages": 5,
-        "totalNewArtworks": 26,
+        "attackEffectImages": 3,
+        "totalNewArtworks": 25,
         "derivedThumbnails": 3,
-        "newAttackEffectAssignments": 11,
-        "sharedExistingShotAssignments": 5,
-        "newStoryRoutes": 4,
-        "newStoryDuels": 12
+        "newAttackEffectAssignments": 4,
+        "newStoryRoutes": 3,
+        "newStoryDuels": 9
       },
       "totals": {
-        "newGeneratedArtworks": 26,
-        "newMasterFiles": 26,
-        "publicImageFiles": 29,
-        "registeredPublicImageFiles": 29,
-        "totalImageFiles": 55,
+        "newGeneratedArtworks": 25,
+        "newMasterFiles": 25,
+        "publicImageFiles": 28,
+        "registeredPublicImageFiles": 28,
+        "totalImageFiles": 53,
         "derivedThumbnails": 3
       },
       "runtime": {
-        "fighters": 40,
-        "individualReady": 37,
-        "individualGuard": 13,
-        "individualLightContact": 15,
-        "individualHit": 14,
+        "fighters": 43,
+        "individualReady": 40,
+        "individualGuard": 17,
+        "individualLightContact": 17,
+        "individualHit": 18,
         "costumes": 6,
         "costumeKeyPoses": 35,
         "finisherKeyPoses": 5,
         "separatedFinishProps": 1,
-        "storyAssignments": 120,
+        "storyAssignments": 129,
         "illustratedStoryAssignments": 26,
         "uniqueStoryIllustrations": 22,
-        "stages": 22,
-        "threePlaneStages": 22,
+        "stages": 25,
+        "threePlaneStages": 25,
         "twoPlaneStages": 0,
         "onePlaneStages": 0,
-        "attackEffectImages": 11,
-        "attackEffectAssignments": 24,
-        "referencedAssets": 377,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 408,
         "brokenReferences": []
       },
       "retainedComponents": [
@@ -14111,101 +14216,81 @@
       "verification": {
         "runtimeAssetAudit": {
           "status": "passed",
-          "referencedAssets": 377,
+          "referencedAssets": 408,
           "missingReferences": 0,
           "evidence": "docs/standalone/ASSET_COVERAGE.json"
+        },
+        "exports": {
+          "status": "passed",
+          "masterFiles": 25,
+          "losslessPixelExactWebP": 25,
+          "derivedThumbnails": 3,
+          "evidence": "art/infernal-versus/production/export-wave-f-2026-11-24.json"
         },
         "automatedQA": {
           "status": "passed",
           "command": "npm run qa",
           "exitCode": 0,
           "suites": 44,
-          "tests": 363,
+          "tests": 376,
           "typecheck": "passed",
           "lint": "passed",
           "builds": 2,
-          "standaloneFiles": 961,
-          "standaloneHashesVerified": 961,
-          "standaloneBytes": 586517302,
-          "standaloneMiB": 559.35,
-          "runtimeReferences": 377,
-          "missingRuntimeReferences": 0,
-          "sourceFilesHashed": 1114,
-          "sourceMutationsDuringQA": [],
-          "evidence": "docs/standalone/QA_RUNTIME_WAVE_D_2026-11-24.json"
+          "standaloneFiles": 989,
+          "standaloneHashesVerified": 989,
+          "standaloneBytes": 600133226,
+          "standaloneMiB": 572.33,
+          "phase": "Full QA before final CSS positioning; both builds and standalone hash verification passed again after CSS positioning.",
+          "evidence": "docs/standalone/QA_RUNTIME_WAVE_F_2026-11-24.json"
         },
-        "browserReview": "Chromium ne démarre pas : socket() EPERM avant création de page. Montages statiques et tests de composants ne sont pas des captures du jeu.",
-        "oneToOneFidelity": "Non certifiée. Références primaires, cartes sous licence photographiées sur un hébergement secondaire, captures republiées et reconstructions AU sont distinguées dans les manifestes.",
-        "pivots": "Échelle uniforme 1,4 et contact bas de canvas pour les quatre portraits uniquement. Mesures numériques et composition statique ; pas de certification de taille canonique ou transition animée.",
-        "animationCompleteness": "Les banques historiques des quatre nouveaux jouables contiennent des cellules contaminées ou tronquées. Le standalone utilise provisoirement les poses propres de Katie, Tom et Mammon pour les actions non redessinées et les cinématiques, et le portrait historique intact de Stella pour tous ses états. Le déplacement et les règles de combat restent actifs ; ce repli statique ne constitue aucun nouveau cycle ni pose dédiée.",
-        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_D_2026-11-24.json",
+        "browserReview": "Chromium bloqué par socket() EPERM avant création de page. La revue automatique a refusé le lancement avec permissions supplémentaires. Aucune capture, interaction ni recette navigateur annoncée.",
+        "oneToOneFidelity": "Non certifiée. Les sources et motifs sont documentés séparément des poses et compositions AU. Les proportions, contours, marges alpha et cadrages sont contrôlés sur les images ; la comparaison animée en jeu reste à faire.",
+        "pivots": "Appuis mesurés à partir du bas de la silhouette alpha ≥ 16. Ratios natifs conservés ; échelle canonique et transitions animées non certifiées.",
+        "animationCompleteness": "Vortex et Glitz : quatre poses clés chacun. Glam : repos, garde, recul. Alastor : nouvelle garde et nouveau recul, repos conservé. Les actions non dessinées utilisent le repli existant ; aucun cycle complet ni nouvelle finition animée.",
+        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_F_2026-11-24.json",
         "workbookQA": {
           "status": "passed",
-          "sheetCount": 23,
-          "historicalSheetsPreserved": 11,
-          "historicalXmlByteIdentical": true,
-          "formulas": 200,
-          "runtimeCellsChecked": 5361,
-          "recalculationProbes": 8,
-          "visualViews": 21,
-          "workbookSha256": "c72712eb6919b7c80028d1c56a945b5cb559822a10217db2ae20093eac322b1d",
-          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_D_2026-11-24.json"
+          "sheets": 23,
+          "formulaCount": 209,
+          "formulaErrors": 0,
+          "runtimeCellsCompared": 5870,
+          "runtimeCellMismatches": 0,
+          "historicalSheetsPreservedByteForByte": 11,
+          "renderedViewsInspected": 4,
+          "workbookSha256": "5472c3c7d2bcf76a6f328624d85b61362202e4a6da6c81a2201fdf025ee9299e"
+        },
+        "staticVisualQA": {
+          "status": "passed_with_limits",
+          "stageCompositions": 9,
+          "propBoundsContained": 18,
+          "parallaxOffset": 0,
+          "fighterPositions": [
+            22,
+            78
+          ],
+          "browserExecuted": false,
+          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_F_2026-11-24.md"
         }
       },
-      "unrecoveredPreviousClaims": {
-        "date": "2026-11-20",
-        "claimedFighters": 50,
-        "claimedStages": 25,
-        "claimedCostumes": 7,
-        "claimedRecoveredDrawings": 111,
-        "restoredByThisBatch": false,
-        "note": "Archives correspondantes non retrouvées ; nombres non repris comme état réel du dépôt."
-      },
+      "blockedRequests": [
+        {
+          "asset": "alastor-strike",
+          "status": "generation_refused",
+          "requestId": "f665822b-5dce-48ff-bfd5-64e57c513736",
+          "fileProduced": false,
+          "retryAfterRefusal": false
+        },
+        {
+          "asset": "hb_glam-strike",
+          "status": "generation_refused",
+          "requestId": "b7f06d9a-9564-4c19-99c7-f8ff6aa00def",
+          "fileProduced": false,
+          "retryAfterRefusal": false
+        }
+      ],
       "priorBatch": {
-        "date": "2026-11-24",
-        "batchId": "wave-c-2026-11-24",
-        "comparisonCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
-        "branch": "feat/infernal-versus-assets-20261124",
-        "manifest": "art/infernal-versus/production/delivery-wave-c-2026-11-24.json",
-        "newProduction": {
-          "fighterPoses": 21,
-          "stageBackgrounds": 3,
-          "foregroundProps": 6,
-          "costumePoses": 5,
-          "totalNewArtworks": 35,
-          "derivedThumbnails": 3,
-          "reusedExistingReady": 1
-        },
-        "totals": {
-          "newGeneratedArtworks": 35,
-          "newMasterFiles": 35,
-          "publicImageFiles": 38,
-          "registeredPublicImageFiles": 38,
-          "totalImageFiles": 73,
-          "reusedExistingPublicFilesActivated": 1
-        },
-        "runtime": {
-          "fighters": 36,
-          "individualReady": 34,
-          "individualGuard": 10,
-          "individualLightContact": 12,
-          "individualHit": 11,
-          "costumes": 6,
-          "costumeKeyPoses": 35,
-          "finisherKeyPoses": 5,
-          "separatedFinishProps": 1,
-          "storyAssignments": 108,
-          "illustratedStoryAssignments": 26,
-          "uniqueStoryIllustrations": 22,
-          "stages": 19,
-          "threePlaneStages": 19,
-          "twoPlaneStages": 0,
-          "onePlaneStages": 0,
-          "attackEffectImages": 6,
-          "attackEffectAssignments": 13,
-          "referencedAssets": 336,
-          "brokenReferences": []
-        }
+        "batchId": "wave-d-2026-11-24",
+        "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json"
       }
     }
   }

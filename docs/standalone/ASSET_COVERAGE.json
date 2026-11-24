@@ -1,25 +1,25 @@
 {
   "schemaVersion": 2,
   "summary": {
-    "fighters": 40,
-    "individualReady": 37,
-    "individualGuard": 13,
-    "individualLightContact": 15,
-    "individualHit": 14,
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
     "costumes": 6,
     "costumeKeyPoses": 35,
     "finisherKeyPoses": 5,
     "separatedFinishProps": 1,
-    "storyAssignments": 120,
+    "storyAssignments": 129,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 22,
-    "threePlaneStages": 22,
+    "stages": 25,
+    "threePlaneStages": 25,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
-    "attackEffectImages": 11,
-    "attackEffectAssignments": 24,
-    "referencedAssets": 377,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 408,
     "brokenReferences": []
   },
   "fighters": [
@@ -151,9 +151,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/stances/alastor.webp",
-        "guard": null,
+        "guard": "/assets/sprites/individual/alastor-guard.webp",
         "lightContact": null,
-        "hit": null
+        "hit": "/assets/sprites/individual/alastor-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": "/assets/sprites/finishers/alastor.webp",
@@ -1380,6 +1380,102 @@
         "rival": null,
         "ending": null
       }
+    },
+    {
+      "id": "hb_vortex",
+      "name": "Vortex",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_vortex-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_vortex.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_vortex-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-extended-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-extended-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-extended-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-extended-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-extended-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-extended-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_vortex-ready.webp",
+        "guard": "/assets/sprites/individual/hb_vortex-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_vortex-strike.webp",
+        "hit": "/assets/sprites/individual/hb_vortex-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_glitz",
+      "name": "Glitz",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_glitz-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_glitz.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_glitz-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-rivals-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-rivals-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-rivals-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-rivals-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-rivals-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-rivals-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-rivals-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_glitz-ready.webp",
+        "guard": "/assets/sprites/individual/hb_glitz-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_glitz-strike.webp",
+        "hit": "/assets/sprites/individual/hb_glitz-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_glam",
+      "name": "Glam",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_glam-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_glam.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_glam-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-rivals-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-rivals-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-rivals-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-rivals-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-rivals-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-rivals-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-rivals-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_glam-ready.webp",
+        "guard": "/assets/sprites/individual/hb_glam-guard.webp",
+        "lightContact": null,
+        "hit": "/assets/sprites/individual/hb_glam-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
     }
   ],
   "stages": [
@@ -1624,6 +1720,39 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/hazbin/hh-heaven-gates/thumb.webp"
+    },
+    {
+      "id": "imp-exterior",
+      "name": "I.M.P. · Rue des bureaux",
+      "planes": [
+        "/assets/stages/helluva/imp-exterior/room.webp",
+        "/assets/stages/helluva/imp-exterior/prop-middle.webp",
+        "/assets/stages/helluva/imp-exterior/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/imp-exterior/thumb.webp"
+    },
+    {
+      "id": "oops-warehouse",
+      "name": "Oops · Entrepôt",
+      "planes": [
+        "/assets/stages/helluva/oops-warehouse/room.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-middle.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/oops-warehouse/thumb.webp"
+    },
+    {
+      "id": "sinsmas-balcony",
+      "name": "Blitzø · Balcon de Sinsmas",
+      "planes": [
+        "/assets/stages/helluva/sinsmas-balcony/room.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-middle.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/sinsmas-balcony/thumb.webp"
     }
   ],
   "attackEffects": [
@@ -1746,6 +1875,27 @@
       "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
     },
     {
+      "fighter": "velvette",
+      "id": "velvette-arrow",
+      "image": "/assets/vfx/infernal-versus/velvette-arrow.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "valentino",
+      "id": "valentino-smoke",
+      "image": "/assets/vfx/infernal-versus/valentino-smoke.webp",
+      "attacks": [
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
       "fighter": "angeldust",
       "id": "moxxie-bullet",
       "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
@@ -1773,6 +1923,16 @@
       "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
       "attacks": [
         "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_striker",
+      "id": "striker-lasso",
+      "image": "/assets/vfx/infernal-versus/striker-lasso.webp",
+      "attacks": [
+        "special"
       ],
       "canonStatus": "simulation_au",
       "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."

@@ -67,7 +67,7 @@ const stages = runtime.STANDALONE_STAGES.map(stage => {
   const planes = [asset(stage.imagePath), asset(stage.scenery?.middle), asset(stage.scenery?.near)].filter(Boolean);
   return { id: stage.id, name: stage.name, planes, planeCount: planes.length, thumbnail: asset(stage.thumbnailPath) };
 });
-const attackEffects = Object.entries(runtime.INFERNAL_ATTACK_EFFECTS).map(([fighter, effect]) => ({
+const attackEffects = runtime.getInfernalAttackEffectEntries().map(([fighter, effect]) => ({
   fighter, id: effect.id, image: asset(effect.image), attacks: effect.attacks,
   canonStatus: effect.canonStatus,
   behavior: 'Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage.',

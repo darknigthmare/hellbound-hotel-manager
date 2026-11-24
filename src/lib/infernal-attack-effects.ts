@@ -18,7 +18,10 @@ export type InfernalAttackEffectId =
   | 'adam-light'
   | 'stolas-portal'
   | 'asmodeus-smoke'
-  | 'beelzebub-ribbon';
+  | 'beelzebub-ribbon'
+  | 'velvette-arrow'
+  | 'striker-lasso'
+  | 'valentino-smoke';
 
 export interface InfernalAttackEffectDefinition {
   id: InfernalAttackEffectId;
@@ -102,6 +105,16 @@ export const INFERNAL_ATTACK_EFFECTS: Readonly<Record<string, InfernalAttackEffe
     kind: 'sweep', leadMs: 125, lingerMs: 150, width: 0, height: 0.42,
     elevation: 0.45, canonStatus: 'simulation_au',
   },
+  velvette: {
+    id: 'velvette-arrow', image: effectImage('velvette-arrow'), attacks: ['heavy', 'special'],
+    kind: 'projectile', leadMs: 110, lingerMs: 140, width: 9, height: 0.28,
+    elevation: 0.52, canonStatus: 'simulation_au',
+  },
+  valentino: {
+    id: 'valentino-smoke', image: effectImage('valentino-smoke'), attacks: ['special'],
+    kind: 'sweep', leadMs: 140, lingerMs: 180, width: 0, height: 0.46,
+    elevation: 0.5, canonStatus: 'simulation_au',
+  },
   // Ordinary gunfire reuses the existing AU bullet. This does not assert a
   // character-specific canonical ammunition shape or an angelic bullet design.
   angeldust: {
@@ -120,6 +133,24 @@ export const INFERNAL_ATTACK_EFFECTS: Readonly<Record<string, InfernalAttackEffe
     elevation: 0.52, canonStatus: 'simulation_au',
   },
 };
+
+/** A distinct move may use another motif without replacing its fighter's gunfire. */
+const INFERNAL_ATTACK_EFFECT_VARIANTS: Readonly<Record<string, readonly InfernalAttackEffectDefinition[]>> = {
+  hb_striker: [{
+    id: 'striker-lasso', image: effectImage('striker-lasso'), attacks: ['special'],
+    kind: 'sweep', leadMs: 130, lingerMs: 170, width: 0, height: 0.4,
+    elevation: 0.48, canonStatus: 'simulation_au',
+  }],
+};
+
+/** Complete inventory for asset audits, including alternate effects by move. */
+export function getInfernalAttackEffectEntries(): readonly (readonly [string, InfernalAttackEffectDefinition])[] {
+  return [
+    ...Object.entries(INFERNAL_ATTACK_EFFECTS),
+    ...Object.entries(INFERNAL_ATTACK_EFFECT_VARIANTS)
+      .flatMap(([fighter, effects]) => effects.map(effect => [fighter, effect] as const)),
+  ];
+}
 
 export interface InfernalAttackEffectFrame {
   id: InfernalAttackEffectId;
@@ -154,11 +185,13 @@ export function getInfernalAttackEffectFrame({
 }: InfernalAttackEffectInput): InfernalAttackEffectFrame | null {
   if (!running || !combat.active || combat.winner !== null || combat.matchWinner !== null
     || combat.hpOne <= 0 || combat.hpTwo <= 0 || combat.timerMs <= 0) return null;
-  const effect = INFERNAL_ATTACK_EFFECTS[fighterId];
   const isOne = side === 'one';
   const action = isOne ? combat.actionOne : combat.actionTwo;
-  if (!effect || !isCombatAttackAction(action) || action === 'signature'
-    || !effect.attacks.includes(action)) return null;
+  if (!isCombatAttackAction(action) || action === 'signature') return null;
+  const primary = INFERNAL_ATTACK_EFFECTS[fighterId];
+  const effect = primary?.attacks.includes(action) ? primary
+    : INFERNAL_ATTACK_EFFECT_VARIANTS[fighterId]?.find(candidate => candidate.attacks.includes(action));
+  if (!effect) return null;
 
   const duration = isOne ? combat.actionDurationMsOne : combat.actionDurationMsTwo;
   const remaining = isOne ? combat.actionMsOne : combat.actionMsTwo;

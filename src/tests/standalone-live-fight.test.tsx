@@ -73,6 +73,9 @@ describe('standalone combat lifecycle', () => {
     ['hz_katie_killjoy', true, 'hz_katie_killjoy-guard'],
     ['hz_tom_trench', true, 'hz_tom_trench-guard'],
     ['hb_mammon', true, 'hb_mammon-guard'],
+    ['hb_vortex', false, 'hb_vortex-guard'],
+    ['hb_glitz', false, 'hb_glitz-guard'],
+    ['hb_glam', false, 'hb_glam-guard'],
   ] as const)('keeps the recovered %s pose format through a held guard', (id, portrait, guardPose) => {
     const fighter = getStandaloneFighter(id)!;
     render(<PentagramLiveFight {...props({
@@ -120,8 +123,8 @@ describe('standalone combat lifecycle', () => {
     expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
   });
 
-  it.each(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon', 'hb_stella'])(
-    'keeps damaged %s atlas cells hidden through intro, movement, crouch and attack on both sides', id => {
+  it.each(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon', 'hb_stella', 'hb_vortex', 'hb_glitz', 'hb_glam'])(
+    'keeps %s authored fallback visible through intro, movement, crouch and attack on both sides', id => {
       const fighter = getStandaloneFighter(id)!;
       const definition = buildCombatantDefinition(fighter.character, fighter.profile);
       render(<PentagramLiveFight {...props({
@@ -131,7 +134,8 @@ describe('standalone combat lifecycle', () => {
       })} />);
       const cleanPoses = id === 'hb_stella'
         ? ['/assets/sprites/helluva/portraits/hb_stella.png']
-        : ['ready', 'guard', 'strike', 'recoil'].map(pose => `/assets/sprites/individual/${id}-${pose}.webp`);
+        : (id === 'hb_glam' ? ['ready', 'guard', 'recoil'] : ['ready', 'guard', 'strike', 'recoil'])
+          .map(pose => `/assets/sprites/individual/${id}-${pose}.webp`);
       const assertClean = () => {
         for (const side of ['one', 'two']) {
           const fighterElement = document.querySelector<HTMLElement>(`.arena-combatant.is-${side}`)!;

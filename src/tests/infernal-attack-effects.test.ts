@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { INFERNAL_ATTACK_EFFECTS, getInfernalAttackEffectFrame } from '../lib/infernal-attack-effects';
+import { INFERNAL_ATTACK_EFFECTS, getInfernalAttackEffectEntries, getInfernalAttackEffectFrame } from '../lib/infernal-attack-effects';
 import {
   createCombatState, getCombatMoveInfo, resolveCombatAttack, stepCombat,
   type CombatAttack, type CombatInputs, type CombatState, type PlayerSide,
@@ -35,13 +35,26 @@ function attack(fighterId: string, side: PlayerSide = 'one', action: CombatAttac
 }
 
 describe('Infernal attack artwork synchronized with existing combat', () => {
-  it.each(Object.entries(INFERNAL_ATTACK_EFFECTS))('assigns %s artwork only to supported moves of a real fighter', (id, effect) => {
+  it.each(getInfernalAttackEffectEntries())('assigns %s artwork only to supported moves of a real fighter', (id, effect) => {
     expect(getStandaloneFighter(id)).toBeDefined();
     expect(effect.canonStatus).toBe('simulation_au');
     expect(existsSync(join(process.cwd(), 'public', effect.image)), effect.image).toBe(true);
     for (const action of effect.attacks) {
       const scene = attack(id, 'one', action);
       expect(scene.frame(scene.tick(scene.started, scene.move.startupMs))?.id).toBe(effect.id);
+    }
+  });
+
+  it('keeps Striker gunfire on heavy and reserves his lasso for special without overlapping assignments', () => {
+    const effects = getInfernalAttackEffectEntries().filter(([id]) => id === 'hb_striker').map(([, effect]) => effect);
+    expect(effects.flatMap(effect => effect.attacks)).toEqual(['heavy', 'special']);
+    for (const side of ['one', 'two'] as const) {
+      const heavy = attack('hb_striker', side, 'heavy');
+      const special = attack('hb_striker', side, 'special');
+      const light = attack('hb_striker', side, 'light');
+      expect(heavy.frame(heavy.tick(heavy.started, heavy.move.startupMs))?.id).toBe('moxxie-bullet');
+      expect(special.frame(special.tick(special.started, special.move.startupMs))?.id).toBe('striker-lasso');
+      expect(light.frame(light.tick(light.started, light.move.startupMs))).toBeNull();
     }
   });
 
@@ -60,7 +73,7 @@ describe('Infernal attack artwork synchronized with existing combat', () => {
   });
 
   it('mirrors both players and keeps every image inside its actual reach and the viewport', () => {
-    for (const [id, effect] of Object.entries(INFERNAL_ATTACK_EFFECTS)) {
+    for (const [id, effect] of getInfernalAttackEffectEntries()) {
       for (const action of effect.attacks) {
         const one = attack(id, 'one', action);
         const two = attack(id, 'two', action);
@@ -147,9 +160,10 @@ describe('Infernal attack artwork synchronized with existing combat', () => {
     // jabs, knife strikes or Blitzø's separate movement signature.
     for (const [fighterId, action] of [
       ['husk', 'heavy'], ['angeldust', 'light'], ['hb_blitzo', 'light'],
-      ['hb_blitzo', 'signature'], ['hb_striker', 'light'], ['hb_striker', 'special'],
+      ['hb_blitzo', 'signature'], ['hb_striker', 'light'],
       ['adam', 'light'], ['adam', 'special'], ['hb_stolas', 'special'],
       ['hb_asmodeus', 'heavy'], ['hb_beelzebub', 'special'], ['lucifer', 'special'],
+      ['velvette', 'light'], ['valentino', 'light'], ['valentino', 'heavy'],
     ] as const) {
       const scene = attack(fighterId, 'one', action);
       expect(scene.frame(scene.tick(scene.started, scene.move.startupMs)), `${fighterId}/${action}`).toBeNull();

@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-24",
+  "batchId": "wave-f-2026-11-24",
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "oneToOneFidelityCertified": false,
+  "canonStatus": "simulation_au",
+  "assignments": [
+    {
+      "fighter": "velvette",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "effect": "velvette-arrow"
+    },
+    {
+      "fighter": "hb_striker",
+      "attacks": [
+        "special"
+      ],
+      "effect": "striker-lasso"
+    },
+    {
+      "fighter": "valentino",
+      "attacks": [
+        "special"
+      ],
+      "effect": "valentino-smoke"
+    }
+  ],
+  "retained": "Striker conserve le projectile moxxie-bullet sur son coup lourd.",
+  "behavior": "Habillage des attaques existantes. Aucune physique, collision, portée, statut ni dégât autonome ajouté.",
+  "sourcesAndPrompts": "art/infernal-versus/production/root-prompts-wave-f-2026-11-24.json",
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/vfx/velvette-arrow.png",
+      "bytes": 234804,
+      "sha256": "27d4673d8c4c6e104ce3a1242771c77fec596a856a75fb1db9f8adb52df9f0ee",
+      "gitBlobSha": "6c876c45ee2aa58893316e37bc660e08d7ee6665",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        104,
+        231,
+        2077,
+        506
+      ],
+      "id": "velvette-arrow",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/velvette-arrow.webp",
+      "bytes": 132584,
+      "sha256": "4bd5f699a4256db870064bdf02b8ea87ea0219f7bd7598de6b48980eb1fd1e5f",
+      "gitBlobSha": "62dbbf04c1500b1efee89be07e4ddb6f07a678a5",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        104,
+        231,
+        2077,
+        506
+      ],
+      "id": "velvette-arrow",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/striker-lasso.png",
+      "bytes": 403247,
+      "sha256": "c575b4adfcd4904c99cbd8c873ca8c95dbf636f3825e1c13b218861c77e9b6a1",
+      "gitBlobSha": "5ecad56737dc0ed76e63190044d99e2414d043d6",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        50,
+        149,
+        2122,
+        576
+      ],
+      "id": "striker-lasso",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/striker-lasso.webp",
+      "bytes": 275222,
+      "sha256": "310037a207a18fa21a35ee63b41e67470c6c7741bb3da4cd687bc1e6a57e804b",
+      "gitBlobSha": "4e2480b89219541aa029c745932b1978a51984b8",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        50,
+        149,
+        2122,
+        576
+      ],
+      "id": "striker-lasso",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/valentino-smoke.png",
+      "bytes": 875106,
+      "sha256": "7e534a75fda9a006b0c691161d2fcad727217c3426fccb90d62d71d88fa043d5",
+      "gitBlobSha": "e8351bd30996c51dfd701c3e2aaf937e1574f846",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        109,
+        97,
+        2074,
+        649
+      ],
+      "id": "valentino-smoke",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/valentino-smoke.webp",
+      "bytes": 590720,
+      "sha256": "4d82461d56b26f9199040a575ec566cd0990c3b489d9ec231bdcbfb61284e53f",
+      "gitBlobSha": "d8c4222b7a8407960ac2c4d5775a1d6d89e5dfee",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        109,
+        97,
+        2074,
+        649
+      ],
+      "id": "valentino-smoke",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    }
+  ]
+}

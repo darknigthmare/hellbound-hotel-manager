@@ -1,0 +1,518 @@
+{
+  "date": "2026-11-24",
+  "batchId": "wave-f-2026-11-24",
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "oneToOneFidelityCertified": false,
+  "canonStatus": "simulation_au",
+  "stages": [
+    {
+      "id": "imp-exterior",
+      "name": "I.M.P. · Façade extérieure",
+      "back": "Façade, fenêtres et accès de l’immeuble I.M.P. dans Imp City ; rue vidée de personnages.",
+      "middle": "Bloc indépendant de six fenêtres, fixé dans le cadre du fond contenu.",
+      "floor": "Deux affiches murales détourées ; couloir de duel dégagé.",
+      "ambient": "Partition procédurale originale ; aucune bande originale reprise.",
+      "composition": "Master complet au ratio natif, contain bas-centre. Fenêtres et affiches sont des éléments indépendants ; leur placement et la piste sont adaptés à la simulation AU.",
+      "reference": "Murder Family S1E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=el_PChGfJN8 ; repère extérieur vers 02:05. Comparaison en jeu et fidélité 1:1 non certifiées."
+    },
+    {
+      "id": "oops-warehouse",
+      "name": "Entrepôt · Oops",
+      "back": "Entrepôt industriel sombre, stockage et cage ; espace frontal libéré pour le duel.",
+      "middle": "Groupe cohérent de cinq caisses détourées au bord du décor.",
+      "floor": "Cage vide indépendante ; placée derrière les combattants pour conserver leur lisibilité.",
+      "ambient": "Partition procédurale originale et teinte fixe, sans reprise de chanson.",
+      "composition": "Master entier en contain bas-centre. Les deux props constituent des plans de présentation distincts ; les placements ne reproduisent pas un plan de caméra exact.",
+      "reference": "Oops S2E6, épisode officiel Vivziepop : https://www.youtube.com/watch?v=y1sF6ZeASU0. Motifs repérés ; composition de duel AU et fidélité 1:1 non certifiée."
+    },
+    {
+      "id": "sinsmas-balcony",
+      "name": "Balcon de Blitzø · Sinsmas",
+      "back": "Balcon nocturne de l’appartement, façade et décorations de Sinsmas.",
+      "middle": "Segment de garde-corps détouré, au bord de la composition.",
+      "floor": "Guirlande multicolore indépendante, alignée au haut de l’image contenue.",
+      "ambient": "Lumières fixes et partition procédurale originale ; aucune musique de l’épisode.",
+      "composition": "Fond entier, sans déformation. La piste et les éléments sont réorganisés pour le duel AU ; les bandes de ratio restent teintées.",
+      "reference": "Sinsmas S2E12, épisode officiel Vivziepop : https://www.youtube.com/watch?v=GisSNuVpbkM. Références documentées dans SOURCES_QA.md ; fidélité 1:1 non certifiée."
+    }
+  ],
+  "sourceRecord": "art/infernal-versus/production/wave-f-2026-11-24/backgrounds/SOURCES_QA.md",
+  "comparison": "Motifs et captures de référence contrôlés ; composition AU. Pas de capture ni de recette du jeu en navigateur.",
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/room.png",
+      "bytes": 1693956,
+      "sha256": "ca00112a650faa2a4a80417f4a486283b8d6b8337e552707aedf24b1e7fe2a8f",
+      "gitBlobSha": "23244920feda078bfff62e38bf743f3fc7032fdb",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/room.webp",
+      "bytes": 1224992,
+      "sha256": "9f89780f79f3368e57669a75791305170473db0c435266a508725ed9b71cc19d",
+      "gitBlobSha": "a545223bf53afc947a58c9aab54c85d33d15d61a",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/thumb.webp",
+      "bytes": 21276,
+      "sha256": "553678c5c8e3862c488eb622b63b63a6756ca4d3c6450e4717ebe50788d69101",
+      "gitBlobSha": "e1f53644b48611d5b2acfb0c446f5fca4c36ada4",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/prop-middle.png",
+      "bytes": 805767,
+      "sha256": "748f47e25e46b29e8ffa9cb2d9d189abbfbd8e0ffeb6cc4a6e43f453d553505c",
+      "gitBlobSha": "16c0fa652765ad957109c7e1f1c35a8e45d35ff1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        122,
+        344,
+        1132,
+        944
+      ],
+      "id": "imp-exterior/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/prop-middle.webp",
+      "bytes": 449822,
+      "sha256": "7b54042d0f7c7f97c9055fa2836aee6d5e62719a55278ae42f71ad679e81b621",
+      "gitBlobSha": "cc24b2b7404656f3023047786148af3b724b2103",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        122,
+        344,
+        1132,
+        944
+      ],
+      "id": "imp-exterior/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/prop-near.png",
+      "bytes": 803946,
+      "sha256": "70396e8742949edfaf2eaf80beb82272b149ed365799ac052f52d65c2080d7fc",
+      "gitBlobSha": "f908b4429cbefa838a929b606ceb3ca9bb0ed7c8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        236,
+        169,
+        960,
+        1067
+      ],
+      "id": "imp-exterior/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/prop-near.webp",
+      "bytes": 516480,
+      "sha256": "83b0ef401398e4ddebcbff668348e33f44a42b492b8f54fa98466b8ed1447ef9",
+      "gitBlobSha": "19e0ea2a9583cdc0f811adc11bef06df62fc69f4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        236,
+        169,
+        960,
+        1067
+      ],
+      "id": "imp-exterior/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/room.png",
+      "bytes": 1612262,
+      "sha256": "e06872a4da7d6c204810071bc6eca00e93c9a914dc51dd9308de8e8f9c3aa887",
+      "gitBlobSha": "ff839df1ecc58aad229ca93cd97afc666bdd9e91",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/room.webp",
+      "bytes": 1098604,
+      "sha256": "8d89fd56c12d48878d477b6082a32fb37ec92368dba3b69beac63cabb9755436",
+      "gitBlobSha": "9186222e87518fbdf5f4c203172c1e3060c9efa4",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/thumb.webp",
+      "bytes": 17246,
+      "sha256": "64a3be519a393e09e9f42a2c2ad8ae02017b8c023443016b9d684e8dc779bada",
+      "gitBlobSha": "45b615e2176a1b35f9597a5869b775aebd07b13b",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/prop-middle.png",
+      "bytes": 607183,
+      "sha256": "0d2ba2f9def68dc7333bde7d3355d4f6b022f42e0d3e45cf3d486c5ad4073b4a",
+      "gitBlobSha": "5cba009b93013407f1d67181309fb6a7cf2a7faf",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        90,
+        414,
+        1165,
+        915
+      ],
+      "id": "oops-warehouse/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/prop-middle.webp",
+      "bytes": 316228,
+      "sha256": "f7e171e0fe63cfa9ca26599831b7837782ba082abb1709fd019d9c4e22b56217",
+      "gitBlobSha": "346ea13a1d95c70f1652dfa7d0e18116fc93a463",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        90,
+        414,
+        1165,
+        915
+      ],
+      "id": "oops-warehouse/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/prop-near.png",
+      "bytes": 944918,
+      "sha256": "7a7ab4c8d3a0a15ee680aece2e4362c5be1ba5522a0634ed6ff418fb15e62354",
+      "gitBlobSha": "d35a6d8bc2d215ecfd188ca6a43a36556aada78b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        95,
+        282,
+        1157,
+        984
+      ],
+      "id": "oops-warehouse/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/prop-near.webp",
+      "bytes": 662144,
+      "sha256": "0e05770722e4e2753e260d46128c434213c528a15a36ef78c64b9ffef7e15c5d",
+      "gitBlobSha": "a23b51fa38657810c67d52e9ae25a519469ec4e6",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        95,
+        282,
+        1157,
+        984
+      ],
+      "id": "oops-warehouse/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/room.png",
+      "bytes": 1704890,
+      "sha256": "3acd55fd60b2d7551d1c02c8d54a472320b721f821aa63edd66c3a7157a28366",
+      "gitBlobSha": "56fd0572a9ef866d98981694fa49b91e6566d92d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/room.webp",
+      "bytes": 1219530,
+      "sha256": "3ed15885a35d82dd55d793d3a90a17994f4835289a9f8a96693aff2e2c960b27",
+      "gitBlobSha": "825be716ad38b6566a2f30be740262554fdf6073",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/thumb.webp",
+      "bytes": 27080,
+      "sha256": "9111282f5cae47f08669772247c6f3e14be74111d033c144ff062d46b7c85622",
+      "gitBlobSha": "b06b78dbf5caef246af16ea51538436b088369d6",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/prop-middle.png",
+      "bytes": 306134,
+      "sha256": "184da3db5ca32b4b8e2f6396bec05c961c39f7fc84bae50e5cbedc61d6cdad65",
+      "gitBlobSha": "b72fc91bd47f105e38a73e03dcd523793e15ed8a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        45,
+        373,
+        1210,
+        904
+      ],
+      "id": "sinsmas-balcony/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/prop-middle.webp",
+      "bytes": 171934,
+      "sha256": "19b1e129562f4af2080da9c583881c4d120c9784d7ac08bceefdaaebc722d804",
+      "gitBlobSha": "728e4e8f29ba01660a279d0acd6ae6208b0fd958",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        45,
+        373,
+        1210,
+        904
+      ],
+      "id": "sinsmas-balcony/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/prop-near.png",
+      "bytes": 306068,
+      "sha256": "72e89bf26ef8a5a315a236c351ac0308a8d2e42bb98f3007ce7754172d7a489d",
+      "gitBlobSha": "de886d42e4aaa20eb83d5e88338898ab93e1ae74",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        37,
+        547,
+        1217,
+        748
+      ],
+      "id": "sinsmas-balcony/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/prop-near.webp",
+      "bytes": 187776,
+      "sha256": "b552b24b8a864bd7327822706bf064205ad25b580b59f1fa5aa0fb2958511947",
+      "gitBlobSha": "1623bf636076f6c4225b9b309ef33e50d284874a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        37,
+        547,
+        1217,
+        748
+      ],
+      "id": "sinsmas-balcony/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    }
+  ]
+}

@@ -2,6 +2,26 @@ import { describe, expect, it } from 'vitest';
 import { getInfernalPoseGroundOffsetPercent, getInfernalPosePlacement } from '../lib/infernal-pose-anchors';
 
 const costume = 'lute-pre-injury';
+
+describe('wave F native canvas foot contacts', () => {
+  const contacts = [
+    ['hb_vortex-ready', 1310, 1268], ['hb_vortex-guard', 1419, 1376],
+    ['hb_vortex-strike', 1419, 1367], ['hb_vortex-recoil', 1419, 1387],
+    ['hb_glitz-ready', 1380, 1301], ['hb_glitz-guard', 1456, 1371],
+    ['hb_glitz-strike', 1380, 1298], ['hb_glitz-recoil', 1380, 1288],
+    ['hb_glam-ready', 1312, 1226], ['hb_glam-guard', 1420, 1341],
+    ['hb_glam-recoil', 1312, 1220],
+  ] as const;
+  it.each([168, 310, 460])('meets one floor at image height %i despite different source sizes', renderedHeight => {
+    for (const [pose, nativeHeight, contact] of contacts) {
+      const placement = getInfernalPosePlacement(undefined, `/assets/sprites/individual/${pose}.webp`)!;
+      expect(placement.groundReference).toBe('canvas-bottom');
+      expect(placement.renderScale).toBe(1);
+      expect(contact / nativeHeight * renderedHeight + placement.groundOffsetPercent / 100 * renderedHeight).toBeCloseTo(renderedHeight, 10);
+    }
+  });
+});
+
 // Independently inspected lower edges of the boots at alpha >= 16.
 const groundedContacts = [
   ['/assets/sprites/individual/lute-ready.webp', 1517],

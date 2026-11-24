@@ -19,6 +19,36 @@ function duel(opponent: string, stage: PentagramStageId, scene: string): StoryCh
 
 // Original exhibition fiction. The scenes use the locations available to the standalone.
 export const STORY_ROUTES: Readonly<Record<string, StoryRoute>> = {
+  hb_vortex: {
+    title: 'Le passage libre',
+    intro: 'Pour une soirée d’exhibition, Vortex doit garder libre le chemin entre la scène et la sortie. Les techniciens ont déplacé les barrières après sa première ronde. Il refait le parcours avant l’arrivée des invités.',
+    chapters: [
+      duel('hb_verosika', 'vee-broadcast-studio', 'Verosika répète sa sortie sur un plateau loué. Vortex lui propose un essai à pleine vitesse pour vérifier que personne ne restera coincé derrière les enceintes.'),
+      duel('hb_loona', 'imp-reception', 'Loona a trouvé un raccourci dans le plan de circulation. Ils essaient chacun de tenir le passage pendant que les autres installent le matériel.'),
+      duel('hb_beelzebub', 'bee-party', 'Bee veut traverser la salle pour rejoindre les invités du fond. Vortex lui ouvre une voie, puis la laisse tester elle-même chaque changement de direction.'),
+    ],
+    ending: 'La dernière barrière est déplacée avant l’ouverture des portes. Vortex reste près de la sortie, assez loin des enceintes pour entendre ceux qui ont besoin de passer. Bee lui garde une place pour la fin de la soirée.',
+  },
+  hb_glitz: {
+    title: 'La marque déplacée',
+    intro: 'Glitz retrouve sa marque de départ déplacée d’un pas vers le bord du plateau. Pour une nouvelle exhibition, elle veut reprendre le numéro depuis son entrée, avec assez de place pour décider elle-même de son dernier mouvement.',
+    chapters: [
+      duel('hb_glam', 'mammon-show', 'Glam a déjà réglé le croisement au centre. Les jumelles reprennent le passage pour choisir laquelle prendra la ligne intérieure.'),
+      duel('hb_fizzarolli', 'ozzies-cabaret', 'Fizzarolli connaît une scène où les marques changent chaque soir. Glitz y essaie son nouveau départ pendant qu’il lui dispute le prochain temps fort.'),
+      duel('hb_mammon', 'mammon-show', 'Mammon a remis la marque au bord du plateau pour dégager la vue de sa tribune. Glitz entre avant le signal et ramène le centre du numéro sous ses propres pieds.'),
+    ],
+    ending: 'Glitz retire le ruban du sol et le roule entre ses doigts. Au prochain départ, Glam se place à sa hauteur. Elles commencent lorsque leurs regards se croisent, sans attendre le geste de la tribune.',
+  },
+  hb_glam: {
+    title: 'Un temps de plus',
+    intro: 'Le conducteur d’une exhibition coupe le dernier mouvement de Glam pour avancer le salut final. Elle garde la page d’origine et cherche un espace où le numéro pourra aller jusqu’au bout.',
+    chapters: [
+      duel('hb_glitz', 'mammon-show', 'Glitz veut garder l’entrée rapide. Glam lui propose un essai où chacune conserve un temps entier pour terminer son passage.'),
+      duel('hb_verosika', 'vee-broadcast-studio', 'Verosika répète un final sur le plateau voisin. Glam teste son arrêt face à une partenaire qui refuse de laisser tomber le rythme.'),
+      duel('hb_asmodeus', 'ozzies-cabaret', 'Asmodeus lui ouvre la scène du cabaret pour un dernier essai. Glam traverse le plateau et défend jusqu’au silence la durée qu’elle a choisie.'),
+    ],
+    ending: 'Glam termine le mouvement avant de saluer. Le silence dure un instant de plus que prévu. Dans les coulisses, elle rend à Glitz le conducteur corrigé, avec deux places pour signer.',
+  },
   hz_katie_killjoy: {
     title: 'Le dernier mot',
     intro: 'Un sujet préparé par Katie revient du montage avec sa dernière phrase coupée. Elle quitte le bureau de 666 News avec la bande originale et exige une place dans le prochain direct.',

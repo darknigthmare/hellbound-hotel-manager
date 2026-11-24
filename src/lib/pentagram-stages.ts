@@ -22,7 +22,10 @@ export type PentagramStageId = HotelStageId
   | 'mammon-show'
   | 'western-lair'
   | 'goetia-court'
-  | 'hh-heaven-gates';
+  | 'hh-heaven-gates'
+  | 'imp-exterior'
+  | 'oops-warehouse'
+  | 'sinsmas-balcony';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -382,6 +385,9 @@ const MAMMON_SHOW = '/assets/stages/helluva/mammon-show';
 const WESTERN_LAIR = '/assets/stages/helluva/western-lair';
 const GOETIA_COURT = '/assets/stages/helluva/goetia-court';
 const HH_HEAVEN_GATES = '/assets/stages/hazbin/hh-heaven-gates';
+const IMP_EXTERIOR = '/assets/stages/helluva/imp-exterior';
+const OOPS_WAREHOUSE = '/assets/stages/helluva/oops-warehouse';
+const SINSMAS_BALCONY = '/assets/stages/helluva/sinsmas-balcony';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -662,6 +668,60 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 4, 7, 11], [4, 7, 11, 14], [9, 12, 16, 19], [7, 11, 14, 18]],
     bassPattern: [0, 12, 4, 11, 9, 16, 7, 14],
     leadPattern: [19, null, 16, 23, 21, null, 16, 14, 24, 21, null, 19, 18, null, 14, 12],
+  },
+}, {
+  id: 'imp-exterior',
+  name: 'I.M.P. · Rue des bureaux',
+  district: 'Imp City',
+  description: 'La façade de briques et les fenêtres roses des bureaux dominent une ruelle au ciel pourpre.',
+  loreBasis: 'Helluva Boss, Murder Family, S1 E1. Repères extérieurs des bureaux I.M.P. La rue élargie, les avis muraux et la fenêtre déportée en bord de cadre sont une reconstruction de simulation AU.',
+  imagePath: `${IMP_EXTERIOR}/room.webp`,
+  thumbnailPath: `${IMP_EXTERIOR}/thumb.webp`,
+  scenery: { middle: `${IMP_EXTERIOR}/prop-middle.webp`, near: `${IMP_EXTERIOR}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#ef527c', shadow: '#420d2c', floor: '#482e3c',
+  soundtrack: {
+    id: 'after-hours-contract', title: 'Contrat après la fermeture', bpm: 134, rootMidi: 38,
+    swing: 0.46, drive: 0.78, seed: 261124501,
+    chordProgression: [[0, 3, 7, 10], [3, 7, 10, 14], [6, 9, 13, 16], [7, 10, 14, 17]],
+    bassPattern: [0, 7, 3, 12, 6, 13, 7, 10],
+    leadPattern: [15, null, 12, 19, 14, null, 10, 13, 16, null, 15, 12, 17, null, 14, 7],
+  },
+}, {
+  id: 'oops-warehouse',
+  name: 'Oops · Entrepôt',
+  district: 'Anneau de l’Avarice',
+  description: 'Un entrepôt vert bleuté, des poutres industrielles et des cartons entourent une piste de béton libre.',
+  loreBasis: 'Helluva Boss, Oops, S2 E6. Repères de l’entrepôt avant les dégâts. L’espace de duel élargi, la cage vide et les cartons déplacés vers les bords relèvent de la simulation AU.',
+  imagePath: `${OOPS_WAREHOUSE}/room.webp`,
+  thumbnailPath: `${OOPS_WAREHOUSE}/thumb.webp`,
+  scenery: { middle: `${OOPS_WAREHOUSE}/prop-middle.webp`, near: `${OOPS_WAREHOUSE}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#86b9a9', shadow: '#0d212a', floor: '#2d4145',
+  soundtrack: {
+    id: 'empty-crate-echo', title: 'Échos entre les caisses', bpm: 126, rootMidi: 35,
+    swing: 0.31, drive: 0.84, seed: 261124506,
+    chordProgression: [[0, 3, 6, 10], [5, 8, 12, 15], [1, 5, 8, 11], [7, 10, 14, 17]],
+    bassPattern: [0, 0, 6, 12, 5, 8, 1, 7],
+    leadPattern: [12, null, 18, 15, 13, null, 8, 10, 17, null, 14, 12, 16, null, 11, 7],
+  },
+}, {
+  id: 'sinsmas-balcony',
+  name: 'Blitzø · Balcon de Sinsmas',
+  district: 'Imp City',
+  description: 'Un balcon métallique illuminé par une guirlande domine les silhouettes fuchsia de la ville.',
+  loreBasis: 'Helluva Boss, Sinsmas, S2 E12. Balcon de l’appartement de Blitzø et guirlande de fête. Largeur de la plateforme, garde-corps de bord et profondeur des lumières adaptés à la simulation AU.',
+  imagePath: `${SINSMAS_BALCONY}/room.webp`,
+  thumbnailPath: `${SINSMAS_BALCONY}/thumb.webp`,
+  scenery: { middle: `${SINSMAS_BALCONY}/prop-middle.webp`, near: `${SINSMAS_BALCONY}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#fa79c4', shadow: '#30062e', floor: '#3d203b',
+  soundtrack: {
+    id: 'pink-sky-refrain', title: 'Refrain sous le ciel rose', bpm: 110, rootMidi: 43,
+    swing: 0.5, drive: 0.62, seed: 261124512,
+    chordProgression: [[0, 3, 7, 11], [8, 12, 15, 19], [5, 8, 12, 16], [7, 11, 14, 18]],
+    bassPattern: [0, 7, 12, 3, 8, 15, 5, 11],
+    leadPattern: [19, null, 15, 12, 20, null, 19, 15, 17, null, 12, 16, 18, null, 14, 11],
   },
 }];
 

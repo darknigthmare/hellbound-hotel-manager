@@ -1,0 +1,1559 @@
+{
+  "date": "2026-11-24",
+  "batchId": "wave-f-2026-11-24",
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "oneToOneFidelityCertified": false,
+  "canonStatus": "simulation_au",
+  "comparisonCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json",
+  "newProduction": {
+    "playableFighters": 3,
+    "fighterPoses": 13,
+    "stageBackgrounds": 3,
+    "foregroundProps": 6,
+    "attackEffectImages": 3,
+    "totalNewArtworks": 25,
+    "derivedThumbnails": 3,
+    "newAttackEffectAssignments": 4,
+    "newStoryRoutes": 3,
+    "newStoryDuels": 9
+  },
+  "totals": {
+    "newGeneratedArtworks": 25,
+    "newMasterFiles": 25,
+    "publicImageFiles": 28,
+    "registeredPublicImageFiles": 28,
+    "totalImageFiles": 53,
+    "derivedThumbnails": 3
+  },
+  "runtime": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 25,
+    "threePlaneStages": 25,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 408,
+    "brokenReferences": []
+  },
+  "retainedComponents": [
+    {
+      "id": "hb_moxxie-bowtie",
+      "name": "Nœud papillon de Moxxie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "hb_millie-top",
+      "name": "Haut de Millie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
+      "export": "public/assets/sprites/parts/hb_millie-top.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "alastor-microphone-cane",
+      "name": "Canne-micro d’Alastor",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
+      "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "vaggie-exorcist-spear",
+      "name": "Lance d’exorciste de Vaggie",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
+      "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "carmine-industries-crate-variant",
+      "name": "Caisse Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "carmine-industries-chain",
+      "name": "Chaîne Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "wrath-ranch-lantern",
+      "name": "Lanterne de Wrath",
+      "kind": "Variante de décor",
+      "master": null,
+      "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
+      "status": "Export récupéré, hors scène active"
+    },
+    {
+      "id": "lucifer-top-hat",
+      "name": "Chapeau de Lucifer",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
+      "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    },
+    {
+      "id": "hb_moxxie-tail",
+      "name": "Queue de Moxxie",
+      "kind": "Partie séparée",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    }
+  ],
+  "verification": {
+    "runtimeAssetAudit": {
+      "status": "passed",
+      "referencedAssets": 408,
+      "missingReferences": 0,
+      "evidence": "docs/standalone/ASSET_COVERAGE.json"
+    },
+    "exports": {
+      "status": "passed",
+      "masterFiles": 25,
+      "losslessPixelExactWebP": 25,
+      "derivedThumbnails": 3,
+      "evidence": "art/infernal-versus/production/export-wave-f-2026-11-24.json"
+    },
+    "automatedQA": {
+      "status": "passed",
+      "command": "npm run qa",
+      "exitCode": 0,
+      "suites": 44,
+      "tests": 376,
+      "typecheck": "passed",
+      "lint": "passed",
+      "builds": 2,
+      "standaloneFiles": 989,
+      "standaloneHashesVerified": 989,
+      "standaloneBytes": 600133226,
+      "standaloneMiB": 572.33,
+      "phase": "Full QA before final CSS positioning; both builds and standalone hash verification passed again after CSS positioning.",
+      "evidence": "docs/standalone/QA_RUNTIME_WAVE_F_2026-11-24.json"
+    },
+    "browserReview": "Chromium bloqué par socket() EPERM avant création de page. La revue automatique a refusé le lancement avec permissions supplémentaires. Aucune capture, interaction ni recette navigateur annoncée.",
+    "oneToOneFidelity": "Non certifiée. Les sources et motifs sont documentés séparément des poses et compositions AU. Les proportions, contours, marges alpha et cadrages sont contrôlés sur les images ; la comparaison animée en jeu reste à faire.",
+    "pivots": "Appuis mesurés à partir du bas de la silhouette alpha ≥ 16. Ratios natifs conservés ; échelle canonique et transitions animées non certifiées.",
+    "animationCompleteness": "Vortex et Glitz : quatre poses clés chacun. Glam : repos, garde, recul. Alastor : nouvelle garde et nouveau recul, repos conservé. Les actions non dessinées utilisent le repli existant ; aucun cycle complet ni nouvelle finition animée.",
+    "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_F_2026-11-24.json",
+    "workbookQA": {
+      "status": "passed",
+      "sheets": 23,
+      "formulaCount": 209,
+      "formulaErrors": 0,
+      "runtimeCellsCompared": 5870,
+      "runtimeCellMismatches": 0,
+      "historicalSheetsPreservedByteForByte": 11,
+      "renderedViewsInspected": 4,
+      "workbookSha256": "5472c3c7d2bcf76a6f328624d85b61362202e4a6da6c81a2201fdf025ee9299e"
+    },
+    "staticVisualQA": {
+      "status": "passed_with_limits",
+      "stageCompositions": 9,
+      "propBoundsContained": 18,
+      "parallaxOffset": 0,
+      "fighterPositions": [
+        22,
+        78
+      ],
+      "browserExecuted": false,
+      "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_F_2026-11-24.md"
+    }
+  },
+  "blockedRequests": [
+    {
+      "asset": "alastor-strike",
+      "status": "generation_refused",
+      "requestId": "f665822b-5dce-48ff-bfd5-64e57c513736",
+      "fileProduced": false,
+      "retryAfterRefusal": false
+    },
+    {
+      "asset": "hb_glam-strike",
+      "status": "generation_refused",
+      "requestId": "b7f06d9a-9564-4c19-99c7-f8ff6aa00def",
+      "fileProduced": false,
+      "retryAfterRefusal": false
+    }
+  ],
+  "priorBatch": {
+    "batchId": "wave-d-2026-11-24",
+    "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json"
+  },
+  "beforeRuntime": {
+    "fighters": 40,
+    "individualReady": 37,
+    "individualGuard": 13,
+    "individualLightContact": 15,
+    "individualHit": 14,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 120,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 22,
+    "threePlaneStages": 22,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 11,
+    "attackEffectAssignments": 24,
+    "referencedAssets": 377,
+    "brokenReferences": []
+  },
+  "generation": {
+    "requests": 30,
+    "successfulOutputs": 28,
+    "acceptedArtworks": 25,
+    "supersededCandidates": 3,
+    "refusedRequests": 2,
+    "retriesAfterRefusal": 0
+  },
+  "waveERecovery": "Aucun ancien PNG de la vague E retrouvé. Les trois décors et la garde Alastor sont de nouvelles générations F. Vassago, Wally, Barbie Wire et les poses Husk restent à récupérer ou à produire.",
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/poses/alastor-guard.png",
+      "bytes": 1202390,
+      "sha256": "acf0b157624060791fcf45a67c995299dec651b6ac10dc3f76f80ba068fd13fc",
+      "gitBlobSha": "8c4a59d9cac42175aae50338ca2f6ce4e4bb3158",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        416,
+        26,
+        1116,
+        992
+      ],
+      "id": "alastor-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/alastor-guard.webp",
+      "bytes": 769454,
+      "sha256": "a91225b4436c2f9c6e6db9b617ee2ef7c94ea25296e5bcc6fcb9992418348cb5",
+      "gitBlobSha": "ed033094060da46f78b5a85fcdb1cbd2cc73e057",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        416,
+        26,
+        1116,
+        992
+      ],
+      "id": "alastor-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/alastor-recoil.png",
+      "bytes": 1144770,
+      "sha256": "e8d4404202b9f30eaee1a081d352087a8efa9a8f27ee3742b45d1a657f3dd1c1",
+      "gitBlobSha": "dc38df6cfd9cfa26dc2bd023286f03bd4863e150",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        443,
+        20,
+        966,
+        990
+      ],
+      "id": "alastor-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/alastor-recoil.webp",
+      "bytes": 731682,
+      "sha256": "9823f6ecd128496e16ce48268f4c587d6e54b67120b09af0c639acd29ca75437",
+      "gitBlobSha": "d60bf83d6806a9ff206ba7cdefe6145ec4ae04cb",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        443,
+        20,
+        966,
+        990
+      ],
+      "id": "alastor-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-ready.png",
+      "bytes": 792406,
+      "sha256": "191fe22bd46ea1ea0b525e4435be5d7d0f2141a0021fa546e9346aa46b2be788",
+      "gitBlobSha": "46d2a9ffb5a845ad3a6c2974bb103a77dba55f6b",
+      "dimensions": [
+        1200,
+        1310
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        113,
+        29,
+        1016,
+        1268
+      ],
+      "id": "hb_vortex-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-ready.webp",
+      "bytes": 450420,
+      "sha256": "5fa57790e070a65e54f6995a73786ef06ef963772838eda9cc754b9ea6f2e82b",
+      "gitBlobSha": "fd4f8afacb6b4b0df0e2624b30747f9811ca4f2a",
+      "dimensions": [
+        1200,
+        1310
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        113,
+        29,
+        1016,
+        1268
+      ],
+      "id": "hb_vortex-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-guard.png",
+      "bytes": 912481,
+      "sha256": "93b4ad7a9b27769264da66746bcc2fdb310a1b059763bb7c6af3f3b41ccc4a09",
+      "gitBlobSha": "1e936311b62bd2c1fa506511252e5c068dae3f94",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        67,
+        39,
+        982,
+        1376
+      ],
+      "id": "hb_vortex-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-guard.webp",
+      "bytes": 526216,
+      "sha256": "3e61de0e93f2e13876f3d833beb9dc8a6cdf49477e0f05b5447b4873c424091a",
+      "gitBlobSha": "60ec406089b5480dd1f634635c53ad1bf7f133b6",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        67,
+        39,
+        982,
+        1376
+      ],
+      "id": "hb_vortex-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-strike.png",
+      "bytes": 880456,
+      "sha256": "5dd655e6eb1bb5754b9878c7b581687f2a1c6631d43b3645ee5f12354cccdf7f",
+      "gitBlobSha": "46ca106bb8bc214c3edeee15ba7375e62164f9b4",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        15,
+        76,
+        1099,
+        1367
+      ],
+      "id": "hb_vortex-strike",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-strike.webp",
+      "bytes": 508608,
+      "sha256": "720245ddea284c2b7c84dbd1c7bc5cc3beaf654d8850c955bfd3aca518181d5a",
+      "gitBlobSha": "b4a496a9a280c57c98aea1f28d1f8d98cf5e70a1",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        15,
+        76,
+        1099,
+        1367
+      ],
+      "id": "hb_vortex-strike",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-recoil.png",
+      "bytes": 1019391,
+      "sha256": "d03c985dbfb46c58064905de32b87f07009ecb31dc1f39b4e9f98ee7652a6551",
+      "gitBlobSha": "1c807e712b7e29efd2de9fc3a9f29b42a928540d",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        55,
+        67,
+        1080,
+        1387
+      ],
+      "id": "hb_vortex-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-recoil.webp",
+      "bytes": 578216,
+      "sha256": "a95f8fd829ed9ce1b767d2edba99d003e5551ba1c033f50f5a7dc27cd56715fd",
+      "gitBlobSha": "16d94a1ea3ea87645a819526dd8c2cfc8a74dc96",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        55,
+        67,
+        1080,
+        1387
+      ],
+      "id": "hb_vortex-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-ready.png",
+      "bytes": 691126,
+      "sha256": "719ca716b72468ffda976c64c48df4c97cebd251a5f4566cc9e70bb6e20c147f",
+      "gitBlobSha": "f2300d6e8cc5cfb10a5fc391ce68162e17ad5896",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        103,
+        89,
+        982,
+        1301
+      ],
+      "id": "hb_glitz-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-ready.webp",
+      "bytes": 436970,
+      "sha256": "93f2704fabbd7cb3cacad92d1dc5be1e040f97aa3f3b8a378c60310bcf63fd1b",
+      "gitBlobSha": "fc3fa93e0ee8b12803fac0da5300b428d73cfa94",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        103,
+        89,
+        982,
+        1301
+      ],
+      "id": "hb_glitz-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-guard.png",
+      "bytes": 772974,
+      "sha256": "82c10b1c89356b8762fe81799707bf9479f03b73c6b3591f9fee31debecbbb5f",
+      "gitBlobSha": "8cfcb3899a1132033795c9d8c8b68967e807df0c",
+      "dimensions": [
+        1080,
+        1456
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        64,
+        91,
+        926,
+        1371
+      ],
+      "id": "hb_glitz-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-guard.webp",
+      "bytes": 480518,
+      "sha256": "cb7c72f042820b45052e0805d75379d42555e74bf5f1dc7abaa7e758a2b10579",
+      "gitBlobSha": "c28d7496f4789c090ba062a71a6c2d4e9f92d04b",
+      "dimensions": [
+        1080,
+        1456
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        64,
+        91,
+        926,
+        1371
+      ],
+      "id": "hb_glitz-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-strike.png",
+      "bytes": 700317,
+      "sha256": "01dad19546f6cbfe72f89ec190695d9e489c633f4fd4cc7a01bb77222ae69087",
+      "gitBlobSha": "08a4379171528c604579f36275d3d45bd21cdd4d",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        99,
+        86,
+        1037,
+        1298
+      ],
+      "id": "hb_glitz-strike",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-strike.webp",
+      "bytes": 441408,
+      "sha256": "cbea835ed5e6d5e02b97ae538ad05d261258ef0b4fccd89a2ba9124862db4f00",
+      "gitBlobSha": "e323e7c46341eafe8716a597f6bb3096c69225ed",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        99,
+        86,
+        1037,
+        1298
+      ],
+      "id": "hb_glitz-strike",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-recoil.png",
+      "bytes": 706952,
+      "sha256": "4d6eef9a5450b058a750ef0c819d366a379643fd1c835dff0f52bf0baf1338df",
+      "gitBlobSha": "51d8d3b395f8e15aae757588e120712362e8d772",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        75,
+        99,
+        907,
+        1288
+      ],
+      "id": "hb_glitz-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-recoil.webp",
+      "bytes": 446728,
+      "sha256": "6b7a26202ac7ac675e3a79c1255b7f5cd60ca4f60b36201d595b5255a6ed6602",
+      "gitBlobSha": "11b9034754fa92d6ffede698d196942855c7153b",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        75,
+        99,
+        907,
+        1288
+      ],
+      "id": "hb_glitz-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-ready.png",
+      "bytes": 641631,
+      "sha256": "d6daa4d9a78db0f7ca9db36038b138541f773ec39f45605aca28edfa65fd354b",
+      "gitBlobSha": "d4d002baa32acaf27959b3f3d87e16ee4d7fdcd2",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        235,
+        70,
+        970,
+        1226
+      ],
+      "id": "hb_glam-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-ready.webp",
+      "bytes": 403546,
+      "sha256": "44b5941aded4014ce3fbc790f9abcf7e36a55f5ddfe7cc260636f2151fa15418",
+      "gitBlobSha": "cc35b6713d66cbaa18dec490380be8b97bbe8f6e",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        235,
+        70,
+        970,
+        1226
+      ],
+      "id": "hb_glam-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-guard.png",
+      "bytes": 790481,
+      "sha256": "c94d85d7d6522d8af4dd9f881f678c92867c248d3445bb27746cce84e6b4f923",
+      "gitBlobSha": "ae2090e09e97371d4fa71ec819d869ba55f0dbce",
+      "dimensions": [
+        1108,
+        1420
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        73,
+        884,
+        1341
+      ],
+      "id": "hb_glam-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-guard.webp",
+      "bytes": 491158,
+      "sha256": "c981eed03daf0f2152b9e719f0ad81d5e0b98c57aaa86b3cefdee7afc9b33a4a",
+      "gitBlobSha": "fca9f2b72bb2a367f67bf3eeca442cb7a9d03e17",
+      "dimensions": [
+        1108,
+        1420
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        73,
+        884,
+        1341
+      ],
+      "id": "hb_glam-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-recoil.png",
+      "bytes": 680125,
+      "sha256": "7114755847a398a6f3fa910adf153b7dd062b42e7e014cebbca2e8de5839efd8",
+      "gitBlobSha": "1bcd45943229264bfdf33df554ae8e5b5f0cc64a",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        138,
+        78,
+        867,
+        1220
+      ],
+      "id": "hb_glam-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-recoil.webp",
+      "bytes": 424644,
+      "sha256": "5008493044444effd28333caefc61bd753ec94f599c2932bf4204993472f709a",
+      "gitBlobSha": "8c23c8bd793a0dea8c7c129964db53e64090f859",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        138,
+        78,
+        867,
+        1220
+      ],
+      "id": "hb_glam-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/velvette-arrow.png",
+      "bytes": 234804,
+      "sha256": "27d4673d8c4c6e104ce3a1242771c77fec596a856a75fb1db9f8adb52df9f0ee",
+      "gitBlobSha": "6c876c45ee2aa58893316e37bc660e08d7ee6665",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        104,
+        231,
+        2077,
+        506
+      ],
+      "id": "velvette-arrow",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/velvette-arrow.webp",
+      "bytes": 132584,
+      "sha256": "4bd5f699a4256db870064bdf02b8ea87ea0219f7bd7598de6b48980eb1fd1e5f",
+      "gitBlobSha": "62dbbf04c1500b1efee89be07e4ddb6f07a678a5",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        104,
+        231,
+        2077,
+        506
+      ],
+      "id": "velvette-arrow",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/striker-lasso.png",
+      "bytes": 403247,
+      "sha256": "c575b4adfcd4904c99cbd8c873ca8c95dbf636f3825e1c13b218861c77e9b6a1",
+      "gitBlobSha": "5ecad56737dc0ed76e63190044d99e2414d043d6",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        50,
+        149,
+        2122,
+        576
+      ],
+      "id": "striker-lasso",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/striker-lasso.webp",
+      "bytes": 275222,
+      "sha256": "310037a207a18fa21a35ee63b41e67470c6c7741bb3da4cd687bc1e6a57e804b",
+      "gitBlobSha": "4e2480b89219541aa029c745932b1978a51984b8",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        50,
+        149,
+        2122,
+        576
+      ],
+      "id": "striker-lasso",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/valentino-smoke.png",
+      "bytes": 875106,
+      "sha256": "7e534a75fda9a006b0c691161d2fcad727217c3426fccb90d62d71d88fa043d5",
+      "gitBlobSha": "e8351bd30996c51dfd701c3e2aaf937e1574f846",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        109,
+        97,
+        2074,
+        649
+      ],
+      "id": "valentino-smoke",
+      "group": "projectiles",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/valentino-smoke.webp",
+      "bytes": 590720,
+      "sha256": "4d82461d56b26f9199040a575ec566cd0990c3b489d9ec231bdcbfb61284e53f",
+      "gitBlobSha": "d8c4222b7a8407960ac2c4d5775a1d6d89e5dfee",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        109,
+        97,
+        2074,
+        649
+      ],
+      "id": "valentino-smoke",
+      "group": "projectiles",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/room.png",
+      "bytes": 1693956,
+      "sha256": "ca00112a650faa2a4a80417f4a486283b8d6b8337e552707aedf24b1e7fe2a8f",
+      "gitBlobSha": "23244920feda078bfff62e38bf743f3fc7032fdb",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/room.webp",
+      "bytes": 1224992,
+      "sha256": "9f89780f79f3368e57669a75791305170473db0c435266a508725ed9b71cc19d",
+      "gitBlobSha": "a545223bf53afc947a58c9aab54c85d33d15d61a",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/thumb.webp",
+      "bytes": 21276,
+      "sha256": "553678c5c8e3862c488eb622b63b63a6756ca4d3c6450e4717ebe50788d69101",
+      "gitBlobSha": "e1f53644b48611d5b2acfb0c446f5fca4c36ada4",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "imp-exterior/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/prop-middle.png",
+      "bytes": 805767,
+      "sha256": "748f47e25e46b29e8ffa9cb2d9d189abbfbd8e0ffeb6cc4a6e43f453d553505c",
+      "gitBlobSha": "16c0fa652765ad957109c7e1f1c35a8e45d35ff1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        122,
+        344,
+        1132,
+        944
+      ],
+      "id": "imp-exterior/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/prop-middle.webp",
+      "bytes": 449822,
+      "sha256": "7b54042d0f7c7f97c9055fa2836aee6d5e62719a55278ae42f71ad679e81b621",
+      "gitBlobSha": "cc24b2b7404656f3023047786148af3b724b2103",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        122,
+        344,
+        1132,
+        944
+      ],
+      "id": "imp-exterior/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/imp-exterior/prop-near.png",
+      "bytes": 803946,
+      "sha256": "70396e8742949edfaf2eaf80beb82272b149ed365799ac052f52d65c2080d7fc",
+      "gitBlobSha": "f908b4429cbefa838a929b606ceb3ca9bb0ed7c8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        236,
+        169,
+        960,
+        1067
+      ],
+      "id": "imp-exterior/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/imp-exterior/prop-near.webp",
+      "bytes": 516480,
+      "sha256": "83b0ef401398e4ddebcbff668348e33f44a42b492b8f54fa98466b8ed1447ef9",
+      "gitBlobSha": "19e0ea2a9583cdc0f811adc11bef06df62fc69f4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        236,
+        169,
+        960,
+        1067
+      ],
+      "id": "imp-exterior/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/room.png",
+      "bytes": 1612262,
+      "sha256": "e06872a4da7d6c204810071bc6eca00e93c9a914dc51dd9308de8e8f9c3aa887",
+      "gitBlobSha": "ff839df1ecc58aad229ca93cd97afc666bdd9e91",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/room.webp",
+      "bytes": 1098604,
+      "sha256": "8d89fd56c12d48878d477b6082a32fb37ec92368dba3b69beac63cabb9755436",
+      "gitBlobSha": "9186222e87518fbdf5f4c203172c1e3060c9efa4",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/thumb.webp",
+      "bytes": 17246,
+      "sha256": "64a3be519a393e09e9f42a2c2ad8ae02017b8c023443016b9d684e8dc779bada",
+      "gitBlobSha": "45b615e2176a1b35f9597a5869b775aebd07b13b",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "oops-warehouse/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/prop-middle.png",
+      "bytes": 607183,
+      "sha256": "0d2ba2f9def68dc7333bde7d3355d4f6b022f42e0d3e45cf3d486c5ad4073b4a",
+      "gitBlobSha": "5cba009b93013407f1d67181309fb6a7cf2a7faf",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        90,
+        414,
+        1165,
+        915
+      ],
+      "id": "oops-warehouse/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/prop-middle.webp",
+      "bytes": 316228,
+      "sha256": "f7e171e0fe63cfa9ca26599831b7837782ba082abb1709fd019d9c4e22b56217",
+      "gitBlobSha": "346ea13a1d95c70f1652dfa7d0e18116fc93a463",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        90,
+        414,
+        1165,
+        915
+      ],
+      "id": "oops-warehouse/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/oops-warehouse/prop-near.png",
+      "bytes": 944918,
+      "sha256": "7a7ab4c8d3a0a15ee680aece2e4362c5be1ba5522a0634ed6ff418fb15e62354",
+      "gitBlobSha": "d35a6d8bc2d215ecfd188ca6a43a36556aada78b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        95,
+        282,
+        1157,
+        984
+      ],
+      "id": "oops-warehouse/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/oops-warehouse/prop-near.webp",
+      "bytes": 662144,
+      "sha256": "0e05770722e4e2753e260d46128c434213c528a15a36ef78c64b9ffef7e15c5d",
+      "gitBlobSha": "a23b51fa38657810c67d52e9ae25a519469ec4e6",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        95,
+        282,
+        1157,
+        984
+      ],
+      "id": "oops-warehouse/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/room.png",
+      "bytes": 1704890,
+      "sha256": "3acd55fd60b2d7551d1c02c8d54a472320b721f821aa63edd66c3a7157a28366",
+      "gitBlobSha": "56fd0572a9ef866d98981694fa49b91e6566d92d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/room.webp",
+      "bytes": 1219530,
+      "sha256": "3ed15885a35d82dd55d793d3a90a17994f4835289a9f8a96693aff2e2c960b27",
+      "gitBlobSha": "825be716ad38b6566a2f30be740262554fdf6073",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/thumb.webp",
+      "bytes": 27080,
+      "sha256": "9111282f5cae47f08669772247c6f3e14be74111d033c144ff062d46b7c85622",
+      "gitBlobSha": "b06b78dbf5caef246af16ea51538436b088369d6",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "sinsmas-balcony/room",
+      "group": "stages",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/prop-middle.png",
+      "bytes": 306134,
+      "sha256": "184da3db5ca32b4b8e2f6396bec05c961c39f7fc84bae50e5cbedc61d6cdad65",
+      "gitBlobSha": "b72fc91bd47f105e38a73e03dcd523793e15ed8a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        45,
+        373,
+        1210,
+        904
+      ],
+      "id": "sinsmas-balcony/prop-middle",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/prop-middle.webp",
+      "bytes": 171934,
+      "sha256": "19b1e129562f4af2080da9c583881c4d120c9784d7ac08bceefdaaebc722d804",
+      "gitBlobSha": "728e4e8f29ba01660a279d0acd6ae6208b0fd958",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        45,
+        373,
+        1210,
+        904
+      ],
+      "id": "sinsmas-balcony/prop-middle",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sinsmas-balcony/prop-near.png",
+      "bytes": 306068,
+      "sha256": "72e89bf26ef8a5a315a236c351ac0308a8d2e42bb98f3007ce7754172d7a489d",
+      "gitBlobSha": "de886d42e4aaa20eb83d5e88338898ab93e1ae74",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        37,
+        547,
+        1217,
+        748
+      ],
+      "id": "sinsmas-balcony/prop-near",
+      "group": "stages",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/sinsmas-balcony/prop-near.webp",
+      "bytes": 187776,
+      "sha256": "b552b24b8a864bd7327822706bf064205ad25b580b59f1fa5aa0fb2958511947",
+      "gitBlobSha": "1623bf636076f6c4225b9b309ef33e50d284874a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        37,
+        547,
+        1217,
+        748
+      ],
+      "id": "sinsmas-balcony/prop-near",
+      "group": "stages",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    }
+  ],
+  "sourceManifestSha256": {
+    "characters-wave-f-2026-11-24.json": "f4a783720db228b8368869a226a7ecaf045d9aa5ea9a07053114f3150eaf2caa",
+    "stages-wave-f-2026-11-24.json": "9e7c2cce4e93fd29b6688ab381176823476415418614d9b66d45d1ba22e201dd",
+    "projectiles-wave-f-2026-11-24.json": "a1801489bf6e57942fa8528710fcc4e0c8666230547dbe9b1a98f3bcbf21f805",
+    "export-wave-f-2026-11-24.json": "a3290d6a3e652433f75e1867036141a54fcca39ceba189ab2944006599adcec2",
+    "root-prompts-wave-f-2026-11-24.json": "119e5bebbc2a00436f69a1e7f2c6ef5460f4c109409e9aef1d078040b8bbb2d5"
+  },
+  "diagnosticImages": {
+    "count": 3,
+    "directory": "docs/standalone/qa-wave-f-2026-11-24",
+    "excludedFromProductionArtworkAndImageFileCounts": true
+  }
+}

@@ -2441,6 +2441,125 @@
   translate: 0 26.5%;
 }
 
+/* Wave F keeps the complete master visible. Props share its contained bounds,
+   including transparent canvas margins; scenery stays behind the fighters. */
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+  --infernal-contained-stage-height: clamp(330px, 42vw, 520px);
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  display: none;
+  z-index: 1;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+/* The complete master remains the fallback without container query units.
+   Enhanced layers become visible only with the shared image coordinate frame. */
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+  width: clamp(84px, 19%, 190px);
+  left: clamp(20px, 4%, 52px); right: auto; top: auto; bottom: clamp(52px, 10vw, 160px);
+}
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+  width: clamp(80px, 17%, 160px);
+  right: clamp(48px, 6%, 80px); left: auto; top: auto; bottom: clamp(42px, 8vw, 130px);
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+  width: clamp(90px, 22%, 205px);
+  left: clamp(22px, 4%, 56px); right: auto; top: auto; bottom: 13%;
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+  width: clamp(92px, 23%, 220px);
+  right: clamp(46px, 5%, 76px); left: auto; top: auto; bottom: 0;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+  width: clamp(108px, 25%, 250px);
+  left: clamp(24px, 5%, 64px); right: auto; top: auto; bottom: 12%;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+  width: clamp(140px, 38%, 430px);
+  left: 31%; right: auto; top: auto; bottom: clamp(64px, 15vw, 230px);
+  object-position: center top;
+}
+@media (max-width: 700px) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+    --infernal-contained-stage-height: clamp(300px, 72vw, 430px);
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+    --infernal-contained-stage-height: 62vh;
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    bottom: 8%;
+  }
+}
+@supports (height: 1svh) {
+  @media (max-height: 600px) and (orientation: landscape) {
+    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+      --infernal-contained-stage-height: 62svh;
+    }
+  }
+}
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+    /* Definite height preserves the existing responsive minimum under size
+       containment. The absolutely positioned layers cannot size this box. */
+    height: var(--infernal-contained-stage-height);
+    min-height: var(--infernal-contained-stage-height);
+    container-type: size;
+  }
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+    display: block;
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
+    --wave-art-side: calc((100% - var(--wave-art-width)) / 2);
+    width: var(--wave-prop-width);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+    --wave-prop-width: clamp(56px, calc(var(--wave-art-width) * .18), 190px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .60 - var(--wave-prop-width) * .725678);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+    --wave-prop-width: clamp(42px, calc(var(--wave-art-width) * .14), 140px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .58 - var(--wave-prop-width) * .865231);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+    --wave-prop-width: clamp(70px, calc(var(--wave-art-width) * .20), 205px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .14 - var(--wave-prop-width) * .270335);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+    --wave-prop-width: clamp(72px, calc(var(--wave-art-width) * .22), 220px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .07 - var(--wave-prop-width) * .215311);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+    --wave-prop-width: clamp(84px, calc(var(--wave-art-width) * .25), 250px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .21 - var(--wave-prop-width) * .279107);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .65);
+    left: calc((100% - var(--wave-prop-width)) / 2);
+    bottom: calc(var(--wave-art-height) * .94 - var(--wave-prop-width) * .563796);
+  }
+}
+
 .infernal-finish-choice {
   position: absolute;
   z-index: 5;

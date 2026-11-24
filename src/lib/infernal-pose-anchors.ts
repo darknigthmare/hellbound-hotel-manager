@@ -15,6 +15,10 @@ const VOX_READY = '/assets/sprites/individual/vox-ready.webp';
 const VELVETTE_READY = '/assets/sprites/individual/velvette-ready.webp';
 const CARMILLA_READY = '/assets/sprites/individual/carmilla-ready.webp';
 const MAMMON_READY = '/assets/sprites/individual/hb_mammon-ready.webp';
+const VORTEX_READY = '/assets/sprites/individual/hb_vortex-ready.webp';
+const GLITZ_READY = '/assets/sprites/individual/hb_glitz-ready.webp';
+const GLAM_READY = '/assets/sprites/individual/hb_glam-ready.webp';
+const ALASTOR_READY = '/assets/sprites/stances/alastor.webp';
 
 /**
  * Alpha >= 16 bounds visually checked against Lute S1 and the default Vox,
@@ -28,6 +32,23 @@ const MAMMON_READY = '/assets/sprites/individual/hb_mammon-ready.webp';
  * these measured placements are not a browser/fidelity certification.
  */
 export const INFERNAL_POSE_ANCHORS: Readonly<Record<string, InfernalPoseGroundAnchor>> = {
+  // Native canvases are preserved. A contain frame fits these near-square
+  // Vortex images by height, so each measured foot line meets the same floor.
+  [VORTEX_READY]: { canvasHeight: 1310, groundContactY: 1268, readyPose: VORTEX_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_vortex-guard.webp': { canvasHeight: 1419, groundContactY: 1376, readyPose: VORTEX_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_vortex-strike.webp': { canvasHeight: 1419, groundContactY: 1367, readyPose: VORTEX_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_vortex-recoil.webp': { canvasHeight: 1419, groundContactY: 1387, readyPose: VORTEX_READY, groundReference: 'canvas-bottom' },
+  [GLITZ_READY]: { canvasHeight: 1380, groundContactY: 1301, readyPose: GLITZ_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_glitz-guard.webp': { canvasHeight: 1456, groundContactY: 1371, readyPose: GLITZ_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_glitz-strike.webp': { canvasHeight: 1380, groundContactY: 1298, readyPose: GLITZ_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_glitz-recoil.webp': { canvasHeight: 1380, groundContactY: 1288, readyPose: GLITZ_READY, groundReference: 'canvas-bottom' },
+  [GLAM_READY]: { canvasHeight: 1312, groundContactY: 1226, readyPose: GLAM_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_glam-guard.webp': { canvasHeight: 1420, groundContactY: 1341, readyPose: GLAM_READY, groundReference: 'canvas-bottom' },
+  '/assets/sprites/individual/hb_glam-recoil.webp': { canvasHeight: 1312, groundContactY: 1220, readyPose: GLAM_READY, groundReference: 'canvas-bottom' },
+  // Alastor retains the original landscape READY and its existing ground line.
+  [ALASTOR_READY]: { canvasHeight: 1024, groundContactY: 990, readyPose: ALASTOR_READY },
+  '/assets/sprites/individual/alastor-guard.webp': { canvasHeight: 1024, groundContactY: 992, readyPose: ALASTOR_READY },
+  '/assets/sprites/individual/alastor-recoil.webp': { canvasHeight: 1024, groundContactY: 990, readyPose: ALASTOR_READY },
   [LUTE_READY]: { canvasHeight: 1536, groundContactY: 1517, readyPose: LUTE_READY, costumeId: 'lute-pre-injury' },
   '/assets/sprites/costumes/lute-pre-injury-strike.webp': { canvasHeight: 1536, groundContactY: 1501, readyPose: LUTE_READY, costumeId: 'lute-pre-injury' },
   '/assets/sprites/costumes/lute-pre-injury-recoil.webp': { canvasHeight: 1536, groundContactY: 1497, readyPose: LUTE_READY, costumeId: 'lute-pre-injury' },

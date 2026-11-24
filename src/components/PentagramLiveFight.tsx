@@ -13,7 +13,7 @@ import { canOfferFinish, INFERNAL_FINISHES, FINISH_CINEMATIC_MS, FINISH_INPUT_MS
 import { InfernalMoveList } from './InfernalMoveList';
 import { InfernalStageLayers } from './InfernalStageLayers';
 import { InfernalAttackEffects } from './InfernalAttackEffects';
-import { INFERNAL_ATTACK_EFFECTS } from '../lib/infernal-attack-effects';
+import { getInfernalAttackEffectEntries } from '../lib/infernal-attack-effects';
 import { Volume2, VolumeX } from 'lucide-react';
 import {
   getCharacterCinematicSpriteSheet,
@@ -960,7 +960,8 @@ export function PentagramLiveFight({
         const finish = INFERNAL_FINISHES[fighterId!];
         const urls = [INFERNAL_STANCES[fighterId!], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
           outfit?.ready, outfit?.strike, outfit?.heavy, outfit?.recoil, outfit?.crouch, outfit?.jump,
-          finish?.impactSprite, finish?.detachedProp, INFERNAL_ATTACK_EFFECTS[fighterId!]?.image];
+          finish?.impactSprite, finish?.detachedProp,
+          ...getInfernalAttackEffectEntries().filter(([id]) => id === fighterId).map(([, effect]) => effect.image)];
         for (const url of urls) if (url) priorityUrls.add(url);
       }
     }

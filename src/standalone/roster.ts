@@ -69,6 +69,22 @@ export const HELLUVA_COMBAT_PROFILES: Readonly<Record<string, FighterProfile>> =
     combatStyle: 'boss', evidence: 'motif', power: 17, range: 74, speed: 40, guard: 80,
     tensionGain: 12, basicMove: 'Paume de rappel', heavyMove: 'Balayage du promoteur', specialMove: 'Final du promoteur',
   },
+  // Motif-based exhibition choreography only. These kits assert no new powers.
+  hb_vortex: {
+    id: 'hb_vortex', style: 'Protection rapprochée', archetype: 'Garde et contrôle au sol',
+    combatStyle: 'guardian', evidence: 'motif', power: 15, range: 58, speed: 56, guard: 82,
+    tensionGain: 14, basicMove: 'Paume de contrôle', heavyMove: 'Revers de protection', specialMove: 'Passage dégagé',
+  },
+  hb_glitz: {
+    id: 'hb_glitz', style: 'Cadence de concours', archetype: 'Feintes et changements de rythme',
+    combatStyle: 'trickster', evidence: 'motif', power: 12, range: 68, speed: 84, guard: 48,
+    tensionGain: 18, basicMove: 'Pas croisé', heavyMove: 'Revers de scène', specialMove: 'Volte du rappel',
+  },
+  hb_glam: {
+    id: 'hb_glam', style: 'Précision de scène', archetype: 'Placement et contretemps',
+    combatStyle: 'duelist', evidence: 'motif', power: 13, range: 64, speed: 78, guard: 56,
+    tensionGain: 17, basicMove: 'Appui pivoté', heavyMove: 'Balayage dansé', specialMove: 'Dernier temps',
+  },
 };
 
 function helluvaCharacter(id: string): Character {
@@ -106,7 +122,7 @@ export function getStandaloneFighter(id: string): StandaloneFighter | undefined 
   return STANDALONE_ROSTER.find(fighter => fighter.character.id === id);
 }
 
-const AUTHORED_PORTRAIT_IDS = new Set(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon']);
+const AUTHORED_PORTRAIT_IDS = new Set(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon', 'hb_vortex', 'hb_glitz', 'hb_glam']);
 
 /** Reuse the reviewed full-body READY without changing the hotel portrait registry. */
 export function getStandalonePortrait(id: string): string | undefined {

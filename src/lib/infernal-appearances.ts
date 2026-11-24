@@ -14,7 +14,7 @@ export interface InfernalActionPoses {
   strike?: string;
   recoil?: string;
   layout: 'portrait' | 'landscape';
-  /** Temporary key-pose rendering while the legacy atlas contains damaged cells. */
+  /** Temporary static rendering while dedicated animation cycles remain unavailable. */
   fallbackToKeyPoses?: boolean;
 }
 
@@ -33,6 +33,12 @@ function guardedActionPoses(id: string): InfernalActionPoses {
 
 /** Individual key poses supplement the existing animation banks. */
 export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>> = {
+  alastor: {
+    ready: INFERNAL_STANCES.alastor,
+    guard: '/assets/sprites/individual/alastor-guard.webp',
+    recoil: '/assets/sprites/individual/alastor-recoil.webp',
+    layout: 'landscape',
+  },
   niffty: readyPose('niffty'),
   sirpentious: readyPose('sirpentious'),
   vox: guardedActionPoses('vox'),
@@ -62,6 +68,16 @@ export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>
   hb_sallie_may: readyPose('hb_sallie_may'),
   hb_andrealphus: readyPose('hb_andrealphus'),
   hb_mammon: { ...guardedActionPoses('hb_mammon'), fallbackToKeyPoses: true },
+  // These independent key poses are not newly authored animation banks.
+  // Their near-square native canvases fit the existing contain frame by height.
+  hb_vortex: { ...guardedActionPoses('hb_vortex'), layout: 'landscape', fallbackToKeyPoses: true },
+  hb_glitz: { ...guardedActionPoses('hb_glitz'), layout: 'landscape', fallbackToKeyPoses: true },
+  hb_glam: {
+    ...readyPose('hb_glam'),
+    guard: '/assets/sprites/individual/hb_glam-guard.webp',
+    recoil: '/assets/sprites/individual/hb_glam-recoil.webp',
+    layout: 'landscape', fallbackToKeyPoses: true,
+  },
   angeldust: actionPoses('angeldust'),
   hb_striker: actionPoses('hb_striker'),
   lucifer: { ...actionPoses('lucifer'), guard: '/assets/sprites/individual/lucifer-guard.webp' },
@@ -99,9 +115,9 @@ export function infernalActionPose(
 }
 
 /**
- * Damaged legacy cells must not reappear between the new key poses. This is
- * deliberately a temporary static fallback, not a new animation bank. Stella
- * has no accepted new drawing and uses her intact historical portrait.
+ * Fighters explicitly using authored poses keep that artwork between actions.
+ * READY-only sets deliberately remain static until their own cycles are authored.
+ * Stella has no accepted new drawing and uses her intact historical portrait.
  */
 export function infernalFallbackPose(
   fighterId: string,

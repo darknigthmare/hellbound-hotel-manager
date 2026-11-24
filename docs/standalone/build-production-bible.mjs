@@ -117,7 +117,7 @@ async function collectRuntimeTables(){
   }
   const vfxRows = [], vfxImages = new Map();
   const vfxKinds = { projectile: 'Projectile visuel', beam: 'Rayon visuel', sweep: 'Balayage visuel' };
-  for (const [fighterId, effect] of Object.entries(runtime.INFERNAL_ATTACK_EFFECTS)) {
+  for (const [fighterId, effect] of runtime.getInfernalAttackEffectEntries()) {
     const name = names.get(fighterId);
     assert(name && effect.canonStatus === 'simulation_au', 'VFX sans combattant ou périmètre AU : ' + fighterId);
     assetPaths.add(effect.image);
