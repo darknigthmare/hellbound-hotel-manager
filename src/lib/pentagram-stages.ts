@@ -16,7 +16,10 @@ export type PentagramStageId = HotelStageId
   | 'pentious-workshop'
   | 'looloo-land'
   | 'stolas-palace'
-  | 'bee-party';
+  | 'bee-party'
+  | 'dhorks'
+  | 'crimson-mansion'
+  | 'mammon-show';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -370,6 +373,9 @@ const PENTIOUS_WORKSHOP = '/assets/stages/hazbin/pentious-workshop';
 const LOOLOO_LAND = '/assets/stages/helluva/looloo-land';
 const STOLAS_PALACE = '/assets/stages/helluva/stolas-palace';
 const BEE_PARTY = '/assets/stages/helluva/bee-party';
+const DHORKS = '/assets/stages/helluva/dhorks';
+const CRIMSON_MANSION = '/assets/stages/helluva/crimson-mansion';
+const MAMMON_SHOW = '/assets/stages/helluva/mammon-show';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -530,6 +536,66 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 4, 7, 10], [5, 9, 12, 15], [9, 12, 16, 19], [7, 11, 14, 17]],
     bassPattern: [0, 12, 7, 10, 5, 12, 9, 7],
     leadPattern: [12, 16, null, 19, 17, null, 16, 12, 21, null, 19, 16, 14, null, 10, 12],
+  },
+}, {
+  id: 'dhorks',
+  name: 'D.H.O.R.K.S. · Interrogatoire',
+  district: 'Terre',
+  description: 'Un miroir sombre et une lumière zénithale encadrent le carrelage de la salle d’interrogatoire.',
+  loreBasis: 'Helluva Boss, Truth Seekers, S1 E6. Salle intacte avant l’évasion, sans installation de portail ultérieure. La piste élargie et la caméra extérieure relocalisée sont une reconstruction AU.',
+  imagePath: `${DHORKS}/room.webp`,
+  thumbnailPath: `${DHORKS}/thumb.webp`,
+  scenery: { middle: `${DHORKS}/prop-middle.webp`, near: `${DHORKS}/prop-near.webp` },
+  imagePosition: 'center 65%',
+  accent: '#abbc8b',
+  shadow: '#17201a',
+  floor: '#343b2b',
+  soundtrack: {
+    id: 'observation-window', title: 'Derrière la vitre', bpm: 122, rootMidi: 35,
+    swing: 0.28, drive: 0.74, seed: 26112461,
+    chordProgression: [[0, 3, 6, 10], [1, 5, 8, 12], [6, 9, 12, 16], [7, 10, 13, 17]],
+    bassPattern: [0, 0, 6, 7, 1, 8, 6, 10],
+    leadPattern: [12, null, 13, 18, null, 15, 10, null, 13, 12, null, 16, 18, null, 13, 10],
+  },
+}, {
+  id: 'crimson-mansion',
+  name: 'Demeure de Crimson · Salon',
+  district: 'Anneau de l’Avarice',
+  description: 'Un salon vert à boiseries, cheminée et vitrine éclairée, bordé d’un fauteuil haut et d’une lampe à franges.',
+  loreBasis: 'Helluva Boss, Exes and Oohs, S2 E3. Repères du salon ordinaire avant l’activation du gag mural. Pièce vidée, meubles repositionnés et parquet élargi pour une simulation AU.',
+  imagePath: `${CRIMSON_MANSION}/room.webp`,
+  thumbnailPath: `${CRIMSON_MANSION}/thumb.webp`,
+  scenery: { middle: `${CRIMSON_MANSION}/prop-middle.webp`, near: `${CRIMSON_MANSION}/prop-near.webp` },
+  imagePosition: 'center 65%',
+  accent: '#89c45c',
+  shadow: '#102d24',
+  floor: '#302a1e',
+  soundtrack: {
+    id: 'emerald-house-rules', title: 'Les règles de la maison', bpm: 118, rootMidi: 39,
+    swing: 0.66, drive: 0.72, seed: 26112423,
+    chordProgression: [[0, 3, 7, 10], [2, 5, 8, 11], [5, 8, 12, 16], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 10, 12, 2, 8, 5, 11],
+    leadPattern: [15, null, 12, 10, 14, null, 17, 15, null, 16, 12, 8, 11, null, 14, 10],
+  },
+}, {
+  id: 'mammon-show',
+  name: 'Concours de Mammon · Scène',
+  district: 'Anneau de l’Avarice',
+  description: 'Une scène pourpre et or sous les ampoules du théâtre, avec enceintes et treillis lumineux sur les bords.',
+  loreBasis: 'Helluva Boss, Mammon’s Magnificent Musical Mid-Season Special, S2 E7. Théâtre intact du concours, vidé et élargi pour la simulation AU. Ornements circulaires et assemblage du projecteur adaptés au jeu.',
+  imagePath: `${MAMMON_SHOW}/room.webp`,
+  thumbnailPath: `${MAMMON_SHOW}/thumb.webp`,
+  scenery: { middle: `${MAMMON_SHOW}/prop-middle.webp`, near: `${MAMMON_SHOW}/prop-near.webp` },
+  imagePosition: 'center 65%',
+  accent: '#f3d64b',
+  shadow: '#470e53',
+  floor: '#4b1264',
+  soundtrack: {
+    id: 'gilded-truss-encore', title: 'Rappel sous les projecteurs', bpm: 146, rootMidi: 41,
+    swing: 0.36, drive: 0.92, seed: 26112427,
+    chordProgression: [[0, 4, 7, 10], [3, 7, 10, 14], [8, 12, 15, 18], [7, 11, 14, 17]],
+    bassPattern: [0, 12, 7, 3, 10, 8, 15, 7],
+    leadPattern: [16, null, 19, 22, 14, null, 15, 19, 20, 18, null, 15, 17, null, 14, 12],
   },
 }];
 

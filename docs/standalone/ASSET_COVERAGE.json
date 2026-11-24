@@ -3,23 +3,23 @@
   "summary": {
     "fighters": 36,
     "individualReady": 34,
-    "individualGuard": 3,
-    "individualLightContact": 5,
-    "individualHit": 4,
-    "costumes": 5,
-    "costumeKeyPoses": 29,
+    "individualGuard": 10,
+    "individualLightContact": 12,
+    "individualHit": 11,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
     "finisherKeyPoses": 5,
     "separatedFinishProps": 1,
     "storyAssignments": 108,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 16,
-    "threePlaneStages": 16,
+    "stages": 19,
+    "threePlaneStages": 19,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
     "attackEffectImages": 6,
     "attackEffectAssignments": 13,
-    "referencedAssets": 297,
+    "referencedAssets": 336,
     "brokenReferences": []
   },
   "fighters": [
@@ -323,9 +323,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/vox-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/vox-guard.webp",
+        "lightContact": "/assets/sprites/individual/vox-strike.webp",
+        "hit": "/assets/sprites/individual/vox-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -383,9 +383,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/velvette-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/velvette-guard.webp",
+        "lightContact": "/assets/sprites/individual/velvette-strike.webp",
+        "hit": "/assets/sprites/individual/velvette-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -507,7 +507,20 @@
         "lightContact": null,
         "hit": null
       },
-      "costumes": [],
+      "costumes": [
+        {
+          "id": "lute-pre-injury",
+          "name": "Avant la blessure · saison 1",
+          "poses": {
+            "ready": "/assets/sprites/individual/lute-ready.webp",
+            "strike": "/assets/sprites/costumes/lute-pre-injury-strike.webp",
+            "heavy": "/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+            "recoil": "/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+            "crouch": "/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+            "jump": "/assets/sprites/costumes/lute-pre-injury-jump.webp"
+          }
+        }
+      ],
       "finisherKeyPose": null,
       "separatedFinishProp": null,
       "story": {
@@ -533,9 +546,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/carmilla-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/carmilla-guard.webp",
+        "lightContact": "/assets/sprites/individual/carmilla-strike.webp",
+        "hit": "/assets/sprites/individual/carmilla-recoil.webp"
       },
       "costumes": [
         {
@@ -756,9 +769,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/hb_blitzo-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/hb_blitzo-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_blitzo-strike.webp",
+        "hit": "/assets/sprites/individual/hb_blitzo-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": "/assets/sprites/finishers/hb_blitzo.webp",
@@ -902,9 +915,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/hb_stolas-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/hb_stolas-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_stolas-strike.webp",
+        "hit": "/assets/sprites/individual/hb_stolas-recoil.webp"
       },
       "costumes": [
         {
@@ -1005,9 +1018,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/hb_fizzarolli-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/hb_fizzarolli-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_fizzarolli-strike.webp",
+        "hit": "/assets/sprites/individual/hb_fizzarolli-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -1035,9 +1048,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/individual/hb_asmodeus-ready.webp",
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "guard": "/assets/sprites/individual/hb_asmodeus-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_asmodeus-strike.webp",
+        "hit": "/assets/sprites/individual/hb_asmodeus-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -1345,6 +1358,39 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/helluva/bee-party/thumb.webp"
+    },
+    {
+      "id": "dhorks",
+      "name": "D.H.O.R.K.S. · Interrogatoire",
+      "planes": [
+        "/assets/stages/helluva/dhorks/room.webp",
+        "/assets/stages/helluva/dhorks/prop-middle.webp",
+        "/assets/stages/helluva/dhorks/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/dhorks/thumb.webp"
+    },
+    {
+      "id": "crimson-mansion",
+      "name": "Demeure de Crimson · Salon",
+      "planes": [
+        "/assets/stages/helluva/crimson-mansion/room.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/crimson-mansion/thumb.webp"
+    },
+    {
+      "id": "mammon-show",
+      "name": "Concours de Mammon · Scène",
+      "planes": [
+        "/assets/stages/helluva/mammon-show/room.webp",
+        "/assets/stages/helluva/mammon-show/prop-middle.webp",
+        "/assets/stages/helluva/mammon-show/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/mammon-show/thumb.webp"
     }
   ],
   "attackEffects": [

@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 1,
+  "batchId": "costumes-wave-c-2026-11-24",
+  "date": "2026-11-24",
+  "sourceCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "fighterId": "lute",
+  "costumeId": "lute-pre-injury",
+  "scope": "Complete the five missing pose candidates around the published unmasked pre-injury Lute READY. Two ordinary arms in every pose; historical portrait and animation atlases are not edited by this batch.",
+  "generationMode": "built-in image_gen.imagegen",
+  "imageGenerationCalls": 5,
+  "successfulGenerations": 5,
+  "retries": 0,
+  "blockedPoses": [],
+  "counts": {
+    "newArtworks": 5,
+    "reusedArtworks": 1,
+    "newMasterFiles": 5,
+    "newRuntimeFiles": 5,
+    "newImageFiles": 10,
+    "availableCostumeKeyPoses": 6,
+    "requestedCostumeKeyPoses": 6
+  },
+  "status": "six_pose_candidates_prepared_for_runtime_integration",
+  "fidelityStatus": "source_guided_candidate_not_certified_1_to_1",
+  "fullAnimationCycleClaimed": false,
+  "referencePolicy": {
+    "primary": "Published Lute READY is supplied unchanged to every generation call as the identity, proportions and style reference.",
+    "numericSeed": "The built-in tool exposes no numeric seed; consistency uses the same reference image.",
+    "officialCorroboration": "The licensed Youtooz illustration was inspected for the white bob, yellow eyes, black halo, gray exorcist uniform, two normal gray-gloved arms and striped wings. Its toy proportions, sword and blood marks were not adopted.",
+    "historicalPortrait": "The old portrait/atlases with a golden arm are outside this costume and were not used as generation inputs."
+  },
+  "sources": [
+    {
+      "type": "published_project_pose",
+      "masterPath": "art/infernal-versus/masters/poses/lute-ready.png",
+      "runtimePath": "public/assets/sprites/individual/lute-ready.webp",
+      "masterSha256": "4ff83db698da8337fcf8b10183cba6f0b5f23561e90ad2cfae363b871468fec0",
+      "runtimeSha256": "8f3e5d97fcb938ec9bf9ed9cb58d9ac7bfd100821228f631b4e9fad31dfcdb99",
+      "role": "Primary image input to all five calls; existing files reused without copy or modification."
+    },
+    {
+      "type": "official_licensed_merchandise",
+      "publisher": "Youtooz",
+      "url": "https://youtooz.com/products/lute",
+      "imageUrl": "https://youtooz.com/cdn/shop/files/1c7t1k105p.png?v=1770149952",
+      "copyright": "Amazon Content Services LLC / A24 Films LLC",
+      "inspected": true,
+      "pageRecheckedOn": "2026-11-24",
+      "localImageEvidence": {
+        "path": "/workspace/scratch/eed3bf2e772a/reference_work/lute-youtooz-1c7t1k105p.png",
+        "sha256": "539c32c0f0d1543bfd7a11d0c6a09d9b12fd8415ab02deed62e0850d55009e19",
+        "bytes": 114518
+      },
+      "role": "Visual corroboration; not a series production model sheet and not supplied to the five pose-generation calls."
+    },
+    {
+      "type": "repository_provenance",
+      "path": "art/infernal-versus/production/poses-support-2026-11-24.json",
+      "sha256": "3fcef4f361c627c40c8d7d300b394f7264a271b6557cd177da93ef65131e1010",
+      "role": "Published READY prompt, provenance, continuity correction and original technical checks."
+    }
+  ],
+  "exportPolicy": {
+    "masters": "Original generated PNG files copied byte-for-byte, originals retained.",
+    "runtime": "Pillow WebP lossless=True, exact=True, quality=100, method=6; dimensions, all decoded RGBA bytes and alpha retained.",
+    "creativeRasterPostprocessing": false,
+    "readyCopiedOrRegenerated": false
+  },
+  "layoutPolicy": {
+    "canvas": [
+      1024,
+      1536
+    ],
+    "facing": "right",
+    "requestedCanvasPivotNormalized": [
+      0.5,
+      1.0
+    ],
+    "requestedGroundBaselinePx": 1480,
+    "actualBoundsRecordedPerAsset": true,
+    "inGamePivotValidationPerformed": false,
+    "note": "Generative framing is not pixel-normalized. Some halo/boot margins remain narrow; native low-alpha fringe is preserved. Runtime scale, feet, mirroring and transitions require a dedicated check."
+  },
+  "reusedAssets": [
+    {
+      "masterPath": "art/infernal-versus/masters/poses/lute-ready.png",
+      "runtimePath": "public/assets/sprites/individual/lute-ready.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1071360,
+        "partiallyTransparentPixels": 501504,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 464501,
+        "veryLowAlphaPixels1To15": 23132,
+        "contentBounds": [
+          91,
+          8,
+          1010,
+          1519
+        ],
+        "visibleBoundsAtAlpha16": [
+          132,
+          10,
+          874,
+          1517
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "ede1aca20c8415c0721047a970a24a6662f2778b032f04bc82d0a670bf243c96",
+        "sha256": "4ff83db698da8337fcf8b10183cba6f0b5f23561e90ad2cfae363b871468fec0",
+        "bytes": 1335694
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1071360,
+        "partiallyTransparentPixels": 501504,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 464501,
+        "veryLowAlphaPixels1To15": 23132,
+        "contentBounds": [
+          91,
+          8,
+          1010,
+          1519
+        ],
+        "visibleBoundsAtAlpha16": [
+          132,
+          10,
+          874,
+          1517
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "ede1aca20c8415c0721047a970a24a6662f2778b032f04bc82d0a670bf243c96",
+        "sha256": "8f3e5d97fcb938ec9bf9ed9cb58d9ac7bfd100821228f631b4e9fad31dfcdb99",
+        "bytes": 826194
+      },
+      "reusedWithoutCopy": true,
+      "generatedInThisBatch": false,
+      "id": "lute-pre-injury-ready",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "ready",
+      "origin": "reused_published_image",
+      "runtimeUrl": "/assets/sprites/individual/lute-ready.webp",
+      "sourceManifest": "art/infernal-versus/production/poses-support-2026-11-24.json",
+      "copiedInThisBatch": false,
+      "countAsNewArtwork": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "lute-pre-injury-strike",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "strike",
+      "origin": "new_generation",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate_pending_in_game_validation",
+      "prompt": "Use case: precise-character-edit / identity-preserve pose variant. Create exactly ONE full-body 2D game sprite of Lute from Hazbin Hotel, the SAME unmasked Season 1 pre-injury character shown in the supplied published READY sprite. Treat this image as the authority for proportions, face, palette, line art, clothing, halo and wings. Preserve her tall slender adult build and long legs, sharp asymmetrical white bob with pale lavender shading, pale gray face, yellow eyes with black pupils and long black eyelashes, black ring halo pierced by the narrow vertical pointed ornament, short charcoal-gray exorcist tunic, pale frilled collar, pale bands on dark short sleeves, pale belt, opaque black fitted leggings, matching light-gray elbow-length gloves, very tall pointed light-gray boots with dark chevron trim, and pale wings with thick dark edges and exactly TWO transverse dark stripes. Both arms are intact ordinary arms with matching gloves. No prosthesis, no gold arm, no mask, no horns, no new costume or accessories. Keep the same clean crisp flat 2D cel-shaded drawing style and controlled outline thickness. Image is a single pose sprite, not an illustration scene or a panel. Facing and looking toward the RIGHT edge in a readable three-quarter side view. Preserve all clothing coverage and keep the entire halo, both wings, both hands and both feet visible. Portrait canvas 1024 x 1536. Keep the same body scale as the reference, an approximately central horizontal body pivot, and consistent ground baseline near y=1480 for grounded poses. Leave clear transparent padding around every extremity and fold the wings naturally when needed to fit; do not clip or duplicate limbs. Fully transparent background including gaps between feathers, with crisp native alpha. No surrounding glow, floor, cast shadow, border, text, logo, opponent, separate object or VFX.\n\nPOSE — STRIKE: a controlled short unarmed forward palm strike toward the RIGHT, the front arm extended at shoulder/chest height with the palm facing outward, the other forearm bent close to the torso in guard. Weight shifts to the forward foot while both feet remain grounded, rear heel only slightly lifted. Head and gaze track right. Wings stay folded behind the shoulders so that the attacking hand is unobstructed. This is a single clear contact key pose, with no impact target or motion trail.",
+      "referencedImagePaths": [
+        "art/infernal-versus/masters/poses/lute-ready.png"
+      ],
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-682ef368-9448-4ae6-841d-8551aa2e0559.png",
+      "masterPath": "art/infernal-versus/masters/costumes/lute-pre-injury-strike.png",
+      "runtimePath": "public/assets/sprites/costumes/lute-pre-injury-strike.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-strike.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1131769,
+        "partiallyTransparentPixels": 441095,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 402220,
+        "veryLowAlphaPixels1To15": 25498,
+        "contentBounds": [
+          0,
+          8,
+          1000,
+          1512
+        ],
+        "visibleBoundsAtAlpha16": [
+          114,
+          10,
+          983,
+          1501
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "d5495b6b9a202029f52e99a3e14b3fdad8b4887809fc35537ed7d4ebfe247e07",
+        "sha256": "a04f28cbfe3865e898a9c426ac31b7b240a9ca7731f7009d2e680e23de77bb79",
+        "bytes": 1360882
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1131769,
+        "partiallyTransparentPixels": 441095,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 402220,
+        "veryLowAlphaPixels1To15": 25498,
+        "contentBounds": [
+          0,
+          8,
+          1000,
+          1512
+        ],
+        "visibleBoundsAtAlpha16": [
+          114,
+          10,
+          983,
+          1501
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "d5495b6b9a202029f52e99a3e14b3fdad8b4887809fc35537ed7d4ebfe247e07",
+        "sha256": "70d94ba111ba1714c4da57196a01b88cde1b0d38a775a61e7b29a233d84fb572",
+        "bytes": 831716
+      },
+      "technicalQa": {
+        "masterPreservedByteForByte": true,
+        "losslessDecodedRgbaMatch": true,
+        "sameCanvasDimensionsAsReady": true,
+        "distinctDecodedImageFromReadyAndAllOtherPoses": true,
+        "visibleContentClearOfImageEdges": true
+      },
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facing": "right",
+        "twoIntactOrdinaryArms": true,
+        "sameCostumeAndIdentityAsPublishedReady": true,
+        "noOpponentOrAttackVfx": true,
+        "poseDescription": "Controlled forward open-palm strike to the right; other hand in compact guard.",
+        "fidelityStatus": "source_guided_candidate_not_certified_1_to_1"
+      },
+      "alignmentObservation": {
+        "visibleBoundsAtAlpha16": [
+          114,
+          10,
+          983,
+          1501
+        ],
+        "visibleContentBottomPx": 1500,
+        "groundedBottomDifferenceToReadyPx": 16,
+        "pixelAlignedPivotVerifiedInGame": false,
+        "note": "Alpha-bound measurement only, not a normalized animation pivot. Jump is intentionally airborne; crouch retains empty headroom. No crop, resize or pixel shift was applied."
+      }
+    },
+    {
+      "id": "lute-pre-injury-recoil",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "recoil",
+      "origin": "new_generation",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate_pending_in_game_validation",
+      "prompt": "Use case: precise-character-edit / identity-preserve pose variant. Create exactly ONE full-body 2D game sprite of Lute from Hazbin Hotel, the SAME unmasked Season 1 pre-injury character shown in the supplied published READY sprite. Treat this image as the authority for proportions, face, palette, line art, clothing, halo and wings. Preserve her tall slender adult build and long legs, sharp asymmetrical white bob with pale lavender shading, pale gray face, yellow eyes with black pupils and long black eyelashes, black ring halo pierced by the narrow vertical pointed ornament, short charcoal-gray exorcist tunic, pale frilled collar, pale bands on dark short sleeves, pale belt, opaque black fitted leggings, matching light-gray elbow-length gloves, very tall pointed light-gray boots with dark chevron trim, and pale wings with thick dark edges and exactly TWO transverse dark stripes. Both arms are intact ordinary arms with matching gloves. No prosthesis, no gold arm, no mask, no horns, no new costume or accessories. Keep the same clean crisp flat 2D cel-shaded drawing style and controlled outline thickness. Image is a single pose sprite, not an illustration scene or a panel. Facing and looking toward the RIGHT edge in a readable three-quarter side view. Preserve all clothing coverage and keep the entire halo, both wings, both hands and both feet visible. Portrait canvas 1024 x 1536. Keep the same body scale as the reference, an approximately central horizontal body pivot, and consistent ground baseline near y=1480 for grounded poses. Leave clear transparent padding around every extremity and fold the wings naturally when needed to fit; do not clip or duplicate limbs. Fully transparent background including gaps between feathers, with crisp native alpha. No surrounding glow, floor, cast shadow, border, text, logo, opponent, separate object or VFX.\n\nPOSE — RECOIL: a non-graphic stagger-back reaction, upper torso tilting slightly to the LEFT while her face remains turned and looking RIGHT. Both elbows bend and both open gloved hands lift naturally near chest/shoulder level to regain balance. The front knee softens and the rear foot braces, both complete boots remaining grounded on the shared baseline. Wings settle backward with the motion. No visible wound, no bruise, no impact mark, no other person. Preserve her intact body and clothing.",
+      "referencedImagePaths": [
+        "art/infernal-versus/masters/poses/lute-ready.png"
+      ],
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-b3808e40-0c06-4140-aeac-d9be93dd1fe3.png",
+      "masterPath": "art/infernal-versus/masters/costumes/lute-pre-injury-recoil.png",
+      "runtimePath": "public/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1068582,
+        "partiallyTransparentPixels": 504282,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 468569,
+        "veryLowAlphaPixels1To15": 23308,
+        "contentBounds": [
+          0,
+          5,
+          1000,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          96,
+          9,
+          850,
+          1497
+        ],
+        "minimumVisibleMarginFraction": 0.005859,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "3d148d150aa50335df09ee00f04394dcbe3e62049d2dcf21d80d0a30bfef3a7f",
+        "sha256": "4bf960519f254ec46fd3c2b51dcb65cbcaa5ce23b25e8be3e068088687604052",
+        "bytes": 1410935
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1068582,
+        "partiallyTransparentPixels": 504282,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 468569,
+        "veryLowAlphaPixels1To15": 23308,
+        "contentBounds": [
+          0,
+          5,
+          1000,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          96,
+          9,
+          850,
+          1497
+        ],
+        "minimumVisibleMarginFraction": 0.005859,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "3d148d150aa50335df09ee00f04394dcbe3e62049d2dcf21d80d0a30bfef3a7f",
+        "sha256": "3ded7d5346a59ab471c4b2621fc19b4bacfc72c3b5b94a23676f975264933cd6",
+        "bytes": 864442
+      },
+      "technicalQa": {
+        "masterPreservedByteForByte": true,
+        "losslessDecodedRgbaMatch": true,
+        "sameCanvasDimensionsAsReady": true,
+        "distinctDecodedImageFromReadyAndAllOtherPoses": true,
+        "visibleContentClearOfImageEdges": true
+      },
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facing": "right",
+        "twoIntactOrdinaryArms": true,
+        "sameCostumeAndIdentityAsPublishedReady": true,
+        "noOpponentOrAttackVfx": true,
+        "poseDescription": "Backward stagger with open hands raised, looking right; no injury marks.",
+        "fidelityStatus": "source_guided_candidate_not_certified_1_to_1"
+      },
+      "alignmentObservation": {
+        "visibleBoundsAtAlpha16": [
+          96,
+          9,
+          850,
+          1497
+        ],
+        "visibleContentBottomPx": 1496,
+        "groundedBottomDifferenceToReadyPx": 20,
+        "pixelAlignedPivotVerifiedInGame": false,
+        "note": "Alpha-bound measurement only, not a normalized animation pivot. Jump is intentionally airborne; crouch retains empty headroom. No crop, resize or pixel shift was applied."
+      }
+    },
+    {
+      "id": "lute-pre-injury-heavy",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "heavy",
+      "origin": "new_generation",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate_pending_in_game_validation",
+      "prompt": "Use case: precise-character-edit / identity-preserve pose variant. Create exactly ONE full-body 2D game sprite of Lute from Hazbin Hotel, the SAME unmasked Season 1 pre-injury character shown in the supplied published READY sprite. Treat this image as the authority for proportions, face, palette, line art, clothing, halo and wings. Preserve her tall slender adult build and long legs, sharp asymmetrical white bob with pale lavender shading, pale gray face, yellow eyes with black pupils and long black eyelashes, black ring halo pierced by the narrow vertical pointed ornament, short charcoal-gray exorcist tunic, pale frilled collar, pale bands on dark short sleeves, pale belt, opaque black fitted leggings, matching light-gray elbow-length gloves, very tall pointed light-gray boots with dark chevron trim, and pale wings with thick dark edges and exactly TWO transverse dark stripes. Both arms are intact ordinary arms with matching gloves. No prosthesis, no gold arm, no mask, no horns, no new costume or accessories. Keep the same clean crisp flat 2D cel-shaded drawing style and controlled outline thickness. Image is a single pose sprite, not an illustration scene or a panel. Facing and looking toward the RIGHT edge in a readable three-quarter side view. Preserve all clothing coverage and keep the entire halo, both wings, both hands and both feet visible. Portrait canvas 1024 x 1536. Keep the same body scale as the reference, an approximately central horizontal body pivot, and consistent ground baseline near y=1480 for grounded poses. Leave clear transparent padding around every extremity and fold the wings naturally when needed to fit; do not clip or duplicate limbs. Fully transparent background including gaps between feathers, with crisp native alpha. No surrounding glow, floor, cast shadow, border, text, logo, opponent, separate object or VFX.\n\nPOSE — HEAVY: a strong controlled martial-arts side kick toward the RIGHT, front leg raised and extended at waist height, the other leg firmly planted on the shared ground baseline. Both ordinary gloved arms are bent naturally in a balanced guard, fists closed. Torso leans slightly left to counterbalance, face and gaze directed right. Keep the full extended boot and toes safely inside the right margin; compress the pose's spread by a natural bent supporting leg, never by shortening the limbs or shrinking the character. Wings folded back enough to keep the kicking silhouette legible. No weapon, enemy, contact flash, motion arc or energy effect.",
+      "referencedImagePaths": [
+        "art/infernal-versus/masters/poses/lute-ready.png"
+      ],
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-41ea6ee3-5cfb-4f8d-958e-e2021d6c7ded.png",
+      "masterPath": "art/infernal-versus/masters/costumes/lute-pre-injury-heavy.png",
+      "runtimePath": "public/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1172311,
+        "partiallyTransparentPixels": 400553,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 373292,
+        "veryLowAlphaPixels1To15": 17344,
+        "contentBounds": [
+          0,
+          61,
+          1012,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          16,
+          93,
+          1009,
+          1445
+        ],
+        "minimumVisibleMarginFraction": 0.014648,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "08bf11aa5e69d2a7f6c4f568674ebaa0a28bbf90a6aa04549a9e47a94467488e",
+        "sha256": "38ec14670c3f7e9b7c293a7c56e35c9e26ecb72626d40f2039444564197ad799",
+        "bytes": 1264508
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1172311,
+        "partiallyTransparentPixels": 400553,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 373292,
+        "veryLowAlphaPixels1To15": 17344,
+        "contentBounds": [
+          0,
+          61,
+          1012,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          16,
+          93,
+          1009,
+          1445
+        ],
+        "minimumVisibleMarginFraction": 0.014648,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "08bf11aa5e69d2a7f6c4f568674ebaa0a28bbf90a6aa04549a9e47a94467488e",
+        "sha256": "d8cedde774806bbbeabca3825d1fd4cb963f7f8056222c9ee6e837a215ab451e",
+        "bytes": 772720
+      },
+      "technicalQa": {
+        "masterPreservedByteForByte": true,
+        "losslessDecodedRgbaMatch": true,
+        "sameCanvasDimensionsAsReady": true,
+        "distinctDecodedImageFromReadyAndAllOtherPoses": true,
+        "visibleContentClearOfImageEdges": true
+      },
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facing": "right",
+        "twoIntactOrdinaryArms": true,
+        "sameCostumeAndIdentityAsPublishedReady": true,
+        "noOpponentOrAttackVfx": true,
+        "poseDescription": "Waist-height side kick to the right with one boot grounded and two arms in guard.",
+        "fidelityStatus": "source_guided_candidate_not_certified_1_to_1"
+      },
+      "alignmentObservation": {
+        "visibleBoundsAtAlpha16": [
+          16,
+          93,
+          1009,
+          1445
+        ],
+        "visibleContentBottomPx": 1444,
+        "groundedBottomDifferenceToReadyPx": 72,
+        "pixelAlignedPivotVerifiedInGame": false,
+        "note": "Alpha-bound measurement only, not a normalized animation pivot. Jump is intentionally airborne; crouch retains empty headroom. No crop, resize or pixel shift was applied."
+      }
+    },
+    {
+      "id": "lute-pre-injury-crouch",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "crouch",
+      "origin": "new_generation",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate_pending_in_game_validation",
+      "prompt": "Use case: precise-character-edit / identity-preserve pose variant. Create exactly ONE full-body 2D game sprite of Lute from Hazbin Hotel, the SAME unmasked Season 1 pre-injury character shown in the supplied published READY sprite. Treat this image as the authority for proportions, face, palette, line art, clothing, halo and wings. Preserve her tall slender adult build and long legs, sharp asymmetrical white bob with pale lavender shading, pale gray face, yellow eyes with black pupils and long black eyelashes, black ring halo pierced by the narrow vertical pointed ornament, short charcoal-gray exorcist tunic, pale frilled collar, pale bands on dark short sleeves, pale belt, opaque black fitted leggings, matching light-gray elbow-length gloves, very tall pointed light-gray boots with dark chevron trim, and pale wings with thick dark edges and exactly TWO transverse dark stripes. Both arms are intact ordinary arms with matching gloves. No prosthesis, no gold arm, no mask, no horns, no new costume or accessories. Keep the same clean crisp flat 2D cel-shaded drawing style and controlled outline thickness. Image is a single pose sprite, not an illustration scene or a panel. Facing and looking toward the RIGHT edge in a readable three-quarter side view. Preserve all clothing coverage and keep the entire halo, both wings, both hands and both feet visible. Portrait canvas 1024 x 1536. Keep the same body scale as the reference, an approximately central horizontal body pivot, and consistent ground baseline near y=1480 for grounded poses. Leave clear transparent padding around every extremity and fold the wings naturally when needed to fit; do not clip or duplicate limbs. Fully transparent background including gaps between feathers, with crisp native alpha. No surrounding glow, floor, cast shadow, border, text, logo, opponent, separate object or VFX.\n\nPOSE — CROUCH: a low, practical defensive duck with both knees deeply bent, both boot soles stable on the shared ground baseline, torso upright and facing RIGHT, both forearms held in a compact defensive guard in front of the chest. Keep the opaque black leggings and charcoal tunic unchanged and fully covering the body as in the reference. Use the SAME limb lengths and absolute figure scale as the standing reference: this lowered posture occupies the lower portion of the canvas with more empty headroom, rather than enlarging the crouched person to fill the portrait. Halo follows above her head, wings fold compactly behind her. A neutral side-view combat animation key pose.",
+      "referencedImagePaths": [
+        "art/infernal-versus/masters/poses/lute-ready.png"
+      ],
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-895c46e0-4a14-4916-bc31-bd30d9b356c8.png",
+      "masterPath": "art/infernal-versus/masters/costumes/lute-pre-injury-crouch.png",
+      "runtimePath": "public/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1274938,
+        "partiallyTransparentPixels": 297926,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 278159,
+        "veryLowAlphaPixels1To15": 12105,
+        "contentBounds": [
+          0,
+          101,
+          984,
+          1506
+        ],
+        "visibleBoundsAtAlpha16": [
+          184,
+          540,
+          764,
+          1503
+        ],
+        "minimumVisibleMarginFraction": 0.021484,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "2f9092fc9d600e5f963777d528be14d6c65402ee7e42bfc4f743f0883aad53e1",
+        "sha256": "1f2d7e0deea85256888e1b47347bb888942265f2cb10efdf70aae79d5e3edee5",
+        "bytes": 1124113
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1274938,
+        "partiallyTransparentPixels": 297926,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 278159,
+        "veryLowAlphaPixels1To15": 12105,
+        "contentBounds": [
+          0,
+          101,
+          984,
+          1506
+        ],
+        "visibleBoundsAtAlpha16": [
+          184,
+          540,
+          764,
+          1503
+        ],
+        "minimumVisibleMarginFraction": 0.021484,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "2f9092fc9d600e5f963777d528be14d6c65402ee7e42bfc4f743f0883aad53e1",
+        "sha256": "12e7cff30f5ae22fdef9ebaa544dfac6a03c53ecad3639ee8796b7f7b98a6ecf",
+        "bytes": 680484
+      },
+      "technicalQa": {
+        "masterPreservedByteForByte": true,
+        "losslessDecodedRgbaMatch": true,
+        "sameCanvasDimensionsAsReady": true,
+        "distinctDecodedImageFromReadyAndAllOtherPoses": true,
+        "visibleContentClearOfImageEdges": true
+      },
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facing": "right",
+        "twoIntactOrdinaryArms": true,
+        "sameCostumeAndIdentityAsPublishedReady": true,
+        "noOpponentOrAttackVfx": true,
+        "poseDescription": "Low defensive duck with bent knees, compact guard and extra headroom at the same figure scale.",
+        "fidelityStatus": "source_guided_candidate_not_certified_1_to_1"
+      },
+      "alignmentObservation": {
+        "visibleBoundsAtAlpha16": [
+          184,
+          540,
+          764,
+          1503
+        ],
+        "visibleContentBottomPx": 1502,
+        "groundedBottomDifferenceToReadyPx": 14,
+        "pixelAlignedPivotVerifiedInGame": false,
+        "note": "Alpha-bound measurement only, not a normalized animation pivot. Jump is intentionally airborne; crouch retains empty headroom. No crop, resize or pixel shift was applied."
+      }
+    },
+    {
+      "id": "lute-pre-injury-jump",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "jump",
+      "origin": "new_generation",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate_pending_in_game_validation",
+      "prompt": "Use case: precise-character-edit / identity-preserve pose variant. Create exactly ONE full-body 2D game sprite of Lute from Hazbin Hotel, the SAME unmasked Season 1 pre-injury character shown in the supplied published READY sprite. Treat this image as the authority for proportions, face, palette, line art, clothing, halo and wings. Preserve her tall slender adult build and long legs, sharp asymmetrical white bob with pale lavender shading, pale gray face, yellow eyes with black pupils and long black eyelashes, black ring halo pierced by the narrow vertical pointed ornament, short charcoal-gray exorcist tunic, pale frilled collar, pale bands on dark short sleeves, pale belt, opaque black fitted leggings, matching light-gray elbow-length gloves, very tall pointed light-gray boots with dark chevron trim, and pale wings with thick dark edges and exactly TWO transverse dark stripes. Both arms are intact ordinary arms with matching gloves. No prosthesis, no gold arm, no mask, no horns, no new costume or accessories. Keep the same clean crisp flat 2D cel-shaded drawing style and controlled outline thickness. Image is a single pose sprite, not an illustration scene or a panel. Facing and looking toward the RIGHT edge in a readable three-quarter side view. Preserve all clothing coverage and keep the entire halo, both wings, both hands and both feet visible. Portrait canvas 1024 x 1536. Keep the same body scale as the reference, an approximately central horizontal body pivot, and consistent ground baseline near y=1480 for grounded poses. Leave clear transparent padding around every extremity and fold the wings naturally when needed to fit; do not clip or duplicate limbs. Fully transparent background including gaps between feathers, with crisp native alpha. No surrounding glow, floor, cast shadow, border, text, logo, opponent, separate object or VFX.\n\nPOSE — JUMP: a compact upward-forward airborne hop toward the RIGHT, both knees bent naturally, one thigh slightly higher and the two complete pointed boots separated and fully visible below the body. Both intact gloved arms form a compact balanced guard. Keep her torso mainly upright with the head and gaze right. Wings lift only slightly for balance, preserving their original shape and the same two stripes; no flight transformation. Use the same figure scale as the READY, centered near x=512, with the lowest boot ending around y=1290 so the sprite reads clearly airborne above the common baseline. Show the entire halo and all wing tips inside transparent margins. No ground or shadow.",
+      "referencedImagePaths": [
+        "art/infernal-versus/masters/poses/lute-ready.png"
+      ],
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a6003d0f-b0d2-4b4c-a565-53837d9b57ba.png",
+      "masterPath": "art/infernal-versus/masters/costumes/lute-pre-injury-jump.png",
+      "runtimePath": "public/assets/sprites/costumes/lute-pre-injury-jump.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-jump.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1090355,
+        "partiallyTransparentPixels": 482509,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 451075,
+        "veryLowAlphaPixels1To15": 19814,
+        "contentBounds": [
+          17,
+          13,
+          1005,
+          1506
+        ],
+        "visibleBoundsAtAlpha16": [
+          76,
+          15,
+          928,
+          1384
+        ],
+        "minimumVisibleMarginFraction": 0.009766,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "c8ce1ea2641ac149d263b2483939883e205c60c025cbc2f6d1d03bdfd102af63",
+        "sha256": "db9dd009be40bd6e096b94c61faaa9d1440f5a96f1f8e976939b4ee351b6712e",
+        "bytes": 1390191
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1090355,
+        "partiallyTransparentPixels": 482509,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 451075,
+        "veryLowAlphaPixels1To15": 19814,
+        "contentBounds": [
+          17,
+          13,
+          1005,
+          1506
+        ],
+        "visibleBoundsAtAlpha16": [
+          76,
+          15,
+          928,
+          1384
+        ],
+        "minimumVisibleMarginFraction": 0.009766,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "c8ce1ea2641ac149d263b2483939883e205c60c025cbc2f6d1d03bdfd102af63",
+        "sha256": "84d429f6bb227f36816d5b54e90bfac05ead993e5c33660d57762d398dfa93d7",
+        "bytes": 846830
+      },
+      "technicalQa": {
+        "masterPreservedByteForByte": true,
+        "losslessDecodedRgbaMatch": true,
+        "sameCanvasDimensionsAsReady": true,
+        "distinctDecodedImageFromReadyAndAllOtherPoses": true,
+        "visibleContentClearOfImageEdges": true
+      },
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facing": "right",
+        "twoIntactOrdinaryArms": true,
+        "sameCostumeAndIdentityAsPublishedReady": true,
+        "noOpponentOrAttackVfx": true,
+        "poseDescription": "Airborne hop with bent knees, two separate boots and two arms in guard.",
+        "fidelityStatus": "source_guided_candidate_not_certified_1_to_1"
+      },
+      "alignmentObservation": {
+        "visibleBoundsAtAlpha16": [
+          76,
+          15,
+          928,
+          1384
+        ],
+        "visibleContentBottomPx": 1383,
+        "groundedBottomDifferenceToReadyPx": null,
+        "pixelAlignedPivotVerifiedInGame": false,
+        "note": "Alpha-bound measurement only, not a normalized animation pivot. Jump is intentionally airborne; crouch retains empty headroom. No crop, resize or pixel shift was applied."
+      }
+    }
+  ],
+  "qaSummary": {
+    "allFiveNewDecodedImagesDistinct": true,
+    "allSixIncludingReadyDecodedImagesDistinct": true,
+    "readyHashesMatchPublishedManifest": true,
+    "allExportsMatchOriginalDecodedRgba": true,
+    "allImagesHaveTrueAlpha": true,
+    "allNewImages1024x1536": true,
+    "visualInspectionPerformed": true,
+    "runtimeIntegrationPerformedByThisAgent": false,
+    "browserValidationPerformed": false
+  },
+  "remainingChecks": [
+    "Wire the existing READY plus the five new paths to one explicit costume; do not mix this set with the gold-arm atlas.",
+    "Check foot baseline and body pivot across grounded poses, jump and crouch on both facing directions.",
+    "Review scale, silhouette and timing in the running game; the six key images are not a complete animation cycle."
+  ],
+  "runtimeIntegration": {
+    "registered": true,
+    "costumeId": "lute-pre-injury",
+    "registry": "src/lib/infernal-appearances.ts",
+    "readyReused": "/assets/sprites/individual/lute-ready.webp",
+    "groundedPoseOffsetModule": "src/lib/infernal-pose-anchors.ts",
+    "defaultPortraitAndBanksChanged": false,
+    "note": "Optional coherent S1 costume; five grounded poses have explicit vertical-padding correction. Jump remains unanchored. Runtime browser and horizontal pivots are not certified."
+  }
+}

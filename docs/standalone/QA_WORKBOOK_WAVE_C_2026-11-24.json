@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "batchId": "wave-c-2026-11-24",
+  "status": "passed",
+  "scope": "Contrôle de structure, formules, sources et lisibilité du classeur. Ce contrôle ne constitue pas une recette visuelle du jeu.",
+  "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V2.xlsx",
+  "builder": "docs/standalone/build-production-bible.mjs",
+  "builderModified": true,
+  "authoringEngine": "@oai/artifact-tool in CODEX_PRIMARY_RUNTIME_NODE",
+  "authoringDirectory": "/tmp/infernal-bible-wave-c-20261124-CnlMcj",
+  "sheetCount": 23,
+  "sheetNames": [
+    "Guide V2",
+    "Modes V2",
+    "Histoires",
+    "Duels de campagne",
+    "Données moteur",
+    "Techniques signatures",
+    "Tenues et gardes",
+    "Finitions",
+    "Plans des arènes",
+    "Illustrations",
+    "Atelier et recette",
+    "Références V2",
+    "Synthèse",
+    "Chantiers",
+    "Parité CQC",
+    "Personnages",
+    "Kits combat",
+    "Variantes",
+    "Techniques",
+    "Arènes",
+    "Parcours",
+    "Recette",
+    "Sources"
+  ],
+  "v1Preservation": {
+    "historicalSheets": 11,
+    "worksheetXmlByteIdentical": true,
+    "tablesAndSheetRelationshipsByteIdentical": true,
+    "originalStyleAndSharedStringPrefixesPreserved": true,
+    "preservedParts": [
+      "xl/worksheets/sheet1.xml",
+      "xl/worksheets/sheet2.xml",
+      "xl/tables/table1.xml",
+      "xl/worksheets/sheet3.xml",
+      "xl/tables/table2.xml",
+      "xl/worksheets/sheet4.xml",
+      "xl/tables/table3.xml",
+      "xl/worksheets/sheet5.xml",
+      "xl/tables/table4.xml",
+      "xl/worksheets/sheet6.xml",
+      "xl/tables/table5.xml",
+      "xl/worksheets/sheet7.xml",
+      "xl/tables/table6.xml",
+      "xl/worksheets/sheet8.xml",
+      "xl/tables/table7.xml",
+      "xl/worksheets/sheet9.xml",
+      "xl/tables/table8.xml",
+      "xl/worksheets/sheet10.xml",
+      "xl/tables/table9.xml",
+      "xl/worksheets/sheet11.xml",
+      "xl/tables/table10.xml",
+      "xl/worksheets/_rels/sheet10.xml.rels",
+      "xl/worksheets/_rels/sheet11.xml.rels",
+      "xl/worksheets/_rels/sheet2.xml.rels",
+      "xl/worksheets/_rels/sheet3.xml.rels",
+      "xl/worksheets/_rels/sheet4.xml.rels",
+      "xl/worksheets/_rels/sheet5.xml.rels",
+      "xl/worksheets/_rels/sheet6.xml.rels",
+      "xl/worksheets/_rels/sheet7.xml.rels",
+      "xl/worksheets/_rels/sheet8.xml.rels",
+      "xl/worksheets/_rels/sheet9.xml.rels"
+    ],
+    "baseline": {
+      "sha256": "e4e870fd1add60aaef72a41d06ea496009f134907854fda18f0fa144a89d631b",
+      "bytes": 115069
+    }
+  },
+  "unchangedV2ValuesAndFormulas": [
+    "Modes V2",
+    "Histoires",
+    "Duels de campagne",
+    "Données moteur",
+    "Techniques signatures",
+    "Finitions",
+    "Illustrations"
+  ],
+  "workbookComparison": [
+    {
+      "sheet": "Guide V2",
+      "changedValues": [
+        "A4",
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C24",
+        "C25",
+        "D13",
+        "D26"
+      ],
+      "changedFormulas": [
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "changedRows": [
+        4,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        24,
+        25,
+        26,
+        27
+      ],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Modes V2",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Histoires",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Duels de campagne",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Données moteur",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Techniques signatures",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Tenues et gardes",
+      "changedValues": [
+        "A23",
+        "A25",
+        "A26",
+        "A27",
+        "A28",
+        "A29",
+        "A30",
+        "A31",
+        "A32",
+        "A34",
+        "A35",
+        "A37",
+        "A39",
+        "A40",
+        "A41",
+        "A42",
+        "A43",
+        "A44",
+        "A45",
+        "A46",
+        "A47",
+        "B23",
+        "B24",
+        "B25",
+        "B33",
+        "B34",
+        "B36",
+        "B37",
+        "B38",
+        "B39",
+        "B47",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C28",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D32",
+        "D33",
+        "D34",
+        "D35",
+        "D36",
+        "D37",
+        "D38",
+        "D39",
+        "D40",
+        "D41",
+        "D42",
+        "D43",
+        "D44",
+        "D45",
+        "D46",
+        "D47",
+        "E23",
+        "E24",
+        "E25",
+        "E26",
+        "E27",
+        "E28",
+        "E29",
+        "E30",
+        "E31",
+        "E32",
+        "E33",
+        "E34",
+        "E35",
+        "E36",
+        "E37",
+        "E38",
+        "E39",
+        "E40",
+        "E41",
+        "E42",
+        "E43",
+        "E44",
+        "E45",
+        "E46",
+        "E47",
+        "F23",
+        "F24",
+        "F25",
+        "F28",
+        "F30",
+        "F31",
+        "F33",
+        "F34",
+        "F36",
+        "F37",
+        "F38",
+        "F39",
+        "F40",
+        "F42",
+        "F44",
+        "F47",
+        "G16",
+        "G18",
+        "G23",
+        "G24",
+        "G25",
+        "G32",
+        "G33",
+        "G34",
+        "G35",
+        "G36",
+        "G37",
+        "G38",
+        "G39",
+        "G40",
+        "G42",
+        "G43",
+        "H23",
+        "H24",
+        "H25",
+        "H33",
+        "H34",
+        "H36",
+        "H37",
+        "H38",
+        "H39",
+        "I16",
+        "I18",
+        "I23",
+        "I24",
+        "I25",
+        "I32",
+        "I33",
+        "I34",
+        "I36",
+        "I37",
+        "I38",
+        "I39",
+        "I40",
+        "I42",
+        "I43",
+        "J23",
+        "J33",
+        "J34",
+        "J36",
+        "J37",
+        "J38",
+        "J39",
+        "K23",
+        "K24",
+        "K25",
+        "K33",
+        "K34",
+        "K36",
+        "K37",
+        "K38",
+        "K39",
+        "L16",
+        "L18",
+        "L24",
+        "L32",
+        "L33",
+        "L38",
+        "L42",
+        "L43"
+      ],
+      "changedFormulas": [],
+      "changedRows": [
+        16,
+        18,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Finitions",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Plans des arènes",
+      "changedValues": [
+        "A22",
+        "A23",
+        "A24",
+        "B22",
+        "B23",
+        "B24",
+        "C22",
+        "C23",
+        "C24",
+        "D22",
+        "D23",
+        "D24",
+        "E22",
+        "E23",
+        "E24",
+        "F22",
+        "F23",
+        "F24",
+        "G22",
+        "G23",
+        "G24",
+        "H22",
+        "H23",
+        "H24",
+        "I22",
+        "I23",
+        "I24"
+      ],
+      "changedFormulas": [],
+      "changedRows": [
+        22,
+        23,
+        24
+      ],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Illustrations",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Atelier et recette",
+      "changedValues": [
+        "A62",
+        "A63",
+        "A64",
+        "A65",
+        "A66",
+        "A67",
+        "A68",
+        "A69",
+        "A70",
+        "A71",
+        "A72",
+        "A73",
+        "A74",
+        "A75",
+        "A76",
+        "A83",
+        "A84",
+        "A85",
+        "A86",
+        "A87",
+        "A88",
+        "A89",
+        "B70",
+        "B71",
+        "B72",
+        "B73",
+        "B74",
+        "B75",
+        "B76",
+        "B77",
+        "B78",
+        "B79",
+        "B80",
+        "B81",
+        "B82",
+        "B83",
+        "B84",
+        "B85",
+        "B86",
+        "B87",
+        "B88",
+        "B89",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "D70",
+        "D71",
+        "D72",
+        "D73",
+        "D74",
+        "D75",
+        "D76",
+        "D77",
+        "D78",
+        "D79",
+        "D80",
+        "D81",
+        "D82",
+        "D83",
+        "D84",
+        "D85",
+        "D86",
+        "D87",
+        "D88",
+        "D89",
+        "E70",
+        "E71",
+        "E72",
+        "E73",
+        "E74",
+        "E75",
+        "E76",
+        "E83",
+        "E84",
+        "E85",
+        "E86",
+        "E87",
+        "E88",
+        "E89"
+      ],
+      "changedFormulas": [],
+      "changedRows": [
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Références V2",
+      "changedValues": [
+        "A47",
+        "A48",
+        "A49",
+        "A50",
+        "A51",
+        "A52",
+        "A53",
+        "A54",
+        "A55",
+        "A56",
+        "A57",
+        "A58",
+        "A59",
+        "A60",
+        "A61",
+        "A62",
+        "B42",
+        "B47",
+        "B48",
+        "B49",
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B58",
+        "B59",
+        "B60",
+        "B61",
+        "B62",
+        "C42",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "D47",
+        "D48",
+        "D49",
+        "D50",
+        "D51",
+        "D52",
+        "D53",
+        "D54",
+        "D55",
+        "D56",
+        "D57",
+        "D58",
+        "D59",
+        "D60",
+        "D61",
+        "D62"
+      ],
+      "changedFormulas": [],
+      "changedRows": [
+        42,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Synthèse",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Chantiers",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Parité CQC",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Personnages",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Kits combat",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Variantes",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Techniques",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Arènes",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Parcours",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Recette",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    },
+    {
+      "sheet": "Sources",
+      "changedValues": [],
+      "changedFormulas": [],
+      "changedRows": [],
+      "existingCellStylesPreserved": true,
+      "columnWidthsPreserved": true,
+      "freezePanesPreserved": true,
+      "dataValidationsPreserved": true
+    }
+  ],
+  "formulas": {
+    "totalWithCachedResults": 188,
+    "guideFormulasChecked": 22,
+    "motorTimingFormulasChecked": 112,
+    "errorCells": []
+  },
+  "guideCounts": {
+    "Modes décrits": 13,
+    "Routes scénarisées": 36,
+    "Confrontations": 108,
+    "Attaques paramétrées": 112,
+    "Signatures jouables": 4,
+    "Signatures à prototyper": 32,
+    "Tenues alternatives": 6,
+    "Poses des tenues alternatives": 35,
+    "Gardes actives distinctes": 10,
+    "Variantes longues à dessiner": 36,
+    "Lieux détaillés": 19,
+    "Arènes à trois plans jouables": 19,
+    "Arènes à deux plans jouables": 0,
+    "Arènes avec fond seul": 0,
+    "Pièces séparées intégrées": 1,
+    "Affectations de scène": 108,
+    "Affectations dédiées": 26,
+    "Affectations à illustrer": 82,
+    "Fiches de travail": 84,
+    "Sources de travail": 57,
+    "Sprites VFX uniques": 6,
+    "Attaques avec VFX": 13
+  },
+  "runtimeCellsChecked": 4685,
+  "runtime": {
+    "fighters": 36,
+    "individualReady": 34,
+    "individualGuard": 10,
+    "individualLightContact": 12,
+    "individualHit": 11,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 19,
+    "threePlaneStages": 19,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 336,
+    "brokenReferences": []
+  },
+  "newProduction": {
+    "fighterPoses": 21,
+    "stageBackgrounds": 3,
+    "foregroundProps": 6,
+    "costumePoses": 5,
+    "totalNewArtworks": 35,
+    "derivedThumbnails": 3,
+    "reusedExistingReady": 1
+  },
+  "costumeCoverage": [
+    {
+      "id": "lute-pre-injury",
+      "distinctPoses": 6,
+      "newImages": 5,
+      "reusedImages": 1,
+      "ready": "/assets/sprites/individual/lute-ready.webp",
+      "readyCountedAsNewGeneration": false,
+      "workbookRow": "Tenues et gardes!23",
+      "fidelityStatus": "candidate_not_certified_1_to_1"
+    },
+    {
+      "id": "carmilla-loose-hair",
+      "producedPoses": 5,
+      "requestedPoses": 6,
+      "missingPose": "crouch",
+      "missingPathCell": "Tenues et gardes!J25",
+      "fallbackCountsAsProducedPose": false,
+      "fidelityStatus": "candidate_not_certified_1_to_1"
+    }
+  ],
+  "vfxCoverage": {
+    "uniqueImages": 6,
+    "attackAssignments": 13,
+    "mappingRange": "Atelier et recette!A77:E89",
+    "imagesRange": "Références V2!A57:D62",
+    "classification": "simulation_au",
+    "independentProjectilePhysics": false
+  },
+  "recalculationSensitivity": {
+    "status": "passed",
+    "scope": "Disposable in-memory import; no modified workbook exported",
+    "checks": [
+      {
+        "input": "Tenues et gardes!K25",
+        "outputs": [
+          "Guide V2!C13"
+        ],
+        "originalInput": "/assets/sprites/costumes/carmilla-loose-hair-jump.webp",
+        "perturbedInput": "",
+        "originalOutputs": [
+          35
+        ],
+        "perturbedOutputs": [
+          34
+        ],
+        "restoredOutputs": [
+          35
+        ]
+      },
+      {
+        "input": "Tenues et gardes!J25",
+        "outputs": [
+          "Guide V2!C13"
+        ],
+        "originalInput": null,
+        "perturbedInput": "qa-temporary-crouch-path",
+        "originalOutputs": [
+          35
+        ],
+        "perturbedOutputs": [
+          36
+        ],
+        "restoredOutputs": [
+          35
+        ]
+      },
+      {
+        "input": "Tenues et gardes!E23",
+        "outputs": [
+          "Guide V2!C13"
+        ],
+        "originalInput": "/assets/sprites/individual/lute-ready.webp",
+        "perturbedInput": "",
+        "originalOutputs": [
+          35
+        ],
+        "perturbedOutputs": [
+          34
+        ],
+        "restoredOutputs": [
+          35
+        ]
+      },
+      {
+        "input": "Tenues et gardes!L16",
+        "outputs": [
+          "Guide V2!C14"
+        ],
+        "originalInput": "/assets/sprites/individual/vox-guard.webp",
+        "perturbedInput": "",
+        "originalOutputs": [
+          10
+        ],
+        "perturbedOutputs": [
+          9
+        ],
+        "restoredOutputs": [
+          10
+        ]
+      },
+      {
+        "input": "Plans des arènes!B22",
+        "outputs": [
+          "Guide V2!C17",
+          "Guide V2!C19"
+        ],
+        "originalInput": "Trois plans en jeu",
+        "perturbedInput": "Fond en jeu, calques à produire",
+        "originalOutputs": [
+          19,
+          0
+        ],
+        "perturbedOutputs": [
+          18,
+          1
+        ],
+        "restoredOutputs": [
+          19,
+          0
+        ]
+      },
+      {
+        "input": "Atelier et recette!A77",
+        "outputs": [
+          "Guide V2!C27"
+        ],
+        "originalInput": "VFX d’attaque",
+        "perturbedInput": "QA temporaire",
+        "originalOutputs": [
+          13
+        ],
+        "perturbedOutputs": [
+          12
+        ],
+        "restoredOutputs": [
+          13
+        ]
+      },
+      {
+        "input": "Références V2!A57",
+        "outputs": [
+          "Guide V2!C26"
+        ],
+        "originalInput": "Image VFX",
+        "perturbedInput": "QA temporaire",
+        "originalOutputs": [
+          6
+        ],
+        "perturbedOutputs": [
+          5
+        ],
+        "restoredOutputs": [
+          6
+        ]
+      },
+      {
+        "input": "Données moteur!E6",
+        "outputs": [
+          "Données moteur!F6"
+        ],
+        "originalInput": 120,
+        "perturbedInput": 137,
+        "perturbedOutputs": [
+          9
+        ],
+        "restoredOutputs": [
+          8
+        ]
+      }
+    ]
+  },
+  "visualReview": {
+    "status": "passed",
+    "beforeRangesReviewed": [
+      "Guide V2!A1:D27",
+      "Tenues et gardes!A21:F25",
+      "Plans des arènes!A19:E21",
+      "Atelier et recette!A62:E69"
+    ],
+    "changedViews": [
+      {
+        "name": "guide",
+        "sheet": "Guide V2",
+        "range": "A1:D27",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/guide.png",
+        "reviewed": true,
+        "sha256": "c4d130604eba24563c224095d5876a389bc45e5c08776a19ce26c18387ffc0bf"
+      },
+      {
+        "name": "main-actions-vox-velvette",
+        "sheet": "Tenues et gardes",
+        "range": "G16:L18",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/main-actions-vox-velvette.png",
+        "reviewed": true,
+        "sha256": "b189e84a1b3b6003a5bc9a37a99f40d1cb5fb045c0bcdfa236b3236be2e7ab2f"
+      },
+      {
+        "name": "lute-carmilla-tenues",
+        "sheet": "Tenues et gardes",
+        "range": "A22:F25",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/lute-carmilla-tenues.png",
+        "reviewed": true,
+        "sha256": "0a654626f64a966606f712a7ef8068b361e6b7b6edf59185ae513afd2d605780"
+      },
+      {
+        "name": "lute-carmilla-poses",
+        "sheet": "Tenues et gardes",
+        "range": "G22:L25",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/lute-carmilla-poses.png",
+        "reviewed": true,
+        "sha256": "2d768f9d0bb65b88677e6e1eb8a7645f4892b5e385fcbbb3f0da3142dd639614"
+      },
+      {
+        "name": "helluva-actions",
+        "sheet": "Tenues et gardes",
+        "range": "G32:L43",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/helluva-actions.png",
+        "reviewed": true,
+        "sha256": "7504d50d985576533c860f6309f317cf66793e2239743cf2128be08cfcecdd1e"
+      },
+      {
+        "name": "arenes-nouvelles",
+        "sheet": "Plans des arènes",
+        "range": "A22:E24",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/arenes-nouvelles.png",
+        "reviewed": true,
+        "sha256": "f011907366f73e3355b6be8402701b72ddee90b517b8fa968006c0ef69627cfa"
+      },
+      {
+        "name": "arenes-ressources",
+        "sheet": "Plans des arènes",
+        "range": "F22:I24",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/arenes-ressources.png",
+        "reviewed": true,
+        "sha256": "3c764f2d815597de5061650332c808ffc277789c4753b1ccfa636d549323f5d0"
+      },
+      {
+        "name": "atelier-historique",
+        "sheet": "Atelier et recette",
+        "range": "A62:E69",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/atelier-historique.png",
+        "reviewed": true,
+        "sha256": "cb0acf694863ad982d8142c6e6e50ddae97f8b3f6b0706e0390fe0f890206a0b"
+      },
+      {
+        "name": "atelier-wave-c",
+        "sheet": "Atelier et recette",
+        "range": "A70:E76",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/atelier-wave-c.png",
+        "reviewed": true,
+        "sha256": "e4e6b200f6db3bd4b45e66c4ab93a6fcaca7b5227bde3d0fe86ebaeaa55f6df3"
+      },
+      {
+        "name": "references-lute",
+        "sheet": "Références V2",
+        "range": "A39:D42",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/references-lute.png",
+        "reviewed": true,
+        "sha256": "3125b906408dcb296ee6533c4f288f06c49b92b15376ab869452a5bb3d022ff8"
+      },
+      {
+        "name": "references-wave-c",
+        "sheet": "Références V2",
+        "range": "A47:D56",
+        "render": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after/references-wave-c.png",
+        "reviewed": true,
+        "sha256": "de5356f78f5ed78b0b9474d0825c37997582f4688c44e781c3e14288944055bf"
+      }
+    ],
+    "observations": [
+      "Palette, police, largeurs de colonnes, styles existants et gel des en-têtes conservés.",
+      "Aucun chevauchement ni texte coupé observé dans les onze vues de contrôle.",
+      "La pose accroupie de Carmilla reste vide ; le compteur affiche 35 poses réelles pour six costumes.",
+      "Lute S1 présente six clés distinctes, dont son READY réutilisé sans nouvelle génération.",
+      "Les nouveaux sets et les trois arènes sont présents ; les états historiques sont distingués des comptes actuels.",
+      "La ligne de recette Wave C affiche 44 suites / 341 tests, deux builds, 932 empreintes et 336 références sans absence."
+    ],
+    "evidenceDirectory": "/workspace/scratch/eed3bf2e772a/outputs/infernal-bible-wave-c-20261124/after"
+  },
+  "gameQa": {
+    "schemaVersion": 1,
+    "batchId": "wave-c-2026-11-24",
+    "command": "npm run qa",
+    "baseCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+    "startedAtUtc": "2026-11-24T11:49:14.037366+00:00",
+    "finishedAtUtc": "2026-11-24T11:51:01.986702+00:00",
+    "durationSeconds": 107.949,
+    "exitCode": 0,
+    "status": "passed",
+    "suites": 44,
+    "tests": 341,
+    "log": "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.log",
+    "logSha256": "3e34066e6acf362680ed6daa4136a8a69d768e33a99406c17d3a3a2f15be4530",
+    "sourceIntegrity": {
+      "filesHashed": 1083,
+      "changedDuringQA": [],
+      "currentFilesRechecked": true,
+      "fullHashMapInSourceReport": true
+    },
+    "runtimeAssetAudit": {
+      "fighters": 36,
+      "individualReady": 34,
+      "individualGuard": 10,
+      "individualLightContact": 12,
+      "individualHit": 11,
+      "costumes": 6,
+      "costumeKeyPoses": 35,
+      "finisherKeyPoses": 5,
+      "separatedFinishProps": 1,
+      "storyAssignments": 108,
+      "illustratedStoryAssignments": 26,
+      "uniqueStoryIllustrations": 22,
+      "stages": 19,
+      "threePlaneStages": 19,
+      "twoPlaneStages": 0,
+      "onePlaneStages": 0,
+      "attackEffectImages": 6,
+      "attackEffectAssignments": 13,
+      "referencedAssets": 336,
+      "brokenReferences": []
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "builds": 2,
+    "browserReview": "Not run: Chromium launch previously confirmed blocked by socket EPERM. No live screenshots or actual-device performance claim.",
+    "standaloneFiles": 932,
+    "standaloneHashesVerified": 932,
+    "standaloneMiB": 542.0,
+    "sourceReport": "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.json",
+    "provenance": "Résultats exécutés et consignés par l’agent d’intégration ; rapport lu et empreinte conservée par l’agent du classeur.",
+    "sourceFileHashesVerified": true
+  },
+  "browserVisualQa": {
+    "status": "not-executed",
+    "reason": "Chromium launch blocked: socket() Operation not permitted in ProcessSingleton before navigation.",
+    "screenshotsCaptured": 0,
+    "source": "/workspace/scratch/eed3bf2e772a/qa-infernal-20261124/browser-preflight.json"
+  },
+  "sourceEvidence": {
+    "docs/standalone/extension-plan.json": {
+      "sha256": "b922a1357c29186923b4f6c16eae49bd8bad0a984ad3e8fbbd0786f6e8f3b0fb",
+      "bytes": 596954
+    },
+    "docs/standalone/build-production-bible.mjs": {
+      "sha256": "9a22a41dc31193bf56552f458368b06fc8496f7cdf5d1741b70c21d3bbd00b27",
+      "bytes": 26611
+    },
+    "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.json": {
+      "sha256": "59da9a8ddbd5c6b0232338fcd216d56245682daa2cea40caea919394519a7d82",
+      "bytes": 152805
+    },
+    "src/lib/infernal-attack-effects.ts": {
+      "sha256": "8e35da784b531ac827fd6dba1a02b65a8e08c73b8a700a6a4f4dc70d13a08c89",
+      "bytes": 6160
+    },
+    "src/lib/infernal-appearances.ts": {
+      "sha256": "491650109a8d6376d853f4f94b5af1f7c1aa4f8344979313e7aa37c9e23a4fa9",
+      "bytes": 6215
+    },
+    "src/lib/infernal-pose-anchors.ts": {
+      "sha256": "0b377b690bcad10ac0fa1b6ac856ce06e812a916bde23e16ee4ccb70f1dcd64e",
+      "bytes": 3960
+    },
+    "src/lib/pentagram-stages.ts": {
+      "sha256": "8daa375a015a8e516728bd7c656c29ed7e3725eb685020e0ec1c05c8243685da",
+      "bytes": 24278
+    },
+    "src/standalone/roster.ts": {
+      "sha256": "eaa761f28667bd9b9ac1b3b912d4f91d9c2e4961ef7685f4fed03a1669421513",
+      "bytes": 7569
+    },
+    "art/infernal-versus/production/costumes-2026-11-24.json": {
+      "sha256": "7e11171c4d8d6fd400db62e5cf77760e248f8247bb4d03ebc82f371b42fc3742",
+      "bytes": 28353
+    },
+    "art/infernal-versus/production/costumes-wave-c-2026-11-24.json": {
+      "sha256": "03ae216a0e947087d13b8bd78e96b1b66061d2d0966acce4fb89575fc7e71fbd",
+      "bytes": 38676
+    },
+    "art/infernal-versus/production/delivery-2026-11-24.json": {
+      "sha256": "6e9df8fe979093cc315136a2374dd0d998c235a65b4cccf9a99b9fc9f73bb9e2",
+      "bytes": 28382
+    },
+    "art/infernal-versus/production/delivery-wave-c-2026-11-24.json": {
+      "sha256": "f66dbf8c38299cba5c194cbedd1f650c0a457a906f1c8ca6e51bc3309e76e269",
+      "bytes": 68126
+    },
+    "art/infernal-versus/production/poses-helluva-2026-11-24.json": {
+      "sha256": "a2bd7d19449435d909bd528b41c505a02a36f2ea5a60d7d1a1613f1be642f531",
+      "bytes": 29678
+    },
+    "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json": {
+      "sha256": "b2618a804a05f330c7880ff19c21d413587d2025337d01f3ec81e5dfe35288ab",
+      "bytes": 81701
+    },
+    "art/infernal-versus/production/poses-main-2026-11-24.json": {
+      "sha256": "dc1699921f0d235b54fe2ff8645602c5f43df0f779100ee1de365f0d26e354d4",
+      "bytes": 33899
+    },
+    "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json": {
+      "sha256": "76b56a798356936dd99c7d8a277bbe02383f845987e7a9ce131a85c3f41b5d9f",
+      "bytes": 38959
+    },
+    "art/infernal-versus/production/poses-support-2026-11-24.json": {
+      "sha256": "3fcef4f361c627c40c8d7d300b394f7264a271b6557cd177da93ef65131e1010",
+      "bytes": 28502
+    },
+    "art/infernal-versus/production/projectiles-2026-11-24.json": {
+      "sha256": "f2a1c40fbc44e57006d5085c10c692affb724584453e6ba3c4f6cf0bb66aee42",
+      "bytes": 19149
+    },
+    "art/infernal-versus/production/stages-2026-11-24.json": {
+      "sha256": "3823d248b2e04ba886da39c93cb6dabfc66580d63824f5d683cb8e8845018211",
+      "bytes": 23540
+    },
+    "art/infernal-versus/production/stages-wave-c-2026-11-24.json": {
+      "sha256": "0474e4ff158256574995e1f56384cb7666de71415afa7422d4c60c5ff704eb34",
+      "bytes": 73804
+    }
+  },
+  "workbookSHA256": "1d301bba0769dc0e89220f5f1ba3a81a4805f7fab56341bafd030aae88bb7ed7",
+  "workbookBytes": 213768,
+  "limits": [
+    "Aucune certification canonique 1:1.",
+    "Les poses clés ne constituent pas des cycles animés complets.",
+    "Ancrage vertical ciblé relativement au READY ; taille et pivots horizontaux non normalisés, sauts non ramenés au sol.",
+    "La conformité du classeur et des fichiers ne certifie ni collisions visuelles, ni fluidité dans un navigateur.",
+    "Recalcul et réimport vérifiés dans Artifact Tool ; aucune validation dans Excel natif revendiquée."
+  ]
+}

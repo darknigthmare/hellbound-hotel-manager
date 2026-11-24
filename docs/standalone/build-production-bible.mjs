@@ -229,7 +229,7 @@ const guideRows=[
   ['Techniques signatures','Signatures jouables',null,'Retrouver chaque commande et la réaction propre au coup. Les valeurs de combat figurent dans Données moteur.'],
   ['Techniques signatures','Signatures à prototyper',null,'Le prototype décrit la commande envisagée, son rôle et la réponse adverse à tester.'],
   ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable. Les colonnes E et G à K recensent les poses disponibles : repos, léger, lourd, réaction, accroupissement et saut.'],
-  ['Tenues et gardes','Poses des tenues alternatives',null,'Comptage des chemins renseignés. Carmilla cheveux lâchés : 5/6 poses ; accroupissement absent après refus de génération. Le repli visuel sur le repos ne constitue pas une sixième image.'],
+  ['Tenues et gardes','Poses des tenues alternatives',null,'Chemins renseignés : Lute S1 possède six clés, dont un READY réutilisé. Carmilla cheveux lâchés reste à 5/6 après refus de l’accroupissement. Le repli sur le repos ne compte pas une nouvelle image.'],
   ['Tenues et gardes','Gardes actives distinctes',null,'La colonne L recense uniquement une image de garde distincte du repos. Une cellule vide conserve le comportement existant.'],
   ['Finitions','Variantes longues à dessiner',null,'Les colonnes B et C identifient l’effet en jeu ; D à G décrivent la séquence longue proposée. H et I indiquent les fichiers dédiés.'],
   ['Plans des arènes','Lieux détaillés',null,'Les fichiers en jeu et le travail de découpe artistique sont renseignés pour chaque lieu.'],
@@ -242,10 +242,10 @@ const guideRows=[
   ['Illustrations','Affectations à illustrer',null,'Le jeu compose actuellement un décor et les portraits existants pour ces scènes.'],
   ['Atelier et recette','Fiches de travail',null,'Faire valider silhouettes, pieds, plans d’arène, effets de fin et lisibilité sur téléphone.'],
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
-  ['Références V2','Sprites VFX uniques',null,'Six images détourées du lot du 24 novembre. Adaptations AU ; les sources, prompts et contrôles alpha figurent dans le manifeste projectiles-2026-11-24.json.'],
+  ['Références V2','Sprites VFX uniques',null,'Six images détourées du premier lot du 24 novembre, conservées dans la vague C. Adaptations AU ; sources, prompts et contrôles alpha dans projectiles-2026-11-24.json.'],
   ['Atelier et recette','Attaques avec VFX',null,'Une ligne par association entre combattant, attaque et image. Les effets suivent le contact existant ; ils n’ajoutent ni collision autonome, ni dégâts, ni portée.'],
 ];
-drawnTable(guide,'Infernal Versus · Guide de la V2','24 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
+drawnTable(guide,'Infernal Versus · Guide de la V2','24 novembre 2026 · Vague C · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
 const guideFilters = {
   'Signatures jouables': ['F', 'Jouable'],

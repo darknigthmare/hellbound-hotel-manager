@@ -2352,6 +2352,37 @@
   width: 25%; right: -3%; left: auto; top: auto; bottom: -1%;
 }
 
+/* Wave C props keep their full square alpha canvases and natural aspect ratio.
+   Edge margins account for up to 25.675px (middle) / 47.4px (near) of
+   horizontal parallax; the visible silhouettes stay inside at 300px width. */
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-room-plane {
+  background-position: center 65%;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-desk-plane {
+  z-index: 1;
+  width: clamp(100px, 27%, 250px); height: auto;
+  left: clamp(12px, 2%, 32px); right: auto; top: auto; bottom: 14%;
+  object-fit: contain; object-position: left bottom;
+}
+.arena-combat-stage[data-stage="dhorks"] .infernal-near-plane {
+  width: clamp(85px, 21%, 230px); height: auto;
+  right: clamp(48px, 4%, 64px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="crimson-mansion"] .infernal-near-plane {
+  width: clamp(90px, 22%, 220px); height: auto;
+  right: clamp(24px, 3%, 48px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+.arena-combat-stage[data-stage="mammon-show"] .infernal-near-plane {
+  width: clamp(130px, 30%, 300px); height: auto;
+  right: clamp(0px, 1%, 16px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+
 .infernal-finish-choice {
   position: absolute;
   z-index: 5;

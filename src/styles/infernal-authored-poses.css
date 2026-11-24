@@ -7,6 +7,11 @@
   object-position: center bottom;
 }
 
+/* Image-relative ground correction composes with facing/bob transforms. */
+.arena-combatant img.infernal-individual-pose[data-ground-anchor] {
+  translate: 0 var(--infernal-pose-ground-offset, 0%);
+}
+
 .infernal-detached-prop {
   position: absolute;
   z-index: 3;

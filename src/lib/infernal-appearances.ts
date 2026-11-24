@@ -25,30 +25,34 @@ function readyPose(id: string): InfernalActionPoses {
   return { ready: '/assets/sprites/individual/' + id + '-ready.webp', layout: 'portrait' };
 }
 
+function guardedActionPoses(id: string): InfernalActionPoses {
+  return { ...actionPoses(id), guard: '/assets/sprites/individual/' + id + '-guard.webp' };
+}
+
 /** Individual key poses supplement the existing animation banks. */
 export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>> = {
   niffty: readyPose('niffty'),
   sirpentious: readyPose('sirpentious'),
-  vox: readyPose('vox'),
+  vox: guardedActionPoses('vox'),
   valentino: readyPose('valentino'),
-  velvette: readyPose('velvette'),
+  velvette: guardedActionPoses('velvette'),
   adam: readyPose('adam'),
   emily: readyPose('emily'),
   sera: readyPose('sera'),
-  // Lute's S1 ready candidate has two normal arms. Keep it outside the active
-  // registry until the older gold-arm animation banks are harmonized with it.
-  carmilla: readyPose('carmilla'),
+  // Lute's two-arm S1 poses are available as one complete optional costume.
+  // Her default animation banks retain their existing incarnation.
+  carmilla: guardedActionPoses('carmilla'),
   rosie: readyPose('rosie'),
   zestial: readyPose('zestial'),
   zeezi: readyPose('zeezi'),
   baxter: readyPose('baxter'),
   abel: readyPose('abel'),
   hz_mimzy: readyPose('hz_mimzy'),
-  hb_blitzo: readyPose('hb_blitzo'),
-  hb_stolas: readyPose('hb_stolas'),
+  hb_blitzo: guardedActionPoses('hb_blitzo'),
+  hb_stolas: guardedActionPoses('hb_stolas'),
   hb_verosika: readyPose('hb_verosika'),
-  hb_fizzarolli: readyPose('hb_fizzarolli'),
-  hb_asmodeus: readyPose('hb_asmodeus'),
+  hb_fizzarolli: guardedActionPoses('hb_fizzarolli'),
+  hb_asmodeus: guardedActionPoses('hb_asmodeus'),
   hb_beelzebub: readyPose('hb_beelzebub'),
   hb_crimson: readyPose('hb_crimson'),
   hb_sallie_may: readyPose('hb_sallie_may'),
@@ -107,6 +111,12 @@ function costume(id: string, name: string, appearance: string): InfernalCostume 
 }
 
 export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume[]>> = {
+  lute: [{
+    ...costume('lute-pre-injury', 'Avant la blessure · saison 1', 'Hazbin Hotel · uniforme d’exorciste, incarnation avant la blessure du final S1'),
+    // Reuse the published two-arm READY without duplicating the artwork.
+    ready: '/assets/sprites/individual/lute-ready.webp',
+    layout: 'portrait',
+  }],
   carmilla: [{
     ...costume('carmilla-loose-hair', 'Cheveux lâchés', 'Hazbin Hotel · Hello Rosie! / Out for Love, saison 1, épisode 7'),
     // The crouch drawing remains unavailable; a ready fallback is not a new pose.
