@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "baseCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "command": "npm run qa",
+  "exitCode": 0,
+  "typecheck": "passed",
+  "lint": "passed",
+  "testSuites": 43,
+  "tests": 331,
+  "builds": {
+    "production": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 894,
+    "verifiedHashes": 894,
+    "sizeMiB": 515.4
+  },
+  "assetAudit": {
+    "command": "node scripts/audit-infernal-assets.mjs",
+    "exitCode": 0,
+    "references": 297,
+    "missing": 0,
+    "report": "docs/standalone/ASSET_COVERAGE.json"
+  },
+  "finalCssAdjustment": {
+    "description": "Increase Bee stool minimum right inset from 28 px to 32 px; no TypeScript change after full test suite.",
+    "commands": [
+      "npm run build",
+      "npm run build:standalone",
+      "npm run check:standalone"
+    ],
+    "exitCode": 0,
+    "productionCss": "pentagram-arena-OdnyWUQs.css",
+    "standaloneCss": "combat-i_fy0-Bq.css",
+    "standaloneVerifiedHashes": 894
+  },
+  "browser": {
+    "performed": false,
+    "reason": "Chromium launch failed with socket EPERM. No interactive browser or real-device performance validation claimed."
+  },
+  "fullQaLogSha256": "9aa0807c18375c8a3611c9bce529b13ca48139f5adac1ef548a6dc69084b575c",
+  "sourceFiles": {
+    "docs/standalone/build-production-bible.mjs": "3f8c9c7308d55ef5e71f5d8abe4e7bae73b22cf1fd915adfe4357a9fc515a0e4",
+    "scripts/audit-infernal-assets.mjs": "267b2b01185449731aba1467949be2508b1d67ad65300d8139d8c9a5b8f76acb",
+    "src/components/InfernalAttackEffects.tsx": "1ce3a9bc623514d6af4c0c7b02b50f55f68138b0beb930026cf151db4ebf5864",
+    "src/components/PentagramLiveFight.tsx": "e593994007c3d64f720e3ce9a58e37112eb05315d01ea67a120bcae6395bb886",
+    "src/lib/infernal-appearances.ts": "15e498221c71f769a7b781c970ccab36fc6d0cce44cbb2e7712dc4576a42b725",
+    "src/lib/infernal-attack-effects.ts": "8e35da784b531ac827fd6dba1a02b65a8e08c73b8a700a6a4f4dc70d13a08c89",
+    "src/lib/pentagram-stages.ts": "d32c0c9ffc9c0c15ed71687812596b113f06123421952aa4b5da4d50dbfc7cd1",
+    "src/styles/infernal-attack-effects.css": "86c1b216be70871aefc2e7d1474bf9ee8fd9622d5cd76af98fdd1882ca67f287",
+    "src/styles/pentagram-arena.css": "afad618bc092abaf4a619906fd27064a1f1d90c91566c99e76d91d5ff6fea867",
+    "src/tests/infernal-attack-effects-live.test.tsx": "cc2b37360791aac727e1c88c36831af5a79c036d63a0e307a645f5293cc1f1f7",
+    "src/tests/infernal-attack-effects.test.ts": "ea0aa0662c2dc685fcfc55bb69075bda726b0dfc800b9bd7572fed6fbe01ef5b",
+    "src/tests/infernal-authored-poses.test.ts": "6b06ead5d2ce910fbbf573a0062f006330448160d1e8188fa2d4b2bd0df77190"
+  }
+}

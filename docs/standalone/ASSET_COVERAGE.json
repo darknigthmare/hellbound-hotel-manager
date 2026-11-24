@@ -1,23 +1,25 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "summary": {
     "fighters": 36,
-    "individualReady": 10,
+    "individualReady": 34,
     "individualGuard": 3,
     "individualLightContact": 5,
     "individualHit": 4,
-    "costumes": 4,
-    "costumeKeyPoses": 24,
+    "costumes": 5,
+    "costumeKeyPoses": 29,
     "finisherKeyPoses": 5,
     "separatedFinishProps": 1,
     "storyAssignments": 108,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 14,
-    "threePlaneStages": 14,
+    "stages": 16,
+    "threePlaneStages": 16,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
-    "referencedAssets": 254,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 297,
     "brokenReferences": []
   },
   "fighters": [
@@ -200,7 +202,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/niffty-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -230,7 +232,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/sirpentious-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -320,7 +322,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/vox-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -350,7 +352,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/valentino-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -380,7 +382,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/velvette-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -410,7 +412,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/adam-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -440,7 +442,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/emily-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -470,7 +472,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/sera-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -530,12 +532,25 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/carmilla-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
       },
-      "costumes": [],
+      "costumes": [
+        {
+          "id": "carmilla-loose-hair",
+          "name": "Cheveux lâchés",
+          "poses": {
+            "ready": "/assets/sprites/costumes/carmilla-loose-hair.webp",
+            "strike": "/assets/sprites/costumes/carmilla-loose-hair-strike.webp",
+            "heavy": "/assets/sprites/costumes/carmilla-loose-hair-heavy.webp",
+            "recoil": "/assets/sprites/costumes/carmilla-loose-hair-recoil.webp",
+            "crouch": null,
+            "jump": "/assets/sprites/costumes/carmilla-loose-hair-jump.webp"
+          }
+        }
+      ],
       "finisherKeyPose": null,
       "separatedFinishProp": null,
       "story": {
@@ -560,7 +575,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/rosie-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -590,7 +605,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/zestial-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -620,7 +635,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/zeezi-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -650,7 +665,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/season2-au-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/baxter-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -680,7 +695,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/season2-au-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/abel-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -710,7 +725,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hazbin-family-media-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hz_mimzy-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -740,7 +755,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_blitzo-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -886,7 +901,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_stolas-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -959,7 +974,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_verosika-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -989,7 +1004,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_fizzarolli-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1019,7 +1034,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-powers-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_asmodeus-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1049,7 +1064,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-powers-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_beelzebub-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1079,7 +1094,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_crimson-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1109,7 +1124,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_sallie_may-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1139,7 +1154,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_andrealphus-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1308,6 +1323,97 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/helluva/looloo-land/thumb.webp"
+    },
+    {
+      "id": "stolas-palace",
+      "name": "Palais de Stolas · Terrasse",
+      "planes": [
+        "/assets/stages/helluva/stolas-palace/room.webp",
+        "/assets/stages/helluva/stolas-palace/prop-middle.webp",
+        "/assets/stages/helluva/stolas-palace/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/stolas-palace/thumb.webp"
+    },
+    {
+      "id": "bee-party",
+      "name": "Beelzebub · Réception",
+      "planes": [
+        "/assets/stages/helluva/bee-party/room.webp",
+        "/assets/stages/helluva/bee-party/prop-middle.webp",
+        "/assets/stages/helluva/bee-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/bee-party/thumb.webp"
+    }
+  ],
+  "attackEffects": [
+    {
+      "fighter": "cherribomb",
+      "id": "cherri-bomb",
+      "image": "/assets/vfx/infernal-versus/cherri-bomb.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_moxxie",
+      "id": "moxxie-bullet",
+      "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "attacks": [
+        "light",
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_andrealphus",
+      "id": "andrealphus-ice",
+      "image": "/assets/vfx/infernal-versus/andrealphus-ice.webp",
+      "attacks": [
+        "light",
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "vox",
+      "id": "vox-electric",
+      "image": "/assets/vfx/infernal-versus/vox-electric.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "sirpentious",
+      "id": "sirpentious-ray",
+      "image": "/assets/vfx/infernal-versus/sirpentious-ray.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "alastor",
+      "id": "alastor-shadow",
+      "image": "/assets/vfx/infernal-versus/alastor-shadow.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
     }
   ],
   "interpretation": "Counts describe registered files and authored key poses. They do not certify animation fluidity, canonical visual fidelity, or browser rendering."

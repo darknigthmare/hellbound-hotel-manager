@@ -47,7 +47,7 @@ async function collectRuntimeTables(){
     const modules = await Promise.all([
       'standalone/roster', 'standalone/campaign', 'lib/pentagram-fighters',
       'lib/pentagram-combat', 'lib/pentagram-stages', 'lib/infernal-finishers',
-      'lib/infernal-appearances', 'lib/character-sprites',
+      'lib/infernal-appearances', 'lib/character-sprites', 'lib/infernal-attack-effects',
     ].map(module => import(src + module + '.ts')));
     runtime = Object.assign({}, ...modules);
   } finally {
@@ -104,13 +104,36 @@ async function collectRuntimeTables(){
     appearances.push([name, 'Habituelle', fighter.source, sprite.portrait, stance ?? '', sprite.sheet, poses?.strike ?? '', '', poses?.recoil ?? '', '', '', poses?.guard ?? '']);
     for (const outfit of runtime.INFERNAL_COSTUMES[id] ?? []) {
       for (const file of [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump]) if (file) assetPaths.add(file);
-      appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump, '']);
+      appearances.push([name, outfit.name, outfit.appearance, outfit.ready, outfit.ready, '', outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch ?? '', outfit.jump, '']);
     }
     for (const [kind, label] of Object.entries(kinds)) {
       const image = runtime.storyIllustration(id, kind);
       if (image) assetPaths.add(image);
       const brief = kind === 'intro' ? intro : kind === 'rival' ? route.chapters[2].scene : ending;
       pictures.push([name, label, kind === 'rival' ? rival : name, brief, image ? 'Illustration dédiée' : 'Décor et portraits', image ?? '']);
+    }
+  }
+  const vfxRows = [], vfxImages = new Map();
+  const vfxKinds = { projectile: 'Projectile visuel', beam: 'Rayon visuel', sweep: 'Balayage visuel' };
+  for (const [fighterId, effect] of Object.entries(runtime.INFERNAL_ATTACK_EFFECTS)) {
+    const name = names.get(fighterId);
+    assert(name && effect.canonStatus === 'simulation_au', 'VFX sans combattant ou périmètre AU : ' + fighterId);
+    assetPaths.add(effect.image);
+    vfxImages.set(effect.image, [
+      'Image VFX', effect.id,
+      name + ' · ' + vfxKinds[effect.kind] + '. Adaptation AU des coups existants ; fidélité 1:1 non certifiée.',
+      'public' + effect.image,
+    ]);
+    for (const attack of effect.attacks) {
+      const move = moves.find(row => row[0] === name && row[1] === actions[attack]);
+      assert(move, 'Association VFX sans attaque : ' + fighterId + '/' + attack);
+      const start = Math.max(0, move[4] - effect.leadMs);
+      const end = Math.min(move[6], move[4] + effect.lingerMs);
+      vfxRows.push([
+        'VFX d’attaque', name + ' · ' + actions[attack], 'Habillage AU intégré',
+        move[2] + ' · ' + vfxKinds[effect.kind] + '\n' + effect.image + '\nFenêtre ' + start + '–' + end + ' ms depuis le départ ; impact à ' + move[4] + ' ms.',
+        'Effet visuel synchronisé au coup existant, sans collision ni dégâts autonomes ni portée supplémentaire. Vérifier les deux orientations, pause, K.-O., arrêt sur impact, expiration et mouvement réduit.',
+      ]);
     }
   }
   await Promise.all([...assetPaths].map(file => fs.access(path.join(root, 'public', file))));
@@ -135,11 +158,11 @@ async function collectRuntimeTables(){
       return [r.name,status,r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
     })],
     ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
-    ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les cibles d’animation et de performance doivent être mesurées dans le jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance])],
-    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],design.sources],
+    ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les VFX habillent les coups existants ; leur présence ne certifie pas une recette visuelle en jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],[...design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance]),...vfxRows]],
+    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],[...design.sources,...vfxImages.values()]],
   ];
 
-  return {sets, fighterCount:fighters.length, stageCount:stages.size, threePlanCount:[...stages.values()].filter(stage=>stage.scenery?.middle && stage.scenery?.near).length, twoPlanCount:[...stages.values()].filter(stage=>Number(Boolean(stage.scenery?.middle))+Number(Boolean(stage.scenery?.near))===1).length, onePlanCount:[...stages.values()].filter(stage=>!stage.scenery?.middle && !stage.scenery?.near).length, detachedPropCount:finishes.filter(row=>row[8]).length, guardPoseCount:appearances.filter(row=>row[11]).length, costumePoseCount:appearances.filter(row=>row[1]!=='Habituelle').reduce((sum,row)=>sum+[row[4],...row.slice(6,11)].filter(Boolean).length,0), referencedAssetCount:assetPaths.size, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
+  return {sets, fighterCount:fighters.length, stageCount:stages.size, threePlanCount:[...stages.values()].filter(stage=>stage.scenery?.middle && stage.scenery?.near).length, twoPlanCount:[...stages.values()].filter(stage=>Number(Boolean(stage.scenery?.middle))+Number(Boolean(stage.scenery?.near))===1).length, onePlanCount:[...stages.values()].filter(stage=>!stage.scenery?.middle && !stage.scenery?.near).length, detachedPropCount:finishes.filter(row=>row[8]).length, guardPoseCount:appearances.filter(row=>row[11]).length, costumePoseCount:appearances.filter(row=>row[1]!=='Habituelle').reduce((sum,row)=>sum+[row[4],...row.slice(6,11)].filter(Boolean).length,0), vfxImageCount:vfxImages.size, vfxAttackCount:vfxRows.length, referencedAssetCount:assetPaths.size, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
 }
 if(process.argv[2]==='--read-game'){
   const payload=JSON.stringify(await collectRuntimeTables());
@@ -148,7 +171,7 @@ if(process.argv[2]==='--read-game'){
 }
 const child=spawnSync(process.execPath,[fileURLToPath(import.meta.url),'--read-game'],{encoding:'utf8',maxBuffer:4*1024*1024});
 if(child.status!==0)throw Error(child.stderr||'Lecture du code interrompue.');
-const {sets,fighterCount,stageCount,threePlanCount,twoPlanCount,onePlanCount,detachedPropCount,guardPoseCount,costumePoseCount,referencedAssetCount,signatureCount,expectedFrames}=JSON.parse(child.stdout);
+const {sets,fighterCount,stageCount,threePlanCount,twoPlanCount,onePlanCount,detachedPropCount,guardPoseCount,costumePoseCount,vfxImageCount,vfxAttackCount,referencedAssetCount,signatureCount,expectedFrames}=JSON.parse(child.stdout);
 process.env.DOTNET_PROCESSOR_COUNT ??= '2';
 process.env.COMPlus_gcServer ??= '0';
 process.env.DOTNET_GCHeapHardLimit ??= '20000000';
@@ -205,8 +228,8 @@ const guideRows=[
   ['Données moteur','Attaques paramétrées',null,'Contrôler départ, contact, récupération et recharge. La simulation utilise des millisecondes.'],
   ['Techniques signatures','Signatures jouables',null,'Retrouver chaque commande et la réaction propre au coup. Les valeurs de combat figurent dans Données moteur.'],
   ['Techniques signatures','Signatures à prototyper',null,'Le prototype décrit la commande envisagée, son rôle et la réponse adverse à tester.'],
-  ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable avec les poses de garde, légère, lourde, réaction, accroupissement et saut.'],
-  ['Tenues et gardes','Poses des tenues alternatives',null,'Six poses pour chaque costume complet : repos, léger, lourd, réaction, accroupissement et saut. Les pivots et la fluidité restent à vérifier en jeu.'],
+  ['Tenues et gardes','Tenues alternatives',null,'Une ligne par tenue sélectionnable. Les colonnes E et G à K recensent les poses disponibles : repos, léger, lourd, réaction, accroupissement et saut.'],
+  ['Tenues et gardes','Poses des tenues alternatives',null,'Comptage des chemins renseignés. Carmilla cheveux lâchés : 5/6 poses ; accroupissement absent après refus de génération. Le repli visuel sur le repos ne constitue pas une sixième image.'],
   ['Tenues et gardes','Gardes actives distinctes',null,'La colonne L recense uniquement une image de garde distincte du repos. Une cellule vide conserve le comportement existant.'],
   ['Finitions','Variantes longues à dessiner',null,'Les colonnes B et C identifient l’effet en jeu ; D à G décrivent la séquence longue proposée. H et I indiquent les fichiers dédiés.'],
   ['Plans des arènes','Lieux détaillés',null,'Les fichiers en jeu et le travail de découpe artistique sont renseignés pour chaque lieu.'],
@@ -219,8 +242,10 @@ const guideRows=[
   ['Illustrations','Affectations à illustrer',null,'Le jeu compose actuellement un décor et les portraits existants pour ces scènes.'],
   ['Atelier et recette','Fiches de travail',null,'Faire valider silhouettes, pieds, plans d’arène, effets de fin et lisibilité sur téléphone.'],
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
+  ['Références V2','Sprites VFX uniques',null,'Six images détourées du lot du 24 novembre. Adaptations AU ; les sources, prompts et contrôles alpha figurent dans le manifeste projectiles-2026-11-24.json.'],
+  ['Atelier et recette','Attaques avec VFX',null,'Une ligne par association entre combattant, attaque et image. Les effets suivent le contact existant ; ils n’ajoutent ni collision autonome, ni dégâts, ni portée.'],
 ];
-drawnTable(guide,'Infernal Versus · Guide de la V2','19 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
+drawnTable(guide,'Infernal Versus · Guide de la V2','24 novembre 2026 · Les onze derniers onglets conservent intégralement les registres de la V1.', ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
 const guideFilters = {
   'Signatures jouables': ['F', 'Jouable'],
@@ -231,6 +256,8 @@ const guideFilters = {
   'Arènes avec fond seul': ['B', 'Fond en jeu, calques à produire'],
   'Affectations dédiées': ['E', 'Illustration dédiée'],
   'Affectations à illustrer': ['E', 'Décor et portraits'],
+  'Sprites VFX uniques': ['A', 'Image VFX'],
+  'Attaques avec VFX': ['A', 'VFX d’attaque'],
 };
 for(const [i,row] of guideRows.entries()){
   const filter = guideFilters[row[1]];
@@ -240,7 +267,7 @@ for(const [i,row] of guideRows.entries()){
   const formula = nonEmptyColumn
     ? `=ROWS('${row[0]}'!$${nonEmptyColumn}$6:$${nonEmptyColumn}${end})-COUNTBLANK('${row[0]}'!$${nonEmptyColumn}$6:$${nonEmptyColumn}${end})`
     : row[1] === 'Poses des tenues alternatives'
-    ? `=COUNTIF('${row[0]}'!$B$6:$B${end},"<>Habituelle")*6`
+    ? '=' + ['E','G','H','I','J','K'].map(column => `SUMPRODUCT(('${row[0]}'!$B$6:$B${end}<>"Habituelle")*('${row[0]}'!$${column}$6:$${column}${end}<>""))`).join('+')
     : filter
     ? `=COUNTIF('${row[0]}'!$${filter[0]}$6:$${filter[0]}${end},"${filter[1]}")`
     : `=COUNTA('${row[0]}'!$A$6:$A${end})`;
@@ -260,6 +287,8 @@ assert.equal(summaryCount('Arènes avec fond seul'),onePlanCount);
 assert.equal(summaryCount('Pièces séparées intégrées'),detachedPropCount);
 assert.equal(summaryCount('Gardes actives distinctes'),guardPoseCount);
 assert.equal(summaryCount('Poses des tenues alternatives'),costumePoseCount);
+assert.equal(summaryCount('Sprites VFX uniques'),vfxImageCount);
+assert.equal(summaryCount('Attaques avec VFX'),vfxAttackCount);
 assert.equal(referencedAssetCount,design.assetBatch.runtime.referencedAssets);
 assert(summaryCount('Lieux détaillés')>=stageCount);
 assert.equal(summaryCount('Affectations dédiées') + summaryCount('Affectations à illustrer'),pictures.length);

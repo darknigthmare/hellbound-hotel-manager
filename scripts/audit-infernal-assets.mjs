@@ -26,7 +26,7 @@ const hooks = registerHooks({
 let runtime;
 try {
   const modules = await Promise.all(['standalone/roster', 'standalone/campaign', 'lib/pentagram-stages',
-    'lib/infernal-appearances', 'lib/infernal-finishers', 'lib/character-sprites']
+    'lib/infernal-appearances', 'lib/infernal-finishers', 'lib/character-sprites', 'lib/infernal-attack-effects']
     .map(module => import(source + module + '.ts')));
   runtime = Object.assign({}, ...modules);
 } finally {
@@ -65,6 +65,11 @@ const stages = runtime.STANDALONE_STAGES.map(stage => {
   const planes = [asset(stage.imagePath), asset(stage.scenery?.middle), asset(stage.scenery?.near)].filter(Boolean);
   return { id: stage.id, name: stage.name, planes, planeCount: planes.length, thumbnail: asset(stage.thumbnailPath) };
 });
+const attackEffects = Object.entries(runtime.INFERNAL_ATTACK_EFFECTS).map(([fighter, effect]) => ({
+  fighter, id: effect.id, image: asset(effect.image), attacks: effect.attacks,
+  canonStatus: effect.canonStatus,
+  behavior: 'Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage.',
+}));
 const summary = {
   fighters: fighters.length,
   individualReady: fighters.filter(fighter => fighter.individual.ready).length,
@@ -82,10 +87,12 @@ const summary = {
   threePlaneStages: stages.filter(stage => stage.planeCount === 3).length,
   twoPlaneStages: stages.filter(stage => stage.planeCount === 2).length,
   onePlaneStages: stages.filter(stage => stage.planeCount === 1).length,
+  attackEffectImages: new Set(attackEffects.map(effect => effect.image)).size,
+  attackEffectAssignments: attackEffects.reduce((sum, effect) => sum + effect.attacks.length, 0),
   referencedAssets: paths.size,
   brokenReferences: [...missing],
 };
-const report = { schemaVersion: 1, summary, fighters, stages,
+const report = { schemaVersion: 2, summary, fighters, stages, attackEffects,
   interpretation: 'Counts describe registered files and authored key poses. They do not certify animation fluidity, canonical visual fidelity, or browser rendering.' };
 const destination = path.join(root, 'docs/standalone/ASSET_COVERAGE.json');
 fs.writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');

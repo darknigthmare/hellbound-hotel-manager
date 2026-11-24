@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "batch": "stages-2026-11-24",
+  "date": "2026-11-24",
+  "tool": "image_gen.imagegen",
+  "executionMode": "built-in",
+  "stageCount": 2,
+  "imageGenerationCalls": 6,
+  "status": "generated_candidate_pending_in_game_validation",
+  "fidelity": "Source-guided candidates; not certified 1:1.",
+  "rightsNote": "Original generated fan-game adaptation of third-party franchise designs. Reference screenshots were inspected in scratch only and are not redistributed in this batch. Generation does not grant a license to underlying franchise IP.",
+  "repositoryBase": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "engine": "Existing React/TypeScript custom 2D combat renderer",
+  "formatPolicy": "PNG masters preserved byte-for-byte; runtime WebP lossless; only deterministic resizing/format conversion; thumbnails derived from room backgrounds.",
+  "inGameValidation": {
+    "performed": false,
+    "owner": "root integration step"
+  },
+  "stages": [
+    {
+      "id": "stolas-palace",
+      "title": "Palais de Stolas — terrasse intacte",
+      "timeline": "Helluva Boss, intact terrace before S2E12",
+      "primarySources": [
+        {
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+          "title": "HELLUVA BOSS - THE CIRCUS // S2: Episode 1",
+          "publisher": "Vivziepop / SpindleHorse",
+          "sourceType": "official_episode"
+        }
+      ],
+      "visualReferences": [
+        {
+          "url": "https://i.pinimg.com/736x/23/59/c0/2359c0b1698099a76ae38098517da370.jpg",
+          "page": "https://www.pinterest.com/pin/stolas-palace--622974560950076693/",
+          "role": "Secondary rehost of palace balcony still; observed for architecture only",
+          "localObserved": "reference_work/stolas-palace-balcony.jpg"
+        }
+      ],
+      "adaptations": [
+        "Balcony expanded into a horizontal 2D arena terrace with level stone fight lane.",
+        "Building framing, distant skyline, floor extent and independent parallax placement are game adaptations.",
+        "Stage deliberately represents the intact terrace; it does not assert any later ownership or damage state."
+      ],
+      "assets": [
+        {
+          "file": "room",
+          "role": "background",
+          "alphaRequired": false,
+          "prompt": "Use case: stylized-concept. Asset type: side-on 2D fighting game arena background for Infernal Versus, stolas-palace. Adapt the reference image of Stolas' palace balcony from Helluva Boss into a single wide empty terrace background, intact before S2E12. Preserve the recognizable architectural design and palette: angular pale gray stone façade, mauve plum diamond-pattern glass door, narrow tall windows, gold arcane line ornament on the façade, square stone columns with feather motifs, balcony balustrade with elongated pointed openings and a central heart motif, rose-petal stone finials. Show enough palace façade on the left and rear and distant muted pink infernal sky with silhouetted rooftops on the right to read as an OUTDOOR TERRACE. Eye-level side-view fighting stage, open level stone floor across the entire bottom 27 percent, unbroken horizontal fighting line and ample open space for two characters. Architecture behind that line, no stairs on the fighting lane. Match Helluva Boss clean black line art, flat cel-shaded mauve-gray shapes and restrained atmospheric depth, high-detail 2D background. This is a gameplay adaptation of the terrace, do not redesign it into a generic fantasy castle or palace interior. Technical output: landscape 1536 x 1024, one complete environment only, opaque background. No people, no animals, no silhouettes of people, no lettering, no interface, no logos, no watermark, no split panels. Maintain readable low-contrast lower play area.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-afe33ecd-edb7-42c3-9d82-2f6f8b84f208.png",
+          "masterPath": "art/infernal-versus/masters/stages/stolas-palace/room.png",
+          "runtimePath": "public/assets/stages/helluva/stolas-palace/room.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1536,
+              1024
+            ],
+            "runtimeDimensions": [
+              1536,
+              1024
+            ],
+            "alphaExtrema": [
+              255,
+              255
+            ],
+            "fullyTransparentPixels": 0,
+            "partiallyTransparentPixels": 0,
+            "fullyOpaquePixels": 1572864,
+            "contentBounds": [
+              0,
+              0,
+              1536,
+              1024
+            ],
+            "visibleBoundsAtAlpha16": [
+              0,
+              0,
+              1536,
+              1024
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "ce90dd9b4f17dec7262a9a079591ffb2385bf9b5aa1a530d65ea43dfb8fd3a3c",
+            "runtimeSha256": "acdf311395fd0a4638382fe8519a86c2fe6c63552f027aae981f98dc1aaa9efb",
+            "masterBytes": 2168613,
+            "runtimeBytes": 1446666
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        },
+        {
+          "file": "prop-middle",
+          "role": "balustrade and finial prop",
+          "alphaRequired": true,
+          "prompt": "Use case: precise-object-edit. Asset type: one midground parallax scenery prop for a 2D fighting game, Stolas palace terrace. Use the supplied generated terrace background as the exact style and palette reference. Extract/reconstruct ONE self-contained short section of the pale gray-mauve stone balustrade: one square ornate end post with rose-petal finial on its top, attached to a short horizontal railing segment with three narrow pointed openings and one small heart cutout. The prop is one connected architectural object, front elevation with only slight visible depth, no dramatic perspective. Preserve the angular Helluva Boss line art, mauve gray stone, muted rose details and precise black outlines of the reference. This prop sits behind fighters at the far edge of the terrace. All cutout openings must be genuinely transparent. Technical output: square 1024 x 1024, whole object centered, 8 percent margin on all sides, actual transparent background. No floor, no facade, no sky, no characters, no text, no logo, no watermark, no separate objects, no drop shadow outside the object.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-8b6060e0-ff04-44aa-b956-fdbda22d02a7.png",
+          "masterPath": "art/infernal-versus/masters/stages/stolas-palace/prop-middle.png",
+          "runtimePath": "public/assets/stages/helluva/stolas-palace/prop-middle.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1254,
+              1254
+            ],
+            "runtimeDimensions": [
+              1024,
+              1024
+            ],
+            "alphaExtrema": [
+              0,
+              255
+            ],
+            "fullyTransparentPixels": 662600,
+            "partiallyTransparentPixels": 383743,
+            "fullyOpaquePixels": 2233,
+            "contentBounds": [
+              73,
+              94,
+              980,
+              946
+            ],
+            "visibleBoundsAtAlpha16": [
+              85,
+              99,
+              944,
+              859
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "c42e4b9cc9bc7bdc574a8c43a4ca1df6e327ce2181312baa0c308e92c2721b27",
+            "runtimeSha256": "cd1711ea2e9896f421d85aa1bad6fce42c805521b057e09c1ac7a183c45a068e",
+            "masterBytes": 912074,
+            "runtimeBytes": 403158,
+            "cornerAlphaValues": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "visibleContentClearOfImageEdges": true,
+            "veryLowAlphaPixels": 10996,
+            "alphaNote": "Unmodified generated transparency; very low alpha fringe pixels are retained. Visible silhouette at alpha>=16 is fully contained."
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        },
+        {
+          "file": "prop-near",
+          "role": "hanging mauve heraldic banner",
+          "alphaRequired": true,
+          "prompt": "Use case: precise-object-edit. Asset type: one foreground hanging scenery prop for a 2D fighting game, Stolas palace terrace. Use the supplied terrace as the exact style/palette reference. Isolate/reconstruct ONE long royal mauve-purple heraldic pennant like the hanging banners visible on the balcony posts: wide rectangular top, two-point swallowtail bottom, slim gold border and two elegant stylized golden feather/leaf emblems vertically aligned, no text. Show the entire single banner hanging from one simple short dark metal horizontal rod, a subtle natural cloth curve but a readable near-front view. Match Helluva Boss's angular 2D black outline/cel shading and the muted rose/plum, gray and gold design of the reference. Technical output square 1024 x 1024, actual transparent background, whole banner and rod fully visible with generous margins. No wall, no sky, no balcony, no floor, no character, no lettering, no logo, no glow, no shadow outside the cloth, no extra unrelated props.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-6aa863f5-1ebf-4f36-8b61-dce0722ee0fc.png",
+          "masterPath": "art/infernal-versus/masters/stages/stolas-palace/prop-near.png",
+          "runtimePath": "public/assets/stages/helluva/stolas-palace/prop-near.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1254,
+              1254
+            ],
+            "runtimeDimensions": [
+              1024,
+              1024
+            ],
+            "alphaExtrema": [
+              0,
+              255
+            ],
+            "fullyTransparentPixels": 780988,
+            "partiallyTransparentPixels": 266130,
+            "fullyOpaquePixels": 1458,
+            "contentBounds": [
+              0,
+              0,
+              990,
+              1024
+            ],
+            "visibleBoundsAtAlpha16": [
+              286,
+              52,
+              738,
+              971
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "145cfa21df8f503bdebb9e87cd3ab633a989d5d5c9f99cb58fc0661034354c74",
+            "runtimeSha256": "db309a927bac467f23c15d1e0582ef06c7c51ac7971d32eb52d13d290026be7c",
+            "masterBytes": 608551,
+            "runtimeBytes": 262988,
+            "cornerAlphaValues": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "visibleContentClearOfImageEdges": true,
+            "veryLowAlphaPixels": 6694,
+            "alphaNote": "Unmodified generated transparency; very low alpha fringe pixels are retained. Visible silhouette at alpha>=16 is fully contained."
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        }
+      ],
+      "thumbnail": {
+        "path": "public/assets/stages/helluva/stolas-palace/thumb.webp",
+        "dimensions": [
+          384,
+          256
+        ],
+        "sha256": "61c038a90b96c00316af18f35def109e0c309d567b3e9c5ded20a03c4ad4ba8b",
+        "derivedFrom": "art/infernal-versus/masters/stages/stolas-palace/room.png"
+      }
+    },
+    {
+      "id": "bee-party",
+      "title": "Réception de Beelzebub — atrium",
+      "timeline": "Helluva Boss S1E8 Queen Bee",
+      "primarySources": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "title": "HELLUVA BOSS - QUEEN BEE // S1: Episode 8",
+          "publisher": "Vivziepop / SpindleHorse",
+          "sourceType": "official_episode"
+        },
+        {
+          "url": "https://www.primevideo.com/detail/0T98QG55F0QH9IXUALGYLHGZUT",
+          "title": "Helluva Boss Season 1 — episode 8 Queen Bee",
+          "publisher": "Prime Video",
+          "sourceType": "official_catalog"
+        }
+      ],
+      "visualReferences": [
+        {
+          "url": "https://i.pinimg.com/736x/76/35/5a/76355a93e9037d5a084003e5c4746e9a.jpg",
+          "page": "https://www.pinterest.com/pin/beelzebubs-mansion--862157922447155919/",
+          "role": "Secondary episode-still rehost; observed atrium geometry and three-hoop sculpture",
+          "localObserved": "reference_work/beelzebub-mansion-party.jpg"
+        },
+        {
+          "url": "https://m.media-amazon.com/images/M/MV5BZTYxMjEyZGYtZWRhYi00NTNhLWI3NmMtNzk0NjNhMzZhMTc3XkEyXkFqcGc%40._V1_.jpg",
+          "page": "https://www.imdb.com/title/tt14294134/",
+          "role": "Episode still; observed honeycomb walls, gold/cyan furnishings and barstools",
+          "localObserved": "reference_work/beelzebub-mansion-party-official-still.jpg"
+        }
+      ],
+      "adaptations": [
+        "All party guests removed to maintain one environment layer per file.",
+        "Fight lane is a flat widened dance floor; no stair collision is implied.",
+        "Three-hoop sculpture reconstructed as one independent parallax prop.",
+        "Reconstructed central decorative light/emblem and exact railing/floor patterns remain candidate interpretations."
+      ],
+      "assets": [
+        {
+          "file": "room",
+          "role": "background",
+          "alphaRequired": false,
+          "prompt": "Use case: stylized-concept. Asset type: side-on 2D fighting game arena background for Infernal Versus, bee-party. Adapt the reference images of Beelzebub's party atrium in the Helluva Boss episode Queen Bee into one empty fighting-game stage. Preserve the scene's distinctive warm honey-yellow, amber, peach and cream palette with turquoise accents: huge circular cream atrium, curved upper galleries with honeycomb patterned gold balustrades, honey-orange hexagonal wall patterns, two symmetrical sweeping golden staircases rising in the background, amber translucent lava-like columns, central softly glowing yellow ceremonial light in the rear. Leave the freestanding THREE CYAN RINGS sculpture out of this background so it can be a separate parallax prop. The lower 27 percent is one wide unobstructed horizontal honey-colored dance floor at eye-level side-view camera with minimal floor perspective; enough empty low-contrast space for 2D fighting characters. The staircase is behind the play area only. Match the original clean animated 2D line art and flat warm shading; no photorealism, no 3D render, no generic gothic nightclub. Technical output: landscape 1536 x 1024, single complete opaque background. Remove ALL people, demons, guests and crowd silhouettes from both reference images. No text, no logos, no UI, no watermark, no multiple panels. Soft stable illumination, no strobe.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-74ca7bfc-3e36-4bcc-a325-74e30aba6799.png",
+          "masterPath": "art/infernal-versus/masters/stages/bee-party/room.png",
+          "runtimePath": "public/assets/stages/helluva/bee-party/room.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1536,
+              1024
+            ],
+            "runtimeDimensions": [
+              1536,
+              1024
+            ],
+            "alphaExtrema": [
+              255,
+              255
+            ],
+            "fullyTransparentPixels": 0,
+            "partiallyTransparentPixels": 0,
+            "fullyOpaquePixels": 1572864,
+            "contentBounds": [
+              0,
+              0,
+              1536,
+              1024
+            ],
+            "visibleBoundsAtAlpha16": [
+              0,
+              0,
+              1536,
+              1024
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "7ca456496dce01f851e2f7b7a1c0269bc7ae6e9c7c595a208f1d1083a6bc6a48",
+            "runtimeSha256": "e46fe43efb31ecf8853ad59c282e5166592eaa5a764602f2410f63c8be4d0f2b",
+            "masterBytes": 1940621,
+            "runtimeBytes": 1452712
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        },
+        {
+          "file": "prop-middle",
+          "role": "three cyan ring sculpture",
+          "alphaRequired": true,
+          "prompt": "Use case: precise-object-edit. Asset type: one midground parallax stage prop for the Queen Bee atrium from Helluva Boss. Image 1 is the original episode still showing the central sculpture. Image 2 is our stage background whose line weight, warm cream-gold lighting, teal palette and clean 2D shading must remain consistent. Isolate/reconstruct exactly ONE sculpture made of THREE thin vertically stacked turquoise/cyan metal hoop rings, as visible in Image 1: top circular hoop, middle slightly vertically oval hoop touching top, bottom circular hoop touching middle, with a small turquoise foot/base supporting the bottom. All three hoop interiors must be transparent. Front elevation, clean animation-line contours, slight metallic pale highlights, no magical glow or extra rings. This is a single connected scenery prop behind the play line. Technical output 1024 x 1024 with actual transparent background, the entire tall object visible centered with safe margin; no room, no floor, no people, no text, no logo, no watermark, no duplicate props.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-89cdbf63-8b47-4f93-84a6-e61d265202f6.png",
+          "masterPath": "art/infernal-versus/masters/stages/bee-party/prop-middle.png",
+          "runtimePath": "public/assets/stages/helluva/bee-party/prop-middle.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1254,
+              1254
+            ],
+            "runtimeDimensions": [
+              1024,
+              1024
+            ],
+            "alphaExtrema": [
+              0,
+              255
+            ],
+            "fullyTransparentPixels": 976597,
+            "partiallyTransparentPixels": 69964,
+            "fullyOpaquePixels": 2015,
+            "contentBounds": [
+              20,
+              17,
+              1013,
+              1024
+            ],
+            "visibleBoundsAtAlpha16": [
+              352,
+              27,
+              665,
+              997
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "9ecc4094b9935e424ce81a6d70c4115574dad1d1806a82cdd2f25d91c595de53",
+            "runtimeSha256": "c53277197efca3bf39b281701c12e53257ffa8eda86a2ca2e81d751d58b69f03",
+            "masterBytes": 327495,
+            "runtimeBytes": 151038,
+            "cornerAlphaValues": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "visibleContentClearOfImageEdges": true,
+            "veryLowAlphaPixels": 13841,
+            "alphaNote": "Unmodified generated transparency; very low alpha fringe pixels are retained. Visible silhouette at alpha>=16 is fully contained."
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        },
+        {
+          "file": "prop-near",
+          "role": "cyan-and-gold barstool",
+          "alphaRequired": true,
+          "prompt": "Use case: precise-object-edit. Asset type: one foreground parallax prop for the Queen Bee atrium in Helluva Boss. Image 1 is the episode still showing the bar furnishings; Image 2 is our matching arena background. Isolate/reconstruct ONE ornate turquoise-and-gold barstool from that environment: small round pale gold/honey seat with turquoise edge, short tapering cyan/teal polygonal pedestal decorated with dark teal inverted triangles, narrow gold ankle/support and a broad small gold circular foot. Compact elegant cocktail bar stool, not a chair, no backrest, no person seated. Near-front side view with only slight top visibility, clean 2D cartoon black-brown line work, warm cream/amber illumination and turquoise accents matching the stage. Technical output square 1024 x 1024, actual transparent background, one whole isolated object centered with 10 percent margins. No room, no flooring, no people, no drinks, no text, no logo, no watermark, no extra props or detached pieces, no cast shadow outside the object.",
+          "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a140aa18-bbb2-46ac-bf51-d8fd037961f4.png",
+          "masterPath": "art/infernal-versus/masters/stages/bee-party/prop-near.png",
+          "runtimePath": "public/assets/stages/helluva/bee-party/prop-near.webp",
+          "technicalQa": {
+            "nativeDimensions": [
+              1254,
+              1254
+            ],
+            "runtimeDimensions": [
+              1024,
+              1024
+            ],
+            "alphaExtrema": [
+              0,
+              255
+            ],
+            "fullyTransparentPixels": 830586,
+            "partiallyTransparentPixels": 216803,
+            "fullyOpaquePixels": 1187,
+            "contentBounds": [
+              32,
+              29,
+              998,
+              1003
+            ],
+            "visibleBoundsAtAlpha16": [
+              272,
+              163,
+              750,
+              884
+            ],
+            "losslessPixelsMatch": true,
+            "masterSha256": "1ef4088216152c9942b50b367ebcfd8f57a83738490a67d8e634d8b19fd3117b",
+            "runtimeSha256": "083b95273e6c7c21592eccfcd46f356fee72ca339d7349746aaebcaf104edd73",
+            "masterBytes": 508178,
+            "runtimeBytes": 239604,
+            "cornerAlphaValues": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "visibleContentClearOfImageEdges": true,
+            "veryLowAlphaPixels": 5164,
+            "alphaNote": "Unmodified generated transparency; very low alpha fringe pixels are retained. Visible silhouette at alpha>=16 is fully contained."
+          },
+          "visualQa": {
+            "inspected": true,
+            "oneConnectedPropOrEnvironment": true,
+            "noCharactersOrLabels": true,
+            "sourceStyleAndPaletteCompared": true,
+            "status": "candidate; in-game composition pending"
+          }
+        }
+      ],
+      "thumbnail": {
+        "path": "public/assets/stages/helluva/bee-party/thumb.webp",
+        "dimensions": [
+          384,
+          256
+        ],
+        "sha256": "e390346058ed16299512923c46321846403b8047f8b27b9777f497c8dead2664",
+        "derivedFrom": "art/infernal-versus/masters/stages/bee-party/room.png"
+      }
+    }
+  ]
+}

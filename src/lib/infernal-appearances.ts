@@ -21,8 +21,38 @@ function actionPoses(id: string): InfernalActionPoses {
   return { ready: base + '-ready.webp', strike: base + '-strike.webp', recoil: base + '-recoil.webp', layout: 'portrait' };
 }
 
+function readyPose(id: string): InfernalActionPoses {
+  return { ready: '/assets/sprites/individual/' + id + '-ready.webp', layout: 'portrait' };
+}
+
 /** Individual key poses supplement the existing animation banks. */
 export const INFERNAL_ACTION_POSES: Readonly<Record<string, InfernalActionPoses>> = {
+  niffty: readyPose('niffty'),
+  sirpentious: readyPose('sirpentious'),
+  vox: readyPose('vox'),
+  valentino: readyPose('valentino'),
+  velvette: readyPose('velvette'),
+  adam: readyPose('adam'),
+  emily: readyPose('emily'),
+  sera: readyPose('sera'),
+  // Lute's S1 ready candidate has two normal arms. Keep it outside the active
+  // registry until the older gold-arm animation banks are harmonized with it.
+  carmilla: readyPose('carmilla'),
+  rosie: readyPose('rosie'),
+  zestial: readyPose('zestial'),
+  zeezi: readyPose('zeezi'),
+  baxter: readyPose('baxter'),
+  abel: readyPose('abel'),
+  hz_mimzy: readyPose('hz_mimzy'),
+  hb_blitzo: readyPose('hb_blitzo'),
+  hb_stolas: readyPose('hb_stolas'),
+  hb_verosika: readyPose('hb_verosika'),
+  hb_fizzarolli: readyPose('hb_fizzarolli'),
+  hb_asmodeus: readyPose('hb_asmodeus'),
+  hb_beelzebub: readyPose('hb_beelzebub'),
+  hb_crimson: readyPose('hb_crimson'),
+  hb_sallie_may: readyPose('hb_sallie_may'),
+  hb_andrealphus: readyPose('hb_andrealphus'),
   angeldust: actionPoses('angeldust'),
   hb_striker: actionPoses('hb_striker'),
   lucifer: { ...actionPoses('lucifer'), guard: '/assets/sprites/individual/lucifer-guard.webp' },
@@ -68,7 +98,7 @@ export interface InfernalCostume {
   strike: string;
   recoil: string;
   heavy: string;
-  crouch: string;
+  crouch?: string;
   jump: string;
 }
 function costume(id: string, name: string, appearance: string): InfernalCostume {
@@ -77,6 +107,12 @@ function costume(id: string, name: string, appearance: string): InfernalCostume 
 }
 
 export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume[]>> = {
+  carmilla: [{
+    ...costume('carmilla-loose-hair', 'Cheveux lâchés', 'Hazbin Hotel · Hello Rosie! / Out for Love, saison 1, épisode 7'),
+    // The crouch drawing remains unavailable; a ready fallback is not a new pose.
+    crouch: undefined,
+    layout: 'portrait',
+  }],
   vaggie: [costume('vaggie-exorcist', 'Uniforme d’exorciste', 'Hazbin Hotel · Welcome to Heaven, saison 1, épisode 6')],
   hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3')],
   hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2')],
@@ -92,7 +128,7 @@ export function costumePose(outfit: InfernalCostume, action: CombatAction, cinem
   if (isFinishing) return outfit.heavy;
   if (action === 'ko' || action === 'hit') return outfit.recoil;
   if (cinematic) return outfit.ready;
-  if (action === 'crouch') return outfit.crouch;
+  if (action === 'crouch') return outfit.crouch ?? outfit.ready;
   if (action === 'jump') return outfit.jump;
   if (action === 'heavy' || action === 'special' || action === 'signature') return outfit.heavy;
   if (action === 'light') return outfit.strike;

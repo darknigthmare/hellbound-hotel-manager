@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "batchId": "projectiles-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "date": "2026-11-24",
+  "generationMode": "built-in image_gen; one call per asset; transparent_background=true",
+  "scope": {
+    "uniqueDrawings": 6,
+    "pngMasters": 6,
+    "losslessWebpExports": 6
+  },
+  "classification": "simulation_au",
+  "status": "generated-and-file-verified",
+  "note": "Six independent projectile/attack-accent sprites for existing AU attacks. These visuals do not by themselves implement a ballistic projectile simulation, add collisions or certify canonical 1:1 fidelity.",
+  "assets": [
+    {
+      "id": "cherri-bomb",
+      "fighter": "cherribomb",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster projectile sprite for a 2D Hazbin Hotel / Helluva Boss fan fighting game. Subject: a single stylized round black cartoon bomb associated with Cherri Bomb's explosive motif, small pink skull emblem on its front, a short fuse curling upward-right with one tiny orange-yellow burning spark. The entire bomb and fuse must be visible. Compact bold graphic silhouette, crisp black linework, flat charcoal-black casing with one dark grey cel-shaded highlight, hot pink emblem, warm fuse. Clean animated television cartoon finish, not realistic and not 3D. This is an original gameplay AU prop adaptation, not a claim to reproduce an exact episode prop. Square 1024x1024 canvas, centered object filling about 70% width and 78% height, large transparent safety margins on every side. ACTUAL transparent alpha background, no checkerboard painted into image. One object only, no hand, character, scenery, floor, cast shadow, explosion cloud, text, labels, border, watermark or duplicate versions.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-e2a4813f-17f8-4c85-af3a-ba1b0d39bd4d.png",
+      "master": "art/infernal-versus/masters/vfx/cherri-bomb.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/cherri-bomb.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.6808305925027154,
+        "opaqueFraction": 0.00039936000651185743,
+        "bboxNonzero": [
+          0,
+          19,
+          1235,
+          1254
+        ],
+        "bboxAlphaAtLeast8": [
+          214,
+          86,
+          1105,
+          1205
+        ],
+        "lowAlphaNonzeroFraction": 0.004974194221235269
+      },
+      "files": {
+        "master": {
+          "bytes": 678510,
+          "sha256": "468ab435beccf692aec1e7778cbab603f59ca67751044067ce62c1b15fcf6980"
+        },
+        "export": {
+          "bytes": 382864,
+          "sha256": "e1f031dcb83402e346043835f33fc9469e94a9168e70b82225b1304547c4fe47"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "moxxie-bullet",
+      "fighter": "hb_moxxie",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster projectile / attack accent sprite for a 2D Hazbin Hotel / Helluva Boss fan fighting game. Subject: one small stylized copper-and-gold bullet flying horizontally to the RIGHT, sharply pointed rounded nose at the right and a short tapered warm yellow tracer streak trailing left. One connected silhouette, no cartridge case, no gun, no muzzle, no hand, no additional bullet. Crisp angular black outline and flat warm copper cel colors, small pale yellow highlight, clean television cartoon linework matching the bold graphic look of Helluva Boss. This is an original Simulation AU attack accent for Moxxie's existing ranged attack. Landscape 1536x1024 canvas; horizontal sprite centered at midheight with long axis perfectly level, occupy about 78% width and 18% height. Real transparent alpha around sprite, safe clear margin on all sides. No scene, backdrop, floor, shadow, smoke cloud, motion duplicates, text, labels, frame or watermark.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-b8902828-e670-4914-b09e-1daed33a9651.png",
+      "master": "art/infernal-versus/masters/vfx/moxxie-bullet.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.9005699157714844,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          71,
+          84,
+          1522,
+          984
+        ],
+        "bboxAlphaAtLeast8": [
+          77,
+          430,
+          1436,
+          626
+        ],
+        "lowAlphaNonzeroFraction": 0.0055789947509765625
+      },
+      "files": {
+        "master": {
+          "bytes": 763116,
+          "sha256": "01b5ccdeceda651f9c9f3e42e6f5cd2d1545173087cf0e36a0d8a85d1aa95b26"
+        },
+        "export": {
+          "bytes": 499720,
+          "sha256": "146fc291e284ed74dc644b7ac9d8fa5afc77c66d7f2a551c9d14920c4d98219e"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "andrealphus-ice",
+      "fighter": "hb_andrealphus",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster ice projectile sprite for a 2D Helluva Boss fan fighting game. Subject: one long crystalline ice lance / tapered shard flying perfectly horizontally to the RIGHT. Broad faceted base at left and a sharp clear spear tip at right, icy cyan-blue planes and white crisp highlights, sparse pale blue frost wisps attached to the left base. Single coherent shard silhouette with angular dark navy outline and flat sharply divided cel shading, clean television animation finish; no photoreal materials. This is a Simulation AU visual accent of Andrealphus's ice motif, not a reproduced canonical attack. Landscape 1536x1024 canvas with centered horizontal object occupying about 78% width and 24% height; every tip entirely inside canvas with generous clear margins. Genuine transparent alpha background. No character, hand, weapon handle, snow landscape, floor, shadow, loose additional shards, scene, text, labels, border or watermark.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-29edec2f-abe1-41d7-9e7a-aaf2c9c618c3.png",
+      "master": "art/infernal-versus/masters/vfx/andrealphus-ice.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/andrealphus-ice.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8617121378580729,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          38,
+          1512,
+          978
+        ],
+        "bboxAlphaAtLeast8": [
+          95,
+          343,
+          1444,
+          688
+        ],
+        "lowAlphaNonzeroFraction": 0.02380816141764323
+      },
+      "files": {
+        "master": {
+          "bytes": 1033299,
+          "sha256": "c620ed9ab74acacbf1ea08a138103f7eaa3008561213d80e292908e58e7ddc84"
+        },
+        "export": {
+          "bytes": 688018,
+          "sha256": "176a957c77917436d88dfa4d47fcbfb18b9dd6ba51a592c3a21be6cfbceb62cb"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "vox-electric",
+      "fighter": "vox",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster electrical projectile VFX sprite for a 2D Hazbin Hotel fan fighting game. Subject: a single connected horizontal burst of sharp zigzag electricity moving to the RIGHT, dominant bright cyan body with ice-blue-white core and thin magenta-red accent sparks along edges. The main bright spear-shaped electrical head points right; short jagged tail tapers left. A clean connected readable silhouette with crisp tapered graphic contours and restrained tight glow, flat cel animation colors; this is a Simulation AU accent of Vox's electrical and broadcast motif, no literal screen or face. Landscape 1536x1024 canvas, all VFX confined to centered 80%-width by 30%-height band, safe transparent margin all around. Real transparent alpha including glow edges. Exactly one effect, no separate copies, no character, no scenery, no black rectangular background, no smoke, no text, lettering, labels, frame or watermark.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-4ba03af2-0b18-42e3-922e-8c4905d709eb.png",
+      "master": "art/infernal-versus/masters/vfx/vox-electric.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/vox-electric.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8019797007242838,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          20,
+          1518,
+          1024
+        ],
+        "bboxAlphaAtLeast8": [
+          78,
+          339,
+          1464,
+          704
+        ],
+        "lowAlphaNonzeroFraction": 0.04235267639160156
+      },
+      "files": {
+        "master": {
+          "bytes": 1236663,
+          "sha256": "85a5f6de31b9277712b9f86d65c8a991831d852f9051f7f9847ddf1ad1495adb"
+        },
+        "export": {
+          "bytes": 851672,
+          "sha256": "f5d8fbf53413f517010bfff97d652dddd8d7ef52cdaac1b76ae1801bc974d935"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "sirpentious-ray",
+      "fighter": "sirpentious",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster energy-ray projectile VFX for a 2D Hazbin Hotel fan fighting game. Subject: one horizontal steampunk energy discharge moving to the RIGHT, a pale luminous yellow core within a lime-yellow/acid-green tapered ray, angular pointed bright head at right, three compact attached ring-like shock ripples toward its trailing left end. ONE connected coherent effect silhouette. Clean sharp cel animation shapes, restrained small halo confined tightly to the effect, dark olive accent contours, high contrast at small game scale. Simulation AU attack accent inspired by Sir Pentious's fictional machinery, without asserting an exact canonical beam design. Landscape 1536x1024 canvas, perfectly horizontal axis at middle, effect occupies about 78% width and 24% height with generous safe transparent margins. Genuine transparent alpha. No gun, machine, character, scene, ground, cast shadow, text, logo, label, frame or repeated effect.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-262eb8ce-f743-4149-891d-23edc44ce8e2.png",
+      "master": "art/infernal-versus/masters/vfx/sirpentious-ray.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/sirpentious-ray.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7973149617513021,
+        "opaqueFraction": 0.0,
+        "bboxNonzero": [
+          0,
+          0,
+          1536,
+          999
+        ],
+        "bboxAlphaAtLeast8": [
+          78,
+          367,
+          1461,
+          680
+        ],
+        "lowAlphaNonzeroFraction": 0.036699930826822914
+      },
+      "files": {
+        "master": {
+          "bytes": 1164768,
+          "sha256": "d438d273e693ca56a059583b23a1bb3631d185971a865486ec75c164385a104f"
+        },
+        "export": {
+          "bytes": 802252,
+          "sha256": "3a613e8bfe0099cbb106fcc33791f5f8b82d9d3792c8bba5add4c653ee9c95e7"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "alastor-shadow",
+      "fighter": "alastor",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated raster shadow-tendril attack VFX for a 2D Hazbin Hotel fan fighting game. Subject: a single long black shadow tendril sweeping horizontally toward the RIGHT from a tapered left tail, bending into one sinister hook at its right tip; sharp fluid silhouette with a thin crimson-red rim and a few small vivid acid-green supernatural accent slits embedded along the tendril. No face, eye, head, hand or body. Bold clean black shape, crisp cel animation contours, restrained red/green edge glow, not a realistic octopus. One continuous connected effect, original Simulation AU accent of Alastor's shadow motif. Landscape 1536x1024 canvas, centered occupying about 78% width and 30% height, safe transparent margin all around. ACTUAL transparent alpha background. No character, scene, floor, shadow cast, extra tentacles, repeated frames, text, labels, border or watermark.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-22d63b27-18ef-427e-bcbf-e312d9795323.png",
+      "master": "art/infernal-versus/masters/vfx/alastor-shadow.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/alastor-shadow.webp",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.8527663736353184,
+        "opaqueFraction": 0.0012222357884883448,
+        "bboxNonzero": [
+          0,
+          0,
+          2148,
+          706
+        ],
+        "bboxAlphaAtLeast8": [
+          91,
+          144,
+          2041,
+          615
+        ],
+        "lowAlphaNonzeroFraction": 0.0060749315751452435
+      },
+      "files": {
+        "master": {
+          "bytes": 269282,
+          "sha256": "44fd184e850ca9c295d1dcceafd810192eaa073c9f066b78b0b0bda2d3315633"
+        },
+        "export": {
+          "bytes": 170930,
+          "sha256": "c9500d6764d200aa06e594cf58f1c392bbf0fafbdfee428980c04ae61490cd62"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes checked identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one isolated asset",
+          "entire silhouette inside frame",
+          "right-facing horizontal direction for directional projectiles",
+          "crisp cel-style shapes",
+          "real alpha channel checked",
+          "lossless decoded pixels identical"
+        ],
+        "limitations": [
+          "original Simulation AU design; exact canonical fidelity not certified",
+          "runtime scale, timing and composition pending integrating-agent review",
+          "broad soft edge glow preserved where generated"
+        ],
+        "fidelity1to1Certified": false
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    }
+  ]
+}

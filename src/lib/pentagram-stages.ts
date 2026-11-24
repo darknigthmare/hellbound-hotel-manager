@@ -14,7 +14,9 @@ export type PentagramStageId = HotelStageId
   | 'wrath-ranch'
   | 'heaven-court'
   | 'pentious-workshop'
-  | 'looloo-land';
+  | 'looloo-land'
+  | 'stolas-palace'
+  | 'bee-party';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -366,6 +368,8 @@ const WRATH_RANCH = '/assets/stages/helluva/wrath-ranch';
 const HEAVEN_COURT = '/assets/stages/hazbin/heaven-court';
 const PENTIOUS_WORKSHOP = '/assets/stages/hazbin/pentious-workshop';
 const LOOLOO_LAND = '/assets/stages/helluva/looloo-land';
+const STOLAS_PALACE = '/assets/stages/helluva/stolas-palace';
+const BEE_PARTY = '/assets/stages/helluva/bee-party';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -486,6 +490,46 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 3, 7, 10], [3, 6, 10, 13], [8, 11, 15, 18], [7, 11, 14, 17]],
     bassPattern: [0, 7, 12, 10, 3, 10, 8, 7],
     leadPattern: [12, 15, 19, null, 18, 15, 13, null, 10, 12, 15, null, 13, 10, 7, null],
+  },
+}, {
+  id: 'stolas-palace',
+  name: 'Palais de Stolas · Terrasse',
+  district: 'Domaine des Ars Goetia',
+  description: 'Une terrasse mauve sous le ciel rose, encadrée par les balustrades et les bannières du palais.',
+  loreBasis: 'Repères du palais de Stolas dans Helluva Boss, The Circus, S2 E1. Terrasse intacte antérieure à Sinsmas. La piste et les distances sont une reconstruction de simulation AU.',
+  imagePath: `${STOLAS_PALACE}/room.webp`,
+  thumbnailPath: `${STOLAS_PALACE}/thumb.webp`,
+  scenery: { middle: `${STOLAS_PALACE}/prop-middle.webp`, near: `${STOLAS_PALACE}/prop-near.webp` },
+  imagePosition: 'center 60%',
+  accent: '#e6acd4',
+  shadow: '#392847',
+  floor: '#63506f',
+  soundtrack: {
+    id: 'goetia-dusk', title: 'Crépuscule de Goetia', bpm: 112, rootMidi: 42,
+    swing: 0.42, drive: 0.66, seed: 241121,
+    chordProgression: [[0, 3, 7, 11], [5, 8, 12, 15], [8, 12, 15, 19], [7, 11, 14, 18]],
+    bassPattern: [0, 7, 12, 3, 5, 12, 8, 7],
+    leadPattern: [19, null, 15, 14, null, 12, 15, null, 20, 19, null, 15, 14, null, 11, 12],
+  },
+}, {
+  id: 'bee-party',
+  name: 'Beelzebub · Réception',
+  district: 'Anneau de la Gourmandise',
+  description: 'Un atrium ambré à alvéoles, bordé de balcons et de lumières cyan autour de la piste.',
+  loreBasis: 'Réception de Beelzebub dans Helluva Boss, Queen Bee, S1 E8. La géométrie de duel et le placement des objets sont une adaptation de simulation AU.',
+  imagePath: `${BEE_PARTY}/room.webp`,
+  thumbnailPath: `${BEE_PARTY}/thumb.webp`,
+  scenery: { middle: `${BEE_PARTY}/prop-middle.webp`, near: `${BEE_PARTY}/prop-near.webp` },
+  imagePosition: 'center 60%',
+  accent: '#73e8df',
+  shadow: '#4d254c',
+  floor: '#c48a5c',
+  soundtrack: {
+    id: 'honey-afterparty', title: 'Après la fête', bpm: 138, rootMidi: 40,
+    swing: 0.32, drive: 0.9, seed: 241128,
+    chordProgression: [[0, 4, 7, 10], [5, 9, 12, 15], [9, 12, 16, 19], [7, 11, 14, 17]],
+    bassPattern: [0, 12, 7, 10, 5, 12, 9, 7],
+    leadPattern: [12, 16, null, 19, 17, null, 16, 12, 21, null, 19, 16, 14, null, 10, 12],
   },
 }];
 

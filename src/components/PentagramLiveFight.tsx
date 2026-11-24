@@ -11,6 +11,8 @@ import {
 import { canOfferFinish, INFERNAL_FINISHES, FINISH_CINEMATIC_MS, FINISH_INPUT_MS } from '../lib/infernal-finishers';
 import { InfernalMoveList } from './InfernalMoveList';
 import { InfernalStageLayers } from './InfernalStageLayers';
+import { InfernalAttackEffects } from './InfernalAttackEffects';
+import { INFERNAL_ATTACK_EFFECTS } from '../lib/infernal-attack-effects';
 import { Volume2, VolumeX } from 'lucide-react';
 import {
   getCharacterCinematicSpriteSheet,
@@ -957,7 +959,7 @@ export function PentagramLiveFight({
         const finish = INFERNAL_FINISHES[fighterId!];
         const urls = [INFERNAL_STANCES[fighterId!], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
           outfit?.ready, outfit?.strike, outfit?.heavy, outfit?.recoil, outfit?.crouch, outfit?.jump,
-          finish?.impactSprite, finish?.detachedProp];
+          finish?.impactSprite, finish?.detachedProp, INFERNAL_ATTACK_EFFECTS[fighterId!]?.image];
         for (const url of urls) if (url) priorityUrls.add(url);
       }
     }
@@ -1275,6 +1277,15 @@ export function PentagramLiveFight({
           fighterOneId={fighterOne.id}
           fighterTwoId={fighterTwo.id}
           cameraFocus={motionReduced ? 50 : (combat.positionOne + combat.positionTwo) / 2}
+        />
+        <InfernalAttackEffects
+          combat={combat}
+          fighterOneId={fighterOne.id}
+          fighterTwoId={fighterTwo.id}
+          fighterOneDefinition={fighterOneDefinition}
+          fighterTwoDefinition={fighterTwoDefinition}
+          running={infernalRules && fightPhase === 'running'}
+          reducedMotion={motionReduced}
         />
 
         {phaseLabel && (

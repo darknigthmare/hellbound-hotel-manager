@@ -30,7 +30,7 @@ describe('authored poses in Infernal Versus', () => {
     for (const id of Object.keys(INFERNAL_COSTUMES)) {
       const outfit = INFERNAL_COSTUMES[id][0];
       expect(getInfernalCostume(id, outfit.id)).toBe(outfit);
-      expect(costumePose(outfit, 'crouch', null, false)).toBe(outfit.crouch);
+      expect(costumePose(outfit, 'crouch', null, false)).toBe(outfit.crouch ?? outfit.ready);
       expect(costumePose(outfit, 'jump', null, false)).toBe(outfit.jump);
       expect(costumePose(outfit, 'jump', 'intro', false)).toBe(outfit.ready);
       expect(costumePose(outfit, 'jump', null, true)).toBe(outfit.heavy);
@@ -41,7 +41,7 @@ describe('authored poses in Infernal Versus', () => {
   it('ships every newly registered pose and separated finish prop', () => {
     const paths = [
       ...Object.values(INFERNAL_ACTION_POSES).flatMap(poses => [poses.ready, poses.guard, poses.strike, poses.recoil].filter((path): path is string => Boolean(path))),
-      ...Object.values(INFERNAL_COSTUMES).flatMap(outfits => outfits.flatMap(outfit => [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump])),
+      ...Object.values(INFERNAL_COSTUMES).flatMap(outfits => outfits.flatMap(outfit => [outfit.ready, outfit.strike, outfit.heavy, outfit.recoil, outfit.crouch, outfit.jump].filter((path): path is string => Boolean(path)))),
       ...Object.values(INFERNAL_FINISHES).flatMap(finish => finish.detachedProp ? [finish.detachedProp] : []),
     ];
     for (const path of paths) expect(existsSync(join(process.cwd(), 'public', path)), path).toBe(true);

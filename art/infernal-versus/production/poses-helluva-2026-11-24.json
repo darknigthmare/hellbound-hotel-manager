@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "batchId": "poses-helluva-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "date": "2026-11-24",
+  "generationMode": "built-in image_gen; one call per asset; transparent_background=true",
+  "scope": {
+    "uniqueDrawings": 6,
+    "pngMasters": 6,
+    "losslessWebpExports": 6
+  },
+  "classification": "simulation_au",
+  "status": "generated-and-file-verified",
+  "note": "Six individual ready poses derived from the existing project portraits. They do not add distinct guard or attack drawings, and do not certify canonical 1:1 fidelity. Runtime registry and in-game visual acceptance are separate steps.",
+  "assets": [
+    {
+      "id": "hb_verosika",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact character-design and flat cel-art reference: the project's Verosika Mayday portrait. Use only this character and retain her recognizable adult proportions, pink skin, long pale pink-white hair, horn pattern, gold eyes, heart motif, black-and-white costume, star-patterned thigh-high boots and pointed tail. Preserve the reference outfit, palette and silhouette without redesign.\nPrimary request: redraw this same character in one neutral, balanced ready-to-stand stance, body and gaze facing screen RIGHT in a readable three-quarter side view. Feet planted naturally with a small stagger, arms resting naturally, expression composed. This is an idle pose, with no attack or movement effect.\nComposition: portrait canvas 1024 by 1536, one complete full-body character only; all hair, horns, hands, tail and boots visible, with at least 8 percent transparent breathing room on every edge. No other character, no duplicate pose, no sprite sheet.\nStyle: clean dark outlines and flat cel colors matching the provided image, crisp readable game silhouette.\nBackdrop: genuine transparent alpha everywhere outside the character, no floor shadow, no scenery.\nAvoid: text, watermark, logo, border, props not in the reference, sparks, trails, aura, checkerboard drawn into the image, cropped extremities, costume changes.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-47a52172-5696-44fb-8db6-985ab345f077.png",
+      "master": "art/infernal-versus/masters/poses/hb_verosika-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_verosika.png",
+        "bytes": 146055,
+        "sha256": "fc83c63938b6bd224df50d3a7950f85d48bdb023811fda255c52095febefd23a",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_verosika-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7381483713785807,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.24174626668294272,
+        "lowAlphaNonzeroFraction": 0.012259165445963541,
+        "bboxNonzero": [
+          0,
+          35,
+          1002,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          127,
+          76,
+          742,
+          1454
+        ],
+        "bboxAlphaAtLeast16": [
+          128,
+          76,
+          742,
+          1454
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.125,
+          0.049479166666666664,
+          0.275390625,
+          0.053385416666666664
+        ],
+        "allVisibleMarginsAtLeastEightPercent": false,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1412841,
+          "sha256": "85936f3c2cf59be55a53779727e6674e09471ca2e1635cced7a7ebd65c3a7703"
+        },
+        "export": {
+          "bytes": 895230,
+          "sha256": "1ac32cd5e069eab35688b1d24e758d33d4ed51ae0becb6f47924f5546c5388b5"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "hb_asmodeus",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact character-design and flat cel-art reference: the project's Asmodeus portrait. Preserve this one character's very tall slender avian silhouette, blue and cyan plumage, dark face with yellow eyes, large cyan cheek mane, long curved red and ivory head feathers, pointed dark blue striped coat with pale lapels, red sleeves, cyan hands, black elongated legs, and the three long red, ivory and dark tail feathers. Use the existing costume and proportions without adding regalia or redesigning his body.\nPrimary request: same character in a neutral balanced resting READY stance, body and gaze facing screen RIGHT in a readable three-quarter side view. Both feet planted naturally, relaxed hands lowered, no active gesture.\nComposition: 1024 by 1536 portrait canvas, one complete full-body character, every head feather, fingertip, tail tip and foot visible; leave at least 8 percent completely empty transparent margins on ALL four sides.\nStyle: crisp flat cel animation artwork, dark outlines matching the supplied reference.\nBackdrop: genuine clean transparent alpha only, no colored or luminous halo, no floor, shadow, scenery or background paint.\nAvoid: attack pose, flame, magic, sparks, aura, additional characters, duplicate pose, sprite sheet, text, watermark, borders, cropped limbs or feathers, costume changes.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ae2b87ff-2aee-46c5-9078-dece52360582.png",
+      "master": "art/infernal-versus/masters/poses/hb_asmodeus-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_asmodeus.png",
+        "bytes": 148538,
+        "sha256": "6c4a958987437735e1976bb340b8c18e6c26c9813aef6cc42cbe249405a72bfc",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_asmodeus-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8007310231526693,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.1705493927001953,
+        "lowAlphaNonzeroFraction": 0.017687479654947918,
+        "bboxNonzero": [
+          21,
+          93,
+          1004,
+          1512
+        ],
+        "bboxAlphaAtLeast8": [
+          113,
+          150,
+          804,
+          1403
+        ],
+        "bboxAlphaAtLeast16": [
+          113,
+          150,
+          804,
+          1403
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.1103515625,
+          0.09765625,
+          0.21484375,
+          0.08658854166666667
+        ],
+        "allVisibleMarginsAtLeastEightPercent": true,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1358522,
+          "sha256": "ef2487d7a3461f81ef539ef576bb614790d3f2e74130787f58101fa6c9493e41"
+        },
+        "export": {
+          "bytes": 849960,
+          "sha256": "754ef550ac857548f1b7e70fd34e7e5bab0659ceb341d428216ff88d38810ca8"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "hb_beelzebub",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact character-design and cel-art reference: the project's Beelzebub portrait. Preserve the adult fox-and-insect demon silhouette, long dark legs, white muzzle, large pale yellow ears with pink markings, four arms, the same pink outfit and pale shorts, and the flowing cyan, coral-pink and golden-orange mane and voluminous tail. Match the actual visible reference, including its anatomy and color blocking; no alternate costume or redesign.\nPrimary request: one neutral standing READY pose with body and gaze facing screen RIGHT in a clear three-quarter side view. Keep the four arms readable, relaxed naturally, and both feet planted; no attacking or magical gesture.\nComposition: portrait canvas 1024 by 1536. Exactly one complete full-body character, with all ear tips, hair, arms, feet and tail visible. Keep at least 8 percent empty transparent margins on every edge, including around the full tail.\nStyle: clean dark outline, crisp flat cel shading matching the input.\nBackdrop: genuine transparent alpha, no scenery, ground shadow, luminous aura or background paint.\nAvoid: extra limbs beyond her four arms, missing arms, duplicated character, sprite sheet, weapons, effects, sparks, text, watermark, border, cropped tips or costume changes.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-5f65a710-8504-4cd1-b40f-9399218262c0.png",
+      "master": "art/infernal-versus/masters/poses/hb_beelzebub-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_beelzebub.png",
+        "bytes": 152799,
+        "sha256": "cd92fb9034acde866ea35d09546ca330a6c5b1d5307d2282ee6ba9d5f9b9f5f3",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_beelzebub-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.6580251057942709,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.31993738810221356,
+        "lowAlphaNonzeroFraction": 0.014345804850260416,
+        "bboxNonzero": [
+          21,
+          57,
+          1010,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          99,
+          92,
+          920,
+          1401
+        ],
+        "bboxAlphaAtLeast16": [
+          99,
+          92,
+          920,
+          1401
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.0966796875,
+          0.059895833333333336,
+          0.1015625,
+          0.087890625
+        ],
+        "allVisibleMarginsAtLeastEightPercent": false,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1510825,
+          "sha256": "f2b3ac1d23aebe736fb09f0a7878a6d39c01fbb55cf85fbef0428c351bf1201a"
+        },
+        "export": {
+          "bytes": 946098,
+          "sha256": "fa37f9ae4416b7cc35db3f483a5c7695f6db8318bf9cefa80ba3d012a6c91965"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "hb_crimson",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact character-design and flat cel-art reference: the project's Crimson portrait. Keep the same adult male imp design: red face and skin, angular white side hair, yellow eyes, black-and-white banded horns, dark fedora with red band, dark navy-purple pinstripe suit with pale-edged coat tails and red-orange lining, red shirt details, black footwear and angular arrow-tipped red tail. Preserve the reference's lean proportions, face, palette and complete costume.\nPrimary request: the same character standing neutrally ready with body and gaze facing screen RIGHT in a readable three-quarter side view. Feet planted in a natural stagger, hands relaxed and lowered, reserved confident expression. No attack, no weapon, no action effect.\nComposition: 1024 by 1536 portrait canvas; exactly one full-body character. All horns, hat, hands, tail tip and shoes visible inside at least 8 percent empty transparent margin on all four sides.\nStyle: clean dark outlines, flat cel colors, crisp silhouette matching the provided artwork.\nBackdrop: genuine transparent alpha everywhere outside the character. No floor, scenery, glow or shadow.\nAvoid: duplicate poses, sprite sheet, changed costume, added accessories, aura, sparks, text, watermark, borders and clipping.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-0d5fbce3-4c29-479f-b982-541b2bf12917.png",
+      "master": "art/infernal-versus/masters/poses/hb_crimson-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_crimson.png",
+        "bytes": 148318,
+        "sha256": "f3d024d0fcea75944225ddec9a77c22d59b9c6c280aceed98a51d41244f018f7",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_crimson-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7865816752115885,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.19214439392089844,
+        "lowAlphaNonzeroFraction": 0.013108571370442709,
+        "bboxNonzero": [
+          0,
+          17,
+          994,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          110,
+          87,
+          814,
+          1441
+        ],
+        "bboxAlphaAtLeast16": [
+          111,
+          87,
+          814,
+          1441
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.1083984375,
+          0.056640625,
+          0.205078125,
+          0.061848958333333336
+        ],
+        "allVisibleMarginsAtLeastEightPercent": false,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1309802,
+          "sha256": "8d0129a0d16eb16b1fefb0a99f7cfe8556d8208bd06acf5cab18661a533a67fa"
+        },
+        "export": {
+          "bytes": 823996,
+          "sha256": "3fb8210ba283afe08eaf218c93dae160f55de23fefcb83f856536cf0f8bbbd80"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "hb_sallie_may",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact design and cel-art reference: the project's Sallie May portrait. Preserve the same adult imp woman with red skin, a large golden yellow visible eye, long dark hair with side-swept fringe covering the other eye, black-and-white banded horns, red neckerchief, torn black sleeveless crop top, pale frayed shorts, black torn leggings showing red skin, white pointed boots and red arrow-tipped tail. Keep the same face, lean proportions, outfit, markings and palette. No redesign.\nPrimary request: a quiet balanced READY standing pose, body and gaze facing screen RIGHT in a clear three-quarter side view. Both boots planted naturally, arms resting loosely by her sides, calm confident expression. Not an attack or guard action.\nComposition: portrait canvas 1024 by 1536, exactly one complete full-body character. Show the entire horns, hair, hands, boots and tail with at least 8 percent empty transparent margins on ALL four edges.\nStyle: clean dark outlines and flat cel coloring that match the provided image.\nBackdrop: genuine transparent alpha outside the character, no floor shadow, scenery, glow, or background color.\nAvoid: extra accessories, weapon, attack effect, motion trail, duplicate pose, sprite sheet, text, watermark, border, cropped extremities or changed clothing.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-18f5abb9-8519-4e9a-89ee-aefe14dcbefe.png",
+      "master": "art/infernal-versus/masters/poses/hb_sallie_may-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_sallie_may.png",
+        "bytes": 121896,
+        "sha256": "a16b7bef60e7bdfb60b9203715a89a22fbc5d26175172b816606a47c7a068e48",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_sallie_may-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7643731435139974,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.2185509999593099,
+        "lowAlphaNonzeroFraction": 0.010150909423828125,
+        "bboxNonzero": [
+          69,
+          19,
+          974,
+          1496
+        ],
+        "bboxAlphaAtLeast8": [
+          164,
+          104,
+          785,
+          1420
+        ],
+        "bboxAlphaAtLeast16": [
+          164,
+          104,
+          785,
+          1419
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.16015625,
+          0.06770833333333333,
+          0.2333984375,
+          0.076171875
+        ],
+        "allVisibleMarginsAtLeastEightPercent": false,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1278392,
+          "sha256": "98334d1f8d0d35423deb42be7a716b26d30d4d085754bc70ea1ab1508913091e"
+        },
+        "export": {
+          "bytes": 797808,
+          "sha256": "aa0659d7837dd4c072414b148b769bb4316b52ba0b2838a7060e0cd0153b8bb3"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    },
+    {
+      "id": "hb_andrealphus",
+      "pose": "ready",
+      "layout": "portrait",
+      "facing": "right",
+      "prompt": "Use case: identity-preserve.\nAsset type: individual full-body transparent READY idle sprite for an existing 2D fighting game.\nInput image 1 is the exact design and cel-art reference: the project's Andrealphus portrait. Preserve this very tall, slender aristocratic white avian demon, his angular pale face and cyan markings, swept blue crest, enormous pale turquoise feathered collar, white star-like chest motif, long pale blue and periwinkle robe with sharp white and cyan geometric trim, and wide white flowing hem. Keep the reference's complete robe, feather shapes, colors and elongated proportions without adding a crown or changing costume.\nPrimary request: the same character resting in one dignified neutral READY standing stance, body and face turned toward screen RIGHT in a readable three-quarter side view. His arms remain quietly concealed by his robe as in the source. No magic and no attack.\nComposition: 1024 by 1536 portrait canvas, one complete full-body character including the entire crest, collar and floor-length hem. Maintain at least 8 percent empty transparent margins on all four sides.\nStyle: crisp dark-blue contours, flat cel colors matching the supplied artwork, simple clean readable silhouette.\nBackdrop: genuine transparent alpha, no background paint, scenery, floor, cast shadow, glow or aura.\nAvoid: ice crystals, snow, beams, weapon, extra character, duplicate poses, sprite sheet, text, watermark, borders, clipped crest or hem and costume redesign.",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-2a5cf5ff-c125-47d4-9285-50f0f0008ef4.png",
+      "master": "art/infernal-versus/masters/poses/hb_andrealphus-ready.png",
+      "reference": {
+        "path": "public/assets/sprites/helluva/portraits/hb_andrealphus.png",
+        "bytes": 102356,
+        "sha256": "5ffe37191b80d02aff483bbb1f6964c024305a30633f293d5a65a9b8063201df",
+        "role": "existing project portrait inspected before generation; not an independently verified official model sheet"
+      },
+      "runtimeExport": "public/assets/sprites/individual/hb_andrealphus-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7679131825764974,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.2188892364501953,
+        "lowAlphaNonzeroFraction": 0.008675257364908854,
+        "bboxNonzero": [
+          65,
+          33,
+          1024,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          127,
+          70,
+          892,
+          1446
+        ],
+        "bboxAlphaAtLeast16": [
+          127,
+          71,
+          892,
+          1445
+        ]
+      },
+      "framing": {
+        "requestedMinimumMarginFraction": 0.08,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.1240234375,
+          0.046223958333333336,
+          0.12890625,
+          0.059244791666666664
+        ],
+        "allVisibleMarginsAtLeastEightPercent": false,
+        "visibleSilhouetteInsideFrame": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1275484,
+          "sha256": "7c93fb0a43006527bc46b0d966b29ac1661f9409f49f801c6acecde5a4c06aff"
+        },
+        "export": {
+          "bytes": 791222,
+          "sha256": "777f335a28d6a452e608f9c3b34c585079e2aab0fe296140e3502a4a9188d42c"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA bytes verified identical. No crop, redraw, alpha correction, resizing, or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image-and-neutral-background-composite",
+        "checks": [
+          "one complete character",
+          "neutral idle stance facing screen right",
+          "existing project portrait used as design reference",
+          "real alpha channel",
+          "lossless decoded RGBA pixels identical",
+          "full silhouettes reviewed against the project portrait references",
+          "neutral-background composition inspected; no visible generated background halo"
+        ],
+        "limitations": [
+          "Exact canonical 1:1 fidelity is not certified.",
+          "The request for 8 percent margins is a target; actual visible margins are measured above.",
+          "Small alpha values and RGB colors under transparent pixels are preserved exactly.",
+          "No in-game browser visual verification: Chromium launch is blocked in this environment."
+        ],
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "alphaCompositingChecked": true
+      },
+      "integrationStatus": "prepared-for-runtime-registry"
+    }
+  ],
+  "blocked": []
+}

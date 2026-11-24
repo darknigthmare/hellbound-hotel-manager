@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "batchId": "assets-2026-11-24",
+  "date": "2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "baseCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "generationMode": "Built-in image_gen, one asset per generation; detailed prompts and corrections retained in component manifests.",
+  "classification": "simulation_au",
+  "totals": {
+    "newArtworks": 42,
+    "fighterReadyPoses": 25,
+    "costumeKeyPoses": 5,
+    "stageBackgrounds": 2,
+    "stageProps": 4,
+    "attackEffectImages": 6,
+    "pngMasters": 42,
+    "webpExports": 42,
+    "derivedThumbnails": 2,
+    "imageFiles": 86,
+    "masterBytes": 53321215,
+    "runtimeBytesIncludingThumbnails": 34378496,
+    "registeredFighterReadyPoses": 24,
+    "candidateFighterReadyPoses": 1,
+    "registeredPublicImageFiles": 43,
+    "candidatePublicImageFiles": 1
+  },
+  "components": [
+    {
+      "manifest": "art/infernal-versus/production/poses-main-2026-11-24.json",
+      "sha256": "dc1699921f0d235b54fe2ff8645602c5f43df0f779100ee1de365f0d26e354d4",
+      "newArtworks": 12
+    },
+    {
+      "manifest": "art/infernal-versus/production/poses-support-2026-11-24.json",
+      "sha256": "3fcef4f361c627c40c8d7d300b394f7264a271b6557cd177da93ef65131e1010",
+      "newArtworks": 7
+    },
+    {
+      "manifest": "art/infernal-versus/production/poses-helluva-2026-11-24.json",
+      "sha256": "a2bd7d19449435d909bd528b41c505a02a36f2ea5a60d7d1a1613f1be642f531",
+      "newArtworks": 6
+    },
+    {
+      "manifest": "art/infernal-versus/production/costumes-2026-11-24.json",
+      "sha256": "7e11171c4d8d6fd400db62e5cf77760e248f8247bb4d03ebc82f371b42fc3742",
+      "newArtworks": 5
+    },
+    {
+      "manifest": "art/infernal-versus/production/stages-2026-11-24.json",
+      "sha256": "3823d248b2e04ba886da39c93cb6dabfc66580d63824f5d683cb8e8845018211",
+      "newArtworks": 6
+    },
+    {
+      "manifest": "art/infernal-versus/production/projectiles-2026-11-24.json",
+      "sha256": "f2a1c40fbc44e57006d5085c10c692affb724584453e6ba3c4f6cf0bb66aee42",
+      "newArtworks": 6
+    }
+  ],
+  "artworks": [
+    {
+      "id": "sirpentious-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/sirpentious-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/sirpentious-ready.webp",
+      "masterSha256": "a53e0c6e881d86e0ac5cb4ff61b5d4452337c666868527c4e4ac3ebe394cb2f2",
+      "runtimeSha256": "217fd1df95a33aa8406c7f387749525cb09f5a3d42f3e4fba47de6934b95cc68",
+      "masterBytes": 1460154,
+      "runtimeBytes": 968902
+    },
+    {
+      "id": "niffty-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/niffty-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/niffty-ready.webp",
+      "masterSha256": "b46f9a1989ec0ff9b5a1cef3139b5f624bb482dbb91daac5a5e5ef8738508b8f",
+      "runtimeSha256": "f02cf286e14ae15c262b36102fd50131d1ad11b10621e1fb3df688087f02cf09",
+      "masterBytes": 1381694,
+      "runtimeBytes": 914766
+    },
+    {
+      "id": "hb_fizzarolli-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/hb_fizzarolli-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_fizzarolli-ready.webp",
+      "masterSha256": "03b754844e01ea91004018392046e788d82917f076fcd163b0435c44d0924dcf",
+      "runtimeSha256": "de38a3fbbe519901bbd3a33e4e433be6e367782b66497b784145a13dbbbc46cf",
+      "masterBytes": 1592421,
+      "runtimeBytes": 1051206
+    },
+    {
+      "id": "hb_blitzo-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/hb_blitzo-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_blitzo-ready.webp",
+      "masterSha256": "d08287f6a191e3ef0b62e98cdecad87dfbd81ad1e6955cd8fa0bcf4587b05a87",
+      "runtimeSha256": "1476a21f0e28832c6cb7b44d11a4c0a71a8e6e28b54f4d00fd1c14353bbe129c",
+      "masterBytes": 1350838,
+      "runtimeBytes": 892674
+    },
+    {
+      "id": "vox-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/vox-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-ready.webp",
+      "masterSha256": "b49c02ac1e81f88cbee6f9c67545f5d2fbf3ed69adaa01c28eedf5d11dc7c669",
+      "runtimeSha256": "925246edaa7ae832472ed24a6f99a0255c107667404797f9f960b478e3df4770",
+      "masterBytes": 1186725,
+      "runtimeBytes": 781340
+    },
+    {
+      "id": "hb_stolas-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/hb_stolas-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_stolas-ready.webp",
+      "masterSha256": "a0ef42189a722c0e2d0d542f4a78b7cd1e3b4db3bef65ff410f165283440b136",
+      "runtimeSha256": "8e9468d4b17cd4eb54ad19af47a0f158e88545aefbc09341f9fcf8d34bef247d",
+      "masterBytes": 1230950,
+      "runtimeBytes": 814044
+    },
+    {
+      "id": "valentino-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/valentino-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/valentino-ready.webp",
+      "masterSha256": "a327a6422366ee537d90a5d7838507f435e473ecc1b04a698db47804b007559e",
+      "runtimeSha256": "357a5c2db3d039c04fd00e3d48e9ddf66378871a0a6c5e7b227b0136ab4771d0",
+      "masterBytes": 1378665,
+      "runtimeBytes": 900756
+    },
+    {
+      "id": "velvette-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/velvette-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-ready.webp",
+      "masterSha256": "8a9802a93665bc815f0736a0db753f30287825fdf10a052842c6d3650156da1f",
+      "runtimeSha256": "101ebba697733b5a893eaa065d5379db07c7d9bf46b47e699cabf7e8b865bd71",
+      "masterBytes": 1435310,
+      "runtimeBytes": 965196
+    },
+    {
+      "id": "adam-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/adam-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/adam-ready.webp",
+      "masterSha256": "69142802a666e1bef487f5c6e939eb94923be5e2d25c90651251c9beb3127dfb",
+      "runtimeSha256": "9ed85c4fca234e7f4d433e3229ff629a03ab27062c622c47fc7ec0d0778230ae",
+      "masterBytes": 1387592,
+      "runtimeBytes": 918010
+    },
+    {
+      "id": "hz_mimzy-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/hz_mimzy-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_mimzy-ready.webp",
+      "masterSha256": "8fcdbd36592648a8692ce6e57427ff08e2826ec4d6d78f627e25ccf3a5653687",
+      "runtimeSha256": "e3be7a99099c43938ee6867e30bf030849324210c207910a3108c55941bd5bdc",
+      "masterBytes": 1426383,
+      "runtimeBytes": 931598
+    },
+    {
+      "id": "carmilla-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/carmilla-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-ready.webp",
+      "masterSha256": "1d7f0ad2c8591475bc5fbf6bf10e11563b2501ecc2e2f94efa26f659d95a2be9",
+      "runtimeSha256": "d299544abdc7387d98d9f4780b95e489f32427dca302aa10596c7906bd51d86d",
+      "masterBytes": 1320172,
+      "runtimeBytes": 830004
+    },
+    {
+      "id": "baxter-ready",
+      "component": "poses-main",
+      "master": "art/infernal-versus/masters/poses/baxter-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/baxter-ready.webp",
+      "masterSha256": "a1a57b70eb78afde2cc33c2ee9d00d76dd225a6f6b564e6ed72a40fa18fefd1d",
+      "runtimeSha256": "45d41eea3dfd833989ea697817d8c4a16bd7a0f26f5a698e8bd7e4d3485b3dc8",
+      "masterBytes": 1184589,
+      "runtimeBytes": 770952
+    },
+    {
+      "id": "emily",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/emily-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/emily-ready.webp",
+      "masterSha256": "549ad0956e86435d0e4dcd47d54594ab06acce36ad52af62fcc85ea6e10b3582",
+      "runtimeSha256": "2a2cea132bfeaead996d3dbea700110bcf7f53eaeef678bfc0d045eb120f8a27",
+      "masterBytes": 1444349,
+      "runtimeBytes": 896580
+    },
+    {
+      "id": "sera",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/sera-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/sera-ready.webp",
+      "masterSha256": "8e54824f78e20ccd26e8200c57e65c419c8e3bf044719a8303a53fa40dbf399f",
+      "runtimeSha256": "97ad88ce227d416b468fc6983bddc48b11006986120232543407d85adc12fd99",
+      "masterBytes": 1528845,
+      "runtimeBytes": 947240
+    },
+    {
+      "id": "lute",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/lute-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/lute-ready.webp",
+      "masterSha256": "4ff83db698da8337fcf8b10183cba6f0b5f23561e90ad2cfae363b871468fec0",
+      "runtimeSha256": "8f3e5d97fcb938ec9bf9ed9cb58d9ac7bfd100821228f631b4e9fad31dfcdb99",
+      "masterBytes": 1335694,
+      "runtimeBytes": 826194
+    },
+    {
+      "id": "rosie",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/rosie-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/rosie-ready.webp",
+      "masterSha256": "83410195b9cf1fcce2e54a488a0b79deb531b12bc86eeae864ea225a2acd03f1",
+      "runtimeSha256": "5402aeff871ff9089d6c4ae726d8432bf974adc6770c08f3155563aa8d5f4fd9",
+      "masterBytes": 1277147,
+      "runtimeBytes": 818972
+    },
+    {
+      "id": "zestial",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/zestial-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/zestial-ready.webp",
+      "masterSha256": "65f7365ba0c72985932b1891e7fb73042d1f6685e2cbc64d7afae95df50acf10",
+      "runtimeSha256": "c21e145ce54d7e6c5d1b7ee6890209756dca0be4e468a00258fa864c2d669ff4",
+      "masterBytes": 1063392,
+      "runtimeBytes": 676960
+    },
+    {
+      "id": "zeezi",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/zeezi-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/zeezi-ready.webp",
+      "masterSha256": "d38022996e736069af1f4dababddd4b606d79ca3040f217d44b3dc29e2a6e599",
+      "runtimeSha256": "318c1f74dd289c807ba98a176209fb3ce60dd31ea12c7c28c39ff19d6833fb23",
+      "masterBytes": 1625076,
+      "runtimeBytes": 1088528
+    },
+    {
+      "id": "abel",
+      "component": "poses-support",
+      "master": "art/infernal-versus/masters/poses/abel-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/abel-ready.webp",
+      "masterSha256": "f5a0a825f104f01de32a0900a4ceaf99026112619a3380b299cb1003dd1e96cb",
+      "runtimeSha256": "c4011236443411fd4a5789711c14d0647db42882bd3b9e27e08c6f7070cf8b4f",
+      "masterBytes": 1671821,
+      "runtimeBytes": 1103820
+    },
+    {
+      "id": "hb_verosika",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_verosika-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_verosika-ready.webp",
+      "masterSha256": "85936f3c2cf59be55a53779727e6674e09471ca2e1635cced7a7ebd65c3a7703",
+      "runtimeSha256": "1ac32cd5e069eab35688b1d24e758d33d4ed51ae0becb6f47924f5546c5388b5",
+      "masterBytes": 1412841,
+      "runtimeBytes": 895230
+    },
+    {
+      "id": "hb_asmodeus",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_asmodeus-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_asmodeus-ready.webp",
+      "masterSha256": "ef2487d7a3461f81ef539ef576bb614790d3f2e74130787f58101fa6c9493e41",
+      "runtimeSha256": "754ef550ac857548f1b7e70fd34e7e5bab0659ceb341d428216ff88d38810ca8",
+      "masterBytes": 1358522,
+      "runtimeBytes": 849960
+    },
+    {
+      "id": "hb_beelzebub",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_beelzebub-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_beelzebub-ready.webp",
+      "masterSha256": "f2b3ac1d23aebe736fb09f0a7878a6d39c01fbb55cf85fbef0428c351bf1201a",
+      "runtimeSha256": "fa37f9ae4416b7cc35db3f483a5c7695f6db8318bf9cefa80ba3d012a6c91965",
+      "masterBytes": 1510825,
+      "runtimeBytes": 946098
+    },
+    {
+      "id": "hb_crimson",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_crimson-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_crimson-ready.webp",
+      "masterSha256": "8d0129a0d16eb16b1fefb0a99f7cfe8556d8208bd06acf5cab18661a533a67fa",
+      "runtimeSha256": "3fb8210ba283afe08eaf218c93dae160f55de23fefcb83f856536cf0f8bbbd80",
+      "masterBytes": 1309802,
+      "runtimeBytes": 823996
+    },
+    {
+      "id": "hb_sallie_may",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_sallie_may-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_sallie_may-ready.webp",
+      "masterSha256": "98334d1f8d0d35423deb42be7a716b26d30d4d085754bc70ea1ab1508913091e",
+      "runtimeSha256": "aa0659d7837dd4c072414b148b769bb4316b52ba0b2838a7060e0cd0153b8bb3",
+      "masterBytes": 1278392,
+      "runtimeBytes": 797808
+    },
+    {
+      "id": "hb_andrealphus",
+      "component": "poses-helluva",
+      "master": "art/infernal-versus/masters/poses/hb_andrealphus-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_andrealphus-ready.webp",
+      "masterSha256": "7c93fb0a43006527bc46b0d966b29ac1661f9409f49f801c6acecde5a4c06aff",
+      "runtimeSha256": "777f335a28d6a452e608f9c3b34c585079e2aab0fe296140e3502a4a9188d42c",
+      "masterBytes": 1275484,
+      "runtimeBytes": 791222
+    },
+    {
+      "id": "carmilla-loose-hair",
+      "component": "costumes",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair.webp",
+      "masterSha256": "71885990edfb63fda201d1a5b227a4f8096a182a37bd5093114728c5f34c9b67",
+      "runtimeSha256": "f2e6d767a9f89c8e70bfc76a4071160cb7b03584f70474e38454df92393ccc11",
+      "masterBytes": 1517028,
+      "runtimeBytes": 951488
+    },
+    {
+      "id": "carmilla-loose-hair-strike",
+      "component": "costumes",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-strike.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-strike.webp",
+      "masterSha256": "b1d09a7b5452ac627a27d99edf7e7cc2af3108dffd922c797dbaa9532249c0ef",
+      "runtimeSha256": "488b1839738162b634ebdf89832b444478b3d30a876e919754aa96a2a8e27f9b",
+      "masterBytes": 1357854,
+      "runtimeBytes": 855018
+    },
+    {
+      "id": "carmilla-loose-hair-recoil",
+      "component": "costumes",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-recoil.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-recoil.webp",
+      "masterSha256": "e4cc736c60f43731b4bd639a34aeb757ed438caa9bf52f17dc6e9851f673024f",
+      "runtimeSha256": "76c6ba4cd185b8539ea32979734dc00d01374d28dbcd9709d73f333cd7bef13a",
+      "masterBytes": 1504795,
+      "runtimeBytes": 947270
+    },
+    {
+      "id": "carmilla-loose-hair-heavy",
+      "component": "costumes",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-heavy.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-heavy.webp",
+      "masterSha256": "25dcdfb5e958547ab73ef53aca527f4f6fa169b6dba40074c49b9eef0af9298d",
+      "runtimeSha256": "f72f7d3f24b5c7312bba43dfd57c1bdbb5a47f359d459132718c44c3b83fc7eb",
+      "masterBytes": 1395985,
+      "runtimeBytes": 882412
+    },
+    {
+      "id": "carmilla-loose-hair-jump",
+      "component": "costumes",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-jump.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-jump.webp",
+      "masterSha256": "e50b4f5d0270e08dfdfcd7160ac54087c50e721edd32bc1e204854447bbd2d9c",
+      "runtimeSha256": "eecc7608f8b4593ecd98aec513fde5de8dc3e1c84aef9181ac6591844298ae20",
+      "masterBytes": 1506700,
+      "runtimeBytes": 947402
+    },
+    {
+      "id": "stolas-palace-room",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/stolas-palace/room.png",
+      "runtimeExport": "public/assets/stages/helluva/stolas-palace/room.webp",
+      "masterSha256": "ce90dd9b4f17dec7262a9a079591ffb2385bf9b5aa1a530d65ea43dfb8fd3a3c",
+      "runtimeSha256": "acdf311395fd0a4638382fe8519a86c2fe6c63552f027aae981f98dc1aaa9efb",
+      "masterBytes": 2168613,
+      "runtimeBytes": 1446666
+    },
+    {
+      "id": "stolas-palace-prop-middle",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/stolas-palace/prop-middle.png",
+      "runtimeExport": "public/assets/stages/helluva/stolas-palace/prop-middle.webp",
+      "masterSha256": "c42e4b9cc9bc7bdc574a8c43a4ca1df6e327ce2181312baa0c308e92c2721b27",
+      "runtimeSha256": "cd1711ea2e9896f421d85aa1bad6fce42c805521b057e09c1ac7a183c45a068e",
+      "masterBytes": 912074,
+      "runtimeBytes": 403158
+    },
+    {
+      "id": "stolas-palace-prop-near",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/stolas-palace/prop-near.png",
+      "runtimeExport": "public/assets/stages/helluva/stolas-palace/prop-near.webp",
+      "masterSha256": "145cfa21df8f503bdebb9e87cd3ab633a989d5d5c9f99cb58fc0661034354c74",
+      "runtimeSha256": "db309a927bac467f23c15d1e0582ef06c7c51ac7971d32eb52d13d290026be7c",
+      "masterBytes": 608551,
+      "runtimeBytes": 262988
+    },
+    {
+      "id": "bee-party-room",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/bee-party/room.png",
+      "runtimeExport": "public/assets/stages/helluva/bee-party/room.webp",
+      "masterSha256": "7ca456496dce01f851e2f7b7a1c0269bc7ae6e9c7c595a208f1d1083a6bc6a48",
+      "runtimeSha256": "e46fe43efb31ecf8853ad59c282e5166592eaa5a764602f2410f63c8be4d0f2b",
+      "masterBytes": 1940621,
+      "runtimeBytes": 1452712
+    },
+    {
+      "id": "bee-party-prop-middle",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/bee-party/prop-middle.png",
+      "runtimeExport": "public/assets/stages/helluva/bee-party/prop-middle.webp",
+      "masterSha256": "9ecc4094b9935e424ce81a6d70c4115574dad1d1806a82cdd2f25d91c595de53",
+      "runtimeSha256": "c53277197efca3bf39b281701c12e53257ffa8eda86a2ca2e81d751d58b69f03",
+      "masterBytes": 327495,
+      "runtimeBytes": 151038
+    },
+    {
+      "id": "bee-party-prop-near",
+      "component": "stages",
+      "master": "art/infernal-versus/masters/stages/bee-party/prop-near.png",
+      "runtimeExport": "public/assets/stages/helluva/bee-party/prop-near.webp",
+      "masterSha256": "1ef4088216152c9942b50b367ebcfd8f57a83738490a67d8e634d8b19fd3117b",
+      "runtimeSha256": "083b95273e6c7c21592eccfcd46f356fee72ca339d7349746aaebcaf104edd73",
+      "masterBytes": 508178,
+      "runtimeBytes": 239604
+    },
+    {
+      "id": "cherri-bomb",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/cherri-bomb.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/cherri-bomb.webp",
+      "masterSha256": "468ab435beccf692aec1e7778cbab603f59ca67751044067ce62c1b15fcf6980",
+      "runtimeSha256": "e1f031dcb83402e346043835f33fc9469e94a9168e70b82225b1304547c4fe47",
+      "masterBytes": 678510,
+      "runtimeBytes": 382864
+    },
+    {
+      "id": "moxxie-bullet",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/moxxie-bullet.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "masterSha256": "01b5ccdeceda651f9c9f3e42e6f5cd2d1545173087cf0e36a0d8a85d1aa95b26",
+      "runtimeSha256": "146fc291e284ed74dc644b7ac9d8fa5afc77c66d7f2a551c9d14920c4d98219e",
+      "masterBytes": 763116,
+      "runtimeBytes": 499720
+    },
+    {
+      "id": "andrealphus-ice",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/andrealphus-ice.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/andrealphus-ice.webp",
+      "masterSha256": "c620ed9ab74acacbf1ea08a138103f7eaa3008561213d80e292908e58e7ddc84",
+      "runtimeSha256": "176a957c77917436d88dfa4d47fcbfb18b9dd6ba51a592c3a21be6cfbceb62cb",
+      "masterBytes": 1033299,
+      "runtimeBytes": 688018
+    },
+    {
+      "id": "vox-electric",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/vox-electric.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/vox-electric.webp",
+      "masterSha256": "85a5f6de31b9277712b9f86d65c8a991831d852f9051f7f9847ddf1ad1495adb",
+      "runtimeSha256": "f5d8fbf53413f517010bfff97d652dddd8d7ef52cdaac1b76ae1801bc974d935",
+      "masterBytes": 1236663,
+      "runtimeBytes": 851672
+    },
+    {
+      "id": "sirpentious-ray",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/sirpentious-ray.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/sirpentious-ray.webp",
+      "masterSha256": "d438d273e693ca56a059583b23a1bb3631d185971a865486ec75c164385a104f",
+      "runtimeSha256": "3a613e8bfe0099cbb106fcc33791f5f8b82d9d3792c8bba5add4c653ee9c95e7",
+      "masterBytes": 1164768,
+      "runtimeBytes": 802252
+    },
+    {
+      "id": "alastor-shadow",
+      "component": "projectiles",
+      "master": "art/infernal-versus/masters/vfx/alastor-shadow.png",
+      "runtimeExport": "public/assets/vfx/infernal-versus/alastor-shadow.webp",
+      "masterSha256": "44fd184e850ca9c295d1dcceafd810192eaa073c9f066b78b0b0bda2d3315633",
+      "runtimeSha256": "c9500d6764d200aa06e594cf58f1c392bbf0fafbdfee428980c04ae61490cd62",
+      "masterBytes": 269282,
+      "runtimeBytes": 170930
+    }
+  ],
+  "derivedThumbnails": [
+    {
+      "path": "public/assets/stages/helluva/stolas-palace/thumb.webp",
+      "derivedFrom": "public/assets/stages/helluva/stolas-palace/room.webp",
+      "bytes": 110300,
+      "sha256": "61c038a90b96c00316af18f35def109e0c309d567b3e9c5ded20a03c4ad4ba8b"
+    },
+    {
+      "path": "public/assets/stages/helluva/bee-party/thumb.webp",
+      "derivedFrom": "public/assets/stages/helluva/bee-party/room.webp",
+      "bytes": 130928,
+      "sha256": "e390346058ed16299512923c46321846403b8047f8b27b9777f497c8dead2664"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "niffty-guard",
+      "component": "poses-main",
+      "status": "generation-safety-refusal",
+      "produced": false
+    },
+    {
+      "id": "sirpentious-guard",
+      "component": "poses-main",
+      "status": "generation-safety-refusal",
+      "produced": false
+    },
+    {
+      "id": "cherribomb-ready",
+      "component": "poses-main",
+      "status": "generation-safety-refusal",
+      "produced": false
+    },
+    {
+      "id": "carmilla-loose-hair-crouch",
+      "component": "costumes",
+      "status": "generation-blocked-no-file-produced",
+      "produced": false
+    }
+  ],
+  "runtimeBefore": {
+    "fighters": 36,
+    "individualReady": 10,
+    "individualGuard": 3,
+    "individualLightContact": 5,
+    "individualHit": 4,
+    "costumes": 4,
+    "costumeKeyPoses": 24,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 14,
+    "threePlaneStages": 14,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "referencedAssets": 254,
+    "brokenReferences": []
+  },
+  "runtimeAfter": {
+    "fighters": 36,
+    "individualReady": 34,
+    "individualGuard": 3,
+    "individualLightContact": 5,
+    "individualHit": 4,
+    "costumes": 5,
+    "costumeKeyPoses": 29,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 16,
+    "threePlaneStages": 16,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 297,
+    "brokenReferences": []
+  },
+  "remaining": {
+    "ready": [
+      "cherribomb",
+      "lute"
+    ],
+    "guard": [
+      "charlie",
+      "vaggie",
+      "angeldust",
+      "alastor",
+      "niffty",
+      "sirpentious",
+      "cherribomb",
+      "vox",
+      "valentino",
+      "velvette",
+      "adam",
+      "emily",
+      "sera",
+      "lute",
+      "carmilla",
+      "rosie",
+      "zestial",
+      "zeezi",
+      "baxter",
+      "abel",
+      "hz_mimzy",
+      "hb_blitzo",
+      "hb_millie",
+      "hb_loona",
+      "hb_stolas",
+      "hb_striker",
+      "hb_verosika",
+      "hb_fizzarolli",
+      "hb_asmodeus",
+      "hb_beelzebub",
+      "hb_crimson",
+      "hb_sallie_may",
+      "hb_andrealphus"
+    ],
+    "lightContact": [
+      "charlie",
+      "vaggie",
+      "alastor",
+      "husk",
+      "niffty",
+      "sirpentious",
+      "cherribomb",
+      "vox",
+      "valentino",
+      "velvette",
+      "adam",
+      "emily",
+      "sera",
+      "lute",
+      "carmilla",
+      "rosie",
+      "zestial",
+      "zeezi",
+      "baxter",
+      "abel",
+      "hz_mimzy",
+      "hb_blitzo",
+      "hb_loona",
+      "hb_stolas",
+      "hb_verosika",
+      "hb_fizzarolli",
+      "hb_asmodeus",
+      "hb_beelzebub",
+      "hb_crimson",
+      "hb_sallie_may",
+      "hb_andrealphus"
+    ],
+    "hit": [
+      "charlie",
+      "vaggie",
+      "alastor",
+      "husk",
+      "niffty",
+      "sirpentious",
+      "cherribomb",
+      "vox",
+      "valentino",
+      "velvette",
+      "adam",
+      "emily",
+      "sera",
+      "lute",
+      "carmilla",
+      "rosie",
+      "zestial",
+      "zeezi",
+      "baxter",
+      "abel",
+      "hz_mimzy",
+      "hb_blitzo",
+      "hb_millie",
+      "hb_loona",
+      "hb_stolas",
+      "hb_verosika",
+      "hb_fizzarolli",
+      "hb_asmodeus",
+      "hb_beelzebub",
+      "hb_crimson",
+      "hb_sallie_may",
+      "hb_andrealphus"
+    ],
+    "costumePoses": [
+      {
+        "fighter": "carmilla",
+        "costume": "carmilla-loose-hair",
+        "pose": "crouch"
+      }
+    ]
+  },
+  "integration": {
+    "sprites": "Ready key poses use existing portrait contain renderer. Other movements retain existing banks.",
+    "costume": "Carmilla has five unique poses. Missing crouch uses ready explicitly and is counted as absent.",
+    "stages": "Stolas palace and Bee party each include room, middle, near and derived thumbnail. Layout review remains separate from file verification.",
+    "attackEffects": "Six visual overlays for 13 existing attacks. Position and lifetime use simulation timing and existing range; no independent projectile collision or extra damage.",
+    "continuity": "Lute S1 ready with two normal arms is delivered as a candidate outside the runtime registry. Existing portrait and gold-arm animation banks remain unchanged to prevent an incarnation switch between actions."
+  },
+  "verification": {
+    "files": "86 new image files enumerated and hashed; masters preserved. Component manifests contain alpha and lossless pixel checks.",
+    "assetReferences": {
+      "count": 297,
+      "missing": []
+    },
+    "automatedQA": {
+      "status": "passed",
+      "command": "npm run qa",
+      "exitCode": 0,
+      "suites": 43,
+      "tests": 331,
+      "typecheck": "passed",
+      "lint": "passed",
+      "builds": 2,
+      "standaloneFiles": 894,
+      "standaloneHashesVerified": 894,
+      "standaloneMiB": 515.4,
+      "runtimeReferences": 297,
+      "missingRuntimeReferences": 0,
+      "finalCssRebuild": "Both builds and standalone hash verification passed again after the 32 px stool margin correction.",
+      "evidence": "docs/standalone/QA_RUNTIME_2026-11-24.json"
+    },
+    "workbookQA": "docs/standalone/QA_WORKBOOK_2026-11-24.json",
+    "browserReview": {
+      "performed": false,
+      "reason": "Local Chromium fails to launch: socket EPERM. Static composites are not browser or in-game screenshots."
+    },
+    "fidelity1to1Certified": false,
+    "pivotNormalizationCertified": false,
+    "newCompleteAnimationCycles": 0
+  },
+  "unrecoveredHistory": "Earlier claims for 50 fighters, 25 stages, 7 costumes and 111 recovered drawings are not supported by recovered files in this session and are not counted as restored."
+}

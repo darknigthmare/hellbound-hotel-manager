@@ -2318,6 +2318,33 @@
 .arena-combat-stage[data-stage="looloo-land"] .infernal-near-plane {
   width: 72%; left: 19%; top: -5%;
 }
+/* These props have transparent square canvases; place their visible bases on
+   the rear floor (middle) or near floor (stool), not at the canvas edge. */
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) .infernal-desk-plane {
+  z-index: 1;
+  width: auto;
+  object-fit: contain;
+  object-position: left bottom;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-desk-plane {
+  height: 40%; max-width: 34%; left: clamp(20px, 5%, 60px); bottom: 13%;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-near-plane {
+  width: auto; height: 50%; max-width: 28%;
+  right: clamp(26px, 4%, 60px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-desk-plane {
+  height: 54%; max-width: 32%; left: 0; bottom: 18%;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-near-plane {
+  width: auto; height: 36%; max-width: 22%;
+  right: clamp(32px, 5%, 72px); left: auto; top: auto; bottom: -1%;
+  object-fit: contain; object-position: right bottom;
+}
 .arena-combat-stage[data-stage="carmine-industries"] .infernal-desk-plane {
   width: auto; height: 44%; left: 1%; bottom: 14%;
 }

@@ -1,0 +1,37 @@
+.infernal-attack-effects {
+  /* Match the fighter sprite's responsive footprint, including portrait poses. */
+  --infernal-fighter-width: clamp(168px, 25vw, 310px);
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.infernal-attack-effect {
+  position: absolute;
+  bottom: calc(9% + var(--infernal-fighter-width) * var(--infernal-effect-elevation));
+  display: block;
+  height: auto;
+  max-height: calc(var(--infernal-fighter-width) * var(--infernal-effect-height));
+  object-fit: contain;
+  transform: translate(-50%, 50%) scaleX(var(--infernal-effect-facing));
+  transform-origin: center;
+  pointer-events: none;
+  /* No independent animation/transition: the simulation supplies every frame. */
+  animation: none;
+  transition: none;
+}
+
+@media (max-width: 700px) {
+  .infernal-attack-effects {
+    --infernal-fighter-width: clamp(124px, 38vw, 190px);
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .infernal-attack-effects {
+    --infernal-fighter-width: clamp(104px, 20vw, 190px);
+  }
+}
