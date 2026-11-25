@@ -78,6 +78,8 @@ interface PentagramLiveFightProps {
   training?: boolean;
   trainingGuard?: boolean;
   reducedMotion?: boolean;
+  /** Presentation only: combat timing, damage and collisions remain identical. */
+  stagePresentation?: 'alive' | 'static' | 'reduced';
   onMatchComplete?: (result: CombatState) => void;
   onNextMatch?: () => void;
   nextMatchLabel?: string;
@@ -270,6 +272,7 @@ export function PentagramLiveFight({
   training = false,
   trainingGuard = false,
   reducedMotion = false,
+  stagePresentation = 'alive',
   onMatchComplete,
   onNextMatch,
   nextMatchLabel,
@@ -982,6 +985,8 @@ export function PentagramLiveFight({
     ? combat.actionDurationMsTwo
     : undefined;
   const motionReduced = prefersReducedMotion || reducedMotion;
+  const stageMotion = motionReduced ? 'static' : stagePresentation;
+  const stageCameraFixed = stageMotion !== 'alive';
   const displayingFinish = fightPhase === 'finisher' || (fightPhase === 'paused' && pausedPhase === 'finisher');
   const finishWinner = displayingFinish ? combat.matchWinner : null;
   const finishFrameMs = motionReduced ? FINISH_CINEMATIC_MS / 2 : Math.max(0, FINISH_CINEMATIC_MS - animationClockMs);
@@ -1274,6 +1279,7 @@ export function PentagramLiveFight({
         className={`arena-combat-stage${combat.hitstopMs > 0 ? ' is-hitstop' : ''}`}
         style={stageStyle}
         data-stage={stage.id}
+        data-stage-presentation={stageMotion}
         data-phase={fightPhase}
         role="region"
         tabIndex={0}
@@ -1285,7 +1291,7 @@ export function PentagramLiveFight({
         onPointerCancel={(event) => finishPointer(event, true)}
         onLostPointerCapture={(event) => finishPointer(event, true)}
       >
-        <InfernalStageLayers stage={stage} offset={motionReduced ? 0 : 50 - (combat.positionOne + combat.positionTwo) / 2} />
+        <InfernalStageLayers stage={stage} offset={stageCameraFixed ? 0 : 50 - (combat.positionOne + combat.positionTwo) / 2} />
         <div className="arena-stage__glow" aria-hidden="true" />
         <div className="arena-lane-grid" aria-hidden="true" />
         <div className="arena-crowd-lights" aria-hidden="true" />
@@ -1294,7 +1300,7 @@ export function PentagramLiveFight({
           timeline={timeline}
           fighterOneId={fighterOne.id}
           fighterTwoId={fighterTwo.id}
-          cameraFocus={motionReduced ? 50 : (combat.positionOne + combat.positionTwo) / 2}
+          cameraFocus={stageCameraFixed ? 50 : (combat.positionOne + combat.positionTwo) / 2}
         />
         <InfernalAttackEffects
           combat={combat}

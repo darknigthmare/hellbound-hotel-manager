@@ -1,10 +1,11 @@
 import { describe, expect, it, vi } from 'vitest';
 import {
-  advanceRun, applyMatchResult, buildRun, createDefaultSave, exportSave,
+  advanceRun, applyMatchResult, buildRun, createDefaultSave, exportSave, getRunEncounter,
   importSave, loadSave, MAX_IMPORT_LENGTH, MAX_SAVED_MATCHES, retryRun,
   saveProgress, STANDALONE_STORAGE_KEY, validateSave,
   type MatchOutcome, type StandaloneMatchResult, type StandaloneSave,
 } from '../standalone/progression';
+import { STANDALONE_STAGES } from '../lib/pentagram-stages';
 
 const roster = ['charlie', 'vaggie', 'alastor', 'adam', 'hb_blitzo', 'hb_millie', 'hb_stolas'];
 const bosses = ['alastor', 'adam', 'hb_stolas'];
@@ -81,6 +82,24 @@ describe('Infernal Versus standalone progression', () => {
     save = completeCurrent(save, 'retry-win');
     expect(validateSave(save, roster).run).toMatchObject({ index: 2, retries: 1, wins: 2 });
     expect(save.stats).toMatchObject({ wins: 2, losses: 1, streak: 1, bestStreak: 1 });
+  });
+
+  it('resumes long runs with the standalone arena rotation beyond the eight hotel stages', () => {
+    expect(STANDALONE_STAGES).toHaveLength(30);
+    let save = saveWithRun('survival');
+    for (let index = 0; index < 8; index++) save = completeCurrent(save, `survival-stage-${index}`);
+    save = importSave(exportSave(save, roster), roster);
+    expect(save.run?.index).toBe(8);
+    expect(getRunEncounter(save.run!).stageId).toBe('imp-reception');
+    expect(getRunEncounter(save.run!).stageId).toBe(STANDALONE_STAGES[8].id);
+    save = completeCurrent(save, 'survival-stage-loss', 'lost');
+    save = importSave(exportSave(save, roster), roster);
+    save = { ...save, run: retryRun(save.run!) };
+    expect(getRunEncounter(save.run!).stageId).toBe('imp-reception');
+    for (let index = 8; index < 19; index++) save = completeCurrent(save, `survival-stage-${index}`);
+    save = importSave(exportSave(save, roster), roster);
+    expect(getRunEncounter(save.run!).stageId).toBe('western-lair');
+    expect(save.run).toMatchObject({ index: 19, wins: 19, retries: 1 });
   });
 
   it('rejects a route result for the wrong opponent without partially changing the save', () => {

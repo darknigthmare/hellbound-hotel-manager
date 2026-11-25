@@ -1,8 +1,9 @@
 import type { Ref } from 'react';
 import { ArrowLeft, ArrowRight, Trophy } from 'lucide-react';
 import { getPentagramStage } from '../lib/pentagram-stages';
-import { STORY_ROUTES, storyIllustration } from './campaign';
-import { tournamentTable, type StandaloneRun } from './progression';
+import { storyIllustration } from './campaign';
+import { GLOBAL_CAMPAIGN } from './campaign-global';
+import { getRunStory, tournamentTable, type StandaloneRun } from './progression';
 import { getStandaloneFighter, getStandalonePortrait } from './roster';
 import './run-interlude.css';
 
@@ -52,14 +53,50 @@ export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludePro
     </section>;
   }
 
-  const story = STORY_ROUTES[run.fighterId];
+  if (run.mode === 'campaign') {
+    const ending = run.status === 'complete';
+    const chapter = GLOBAL_CAMPAIGN.chapters[Math.min(run.index, GLOBAL_CAMPAIGN.chapters.length - 1)];
+    const previous = run.index > 0 ? GLOBAL_CAMPAIGN.chapters[run.index - 1] : undefined;
+    const stage = getPentagramStage(chapter.stageId);
+    return <article className="iv-story iv-global-story" aria-label="Campagne globale">
+      <button className="iv-back" onClick={onHome}><ArrowLeft size={16} /> Accueil</button>
+      <div className="iv-story-layout">
+        <div className="iv-story-art">
+          <img className="iv-story-location" src={stage.imagePath} alt="" />
+          <div className="iv-story-cast" aria-hidden="true">
+            {(ending ? ['charlie', 'hb_blitzo'] : [chapter.fighterId, chapter.opponentId]).map(id => <img key={id} src={getStandalonePortrait(id)} alt="" />)}
+          </div>
+          <span className="iv-story-art-label">{stage.name}</span>
+        </div>
+        <div className="iv-story-copy">
+          <p className="iv-eyebrow">{ending ? 'ÉPILOGUE' : `CHAPITRE ${run.index + 1} / ${GLOBAL_CAMPAIGN.chapters.length}`} · CAMPAGNE GLOBALE</p>
+          <h1 tabIndex={-1} ref={titleRef}>{ending ? GLOBAL_CAMPAIGN.title : chapter.title}</h1>
+          {ending ? <><p>{GLOBAL_CAMPAIGN.ending}</p><p className="iv-story-hook">{GLOBAL_CAMPAIGN.nextHook}</p></> : <>
+            {run.index === 0 && <details className="iv-story-recap"><summary>Au début de cette nuit…</summary><p>{GLOBAL_CAMPAIGN.intro}</p></details>}
+            {previous && <aside className="iv-story-recap"><h2>Précédemment</h2><p>{previous.afterVictory}</p></aside>}
+            <p>{chapter.scene}</p>
+            <dl className="iv-chapter-brief"><div><dt>Vous jouez</dt><dd>{name(chapter.fighterId)}</dd></div><div><dt>Adversaire</dt><dd>{name(chapter.opponentId)}</dd></div><div><dt>Objectif</dt><dd>{chapter.objective}</dd></div></dl>
+            <div className="iv-dialogue">{chapter.dialogue.map((line, index) => <blockquote key={index}><cite>{name(line.speakerId)}</cite><p>« {line.line} »</p></blockquote>)}</div>
+          </>}
+          <p className="iv-small">Histoire originale dans un univers alternatif. Ces rencontres ne sont pas des événements des séries.</p>
+          <button className="iv-primary" onClick={ending ? onHome : onFight}>{ending ? 'Retour aux modes' : 'Entrer en combat'} <ArrowRight size={18} /></button>
+        </div>
+      </div>
+      <ol className="iv-chapter-track" aria-label="Progression des chapitres">{GLOBAL_CAMPAIGN.chapters.map((item, index) => <li key={item.id} aria-current={active && index === run.index ? 'step' : undefined} data-complete={index < run.index}>
+        <span>{String(index + 1).padStart(2, '0')}</span><strong>{index <= run.index || ending ? item.title : 'À découvrir'}</strong><small>{index < run.index ? 'Terminé' : index === run.index ? 'En cours' : 'À venir'}</small>
+      </li>)}</ol>
+    </article>;
+  }
+
+  const story = getRunStory(run);
+  if (!story) return <section className="iv-panel"><h1 ref={titleRef} tabIndex={-1}>Récit indisponible</h1><button className="iv-primary" onClick={onHome}>Retour aux modes</button></section>;
   const ending = run.status === 'complete';
   const chapter = story.chapters[Math.min(run.index, story.chapters.length - 1)];
-  const rival = run.index === story.chapters.length - 1 && !ending;
+  const rival = !ending && (story.rival ? chapter.opponent === story.rival.fighterId : run.index === story.chapters.length - 1);
   const first = run.index === 0;
   const stage = getPentagramStage(chapter.stage);
   const beat = ending ? 'ending' : first ? 'intro' : rival ? 'rival' : undefined;
-  const illustration = beat && storyIllustration(run.fighterId, beat);
+  const illustration = beat && storyIllustration(run.fighterId, beat, run.routeVersion ?? 1);
   return <article className="iv-story">
     <button className="iv-back" onClick={onHome}><ArrowLeft size={16} /> Accueil</button>
     <div className="iv-story-layout">
@@ -76,9 +113,11 @@ export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludePro
         {first && <p className="iv-story-prologue">{story.intro}</p>}
         {ending ? <p>{story.ending}</p> : <>
           <h2>{rival ? 'Rival' : `Duel ${run.index + 1}`} · {name(chapter.opponent)}</h2>
+          {chapter.title && <p className="iv-story-chapter-title">{chapter.title}</p>}
           <p>{chapter.scene}</p><p className="iv-story-stage">{stage.name}</p>
         </>}
-        <p className="iv-small">Histoire originale du mode Exhibition.</p>
+        {ending && story.nextHook && <p className="iv-story-hook">{story.nextHook}</p>}
+        <p className="iv-small">{run.routeVersion === 1 ? 'Archive de la première chronique.' : 'Chronique originale dans un univers alternatif.'} {story.continuity?.incarnation}</p>
         <button className="iv-primary" onClick={ending ? onHome : onFight}>{ending ? 'Retour aux modes' : 'Entrer en combat'} <ArrowRight size={18} /></button>
       </div>
     </div>

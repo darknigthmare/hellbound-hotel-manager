@@ -1286,6 +1286,25 @@
   animation: arena-spectator-idle-frames 940ms steps(1, end) infinite;
 }
 
+/* Scenery preferences are independent of fighter animations and combat rules. */
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator,
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator {
+  animation: none;
+  transition: none;
+  will-change: auto;
+}
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator__sprite {
+  animation-duration: 1880ms;
+}
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator__sprite {
+  animation: none;
+  background-position-x: 0%;
+}
+.arena-combat-stage:is([data-stage-presentation="reduced"], [data-stage-presentation="static"]) :is(.arena-stage__glow, .arena-crowd-lights) {
+  animation: none;
+  transition: none;
+}
+
 .arena-combatant {
   --arena-facing-scale: 1;
   position: absolute;

@@ -1,10 +1,12 @@
 import { getInfernalCostume } from '../lib/infernal-appearances';
-import { STORY_ROUTES, storyAvailable } from './campaign';
+import { CURRENT_STORY_ROUTE_VERSION, getStoryRoute, storyAvailable, type StoryRouteVersion } from './campaign';
+import { GLOBAL_CAMPAIGN, GLOBAL_CAMPAIGN_ENDING_ID, campaignAvailable } from './campaign-global';
 import type { CombatAiDifficulty } from '../lib/pentagram-ai';
+import { STANDALONE_STAGES, type PentagramStageId } from '../lib/pentagram-stages';
 
 /** Pure progression. Browser storage is injected; hotel data is never imported. */
-export type StandaloneMode = 'versus' | 'local' | 'training' | 'arcade' | 'survival' | 'boss-rush' | 'story' | 'tournament';
-export type RunMode = Extract<StandaloneMode, 'arcade' | 'survival' | 'boss-rush' | 'story' | 'tournament'>;
+export type StandaloneMode = 'versus' | 'local' | 'training' | 'arcade' | 'survival' | 'boss-rush' | 'story' | 'campaign' | 'tournament';
+export type RunMode = Extract<StandaloneMode, 'arcade' | 'survival' | 'boss-rush' | 'story' | 'campaign' | 'tournament'>;
 export type MatchOutcome = 'won' | 'lost' | 'draw';
 
 export const STANDALONE_STORAGE_KEY = 'hellbound_infernal_versus_v1';
@@ -12,14 +14,16 @@ export const MAX_SAVED_MATCHES = 10_000;
 export const MAX_IMPORT_LENGTH = 1_500_000;
 const MAX_ROSTER_SIZE = 512;
 const RECENT_LIMIT = 30;
-const MODES: readonly StandaloneMode[] = ['versus', 'local', 'training', 'arcade', 'survival', 'boss-rush', 'story', 'tournament'];
-const RUN_MODES: readonly RunMode[] = ['arcade', 'survival', 'boss-rush', 'story', 'tournament'];
+const MODES: readonly StandaloneMode[] = ['versus', 'local', 'training', 'arcade', 'survival', 'boss-rush', 'story', 'campaign', 'tournament'];
+const RUN_MODES: readonly RunMode[] = ['arcade', 'survival', 'boss-rush', 'story', 'campaign', 'tournament'];
 const DIFFICULTIES: readonly CombatAiDifficulty[] = ['rookie', 'standard', 'overlord'];
+const STAGE_PRESENTATIONS = ['alive', 'static', 'reduced'] as const;
 
 export interface StandaloneOptions {
   soundtrack: boolean;
   reducedMotion: boolean;
   difficulty: CombatAiDifficulty;
+  stagePresentation?: 'alive' | 'static' | 'reduced';
 }
 
 export interface StandaloneStats {
@@ -45,6 +49,15 @@ export interface StandaloneRun {
   wins: number;
   retries: number;
   status: 'active' | 'complete' | 'failed';
+  /** Absent in pre-V3 saves; those stories always resume the version-1 route. */
+  routeVersion?: StoryRouteVersion;
+  campaignId?: typeof GLOBAL_CAMPAIGN.id;
+  campaignVersion?: typeof GLOBAL_CAMPAIGN.version;
+}
+
+export interface StoryCompletion {
+  fighterId: string;
+  routeVersion: StoryRouteVersion;
 }
 
 /** A new id is required for every played match, including retries and rematches. */
@@ -64,6 +77,9 @@ export interface StandaloneSave {
   stats: StandaloneStats;
   /** Completed story routes, retained after the current run is replaced. */
   storyEndings: string[];
+  /** Versioned unlocks prevent old victories from unlocking rewritten endings. */
+  storyCompletions: StoryCompletion[];
+  campaignEndings: string[];
   /** Newest first; complete duplicate protection is kept in the separate ledger. */
   recentResults: StandaloneMatchResult[];
   /** Oldest first; never silently evicted. */
@@ -182,14 +198,14 @@ export function tournamentTable(fighterId: string, rosterIds: readonly string[],
 export function createDefaultSave(): StandaloneSave {
   return {
     version: 1,
-    options: { soundtrack: true, reducedMotion: false, difficulty: 'standard' },
+    options: { soundtrack: true, reducedMotion: false, difficulty: 'standard', stagePresentation: 'alive' },
     stats: { matches: 0, wins: 0, losses: 0, draws: 0, streak: 0, bestStreak: 0, bestSurvival: 0, completedArcades: 0 },
-    storyEndings: [], recentResults: [], processedResultIds: [], run: null,
+    storyEndings: [], storyCompletions: [], campaignEndings: [], recentResults: [], processedResultIds: [], run: null,
   };
 }
 
 /** Candidate ordering does not change a seeded route. Small pools may repeat. */
-export function buildRun(mode: RunMode, fighterId: string, candidateIds: readonly string[], bossIds: readonly string[], seed: number): StandaloneRun {
+export function buildRun(mode: RunMode, fighterId: string, candidateIds: readonly string[], bossIds: readonly string[], seed: number, routeVersion: StoryRouteVersion = CURRENT_STORY_ROUTE_VERSION): StandaloneRun {
   ensure(RUN_MODES.includes(mode), 'Mode de parcours inconnu.');
   ensure(validId(fighterId), 'Combattant du parcours invalide.');
   ensure(integer(seed, 0, 0xffffffff), 'La seed doit être un entier non signé de 32 bits.');
@@ -202,8 +218,13 @@ export function buildRun(mode: RunMode, fighterId: string, candidateIds: readonl
   ensure(pool.length > 0, 'Aucun adversaire compatible disponible pour ce parcours.');
   let opponentIds: string[];
   if (mode === 'story') {
-    ensure(storyAvailable(fighterId, rosterIds), 'Cette histoire demande des adversaires absents des filtres sélectionnés.');
-    opponentIds = STORY_ROUTES[fighterId].chapters.map(chapter => chapter.opponent);
+    ensure(routeVersion === 1 || routeVersion === 3, 'Version du récit inconnue.');
+    ensure(storyAvailable(fighterId, rosterIds, { routeVersion }), 'Cette histoire demande des adversaires absents des filtres sélectionnés.');
+    opponentIds = getStoryRoute(fighterId, routeVersion)!.chapters.map(chapter => chapter.opponent);
+  } else if (mode === 'campaign') {
+    ensure(fighterId === GLOBAL_CAMPAIGN.chapters[0].fighterId, 'La campagne commence avec Charlie.');
+    ensure(campaignAvailable(rosterIds), 'La campagne demande des acteurs absents des filtres sélectionnés.');
+    opponentIds = GLOBAL_CAMPAIGN.chapters.map(chapter => chapter.opponentId);
   } else if (mode === 'tournament') {
     opponentIds = tournamentTable(fighterId, rosterIds, seed).opponentIds;
   } else {
@@ -216,7 +237,40 @@ export function buildRun(mode: RunMode, fighterId: string, candidateIds: readonl
       opponentIds.push(...deck.slice(0, length - opponentIds.length));
     }
   }
-  return { mode, fighterId, seed, rosterIds, bossIds: availableBosses, opponentIds, index: 0, wins: 0, retries: 0, status: 'active' };
+  return {
+    mode, fighterId, seed, rosterIds, bossIds: availableBosses, opponentIds, index: 0, wins: 0, retries: 0, status: 'active',
+    ...(mode === 'story' ? { routeVersion } : {}),
+    ...(mode === 'campaign' ? { campaignId: GLOBAL_CAMPAIGN.id, campaignVersion: GLOBAL_CAMPAIGN.version } : {}),
+  };
+}
+
+export function buildCampaignRun(candidateIds: readonly string[], seed: number): StandaloneRun {
+  ensure(campaignAvailable(candidateIds), 'La campagne demande des acteurs absents des filtres sélectionnés.');
+  return buildRun('campaign', GLOBAL_CAMPAIGN.chapters[0].fighterId, candidateIds, [], seed);
+}
+
+export function getRunStory(run: StandaloneRun) {
+  return run.mode === 'story' ? getStoryRoute(run.fighterId, run.routeVersion ?? 1) : undefined;
+}
+
+/** Completion belongs to one authored route; a legacy ending never unlocks V3. */
+export function storyEndingUnlocked(save: StandaloneSave, fighterId: string, routeVersion: StoryRouteVersion = CURRENT_STORY_ROUTE_VERSION): boolean {
+  return save.storyCompletions.some(entry => entry.fighterId === fighterId && entry.routeVersion === routeVersion);
+}
+
+/** The active actor may change by chapter; results must match this exact encounter. */
+export function getRunEncounter(run: StandaloneRun): { fighterId: string; opponentId: string; stageId: PentagramStageId } {
+  ensure(run.status !== 'complete' && integer(run.index, 0, run.opponentIds.length - 1), 'Ce parcours est déjà terminé.');
+  if (run.mode === 'campaign') {
+    const chapter = GLOBAL_CAMPAIGN.chapters[run.index];
+    return { fighterId: chapter.fighterId, opponentId: chapter.opponentId, stageId: chapter.stageId };
+  }
+  const chapter = getRunStory(run)?.chapters[run.index];
+  return {
+    fighterId: run.fighterId,
+    opponentId: run.opponentIds[run.index],
+    stageId: chapter?.stage ?? STANDALONE_STAGES[run.index % STANDALONE_STAGES.length].id,
+  };
 }
 
 export function advanceRun(run: StandaloneRun, outcome: MatchOutcome): StandaloneRun {
@@ -250,7 +304,9 @@ export function applyMatchResult(save: StandaloneSave, value: StandaloneMatchRes
   ensure(save.processedResultIds.length < MAX_SAVED_MATCHES, 'Limite de 10 000 duels atteinte. Exportez votre progression avant de démarrer un nouveau profil.');
   let run = save.run;
   if (RUN_MODES.includes(result.mode as RunMode)) {
-    ensure(run?.status === 'active' && run.mode === result.mode && run.fighterId === result.fighterId && run.opponentIds[run.index] === result.opponentId, 'Ce résultat ne correspond pas au duel courant du parcours.');
+    ensure(run?.status === 'active' && run.mode === result.mode, 'Ce résultat ne correspond pas au duel courant du parcours.');
+    const encounter = getRunEncounter(run);
+    ensure(encounter.fighterId === result.fighterId && encounter.opponentId === result.opponentId, 'Ce résultat ne correspond pas au duel courant du parcours.');
     run = advanceRun(run, result.outcome);
   }
   const won = result.outcome === 'won';
@@ -268,19 +324,34 @@ export function applyMatchResult(save: StandaloneSave, value: StandaloneMatchRes
   };
   const unlockEnding = result.mode === 'story' && won && run?.status === 'complete' && !save.storyEndings.includes(result.fighterId);
   const storyEndings = unlockEnding ? [...save.storyEndings, result.fighterId] : save.storyEndings;
-  return { ...save, stats, run, storyEndings, recentResults: [result, ...save.recentResults].slice(0, RECENT_LIMIT), processedResultIds: [...save.processedResultIds, result.id] };
+  const routeVersion = run?.routeVersion ?? 1;
+  const unlockStoryVersion = result.mode === 'story' && won && run?.status === 'complete'
+    && !storyEndingUnlocked(save, result.fighterId, routeVersion);
+  const storyCompletions = unlockStoryVersion ? [...save.storyCompletions, { fighterId: result.fighterId, routeVersion }] : save.storyCompletions;
+  const unlockCampaign = result.mode === 'campaign' && won && run?.status === 'complete' && !save.campaignEndings.includes(GLOBAL_CAMPAIGN_ENDING_ID);
+  const campaignEndings = unlockCampaign ? [...save.campaignEndings, GLOBAL_CAMPAIGN_ENDING_ID] : save.campaignEndings;
+  return { ...save, stats, run, storyEndings, storyCompletions, campaignEndings, recentResults: [result, ...save.recentResults].slice(0, RECENT_LIMIT), processedResultIds: [...save.processedResultIds, result.id] };
 }
 
 function parseRun(value: unknown, knownIds: ReadonlySet<string>, stats: StandaloneStats): StandaloneRun | null {
   if (value === null) return null;
-  const entry = record(value, ['mode', 'fighterId', 'seed', 'rosterIds', 'bossIds', 'opponentIds', 'index', 'wins', 'retries', 'status'], 'Parcours');
+  const keys = ['mode', 'fighterId', 'seed', 'rosterIds', 'bossIds', 'opponentIds', 'index', 'wins', 'retries', 'status'];
+  // Only old personal stories may omit the version. Campaigns were introduced versioned.
+  if (value && typeof value === 'object' && 'mode' in value) {
+    if (value.mode === 'story' && Object.hasOwn(value, 'routeVersion')) keys.push('routeVersion');
+    if (value.mode === 'campaign') keys.push('campaignId', 'campaignVersion');
+  }
+  const entry = record(value, keys, 'Parcours');
   ensure(RUN_MODES.includes(entry.mode as RunMode) && validId(entry.fighterId) && knownIds.has(entry.fighterId), 'Identité du parcours invalide.');
   ensure(integer(entry.seed, 0, 0xffffffff), 'Seed du parcours invalide.');
   const rosterIds = uniqueIds(entry.rosterIds, MAX_ROSTER_SIZE, 'Catalogue du parcours');
   const bossIds = uniqueIds(entry.bossIds, MAX_ROSTER_SIZE, 'Boss du parcours');
   const opponentIds = ids(entry.opponentIds, MAX_ROSTER_SIZE, 'Adversaires');
   ensure(rosterIds.every(id => knownIds.has(id)), 'Le parcours contient un personnage inconnu.');
-  const expected = buildRun(entry.mode as RunMode, entry.fighterId, rosterIds, bossIds, entry.seed);
+  const routeVersion = entry.routeVersion ?? 1;
+  if (entry.mode === 'story') ensure(routeVersion === 1 || routeVersion === 3, 'Version du récit incompatible.');
+  if (entry.mode === 'campaign') ensure(entry.campaignId === GLOBAL_CAMPAIGN.id && entry.campaignVersion === GLOBAL_CAMPAIGN.version, 'Version de campagne incompatible.');
+  const expected = buildRun(entry.mode as RunMode, entry.fighterId, rosterIds, bossIds, entry.seed, routeVersion as StoryRouteVersion);
   ensure(equalIds(rosterIds, expected.rosterIds) && equalIds(bossIds, expected.bossIds) && equalIds(opponentIds, expected.opponentIds), 'Parcours incompatible avec sa seed ou son catalogue.');
   ensure(integer(entry.index, 0, opponentIds.length) && entry.wins === entry.index, 'Avancée du parcours incohérente.');
   ensure(integer(entry.retries, 0, MAX_SAVED_MATCHES) && ['active', 'complete', 'failed'].includes(entry.status as string), 'État du parcours invalide.');
@@ -296,9 +367,10 @@ function parseRun(value: unknown, knownIds: ReadonlySet<string>, stats: Standalo
 /** Strict schema and bounded data; this is validation, not anti-cheat signing. */
 export function validateSave(value: unknown, rosterIds: readonly string[]): StandaloneSave {
   const keys = ['version', 'options', 'stats', 'recentResults', 'processedResultIds', 'run'];
-  // Earlier version-1 saves predate the gallery. Keep the original storage key and recover them on read.
-  if (value && typeof value === 'object' && Object.hasOwn(value, 'storyEndings')) keys.push('storyEndings');
-  if (value && typeof value === 'object' && Object.hasOwn(value, 'wardrobe')) keys.push('wardrobe');
+  // Additive migration keeps both the original storage key and the old route content.
+  for (const optional of ['storyEndings', 'storyCompletions', 'campaignEndings', 'wardrobe']) {
+    if (value && typeof value === 'object' && Object.hasOwn(value, optional)) keys.push(optional);
+  }
   const entry = record(value, keys, 'Sauvegarde');
   ensure(entry.version === 1, 'Version de sauvegarde incompatible.');
   const knownIds = new Set(uniqueIds(rosterIds, MAX_ROSTER_SIZE, 'Catalogue connu'));
@@ -318,8 +390,13 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
       wardrobe[side] = validated;
     }
   }
-  const options = record(entry.options, ['soundtrack', 'reducedMotion', 'difficulty'], 'Options');
+  const optionKeys = ['soundtrack', 'reducedMotion', 'difficulty'];
+  if (entry.options && typeof entry.options === 'object' && Object.hasOwn(entry.options, 'stagePresentation')) optionKeys.push('stagePresentation');
+  const options = record(entry.options, optionKeys, 'Options');
   ensure(typeof options.soundtrack === 'boolean' && typeof options.reducedMotion === 'boolean' && DIFFICULTIES.includes(options.difficulty as CombatAiDifficulty), 'Options incompatibles.');
+  // Old reduced-motion saves keep a reduced stage presentation on first load.
+  const stagePresentation = options.stagePresentation ?? (options.reducedMotion ? 'reduced' : 'alive');
+  ensure(STAGE_PRESENTATIONS.includes(stagePresentation as typeof STAGE_PRESENTATIONS[number]), 'Présentation du décor incompatible.');
   const counters = record(entry.stats, ['matches', 'wins', 'losses', 'draws', 'streak', 'bestStreak', 'bestSurvival', 'completedArcades'], 'Statistiques');
   ensure(Object.values(counters).every(value => integer(value, 0, MAX_SAVED_MATCHES)), 'Compteurs invalides.');
   const stats = { ...counters } as unknown as StandaloneStats;
@@ -339,16 +416,39 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
     ? stats.streak === recentStreak
     : stats.streak >= recentStreak, 'Série de victoires incompatible avec l’historique.');
   const run = parseRun(entry.run, knownIds, stats);
-  const legacyEndings = run?.mode === 'story' && run.status === 'complete' ? [run.fighterId] : [];
+  const completedStory = run?.mode === 'story' && run.status === 'complete' ? run : null;
+  const legacyEndings = completedStory && completedStory.routeVersion === 1 ? [completedStory.fighterId] : [];
   const storyEndings = entry.storyEndings === undefined ? legacyEndings : uniqueIds(entry.storyEndings, MAX_ROSTER_SIZE, 'Épilogues');
-  ensure(storyEndings.every(id => knownIds.has(id) && Object.hasOwn(STORY_ROUTES, id)), 'Épilogue inconnu.');
-  ensure(storyEndings.length * 3 + stats.completedArcades * 5 <= stats.wins, 'Épilogues sans les victoires correspondantes.');
-  ensure(!legacyEndings.length || storyEndings.includes(legacyEndings[0]), 'Épilogue du parcours terminé absent.');
+  ensure(storyEndings.every(id => knownIds.has(id) && (getStoryRoute(id, 1) || getStoryRoute(id, 3))), 'Épilogue inconnu.');
+
+  let storyCompletions: StoryCompletion[];
+  if (entry.storyCompletions === undefined) {
+    // Before this update all gallery unlocks referred to version 1, even when
+    // another mode had already replaced the completed story in the current run.
+    storyCompletions = storyEndings.map(fighterId => ({ fighterId, routeVersion: 1 }));
+  } else {
+    ensure(Array.isArray(entry.storyCompletions) && entry.storyCompletions.length <= MAX_ROSTER_SIZE * 2, 'Épilogues versionnés invalides.');
+    storyCompletions = entry.storyCompletions.map(value => {
+      const completion = record(value, ['fighterId', 'routeVersion'], 'Épilogue versionné');
+      ensure(validId(completion.fighterId) && knownIds.has(completion.fighterId)
+        && (completion.routeVersion === 1 || completion.routeVersion === 3)
+        && getStoryRoute(completion.fighterId, completion.routeVersion), 'Version d’épilogue inconnue.');
+      return { fighterId: completion.fighterId, routeVersion: completion.routeVersion } as StoryCompletion;
+    });
+    ensure(new Set(storyCompletions.map(item => `${item.fighterId}:${item.routeVersion}`)).size === storyCompletions.length, 'Épilogue versionné en double.');
+  }
+  ensure(equalIds([...storyEndings].sort(), [...new Set(storyCompletions.map(item => item.fighterId))].sort()), 'Collection d’épilogues incohérente.');
+  ensure(!completedStory || storyCompletions.some(item => item.fighterId === completedStory.fighterId && item.routeVersion === completedStory.routeVersion), 'Épilogue du parcours terminé absent.');
+
+  const campaignEndings = entry.campaignEndings === undefined ? [] : uniqueIds(entry.campaignEndings, 1, 'Épilogues de campagne');
+  ensure(campaignEndings.every(id => id === GLOBAL_CAMPAIGN_ENDING_ID), 'Épilogue de campagne inconnu.');
+  ensure(run?.mode !== 'campaign' || run.status !== 'complete' || campaignEndings.includes(GLOBAL_CAMPAIGN_ENDING_ID), 'Épilogue de campagne terminée absent.');
+  ensure(storyCompletions.length * 3 + campaignEndings.length * GLOBAL_CAMPAIGN.chapters.length + stats.completedArcades * 5 <= stats.wins, 'Épilogues sans les victoires correspondantes.');
   return {
     version: 1,
-    options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty },
+    options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty, stagePresentation: stagePresentation as StandaloneOptions['stagePresentation'] },
     ...(wardrobe ? { wardrobe } : {}),
-    stats, storyEndings: [...storyEndings], recentResults, processedResultIds: [...processedResultIds], run,
+    stats, storyEndings: [...storyEndings], storyCompletions, campaignEndings: [...campaignEndings], recentResults, processedResultIds: [...processedResultIds], run,
   };
 }
 

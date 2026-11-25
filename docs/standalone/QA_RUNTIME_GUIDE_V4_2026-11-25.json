@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "edition": "V4 - integration du guide general",
+  "date": "2026-11-25",
+  "baselineCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "pullRequest": "https://github.com/darknigthmare/hellbound-hotel-manager/pull/8",
+  "command": "npm run qa",
+  "result": "passed",
+  "typecheck": "passed",
+  "eslint": "passed",
+  "testSuites": 45,
+  "tests": 395,
+  "failures": 0,
+  "builds": {
+    "manager": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 1031,
+    "bytes": 626483485,
+    "integrity": "all_sha256_verified",
+    "hotelCloudPersistence": "excluded",
+    "manifestSha256": "1cc82f985b2f8e04d2c300b86191e4ca03c33404641b8e9ed5eac5164915d22b"
+  },
+  "publicAssets": {
+    "files": 1027,
+    "bytes": 625709133,
+    "gitBlobHashMismatches": 0,
+    "restoredForVerification": 947,
+    "sourceCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145"
+  },
+  "scope": {
+    "playableFighters": 43,
+    "gameModes": 9,
+    "stages": 30,
+    "v3PersonalRoutes": 43,
+    "v3PersonalChapters": 129,
+    "legacyRoutesPreserved": 43,
+    "globalCampaigns": 1,
+    "globalCampaignChapters": 9,
+    "reserveGalleryArtworks": 22,
+    "newGeneratedArtworks": 0,
+    "newAnimationCycles": 0,
+    "newRuntimeAttacks": 0,
+    "newDedicatedNarrativeIllustrations": 0,
+    "v3IllustrationAssignments": 0,
+    "legacyIllustrationAssignments": 26,
+    "legacyDistinctIllustrations": 22
+  },
+  "regressionCases": [
+    "Pre-guide save without routeVersion resumes the original opponents, narrative and stage order.",
+    "Legacy and V3 endings unlock independently; existing wins do not unlock a rewritten ending.",
+    "Nine campaign chapters change controlled fighters and survive draw, defeat, retry and reload.",
+    "Repeated result callbacks do not duplicate stats or ending unlocks.",
+    "Filtered empty story rosters cannot retain a hidden fighter in another mode.",
+    "Season-two gallery incarnations and campaign content remain hidden under the season-one filter.",
+    "Gallery category filtering and detail-preview focus work; scene options persist after reload.",
+    "Scenery options freeze only scenery camera; fighters and combat keep advancing.",
+    "Survival resumes with the standalone 30-stage rotation after duels 8 and 19.",
+    "Hotel saves and cloud account code remain separate from the standalone build."
+  ],
+  "browser": {
+    "status": "blocked_environment",
+    "executedUiSteps": 0,
+    "screenshots": 0,
+    "reason": "Chromium wrapper exists but its binary target is missing. The official Playwright browser download returned HTTP 403 Site Unavailable.",
+    "plannedViewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "jsdomUiTests": "passed",
+    "visualFidelityCertified": false
+  },
+  "limits": [
+    "No new illustration, pose, animation or combat kit is counted as produced.",
+    "Moves and finishing storyboards from V3 remain proposals except existing engine techniques.",
+    "Browser layout, controller hardware and canonical visual fidelity were not certified in this environment."
+  ]
+}

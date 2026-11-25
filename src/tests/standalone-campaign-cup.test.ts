@@ -60,8 +60,12 @@ describe('authored stories and seeded elimination brackets', () => {
 
 describe('story ending collection', () => {
   it('migrates the previous storage format and retains a single unlock after replays and a different run', () => {
-    const { storyEndings, ...legacy } = createDefaultSave();
-    expect(storyEndings).toEqual([]);
+    const legacy = {
+      version: 1,
+      options: { soundtrack: true, reducedMotion: false, difficulty: 'standard' },
+      stats: { matches: 0, wins: 0, losses: 0, draws: 0, streak: 0, bestStreak: 0, bestSurvival: 0, completedArcades: 0 },
+      recentResults: [], processedResultIds: [], run: null,
+    };
     let save = importSave(JSON.stringify(legacy), STANDALONE_FIGHTER_IDS);
     for (let play = 0; play < 2; play++) {
       const story = buildRun('story', 'charlie', STANDALONE_FIGHTER_IDS, [], 100 + play);
@@ -71,7 +75,9 @@ describe('story ending collection', () => {
       }
     }
     save = { ...save, run: buildRun('tournament', 'hb_blitzo', STANDALONE_FIGHTER_IDS, [], 10) };
-    expect(importSave(exportSave(save, STANDALONE_FIGHTER_IDS), STANDALONE_FIGHTER_IDS).storyEndings).toEqual(['charlie']);
+    const restored = importSave(exportSave(save, STANDALONE_FIGHTER_IDS), STANDALONE_FIGHTER_IDS);
+    expect(restored.storyEndings).toEqual(['charlie']);
+    expect(restored.storyCompletions).toEqual([{ fighterId: 'charlie', routeVersion: 3 }]);
     expect(() => importSave(JSON.stringify({ ...legacy, storyEndings: ['charlie'] }), STANDALONE_FIGHTER_IDS)).toThrow();
   });
 });

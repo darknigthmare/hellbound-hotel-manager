@@ -7,7 +7,7 @@
   "status": "simulation_au_proposal",
   "finisherSystemName": "Dernier Acte",
   "canonicalTerm": false,
-  "runtimeCampaignsReplaced": false,
+  "runtimeCampaignsReplaced": true,
   "runtimeMovesReplaced": false,
   "newAnimationAssets": 0,
   "sources": [
@@ -11426,5 +11426,22 @@
     "finishBoundary": "Dernier Acte is original game terminology. New three-beat storyboards do not replace the current 1.5-second shared sequence.",
     "fidelityBoundary": "No exact 1:1 visual or motion certification. Official close-up comparisons are required before production approval.",
     "targetVariants": "Weapon-dependent finishing beats use the actual equipped prop; an explicit unarmed variant is required. No weapon is invented for an unarmed incarnation."
+  },
+  "runtimeIntegration": {
+    "edition": "V4",
+    "date": "2026-11-25",
+    "routeVersion": 3,
+    "path": "src/standalone/campaign-v3.ts",
+    "legacyRoutes": "src/standalone/campaign-legacy.ts",
+    "illustrationAssignmentsV3": 0,
+    "illustrationPolicy": "No legacy illustration is automatically assigned to a rewritten V3 brief.",
+    "movesReplaced": false,
+    "finishersReplaced": false,
+    "authoredStatusNote": "campaign.status records its original proposal status; runtimeIntegration records the current executable narrative association.",
+    "historicalV3": {
+      "baselineCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+      "runtimeCampaignsReplaced": false,
+      "runtimeMovesReplaced": false
+    }
   }
 }

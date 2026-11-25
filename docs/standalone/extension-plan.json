@@ -72,18 +72,38 @@
     },
     "currentRuntime": {
       "date": "2026-11-25",
-      "batchId": "wave-i-2026-11-25",
-      "baseCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
+      "batchId": "guide-v4-2026-11-25",
+      "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "Les tables moteur du classeur décrivent le jeu actuel. Les six feuilles V3 décrivent des propositions AU. meta.implementation et les onze feuilles V1 restent historiques.",
+      "note": "V4 raccorde les récits V3 et conserve les routes V1 pour les anciennes sauvegardes. Les 172 coups et 43 storyboards longs restent des propositions. Les 29 feuilles V3 décrivent le lot I historique.",
       "stages": 30,
       "threePlaneStages": 30,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 428
+      "referencedAssets": 428,
+      "modes": 9,
+      "personalRouteVersion": 3,
+      "personalRoutes": 43,
+      "personalChapters": 129,
+      "globalCampaigns": 1,
+      "globalChapters": 9,
+      "reserveGalleryDrawings": 22,
+      "stagePresentations": [
+        "alive",
+        "static",
+        "reduced"
+      ],
+      "illustrationAssignmentsV3": 0
+    },
+    "latestIntegration": {
+      "date": "2026-11-25",
+      "batchId": "guide-v4-2026-11-25",
+      "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+      "branch": "feat/infernal-versus-assets-20261124",
+      "scope": "Guide général contextualisé, 43 routes V3 versionnées, campagne AU de neuf chapitres, galerie 22 réserves et présentation des arènes. Aucun dessin ou cycle nouveau."
     }
   },
   "sources": [
@@ -13174,11 +13194,19 @@
       },
       {
         "name": "Histoire",
-        "status": "Lot du 18 novembre",
-        "selection": "Sélectionner un héros dont les trois adversaires sont disponibles dans le filtre.",
-        "rules": "Prologue, trois duels scénarisés, scène de rivalité finale, épilogue écrit. Le scénario reste une fiction de l’arène.",
-        "progress": "Reprise entre duels. La dernière victoire débloque l’épilogue dans le Codex, y compris après un nouveau parcours et après export / import.",
-        "check": "Depuis une sauvegarde neuve, terminer puis relire le dernier écran. Parcourir les filtres qui excluent un rival."
+        "status": "Routes V3 intégrées",
+        "selection": "Sélectionner un héros dont les adversaires et la continuité sont autorisés par les filtres.",
+        "rules": "43 prologues, 129 duels et 43 épilogues V3. Les routes V1 sont préservées pour les sauvegardes anciennes.",
+        "progress": "Reprise selon routeVersion et fins débloquées par version ; une fin V1 ne débloque pas la fin V3 réécrite.",
+        "check": "Reprendre une sauvegarde V1 puis achever une nouvelle route V3 ; vérifier adversaires, art legacy et bonne fin débloquée."
+      },
+      {
+        "name": "Campagne globale",
+        "status": "Intégrée V4",
+        "selection": "La nuit du signal libre, accessible avec les deux univers et le niveau de spoiler autorisé.",
+        "rules": "Neuf chapitres AU avec héros, adversaire, arène, dialogues et objectif propres. Combat de duel standard, aucun bonus de campagne.",
+        "progress": "Chapitre courant, reprise après défaite et déblocage séparé de la conclusion. Le résultat doit correspondre au héros exact du chapitre.",
+        "check": "Atteindre les neuf victoires, perdre et reprendre au chapitre 6, tester filtres, égalité et callback de résultat dupliqué."
       },
       {
         "name": "Tournoi",
@@ -14436,11 +14464,37 @@
       "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx",
       "scope": "43 current playable fighters; individual campaign, rival, illustration briefs, moveset proposals and finisher storyboard.",
       "narrativeStatus": "simulation_au_proposal",
-      "runtimeCampaignsReplaced": false,
+      "runtimeCampaignsReplaced": true,
       "runtimeMovesReplaced": false,
       "finisherSystemName": "Dernier Acte",
       "canonicalTerm": false,
-      "newAnimationAssets": 0
+      "newAnimationAssets": 0,
+      "currentRuntimeEdition": "V4",
+      "runtimeRouteVersion": 3,
+      "currentWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V4.xlsx",
+      "historicalV3": {
+        "runtimeCampaignsReplaced": false,
+        "runtimeMovesReplaced": false,
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx"
+      }
+    },
+    "guideIntegration": {
+      "edition": "V4",
+      "data": "docs/standalone/guide-integration-v4.json",
+      "readable": "docs/standalone/INFERNAL_VERSUS_GUIDE_V4.md",
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V4.xlsx",
+      "sourceGuide": "docs/standalone/references/Combat_Games_Guide_General_v1.0.txt",
+      "sections": 30,
+      "referenceCards": 10,
+      "designOnlyTransitions": 3,
+      "acceptanceCases": 20,
+      "presentation": {
+        "alive": "Caméra et figurants actuels",
+        "reduced": "Caméra fixe et figurants ralentis",
+        "static": "Caméra et figurants figés",
+        "systemReducedMotion": "Force statique",
+        "gameplayChanges": false
+      }
     }
   }
 }

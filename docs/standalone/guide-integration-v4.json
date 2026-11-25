@@ -1,0 +1,3062 @@
+{
+  "schemaVersion": 1,
+  "edition": "V4 · Guide général et narration jouable",
+  "date": "2026-11-25",
+  "baselineCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+  "sourceGuide": {
+    "path": "docs/standalone/references/Combat_Games_Guide_General_v1.0.txt",
+    "sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+    "bytes": 55172,
+    "preservedVerbatim": true
+  },
+  "statusDefinitions": {
+    "documented": "La règle ou la fiche est écrite. Cela ne prouve ni son implémentation ni sa validation visuelle.",
+    "partial": "Une partie de la rubrique fonctionne. Les éléments manquants sont nommés dans la même ligne.",
+    "integrated": "Le composant est raccordé au jeu dans le lot V4. Les résultats de recette restent dans le rapport daté.",
+    "deferred": "La conception est conservée, mais le système ne fait pas partie du moteur livré par ce lot.",
+    "notApplicable": "Le point est incompatible avec le périmètre choisi. La justification est explicite.",
+    "validation": "Les preuves datées du lot font autorité. Une ancienne réussite ne valide pas automatiquement le nouveau code."
+  },
+  "decisions": [
+    {
+      "id": "IV-D01",
+      "topic": "Périmètre",
+      "decision": "Duel latéral 2D, React/TypeScript/Vite, entrée combat.html et sauvegarde isolée du manager."
+    },
+    {
+      "id": "IV-D02",
+      "topic": "Univers",
+      "decision": "Hazbin Hotel et Helluva Boss. Le pilote reste une continuité séparée. Une œuvre non auditée ne devient pas vérifiée par sa date de publication."
+    },
+    {
+      "id": "IV-D03",
+      "topic": "Narration",
+      "decision": "43 routes personnelles V3 et une campagne globale originale de neuf chapitres. Les rencontres et dialogues inventés sont des simulations AU."
+    },
+    {
+      "id": "IV-D04",
+      "topic": "Production",
+      "decision": "Le présent lot raccorde les contenus existants. Il ne produit pas de nouveau cycle d’animation ni de nouveau kit à partir d’une seule pose."
+    },
+    {
+      "id": "IV-D05",
+      "topic": "Fidélité",
+      "decision": "Objectif 1:1 portant sur l’identité et l’incarnation. Aucune certification globale. Références et écarts restent visibles dans chaque fiche."
+    },
+    {
+      "id": "IV-D06",
+      "topic": "Finitions",
+      "decision": "Dernier Acte est le nom original du système. Les 43 storyboards V3 restent à réaliser. La finition actuelle conserve son effet court."
+    },
+    {
+      "id": "IV-D07",
+      "topic": "Arènes",
+      "decision": "Présentation vivante, réduite et statique séparée des règles. Les dangers, interactions et transitions restent des chantiers distincts."
+    },
+    {
+      "id": "IV-D08",
+      "topic": "Sauvegardes",
+      "decision": "Les routes anciennes conservent leur identité de contenu V1. Une victoire ancienne ne débloque pas silencieusement une fin réécrite V3."
+    },
+    {
+      "id": "IV-D09",
+      "topic": "Multijoueur",
+      "decision": "Duel local au clavier et tactile. Manette, remappage complet, rollback et replays ne sont pas déclarés livrés."
+    },
+    {
+      "id": "IV-D10",
+      "topic": "Mesures",
+      "decision": "Compter séparément combattants, attaques, dessins, fichiers, briefs et affectations. Le catalogue de réserve ne gonfle pas le roster jouable."
+    }
+  ],
+  "metrics": {
+    "playableFighters": 43,
+    "hazbinFighters": 25,
+    "helluvaFighters": 18,
+    "stages": 30,
+    "personalRoutesV3": 43,
+    "personalChaptersV3": 129,
+    "globalCampaigns": 1,
+    "globalChapters": 9,
+    "globalPlayableIdentities": 8,
+    "baseAttacks": 129,
+    "signatures": 4,
+    "attackCount": 133,
+    "illustrationBriefsV3": 129,
+    "moveProposalsV3": 172,
+    "proposalsRequiringNewMechanic": 67,
+    "finisherStoryboardsV3": 43,
+    "reserves": 22,
+    "reserveCharacters": 13,
+    "reserveEnemies": 8,
+    "reserveProjectiles": 1,
+    "guideSections": 30,
+    "referenceCards": 10,
+    "transitionProposals": 3,
+    "newDrawingsInV4": 0,
+    "newAnimationCyclesInV4": 0,
+    "fidelityOneToOneCertified": false
+  },
+  "requirements": [
+    {
+      "id": "IV-G00",
+      "section": 0,
+      "title": "Utilisation du guide et priorités",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Documentée",
+      "present": "Le guide source est archivé à l’identique. Les 30 rubriques sont associées au projet et aux fiches A–J.",
+      "remaining": "Actualiser la matrice et ses preuves à chaque lot. Les fonctions différées restent visibles.",
+      "criterion": "30 identifiants uniques, source inchangée, décision et critère pour chaque rubrique.",
+      "evidence": [
+        "docs/standalone/references/Combat_Games_Guide_General_v1.0.txt",
+        "docs/standalone/guide-integration-v4.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G01",
+      "section": 1,
+      "title": "Identité du projet et périmètre",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Intégrée",
+      "present": "Infernal Versus est un standalone 2D de Hazbin/Helluva, séparé du manager. 43 combattants, 30 arènes, clavier et tactile.",
+      "remaining": "Mesurer les performances sur une machine et un téléphone identifiés. Aucune promesse de 60 images/s universelles.",
+      "criterion": "Le build autonome démarre sans importer les données de gestion et ouvre combat.html.",
+      "evidence": [
+        "src/standalone/main.tsx",
+        "src/standalone/roster.ts",
+        "vite.config.ts",
+        "scripts/check-standalone.mjs"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G02",
+      "section": 2,
+      "title": "Fidélité au lore et sources",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Gouvernance canon/AU, incarnation et spoiler par fiche. 109 repères et 27 sources de conception V3 conservés.",
+      "remaining": "Comparer les images en taille de jeu à des références précises. Compléter les références trop petites et les capacités incertaines.",
+      "criterion": "Aucune création AU présentée comme un événement d’épisode. Chaque affirmation canonique possède une référence vérifiable.",
+      "evidence": [
+        "docs/lore-governance.md",
+        "docs/standalone/campaign-design-v3.json",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G03",
+      "section": 3,
+      "title": "Roster, variantes et costumes",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "43 kits jouables et six costumes. La galerie expose 13 bases de personnages, huit bases d’ennemis et un projectile en réserve.",
+      "remaining": "Les réserves demandent une décision de rôle, des kits et des réactions avant activation. Étendre les incarnations et costumes vérifiés.",
+      "criterion": "Sélection et filtres n’activent que les kits complets. Une réserve reste identifiée comme non jouable.",
+      "evidence": [
+        "src/standalone/roster.ts",
+        "src/lib/infernal-appearances.ts",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G04",
+      "section": 4,
+      "title": "Fondations du combat",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "100 PV, 99 s, deux manches gagnantes, tension 0–100, garde, déplacement, poses saut/accroupissement et contact différé.",
+      "remaining": "Projections, garde haute/basse, vrais échanges aériens et changement de côté demandent un contrat moteur dédié.",
+      "criterion": "KO, temps écoulé, égalité, pause, perte de focus et résultat unique conservent les règles communes.",
+      "evidence": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/tests/pentagram-combat.test.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G05",
+      "section": 5,
+      "title": "Movesets et ressources",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "133 attaques paramétrées, dont quatre signatures. Carnet des durées/portées/coûts. 172 concepts V3 documentés séparément.",
+      "remaining": "67 concepts exigent une mécanique nouvelle. Les 105 autres restent des propositions à régler et à tester, pas des coups déjà remplacés.",
+      "criterion": "Toute nouvelle action spécifie départ, contact, récupération, garde, ressources, interruption et contre-jeu compatible avec le moteur.",
+      "evidence": [
+        "src/lib/pentagram-combat.ts",
+        "src/lib/pentagram-fighters.ts",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G06",
+      "section": 6,
+      "title": "Ultimes, finishers et conclusions",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Dernier Acte : fenêtre 3,2 s après KO décisif, séquence 1,5 s, passage vers victoire. 43 storyboards longs sont écrits.",
+      "remaining": "Réaliser les storyboards, réactions et solutions par morphologie. Distinguer spécial, finisher, victoire et épilogue.",
+      "criterion": "Aucun effet de finition ne change le résultat, le contrat d’âme ou la rédemption. La séquence peut être passée.",
+      "evidence": [
+        "src/lib/infernal-finishers.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G07",
+      "section": 7,
+      "title": "Présentation et relations",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Entrées et victoires existantes, 43 rivaux motivés et relations classées dans V3. Les rencontres croisées sont AU.",
+      "remaining": "Échanges spécifiques par paire, voix et poses personnalisées restent à produire et à vérifier par incarnation.",
+      "criterion": "Le texte différencie relation attestée et rencontre inventée. Aucun personnage ne connaît un fait hors de sa période.",
+      "evidence": [
+        "src/lib/pentagram-cinematics.ts",
+        "src/standalone/campaign-v3.ts",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G08",
+      "section": 8,
+      "title": "Histoires individuelles",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Intégrée",
+      "present": "43 routes V3 : motivation, enjeu, prologue, trois duels, rival et épilogue. Les anciennes routes V1 restent reprenables.",
+      "remaining": "Produire et associer les 129 briefs d’illustration à leur scène exacte. Les embranchements restent différés.",
+      "criterion": "Chaque route atteint sa conclusion après ses trois victoires, reprend le duel interrompu et respecte les filtres narratifs.",
+      "evidence": [
+        "src/standalone/campaign.ts",
+        "src/standalone/campaign-v3.ts",
+        "src/standalone/campaign-legacy.ts",
+        "src/standalone/progression.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G09",
+      "section": 9,
+      "title": "Campagne globale distincte",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Intégrée",
+      "present": "La nuit du signal libre : neuf chapitres, héros alternés, objectifs, dialogues, conséquences et épilogue AU propres.",
+      "remaining": "Illustrations dédiées, exploration et branches ne sont pas dans ce lot. La campagne utilise décors et portraits du jeu.",
+      "criterion": "Neuf victoires ordonnées conduisent à la fin, avec héros/adversaire/arène du chapitre et sauvegarde entre les duels.",
+      "evidence": [
+        "src/standalone/campaign-global.ts",
+        "src/standalone/progression.ts",
+        "src/standalone/RunInterlude.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G10",
+      "section": 10,
+      "title": "Illustrations et cinématiques",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "129 briefs V3 détaillés. Les anciennes images restent attachées à la version de leur route ; V3 utilise une composition de repli.",
+      "remaining": "Revalider les 26 anciennes affectations pour les nouveaux briefs. Aucun dessin réaffecté sans contrôle du casting et de la continuité.",
+      "criterion": "Intro, rivalité et outro expriment des fonctions différentes. Le texte est séparé de l’image et reste lisible en petit écran.",
+      "evidence": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/campaign.ts",
+        "src/standalone/RunInterlude.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G11",
+      "section": 11,
+      "title": "Boss, machines et Boss Rush",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Boss Rush sur neuf candidats de duel. Le héros est retiré du pool. Les PV sont restaurés à chaque rencontre.",
+      "remaining": "Phases, bosses géants, machines à points faibles et écran Boss Combat dédié sont à développer. Le versus permet déjà un duel libre avec un boss.",
+      "criterion": "Un boss reste affrontable par chaque style prévu, avec résultat/reprise corrects et aucune phase annoncée sans implémentation.",
+      "evidence": [
+        "src/standalone/roster.ts",
+        "src/standalone/progression.ts",
+        "src/lib/pentagram-ai.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G12",
+      "section": 12,
+      "title": "Modes de jeu",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Neuf modes jouables : CPU, local, entraînement, histoire, campagne, tournoi, arcade, survie et Boss Rush. Galerie accessible.",
+      "remaining": "Tag, assistances, coopération, GG Boost, avatar, exploration, réseau et replays restent différés.",
+      "criterion": "Chaque mode possède entrée, sélection, partie, résultat, sortie et reprise cohérents ; un simple bouton ne vaut pas livraison.",
+      "evidence": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/progression.ts",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G13",
+      "section": 13,
+      "title": "Arènes et lisibilité",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "30 arènes à trois plans enregistrés, reconstruits pour le jeu. Le standalone conserve tous les lieux, le manager ses huit lieux.",
+      "remaining": "Vérifier les proportions, l’ancrage, les avant-plans et les différences d’incarnation sur les plateformes visées.",
+      "criterion": "Terrain et informations de combat visibles aux formats testés, fichiers existants, aucun accessoire masquant les combattants.",
+      "evidence": [
+        "src/lib/pentagram-stages.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "docs/standalone/extension-plan.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G14",
+      "section": 14,
+      "title": "Arènes vivantes, statiques et événements",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Sélecteur vivant/statique/réduit pour la présentation. Parallaxe et réactions visuelles existantes restent sans impact mécanique.",
+      "remaining": "Événements de travail des PNJ et variations propres à chaque scène demandent assets et scénarios. Dangers séparés et différés.",
+      "criterion": "Changer la présentation ne change ni terrain, PV, chrono ni ressources. Le mode statique conserve les repères utiles.",
+      "evidence": [
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/components/PentagramLiveFight.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G15",
+      "section": 15,
+      "title": "Arènes connectées et interactions",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Différée",
+      "present": "Trois liaisons de conception entre lieux déjà enregistrés : hôtel extérieur→hall, hall→bar, I.M.P. extérieur→réception.",
+      "remaining": "Déclencheurs, géométrie, caméra, chargement et réinitialisation à implémenter. Aucune transition active ni objet utilisable annoncé.",
+      "criterion": "Une liaison rejoint un terrain existant, conserve les ressources définies et empêche double déclenchement, boucle abusive et KO perdu.",
+      "evidence": [
+        "docs/standalone/guide-integration-v4.json",
+        "src/lib/pentagram-stages.ts",
+        "src/lib/pentagram-combat.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G16",
+      "section": 16,
+      "title": "Ennemis, soutiens et projectiles",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Huit bases d’ennemis et une fléchette en galerie. 14 VFX associés à 28 attaques du roster. Les effets suivent le contact existant.",
+      "remaining": "La fléchette n’a ni trajectoire ni collision. Les bases n’ont pas d’IA de campagne. Assistances, machines et projectiles autonomes sont différés.",
+      "criterion": "Chaque usage distingue image, effet visuel et objet simulé. Aucun nombre de kits gonflé par des réserves.",
+      "evidence": [
+        "art/infernal-versus/production/reserve-assets.json",
+        "src/lib/infernal-attack-effects.ts",
+        "src/lib/pentagram-combat.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G17",
+      "section": 17,
+      "title": "Direction artistique et production",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Masters individuels PNG, exports WebP sans perte, dimensions, références et empreintes documentés. Un sujet par sprite autonome.",
+      "remaining": "Terminer les bases manquantes avec comparaison des silhouettes, accessoires, asymétries et alpha. Éviter de compter un atlas comme un sujet neuf.",
+      "criterion": "Un master est conservé, l’export est exploitable et la validation 1:1 est justifiée élément par élément.",
+      "evidence": [
+        "art/infernal-versus/production/reserve-assets.json",
+        "docs/standalone/ASSET_COVERAGE.json",
+        "docs/standalone/DELIVERY_WAVE_I_2026-11-25.md"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G18",
+      "section": 18,
+      "title": "Animations, VFX, son et caméra",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Banques d’animation existantes, hit-stop de 58 ms, poses clés, effets d’impact et musiques originales du projet.",
+      "remaining": "Cycles dédiés et voix restent à produire lors de leur phase. Aucun nouveau cycle n’est ajouté par V4.",
+      "criterion": "Le contact, la pose et les effets restent synchronisés ; l’option de confort ne modifie pas les timings de simulation.",
+      "evidence": [
+        "src/lib/pentagram-animation.ts",
+        "src/lib/pentagram-combat.ts",
+        "src/lib/pentagram-stages.ts",
+        "src/components/usePentagramCombatSoundtrack.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G19",
+      "section": 19,
+      "title": "Interface et expérience utilisateur",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Modes, sélection, carnet, garde-robe, résultat, reprise, galeries et options. Narration lisible et scènes passables.",
+      "remaining": "Remappage complet et navigation manette à développer. La cible actuelle garantit uniquement les périphériques effectivement testés.",
+      "criterion": "Un joueur peut entrer, combattre, revenir, reprendre et relire une fin sans perdre son filtre ou lancer un mauvais personnage.",
+      "evidence": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/RunInterlude.tsx",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G20",
+      "section": 20,
+      "title": "Tutoriels et entraînement",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Mannequin immobile ou en garde, tension illimitée, remise à zéro, commandes et durées dans le carnet.",
+      "remaining": "Défis guidés, enregistrement du mannequin, répétitions et affichage des hitboxes restent à développer.",
+      "criterion": "L’entraînement ne modifie pas les statistiques de victoire ; sa réinitialisation remet un état jouable et les commandes sont explicites.",
+      "evidence": [
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/InfernalVersus.tsx",
+        "src/tests/standalone-live-fight.test.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G21",
+      "section": 21,
+      "title": "IA et difficulté",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Trois difficultés : Rookie, Standard, Overlord. Réflexion 430/260/150 ms, garde, recul, gestion de portée et ressources.",
+      "remaining": "Personnalités propres à chaque kit, nouvelles interactions et boss à phases demanderont des règles dédiées.",
+      "criterion": "L’IA utilise les conditions d’attaque du moteur, ne frappe pas hors état autorisé et les tests fixent les tirages aléatoires.",
+      "evidence": [
+        "src/lib/pentagram-ai.ts",
+        "src/tests/pentagram-ai.test.ts",
+        "src/lib/pentagram-combat.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G22",
+      "section": 22,
+      "title": "Équilibrage et accessibilité",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Attaques différées, enchaînement lourd→spécial, pause, focus relâché et réduction de mouvement. Aucun bonus RPG importé dans le duel.",
+      "remaining": "Matrice exhaustive des confrontations, réglages séparés de volume, remappage et tests manette restent ouverts.",
+      "criterion": "Pas de victoire automatique liée au rang de lore. Aucune boucle ne retire indéfiniment le contrôle. Les informations restent lisibles sans animation.",
+      "evidence": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/tests/accessibility.test.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G23",
+      "section": 23,
+      "title": "Multijoueur, réseau et replays",
+      "priority": "P2",
+      "decision": "Partiellement retenue",
+      "design": "Documentée",
+      "implementation": "Partielle",
+      "present": "Duel local à deux sur clavier partagé ou commandes tactiles. Les mêmes règles s’appliquent aux deux côtés.",
+      "remaining": "Réseau, rollback, salons, matchmaking, classement, crossplay et replays sont différés. Aucun service en ligne requis pour jouer.",
+      "criterion": "Deux côtés indépendants, pause cohérente et revanche correcte. Une future version réseau devra conserver état et commandes de simulation.",
+      "evidence": [
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/InfernalVersus.tsx",
+        "src/tests/pentagram-live-inputs.test.tsx"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G24",
+      "section": 24,
+      "title": "Progression et sauvegardes",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Intégrée",
+      "present": "Sauvegarde du parcours, statistiques, tenues et options ; version de route 1/3, fins versionnées et campagne identifiée.",
+      "remaining": "Branches narratives et profils multiples restent différés. Une importation invalide doit laisser la sauvegarde existante intacte.",
+      "criterion": "Chargement ancien→reprise identique ; nouvelle route→fin V3 ; pertes/égalités/réessais et doublons ne falsifient pas la progression.",
+      "evidence": [
+        "src/standalone/progression.ts",
+        "src/tests/standalone-progression.test.ts",
+        "src/tests/standalone-campaign-cup.test.ts"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G25",
+      "section": 25,
+      "title": "Inventaires et statistiques",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Intégrée",
+      "present": "Registres JSON, bible V4 et catalogue de réserve reliés aux identifiants. Historique V3 conservé avec sa date de référence.",
+      "remaining": "Le dénominateur de tout l’univers reste ouvert. Les chiffres annoncés décrivent uniquement les périmètres nommés.",
+      "criterion": "Les 43 combattants, 129 briefs, 22 réserves et 30 arènes ne sont jamais additionnés comme une complétude unique.",
+      "evidence": [
+        "docs/standalone/extension-plan.json",
+        "docs/standalone/guide-integration-v4.json",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G26",
+      "section": 26,
+      "title": "Validation et ordre de production",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Documentée",
+      "present": "Recette dédiée aux routes V3, campagne, réserves, sauvegardes et présentation. Les preuves de lot sont séparées des critères prévus.",
+      "remaining": "Exécuter les scénarios sur la révision publiée et compléter la revue visuelle par incarnation. Le rendu Excel ne valide pas le jeu.",
+      "criterion": "Aucune réussite annoncée sans résultat exécuté ; chaque blocage garde son prochain test et son périmètre.",
+      "evidence": [
+        "docs/standalone/guide-integration-v4.json",
+        "package.json",
+        "scripts/check-standalone.mjs"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G27",
+      "section": 27,
+      "title": "Fiches types A–J",
+      "priority": "P1",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Documentée",
+      "present": "Dix fiches contextualisées et renseignées : projet, personnage, action, finition, route, scène, arène, liaison, boss et asset.",
+      "remaining": "Étendre les fiches de référence à chaque futur élément. Les capacités proposées et les valeurs non fixées restent explicitement ouvertes.",
+      "criterion": "Aucun champ absent masqué. Chaque fiche désigne son sujet, son statut, ses dépendances et sa recette.",
+      "evidence": [
+        "docs/standalone/INFERNAL_VERSUS_GUIDE_V4.md",
+        "docs/standalone/guide-integration-v4.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G28",
+      "section": 28,
+      "title": "Instruction propre au projet",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Documentée",
+      "present": "Ordre de travail adapté : lire les registres, réutiliser le socle, traiter les manquants, préserver les identités de sauvegarde et publier des preuves.",
+      "remaining": "Poursuivre les lots selon les exigences réellement applicables et les références disponibles.",
+      "criterion": "Les prochaines reprises partent de cette matrice, sans présenter les projets différés comme terminés.",
+      "evidence": [
+        "AGENTS.md",
+        "docs/development/GAMEDEV_GUIDANCE.md",
+        "docs/standalone/INFERNAL_VERSUS_GUIDE_V4.md"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    },
+    {
+      "id": "IV-G29",
+      "section": 29,
+      "title": "Références et vocabulaire",
+      "priority": "P0",
+      "decision": "Retenue",
+      "design": "Documentée",
+      "implementation": "Documentée",
+      "present": "Les cinq références du guide et son vocabulaire sont conservés avec la source exacte. Les liens de lore V3 gardent leur provenance.",
+      "remaining": "Les pages externes du guide ne sont pas requalifiées comme audit nouveau par cette intégration. Employer des titres précis.",
+      "criterion": "Une inspiration de mode n’est ni une preuve de lore ni la preuve que tous les jeux cités possèdent la même fonction.",
+      "evidence": [
+        "docs/standalone/references/Combat_Games_Guide_General_v1.0.txt",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "validation": "Voir les résultats datés du lot ; cette matrice décrit le périmètre et ses critères."
+    }
+  ],
+  "referenceCards": [
+    {
+      "id": "IV-FICHE-A",
+      "letter": "A",
+      "title": "Projet",
+      "subject": "Infernal Versus V4",
+      "status": "Socle intégré, extensions précisées",
+      "fields": [
+        {
+          "label": "ID / titre / version",
+          "value": "infernal-versus / Hellbound — Infernal Versus / V4 de la bible ; application 0.1.0."
+        },
+        {
+          "label": "Univers / continuité / période",
+          "value": "Hazbin Hotel et Helluva Boss selon les sources V3. Expositions et campagne dans une continuité AU. Pilote isolé, incarnations séparées."
+        },
+        {
+          "label": "Piliers",
+          "value": "Identité reconnaissable ; combat lisible ; personnages motivés ; récits distincts ; preuves de production consultables."
+        },
+        {
+          "label": "Format / commandes",
+          "value": "Duel latéral 2D. Clavier Q/A–D, F/G/H et signature T pour J1 ; flèches, J/K/L et I pour J2. Garde, pose saut, accroupissement, provocation et tactile."
+        },
+        {
+          "label": "Plateformes / performances",
+          "value": "Navigateur desktop et mobile. Simulation découpée en pas de 16 ms. Objectif de fluidité à mesurer sur matériel identifié ; pas de certificat 60 Hz."
+        },
+        {
+          "label": "Modes",
+          "value": "CPU, local, entraînement, histoire, campagne, tournoi, arcade, survie, Boss Rush. Extensions tag, exploration, coopération et réseau différées."
+        },
+        {
+          "label": "Roster",
+          "value": "43 combattants actifs (25 Hazbin, 18 Helluva), 30 arènes. 22 dessins de réserve consultables sans ajouter de kit."
+        },
+        {
+          "label": "Direction artistique",
+          "value": "Illustration 2D fidèle aux incarnations retenues ; sprites autonomes détourés, composition d’arène latérale et plans indépendants."
+        },
+        {
+          "label": "Règles communes",
+          "value": "100 PV, 99 s, deux manches gagnantes, tension 0–100. Les paramètres de duel ne modifient ni rang canonique ni état du manager."
+        },
+        {
+          "label": "Phase",
+          "value": "Intégration des routes, galerie et guide. Production d’animations nouvelles hors lot."
+        },
+        {
+          "label": "Incertitudes",
+          "value": "Fidélité exacte non certifiée ; références de certaines réserves limitées ; règles aériennes, transitions et boss géants à développer."
+        },
+        {
+          "label": "Livraison",
+          "value": "Contenu associé à des identifiants, parcours complets testés, anciennes sauvegardes reprises et PR vérifiée après publication."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-B",
+      "letter": "B",
+      "title": "Personnage",
+      "subject": "Charlie Morningstar — série S1",
+      "status": "Jouable ; concepts V3 distincts du kit actuel",
+      "fields": [
+        {
+          "label": "ID / incarnation",
+          "value": "charlie — modèle de la série S1. Tenue finale de combat uniquement dans la scène qui la justifie."
+        },
+        {
+          "label": "Univers / rôle",
+          "value": "Hazbin Hotel. Combattante du roster ; protagoniste de sa route et des chapitres 1 et 9 de la campagne globale AU."
+        },
+        {
+          "label": "Sources",
+          "value": "Fiche V3 charlie : hh-i-cast, hh-i-s1. Ces identifiants renvoient au registre sources V3 conservé."
+        },
+        {
+          "label": "Silhouette / asymétries",
+          "value": "Conserver silhouette, coiffure, cornes éventuelles et tenue de l’incarnation choisie. Échelle de jeu à comparer visuellement ; aucun détail absent de la source inventé comme canon."
+        },
+        {
+          "label": "Personnalité / motivation",
+          "value": "Obtenir une chance réelle pour les résidents, sans les réduire à des exemples publicitaires."
+        },
+        {
+          "label": "Relations",
+          "value": "Adam est l’interlocuteur antagoniste de Charlie dans la confrontation avec le Paradis en S1. Les affrontements de cette route sont des mises en scène AU."
+        },
+        {
+          "label": "Rôle / réponses",
+          "value": "Kit actuel de contrôle accessible ; approcher, garder puis punir la récupération. Les quatre concepts V3 ne remplacent pas les paramètres actuels."
+        },
+        {
+          "label": "Mouvement / défense / ressource",
+          "value": "Règles communes, garde et tension 0–100. Aucune ressource de purification ou propriété d’âme."
+        },
+        {
+          "label": "Normaux / projections",
+          "value": "Trois attaques de base du moteur. Pas de projection simulée, pas de série de normaux aériens propre à Charlie."
+        },
+        {
+          "label": "Spéciaux / finisher",
+          "value": "Spécial moteur coût 50 ; Dernier Acte actuel Le rideau de l’aube. La seconde clé est son storyboard V3 encore à produire."
+        },
+        {
+          "label": "Armes / états",
+          "value": "Ne pas confondre tenue, transformation et pouvoir. Le piège Porte ouverte demeure un concept AU non implémenté."
+        },
+        {
+          "label": "Présentation",
+          "value": "Entrée et victoire existantes. Nouvelles provocations et réactions fidèles à concevoir en phase animation."
+        },
+        {
+          "label": "Route / campagne",
+          "value": "Une chambre, un choix : Vaggie → Velvette → Adam. Campagne La nuit du signal libre : protège le seuil, ouvre une soirée sans imposer un rôle."
+        },
+        {
+          "label": "Costumes",
+          "value": "Aucun nouveau costume ajouté par V4. Comparer toute tenue finale à sa référence avant production."
+        },
+        {
+          "label": "Assets",
+          "value": "Portrait/atlas/READY existants ; trois briefs V3 La clé encore chaude, Deux conceptions du salut, La place libre. Images dédiées à revalider/produire."
+        },
+        {
+          "label": "Adaptations",
+          "value": "Dégâts, durées et noms de coups conçus pour le jeu. Les duels ne produisent pas de rédemption automatique."
+        },
+        {
+          "label": "À confirmer",
+          "value": "Correspondance image/brief exacte et détails de la tenue finale en jeu."
+        },
+        {
+          "label": "Statuts",
+          "value": "Lore : repères sourcés ; conception : documentée ; assets : partiels ; kit : intégré ; route V3 : intégrée, recette datée séparée."
+        },
+        {
+          "label": "Recette",
+          "value": "Parcours jusqu’à l’épilogue, filtre de saison, sauvegarde V1/V3, cadrage petit écran, contrôle des accessoires et de la palette."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-C",
+      "letter": "C",
+      "title": "Action",
+      "subject": "Vaggie — Ligne de défense",
+      "status": "Signature jouable ; valeurs extraites du moteur",
+      "fields": [
+        {
+          "label": "ID / nom / propriétaire",
+          "value": "line-guard / Ligne de défense / vaggie. Nom original du projet, pas nom canonique certifié."
+        },
+        {
+          "label": "Source / motif",
+          "value": "Motif de protection à la lance ; source du personnage dans roster.ts et fiche V3. Chorégraphie et équilibrage sont adaptés."
+        },
+        {
+          "label": "Commande / rôle",
+          "value": "T pour J1, I pour J2 ou touche Signature. Estocade de portée contrôlée ; tension suffisante et état autorisé requis."
+        },
+        {
+          "label": "Départ / contact / récupération",
+          "value": "160 ms de démarrage ; résolution d’un contact unique à la fin du démarrage ; 280 ms de récupération ; 440 ms d’action totale."
+        },
+        {
+          "label": "Recharge / immobilisation",
+          "value": "600 ms de recharge et 155 ms d’immobilisation après touche hors garde. Ne pas traduire ces valeurs en 60 frames comme mesure moteur native."
+        },
+        {
+          "label": "Portée / collision",
+          "value": "12.277777777777779 unités normalisées calculées par le moteur. Test de distance au contact ; aucune hurtbox animée autonome revendiquée."
+        },
+        {
+          "label": "Dégâts / ressources / garde",
+          "value": "Coût 20 de tension. Dégâts calculés par puissance, bonus, portée et GLOBAL_DAMAGE_SCALE=0.66. La garde réduit selon le défenseur ; pas de valeur universelle fixe."
+        },
+        {
+          "label": "Touche / garde / raté",
+          "value": "Une touche non gardée protège automatiquement la récupération de Vaggie. Sur garde ou raté, sa récupération reste ouverte."
+        },
+        {
+          "label": "Avantage temporel",
+          "value": "Il dépend des états restants, du hit-stop et de la garde automatique. Aucune valeur universelle on-block attribuée au coup."
+        },
+        {
+          "label": "Annulations",
+          "value": "Cette signature ne possède pas l’annulation signature→léger de Mimzy. Les règles communes lourd→spécial restent distinctes."
+        },
+        {
+          "label": "Trajectoire / durée de vie",
+          "value": "Sans objet projectile. Un contact frontal différé ; aucun suivi ou réflexion."
+        },
+        {
+          "label": "Décor / autres actions",
+          "value": "Aucune interaction mécanique de stage ou transition. La touche peut interrompre l’action adverse selon les règles communes."
+        },
+        {
+          "label": "Image / son / caméra",
+          "value": "Pose de frappe et effets existants synchronisés au contact, hit-stop 58 ms. Aucun nouveau dessin V4."
+        },
+        {
+          "label": "Restrictions",
+          "value": "Pas de garantie d’invulnérabilité au démarrage. La protection propre au coup n’est accordée qu’après touche sans garde."
+        },
+        {
+          "label": "Recette",
+          "value": "Tester touche, garde, raté, tension insuffisante, interruption avant contact et expiration de récupération."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-D",
+      "letter": "D",
+      "title": "Finisher",
+      "subject": "Charlie — La seconde clé",
+      "status": "Storyboard V3 proposé, non remplacé en combat",
+      "fields": [
+        {
+          "label": "ID / nom / statut",
+          "value": "IV-FIN-CHARLIE-V3 / Dernier Acte : La seconde clé. Noms originaux du projet."
+        },
+        {
+          "label": "Justification",
+          "value": "Une victoire qui conserve le choix. Références de personnalité hh-i-cast et hh-i-s1."
+        },
+        {
+          "label": "Intention / résultat",
+          "value": "Défaite d’arène non létale ; l’adversaire conserve son autonomie."
+        },
+        {
+          "label": "Conditions / modes",
+          "value": "Le système actuel propose une finition après un KO décisif avec vainqueur encore vivant. Cette nouvelle variante doit respecter la même règle avant intégration."
+        },
+        {
+          "label": "Cibles",
+          "value": "Humanoïdes compatibles avec contact de bras. Versions armée et désarmée distinctes ; ne pas créer une arme dans la main d’une cible désarmée."
+        },
+        {
+          "label": "Déroulement",
+          "value": "1. Elle bloque le dernier assaut et détourne l’arme équipée hors du cadre ; face à une cible désarmée, elle écarte son avant-bras sans lui retirer le choix de reculer.\n2. Elle fait glisser une clé devant l’adversaire immobilisé.\n3. Elle ouvre la porte et lui laisse deux directions possibles."
+        },
+        {
+          "label": "Durée / caméra",
+          "value": "Durée du storyboard non fixée. Le runtime actuel dure 1,5 s, fenêtre 3,2 s ; ces durées ne valident pas trois nouveaux plans."
+        },
+        {
+          "label": "Décor / ancrage",
+          "value": "Seuil et comptoir de l’hôtel proposés. Fallback non spécifique requis si le duel se déroule ailleurs."
+        },
+        {
+          "label": "Assets / effets / dialogue",
+          "value": "Clé isolée de l’hôtel, sans lettrage\nIllustration finale du seuil avec deux issues lisibles\nVariante de cible armée et désarmée, sans ajout d’arme à une incarnation qui n’en porte pas\nAucune voix ni réplique nouvelle enregistrée."
+        },
+        {
+          "label": "Cible incompatible",
+          "value": "Proposition : salut à distance et plan sur la clé, sans contact anatomique. À concevoir et tester pour géant, machine ou entité."
+        },
+        {
+          "label": "Conséquences",
+          "value": "Aucune rédemption, aucun pardon forcé ni admission automatique à l’hôtel."
+        },
+        {
+          "label": "Retour / confort",
+          "value": "Trois images fixes correspondant aux trois temps, transitions douces sans flash plein écran ; conserver l’image finale et le résultat du match. Conserver le bouton Passer et le résultat déjà calculé."
+        },
+        {
+          "label": "Validation",
+          "value": "Storyboard documenté. Les images, transitions, cibles et lecture dans chaque arène restent à produire/tester."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-E",
+      "letter": "E",
+      "title": "Route individuelle",
+      "subject": "Charlie — Une chambre, un choix",
+      "status": "Route V3 intégrée",
+      "fields": [
+        {
+          "label": "ID / version",
+          "value": "story:charlie:3. Simulation AU, séparée des événements diffusés. La route V1 reste archivée pour les sauvegardes."
+        },
+        {
+          "label": "Situation / motivation",
+          "value": "Une journée de portes ouvertes est détournée en démonstration de force ; Charlie doit en reprendre le sens. Obtenir une chance réelle pour les résidents, sans les réduire à des exemples publicitaires."
+        },
+        {
+          "label": "Déclencheur",
+          "value": "Charlie prépare une chambre pour un visiteur qui ne croit pas à l’hôtel. Une campagne hostile transforme son invitation en défi public. Pour protéger l’accueil, elle accepte des duels limités, puis découvre que gagner ne suffira pas à convaincre."
+        },
+        {
+          "label": "Rival / relations",
+          "value": "Adam, rival principal ; Vaggie partenaire, Velvette antagoniste d’une rencontre inventée. Les relations sourcées ne rendent pas chaque duel canonique."
+        },
+        {
+          "label": "Combats ordonnés",
+          "value": "1. vaggie à hotel-lobby : Vaggie transforme la répétition de l’accueil en exercice de protection du seuil.\n2. velvette à vee-broadcast-studio : Velvette propose de réduire le projet à une image de victoire ; Charlie refuse cette condition.\n3. adam à heaven-embassy : Une confrontation d’archives oppose l’argument de Charlie au refus d’Adam."
+        },
+        {
+          "label": "Revers",
+          "value": "La proposition de Velvette réduit l’hôtel à une image de victoire. Charlie choisit le droit de parole plutôt que l’audience."
+        },
+        {
+          "label": "Confrontation finale",
+          "value": "Adam à heaven-embassy, confrontation d’archives AU. Sa présence ne ressuscite pas le personnage dans la continuité série."
+        },
+        {
+          "label": "Outro",
+          "value": "Charlie laisse la clé à portée du visiteur et se retire pour qu’il puisse choisir. L’équipe rouvre la porte malgré la mauvaise couverture médiatique. L’image finale montre une place libre, pas une âme transformée."
+        },
+        {
+          "label": "Illustrations",
+          "value": "intro : La clé encore chaude. Plan moyen à hauteur humaine ; illustration fixe 16:9\nrival : Deux conceptions du salut. Plan large frontal ; illustration fixe 16:9\nending : La place libre. Plan large intérieur calme ; illustration fixe 16:9"
+        },
+        {
+          "label": "Embranchements",
+          "value": "Aucun embranchement dans ce lot. Trois duels en ordre fixe, réessai du duel courant."
+        },
+        {
+          "label": "Campagne globale",
+          "value": "Même thème de choix et d’hospitalité ; récit distinct. Terminer cette route n’accomplit pas automatiquement les neuf chapitres globaux."
+        },
+        {
+          "label": "Sauvegarde / récompense",
+          "value": "RouteVersion=3, index du duel et fin versionnée. Les fins V1 restent consultables dans leur version."
+        },
+        {
+          "label": "Recette",
+          "value": "Nouvelle partie, perte, égalité, fermeture au duel 2, victoire finale et relecture du bon épilogue."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-F",
+      "letter": "F",
+      "title": "Chapitre et scène",
+      "subject": "La nuit du signal libre — Seuil ouvert",
+      "status": "Chapitre intégré ; illustration dédiée proposée",
+      "fields": [
+        {
+          "label": "ID / ordre",
+          "value": "signal-libre:1 / seuil-ouvert / chapitre 1 sur 9."
+        },
+        {
+          "label": "Époque / lieu",
+          "value": "Continuité AU du crossover. Hall reconstitué hotel-lobby. Aucun événement série remplacé."
+        },
+        {
+          "label": "Objectifs",
+          "value": "Faire comprendre que la porte doit permettre de repartir. Jeu : gagner l’exercice de protection contre Vaggie."
+        },
+        {
+          "label": "Jouable / acteurs",
+          "value": "Charlie jouable, Vaggie adverse. Angel recherche une référence au dos de l’affiche dans le récit. Modèles du jeu existants."
+        },
+        {
+          "label": "Résumé / émotion",
+          "value": "Une affiche promet une démonstration de rédemption en direct et porte le nom de l’hôtel. Charlie n’a autorisé qu’une visite. Avant de chercher le responsable, Vaggie exige de sécuriser le hall : si une foule arrive, la porte devra rester une sortie aussi bien qu’une entrée. Elles répètent un duel de protection, sans public, pendant qu’Angel compare l’affiche à l’invitation originale."
+        },
+        {
+          "label": "Combat / conséquences",
+          "value": "Le hall est prêt. Angel repère un numéro de livraison au dos de l’affiche ; le même numéro figure sur une mission reçue par I.M.P."
+        },
+        {
+          "label": "Dialogues",
+          "value": "charlie : Je veux qu’ils puissent entrer. Je veux aussi qu’ils puissent changer d’avis.\nvaggie : Alors on commence par garder ce passage."
+        },
+        {
+          "label": "Découpage proposé",
+          "value": "Plan 1 : affiche sur le comptoir, noms sans texte brûlé dans l’image. Plan 2 : Charlie et Vaggie dégagent le seuil. Plan 3 : porte libre avant le duel."
+        },
+        {
+          "label": "Cadrage / tenue",
+          "value": "Plan moyen latéral, Charlie à gauche et Vaggie à droite. Les mains et la lance restent lisibles. Réserver les bords pour le texte séparé."
+        },
+        {
+          "label": "Lumière / palette",
+          "value": "Rouge carmin, crème et lumière chaude du hall. Le seuil reste distinct du fond et des portraits."
+        },
+        {
+          "label": "Continuité",
+          "value": "Exercice entre alliées. Aucune arme improvisée dans les mains de Charlie, aucun halo de rédemption."
+        },
+        {
+          "label": "Son / effets",
+          "value": "Thème original de l’arène, pas de chanson de série transcrite. Les trois plans n’existent pas encore comme nouvelle animation."
+        },
+        {
+          "label": "Entrée / sortie",
+          "value": "Prologue → objectif/dialogues → duel → conséquence → chapitre 2. Défaite : réessai du même chapitre."
+        },
+        {
+          "label": "Sources / original",
+          "value": "Personnages et lieu liés aux sources V3 ; intrigue, affiche et dialogue originaux AU."
+        },
+        {
+          "label": "Assets / validation",
+          "value": "Runtime : décor + portraits existants. Illustration dédiée à produire. Vérifier le bon héros, l’adversaire, le stage, le passage de scène et la sauvegarde."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-G",
+      "letter": "G",
+      "title": "Arène",
+      "subject": "Hazbin Hotel Lobby",
+      "status": "Trois plans intégrés ; liaisons différées",
+      "fields": [
+        {
+          "label": "ID / univers",
+          "value": "hotel-lobby / Hazbin Hotel Lobby / Hazbin Hotel."
+        },
+        {
+          "label": "Lieu / statut",
+          "value": "Lieu inspiré de l’hôtel, reconstitution spatiale AU de combat. La géométrie jouable n’est pas une mesure canonique."
+        },
+        {
+          "label": "Références",
+          "value": "Registre d’arènes extension-plan.json et sources de l’hôtel V3. Comparer les détails de décor à l’incarnation avant tout nouveau dessin."
+        },
+        {
+          "label": "Plan / limites",
+          "value": "Couloir latéral normalisé x=7 à 93, écart minimal 7 unités, départ à 22/78. Aucune collision propre aux accessoires de cette scène."
+        },
+        {
+          "label": "Composition",
+          "value": "Fond entier avec ratio conservé, chariot intermédiaire et valance au premier plan. Les combattants restent devant les plans décoratifs."
+        },
+        {
+          "label": "Ambiance / musique",
+          "value": "Red Velvet Rumble, thème original du projet à 128 BPM."
+        },
+        {
+          "label": "Activité",
+          "value": "Parallaxe et présentation existantes. Les PNJ de travail ou événements narratifs spécifiques restent à concevoir."
+        },
+        {
+          "label": "Événements",
+          "value": "Aucun danger ou bonus de gameplay. Les variations visuelles ne changent ni portée, ni dégâts, ni chronomètre."
+        },
+        {
+          "label": "Interactions",
+          "value": "Chariot et valance décoratifs ; aucun bouton d’interaction actuellement livré."
+        },
+        {
+          "label": "Liaisons",
+          "value": "IV-LINK-01 depuis l’extérieur ; IV-LINK-02 vers le bar. Conception uniquement, destinations déjà cataloguées."
+        },
+        {
+          "label": "Présentation",
+          "value": "Vivant, statique ou réduit selon option. Le terrain et les repères utiles doivent rester identiques."
+        },
+        {
+          "label": "Règles de référence",
+          "value": "Aucun danger/objet interactif/transition activés. La campagne réutilise ce terrain sans modifier ses statistiques."
+        },
+        {
+          "label": "Fichiers",
+          "value": "/assets/stages/hazbin/hotel-lobby.webp\n/assets/stages/hazbin/hotel-lobby/luggage-cart.webp\n/assets/stages/hazbin/hotel-lobby/valance.webp\n/assets/stages/hazbin/thumbs/hotel-lobby.webp"
+        },
+        {
+          "label": "Recette",
+          "value": "Ratio, pieds, avant-plans, mobile, option de confort, absence d’asset manquant. Fidélité fine distincte des tests de chargement."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-H",
+      "letter": "H",
+      "title": "Transition",
+      "subject": "IV-LINK-01 — Du perron au hall",
+      "status": "Conception uniquement",
+      "fields": [
+        {
+          "label": "ID / type / origine",
+          "value": "IV-LINK-01 / passage entre arènes / hotel-exterior."
+        },
+        {
+          "label": "Destination",
+          "value": "hotel-lobby, déjà présente comme arène. Le seuil exact reste à définir dans une géométrie AU."
+        },
+        {
+          "label": "Déclencheur / conditions",
+          "value": "Proposition : attaque lourde touchant près du seuil droit, après annonce du seuil actif. La projection générique n’existe pas encore."
+        },
+        {
+          "label": "Annonce / réponse",
+          "value": "Marque de seuil visible avant le contact. Garde du lourd ou éloignement de la zone. Le déclenchement ne doit jamais suivre un coup bloqué."
+        },
+        {
+          "label": "Durée / caméra",
+          "value": "Cible proposée 1,2 s maximum, non validée. Option réduite : fondu bref et nom de lieu. Aucun déplacement de caméra livré."
+        },
+        {
+          "label": "PV / ressources / chrono / combo",
+          "value": "Une fois par match, pas de dégâts bonus, PV et tension conservés, compteur de combo clôturé, chrono suspendu pendant la présentation."
+        },
+        {
+          "label": "Arrivée",
+          "value": "Positions normalisées 22 et 78, joueurs conservant leur côté, aucune attaque en attente, 500 ms de contrôle commun suspendu."
+        },
+        {
+          "label": "Usage / reset",
+          "value": "Une fois par match, remise à zéro au nouveau match. Pas de boucle aller-retour ; changement de manche ne doit pas dupliquer le déclenchement."
+        },
+        {
+          "label": "Décor après usage",
+          "value": "Porte franchie ; pas de destruction permanente du manager. Définir la variante visuelle au prototype."
+        },
+        {
+          "label": "Simultané / KO / interruption",
+          "value": "KO ou fin du chrono prime sur la transition. Un seul événement arbitré par pas. Quitter avant validation ne consomme pas la liaison."
+        },
+        {
+          "label": "Version fixe",
+          "value": "Porte et déplacement de caméra à produire. En mode réduit/statique : fondu bref avec destination écrite."
+        },
+        {
+          "label": "Synchronisation",
+          "value": "Si replay/réseau sont retenus plus tard, sérialiser la liaison et son résultat dans l’état de match. Aucun réseau dans ce lot."
+        },
+        {
+          "label": "Assets / recette",
+          "value": "état de liaison par match, seuil logique dans le moteur, préchargement de destination, caméra de transition, réinitialisation des entrées. Tester les 43 kits, pause, coin, KO et échec de chargement avant activation."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-I",
+      "letter": "I",
+      "title": "Boss",
+      "subject": "Adam — duel d’archives AU",
+      "status": "Boss de duel intégré, phases différées",
+      "fields": [
+        {
+          "label": "ID / version / source",
+          "value": "adam / incarnation de la série S1, références hh-i-cast et hh-i-s1. Le duel d’archives n’est pas une résurrection canonique."
+        },
+        {
+          "label": "Type",
+          "value": "Boss au format duel standard. Aucune mécanique de géant, phase destructible ou machine."
+        },
+        {
+          "label": "Rôle / échelle / arène",
+          "value": "Rival final de Charlie V3 à heaven-embassy. Échelle du sprite de duel et mêmes bornes de terrain."
+        },
+        {
+          "label": "Phases",
+          "value": "Deux manches gagnantes selon les règles communes. Aucun changement de comportement indexé sur un seuil de PV."
+        },
+        {
+          "label": "Attaques / annonce",
+          "value": "Trois attaques paramétrées dans HAZBIN_EXHIBITION_PROFILES. Poses et contact différé du moteur ; aucun rayon autonome ajouté par son nom."
+        },
+        {
+          "label": "Vulnérabilités",
+          "value": "Portée, démarrage et récupération. Garde et punition après attaque ratée. Aucun rang divin rendant le duel impossible."
+        },
+        {
+          "label": "Compatibilité",
+          "value": "Tester courte/longue portée et signatures. Les projections et géants étant absents, leur compatibilité n’est pas déclarée."
+        },
+        {
+          "label": "Victoire / échec",
+          "value": "Deux manches gagnées ; défaite peut être réessayée dans la route/Boss Rush selon progression. Dernier Acte selon KO décisif."
+        },
+        {
+          "label": "Difficulté / récompense",
+          "value": "Rookie, Standard, Overlord. La route Charlie déverrouille sa propre fin V3, pas un changement d’état du monde."
+        },
+        {
+          "label": "Boss Rush",
+          "value": "Un des neuf candidats. L’ordre suit la seed et le roster disponible, le héros est retiré. PV remis à 100 au nouveau duel ; pas d’attrition."
+        },
+        {
+          "label": "Version jouable",
+          "value": "Le même kit appartient au roster. Les valeurs sont du jeu et ne mesurent pas la puissance canonique."
+        },
+        {
+          "label": "Assets / recette",
+          "value": "Portrait, atlas et arène existants. Réactions dédiées et phases nouvelles restent à produire ; tester victoire, perte, rechargement et exclusion de doublon."
+        }
+      ]
+    },
+    {
+      "id": "IV-FICHE-J",
+      "letter": "J",
+      "title": "Asset et suivi",
+      "subject": "D.H.O.R.K.S. · Fléchette tranquillisante",
+      "status": "Image produite ; galerie, pas de projectile simulé",
+      "fields": [
+        {
+          "label": "ID / catégorie",
+          "value": "dhorks-dart / projectile en réserve / D.H.O.R.K.S."
+        },
+        {
+          "label": "Description / référence",
+          "value": "The Full Moon S2E8 · fléchette visible derrière le cou de Cletus, vers 04:40."
+        },
+        {
+          "label": "Format / dimensions",
+          "value": "1774 × 887 px, master PNG avec alpha et export WebP sans perte. Un seul projectile."
+        },
+        {
+          "label": "Ancrage / marges / orientation",
+          "value": "Boîte alpha déclarée à seuil 16 : 234, 343, 1539, 566. Pivot d’émission et échelle de combat non définis."
+        },
+        {
+          "label": "Master",
+          "value": "art/infernal-versus/masters/projectiles/dhorks-dart.png"
+        },
+        {
+          "label": "Export",
+          "value": "public/assets/vfx/infernal/reserve/dhorks-dart.webp"
+        },
+        {
+          "label": "Dépendances / usages",
+          "value": "Galerie de réserve. Pour un futur tir : propriétaire, animation d’émission, trajectoire, collision, impact et règles de garde à spécifier."
+        },
+        {
+          "label": "Statuts",
+          "value": "Lore : référence limitée ; conception : description d’objet ; production : réalisée ; contrôle : historique ; intégration : galerie ; gameplay : absent."
+        },
+        {
+          "label": "Vérification",
+          "value": "Master SHA-256 878442de4a5cac7793826c188857df5b5a5897c9758d1cd2cd72e5bc55ed5cba. Export SHA-256 1282ebe8fb6819831f25f1aef3118edd8106eb780ce5e8d74583921299d6acdb. Comparaison sans perte déclarée dans le manifeste d’origine, pas nouvel audit de fidélité."
+        },
+        {
+          "label": "Publication",
+          "value": "Produit vague G, conservé par la PR #8 au head de base 2738bfd. Le raccordement galerie appartient au lot V4."
+        },
+        {
+          "label": "Écart / prochaine action",
+          "value": "La pointe était masquée dans la référence ; sa terminaison simple est reconstruite. Détails de très petite taille dans la prévisualisation officielle. Fidélité 1:1 non certifiée. Sprite en réserve, sans collision, animation ou affectation d’attaque. Définir le propriétaire et le comportement avant toute activation en combat."
+        }
+      ]
+    }
+  ],
+  "individualRouteAssociation": [
+    {
+      "fighterId": "charlie",
+      "name": "Charlie Morningstar",
+      "title": "Une chambre, un choix",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "vaggie",
+      "name": "Vaggie",
+      "title": "Le seuil que je choisis",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "angeldust",
+      "name": "Angel Dust",
+      "title": "Le contrat ne raconte pas tout",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "alastor",
+      "name": "Alastor",
+      "title": "Fréquence propriétaire",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "husk",
+      "name": "Husk",
+      "title": "La dernière mise",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "niffty",
+      "name": "Niffty",
+      "title": "Service de nuit",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "sirpentious",
+      "name": "Sir Pentious",
+      "title": "Une machine pour rester",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "lucifer",
+      "name": "Lucifer Morningstar",
+      "title": "Laisser une place",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "cherribomb",
+      "name": "Cherri Bomb",
+      "title": "Une explosion de moins",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "vox",
+      "name": "Vox",
+      "title": "Audience captive",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "valentino",
+      "name": "Valentino",
+      "title": "Plateau fermé",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "velvette",
+      "name": "Velvette",
+      "title": "Le prix d’une image",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "adam",
+      "name": "Adam",
+      "title": "Le rappel du premier homme",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "emily",
+      "name": "Emily",
+      "title": "Une preuve à entendre",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "sera",
+      "name": "Sera",
+      "title": "Le poids du siège",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "lute",
+      "name": "Lute",
+      "title": "L’ordre et la faille",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "carmilla",
+      "name": "Carmilla Carmine",
+      "title": "Fermer l’atelier",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "rosie",
+      "name": "Rosie",
+      "title": "La table et la porte",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "zestial",
+      "name": "Zestial",
+      "title": "Avant le verdict",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "zeezi",
+      "name": "Zeezi",
+      "title": "La salle appartient au public",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "baxter",
+      "name": "Baxter",
+      "title": "La preuve sans cobaye",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "abel",
+      "name": "Abel",
+      "title": "Une parole à soi",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hz_mimzy",
+      "name": "Mimzy",
+      "title": "L’addition après le rappel",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hz_katie_killjoy",
+      "name": "Katie Killjoy",
+      "title": "Le direct se retourne",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hz_tom_trench",
+      "name": "Tom Trench",
+      "title": "Une phrase entière",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_blitzo",
+      "name": "Blitzø",
+      "title": "Les noms au dos du contrat",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_moxxie",
+      "name": "Moxxie",
+      "title": "Une signature qui manque",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_millie",
+      "name": "Millie",
+      "title": "Ce que l’on rapporte à Wrath",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_loona",
+      "name": "Loona",
+      "title": "Les numéros que l’on garde",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_stolas",
+      "name": "Stolas",
+      "title": "La page que l’on refuse de céder",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_striker",
+      "name": "Striker",
+      "title": "Le prix du trophée",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_verosika",
+      "name": "Verosika Mayday",
+      "title": "Le refrain à elle",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_fizzarolli",
+      "name": "Fizzarolli",
+      "title": "Le visage sur la boîte",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_asmodeus",
+      "name": "Asmodeus",
+      "title": "Le prix de la porte ouverte",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_beelzebub",
+      "name": "Beelzebub",
+      "title": "La fête et la faim",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_crimson",
+      "name": "Crimson",
+      "title": "La place vide",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_sallie_may",
+      "name": "Sallie May",
+      "title": "Une journée qui compte",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_andrealphus",
+      "name": "Andrealphus",
+      "title": "Les marches du palais",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_stella",
+      "name": "Stella",
+      "title": "L’ordre qui ne revient pas",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_mammon",
+      "name": "Mammon",
+      "title": "La caisse applaudit",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_vortex",
+      "name": "Vortex",
+      "title": "Fin de service",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_glitz",
+      "name": "Glitz",
+      "title": "L’entrée en double",
+      "routeVersion": 3,
+      "chapterCount": 3
+    },
+    {
+      "fighterId": "hb_glam",
+      "name": "Glam",
+      "title": "Le temps du second salut",
+      "routeVersion": 3,
+      "chapterCount": 3
+    }
+  ],
+  "globalCampaign": {
+    "id": "signal-libre",
+    "version": 1,
+    "title": "La nuit du signal libre",
+    "subtitle": "Deux équipes, neuf chapitres, une porte à laisser ouverte.",
+    "status": "simulation_au",
+    "spoilerTier": "season_2",
+    "premise": "Une invitation falsifiée transforme les portes ouvertes de l’hôtel en spectacle sous contrat. L’équipe de Charlie et I.M.P. suivent séparément les copies de l’accord, puis choisissent de rendre la parole à ceux que la publicité voulait exposer.",
+    "intro": "Charlie prépare une soirée où chacun peut venir, parler ou repartir. À l’autre bout de Pride, I.M.P. reçoit une mission de récupération : retrouver la caisse contenant les autorisations de tournage. Quand Angel découvre son nom sur une affiche qu’il n’a jamais approuvée, la même question relie les deux équipes : qui a signé pour les absents ? Cette rencontre entre les séries, ses contrats et tous ses duels appartiennent à une continuité AU originale.",
+    "continuity": "Simulation AU originale inspirée des personnages des deux séries. Les rencontres inter-séries, le montage publicitaire et leurs conséquences sont inventés. Les lieux sont des reconstitutions de jeu. Les contrats d’âme et la rédemption ne sont jamais réglés par une victoire d’arène.",
+    "ending": "Le dernier écran s’éteint, mais les copies du document continuent de circuler. Charlie ouvre sans caméra. Angel décide de rester au bar et n’a pas à expliquer pourquoi ; son contrat n’a pas disparu, et son choix de ce soir lui appartient. Loona conserve le numéro de la réception, Moxxie classe le reçu et Blitzø réclame le paiement de la récupération, sans ajouter de nom à la liste. Fizz retourne à sa scène avec son propre texte. Alastor laisse sa fréquence vide juste assez longtemps pour que l’on entende les conversations dans le hall. Aucun adversaire n’a changé de nature, aucune âme n’a été déclarée sauvée. La première invitée franchit le seuil, regarde les chaises et choisit celle qui lui plaît.",
+    "nextHook": "Au matin, l’hôtel garde une copie vierge de l’invitation. La prochaine signature devra venir de la personne qu’elle engage.",
+    "chapters": [
+      {
+        "id": "seuil-ouvert",
+        "title": "Une invitation sans petites lignes",
+        "fighterId": "charlie",
+        "opponentId": "vaggie",
+        "stageId": "hotel-lobby",
+        "scene": "Une affiche promet une démonstration de rédemption en direct et porte le nom de l’hôtel. Charlie n’a autorisé qu’une visite. Avant de chercher le responsable, Vaggie exige de sécuriser le hall : si une foule arrive, la porte devra rester une sortie aussi bien qu’une entrée. Elles répètent un duel de protection, sans public, pendant qu’Angel compare l’affiche à l’invitation originale.",
+        "objective": "Tenir le seuil pendant l’exercice de Vaggie et préparer une sortie libre.",
+        "dialogue": [
+          {
+            "speakerId": "charlie",
+            "line": "Je veux qu’ils puissent entrer. Je veux aussi qu’ils puissent changer d’avis."
+          },
+          {
+            "speakerId": "vaggie",
+            "line": "Alors on commence par garder ce passage."
+          }
+        ],
+        "afterVictory": "Le hall est prêt. Angel repère un numéro de livraison au dos de l’affiche ; le même numéro figure sur une mission reçue par I.M.P.",
+        "retry": "Vaggie interrompt la répétition. Le passage est remis en place ; Charlie peut reprendre le même exercice."
+      },
+      {
+        "id": "caisse-imp",
+        "title": "Le nom au bas du reçu",
+        "fighterId": "hb_blitzo",
+        "opponentId": "hb_moxxie",
+        "stageId": "imp-reception",
+        "scene": "Le client a payé pour récupérer une caisse, sans dire à qui appartiennent les papiers qu’elle contient. Blitzø veut partir immédiatement ; Moxxie refuse de traiter une liste de noms comme une liste de cibles. Il lui propose une répétition de l’extraction dans le bureau, avec une consigne claire : rapporter les documents et laisser leurs propriétaires en vie. Le duel met leur coordination à l’épreuve avant le départ.",
+        "objective": "Terminer l’exercice d’extraction et accepter une mission de récupération précise.",
+        "dialogue": [
+          {
+            "speakerId": "hb_moxxie",
+            "line": "Une adresse de livraison ne nous dit pas qui a consenti."
+          },
+          {
+            "speakerId": "hb_blitzo",
+            "line": "D’accord. On ramène la caisse. Les petites lignes, tu me les lis en route."
+          }
+        ],
+        "afterVictory": "Le reçu mène au matériel d’un plateau des Vees. Loona appelle le numéro de retour : Angel répond depuis le studio.",
+        "retry": "Moxxie marque une pause avant le départ. La caisse factice reste au même endroit et la répétition reprend sans perdre les informations trouvées."
+      },
+      {
+        "id": "prise-originale",
+        "title": "La prise que personne ne signe",
+        "fighterId": "angeldust",
+        "opponentId": "valentino",
+        "stageId": "vee-broadcast-studio",
+        "scene": "Angel retrouve l’invitation utilisée comme accessoire de tournage. Valentino veut conserver son image dans la bande promotionnelle. Angel ne prétend pas annuler son contrat en remportant un duel ; il veut seulement atteindre la sortie avec une copie du montage et choisir s’il participe à cette soirée. Un affrontement d’arène ouvre un passage pendant que Husk l’attend au téléphone.",
+        "objective": "Gagner le passage jusqu’à la copie du montage et quitter le plateau.",
+        "dialogue": [
+          {
+            "speakerId": "angeldust",
+            "line": "Mon nom sur ton affiche ne dit pas ce que je ferai ce soir."
+          },
+          {
+            "speakerId": "valentino",
+            "line": "Tu crois pouvoir décider du moment où le spectacle s’arrête ?"
+          }
+        ],
+        "afterVictory": "Angel emporte une copie, pas une libération magique. Le numéro du transporteur permet à Loona de vérifier où la caisse a été détournée.",
+        "retry": "Angel recule avant que la confrontation ne se referme. Le soutien de Husk reste disponible ; le duel de ce chapitre peut être retenté."
+      },
+      {
+        "id": "bon-passage",
+        "title": "Reconnaître celui qui passe",
+        "fighterId": "hb_loona",
+        "opponentId": "hb_vortex",
+        "stageId": "imp-exterior",
+        "scene": "Vortex a accompagné un convoi portant le même numéro, sans prendre part au contrat publicitaire. Il ne remettra pas son double à quelqu’un qui se contente d’agiter un badge. Loona lui expose ce qu’Angel a trouvé. Ils règlent ensuite, par un exercice convenu, le passage à tenir si l’équipe revient avec des personnes poursuivies. La confiance vient de cette conversation ; le duel vérifie leur préparation.",
+        "objective": "Passer le contrôle de Vortex pendant l’exercice et sécuriser le point de rendez-vous.",
+        "dialogue": [
+          {
+            "speakerId": "hb_vortex",
+            "line": "Je peux reconnaître un badge. Je préfère savoir qui je laisse entrer."
+          },
+          {
+            "speakerId": "hb_loona",
+            "line": "Alors garde mon numéro. Je préviendrai avant qu’on revienne."
+          }
+        ],
+        "afterVictory": "Vortex confie le double du bordereau. Une partie du matériel doit passer par un dépôt de Carmilla ; l’autre a quitté Pride avec Striker.",
+        "retry": "Vortex suspend l’exercice. Le bordereau reste à l’abri et Loona peut recommencer le passage."
+      },
+      {
+        "id": "chargement-ferme",
+        "title": "Ce que l’atelier laisse sortir",
+        "fighterId": "vaggie",
+        "opponentId": "carmilla",
+        "stageId": "carmine-industries",
+        "scene": "Le dépôt de Carmilla contient une caisse d’équipements ordinaires destinés au plateau. Vaggie demande qu’elle soit retenue le temps de comparer les bons. Carmilla refuse que son quai devienne un champ de bataille improvisé : elle teste la discipline de Vaggie dans une confrontation encadrée. Les résidents de l’hôtel restent à Pentagram City tandis que l’équipe hellborn poursuit la seconde livraison.",
+        "objective": "Achever l’épreuve de Carmilla pour organiser le retrait du matériel sans exposer le quai.",
+        "dialogue": [
+          {
+            "speakerId": "carmilla",
+            "line": "Tu protèges une porte. Pense aussi à ceux qui travaillent derrière."
+          },
+          {
+            "speakerId": "vaggie",
+            "line": "Personne ici ne servira de diversion."
+          }
+        ],
+        "afterVictory": "Les deux bons portent des clauses différentes. Vaggie garde le premier à Pride ; Millie suit le second jusqu’au repaire de Striker.",
+        "retry": "Carmilla arrête l’épreuve avant la zone de chargement. Vaggie reprend au début de ce duel ; les copies déjà trouvées sont conservées."
+      },
+      {
+        "id": "seconde-copie",
+        "title": "Le prix de la seconde copie",
+        "fighterId": "hb_millie",
+        "opponentId": "hb_striker",
+        "stageId": "western-lair",
+        "scene": "Striker a détourné la caisse afin de revendre la signature qui permettrait de remettre le spectacle en route. Millie retrouve les papiers dans son repaire. Elle ne négocie pas le nom de ses collègues : le duel lui permet de dégager la caisse, puis de la rapporter à Moxxie. Cette mission et ce marché sont propres à cette fiction AU.",
+        "objective": "Récupérer la seconde copie et quitter le repaire avec les papiers intacts.",
+        "dialogue": [
+          {
+            "speakerId": "hb_striker",
+            "line": "Quelqu’un finira par payer pour récupérer ces noms."
+          },
+          {
+            "speakerId": "hb_millie",
+            "line": "Tu peux garder ton prix. Je prends la caisse."
+          }
+        ],
+        "afterVictory": "Le document révèle un achat de droits promotionnels par Mammon. Fizz accepte d’examiner la campagne dont son visage fait aussi partie.",
+        "retry": "Millie se replie au bord du repaire. La tentative suivante recommence ce duel, avec les cinq chapitres précédents déjà validés."
+      },
+      {
+        "id": "rappel-refuse",
+        "title": "Un rappel à son nom",
+        "fighterId": "hb_fizzarolli",
+        "opponentId": "hb_mammon",
+        "stageId": "mammon-show",
+        "scene": "Mammon a réservé une séquence promotionnelle pour vendre la soirée comme un nouveau numéro. Fizz monte sur le plateau avec une copie de l’affiche. Il refuse d’y jouer le rôle qu’on lui a choisi et transforme le duel d’exhibition prévu en occasion de faire entendre ce refus. La victoire coupe le numéro de ce soir ; elle ne réécrit ni le passé ni les rapports de pouvoir.",
+        "objective": "Terminer le duel du plateau et interrompre le rappel publicitaire annoncé sans accord.",
+        "dialogue": [
+          {
+            "speakerId": "hb_mammon",
+            "line": "Le public a déjà vu l’affiche. Ça compte comme une promesse !"
+          },
+          {
+            "speakerId": "hb_fizzarolli",
+            "line": "Alors il va m’entendre la corriger."
+          }
+        ],
+        "afterVictory": "Le refus de Fizz est enregistré. Avec les deux copies du contrat, il peut maintenant être diffusé sans les coupes prévues par la régie de Vox.",
+        "retry": "Fizz quitte momentanément la marque centrale. Il peut revenir jouer le même duel ; aucune signature supplémentaire n’est créée par une défaite."
+      },
+      {
+        "id": "frequence-vide",
+        "title": "Un silence dans la régie",
+        "fighterId": "alastor",
+        "opponentId": "vox",
+        "stageId": "vee-broadcast-studio",
+        "scene": "Alastor n’offre aucune aide désintéressée : il veut priver Vox de l’exclusivité du récit. Charlie accepte qu’il ouvre une fenêtre d’émission, sans lui céder l’accueil de l’hôtel. Dans le studio, leur rivalité devient un duel pour le contrôle momentané de la diffusion. Pendant cet intervalle, les copies et le refus de Fizz sont rendus publics ; leur existence ne dépendra plus d’un seul écran.",
+        "objective": "Gagner l’intervalle de diffusion nécessaire à la publication des copies.",
+        "dialogue": [
+          {
+            "speakerId": "vox",
+            "line": "Sans mon signal, ton petit scandale reste une conversation de couloir."
+          },
+          {
+            "speakerId": "alastor",
+            "line": "Les couloirs ont parfois une excellente acoustique."
+          }
+        ],
+        "afterVictory": "Les copies circulent. Velvette se rend à l’hôtel avec une dernière proposition : reprendre l’ouverture sous une image contrôlée, en échange de la fin de la campagne hostile.",
+        "retry": "La fenêtre de diffusion se referme. Les documents restent copiés ; Alastor peut disputer à nouveau ce même contrôle de régie."
+      },
+      {
+        "id": "porte-sans-camera",
+        "title": "La porte sans caméra",
+        "fighterId": "charlie",
+        "opponentId": "velvette",
+        "stageId": "hotel-exterior",
+        "scene": "Velvette propose à Charlie une image impeccable : une victoire, un sourire et des invités qui suivent le conducteur. Charlie refuse de faire de leur accueil la récompense d’un spectacle. Lorsque Velvette impose un dernier duel sur le perron, l’équipe garde les sorties ouvertes. Charlie défend l’accès à l’hôtel, puis doit tenir sa promesse après la victoire : laisser chacun décider, même si personne ne reste.",
+        "objective": "Défendre le seuil et ouvrir la soirée sans imposer de rôle aux invités.",
+        "dialogue": [
+          {
+            "speakerId": "velvette",
+            "line": "Une bonne image peut leur faire oublier toute cette histoire."
+          },
+          {
+            "speakerId": "charlie",
+            "line": "Je ne veux pas qu’ils oublient. Je veux qu’ils puissent choisir."
+          }
+        ],
+        "afterVictory": "Le perron se vide de ses caméras. Charlie rentre la première, déplace une chaise et laisse la porte ouverte.",
+        "retry": "L’équipe protège toujours les sorties. Charlie peut reprendre le dernier duel sans rejouer les huit chapitres validés."
+      }
+    ]
+  },
+  "transitionDesign": [
+    {
+      "id": "IV-LINK-01",
+      "from": "hotel-exterior",
+      "to": "hotel-lobby",
+      "title": "Du perron au hall",
+      "status": "design_only",
+      "rationale": "Connexion spatiale originale entre deux reconstitutions de l’hôtel. Aucun mur destructible canonique n’est revendiqué.",
+      "trigger": "Proposition : attaque lourde touchant près du seuil droit, après annonce du seuil actif. La projection générique n’existe pas encore.",
+      "rules": "Une fois par match, pas de dégâts bonus, PV et tension conservés, compteur de combo clôturé, chrono suspendu pendant la présentation.",
+      "arrival": "Positions normalisées 22 et 78, joueurs conservant leur côté, aucune attaque en attente, 500 ms de contrôle commun suspendu.",
+      "response": "Garde du lourd ou éloignement de la zone. Le déclenchement ne doit jamais suivre un coup bloqué.",
+      "presentation": "Porte et déplacement de caméra à produire. En mode réduit/statique : fondu bref avec destination écrite.",
+      "edgeCases": "KO ou fin du chrono prime sur la transition. Un seul événement arbitré par pas. Quitter avant validation ne consomme pas la liaison.",
+      "dependencies": [
+        "état de liaison par match",
+        "seuil logique dans le moteur",
+        "préchargement de destination",
+        "caméra de transition",
+        "réinitialisation des entrées"
+      ]
+    },
+    {
+      "id": "IV-LINK-02",
+      "from": "hotel-lobby",
+      "to": "hotel-bar",
+      "title": "L’accès au bar",
+      "status": "design_only",
+      "rationale": "Passage AU entre les pièces représentées. Conserver le bar comme lieu de rencontre plutôt qu’arme létale automatique.",
+      "trigger": "Proposition : interaction volontaire au seuil latéral quand les deux combattants sont hors stun. Commande à définir après remappage.",
+      "rules": "Transition consentie par la règle du match, sans bonus de ressource, usage unique, aucun aller-retour pendant le même duel.",
+      "arrival": "Positions centrales identiques pour tous les kits. Les accessoires restent décoratifs.",
+      "response": "Repositionnement avant l’action d’interaction. Aucun effet caché lié au costume ou à la taille.",
+      "presentation": "Séquence d’entrée à produire ; le fallback affiche le nouveau lieu sans flash.",
+      "edgeCases": "Annuler au KO, à la pause avant confirmation ou si la destination est indisponible. Un échec de chargement garde l’arène source jouable.",
+      "dependencies": [
+        "action d’interaction",
+        "règle de match commune",
+        "état de chargement",
+        "brief de porte"
+      ]
+    },
+    {
+      "id": "IV-LINK-03",
+      "from": "imp-exterior",
+      "to": "imp-reception",
+      "title": "Du palier à la réception I.M.P.",
+      "status": "design_only",
+      "rationale": "Liaison originale entre extérieur et bureau. La scène ne confirme pas une géométrie exacte absente des références.",
+      "trigger": "Proposition : action de seuil après un recul suffisamment fort et une annonce claire. Valeur à prototyper.",
+      "rules": "Désactivée en duel de référence jusqu’à validation. PV/tension conservés, aucune munition ou ressource inventée.",
+      "arrival": "J1 à 22, J2 à 78 ; la caisse narrative ne crée pas de collision.",
+      "response": "Éviter le seuil ou bloquer l’attaque. Aucun téléportage imposé depuis le centre de l’écran.",
+      "presentation": "Passage de porte avec caméra courte, version fixe avec les mêmes informations.",
+      "edgeCases": "Tester attaque simultanée, pause, défaite, résultat déjà traité et retour au menu sans perte de sauvegarde.",
+      "dependencies": [
+        "mécanique de seuil validée",
+        "repères d’entrée/sortie",
+        "recette tous styles"
+      ]
+    }
+  ],
+  "reserveAssociation": [
+    {
+      "id": "hb_vassago-ready",
+      "name": "Vassago — tenue du tribunal de Mastermind",
+      "kind": "character_base",
+      "identityId": "hb_vassago",
+      "master": "art/infernal-versus/masters/base/hb_vassago-ready.png",
+      "export": "public/assets/sprites/reserve/hb_vassago-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "7f492edaf80e29893463d9311bc72470148c072b58e7dff750b73d81c08c0728",
+      "exportSha256": "0fb44cb7ccf973e68d65de8f55632fb6929661089a7749d2ffd46bdc447dd1ed",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Détails des bottes et du bas du corps complétés avec portrait du projet et merchandising sous licence, non avec une planche de modèle de production.",
+        "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+        "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+        "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=IoVB5Hn2m_k",
+          "kind": "official_episode",
+          "episode": "Mastermind S2E11",
+          "approximatePreviewTimesSeconds": [
+            290,
+            370
+          ],
+          "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+        },
+        {
+          "url": "https://sharkrobot.com/products/vassago-standee",
+          "kind": "supplementary_licensed_merchandise"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_vassago.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_wally_wackford-ready",
+      "name": "Wally Wackford — costume commercial C.H.E.R.U.B.",
+      "kind": "character_base",
+      "identityId": "hb_wally_wackford",
+      "master": "art/infernal-versus/masters/base/hb_wally_wackford-ready.png",
+      "export": "public/assets/sprites/reserve/hb_wally_wackford-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "6eb1e7a28e2c10172d1c9c690ecdee81f794c49fc497b6f17da9d2f9fa2421b0",
+      "exportSha256": "5e1075da15c1cba34e0f47a684b7786ced9d60f41ce439f018a5ae0b9f2869b2",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le plan officiel de corps entier est une vignette de prévisualisation basse résolution ; détails fins complétés depuis le portrait du projet.",
+        "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+        "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+        "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "episode": "C.H.E.R.U.B. S1E4",
+          "approximatePreviewTimesSeconds": [
+            850,
+            880
+          ],
+          "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_wally_wackford.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_barbie_wire-ready",
+      "name": "Barbie Wire — forme imp Unhappy Campers",
+      "kind": "character_base",
+      "identityId": "hb_barbie_wire",
+      "master": "art/infernal-versus/masters/base/hb_barbie_wire-ready.png",
+      "export": "public/assets/sprites/reserve/hb_barbie_wire-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "566225b98fd2f488aea8aa26aa7487a2f1d3c01156f5abbcfe4ff7d2009d8668",
+      "exportSha256": "7d620b14681a04d08994160b6b169693dbeb75ebf9302a23886c3caa38c3ccb5",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Petit détail du cristal au poignet simplifié à la définition de sortie ; la géométrie exacte du bijou n’est pas certifiée.",
+        "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+        "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+        "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=lYu1ysDULwA",
+          "kind": "official_episode",
+          "episode": "Unhappy Campers S2E5",
+          "approximatePreviewTimesSeconds": [
+            1010,
+            1140
+          ],
+          "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_barbie_wire.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_martha-ready",
+      "name": "Martha — forme sinner Apology Tour",
+      "kind": "character_base",
+      "identityId": "hb_martha",
+      "master": "art/infernal-versus/masters/base/hb_martha-ready.png",
+      "export": "public/assets/sprites/reserve/hb_martha-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "c4f9926dd11e5ffee239463b30f3690aefe32748095823a4e74cc77d84b39761",
+      "exportSha256": "947ea84ea5a0b774c92a63dbee288ff3320f03a06bf78327c8d9a2bd5702a652",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le plan officiel inspecté montre surtout le haut du corps ; pantalon et pieds sont complétés depuis le portrait historique du projet.",
+        "Les cornes, motifs du pantalon et pointes de doigts sont des reconstructions dessinées ; leur conformité trait pour trait n’est pas certifiée.",
+        "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+        "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+        "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+          "kind": "official_episode",
+          "episode": "Apology Tour S2E9",
+          "approximatePreviewTimesSeconds": [
+            320
+          ],
+          "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+        },
+        {
+          "url": "https://x.com/mccraecook/status/1827524429628215297",
+          "kind": "secondary_frame_reproduction"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_martha.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_mrs_mayberry-ready",
+      "name": "Mrs Mayberry — forme sinner cliente Murder Family",
+      "kind": "character_base",
+      "identityId": "hb_mrs_mayberry",
+      "master": "art/infernal-versus/masters/base/hb_mrs_mayberry-ready.png",
+      "export": "public/assets/sprites/reserve/hb_mrs_mayberry-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "175fb894ab711261ff7925a5556997bbd0c627da16323dd24d8cc60f2158faa1",
+      "exportSha256": "d9fd9a48de8317bc05b262563ecaba3a39909994104384507ccb42b68e831bb1",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le bas de la jupe et les chaussures sont principalement renseignés par le portrait historique ; aucun modèle officiel complet n’a été inspecté.",
+        "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+        "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+        "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "kind": "official_episode",
+          "episode": "Murder Family S1E1",
+          "approximatePreviewTimesSeconds": [
+            155,
+            780
+          ],
+          "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_mrs_mayberry.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_agent_one-ready",
+      "name": "Agent One",
+      "kind": "enemy_base",
+      "identityId": "hb_agent_one",
+      "master": "art/infernal-versus/masters/base/hb_agent_one-ready.png",
+      "export": "public/assets/sprites/reserve/hb_agent_one-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "9b44cae7b4b1ab3c790c91d88733a2d45fbee11a9a3d277758c7818d281ae9a7",
+      "exportSha256": "198524a319d925517889288e28d9dc9ad27dfdb266794da8da8f64e4bf7c5311",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            210,
+            240,
+            380
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_agent_one.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_agent_two-ready",
+      "name": "Agent Two",
+      "kind": "enemy_base",
+      "identityId": "hb_agent_two",
+      "master": "art/infernal-versus/masters/base/hb_agent_two-ready.png",
+      "export": "public/assets/sprites/reserve/hb_agent_two-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "dc99887526e0f7cf384a6eaadb991f450a0e6998c2d63012c4ec2e9b396d1f7c",
+      "exportSha256": "603171e2cfde1929591fb98a5e523e33e3911fb7d2ac8e21970e1406e4a78154",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            210,
+            240,
+            380
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_agent_two.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_cletus-ready",
+      "name": "Cletus",
+      "kind": "enemy_base",
+      "identityId": "hb_cletus",
+      "master": "art/infernal-versus/masters/base/hb_cletus-ready.png",
+      "export": "public/assets/sprites/reserve/hb_cletus-ready.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "ac2e01b42a519baab1daef25952ed1a18d7b2ebfa4a877ef526f21581f61381b",
+      "exportSha256": "0f6af22a8fb3d6ffa1bb7394a9590b4d8bdcaa676bd4bec16881fbf82789a7c1",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            330,
+            730,
+            780
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_cletus.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_collin-ready",
+      "name": "Collin",
+      "kind": "enemy_base",
+      "identityId": "hb_collin",
+      "master": "art/infernal-versus/masters/base/hb_collin-ready.png",
+      "export": "public/assets/sprites/reserve/hb_collin-ready.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "82a0749bc3159ce8eda639113e93be5f6000a501166f609f2d8520d62b63c0fa",
+      "exportSha256": "3ba9d0acc6f7c3bbc359fc4b19f947c627a4094e44ea0d2697f82d4c2e709d5f",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            330,
+            600,
+            730
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_collin.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_keenie-ready",
+      "name": "Keenie",
+      "kind": "enemy_base",
+      "identityId": "hb_keenie",
+      "master": "art/infernal-versus/masters/base/hb_keenie-ready.png",
+      "export": "public/assets/sprites/reserve/hb_keenie-ready.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "b6bc87290c959f74e1d5beed330809b0391a36fc83d59493ece18491811a310b",
+      "exportSha256": "96bffa6fff50d07bed54c661737c189d227d642f0ca156e48c0a21b5f3230880",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            330,
+            610,
+            620
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_keenie.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_robo_fizz-ready",
+      "name": "Robo Fizz",
+      "kind": "enemy_base",
+      "identityId": "hb_robo_fizz",
+      "master": "art/infernal-versus/masters/base/hb_robo_fizz-ready.png",
+      "export": "public/assets/sprites/reserve/hb_robo_fizz-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "b911ebe78f736f9fda1e6108f74ddd7217218a79eae50017d3a5781564818572",
+      "exportSha256": "98eab753fe5cf0d473444e3b423023d73989284ec8ca4f7e25a592332732f9b5",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Sources officielles inspectées en prévisualisations 320 × 180 ; détails fins reconstruits.",
+        "Pose neutre de présentation adaptée au jeu. Fidélité 1:1 non certifiée.",
+        "Une seule image en réserve, aucun kit, récit ou cycle ajouté."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+          "kind": "official_episode",
+          "approximatePreviewTimesSeconds": [
+            550,
+            560,
+            680,
+            700
+          ]
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_robo_fizz.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "dhorks-dart",
+      "name": "D.H.O.R.K.S. · Fléchette tranquillisante",
+      "kind": "projectile",
+      "identityId": null,
+      "master": "art/infernal-versus/masters/projectiles/dhorks-dart.png",
+      "export": "public/assets/vfx/infernal/reserve/dhorks-dart.webp",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "masterSha256": "878442de4a5cac7793826c188857df5b5a5897c9758d1cd2cd72e5bc55ed5cba",
+      "exportSha256": "1282ebe8fb6819831f25f1aef3118edd8106eb780ce5e8d74583921299d6acdb",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "La pointe était masquée dans la référence ; sa terminaison simple est reconstruite.",
+        "Détails de très petite taille dans la prévisualisation officielle. Fidélité 1:1 non certifiée.",
+        "Sprite en réserve, sans collision, animation ou affectation d’attaque."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw&t=280s",
+          "kind": "official_episode",
+          "approximatePreviewTimeSeconds": 280,
+          "method": "Public YouTube storyboard preview from the official Vivziepop player, visually inspected at 320×180. No full episode playback."
+        }
+      ]
+    },
+    {
+      "id": "hb_paimon-ready",
+      "name": "Paimon",
+      "kind": "character_base",
+      "identityId": "hb_paimon",
+      "master": "art/infernal-versus/masters/base/hb_paimon-ready.png",
+      "export": "public/assets/sprites/reserve/hb_paimon-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "db605cd7d1ee4d2fdfb4ed37928742ae31a4376ca3b8dbc5c6e1cbe139ae1981",
+      "exportSha256": "4a7bd03a2e9107ffbec97f5ac86cecb8c152c93aa97e0b6c5f857ad2dd974aa6",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le costume inférieur et les pieds reprennent surtout le portrait historique du projet; la source officielle montre le haut et la cape.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+          "kind": "official_episode",
+          "episode": "The Circus S2E1",
+          "approximatePreviewTimesSeconds": [
+            90,
+            100,
+            110,
+            120,
+            130
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/the-circus-L3-M1.jpg",
+          "localEvidenceSha256": "5f5f1e8afbb48c5a407abdeb82a72181f6ca81715bb34ce4f25df7e95dfdeaf3"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_paimon.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_paimon.png",
+          "localEvidenceSha256": "55779aadef3cbdcde728c1948fdcede7f92a320cb7cf17eac1abfb795eb3879a"
+        }
+      ]
+    },
+    {
+      "id": "hb_cash_buckzo-ready",
+      "name": "Cash Buckzo",
+      "kind": "character_base",
+      "identityId": "hb_cash_buckzo",
+      "master": "art/infernal-versus/masters/base/hb_cash_buckzo-ready.png",
+      "export": "public/assets/sprites/reserve/hb_cash_buckzo-ready.webp",
+      "dimensions": [
+        1225,
+        1284
+      ],
+      "masterSha256": "0ced42d44b4653c91bacb02743bbb010d58346b77ad60574e0d6bd19c7d1cd6e",
+      "exportSha256": "78aeeb9f63a5889d3e909866c6add47e8e3b8382b7a8b16feb78896b09c9dcc3",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Pantalon rapiécé et queue complète complétés depuis le portrait historique, dont la queue était rognée au bord; extrémité reconstruite.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+          "kind": "official_episode",
+          "episode": "The Circus S2E1",
+          "approximatePreviewTimesSeconds": [
+            270,
+            280,
+            300,
+            310,
+            320
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/the-circus-L3-M3.jpg",
+          "localEvidenceSha256": "a8c1cdab195dd1a69034054f785777bab957cbbe97a7b5518100de7558e33dd5"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_cash_buckzo.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_cash_buckzo.png",
+          "localEvidenceSha256": "75a37c1a8ba004c10d0c745f49d098bb7e834b126537a4ec651c6f02bd39e83f"
+        }
+      ]
+    },
+    {
+      "id": "hb_joe-ready",
+      "name": "Joe",
+      "kind": "character_base",
+      "identityId": "hb_joe",
+      "master": "art/infernal-versus/masters/base/hb_joe-ready.png",
+      "export": "public/assets/sprites/reserve/hb_joe-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "6ddb68bd95d8e8d62e837d1ae448f72f2f6efe1e4aae1d5883bf38bb7c347bf4",
+      "exportSha256": "ca8fea22a050317bbe62f6ff78a60a99a6ac5b845cab4909932ac47fa71af451",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Pose bras croisés et bas du costume renseignés par le portrait historique; courbure exacte du motif et angle de pose non certifiés.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "kind": "official_episode",
+          "episode": "The Harvest Moon Festival S1E5",
+          "approximatePreviewTimesSeconds": [
+            180,
+            190,
+            200,
+            210,
+            220,
+            240
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/harvest-L3-M2.jpg",
+          "localEvidenceSha256": "dc4075adb0ca06451f9d6629ed48e631a2258f3ca653c703aa36d1a2cf234fa8"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_joe.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_joe.png",
+          "localEvidenceSha256": "0ee3c5185a88f5c2bc26dac3ba4e924f06b97901fd8c90d111e3eaa2b880684e"
+        }
+      ]
+    },
+    {
+      "id": "hb_lin-ready",
+      "name": "Lin",
+      "kind": "character_base",
+      "identityId": "hb_lin",
+      "master": "art/infernal-versus/masters/base/hb_lin-ready.png",
+      "export": "public/assets/sprites/reserve/hb_lin-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "c1f197155fcb69ace8f4e9e5eba2b914ce991ac7ec0b5bfb91a13ff0079be38b",
+      "exportSha256": "075d8af4f18320b59d6e5f24d3d1714ed7bfbf3fdc11beed347637abcd2a6e20",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le bas du pantalon, les sabots et les motifs précis de la queue sont surtout renseignés par le portrait historique; pas de modèle officiel HD complet.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "kind": "official_episode",
+          "episode": "The Harvest Moon Festival S1E5",
+          "approximatePreviewTimesSeconds": [
+            180,
+            190,
+            200,
+            210,
+            220
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/harvest-L3-M2.jpg",
+          "localEvidenceSha256": "dc4075adb0ca06451f9d6629ed48e631a2258f3ca653c703aa36d1a2cf234fa8"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_lin.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_lin.png",
+          "localEvidenceSha256": "c8b8f0b4ddd13f69a42fa612af03b1bb79249a0a45470315c9f30853fa81b75b"
+        }
+      ]
+    },
+    {
+      "id": "hb_chazwick_thurman-ready",
+      "name": "Chazwick Thurman",
+      "kind": "character_base",
+      "identityId": "hb_chazwick_thurman",
+      "master": "art/infernal-versus/masters/base/hb_chazwick_thurman-ready.png",
+      "export": "public/assets/sprites/reserve/hb_chazwick_thurman-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "8d7c4ce13ecf07a707db97f39893d9a8804bbf2381cb958012e376096e60d87b",
+      "exportSha256": "7bd3be9452eab4f78efe5c46769f197f34499c179e496373123407ba208ac05e",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "La teinte menthe et les ombres de la sortie sont plus lumineuses que dans les plans officiels éclairés en vert.",
+        "Une partie du costume et la queue s’appuient surtout sur le portrait historique, dont la provenance officielle n’est pas certifiée.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Références officielles en vignettes de 320 × 180 pixels, sans planche de modèle HD. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Exes and Oohs S2E3 — costume de la visite chez Crimson",
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "kind": "official_episode",
+          "verification": "Métadonnées publiques officielles et prévisualisations de dix secondes inspectées, pas lecture intégrale de la vidéo.",
+          "approximatePreviewTimesSeconds": [
+            360,
+            370,
+            400,
+            420
+          ],
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/exes-L3-M4.jpg",
+          "localEvidenceSha256": "ca501f33ed5a48f445036eb370ede3cb15c278a1338d3c10630892a05c9e3af4"
+        },
+        {
+          "title": "Portrait historique du projet — Chazwick Thurman",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_chazwick_thurman.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_chazwick_thurman.png",
+          "localEvidenceSha256": "ac4de482a911617058b7f6ae21d8e4069846e8d0d0048515aa38e485d98edefc"
+        }
+      ]
+    },
+    {
+      "id": "hb_alessio-ready",
+      "name": "Alessio",
+      "kind": "enemy_base",
+      "identityId": "hb_alessio",
+      "master": "art/infernal-versus/masters/base/hb_alessio-ready.png",
+      "export": "public/assets/sprites/reserve/hb_alessio-ready.webp",
+      "dimensions": [
+        1214,
+        1295
+      ],
+      "masterSha256": "7d8cf30892a26eaf6259ecf9ecf28e446361f4a615bf4e060b2accf6fc59ba33",
+      "exportSha256": "879dbfcd28625772eca807cc83be90ebf38dd8e650902eb54851fd9a6d5eec0d",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "La pointe de la queue, les plis fins et la hauteur des chaussures sont surtout renseignés par le portrait historique.",
+        "La pose bras croisés est une base de personnage ; elle ne constitue ni une garde animée ni un kit de combat.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Références officielles en vignettes de 320 × 180 pixels, sans planche de modèle HD. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Exes and Oohs S2E3 — garde du corps de Crimson",
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "kind": "official_episode",
+          "verification": "Métadonnées publiques officielles et prévisualisations de dix secondes inspectées, pas lecture intégrale de la vidéo.",
+          "approximatePreviewTimesSeconds": [
+            650,
+            660,
+            670,
+            680
+          ],
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/exes-L3-M7.jpg",
+          "localEvidenceSha256": "0c25f56790f2d7ce84e5372d84f634e7a218086b01351fba9b1783c78962997d"
+        },
+        {
+          "title": "Portrait historique du projet — Alessio",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_alessio.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_alessio.png",
+          "localEvidenceSha256": "4d6c93c875c7c92410165f0e0065e3d56c2956b229d9325dafcb909fe275d076"
+        }
+      ]
+    },
+    {
+      "id": "hb_elder_jaws-ready",
+      "name": "Elder Jaws",
+      "kind": "character_base",
+      "identityId": "hb_elder_jaws",
+      "master": "art/infernal-versus/masters/base/hb_elder_jaws-ready.png",
+      "export": "public/assets/sprites/reserve/hb_elder_jaws-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "2f967cbfa284ed3131b496b6dc5612aaa2e9eb9da3a468ed908b932f03489fb2",
+      "exportSha256": "0ec6e85896d754ea9c866fa47dbe6cf396d90260ae5e335bb1d2e1f512035420",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le personnage est très petit dans les plans larges officiels disponibles ; le détail de la mitre, des croix et de la robe repose principalement sur le portrait historique.",
+        "Les marges du bas sont plus serrées que la consigne de 7 %, sans coupe de la silhouette visible.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Références officielles en vignettes de 320 × 180 pixels, sans planche de modèle HD. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Exes and Oohs S2E3 — officiant de la cérémonie",
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "kind": "official_episode",
+          "verification": "Métadonnées publiques officielles et prévisualisations de dix secondes inspectées, pas lecture intégrale de la vidéo.",
+          "approximatePreviewTimesSeconds": [
+            1220,
+            1250
+          ],
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/exes-L3-M13.jpg",
+          "localEvidenceSha256": "278a1cd9bbf5b7243ff882f74c2da81156315e982782304d51b44eaace07fc6e"
+        },
+        {
+          "title": "Portrait historique du projet — Elder Jaws",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_elder_jaws.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_elder_jaws.png",
+          "localEvidenceSha256": "eea6677b6177003b9fd6d38917065f7275efcb732d15c079292190817818cf3c"
+        }
+      ]
+    },
+    {
+      "id": "hb_rolando-ready",
+      "name": "Rolando",
+      "kind": "enemy_base",
+      "identityId": "hb_rolando",
+      "master": "art/infernal-versus/masters/base/hb_rolando-ready.png",
+      "export": "public/assets/sprites/reserve/hb_rolando-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "57fec9ae496847a275df93b48e2550d246262866078fd76e0ba4b8dddbc3e2a8",
+      "exportSha256": "26a02e02a19fb21b20b6076d924f9dddd8e632b5d368370afc5a96f4eb6d6c4b",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "La silhouette finale est plus frontale et allongée que certains plans officiels ; la proportion exacte tête/corps n’est pas certifiée.",
+        "Un halo coloré reste dans les canaux RGB de pixels transparents ; les pixels échantillonnés autour de la silhouette ont un alpha nul. L’alpha original est conservé.",
+        "Une passe Imagegen de suppression du fond a été effectuée ; elle est conservée comme sortie finale, le premier essai n’est pas compté comme dessin livré.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Références officielles en vignettes de 320 × 180 pixels, sans planche de modèle HD. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Ghostf**kers S2E10 — forme démoniaque révélée, pas le déguisement humain",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "kind": "official_episode",
+          "verification": "Métadonnées publiques officielles et prévisualisations de dix secondes inspectées, pas lecture intégrale de la vidéo.",
+          "approximatePreviewTimesSeconds": [
+            1310,
+            1320,
+            1330
+          ],
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/ghost-hotel-M14.jpg",
+          "localEvidenceSha256": "800a2eed9426a4ef26a7cff5a5080601e39b4da5c30c965a55340b0a3b31b8f3"
+        },
+        {
+          "title": "Portrait historique du projet — Rolando",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_rolando.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_rolando.png",
+          "localEvidenceSha256": "53122a6e2cb376520e88ee8931e05c99bce841596790b3a25b2088616f2a8edf"
+        }
+      ]
+    },
+    {
+      "id": "hb_dennis-ready",
+      "name": "Dennis",
+      "kind": "character_base",
+      "identityId": "hb_dennis",
+      "master": "art/infernal-versus/masters/base/hb_dennis-ready.png",
+      "export": "public/assets/sprites/reserve/hb_dennis-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "1ff3aeac9636f284fca6ee4640ace85dd1de9186ed122d09a816bd2ad21d202c",
+      "exportSha256": "ed72718892ebb9bee8545efdb5eb4b53b5da534f799f19315be9ee46132be63c",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le bas de la tenue et la longueur de la queue sont surtout renseignés par le portrait historique.",
+        "Les canaux RGB transparents contiennent un halo qui ne doit pas être rendu comme un fond opaque ; exporter en préservant l’alpha.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Références officielles en vignettes de 320 × 180 pixels, sans planche de modèle HD. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Queen Bee S1E8 — tenue de fête",
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "kind": "official_episode",
+          "verification": "Métadonnées publiques officielles et prévisualisations de dix secondes inspectées, pas lecture intégrale de la vidéo.",
+          "approximatePreviewTimesSeconds": [
+            760
+          ],
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/queen-bee-L3-M8.jpg",
+          "localEvidenceSha256": "eed81c6fe9f315e2658837aac9481d873ea4ea302dd663881ea53e24d4ef6e07"
+        },
+        {
+          "title": "Portrait historique du projet — Dennis",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_dennis.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_dennis.png",
+          "localEvidenceSha256": "2003419076a99d4cb72528866ad958296cfe908f736b0a69dfcca6076035f339"
+        }
+      ]
+    },
+    {
+      "id": "hb_toledo_the_igor-ready",
+      "name": "Toledo the Igor",
+      "kind": "character_base",
+      "identityId": "hb_toledo_the_igor",
+      "master": "art/infernal-versus/masters/base/hb_toledo_the_igor-ready.png",
+      "export": "public/assets/sprites/reserve/hb_toledo_the_igor-ready.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "44ca51dadd8938b6d0b29ab6fac2a4cc4b3d5b4fb39bd0cf54e6066deef75640",
+      "exportSha256": "c4b1d2453840ac5e5e8fbc91d661585617f578d0823ee45ef4b37da1e1c4d48a",
+      "usageV4": "Galerie de réserve ; kit ou collision absents",
+      "originalRuntimeStatus": "reserve",
+      "fidelityOneToOneCertified": false,
+      "originalInGameChecked": false,
+      "fidelityNotes": [
+        "Le plan rapproché de Toledo n’est pas retenu dans les prévisualisations officielles à pas de dix secondes inspectées. Cette sortie est guidée par le seul portrait historique pour les détails visuels.",
+        "L’attribution de l’apparition dans cet épisode a été recoupée dans le catalogue et une transcription secondaire ; elle ne remplace pas un modèle officiel HD.",
+        "Une nouvelle validation avec un plan officiel rapproché est nécessaire avant certification 1:1.",
+        "Une seule base statique, aucun cycle ou pose d’animation supplémentaire.",
+        "Réserve de production ; personnage non ajouté au roster jouable et non validé dans le moteur.",
+        "Aucune planche de modèle officielle HD inspectée. Fidélité 1:1 non certifiée.",
+        "Master Imagegen original et canal alpha préservés, sans retouche raster par code."
+      ],
+      "references": [
+        {
+          "title": "Ghostf**kers S2E10 — groom humain du One Star Wonder",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "kind": "official_episode",
+          "verification": "Épisode officiel identifié ; les prévisualisations inspectées ne montrent pas un plan rapproché exploitable de Toledo.",
+          "approximatePreviewTimesSeconds": []
+        },
+        {
+          "title": "Ghostf**kers — transcription secondaire utilisée pour localiser la scène",
+          "url": "https://hazbinhotel.fandom.com/wiki/Ghostf%2A%2Akers/Transcript",
+          "kind": "secondary_transcript",
+          "verification": "Extrait retourné par recherche : présentation du groom derrière le comptoir. Ne sert pas de modèle visuel."
+        },
+        {
+          "title": "Portrait historique du projet — Toledo the Igor",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_toledo_the_igor.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "/workspace/scratch/9be6ab2142e0/production-i/assets/references/project_hb_toledo_the_igor.png",
+          "localEvidenceSha256": "143232dd87a34bccfabd4f302d4aa2bda896d266ba8dfd9ea16c9be325f14432"
+        }
+      ]
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "IV-Q01",
+      "requirements": [
+        "IV-G00"
+      ],
+      "title": "Préservation du guide",
+      "scenario": "Comparer SHA-256 et octets avec la pièce jointe d’origine.",
+      "expected": "55 172 octets et SHA-256 documenté identiques.",
+      "type": "Contrôle de données",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q02",
+      "requirements": [
+        "IV-G00",
+        "IV-G27"
+      ],
+      "title": "Couverture de la matrice",
+      "scenario": "Contrôler sections 00–29, modèles A–J et identifiants.",
+      "expected": "30 rubriques uniques et dix modèles renseignés.",
+      "type": "Contrôle de données",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q03",
+      "requirements": [
+        "IV-G08"
+      ],
+      "title": "Couverture narrative",
+      "scenario": "Comparer les routes runtime V3 aux 43 fiches de la bible.",
+      "expected": "43 héros et 129 chapitres associés aux adversaires/arènes existants.",
+      "type": "Test logique",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q04",
+      "requirements": [
+        "IV-G08",
+        "IV-G24"
+      ],
+      "title": "Ancien parcours",
+      "scenario": "Importer une sauvegarde antérieure sans routeVersion au duel 2.",
+      "expected": "La route V1 et ses adversaires restent identiques. Aucun reset silencieux.",
+      "type": "Test logique",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q05",
+      "requirements": [
+        "IV-G24"
+      ],
+      "title": "Ancienne fin débloquée",
+      "scenario": "Charger storyEndings antérieur puis ouvrir la galerie des fins.",
+      "expected": "Le déblocage V1 n’autorise pas une fin V3 non gagnée.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q06",
+      "requirements": [
+        "IV-G08"
+      ],
+      "title": "Nouvelle histoire",
+      "scenario": "Commencer Charlie puis gagner ses trois duels.",
+      "expected": "Prologue V3, rival Adam et épilogue V3. Résultats comptés une seule fois.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q07",
+      "requirements": [
+        "IV-G09"
+      ],
+      "title": "Campagne complète",
+      "scenario": "Gagner les neuf chapitres de La nuit du signal libre.",
+      "expected": "Héros, adversaire et stage changent selon le chapitre ; la fin est débloquée.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q08",
+      "requirements": [
+        "IV-G09",
+        "IV-G24"
+      ],
+      "title": "Défaite et reprise de campagne",
+      "scenario": "Perdre au chapitre 6, quitter puis recharger et réessayer.",
+      "expected": "Cinq chapitres restent validés, le sixième reprend sans usurper son héros.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q09",
+      "requirements": [
+        "IV-G09",
+        "IV-G24"
+      ],
+      "title": "Campagne après match nul",
+      "scenario": "Produire une égalité puis un résultat dupliqué.",
+      "expected": "Aucun saut de chapitre, aucune double statistique ou récompense.",
+      "type": "Test logique",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q10",
+      "requirements": [
+        "IV-G02",
+        "IV-G08",
+        "IV-G09"
+      ],
+      "title": "Filtres d’univers et saison",
+      "scenario": "Masquer les saisons ou l’un des univers après une sauvegarde.",
+      "expected": "Les contenus non autorisés restent indisponibles sans effacer leur progression.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q11",
+      "requirements": [
+        "IV-G24"
+      ],
+      "title": "Import invalide",
+      "scenario": "Importer version inconnue, héros incohérent ou route corrompue.",
+      "expected": "Message explicite et sauvegarde courante préservée.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q12",
+      "requirements": [
+        "IV-G14"
+      ],
+      "title": "Présentation d’arène",
+      "scenario": "Même duel en vivant, réduit et statique avec les mêmes entrées.",
+      "expected": "État de combat identique ; animation de présentation seule affectée.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q13",
+      "requirements": [
+        "IV-G03",
+        "IV-G16"
+      ],
+      "title": "Galerie de réserves",
+      "scenario": "Ouvrir chaque catégorie et rechercher une identité.",
+      "expected": "22 dessins : 13 personnages, huit ennemis, un projectile. Aucun sélectionnable comme kit.",
+      "type": "Test UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q14",
+      "requirements": [
+        "IV-G17"
+      ],
+      "title": "Fichiers de réserve",
+      "scenario": "Comparer les 44 chemins master/export au manifeste.",
+      "expected": "Tous présents, empreintes conformes ; l’existence ne vaut pas fidélité 1:1.",
+      "type": "Contrôle de fichiers",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q15",
+      "requirements": [
+        "IV-G10",
+        "IV-G19"
+      ],
+      "title": "Lecture responsive",
+      "scenario": "Consulter prologue, chapitre, épilogue et galerie sur desktop/mobile.",
+      "expected": "Image non rognée, texte lisible, focus visible, commandes atteignables.",
+      "type": "Revue visuelle",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q16",
+      "requirements": [
+        "IV-G04",
+        "IV-G06"
+      ],
+      "title": "Fin de combat",
+      "scenario": "KO décisif, chrono, passage de finition, pause et retour au menu.",
+      "expected": "Un seul résultat, bonne récompense et reprise jouable.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q17",
+      "requirements": [
+        "IV-G20"
+      ],
+      "title": "Entraînement",
+      "scenario": "Attaquer, réinitialiser, quitter et relire les statistiques.",
+      "expected": "Aucun résultat d’entraînement ajouté au registre.",
+      "type": "Test logique/UI",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q18",
+      "requirements": [
+        "IV-G25"
+      ],
+      "title": "Préservation du classeur",
+      "scenario": "Comparer les parties OOXML historiques V3 après assemblage.",
+      "expected": "29 feuilles conservées à l’octet, cinq ajouts, formules nouvelles sans erreur.",
+      "type": "Contrôle du classeur",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q19",
+      "requirements": [
+        "IV-G01",
+        "IV-G26"
+      ],
+      "title": "Build autonome",
+      "scenario": "Construire manager et standalone puis vérifier les chemins/empreintes.",
+      "expected": "Aucun asset référencé manquant ni import interdit du manager.",
+      "type": "Build et vérification",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    },
+    {
+      "id": "IV-Q20",
+      "requirements": [
+        "IV-G02",
+        "IV-G17"
+      ],
+      "title": "Revue de fidélité",
+      "scenario": "Comparer chaque nouveau visuel à son incarnation et sa référence.",
+      "expected": "Statut conservé à vérifier tant qu’une comparaison réelle n’est pas consignée.",
+      "type": "Revue artistique",
+      "status": "Critère prévu ; résultat à lire dans le rapport daté"
+    }
+  ],
+  "historicalWorkbook": {
+    "file": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx",
+    "preservedSheets": 29,
+    "snapshot": "Vague I / bible V3 ; ses tableaux décrivent cet état historique, pas un inventaire courant V4."
+  }
+}

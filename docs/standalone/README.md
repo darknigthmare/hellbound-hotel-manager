@@ -17,7 +17,26 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Contenu de cette version — 25 novembre 2026, vague I
+## Reprise actuelle — 25 novembre 2026, guide intégré V4
+
+La [bible V4](INFERNAL_VERSUS_BIBLE_V4.xlsx) et son [chapitre lisible](INFERNAL_VERSUS_GUIDE_V4.md) associent les **30 rubriques du guide général et dix fiches A–J** au jeu réel. Le [guide source](references/Combat_Games_Guide_General_v1.0.txt) est conservé à l’identique. Les **29 feuilles de la V3 restent archivées dans le classeur**, avec cinq nouvelles vues : Guide V4, Fiches V4, Campagne globale, Réserves V4 et Recette V4.
+
+Le [fichier Excel de suivi sur Google Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) a été mis à jour au même identifiant le 25 novembre 2026 : **INFERNAL_VERSUS_BIBLE_V4.xlsx**, 416 663 octets. Son nom, sa taille, son format et son dossier parent ont été relus après remplacement.
+
+- **43 routes personnelles V3 et 129 duels** sont raccordés aux Chroniques. Les anciennes sauvegardes reprennent leur route V1, avec leur ancien ordre d’adversaires et leurs fins propres.
+- **La nuit du signal libre** ajoute une campagne AU distincte de neuf chapitres, avec huit identités jouables successives, objectifs, dialogues, conséquences et reprise entre les duels.
+- **La galerie de réserve expose 22 dessins** : 13 bases de personnages, huit bases d’ennemis et une fléchette. Ces images restent hors des kits et ne sont pas présentées comme des combattants ou projectiles fonctionnels.
+- **Trois présentations du décor** : vivant, réduit et statique. Le mode réduit fixe la caméra et ralentit les figurants ; le mode statique fige leur présentation. La préférence système de réduction des mouvements force la présentation statique. Les règles de combat restent identiques.
+- **Neuf modes** : Versus CPU, Versus local, Entraînement, Histoire, Campagne, Tournoi, Arcade, Survie et Boss Rush. Le catalogue conserve **43 combattants, 30 arènes et 133 attaques paramétrées**.
+- Les **129 briefs d’illustration V3**, **172 concepts de techniques** et **43 storyboards de Dernier Acte** restent distingués de leur réalisation. **Aucune illustration ancienne n’est automatiquement attribuée à V3** : les 22 dessins narratifs existants et leurs 26 affectations restent liés aux routes V1. V3 utilise décors et portraits en attendant une association vérifiée.
+
+Le lot V4 n’ajoute aucun dessin, cycle d’animation, kit ou mécanique de projectile. Trois liaisons entre arènes sont décrites dans la bible, mais leurs transitions restent à développer. Les champs `runtimeIntegration` de la source V3 et `meta.currentRuntime` du plan décrivent désormais le raccordement effectif ; les flags historiques du lot I sont conservés séparément.
+
+La recette locale courante a réussi : **45 suites / 395 tests**, TypeScript, ESLint, les builds manager et standalone et **1 031 fichiers de distribution vérifiés**. Les tests d’interface utilisent JSDOM. **Aucune validation réelle en navigateur n’est revendiquée** : le binaire Chromium est absent et le téléchargement officiel Playwright a été refusé (HTTP 403). Voir le [rapport runtime V4](QA_RUNTIME_GUIDE_V4_2026-11-25.json), le [rapport de livraison](DELIVERY_GUIDE_V4_2026-11-25.md), les [associations de données](QA_GUIDE_DATA_V4_2026-11-25.json) et les [contrôles du classeur](QA_GUIDE_WORKBOOK_V4_2026-11-25.json). Les tests ne certifient pas la fidélité artistique 1:1.
+
+## Contenu conservé — 25 novembre 2026, vague I (historique)
+
+Les chiffres et descriptions de cette section décrivent la livraison I avant le raccordement V4 ci-dessus.
 
 - **43 combattants jouables** : 25 de *Hazbin Hotel* et 18 de *Helluva Boss*. Vortex, Glitz et Glam ont rejoint le standalone avec la vague F. Les vagues G, H et I complètent les dessins de base en réserve.
 - **133 attaques paramétrées** : 129 légers, lourds et spéciaux, plus les quatre signatures de Vaggie, Blitzø, Mimzy et Sallie May. Le carnet expose commandes, temps, portée et tension.
@@ -48,7 +67,7 @@ Les identités, incarnations et motifs sont rattachés aux sources des manifeste
 
 **La fidélité exacte 1:1 n’est pas certifiée.** Les références officielles de G, H et I sont principalement des prévisualisations de 320 × 180. Le plan rapproché de Toledo reste à vérifier, et les détails fins d’Elder Jaws proviennent surtout du portrait historique. Les parties basses de Martha et Mayberry, certains petits détails et la pointe cachée de la fléchette restent des reconstructions. Les poses neutres, pistes de duel et placements d’accessoires sont des adaptations de présentation. Les PNG sont conservés à l’octet et les WebP de production sont sans perte, à leur taille native.
 
-Les finitions comprennent 43 titres et des traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les illustrations narratives couvrent 26 affectations avec 22 dessins distincts. Les anciennes demandes refusées restent consignées dans leurs lots. En H, Clara, Odette, Deerie et Loopty ont reçu chacun un refus du générateur ; aucun fichier produit ni relance après refus. I ne reçoit aucun refus et conserve six dessins, après remplacement d’un premier essai de Rolando.
+Les finitions comprennent 43 titres et des traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les illustrations narratives couvrent 26 affectations V1 avec 22 dessins distincts ; aucune affectation V3 n’est validée par défaut. Les anciennes demandes refusées restent consignées dans leurs lots. En H, Clara, Odette, Deerie et Loopty ont reçu chacun un refus du générateur ; aucun fichier produit ni relance après refus. I ne reçoit aucun refus et conserve six dessins, après remplacement d’un premier essai de Rolando.
 
 Le lancement du navigateur G a échoué parce que le binaire Chromium était absent ; son absence a été confirmée en H. Les compositions statiques et les contrôles de fichiers ne certifient pas les transitions, les tailles canoniques relatives ou le rendu sur appareil. Les détails figurent dans le [rapport de revue H](REVIEW_ASSETS_WAVE_H_2026-11-25.md).
 
@@ -71,11 +90,13 @@ La vague I apporte **6 dessins retenus et 12 fichiers d’image de production** 
 
 Les pièces de réserve des lots antérieurs — vêtements, chapeau, queue, canne, lance et variantes de décor — restent conservées avec leur propre statut. Le catalogue cumulatif porte uniquement sur les bases et le projectile des vagues G, H et I ; les manifestes datés restent inchangés.
 
-## Bible de production
+## Bible de production V3 — archive historique
+
+La V4 et son état actuel sont présentés en tête de ce document. Les descriptions suivantes conservent la provenance et le contenu de la V3 au moment de sa livraison.
 
 [Ouvrir le classeur V3](INFERNAL_VERSUS_BIBLE_V3.xlsx) ou [lire les fiches complètes](INFERNAL_VERSUS_CAMPAIGNS_V3.md). Ses **29 feuilles** conservent les onze registres V1 historiques, les douze vues du jeu et de la production courants, puis six nouveaux onglets : Campagnes V3, Chapitres V3, Illustrations V3, Movesets V3, Derniers Actes et Continuité V3.
 
-Le [classeur V3 sur Google Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) remplace la V2 au même identifiant, au format `.xlsx`. Le nom, la taille de 372 305 octets et le dossier parent ont été relus après la mise à jour du 25 novembre 2026.
+Le [fichier de suivi sur Google Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) suit les éditions successives au même identifiant, au format `.xlsx`. La livraison V3 du 25 novembre 2026 y comptait 372 305 octets ; son nom et son dossier parent avaient été relus. L’archive V3 immuable reste le fichier du dépôt lié ci-dessus.
 
 La V3 couvre **43 campagnes proposées, 129 chapitres, 129 briefs d’illustration (86 introductions/épilogues et 43 rivalités), 172 propositions de techniques et 43 Derniers Actes**. Elle relie 109 repères de lore à 27 sources documentées, dont deux registres historiques du projet. Chaque illustration précise caméra, composition, lumière, palette, incarnation et exclusions. Les images existantes doivent être revalidées pour leur nouveau brief et leur casting.
 
@@ -97,7 +118,7 @@ Les données structurées sont dans `extension-plan.json`. Le builder `build-wor
 
 Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884769873e66bbda0b6fe849bcd2f1a2`; arbre identique au lot P39 `bdcc11a5136e944b1eaa0b1adb357ddd3f3fa1ef`. Les modules CQC ont servi de référence d'architecture et de périmètre, sans modifier ce dépôt.
 
-## Vérifications
+## Vérifications du lot I — archive historique
 
 `npm run qa` regroupe TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 du standalone. Pour I, ces étapes ont été exécutées séparément avec succès : **44 suites / 376 tests**, deux builds et **1 031 empreintes vérifiées**. Les sorties de build temporaires ont été retirées après validation. Les résultats figurent dans [QA_RUNTIME_WAVE_I_2026-11-25.json](QA_RUNTIME_WAVE_I_2026-11-25.json).
 

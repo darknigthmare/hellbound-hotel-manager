@@ -2,10 +2,13 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { STANDALONE_FIGHTER_IDS } from '../standalone/roster';
+import { GLOBAL_CAMPAIGN } from '../standalone/campaign-global';
+import type { PentagramStage } from '../lib/pentagram-stages';
 import type { CombatState } from '../lib/pentagram-combat';
 import type { Character, TimelineState } from '../types';
 import { InfernalVersus } from '../standalone/InfernalVersus';
-import { createDefaultSave, STANDALONE_STORAGE_KEY, type StandaloneSave } from '../standalone/progression';
+import { buildRun, createDefaultSave, STANDALONE_STORAGE_KEY, type StandaloneSave } from '../standalone/progression';
 
 interface LiveProps {
   fighterOne: Character;
@@ -13,6 +16,8 @@ interface LiveProps {
   timeline: TimelineState;
   matchMode: 'ai' | 'local';
   training?: boolean;
+  stage: PentagramStage;
+  stagePresentation?: 'alive' | 'static' | 'reduced';
   onMatchComplete?: (result: CombatState) => void;
   onNextMatch?: () => void;
   onExit: () => void;
@@ -212,7 +217,7 @@ describe('playable stories and elimination cups', () => {
     const initial = render(<InfernalVersus />);
     press(/HISTOIRE/);
     press('Démarrer le parcours');
-    expect(screen.getByRole('heading', { name: 'Une place à la table' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Une chambre, un choix' })).toBeTruthy();
     expect(screen.getByText(/PROLOGUE · Charlie/)).toBeTruthy();
     press('Entrer en combat');
     expect(runtime.last!.fighterTwo.id).toBe('vaggie');
@@ -223,7 +228,8 @@ describe('playable stories and elimination cups', () => {
     render(<InfernalVersus />);
     press('Continuer');
     press('Entrer en combat');
-    expect(runtime.last!.fighterTwo.id).toBe('alastor');
+    expect(runtime.last!.fighterTwo.id).toBe('velvette');
+    expect(runtime.last!.stage.id).toBe('vee-broadcast-studio');
     press('Fixture win');
     press('Fixture next');
     expect(screen.getByRole('heading', { name: 'Rival · Adam' })).toBeTruthy();
@@ -240,10 +246,10 @@ describe('playable stories and elimination cups', () => {
     press('Démarrer le parcours');
     press('Fixture quit');
     press('Combattants');
-    const entry = screen.getByText('Charlie Morningstar · Une place à la table');
+    const entry = screen.getByText('Charlie Morningstar · Une chambre, un choix');
     fireEvent.click(entry);
     expect(entry.closest('details')?.open).toBe(true);
-    expect(screen.getByText(/Elle rouvre le registre/)).toBeTruthy();
+    expect(screen.getByText(/Charlie laisse la clé à portée/)).toBeTruthy();
   }, 30_000);
 
   it('keeps a drawn cup through reload, shows CPU results and ends the cup on defeat', () => {
@@ -270,4 +276,112 @@ describe('playable stories and elimination cups', () => {
     press('Voir le tableau final');
     expect(screen.getByRole('heading', { name: 'Palmarès du tournoi' })).toBeTruthy();
   }, 30_000);
+});
+
+describe('guide integration and narrative compatibility', () => {
+  it('plays nine campaign chapters with changing actors, a retry, reload and a permanent epilogue', () => {
+    let view = render(<InfernalVersus />);
+    click(/CAMPAGNE/);
+    click('Commencer la campagne');
+    expect(screen.getByRole('heading', { name: 'Une invitation sans petites lignes' })).toBeTruthy();
+    const actors: string[] = [];
+    for (let index = 0; index < 9; index++) {
+      if (index === 2) {
+        view.unmount();
+        view = render(<InfernalVersus />);
+        click('Continuer');
+      }
+      click('Entrer en combat');
+      actors.push(runtime.last!.fighterOne.id);
+      expect(runtime.last!.fighterTwo.id).toBe(GLOBAL_CAMPAIGN.chapters[index].opponentId);
+      expect(runtime.last!.stage.id).toBe(GLOBAL_CAMPAIGN.chapters[index].stageId);
+      if (index === 1) {
+        click('Fixture loss');
+        click('Fixture next');
+        click('Réessayer le duel');
+        click('Entrer en combat');
+        expect(runtime.last!.fighterOne.id).toBe('hb_blitzo');
+      }
+      click('Fixture win');
+      click('Fixture win');
+      click('Fixture next');
+    }
+    expect(actors).toEqual(['charlie', 'hb_blitzo', 'angeldust', 'hb_loona', 'vaggie', 'hb_millie', 'hb_fizzarolli', 'alastor', 'charlie']);
+    expect(saved().run?.status).toBe('complete');
+    expect(saved().stats).toMatchObject({ matches: 10, wins: 9, losses: 1 });
+    expect(saved().campaignEndings).toEqual(['signal-libre:1']);
+    expect(screen.getByText(/ÉPILOGUE · CAMPAGNE GLOBALE/)).toBeTruthy();
+    click('Retour aux modes');
+    click('Clore le parcours');
+    click('Combattants');
+    expect(screen.getByText('Campagne globale · La nuit du signal libre')).toBeTruthy();
+    expect(localStorage.getItem('hellbound_hotel_db_state')).toBe('hotel-save-sentinel');
+  }, 30_000);
+
+  it('resumes a pre-guide route with its original rival, scenery, pictures and archived ending', () => {
+    const run = buildRun('story', 'charlie', STANDALONE_FIGHTER_IDS, [], 71, 1);
+    delete run.routeVersion;
+    const legacy = {
+      version: 1,
+      options: { soundtrack: true, reducedMotion: false, difficulty: 'standard' },
+      stats: createDefaultSave().stats,
+      storyEndings: [], recentResults: [], processedResultIds: [], run,
+    };
+    localStorage.setItem(STANDALONE_STORAGE_KEY, JSON.stringify(legacy));
+    render(<InfernalVersus />);
+    click('Continuer');
+    expect(screen.getByRole('heading', { name: 'Une place à la table' })).toBeTruthy();
+    for (const opponent of ['vaggie', 'alastor', 'adam']) {
+      click('Entrer en combat');
+      expect(runtime.last!.fighterTwo.id).toBe(opponent);
+      click('Fixture win');
+      click('Fixture next');
+    }
+    expect(saved().storyCompletions).toEqual([{ fighterId: 'charlie', routeVersion: 1 }]);
+    click('Retour aux modes');
+    click('Combattants');
+    expect(screen.getByText('Charlie Morningstar · Une place à la table · Archive')).toBeTruthy();
+    expect(screen.queryByText('Charlie Morningstar · Une chambre, un choix')).toBeNull();
+  });
+
+  it('does not retain a hidden season-two fighter when a filtered story list is empty', () => {
+    render(<InfernalVersus />);
+    click(/HISTOIRE/);
+    fireEvent.change(screen.getByLabelText('Univers'), { target: { value: 'Helluva Boss' } });
+    click(/Mammon\s*HELLUVA/);
+    fireEvent.change(screen.getByLabelText('Contenu'), { target: { value: 'season_1' } });
+    expect(screen.getByRole('button', { name: 'Démarrer le parcours' }).hasAttribute('disabled')).toBe(true);
+    expect(screen.queryByRole('heading', { name: 'Mammon' })).toBeNull();
+    click('Modes de jeu');
+    click(/VERSUS CPU/);
+    click('Lancer le combat');
+    expect(runtime.last!.fighterOne.id).not.toBe('hb_mammon');
+    expect(runtime.last!.timeline.spoilerLevel).toBe('season_1');
+    click('Fixture quit');
+    click(/CAMPAGNE/);
+    expect(screen.queryByRole('button', { name: 'Commencer la campagne' })).toBeNull();
+    expect(screen.queryByText(GLOBAL_CAMPAIGN.intro)).toBeNull();
+  });
+
+  it('filters reserve art without changing the roster and keeps scene preferences after reload', () => {
+    const view = render(<InfernalVersus />);
+    click('Galerie');
+    expect(document.querySelectorAll('.iv-reserve-card')).toHaveLength(22);
+    fireEvent.change(screen.getByLabelText('Catégorie'), { target: { value: 'projectile' } });
+    const dart = screen.getByRole('button', { name: /Fléchette tranquillisante/ });
+    fireEvent.click(dart);
+    expect(document.activeElement).toBe(screen.getByRole('heading', { name: /Fléchette tranquillisante/ }));
+    click('Refermer l’aperçu');
+    expect(document.activeElement).toBe(dart);
+    fireEvent.change(screen.getByLabelText('Contenu de la galerie'), { target: { value: 'season_1' } });
+    expect(document.querySelectorAll('.iv-reserve-card')).toHaveLength(0);
+    click('Options');
+    fireEvent.change(screen.getByLabelText('Présentation des décors'), { target: { value: 'static' } });
+    view.unmount();
+    render(<InfernalVersus />);
+    expect(screen.getByText('43', { selector: 'strong' })).toBeTruthy();
+    click(/VERSUS CPU/);
+    click('Lancer le combat');
+    expect(runtime.last!.stagePresentation).toBe('static');
+  });
 });

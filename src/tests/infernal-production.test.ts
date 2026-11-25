@@ -13,7 +13,9 @@ describe('Infernal Versus production assets', () => {
     const paths = new Set<string>();
     for (const id of Object.keys(STORY_ROUTES)) {
       for (const kind of ['intro','rival','ending'] as const) {
-        const art = storyIllustration(id, kind);
+        // The published pictures belong to the preserved exhibition stories.
+        // V3 has different briefs; a matching character name is not an art review.
+        const art = storyIllustration(id, kind, 1);
         if (art) paths.add(art);
       }
     }

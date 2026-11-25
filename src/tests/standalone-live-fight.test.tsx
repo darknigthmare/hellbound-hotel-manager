@@ -65,6 +65,31 @@ function start() { advance(4_000); expect(stage().getAttribute('data-phase')).to
 function knockOut() { key('KeyG'); advance(1_000); }
 
 describe('standalone combat lifecycle', () => {
+  it.each(['alive', 'reduced', 'static'] as const)('keeps combat movement active with %s scenery and fixes only the scenery camera when requested', presentation => {
+    render(<PentagramLiveFight {...props({ infernalRules: true, training: true, stagePresentation: presentation })} />);
+    start();
+    expect(stage().dataset.stagePresentation).toBe(presentation);
+    const fighter = stage().querySelector<HTMLElement>('.arena-combatant.is-one')!;
+    const before = Number(fighter.dataset.position);
+    fireEvent.keyDown(stage(), { code: 'KeyD' });
+    advance(500);
+    fireEvent.keyUp(stage(), { code: 'KeyD' });
+    expect(Number(fighter.dataset.position)).toBeGreaterThan(before);
+    const plane = stage().querySelector<HTMLElement>('.infernal-room-plane')!;
+    if (presentation === 'alive') expect(plane.style.transform).not.toBe('translateX(0px)');
+    else expect(plane.style.transform).toBe('translateX(0px)');
+    expect(stage().dataset.phase).toBe('running');
+  });
+
+  it('lets reduced-motion accessibility override living scenery without freezing combat', () => {
+    render(<PentagramLiveFight {...props({ infernalRules: true, training: true, reducedMotion: true, stagePresentation: 'alive' })} />);
+    start();
+    expect(stage().dataset.stagePresentation).toBe('static');
+    key('KeyF');
+    advance(100);
+    expect(stage().dataset.phase).toBe('running');
+  });
+
   it.each([
     ['husk', false, 'husk-guard'],
     ['hb_millie', true, 'hb_millie-ready'],
