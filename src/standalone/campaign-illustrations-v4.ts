@@ -611,6 +611,291 @@ export const CAMPAIGN_ILLUSTRATIONS_V4: readonly CampaignIllustration[] = [
     "beat": "ending"
   },
   {
+    "id": "v3:niffty:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/niffty-intro.webp",
+    "alt": "Simulation AU — Niffty : Le monde à hauteur de balai. Caméra très basse au niveau du sol du bar ; un tesson paraît énorme au premier plan, Niffty au centre suit la ligne de petits débris. Seules les jambes de Husk sont visibles loin derrière le comptoir, hors foyer.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-bar",
+    "cast": [
+      "niffty",
+      "husk"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "niffty",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:niffty:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/niffty-rival.webp",
+    "alt": "Simulation AU — Niffty : Le point aveugle. Plan large bas devant les marches de l’hôtel. Adam, incarnation masquée S1, occupe la verticale à droite ; Niffty, beaucoup plus petite, ferme calmement un angle à sa gauche. Espace vide lisible entre eux, instant avant le duel.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-exterior",
+    "cast": [
+      "niffty",
+      "adam"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "niffty",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:niffty:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/niffty-ending.webp",
+    "alt": "Simulation AU — Niffty : Enfin un passage. Au ras du sol dans le passage dégagé du hall, Niffty se retourne vers une minuscule tache ; un petit panneau de travail uni est décalé sur le côté. Charlie et Vaggie demeurent de petites silhouettes identifiables mais hors foyer dans le fond.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-lobby",
+    "cast": [
+      "niffty",
+      "charlie",
+      "vaggie"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "niffty",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:sirpentious:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/sirpentious-rival.webp",
+    "alt": "Simulation AU — Sir Pentious : La machine entre deux mondes. Plan large de profil devant les marches de l’hôtel. Petit mécanisme de porte AU au centre ; Pentious à gauche tient son levier, Adam masqué S1 haut à droite. Un passage d’évacuation reste dégagé au fond. Instant de confrontation avant impact.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-exterior",
+    "cast": [
+      "sirpentious",
+      "adam"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "sirpentious",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:sirpentious:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/sirpentious-ending.webp",
+    "alt": "Simulation AU — Sir Pentious : Le passage fonctionne. Plan moyen dans un couloir AU ouvert sur le hall référencé. Levier tordu au premier plan, outils posés au sol, passage ouvert derrière. Pentious repose sur sa queue enroulée à côté et examine une petite pièce utile.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-lobby",
+    "cast": [
+      "sirpentious"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "sirpentious",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:lucifer:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/lucifer-intro.webp",
+    "alt": "Simulation AU — Lucifer Morningstar : Un cadeau trop grand. Plan large légèrement comique dans le hall : grand paquet fermé au premier plan, Lucifer fier devant, Charlie près d’une petite porte au fond. Lucifer mesure l’ouverture avec son regard et comprend que son colis gêne le travail.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-lobby",
+    "cast": [
+      "lucifer",
+      "charlie"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "lucifer",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:lucifer:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/lucifer-rival.webp",
+    "alt": "Simulation AU — Lucifer Morningstar : La force retenue. Contre-plongée modérée devant la façade de l’hôtel. Lucifer de profil au premier plan referme sa main et retient son geste ; Adam masqué S1 reste à distance à droite. Fenêtre et marches de l’hôtel reconnaissables, espace clair entre eux.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-exterior",
+    "cast": [
+      "lucifer",
+      "adam"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "lucifer",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:lucifer:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/lucifer-ending.webp",
+    "alt": "Simulation AU — Lucifer Morningstar : À la bonne place. Plan moyen domestique : un petit meuble entre Lucifer et Charlie. Lucifer soulève un côté tandis que Charlie indique l’emplacement avec sa main libre. Hall intact dans la profondeur et lumière chaude.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-lobby",
+    "cast": [
+      "lucifer",
+      "charlie"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "lucifer",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:cherribomb:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/cherribomb-intro.webp",
+    "alt": "Simulation AU — Cherri Bomb : Deux charges, une décision. Plan poitrine sur Cherri devant un mur de l’atelier AU. Son regard se détourne du geste de lancer et suit la main de Husk vers une fenêtre au fond. Un carton opaque au premier plan masque presque complètement l’accessoire inactif et le bas de son corps ; aucune forme de charge détaillée ni mèche visible.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "pentious-workshop",
+    "cast": [
+      "cherribomb",
+      "husk"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "cherribomb",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:cherribomb:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/cherribomb-rival.webp",
+    "alt": "Simulation AU — Cherri Bomb : La porte comme cible. Plan moyen latéral de Cherri au premier plan, cadrée poitrine, regard dirigé vers le verrou d’une porte de sortie à gauche. Valentino se tient plus loin à droite du plateau. La console de premier plan masque la main basse et tout accessoire ; aucun lancer ou impact montré.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "cherribomb",
+      "valentino"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "cherribomb",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:cherribomb:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/cherribomb-ending.webp",
+    "alt": "Simulation AU — Cherri Bomb : La bombe restante. Plan rapproché poitrine dans le vestibule AU de la sortie ouverte du studio, éclairé par la rue. Cherri referme le rabat d’un sac opaque tenu haut devant le bas de son buste ; son accessoire inactif reste entièrement caché dans le sac. Angel, hors foyer à côté, se dirige librement vers la sortie.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "cherribomb",
+      "angeldust"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "cherribomb",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:vox:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/vox-intro.webp",
+    "alt": "Simulation AU — Vox : Tout est cadré. Composition géométrique du studio, Vox centré parmi une grille de moniteurs. Chaise d’invité vide au premier plan ; Vox ajuste à la main un cadre de caméra. Les écrans portent uniquement des aplats abstraits sans chiffres ni visages nouveaux.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "vox"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "vox",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:vox:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/vox-rival.webp",
+    "alt": "Simulation AU — Vox : Le cadre se décale. Plan large asymétrique : Vox entre deux moniteurs se penche et pointe vers la ligne de caméra ; Alastor se tient volontairement à côté de cet axe, tenant sa canne microphone. Lumière cyan autour de Vox, ombres rouges autour d’Alastor.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "vox",
+      "alastor"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "vox",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:vox:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/vox-ending.webp",
+    "alt": "Simulation AU — Vox : Le canal muet. Plan rapproché de dos : Vox seul devant plusieurs moniteurs bleutés ; un rectangle noir au centre reste éteint. Sa main demeure suspendue devant l’écran sombre. Studio vide, composition froide et silencieuse.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "vox"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "vox",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:valentino:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/valentino-intro.webp",
+    "alt": "Simulation AU — Valentino : Le plateau attend. Plan large frontal d’un plateau désert : fauteuil de direction vide au premier plan, postes de travail abandonnés. Valentino au fond écarte un rideau pour chercher son équipe ; vastes zones sombres.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "valentino"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "valentino",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:valentino:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/valentino-rival.webp",
+    "alt": "Simulation AU — Valentino : La porte dans le champ. Plan moyen de profil. Valentino proche caméra tend un bras d’ordre vers le plateau ; Angel se tient près de l’issue ouverte et regarde le couloir neutre. Distance nette entre les deux, chemin de sortie non obstrué visuellement.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "valentino",
+      "angeldust"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "valentino",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:valentino:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/valentino-ending.webp",
+    "alt": "Simulation AU — Valentino : Une victoire sans équipe. Plan général éloigné : Valentino demeure seul sous un projecteur rose isolé, sièges vides autour de lui et caméra éteinte au bord du cadre. Il garde sa pose, mais personne ne filme ; sortie ouverte derrière.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "valentino"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "valentino",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
     "id": "v3:velvette:intro",
     "scope": "personal",
     "src": "/assets/story/infernal-versus/v3/velvette-intro.webp",
@@ -1134,6 +1419,170 @@ export const CAMPAIGN_ILLUSTRATIONS_V4: readonly CampaignIllustration[] = [
     "beat": "rival"
   },
   {
+    "id": "v3:abel:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/abel-ending.webp",
+    "alt": "La décision assumée — Il relève la tête vers l’interlocuteur hors champ.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hh-heaven-gates",
+    "cast": [
+      "abel"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "abel",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hz_mimzy:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_mimzy-intro.webp",
+    "alt": "Une entrée impeccable — Elle masque la pièce abîmée derrière son dos.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-bar",
+    "cast": [
+      "hz_mimzy"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_mimzy",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hz_mimzy:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_mimzy-rival.webp",
+    "alt": "Le sourire ne suffit pas — Elle cesse de présenter la scène et regarde enfin le dégât.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-exterior",
+    "cast": [
+      "hz_mimzy",
+      "alastor"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_mimzy",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hz_mimzy:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_mimzy-ending.webp",
+    "alt": "Après les applaudissements — Elle remet un élément à sa place.",
+    "width": 1671,
+    "height": 941,
+    "stageId": "hotel-bar",
+    "cast": [
+      "hz_mimzy"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_mimzy",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hz_katie_killjoy:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_katie_killjoy-intro.webp",
+    "alt": "Tout prépare la conclusion — Elle réoriente la chaise de l’invité vers la caméra.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "hz_katie_killjoy"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hz_katie_killjoy",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hz_katie_killjoy:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_katie_killjoy-rival.webp",
+    "alt": "Le contrôle du bouton — Aucune main n’atteint encore le bouton.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "hz_katie_killjoy",
+      "vox"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hz_katie_killjoy",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hz_katie_killjoy:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_katie_killjoy-ending.webp",
+    "alt": "Un plan moins serré — Katie garde sa main sur le bureau sans pointer hors champ.",
+    "width": 1672,
+    "height": 940,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "hz_katie_killjoy",
+      "hz_tom_trench"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hz_katie_killjoy",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hz_tom_trench:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_tom_trench-intro.webp",
+    "alt": "Rapporter quelque chose d’entier — Il rassemble le câble pour dégager le passage.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "hotel-lobby",
+    "cast": [
+      "hz_tom_trench"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_tom_trench",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hz_tom_trench:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_tom_trench-rival.webp",
+    "alt": "Le point final — Tom garde une main ouverte pour demander une seconde supplémentaire.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "hz_tom_trench",
+      "hz_katie_killjoy"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_tom_trench",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hz_tom_trench:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hz_tom_trench-ending.webp",
+    "alt": "Après la phrase — Tom retire sa main du micro après l’arrêt.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "vee-broadcast-studio",
+    "cast": [
+      "hz_tom_trench"
+    ],
+    "spoilerTier": "season_1",
+    "fighterId": "hz_tom_trench",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
     "id": "v3:hb_moxxie:intro",
     "scope": "personal",
     "src": "/assets/story/infernal-versus/v3/hb_moxxie-intro.webp",
@@ -1329,6 +1778,555 @@ export const CAMPAIGN_ILLUSTRATIONS_V4: readonly CampaignIllustration[] = [
     ],
     "spoilerTier": "season_2",
     "fighterId": "hb_striker",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_verosika:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_verosika-intro.webp",
+    "alt": "La loge ouverte — Elle retire un pass du dossier de sa chaise.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "spring-broken-beach",
+    "cast": [
+      "hb_verosika"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_verosika",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_verosika:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_verosika-rival.webp",
+    "alt": "Le micro au centre — Elle garde une main sur le pied du micro et lui indique la sortie.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "apology-party",
+    "cast": [
+      "hb_verosika",
+      "hb_blitzo"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_verosika",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_verosika:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_verosika-ending.webp",
+    "alt": "À son signal — Elle lance le départ d’un signe choisi.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "apology-party",
+    "cast": [
+      "hb_verosika",
+      "hb_vortex"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_verosika",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_asmodeus:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_asmodeus-intro.webp",
+    "alt": "Les mauvais billets — Il examine les billets tandis qu’une petite silhouette d’artiste attend sa réponse.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "ozzies-cabaret",
+    "cast": [
+      "hb_asmodeus",
+      "hb_fizzarolli"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_asmodeus",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_asmodeus:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_asmodeus-rival.webp",
+    "alt": "Le guichet brisé — Ozzie tient le cadre du guichet arraché.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_asmodeus",
+      "hb_mammon"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_asmodeus",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_asmodeus:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_asmodeus-ending.webp",
+    "alt": "Entrer par choix — Ozzie attend un signe avant d’entrer.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "ozzies-cabaret",
+    "cast": [
+      "hb_asmodeus",
+      "hb_fizzarolli"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_asmodeus",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_beelzebub:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_beelzebub-intro.webp",
+    "alt": "Le compteur de trop — Bee soulève le cordon de la barrière pour dégager le passage.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "bee-party",
+    "cast": [
+      "hb_beelzebub"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_beelzebub",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_beelzebub:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_beelzebub-rival.webp",
+    "alt": "Le guichet et le banquet — Elle arrête une roue dentée du décor, pas l’esprit de Mammon.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_beelzebub",
+      "hb_mammon"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_beelzebub",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_beelzebub:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_beelzebub-ending.webp",
+    "alt": "On peut rester assis — Bee pose un verre d’eau sur une table basse.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "bee-party",
+    "cast": [
+      "hb_beelzebub",
+      "hb_vortex"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_beelzebub",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_crimson:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_crimson-intro.webp",
+    "alt": "Trop de couverts — Il redresse un verre déjà droit.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "crimson-mansion",
+    "cast": [
+      "hb_crimson"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_crimson",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_crimson:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_crimson-rival.webp",
+    "alt": "La chaise en travers — Crimson pousse le siège dans l’axe de la porte.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "crimson-mansion",
+    "cast": [
+      "hb_crimson",
+      "hb_moxxie"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_crimson",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_crimson:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_crimson-ending.webp",
+    "alt": "Le couvert intact — Crimson lève son verre face à l’absence.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "crimson-mansion",
+    "cast": [
+      "hb_crimson"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_crimson",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_sallie_may:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_sallie_may-intro.webp",
+    "alt": "Deux billets, une chaise — Elle range un billet au lieu de l’abandonner sur le bureau.",
+    "width": 1671,
+    "height": 941,
+    "stageId": "imp-reception",
+    "cast": [
+      "hb_sallie_may"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_sallie_may",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_sallie_may:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_sallie_may-rival.webp",
+    "alt": "Le vieux jeu — Elles se font face avec un sourire retenu et des appuis sérieux.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "wrath-ranch",
+    "cast": [
+      "hb_sallie_may",
+      "hb_millie"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_sallie_may",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_sallie_may:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_sallie_may-ending.webp",
+    "alt": "Chacune son chemin — Elles lèvent chacune une main sans courir l’une vers l’autre.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "wrath-ranch",
+    "cast": [
+      "hb_sallie_may",
+      "hb_millie"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_sallie_may",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_andrealphus:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_andrealphus-intro.webp",
+    "alt": "L’escalier parfait — Il dessine du bout des doigts une arête géométrique.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "stolas-palace",
+    "cast": [
+      "hb_andrealphus"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_andrealphus",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_andrealphus:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_andrealphus-rival.webp",
+    "alt": "Le pas qui fissure — Andrealphus serre la rampe tandis que Stolas pose un pied.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "sinsmas-balcony",
+    "cast": [
+      "hb_andrealphus",
+      "hb_stolas"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_andrealphus",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_andrealphus:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_andrealphus-ending.webp",
+    "alt": "Un palais impeccable — Il se tient parfaitement droit devant les marches intactes.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "stolas-palace",
+    "cast": [
+      "hb_andrealphus"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_andrealphus",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_stella:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_stella-intro.webp",
+    "alt": "Le retour intact — Elle retire son gant en le tirant sèchement.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "stolas-palace",
+    "cast": [
+      "hb_stella"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_stella",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_stella:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_stella-rival.webp",
+    "alt": "La place que l’on déplace — Elle repousse le fauteuil hors de son chemin.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "goetia-court",
+    "cast": [
+      "hb_stella",
+      "hb_andrealphus"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_stella",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_stella:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_stella-ending.webp",
+    "alt": "La clé gardée — Elle garde la clé dans sa paume au lieu de la tendre.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "stolas-palace",
+    "cast": [
+      "hb_stella"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_stella",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_mammon:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_mammon-intro.webp",
+    "alt": "Le bruit sans recette — Il secoue le tiroir vide avec incrédulité.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_mammon"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_mammon",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_mammon:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_mammon-rival.webp",
+    "alt": "Deux économies — Mammon pousse le guichet vers la scène, Ozzie en arrête le bord.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "ozzies-cabaret",
+    "cast": [
+      "hb_mammon",
+      "hb_asmodeus"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_mammon",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_mammon:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_mammon-ending.webp",
+    "alt": "Le public mécanique — Il écoute le bruit sans regarder les sièges.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_mammon"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_mammon",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_vortex:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_vortex-intro.webp",
+    "alt": "Le créneau en plus — Il pose les clés au lieu de les empocher.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "spring-broken-beach",
+    "cast": [
+      "hb_vortex"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_vortex",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_vortex:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_vortex-rival.webp",
+    "alt": "Le relais à prouver — Vortex montre le chemin alternatif avec une paume ouverte.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "spring-broken-beach",
+    "cast": [
+      "hb_vortex",
+      "hb_verosika"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_vortex",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_vortex:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_vortex-ending.webp",
+    "alt": "Badge posé — Il pose son téléphone face contre table.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "bee-party",
+    "cast": [
+      "hb_vortex",
+      "hb_beelzebub"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_vortex",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_glitz:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glitz-intro.webp",
+    "alt": "Le cadre trop serré — Glitz écarte le bord du cadre pour laisser apparaître sa silhouette entière.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_glitz",
+      "hb_glam"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glitz",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_glitz:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glitz-rival.webp",
+    "alt": "Une entrée reconnaissable — Glitz finit sa pose sur ses propres appuis face à un bras de Fizz encore replié.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "ozzies-cabaret",
+    "cast": [
+      "hb_glitz",
+      "hb_fizzarolli"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glitz",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_glitz:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glitz-ending.webp",
+    "alt": "Deux lumières — Glitz relève la tête pendant que Glam ajuste sa propre marque.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_glitz",
+      "hb_glam"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glitz",
+    "routeVersion": 3,
+    "beat": "ending"
+  },
+  {
+    "id": "v3:hb_glam:intro",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glam-intro.webp",
+    "alt": "Le geste interrompu — Glam tient l’arrêt malgré le rideau qui masque une partie de son espace.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_glam",
+      "hb_glitz"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glam",
+    "routeVersion": 3,
+    "beat": "intro"
+  },
+  {
+    "id": "v3:hb_glam:rival",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glam-rival.webp",
+    "alt": "La main sur la commande — Glam garde le menton haut et une ligne corporelle claire.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_glam",
+      "hb_mammon"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glam",
+    "routeVersion": 3,
+    "beat": "rival"
+  },
+  {
+    "id": "v3:hb_glam:ending",
+    "scope": "personal",
+    "src": "/assets/story/infernal-versus/v3/hb_glam-ending.webp",
+    "alt": "Après le second salut — Glam relâche enfin son geste pendant que Glitz lui adresse un regard.",
+    "width": 1672,
+    "height": 941,
+    "stageId": "mammon-show",
+    "cast": [
+      "hb_glam",
+      "hb_glitz"
+    ],
+    "spoilerTier": "season_2",
+    "fighterId": "hb_glam",
     "routeVersion": 3,
     "beat": "ending"
   }
