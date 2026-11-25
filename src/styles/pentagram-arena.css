@@ -2639,7 +2639,7 @@
 /* Static stage expansions: complete background, no generated prop layers.
    Contain preserves the authored framing; coloured bands extend the floor.
    The combat lane and its collision bounds stay independent of the image. */
-.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"]) {
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) {
   background-color: var(--arena-stage-floor);
   background-image:
     linear-gradient(180deg, rgba(7, 3, 5, .12), rgba(7, 3, 5, .24)),
@@ -2648,7 +2648,7 @@
   background-size: auto, contain;
   background-repeat: no-repeat;
 }
-.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) :is(.arena-lane-grid,.arena-crowd-lights) {
   display: none;
 }
 /* End static stage expansions. */

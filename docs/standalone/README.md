@@ -17,7 +17,19 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Reprise actuelle — 25 novembre 2026, production statique V5
+## Reprise actuelle — 25 novembre 2026, production statique V6
+
+La [bible V6](INFERNAL_VERSUS_BIBLE_V6.xlsx) conserve les 40 feuilles V5 et ajoute **Production V6, Cibles V6 et Repères V6**. Le [rapport de livraison](DELIVERY_STATIC_V6_2026-11-25.md) et le [registre V6](production-v6/delivery-register.json) décrivent **9 dessins distincts et 20 fichiers d’image** : six bases Helluva, une machine D.H.O.R.K.S. isolée et deux fonds d’arène. Les trois retouches ciblées remplacent leurs versions initiales et ne sont pas comptées comme des dessins supplémentaires.
+
+Le jeu expose **43 combattants**, **37 arènes**, **11 familles de costumes sélectionnables** et **49 éléments en galerie de réserve**. Il possède **83 bases autonomes explicites** : 40 actives et 43 en réserve. Les nouvelles bases Josh, Coco, Apple, Kat, Milky et Kiki restent des dessins consultables dans la galerie ; elles ne constituent pas six kits jouables.
+
+L’annexe d’entraînement est une création originale **AU**. Le bureau de Vox S2 adapte un intérieur précisément référencé ; la façade et l’architecture complète de la tour restent hors de cette livraison. La machine-portail est une image statique séparée, sans mécanisme de téléportation. Aucun nouveau cycle d’animation n’est ajouté.
+
+Les [références et revues visuelles](production-v6/independent-visual-review.md) consignent les écarts observés. Apple a retrouvé ses bracelets et les branches de sa queue, mais le motif du mollet reste différent. Le rendu 1:1 n’est pas certifié. Les cinq nouveaux refus du générateur ne fournissent aucun fichier et ne sont pas comptés comme livraisons ; les deux scènes narratives historiquement refusées restent à **127/129**, avec **11/11** illustrations globales.
+
+La [validation automatisée V6](production-v6/validation.json) et le [contrôle des chemins d’images](production-v6/active-asset-coverage.json) portent sur ce lot. Le [rapport navigateur](production-v6/browser-qa.json) consigne le contrôle non exécuté : Chromium est absent et son téléchargement officiel est refusé. Les observations navigateur V5 ci-dessous restent historiques. Les [sources et commandes V6](production-v6/README.md) permettent de reconstruire le suivi et la bible.
+
+## Contenu conservé — 25 novembre 2026, production statique V5 (historique)
 
 La [bible V5](INFERNAL_VERSUS_BIBLE_V5.xlsx) conserve les 34 feuilles V4 et ajoute six vues : production, catalogue, variantes, illustrations, livraisons et suites. Le [rapport de livraison](DELIVERY_STATIC_V5_2026-11-25.md), le [registre vérifié](production-v5-register.json) et le [relevé courant](production-static-v5.json) décrivent ce lot de **168 dessins statiques**.
 

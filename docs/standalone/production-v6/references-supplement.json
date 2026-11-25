@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-11-25T22:01:29.810372+00:00",
+  "scope": "Supplément indépendant : deux décors réels manquants et réévaluation rapide des deux petits accessoires. Aucune génération, aucun changement de registre existant.",
+  "baseJournal": {
+    "path": "/workspace/scratch/efd8f075f90c/reference-research.json",
+    "sha256": "0ac23169268856caf469ab8beef93c6ea5a5aeb61fb73d417b66332be0d286d7",
+    "modified": false
+  },
+  "sourceHandling": "Références locales pour inspection uniquement. Aucun bitmap de capture ou de merchandising ajouté au dépôt. Les storyboards publics sont des vignettes natives, pas des captures vidéo HD. Aucune protection de lecture contournée.",
+  "sources": [
+    {
+      "id": "SUP-VOX-CLIP",
+      "url": "https://www.youtube.com/watch?v=PNqlp9t7ies",
+      "title": "The Vees Meeting | Hazbin Hotel Season 2 | Clip | Prime Video",
+      "publisher": "Prime Video",
+      "kind": "primary_official_clip",
+      "localPlayer": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-player.json",
+      "access": "public_player_and_storyboards",
+      "storyboard": {
+        "level": 3,
+        "cellWidth": 320,
+        "cellHeight": 180,
+        "columns": 3,
+        "rows": 3,
+        "intervalSeconds": 1
+      },
+      "verifiedViews": [
+        {
+          "clipSeconds": 1,
+          "method": "storyboard board 0 cell 1 (zero based), not full video playback",
+          "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-office-001s.jpg",
+          "content": "Vue en plongée depuis l’aquarium vers le bureau, le grand V mural, la chaise de Vox et deux chaises visiteurs."
+        },
+        {
+          "clipSeconds": 2,
+          "method": "storyboard board 0 cell 2 (zero based)",
+          "content": "Même angle avec personnages légèrement déplacés."
+        }
+      ],
+      "limits": "La vue large est native 320×180 ; les détails fins des murs et objets ne sont pas documentés en HD."
+    },
+    {
+      "id": "SUP-VOX-SONG",
+      "url": "https://www.youtube.com/watch?v=nnQfZMbwdt0",
+      "title": "Once We Get Up There Sing-Along - Hazbin Hotel S2 | Prime Video",
+      "publisher": "Prime Video",
+      "kind": "primary_official_clip",
+      "localPlayer": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-player.json",
+      "access": "public_player_and_storyboards",
+      "storyboard": {
+        "cellWidth": 320,
+        "cellHeight": 180,
+        "columns": 3,
+        "rows": 3,
+        "intervalSeconds": 2
+      },
+      "viewed": "Board 0 : même bureau bleu/cyan et grand V, surtout plans rapprochés avec texte de paroles."
+    },
+    {
+      "id": "SUP-VOX-CARD",
+      "url": "https://www.edenhunter.com.au/product/50-60-vox-s-office-common-foil-2nd-edition-hazbin-hotel-trading-card/ATQDJQVSKLJETES676CTNNOQ",
+      "imageUrl": "https://140825015.cdn6.editmysite.com/uploads/1/4/0/8/140825015/AFJEJ7NREESTFFIE5Z3YGZXK.jpeg?optimize=medium&width=2400",
+      "title": "Vox’s Office 50/60, 2nd Edition foil",
+      "kind": "secondary_reseller_photograph_of_licensed_trading_card",
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/vox-office-card-reseller.jpeg",
+      "viewed": true,
+      "confidence": "L’architecture correspond visuellement à la vue officielle du clip. Provenance du fichier secondaire, pas image de production originale.",
+      "limits": "Reflets foil très importants, angle de photographie et cadrage vertical. Ne pas reproduire le foil ou le cadre ; ne pas utiliser comme référence colorimétrique."
+    },
+    {
+      "id": "SUP-ROOF-CLIP",
+      "url": "https://www.youtube.com/watch?v=IKUfXKnfEpA",
+      "title": "Alastor & Adam’s Head To Head Battle Causes Havoc | Hazbin Hotel",
+      "publisher": "Amazon Prime Video UK & IE",
+      "kind": "primary_official_clip",
+      "localPlayer": "/workspace/scratch/efd8f075f90c/reference-sources/prime-alastor-adam-player.json",
+      "access": "LOGIN_REQUIRED age check; stopped; public thumbnail only",
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-roof-thumbnail.jpg",
+      "viewed": true,
+      "limits": "Miniature avec Alastor, tentacules, titre et logo ; presque aucune architecture exploitable. Aucun timecode vérifié dans la vidéo."
+    },
+    {
+      "id": "SUP-ROOF-REHOST",
+      "url": "https://www.pinterest.com/pin/adam-nearly-kills-alastor--949767008908163404/",
+      "imageUrl": "https://i.pinimg.com/originals/ff/9a/38/ff9a38ed6c8bebce884da03bfcfc3c67.jpg",
+      "title": "Adam Nearly Kills Alastor / Hazbin Hotel Ep 8",
+      "kind": "secondary_rehost_of_promotional_episode_still",
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/roof-pinterest-s1e8.jpg",
+      "viewed": true,
+      "limits": "1280×720, mais personnages et logo masquent la majorité du toit. On distingue un garde-corps à barreaux verticaux, le sol rouge sombre et des débris. L’image seule ne fixe pas l’ensemble du plan du toit. Attribution S1E8 du rehost cohérente avec les personnages ; pas de timecode vérifié."
+    },
+    {
+      "id": "SUP-SHURIKEN-EPISODE",
+      "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+      "title": "HELLUVA BOSS - Truth Seekers // S1: Episode 6",
+      "publisher": "Vivziepop",
+      "kind": "primary_official_episode",
+      "limits": "Aucune capture HD avec points et trou central simultanément lisibles retrouvée. Ne pas déduire la forme d’un shuriken japonais générique."
+    },
+    {
+      "id": "SUP-ARROW-EPISODE",
+      "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+      "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+      "publisher": "Vivziepop",
+      "kind": "primary_official_episode",
+      "limits": "Aucune capture HD couvrant toute la flèche (pointe, hampe et empennage) retrouvée. Aucune nouvelle qualification 1:1."
+    },
+    {
+      "id": "SUP-PILOT-2019",
+      "url": "https://www.youtube.com/watch?v=Zlmswo0S0e0",
+      "title": "HAZBIN HOTEL (PILOT)",
+      "publisher": "Vivziepop",
+      "kind": "primary_official_pilot",
+      "limits": "Référence d’incarnation. Pas de nouveau visuel complet de l’aéronef qualifié dans cette recherche."
+    }
+  ],
+  "assets": [
+    {
+      "id": "vox-tower",
+      "proposedIncarnation": "Bureau de Vox dans la tour des Vees, saison 2, vu depuis l’aquarium dans The Vees Meeting",
+      "status": "candidate_reference_qualified_for_specific_view_not_1_to_1_certified",
+      "sourceIds": [
+        "SUP-VOX-CLIP",
+        "SUP-VOX-SONG",
+        "SUP-VOX-CARD"
+      ],
+      "observed": [
+        "Palette bleu marine et cyan ; grand V angulaire sur le mur du fond.",
+        "Bureau large et angulaire, arêtes cyan, motif V sur la façade.",
+        "Chaise de Vox vue de dos avec partie haute pointue ; deux chaises visiteurs en face.",
+        "Panneaux verticaux latéraux à tracés électroniques lumineux.",
+        "Premier plan : bord sombre et silhouettes de coraux/branches dans un aquarium, donnant une vue plongeante vers le bureau."
+      ],
+      "generationConstraints": [
+        "Choisir ce bureau précis et cet angle, sans le rebaptiser façade extérieure de la tour.",
+        "Séparer les personnages et les accessoires mobiles ; garder leur absence explicite si scène vide.",
+        "Conserver le plan du bureau et la position du V ; éviter studio TV, caméras de cinéma, scène circulaire et forêt de moniteurs du décor Vee Broadcast Studio existant.",
+        "Utiliser le clip pour les couleurs ; la photo de carte uniquement pour la disposition des éléments déjà corroborés.",
+        "Ne pas inventer détails fins invisibles, prolongements de la pièce ou architecture complète de la tour."
+      ],
+      "remainingLimits": [
+        "Vue large officielle seulement 320×180.",
+        "Photo de carte tronquée et foil.",
+        "Aucune façade S2 complète qualifiée."
+      ],
+      "recommendation": "Candidat réel documenté pour une vue spécifique du bureau ; différer une reconstruction strictement 1:1/HD si cette exigence doit être absolue."
+    },
+    {
+      "id": "extermination-roof",
+      "incarnation": "Ancien Hazbin Hotel, combat du final S1, avant reconstruction",
+      "status": "deferred_insufficient_architecture",
+      "sourceIds": [
+        "SUP-ROOF-CLIP",
+        "SUP-ROOF-REHOST"
+      ],
+      "observed": [
+        "Atmosphère rouge sombre de l’Extermination.",
+        "Portion de garde-corps à barreaux verticaux et sol du toit visibles dans le rehost."
+      ],
+      "remainingLimits": [
+        "Vues dégagées et géométrie générale du toit non vérifiées.",
+        "Combattants, effets et logo masquent l’essentiel des deux images accessibles."
+      ],
+      "recommendation": "Ne pas produire un toit générique ni mélanger hôtel reconstruit S2 et ancien hôtel S1."
+    },
+    {
+      "id": "pentious-airship-pilot",
+      "incarnation": "Aéronef de Sir Pentious dans le pilote Hazbin Hotel de 2019",
+      "status": "deferred",
+      "sourceIds": [
+        "SUP-PILOT-2019"
+      ],
+      "reason": "Aucune nouvelle référence complète ne qualifie le modèle du pilote ; ne pas le remplacer par une incarnation Prime S1/S2."
+    },
+    {
+      "id": "cherub-golden-arrow",
+      "status": "deferred",
+      "sourceIds": [
+        "SUP-ARROW-EPISODE"
+      ],
+      "reason": "Aucun nouveau visuel de détail complet et fiable."
+    },
+    {
+      "id": "dhorks-shuriken",
+      "status": "deferred",
+      "sourceIds": [
+        "SUP-SHURIKEN-EPISODE"
+      ],
+      "reason": "Aucun nouveau visuel HD permettant de compter les pointes et de qualifier le trou central."
+    }
+  ],
+  "integrity": [
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-0.jpg",
+      "bytes": 77337,
+      "sha256": "fbf6e986a833dfb278fa6958db0894f4225f95d3ce70fb4a3615e364622295af",
+      "visuallyInspected": true,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-1.jpg",
+      "bytes": 78301,
+      "sha256": "0fd99665aa496a6d2b80aaa6e5f7560287e4dac1a526f7d4c850f07e3d4f9ab6",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-2.jpg",
+      "bytes": 59916,
+      "sha256": "8c73699779b6a4921219f76c896112ea8c104f833615b67247352bd245b69f3c",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-3.jpg",
+      "bytes": 73019,
+      "sha256": "d67dab689e8397dbb2cc6c054dba057dfa9997709903d79481f4165f573f811d",
+      "visuallyInspected": true,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-4.jpg",
+      "bytes": 67897,
+      "sha256": "7baf4373328fa277a20b9fab8eb7493493f377f127d7470337aacc7ce92f8253",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-5.jpg",
+      "bytes": 74650,
+      "sha256": "bad9c05ab608252c1652e5c59329267f664aadec2b2ead1be9df0304c4a3fc30",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-6.jpg",
+      "bytes": 47420,
+      "sha256": "3724c57ba39bacfef0989c2a594c289425e4f67079f8b523d35134cbf2e18ca9",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-7.jpg",
+      "bytes": 7615,
+      "sha256": "e558d5875c67afb4ddf47f31bdbcc3f17d814a5684bc591cc3797fc90f224945",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-board-8.jpg",
+      "bytes": 2838,
+      "sha256": "6d0bab8f997eba7d85e2fc50aa273663c05545654fede00de62011340e1038a9",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 180
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-office-001s.jpg",
+      "bytes": 10423,
+      "sha256": "8a66f176f6fcdcd6be72ae2a3d499f38973a2ffe5b4706d782cf79d490423c7b",
+      "visuallyInspected": true,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-player.json",
+      "bytes": 61066,
+      "sha256": "3ea0d82ccddc72be54fe08ed2b50aa95bc7401df8344552ffb268c71fe652f44",
+      "visuallyInspected": false
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-vees-s2-thumbnail.jpg",
+      "bytes": 152033,
+      "sha256": "8c5b75109efcd74539af9f090d6c0b79423d545a101b320e51d5cac67c2b8b33",
+      "visuallyInspected": true,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-board-0.jpg",
+      "bytes": 60716,
+      "sha256": "9804a0503aeccf49f9854e6e9aea19192ce2478c15442593b7a5a781cf29e3d7",
+      "visuallyInspected": true,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-board-1.jpg",
+      "bytes": 44703,
+      "sha256": "8df4e8dad418cbd486cbb0c59c51315930af68331feded69058ff71869ee25d2",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-board-2.jpg",
+      "bytes": 50232,
+      "sha256": "70b82600ea11c1c67f72e756ea3986d4e479365d1b00356adde0c3f9506350a6",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-board-3.jpg",
+      "bytes": 77087,
+      "sha256": "8ffea6c472f08c55997e011b2ccf051cdad385d44e34cc162b8021a86657ebe3",
+      "visuallyInspected": false,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-once-up-there-player.json",
+      "bytes": 58239,
+      "sha256": "f6ebbb982b9987b21d236945d49827d389ef655db607768ccf4df726f50d8837",
+      "visuallyInspected": false
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-alastor-adam-player.json",
+      "bytes": 12812,
+      "sha256": "03c0faa1817abdfcf819dab22048fd9047ca870afe8a4cefbc2e28baaf87ec34",
+      "visuallyInspected": false
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/prime-roof-thumbnail.jpg",
+      "bytes": 123429,
+      "sha256": "218e17836f7e1704848fb1337f5481d6f8d5f53d5bfe7a0575b521db34001965",
+      "visuallyInspected": true,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/roof-pinterest-s1e8.jpg",
+      "bytes": 100450,
+      "sha256": "3906bfeb48b19ebd9d6065bf2e19934990528669f27a4f9c57ff2408572c72bc",
+      "visuallyInspected": true,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "/workspace/scratch/efd8f075f90c/reference-sources/vox-office-card-reseller.jpeg",
+      "bytes": 331293,
+      "sha256": "53914458239f5d2c979c38db3104eb9c84544b8e913d33d41bfc3f0f116b9a0a",
+      "visuallyInspected": true,
+      "width": 2048,
+      "height": 2048
+    }
+  ],
+  "exclusions": [
+    "Toit : aucun contournement de la limite d’âge du clip officiel.",
+    "Refus HTTP403 TVTropes et fanhost Vox : pas de nouvel essai de contournement.",
+    "Pas de relance des cinq familiers/supports HH refusés.",
+    "Les images de merchandising ne sont pas des rendus de production et ne sont pas publiées dans le dépôt."
+  ],
+  "decisionUpdate": {
+    "at": "2026-11-25T22:03:32.791347+00:00",
+    "by": "parent",
+    "voxOffice": "Autorisé pour une adaptation de fond de combat du bureau intérieur S2 avec limites documentées, sans certification 1:1 ni façade/tour entière.",
+    "otherTargets": "Toit final S1, aéronef pilote, flèche CHERUB et shuriken maintenus différés."
+  }
+}

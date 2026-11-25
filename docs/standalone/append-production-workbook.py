@@ -1,4 +1,4 @@
-"""Append Artifact Tool sheets without rewriting the historical V4 worksheets.
+"""Append Artifact Tool sheets without rewriting historical worksheets.
 
 This module only packages authored OOXML parts. The new sheet contents, styles,
 tables, validation rules, formulas and cached values come from Artifact Tool.
@@ -94,15 +94,16 @@ def update_app_properties(parts, added_names):
     parts[name] = xml(app)
 
 
-def append_workbook(baseline, edition, output, report_path):
+def append_workbook(baseline, edition, output, report_path, expected_sheet_count=34,
+                    opening_sheet="Production V5", relationship_prefix="rProductionV5"):
     with ZipFile(baseline) as old, ZipFile(edition) as new:
         original = {name: old.read(name) for name in old.namelist()}
         parts = dict(original)
         old_book = ET.fromstring(parts["xl/workbook.xml"])
         old_sheets = old_book.find(M + "sheets")
         original_names = [s.get("name") for s in old_sheets]
-        if len(original_names) != 34:
-            raise ValueError(f"34 feuilles V4 attendues, trouvé {len(original_names)}")
+        if len(original_names) != expected_sheet_count:
+            raise ValueError(f"{expected_sheet_count} feuilles historiques attendues, trouvé {len(original_names)}")
         styles = ET.fromstring(parts["xl/styles.xml"])
         offsets = append_styles(styles, ET.fromstring(new.read("xl/styles.xml")))
         parts["xl/styles.xml"] = xml(styles)
@@ -149,7 +150,7 @@ def append_workbook(baseline, edition, output, report_path):
             parts[destination] = xml(sheet)
             new_sheet_parts.append(destination)
             ET.SubElement(content_types, C + "Override", PartName="/" + destination, ContentType=content_prefix + "worksheet+xml")
-            rel_id = "rProductionV5" + str(index + 1)
+            rel_id = relationship_prefix + str(index + 1)
             if rel_id in rel_ids:
                 raise ValueError("Relation en double : " + rel_id)
             ET.SubElement(relationships, P + "Relationship", Id=rel_id, Type=R[1:-1] + "/worksheet", Target="/" + destination)
@@ -180,7 +181,7 @@ def append_workbook(baseline, edition, output, report_path):
             raise ValueError("Les nouveaux onglets ne doivent pas nécessiter de noms définis implicites.")
         # Opening the current edition is a workbook-level navigation choice;
         # no historical worksheet view or other worksheet XML is rewritten.
-        opening_index = len(original_names) + added_names.index("Production V5")
+        opening_index = len(original_names) + added_names.index(opening_sheet)
         views = old_book.find(M + "bookViews")
         if views is None:
             views = ET.Element(M + "bookViews")
@@ -198,7 +199,7 @@ def append_workbook(baseline, edition, output, report_path):
         preserved = [name for name in original if name not in mutable_parts]
         changed = [name for name in preserved if original[name] != parts.get(name)]
         if changed:
-            raise ValueError("Composants V4 modifiés : " + ", ".join(changed))
+            raise ValueError("Composants historiques modifiés : " + ", ".join(changed))
         formula_counts = {}
         for sheet_name, source in zip(added_names, new_sheet_parts):
             sheet = ET.fromstring(parts[source])
@@ -227,10 +228,12 @@ def append_workbook(baseline, edition, output, report_path):
         "originalSheetOrder": original_names,
         "addedSheets": added_names,
         "finalSheetCount": len(original_names) + len(added_names),
-        "openingSheet": "Production V5",
+        "openingSheet": opening_sheet,
         "openingSheetIndex": opening_index,
         "preservedOriginalParts": len(preserved),
         "preservedWorksheetXmlParts": sum(bool(re.fullmatch(r"xl/worksheets/sheet\d+\.xml", name)) for name in preserved),
+        "preservedWorksheetSha256": {name: sha256(original[name]).hexdigest() for name in preserved
+                                     if re.fullmatch(r"xl/worksheets/sheet\d+\.xml", name)},
         "preservedTableXmlParts": sum(bool(re.fullmatch(r"xl/tables/table\d+\.xml", name)) for name in preserved),
         "originalPartsChangedUnexpectedly": changed,
         "formulasInAddedSheets": formula_counts,
@@ -244,6 +247,7 @@ def append_workbook(baseline, edition, output, report_path):
 
 
 if __name__ == "__main__":
-    if len(argv) != 5:
-        raise SystemExit("Usage: append-production-workbook.py V4.xlsx additions.xlsx V5.xlsx packaging-report.json")
-    append_workbook(*map(Path, argv[1:]))
+    if len(argv) not in (5, 8):
+        raise SystemExit("Usage: append-production-workbook.py baseline.xlsx additions.xlsx output.xlsx packaging-report.json [expected-sheet-count opening-sheet relationship-prefix]")
+    options = (int(argv[5]), argv[6], argv[7]) if len(argv) == 8 else ()
+    append_workbook(*map(Path, argv[1:5]), *options)

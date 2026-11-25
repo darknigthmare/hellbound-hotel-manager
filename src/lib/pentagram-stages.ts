@@ -35,7 +35,9 @@ export type PentagramStageId = HotelStageId
   | 'sinsmas-frozen-pavilion'
   | 'seeing-stars-overlook'
   | 'cherub-opera-stage'
-  | 'dhorks-portal-chamber';
+  | 'dhorks-portal-chamber'
+  | 'hellaverse-training'
+  | 'vox-office-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -886,6 +888,30 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   shadow: "#102e27",
   floor: "#3c5c52",
   // Reuse a published original procedural score; this static-art stage adds no audio.
+  soundtrack: PENTAGRAM_STAGES[6].soundtrack,
+}, {
+  id: 'hellaverse-training',
+  name: 'Annexe infernale · Entraînement',
+  district: 'Salle originale · Simulation AU',
+  description: 'Une salle de pratique à tapis bordeaux, colonnes protégées et éclairage doux garde toute la piste dégagée.',
+  loreBasis: 'Lieu original de la simulation AU prévu par le guide du projet. Cette annexe de pratique ne reproduit aucun lieu montré dans Hazbin Hotel ou Helluva Boss. Un fond statique complet, sans danger de décor ni nouvelle animation.',
+  imagePath: '/assets/stages/original/hellaverse-training/room.webp',
+  thumbnailPath: '/assets/stages/original/hellaverse-training/thumb.webp',
+  imagePosition: 'center bottom',
+  accent: '#e2b56b', shadow: '#350c18', floor: '#591226',
+  // Existing original score; a new drawing does not imply a new audio track.
+  soundtrack: PENTAGRAM_STAGES[0].soundtrack,
+}, {
+  id: 'vox-office-s2',
+  name: 'Vox · Bureau S2',
+  district: 'Pentagram City · Intérieur des Vees',
+  description: 'Un bureau angulaire, trois sièges et un grand V lumineux sont encadrés par les parois cyan de l’aquarium.',
+  loreBasis: 'Hazbin Hotel saison 2, clip officiel The Vees Meeting : bureau vu depuis l’aquarium. La caméra abaissée, la piste élargie et les panneaux simplifiés sont adaptés à la simulation AU. Ce fond représente un intérieur précis, pas la façade de la tour ; aucun décor canonique 1:1 n’est certifié.',
+  imagePath: '/assets/stages/hazbin/vox-office-s2/room.webp',
+  thumbnailPath: '/assets/stages/hazbin/vox-office-s2/thumb.webp',
+  imagePosition: 'center bottom',
+  accent: '#52e7fb', shadow: '#071c35', floor: '#12516c',
+  // Reuse the existing Vees score; this static-art addition introduces no audio.
   soundtrack: PENTAGRAM_STAGES[6].soundtrack,
 }];
 

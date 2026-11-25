@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "mode": "built-in image_gen",
+  "sourceIdentityReference": {
+    "path": "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg",
+    "creditedArtist": "CalisDraws / Cécilia Goncalves",
+    "sourceArtistPost": "https://twitter.com/CalisDraws/status/1355948687814520837",
+    "bitmapRetrievedFrom": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+    "status": "production_sheet_attribution_checked_secondary_bitmap_host",
+    "notes": [
+      "Planche entière inspectée ; 7 sujets étiquetés. Les 6 premiers sont les cibles, Ace est exclu.",
+      "L’endpoint public X oEmbed confirme auteur/date et sa participation aux designs. Le bitmap est une copie secondaire.",
+      "Recoupe officielle Spring Broken 04:30–04:40 pour Josh ; 15:10–15:40 déguisements humains de Coco/Apple. Ce contrôle partiel ne vaut pas six vues démon complètes.",
+      "Aucune référence merchandising n’est incorporée au dépôt."
+    ],
+    "primaryAttributionEvidence": {
+      "url": "https://publish.twitter.com/oembed?url=https://twitter.com/CalisDraws/status/1355948687814520837",
+      "localPath": "/workspace/scratch/efd8f075f90c/reference-sources/calis-public-oembed.json",
+      "inspectedBy": "references agent",
+      "date": "2026-11-25"
+    },
+    "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db",
+    "artistPostPublished": "2021-01-31",
+    "officialEpisodeEvidence": {
+      "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+      "episode": "Helluva Boss — Spring Broken — S1E3",
+      "reviewer": "references agent",
+      "inspectionScope": "Partial official episode storyboard visual corroboration; not six full demon turnarounds.",
+      "observations": [
+        {
+          "time": "04:30–04:40",
+          "subjects": [
+            "hb_josh"
+          ],
+          "scope": "Pale asymmetrical hair, black outfit and cross visible behind Verosika; other crew partly occluded."
+        },
+        {
+          "time": "15:10–15:40",
+          "subjects": [
+            "hb_coco",
+            "hb_apple"
+          ],
+          "scope": "Human disguises with matching silhouette/clothes; not a complete demon-form reference."
+        }
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "id": "hb_josh-ready",
+      "name": "Josh",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: JOSH, the far-left character labeled JOSH in the supplied sheet. Slender tall red-skinned adult male demon, angular face with yellow eyes, side-shaved haircut with long pale pink-grey bangs swept across the head, two tall dark horns, a small gold ear hoop, black choker with cross pendant, dark V-neck short-sleeved T-shirt with the red forest/horse emblem and the small words BURN FOREST BURN as shown, long dark trousers and pointed shoes, black bat wings and a thin red tail with dark arrow tip. Keep the outfit fully as depicted. Omit all other figures and every handwritten reference label.",
+      "startedAt": "2026-11-25T21:52:23.040Z",
+      "finishedAt": "2026-11-25T21:54:26.443Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-71dae286-f150-4d32-86b5-54c593a8d1a4.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "imageUrlType": "data:image/png;base64",
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-71dae286-f150-4d32-86b5-54c593a8d1a4.png",
+      "sourceIdentityId": "hb_josh",
+      "masterPath": "art/infernal-versus/masters/base/hb_josh-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_josh-ready.webp",
+      "qa": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "alphaBounds1": [
+          97,
+          3,
+          992,
+          1504
+        ],
+        "alphaBounds16": [
+          205,
+          42,
+          866,
+          1500
+        ],
+        "alphaBounds128": [
+          206,
+          43,
+          865,
+          1499
+        ],
+        "zeroAlphaPixels": 1272936,
+        "fullAlphaPixels": 0,
+        "partialAlphaPixels": 299928,
+        "totalPixels": 1572864,
+        "borderAlphaMax": 0,
+        "decodedPixelsEqual": true,
+        "masterSha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "masterBytes": 1088361,
+        "exportSha256": "8cfdf2538c8fe2918984cb709b1c5be2062a224cb47acd15572e033aa7743899",
+        "exportBytes": 678144,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Chevelure asymétrique, cornes, collier à croix, ailes, queue et tenue noire conservés. Motif et texte du T-shirt lisibles.",
+          "Pose neutre redessinée ; inclinaison des ailes et proportions fines ne sont pas certifiées 1:1.",
+          "La bouche fermée ne conserve pas le petit croc visible sur la planche.",
+          "Zone rasée rendue avec un quadrillage plutôt que les quelques hachures courtes de la planche."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "minor_differences_observed",
+        "initialMasterSha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "initialDifferences": [
+          {
+            "severity": "minor",
+            "detail": "La bouche fermée ne conserve pas le petit croc visible sur la planche.",
+            "action": "Réserver pour une revue de détail si la base doit suivre cette expression exacte."
+          },
+          {
+            "severity": "minor",
+            "detail": "Zone rasée rendue avec un quadrillage plutôt que les quelques hachures courtes de la planche.",
+            "action": "Simplifier la texture du côté rasé si une fidélité de détail est requise."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "minor_differences_observed",
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "finalDifferences": [
+          {
+            "severity": "minor",
+            "detail": "La bouche fermée ne conserve pas le petit croc visible sur la planche.",
+            "action": "Réserver pour une revue de détail si la base doit suivre cette expression exacte."
+          },
+          {
+            "severity": "minor",
+            "detail": "Zone rasée rendue avec un quadrillage plutôt que les quelques hachures courtes de la planche.",
+            "action": "Simplifier la texture du côté rasé si une fidélité de détail est requise."
+          }
+        ]
+      },
+      "selectedRevision": 1,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "minor_differences_observed"
+    },
+    {
+      "id": "hb_coco-ready",
+      "name": "Coco",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: COCO, the second character from the left, directly under the COCO label in the supplied sheet. Red-skinned adult woman demon with a large rounded dark burgundy afro, small dark red horns partly visible within her hair, yellow eyes, purple off-shoulder short top bearing the white skull motif, light blue denim shorts, black fishnet tights visible at waist and legs, purple heeled ankle boots, small black bat wings and slim red arrow-ended tail. Preserve her particular silhouette and hair volume from the reference. Natural upright stance, arms resting. Omit all other figures and every handwritten reference label.",
+      "startedAt": "2026-11-25T21:52:23.041Z",
+      "finishedAt": "2026-11-25T21:55:10.582Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-326b0593-da46-45e5-98c8-724a5d2bcd8f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "imageUrlType": "data:image/png;base64",
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-326b0593-da46-45e5-98c8-724a5d2bcd8f.png",
+      "sourceIdentityId": "hb_coco",
+      "masterPath": "art/infernal-versus/masters/base/hb_coco-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_coco-ready.webp",
+      "qa": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "alphaBounds1": [
+          65,
+          23,
+          970,
+          1519
+        ],
+        "alphaBounds16": [
+          246,
+          25,
+          789,
+          1517
+        ],
+        "alphaBounds128": [
+          246,
+          26,
+          789,
+          1517
+        ],
+        "zeroAlphaPixels": 1208338,
+        "fullAlphaPixels": 0,
+        "partialAlphaPixels": 364526,
+        "totalPixels": 1572864,
+        "borderAlphaMax": 0,
+        "decodedPixelsEqual": true,
+        "masterSha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "masterBytes": 1297007,
+        "exportSha256": "dab6516c2d8635a4e8f59b56cf4a51127935b094ac24a0ef5ac9c4fff5611e58",
+        "exportBytes": 826672,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Afro bordeaux, petit haut violet au crâne, résille, short bleu, bottines et queue reconnaissables et distincts des autres membres du groupe.",
+          "Coutures et ourlets du short interprétés dans la pose neutre ; fidélité exacte à revalider.",
+          "Le short reçoit des poches et des ourlets supplémentaires ; sa taille devient presque droite tandis que la planche montre une découpe centrale en V laissant la résille visible.",
+          "Les ailes sont plus arquées et plus hautes relativement aux épaules que sur la planche."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "minor_differences_observed",
+        "initialMasterSha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "initialDifferences": [
+          {
+            "severity": "minor",
+            "detail": "Le short reçoit des poches et des ourlets supplémentaires ; sa taille devient presque droite tandis que la planche montre une découpe centrale en V laissant la résille visible.",
+            "action": "Rétablir la taille en V et éviter les coutures non attestées pour une validation de détail."
+          },
+          {
+            "severity": "minor",
+            "detail": "Les ailes sont plus arquées et plus hautes relativement aux épaules que sur la planche.",
+            "action": "Conserver comme variation de pose, sans la présenter comme copie exacte du modèle."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "minor_differences_observed",
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "finalDifferences": [
+          {
+            "severity": "minor",
+            "detail": "Le short reçoit des poches et des ourlets supplémentaires ; sa taille devient presque droite tandis que la planche montre une découpe centrale en V laissant la résille visible.",
+            "action": "Rétablir la taille en V et éviter les coutures non attestées pour une validation de détail."
+          },
+          {
+            "severity": "minor",
+            "detail": "Les ailes sont plus arquées et plus hautes relativement aux épaules que sur la planche.",
+            "action": "Conserver comme variation de pose, sans la présenter comme copie exacte du modèle."
+          }
+        ]
+      },
+      "selectedRevision": 1,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "minor_differences_observed"
+    },
+    {
+      "id": "hb_apple-ready",
+      "name": "Apple",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: APPLE, the third character from the left under the APPLE label in the supplied sheet. Red-pink-skinned adult woman demon with shaggy pale blonde hair, tall slim red horns with black tips, yellow eyes, two black bat wings, grey short overalls with pale rolled hems and round strap fasteners, dark shirt panel visible under the overalls and the small pentagram charm at the waist, slim legs, distinctive black-and-pink tattoo on one lower leg, pointed thin-strapped high heels, and a red arrow-ended tail. Preserve the exact side and pattern of the visible tattoo and the detailed clothing from the reference. Natural upright stance, no gesture. Omit all other figures, relationship doodles and every handwritten reference label.",
+      "startedAt": "2026-11-25T21:52:23.041Z",
+      "finishedAt": "2026-11-25T21:53:34.012Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-dfc80b33-0459-44ba-9985-fc92b820bffb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "imageUrlType": "data",
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-dfc80b33-0459-44ba-9985-fc92b820bffb.png",
+      "sourceIdentityId": "hb_apple",
+      "masterPath": "art/infernal-versus/masters/base/hb_apple-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_apple-ready.webp",
+      "qa": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "alphaBounds1": [
+          39,
+          27,
+          1006,
+          1524
+        ],
+        "alphaBounds16": [
+          234,
+          29,
+          854,
+          1522
+        ],
+        "alphaBounds128": [
+          235,
+          30,
+          854,
+          1521
+        ],
+        "zeroAlphaPixels": 1249039,
+        "fullAlphaPixels": 0,
+        "partialAlphaPixels": 323825,
+        "totalPixels": 1572864,
+        "borderAlphaMax": 0,
+        "decodedPixelsEqual": true,
+        "masterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+        "masterBytes": 1349129,
+        "exportSha256": "c8670e10dbf84b81dbcad4251f8993f58a6d9c001f099d1aa10f0a51ab2b1f9d",
+        "exportBytes": 867430,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct inspection of generated output and neutral-gray alpha composite beside the Calis reference; independent review by references agent; alpha bounds and exact PNG/WebP RGBA checks.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Cheveux blonds, salopette grise, cornes, ailes, queue, talons et emplacement du motif du mollet conservés.",
+          "Bracelets rétablis au poignet à gauche de l’image.",
+          "Deux branches noires de la pointe de queue rétablies.",
+          "Le motif du mollet reste divergent : deux ronds clairs et une boucle noire, au lieu du motif irrégulier visible sur la planche Calis.",
+          "Aucune certification de fidélité 1:1 ; le détail du mollet reste explicitement à corriger."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "targeted_correction_requested",
+        "initialMasterSha256": "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84",
+        "initialDifferences": [
+          {
+            "severity": "material",
+            "detail": "Les anneaux/bracelets noirs visibles autour du poignet situé à gauche de la planche sont absents des deux poignets du PNG.",
+            "action": "Rétablir les anneaux sur le même poignet dans la nouvelle pose."
+          },
+          {
+            "severity": "material",
+            "detail": "La pointe de queue devient une flèche rose simple ; les deux prolongements noirs latéraux de la référence sont perdus.",
+            "action": "Reprendre les contours rose/noir de la pointe directement depuis la référence."
+          },
+          {
+            "severity": "material",
+            "detail": "Le motif du mollet est réinterprété : deux ronds clairs et une boucle noire remplacent le dessin irrégulier, ses réserves claires et ses courbes de la planche.",
+            "action": "Reprendre le motif exact de la jambe de référence, sans inventer une symétrie ou un motif générique."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "improved_with_remaining_calf_motif_difference",
+        "currentResolvedDifferences": [
+          "Bracelets rétablis au poignet à gauche de l’image.",
+          "Deux branches noires de la pointe de queue rétablies."
+        ],
+        "currentRemainingDifferences": [
+          "Le motif du mollet reste divergent : deux ronds clairs et une boucle noire, au lieu du motif irrégulier visible sur la planche Calis."
+        ],
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+        "finalDifferences": [
+          {
+            "severity": "material",
+            "detail": "Le motif du mollet est réinterprété : deux ronds clairs et une boucle noire remplacent le dessin irrégulier, ses réserves claires et ses courbes de la planche.",
+            "action": "Reprendre le motif exact de la jambe de référence, sans inventer une symétrie ou un motif générique."
+          }
+        ]
+      },
+      "selectedRevision": 2,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "improved_with_remaining_calf_motif_difference",
+      "initialOutput": {
+        "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-a1d2de09-abe2-4779-99da-8e31491e86f8.png",
+        "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-a1d2de09-abe2-4779-99da-8e31491e86f8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+        "imageUrlType": "data:image/png;base64",
+        "qa": {
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            254
+          ],
+          "alphaBounds1": [
+            33,
+            23,
+            1012,
+            1536
+          ],
+          "alphaBounds16": [
+            235,
+            32,
+            858,
+            1521
+          ],
+          "alphaBounds128": [
+            236,
+            33,
+            858,
+            1520
+          ],
+          "zeroAlphaPixels": 1244662,
+          "fullAlphaPixels": 0,
+          "partialAlphaPixels": 328202,
+          "totalPixels": 1572864,
+          "borderAlphaMax": 1,
+          "decodedPixelsEqual": true,
+          "masterSha256": "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84",
+          "masterBytes": 1376998,
+          "exportSha256": "63c24d49e29e96ce0db105131c9ad03a71473fcaa8403cfcb02b9b2e4656c28d",
+          "exportBytes": 888502,
+          "originalMasterBytesPreserved": true
+        },
+        "visualReview": {
+          "reviewer": "inventory agent",
+          "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+          "singleSubject": true,
+          "fullVisibleSilhouette": true,
+          "trueAlpha": true,
+          "newAnimationCycles": 0,
+          "inGameChecked": false,
+          "fidelityOneToOneCertified": false,
+          "fidelityNotes": [
+            "Cheveux blonds, salopette grise, cornes, ailes, queue, talons et emplacement du tatouage conservés.",
+            "Contours du tatouage et détails fins de la salopette simplifiés ; ce dessin est une adaptation guidée par référence, sans certification 1:1."
+          ]
+        },
+        "status": "accepted_for_static_reserve_with_declared_limits",
+        "accepted": true,
+        "revisionNumber": 1,
+        "scratchMasterArchive": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_apple-ready.png",
+        "scratchExportArchive": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_apple-ready.webp",
+        "selectionStatus": "superseded_by_reviewed_targeted_revision"
+      },
+      "revisions": [
+        {
+          "id": "hb_apple-ready",
+          "name": "Apple",
+          "revisionNumber": 2,
+          "operation": "targeted_reference_correction",
+          "prompt": "Use case: precise localized sprite edit with identity preservation. Image 1 is the CURRENT deliverable to edit: one full-body Apple character on transparent alpha. Image 2 is the credited Calis production lineup; Apple is the THIRD named figure from the left, marked APPLE. Use only that figure from image 2 as the reference for three local corrections.\n\nPreserve image 1's complete character, neutral standing pose with lowered arms, face, expression, blonde hairstyle, horns, wings, outfit, linework, palette, scale, and canvas composition. Make ONLY these three corrections:\n1. Add the small thin dark outlined loop bracelets/bangles around the wrist on the LEFT SIDE OF THE IMAGE (Apple's right wrist), matching the bangles visible on that wrist in the APPLE figure in image 2. Adapt their angle to the current lowered hand. Do not add jewelry to the opposite wrist.\n2. Correct the arrowhead of the tail: match the reference's pink central tip with its two black pointed lateral branches. Keep the current tail's complete curve, position, thickness and length. Change only the tail-tip design/colors.\n3. Replace the invented two round pale spots and simplified black curls on the calf at the RIGHT SIDE OF THE IMAGE with the exact small stylized motif visible in that same calf location on the APPLE figure in image 2. Carefully match its black contour, pink inner shapes, and small pale details rather than making new generic circles. Preserve its placement and scale on the current leg.\n\nKeep every other part unchanged. The result must remain ONE isolated full-body static 2D drawing, with the entire horns, wings, tail and feet inside frame, transparent background and preserved alpha; no background, gray fill, visible glow, labels, names, reference sheet, extra character, duplicate pose, panel or animation. Hidden RGB in transparent areas is not a background to recreate. Output only the edited Apple sprite.",
+          "referencedImagePaths": [
+            "/home/agent/hazbin-v6/art/infernal-versus/masters/base/hb_apple-ready.png",
+            "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg"
+          ],
+          "startedAt": "2026-11-25T22:04:02.891Z",
+          "finishedAt": "2026-11-25T22:05:16.533Z",
+          "status": "accepted_for_static_reserve_with_declared_limits",
+          "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-dfc80b33-0459-44ba-9985-fc92b820bffb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+          "imageUrlType": "data",
+          "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-dfc80b33-0459-44ba-9985-fc92b820bffb.png",
+          "candidateExportPath": "/workspace/scratch/efd8f075f90c/helluva-targeted-candidates/hb_apple-ready.webp",
+          "qa": {
+            "dimensions": [
+              1024,
+              1536
+            ],
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              254
+            ],
+            "alphaBounds1": [
+              39,
+              27,
+              1006,
+              1524
+            ],
+            "alphaBounds16": [
+              234,
+              29,
+              854,
+              1522
+            ],
+            "alphaBounds128": [
+              235,
+              30,
+              854,
+              1521
+            ],
+            "zeroAlphaPixels": 1249039,
+            "fullAlphaPixels": 0,
+            "partialAlphaPixels": 323825,
+            "totalPixels": 1572864,
+            "borderAlphaMax": 0,
+            "decodedPixelsEqual": true,
+            "masterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+            "masterBytes": 1349129,
+            "exportSha256": "c8670e10dbf84b81dbcad4251f8993f58a6d9c001f099d1aa10f0a51ab2b1f9d",
+            "exportBytes": 867430,
+            "originalMasterBytesPreserved": true
+          },
+          "inputSha256": [
+            "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84",
+            "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db"
+          ],
+          "attemptNumberForThisRevision": 1,
+          "selected": true,
+          "accepted": true,
+          "reviewedBy": [
+            "inventory agent",
+            "references agent"
+          ],
+          "reviewedAt": "2026-11-25T22:07:37.259417+00:00",
+          "masterPath": "art/infernal-versus/masters/base/hb_apple-ready.png",
+          "exportPath": "public/assets/sprites/reserve/hb_apple-ready.webp",
+          "resolvedDifferences": [
+            "Bracelets rétablis au poignet à gauche de l’image.",
+            "Deux branches noires de la pointe de queue rétablies."
+          ],
+          "remainingDifferences": [
+            "Le motif du mollet reste divergent : deux ronds clairs et une boucle noire, au lieu du motif irrégulier visible sur la planche Calis."
+          ],
+          "fidelityStatus": "improved_with_remaining_calf_motif_difference",
+          "inputSnapshots": [
+            {
+              "originalToolInputPath": "/home/agent/hazbin-v6/art/infernal-versus/masters/base/hb_apple-ready.png",
+              "immutableScratchCopy": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_apple-ready.png",
+              "sha256": "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84"
+            },
+            {
+              "originalToolInputPath": "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg",
+              "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-11-25T22:07:37.259417+00:00"
+    },
+    {
+      "id": "hb_kat-ready",
+      "name": "Kat",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: KAT, the fourth character from the left under the KAT label in the supplied sheet. Tall slender red-pink adult demon with angular yellow eyes and sharp teeth, very tall black horns, messy swept dark purple hair, burgundy sleeveless hoodie, long blue-grey trousers ending in pale cuffs and black pointed shoes, black bat wings, a long black tail and large black arrow tip. Keep the very narrow torso and long limbs as shown. Upright relaxed stance, both arms naturally lowered, without leaning. Preserve the individual silhouette. Omit all other figures and every handwritten reference label.",
+      "startedAt": "2026-11-25T21:56:50.038Z",
+      "finishedAt": "2026-11-25T21:58:50.031Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-ca873699-b121-4864-8009-6f6377d53ff9.png",
+      "sourceIdentityId": "hb_kat",
+      "masterPath": "art/infernal-versus/masters/base/hb_kat-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_kat-ready.webp",
+      "qa": {
+        "dimensions": [
+          887,
+          1774
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds1": [
+          71,
+          25,
+          859,
+          1752
+        ],
+        "alphaBounds16": [
+          211,
+          27,
+          771,
+          1731
+        ],
+        "alphaBounds128": [
+          212,
+          29,
+          769,
+          1730
+        ],
+        "zeroAlphaPixels": 1249455,
+        "fullAlphaPixels": 2779,
+        "partialAlphaPixels": 321304,
+        "totalPixels": 1573538,
+        "borderAlphaMax": 0,
+        "decodedPixelsEqual": true,
+        "masterSha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "masterBytes": 466062,
+        "exportSha256": "1c5e08fbacfc1601ca4b3f39f4db79a7518ce00c7a9494838f3d21689abee632",
+        "exportBytes": 297878,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Silhouette longiligne, cheveux violets, longues cornes, hoodie bordeaux sans manches, pantalon bleu-gris à revers clairs et queue noire conservés.",
+          "Pose redressée et bras abaissés ; placement des ailes et courbe de queue adaptés à cette vue.",
+          "La main sur la hanche devient une pose neutre avec deux bras baissés ; les ailes et l’écartement des jambes s’adaptent à cette pose."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "no_material_difference_identified_in_checked_features",
+        "initialMasterSha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "initialDifferences": [
+          {
+            "severity": "pose",
+            "detail": "La main sur la hanche devient une pose neutre avec deux bras baissés ; les ailes et l’écartement des jambes s’adaptent à cette pose.",
+            "action": "Variation de pose à documenter ; aucune certification d’identité pixel à pixel."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "no_material_difference_identified_in_checked_features",
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "finalDifferences": [
+          {
+            "severity": "pose",
+            "detail": "La main sur la hanche devient une pose neutre avec deux bras baissés ; les ailes et l’écartement des jambes s’adaptent à cette pose.",
+            "action": "Variation de pose à documenter ; aucune certification d’identité pixel à pixel."
+          }
+        ]
+      },
+      "selectedRevision": 1,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "no_material_difference_identified_in_checked_features"
+    },
+    {
+      "id": "hb_milky-ready",
+      "name": "Milky",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: MILKY, the fifth character from the left under the MILKY label in the supplied sheet. The clearly adult, short, round-bodied red-skinned demon with short dark hair swept to one side, two black horns, yellow eyes with dark lashes, black off-shoulder long-sleeved cropped top, blue denim shorts with frayed hems, high black pointed boots and black bat wings. Preserve the broad rounded proportions and the red tail with dark arrow detail exactly as shown, keeping the body compact rather than turning the character into a tall figure. Plain relaxed upright pose and neutral expression, arms naturally lowered. Match the source outfit without inventing jewelry or props. Omit all other figures and every handwritten reference label.",
+      "startedAt": "2026-11-25T21:56:50.039Z",
+      "finishedAt": "2026-11-25T21:57:35.012Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-9a59faca-cf48-415e-9e85-96738698f72a.png",
+      "sourceIdentityId": "hb_milky",
+      "masterPath": "art/infernal-versus/masters/base/hb_milky-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_milky-ready.webp",
+      "qa": {
+        "dimensions": [
+          1105,
+          1423
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds1": [
+          53,
+          41,
+          1071,
+          1405
+        ],
+        "alphaBounds16": [
+          254,
+          44,
+          901,
+          1400
+        ],
+        "alphaBounds128": [
+          255,
+          46,
+          900,
+          1399
+        ],
+        "zeroAlphaPixels": 1163513,
+        "fullAlphaPixels": 4162,
+        "partialAlphaPixels": 404740,
+        "totalPixels": 1572415,
+        "borderAlphaMax": 0,
+        "decodedPixelsEqual": true,
+        "masterSha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89",
+        "masterBytes": 607894,
+        "exportSha256": "fc7d67f84d07d6f2f9d63854e303a9a05670e81271548b1f65048edd24a84829",
+        "exportBytes": 376866,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct inspection of generated output and neutral-gray alpha composite beside the Calis reference; independent review by references agent; alpha bounds and exact PNG/WebP RGBA checks.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Silhouette courte et arrondie, cheveux noirs, top asymétrique, short en jean effrangé, bottes hautes, ailes et queue conservés.",
+          "Manche ajoutée côté gauche de l’image retirée ; bras en peau rouge et manche opposée conservés.",
+          "La pose neutre et quelques contours de la frange et des déchirures du short restent des adaptations de production.",
+          "Pas de régression majeure identifiée par la revue indépendante sur les attributs contrôlés ; aucune certification de fidélité 1:1."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "targeted_correction_requested",
+        "initialMasterSha256": "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b",
+        "initialDifferences": [
+          {
+            "severity": "material",
+            "detail": "Le bras à gauche de l’image est nu sur la planche ; le PNG ajoute une manche noire complète sur ce bras. Le bras droit possède bien la manche sombre sur la référence.",
+            "action": "Rétablir le bras gauche de l’image en peau rouge tout en conservant la manche droite et le haut asymétrique."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "targeted_sleeve_difference_resolved",
+        "currentResolvedDifferences": [
+          "Manche ajoutée côté gauche de l’image retirée ; bras en peau rouge et manche opposée conservés."
+        ],
+        "currentRemainingDifferences": [
+          "La pose neutre et quelques contours de la frange et des déchirures du short restent des adaptations de production."
+        ],
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89",
+        "finalDifferences": []
+      },
+      "selectedRevision": 2,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "targeted_sleeve_difference_resolved",
+      "initialOutput": {
+        "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-e50b2b27-8270-4ebb-9ce2-360abdae7a47.png",
+        "outputHint": null,
+        "imageUrlType": null,
+        "qa": {
+          "dimensions": [
+            1105,
+            1423
+          ],
+          "mode": "RGBA",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "alphaBounds1": [
+            53,
+            30,
+            1051,
+            1423
+          ],
+          "alphaBounds16": [
+            237,
+            49,
+            903,
+            1392
+          ],
+          "alphaBounds128": [
+            239,
+            50,
+            902,
+            1391
+          ],
+          "zeroAlphaPixels": 1162429,
+          "fullAlphaPixels": 3312,
+          "partialAlphaPixels": 406674,
+          "totalPixels": 1572415,
+          "borderAlphaMax": 1,
+          "decodedPixelsEqual": true,
+          "masterSha256": "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b",
+          "masterBytes": 591927,
+          "exportSha256": "18dd87262bbc7fbf3f90dd549edaf00211f102e82a9da6b41ae0c155e9a09d01",
+          "exportBytes": 371658,
+          "originalMasterBytesPreserved": true
+        },
+        "visualReview": {
+          "reviewer": "inventory agent",
+          "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+          "singleSubject": true,
+          "fullVisibleSilhouette": true,
+          "trueAlpha": true,
+          "newAnimationCycles": 0,
+          "inGameChecked": false,
+          "fidelityOneToOneCertified": false,
+          "fidelityNotes": [
+            "Silhouette courte et arrondie, cheveux noirs, haut noir, short en jean effrangé, bottes hautes, ailes et queue conservés.",
+            "Contours de la frange et déchirures du short restent une interprétation de production."
+          ]
+        },
+        "status": "accepted_for_static_reserve_with_declared_limits",
+        "accepted": true,
+        "revisionNumber": 1,
+        "scratchMasterArchive": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_milky-ready.png",
+        "scratchExportArchive": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_milky-ready.webp",
+        "selectionStatus": "superseded_by_reviewed_targeted_revision"
+      },
+      "revisions": [
+        {
+          "id": "hb_milky-ready",
+          "name": "Milky",
+          "revisionNumber": 2,
+          "operation": "targeted_reference_correction",
+          "prompt": "Use case: precise localized sprite edit with identity preservation. Image 1 is the CURRENT deliverable to edit: one full-body Milky character on transparent alpha. Image 2 is the credited Calis production lineup; Milky is the FIFTH named figure from the left, marked MILKY. Use only that figure from image 2 to correct one costume detail.\n\nMake ONE local correction to image 1: remove the incorrectly added BLACK SLEEVE on the arm at the LEFT SIDE OF THE IMAGE (Milky's right arm). In the MILKY reference, that arm is bare, with the same red skin as her face and hand, from the exposed shoulder down to the wrist. Replace only that sleeve area with the character's red skin, keeping the existing arm/hand position, contours and length. Leave the black bodice of the asymmetrical cropped top intact. Keep the long BLACK SLEEVE on the OPPOSITE arm at the RIGHT SIDE OF THE IMAGE completely unchanged.\n\nPreserve every other part of image 1: identity, expression, eyes, hair, horns, wings, top, shorts, boots, tail, lowered-arm neutral standing pose, body proportions, flat cel style, linework, palette, scale, transparent alpha and canvas composition. The result must remain ONE isolated full-body static 2D sprite, complete silhouette inside the frame. No background, gray fill, visible glow, labels, names, reference sheet, extra character, duplicate pose, panel or animation. Hidden RGB in transparent areas is not a background to recreate. Output only the edited Milky sprite.",
+          "referencedImagePaths": [
+            "/home/agent/hazbin-v6/art/infernal-versus/masters/base/hb_milky-ready.png",
+            "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg"
+          ],
+          "startedAt": "2026-11-25T22:04:02.892Z",
+          "finishedAt": "2026-11-25T22:04:40.301Z",
+          "status": "accepted_for_static_reserve_with_declared_limits",
+          "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-9a59faca-cf48-415e-9e85-96738698f72a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+          "imageUrlType": "data",
+          "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-9a59faca-cf48-415e-9e85-96738698f72a.png",
+          "candidateExportPath": "/workspace/scratch/efd8f075f90c/helluva-targeted-candidates/hb_milky-ready.webp",
+          "qa": {
+            "dimensions": [
+              1105,
+              1423
+            ],
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "alphaBounds1": [
+              53,
+              41,
+              1071,
+              1405
+            ],
+            "alphaBounds16": [
+              254,
+              44,
+              901,
+              1400
+            ],
+            "alphaBounds128": [
+              255,
+              46,
+              900,
+              1399
+            ],
+            "zeroAlphaPixels": 1163513,
+            "fullAlphaPixels": 4162,
+            "partialAlphaPixels": 404740,
+            "totalPixels": 1572415,
+            "borderAlphaMax": 0,
+            "decodedPixelsEqual": true,
+            "masterSha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89",
+            "masterBytes": 607894,
+            "exportSha256": "fc7d67f84d07d6f2f9d63854e303a9a05670e81271548b1f65048edd24a84829",
+            "exportBytes": 376866,
+            "originalMasterBytesPreserved": true
+          },
+          "inputSha256": [
+            "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b",
+            "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db"
+          ],
+          "attemptNumberForThisRevision": 1,
+          "selected": true,
+          "accepted": true,
+          "reviewedBy": [
+            "inventory agent",
+            "references agent"
+          ],
+          "reviewedAt": "2026-11-25T22:07:37.259417+00:00",
+          "masterPath": "art/infernal-versus/masters/base/hb_milky-ready.png",
+          "exportPath": "public/assets/sprites/reserve/hb_milky-ready.webp",
+          "resolvedDifferences": [
+            "Manche ajoutée côté gauche de l’image retirée ; bras en peau rouge et manche opposée conservés."
+          ],
+          "remainingDifferences": [
+            "La pose neutre et quelques contours de la frange et des déchirures du short restent des adaptations de production."
+          ],
+          "fidelityStatus": "targeted_sleeve_difference_resolved",
+          "inputSnapshots": [
+            {
+              "originalToolInputPath": "/home/agent/hazbin-v6/art/infernal-versus/masters/base/hb_milky-ready.png",
+              "immutableScratchCopy": "/workspace/scratch/efd8f075f90c/helluva-initial-archive/hb_milky-ready.png",
+              "sha256": "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b"
+            },
+            {
+              "originalToolInputPath": "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg",
+              "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db"
+            }
+          ]
+        }
+      ],
+      "outputHint": "Generated images are saved to /workspace/scratch/efd8f075f90c/generated_images as /workspace/scratch/efd8f075f90c/generated_images/exec-9a59faca-cf48-415e-9e85-96738698f72a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "imageUrlType": "data",
+      "updatedAt": "2026-11-25T22:07:37.259417+00:00"
+    },
+    {
+      "id": "hb_kiki-ready",
+      "name": "Kiki",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent full-body static 2D character sprite for Infernal Versus, a fan game. The attached lineup is an identity and costume reference, not a requested layout. Re-draw ONLY the named character as a single isolated adult demon in a relaxed neutral standing pose, slight three-quarter view toward the right. Preserve that character's exact observed body proportions, colors, face, hair, horns, wings, tail, costume and asymmetries from the lineup. Keep both hands relaxed, no prop, no fighting, no action effects. Clean hand-drawn 2D cel look matching the reference, flat colors and crisp dark outlines. Full figure from horn tips to feet with generous transparent margin all around; no cropping. Genuine transparent RGBA background. No floor, no shadow, no scene, no labels, no lineup, no extra character, no animation frames. This is a single newly drawn static sprite, not a contact sheet. Subject: KIKI, the sixth character from the left under the KIKI label in the supplied sheet, immediately before ACE. Tall slender red-pink-skinned adult woman demon, extremely long flowing blue-grey hair swept over one side, tall red horns with black tips, yellow eyes, thin black choker and long cross earrings. Preserve the reference black mesh long-sleeved top with its opaque black heart-shaped front panels and high-waisted black corset shorts, long dark pointed boots, black bat wings and slender red tail with its arrow tip. The clothing remains exactly the source design. Relaxed natural stance, both arms lowered, no action or pose exaggeration. Omit Ace and all other figures, and omit every handwritten reference label.",
+      "startedAt": "2026-11-25T21:56:50.039Z",
+      "finishedAt": "2026-11-25T21:58:15.737Z",
+      "status": "accepted_for_static_reserve_with_declared_limits",
+      "attemptNumber": 1,
+      "accepted": true,
+      "generatedSourcePath": "/workspace/scratch/efd8f075f90c/generated_images/exec-7f7d85d0-6167-4731-887e-58af50c6ec65.png",
+      "sourceIdentityId": "hb_kiki",
+      "masterPath": "art/infernal-versus/masters/base/hb_kiki-ready.png",
+      "exportPath": "public/assets/sprites/reserve/hb_kiki-ready.webp",
+      "qa": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "alphaBounds1": [
+          47,
+          21,
+          994,
+          1536
+        ],
+        "alphaBounds16": [
+          301,
+          32,
+          845,
+          1511
+        ],
+        "alphaBounds128": [
+          301,
+          34,
+          843,
+          1510
+        ],
+        "zeroAlphaPixels": 1307115,
+        "fullAlphaPixels": 0,
+        "partialAlphaPixels": 265749,
+        "totalPixels": 1572864,
+        "borderAlphaMax": 1,
+        "decodedPixelsEqual": true,
+        "masterSha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "masterBytes": 1131304,
+        "exportSha256": "9b0cdcbb5f12bc927cedb6d9459ecb0e1ece48cc20e529f689f1deb614050467",
+        "exportBytes": 741424,
+        "originalMasterBytesPreserved": true
+      },
+      "visualReview": {
+        "reviewer": "inventory agent",
+        "method": "Direct visual inspection of each tool-generated output and the source lineup; exported Milky WebP also opened with view_image. Technical alpha/pixel checks supplement the visual review.",
+        "singleSubject": true,
+        "fullVisibleSilhouette": true,
+        "trueAlpha": true,
+        "newAnimationCycles": 0,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "fidelityNotes": [
+          "Cheveux bleu-gris très longs, boucles en croix, haut résille à panneaux noirs, short corset, bottes asymétriques, ailes et queue conservés.",
+          "Maillage et détails de couture redessinés pour la nouvelle pose ; fidélité exacte à revalider.",
+          "Les petits segments/lignes noirs à la racine rose des cornes sont simplifiés par rapport à la planche.",
+          "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées."
+        ]
+      },
+      "independentReview": {
+        "reviewer": "references agent",
+        "report": "docs/standalone/production-v6/independent-visual-review.json",
+        "initialFidelityStatus": "minor_differences_observed",
+        "initialMasterSha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "initialDifferences": [
+          {
+            "severity": "minor",
+            "detail": "Les petits segments/lignes noirs à la racine rose des cornes sont simplifiés par rapport à la planche.",
+            "action": "Rétablir ces petits marquages si le niveau de détail retenu les exige."
+          },
+          {
+            "severity": "minor",
+            "detail": "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées.",
+            "action": "Comparer le contour du short/corset sur la référence avant qualification finale de détail."
+          }
+        ],
+        "fidelityOneToOneCertified": false,
+        "currentFidelityStatus": "minor_differences_observed",
+        "finalReviewAt": "2026-11-25T22:08:13.655824+00:00",
+        "finalMasterSha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "finalDifferences": [
+          {
+            "severity": "minor",
+            "detail": "Les petits segments/lignes noirs à la racine rose des cornes sont simplifiés par rapport à la planche.",
+            "action": "Rétablir ces petits marquages si le niveau de détail retenu les exige."
+          },
+          {
+            "severity": "minor",
+            "detail": "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées.",
+            "action": "Comparer le contour du short/corset sur la référence avant qualification finale de détail."
+          }
+        ]
+      },
+      "selectedRevision": 1,
+      "acceptanceScope": "static_reserve_with_explicit_fidelity_limits; not a 1:1 model certification",
+      "fidelityStatus": "minor_differences_observed"
+    }
+  ],
+  "newAnimationCycles": 0,
+  "fidelityOneToOneCertified": false,
+  "summary": {
+    "attemptedSubjects": 6,
+    "generationCalls": 8,
+    "successfulOutputs": 8,
+    "acceptedStaticDrawings": 6,
+    "policyRefusals": 0,
+    "masterPngFiles": 6,
+    "losslessWebpFiles": 6,
+    "totalDeliveredImageFiles": 12,
+    "pixelEqualityChecksPassed": 6,
+    "newAnimationCycles": 0,
+    "runtimeCatalogueChangedByThisAgent": false,
+    "visibleSilhouetteClippings": 0,
+    "inGameChecked": false,
+    "fidelityOneToOneCertified": false,
+    "initialGenerationCalls": 6,
+    "targetedEditCalls": 2,
+    "uniqueSubjects": 6,
+    "selectedTargetedRevisions": 2,
+    "supersededInitialOutputs": 2,
+    "refusedSubjectsRetried": 0,
+    "subjectsWithMaterialDetailReservation": 1,
+    "subjectsWithMinorDetailDifferences": 3,
+    "subjectsWithoutMaterialDifferenceInCheckedFeatures": 2
+  },
+  "transparencyNotes": [
+    "All six selected master images have true alpha; RGB colors outside the opaque silhouette remain hidden by transparency.",
+    "Four selected masters have maximum alpha 254; Kat and Milky reach 255. Lossless exports preserve the complete decoded RGBA values.",
+    "Kiki has only alpha=1 on a canvas border; all six visible alpha>16 silhouettes remain strictly inside the frame. The two revised Apple/Milky images have border alpha 0. No destructive alpha cleanup was performed."
+  ],
+  "browserReview": {
+    "status": "not_executed_missing_chromium",
+    "attemptedTool": "Python Playwright chromium.launch",
+    "reason": "Expected chromium_headless_shell-1234 executable absent.",
+    "diagnosticPage": "/home/agent/hazbin-v6-image-review/review.html",
+    "screenshot": null
+  },
+  "independentReviewReport": "docs/standalone/production-v6/independent-visual-review.json",
+  "updatedAt": "2026-11-25T22:07:37.259417+00:00",
+  "countingPolicy": "Six unique delivered static subjects at six master/export pairs. Two selected revisions replace the initial Apple and Milky outputs; eight successful tool outputs do not count as eight delivered drawings.",
+  "independentFinalReviewStatus": "character_reviews_complete"
+}

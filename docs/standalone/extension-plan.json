@@ -72,36 +72,37 @@
     },
     "currentRuntime": {
       "date": "2026-11-25",
-      "batchId": "static-v5-2026-11-25",
-      "baseCommit": "cf323521",
+      "batchId": "static-v6-2026-11-25",
+      "baseCommit": "8d34176aa08dbd566230e5a4742487d64d731cd9",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V5 raccorde des dessins statiques et leurs références. Le roster, les règles de combat et les propositions de techniques/finition restent distincts de cette production. Les versions V3/V4 du classeur restent des archives.",
-      "stages": 35,
+      "note": "V6 ajoute des bases statiques en réserve, une machine isolée et deux fonds. Les 43 kits jouables, les techniques, les fins et les cycles animés restent des périmètres distincts. V1–V5 restent archivées dans la bible ; fidélité 1:1 non certifiée.",
+      "stages": 37,
       "threePlaneStages": 30,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 428,
+      "referencedAssets": 612,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 42,
+      "reserveGalleryDrawings": 49,
       "stagePresentations": [
         "alive",
         "static",
         "reduced"
       ],
       "illustrationAssignmentsV3": 127,
-      "onePlaneStages": 5,
+      "onePlaneStages": 7,
       "twoPlaneStages": 0,
       "costumeFamilies": 11,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v5-register.json"
+      "productionRegister": "docs/standalone/production-v6/delivery-register.json",
+      "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
     },
     "latestIntegration": {
       "date": "2026-11-25",
@@ -138,6 +139,39 @@
           "reduced"
         ],
         "illustrationAssignmentsV3": 0
+      },
+      {
+        "date": "2026-11-25",
+        "batchId": "static-v5-2026-11-25",
+        "baseCommit": "cf323521",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V5 raccorde des dessins statiques et leurs références. Le roster, les règles de combat et les propositions de techniques/finition restent distincts de cette production. Les versions V3/V4 du classeur restent des archives.",
+        "stages": 35,
+        "threePlaneStages": 30,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 428,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 42,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 5,
+        "twoPlaneStages": 0,
+        "costumeFamilies": 11,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v5-register.json"
       }
     ]
   },
@@ -9364,7 +9398,9 @@
       "asset": "/assets/stages/helluva/imp-reception/room.webp ; /assets/stages/helluva/imp-reception/desk.webp ; /assets/stages/helluva/imp-reception/lamp.webp ; /assets/stages/helluva/imp-reception/thumb.webp",
       "acceptance": "Plans et miniature enregistrés ; audit des fichiers distinct de la recette en jeu. Fidélité 1:1, silhouettes en duel, appuis et performance mobile restent à vérifier.",
       "runtimeId": "imp-reception",
-      "registryNote": "Identifiant de plan imp-office réconcilié avec imp-reception déjà présent ; aucune arène supplémentaire comptée."
+      "registryNote": "Identifiant de plan imp-office réconcilié avec imp-reception déjà présent ; aucune arène supplémentaire comptée.",
+      "runtimeStageId": "imp-reception",
+      "currentStaticCoverage": "Fond et accessoires présents ; ancien statut de plan conservé pour les exigences complémentaires."
     },
     {
       "id": "wrath-ranch",
@@ -9410,7 +9446,9 @@
       "asset": "/assets/stages/helluva/ozzies-cabaret/room.webp ; /assets/stages/helluva/ozzies-cabaret/table.webp ; /assets/stages/helluva/ozzies-cabaret/curtain.webp ; /assets/stages/helluva/ozzies-cabaret/thumb.webp",
       "acceptance": "Plans et miniature enregistrés ; audit des fichiers distinct de la recette en jeu. Fidélité 1:1, silhouettes en duel, appuis et performance mobile restent à vérifier.",
       "runtimeId": "ozzies-cabaret",
-      "registryNote": "Identifiant de plan ozzies réconcilié avec ozzies-cabaret déjà présent ; aucune arène supplémentaire comptée."
+      "registryNote": "Identifiant de plan ozzies réconcilié avec ozzies-cabaret déjà présent ; aucune arène supplémentaire comptée.",
+      "runtimeStageId": "ozzies-cabaret",
+      "currentStaticCoverage": "Fond et accessoires présents ; ancien statut de plan conservé pour les exigences complémentaires."
     },
     {
       "id": "bee-party",
@@ -9535,14 +9573,16 @@
       "name": "Hôpital de Sloth",
       "franchise": "Helluva Boss",
       "place": "Sloth",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P2",
       "lot": "V3",
       "source": "SRC-DESIGN",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique.",
+      "reference": "Western Energy S2E4 : salle d’attente livrée en V5. La façade et la cour initialement prévues restent un périmètre distinct à documenter.",
       "design": "Façade/cour; supports médicaux hors combat.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "asset": "public/assets/stages/helluva/sloth-hospital/room.webp ; public/assets/stages/helluva/sloth-hospital/thumb.webp",
+      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées.",
+      "runtimeStageId": "sloth-hospital",
+      "currentStaticCoverage": "Intérieur présent ; façade/cour non livrées."
     },
     {
       "id": "human-beach",
@@ -9557,7 +9597,8 @@
       "design": "Plage et promenade intégrées sous spring-broken-beach. La créature géante envisagée reste un format de boss non produit.",
       "asset": "public/assets/stages/helluva/spring-broken-beach/room.webp ; prop-middle.webp ; prop-near.webp",
       "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées.",
-      "runtimeStageId": "spring-broken-beach"
+      "runtimeStageId": "spring-broken-beach",
+      "currentStaticCoverage": "Fond et accessoires présents ; ancien statut de plan conservé pour les exigences complémentaires."
     },
     {
       "id": "apology-party",
@@ -9609,14 +9650,17 @@
       "name": "Tour VoxTek",
       "franchise": "Hazbin Hotel",
       "place": "Pentagram City",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
-      "lot": "V3",
-      "source": "SRC-DESIGN; HH-S2",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique. Version S2 à documenter",
+      "lot": "V6 · 2026-11-25",
+      "source": "SRC-DESIGN; HH-S2 · clip officiel Prime Video The Vees Meeting",
+      "reference": "https://www.youtube.com/watch?v=PNqlp9t7ies · prévisualisation officielle vers 00:01, native 320 × 180 ; photo secondaire de la carte Vox’s Office pour corroborer la géométrie. Numéro d’épisode non certifié par cet audit.",
       "design": "Écrans à intensité réglable, câblages séparés.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "asset": "public/assets/stages/hazbin/vox-office-s2/room.webp ; public/assets/stages/hazbin/vox-office-s2/thumb.webp",
+      "acceptance": "PNG maître et export WebP sans perte, miniature et sélection d’arène vérifiés par la QA V6. Revue artistique et limites tracées dans production-v6 ; contrôle visuel navigateur non exécuté.",
+      "runtimeStageId": "vox-office-s2",
+      "continuity": "season_2",
+      "currentStaticCoverage": "Un fond jouable du bureau S2 depuis les repères de l’aquarium. Intérieur distinct du Vee Broadcast Studio existant. Caméra et piste adaptées, panneaux simplifiés ; ni façade de tour, ni câblages séparés ou écrans réglables livrés."
     },
     {
       "id": "extermination-roof",
@@ -9630,21 +9674,24 @@
       "reference": "Lieu à rattacher à épisode exact avant production artistique. Plans du final S1 à relever",
       "design": "Version datée de la confrontation finale S1.",
       "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées.",
+      "referenceQualification": "V6 : vues de confrontation retrouvées, mais personnages et cadrage masquent trop le toit pour produire une vue dégagée fidèle. Aucun nouveau fond compté ; dossier dans production-v6/references-supplement.json."
     },
     {
       "id": "hellaverse-training",
       "name": "Salle d’entraînement infernale",
       "franchise": "Hazbin + Helluva",
       "place": "Simulation AU",
-      "status": "À produire",
+      "status": "Ajout PR",
       "priority": "P1",
-      "lot": "V2",
+      "lot": "V6 · 2026-11-25",
       "source": "SRC-DESIGN",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique.",
-      "design": "Décor sobre avec graduations optionnelles et lisibilité maximale.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "reference": "Création originale pour la simulation AU du projet, sans lieu canonique revendiqué. Guide général : entraînement et lisibilité.",
+      "design": "Annexe de pratique originale : tapis bordeaux dégagé, murs rouge sombre, encadrements crème et laiton, deux sorties latérales, protections de colonnes et mobilier au fond. Un fond statique complet ; aucune animation ou couche indépendante ajoutée.",
+      "asset": "public/assets/stages/original/hellaverse-training/room.webp ; public/assets/stages/original/hellaverse-training/thumb.webp",
+      "acceptance": "Fichier PNG maître et WebP sans perte vérifiés. Choix d’arène intégré ; revue navigateur V6 tracée séparément.",
+      "runtimeStageId": "hellaverse-training",
+      "continuity": "simulation_au"
     },
     {
       "id": "hh-heaven-gates",
