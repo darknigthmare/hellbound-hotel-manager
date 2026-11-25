@@ -38,6 +38,9 @@ def main():
     mapping = json.loads(Path(sys.argv[1]).read_text())
     files = []
     for entry in mapping:
+        runtime_status = entry.get('runtimeStatus', 'active')
+        if runtime_status not in ('active', 'reserve'):
+            raise ValueError('Unexpected runtime status: ' + runtime_status)
         source = Path(entry['source'])
         master = ROOT / entry['master']
         runtime = ROOT / entry['runtime']
@@ -55,7 +58,8 @@ def main():
             raise ValueError('Pixel mismatch in lossless export: ' + str(runtime))
         for role, path in [('master', master), ('runtime', runtime)]:
             files.append({**describe(path), 'id': entry['id'], 'group': entry['group'], 'kind': role,
-                          'pixelExactToMaster': role == 'runtime', 'registered': role == 'runtime'})
+                          'pixelExactToMaster': role == 'runtime', 'runtimeStatus': runtime_status,
+                          'registered': role == 'runtime' and runtime_status == 'active'})
         if entry.get('thumbnail'):
             thumbnail = ROOT / entry['thumbnail']
             thumbnail.parent.mkdir(parents=True, exist_ok=True)
@@ -63,7 +67,8 @@ def main():
             small.thumbnail((480, 270), Image.Resampling.LANCZOS)
             small.save(thumbnail, format='WEBP', quality=92, method=6)
             files.append({**describe(thumbnail), 'id': entry['id'], 'group': entry['group'],
-                          'kind': 'thumbnail', 'pixelExactToMaster': False, 'registered': True})
+                          'kind': 'thumbnail', 'pixelExactToMaster': False, 'runtimeStatus': runtime_status,
+                          'registered': runtime_status == 'active'})
     report = {'masterCount': len(mapping), 'fileCount': len(files),
               'allRuntimeExportsPixelExact': True, 'files': files}
     target = ROOT / sys.argv[2]

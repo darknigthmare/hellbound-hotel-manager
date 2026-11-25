@@ -2441,15 +2441,15 @@
   translate: 0 26.5%;
 }
 
-/* Wave F keeps the complete master visible. Props share its contained bounds,
+/* Waves F and G keep the complete master visible. Props share its contained bounds,
    including transparent canvas margins; scenery stays behind the fighters. */
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) {
   --infernal-contained-stage-height: clamp(330px, 42vw, 520px);
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) :is(.arena-lane-grid,.arena-crowd-lights) {
   display: none;
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) .infernal-room-plane {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) .infernal-room-plane {
   inset: 0 -10px;
   box-sizing: border-box;
   padding: 0 20px;
@@ -2459,7 +2459,7 @@
   background-repeat: no-repeat;
   background-position: center bottom;
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) :is(.infernal-desk-plane,.infernal-near-plane) {
   display: none;
   z-index: 1;
   height: auto;
@@ -2493,13 +2493,17 @@
   left: 31%; right: auto; top: auto; bottom: clamp(64px, 15vw, 230px);
   object-position: center top;
 }
+.arena-combat-stage:is([data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  inset: auto;
+  translate: none;
+}
 @media (max-width: 700px) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) {
     --infernal-contained-stage-height: clamp(300px, 72vw, 430px);
   }
 }
 @media (max-height: 600px) and (orientation: landscape) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) {
     --infernal-contained-stage-height: 62vh;
   }
   .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
@@ -2508,20 +2512,20 @@
 }
 @supports (height: 1svh) {
   @media (max-height: 600px) and (orientation: landscape) {
-    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) {
       --infernal-contained-stage-height: 62svh;
     }
   }
 }
 @supports (container-type: size) and (width: 1cqw) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) {
     /* Definite height preserves the existing responsive minimum under size
        containment. The absolutely positioned layers cannot size this box. */
     height: var(--infernal-contained-stage-height);
     min-height: var(--infernal-contained-stage-height);
     container-type: size;
   }
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"]) :is(.infernal-desk-plane,.infernal-near-plane) {
     display: block;
     --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
     --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
@@ -2557,6 +2561,38 @@
     --wave-prop-width: calc(var(--wave-art-width) * .65);
     left: calc((100% - var(--wave-prop-width)) / 2);
     bottom: calc(var(--wave-art-height) * .94 - var(--wave-prop-width) * .563796);
+  }
+  /* Wave G uses the same contained image frame. The subtraction removes each
+     PNG's transparent bottom margin without changing its native aspect ratio. */
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .16);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .055664);
+  }
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .32);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .12 - var(--wave-prop-width) * .038872);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .132);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .572 - var(--wave-prop-width) * .5);
+    bottom: calc(var(--wave-art-height) * .359 - var(--wave-prop-width) * .120631);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .45);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01);
+    bottom: calc(var(--wave-art-height) * .015 - var(--wave-prop-width) * .034070);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .34);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .235 - var(--wave-prop-width) * .096685);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .28);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .26 - var(--wave-prop-width) * .107422);
   }
 }
 

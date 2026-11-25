@@ -1,0 +1,1777 @@
+{
+  "date": "2026-11-25",
+  "type": "static CSS and exported-asset reconstruction",
+  "browser_capture": false,
+  "dom_measured": false,
+  "source_css_sha256": "f9aab00a0d9560d1b25a1c9c91d7cf6ed620b3305cdea89f6f3c06b386a8af47",
+  "source_files": {
+    "public/assets/sprites/individual/hb_glitz-ready.webp": "93f2704fabbd7cb3cacad92d1dc5be1e040f97aa3f3b8a378c60310bcf63fd1b",
+    "public/assets/sprites/individual/hb_vortex-ready.webp": "5fa57790e070a65e54f6995a73786ef06ef963772838eda9cc754b9ea6f2e82b",
+    "public/assets/stages/helluva/cash-circus/prop-middle.webp": "5b229b32458291cb255f3fb5e5cbf9c4493ec30a116706da09cfa45aa2ad8188",
+    "public/assets/stages/helluva/cash-circus/prop-near.webp": "895560ab5882215e62d0ab1432a1f86fe67472e95b83abc53d23d0de26e5f122",
+    "public/assets/stages/helluva/cash-circus/room.webp": "08f946b63d30cebaf157981b993ea3f65aed1fd7545ec5d85fd1c09530e49834",
+    "public/assets/stages/helluva/murder-family-house/prop-middle.webp": "2a172f046e2e052c4448002c5bbf57945da7089671f10da0585d20dddd46191e",
+    "public/assets/stages/helluva/murder-family-house/prop-near.webp": "694368324b0ebd95ab8b1320095369311cbd689ee7ef49c392e8492756a88b3a",
+    "public/assets/stages/helluva/murder-family-house/room.webp": "fc16e947bb7b9b4e4ba796f4a14da7906c806df0c56746f7c661e6cdc7eb1d9c",
+    "public/assets/stages/helluva/spring-broken-beach/prop-middle.webp": "7a3c28ae71a98fffd6dce1b309b1ea42a655c94023b319628891c0bac041482f",
+    "public/assets/stages/helluva/spring-broken-beach/prop-near.webp": "2576c352080ef2e0de707d63c3c17f495b147bebe00982698d06cbb0c2eadf00",
+    "public/assets/stages/helluva/spring-broken-beach/room.webp": "c7ccf1d582deb616408b572f0a9c85019e585f6ad60a414b5f2417fc414b109f",
+    "src/lib/infernal-appearances.ts": "687206eb364562022de29187f967d1ee8f9736d727f937591c3c2ff608edb1ed",
+    "src/lib/infernal-pose-anchors.ts": "918114cbe0c5e8f8e6fc0d0dcd0f3cbd9f7051335176529f63528973f06b9f56",
+    "src/lib/pentagram-stages.ts": "b4f9727da4ea4640e8bca0dbbc6ab8eedc0eb4530a9dc44aa6bef12c687cd360",
+    "src/styles/infernal-authored-poses.css": "f6dbe4ef390f5ab19790d7fb6cc98cee157fa6cc7950b47e9f3ccf69137c966a",
+    "src/styles/pentagram-arena.css": "f9aab00a0d9560d1b25a1c9c91d7cf6ed620b3305cdea89f6f3c06b386a8af47"
+  },
+  "assumptions": [
+    "Requested canvas sizes are the stage content box; no DOM width/height measurements.",
+    "Container query units are assumed supported. 100cqw=W and 100cqh=H.",
+    "The landscape requested raster height242px rounds62svh=241.8px for the assumed390px viewport.",
+    "Parallax offset0, positions22/78, READY poses, no costume.",
+    "Room brightness0.83 reproduced. Native image ratios preserved by uniform geometry scaling.",
+    "HUD, browser font metrics, outer border, CSS drop shadows, spectator layers, attack effects and animation transforms omitted.",
+    "Raster placement/resizing rounds subpixel values, so exact and raster alpha bounds are reported separately."
+  ],
+  "geometry": {
+    "art_width": "min(W-20,H*1672/941)",
+    "art_height": "min(H,(W-20)*941/1672)",
+    "art_left": "(W-art_width)/2",
+    "art_top": "H-art_height",
+    "image_height": "CSS width*native_height/native_width",
+    "visible_alpha_bbox": "image origin + source alpha16 bbox * uniform scale"
+  },
+  "rules": {
+    "spring-broken-beach": {
+      "middle": {
+        "width_art_fraction": 0.16,
+        "bottom_art_height_fraction": 0.2,
+        "bottom_canvas_width_correction": 0.055664,
+        "horizontal_side": "left",
+        "horizontal_art_fraction": 0.015,
+        "horizontal_prop_width_subtraction": 0.0,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .16);\n    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);\n    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .055664);",
+        "z_index": 1
+      },
+      "near": {
+        "width_art_fraction": 0.32,
+        "bottom_art_height_fraction": 0.12,
+        "bottom_canvas_width_correction": 0.038872,
+        "horizontal_side": "right",
+        "horizontal_art_fraction": 0.015,
+        "horizontal_prop_width_subtraction": 0.0,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .32);\n    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);\n    bottom: calc(var(--wave-art-height) * .12 - var(--wave-prop-width) * .038872);",
+        "z_index": 1
+      }
+    },
+    "murder-family-house": {
+      "middle": {
+        "width_art_fraction": 0.132,
+        "bottom_art_height_fraction": 0.359,
+        "bottom_canvas_width_correction": 0.120631,
+        "horizontal_side": "left",
+        "horizontal_art_fraction": 0.572,
+        "horizontal_prop_width_subtraction": 0.5,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .132);\n    left: calc(var(--wave-art-side) + var(--wave-art-width) * .572 - var(--wave-prop-width) * .5);\n    bottom: calc(var(--wave-art-height) * .359 - var(--wave-prop-width) * .120631);",
+        "z_index": 1
+      },
+      "near": {
+        "width_art_fraction": 0.45,
+        "bottom_art_height_fraction": 0.015,
+        "bottom_canvas_width_correction": 0.03407,
+        "horizontal_side": "left",
+        "horizontal_art_fraction": 0.01,
+        "horizontal_prop_width_subtraction": 0.0,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .45);\n    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01);\n    bottom: calc(var(--wave-art-height) * .015 - var(--wave-prop-width) * .034070);",
+        "z_index": 1
+      }
+    },
+    "cash-circus": {
+      "middle": {
+        "width_art_fraction": 0.34,
+        "bottom_art_height_fraction": 0.235,
+        "bottom_canvas_width_correction": 0.096685,
+        "horizontal_side": "left",
+        "horizontal_art_fraction": 0.015,
+        "horizontal_prop_width_subtraction": 0.0,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .34);\n    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);\n    bottom: calc(var(--wave-art-height) * .235 - var(--wave-prop-width) * .096685);",
+        "z_index": 1
+      },
+      "near": {
+        "width_art_fraction": 0.28,
+        "bottom_art_height_fraction": 0.26,
+        "bottom_canvas_width_correction": 0.107422,
+        "horizontal_side": "right",
+        "horizontal_art_fraction": 0.015,
+        "horizontal_prop_width_subtraction": 0.0,
+        "source_declarations": "--wave-prop-width: calc(var(--wave-art-width) * .28);\n    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);\n    bottom: calc(var(--wave-art-height) * .26 - var(--wave-prop-width) * .107422);",
+        "z_index": 1
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "stage_id": "spring-broken-beach",
+      "case": "desktop",
+      "assumed_stage_content_box": [
+        1200,
+        520
+      ],
+      "assumed_viewport": [
+        1440,
+        900
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        138.0234,
+        0.0,
+        1061.9766,
+        520.0
+      ],
+      "room_scale": 0.5526036131774708,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            160,
+            85,
+            881,
+            1479
+          ],
+          "css_image_box": [
+            151.8827,
+            202.4802,
+            299.7152,
+            424.2289
+          ],
+          "css_bottom": 95.771051,
+          "scale_uniform": 0.144367694,
+          "visible_bounds_exact": [
+            174.9815,
+            214.7514,
+            279.0706,
+            416.0
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.04,
+            0.413,
+            0.1527,
+            0.8
+          ],
+          "visible_bounds_raster": [
+            175,
+            214,
+            280,
+            416
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-near.webp",
+          "source_canvas": [
+            1312,
+            1199
+          ],
+          "source_alpha16_bbox": [
+            140,
+            63,
+            1170,
+            1148
+          ],
+          "css_image_box": [
+            752.4523,
+            198.8931,
+            1048.1173,
+            469.0931
+          ],
+          "css_bottom": 50.906909,
+          "scale_uniform": 0.225354449,
+          "visible_bounds_exact": [
+            784.0019,
+            213.0904,
+            1016.117,
+            457.6
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.6991,
+            0.4098,
+            0.9504,
+            0.88
+          ],
+          "visible_bounds_raster": [
+            783,
+            213,
+            1016,
+            458
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            283.9695,
+            310.0
+          ],
+          "uniform_scale": 0.2366412213740458,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 9.938931297709926,
+          "visible_bounds_exact": [
+            148.7557,
+            180.0015,
+            362.4427,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            148,
+            179,
+            363,
+            473
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            256.087,
+            310.0
+          ],
+          "uniform_scale": 0.2246376811594203,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 17.746376811594192,
+          "visible_bounds_exact": [
+            843.4493,
+            200.9391,
+            1040.9058,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            843,
+            201,
+            1041,
+            474
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "spring-broken-beach-desktop-static.png"
+    },
+    {
+      "stage_id": "spring-broken-beach",
+      "case": "portrait",
+      "assumed_stage_content_box": [
+        330,
+        300
+      ],
+      "assumed_viewport": [
+        390,
+        844
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        10.0,
+        125.5323,
+        320.0,
+        300.0
+      ],
+      "room_scale": 0.1854066985645933,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            160,
+            85,
+            881,
+            1479
+          ],
+          "css_image_box": [
+            14.65,
+            193.4674,
+            64.25,
+            267.8674
+          ],
+          "css_bottom": 32.132606,
+          "scale_uniform": 0.0484375,
+          "visible_bounds_exact": [
+            22.4,
+            197.5846,
+            57.3234,
+            265.1065
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.04,
+            0.413,
+            0.1527,
+            0.8
+          ],
+          "visible_bounds_raster": [
+            22,
+            197,
+            58,
+            265
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-near.webp",
+          "source_canvas": [
+            1312,
+            1199
+          ],
+          "source_alpha16_bbox": [
+            140,
+            63,
+            1170,
+            1148
+          ],
+          "css_image_box": [
+            216.15,
+            192.2639,
+            315.35,
+            282.92
+          ],
+          "css_bottom": 17.080022,
+          "scale_uniform": 0.075609756,
+          "visible_bounds_exact": [
+            226.7354,
+            197.0273,
+            304.6134,
+            279.0639
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.6991,
+            0.4098,
+            0.9504,
+            0.88
+          ],
+          "visible_bounds_raster": [
+            226,
+            196,
+            305,
+            279
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            135.7557,
+            148.2
+          ],
+          "uniform_scale": 0.1131297709923664,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 4.7514503816793905,
+          "visible_bounds_exact": [
+            17.5058,
+            132.8322,
+            119.662,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            17,
+            133,
+            121,
+            273
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            122.4261,
+            148.2
+          ],
+          "uniform_scale": 0.10739130434782608,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 8.483913043478255,
+          "visible_bounds_exact": [
+            213.1548,
+            142.8417,
+            307.5517,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            213,
+            142,
+            308,
+            273
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "spring-broken-beach-portrait-static.png"
+    },
+    {
+      "stage_id": "spring-broken-beach",
+      "case": "landscape",
+      "assumed_stage_content_box": [
+        730,
+        242
+      ],
+      "assumed_viewport": [
+        844,
+        390
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        150.0032,
+        0.0,
+        579.9968,
+        242.0
+      ],
+      "room_scale": 0.257173219978746,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            160,
+            85,
+            881,
+            1479
+          ],
+          "css_image_box": [
+            156.4531,
+            94.2312,
+            225.2521,
+            197.4296
+          ],
+          "css_bottom": 44.570374,
+          "scale_uniform": 0.067186504,
+          "visible_bounds_exact": [
+            167.2029,
+            99.942,
+            215.6444,
+            193.6
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.04,
+            0.413,
+            0.1527,
+            0.8
+          ],
+          "visible_bounds_raster": [
+            166,
+            99,
+            216,
+            194
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/spring-broken-beach/prop-near.webp",
+          "source_canvas": [
+            1312,
+            1199
+          ],
+          "source_alpha16_bbox": [
+            140,
+            63,
+            1170,
+            1148
+          ],
+          "css_image_box": [
+            435.9489,
+            92.5618,
+            573.5469,
+            218.3087
+          ],
+          "css_bottom": 23.691292,
+          "scale_uniform": 0.104876494,
+          "visible_bounds_exact": [
+            450.6317,
+            99.169,
+            558.6544,
+            212.96
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.6991,
+            0.4098,
+            0.9504,
+            0.88
+          ],
+          "visible_bounds_raster": [
+            450,
+            99,
+            559,
+            214
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            154.626,
+            168.8
+          ],
+          "uniform_scale": 0.12885496183206108,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 5.411908396946567,
+          "visible_bounds_exact": [
+            97.8476,
+            60.5687,
+            214.2037,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            97,
+            60,
+            215,
+            221
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            139.4435,
+            168.8
+          ],
+          "uniform_scale": 0.12231884057971015,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 9.663188405797097,
+          "visible_bounds_exact": [
+            519.0046,
+            71.9696,
+            626.5229,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            519,
+            71,
+            627,
+            221
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "spring-broken-beach-landscape-static.png"
+    },
+    {
+      "stage_id": "murder-family-house",
+      "case": "desktop",
+      "assumed_stage_content_box": [
+        1200,
+        520
+      ],
+      "assumed_viewport": [
+        1440,
+        900
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        138.0234,
+        0.0,
+        1061.9766,
+        520.0
+      ],
+      "room_scale": 0.5526036131774708,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-middle.webp",
+          "source_canvas": [
+            1774,
+            887
+          ],
+          "source_alpha16_bbox": [
+            126,
+            230,
+            1648,
+            673
+          ],
+          "css_image_box": [
+            605.5437,
+            287.0515,
+            727.5055,
+            348.0324
+          ],
+          "css_bottom": 171.967623,
+          "scale_uniform": 0.068749621,
+          "visible_bounds_exact": [
+            614.2062,
+            302.8639,
+            718.8431,
+            333.32
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.5154,
+            0.5824,
+            0.6286,
+            0.641
+          ],
+          "visible_bounds_raster": [
+            614,
+            302,
+            720,
+            334
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-near.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            153,
+            139,
+            2009,
+            650
+          ],
+          "css_image_box": [
+            147.2629,
+            387.7726,
+            563.0419,
+            526.3656
+          ],
+          "css_bottom": -6.365589,
+          "scale_uniform": 0.191426776,
+          "visible_bounds_exact": [
+            176.5512,
+            414.3809,
+            531.8393,
+            512.2
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0417,
+            0.7969,
+            0.4262,
+            0.985
+          ],
+          "visible_bounds_raster": [
+            176,
+            415,
+            532,
+            513
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            283.9695,
+            310.0
+          ],
+          "uniform_scale": 0.2366412213740458,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 9.938931297709926,
+          "visible_bounds_exact": [
+            148.7557,
+            180.0015,
+            362.4427,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            148,
+            179,
+            363,
+            473
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            256.087,
+            310.0
+          ],
+          "uniform_scale": 0.2246376811594203,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 17.746376811594192,
+          "visible_bounds_exact": [
+            843.4493,
+            200.9391,
+            1040.9058,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            843,
+            201,
+            1041,
+            474
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "murder-family-house-desktop-static.png",
+      "planter_detail_crop": [
+        582,
+        255,
+        766,
+        359
+      ]
+    },
+    {
+      "stage_id": "murder-family-house",
+      "case": "portrait",
+      "assumed_stage_content_box": [
+        330,
+        300
+      ],
+      "assumed_viewport": [
+        390,
+        844
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        10.0,
+        125.5323,
+        320.0,
+        300.0
+      ],
+      "room_scale": 0.1854066985645933,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-middle.webp",
+          "source_canvas": [
+            1774,
+            887
+          ],
+          "source_alpha16_bbox": [
+            126,
+            230,
+            1648,
+            673
+          ],
+          "css_image_box": [
+            166.86,
+            221.8423,
+            207.78,
+            242.3023
+          ],
+          "css_bottom": 57.697685,
+          "scale_uniform": 0.023066516,
+          "visible_bounds_exact": [
+            169.7664,
+            227.1476,
+            204.8736,
+            237.3661
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.5154,
+            0.5824,
+            0.6286,
+            0.641
+          ],
+          "visible_bounds_raster": [
+            170,
+            227,
+            205,
+            238
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-near.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            153,
+            139,
+            2009,
+            650
+          ],
+          "css_image_box": [
+            13.1,
+            255.6357,
+            152.6,
+            302.1357
+          ],
+          "css_bottom": -2.135749,
+          "scale_uniform": 0.064226519,
+          "visible_bounds_exact": [
+            22.9267,
+            264.5632,
+            142.1311,
+            297.383
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0417,
+            0.7969,
+            0.4262,
+            0.985
+          ],
+          "visible_bounds_raster": [
+            23,
+            265,
+            143,
+            298
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            135.7557,
+            148.2
+          ],
+          "uniform_scale": 0.1131297709923664,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 4.7514503816793905,
+          "visible_bounds_exact": [
+            17.5058,
+            132.8322,
+            119.662,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            17,
+            133,
+            121,
+            273
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            122.4261,
+            148.2
+          ],
+          "uniform_scale": 0.10739130434782608,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 8.483913043478255,
+          "visible_bounds_exact": [
+            213.1548,
+            142.8417,
+            307.5517,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            213,
+            142,
+            308,
+            273
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "murder-family-house-portrait-static.png",
+      "planter_detail_crop": [
+        159,
+        211,
+        221,
+        246
+      ]
+    },
+    {
+      "stage_id": "murder-family-house",
+      "case": "landscape",
+      "assumed_stage_content_box": [
+        730,
+        242
+      ],
+      "assumed_viewport": [
+        844,
+        390
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        150.0032,
+        0.0,
+        579.9968,
+        242.0
+      ],
+      "room_scale": 0.257173219978746,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-middle.webp",
+          "source_canvas": [
+            1774,
+            887
+          ],
+          "source_alpha16_bbox": [
+            126,
+            230,
+            1648,
+            673
+          ],
+          "css_image_box": [
+            367.58,
+            133.5893,
+            424.3391,
+            161.9689
+          ],
+          "css_bottom": 80.031086,
+          "scale_uniform": 0.031995016,
+          "visible_bounds_exact": [
+            371.6113,
+            140.9482,
+            420.3077,
+            155.122
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.5154,
+            0.5824,
+            0.6286,
+            0.641
+          ],
+          "visible_bounds_raster": [
+            372,
+            141,
+            421,
+            156
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/murder-family-house/prop-near.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            153,
+            139,
+            2009,
+            650
+          ],
+          "css_image_box": [
+            154.3031,
+            180.4634,
+            347.8003,
+            244.9624
+          ],
+          "css_bottom": -2.962447,
+          "scale_uniform": 0.089087077,
+          "visible_bounds_exact": [
+            167.9334,
+            192.8465,
+            333.2791,
+            238.37
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0417,
+            0.7969,
+            0.4262,
+            0.985
+          ],
+          "visible_bounds_raster": [
+            167,
+            192,
+            333,
+            238
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            154.626,
+            168.8
+          ],
+          "uniform_scale": 0.12885496183206108,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 5.411908396946567,
+          "visible_bounds_exact": [
+            97.8476,
+            60.5687,
+            214.2037,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            97,
+            60,
+            215,
+            221
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            139.4435,
+            168.8
+          ],
+          "uniform_scale": 0.12231884057971015,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 9.663188405797097,
+          "visible_bounds_exact": [
+            519.0046,
+            71.9696,
+            626.5229,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            519,
+            71,
+            627,
+            221
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "murder-family-house-landscape-static.png",
+      "planter_detail_crop": [
+        356,
+        119,
+        442,
+        167
+      ]
+    },
+    {
+      "stage_id": "cash-circus",
+      "case": "desktop",
+      "assumed_stage_content_box": [
+        1200,
+        520
+      ],
+      "assumed_viewport": [
+        1440,
+        900
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        138.0234,
+        0.0,
+        1061.9766,
+        520.0
+      ],
+      "room_scale": 0.5526036131774708,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-middle.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            126,
+            228,
+            2046,
+            514
+          ],
+          "css_image_box": [
+            151.8827,
+            323.4583,
+            466.0268,
+            428.173
+          ],
+          "css_bottom": 91.826977,
+          "scale_uniform": 0.144633564,
+          "visible_bounds_exact": [
+            170.1065,
+            356.4348,
+            447.803,
+            397.8
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0347,
+            0.6855,
+            0.3353,
+            0.765
+          ],
+          "visible_bounds_raster": [
+            170,
+            356,
+            448,
+            398
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-near.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            227,
+            105,
+            730,
+            1426
+          ],
+          "css_image_box": [
+            789.4104,
+            24.5305,
+            1048.1173,
+            412.5908
+          ],
+          "css_bottom": 107.409187,
+          "scale_uniform": 0.252643464,
+          "visible_bounds_exact": [
+            846.7605,
+            51.058,
+            973.8401,
+            384.8
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.7671,
+            0.0982,
+            0.9046,
+            0.74
+          ],
+          "visible_bounds_raster": [
+            846,
+            51,
+            974,
+            386
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            283.9695,
+            310.0
+          ],
+          "uniform_scale": 0.2366412213740458,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 9.938931297709926,
+          "visible_bounds_exact": [
+            148.7557,
+            180.0015,
+            362.4427,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            148,
+            179,
+            363,
+            473
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 310,
+          "css_contain_frame": [
+            465.0,
+            310
+          ],
+          "image_render_size": [
+            256.087,
+            310.0
+          ],
+          "uniform_scale": 0.2246376811594203,
+          "ground_line_y": 473.2,
+          "ground_correction_pixels": 17.746376811594192,
+          "visible_bounds_exact": [
+            843.4493,
+            200.9391,
+            1040.9058,
+            473.2
+          ],
+          "visible_bounds_raster": [
+            843,
+            201,
+            1041,
+            474
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "cash-circus-desktop-static.png"
+    },
+    {
+      "stage_id": "cash-circus",
+      "case": "portrait",
+      "assumed_stage_content_box": [
+        330,
+        300
+      ],
+      "assumed_viewport": [
+        390,
+        844
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        10.0,
+        125.5323,
+        320.0,
+        300.0
+      ],
+      "room_scale": 0.1854066985645933,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-middle.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            126,
+            228,
+            2046,
+            514
+          ],
+          "css_image_box": [
+            14.65,
+            234.0574,
+            120.05,
+            269.1907
+          ],
+          "css_bottom": 30.809311,
+          "scale_uniform": 0.048526703,
+          "visible_bounds_exact": [
+            20.7644,
+            245.1214,
+            113.9356,
+            259.0001
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0347,
+            0.6855,
+            0.3353,
+            0.765
+          ],
+          "visible_bounds_raster": [
+            21,
+            245,
+            114,
+            259
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-near.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            227,
+            105,
+            730,
+            1426
+          ],
+          "css_image_box": [
+            228.55,
+            133.7626,
+            315.35,
+            263.9626
+          ],
+          "css_bottom": 36.037373,
+          "scale_uniform": 0.084765625,
+          "visible_bounds_exact": [
+            247.7918,
+            142.663,
+            290.4289,
+            254.6384
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.7671,
+            0.0982,
+            0.9046,
+            0.74
+          ],
+          "visible_bounds_raster": [
+            248,
+            143,
+            291,
+            255
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            135.7557,
+            148.2
+          ],
+          "uniform_scale": 0.1131297709923664,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 4.7514503816793905,
+          "visible_bounds_exact": [
+            17.5058,
+            132.8322,
+            119.662,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            17,
+            133,
+            121,
+            273
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 148.2,
+          "css_contain_frame": [
+            222.29999999999998,
+            148.2
+          ],
+          "image_render_size": [
+            122.4261,
+            148.2
+          ],
+          "uniform_scale": 0.10739130434782608,
+          "ground_line_y": 273.0,
+          "ground_correction_pixels": 8.483913043478255,
+          "visible_bounds_exact": [
+            213.1548,
+            142.8417,
+            307.5517,
+            273.0
+          ],
+          "visible_bounds_raster": [
+            213,
+            142,
+            308,
+            273
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "cash-circus-portrait-static.png"
+    },
+    {
+      "stage_id": "cash-circus",
+      "case": "landscape",
+      "assumed_stage_content_box": [
+        730,
+        242
+      ],
+      "assumed_viewport": [
+        844,
+        390
+      ],
+      "parallax_offset": 0,
+      "room_visible_bounds": [
+        150.0032,
+        0.0,
+        579.9968,
+        242.0
+      ],
+      "room_scale": 0.257173219978746,
+      "props": [
+        {
+          "layer": "middle",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-middle.webp",
+          "source_canvas": [
+            2172,
+            724
+          ],
+          "source_alpha16_bbox": [
+            126,
+            228,
+            2046,
+            514
+          ],
+          "css_image_box": [
+            156.4531,
+            150.5325,
+            302.6509,
+            199.2651
+          ],
+          "css_bottom": 42.734863,
+          "scale_uniform": 0.067310236,
+          "visible_bounds_exact": [
+            164.9342,
+            165.8793,
+            294.1698,
+            185.13
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.0347,
+            0.6855,
+            0.3353,
+            0.765
+          ],
+          "visible_bounds_raster": [
+            164,
+            166,
+            294,
+            186
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        },
+        {
+          "layer": "near",
+          "asset": "public/assets/stages/helluva/cash-circus/prop-near.webp",
+          "source_canvas": [
+            1024,
+            1536
+          ],
+          "source_alpha16_bbox": [
+            227,
+            105,
+            730,
+            1426
+          ],
+          "css_image_box": [
+            453.1487,
+            11.4161,
+            573.5469,
+            192.0134
+          ],
+          "css_bottom": 49.986583,
+          "scale_uniform": 0.117576382,
+          "visible_bounds_exact": [
+            479.8385,
+            23.7616,
+            538.9795,
+            179.08
+          ],
+          "visible_bounds_normalized_in_art": [
+            0.7671,
+            0.0982,
+            0.9046,
+            0.74
+          ],
+          "visible_bounds_raster": [
+            479,
+            23,
+            539,
+            180
+          ],
+          "contained_exact": true,
+          "contained_raster": true,
+          "z_index": 1
+        }
+      ],
+      "fighters": [
+        {
+          "id": "hb_vortex",
+          "pose": "ready",
+          "position_percent": 22,
+          "facing": "right",
+          "native_canvas": [
+            1200,
+            1310
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            154.626,
+            168.8
+          ],
+          "uniform_scale": 0.12885496183206108,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 5.411908396946567,
+          "visible_bounds_exact": [
+            97.8476,
+            60.5687,
+            214.2037,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            97,
+            60,
+            215,
+            221
+          ],
+          "z_index": 2
+        },
+        {
+          "id": "hb_glitz",
+          "pose": "ready",
+          "position_percent": 78,
+          "facing": "left",
+          "native_canvas": [
+            1140,
+            1380
+          ],
+          "combatant_width": 168.8,
+          "css_contain_frame": [
+            253.20000000000002,
+            168.8
+          ],
+          "image_render_size": [
+            139.4435,
+            168.8
+          ],
+          "uniform_scale": 0.12231884057971015,
+          "ground_line_y": 220.22,
+          "ground_correction_pixels": 9.663188405797097,
+          "visible_bounds_exact": [
+            519.0046,
+            71.9696,
+            626.5229,
+            220.22
+          ],
+          "visible_bounds_raster": [
+            519,
+            71,
+            627,
+            221
+          ],
+          "z_index": 2
+        }
+      ],
+      "composition_file": "cash-circus-landscape-static.png"
+    }
+  ],
+  "summary": {
+    "scenario_count": 9,
+    "prop_boxes": 18,
+    "contained_exact": 18,
+    "contained_raster": 18
+  },
+  "planter_runtime_master_check": {
+    "roi_native_pixels": [
+      845,
+      530,
+      1065,
+      615
+    ],
+    "mean_abs_rgb_difference_to_selected_final": 0.0,
+    "mean_abs_rgb_difference_to_archived_baked_planter": 31.551532976827094,
+    "runtime_is_closer_to_final_unpainted_master": true,
+    "scope": "Pixel comparison of existing decoded exports only; no asset modified."
+  }
+}

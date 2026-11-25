@@ -63,27 +63,27 @@
       "XL": "Production transverse importante; à chiffrer après prototype"
     },
     "latestDelivery": {
-      "date": "2026-11-24",
-      "batchId": "wave-f-2026-11-24",
+      "date": "2026-11-25",
+      "batchId": "wave-g-2026-11-25",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json",
-      "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
-      "scope": "Trois nouveaux combattants, treize poses, trois arènes à trois plans et trois VFX. Références documentées ; fidélité 1:1 non certifiée."
+      "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
+      "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+      "scope": "Bases statiques manquantes, trois arènes et leurs six accessoires, projectiles isolés. Aucune nouvelle animation ni kit. Bases et projectiles en réserve ; décors sélectionnables. Fidélité 1:1 non certifiée."
     },
     "currentRuntime": {
-      "date": "2026-11-24",
-      "batchId": "wave-f-2026-11-24",
-      "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+      "date": "2026-11-25",
+      "batchId": "wave-g-2026-11-25",
+      "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
       "note": "Le bloc meta.implementation et les onze feuilles V1 restent historiques. Les tables V2 sont calculées depuis le runtime actuel.",
-      "stages": 25,
-      "threePlaneStages": 25,
+      "stages": 28,
+      "threePlaneStages": 28,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 408
+      "referencedAssets": 420
     }
   },
   "sources": [
@@ -12384,8 +12384,8 @@
     }
   ],
   "productionBible": {
-    "edition": "2026-11-24 · vague F",
-    "baseCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+    "edition": "2026-11-25 · vague G",
+    "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
     "fighterDesign": [
       {
         "fighter": "charlie",
@@ -13068,6 +13068,36 @@
         "ambient": "Lumières fixes et partition procédurale originale ; aucune musique de l’épisode.",
         "composition": "Fond entier, sans déformation. La piste et les éléments sont réorganisés pour le duel AU ; les bandes de ratio restent teintées.",
         "reference": "Sinsmas S2E12, épisode officiel Vivziepop : https://www.youtube.com/watch?v=GisSNuVpbkM. Références documentées dans SOURCES_QA.md ; fidélité 1:1 non certifiée."
+      },
+      {
+        "id": "spring-broken-beach",
+        "name": "Plage · Spring Broken",
+        "back": "Plage et promenade bordée de bâtiments sous le ciel rose de Spring Broken.",
+        "middle": "Deux planches de surf indépendantes, au bord gauche.",
+        "floor": "Parasol gris indépendant au bord droit ; sable de duel dégagé.",
+        "ambient": "Lumière fixe et partition procédurale originale Contrat sur le sable.",
+        "composition": "Fond entier en contain bas-centre ; ratio natif préservé. Le cadrage frontal et la piste dégagée sont une adaptation de simulation AU.",
+        "reference": "Spring Broken S1E3, épisode officiel Vivziepop : https://www.youtube.com/watch?v=RghsgkZKedg. Planches vers 07:40, parasol vers 12:40. Aperçus officiels inspectés ; pas de certification trait pour trait."
+      },
+      {
+        "id": "murder-family-house",
+        "name": "Martha · Maison dans la clairière",
+        "back": "Maison de bois rouge et toit bleu, deux lucarnes, hublot et baie arrondie ; clairière de nuit.",
+        "middle": "Jardinière lavande autonome, sous une fenêtre de bord.",
+        "floor": "Feuillage bleu indépendant au bord bas gauche.",
+        "ambient": "Lumière nocturne fixe et partition procédurale originale La clairière après minuit.",
+        "composition": "Fond entier en contain bas-centre. La pleine lune non confirmée du premier candidat est retirée. Composition et sol élargis pour la simulation AU.",
+        "reference": "Murder Family S1E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=el_PChGfJN8. Jardinière vers 05:35, feuillage vers 12:15. Aperçus officiels inspectés ; formes de jeu reconstruites."
+      },
+      {
+        "id": "cash-circus",
+        "name": "Cirque de Cash · Piste",
+        "back": "Piste vide du cirque de Cash, tentures rouges et arche à ampoules.",
+        "middle": "Balustrade à fanions rouges en bordure gauche, derrière les combattants.",
+        "floor": "Section indépendante d’arche à ampoules au bord droit.",
+        "ambient": "Éclairage fixe et partition procédurale originale Reprise sur la piste vide.",
+        "composition": "Fond entier en contain bas-centre. Perspective aplatie et fragments repositionnés pour le duel AU ; aucune nouvelle scène d’histoire.",
+        "reference": "The Circus S2E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=_spuxXnul0U. Piste vers 03:40, arche vers 04:00. Motifs inspectés ; aucun plan architectural exact certifié."
       }
     ],
     "modeDesign": [
@@ -14087,32 +14117,54 @@
         "Trois effets visuels",
         "Sources, prompts, exports et limites de validation ; adaptations AU.",
         "art/infernal-versus/production/projectiles-wave-f-2026-11-24.json"
+      ],
+      [
+        "Dépôt · vague G",
+        "Bases statiques en réserve",
+        "Personnages et ennemis absents des images READY individuelles. Fichiers, sources et limites, hors kits jouables.",
+        "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json"
+      ],
+      [
+        "Dépôt · vague G",
+        "Arènes et accessoires",
+        "Trois fonds et six objets indépendants. Motifs de sources, recadrage de duel AU, alpha et ratio.",
+        "art/infernal-versus/production/stages-wave-g-2026-11-25.json"
+      ],
+      [
+        "Dépôt · vague G",
+        "Projectiles isolés",
+        "Sprites en réserve et références vérifiées ; aucune nouvelle affectation moteur.",
+        "art/infernal-versus/production/projectiles-wave-g-2026-11-25.json"
       ]
     ],
     "assetBatch": {
-      "date": "2026-11-24",
-      "batchId": "wave-f-2026-11-24",
-      "comparisonCommit": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+      "date": "2026-11-25",
+      "batchId": "wave-g-2026-11-25",
+      "comparisonCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json",
+      "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
+      "reserveManifest": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json",
       "newProduction": {
-        "playableFighters": 3,
-        "fighterPoses": 13,
+        "playableFighters": 0,
+        "characterBases": 5,
+        "enemyBases": 6,
+        "animationPoses": 0,
         "stageBackgrounds": 3,
         "foregroundProps": 6,
-        "attackEffectImages": 3,
-        "totalNewArtworks": 25,
+        "projectileImages": 1,
+        "totalNewArtworks": 21,
         "derivedThumbnails": 3,
-        "newAttackEffectAssignments": 4,
-        "newStoryRoutes": 3,
-        "newStoryDuels": 9
+        "newAttackEffectAssignments": 0,
+        "newStoryRoutes": 0,
+        "newStoryDuels": 0
       },
       "totals": {
-        "newGeneratedArtworks": 25,
-        "newMasterFiles": 25,
-        "publicImageFiles": 28,
-        "registeredPublicImageFiles": 28,
-        "totalImageFiles": 53,
+        "newGeneratedArtworks": 21,
+        "newMasterFiles": 21,
+        "publicImageFiles": 24,
+        "registeredPublicImageFiles": 12,
+        "reservePublicImageFiles": 12,
+        "totalImageFiles": 45,
         "derivedThumbnails": 3
       },
       "runtime": {
@@ -14128,13 +14180,21 @@
         "storyAssignments": 129,
         "illustratedStoryAssignments": 26,
         "uniqueStoryIllustrations": 22,
-        "stages": 25,
-        "threePlaneStages": 25,
+        "stages": 28,
+        "threePlaneStages": 28,
         "twoPlaneStages": 0,
         "onePlaneStages": 0,
         "attackEffectImages": 14,
         "attackEffectAssignments": 28,
-        "referencedAssets": 408,
+        "referencedAssets": 420,
+        "brokenReferences": []
+      },
+      "reserves": {
+        "characterBases": 5,
+        "enemyBases": 6,
+        "projectileImages": 1,
+        "artworks": 12,
+        "referencedFiles": 24,
         "brokenReferences": []
       },
       "retainedComponents": [
@@ -14214,18 +14274,28 @@
         }
       ],
       "verification": {
+        "status": "passed_with_documented_limits",
         "runtimeAssetAudit": {
           "status": "passed",
-          "referencedAssets": 408,
+          "referencedAssets": 420,
           "missingReferences": 0,
           "evidence": "docs/standalone/ASSET_COVERAGE.json"
         },
+        "reserveAudit": {
+          "status": "passed",
+          "artworks": 12,
+          "referencedFiles": 24,
+          "missingReferences": 0,
+          "includedInActiveRoster": false,
+          "evidence": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json"
+        },
         "exports": {
           "status": "passed",
-          "masterFiles": 25,
-          "losslessPixelExactWebP": 25,
+          "unchangedMasterFiles": 21,
+          "losslessPixelExactWebP": 21,
           "derivedThumbnails": 3,
-          "evidence": "art/infernal-versus/production/export-wave-f-2026-11-24.json"
+          "productionImageFiles": 45,
+          "evidence": "art/infernal-versus/production/export-wave-g-2026-11-25.json"
         },
         "automatedQA": {
           "status": "passed",
@@ -14236,61 +14306,69 @@
           "typecheck": "passed",
           "lint": "passed",
           "builds": 2,
-          "standaloneFiles": 989,
-          "standaloneHashesVerified": 989,
-          "standaloneBytes": 600133226,
-          "standaloneMiB": 572.33,
-          "phase": "Full QA before final CSS positioning; both builds and standalone hash verification passed again after CSS positioning.",
-          "evidence": "docs/standalone/QA_RUNTIME_WAVE_F_2026-11-24.json"
+          "standaloneFiles": 1013,
+          "standaloneHashesVerified": 1013,
+          "standaloneBytes": 615498785,
+          "standaloneMiB": 586.99,
+          "phase": "Final game source, CSS and public images. Later changes only finalize reports and verification metadata.",
+          "evidence": "docs/standalone/QA_RUNTIME_WAVE_G_2026-11-25.json"
         },
-        "browserReview": "Chromium bloqué par socket() EPERM avant création de page. La revue automatique a refusé le lancement avec permissions supplémentaires. Aucune capture, interaction ni recette navigateur annoncée.",
-        "oneToOneFidelity": "Non certifiée. Les sources et motifs sont documentés séparément des poses et compositions AU. Les proportions, contours, marges alpha et cadrages sont contrôlés sur les images ; la comparaison animée en jeu reste à faire.",
-        "pivots": "Appuis mesurés à partir du bas de la silhouette alpha ≥ 16. Ratios natifs conservés ; échelle canonique et transitions animées non certifiées.",
-        "animationCompleteness": "Vortex et Glitz : quatre poses clés chacun. Glam : repos, garde, recul. Alastor : nouvelle garde et nouveau recul, repos conservé. Les actions non dessinées utilisent le repli existant ; aucun cycle complet ni nouvelle finition animée.",
-        "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_F_2026-11-24.json",
+        "browserReview": {
+          "status": "blocked",
+          "browserExecuted": false,
+          "screenshots": 0,
+          "reason": "Chromium launcher exists but /usr/lib/chromium/chromium is absent; bundled Playwright browser is also absent. No page was created and no DOM or interaction review occurred.",
+          "evidence": "docs/standalone/qa-wave-g-2026-11-25/browser-review.json"
+        },
+        "oneToOneFidelity": {
+          "certified": false,
+          "reason": "Official previews at 320×180 provide source motifs and identities, not full-resolution exact reconstruction. Neutral poses, playable framing and some hidden details are adapted or reconstructed.",
+          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_G_2026-11-25.md"
+        },
+        "animationScope": {
+          "newAnimationPoses": 0,
+          "newAnimationCycles": 0,
+          "neutralReadyBases": 11,
+          "newAttackEffectAssignments": 0,
+          "note": "One static READY image per reserve identity; reserve projectile has no animation or gameplay integration."
+        },
         "workbookQA": {
           "status": "passed",
           "sheets": 23,
-          "formulaCount": 209,
+          "formulaCount": 212,
           "formulaErrors": 0,
-          "runtimeCellsCompared": 5870,
+          "runtimeCellsCompared": 6017,
           "runtimeCellMismatches": 0,
           "historicalSheetsPreservedByteForByte": 11,
           "renderedViewsInspected": 4,
-          "workbookSha256": "5472c3c7d2bcf76a6f328624d85b61362202e4a6da6c81a2201fdf025ee9299e"
+          "workbookSha256": "09e94c83a17c868ca3438f57c5d2078bd2a38b59159ece832ce9b1fee8228e6d",
+          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_G_2026-11-25.json"
         },
         "staticVisualQA": {
           "status": "passed_with_limits",
           "stageCompositions": 9,
           "propBoundsContained": 18,
+          "propBoundsTested": 18,
+          "alphaThreshold": 16,
           "parallaxOffset": 0,
           "fighterPositions": [
             22,
             78
           ],
           "browserExecuted": false,
-          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_F_2026-11-24.md"
+          "planterAlignedAndUnique": true,
+          "limits": [
+            "730×242: fighters partly overlap the plain lateral bands because their positions use the whole arena while the artwork uses contain.",
+            "330×300: contain leaves 125.53 px of plain space above the artwork.",
+            "Static reconstruction excludes HUD, animation, collisions, network requests and real browser layout."
+          ],
+          "evidence": "docs/standalone/qa-wave-g-2026-11-25/STATIC_STAGE_QA.md"
         }
       },
-      "blockedRequests": [
-        {
-          "asset": "alastor-strike",
-          "status": "generation_refused",
-          "requestId": "f665822b-5dce-48ff-bfd5-64e57c513736",
-          "fileProduced": false,
-          "retryAfterRefusal": false
-        },
-        {
-          "asset": "hb_glam-strike",
-          "status": "generation_refused",
-          "requestId": "b7f06d9a-9564-4c19-99c7-f8ff6aa00def",
-          "fileProduced": false,
-          "retryAfterRefusal": false
-        }
-      ],
+      "blockedRequests": [],
       "priorBatch": {
-        "batchId": "wave-d-2026-11-24",
-        "manifest": "art/infernal-versus/production/delivery-wave-d-2026-11-24.json"
+        "batchId": "wave-f-2026-11-24",
+        "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json"
       }
     }
   }

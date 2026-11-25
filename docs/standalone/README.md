@@ -17,19 +17,21 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Contenu de cette version — 24 novembre 2026, vague D
+## Contenu de cette version — 25 novembre 2026, vague G
 
-- **40 combattants jouables** : 25 de *Hazbin Hotel* et 15 de *Helluva Boss*. Katie Killjoy, Tom Trench, Stella et Mammon rejoignent le standalone avec trois coups, une route de trois duels et une finition à effet partagé. Ces kits sont des créations d’Exhibition fondées sur leurs motifs ; leurs techniques signatures restent des propositions à prototyper.
-- **124 attaques paramétrées** : 120 légers, lourds et spéciaux, plus les quatre signatures de Vaggie, Blitzø, Mimzy et Sallie May. Le carnet expose les commandes, les temps, la portée et le coût en tension.
-- **Six costumes et 35 poses de costume** : Vaggie exorciste, Loona humaine, Stolas humain, Moxxie au festival des moissons, Carmilla cheveux lâchés et Lute avant sa blessure de fin de saison 1. Carmilla utilise sa pose de repos en accroupissement, faute de dessin dédié.
-- **37 poses individuelles d’attente, 13 gardes distinctes, 15 contacts légers et 14 réactions.** Katie, Tom et Mammon disposent chacun de quatre nouveaux dessins. Mammon utilise une échelle uniforme et un placement des pieds mesuré. Ce sont des poses clés ; les cycles complets restent un chantier séparé.
-- **22 arènes à trois plans**. La mine de Striker (*Western Energy*), le tribunal infernal (*Mastermind*) et les portes du Paradis (*Welcome to Heaven*) ajoutent neuf couches illustrées et trois miniatures. Leur fond reste entier, avec des bandes teintées selon le format. Le manager conserve ses huit arènes.
-- **11 images VFX pour 24 associations d’attaques, sur 14 combattants** : cartes de Husk, lumière d’Adam, portail de Stolas, fumée d’Asmodeus et ruban lumineux de Bee ajoutés aux effets existants. Angel Dust, Blitzø et Striker réemploient le tir de Moxxie. Ces effets visuels suivent les coups existants, sans collision ou dégâts supplémentaires.
-- Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush. Le Boss Rush tire parmi neuf adversaires possibles, puis retire le combattant du joueur s’il appartient à ce groupe. Une sauvegarde déjà créée conserve son propre parcours.
-- L’Histoire propose **40 routes et 120 duels écrits**. Chaque troisième rencontre conclut une rivalité ; l’épilogue se retrouve dans le Codex. Les quatre nouvelles routes sont des histoires AU. Les filtres de saison et d’univers déterminent les routes accessibles.
-- Le Tournoi construit un tableau reproductible de huit, quatre ou deux participants suivant l’effectif disponible. Le joueur dispute ses matchs ; les CPU sont simulés et une défaite élimine le joueur.
+- **43 combattants jouables** : 25 de *Hazbin Hotel* et 18 de *Helluva Boss*. Vortex, Glitz et Glam ont rejoint le standalone avec la vague F. La vague G complète les dessins de base en réserve.
+- **133 attaques paramétrées** : 129 légers, lourds et spéciaux, plus les quatre signatures de Vaggie, Blitzø, Mimzy et Sallie May. Le carnet expose commandes, temps, portée et tension.
+- **Six costumes et 35 poses de costume** : Vaggie exorciste, Loona humaine, Stolas humain, Moxxie au festival des moissons, Carmilla cheveux lâchés et Lute avant sa blessure de fin de saison 1.
+- **40 poses individuelles d’attente, 17 gardes distinctes, 17 contacts légers et 18 réactions** pour le roster actif. Ces poses clés ne constituent pas des cycles complets. Aucun dessin d’animation n’est ajouté par G.
+- **28 arènes à trois plans**. La plage de *Spring Broken*, la maison de *Murder Family* et le cirque de Cash ajoutent trois fonds, six accessoires séparés et trois miniatures. Les fonds conservent leur ratio natif entier. Le manager conserve ses huit arènes.
+- **14 images VFX pour 28 associations d’attaques**. Leurs affectations restent identiques à F. Les effets suivent les coups existants, sans collision ou dégâts supplémentaires.
+- **11 nouvelles bases en réserve** : Vassago, Wally Wackford, Barbie Wire, Martha, Mrs Mayberry, Agent One, Agent Two, Cletus, Collin, Keenie et Robo Fizz. Une image READY par identité, avec ses références et ses limites ; aucun nouveau kit ou récit.
+- **Une fléchette D.H.O.R.K.S. isolée en réserve**. La flèche C.H.E.R.U.B. et le shuriken sont différés faute de contour suffisamment net dans les références inspectées.
+- Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush. Le Boss Rush tire parmi neuf adversaires possibles, puis retire le combattant du joueur s’il appartient à ce groupe.
+- L’Histoire propose **43 routes et 129 duels écrits**. Les scénarios sont des créations AU. Les filtres de saison et d’univers déterminent les routes accessibles.
+- Le Tournoi construit un tableau reproductible de huit, quatre ou deux participants suivant l’effectif disponible. Une défaite élimine le joueur.
 - Un lourd touchant sans garde peut être suivi d’un spécial dès la fin de l’arrêt sur impact, pendant sa récupération. Cet enchaînement consomme 50 de tension.
-- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes : H pour J1, L pour J2 ou **Fatalité**. La finition dure 1,5 seconde ; **Passer** rejoint directement la victoire. La canne à pomme de Lucifer reste une pièce séparée intégrée.
+- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes : H pour J1, L pour J2 ou **Fatalité**. La finition dure 1,5 seconde ; **Passer** rejoint directement la victoire.
 - Trois difficultés, recherche et filtres d’univers/saison ; clavier partagé et contrôles tactiles ; pause et relâchement des commandes lors d’une perte de focus ; réduction des mouvements et des flashes.
 
 L’entraînement propose un mannequin immobile ou en garde, une jauge illimitée et une réinitialisation, sans enregistrer de résultat. Les parcours reprennent le duel en cours depuis son début après une sortie. Les PV sont restaurés entre les rencontres, y compris en Survie. Les autres modes de parcours proposent une reprise explicite après une défaite ; les réessais sont mémorisés.
@@ -42,40 +44,38 @@ Chaque résultat porte un identifiant unique, empêchant les doubles récompense
 
 ## Portée de la fidélité
 
-Les identités, incarnations et motifs sont rattachés aux sources indiquées dans les manifestes. Statistiques, timings, postures de combat, déplacements d’accessoires et affrontements sont des adaptations pour le jeu. Les épisodes officiels, portfolios de production, produits sous licence et captures republiées sont distingués dans la [revue de la vague D](REVIEW_ASSETS_WAVE_D_2026-11-24.md).
+Les identités, incarnations et motifs sont rattachés aux sources des manifestes. Les nouveaux personnages suivent une incarnation précise : Barbie en imp, Martha et Mayberry en sinner, Vassago en tenue du tribunal. Les épisodes officiels, produits sous licence et portraits historiques d’appoint sont distingués dans la [revue G](REVIEW_ASSETS_WAVE_G_2026-11-25.md).
 
-Katie et Tom utilisent les repères de la série principale en saison 1, sans mélange avec le pilote. Leurs références inspectées montrent surtout le haut du corps : leurs silhouettes complètes incluent donc une reconstruction. Mammon correspond à sa forme habituelle à quatre bras, sans transformation géante. Stella reste jouable avec son portrait historique intact utilisé comme repli provisoire ; sa nouvelle READY a été refusée par le générateur, sans relance ni nouvelle pose déclarée. Le projectile de flamme de Lucifer reste différé faute de référence suffisamment lisible.
+**La fidélité exacte 1:1 n’est pas certifiée.** Les références officielles de G sont principalement des prévisualisations de 320 × 180. Les parties basses de Martha et Mayberry, certains petits détails et la pointe cachée de la fléchette restent des reconstructions. Les poses neutres, pistes de duel et placements d’accessoires sont des adaptations de présentation. Les PNG sont conservés à l’octet et les WebP de production sont sans perte, à leur taille native.
 
-Les finitions comprennent 40 titres et huit traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les variantes longues de la bible restent à animer. Les illustrations narratives couvrent 26 affectations avec 22 dessins distincts ; les autres scènes associent décor et portraits. Le réseau avec rollback, les replays déterministes, le relais et les boss multiphases restent à produire.
+Les finitions comprennent 43 titres et des traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les illustrations narratives couvrent 26 affectations avec 22 dessins distincts. Les anciennes demandes refusées restent consignées dans leurs lots, sans nouvelle tentative dans G.
 
-**La fidélité exacte 1:1 n’est pas certifiée.** Les images ont été inspectées individuellement et en compositions statiques. Le lancement local de Chromium échoue sur `socket() EPERM`, avant toute page : les tests de composants et les montages ne constituent pas une recette navigateur. Les transitions, tailles relatives, occultations et lisibilité sur appareil restent à vérifier.
+Le lancement du navigateur G a échoué parce que le binaire Chromium était absent. Les compositions statiques et les contrôles de fichiers ne certifient pas les transitions, les tailles canoniques relatives ou le rendu sur appareil. Les détails figurent dans le [rapport de revue](REVIEW_ASSETS_WAVE_G_2026-11-25.md).
 
-## Couverture des assets — vague D
+## Couverture des assets — vague G
 
-Le [relevé runtime](ASSET_COVERAGE.json) contient **377 chemins distincts, tous présents**. Les apparences habituelles et les costumes sont comptés séparément.
+Le [relevé](ASSET_COVERAGE.json) distingue **420 chemins actifs présents** et **12 nouveaux dessins en réserve / 24 fichiers présents**. Les réserves G ne sont ajoutées ni aux compteurs de combattants ni aux affectations d’effets.
 
-| Élément | Disponible | Reste pour couvrir les 40 combattants |
+| Élément actif | Disponible | Reste pour couvrir les 43 combattants |
 | --- | ---: | ---: |
-| Pose individuelle d’attente | 37 | 3 |
-| Garde individuelle distincte | 13 | 27 |
-| Pose de contact léger | 15 | 25 |
-| Pose individuelle de réaction | 14 | 26 |
-| Pose clé de finition | 5 | 35 |
-| Illustrations d’introduction, rivalité et épilogue | 26 sur 120 | 94 affectations |
+| Pose individuelle d’attente | 40 | 3 |
+| Garde individuelle distincte | 17 | 26 |
+| Pose de contact léger | 17 | 26 |
+| Pose individuelle de réaction | 18 | 25 |
+| Pose clé de finition | 5 | 38 |
+| Illustrations d’introduction, rivalité et épilogue | 26 sur 129 | 103 affectations |
 
-Katie, Tom et Mammon utilisent leurs nouvelles poses comme repli statique pour les actions encore non redessinées ; Stella utilise son portrait historique. Les anciennes banques de ces quatre personnages contiennent des cellules tronquées ou contaminées et ne sont plus affichées dans le standalone. Les poses de repli ne sont pas comptées comme des dessins supplémentaires.
+Les **28 arènes possèdent trois plans enregistrés**. Les nouveaux fonds restent entiers en `contain` ; leurs accessoires suivent le même repère et restent derrière les combattants. Sans unités CSS de conteneur, les accessoires ajoutés sont masqués et le fond reste visible.
 
-Les **22 arènes possèdent trois plans**. Les six costumes utilisent 35 poses clés ; les atlas et banques historiques restent disponibles comme ressources. La présence d’une pose ou d’un atlas ne prouve pas un cycle fluide ni une fidélité intégrale.
+La vague G apporte **21 dessins retenus et 45 fichiers d’image de production** : 11 bases, trois fonds, six accessoires et une fléchette, avec leurs masters PNG, exports WebP et trois miniatures. Les images de diagnostic sont comptées séparément. Consulter le [manifeste G](../../art/infernal-versus/production/delivery-wave-g-2026-11-25.json), le [catalogue de réserve](../../art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json) et le [rapport de livraison](DELIVERY_WAVE_G_2026-11-25.md).
 
-La vague D apporte **26 dessins retenus et 55 fichiers d’image** : 12 poses de personnages, neuf plans de décors, cinq images VFX, leurs PNG et WebP, et trois miniatures. Les masters sont préservés à l’octet ; les WebP sont sans perte, avec réduction proportionnelle des six props carrés. Les détails, empreintes et limites figurent dans le [manifeste](../../art/infernal-versus/production/delivery-wave-d-2026-11-24.json) et le [rapport de livraison](DELIVERY_WAVE_D_2026-11-24.md).
-
-Les pièces de réserve — vêtements, chapeau, queue, canne, lance et variantes de décor — restent conservées avec leur statut hors rig ou hors scène active. Elles ne sont pas comptées comme nouveaux éléments jouables.
+Les pièces de réserve des lots antérieurs — vêtements, chapeau, queue, canne, lance et variantes de décor — restent conservées avec leur propre statut. Le catalogue G porte uniquement sur les nouveaux dessins de cette vague.
 
 ## Bible de production
 
 [Ouvrir le classeur V2](INFERNAL_VERSUS_BIBLE_V2.xlsx). Ses **23 feuilles** conservent les onze onglets V1 historiques et ajoutent douze onglets V2, calculés à partir du jeu actuel : routes, duels, coups, techniques, tenues, finitions, plans, illustrations, atelier et sources. Les prototypes sont distingués des techniques jouables.
 
-Le registre est `extension-plan.json`. Le bloc `meta.currentRuntime` et les tables V2 décrivent l’état courant ; `meta.implementation` et les onze feuilles V1 restent historiques. La génération est indépendante des builds du jeu : `node docs/standalone/build-production-bible.mjs`, avec les dépendances d’auteur. Le [rapport du classeur](QA_WORKBOOK_WAVE_D_2026-11-24.json) vérifie données, formules et préservation des anciennes feuilles.
+Le registre est `extension-plan.json`. Le bloc `meta.currentRuntime` et les tables V2 décrivent l’état courant ; `meta.implementation` et les onze feuilles V1 restent historiques. La génération est indépendante des builds du jeu : `node docs/standalone/build-production-bible.mjs`, avec les dépendances d’auteur. Le [rapport du classeur](QA_WORKBOOK_WAVE_G_2026-11-25.json) vérifie données, formules et préservation des anciennes feuilles.
 
 ## Excel et sources du premier lot
 
@@ -93,6 +93,6 @@ Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884
 
 ## Vérifications
 
-`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 de la distribution. La vague D passe **44 suites et 363 tests**, deux builds et **961 empreintes** ; les **1114 fichiers sources** hachés sont inchangés pendant le run. Le [rapport de QA de la vague D](QA_RUNTIME_WAVE_D_2026-11-24.json) et son [journal](QA_RUNTIME_WAVE_D_2026-11-24.log) donnent le résultat exact et les empreintes des sources contrôlées. La [revue visuelle](REVIEW_ASSETS_WAVE_D_2026-11-24.md) précise le périmètre statique et les références ; le [rapport de livraison](DELIVERY_WAVE_D_2026-11-24.md) relie les ajouts, contrôles et limites.
+`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 du standalone. Les résultats de G figurent dans [QA_RUNTIME_WAVE_G_2026-11-25.json](QA_RUNTIME_WAVE_G_2026-11-25.json). Le classeur contient 23 feuilles, dont les onze historiques conservées intégralement. Les compteurs de réserves sont calculés séparément dans le guide.
 
-Cette vague est destinée à la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8), avec les lots précédents du 24 novembre. Les [preuves de la vague C](QA_RUNTIME_WAVE_C_2026-11-24.json), le [rapport de la vague B](PRODUCTION_WAVE_B_2026-11-19.md), sa [galerie](ASSET_GALLERY_WAVE_B_2026-11-19.md) et le [rapport antérieur](PRODUCTION_2026-11-19.md) restent des archives datées ; leurs chiffres ne décrivent pas la version courante.
+La livraison prolonge la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8). Les rapports [F](DELIVERY_WAVE_F_2026-11-24.md), [D](DELIVERY_WAVE_D_2026-11-24.md), [C](DELIVERY_WAVE_C_2026-11-24.md) et des lots antérieurs restent des archives datées. Leurs chiffres ne décrivent pas la version courante.

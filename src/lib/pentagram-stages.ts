@@ -25,7 +25,10 @@ export type PentagramStageId = HotelStageId
   | 'hh-heaven-gates'
   | 'imp-exterior'
   | 'oops-warehouse'
-  | 'sinsmas-balcony';
+  | 'sinsmas-balcony'
+  | 'spring-broken-beach'
+  | 'murder-family-house'
+  | 'cash-circus';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -388,6 +391,9 @@ const HH_HEAVEN_GATES = '/assets/stages/hazbin/hh-heaven-gates';
 const IMP_EXTERIOR = '/assets/stages/helluva/imp-exterior';
 const OOPS_WAREHOUSE = '/assets/stages/helluva/oops-warehouse';
 const SINSMAS_BALCONY = '/assets/stages/helluva/sinsmas-balcony';
+const SPRING_BROKEN_BEACH = '/assets/stages/helluva/spring-broken-beach';
+const MURDER_FAMILY_HOUSE = '/assets/stages/helluva/murder-family-house';
+const CASH_CIRCUS = '/assets/stages/helluva/cash-circus';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -722,6 +728,60 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     chordProgression: [[0, 3, 7, 11], [8, 12, 15, 19], [5, 8, 12, 16], [7, 11, 14, 18]],
     bassPattern: [0, 7, 12, 3, 8, 15, 5, 11],
     leadPattern: [19, null, 15, 12, 20, null, 19, 15, 17, null, 12, 16, 18, null, 14, 11],
+  },
+}, {
+  id: 'spring-broken-beach',
+  name: 'Plage · Spring Broken',
+  district: 'Terre',
+  description: 'La plage et la promenade ensoleillée encadrent une piste de sable, entre planches de surf et parasol.',
+  loreBasis: 'Helluva Boss, Spring Broken, S1 E3. Motifs de la plage et de la promenade. La scène est vidée et le sol de duel élargi pour la simulation AU ; les accessoires sont déplacés vers les bords.',
+  imagePath: `${SPRING_BROKEN_BEACH}/room.webp`,
+  thumbnailPath: `${SPRING_BROKEN_BEACH}/thumb.webp`,
+  scenery: { middle: `${SPRING_BROKEN_BEACH}/prop-middle.webp`, near: `${SPRING_BROKEN_BEACH}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#f9d27f', shadow: '#4a6279', floor: '#d6ad78',
+  soundtrack: {
+    id: 'sand-and-surf-contract', title: 'Contrat sur le sable', bpm: 132, rootMidi: 41,
+    swing: 0.53, drive: 0.74, seed: 261125103,
+    chordProgression: [[0, 4, 7, 10], [5, 9, 12, 15], [2, 5, 9, 12], [7, 11, 14, 17]],
+    bassPattern: [0, 7, 12, 10, 5, 12, 2, 7],
+    leadPattern: [16, null, 19, 14, 12, null, 17, 15, 21, null, 17, 14, 19, null, 11, 12],
+  },
+}, {
+  id: 'murder-family-house',
+  name: 'Martha · Maison dans la clairière',
+  district: 'Terre',
+  description: 'La maison de bois rouge et toiture bleue se découpe dans une clairière nocturne.',
+  loreBasis: 'Helluva Boss, Murder Family, S1 E1. La maison, sa jardinière et le feuillage de la clairière servent de références. Cadrage frontal, piste et implantation des accessoires adaptés à la simulation AU.',
+  imagePath: `${MURDER_FAMILY_HOUSE}/room.webp`,
+  thumbnailPath: `${MURDER_FAMILY_HOUSE}/thumb.webp`,
+  scenery: { middle: `${MURDER_FAMILY_HOUSE}/prop-middle.webp`, near: `${MURDER_FAMILY_HOUSE}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#cc718c', shadow: '#182738', floor: '#29434b',
+  soundtrack: {
+    id: 'clearing-after-dark', title: 'La clairière après minuit', bpm: 118, rootMidi: 34,
+    swing: 0.34, drive: 0.73, seed: 261125101,
+    chordProgression: [[0, 3, 6, 10], [1, 5, 8, 11], [5, 8, 12, 15], [7, 10, 13, 17]],
+    bassPattern: [0, 6, 0, 12, 1, 8, 5, 7],
+    leadPattern: [15, null, 12, 18, 13, null, 11, 8, 17, null, 15, 12, 10, null, 13, 7],
+  },
+}, {
+  id: 'cash-circus',
+  name: 'Cirque de Cash · Piste',
+  district: 'Enfer',
+  description: 'Une piste de cirque vide, des rideaux rouges et une arche à ampoules entourent le duel.',
+  loreBasis: 'Helluva Boss, The Circus, S2 E1. Repères du cirque de Cash. Le point de vue aplati, la largeur de la piste et les fragments de balustrade et d’arche relèvent de la simulation AU.',
+  imagePath: `${CASH_CIRCUS}/room.webp`,
+  thumbnailPath: `${CASH_CIRCUS}/thumb.webp`,
+  scenery: { middle: `${CASH_CIRCUS}/prop-middle.webp`, near: `${CASH_CIRCUS}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#efb959', shadow: '#4a1630', floor: '#814448',
+  soundtrack: {
+    id: 'empty-ring-reprise', title: 'Reprise sur la piste vide', bpm: 140, rootMidi: 39,
+    swing: 0.64, drive: 0.82, seed: 261125201,
+    chordProgression: [[0, 3, 7, 10], [3, 7, 10, 14], [6, 9, 12, 15], [7, 11, 14, 17]],
+    bassPattern: [0, 12, 7, 3, 6, 12, 7, 11],
+    leadPattern: [19, 15, null, 12, 22, 19, null, 15, 18, 15, null, 12, 17, 14, null, 11],
   },
 }];
 

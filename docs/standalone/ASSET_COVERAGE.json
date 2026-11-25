@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "summary": {
     "fighters": 43,
     "individualReady": 40,
@@ -13,13 +13,22 @@
     "storyAssignments": 129,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 25,
-    "threePlaneStages": 25,
+    "stages": 28,
+    "threePlaneStages": 28,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
     "attackEffectImages": 14,
     "attackEffectAssignments": 28,
-    "referencedAssets": 408,
+    "referencedAssets": 420,
+    "brokenReferences": []
+  },
+  "reserveSummary": {
+    "catalogue": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json",
+    "characterBases": 5,
+    "enemyBases": 6,
+    "projectileImages": 1,
+    "artworks": 12,
+    "referencedFiles": 24,
     "brokenReferences": []
   },
   "fighters": [
@@ -1753,6 +1762,39 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/helluva/sinsmas-balcony/thumb.webp"
+    },
+    {
+      "id": "spring-broken-beach",
+      "name": "Plage · Spring Broken",
+      "planes": [
+        "/assets/stages/helluva/spring-broken-beach/room.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/spring-broken-beach/thumb.webp"
+    },
+    {
+      "id": "murder-family-house",
+      "name": "Martha · Maison dans la clairière",
+      "planes": [
+        "/assets/stages/helluva/murder-family-house/room.webp",
+        "/assets/stages/helluva/murder-family-house/prop-middle.webp",
+        "/assets/stages/helluva/murder-family-house/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/murder-family-house/thumb.webp"
+    },
+    {
+      "id": "cash-circus",
+      "name": "Cirque de Cash · Piste",
+      "planes": [
+        "/assets/stages/helluva/cash-circus/room.webp",
+        "/assets/stages/helluva/cash-circus/prop-middle.webp",
+        "/assets/stages/helluva/cash-circus/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/cash-circus/thumb.webp"
     }
   ],
   "attackEffects": [
@@ -1938,5 +1980,5 @@
       "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
     }
   ],
-  "interpretation": "Counts describe registered files and authored key poses. They do not certify animation fluidity, canonical visual fidelity, or browser rendering."
+  "interpretation": "Summary counts active registered files and authored key poses. ReserveSummary counts only the separate Wave G catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering."
 }

@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-g-2026-11-25",
+  "generator": "built-in image_gen.imagegen",
+  "oneImagePerCall": true,
+  "runtimeStatus": "reserve",
+  "newAttackAssignments": 0,
+  "evidence": {
+    "date": "2026-11-25",
+    "batch": "wave-g",
+    "generator": "built-in image_gen.imagegen",
+    "calls": 1,
+    "retained": 1,
+    "refusals": 0,
+    "files": [
+      {
+        "id": "dhorks-dart",
+        "name": "D.H.O.R.K.S. · Fléchette tranquillisante",
+        "kind": "projectile",
+        "runtimeStatus": "reserve",
+        "sourceIdentityId": null,
+        "path": "dhorks-dart.png",
+        "generatedImage": "exec-54601d8f-fa20-46cb-a835-850274c20195.png",
+        "dimensions": [
+          1774,
+          887
+        ],
+        "mode": "RGBA",
+        "sha256": "878442de4a5cac7793826c188857df5b5a5897c9758d1cd2cd72e5bc55ed5cba",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaBounds16": [
+          234,
+          343,
+          1539,
+          566
+        ],
+        "reference": "The Full Moon S2E8 · fléchette visible derrière le cou de Cletus, vers 04:40.",
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw&t=280s",
+            "kind": "official_episode",
+            "approximatePreviewTimeSeconds": 280,
+            "method": "Public YouTube storyboard preview from the official Vivziepop player, visually inspected at 320×180. No full episode playback."
+          }
+        ],
+        "referenceFiles": [
+          "dhorks-dart-official-280s.png"
+        ],
+        "prompt": "Use case: stylized-concept.\nAsset type: one independent static projectile sprite for the existing Hellbound Infernal Versus game, reserve art, not an animation sheet.\nPrimary request: faithfully reconstruct the single D.H.O.R.K.S. tranquilizer dart visible at Cletus's neck in Helluva Boss, The Full Moon, official episode frame at approximately 04:40.\nInput image 1 is a visual reference only. Look at the small dart behind the right side of Cletus's neck: pale gray-white slim straight shaft, compact lime-green tuft at the exposed rear, simple dark outline. The scene and all characters must be omitted.\nSubject: that one tiny dart, horizontal side view, needle pointing right, green tuft at the left end. Keep the shaft thin and the tuft compact, with the episode's simple angular cartoon silhouette. Only a short plain pointed tip completing the obscured end; no invented elaborate syringe barrel, liquid vial, mechanical wings, logos or markings.\nStyle: clean hand-drawn 2D Helluva Boss cel-art contour, flat colors, one discreet darker facet, crisp silhouette readable at game scale. Not photorealistic, not 3D.\nComposition: single complete object centered on a transparent landscape canvas, generous clear margin on every edge, no cropping. Object occupies about 72% width. True alpha transparency.\nConstraints: exactly one projectile; no bow or gun, no people, no hands, no scene, no animation frames, no motion trail, no glow, no text, no sheet, no floor or cast shadow. Preserve the lime tuft and pale thin shaft seen in the reference.\n",
+        "visualReview": {
+          "singleObject": true,
+          "facing": "right",
+          "realAlpha": true,
+          "entireVisibleObjectContained": true,
+          "observed": "Fût fin gris clair, empennage vert vif compact, contour sombre et image statique sans traînée."
+        },
+        "fidelityNotes": [
+          "La pointe était masquée dans la référence ; sa terminaison simple est reconstruite.",
+          "Détails de très petite taille dans la prévisualisation officielle. Fidélité 1:1 non certifiée.",
+          "Sprite en réserve, sans collision, animation ou affectation d’attaque."
+        ],
+        "sourceFaction": "D.H.O.R.K.S."
+      }
+    ],
+    "deferredCandidates": [
+      {
+        "id": "cherub-arrow",
+        "reason": "Projectile attesté ; silhouette exacte non isolée dans les prévisualisations inspectées. Recherche complémentaire terminée sans contour suffisamment net."
+      },
+      {
+        "id": "dhorks-shuriken",
+        "reason": "Objet attesté ; nombre et forme des pointes non inspectés à une résolution suffisante. Recherche complémentaire terminée sans contour suffisamment net."
+      },
+      {
+        "id": "robo-fizz-flame",
+        "reason": "Jet de flamme autonome non attesté ; aucune génération."
+      }
+    ],
+    "fidelityOneToOneCertified": false
+  },
+  "deferredResearch": {
+    "schemaVersion": 1,
+    "date": "2026-11-25",
+    "agent": "canonical_refs",
+    "scope": "Recherche complémentaire bornée pour deux objets statiques isolés ; aucun code, aucune pose ni animation.",
+    "searchStartedUtc": "2026-11-25T06:01:40Z",
+    "reportWrittenUtc": "2026-11-25T06:06:08.366657+00:00",
+    "result": "deferred_insufficient_readable_visual_reference",
+    "generationCalls": 0,
+    "generatedImages": 0,
+    "generationPrompts": [],
+    "items": [
+      {
+        "sourceIdentityId": "cherub-golden-arrow",
+        "label": "Flèche dorée C.H.E.R.U.B.",
+        "status": "deferred",
+        "officialSource": {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "episode": "C.H.E.R.U.B. — S1E4",
+          "channel": "Vivziepop",
+          "previewTimesSecondsApprox": [
+            610,
+            620
+          ],
+          "timePrecision": "Temps approximatifs de vignettes publiques ; pas de vérification image par image de la vidéo."
+        },
+        "observed": "Keenie et son arme apparaissent dans les vignettes officielles. Les traits dorés observés dans la séquence restent trop petits et partiels pour isoler avec certitude la forme complète du projectile.",
+        "unresolved": [
+          "Contour exact de la pointe",
+          "Empennage et proportions de la hampe",
+          "Distinction fiable entre projectile isolé, arc et effet lumineux"
+        ],
+        "decision": "Aucune génération. Ne pas transformer une description narrative de flèche en modèle géométrique inventé."
+      },
+      {
+        "sourceIdentityId": "dhorks-shuriken",
+        "label": "Shuriken D.H.O.R.K.S.",
+        "status": "deferred",
+        "officialSource": {
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "episode": "Truth Seekers — S1E6",
+          "channel": "Vivziepop",
+          "previewTimesSecondsApproxRange": [
+            720,
+            1070
+          ],
+          "timePrecision": "Planches de vignettes publiques au pas de 10 secondes, avec images de 320 × 180 pixels ; pas de visionnage intégral image par image."
+        },
+        "supplementarySource": {
+          "url": "https://www.youtube.com/watch?v=_PlUvFks1Uk",
+          "title": "Helluva Boss Episode 6 | Fight Scene",
+          "uploader": "ducktales archives",
+          "sourceClass": "Réupload secondaire identifié, dont la description renvoie à l’épisode officiel.",
+          "previewTimesSecondsApproxRange": [
+            0,
+            198
+          ],
+          "previewCellDimensions": [
+            160,
+            90
+          ],
+          "previewIntervalSeconds": 2,
+          "validation": "Les scènes de combat visibles correspondent visuellement à celles des planches officielles inspectées ; cet accord ne suffit pas à certifier la géométrie des projectiles."
+        },
+        "observed": "La séquence de combat est identifiable. Quelques formes claires rapides sont visibles, mais leur taille et leur déformation ne permettent pas de fixer une silhouette distincte du shuriken avec assurance.",
+        "unresolved": [
+          "Nombre et forme exacte des pointes",
+          "Présence et forme d’un éventuel trou central",
+          "Palette et proportions hors flou de mouvement"
+        ],
+        "decision": "Aucune génération générique en étoile. Attendre une image nette où l’objet est isolable."
+      }
+    ],
+    "rejectedReference": {
+      "url": "https://www.redbubble.com/i/photographic-print/Helluva-Boss-Keenie-by-Spencharlie/84036727.6Q0TX",
+      "localPath": "cherub-keenie-secondary-print-reference.jpg",
+      "reason": "Illustration dérivée et non capture officielle ; géométrie ornementale de l’arc et de la flèche non utilisable comme preuve canonique."
+    },
+    "inspectedLocalFiles": [
+      {
+        "path": "cherub-official-arrow-610s.png",
+        "sha256": "63c118fc36197eff14fe6a17c2b309c6c867fff0aebcc3fb886cb35eb0ac72db"
+      },
+      {
+        "path": "cherub-official-arrow-620s.png",
+        "sha256": "f5c91ddb597104d3fdd29d677c3204d7841341c8f394e251c6df0aef49f0fcdf"
+      },
+      {
+        "path": "cherub-L3-M6.jpg",
+        "sha256": "5482d02d5e50afae26643d6c31c360c9022df0ac6fb2466718a901ccb6e16e79"
+      },
+      {
+        "path": "cherub-L3-M7.jpg",
+        "sha256": "f70e7ed6fa385456da027eedc18aae347ca78eb0759d2b306a2aaf0b2e58d224"
+      },
+      {
+        "path": "truth-seekers-L3-M8.jpg",
+        "sha256": "e4811abd69f276056b67731ed06ec87e7af64c950581f34de6a2b4c4322b0787"
+      },
+      {
+        "path": "truth-seekers-L3-M9.jpg",
+        "sha256": "280f91da71d4ab6671cc975570ce786d378e1f17ce67edb07a1061185fcdbcae"
+      },
+      {
+        "path": "truth-seekers-L3-M10.jpg",
+        "sha256": "15006672ec46a16fb783c9f7f98a056f127e9188a1236447babe59702017991e"
+      },
+      {
+        "path": "truth-seekers-L3-M11.jpg",
+        "sha256": "ec4a4d5ed7de0a12893b0651170d00785ca25a58d2d64eb5f14a8dbadc02d73d"
+      },
+      {
+        "path": "truth-fight-secondary-M0.jpg",
+        "sha256": "1ff3385e49055b2da34d34ce3c3a30e0891883513ca140268d0f0cdbf2fdc338"
+      },
+      {
+        "path": "truth-fight-secondary-M1.jpg",
+        "sha256": "fb2b8f6ee3c597fcd23e6d55abdb010048b4c58828c982299bacfa01bec95143"
+      },
+      {
+        "path": "truth-fight-secondary-M2.jpg",
+        "sha256": "ef39fbafff167a8b8a7fd75f82c39fd904ecf7b0e90824882d492a98be72088c"
+      },
+      {
+        "path": "truth-fight-secondary-M3.jpg",
+        "sha256": "6c054564676267a740a07bf840ac5bfa6d42ce95cf4180731afe005361fff263"
+      },
+      {
+        "path": "cherub-keenie-secondary-print-reference.jpg",
+        "sha256": "98624037adcf1a463691c5a2e3eecfec0c61821a66032827ab030b7d16abf811"
+      }
+    ],
+    "limits": [
+      "Aucune certification de fidélité 1:1.",
+      "Aucune vérification en navigateur ou dans le jeu.",
+      "Les temps sont des repères de vignettes et non des timecodes image par image.",
+      "Le report signifie référence insuffisante dans la recherche bornée, pas absence démontrée de l’objet dans le canon."
+    ],
+    "excludedExistingOrUnsupported": [
+      "Fléchette D.H.O.R.K.S. déjà validée par root — ne pas dupliquer.",
+      "Glace Andrealphus déjà active — ne pas dupliquer.",
+      "Flamme Robo Fizz — aucun pouvoir autonome attesté établi, aucune génération."
+    ]
+  },
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/projectiles/dhorks-dart.png",
+      "bytes": 176914,
+      "sha256": "878442de4a5cac7793826c188857df5b5a5897c9758d1cd2cd72e5bc55ed5cba",
+      "gitBlobSha": "817225138abdbda2e16e0dbcd36628b89d654a0e",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        234,
+        343,
+        1539,
+        566
+      ],
+      "id": "dhorks-dart",
+      "group": "projectile",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal/reserve/dhorks-dart.webp",
+      "bytes": 83378,
+      "sha256": "1282ebe8fb6819831f25f1aef3118edd8106eb780ce5e8d74583921299d6acdb",
+      "gitBlobSha": "38fe033b507bd07076dc002becef74914d9e3fca",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        234,
+        343,
+        1539,
+        566
+      ],
+      "id": "dhorks-dart",
+      "group": "projectile",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    }
+  ]
+}

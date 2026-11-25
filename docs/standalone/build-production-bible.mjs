@@ -151,6 +151,18 @@ async function collectRuntimeTables(){
   for (const component of design.assetBatch.retainedComponents) {
     for (const file of [component.master, component.export].filter(Boolean)) await fs.access(path.join(root, file));
   }
+  const reserve = JSON.parse(await fs.readFile(path.join(root, design.assetBatch.reserveManifest), 'utf8'));
+  const reserveKinds = { character_base: 'Base de personnage', enemy_base: 'Base d’ennemi', projectile: 'Projectile en réserve' };
+  const reserveRows = [], reserveReferences = [];
+  for (const asset of reserve.assets) {
+    assert.equal(asset.runtimeStatus, 'reserve', 'Base annoncée active dans le catalogue de réserve : ' + asset.id);
+    for (const file of [asset.master, asset.export]) await fs.access(path.join(root, file));
+    reserveRows.push([reserveKinds[asset.kind], asset.name, 'Réserve statique · vague G',
+      asset.reference + '\n' + asset.export + '\n' + (asset.pose === 'ready' ? 'Une base READY. Aucun kit jouable ni cycle ajouté.' : 'Un projectile isolé. Aucune affectation à une attaque ni physique ajoutée.'),
+      asset.fidelityNotes.join(' ')]);
+    reserveReferences.push(['Réserve vague G', asset.name,
+      asset.reference + ' ' + asset.fidelityNotes.join(' '), asset.references.map(reference => reference.url).join('\n')]);
+  }
   const sets = [
     ['Modes V2', 'Règles des modes de jeu', 'Les modes proposés constituent une spécification. Les filtres et le choix du combattant déterminent les parcours accessibles.', ['Mode','État','Sélection','Règles et déroulé','Progression','Critère de recette'], [24,24,44,58,46,65], design.modeDesign.map(r=>[r.name,r.status,r.selection,r.rules,r.progress,r.check])],
     ['Histoires', 'Histoires des combattants', 'Texte du jeu. Chaque parcours est une fiction originale d’Infernal Versus.', ['Combattant','Univers','Titre du parcours','Prologue','Rival final','Épilogue'], [27,21,38,62,25,62], routes],
@@ -167,8 +179,8 @@ async function collectRuntimeTables(){
       return [r.name,status,r.back,r.middle,r.floor,r.ambient,r.composition,r.reference,stage?[stage.imagePath,scenery?.middle,scenery?.near].filter(Boolean).join('\n'):''];
     })],
     ['Illustrations','Couverture des illustrations de campagne','Une ligne par affectation. Un même dessin de rivalité peut servir aux deux adversaires. Les images dédiées attendent une validation visuelle sur référence.', ['Combattant','Moment','Sujet / adversaire','Brief issu de la scène en jeu','Présentation dans le jeu','Fichier dédié'],[27,18,27,74,31,58],pictures],
-    ['Atelier et recette','Systèmes, production et recette','Les scénarios de recette indiquent quoi tester. Les VFX habillent les coups existants ; leur présence ne certifie pas une recette visuelle en jeu.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],[...design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance]),...vfxRows]],
-    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],[...design.sources,...vfxImageRows]],
+    ['Atelier et recette','Systèmes, production et recette','Les réserves statiques sont séparées des VFX actifs. Leur fichier existe ; elles ne constituent pas un kit jouable ou une animation.', ['Domaine','Sujet','État','Spécification','Contrôle à effectuer'],[23,36,26,77,79],[...design.workshop.map(r=>[r.type,r.subject,r.status,r.spec,r.acceptance]),...vfxRows,...reserveRows]],
+    ['Références V2','Références et périmètre de preuve','Les URL officielles servent au repérage. Les scènes, affrontements et valeurs de combat sont des créations de jeu.', ['Origine','Référence','Usage dans le classeur','Lien ou chemin'],[23,37,70,86],[...design.sources,...vfxImageRows,...reserveReferences]],
   ];
 
   return {sets, fighterCount:fighters.length, stageCount:stages.size, threePlanCount:[...stages.values()].filter(stage=>stage.scenery?.middle && stage.scenery?.near).length, twoPlanCount:[...stages.values()].filter(stage=>Number(Boolean(stage.scenery?.middle))+Number(Boolean(stage.scenery?.near))===1).length, onePlanCount:[...stages.values()].filter(stage=>!stage.scenery?.middle && !stage.scenery?.near).length, detachedPropCount:finishes.filter(row=>row[8]).length, guardPoseCount:appearances.filter(row=>row[11]).length, costumePoseCount:appearances.filter(row=>row[1]!=='Habituelle').reduce((sum,row)=>sum+[row[4],...row.slice(6,11)].filter(Boolean).length,0), vfxImageCount:vfxImages.size, vfxAttackCount:vfxRows.length, referencedAssetCount:assetPaths.size, signatureCount:signatures.filter(row => row[5] === 'Jouable').length, expectedFrames:Math.ceil(moves.at(-1)[4]*60/1000)};
@@ -253,6 +265,9 @@ const guideRows=[
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
   ['Références V2','Sprites VFX uniques',null,'Images distinctes du registre actif, y compris les réemplois entre combattants. Adaptations AU ; sources, prompts et contrôles alpha dans les manifestes projectiles du 24 novembre.'],
   ['Atelier et recette','Attaques avec VFX',null,'Une ligne par association entre combattant, attaque et image. Les effets suivent le contact existant ; ils n’ajoutent ni collision autonome, ni dégâts, ni portée.'],
+  ['Atelier et recette','Bases de personnages en réserve',null,'Nouvelles bases statiques de la vague G. Les fichiers et incarnations sont renseignés dans Atelier et recette ; aucun kit jouable ajouté.'],
+  ['Atelier et recette','Bases d’ennemis en réserve',null,'Une image READY par ennemi de la vague G. Aucun comportement, coup ou cycle d’animation ajouté.'],
+  ['Atelier et recette','Projectiles en réserve',null,'Objets isolés de la vague G. Le compteur exclut les VFX déjà affectés aux attaques jouables.'],
 ];
 drawnTable(guide,'Infernal Versus · Guide de la V2',`${design.edition} · Les onze derniers onglets conservent intégralement les registres de la V1.`, ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;
@@ -267,6 +282,9 @@ const guideFilters = {
   'Affectations à illustrer': ['E', 'Décor et portraits'],
   'Sprites VFX uniques': ['A', 'Image VFX'],
   'Attaques avec VFX': ['A', 'VFX d’attaque'],
+  'Bases de personnages en réserve': ['A', 'Base de personnage'],
+  'Bases d’ennemis en réserve': ['A', 'Base d’ennemi'],
+  'Projectiles en réserve': ['A', 'Projectile en réserve'],
 };
 for(const [i,row] of guideRows.entries()){
   const filter = guideFilters[row[1]];
@@ -298,6 +316,9 @@ assert.equal(summaryCount('Gardes actives distinctes'),guardPoseCount);
 assert.equal(summaryCount('Poses des tenues alternatives'),costumePoseCount);
 assert.equal(summaryCount('Sprites VFX uniques'),vfxImageCount);
 assert.equal(summaryCount('Attaques avec VFX'),vfxAttackCount);
+assert.equal(summaryCount('Bases de personnages en réserve'),design.assetBatch.reserves.characterBases);
+assert.equal(summaryCount('Bases d’ennemis en réserve'),design.assetBatch.reserves.enemyBases);
+assert.equal(summaryCount('Projectiles en réserve'),design.assetBatch.reserves.projectileImages);
 assert.equal(referencedAssetCount,design.assetBatch.runtime.referencedAssets);
 assert(summaryCount('Lieux détaillés')>=stageCount);
 assert.equal(summaryCount('Affectations dédiées') + summaryCount('Affectations à illustrer'),pictures.length);

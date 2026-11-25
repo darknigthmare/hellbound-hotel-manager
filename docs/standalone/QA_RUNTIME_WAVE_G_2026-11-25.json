@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "checkedAtUtc": "2026-11-25T06:13:44.540730+00:00",
+  "batchId": "wave-g-2026-11-25",
+  "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+  "status": "passed",
+  "command": "npm run qa",
+  "exitCode": 0,
+  "typecheck": "passed",
+  "lint": "passed",
+  "testSuites": 44,
+  "tests": 376,
+  "builds": {
+    "manager": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 1013,
+    "verifiedHashes": 1013,
+    "bytes": 615498785,
+    "mib": 586.99,
+    "bootAssets": "present",
+    "hotelPersistence": "excluded"
+  },
+  "activeCoverage": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 28,
+    "threePlaneStages": 28,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 420,
+    "brokenReferences": []
+  },
+  "reserveCoverage": {
+    "catalogue": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json",
+    "characterBases": 5,
+    "enemyBases": 6,
+    "projectileImages": 1,
+    "artworks": 12,
+    "referencedFiles": 24,
+    "brokenReferences": []
+  },
+  "exports": {
+    "masterCount": 21,
+    "fileCount": 45,
+    "allRuntimeExportsPixelExact": true
+  },
+  "log": "docs/standalone/qa-wave-g-2026-11-25/runtime-command-output.txt",
+  "browser": {
+    "status": "blocked",
+    "browserExecuted": false,
+    "screenshots": 0,
+    "reason": "The /usr/bin/chromium launcher points to absent /usr/lib/chromium/chromium. The Playwright bundled executable is also absent. No page or local HTTP server was started.",
+    "evidence": "docs/standalone/qa-wave-g-2026-11-25/browser-review.json"
+  },
+  "scope": "Automated verification of the final game source/CSS and 24 added public images. Spreadsheet and documentation checks are separate. No browser or source-to-game 1:1 certification."
+}

@@ -94,9 +94,38 @@ const summary = {
   referencedAssets: paths.size,
   brokenReferences: [...missing],
 };
-const report = { schemaVersion: 2, summary, fighters, stages, attackEffects,
-  interpretation: 'Counts describe registered files and authored key poses. They do not certify animation fluidity, canonical visual fidelity, or browser rendering.' };
+// Reserve artwork is deliberately outside the playable roster and the active
+// asset set. A delivered base image does not imply a combat kit or animation.
+const reserveCatalogue = JSON.parse(fs.readFileSync(path.join(root,
+  'art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json'), 'utf8'));
+const reservePaths = new Set();
+const reserveMissing = new Set();
+const reserveIds = new Set();
+for (const entry of reserveCatalogue.assets) {
+  if (reserveIds.has(entry.id) || entry.runtimeStatus !== 'reserve') {
+    throw Error('Invalid or duplicate reserve entry: ' + entry.id);
+  }
+  reserveIds.add(entry.id);
+  if (entry.kind !== 'projectile' && fighters.some(fighter => fighter.id === entry.sourceIdentityId)) {
+    throw Error('Reserve base unexpectedly counted as playable: ' + entry.id);
+  }
+  for (const file of [entry.master, entry.export]) {
+    reservePaths.add(file);
+    if (!fs.existsSync(path.join(root, file))) reserveMissing.add(file);
+  }
+}
+const reserveSummary = {
+  catalogue: 'art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json',
+  characterBases: reserveCatalogue.assets.filter(entry => entry.kind === 'character_base').length,
+  enemyBases: reserveCatalogue.assets.filter(entry => entry.kind === 'enemy_base').length,
+  projectileImages: reserveCatalogue.assets.filter(entry => entry.kind === 'projectile').length,
+  artworks: reserveCatalogue.assets.length,
+  referencedFiles: reservePaths.size,
+  brokenReferences: [...reserveMissing],
+};
+const report = { schemaVersion: 3, summary, reserveSummary, fighters, stages, attackEffects,
+  interpretation: 'Summary counts active registered files and authored key poses. ReserveSummary counts only the separate Wave G catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering.' };
 const destination = path.join(root, 'docs/standalone/ASSET_COVERAGE.json');
 fs.writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
-console.log(JSON.stringify(summary, null, 2));
-if (missing.size) process.exitCode = 1;
+console.log(JSON.stringify({ active: summary, reserve: reserveSummary }, null, 2));
+if (missing.size || reserveMissing.size) process.exitCode = 1;
