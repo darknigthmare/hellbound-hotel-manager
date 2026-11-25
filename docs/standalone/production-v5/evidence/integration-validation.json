@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-25T14:03:19.893631+00:00",
+  "scope": "Static environment, reserve gallery and optional costumes integration by review_pr",
+  "stageCount": 35,
+  "galleryReserveCount": 34,
+  "newEquippableStaticCostumes": 5,
+  "newPlayableFighters": 0,
+  "newAnimationCycles": 0,
+  "browserRenderingChecked": false,
+  "checks": [
+    {
+      "kind": "typescript",
+      "command": "tsc --noEmit",
+      "exitCode": 0,
+      "completed": "after first 4 static costumes and gallery31"
+    },
+    {
+      "kind": "eslint",
+      "scope": "changed stages, gallery, appearance registry, pose anchors and targeted tests",
+      "exitCode": 0
+    },
+    {
+      "kind": "vitest",
+      "files": [
+        "pentagram-stages",
+        "infernal-production",
+        "infernal-authored-poses",
+        "infernal-pose-anchors",
+        "standalone-progression",
+        "standalone-ui"
+      ],
+      "filesPassed": 6,
+      "testsPassed": 60,
+      "scopeState": "35 stages / 29 reserves / first 2 new costumes"
+    },
+    {
+      "kind": "vitest",
+      "files": [
+        "standalone-live-fight",
+        "infernal-authored-poses",
+        "standalone-ui"
+      ],
+      "filesPassed": 3,
+      "testsPassed": 55,
+      "scopeState": "35 stages / 31 reserves / 4 new costumes",
+      "observed": "jsdom real combat component keeps Vortex human on both sides during intro and actual engine heavy attacks. Not a browser screenshot."
+    },
+    {
+      "kind": "typescript_and_vitest",
+      "exitCode": 0,
+      "files": [
+        "infernal-authored-poses",
+        "standalone-ui"
+      ],
+      "filesPassed": 2,
+      "testsPassed": 21,
+      "scopeState": "35 stages / 34 reserves / 5 new static costumes"
+    }
+  ],
+  "limits": [
+    "Runs overlap; do not add test counts as unique tests.",
+    "Assets directly inspected and PNG/WebP decoded RGBA equality and hashes checked; no image fidelity 1:1 certification.",
+    "Browser binary unavailable in current runtime; no browser playthrough certified.",
+    "Static props and Barbie human costume remain reserve only.",
+    "All new stages reuse existing original procedural soundtrack configurations; no new audio created."
+  ],
+  "totalRegisteredCostumes": 11
+}

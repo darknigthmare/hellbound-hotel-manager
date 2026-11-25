@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-25T15:29:54.662260+00:00",
+  "scope": "Runtime integration of resumed static production after cf323521",
+  "counts": {
+    "playableFighters": 43,
+    "stages": 35,
+    "reserveEntries": 42,
+    "equippableCostumes": 11,
+    "newEquippableStaticCostumes": 5,
+    "narrativeIllustrations": 78,
+    "personalIllustrations": 67,
+    "personalCompleteTrios": 21,
+    "globalIllustrations": 11,
+    "newAnimationCycles": 0
+  },
+  "runtimeChanges": [
+    "Merged all five accepted narrative manifests; 15 previously unregistered scenes now mapped by exact fighter/route/beat.",
+    "Registered eight existing support bases after hash/dimension/RGBA equality checks.",
+    "Marked Marlow Glass and Ember Vale explicitly as original project AU and surfaced their design references in the gallery.",
+    "Added costume spoiler tiers; hide season-two wardrobe choices during S1 selection/combat while preserving saved choices."
+  ],
+  "checks": {
+    "command": "npm run qa",
+    "exitCode": 0,
+    "testFilesPassed": 46,
+    "testsPassed": 408,
+    "testDurationSeconds": 68.05,
+    "typecheck": "passed",
+    "eslint": "passed",
+    "managerBuild": "passed",
+    "standaloneBuild": "passed",
+    "standaloneVerification": "Standalone verified: 1148 hashes, boot assets present, hotel/cloud persistence excluded.",
+    "log": "production-next/qa-runtime-resumed.log",
+    "browserRenderingChecked": false,
+    "pixelChecks": "production-next/runtime-assets-integrity-resumed.json"
+  },
+  "modifiedByThisAgent": [
+    "src/standalone/campaign-illustrations-v4.ts",
+    "src/standalone/ReserveGallery.tsx",
+    "src/standalone/InfernalVersus.tsx",
+    "src/standalone/campaign.ts",
+    "src/lib/infernal-appearances.ts",
+    "src/tests/standalone-ui.test.tsx",
+    "art/infernal-versus/production/reserve-assets.json"
+  ],
+  "supplementalScratchScript": "production-next/integrate-reviewed-reserves.py",
+  "limits": [
+    "The ongoing continuation-generated-assets.json is not part of this registered-art snapshot. Synchronize it after generation and repeat the affected suite/build as needed.",
+    "No new playable fighter, animation cycle, collision, damage value or combat move was added.",
+    "Tests use jsdom and engine logic; no real browser rendering certified.",
+    "Source-based illustrations remain adaptations; 1:1 fidelity not certified."
+  ]
+}

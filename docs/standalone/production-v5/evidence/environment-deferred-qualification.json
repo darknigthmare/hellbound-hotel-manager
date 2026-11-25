@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25T14:06:07.722553+00:00",
+  "scope": "Requalification of four deferred environment-related machine/projectile targets using already documented primary evidence",
+  "decisionSummary": {
+    "completeIsolatedAssetsReady": 0,
+    "deferred": 4,
+    "alreadyRepresentedInNewStage": 1
+  },
+  "noPolicyRefusalClaim": "These are technical reference gaps, not image-generation policy refusals. No generation call was attempted for these four targets.",
+  "items": [
+    {
+      "id": "dhorks-portal-ring",
+      "category": "machine",
+      "incarnation": "Machine S2E8 de The Full Moon, anneau circulaire vert.",
+      "decision": "defer_complete_isolated_asset",
+      "productionReadyWithDocumentedReferences": false,
+      "sourceUrl": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+      "inspection": "Full Moon, pilot and CHERUB boards directly re-opened during this follow-up; shuriken assessed from the existing wave G inspected-source record, not a fresh video viewing.",
+      "observed": [
+        "Contour supérieur, côtés, voyants et conduits latéraux identifiables."
+      ],
+      "missingForCompleteDrawing": [
+        "Le bas complet et le socle sont masqués ou coupés ; pas de silhouette complète certifiée.",
+        "Utilisable comme élément cadré du décor ; différer un sprite complet jusqu’à une vue de la machine entière.",
+        "Ne pas dessiner par symétrie des supports non montrés."
+      ],
+      "minimumNewEvidence": "Vue primaire où le cercle inférieur, les supports et le socle entiers apparaissent simultanément sans occultation ; ou modèle de production officiel de cette machine S2E8.",
+      "localEvidence": [
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/full-moon-510s.png",
+          "sha256": "47cbf26c2cc10603862f756fbe433bf8c1fcc0eebb4823b5a23420928809ec31"
+        },
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/full-moon-520s.png",
+          "sha256": "0eb72b0da85ceb0264afe640fcfee47ba8c174f11da3f2c34064a8851e151d8c"
+        },
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/full-moon-540s.png",
+          "sha256": "61f0136d50e1d29db86340f5d0401adeea7eff5be9324cb7d3b02c89632474bf"
+        }
+      ],
+      "existingCoverage": "Static portal room stage dhorks-portal-chamber is now implemented; the machine appears within the complete room composition, not as a separately usable complete machine.",
+      "permittedReducedScope": "A framing restricted to documented visible portions can be a scene illustration. It does not count as the complete standalone machine or projectile.",
+      "generationCalls": 0
+    },
+    {
+      "id": "pentious-airship-pilot",
+      "category": "machine",
+      "incarnation": "Pilote Hazbin Hotel officiel de 2019, incarnation séparée des saisons Prime Video.",
+      "decision": "defer_complete_isolated_asset",
+      "productionReadyWithDocumentedReferences": false,
+      "sourceUrl": "https://www.youtube.com/watch?v=Zlmswo0S0e0",
+      "inspection": "Full Moon, pilot and CHERUB boards directly re-opened during this follow-up; shuriken assessed from the existing wave G inspected-source record, not a fresh video viewing.",
+      "observed": [
+        "Petite vue extérieure à ~03:20 ; cockpit, leviers et avant de machine montrés dans les vues suivantes."
+      ],
+      "missingForCompleteDrawing": [
+        "Ne pas présenter le dessin du pilote comme le modèle du finale S1 Prime Video.",
+        "La vue entière est trop petite et partiellement couverte d’effets pour fixer les proportions et armes.",
+        "Il faut une vue d’ensemble propre de l’incarnation demandée avant production 1:1 ; pas de machine générique inventée."
+      ],
+      "minimumNewEvidence": "Choisir explicitement pilote 2019 ou saison Prime, puis fournir une vue d’ensemble primaire assez nette pour les proportions, appendices et armements de cette incarnation.",
+      "localEvidence": [
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/pentious-pilot-airship-referenceboard.png",
+          "sha256": "cbfd1785530442c72492e9fb7d90b0c8e4090839b3e91373d7f9523593fec969"
+        },
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/pentious-pilot-airship-200s.png",
+          "sha256": "cc792dd34e70480206e65a9e7e6bd56260bca5213007db083f38ae25846a01b5"
+        }
+      ],
+      "existingCoverage": null,
+      "permittedReducedScope": "A framing restricted to documented visible portions can be a scene illustration. It does not count as the complete standalone machine or projectile.",
+      "generationCalls": 0
+    },
+    {
+      "id": "cherub-golden-arrow",
+      "category": "projectile",
+      "incarnation": "Arme de Keenie, C.H.E.R.U.B. S1E4, combat dans les cintres.",
+      "decision": "defer_complete_isolated_asset",
+      "productionReadyWithDocumentedReferences": false,
+      "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+      "inspection": "Full Moon, pilot and CHERUB boards directly re-opened during this follow-up; shuriken assessed from the existing wave G inspected-source record, not a fresh video viewing.",
+      "observed": [
+        "Keenie et son arme visibles ; traits clairs et extrémités partielles, sans flèche autonome entièrement lisible."
+      ],
+      "missingForCompleteDrawing": [
+        "Nouvelle inspection des mêmes vues ne résout pas pointe, empennage et longueur de hampe.",
+        "Ni arc, ni éclat de lumière ne doivent être inventés en projectile isolé.",
+        "Aucun prompt de génération exploitable ; conserver le report."
+      ],
+      "minimumNewEvidence": "Une image primaire montrant la flèche entière sans main ni corps devant : pointe, hampe, empennage et couleurs. L’arc seul ou une lueur ne résout pas le modèle.",
+      "localEvidence": [
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/cherub-arrow-referenceboard.png",
+          "sha256": "4f50edc787c14b7dd365ca576a45c34323b1ca2c7bbcc5ee424d056ae12e54da"
+        },
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/cherub-arrow-610s.png",
+          "sha256": "63c118fc36197eff14fe6a17c2b309c6c867fff0aebcc3fb886cb35eb0ac72db"
+        },
+        {
+          "path": "/workspace/scratch/675899046881/production-next/references/cherub-arrow-620s.png",
+          "sha256": "f5c91ddb597104d3fdd29d677c3204d7841341c8f394e251c6df0aef49f0fcdf"
+        }
+      ],
+      "existingCoverage": null,
+      "permittedReducedScope": "A framing restricted to documented visible portions can be a scene illustration. It does not count as the complete standalone machine or projectile.",
+      "generationCalls": 0
+    },
+    {
+      "id": "dhorks-shuriken",
+      "category": "projectile",
+      "incarnation": "Truth Seekers, S1E6, combat I.M.P./D.H.O.R.K.S.",
+      "decision": "defer_complete_isolated_asset",
+      "productionReadyWithDocumentedReferences": false,
+      "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+      "inspection": "Full Moon, pilot and CHERUB boards directly re-opened during this follow-up; shuriken assessed from the existing wave G inspected-source record, not a fresh video viewing.",
+      "observed": [
+        "Le registre G atteste la séquence mais rapporte des formes rapides trop petites pour une silhouette exacte."
+      ],
+      "missingForCompleteDrawing": [
+        "Nombre et forme des pointes et éventuel trou central non résolus.",
+        "Ne pas remplacer par une étoile de ninja générique.",
+        "Pas de prompt de génération ni d’affectation de gameplay."
+      ],
+      "minimumNewEvidence": "Une image primaire assez nette pour compter les pointes, voir le contour du trou central s’il existe et mesurer les proportions hors flou de mouvement.",
+      "localEvidence": [],
+      "existingCoverage": null,
+      "permittedReducedScope": "A framing restricted to documented visible portions can be a scene illustration. It does not count as the complete standalone machine or projectile.",
+      "generationCalls": 0
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "newAnimationCycles": 0
+}

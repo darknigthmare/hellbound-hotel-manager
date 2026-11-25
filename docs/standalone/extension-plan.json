@@ -72,14 +72,14 @@
     },
     "currentRuntime": {
       "date": "2026-11-25",
-      "batchId": "guide-v4-2026-11-25",
-      "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+      "batchId": "static-v5-2026-11-25",
+      "baseCommit": "cf323521",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V4 raccorde les récits V3 et conserve les routes V1 pour les anciennes sauvegardes. Les 172 coups et 43 storyboards longs restent des propositions. Les 29 feuilles V3 décrivent le lot I historique.",
-      "stages": 30,
+      "note": "V5 raccorde des dessins statiques et leurs références. Le roster, les règles de combat et les propositions de techniques/finition restent distincts de cette production. Les versions V3/V4 du classeur restent des archives.",
+      "stages": 35,
       "threePlaneStages": 30,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
@@ -90,13 +90,18 @@
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 22,
+      "reserveGalleryDrawings": 42,
       "stagePresentations": [
         "alive",
         "static",
         "reduced"
       ],
-      "illustrationAssignmentsV3": 0
+      "illustrationAssignmentsV3": 127,
+      "onePlaneStages": 5,
+      "twoPlaneStages": 0,
+      "costumeFamilies": 11,
+      "globalIllustrationAssignments": 11,
+      "productionRegister": "docs/standalone/production-v5-register.json"
     },
     "latestIntegration": {
       "date": "2026-11-25",
@@ -104,7 +109,37 @@
       "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
       "branch": "feat/infernal-versus-assets-20261124",
       "scope": "Guide général contextualisé, 43 routes V3 versionnées, campagne AU de neuf chapitres, galerie 22 réserves et présentation des arènes. Aucun dessin ou cycle nouveau."
-    }
+    },
+    "runtimeHistory": [
+      {
+        "date": "2026-11-25",
+        "batchId": "guide-v4-2026-11-25",
+        "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V4 raccorde les récits V3 et conserve les routes V1 pour les anciennes sauvegardes. Les 172 coups et 43 storyboards longs restent des propositions. Les 29 feuilles V3 décrivent le lot I historique.",
+        "stages": 30,
+        "threePlaneStages": 30,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 428,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 22,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 0
+      }
+    ]
   },
   "sources": [
     [

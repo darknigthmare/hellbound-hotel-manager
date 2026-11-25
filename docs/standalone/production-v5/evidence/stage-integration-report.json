@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "stages": [
+    {
+      "id": "sloth-hospital",
+      "image": "/assets/stages/helluva/sloth-hospital/room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "thumbnail": "/assets/stages/helluva/sloth-hospital/thumb.webp",
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exportSha256": "11ffcbcc97be0352b23747ae2c7964acbda5de01e99ed21810ec92bba98979e1",
+      "visualReview": "Complete image directly inspected by review_pr before registration; clear foreground lane, no characters.",
+      "fidelityOneToOneCertified": false,
+      "illustratedPlanes": 1,
+      "newAnimationCycles": 0,
+      "reusedSoundtrackId": "last-call-uppercut"
+    },
+    {
+      "id": "sinsmas-frozen-pavilion",
+      "image": "/assets/stages/helluva/sinsmas-frozen-pavilion/room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "thumbnail": "/assets/stages/helluva/sinsmas-frozen-pavilion/thumb.webp",
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exportSha256": "dd5afea0b1893fc3aa2da9536047762118e0691d7218ae32e6016c8323f89197",
+      "visualReview": "Complete image directly inspected by review_pr before registration; clear foreground lane, no characters.",
+      "fidelityOneToOneCertified": false,
+      "illustratedPlanes": 1,
+      "newAnimationCycles": 0,
+      "reusedSoundtrackId": "halo-clock-downbeat"
+    },
+    {
+      "id": "seeing-stars-overlook",
+      "image": "/assets/stages/helluva/seeing-stars-overlook/room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "thumbnail": "/assets/stages/helluva/seeing-stars-overlook/thumb.webp",
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exportSha256": "cda86370f7aa48bb81f53a86d1618a4d479b213e0f63ccd593509c346e747053",
+      "visualReview": "Complete image directly inspected by review_pr before registration; clear foreground lane, no characters.",
+      "fidelityOneToOneCertified": false,
+      "illustratedPlanes": 1,
+      "newAnimationCycles": 0,
+      "reusedSoundtrackId": "neon-sinners-swing"
+    },
+    {
+      "id": "cherub-opera-stage",
+      "image": "/assets/stages/helluva/cherub-opera-stage/room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "thumbnail": "/assets/stages/helluva/cherub-opera-stage/thumb.webp",
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exportSha256": "4272a446cc2ed9a0430009e82fa391cb6aaf1fac38c84c893e99e3e09843a8cb",
+      "visualReview": "Complete image directly inspected by review_pr before registration; clear foreground lane, no characters.",
+      "fidelityOneToOneCertified": false,
+      "illustratedPlanes": 1,
+      "newAnimationCycles": 0,
+      "reusedSoundtrackId": "last-call-uppercut"
+    },
+    {
+      "id": "dhorks-portal-chamber",
+      "image": "/assets/stages/helluva/dhorks-portal-chamber/room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "thumbnail": "/assets/stages/helluva/dhorks-portal-chamber/thumb.webp",
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exportSha256": "f814325951f0b8f9210eb76da8f6f768a9ffa7f0494816d993f4636e3459892e",
+      "visualReview": "Complete image directly inspected by review_pr before registration; clear foreground lane, no characters.",
+      "fidelityOneToOneCertified": false,
+      "illustratedPlanes": 1,
+      "newAnimationCycles": 0,
+      "reusedSoundtrackId": "dead-air-duel"
+    }
+  ],
+  "stageCount": 35,
+  "newBackgroundCount": 5,
+  "totalNewAnimationCycles": 0,
+  "browserRenderingChecked": false,
+  "browserLimit": "Local Chromium binary unavailable in prior runtime QA; this integration records file, source, test and geometry checks, not real browser play.",
+  "collisionModel": {
+    "file": "src/lib/pentagram-combat.ts",
+    "sha256": "b3156ab54f090446a09c99a1d0b77c2b5b3fcdcc5a60bc27a4f908d4b83d4522",
+    "changedByIntegration": false,
+    "minimumPositionPercent": 7,
+    "maximumPositionPercent": 93,
+    "minimumFighterGapPercent": 7,
+    "fighterBottomPercent": 9
+  },
+  "framing": {
+    "css": "background-size: auto, contain; background-position: center, var(--arena-stage-position, center bottom); overflow inherited hidden; no parallax translation for new single-background stages",
+    "newSeparateSceneryLayers": 0,
+    "clippingOfAuthoredImage": false,
+    "portalRoomException": "The DHORKS room has a narrow floor below approximately y=851/941. Its image is top anchored so narrow arenas extend the floor below the complete image instead of placing feet over the machinery. No collision or ground physics changed.",
+    "representativeGeometry": [
+      {
+        "arena": [
+          1024,
+          520
+        ],
+        "art": [
+          923.95,
+          520.0
+        ],
+        "leftBand": 50.02,
+        "verticalExtraSpace": 0.0,
+        "bottomAnchoredFighterGroundYWithinArtFraction": 0.91,
+        "portalTopAnchoredFighterGroundYWithinArtFraction": 0.91,
+        "allImageEdgesInsideArena": true
+      },
+      {
+        "arena": [
+          344,
+          300
+        ],
+        "art": [
+          344,
+          193.6
+        ],
+        "leftBand": 0.0,
+        "verticalExtraSpace": 106.4,
+        "bottomAnchoredFighterGroundYWithinArtFraction": 0.8605,
+        "portalTopAnchoredFighterGroundYWithinArtFraction": 1.4101,
+        "allImageEdgesInsideArena": true
+      },
+      {
+        "arena": [
+          740,
+          322
+        ],
+        "art": [
+          572.14,
+          322.0
+        ],
+        "leftBand": 83.93,
+        "verticalExtraSpace": 0.0,
+        "bottomAnchoredFighterGroundYWithinArtFraction": 0.91,
+        "portalTopAnchoredFighterGroundYWithinArtFraction": 0.91,
+        "allImageEdgesInsideArena": true
+      }
+    ]
+  }
+}

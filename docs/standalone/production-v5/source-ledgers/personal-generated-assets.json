@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "attemptId": "v3:charlie:intro:attempt-01",
+      "assetId": "v3:charlie:intro",
+      "id": "v3:charlie:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Charlie Morningstar.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Clé au premier plan sur le comptoir, Charlie au centre, porte ouverte en profondeur ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Charlie aligne une seconde tasse pour un invité absent.\nLumière : Lampe chaude du hall opposée à la rue rouge.\nIncarnation : Charlie, modèle série S1 ; tenue de combat seulement dans le duel final.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas donner à Charlie un pouvoir de purifier ou de posséder les âmes. ; La rédemption reste un choix et un processus, jamais une récompense automatique de victoire. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:charlie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/charlie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-97be0b4e-6b1e-4ce5-902b-9a95dd29a7e8.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/charlie-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/charlie-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "923333939975b67bccbf3a46ddf0821f0bb3dfd8fb63394db005891c50599d69",
+        "masterSha256": "923333939975b67bccbf3a46ddf0821f0bb3dfd8fb63394db005891c50599d69",
+        "exportSha256": "ad84f5a3b06cc969e46965a460a13c63232443e1a407822f438460526f4989e0"
+      },
+      "masterSha256": "923333939975b67bccbf3a46ddf0821f0bb3dfd8fb63394db005891c50599d69",
+      "exportSha256": "ad84f5a3b06cc969e46965a460a13c63232443e1a407822f438460526f4989e0",
+      "masterBytes": 2226435,
+      "exportBytes": 1824752,
+      "generatedAt": "2026-11-25T14:00:08.967850+00:00",
+      "reviewedAt": "2026-11-25T14:00:46.290837+00:00",
+      "visualReviewNotes": "Revue visuelle : Charlie en tenue principale, deux mains cohérentes alignant la seconde tasse, clé au premier plan, porte ouverte, hall carmin/or conforme. Aucun texte intégré ni halo de rédemption.",
+      "fidelityOneToOneCertified": false,
+      "name": "La clé encore chaude",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1"
+      ],
+      "routeVersion": 3,
+      "fighterId": "charlie",
+      "beat": "intro"
+    },
+    {
+      "attemptId": "v3:charlie:rival:attempt-01",
+      "assetId": "v3:charlie:rival",
+      "id": "v3:charlie:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Charlie Morningstar, Adam.\nLieu : Heaven Embassy & Clock Tower ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Charlie à gauche, Adam à droite, seuil vide entre eux ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Charlie abaisse sa main ouverte tandis qu’Adam occupe l’espace supérieur.\nLumière : Or dur côté Paradis, rouge doux côté hôtel.\nIncarnation : Avant le duel final : Charlie en tenue principale de série de la référence locale, sans transformation. Adam est l’incarnation d’archives S1, vivant dans cette simulation.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas donner à Charlie un pouvoir de purifier ou de posséder les âmes. ; La rédemption reste un choix et un processus, jamais une récompense automatique de victoire. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Le lieu reste heaven-embassy ; l’accent rouge est une lumière de composition, pas un portail vers l’hôtel. ; Ne pas déduire une résurrection d’Adam dans le présent ; aucune tenue de combat non référencée.\nReference images supplied, in order:\n1. character_identity: character:charlie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:adam. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:heaven-embassy. Décor runtime exact : Heaven Embassy & Clock Tower. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/charlie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/adam-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/heaven-embassy.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-2a4747dd-1b48-41a4-b6c9-e07d4eedcaac.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/charlie-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/charlie-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "42b160edc2039e1b5da69660bf72edcf150226e211207519cc4a78869d14b6f0",
+        "masterSha256": "42b160edc2039e1b5da69660bf72edcf150226e211207519cc4a78869d14b6f0",
+        "exportSha256": "e0bd36e140d5a6576894c09dbbe17435da0b7f404206906e2cbc517d80676cbc"
+      },
+      "masterSha256": "42b160edc2039e1b5da69660bf72edcf150226e211207519cc4a78869d14b6f0",
+      "exportSha256": "e0bd36e140d5a6576894c09dbbe17435da0b7f404206906e2cbc517d80676cbc",
+      "masterBytes": 2417549,
+      "exportBytes": 1934856,
+      "generatedAt": "2026-11-25T14:00:03.804406+00:00",
+      "reviewedAt": "2026-11-25T14:00:46.498371+00:00",
+      "visualReviewNotes": "Revue visuelle : Charlie à gauche en tenue principale, Adam S1 à droite au-dessus du sol, espace central dégagé et ambassade référencée. Confrontation avant duel, aucun changement de contrat ou rédemption.",
+      "fidelityOneToOneCertified": false,
+      "name": "Deux conceptions du salut",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1"
+      ],
+      "routeVersion": 3,
+      "fighterId": "charlie",
+      "beat": "rival"
+    },
+    {
+      "attemptId": "v3:charlie:ending:attempt-01",
+      "assetId": "v3:charlie:ending",
+      "id": "v3:charlie:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Charlie Morningstar, Vaggie.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Chaise vide au premier plan, équipe discrète en arrière-plan, Charlie près de la porte ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Charlie s’écarte pour laisser le passage.\nLumière : Aube claire, contraste apaisé sans halo de rédemption.\nIncarnation : Charlie en tenue principale ; seule Vaggie reste identifiable en profondeur pour rendre l’équipe discrète sans inventer de nouveau casting.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas donner à Charlie un pouvoir de purifier ou de posséder les âmes. ; La rédemption reste un choix et un processus, jamais une récompense automatique de victoire. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Chaise réellement libre au premier plan ; aucun invité transformé ni montée céleste.\nReference images supplied, in order:\n1. character_identity: character:charlie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:vaggie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n3. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/charlie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/vaggie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-6bbec2c6-3c74-4f1c-9003-28a23bd80c56.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/charlie-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/charlie-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "ff7dba73b4340e6fab27b5b845ced7fd5ceb587be31cca60af23088ff32221a2",
+        "masterSha256": "ff7dba73b4340e6fab27b5b845ced7fd5ceb587be31cca60af23088ff32221a2",
+        "exportSha256": "7408d161c9c43fbf50cff0bd4ca62cf569d78b1496280505ee9a689f0173de6d"
+      },
+      "masterSha256": "ff7dba73b4340e6fab27b5b845ced7fd5ceb587be31cca60af23088ff32221a2",
+      "exportSha256": "7408d161c9c43fbf50cff0bd4ca62cf569d78b1496280505ee9a689f0173de6d",
+      "masterBytes": 2292103,
+      "exportBytes": 1827036,
+      "generatedAt": "2026-11-25T14:00:06.663375+00:00",
+      "reviewedAt": "2026-11-25T14:00:46.730749+00:00",
+      "visualReviewNotes": "Revue visuelle : chaise vide au premier plan, Charlie laisse le passage, Vaggie discrète en profondeur. Personnages distincts, tenue et asymétrie conservées ; calme d’épilogue, sans transformation.",
+      "fidelityOneToOneCertified": false,
+      "name": "La place libre",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1"
+      ],
+      "routeVersion": 3,
+      "fighterId": "charlie",
+      "beat": "ending"
+    },
+    {
+      "attemptId": "v3:angeldust:intro:attempt-01",
+      "assetId": "v3:angeldust:intro",
+      "id": "v3:angeldust:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Angel Dust.\nLieu : Last Call Bar ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Téléphone sans texte au premier plan, Angel prêt à partir, table de l’hôtel au fond ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Un de ses bras retient sa veste tandis qu’un autre hésite au-dessus du téléphone.\nLumière : Lueur froide du téléphone contre chaleur du bar.\nIncarnation : Angel adulte en tenue principale ; bras implantés comme la référence, sans membres supplémentaires créés pour remplir le cadre.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas mettre en scène l’exploitation comme une récompense ou un gag érotique. ; Le contrat et ses contraintes ne disparaissent pas par une victoire d’arène. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Téléphone sans noms, injonction lisible ou données personnelles.\nReference images supplied, in order:\n1. character_identity: character:angeldust. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage_palette_architecture: stage:hotel-bar. Décor runtime exact : Last Call Bar. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/angeldust-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-bar/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-f9263031-e34a-4b75-a430-6bcf2ad4ea37.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/angeldust-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/angeldust-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "f963147c3a69dc1598739ba6ab3da75f12cdb23cf62053e784ab71030ec7cbdf",
+        "masterSha256": "f963147c3a69dc1598739ba6ab3da75f12cdb23cf62053e784ab71030ec7cbdf",
+        "exportSha256": "de8e3ce2f79d55241a5f8b460dfb1ea91948c3164dc1e551248ecdcd0677325e"
+      },
+      "masterSha256": "f963147c3a69dc1598739ba6ab3da75f12cdb23cf62053e784ab71030ec7cbdf",
+      "exportSha256": "de8e3ce2f79d55241a5f8b460dfb1ea91948c3164dc1e551248ecdcd0677325e",
+      "masterBytes": 1846025,
+      "exportBytes": 1392614,
+      "generatedAt": "2026-11-25T14:04:23.006325+00:00",
+      "reviewedAt": "2026-11-25T14:06:20.263701+00:00",
+      "visualReviewNotes": "Revue visuelle : quatre bras cohérents, tenue principale, geste hésitant vers le téléphone abstrait et veste tenue ; bar référencé, cadrage serré. Aucun texte ni scène sexuelle.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le repas et l’appel",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-husk-angel",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "angeldust",
+      "beat": "intro",
+      "stageId": "hotel-bar",
+      "cast": [
+        "angeldust"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Le repas et l’appel — Un de ses bras retient sa veste tandis qu’un autre hésite au-dessus du téléphone."
+    },
+    {
+      "attemptId": "v3:angeldust:rival:attempt-01",
+      "assetId": "v3:angeldust:rival",
+      "id": "v3:angeldust:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Angel Dust, Valentino.\nLieu : Vee Broadcast Studio ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Angel près d’un bord de plateau ouvert, Valentino occupe la profondeur, câbles au sol ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Angel tire le rideau de côté pour rendre la sortie visible.\nLumière : Projecteurs durs et couloir sombre.\nIncarnation : Angel et Valentino en tenues principales de studio ; confrontation latérale sans contact sexuel.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas mettre en scène l’exploitation comme une récompense ou un gag érotique. ; Le contrat et ses contraintes ne disparaissent pas par une victoire d’arène. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; La sortie ouvre une limite quotidienne ; elle ne brise pas le contrat.\nReference images supplied, in order:\n1. character_identity: character:angeldust. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:valentino. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:vee-broadcast-studio. Décor runtime exact : Vee Broadcast Studio. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/angeldust-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/valentino-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/vee-broadcast-studio.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-baf65dff-ce9b-4ce5-bce3-139d39d4bea3.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/angeldust-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/angeldust-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "77f36164bb8c28caca11ab599b399b74ef355f41d5e4647fdebbeb8a6bf92fd4",
+        "masterSha256": "77f36164bb8c28caca11ab599b399b74ef355f41d5e4647fdebbeb8a6bf92fd4",
+        "exportSha256": "f4d9272fcb3f924f016af013d06b1156bd2300c314085d9dc746b167e5bb5cf1"
+      },
+      "masterSha256": "77f36164bb8c28caca11ab599b399b74ef355f41d5e4647fdebbeb8a6bf92fd4",
+      "exportSha256": "f4d9272fcb3f924f016af013d06b1156bd2300c314085d9dc746b167e5bb5cf1",
+      "masterBytes": 2159877,
+      "exportBytes": 1715686,
+      "generatedAt": "2026-11-25T14:04:25.400763+00:00",
+      "reviewedAt": "2026-11-25T14:06:20.468664+00:00",
+      "visualReviewNotes": "Revue visuelle : Angel au rideau ouvrant une issue, Valentino en profondeur, studio et câbles cohérents ; quatre bras distincts d’Angel, confrontation non sexuelle sans chaînes ni libération magique.",
+      "fidelityOneToOneCertified": false,
+      "name": "Sortie du cadre",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-husk-angel",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "angeldust",
+      "beat": "rival",
+      "stageId": "vee-broadcast-studio",
+      "cast": [
+        "angeldust",
+        "valentino"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Sortie du cadre — Angel tire le rideau de côté pour rendre la sortie visible."
+    },
+    {
+      "attemptId": "v3:angeldust:ending:attempt-01",
+      "assetId": "v3:angeldust:ending",
+      "id": "v3:angeldust:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Angel Dust, Husk.\nLieu : Last Call Bar ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Assiette au premier plan, Angel assis de trois quarts, Husk en retrait ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Angel dépose le téléphone et relâche les épaules.\nLumière : Éclairage bas du bar, couleurs douces sans glamour de studio.\nIncarnation : Angel Dust série S1, tenue principale ; aucune variante sexualisée imposée.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas mettre en scène l’exploitation comme une récompense ou un gag érotique. ; Le contrat et ses contraintes ne disparaissent pas par une victoire d’arène. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:angeldust. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:husk. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:hotel-bar. Décor runtime exact : Last Call Bar. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/angeldust-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/husk-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-bar/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-682a1e6f-6af7-4f4f-a422-6318f33619f0.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/angeldust-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/angeldust-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "2b7d381ffd45afcb5a48945ac3a243484b48be4322490358a3cc463f334e95ee",
+        "masterSha256": "2b7d381ffd45afcb5a48945ac3a243484b48be4322490358a3cc463f334e95ee",
+        "exportSha256": "d50649764ab0c6d0ea134be09e5d6ae2cf25486ff4d47672f58367154c158616"
+      },
+      "masterSha256": "2b7d381ffd45afcb5a48945ac3a243484b48be4322490358a3cc463f334e95ee",
+      "exportSha256": "d50649764ab0c6d0ea134be09e5d6ae2cf25486ff4d47672f58367154c158616",
+      "masterBytes": 1843534,
+      "exportBytes": 1375952,
+      "generatedAt": "2026-11-25T14:03:28.906965+00:00",
+      "reviewedAt": "2026-11-25T14:06:20.678184+00:00",
+      "visualReviewNotes": "Revue visuelle : Angel assis relâche les épaules et pose son téléphone au bar, Husk reste en retrait ; quatre bras cohérents, personnages distincts. Le repas est hors champ ; aucun contrat effacé.",
+      "fidelityOneToOneCertified": false,
+      "name": "Une chaise gardée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-husk-angel",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "angeldust",
+      "beat": "ending",
+      "stageId": "hotel-bar",
+      "cast": [
+        "angeldust",
+        "husk"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Une chaise gardée — Angel dépose le téléphone et relâche les épaules."
+    },
+    {
+      "attemptId": "v3:alastor:intro:attempt-01",
+      "assetId": "v3:alastor:intro",
+      "id": "v3:alastor:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Alastor.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Poste radio en premier plan, canne d’Alastor à droite, sourire dans la profondeur ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Alastor tourne un bouton avec une précision trop calme.\nLumière : Lumière rouge du poste, ombre nette derrière lui.\nIncarnation : Alastor série S1, avant les changements contractuels éventuels de S2.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Aucune victoire n’acquiert automatiquement l’âme du vaincu. ; Ne pas présenter ses liens contractuels de S2 comme connus dans cette campagne d’archives S1. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:alastor. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n3. weapon_or_signature_prop: prop:alastor-microphone. Référence de canne microphone, sans nouveau pouvoir ni effet magique ajouté.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/alastor.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/alastor-microphone-cane.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-eb9beb56-ab66-41ba-8531-bfdfdc12007c.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/alastor-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/alastor-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "9de2cdc2f054932d393171975de7745678973dc09230912546e0656c0f3889b2",
+        "masterSha256": "9de2cdc2f054932d393171975de7745678973dc09230912546e0656c0f3889b2",
+        "exportSha256": "fba6bbf81bb9db09ffacaf3842c565f44fc5e723787b99a3034d83e1be1285ac"
+      },
+      "masterSha256": "9de2cdc2f054932d393171975de7745678973dc09230912546e0656c0f3889b2",
+      "exportSha256": "fba6bbf81bb9db09ffacaf3842c565f44fc5e723787b99a3034d83e1be1285ac",
+      "masterBytes": 1996469,
+      "exportBytes": 1586362,
+      "generatedAt": "2026-11-25T14:08:47.895240+00:00",
+      "reviewedAt": "2026-11-25T14:10:15.147444+00:00",
+      "visualReviewNotes": "Revue visuelle : Alastor règle un poste radio dans le hall ; canne microphone de référence posée à droite, modèle série et costume cohérents, ombre distincte. Aucun texte ni sigil ajouté.",
+      "fidelityOneToOneCertified": false,
+      "name": "Une voix déplacée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-overlords",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "alastor",
+      "beat": "intro",
+      "stageId": "hotel-lobby",
+      "cast": [
+        "alastor"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Une voix déplacée — Alastor tourne un bouton avec une précision trop calme."
+    },
+    {
+      "attemptId": "v3:alastor:rival:attempt-01",
+      "assetId": "v3:alastor:rival",
+      "id": "v3:alastor:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Alastor, Vox.\nLieu : Vee Broadcast Studio ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Vox encadré par les moniteurs, Alastor déborde de la symétrie sur le côté ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Alastor incline le micro pendant que Vox serre le bord de son pupitre.\nLumière : Cyan des écrans opposé au rouge et à l’ambre.\nIncarnation : Alastor série S1, avant les changements contractuels éventuels de S2.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Aucune victoire n’acquiert automatiquement l’âme du vaincu. ; Ne pas présenter ses liens contractuels de S2 comme connus dans cette campagne d’archives S1. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:alastor. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:vox. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:vee-broadcast-studio. Décor runtime exact : Vee Broadcast Studio. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n4. weapon_or_signature_prop: prop:alastor-microphone. Référence de canne microphone, sans nouveau pouvoir ni effet magique ajouté.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/alastor.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/vox-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/vee-broadcast-studio.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/alastor-microphone-cane.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-5822b685-fac9-49db-b865-f4b3865384bc.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/alastor-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/alastor-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "850de8f1a2eb6d52c69deb1fd7d95faaf04c7e4208cf9329715e2176863432b9",
+        "masterSha256": "850de8f1a2eb6d52c69deb1fd7d95faaf04c7e4208cf9329715e2176863432b9",
+        "exportSha256": "29a17aaeacee42e7ecb835695303996677f02712232f8846c089f7476bd9371b"
+      },
+      "masterSha256": "850de8f1a2eb6d52c69deb1fd7d95faaf04c7e4208cf9329715e2176863432b9",
+      "exportSha256": "29a17aaeacee42e7ecb835695303996677f02712232f8846c089f7476bd9371b",
+      "masterBytes": 2314365,
+      "exportBytes": 1876454,
+      "generatedAt": "2026-11-25T14:09:53.235951+00:00",
+      "reviewedAt": "2026-11-25T14:10:15.380353+00:00",
+      "visualReviewNotes": "Revue visuelle : Vox au pupitre et Alastor hors axe avec le microphone ; studio et palette cyan/carmin cohérents. Deux acteurs distincts, sans acquisition d’âme ni événement S2 revendiqué.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le cadre et la fréquence",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-overlords",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "alastor",
+      "beat": "rival",
+      "stageId": "vee-broadcast-studio",
+      "cast": [
+        "alastor",
+        "vox"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Le cadre et la fréquence — Alastor incline le micro pendant que Vox serre le bord de son pupitre."
+    },
+    {
+      "attemptId": "v3:alastor:ending:attempt-01",
+      "assetId": "v3:alastor:ending",
+      "id": "v3:alastor:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Alastor.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Boîtier radio ouvert au premier plan, Alastor s’éloigne dans le hall ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Un petit voyant reste visible sous une plaque déplacée.\nLumière : Clair-obscur sans flash ni bruit dessiné envahissant.\nIncarnation : Alastor série S1, avant les changements contractuels éventuels de S2.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Aucune victoire n’acquiert automatiquement l’âme du vaincu. ; Ne pas présenter ses liens contractuels de S2 comme connus dans cette campagne d’archives S1. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:alastor. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n3. weapon_or_signature_prop: prop:alastor-microphone. Référence de canne microphone, sans nouveau pouvoir ni effet magique ajouté.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/alastor.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/alastor-microphone-cane.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-af670034-a857-4d5a-9617-e51c024af5d5.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/alastor-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/alastor-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "bca50cd958f572a5b6f75a09689a83fc272f586b8b49ea12fd2f29f7a90933c0",
+        "masterSha256": "bca50cd958f572a5b6f75a09689a83fc272f586b8b49ea12fd2f29f7a90933c0",
+        "exportSha256": "b00c50d731ebf9d4a9fadb8671082817a09fe26b529337bd5dbd92f2792f0ced"
+      },
+      "masterSha256": "bca50cd958f572a5b6f75a09689a83fc272f586b8b49ea12fd2f29f7a90933c0",
+      "exportSha256": "b00c50d731ebf9d4a9fadb8671082817a09fe26b529337bd5dbd92f2792f0ced",
+      "masterBytes": 2141499,
+      "exportBytes": 1672520,
+      "generatedAt": "2026-11-25T14:09:50.843809+00:00",
+      "reviewedAt": "2026-11-25T14:10:15.603235+00:00",
+      "visualReviewNotes": "Revue visuelle : boîtier radio ouvert au premier plan avec un voyant, Alastor s’éloigne dans le hall. Image ambiguë conforme à l’épilogue, sans domination totale de la ville.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le voyant restant",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-s1",
+        "hh-i-overlords",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "alastor",
+      "beat": "ending",
+      "stageId": "hotel-lobby",
+      "cast": [
+        "alastor"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Le voyant restant — Un petit voyant reste visible sous une plaque déplacée."
+    },
+    {
+      "attemptId": "v3:husk:intro:attempt-01",
+      "assetId": "v3:husk:intro",
+      "id": "v3:husk:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Husk.\nLieu : Last Call Bar ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Table de jeu envahissant le premier plan, Husk petit derrière le comptoir ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Husk déplace un verre vide pour libérer une place.\nLumière : Vert sourd de la table et ambre du bar.\nIncarnation : Husk série S1 ; tenue de barman, sans retour automatique à un rang antérieur.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas présenter l’alcool comme un bonus de soin ou la solution à sa détresse. ; Une victoire contre Alastor ne rompt aucun lien contractuel. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:husk. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage_palette_architecture: stage:hotel-bar. Décor runtime exact : Last Call Bar. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/husk-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-bar/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-9577dafe-95ce-437f-9b17-a0bff26590b6.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/husk-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/husk-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "90db1865e6b968154fbed29c52756e68b3f637b368dd20131ec7e1a21b6cfd7d",
+        "masterSha256": "90db1865e6b968154fbed29c52756e68b3f637b368dd20131ec7e1a21b6cfd7d",
+        "exportSha256": "c166170fffe6dc67f50080fd35ec33b16a912c1ce2490a623a0b63522c7d43cf"
+      },
+      "masterSha256": "90db1865e6b968154fbed29c52756e68b3f637b368dd20131ec7e1a21b6cfd7d",
+      "exportSha256": "c166170fffe6dc67f50080fd35ec33b16a912c1ce2490a623a0b63522c7d43cf",
+      "masterBytes": 1863126,
+      "exportBytes": 1425772,
+      "generatedAt": "2026-11-25T14:14:15.513450+00:00",
+      "reviewedAt": "2026-11-25T14:17:31.783159+00:00",
+      "visualReviewNotes": "Husk identifiable derrière le comptoir, ailes et chapeau conservés ; grande table de jeu au premier plan avec cartes et jetons. Éclairage et architecture du bar cohérents. Illustration AU opaque, sans texte ni changement de contrat.",
+      "fidelityOneToOneCertified": false,
+      "name": "Une table de trop",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-husk-angel",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "husk",
+      "beat": "intro",
+      "stageId": "hotel-bar",
+      "cast": [
+        "husk"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Une table de trop — Husk déplace un verre vide pour libérer une place."
+    },
+    {
+      "attemptId": "v3:husk:ending:attempt-01",
+      "assetId": "v3:husk:ending",
+      "id": "v3:husk:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Husk, Angel Dust.\nLieu : Last Call Bar ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Cartes rangées dans un tiroir au premier plan, Husk et Angel séparés par un verre d’eau ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Husk referme le tiroir.\nLumière : Ambre doux, extérieur rouge très atténué.\nIncarnation : Husk série S1 ; tenue de barman, sans retour automatique à un rang antérieur.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas présenter l’alcool comme un bonus de soin ou la solution à sa détresse. ; Une victoire contre Alastor ne rompt aucun lien contractuel. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nReference images supplied, in order:\n1. character_identity: character:husk. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:angeldust. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:hotel-bar. Décor runtime exact : Last Call Bar. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/husk-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/angeldust-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-bar/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-c666e334-1415-4f2b-868d-6704b7f31a1a.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/husk-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/husk-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "6663bab4ba55b48c9a4bcf895d0684b238eefa9d4234c69507c7f1682a80a967",
+        "masterSha256": "6663bab4ba55b48c9a4bcf895d0684b238eefa9d4234c69507c7f1682a80a967",
+        "exportSha256": "d618801675a031acc5c6f718b643cd7b88e7cee8709ffd233c54b37ca67bfbb9"
+      },
+      "masterSha256": "6663bab4ba55b48c9a4bcf895d0684b238eefa9d4234c69507c7f1682a80a967",
+      "exportSha256": "d618801675a031acc5c6f718b643cd7b88e7cee8709ffd233c54b37ca67bfbb9",
+      "masterBytes": 1896592,
+      "exportBytes": 1430016,
+      "generatedAt": "2026-11-25T14:13:38.395996+00:00",
+      "reviewedAt": "2026-11-25T14:17:32.008424+00:00",
+      "visualReviewNotes": "Husk range les cartes dans le tiroir et reste au comptoir avec Angel ; verre transparent avec eau entre eux. Identités, ailes et tenue lisibles ; paire inférieure de bras d’Angel occultée sous le comptoir. Scène calme AU sans rupture de contrat annoncée.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le comptoir retrouve sa place",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-husk-angel",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "husk",
+      "beat": "ending",
+      "stageId": "hotel-bar",
+      "cast": [
+        "husk",
+        "angeldust"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Le comptoir retrouve sa place — Husk referme le tiroir."
+    },
+    {
+      "attemptId": "v3:hb_loona:intro:attempt-01",
+      "assetId": "v3:hb_loona:intro",
+      "id": "v3:hb_loona:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Loona.\nLieu : I.M.P. · Réception ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Téléphone au premier plan, oreille et regard de Loona tendus vers une pile de passes. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Elle retourne un passe pendant que son téléphone vibre.\nLumière : Néon de réception latéral\nIncarnation : Forme hellhound adulte\nÀ exclure : Aucun écran avec données personnelles réelles. ; Aucun texte, logo ou dialogue intégré à l’image. ; Aucune relation romantique avec Vortex n’est imposée : son couple avec Bee et ses propres limites restent respectés. ; L’adoption par Blitzø ne crée ni dette d’obéissance ni fin imposant affection ou pardon.\nReference images supplied, in order:\n1. character_identity: character:hb_loona. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:imp-reception. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/hb_loona.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-reception/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-9ade32a1-ed98-4f9b-9986-2162123ff940.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_loona-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_loona-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "c2b3a3155b536323614f168b8b99929605b44b850ac9fa3234821513a278bdd4",
+        "masterSha256": "c2b3a3155b536323614f168b8b99929605b44b850ac9fa3234821513a278bdd4",
+        "exportSha256": "3221ab5eacd3dcf1852de218487463b60652f9cb1c2abdb2ad9ca82fe100aba8"
+      },
+      "masterSha256": "c2b3a3155b536323614f168b8b99929605b44b850ac9fa3234821513a278bdd4",
+      "exportSha256": "3221ab5eacd3dcf1852de218487463b60652f9cb1c2abdb2ad9ca82fe100aba8",
+      "masterBytes": 1878998,
+      "exportBytes": 1375564,
+      "generatedAt": "2026-11-25T14:20:06.909583+00:00",
+      "reviewedAt": "2026-11-25T14:21:36.000087+00:00",
+      "visualReviewNotes": "Loona adulte derrière le bureau, téléphone en vibration et passe retourné clairement lisibles ; oreilles, marques, tenue et queue préservées. Décor de réception cohérent, aucun texte privé.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le contact copié",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_stars",
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_loona",
+      "beat": "intro",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_loona"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Le contact copié — Elle retourne un passe pendant que son téléphone vibre."
+    },
+    {
+      "attemptId": "v3:hb_loona:rival:attempt-01",
+      "assetId": "v3:hb_loona:rival",
+      "id": "v3:hb_loona:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Loona, Blitzø.\nLieu : I.M.P. · Réception ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : La chaîne coupe l’espace au premier plan ; Blitzø à l’intérieur, Loona du côté de la porte. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Loona tend la main ouverte vers la chaîne, sans posture infantile.\nLumière : Lumière extérieure plus douce que celle du bureau\nIncarnation : Loona et Blitzø adultes, formes habituelles. La chaîne est fixée à la porte comme barricade, jamais au corps de Loona.\nÀ exclure : Pas de collier ou laisse ajoutés. ; Aucun texte, logo ou dialogue intégré à l’image. ; Aucune relation romantique avec Vortex n’est imposée : son couple avec Bee et ses propres limites restent respectés. ; L’adoption par Blitzø ne crée ni dette d’obéissance ni fin imposant affection ou pardon. ; Aucune laisse ni pose infantilisante.\nReference images supplied, in order:\n1. character_identity: character:hb_loona. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:hb_blitzo. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:imp-reception. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/hb_loona.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_blitzo-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-reception/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-c8bb074d-95d7-44db-935b-8e738c7e4cea.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_loona-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_loona-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "82c4bf63e78593bbd7e43c85500b46dca690b52d4f54051aed3f8df210d20af1",
+        "masterSha256": "82c4bf63e78593bbd7e43c85500b46dca690b52d4f54051aed3f8df210d20af1",
+        "exportSha256": "878f5a1f78c807cf096fc34b8fda27b6ffb0eb3e667162d4d7fb462ebb8ae8fe"
+      },
+      "masterSha256": "82c4bf63e78593bbd7e43c85500b46dca690b52d4f54051aed3f8df210d20af1",
+      "exportSha256": "878f5a1f78c807cf096fc34b8fda27b6ffb0eb3e667162d4d7fb462ebb8ae8fe",
+      "masterBytes": 1864640,
+      "exportBytes": 1364244,
+      "generatedAt": "2026-11-25T14:19:27.668633+00:00",
+      "reviewedAt": "2026-11-25T14:21:36.269286+00:00",
+      "visualReviewNotes": "Loona et Blitzø adultes de part et d’autre de la porte ; chaîne fixée exclusivement au battant et à son cadre, aucun lien au corps. Main ouverte de Loona, différence de taille et costumes conservés.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le seuil partagé",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_stars"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_loona",
+      "beat": "rival",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_loona",
+        "hb_blitzo"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Le seuil partagé — Loona tend la main ouverte vers la chaîne, sans posture infantile."
+    },
+    {
+      "attemptId": "v3:hb_loona:ending:attempt-01",
+      "assetId": "v3:hb_loona:ending",
+      "id": "v3:hb_loona:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Loona.\nLieu : I.M.P. · Rue des bureaux ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Loona au centre, téléphone bas ; porte d’I.M.P. ouverte au fond, trottoir dégagé devant elle. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Elle envoie un message puis regarde la rue.\nLumière : Éclairage de devanture chaud derrière, nuit douce devant\nIncarnation : Forme hellhound adulte\nÀ exclure : Pas de couple avec Vortex suggéré. ; Aucun texte, logo ou dialogue intégré à l’image. ; Aucune relation romantique avec Vortex n’est imposée : son couple avec Bee et ses propres limites restent respectés. ; L’adoption par Blitzø ne crée ni dette d’obéissance ni fin imposant affection ou pardon.\nReference images supplied, in order:\n1. character_identity: character:hb_loona. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:imp-exterior. Décor runtime exact : I.M.P. · Rue des bureaux. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/hb_loona.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-exterior/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-0686d2ee-d8f7-4bcf-bd3f-ada66b2b9b02.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_loona-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_loona-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "3515a24c2d1c6a1e89a0e699685d1d5b1e6e751f7054d21044b0a83901e14a66",
+        "masterSha256": "3515a24c2d1c6a1e89a0e699685d1d5b1e6e751f7054d21044b0a83901e14a66",
+        "exportSha256": "217c877c7a8b7e36fe3a02b0a3fac8d03277ff26b2f8f85c063b1a30bea86455"
+      },
+      "masterSha256": "3515a24c2d1c6a1e89a0e699685d1d5b1e6e751f7054d21044b0a83901e14a66",
+      "exportSha256": "217c877c7a8b7e36fe3a02b0a3fac8d03277ff26b2f8f85c063b1a30bea86455",
+      "masterBytes": 1888546,
+      "exportBytes": 1394930,
+      "generatedAt": "2026-11-25T14:20:09.374178+00:00",
+      "reviewedAt": "2026-11-25T14:21:36.492797+00:00",
+      "visualReviewNotes": "Loona seule dehors devant la porte ouverte d’I.M.P., téléphone tenu bas et rue libre. Forme hellhound, queue et costume lisibles ; scène d’autonomie sans couple ajouté.",
+      "fidelityOneToOneCertified": false,
+      "name": "Un message choisi",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_bee",
+        "HB3_stars"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_loona",
+      "beat": "ending",
+      "stageId": "imp-exterior",
+      "cast": [
+        "hb_loona"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Un message choisi — Elle envoie un message puis regarde la rue."
+    },
+    {
+      "attemptId": "v3:hb_fizzarolli:intro:attempt-01",
+      "assetId": "v3:hb_fizzarolli:intro",
+      "id": "v3:hb_fizzarolli:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Fizzarolli.\nLieu : Ozzie’s · Cabaret ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Boîte ouverte en premier plan, visage réel de Fizz derrière, prothèse tenant l’emballage sans le déformer. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Il regarde un créneau vierge imprimé sur la boîte, sans texte lisible.\nLumière : Lampe de loge et reflets colorés\nIncarnation : Fizz adulte cybernétique, tenue de scène ; loge AU attenante au cabaret d’Ozzie, architecture dérivée du décor mais non présentée comme un plan officiel.\nÀ exclure : Ne pas le remplacer par un Robo Fizz. ; Aucun texte, logo ou dialogue intégré à l’image. ; Fizzarolli n’est pas Robo Fizz : aucune duplication industrielle de son corps n’est une capacité personnelle. ; Son handicap et son histoire ne servent pas de gag de démembrement ; les prothèses restent des membres maîtrisés par lui. ; La boîte est un accessoire AU ; Fizz n’est pas un automate à l’intérieur.\nReference images supplied, in order:\n1. character_identity: character:hb_fizzarolli. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage_palette_architecture: stage:ozzies-cabaret. Décor runtime exact : Ozzie’s · Cabaret. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_fizzarolli-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/ozzies-cabaret/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-b0b41b39-a664-4bd5-ae15-0f8b593af0c2.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_fizzarolli-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_fizzarolli-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "e6ac7079045b09130e7b92f2bc079d2863f8708a16223675bdcce884bc1b0ae1",
+        "masterSha256": "e6ac7079045b09130e7b92f2bc079d2863f8708a16223675bdcce884bc1b0ae1",
+        "exportSha256": "640c977e0bb2bc50373060f907722d860fd52e621036a9c24146950ed2934702"
+      },
+      "masterSha256": "e6ac7079045b09130e7b92f2bc079d2863f8708a16223675bdcce884bc1b0ae1",
+      "exportSha256": "640c977e0bb2bc50373060f907722d860fd52e621036a9c24146950ed2934702",
+      "masterBytes": 2077788,
+      "exportBytes": 1640496,
+      "generatedAt": "2026-11-25T14:21:57.598440+00:00",
+      "reviewedAt": "2026-11-25T14:24:54.471465+00:00",
+      "visualReviewNotes": "Fizz réel identifiable, deux prothèses manipulant une boîte vide en loge AU ouverte sur la scène d’Ozzie ; visage lisible et aucune duplication Robo Fizz. Haut du bonnet atteint le bord supérieur, sans masquer le visage ni l’action.",
+      "fidelityOneToOneCertified": false,
+      "name": "La promesse emballée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_oops",
+        "HB3_mammon"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_fizzarolli",
+      "beat": "intro",
+      "stageId": "ozzies-cabaret",
+      "cast": [
+        "hb_fizzarolli"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La promesse emballée — Il regarde un créneau vierge imprimé sur la boîte, sans texte lisible."
+    },
+    {
+      "attemptId": "v3:hb_fizzarolli:rival:attempt-01",
+      "assetId": "v3:hb_fizzarolli:rival",
+      "id": "v3:hb_fizzarolli:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Fizzarolli, Mammon.\nLieu : Concours de Mammon · Scène ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Mammon domine le fond ; Fizz sort du cadre rectangulaire de l’emballage à l’avant. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Une main mécanique plie le carton tandis que le visage reste calme.\nLumière : Projecteur vert brisé par une lumière rose latérale\nIncarnation : Fizz et Mammon adultes en tenues de scène ; une seule main mécanique plie le carton, sans torsion anatomique impossible.\nÀ exclure : Pas de chaînes d’âme ajoutées. ; Aucun texte, logo ou dialogue intégré à l’image. ; Fizzarolli n’est pas Robo Fizz : aucune duplication industrielle de son corps n’est une capacité personnelle. ; Son handicap et son histoire ne servent pas de gag de démembrement ; les prothèses restent des membres maîtrisés par lui. ; Distinguer ce carton de l’affiche utilisée par Fizz au chapitre global 7.\nReference images supplied, in order:\n1. character_identity: character:hb_fizzarolli. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:hb_mammon. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:mammon-show. Décor runtime exact : Concours de Mammon · Scène. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_fizzarolli-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_mammon-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/mammon-show/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-1016f046-ad3e-4c3e-ae7e-6e4966953e32.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_fizzarolli-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_fizzarolli-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "089488c63cfa8fac13e3330247a841ca0341325db19222ff49ffb9331f5f1374",
+        "masterSha256": "089488c63cfa8fac13e3330247a841ca0341325db19222ff49ffb9331f5f1374",
+        "exportSha256": "deda9cc074c42fd450e57129aadb846af5ba3c859351b31fb47e681f2e47a136"
+      },
+      "masterSha256": "089488c63cfa8fac13e3330247a841ca0341325db19222ff49ffb9331f5f1374",
+      "exportSha256": "deda9cc074c42fd450e57129aadb846af5ba3c859351b31fb47e681f2e47a136",
+      "masterBytes": 1999566,
+      "exportBytes": 1547216,
+      "generatedAt": "2026-11-25T14:23:06.608328+00:00",
+      "reviewedAt": "2026-11-25T14:24:54.737400+00:00",
+      "visualReviewNotes": "Fizz sort volontairement du cadre de carton, une main articulée plie le bord ; Mammon quatre bras au fond conserve sa taille dominante. Aucun membre détaché, chaîne ou transformation ; scène AU lisible.",
+      "fidelityOneToOneCertified": false,
+      "name": "Hors de la boîte",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_mammon"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_fizzarolli",
+      "beat": "rival",
+      "stageId": "mammon-show",
+      "cast": [
+        "hb_fizzarolli",
+        "hb_mammon"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Hors de la boîte — Une main mécanique plie le carton tandis que le visage reste calme."
+    },
+    {
+      "attemptId": "v3:hb_fizzarolli:ending:attempt-01",
+      "assetId": "v3:hb_fizzarolli:ending",
+      "id": "v3:hb_fizzarolli:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Fizzarolli, Asmodeus.\nLieu : Ozzie’s · Cabaret ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Fizz au centre ferme le rideau, Ozzie en silhouette de soutien en retrait. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Fizz garde la corde et tourne le dos à la salle.\nLumière : Chaleur des loges, scène éteinte\nIncarnation : Fizz adulte au premier plan ; Asmodeus silhouette de soutien en retrait, proportions nettement plus grandes, aucune main sur la corde.\nÀ exclure : Ne pas faire d’Ozzie le propriétaire de la corde. ; Aucun texte, logo ou dialogue intégré à l’image. ; Fizzarolli n’est pas Robo Fizz : aucune duplication industrielle de son corps n’est une capacité personnelle. ; Son handicap et son histoire ne servent pas de gag de démembrement ; les prothèses restent des membres maîtrisés par lui. ; La décision de clore le numéro appartient à Fizz.\nReference images supplied, in order:\n1. character_identity: character:hb_fizzarolli. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:hb_asmodeus. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:ozzies-cabaret. Décor runtime exact : Ozzie’s · Cabaret. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_fizzarolli-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_asmodeus-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/ozzies-cabaret/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-71099c57-097c-4f9b-96d3-a9e4dcc7e3b0.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_fizzarolli-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_fizzarolli-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "2d4389e5d923da347f5d0c9888fc027165d75c64f27892fb6fb22c454c78d178",
+        "masterSha256": "2d4389e5d923da347f5d0c9888fc027165d75c64f27892fb6fb22c454c78d178",
+        "exportSha256": "f5a80b09a20238d0fe9cc344993ed20df33b43f5408d156be93459f75b10783e"
+      },
+      "masterSha256": "2d4389e5d923da347f5d0c9888fc027165d75c64f27892fb6fb22c454c78d178",
+      "exportSha256": "f5a80b09a20238d0fe9cc344993ed20df33b43f5408d156be93459f75b10783e",
+      "masterBytes": 1963933,
+      "exportBytes": 1510274,
+      "generatedAt": "2026-11-25T14:21:19.837254+00:00",
+      "reviewedAt": "2026-11-25T14:24:54.958370+00:00",
+      "visualReviewNotes": "Fizz vu de dos tient seul la corde du rideau fermé, Asmodeus nettement plus grand reste en retrait sans toucher la corde. Prothèses, costume et queue conservés ; scène opaque calme.",
+      "fidelityOneToOneCertified": false,
+      "name": "Pas de rappel",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_oops",
+        "HB3_mammon"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_fizzarolli",
+      "beat": "ending",
+      "stageId": "ozzies-cabaret",
+      "cast": [
+        "hb_fizzarolli",
+        "hb_asmodeus"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Pas de rappel — Fizz garde la corde et tourne le dos à la salle."
+    },
+    {
+      "attemptId": "v3:hb_blitzo:intro:attempt-01",
+      "assetId": "v3:hb_blitzo:intro",
+      "id": "v3:hb_blitzo:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Blitzø, Moxxie, Millie, Loona.\nLieu : I.M.P. · Réception ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Le contrat froissé traverse le premier plan ; les trois silhouettes de son équipe restent visibles derrière une porte vitrée. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Blitzø cache d’abord le verso avec sa paume, puis regarde les silhouettes.\nLumière : Lampe de bureau dure, extérieur rouge étouffé\nIncarnation : Blitzø adulte avant The Full Moon ; Moxxie, Millie et Loona restent trois silhouettes distinctes derrière la vitre.\nÀ exclure : Aucun cristal asmodéen ajouté à cet instantané. ; Aucun texte, logo ou dialogue intégré à l’image. ; Ne pas lui attribuer une magie innée de portail : l’accès intermondes dépend du dispositif de l’incarnation choisie. ; Le rival Striker reste un assassin hostile ; une victoire ne le recrute pas et ne guérit pas les relations de Blitzø. ; Ne pas dessiner un cristal asmodéen. ; Respecter les tailles relatives : Loona plus haute, Moxxie petit ; quatre corps seulement.\nReference images supplied, in order:\n1. character_identity: character:hb_blitzo. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:hb_moxxie. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. character_identity: character:hb_millie. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n4. character_identity: character:hb_loona. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n5. stage_palette_architecture: stage:imp-reception. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_blitzo-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_moxxie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_millie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/hb_loona.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-reception/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-6e03d78e-ec06-46dc-ac6c-1ca72b65136f.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_blitzo-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_blitzo-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "632bd09190b0e75ddfba4e41539ac4252d60a825e326683e66f143580fabb7a4",
+        "masterSha256": "632bd09190b0e75ddfba4e41539ac4252d60a825e326683e66f143580fabb7a4",
+        "exportSha256": "24d7113ce50cf748d44fd00563749efd941a67830b29d3448716ba82e49350be"
+      },
+      "masterSha256": "632bd09190b0e75ddfba4e41539ac4252d60a825e326683e66f143580fabb7a4",
+      "exportSha256": "24d7113ce50cf748d44fd00563749efd941a67830b29d3448716ba82e49350be",
+      "masterBytes": 1989073,
+      "exportBytes": 1518786,
+      "generatedAt": "2026-11-25T14:24:47.698892+00:00",
+      "reviewedAt": "2026-11-25T14:30:24.917507+00:00",
+      "visualReviewNotes": "Blitzø lit le document au bureau ; Moxxie, Millie et Loona forment trois silhouettes distinctes derrière la vitre, quatre acteurs au total. Tenue et asymétrie faciale conservées. Enseigne I.M.P. héritée du décor, aucun texte de contrat lisible ; cornes en haut du cadre partiellement coupées.",
+      "fidelityOneToOneCertified": false,
+      "name": "La seconde page",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_prime2",
+        "HB3_truth"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_blitzo",
+      "beat": "intro",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_blitzo",
+        "hb_moxxie",
+        "hb_millie",
+        "hb_loona"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La seconde page — Blitzø cache d’abord le verso avec sa paume, puis regarde les silhouettes."
+    },
+    {
+      "attemptId": "v3:hb_blitzo:rival:attempt-01",
+      "assetId": "v3:hb_blitzo:rival",
+      "id": "v3:hb_blitzo:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Blitzø, Striker.\nLieu : Repaire de Striker · Mine ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Striker partiellement en amorce, Blitzø de profil au centre, contrat accroché au fond. Cadrage poitrine/plan moyen pour garder les armes hors du cadre ; seule la poignée de l’étui déjà visible dans la référence de Striker peut apparaître. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Blitzø garde ses mains basses sous le bord inférieur du cadre et fixe le document, tandis que Striker cherche son regard.\nLumière : Une fente de lumière sépare les deux positions\nIncarnation : Blitzø et Striker adultes ; aucun canon ni mécanisme d’arme visible. La référence locale ne documente que la poignée dans l’étui de Striker : ne pas développer une autre silhouette d’arme.\nÀ exclure : Ne pas traiter Striker comme membre d’I.M.P. ; Aucun texte, logo ou dialogue intégré à l’image. ; Ne pas lui attribuer une magie innée de portail : l’accès intermondes dépend du dispositif de l’incarnation choisie. ; Le rival Striker reste un assassin hostile ; une victoire ne le recrute pas et ne guérit pas les relations de Blitzø. ; Pas de poignée de main, recrutement ou duo amical. ; Le document est la cible dramatique ; aucune victime dans le cadre.\nReference images supplied, in order:\n1. character_identity: character:hb_blitzo. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:hb_striker. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage_palette_architecture: stage:western-lair. Décor runtime exact : Repaire de Striker · Mine. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_blitzo-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_striker-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/western-lair/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-73fb69c7-f94f-419e-9865-f53a6471d509.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_blitzo-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_blitzo-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "199010bb7ac1de6ca0f6671322ca7fd9fbf622278418fa834920c6afecb457b9",
+        "masterSha256": "199010bb7ac1de6ca0f6671322ca7fd9fbf622278418fa834920c6afecb457b9",
+        "exportSha256": "4e44a088ea318c6b2ed1bf5b963112e2504726edc8e3b91a811cc7c5c1f94dfd"
+      },
+      "masterSha256": "199010bb7ac1de6ca0f6671322ca7fd9fbf622278418fa834920c6afecb457b9",
+      "exportSha256": "4e44a088ea318c6b2ed1bf5b963112e2504726edc8e3b91a811cc7c5c1f94dfd",
+      "masterBytes": 1913298,
+      "exportBytes": 1375814,
+      "generatedAt": "2026-11-25T14:25:45.274062+00:00",
+      "reviewedAt": "2026-11-25T14:30:25.170530+00:00",
+      "visualReviewNotes": "Striker en amorce hostile et Blitzø de profil fixent le document dans la mine. Seule la poignée d’arme déjà visible dans l’étui de Striker apparaît ; aucun canon ou mécanisme inventé. Contrat abstrait AU, pas de recrue ni cristal.",
+      "fidelityOneToOneCertified": false,
+      "name": "Pas de partenaire",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_western"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_blitzo",
+      "beat": "rival",
+      "stageId": "western-lair",
+      "cast": [
+        "hb_blitzo",
+        "hb_striker"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Pas de partenaire — Blitzø tient son arme bas et fixe le document, tandis que Striker cherche son regard."
+    },
+    {
+      "attemptId": "v3:hb_blitzo:ending:attempt-01",
+      "assetId": "v3:hb_blitzo:ending",
+      "id": "v3:hb_blitzo:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Blitzø, Moxxie, Millie, Loona.\nLieu : I.M.P. · Réception ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Cendrier au premier plan ; équipe répartie autour du plan plutôt qu’alignée pour une pose héroïque. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction : Blitzø pose sa photo pendant que les autres continuent à travailler.\nLumière : Lumière chaude de fin de service\nIncarnation : Équipe I.M.P. adulte, proportions conservées. Photo posée par Blitzø : petit portrait abstrait de lui, sans lettrage et sans nouveau personnage.\nÀ exclure : Pas de réconciliation romantique automatique avec Stolas. ; Aucun texte, logo ou dialogue intégré à l’image. ; Ne pas lui attribuer une magie innée de portail : l’accès intermondes dépend du dispositif de l’incarnation choisie. ; Le rival Striker reste un assassin hostile ; une victoire ne le recrute pas et ne guérit pas les relations de Blitzø. ; Cendrier et papier seulement ; aucun grand feu envahissant ni personnage brûlé.\nReference images supplied, in order:\n1. character_identity: character:hb_blitzo. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character_identity: character:hb_moxxie. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. character_identity: character:hb_millie. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n4. character_identity: character:hb_loona. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n5. stage_palette_architecture: stage:imp-reception. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_blitzo-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_moxxie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_millie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/hb_loona.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-reception/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-6aedabf4-25ad-426f-a0e4-e49b8d034a5b.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_blitzo-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_blitzo-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "217a07051d12b002be5e0a3b62f991da6aded958aa00f048ba4d7a65f413be4d",
+        "masterSha256": "217a07051d12b002be5e0a3b62f991da6aded958aa00f048ba4d7a65f413be4d",
+        "exportSha256": "722bb0e0ee818e2218e35d09a8cd1b71425ff961e88477b517dee803d444615a"
+      },
+      "masterSha256": "217a07051d12b002be5e0a3b62f991da6aded958aa00f048ba4d7a65f413be4d",
+      "exportSha256": "722bb0e0ee818e2218e35d09a8cd1b71425ff961e88477b517dee803d444615a",
+      "masterBytes": 2007629,
+      "exportBytes": 1546684,
+      "generatedAt": "2026-11-25T14:26:45.679119+00:00",
+      "reviewedAt": "2026-11-25T14:30:25.402004+00:00",
+      "visualReviewNotes": "Les quatre membres d’I.M.P. travaillent séparément ; Blitzø pose sa propre photo, Moxxie écrit, Millie classe et Loona reste au poste. Cendrier au premier plan, aucun grand feu. Anatomies, costumes et échelles cohérents.",
+      "fidelityOneToOneCertified": false,
+      "name": "La prochaine mission",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_prime2",
+        "HB3_stars"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_blitzo",
+      "beat": "ending",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_blitzo",
+        "hb_moxxie",
+        "hb_millie",
+        "hb_loona"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La prochaine mission — Blitzø pose sa photo pendant que les autres continuent à travailler."
+    },
+    {
+      "attemptId": "v3:vaggie:intro:attempt-01",
+      "assetId": "v3:vaggie:intro",
+      "id": "v3:vaggie:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Vaggie.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Ouverture de la route V3, avant le premier combat.\nComposition : Lance en diagonale au premier plan, Vaggie entre porte principale et escalier des chambres ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Elle trace mentalement une voie d’évacuation.\nLumière : Lueur latérale de l’entrée et intérieur chaud.\nIncarnation : Vaggie série S1E07–E08, asymétrie du visage exacte ; ailes repliées derrière elle, non déployées.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas transformer sa relation avec Charlie en obéissance magique. ; Conserver l’asymétrie du visage et l’état des ailes du modèle choisi. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Aucun uniforme d’exorciste de flashback pour cette scène actuelle AU.\nReference images supplied, in order:\n1. character_identity: character:vaggie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n3. optional_weapon_shape: prop:vaggie-spear. Guide secondaire de la lance seulement ; ne pas reprendre le costume exorciste de flashback. Comparer la forme au modèle principal de Vaggie.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/vaggie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-b65bf517-088e-42e1-b324-0d277f4a2928.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/vaggie-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/vaggie-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "cd4bac8340ae9c70cc12609c8f70144b3a0f5ee184fd3722503b82323776213c",
+        "masterSha256": "cd4bac8340ae9c70cc12609c8f70144b3a0f5ee184fd3722503b82323776213c",
+        "exportSha256": "5207c6438cb79f5a7da4e7c01898e54bad607de62fd1ee1f50503a41f84b3d50"
+      },
+      "masterSha256": "cd4bac8340ae9c70cc12609c8f70144b3a0f5ee184fd3722503b82323776213c",
+      "exportSha256": "5207c6438cb79f5a7da4e7c01898e54bad607de62fd1ee1f50503a41f84b3d50",
+      "masterBytes": 2142783,
+      "exportBytes": 1699562,
+      "generatedAt": "2026-11-25T14:27:54.642283+00:00",
+      "reviewedAt": "2026-11-25T14:32:18.397869+00:00",
+      "visualReviewNotes": "Vaggie garde l’entrée et observe l’escalier du hall ; asymétrie de l’œil, nœud, tenue principale et lance de son modèle conservés. Ailes hors champ, aucun uniforme de flashback. Scène continue opaque.",
+      "fidelityOneToOneCertified": false,
+      "name": "Deux voies dans le hall",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-carmilla",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "vaggie",
+      "beat": "intro",
+      "stageId": "hotel-lobby",
+      "cast": [
+        "vaggie"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Deux voies dans le hall — Elle trace mentalement une voie d’évacuation."
+    },
+    {
+      "attemptId": "v3:vaggie:rival:attempt-01",
+      "assetId": "v3:vaggie:rival",
+      "id": "v3:vaggie:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Vaggie, Lute.\nLieu : Heaven Embassy & Clock Tower ; reprendre le décor de référence joint.\nInstant : Avant le duel final de la route V3.\nComposition : Vaggie à gauche devant un passage dégagé, sa lance entièrement visible ; Lute à droite, deux mains vides comme sur sa référence READY ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Vaggie garde le pied arrière sur le seuil plutôt que d’avancer.\nLumière : Lumière blanche tranchante, ombres courtes.\nIncarnation : Vaggie série S1E07–E08, ailes repliées ; Lute en incarnation S1 avant blessure avec ses deux bras ; ses mains sont vides puisque la référence jointe ne documente pas d’arme. Ne pas lui donner la lance de Vaggie ni inventer une épée.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas transformer sa relation avec Charlie en obéissance magique. ; Conserver l’asymétrie du visage et l’état des ailes du modèle choisi. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Ne pas mélanger Lute pré-blessure et Lute après final S1. ; Pas de scène de mutilation ou de flashback prétendument reproduit.\nReference images supplied, in order:\n1. character_identity: character:vaggie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:lute. Incarnation S1 avant blessure, deux bras ; correspond au costume optionnel lute-pre-injury. Ne pas utiliser ses banques par défaut pour cette scène.\n3. stage_palette_architecture: stage:heaven-embassy. Décor runtime exact : Heaven Embassy & Clock Tower. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n4. optional_weapon_shape: prop:vaggie-spear. Guide secondaire de la lance seulement ; ne pas reprendre le costume exorciste de flashback. Comparer la forme au modèle principal de Vaggie.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/vaggie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/lute-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/heaven-embassy.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-a5dd8646-ed86-4bc2-8b90-db5ccd868d35.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/vaggie-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/vaggie-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "f21b34f24e49224b7ce24c15d9351c85515004ff7711b36a72b4a0014b1924ea",
+        "masterSha256": "f21b34f24e49224b7ce24c15d9351c85515004ff7711b36a72b4a0014b1924ea",
+        "exportSha256": "536145d2eef350ed4725ea4167fd5bd1f2990f12ccfcc74922972b7a308fe68a"
+      },
+      "masterSha256": "f21b34f24e49224b7ce24c15d9351c85515004ff7711b36a72b4a0014b1924ea",
+      "exportSha256": "536145d2eef350ed4725ea4167fd5bd1f2990f12ccfcc74922972b7a308fe68a",
+      "masterBytes": 2455777,
+      "exportBytes": 1899642,
+      "generatedAt": "2026-11-25T14:29:51.242498+00:00",
+      "reviewedAt": "2026-11-25T14:32:18.624846+00:00",
+      "visualReviewNotes": "Vaggie à gauche conserve un appui sur le seuil et sa lance complète ; Lute pré-blessure à droite possède deux bras, deux mains vides et ses ailes référencées. Ambassade reconnaissable ; aucune blessure ou arme inventée.",
+      "fidelityOneToOneCertified": false,
+      "name": "Tenir sans poursuivre",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-carmilla",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "vaggie",
+      "beat": "rival",
+      "stageId": "heaven-embassy",
+      "cast": [
+        "vaggie",
+        "lute"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Tenir sans poursuivre — Vaggie garde le pied arrière sur le seuil plutôt que d’avancer."
+    },
+    {
+      "attemptId": "v3:vaggie:ending:attempt-01",
+      "assetId": "v3:vaggie:ending",
+      "id": "v3:vaggie:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: one static narrative still for a 2D game.\nRequested output: opaque horizontal 16:9 landscape image, not transparent. ONE complete scene, not a contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nScène originale de Simulation AU ; ne pas écrire ce label dans l’image.\nPersonnages visibles uniquement : Vaggie, Charlie Morningstar.\nLieu : Hazbin Hotel Lobby ; reprendre le décor de référence joint.\nInstant : Épilogue après les trois combats V3.\nComposition : Lance appuyée au mur, Vaggie assise, Charlie en profondeur près de la porte ; préserver les 8 % périphériques pour l’interface, sans texte intégré.\nAction : Vaggie accepte de lâcher la poignée de sa lance.\nLumière : Lumière de veille chaude, nuit rouge au dehors.\nIncarnation : Vaggie série, lance appuyée au mur ; Charlie en tenue principale de la référence. Ailes de Vaggie repliées hors champ.\nÀ exclure : Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas transformer sa relation avec Charlie en obéissance magique. ; Conserver l’asymétrie du visage et l’état des ailes du modèle choisi. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé. ; Charlie vient prendre la garde, pas donner un ordre magique.\nReference images supplied, in order:\n1. character_identity: character:vaggie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n2. character_identity: character:charlie. Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n3. stage_palette_architecture: stage:hotel-lobby. Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\n4. optional_weapon_shape: prop:vaggie-spear. Guide secondaire de la lance seulement ; ne pas reprendre le costume exorciste de flashback. Comparer la forme au modèle principal de Vaggie.\nPreserve each referenced character’s identity, facial asymmetry, costume, limb count and relative scale. Re-pose naturally for the scene. Reference inputs are identity/environment guides, not panels to paste into the result. Do not add text. All listed characters are adults.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/vaggie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/charlie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-2ec86294-6bb5-438e-9cb0-0fa01cd8a466.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/vaggie-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/vaggie-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "571670fada8386d5cd7a77366712ae9e2a0a0afa084c1c4aa9ce98186305d8b5",
+        "masterSha256": "571670fada8386d5cd7a77366712ae9e2a0a0afa084c1c4aa9ce98186305d8b5",
+        "exportSha256": "8e2e8f35119db37e00af9d7d9c749e938949eca381fa6598c77a319345c82ceb"
+      },
+      "masterSha256": "571670fada8386d5cd7a77366712ae9e2a0a0afa084c1c4aa9ce98186305d8b5",
+      "exportSha256": "8e2e8f35119db37e00af9d7d9c749e938949eca381fa6598c77a319345c82ceb",
+      "masterBytes": 2203824,
+      "exportBytes": 1741898,
+      "generatedAt": "2026-11-25T14:28:54.586440+00:00",
+      "reviewedAt": "2026-11-25T14:32:18.841193+00:00",
+      "visualReviewNotes": "Vaggie assise lâche la lance appuyée au mur ; Charlie se tient en retrait dans le hall avec sa tenue principale. Visages, mains et anatomies lisibles ; garde partagée sans effet magique.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le relais",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-carmilla",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "vaggie",
+      "beat": "ending",
+      "stageId": "hotel-lobby",
+      "cast": [
+        "vaggie",
+        "charlie"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Le relais — Vaggie accepte de lâcher la poignée de sa lance."
+    },
+    {
+      "attemptId": "v3:niffty:rival:attempt-01",
+      "assetId": "v3:niffty:rival",
+      "id": "v3:niffty:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. One opaque horizontal 16:9 landscape narrative still for a 2D game. ONE complete scene, no contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nOriginal Simulation AU scene, not an episode reproduction; do not print this label in the picture.\nVisible characters only: Niffty, Adam. All listed characters are adults.\nPlace: hotel-exterior; architecture and palette from the attached stage reference. New room extensions are explicitly AU.\nMoment: Scène du duel final V3, archive AU, avant tout impact.\nComposition and action: Plan large bas devant les marches de l’hôtel. Adam, incarnation masquée S1, occupe la verticale à droite ; Niffty, beaucoup plus petite, ferme calmement un angle à sa gauche. Espace vide lisible entre eux, instant avant le duel.\nLight: Contre-jour du seuil, visage de Niffty lisible. Palette: rouge sombre, jaune chaud, crème et bruns de bois.\nIdentity and staging bounds: Adam vivant comme archive de simulation ; aucune mort représentée. Niffty garde un seul œil, sa petite taille adulte et ses mains vides comme la référence. Aucun couteau ou pouvoir inventé.\nContinuity bounds: Le lien d’âme avec Alastor reste non confirmé. ; Sa victoire contre Adam ne lui confère pas une capacité universelle à tuer tout être. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nAvoid: Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Sa victoire contre Adam ne lui confère pas une capacité universelle à tuer tout être.\nReference images, in exact order:\n1. character:niffty: Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:adam: Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:hotel-exterior: Décor runtime exact : Hotel Front Steps. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve identity, facial asymmetry, costume, limb count and relative scale from the supplied images. Re-pose naturally. Use references as guides, not pasted panels. No detached limbs or duplicated characters. No added text.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/niffty-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/adam-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-exterior/room-wave-b.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-622e0925-a057-445d-819e-4c02736fbd6b.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/niffty-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/niffty-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "48b5681d8f17c6de543c689ac4b6f65758e6e52579e1b25ea6789fc06fc8af8c",
+        "masterSha256": "48b5681d8f17c6de543c689ac4b6f65758e6e52579e1b25ea6789fc06fc8af8c",
+        "exportSha256": "359aa41c5f2084ab9aefc540b562866869d4ac2278f8fd10a0eccf1cfd239e8b"
+      },
+      "masterSha256": "48b5681d8f17c6de543c689ac4b6f65758e6e52579e1b25ea6789fc06fc8af8c",
+      "exportSha256": "359aa41c5f2084ab9aefc540b562866869d4ac2278f8fd10a0eccf1cfd239e8b",
+      "masterBytes": 2266567,
+      "exportBytes": 1870656,
+      "generatedAt": "2026-11-25T14:33:19.508057+00:00",
+      "reviewedAt": "2026-11-25T15:28:18.407209+00:00",
+      "visualReviewNotes": "Reprise de sortie existante : cadrage, personnages prescrits, contraste de taille et action du brief vérifiés visuellement ; aucune animation, scène AU. Fidélité primaire non certifiée.",
+      "fidelityOneToOneCertified": false,
+      "name": "Le point aveugle",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-niffty-adam",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "niffty",
+      "beat": "rival",
+      "stageId": "hotel-exterior",
+      "cast": [
+        "niffty",
+        "adam"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Simulation AU — Niffty : Le point aveugle. Plan large bas devant les marches de l’hôtel. Adam, incarnation masquée S1, occupe la verticale à droite ; Niffty, beaucoup plus petite, ferme calmement un angle à sa gauche. Espace vide lisible entre eux, instant avant le duel."
+    },
+    {
+      "attemptId": "v3:niffty:ending:attempt-01",
+      "assetId": "v3:niffty:ending",
+      "id": "v3:niffty:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. One opaque horizontal 16:9 landscape narrative still for a 2D game. ONE complete scene, no contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nOriginal Simulation AU scene, not an episode reproduction; do not print this label in the picture.\nVisible characters only: Niffty, Charlie Morningstar, Vaggie. All listed characters are adults.\nPlace: hotel-lobby; architecture and palette from the attached stage reference. New room extensions are explicitly AU.\nMoment: Épilogue de la route V3 après ses trois combats.\nComposition and action: Au ras du sol dans le passage dégagé du hall, Niffty se retourne vers une minuscule tache ; un petit panneau de travail uni est décalé sur le côté. Charlie et Vaggie demeurent de petites silhouettes identifiables mais hors foyer dans le fond.\nLight: Intérieur chaud et clair après le désordre. Palette: rouge sombre, jaune chaud, crème et bruns de bois.\nIdentity and staging bounds: Échelle petite de Niffty conservée ; Charlie et Vaggie dans leurs tenues principales. Aucun texte sur le panneau, aucun halo ou changement de relation.\nContinuity bounds: Le lien d’âme avec Alastor reste non confirmé. ; Sa victoire contre Adam ne lui confère pas une capacité universelle à tuer tout être. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nAvoid: Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Sa victoire contre Adam ne lui confère pas une capacité universelle à tuer tout être.\nReference images, in exact order:\n1. character:niffty: Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:charlie: Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n3. character:vaggie: Modèle statique de référence du projet ; garder proportions, marques, tenue et asymétries, sans recopier la pose de combat si la scène est calme.\n4. stage:hotel-lobby: Décor runtime exact : Hazbin Hotel Lobby. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve identity, facial asymmetry, costume, limb count and relative scale from the supplied images. Re-pose naturally. Use references as guides, not pasted panels. No detached limbs or duplicated characters. No added text.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/niffty-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/charlie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/stances/vaggie.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-lobby.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-b1160a54-3a90-4fe0-af0a-7f130c997cd8.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/niffty-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/niffty-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "faafcb3e0b72efe977ee58d9245d37cb4937ab97e04eccf9e78b13ad784f288c",
+        "masterSha256": "faafcb3e0b72efe977ee58d9245d37cb4937ab97e04eccf9e78b13ad784f288c",
+        "exportSha256": "d805873882430863a3c2c318af1c55f61b18e2ab373b55e3f3529b3320cd0a01"
+      },
+      "masterSha256": "faafcb3e0b72efe977ee58d9245d37cb4937ab97e04eccf9e78b13ad784f288c",
+      "exportSha256": "d805873882430863a3c2c318af1c55f61b18e2ab373b55e3f3529b3320cd0a01",
+      "masterBytes": 2206560,
+      "exportBytes": 1793746,
+      "generatedAt": "2026-11-25T14:32:38.703299+00:00",
+      "reviewedAt": "2026-11-25T15:28:18.641564+00:00",
+      "visualReviewNotes": "Reprise de sortie existante : cadrage, personnages prescrits, contraste de taille et action du brief vérifiés visuellement ; aucune animation, scène AU. Fidélité primaire non certifiée.",
+      "fidelityOneToOneCertified": false,
+      "name": "Enfin un passage",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-cast",
+        "hh-i-niffty-adam",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "niffty",
+      "beat": "ending",
+      "stageId": "hotel-lobby",
+      "cast": [
+        "niffty",
+        "charlie",
+        "vaggie"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Simulation AU — Niffty : Enfin un passage. Au ras du sol dans le passage dégagé du hall, Niffty se retourne vers une minuscule tache ; un petit panneau de travail uni est décalé sur le côté. Charlie et Vaggie demeurent de petites silhouettes identifiables mais hors foyer dans le fond."
+    },
+    {
+      "attemptId": "v3:sirpentious:rival:attempt-01",
+      "assetId": "v3:sirpentious:rival",
+      "id": "v3:sirpentious:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. One opaque horizontal 16:9 landscape narrative still for a 2D game. ONE complete scene, no contact sheet.\nIllustration narrative 2D fixe, contours précis, aplats et ombres cel-shading cohérents avec les modèles locaux. Une scène continue par image.\nCadre horizontal, visages/mains/accessoires narratifs lisibles, sujets clés dans les 84 % centraux ; perspective naturelle. Aucun collage, split-screen, planche de sprites ou atlas.\nAucun titre, dialogue, sous-titre, logo de jeu, HUD, signature ou watermark. Papiers, badges et écrans utilisent des motifs abstraits sans texte lisible.\nOriginal Simulation AU scene, not an episode reproduction; do not print this label in the picture.\nVisible characters only: Sir Pentious, Adam. All listed characters are adults.\nPlace: hotel-exterior; architecture and palette from the attached stage reference. New room extensions are explicitly AU.\nMoment: Scène du duel final V3, archive AU, avant tout impact.\nComposition and action: Plan large de profil devant les marches de l’hôtel. Petit mécanisme de porte AU au centre ; Pentious à gauche tient son levier, Adam masqué S1 haut à droite. Un passage d’évacuation reste dégagé au fond. Instant de confrontation avant impact.\nLight: Lumière blanche de l’assaut contre chaleur de l’hôtel. Palette: jaune verdâtre, noir, laiton et rouge d’atelier.\nIdentity and staging bounds: Pentious reste dans son corps serpentin S1 sans ailes ni halo. Adam est une incarnation d’archives vivante. Le dispositif est un mécanisme non armé de simulation, sans détail technique réaliste ni armement canon inventé.\nContinuity bounds: La rédemption de Pentious est un événement canonique ; cette route d’archives ne la déclenche pas à nouveau. ; Ne pas transposer ses machines de combat dans son modèle céleste sans référence. ; La campagne est une simulation AU ; ses duels, dialogues et issues ne remplacent aucun événement diffusé.\nAvoid: Aucun texte ni logo de jeu dans l’image. ; Ne pas mélanger les modèles du pilote et de la série. ; Ne pas transposer ses machines de combat dans son modèle céleste sans référence.\nReference images, in exact order:\n1. character:sirpentious: Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:adam: Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:hotel-exterior: Décor runtime exact : Hotel Front Steps. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nPreserve identity, facial asymmetry, costume, limb count and relative scale from the supplied images. Re-pose naturally. Use references as guides, not pasted panels. No detached limbs or duplicated characters. No added text.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/sirpentious-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/adam-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/hazbin/hotel-exterior/room-wave-b.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-8e105838-ffef-4bb9-858b-e90d84289456.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/sirpentious-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/sirpentious-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "a9de9660866bfa8301e50e5a04c17cd3e987b6c629993afcf8326925afbb14d2",
+        "masterSha256": "a9de9660866bfa8301e50e5a04c17cd3e987b6c629993afcf8326925afbb14d2",
+        "exportSha256": "d7fbb5df771ac64d33c9cd837d56acd75f97cf794ea9cb1d4c7a22b5741f59c0"
+      },
+      "masterSha256": "a9de9660866bfa8301e50e5a04c17cd3e987b6c629993afcf8326925afbb14d2",
+      "exportSha256": "d7fbb5df771ac64d33c9cd837d56acd75f97cf794ea9cb1d4c7a22b5741f59c0",
+      "masterBytes": 2441490,
+      "exportBytes": 1975236,
+      "generatedAt": "2026-11-25T14:34:46.036250+00:00",
+      "reviewedAt": "2026-11-25T15:29:16.791235+00:00",
+      "visualReviewNotes": "Reprise de sortie existante relue : Sir Pentious conserve silhouette serpentine, chapeau et collerette ; levier tenu, Adam distinct à droite, passage de fond dégagé. Mécanisme AU sans revendication canonique 1:1.",
+      "fidelityOneToOneCertified": false,
+      "name": "La machine entre deux mondes",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "hh-i-s1",
+        "hh-i-s2",
+        "hh-i-project"
+      ],
+      "routeVersion": 3,
+      "fighterId": "sirpentious",
+      "beat": "rival",
+      "stageId": "hotel-exterior",
+      "cast": [
+        "sirpentious",
+        "adam"
+      ],
+      "spoilerTier": "season_1",
+      "alt": "Simulation AU — Sir Pentious : La machine entre deux mondes. Plan large de profil devant les marches de l’hôtel. Petit mécanisme de porte AU au centre ; Pentious à gauche tient son levier, Adam masqué S1 haut à droite. Un passage d’évacuation reste dégagé au fond. Instant de confrontation avant impact."
+    }
+  ]
+}

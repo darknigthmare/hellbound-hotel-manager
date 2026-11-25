@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-25T16:16:42.919907+00:00",
+  "scope": "Final frozen narrative registry and automated source QA",
+  "process": {
+    "startedAt": "2026-11-25T16:02:51.990710+00:00",
+    "finishedAt": "2026-11-25T16:04:39.352752+00:00",
+    "durationSeconds": 107.36,
+    "command": "npm run qa",
+    "exitCode": 0,
+    "logPath": "/workspace/scratch/675899046881/production-next/qa-runtime-final.log"
+  },
+  "narrativeCoverage": {
+    "registered": 138,
+    "personal": 127,
+    "global": 11,
+    "expectedPersonal": 129,
+    "missing": [
+      "v3:husk:rival",
+      "v3:sirpentious:intro"
+    ]
+  },
+  "checks": {
+    "typecheck": "passed",
+    "eslint": "passed",
+    "testFilesPassed": 46,
+    "testsPassed": 408,
+    "testDurationSeconds": 65.7,
+    "managerBuild": "passed",
+    "standaloneBuild": "passed",
+    "standaloneManifestFiles": 1204,
+    "standaloneBytes": 868307863,
+    "standaloneMiB": 828.1,
+    "standaloneHashVerification": "passed",
+    "standaloneBootAssets": "present",
+    "hotelCloudPersistence": "excluded"
+  },
+  "inputHashes": {
+    "src/standalone/campaign-illustrations-v4.ts": "576a0e74cd1b60fa6d67dbe6a96ac7db8c37c702e384c02eb800937ba9b916bb",
+    ".vercelignore": "f4a3d3009553edd85c2dfa0f0b759432341311d31c7c7ce99e43e794384cf431",
+    "package.json": "e00b540ef924857bd308c8168294091d641a8401f8677be2f3a619fc58b3461f",
+    "package-lock.json": "1cf9fb66502c135d075c48f7beba3381d930e67d6a099809d0f09ed2735bbf3b"
+  },
+  "warnings": [
+    "Existing Vite standalone bundle exceeds the 500 kB minified chunk warning threshold.",
+    "npm reports an environment http-proxy option deprecation; all required commands passed."
+  ],
+  "limits": [
+    "The automated source suite uses jsdom and engine checks; live browser review is recorded separately.",
+    "Two narrative illustrations remain absent after generation refusals: Husk rival and Sir Pentious intro.",
+    "Static adaptations are not certified as pixel-identical official scene reproductions."
+  ],
+  "relatedReports": {
+    "coverage": "runtime-final-narrative-coverage.json",
+    "filteredBuild": "qa-filtered-build-final.json",
+    "browser": "docs/standalone/QA_BROWSER_V5_2026-11-25.json",
+    "postDocumentationLint": "qa-lint-post-docs-final.json"
+  },
+  "outputCleanup": "The reproducible manager dist/ was removed after the successful QA to free workspace space; verified dist-combat/ remains available.",
+  "postDocumentationLint": {
+    "startedAt": "2026-11-25T16:16:08.315689+00:00",
+    "finishedAt": "2026-11-25T16:16:20.142421+00:00",
+    "durationSeconds": 11.83,
+    "command": "npm run lint",
+    "exitCode": 0,
+    "logPath": "/workspace/scratch/675899046881/production-next/qa-lint-post-docs-final.log",
+    "documentationScriptHashes": {
+      "docs/standalone/archive-static-production-v5.mjs": "c9b465952cedd7f3fd2b19e30945cf9040583e894d45e385ff61b553da53c635",
+      "docs/standalone/build-guide-bible.mjs": "eb73c72629ed90b173924bc69a6dba8392740ad668d9d5f140f68a2a37127f26",
+      "docs/standalone/build-production-bible.mjs": "9b83e039271bfb93c07132f78853f719f76e7ec6fb971e32a157ee133c05a13f",
+      "docs/standalone/build-static-production-v5.mjs": "f78a239cffcc81874fde8e6411afc75a8f9eaad09bbc64d9da767db7cbeb2fa5",
+      "docs/standalone/build-workbook.mjs": "e25a8a5f0727516dbe4213a51c5facb28c4a0b9112b8f7994ac8a356557684a3",
+      "docs/standalone/campaign-bible.mjs": "ada8d451ac729bc75dc1c27a11a39f2ca2048ca3db6aeb13494b63289b359beb",
+      "docs/standalone/consolidate-static-production-v5.mjs": "c5522b3736b41409ace2dbebc49518b45d5ae238b84efabc97064fde9a8912fa",
+      "docs/standalone/guide-bible-data.mjs": "696c34c7963e5648a75e6ddb09791cf0d830b7240798480c12415b826365788b"
+    },
+    "eslintConfigSha256": "06a6d403cdf2a314cb8bc680f0c4e6d87f06d5c521907cd888197ba25503c51b",
+    "recordedSourceInputsUnchanged": true
+  }
+}

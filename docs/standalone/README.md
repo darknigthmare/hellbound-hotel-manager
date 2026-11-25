@@ -17,7 +17,17 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Reprise actuelle — 25 novembre 2026, guide intégré V4
+## Reprise actuelle — 25 novembre 2026, production statique V5
+
+La [bible V5](INFERNAL_VERSUS_BIBLE_V5.xlsx) conserve les 34 feuilles V4 et ajoute six vues : production, catalogue, variantes, illustrations, livraisons et suites. Le [rapport de livraison](DELIVERY_STATIC_V5_2026-11-25.md), le [registre vérifié](production-v5-register.json) et le [relevé courant](production-static-v5.json) décrivent ce lot de **168 dessins statiques**.
+
+Le jeu propose **43 combattants**, **35 arènes**, **11 costumes sélectionnables** et **42 éléments en galerie de réserve**. Les campagnes personnelles V3 disposent de **127/129 images produites**, dont 127 affectées au jeu. La campagne globale possède **11/11 images**, dont 11 affectées. 2 scènes restent marquées comme refusées par le générateur, sans relance. Aucun nouveau cycle d’animation n’est ajouté.
+
+Les 43 kits, les mouvements existants et les limites de fidélité restent explicitement séparés de ces dessins. Les [contrôles des images](QA_STATIC_IMAGES_V5_2026-11-25.json) comparent les pixels PNG/WebP et leurs empreintes. Le [contrôle du classeur](QA_STATIC_WORKBOOK_V5_2026-11-25.json) documente la préservation des anciennes feuilles et la vérification des vues V5. La fidélité 1:1 n’est pas certifiée.
+
+La [QA automatisée](QA_RUNTIME_STATIC_V5_2026-11-25.json) passe 408 tests et contrôle les 1204 empreintes du standalone. Les [builds filtrés](QA_FILTERED_BUILD_V5_2026-11-25.json) passent. Le [rapport navigateur](QA_BROWSER_V5_2026-11-25.json) décrit les vues observées sur le commit publié. Les [sources de production archivées](production-v5/README.md) permettent de reconstruire ce suivi depuis le dépôt.
+
+## Contenu conservé — 25 novembre 2026, guide V4 (historique)
 
 La [bible V4](INFERNAL_VERSUS_BIBLE_V4.xlsx) et son [chapitre lisible](INFERNAL_VERSUS_GUIDE_V4.md) associent les **30 rubriques du guide général et dix fiches A–J** au jeu réel. Le [guide source](references/Combat_Games_Guide_General_v1.0.txt) est conservé à l’identique. Les **29 feuilles de la V3 restent archivées dans le classeur**, avec cinq nouvelles vues : Guide V4, Fiches V4, Campagne globale, Réserves V4 et Recette V4.
 
