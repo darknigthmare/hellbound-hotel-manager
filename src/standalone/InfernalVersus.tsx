@@ -15,7 +15,8 @@ import '../styles/pentagram-arena.css';
 import './infernal-versus.css';
 import { STORY_ROUTES, storyAvailable } from './campaign';
 import { GLOBAL_CAMPAIGN, campaignAvailable } from './campaign-global';
-import { RunInterlude } from './RunInterlude';
+import { NarrativeArt, RunInterlude } from './RunInterlude';
+import { globalCampaignIllustration } from './campaign-illustrations-v4';
 import { NarrativeCollection, StoryDossier } from './NarrativeCollection';
 import { ReserveGallery } from './ReserveGallery';
 
@@ -79,8 +80,12 @@ export function InfernalVersus() {
   const activeSide = isRunMode(mode) ? 'one' : slot;
   const selected = activeSide === 'one' ? selectedOne : selectedTwo;
   const selectedId = selected.character.id;
-  const outfits = INFERNAL_COSTUMES[selectedId] ?? [];
-  const worn = getInfernalCostume(selectedId, save.wardrobe?.[activeSide]?.[selectedId]);
+  const outfits = (INFERNAL_COSTUMES[selectedId] ?? []).filter(outfit => scope === 'all' || outfit.spoilerTier !== 'season_2');
+  const worn = outfits.find(outfit => outfit.id === save.wardrobe?.[activeSide]?.[selectedId]);
+  const visibleCostumeId = (fighterId: string, side: 'one' | 'two', allowSeasonTwo: boolean) => {
+    const outfit = getInfernalCostume(fighterId, save.wardrobe?.[side]?.[fighterId]);
+    return outfit && (allowSeasonTwo || outfit.spoilerTier !== 'season_2') ? outfit.id : undefined;
+  };
   const stage = getPentagramStage(match?.stageId ?? stageId);
   const combatants = useMemo(() => {
     if (!match) return null;
@@ -103,6 +108,12 @@ export function InfernalVersus() {
     setStorageNotice(result.ok ? '' : result.message ?? 'Progression conservée pour cette session seulement.');
   }, []);
   const changeOption = <K extends keyof StandaloneOptions>(key: K, value: StandaloneOptions[K]) => updateSave({ ...saveRef.current, options: { ...saveRef.current.options, [key]: value } });
+  const canShowNarrative = (next: StandaloneRun) => {
+    if (next.mode === 'campaign') return scope === 'all';
+    if (next.mode !== 'story') return true;
+    const contentIds = scope === 'all' ? STANDALONE_FIGHTER_IDS : STANDALONE_ROSTER.filter(fighter => fighter.spoiler === 'season_1').map(fighter => fighter.character.id);
+    return storyAvailable(next.fighterId, contentIds, { allowSeasonTwo: scope === 'all', routeVersion: next.routeVersion ?? 1 });
+  };
   const chooseCostume = (choice: string) => {
     const current = saveRef.current;
     const selections = { ...current.wardrobe?.[activeSide] };
@@ -118,10 +129,12 @@ export function InfernalVersus() {
   };
   const launchRun = (run: StandaloneRun) => {
     if (run.status !== 'active') return;
+    if (!canShowNarrative(run)) { setNotice('Ce récit est masqué par le filtre de contenu. Choisissez « Saisons 1 et 2 » pour le reprendre.'); return; }
     const encounter = getRunEncounter(run);
     launch({ id: identifier(), one: encounter.fighterId, two: encounter.opponentId, mode: run.mode, stageId: encounter.stageId, runIndex: run.index, allowSeasonTwo: run.mode === 'campaign' || run.rosterIds.some(id => getStandaloneFighter(id)?.spoiler === 'season_2') });
   };
   const enterRun = (next: StandaloneRun) => {
+    if (!canShowNarrative(next)) { setNotice('Ce récit est masqué par le filtre de contenu. Choisissez « Saisons 1 et 2 » pour le reprendre.'); return; }
     if (next.mode === 'story' || next.mode === 'campaign' || next.mode === 'tournament') {
       setMatch(null);
       setScreen('interlude');
@@ -204,6 +217,9 @@ export function InfernalVersus() {
     } catch (error) { setPendingImport(null); setNotice(error instanceof Error ? error.message : 'Sauvegarde incompatible.'); }
   };
   const run = save.run;
+  const narrativeVisible = !run || canShowNarrative(run);
+  const campaignIntroArt = campaignAvailable(eligibleIds, narrativeFilters)
+    ? globalCampaignIllustration(GLOBAL_CAMPAIGN.id, GLOBAL_CAMPAIGN.version, 'intro', narrativeFilters) : undefined;
 
   return <div className="iv-app" data-reduced-motion={save.options.reducedMotion}>
     <a className="iv-skip" href="#infernal-main">Aller au contenu</a>
@@ -241,12 +257,13 @@ export function InfernalVersus() {
           <article className="iv-panel">
             <p className="iv-eyebrow">VOTRE PARCOURS</p><h2>{run ? modeTitle(run.mode) : 'Une nouvelle histoire de rivalité'}</h2>
             {run ? <>
-              <p>{run.mode === 'campaign' ? 'Hazbin Hotel × I.M.P.' : getStandaloneFighter(run.fighterId)?.character.name} · {run.wins}/{run.opponentIds.length} victoires · {run.status === 'active' ? 'en cours' : run.status === 'complete' ? 'terminé' : 'interrompu'}</p>
-              {run.mode === 'campaign' && run.status === 'failed' && <p>{GLOBAL_CAMPAIGN.chapters[run.index].retry}</p>}
+              <p>{!narrativeVisible ? 'Récit masqué par le filtre de contenu' : run.mode === 'campaign' ? 'Hazbin Hotel × I.M.P.' : getStandaloneFighter(run.fighterId)?.character.name} · {run.wins}/{run.opponentIds.length} victoires · {run.status === 'active' ? 'en cours' : run.status === 'complete' ? 'terminé' : 'interrompu'}</p>
+              {!narrativeVisible && <p className="iv-small">Choisissez « Saisons 1 et 2 » pour reprendre ce récit. Votre progression est conservée.</p>}
+              {narrativeVisible && run.mode === 'campaign' && run.status === 'failed' && <p>{GLOBAL_CAMPAIGN.chapters[run.index].retry}</p>}
               <div className="iv-inline-actions">
-                {run.status === 'active' && <button className="iv-primary" onClick={() => enterRun(run)}>Continuer <ArrowRight size={16} /></button>}
-                {run.status === 'failed' && run.mode !== 'tournament' && <button className="iv-primary" onClick={() => { const next = retryRun(run); updateSave({ ...save, run: next }); enterRun(next); }}>Réessayer le duel</button>}
-                {(((run.mode === 'story' || run.mode === 'campaign') && run.status === 'complete') || (run.mode === 'tournament' && run.status !== 'active')) && <button className="iv-primary" onClick={() => enterRun(run)}>{run.mode === 'tournament' ? 'Voir le tableau final' : 'Revoir l’épilogue'}</button>}
+                {run.status === 'active' && <button className="iv-primary" disabled={!narrativeVisible} onClick={() => enterRun(run)}>Continuer <ArrowRight size={16} /></button>}
+                {run.status === 'failed' && run.mode !== 'tournament' && <button className="iv-primary" disabled={!narrativeVisible} onClick={() => { const next = retryRun(run); updateSave({ ...save, run: next }); enterRun(next); }}>Réessayer le duel</button>}
+                {(((run.mode === 'story' || run.mode === 'campaign') && run.status === 'complete') || (run.mode === 'tournament' && run.status !== 'active')) && <button className="iv-primary" disabled={!narrativeVisible} onClick={() => enterRun(run)}>{run.mode === 'tournament' ? 'Voir le tableau final' : 'Revoir l’épilogue'}</button>}
                 <button className="iv-secondary" onClick={() => updateSave({ ...save, run: null })}>Clore le parcours</button>
               </div>
               <small>Reprise au début du duel en cours. Les PV sont restaurés à chaque nouveau duel.</small>
@@ -265,7 +282,8 @@ export function InfernalVersus() {
           <label>Difficulté de la campagne<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label>
         </div>
         {campaignAvailable(eligibleIds, narrativeFilters) ? <div className="iv-campaign-intro iv-panel">
-          <div className="iv-campaign-art" aria-hidden="true"><Portrait id="charlie" /><Portrait id="hb_blitzo" /></div>
+          {campaignIntroArt ? <NarrativeArt illustration={campaignIntroArt} stage={getPentagramStage('hotel-lobby')} cast={['charlie', 'hb_blitzo']} />
+            : <div className="iv-campaign-art" aria-hidden="true"><Portrait id="charlie" /><Portrait id="hb_blitzo" /></div>}
           <div><p className="iv-eyebrow">HAZBIN HOTEL × HELLUVA BOSS</p><h2>{GLOBAL_CAMPAIGN.subtitle}</h2><p>{GLOBAL_CAMPAIGN.intro}</p><p>Vous incarnez le personnage prévu par chaque chapitre. Après une défaite, reprenez ce duel en conservant les chapitres déjà terminés.</p><p className="iv-small">Histoire originale dans un univers alternatif, distincte des chroniques individuelles.</p>{run?.status === 'active' && <p className="iv-small">Démarrer remplacera le parcours en cours.</p>}<button className="iv-primary" onClick={startMatch}>Commencer la campagne <ArrowRight size={18} /></button></div>
         </div> : <div className="iv-panel"><h2>Un récit qui croise les deux univers</h2><p>Choisissez « Les deux univers » et « Saisons 1 et 2 » pour afficher et commencer cette histoire. Le contenu masqué n’apparaît pas dans cet aperçu.</p></div>}
       </section>}
@@ -294,12 +312,12 @@ export function InfernalVersus() {
         {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{getPentagramStage(stageId).name}</span></div><div className="iv-stage-grid">{PENTAGRAM_STAGES.map(arena => <button key={arena.id} onClick={() => setStageId(arena.id)} aria-pressed={stageId === arena.id}><img src={arena.thumbnailPath} alt="" loading="lazy" /><span>{arena.name}</span></button>)}</div></section>}
       </>}
 
-      {screen === 'interlude' && run && <RunInterlude run={run} titleRef={titleRef} onHome={exitMatch} onFight={() => launchRun(run)} />}
+      {screen === 'interlude' && run && <RunInterlude run={run} allowSeasonTwo={scope === 'all'} titleRef={titleRef} onHome={exitMatch} onFight={() => launchRun(run)} />}
 
       {screen === 'fight' && match && combatants && <div className="iv-live-wrap">
         {isRunMode(match.mode) && run && <div className="iv-run-strip"><strong>{modeTitle(match.mode)}</strong><span>Duel {Math.min((match.runIndex ?? 0) + 1, run.opponentIds.length)} / {run.opponentIds.length} · {run.wins} victoires</span></div>}
         {match.mode === 'training' && <p className="iv-practice-note">Mannequin {trainingGuard ? 'en garde' : 'immobile'} · tension illimitée · récupération après K.O. · aucun score enregistré</p>}
-        <PentagramLiveFight infernalRules costumeOne={save.wardrobe?.one?.[match.one]} costumeTwo={save.wardrobe?.two?.[match.two]} key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} stagePresentation={save.options.stagePresentation} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={match.mode === 'tournament' ? 'Tableau du tournoi' : (match.mode === 'story' || match.mode === 'campaign') && run?.status === 'complete' ? 'Voir l’épilogue' : isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
+        <PentagramLiveFight infernalRules costumeOne={visibleCostumeId(match.one, 'one', match.allowSeasonTwo)} costumeTwo={visibleCostumeId(match.two, 'two', match.allowSeasonTwo)} key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} stagePresentation={save.options.stagePresentation} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={match.mode === 'tournament' ? 'Tableau du tournoi' : (match.mode === 'story' || match.mode === 'campaign') && run?.status === 'complete' ? 'Voir l’épilogue' : isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
       </div>}
 
       {screen === 'codex' && <>

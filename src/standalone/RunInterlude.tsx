@@ -1,8 +1,9 @@
-import type { Ref } from 'react';
+import { useState, type Ref } from 'react';
 import { ArrowLeft, ArrowRight, Trophy } from 'lucide-react';
-import { getPentagramStage } from '../lib/pentagram-stages';
+import { getPentagramStage, type PentagramStage } from '../lib/pentagram-stages';
 import { storyIllustration } from './campaign';
 import { GLOBAL_CAMPAIGN } from './campaign-global';
+import { globalCampaignIllustration, personalCampaignIllustration, type CampaignIllustration } from './campaign-illustrations-v4';
 import { getRunStory, tournamentTable, type StandaloneRun } from './progression';
 import { getStandaloneFighter, getStandalonePortrait } from './roster';
 import './run-interlude.css';
@@ -17,14 +18,42 @@ function tournamentRoundName(matches: number): string {
   return 'Finale';
 }
 
+export function NarrativeArt({ illustration, legacyIllustration, stage, cast, showStageName = false }: {
+  illustration?: CampaignIllustration;
+  legacyIllustration?: string;
+  stage: PentagramStage;
+  cast: readonly string[];
+  showStageName?: boolean;
+}) {
+  const [failedSource, setFailedSource] = useState<string>();
+  const artwork = illustration?.src !== failedSource ? illustration : undefined;
+  const hasIllustration = Boolean(artwork || legacyIllustration);
+  return <div className="iv-story-art" style={artwork ? { aspectRatio: `${artwork.width} / ${artwork.height}` } : undefined}>
+    <img
+      className="iv-story-location"
+      src={artwork?.src ?? legacyIllustration ?? stage.imagePath}
+      alt={artwork?.alt ?? ''}
+      width={artwork?.width}
+      height={artwork?.height}
+      style={artwork ? { objectFit: 'contain', display: 'block' } : undefined}
+      onError={artwork ? () => setFailedSource(artwork.src) : undefined}
+    />
+    {!hasIllustration && <div className="iv-story-cast" aria-hidden="true">
+      {cast.map(id => <img key={id} src={getStandalonePortrait(id)} alt="" />)}
+    </div>}
+    {showStageName && <span className="iv-story-art-label">{artwork ? getPentagramStage(artwork.stageId).name : stage.name}</span>}
+  </div>;
+}
+
 interface RunInterludeProps {
   run: StandaloneRun;
+  allowSeasonTwo?: boolean;
   titleRef: Ref<HTMLHeadingElement>;
   onFight: () => void;
   onHome: () => void;
 }
 
-export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludeProps) {
+export function RunInterlude({ run, allowSeasonTwo = true, titleRef, onFight, onHome }: RunInterludeProps) {
   const active = run.status === 'active';
   if (run.mode === 'tournament') {
     const table = tournamentTable(run.fighterId, run.rosterIds, run.seed, run.status === 'failed' ? run.index : undefined);
@@ -58,16 +87,11 @@ export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludePro
     const chapter = GLOBAL_CAMPAIGN.chapters[Math.min(run.index, GLOBAL_CAMPAIGN.chapters.length - 1)];
     const previous = run.index > 0 ? GLOBAL_CAMPAIGN.chapters[run.index - 1] : undefined;
     const stage = getPentagramStage(chapter.stageId);
+    const illustration = globalCampaignIllustration(run.campaignId, run.campaignVersion, ending ? 'ending' : chapter.id, { allowSeasonTwo });
     return <article className="iv-story iv-global-story" aria-label="Campagne globale">
       <button className="iv-back" onClick={onHome}><ArrowLeft size={16} /> Accueil</button>
       <div className="iv-story-layout">
-        <div className="iv-story-art">
-          <img className="iv-story-location" src={stage.imagePath} alt="" />
-          <div className="iv-story-cast" aria-hidden="true">
-            {(ending ? ['charlie', 'hb_blitzo'] : [chapter.fighterId, chapter.opponentId]).map(id => <img key={id} src={getStandalonePortrait(id)} alt="" />)}
-          </div>
-          <span className="iv-story-art-label">{stage.name}</span>
-        </div>
+        <NarrativeArt illustration={illustration} stage={stage} cast={ending ? ['charlie', 'hb_blitzo'] : [chapter.fighterId, chapter.opponentId]} showStageName />
         <div className="iv-story-copy">
           <p className="iv-eyebrow">{ending ? 'ÉPILOGUE' : `CHAPITRE ${run.index + 1} / ${GLOBAL_CAMPAIGN.chapters.length}`} · CAMPAGNE GLOBALE</p>
           <h1 tabIndex={-1} ref={titleRef}>{ending ? GLOBAL_CAMPAIGN.title : chapter.title}</h1>
@@ -96,17 +120,12 @@ export function RunInterlude({ run, titleRef, onFight, onHome }: RunInterludePro
   const first = run.index === 0;
   const stage = getPentagramStage(chapter.stage);
   const beat = ending ? 'ending' : first ? 'intro' : rival ? 'rival' : undefined;
-  const illustration = beat && storyIllustration(run.fighterId, beat, run.routeVersion ?? 1);
+  const illustration = beat ? personalCampaignIllustration(run.fighterId, run.routeVersion ?? 1, beat, { allowSeasonTwo }) : undefined;
+  const legacyIllustration = beat ? storyIllustration(run.fighterId, beat, run.routeVersion ?? 1) : undefined;
   return <article className="iv-story">
     <button className="iv-back" onClick={onHome}><ArrowLeft size={16} /> Accueil</button>
     <div className="iv-story-layout">
-      <div className="iv-story-art">
-        <img className="iv-story-location" src={illustration ?? stage.imagePath} alt="" />
-        {!illustration && <div className="iv-story-cast" aria-hidden="true">
-          {(ending ? [run.fighterId] : [run.fighterId, chapter.opponent]).map(id =>
-            <img key={id} src={getStandalonePortrait(id)} alt="" />)}
-        </div>}
-      </div>
+      <NarrativeArt illustration={illustration} legacyIllustration={legacyIllustration} stage={stage} cast={ending ? [run.fighterId] : [run.fighterId, chapter.opponent]} />
       <div className="iv-story-copy">
         <p className="iv-eyebrow">{ending ? 'ÉPILOGUE' : first ? 'PROLOGUE' : rival ? 'RIVALITÉ' : 'INTERLUDE'} · {name(run.fighterId)}</p>
         <h1 tabIndex={-1} ref={titleRef}>{story.title}</h1>

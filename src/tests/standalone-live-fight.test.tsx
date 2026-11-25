@@ -148,6 +148,37 @@ describe('standalone combat lifecycle', () => {
     expect(pose('one').classList.contains('infernal-individual-pose--portrait')).toBe(true);
   });
 
+  it('keeps Vortex human on both sides during the intro and an actual engine attack', () => {
+    const fighter = getStandaloneFighter('hb_vortex')!;
+    const definition = buildCombatantDefinition(fighter.character, fighter.profile);
+    render(<PentagramLiveFight {...props({
+      infernalRules: true, training: true,
+      fighterOne: fighter.character, fighterTwo: fighter.character,
+      fighterOneDefinition: definition, fighterTwoDefinition: definition,
+      costumeOne: 'hb_vortex-human-disguise', costumeTwo: 'hb_vortex-human-disguise',
+    })} />);
+    const assertHuman = () => {
+      for (const side of ['one', 'two']) {
+        const fighterElement = document.querySelector<HTMLElement>(`.arena-combatant.is-${side}`)!;
+        expect(fighterElement.querySelector('.arena-sprite-frame')).toBeNull();
+        const pose = fighterElement.querySelector<HTMLImageElement>('img.infernal-individual-pose')!;
+        expect(pose.getAttribute('src')).toBe('/assets/sprites/costumes/hb_vortex-human-disguise.webp');
+        expect(pose.dataset.groundAnchor).toBe('canvas-bottom');
+      }
+    };
+    assertHuman();
+    start();
+    key('KeyG');
+    key('KeyK');
+    expect(document.querySelector<HTMLElement>('.arena-combatant.is-one')!.dataset.action).toBe('heavy');
+    expect(document.querySelector<HTMLElement>('.arena-combatant.is-two')!.dataset.action).toBe('heavy');
+    assertHuman();
+    advance(100);
+    assertHuman();
+    advance(1_000);
+    assertHuman();
+  });
+
   it.each(['hz_katie_killjoy', 'hz_tom_trench', 'hb_mammon', 'hb_stella', 'hb_vortex', 'hb_glitz', 'hb_glam'])(
     'keeps %s authored fallback visible through intro, movement, crouch and attack on both sides', id => {
       const fighter = getStandaloneFighter(id)!;

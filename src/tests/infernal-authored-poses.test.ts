@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { costumePose, getInfernalCostume, infernalActionPose, INFERNAL_ACTION_POSES, INFERNAL_COSTUMES } from '../lib/infernal-appearances';
+import { costumePose, getInfernalCostume, infernalActionPose, INFERNAL_ACTION_POSES, INFERNAL_COSTUMES, type InfernalCostume } from '../lib/infernal-appearances';
 import { INFERNAL_FINISHES } from '../lib/infernal-finishers';
 import { getCombatMoveInfo } from '../lib/pentagram-combat';
 import { buildCombatantDefinition } from '../lib/pentagram-fighters';
@@ -31,10 +31,28 @@ describe('authored poses in Infernal Versus', () => {
       const outfit = INFERNAL_COSTUMES[id][0];
       expect(getInfernalCostume(id, outfit.id)).toBe(outfit);
       expect(costumePose(outfit, 'crouch', null, false)).toBe(outfit.crouch ?? outfit.ready);
-      expect(costumePose(outfit, 'jump', null, false)).toBe(outfit.jump);
+      expect(costumePose(outfit, 'jump', null, false)).toBe(outfit.jump ?? outfit.ready);
       expect(costumePose(outfit, 'jump', 'intro', false)).toBe(outfit.ready);
-      expect(costumePose(outfit, 'jump', null, true)).toBe(outfit.heavy);
+      expect(costumePose(outfit, 'jump', null, true)).toBe(outfit.heavy ?? outfit.ready);
       expect(getInfernalCostume(id, 'unknown')).toBeUndefined();
+    }
+  });
+
+  it('keeps a static human costume visible during attacks, reactions and finish cinematics', () => {
+    const human = INFERNAL_COSTUMES.hb_stolas[0];
+    const staticHuman: InfernalCostume = {
+      id: 'static-human-fixture', name: 'Human costume fixture', appearance: human.appearance,
+      ready: human.ready, staticReadyOnly: true,
+    };
+    const staticOutfits = [staticHuman, ...Object.values(INFERNAL_COSTUMES).flat().filter(outfit => outfit.staticReadyOnly)];
+    expect(staticOutfits.length).toBeGreaterThan(1);
+    for (const outfit of staticOutfits) {
+      for (const action of ['idle', 'walk', 'guard', 'light', 'heavy', 'special', 'signature', 'hit', 'ko', 'crouch', 'jump', 'victory'] as const) {
+        for (const cinematic of [null, 'intro', 'victory', 'draw'] as const) {
+          expect(costumePose(outfit, action, cinematic, false)).toBe(outfit.ready);
+          expect(costumePose(outfit, action, cinematic, true)).toBe(outfit.ready);
+        }
+      }
     }
   });
 

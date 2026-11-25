@@ -139,21 +139,33 @@ export function infernalFallbackPose(
   return poses.ready;
 }
 
-export interface InfernalCostume {
+interface InfernalCostumeBase {
   id: string;
   name: string;
   appearance: string;
+  spoilerTier?: 'season_1' | 'season_2';
   layout?: 'portrait' | 'landscape';
   ready: string;
+}
+export type InfernalCostume = InfernalCostumeBase & ({
+  /** One supplied READY image remains visible through every combat phase. */
+  staticReadyOnly: true;
+  strike?: never;
+  recoil?: never;
+  heavy?: never;
+  crouch?: never;
+  jump?: never;
+} | {
+  staticReadyOnly?: false;
   strike: string;
   recoil: string;
   heavy: string;
   crouch?: string;
   jump: string;
-}
-function costume(id: string, name: string, appearance: string): InfernalCostume {
+});
+function costume(id: string, name: string, appearance: string, spoilerTier: 'season_1' | 'season_2' = 'season_1'): InfernalCostume {
   const base = '/assets/sprites/costumes/' + id;
-  return { id, name, appearance, ready: base + '.webp', strike: base + '-strike.webp', recoil: base + '-recoil.webp', heavy: base + '-heavy.webp', crouch: base + '-crouch.webp', jump: base + '-jump.webp' };
+  return { id, name, appearance, spoilerTier, ready: base + '.webp', strike: base + '-strike.webp', recoil: base + '-recoil.webp', heavy: base + '-heavy.webp', crouch: base + '-crouch.webp', jump: base + '-jump.webp' };
 }
 
 export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume[]>> = {
@@ -171,16 +183,61 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
   }],
   vaggie: [costume('vaggie-exorcist', 'Uniforme d’exorciste', 'Hazbin Hotel · Welcome to Heaven, saison 1, épisode 6')],
   hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3')],
-  hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2')],
+  hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2', 'season_2'), {
+    id: 'hb_stolas-deposed-sinsmas',
+    name: 'Stolas déchu · illustration statique',
+    spoilerTier: 'season_2',
+    appearance: 'Helluva Boss · Sinsmas, saison 2, épisode 12. Tenue narrative sans changement des techniques du jeu ; la même illustration reste affichée pendant toutes les actions.',
+    ready: '/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
   hb_moxxie: [{
     ...costume('hb_moxxie-harvest-festival', 'Tenue du festival des moissons', 'Helluva Boss · The Harvest Moon Festival, saison 1, épisode 5'),
     layout: 'portrait',
+  }, {
+    id: 'hb_moxxie-moxxine',
+    name: 'Moxxine · illustration statique',
+    spoilerTier: 'season_2',
+    appearance: 'Helluva Boss · Unhappy Campers, saison 2, épisode 5. Déguisement vestimentaire ; la même illustration reste affichée pendant toutes les actions.',
+    ready: '/assets/sprites/costumes/hb_moxxie-moxxine.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
+  hb_millie: [{
+    id: 'hb_millie-millerd',
+    name: 'Millerd · illustration statique',
+    spoilerTier: 'season_2',
+    appearance: 'Helluva Boss · Unhappy Campers, saison 2, épisode 5. Déguisement vestimentaire ; la même illustration reste affichée pendant toutes les actions.',
+    ready: '/assets/sprites/costumes/hb_millie-millerd.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
+  hb_vortex: [{
+    id: 'hb_vortex-human-disguise',
+    name: 'Apparence humaine · illustration statique',
+    spoilerTier: 'season_1',
+    appearance: 'Helluva Boss · Spring Broken, saison 1, épisode 3. La même illustration humaine reste affichée pendant toutes les actions.',
+    ready: '/assets/sprites/costumes/hb_vortex-human-disguise.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
+  hb_fizzarolli: [{
+    id: 'hb_fizzarolli-casual-oops',
+    name: 'Tenue décontractée · illustration statique',
+    spoilerTier: 'season_2',
+    appearance: 'Helluva Boss · Oops, saison 2, épisode 6. Tenue domestique de l’ouverture ; la même illustration reste affichée pendant toutes les actions.',
+    ready: '/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp',
+    // This near-square canvas fits the existing landscape contain frame by height.
+    layout: 'landscape',
+    staticReadyOnly: true,
   }],
 };
 export const getInfernalCostume = (fighterId: string, costumeId?: string) =>
   INFERNAL_COSTUMES[fighterId]?.find(entry => entry.id === costumeId);
 
 export function costumePose(outfit: InfernalCostume, action: CombatAction, cinematic: PentagramCinematicKind | null, isFinishing: boolean): string {
+  if (outfit.staticReadyOnly) return outfit.ready;
   if (isFinishing) return outfit.heavy;
   if (action === 'ko' || action === 'hit') return outfit.recoil;
   if (cinematic) return outfit.ready;

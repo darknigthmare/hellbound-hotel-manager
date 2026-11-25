@@ -63,7 +63,7 @@ export function storyAvailable(fighterId: string, rosterIds: readonly string[], 
 
 export type StoryBeat = 'intro' | 'rival' | 'ending';
 
-/** No V3 illustration has been matched to its new brief; render stage + portraits. */
+/** Historical V1 art only. Reviewed V3 scenes have an independent, versioned registry. */
 export function storyIllustration(fighterId: string, kind: StoryBeat, routeVersion: StoryRouteVersion = CURRENT_STORY_ROUTE_VERSION): string | undefined {
   return routeVersion === 1 ? legacyStoryIllustration(fighterId, kind) : undefined;
 }

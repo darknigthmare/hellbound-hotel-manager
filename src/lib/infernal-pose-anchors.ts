@@ -19,6 +19,11 @@ const VORTEX_READY = '/assets/sprites/individual/hb_vortex-ready.webp';
 const GLITZ_READY = '/assets/sprites/individual/hb_glitz-ready.webp';
 const GLAM_READY = '/assets/sprites/individual/hb_glam-ready.webp';
 const ALASTOR_READY = '/assets/sprites/stances/alastor.webp';
+const MOXXINE_READY = '/assets/sprites/costumes/hb_moxxie-moxxine.webp';
+const MILLERD_READY = '/assets/sprites/costumes/hb_millie-millerd.webp';
+const VORTEX_HUMAN_READY = '/assets/sprites/costumes/hb_vortex-human-disguise.webp';
+const FIZZ_CASUAL_READY = '/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp';
+const STOLAS_SINSMAS_READY = '/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp';
 
 /**
  * Alpha >= 16 bounds visually checked against Lute S1 and the default Vox,
@@ -32,6 +37,13 @@ const ALASTOR_READY = '/assets/sprites/stances/alastor.webp';
  * these measured placements are not a browser/fidelity certification.
  */
 export const INFERNAL_POSE_ANCHORS: Readonly<Record<string, InfernalPoseGroundAnchor>> = {
+  // These outfits keep one static READY through all actions. Their measured
+  // footwear meets the canvas floor while the native image and soft alpha stay intact.
+  [MOXXINE_READY]: { canvasHeight: 1536, groundContactY: 1488, readyPose: MOXXINE_READY, costumeId: 'hb_moxxie-moxxine', groundReference: 'canvas-bottom' },
+  [MILLERD_READY]: { canvasHeight: 1536, groundContactY: 1485, readyPose: MILLERD_READY, costumeId: 'hb_millie-millerd', groundReference: 'canvas-bottom' },
+  [VORTEX_HUMAN_READY]: { canvasHeight: 1536, groundContactY: 1510, readyPose: VORTEX_HUMAN_READY, costumeId: 'hb_vortex-human-disguise', groundReference: 'canvas-bottom' },
+  [FIZZ_CASUAL_READY]: { canvasHeight: 1312, groundContactY: 1296, readyPose: FIZZ_CASUAL_READY, costumeId: 'hb_fizzarolli-casual-oops', groundReference: 'canvas-bottom' },
+  [STOLAS_SINSMAS_READY]: { canvasHeight: 1536, groundContactY: 1522, readyPose: STOLAS_SINSMAS_READY, costumeId: 'hb_stolas-deposed-sinsmas', groundReference: 'canvas-bottom' },
   // Native canvases are preserved. A contain frame fits these near-square
   // Vortex images by height, so each measured foot line meets the same floor.
   [VORTEX_READY]: { canvasHeight: 1310, groundContactY: 1268, readyPose: VORTEX_READY, groundReference: 'canvas-bottom' },

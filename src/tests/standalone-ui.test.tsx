@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import reserveCatalogue from '../../art/infernal-versus/production/reserve-assets.json';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { STANDALONE_FIGHTER_IDS } from '../standalone/roster';
 import { GLOBAL_CAMPAIGN } from '../standalone/campaign-global';
@@ -8,7 +9,7 @@ import type { PentagramStage } from '../lib/pentagram-stages';
 import type { CombatState } from '../lib/pentagram-combat';
 import type { Character, TimelineState } from '../types';
 import { InfernalVersus } from '../standalone/InfernalVersus';
-import { buildRun, createDefaultSave, STANDALONE_STORAGE_KEY, type StandaloneSave } from '../standalone/progression';
+import { applyMatchResult, buildCampaignRun, buildRun, createDefaultSave, STANDALONE_STORAGE_KEY, type StandaloneSave } from '../standalone/progression';
 
 interface LiveProps {
   fighterOne: Character;
@@ -18,6 +19,8 @@ interface LiveProps {
   training?: boolean;
   stage: PentagramStage;
   stagePresentation?: 'alive' | 'static' | 'reduced';
+  costumeOne?: string;
+  costumeTwo?: string;
   onMatchComplete?: (result: CombatState) => void;
   onNextMatch?: () => void;
   onExit: () => void;
@@ -363,10 +366,35 @@ describe('guide integration and narrative compatibility', () => {
     expect(screen.queryByText(GLOBAL_CAMPAIGN.intro)).toBeNull();
   });
 
+  it('preserves a completed campaign while its epilogue is hidden by the season-one filter', () => {
+    let complete: StandaloneSave = { ...createDefaultSave(), run: buildCampaignRun(STANDALONE_FIGHTER_IDS, 94) };
+    for (const [index, chapter] of GLOBAL_CAMPAIGN.chapters.entries()) {
+      complete = applyMatchResult(complete, { id: `filter-ending-${index}`, mode: 'campaign', fighterId: chapter.fighterId, opponentId: chapter.opponentId, outcome: 'won', playedAt: index });
+    }
+    const raw = JSON.stringify(complete);
+    localStorage.setItem(STANDALONE_STORAGE_KEY, raw);
+    render(<InfernalVersus />);
+    click('Combattants');
+    fireEvent.change(screen.getByLabelText('Contenu du carnet'), { target: { value: 'season_1' } });
+    expect(screen.queryByText(GLOBAL_CAMPAIGN.ending)).toBeNull();
+    click('Jouer');
+    const review = screen.getByRole('button', { name: 'Revoir l’épilogue' });
+    expect(review.hasAttribute('disabled')).toBe(true);
+    fireEvent.click(review);
+    expect(screen.queryByText(GLOBAL_CAMPAIGN.ending)).toBeNull();
+    expect(localStorage.getItem(STANDALONE_STORAGE_KEY)).toBe(raw);
+    click('Combattants');
+    fireEvent.change(screen.getByLabelText('Contenu du carnet'), { target: { value: 'all' } });
+    click('Jouer');
+    click('Revoir l’épilogue');
+    expect(screen.getByText(GLOBAL_CAMPAIGN.ending)).toBeTruthy();
+    expect(saved().campaignEndings).toEqual(['signal-libre:1']);
+  });
+
   it('filters reserve art without changing the roster and keeps scene preferences after reload', () => {
     const view = render(<InfernalVersus />);
     click('Galerie');
-    expect(document.querySelectorAll('.iv-reserve-card')).toHaveLength(22);
+    expect(document.querySelectorAll('.iv-reserve-card')).toHaveLength(reserveCatalogue.assets.length);
     fireEvent.change(screen.getByLabelText('Catégorie'), { target: { value: 'projectile' } });
     const dart = screen.getByRole('button', { name: /Fléchette tranquillisante/ });
     fireEvent.click(dart);
@@ -383,5 +411,63 @@ describe('guide integration and narrative compatibility', () => {
     click(/VERSUS CPU/);
     click('Lancer le combat');
     expect(runtime.last!.stagePresentation).toBe('static');
+  });
+
+  it('separates season-one accessories from season-two props in the reserve gallery', () => {
+    render(<InfernalVersus />);
+    click('Galerie');
+    fireEvent.change(screen.getByLabelText('Catégorie'), { target: { value: 'prop' } });
+    expect(screen.getByRole('button', { name: /Cristal asmodéen/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Siège-coque rose/ })).toBeTruthy();
+    fireEvent.change(screen.getByLabelText('Contenu de la galerie'), { target: { value: 'season_1' } });
+    expect(screen.queryByRole('button', { name: /Cristal asmodéen/ })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Siège-coque rose/ })).toBeNull();
+    click(/Projecteur de cintre/);
+    expect(screen.getByRole('heading', { name: /Projecteur de cintre/ })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /C.H.E.R.U.B., S1E4/ }).getAttribute('href')).toContain('1ZFseYPmkAk');
+  });
+
+  it('saves a static costume and passes it to combat after reloading', () => {
+    const view = render(<InfernalVersus />);
+    click(/VERSUS CPU/);
+    click(/Moxxie\s*HELLUVA/);
+    fireEvent.change(screen.getByLabelText('Tenue de Moxxie'), { target: { value: 'hb_moxxie-moxxine' } });
+    expect(saved().wardrobe?.one?.hb_moxxie).toBe('hb_moxxie-moxxine');
+    view.unmount();
+    render(<InfernalVersus />);
+    click(/VERSUS CPU/);
+    click(/Moxxie\s*HELLUVA/);
+    expect((screen.getByLabelText('Tenue de Moxxie') as HTMLSelectElement).value).toBe('hb_moxxie-moxxine');
+    expect(screen.getByText(/la même illustration reste affichée pendant toutes les actions/)).toBeTruthy();
+    click('Lancer le combat');
+    expect(runtime.last!.costumeOne).toBe('hb_moxxie-moxxine');
+  });
+
+  it('hides a saved season-two costume in season-one selection and combat without deleting it', () => {
+    render(<InfernalVersus />);
+    click(/VERSUS CPU/);
+    click(/Moxxie\s*HELLUVA/);
+    fireEvent.change(screen.getByLabelText('Tenue de Moxxie'), { target: { value: 'hb_moxxie-moxxine' } });
+    fireEvent.change(screen.getByLabelText('Contenu'), { target: { value: 'season_1' } });
+    expect(screen.queryByRole('option', { name: 'Moxxine · illustration statique' })).toBeNull();
+    expect(screen.queryByRole('img', { name: 'Moxxine · illustration statique' })).toBeNull();
+    expect(saved().wardrobe?.one?.hb_moxxie).toBe('hb_moxxie-moxxine');
+    click('Lancer le combat');
+    expect(runtime.last!.costumeOne).toBeUndefined();
+    click('Fixture quit');
+    click(/VERSUS CPU/);
+    fireEvent.change(screen.getByLabelText('Contenu'), { target: { value: 'all' } });
+    click(/Moxxie\s*HELLUVA/);
+    expect((screen.getByLabelText('Tenue de Moxxie') as HTMLSelectElement).value).toBe('hb_moxxie-moxxine');
+  });
+
+  it('identifies original AU support art separately from series references', () => {
+    render(<InfernalVersus />);
+    click('Galerie');
+    fireEvent.change(screen.getByLabelText('Rechercher une création'), { target: { value: 'Marlow' } });
+    click(/Marlow Glass/);
+    expect(screen.getByText('Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.')).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Original AU du projet/ }).getAttribute('href')).toContain('/public/assets/sprites/portraits/sim_applicant_marlow.png');
+    expect(document.querySelectorAll('.iv-reserve-card')).toHaveLength(1);
   });
 });

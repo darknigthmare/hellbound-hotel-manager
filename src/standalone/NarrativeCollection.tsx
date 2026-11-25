@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import { GLOBAL_CAMPAIGN, GLOBAL_CAMPAIGN_ENDING_ID } from './campaign-global';
 import { getStoryRoute, STORY_ROUTES, storyIllustration } from './campaign';
+import { globalCampaignIllustration, personalCampaignIllustration } from './campaign-illustrations-v4';
 import { getStandaloneFighter } from './roster';
 import type { StandaloneSave } from './progression';
+
+function EpilogueArt({ src, alt, width, height }: { src: string; alt: string; width?: number; height?: number }) {
+  const [failed, setFailed] = useState(false);
+  return failed ? null : <img src={src} alt={alt} width={width} height={height} loading="lazy" onError={() => setFailed(true)} />;
+}
 
 export function NarrativeCollection({ save, allowSeasonTwo }: { save: StandaloneSave; allowSeasonTwo: boolean }) {
   const visible = save.storyCompletions.filter(completion => {
@@ -10,6 +17,9 @@ export function NarrativeCollection({ save, allowSeasonTwo }: { save: Standalone
     return route && fighter && (allowSeasonTwo || (fighter.spoiler === 'season_1' && route.continuity?.spoilerTier !== 'season_2'));
   });
   const currentCount = save.storyCompletions.filter(completion => completion.routeVersion === 3).length;
+  const globalEndingUnlocked = allowSeasonTwo && save.campaignEndings.includes(GLOBAL_CAMPAIGN_ENDING_ID);
+  const globalEndingArt = globalEndingUnlocked
+    ? globalCampaignIllustration(GLOBAL_CAMPAIGN.id, GLOBAL_CAMPAIGN.version, 'ending', { allowSeasonTwo }) : undefined;
   return <section className="iv-panel iv-gallery" aria-label="Galerie des épilogues">
     <h2>Galerie des épilogues</h2>
     <p>{currentCount} / {Object.keys(STORY_ROUTES).length} chroniques actuelles terminées</p>
@@ -17,16 +27,19 @@ export function NarrativeCollection({ save, allowSeasonTwo }: { save: Standalone
     {visible.length === 0 && <p>Aucun épilogue disponible avec ce filtre. Terminez une chronique pour la retrouver ici.</p>}
     {visible.map(completion => {
       const story = getStoryRoute(completion.fighterId, completion.routeVersion)!;
-      const illustration = storyIllustration(completion.fighterId, 'ending', completion.routeVersion);
+      const illustration = personalCampaignIllustration(completion.fighterId, completion.routeVersion, 'ending', { allowSeasonTwo });
+      const legacyIllustration = completion.routeVersion === 1 ? storyIllustration(completion.fighterId, 'ending', 1) : undefined;
       return <details key={`${completion.fighterId}:${completion.routeVersion}`}>
         <summary>{getStandaloneFighter(completion.fighterId)?.character.name} · {story.title}{completion.routeVersion === 1 ? ' · Archive' : ''}</summary>
-        {illustration && <img src={illustration} alt="Illustration de l’épilogue archivé" loading="lazy" />}
+        {illustration ? <EpilogueArt key={illustration.src} src={illustration.src} alt={illustration.alt} width={illustration.width} height={illustration.height} />
+          : legacyIllustration && <EpilogueArt key={legacyIllustration} src={legacyIllustration} alt="Illustration de l’épilogue archivé" />}
         <p>{story.ending}</p>
         {story.nextHook && <p className="iv-story-hook">{story.nextHook}</p>}
       </details>;
     })}
-    {allowSeasonTwo && save.campaignEndings.includes(GLOBAL_CAMPAIGN_ENDING_ID) && <details>
+    {globalEndingUnlocked && <details>
       <summary>Campagne globale · {GLOBAL_CAMPAIGN.title}</summary>
+      {globalEndingArt && <EpilogueArt key={globalEndingArt.src} src={globalEndingArt.src} alt={globalEndingArt.alt} width={globalEndingArt.width} height={globalEndingArt.height} />}
       <p>{GLOBAL_CAMPAIGN.ending}</p><p className="iv-story-hook">{GLOBAL_CAMPAIGN.nextHook}</p>
     </details>}
   </section>;
