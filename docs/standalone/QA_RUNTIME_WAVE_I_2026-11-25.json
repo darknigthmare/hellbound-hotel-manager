@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-i-2026-11-25",
+  "date": "2026-11-25",
+  "checkedAtUtc": "2026-11-25T09:57:09.073302+00:00",
+  "baseCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
+  "status": "passed",
+  "invocation": "Quality-gate phases executed as separate commands; both builds use owned temporary output directories through ignored dist symlinks.",
+  "commands": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "phase": "typecheck"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "phase": "lint"
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "suites": 44,
+      "tests": 376,
+      "phase": "tests"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "phase": "managerBuild"
+    },
+    {
+      "command": "npm run build:standalone",
+      "exitCode": 0,
+      "phase": "standaloneBuild"
+    },
+    {
+      "command": "npm run check:standalone",
+      "exitCode": 0,
+      "phase": "standaloneIntegrity"
+    }
+  ],
+  "typecheck": "passed",
+  "lint": "passed",
+  "testSuites": 44,
+  "tests": 376,
+  "builds": {
+    "manager": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 1031,
+    "verifiedHashes": 1031,
+    "bytes": 626287158,
+    "mib": 597.27,
+    "bootAssets": "present",
+    "hotelPersistence": "excluded"
+  },
+  "activeCoverage": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 30,
+    "threePlaneStages": 30,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 428,
+    "brokenReferences": []
+  },
+  "reserveCoverage": {
+    "catalogue": "art/infernal-versus/production/reserve-assets.json",
+    "characterBases": 13,
+    "enemyBases": 8,
+    "projectileImages": 1,
+    "artworks": 22,
+    "referencedFiles": 44,
+    "brokenReferences": []
+  },
+  "scope": "Only visible finishing-system copy changed in React. Six new public images remain reserves; actual combat, story routes, player saves and stage definitions are unchanged.",
+  "browser": {
+    "browserExecuted": false,
+    "screenshots": 0,
+    "reason": "No new browser review for this copy-only UI change; existing DOM interaction tests passed. Reserve image inspection is static."
+  },
+  "exports": {
+    "masterCount": 6,
+    "fileCount": 12,
+    "allRuntimeExportsPixelExact": true
+  },
+  "logs": [
+    "docs/standalone/qa-wave-i-2026-11-25/typecheck.txt",
+    "docs/standalone/qa-wave-i-2026-11-25/lint.txt",
+    "docs/standalone/qa-wave-i-2026-11-25/tests.txt",
+    "docs/standalone/qa-wave-i-2026-11-25/build-manager.txt",
+    "docs/standalone/qa-wave-i-2026-11-25/build-standalone.txt",
+    "docs/standalone/qa-wave-i-2026-11-25/check-standalone.txt"
+  ]
+}

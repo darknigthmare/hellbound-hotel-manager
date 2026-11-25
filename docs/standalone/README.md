@@ -17,21 +17,21 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Contenu de cette version — 25 novembre 2026, vague H
+## Contenu de cette version — 25 novembre 2026, vague I
 
-- **43 combattants jouables** : 25 de *Hazbin Hotel* et 18 de *Helluva Boss*. Vortex, Glitz et Glam ont rejoint le standalone avec la vague F. Les vagues G et H complètent les dessins de base en réserve.
+- **43 combattants jouables** : 25 de *Hazbin Hotel* et 18 de *Helluva Boss*. Vortex, Glitz et Glam ont rejoint le standalone avec la vague F. Les vagues G, H et I complètent les dessins de base en réserve.
 - **133 attaques paramétrées** : 129 légers, lourds et spéciaux, plus les quatre signatures de Vaggie, Blitzø, Mimzy et Sallie May. Le carnet expose commandes, temps, portée et tension.
 - **Six costumes et 35 poses de costume** : Vaggie exorciste, Loona humaine, Stolas humain, Moxxie au festival des moissons, Carmilla cheveux lâchés et Lute avant sa blessure de fin de saison 1.
-- **40 poses individuelles d’attente, 17 gardes distinctes, 17 contacts légers et 18 réactions** pour le roster actif. Ces poses clés ne constituent pas des cycles complets. Aucun dessin d’animation n’est ajouté par G ou H.
+- **40 poses individuelles d’attente, 17 gardes distinctes, 17 contacts légers et 18 réactions** pour le roster actif. Ces poses clés ne constituent pas des cycles complets. Aucun dessin d’animation n’est ajouté par G, H ou I.
 - **30 arènes à trois plans**. Le couloir du One Star Wonder et la salle de fête d’*Apology Tour* ajoutent deux fonds, quatre accessoires séparés et deux miniatures après les trois arènes de G. Les fonds conservent leur ratio natif entier. Le manager conserve ses huit arènes.
 - **14 images VFX pour 28 associations d’attaques**. Leurs affectations restent identiques à F. Les effets suivent les coups existants, sans collision ou dégâts supplémentaires.
-- **15 bases en réserve** : Vassago, Wally Wackford, Barbie Wire, Martha, Mrs Mayberry, Paimon, Cash Buckzo, Joe, Lin, Agent One, Agent Two, Cletus, Collin, Keenie et Robo Fizz. Une image READY par identité, avec ses références et ses limites ; aucun nouveau kit ou récit.
+- **21 bases en réserve** : Vassago, Wally Wackford, Barbie Wire, Martha, Mrs Mayberry, Paimon, Cash Buckzo, Joe, Lin, Agent One, Agent Two, Cletus, Collin, Keenie, Robo Fizz, Chaz, Alessio, Elder Jaws, Rolando, Dennis et Toledo. Une image READY par identité, avec ses références et ses limites ; aucun nouveau kit ou récit.
 - **Une fléchette D.H.O.R.K.S. isolée en réserve**. La flèche C.H.E.R.U.B. et le shuriken sont différés faute de contour suffisamment net dans les références inspectées.
 - Histoire, Tournoi, Versus CPU, Versus local, Entraînement, Arcade, Survie et Boss Rush. Le Boss Rush tire parmi neuf adversaires possibles, puis retire le combattant du joueur s’il appartient à ce groupe.
 - L’Histoire propose **43 routes et 129 duels écrits**. Les scénarios sont des créations AU. Les filtres de saison et d’univers déterminent les routes accessibles.
 - Le Tournoi construit un tableau reproductible de huit, quatre ou deux participants suivant l’effectif disponible. Une défaite élimine le joueur.
 - Un lourd touchant sans garde peut être suivi d’un spécial dès la fin de l’arrêt sur impact, pendant sa récupération. Cet enchaînement consomme 50 de tension.
-- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes : H pour J1, L pour J2 ou **Fatalité**. La finition dure 1,5 seconde ; **Passer** rejoint directement la victoire.
+- Un K.-O. décisif ouvre une fenêtre de 3,2 secondes : H pour J1, L pour J2 ou **Dernier Acte**. La finition dure 1,5 seconde ; **Passer** rejoint directement la victoire.
 - Trois difficultés, recherche et filtres d’univers/saison ; clavier partagé et contrôles tactiles ; pause et relâchement des commandes lors d’une perte de focus ; réduction des mouvements et des flashes.
 
 L’entraînement propose un mannequin immobile ou en garde, une jauge illimitée et une réinitialisation, sans enregistrer de résultat. Les parcours reprennent le duel en cours depuis son début après une sortie. Les PV sont restaurés entre les rencontres, y compris en Survie. Les autres modes de parcours proposent une reprise explicite après une défaite ; les réessais sont mémorisés.
@@ -44,17 +44,17 @@ Chaque résultat porte un identifiant unique, empêchant les doubles récompense
 
 ## Portée de la fidélité
 
-Les identités, incarnations et motifs sont rattachés aux sources des manifestes. Les nouveaux personnages suivent une incarnation précise : Barbie en imp, Martha et Mayberry en sinner, Vassago en tenue du tribunal. Les épisodes officiels, produits sous licence et portraits historiques d’appoint sont distingués dans les revues [G](REVIEW_ASSETS_WAVE_G_2026-11-25.md) et [H](REVIEW_ASSETS_WAVE_H_2026-11-25.md). Paimon, Cash, Joe et Lin reçoivent une base neutre en H.
+Les identités, incarnations et motifs sont rattachés aux sources des manifestes. Les nouveaux personnages suivent une incarnation précise : Barbie en imp, Martha et Mayberry en sinner, Vassago en tenue du tribunal. Les épisodes officiels, produits sous licence et portraits historiques d’appoint sont distingués dans les revues [G](REVIEW_ASSETS_WAVE_G_2026-11-25.md) et [H](REVIEW_ASSETS_WAVE_H_2026-11-25.md). Paimon, Cash, Joe et Lin reçoivent une base neutre en H. I ajoute Chaz, Alessio, Elder Jaws, Rolando dans sa forme démoniaque, Dennis et Toledo ; voir [la revue I](REVIEW_ASSETS_WAVE_I_2026-11-25.md).
 
-**La fidélité exacte 1:1 n’est pas certifiée.** Les références officielles de G et H sont principalement des prévisualisations de 320 × 180. Les parties basses de Martha et Mayberry, certains petits détails et la pointe cachée de la fléchette restent des reconstructions. Les poses neutres, pistes de duel et placements d’accessoires sont des adaptations de présentation. Les PNG sont conservés à l’octet et les WebP de production sont sans perte, à leur taille native.
+**La fidélité exacte 1:1 n’est pas certifiée.** Les références officielles de G, H et I sont principalement des prévisualisations de 320 × 180. Le plan rapproché de Toledo reste à vérifier, et les détails fins d’Elder Jaws proviennent surtout du portrait historique. Les parties basses de Martha et Mayberry, certains petits détails et la pointe cachée de la fléchette restent des reconstructions. Les poses neutres, pistes de duel et placements d’accessoires sont des adaptations de présentation. Les PNG sont conservés à l’octet et les WebP de production sont sans perte, à leur taille native.
 
-Les finitions comprennent 43 titres et des traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les illustrations narratives couvrent 26 affectations avec 22 dessins distincts. Les anciennes demandes refusées restent consignées dans leurs lots. En H, Clara, Odette, Deerie et Loopty ont reçu chacun un refus du générateur ; aucun fichier produit ni relance après refus.
+Les finitions comprennent 43 titres et des traitements partagés ; cinq personnages disposent d’une pose de finition dédiée. Les illustrations narratives couvrent 26 affectations avec 22 dessins distincts. Les anciennes demandes refusées restent consignées dans leurs lots. En H, Clara, Odette, Deerie et Loopty ont reçu chacun un refus du générateur ; aucun fichier produit ni relance après refus. I ne reçoit aucun refus et conserve six dessins, après remplacement d’un premier essai de Rolando.
 
 Le lancement du navigateur G a échoué parce que le binaire Chromium était absent ; son absence a été confirmée en H. Les compositions statiques et les contrôles de fichiers ne certifient pas les transitions, les tailles canoniques relatives ou le rendu sur appareil. Les détails figurent dans le [rapport de revue H](REVIEW_ASSETS_WAVE_H_2026-11-25.md).
 
-## Couverture des assets — vague H
+## Couverture des assets — vague I
 
-Le [relevé](ASSET_COVERAGE.json) distingue **428 chemins actifs présents** et **16 dessins en réserve / 32 fichiers présents**. Les réserves G et H ne sont ajoutées ni aux compteurs de combattants ni aux affectations d’effets.
+Le [relevé](ASSET_COVERAGE.json) distingue **428 chemins actifs présents** et **22 dessins en réserve / 44 fichiers présents**. Les réserves G, H et I ne sont ajoutées ni aux compteurs de combattants ni aux affectations d’effets.
 
 | Élément actif | Disponible | Reste pour couvrir les 43 combattants |
 | --- | ---: | ---: |
@@ -67,15 +67,21 @@ Le [relevé](ASSET_COVERAGE.json) distingue **428 chemins actifs présents** et 
 
 Les **30 arènes possèdent trois plans enregistrés**. Les nouveaux fonds restent entiers en `contain` ; leurs accessoires suivent le même repère et restent derrière les combattants. Sans unités CSS de conteneur, les accessoires ajoutés sont masqués et le fond reste visible.
 
-La vague H apporte **10 dessins retenus et 22 fichiers d’image de production** : quatre bases, deux fonds et quatre accessoires, avec leurs masters PNG, exports WebP et deux miniatures. G et H réunissent 31 dessins et 67 fichiers ; le cumul des six lots tracés sur la PR est de **159 dessins / 334 fichiers de production**. Les images de diagnostic sont comptées séparément. Consulter le [manifeste H](../../art/infernal-versus/production/delivery-wave-h-2026-11-25.json), le [catalogue cumulatif de réserve](../../art/infernal-versus/production/reserve-assets.json) et le [rapport de livraison H](DELIVERY_WAVE_H_2026-11-25.md).
+La vague I apporte **6 dessins retenus et 12 fichiers d’image de production** : quatre bases de personnages et deux bases d’ennemis, avec leurs masters PNG et exports WebP sans perte. Le cumul des sept lots tracés sur la PR est de **165 dessins / 346 fichiers de production**. Les images de diagnostic sont comptées séparément. Consulter le [manifeste I](../../art/infernal-versus/production/delivery-wave-i-2026-11-25.json), le [catalogue cumulatif de réserve](../../art/infernal-versus/production/reserve-assets.json) et le [rapport de livraison I](DELIVERY_WAVE_I_2026-11-25.md).
 
-Les pièces de réserve des lots antérieurs — vêtements, chapeau, queue, canne, lance et variantes de décor — restent conservées avec leur propre statut. Le catalogue cumulatif porte uniquement sur les bases et le projectile des vagues G et H ; les manifestes datés restent inchangés.
+Les pièces de réserve des lots antérieurs — vêtements, chapeau, queue, canne, lance et variantes de décor — restent conservées avec leur propre statut. Le catalogue cumulatif porte uniquement sur les bases et le projectile des vagues G, H et I ; les manifestes datés restent inchangés.
 
 ## Bible de production
 
-[Ouvrir le classeur V2](INFERNAL_VERSUS_BIBLE_V2.xlsx). Ses **23 feuilles** conservent les onze onglets V1 historiques et ajoutent douze onglets V2, calculés à partir du jeu actuel : routes, duels, coups, techniques, tenues, finitions, plans, illustrations, atelier et sources. Les prototypes sont distingués des techniques jouables.
+[Ouvrir le classeur V3](INFERNAL_VERSUS_BIBLE_V3.xlsx) ou [lire les fiches complètes](INFERNAL_VERSUS_CAMPAIGNS_V3.md). Ses **29 feuilles** conservent les onze registres V1 historiques, les douze vues du jeu et de la production courants, puis six nouveaux onglets : Campagnes V3, Chapitres V3, Illustrations V3, Movesets V3, Derniers Actes et Continuité V3.
 
-Le registre est `extension-plan.json`. Le bloc `meta.currentRuntime` et les tables V2 décrivent l’état courant ; `meta.implementation` et les onze feuilles V1 restent historiques. La génération est indépendante des builds du jeu : `node docs/standalone/build-production-bible.mjs`, avec les dépendances d’auteur. Le [rapport du classeur](QA_WORKBOOK_WAVE_H_2026-11-25.json) vérifie données, formules et préservation des anciennes feuilles.
+Le [classeur V3 sur Google Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) remplace la V2 au même identifiant, au format `.xlsx`. Le nom, la taille de 372 305 octets et le dossier parent ont été relus après la mise à jour du 25 novembre 2026.
+
+La V3 couvre **43 campagnes proposées, 129 chapitres, 129 briefs d’illustration (86 introductions/épilogues et 43 rivalités), 172 propositions de techniques et 43 Derniers Actes**. Elle relie 109 repères de lore à 27 sources documentées, dont deux registres historiques du projet. Chaque illustration précise caméra, composition, lumière, palette, incarnation et exclusions. Les images existantes doivent être revalidées pour leur nouveau brief et leur casting.
+
+**Dernier Acte** est un nom original du jeu, adopté dans le carnet et les écrans de finition. Les storyboards individuels restent des propositions AU : le moteur conserve ses 133 attaques, ses 43 routes actuelles et sa séquence de finition de 1,5 seconde. Le classeur distingue les concepts compatibles en principe avec un contact simple des mécaniques nouvelles à développer. Les gestes dont les preuves directes sont limitées restent identifiés comme adaptations. Le classeur V2 précédent est conservé comme archive.
+
+Les registres sont `extension-plan.json` pour l’état courant et `campaign-design-v3.json` pour les propositions. Le bloc `meta.currentRuntime` et les tables moteur décrivent le jeu livré ; `meta.implementation` et les onze feuilles V1 restent historiques. La génération est indépendante des builds du jeu : `node docs/standalone/build-production-bible.mjs`, avec les dépendances d’auteur. Le [rapport du classeur](QA_WORKBOOK_WAVE_I_2026-11-25.json) vérifie données, formules et préservation des anciennes feuilles. La [revue de conception](QA_DESIGN_WAVE_I_2026-11-25.json) précise les adaptations, les limites des preuves et les corrections de cohérence avec le moteur.
 
 ## Excel et sources du premier lot
 
@@ -93,6 +99,8 @@ Référence CQC : `darknigthmare/shadow-codec-ops/public/cqc`, head `42279c1c884
 
 ## Vérifications
 
-`npm run qa` exécute TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 du standalone. Les résultats H figurent dans [QA_RUNTIME_WAVE_H_2026-11-25.json](QA_RUNTIME_WAVE_H_2026-11-25.json) : TypeScript, ESLint et 376 tests passent ; après saturation du disque pendant le premier build, les deux builds et les 1 025 empreintes du standalone passent après nettoyage des sorties temporaires. Le classeur contient 23 feuilles, dont les onze historiques conservées intégralement. Les compteurs de réserves sont calculés séparément dans le guide.
+`npm run qa` regroupe TypeScript, ESLint, Vitest, les deux builds et la vérification SHA-256 du standalone. Pour I, ces étapes ont été exécutées séparément avec succès : **44 suites / 376 tests**, deux builds et **1 031 empreintes vérifiées**. Les sorties de build temporaires ont été retirées après validation. Les résultats figurent dans [QA_RUNTIME_WAVE_I_2026-11-25.json](QA_RUNTIME_WAVE_I_2026-11-25.json).
 
-La livraison prolonge la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8). Les rapports [G](DELIVERY_WAVE_G_2026-11-25.md), [F](DELIVERY_WAVE_F_2026-11-24.md), [D](DELIVERY_WAVE_D_2026-11-24.md), [C](DELIVERY_WAVE_C_2026-11-24.md) et des lots antérieurs restent des archives datées. Leurs chiffres ne décrivent pas la version courante.
+Le classeur V3 compte 29 feuilles ; ses formules sont recalculées et contrôlées indépendamment, et les onze feuilles historiques sont conservées à l’octet. La validation de la bible contrôle la couverture des combattants, les adversaires, arènes, références, quatre slots de moves et trois temps de chaque fin. Les contrôles de données et les revues statiques ne constituent pas une certification visuelle 1:1 en jeu.
+
+La livraison prolonge la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8). Les rapports [H](DELIVERY_WAVE_H_2026-11-25.md), [G](DELIVERY_WAVE_G_2026-11-25.md), [F](DELIVERY_WAVE_F_2026-11-24.md), [D](DELIVERY_WAVE_D_2026-11-24.md), [C](DELIVERY_WAVE_C_2026-11-24.md) et des lots antérieurs restent des archives datées. Leurs chiffres ne décrivent pas la version courante.

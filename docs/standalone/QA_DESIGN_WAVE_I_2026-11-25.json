@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-i-2026-11-25",
+  "checkedAtUtc": "2026-11-25T10:13:10.034530+00:00",
+  "status": "passed_with_documented_limits",
+  "source": "docs/standalone/campaign-design-v3.json",
+  "sourceSha256": "3949e65988ab91596b83a5992a84b907505853faa8f3ae5175e69ac605e2708c",
+  "metrics": {
+    "fighters": 43,
+    "campaigns": 43,
+    "chapters": 129,
+    "illustrationBriefs": 129,
+    "introEndingBriefs": 86,
+    "moveProposals": 172,
+    "finisherStoryboards": 43,
+    "loreAnchors": 109,
+    "sources": 27,
+    "newMechanics": 67,
+    "limitedEvidenceMoves": 127,
+    "existingCompatible": 105
+  },
+  "sourceKinds": {
+    "official_page": 4,
+    "official_clip": 9,
+    "historical_project": 2,
+    "official_episode": 12
+  },
+  "structure": {
+    "allActiveFightersCovered": true,
+    "validOpponentAndStageIds": true,
+    "threeChaptersPerFighter": true,
+    "rivalIsFinalOpponent": true,
+    "threeIllustrationKinds": true,
+    "fourMoveSlots": true,
+    "threeFinisherBeats": true,
+    "sourceIdsResolved": true,
+    "requiredTextListsNonEmpty": true
+  },
+  "engineReview": {
+    "reviewer": "independent peer + root",
+    "fieldCorrections": 48,
+    "correctionLog": "docs/standalone/qa-wave-i-2026-11-25/campaign-engine-corrections.json",
+    "weaponsOptionalFinishersCorrected": [
+      "carmilla",
+      "charlie",
+      "emily",
+      "hb_moxxie",
+      "lucifer",
+      "lute",
+      "sera",
+      "vaggie",
+      "zestial"
+    ],
+    "remainingBlockingDefects": 0,
+    "checks": [
+      "No high/low guard behavior claimed for contact-only engine.",
+      "Appui and body-lean text does not imply an implemented combatant displacement.",
+      "Blitzo and Vox autonomous-projectile concepts explicitly require new mechanics.",
+      "Finishers requiring disarm include an unarmed-target variant; Emily works against Sera."
+    ]
+  },
+  "validatorRegressionReproductions": {
+    "malformedRequiredListsRejected": 6,
+    "scope": "Concrete missing-list and blank-item cases found during authoring; no extra gameplay test suite introduced."
+  },
+  "runtimeChanges": {
+    "visibleSystemName": "Dernier Acte",
+    "canonicalTerm": false,
+    "campaignsReplaced": false,
+    "movesReplaced": false,
+    "longFinishersImplemented": false,
+    "newAnimationAssets": 0
+  },
+  "limits": [
+    "Campaigns, duels and finishers are original AU proposals, not canonical events.",
+    "Official source evidence includes accessible synopsis, official metadata and clips; no complete frame-by-frame episode verification is claimed.",
+    "127 move proposals remain marked limited_evidence_adaptation; a motif reference is not proof of the exact proposed technique.",
+    "105 existing_compatible_proposal concepts are compatible in principle only and still require implementation and balancing.",
+    "67 proposals require new mechanics.",
+    "Existing illustration paths are candidates to revalidate for the new scene and cast; 129 briefs are not 129 delivered images."
+  ]
+}

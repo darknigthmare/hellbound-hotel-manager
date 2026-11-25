@@ -1333,8 +1333,8 @@ export function PentagramLiveFight({
           <div className="infernal-finish-choice">
             <span>K.-O. décisif · {winnerName}</span>
             {matchMode === 'ai' && combat.matchWinner === 'two'
-              ? <strong>Finition adverse</strong>
-              : <button className="btn btn-primary" type="button" onClick={beginFinish}>Fatalité · {combat.matchWinner === 'one' ? 'H' : 'L'}</button>}
+              ? <strong>Dernier Acte adverse</strong>
+              : <button className="btn btn-primary" type="button" onClick={beginFinish}>Dernier Acte · {combat.matchWinner === 'one' ? 'H' : 'L'}</button>}
             <button className="btn btn-secondary" type="button" onClick={() => beginCinematic('victory')}>Passer</button>
           </div>
         )}
@@ -1342,7 +1342,7 @@ export function PentagramLiveFight({
           <>
             <div className={`infernal-finish-effect fx-${finish.effect}`} aria-hidden="true" style={{ '--impact-x': `${combat.matchWinner === 'one' ? combat.positionTwo : combat.positionOne}%` } as CSSProperties} />
             {finish.detachedProp && <img className="infernal-detached-prop" src={finish.detachedProp} alt="" aria-hidden="true" style={{ '--prop-x': `${combat.matchWinner === 'one' ? combat.positionOne : combat.positionTwo}%`, '--prop-facing': combat.matchWinner === 'one' ? 1 : -1 } as CSSProperties} />}
-            <div className="arena-cinematic-overlay" role="status"><span>Fatalité · {winnerName}</span><strong>{finish.title}</strong></div>
+            <div className="arena-cinematic-overlay" role="status"><span>Dernier Acte · {winnerName}</span><strong>{finish.title}</strong></div>
           </>
         )}
         {fightPhase === 'outro' && (

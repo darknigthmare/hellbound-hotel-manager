@@ -64,21 +64,21 @@
     },
     "latestDelivery": {
       "date": "2026-11-25",
-      "batchId": "wave-h-2026-11-25",
+      "batchId": "wave-i-2026-11-25",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-h-2026-11-25.json",
-      "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
-      "scope": "Quatre bases statiques manquantes en réserve, deux arènes sélectionnables et quatre accessoires. Aucune nouvelle animation ni kit. Quatre générations refusées, sans relance. Fidélité 1:1 non certifiée."
+      "manifest": "art/infernal-versus/production/delivery-wave-i-2026-11-25.json",
+      "baseCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
+      "scope": "Six bases statiques en réserve et bible V3 des 43 combattants. Dernier Acte remplace Fatalité dans l’interface. Aucune nouvelle animation ni kit. Fidélité exacte 1:1 non certifiée."
     },
     "currentRuntime": {
       "date": "2026-11-25",
-      "batchId": "wave-h-2026-11-25",
-      "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+      "batchId": "wave-i-2026-11-25",
+      "baseCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "Le bloc meta.implementation et les onze feuilles V1 restent historiques. Les tables V2 sont calculées depuis le runtime actuel.",
+      "note": "Les tables moteur du classeur décrivent le jeu actuel. Les six feuilles V3 décrivent des propositions AU. meta.implementation et les onze feuilles V1 restent historiques.",
       "stages": 30,
       "threePlaneStages": 30,
       "attackEffectImages": 14,
@@ -12387,18 +12387,18 @@
     }
   ],
   "productionBible": {
-    "edition": "2026-11-25 · vague H",
-    "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+    "edition": "2026-11-25 · vague I · bible V3",
+    "baseCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
     "fighterDesign": [
       {
         "fighter": "charlie",
         "signature": "Porte ouverte",
-        "input": "Quart avant + léger",
-        "effect": "Pose un seuil immobile. Si l’adversaire avance dessus, Charlie gagne une reprise courte.",
-        "counter": "Le seuil apparaît sous la porte et disparaît après une activation. Arrêter l’avancée ou l’enjamber.",
+        "input": "T / I · proposition",
+        "effect": "Piège défensif proposé Marquer une petite zone devant soi ; la première entrée adverse déclenche une poussée.",
+        "counter": "Annonce : Marque au sol continue, lisible même sans couleur. Réponse : Contournement aérien ou attente hors de la zone.",
         "finisher": "La seconde clé",
-        "storyboard": "Charlie intercepte le dernier coup, remet l’adversaire debout et lui laisse une clé de chambre.",
-        "lastImage": "L’adversaire regarde la clé. Charlie ouvre la porte de l’hôtel."
+        "storyboard": "1. Elle bloque le dernier assaut et détourne l’arme équipée hors du cadre ; face à une cible désarmée, elle écarte son avant-bras sans lui retirer le choix de reculer.\n2. Elle fait glisser une clé devant l’adversaire immobilisé.\n3. Elle ouvre la porte et lui laisse deux directions possibles.",
+        "lastImage": "La clé nette entre deux mains qui ne se touchent pas."
       },
       {
         "fighter": "vaggie",
@@ -12407,208 +12407,208 @@
         "effect": "Estoc court puis retour en garde. La pointe contrôle le pas suivant après une avancée imprudente.",
         "counter": "L’épaule descend avant l’estoc. Faire manquer à mi-portée puis entrer sur le retrait.",
         "finisher": "Fin de ronde",
-        "storyboard": "La hampe bloque la sortie. Vaggie désarme l’adversaire d’un revers et désigne la porte.",
-        "lastImage": "La lance revient à la verticale. Le vaincu sort du cadre."
+        "storyboard": "1. La hampe détourne l’arme équipée vers le bas ; contre une cible désarmée, elle dévie ses avant-bras vers le côté.\n2. Elle projette l’arme équipée au loin ; dans la variante désarmée, la hampe ferme le passage et force le vaincu à reculer vers la sortie.\n3. Elle pointe la sortie avec sa lance sans porter le coup terminal.",
+        "lastImage": "Vaggie face au spectateur, pointe abaissée, sortie dégagée. L’arme adverse n’apparaît derrière elle que dans la variante armée."
       },
       {
         "fighter": "angeldust",
-        "signature": "Changement de prise",
-        "input": "Quart arrière + léger",
-        "effect": "Un premier bras feinte haut. Une seconde paire frappe si le joueur retarde la touche.",
-        "counter": "Les poignets changent de hauteur. Attendre le second temps ou interrompre la feinte.",
-        "finisher": "Dernier projecteur",
-        "storyboard": "Les projecteurs découpent trois silhouettes. Angel tourne sous le dernier faisceau et laisse tomber l’accessoire adverse.",
-        "lastImage": "Il prend congé de la scène en choisissant lui-même sa sortie."
+        "signature": "Je choisis la sortie",
+        "input": "T / I · proposition",
+        "effect": "Repositionnement offensif proposé Courte rafale de couverture puis recul contrôlé, sans traverser gratuitement l’adversaire.",
+        "counter": "Annonce : Arme abaissée d’un côté et pied arrière prêt au départ. Réponse : Suivre le recul après la dernière balle ; interdire une boucle sûre.",
+        "finisher": "Clap de sortie",
+        "storyboard": "1. Angel cloue les accessoires autour de l’adversaire avec une salve d’arène.\n2. Il arrache le câble du projecteur qui mettait son visage en vitrine.\n3. Le rideau tombe entre eux et Angel sort de son propre côté.",
+        "lastImage": "Rideau noir traversé d’une bande de lumière, silhouette d’Angel déjà tournée vers la porte."
       },
       {
         "fighter": "alastor",
-        "signature": "Larsen",
-        "input": "Quart arrière + spécial",
-        "effect": "Dépose un poste qui répète une frappe une fois. Un seul poste peut sonner à l’écran.",
-        "counter": "Le cadran monte avant la reprise. S’éloigner du poste ou interrompre sa pose.",
-        "finisher": "Fin des ondes",
-        "storyboard": "La canne touche le plancher. Une ombre ferme les volets du studio, puis la porte absorbe la silhouette vaincue.",
-        "lastImage": "L’aiguille du poste revient à zéro, sourire d’Alastor en contre-jour."
+        "signature": "Rideau d’ombre",
+        "input": "T / I · proposition",
+        "effect": "Piège retardé proposé Une zone sombre localisée annonce une saisie brève au sol.",
+        "counter": "Annonce : Contour sombre stable avant surgissement, lisible sans clignotement. Réponse : Quitter la zone dès l’annonce ou interrompre Alastor.",
+        "finisher": "Fin de transmission",
+        "storyboard": "1. Un cadre d’ombre ferme les côtés de l’arène.\n2. Des silhouettes de mains de scène arrachent les accessoires adverses hors champ.\n3. Alastor ferme le micro ; un seul fauteuil renversé reste éclairé.",
+        "lastImage": "Micro au premier plan, fauteuil renversé et absence inquiétante dans le cercle de lumière."
       },
       {
         "fighter": "husk",
-        "signature": "Carte retournée",
-        "input": "Arrière + lourd",
-        "effect": "Lance une carte en cloche. Son rebond fixe invite à avancer derrière elle.",
-        "counter": "Le verso brille à l’apogée. Passer sous la carte tôt ou garder le rebond.",
+        "signature": "La mise s’arrête ici",
+        "input": "T / I · proposition",
+        "effect": "Contrôle de rythme proposé Poser un marqueur de table qui absorbe un projectile ordinaire puis disparaît.",
+        "counter": "Annonce : Marqueur visible au sol, carte face ouverte. Réponse : Approcher physiquement ou attendre sa disparition.",
         "finisher": "Maison fermée",
-        "storyboard": "Un éventail de cartes dirige l’adversaire jusqu’à la dernière chaise du bar. Le tabouret tourne et s’arrête.",
-        "lastImage": "Husk retourne un sous-verre et range son jeu."
+        "storyboard": "1. Il étale quatre cartes autour de la cible.\n2. La table se renverse dans un impact sec, masquant la chute.\n3. Husk retourne la dernière carte et éteint la lampe.",
+        "lastImage": "Une carte face cachée près d’une lampe éteinte ; Husk tourne le dos."
       },
       {
         "fighter": "niffty",
-        "signature": "Ras du tapis",
-        "input": "Bas, avant + léger",
-        "effect": "Glisse au sol sur une courte distance. Une collision termine la glissade et laisse Niffty visible.",
-        "counter": "Le dos se tasse avant le départ. Reculer puis punir le temps de redressement.",
-        "finisher": "Grand nettoyage",
-        "storyboard": "Niffty fond sur une tache au pied du rival. Un nuage de poussière retombe sur le tapis roulé.",
-        "lastImage": "Deux chaussures dépassent du tapis. Elle inspecte le sol."
+        "signature": "Sous leur nez",
+        "input": "T / I · proposition",
+        "effect": "Passage bas proposé Déplacement bas suivi d’un seul coup, vulnérable aux attaques basses.",
+        "counter": "Annonce : Regard vers les pieds adverses et accroupissement net. Réponse : Attendre et couvrir le sol.",
+        "finisher": "Plus une tache",
+        "storyboard": "1. Elle retire l’accessoire dans un mouvement sec.\n2. Une série de coups reste derrière un chariot qui masque l’impact.\n3. Elle essuie l’accessoire et le pose, impeccable, sur le chariot.",
+        "lastImage": "Objet propre au premier plan et regard immense de Niffty derrière."
       },
       {
         "fighter": "sirpentious",
-        "signature": "Rappel mécanique",
-        "input": "Quart avant + lourd",
-        "effect": "Un petit dispositif roule en ligne. Une seconde pression l’arrête sur place avant son extinction.",
-        "counter": "Le voyant change lorsque la roue se bloque. Rester hors de la zone ou gagner le contact.",
-        "finisher": "Inspection de bord",
-        "storyboard": "Le levier déclenche un filet de démonstration à l’arrivée du rival. Pentious salue, puis cherche le bouton pour le libérer.",
-        "lastImage": "Un Egg Boi indique le bon bouton."
+        "signature": "Plan de secours",
+        "input": "T / I · proposition",
+        "effect": "Objet persistant proposé Poser un petit obstacle mécanique destructible qui bloque une approche.",
+        "counter": "Annonce : Projection de l’emplacement avant la pose. Réponse : Détruire l’obstacle ou le contourner.",
+        "finisher": "Dernier prototype",
+        "storyboard": "1. Le canon rate volontairement le corps et détruit l’appui du vaincu.\n2. Une cage mécanique de décor se referme après la chute.\n3. Pentious découvre que la sortie d’urgence de sa propre machine fonctionne.",
+        "lastImage": "Pentious dehors, adversaire coincé dans un mécanisme cabossé mais ouvert à l’air."
       },
       {
         "fighter": "lucifer",
-        "signature": "Tour de piste",
-        "input": "Quart arrière + spécial",
-        "effect": "Déplacement court entre deux marques illuminées. L’arrivée reste attaquable.",
-        "counter": "Les deux marques s’allument ensemble. Couvrir la sortie au lieu de poursuivre l’entrée.",
-        "finisher": "Rappel du maître de piste",
-        "storyboard": "La canne commande une trappe de scène. Un bouquet de plumes monte pendant que le rival tombe sur une pile de coussins.",
-        "lastImage": "Un canard en caoutchouc atterrit dans sa main."
+        "signature": "À mon tour de garder",
+        "input": "T / I · proposition",
+        "effect": "Contre de position proposé Brève garde immobile suivie d’un coup repoussant si touché de face.",
+        "counter": "Annonce : Canne verticale, main libre ouverte devant le corps. Réponse : Feinter et attendre, puis attaquer pendant la sortie de garde.",
+        "finisher": "Le roi a terminé",
+        "storyboard": "1. Il brise l’arme équipée contre le sol ; face à une cible désarmée, son impact fracasse un bord de comptoir AU à côté du vaincu, sans faire apparaître une arme.\n2. Il garde l’adversaire acculé au passage, puis arrête volontairement l’affrontement.\n3. Il se détourne pour vérifier l’état de l’hôtel.",
+        "lastImage": "Canne de Lucifer nette, arme équipée brisée ou débris du comptoir au sol, regard déjà tourné vers Charlie hors champ."
       },
       {
         "fighter": "cherribomb",
-        "signature": "Rebond peint",
-        "input": "Quart avant + léger",
-        "effect": "L’objet rebondit une fois. Une marque au sol montre l’endroit de l’effet et autorise un passage rapproché.",
-        "counter": "Observer le premier rebond, avancer derrière lui ou quitter le marquage.",
-        "finisher": "Dernière mèche",
-        "storyboard": "Cherri fait rouler son accessoire sous une rampe de spectacle. L’impact projette le rival derrière un panneau.",
-        "lastImage": "Le panneau tombe et révèle sa signature peinte."
+        "signature": "Une seule suffit",
+        "input": "T / I · proposition",
+        "effect": "Piège au sol proposé Déposer une charge visible qui explose après un délai fixe.",
+        "counter": "Annonce : Charge lisible avec indicateur de délai non clignotant. Réponse : La contourner ou provoquer l’explosion à distance.",
+        "finisher": "Sortie de secours",
+        "storyboard": "1. Cherri colle une charge au support derrière lui.\n2. La paroi cède dans un nuage de poussière qui masque la chute.\n3. Cherri vérifie la mèche de la seconde charge et la range.",
+        "lastImage": "Brèche nette, seconde bombe intacte au premier plan."
       },
       {
         "fighter": "vox",
-        "signature": "Image décalée",
-        "input": "Quart arrière + lourd",
-        "effect": "Une image retardée reprend un pas du combattant. Seule la silhouette pleine peut toucher.",
-        "counter": "Les lignes de balayage trahissent l’image secondaire. Garder l’original en vue.",
-        "finisher": "Coupure régie",
-        "storyboard": "L’image du perdant se multiplie sur les moniteurs. Vox ferme les écrans un par un, puis coupe le plateau.",
-        "lastImage": "Une unique mire reste allumée."
+        "signature": "Cadre imposé",
+        "input": "T / I · proposition",
+        "effect": "Zone retardée proposée Un moniteur de décor marque une bande au sol puis émet une impulsion locale.",
+        "counter": "Annonce : Bande visible et moniteur tourné vers la zone. Réponse : Sortir latéralement avant l’activation ou interrompre Vox.",
+        "finisher": "Écran noir",
+        "storyboard": "1. Les caméras convergent sur le visage adverse.\n2. Une décharge locale fait tomber les appareils et masque l’impact.\n3. Un seul écran reste allumé sur le sourire de Vox puis s’éteint.",
+        "lastImage": "Rectangle noir avec une faible rémanence cyan, Vox devant la caméra."
       },
       {
         "fighter": "valentino",
-        "signature": "Rideau de fumée",
-        "input": "Quart arrière + léger",
-        "effect": "Fait progresser un nuage lent qui révèle une seule frappe à sa dissipation. La silhouette reste détourée.",
-        "counter": "Le bord violet avance avant l’impact. Reculer ou couper la pose.",
-        "finisher": "Hors champ",
-        "storyboard": "Valentino rabat un rideau sur la scène. Le vaincu en ressort en silhouette, sonné, pendant qu’un néon s’éteint.",
-        "lastImage": "Le fauteuil pivote vers un plateau vide."
+        "signature": "Plateau verrouillé",
+        "input": "T / I · proposition",
+        "effect": "Obstacle proposé Un élément de décor bloque brièvement un côté, sans empêcher les commandes.",
+        "counter": "Annonce : Rideau ou panneau annoncé avant fermeture. Réponse : Changer de côté avant sa pose ou le détruire.",
+        "finisher": "Coupez les lumières",
+        "storyboard": "1. Valentino renverse le panneau de décor devant l’adversaire.\n2. Les projecteurs se coupent l’un après l’autre, masquant l’impact.\n3. Il reste seul face à un appareil dont le voyant est éteint.",
+        "lastImage": "Valentino pose devant une caméra éteinte ; la sortie reste ouverte derrière."
       },
       {
         "fighter": "velvette",
-        "signature": "Changement de look",
-        "input": "Avant + spécial",
-        "effect": "Change la durée d’une feinte de pose. Le pas final est toujours visible, même en mode réduit.",
-        "counter": "La hanche pivote avant le pas. Attendre cette pose commune et garder.",
-        "finisher": "Couverture du soir",
-        "storyboard": "Un cadre photo se referme sur le rival. Velvette redresse le cadrage et balaye le cliché hors écran.",
-        "lastImage": "Une vignette froissée tombe au sol."
+        "signature": "Recadrage",
+        "input": "T / I · proposition",
+        "effect": "Objet mobile proposé Faire glisser un portant de décor destructible sur une courte distance.",
+        "counter": "Annonce : Portant visible avant lancement et trajectoire au sol. Réponse : Sauter l’objet ou le casser.",
+        "finisher": "Hors tendance",
+        "storyboard": "1. Elle tire un panneau de décor dans son angle de fuite.\n2. Le panneau le plaque contre le fond dans une percussion stylisée.\n3. Elle pivote la caméra vers elle et sort le vaincu du cadre.",
+        "lastImage": "Velvette nette au bord d’une image dont l’autre moitié reste volontairement vide."
       },
       {
         "fighter": "adam",
-        "signature": "Accord suspendu",
-        "input": "Quart avant + lourd",
-        "effect": "Un accord vertical couvre une entrée tardive. La zone au sol reste libre après la montée.",
-        "counter": "Le manche se lève et la bande lumineuse précède l’attaque. Rester au sol et attendre la retombée.",
-        "finisher": "Extinction des amplis",
-        "storyboard": "Un dernier accord rabat la silhouette sur le rideau derrière la scène. Les amplis s’éteignent en cascade.",
-        "lastImage": "Adam tient la pose devant un micro désormais muet."
+        "signature": "Le rappel",
+        "input": "T / I · proposition",
+        "effect": "Charge proposée Pose provocante qui charge une frappe unique, annulable si touché.",
+        "counter": "Annonce : Bras ouverts et marque de charge continue. Réponse : Attaquer pendant la pose ou rester hors portée.",
+        "finisher": "Plus un bruit",
+        "storyboard": "1. Il frappe le sol et ferme les issues visuelles par un éclat local.\n2. Une percussion lumineuse masque la chute du vaincu.\n3. Il attend des applaudissements devant une arène muette.",
+        "lastImage": "Adam bras ouverts, projecteur sur un sol vide et fissuré."
       },
       {
         "fighter": "emily",
-        "signature": "Interlude",
-        "input": "Arrière + spécial",
-        "effect": "Un cercle bref protège une seule approche. Il disparaît si Emily avance ou rate sa lecture.",
-        "counter": "Les mains se rejoignent avant le cercle. Attendre son extinction ou feinter l’approche.",
-        "finisher": "La place accordée",
-        "storyboard": "Emily suspend la dispute par un geste ouvert. Deux sièges s’abaissent, l’adversaire accepte de s’asseoir.",
-        "lastImage": "Elle se met à sa hauteur et baisse les ailes."
+        "signature": "Laisser répondre",
+        "input": "T / I · proposition",
+        "effect": "Zone défensive proposée Zone courte réduisant une seule poussée reçue avant de disparaître.",
+        "counter": "Annonce : Cercle ouvert au sol, stable et peu lumineux. Réponse : Attendre sa fin ou attaquer depuis un autre angle.",
+        "finisher": "L’audience reste ouverte",
+        "storyboard": "1. Elle abaisse l’arme équipée vers le sol ; contre un adversaire désarmé comme Sera, elle dévie son avant-bras sans immobilisation douloureuse.\n2. Une chaise glisse physiquement entre les adversaires.\n3. Emily recule et laisse la place au vaincu.",
+        "lastImage": "Chaise entre deux silhouettes, dossier toujours ouvert."
       },
       {
         "fighter": "sera",
-        "signature": "Clôture d’audience",
-        "input": "Quart avant + spécial",
-        "effect": "Une limite descend à distance fixe. Elle retarde l’entrée d’un côté et laisse une ouverture à ses pieds.",
-        "counter": "L’ombre du cadre précède sa descente. Passer avant la fermeture ou attendre.",
-        "finisher": "Audience levée",
-        "storyboard": "Les pans du décor se referment entre les duellistes. Sera reste face à une salle silencieuse.",
-        "lastImage": "La lumière de la tribune s’éteint."
+        "signature": "Règle commune",
+        "input": "T / I · proposition",
+        "effect": "Zone proposée Créer une zone brève qui interrompt une ruée par contact.",
+        "counter": "Annonce : Deux repères au sol, zone stable avant activation. Réponse : Approcher à pied ou contourner.",
+        "finisher": "Séance suspendue",
+        "storyboard": "1. Elle détourne l’arme équipée vers un support de pierre ; contre une cible désarmée, elle écarte ses avant-bras et place le support entre eux.\n2. Le support se ferme sur l’arme équipée ; dans la variante désarmée, il se ferme à vide pour barrer le passage, sans emprisonner de membre ni d’âme.\n3. Sera quitte le champ vers la table où le dossier reste ouvert.",
+        "lastImage": "Support fermé au premier plan, avec l’arme seulement si la cible en portait une ; porte de l’audience ouverte derrière."
       },
       {
         "fighter": "lute",
-        "signature": "Rupture de ligne",
-        "input": "Avant + lourd",
-        "effect": "Percée directe, sensible à une esquive préalable. L’allonge récompense une lecture du recul.",
-        "counter": "La lance se place à hauteur d’épaule. Quitter l’axe puis punir la fin de course.",
-        "finisher": "Dernière sommation",
-        "storyboard": "Lute fixe l’accessoire adverse au décor d’un coup sec. L’ombre du vaincu tombe à genoux derrière une aile.",
-        "lastImage": "La lance se redresse dans le silence."
+        "signature": "Aucun détour",
+        "input": "T / I · proposition",
+        "effect": "Charge linéaire proposée Longue avance frontale qui ne peut pas corriger sa direction.",
+        "counter": "Annonce : Trajectoire annoncée au sol avant l’engagement. Réponse : Changer de côté après le départ et punir l’arrêt.",
+        "finisher": "Ordre rompu",
+        "storyboard": "1. Elle tranche la poignée de l’arme équipée ; contre une cible désarmée, elle tranche un montant de décor AU à côté d’elle.\n2. Une percussion de lame frappe le décor devant le vaincu et masque sa chute.\n3. Lute reste immobile devant une ligne au sol qu’elle a elle-même franchie.",
+        "lastImage": "Lame basse et ligne brisée, adversaire hors champ."
       },
       {
         "fighter": "carmilla",
-        "signature": "Pointe d’appui",
-        "input": "Bas, avant + lourd",
-        "effect": "Pivot sur une jambe puis coup ascendant. La rotation crée un angle mort au départ.",
-        "counter": "Le talon se lève avant la rotation. Interrompre tôt ou attendre le retour au sol.",
-        "finisher": "Dernière révérence",
-        "storyboard": "Deux tracés de pointe encerclent le rival. Carmilla le déséquilibre, puis arrête sa lame avant le contact final.",
-        "lastImage": "Une révérence clôt la scène."
+        "signature": "Pour qu’ils passent",
+        "input": "T / I · proposition",
+        "effect": "Contre mobile proposé Esquive latérale courte suivie d’une frappe si l’attaque adverse traverse l’ancienne position.",
+        "counter": "Annonce : Corps de profil et appui extérieur préparé. Réponse : Retarder le coup ou viser la nouvelle position.",
+        "finisher": "L’atelier est fermé",
+        "storyboard": "1. Une frappe désarme la main équipée ; face à une cible désarmée, elle dévie les avant-bras et coupe l’appui du dernier assaut.\n2. Les supports se plient autour de l’arme abandonnée ; dans la variante désarmée, ils se referment à vide entre Carmilla et le vaincu.\n3. Carmilla referme la porte de l’atelier devant le vaincu tombé.",
+        "lastImage": "Chaussure en appui près des supports pliés, arme visible seulement si la cible en portait une ; porte close en profondeur."
       },
       {
         "fighter": "rosie",
-        "signature": "Pas de réception",
-        "input": "Arrière + léger",
-        "effect": "Un pas d’accueil attire à portée de riposte. La riposte exige un contact pendant la pose.",
-        "counter": "Le poignet s’incline. Feinter le contact puis attaquer à la sortie.",
-        "finisher": "Table réservée",
-        "storyboard": "Les chaises de la place se rangent derrière l’adversaire. Rosie l’invite à s’asseoir au centre du cercle.",
-        "lastImage": "Un couvert est posé. Les rideaux du restaurant se ferment."
+        "signature": "Place réservée",
+        "input": "T / I · proposition",
+        "effect": "Obstacle proposé Une chaise glisse sur une courte distance et arrête une approche si elle touche.",
+        "counter": "Annonce : Chaise visible et route au sol. Réponse : Sauter ou briser l’obstacle.",
+        "finisher": "La maison décline",
+        "storyboard": "1. La chaise se retire au moment où l’adversaire s’y appuie.\n2. La table bascule et le repousse hors du seuil.\n3. Rosie remet le couvert exactement à sa place.",
+        "lastImage": "Assiette intacte au centre, porte refermée sur l’ombre du vaincu."
       },
       {
         "fighter": "zestial",
-        "signature": "Longue attente",
-        "input": "Arrière + spécial",
-        "effect": "Maintient une pose intimidante. Relâcher donne un balayage lent dont la portée croît une seule fois.",
-        "counter": "Le manteau s’ouvre au deuxième temps. Entrer au premier ou rester hors de portée.",
-        "finisher": "Silence de la galerie",
-        "storyboard": "L’ombre du manteau grandit sur le mur. Le rival abandonne la scène lorsque le dernier lampion s’éteint.",
-        "lastImage": "Seul un profil immobile reste éclairé."
+        "signature": "Attendre l’erreur",
+        "input": "T / I · proposition",
+        "effect": "Contre proposé Garde étroite ; une attaque frontale déclenche une riposte courte.",
+        "counter": "Annonce : Corps immobile et main avancée. Réponse : Feinter, attendre ou attaquer depuis une autre direction.",
+        "finisher": "L’objection est close",
+        "storyboard": "1. Il détourne l’arme équipée dans un support de table ; face à une cible désarmée, il dévie l’avant-bras hors de la trajectoire du couvercle.\n2. Il rabat le lourd couvercle sur l’arme équipée ; dans la variante désarmée, il ferme le coffre à vide entre les deux combattants.\n3. Il ferme le dossier pendant que le vaincu tombe hors cadre.",
+        "lastImage": "Dossier clos, coffre fermé et main de Zestial immobile ; une arme n’est visible que dans la variante armée."
       },
       {
         "fighter": "zeezi",
-        "signature": "Pas de basse",
-        "input": "Bas + lourd",
-        "effect": "Piétinement de proximité. Un deuxième rythme retardé couvre les pas courts, avec une pause entre les deux.",
-        "counter": "Le genou pointe vers l’extérieur. Reculer ou sauter l’onde si le saut physique est disponible.",
-        "finisher": "Le dernier temps",
-        "storyboard": "Le sol de scène clignote sous le dernier pas et l’estrade adverse s’abaisse dans les coulisses.",
-        "lastImage": "Le rythme revient au calme sur la scène vide."
+        "signature": "Faire de la place",
+        "input": "T / I · proposition",
+        "effect": "Poussée proposée Avancée lente qui repousse seulement au contact et peut être interrompue.",
+        "counter": "Annonce : Posture large et bras devant le corps. Réponse : Sauter, contourner ou toucher pendant l’avancée.",
+        "finisher": "Retour au parterre",
+        "storyboard": "1. Un impact physique brise le bord du décor.\n2. La plateforme bascule et fait tomber l’adversaire hors champ.\n3. Zeezi enlève le dernier morceau qui bloquait le passage.",
+        "lastImage": "Passage libre et estrade abaissée, Zeezi au même niveau que la salle."
       },
       {
         "fighter": "baxter",
-        "signature": "Flacon témoin",
-        "input": "Quart avant + léger",
-        "effect": "Lance un marqueur coloré qui révèle une zone d’échantillonnage. Une seule zone active à la fois.",
-        "counter": "Le flacon change de main. Traverser avant que le cercle se stabilise.",
-        "finisher": "Essai terminé",
-        "storyboard": "Un écran de laboratoire descend entre les duellistes. Une silhouette brouillée laisse une empreinte sur la vitre.",
-        "lastImage": "Baxter étiquette l’échantillon et referme son carnet."
+        "signature": "Test interrompu",
+        "input": "T / I · proposition",
+        "effect": "Objet proposé Poser un boîtier visible qui déclenche un seul contact après délai, destructible avant départ.",
+        "counter": "Annonce : Voyant de préparation stable et aire indiquée. Réponse : Détruire le boîtier ou quitter la zone.",
+        "finisher": "Résultat non reproductible",
+        "storyboard": "1. Le dispositif mesure puis sature visuellement.\n2. Un bras mécanique de décor repousse le vaincu hors du cadre.\n3. Baxter coupe l’appareil et regarde une aiguille revenue à zéro.",
+        "lastImage": "Aiguille au repos, bouton d’arrêt enfoncé, Baxter perplexe."
       },
       {
         "fighter": "abel",
-        "signature": "Repli ordonné",
-        "input": "Arrière + spécial",
-        "effect": "Recule sous une garde brève. La récupération est plus longue lorsqu’aucun coup ne l’atteint.",
-        "counter": "Le talon recule avant le mouvement. Marcher derrière lui sans frapper.",
-        "finisher": "La consigne",
-        "storyboard": "Abel siffle l’arrêt. Le rival lâche son accessoire et sort entre deux faisceaux de lumière.",
-        "lastImage": "Il range son insigne et attend que la porte se referme."
+        "signature": "Je maintiens",
+        "input": "T / I · proposition",
+        "effect": "Garde proposée Adopter une posture résistante à une seule poussée, sans invulnérabilité aux dégâts.",
+        "counter": "Annonce : Pieds écartés et bras devant le corps. Réponse : Attendre ou toucher de côté.",
+        "finisher": "La parole tient",
+        "storyboard": "1. Il dévie l’attaque finale avec l’avant-bras.\n2. Il ferme un battant entre les deux combattants.\n3. Il rouvre le passage latéral pour les autres.",
+        "lastImage": "Un battant fermé et un passage ouvert, Abel au milieu."
       },
       {
         "fighter": "hb_blitzo",
@@ -12616,119 +12616,119 @@
         "input": "T / I",
         "effect": "Fait mine de battre en retraite puis bondit d’un pas vers l’angle mort. Le pas reste punissable à vide.",
         "counter": "La queue change d’appui avant le retour. Couvrir le point d’arrivée.",
-        "finisher": "Devis signé",
-        "storyboard": "Blitzø chasse le rival vers la porte du bureau, la referme et colle la facture dessus.",
-        "lastImage": "Une main repousse la facture sous la porte."
+        "finisher": "Retour à l’envoyeur",
+        "storyboard": "1. Blitzø plante le contrat sur la porte d’un geste sec.\n2. Un tir fait céder la fixation d’un panneau métallique qui rabat l’adversaire hors champ.\n3. Il récupère sa feuille sous la porte et lui donne un dernier pli.",
+        "lastImage": "Blitzø range le papier pendant qu’un pan de la porte tombe derrière lui."
       },
       {
         "fighter": "hb_moxxie",
-        "signature": "Temps mesuré",
-        "input": "Arrière + lourd",
-        "effect": "Maintient une visée de jeu sur une ligne unique. Relâcher tôt sacrifie de la portée pour reprendre la garde.",
-        "counter": "Le point de visée apparaît avant toute touche. Avancer pendant la mise en place.",
-        "finisher": "Point final",
-        "storyboard": "Trois impacts stylisés perforent un décor en carton autour de la silhouette. Moxxie vérifie sa partition puis salue.",
-        "lastImage": "Le carton bascule et dévoile le rival assis, dépité."
+        "signature": "Contretemps",
+        "input": "T / I · proposition",
+        "effect": "Tir retardé volontairement Après une mise en joue, le joueur choisit entre tir immédiat et retard limité.",
+        "counter": "Annonce : La mise en joue reste visible pendant toute l’attente. Réponse : Saut différé ou pression rapprochée ; aucune visée automatique.",
+        "finisher": "Solde de tout compte",
+        "storyboard": "1. Moxxie pose une feuille sur la table et la tourne face à lui.\n2. Il désarme d’un tir précis si une arme est équipée ; face à une cible désarmée, il tire dans une attache de la table AU. Dans les deux variantes, il repousse ensuite la table qui coupe la silhouette.\n3. Après l’impact en ellipse, il retire uniquement sa feuille.",
+        "lastImage": "La chaise roule dans le vide ; Moxxie part sans regarder la place libre."
       },
       {
         "fighter": "hb_millie",
-        "signature": "Retour de balancier",
-        "input": "Quart avant + lourd",
-        "effect": "Large arc de hache suivi d’un retour retardé si le premier geste rencontre la garde.",
-        "counter": "La main arrière glisse sur le manche. Reculer hors du second arc puis entrer.",
-        "finisher": "Le ruban bleu",
-        "storyboard": "Millie sectionne les attaches d’une bannière de foire. Le tissu s’abat autour du rival comme un paquet.",
-        "lastImage": "Elle noue le ruban et prend la pose."
+        "signature": "Je mène",
+        "input": "T / I · proposition",
+        "effect": "Enchaînement de pression engagé Après un contact, une seconde entrée suit si le joueur confirme ; elle reste punissable si le premier coup rate.",
+        "counter": "Annonce : Reprise de pied visible avant la seconde frappe. Réponse : Défendre le premier coup puis punir l’extension, ou faire rater dès le départ.",
+        "finisher": "Bois de chauffage",
+        "storyboard": "1. Millie enfonce l’arme dans la traverse au-dessus de l’épaule adverse.\n2. Elle arrache le bois et entraîne l’adversaire hors cadre avec le même mouvement.\n3. Le morceau coupé retombe en deux parts qu’elle empile sans cérémonie.",
+        "lastImage": "Millie essuie le manche de l’arme, deux morceaux de palissade impeccablement rangés à ses pieds."
       },
       {
         "fighter": "hb_loona",
-        "signature": "Crochet de poursuite",
-        "input": "Avant, avant + léger",
-        "effect": "Bond court avec réception vers l’avant. La trajectoire se fixe au départ.",
-        "counter": "Les oreilles s’abaissent avant l’impulsion. Se décaler à l’envol ou garder la réception.",
-        "finisher": "Service terminé",
-        "storyboard": "Loona bondit dans le contre-jour. Un téléphone vibre pendant que la silhouette adverse glisse hors du bureau.",
-        "lastImage": "Elle décroche et retourne à son comptoir."
+        "signature": "Territoire personnel",
+        "input": "T / I · proposition",
+        "effect": "Riposte à lecture Posture de garde brève qui ouvre une riposte seulement si un contact proche survient.",
+        "counter": "Annonce : Deux mains levées et pieds fixes pendant la fenêtre. Réponse : Attendre, saisir si disponible, ou utiliser une attaque distante.",
+        "finisher": "Ne rappelle pas",
+        "storyboard": "1. Loona coupe la sonnerie d’un coup de talon.\n2. Elle saisit le revers adverse et le projette derrière une porte métallique.\n3. La porte se ferme ; elle récupère son propre téléphone, intact.",
+        "lastImage": "Loona s’éloigne sans retourner la tête, son écran éclairant une main."
       },
       {
         "fighter": "hb_stolas",
-        "signature": "Fenêtre astrale",
-        "input": "Quart arrière + spécial",
-        "effect": "Ouvre deux fenêtres dont la sortie est visible. Le déplacement consomme la marque et empêche un enchaînement en boucle.",
-        "counter": "Des étoiles dessinent la sortie avant le passage. Préparer une riposte à cet endroit.",
-        "finisher": "Page tournée",
-        "storyboard": "Une page du grimoire encadre le rival et le dépose hors de l’arène. Stolas observe le cadre se replier.",
-        "lastImage": "Le livre se ferme sous une petite constellation."
+        "signature": "Regard interdit",
+        "input": "T / I · proposition",
+        "effect": "Punition à longue préparation Regard dirigé sur une zone étroite ; un impact visuel bref remplace toute pétrification permanente.",
+        "counter": "Annonce : Yeux ouverts, corps immobile, ligne de visée visible. Réponse : Interrompre le départ ou sortir de l’axe.",
+        "finisher": "La porte se referme",
+        "storyboard": "1. Stolas lève les yeux sans avancer.\n2. Sa grande silhouette d’ombre remplit le cadre et absorbe la ligne de fuite.\n3. Le seuil se ferme sur une plume qui reste du côté de Stolas.",
+        "lastImage": "Stolas ferme son livre ; la plume se pose sur une marche vide."
       },
       {
         "fighter": "hb_striker",
-        "signature": "Marque du chasseur",
-        "input": "Avant + lourd",
-        "effect": "Fixe une marque de duel à mi-distance. Le coup suivant couvre le point marqué après un délai.",
-        "counter": "Le regard et le pied visent la même marque. Changer de distance avant la reprise.",
-        "finisher": "Dernier avis",
-        "storyboard": "Le rival recule sur une marque blanche. Une corde de spectacle arrache son accessoire et un avis se déroule au premier plan.",
-        "lastImage": "Striker décroche l’avis et s’éloigne."
+        "signature": "Nœud de capture",
+        "input": "T / I · proposition",
+        "effect": "Prise à distance limitée Une corde matérialisée vise un espace court puis revient si elle manque.",
+        "counter": "Annonce : Boucle préparée au-dessus de l’épaule. Réponse : Saut ou recul anticipé ; punir la récupération.",
+        "finisher": "La marque du chasseur",
+        "storyboard": "1. Striker accroche un anneau de corde à la cible.\n2. Il prend une seule visée ; le cadre bascule sur son ombre au moment du tir.\n3. Il retire la cible fendue et vérifie son propre équipement.",
+        "lastImage": "L’étui se referme au premier plan, cible trouée derrière."
       },
       {
         "fighter": "hb_verosika",
-        "signature": "Contretemps",
-        "input": "Quart arrière + léger",
-        "effect": "Un pas chanté retarde la reprise. Le second appui, visible sans son, déclenche une poussée courte.",
-        "counter": "Observer les deux appuis. Punir après la dernière note ou interrompre au premier appui.",
-        "finisher": "Bis refusé",
-        "storyboard": "Verosika passe le micro au rival. Les projecteurs le cherchent, le rideau l’escamote et le public rappelle la chanteuse.",
-        "lastImage": "Elle quitte la scène avant le rappel."
+        "signature": "Mon rappel",
+        "input": "T / I · proposition",
+        "effect": "Piège de zone technique Un retour de scène au sol émet un seul impact différé dans une zone annoncée.",
+        "counter": "Annonce : Petit cône lumineux stable avant l’impact. Réponse : Sortir du cône ou interrompre la pose.",
+        "finisher": "Micro coupé",
+        "storyboard": "1. Verosika l’éloigne avec un coup de talon contre le pied du micro.\n2. Un élément de décor tombe entre lui et la salle, coupant net sa silhouette.\n3. Elle coupe l’alimentation de son micro puis salue dans le silence.",
+        "lastImage": "Verosika au bord de scène, câble débranché dans la main, décor tombé derrière."
       },
       {
         "fighter": "hb_fizzarolli",
-        "signature": "Bras à ressort",
-        "input": "Quart avant + lourd",
-        "effect": "Étend un bras jusqu’à une marque. Le retrait augmente la vulnérabilité à mesure que l’allonge augmente.",
-        "counter": "Le coude se replie en accordéon. Passer sous le bras ou punir le retrait.",
-        "finisher": "Numéro de sortie",
-        "storyboard": "Le bras articulé saisit un anneau. Une balançoire enlève le rival hors du cercle lumineux.",
-        "lastImage": "Fizz retombe sur les deux pieds et salue."
+        "signature": "Sortie de piste",
+        "input": "T / I · proposition",
+        "effect": "Changement de côté conditionnel Appui extensible sur le décor puis passage derrière à distance courte, uniquement si l’espace est libre.",
+        "counter": "Annonce : Main plantée sur un repère visible. Réponse : Interrompre l’appui ou couvrir l’arrivée ; échec si le bord bloque.",
+        "finisher": "Hors emballage",
+        "storyboard": "1. Fizz déploie ses bras autour du cadre, sans se détacher de son corps.\n2. Un coup de pied referme l’emballage sur la silhouette adverse.\n3. Il retire l’étiquette vierge et en fait tomber la boîte hors de scène.",
+        "lastImage": "Fizz tient l’étiquette minuscule face à une scène redevenue vide."
       },
       {
         "fighter": "hb_asmodeus",
-        "signature": "Lever de rideau",
-        "input": "Quart avant + spécial",
-        "effect": "Une frontière s’ouvre à mi-distance puis se referme. L’effet est symétrique pour garder une lecture stable.",
-        "counter": "La lumière au sol dessine le cadre. Sortir du contour ou passer pendant l’ouverture.",
-        "finisher": "Salle comble",
-        "storyboard": "Des flammes de scène dessinent un arc autour du rival et l’orientent vers les coulisses. Un bras ramène le micro au centre.",
-        "lastImage": "Le cabaret reprend son souffle."
+        "signature": "La sortie reste libre",
+        "input": "T / I · proposition",
+        "effect": "Zone défensive Rideau de flamme bref qui absorbe un seul projectile avant de disparaître.",
+        "counter": "Annonce : Bande lumineuse tracée au sol. Réponse : Approcher à pied ou attendre sa disparition.",
+        "finisher": "Rideau de braise",
+        "storyboard": "1. Ozzie frappe une fois dans ses mains, sans incantation.\n2. Deux pans de feu bleu ferment la plateforme ; l’impact reste visible en silhouette.\n3. La flamme s’abaisse comme un rideau, révélant un plateau vide.",
+        "lastImage": "Ozzie éteint entre deux doigts la dernière braise au bord de scène."
       },
       {
         "fighter": "hb_beelzebub",
-        "signature": "Rebond de fête",
-        "input": "Avant + léger",
-        "effect": "Se déplace suivant deux appuis, avec une seule zone de touche au deuxième temps.",
-        "counter": "La couleur de la traînée change au deuxième appui. Garder jusque-là ou punir entre les pas.",
-        "finisher": "Dernier toast",
-        "storyboard": "Le comptoir tourne, le rival glisse sur un coussin géant et la foule lève ses verres au-dessus de lui.",
-        "lastImage": "Bee rend le verre tombé et relance la fête."
+        "signature": "La part de chacun",
+        "input": "T / I · proposition",
+        "effect": "Contrôle d’une zone Un plateau AU tombe dans une zone annoncée et ne produit qu’un contact.",
+        "counter": "Annonce : Ombre stable au sol avant la chute. Réponse : Quitter l’ombre ou approcher Bee pendant sa commande.",
+        "finisher": "Trop pour toi",
+        "storyboard": "1. Bee présente une minuscule bouchée du bout des doigts.\n2. Le cadre s’élargit sur le dessert géant qui bascule et engloutit la silhouette.\n3. Elle pose la petite bouchée sur le plateau désormais vide au premier plan.",
+        "lastImage": "Bee lève un sourcil, énorme trace de crème derrière elle."
       },
       {
         "fighter": "hb_crimson",
-        "signature": "Porte dérobée",
-        "input": "Quart arrière + lourd",
-        "effect": "Ouvre un passage de décor qui produit une frappe retardée à distance fixe. Un seul signal à l’écran.",
-        "counter": "La poignée tourne avant la frappe. Rester de l’autre côté de la marque.",
-        "finisher": "Réunion ajournée",
-        "storyboard": "Le dossier d’un fauteuil masque le rival. Crimson claque des doigts et deux portes se referment autour du siège.",
-        "lastImage": "Une enveloppe reste seule sur la table."
+        "signature": "La porte est fermée",
+        "input": "T / I · proposition",
+        "effect": "Piège matériel AU Crimson tire un verrou qui ferme brièvement une zone de sortie annoncée.",
+        "counter": "Annonce : Poignée visible et bande au sol. Réponse : Quitter la zone avant la fermeture ou punir le geste.",
+        "finisher": "Au fond du canal",
+        "storyboard": "1. Crimson rabat la silhouette adverse sur la chaise.\n2. Il accroche un lest au pied du meuble et le pousse hors cadre.\n3. L’image coupe sur une eau noire troublée, puis son gant ajusté.",
+        "lastImage": "Crimson remet son gant en place devant une rambarde vide."
       },
       {
         "fighter": "hb_andrealphus",
-        "signature": "Arc de givre",
-        "input": "Quart avant + lourd",
-        "effect": "Une arche de glace se forme à distance moyenne. Sa base matérialise la seule zone active.",
-        "counter": "Le givre dessine la base avant de monter. Entrer très tôt ou se retirer avant la fermeture.",
-        "finisher": "Vitrine d’hiver",
-        "storyboard": "Le contour du rival se fige dans un cadre de glace stylisé. Une plume en dessine le dernier angle.",
-        "lastImage": "Le cadre pivote vers un jardin silencieux."
+        "signature": "Le degré de trop",
+        "input": "T / I · proposition",
+        "effect": "Piège de placement Une marche glacée apparaît brièvement à une position télégraphiée.",
+        "counter": "Annonce : Zone bleue fixe avant émergence. Réponse : Quitter la zone ou contraindre le lanceur avant apparition.",
+        "finisher": "Nature morte en hiver",
+        "storyboard": "1. Andrealphus dessine un cadre de glace autour de la silhouette.\n2. Le cadre se referme en statue opaque, puis une frappe le fracture hors détail anatomique.\n3. Il corrige un éclat de la rampe comme si le désordre était l’offense principale.",
+        "lastImage": "Une rampe intacte et des éclats au sol ; Andrealphus détourne les yeux."
       },
       {
         "fighter": "hz_mimzy",
@@ -12736,9 +12736,9 @@
         "input": "T / I",
         "effect": "Le talon enchaîne sur une attaque légère pendant la récupération si l’adversaire subit une touche franche.",
         "counter": "Garder le talon pour refuser la suite en léger. À distance, attendre son retour avant de reprendre le centre.",
-        "finisher": "Le dernier rappel",
-        "storyboard": "Le projecteur isole Mimzy et son rival. Elle enchaîne deux pas chassés et arrête le troisième, les mains ouvertes. Le rideau descend entre les deux silhouettes.",
-        "lastImage": "Ses talons dépassent sous le rideau, puis rentrent un à un."
+        "finisher": "Le rappel coûte cher",
+        "storyboard": "1. Elle tire une corde clairement reliée au rideau.\n2. Une barre de décor tombe devant l’adversaire et masque la chute.\n3. Mimzy salue, puis ramasse elle-même la corde cassée.",
+        "lastImage": "Salut à moitié terminé, corde cassée dans la main."
       },
       {
         "fighter": "hb_sallie_may",
@@ -12746,79 +12746,79 @@
         "input": "T / I",
         "effect": "Sur la garde adverse, Sallie May repousse la ligne de contact plus loin. Une touche franche conserve le recul ordinaire du coup.",
         "counter": "Éviter de tenir le coin. Laisser manquer le coup et avancer pendant que le pied revient en place.",
-        "finisher": "Dernière cloche",
-        "storyboard": "Sallie May dégage le passage d’un coup d’épaule. Le battant d’une cloche oscille au premier plan tandis que le rival franchit la barrière.",
-        "lastImage": "Elle retient le battant dans sa paume pour en couper la résonance."
+        "finisher": "La barrière est fermée",
+        "storyboard": "1. Sallie May soulève le loquet sans quitter l’adversaire des yeux.\n2. Un coup de pied envoie la silhouette de l’autre côté.\n3. Elle ferme la barrière, vérifie le loquet et ramasse son sac.",
+        "lastImage": "Sallie May repart, barrière soigneusement refermée derrière elle."
       },
       {
         "fighter": "hz_katie_killjoy",
-        "signature": "Cession de parole",
-        "input": "À prototyper",
-        "effect": "Proposition : feinte de revers suivie d’une reprise courte si le joueur retarde sa touche. Aucun pouvoir d’antenne ajouté.",
-        "counter": "Attendre le revers puis entrer pendant le retour du bras. Prototype et fenêtres restent à mesurer.",
-        "finisher": "Coupure d’antenne",
-        "storyboard": "Katie rejoint la marque centrale, remet son col en place et tourne vers une caméra hors champ pendant que le signal se ferme.",
-        "lastImage": "Elle garde le dernier mot au centre du plateau. La version actuelle utilise le traitement signal partagé."
+        "signature": "Coupez ce plan",
+        "input": "T / I · proposition",
+        "effect": "Obstacle proposé Pousser une caméra sur roues dans une direction, destructible.",
+        "counter": "Annonce : Caméra visible et roues orientées avant départ. Réponse : Sauter ou casser l’obstacle.",
+        "finisher": "Fin du direct",
+        "storyboard": "1. Elle frappe le bureau et renverse le décor devant lui.\n2. La caméra roule au premier plan et masque l’impact.\n3. Katie redresse le micro comme si le plan n’avait jamais changé.",
+        "lastImage": "Micro droit, bureau de travers, cadrage trahissant les dégâts."
       },
       {
         "fighter": "hz_tom_trench",
-        "signature": "Retour de régie",
-        "input": "À prototyper",
-        "effect": "Proposition : parade compacte suivie d’une courte poussée. Le masque est un élément visuel ; aucune attaque chimique n’est attribuée au personnage.",
-        "counter": "Retarder le coup ou frapper après la poussée. La garde n’est pas une invulnérabilité.",
-        "finisher": "Retour à la régie",
-        "storyboard": "Tom recule d’un pas, récupère son conducteur et se replace devant la table. La mire occupe le champ.",
-        "lastImage": "Il remet les feuilles en ordre. La version actuelle utilise le traitement signal partagé."
+        "signature": "Prendre le recul",
+        "input": "T / I · proposition",
+        "effect": "Déplacement proposé Recul court avec garde vulnérable aux attaques basses.",
+        "counter": "Annonce : Pied arrière recule avant le départ. Réponse : Suivre le mouvement ou couvrir le sol.",
+        "finisher": "Le témoin reste debout",
+        "storyboard": "1. Il fixe le câble au pied d’un élément de décor.\n2. Le déplacement adverse renverse le panneau et masque la chute.\n3. Tom redresse le micro pour la personne hors champ.",
+        "lastImage": "Micro intact au premier plan, Tom décalé, espace laissé au témoin."
       },
       {
         "fighter": "hb_stella",
-        "signature": "Priorité de passage",
-        "input": "À prototyper",
-        "effect": "Proposition : pas court avec revers de paume pour reprendre le centre. Les coups et statistiques sont une adaptation de duel sans magie ajoutée.",
-        "counter": "Faire manquer le revers puis punir le retrait. La robe ne modifie pas la collision du moteur.",
-        "finisher": "L’audience est terminée",
-        "storyboard": "Stella indique la sortie d’un geste, ramène la main contre sa robe et conserve sa place devant le rideau.",
-        "lastImage": "Elle détourne le regard lorsque le rideau tombe. Version actuelle : effet rideau partagé, storyboard long non animé."
+        "signature": "Un geste de trop",
+        "input": "T / I · proposition",
+        "effect": "Contre physique conditionnel Posture d’attente ouvrant un revers si une attaque proche est bloquée.",
+        "counter": "Annonce : Paume levée, corps presque immobile. Réponse : Attendre ou attaquer à distance plutôt que nourrir le contre.",
+        "finisher": "La réception est terminée",
+        "storyboard": "1. Stella repousse le plateau posé devant elle.\n2. Un coup physique envoie la silhouette dans le paravent qui se replie brutalement.\n3. Elle tire la sonnette de service et tourne le dos au désordre.",
+        "lastImage": "Stella reste nette au premier plan, paravent effondré loin derrière."
       },
       {
         "fighter": "hb_mammon",
-        "signature": "Rappel surtaxé",
-        "input": "À prototyper",
-        "effect": "Proposition : paume lente qui invite une réponse puis seconde poussée retardée. Quatre bras conservés dans le dessin, sans collision indépendante ni transformation géante.",
-        "counter": "Entrer après la première poussée manquée ou garder à distance. Les quatre bras ne produisent pas quatre impacts automatiques.",
-        "finisher": "Le rappel est payant",
-        "storyboard": "Mammon écarte deux mains vers le public et garde les deux autres contre sa silhouette. Le rideau referme son espace de spectacle.",
-        "lastImage": "Il réclame le rappel devant le rideau fermé. Version actuelle : effet rideau partagé, storyboard long non animé."
+        "signature": "Frais de passage",
+        "input": "T / I · proposition",
+        "effect": "Zone punitive AU Un petit guichet marque une zone qui déclenche un seul impact au franchissement.",
+        "counter": "Annonce : Barrière posée et éclairage fixe. Réponse : Attendre sa disparition ou contourner la zone.",
+        "finisher": "Tous frais compris",
+        "storyboard": "1. Mammon ouvre le portillon avec une révérence moqueuse.\n2. Le guichet se referme en presse, la silhouette disparaissant entre deux panneaux.\n3. Un reçu interminable sort pendant qu’il cherche encore une pièce au sol.",
+        "lastImage": "Mammon ramasse une petite pièce, reçu en accordéon derrière lui."
       },
       {
         "fighter": "hb_vortex",
-        "signature": "Passage réservé",
-        "input": "À prototyper",
-        "effect": "Proposition AU : pas de côté puis poussée qui libère une sortie. Aucun pouvoir surnaturel supplémentaire attribué au personnage.",
-        "counter": "Attendre la poussée puis reprendre la ligne extérieure. La signature proposée reste hors du moteur.",
-        "finisher": "La sortie reste libre",
-        "storyboard": "Vortex se place au bord du plateau et indique le passage. Le rideau partagé tombe après le résultat.",
-        "lastImage": "Il reste de garde près de la sortie. Variante longue à animer ; aucune nouvelle pose de finition."
+        "signature": "Je prends le relais",
+        "input": "T / I · proposition",
+        "effect": "Garde conditionnelle Une courte posture absorbe un seul contact et permet une réponse, sans poursuivre l’adversaire.",
+        "counter": "Annonce : Avant-bras croisés, appuis fixes. Réponse : Attendre ou attaquer au-delà de sa portée.",
+        "finisher": "Sortie accompagnée",
+        "storyboard": "1. Vortex lui montre la porte d’une main.\n2. Il le saisit au revers et l’envoie au-delà du seuil, sans suivre la chute.\n3. Il referme la porte et retourne le panneau de service, sans texte visible.",
+        "lastImage": "Vortex réajuste tranquillement sa manche près d’une porte cabossée."
       },
       {
         "fighter": "hb_glitz",
-        "signature": "Dernier accent",
-        "input": "À prototyper",
-        "effect": "Proposition AU : changement de rythme suivi d’un geste de scène. Les timings et contacts relèvent du jeu.",
-        "counter": "Attendre l’accent final avant de reprendre le centre. Signature non implémentée.",
-        "finisher": "Le salut choisi",
-        "storyboard": "Glitz reprend sa marque et termine le salut au centre. Le rideau existant ferme le plateau.",
-        "lastImage": "Le salut se termine sans nouvel accessoire. Variante longue à produire."
+        "signature": "Ma marque",
+        "input": "T / I · proposition",
+        "effect": "Feinte de placement Une marque scénique AU permet une unique feinte de départ, sans apparition de Glam.",
+        "counter": "Annonce : Marque visible et pose tenue avant choix. Réponse : Attendre le départ réel puis couvrir l’arrivée.",
+        "finisher": "Plein cadre",
+        "storyboard": "1. Glitz le force au centre avec un coup de talon.\n2. Elle fait pivoter le cadre sur sa silhouette, qui disparaît derrière un panneau opaque.\n3. Le panneau tombe hors champ tandis qu’elle conserve sa pose entière.",
+        "lastImage": "Glitz de la tête aux pieds sous un seul spot, cadre vide à côté."
       },
       {
         "fighter": "hb_glam",
-        "signature": "Un temps de plus",
-        "input": "À prototyper",
-        "effect": "Proposition AU : arrêt de danse puis reprise sur un temps retardé. Aucun effet magique canonique affirmé.",
-        "counter": "Conserver sa garde durant l’arrêt et répondre après la reprise. Signature non implémentée.",
-        "finisher": "Jusqu’au dernier temps",
-        "storyboard": "Glam achève son mouvement avant le salut. Le rideau partagé accompagne la fin de la manche.",
-        "lastImage": "Elle tient sa marque jusqu’au noir. Frappe distincte refusée à la génération ; aucune pose de remplacement comptée."
+        "signature": "Encore un temps",
+        "input": "T / I · proposition",
+        "effect": "Retard de résolution Pose visible autorisant un retard court de frappe ; aucune action automatique de Glitz.",
+        "counter": "Annonce : Corps tenu immobile avant la reprise. Réponse : Ne pas attaquer au premier rythme, punir l’attente à distance.",
+        "finisher": "Le second salut",
+        "storyboard": "1. Glam le repousse d’un coup de pied dans la zone du rideau.\n2. Elle tire une commande qui fait tomber une toile opaque et coupe l’impact.\n3. Après un premier salut très bref, elle prend le temps d’un second devant la toile immobile.",
+        "lastImage": "Glam tient son dernier arrêt pendant qu’une main disparaît derrière le bas du rideau."
       }
     ],
     "stageDesign": [
@@ -13796,6 +13796,27 @@
         "status": "408 références présentes",
         "spec": "43 combattants, 40 READY, 17 gardes, 17 contacts légers, 18 reculs ; 25 arènes à trois plans ; 14 images VFX pour 28 associations ; 43 routes / 129 duels AU.",
         "acceptance": "Recalcul du classeur à partir du runtime, conservation des onze onglets V1. Ne pas confondre contrôles de fichiers et fidélité en jeu."
+      },
+      {
+        "type": "Narration V3",
+        "subject": "Campagnes et illustrations",
+        "status": "Briefs rédigés, production à venir",
+        "spec": "43 campagnes AU, 129 chapitres, 86 briefs introduction/épilogue et 43 briefs de rivalité. Référence : campaign-design-v3.json.",
+        "acceptance": "Vérifier incarnation, costume, rival et géométrie 16:9 sur référence officielle avant de valider chaque dessin. Les 26 affectations illustrées actuelles ne sont pas automatiquement conformes aux nouveaux briefs."
+      },
+      {
+        "type": "Combat V3",
+        "subject": "Movesets individuels",
+        "status": "Propositions à prototyper",
+        "spec": "Quatre techniques proposées par combattant. Le champ implementation distingue un contact compatible en principe et une mécanique nouvelle à développer.",
+        "acceptance": "Conserver les 133 attaques réellement paramétrées comme référence. Ne pas traiter une idée de projectile mobile, piège ou contre conditionnel comme une fonction déjà disponible."
+      },
+      {
+        "type": "Finitions V3",
+        "subject": "Dernier Acte",
+        "status": "Nom UI intégré, storyboards proposés",
+        "spec": "43 noms et séquences en trois temps. Les issues restent celles d’une arène AU. Le déclenchement actuel de 3,2 s et la séquence de 1,5 s sont conservés.",
+        "acceptance": "Évaluer la lisibilité et les mouvements réduits avant d’intégrer une variante. Aucune mort canonique, propriété d’âme ou rupture de contrat n’est déduite d’une victoire."
       }
     ],
     "sources": [
@@ -14186,33 +14207,33 @@
     ],
     "assetBatch": {
       "date": "2026-11-25",
-      "batchId": "wave-h-2026-11-25",
-      "comparisonCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+      "batchId": "wave-i-2026-11-25",
+      "comparisonCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-h-2026-11-25.json",
+      "manifest": "art/infernal-versus/production/delivery-wave-i-2026-11-25.json",
       "reserveManifest": "art/infernal-versus/production/reserve-assets.json",
       "newProduction": {
         "playableFighters": 0,
         "characterBases": 4,
-        "enemyBases": 0,
+        "enemyBases": 2,
         "animationPoses": 0,
-        "stageBackgrounds": 2,
-        "foregroundProps": 4,
+        "stageBackgrounds": 0,
+        "foregroundProps": 0,
         "projectileImages": 0,
-        "totalNewArtworks": 10,
-        "derivedThumbnails": 2,
+        "totalNewArtworks": 6,
+        "derivedThumbnails": 0,
         "newAttackEffectAssignments": 0,
         "newStoryRoutes": 0,
         "newStoryDuels": 0
       },
       "totals": {
-        "newGeneratedArtworks": 10,
-        "newMasterFiles": 10,
-        "publicImageFiles": 12,
-        "registeredPublicImageFiles": 8,
-        "reservePublicImageFiles": 4,
-        "totalImageFiles": 22,
-        "derivedThumbnails": 2
+        "newGeneratedArtworks": 6,
+        "newMasterFiles": 6,
+        "publicImageFiles": 6,
+        "registeredPublicImageFiles": 0,
+        "reservePublicImageFiles": 6,
+        "totalImageFiles": 12,
+        "derivedThumbnails": 0
       },
       "runtime": {
         "fighters": 43,
@@ -14237,11 +14258,11 @@
         "brokenReferences": []
       },
       "reserves": {
-        "characterBases": 9,
-        "enemyBases": 6,
+        "characterBases": 13,
+        "enemyBases": 8,
         "projectileImages": 1,
-        "artworks": 16,
-        "referencedFiles": 32,
+        "artworks": 22,
+        "referencedFiles": 44,
         "brokenReferences": []
       },
       "retainedComponents": [
@@ -14324,268 +14345,102 @@
         "status": "passed_with_documented_limits",
         "exports": {
           "status": "passed",
-          "unchangedMasterFiles": 10,
-          "losslessPixelExactWebP": 10,
-          "derivedThumbnails": 2,
-          "productionImageFiles": 22,
-          "evidence": "art/infernal-versus/production/export-wave-h-2026-11-25.json"
+          "unchangedMasterFiles": 6,
+          "losslessPixelExactWebP": 6,
+          "productionImageFiles": 12,
+          "evidence": "art/infernal-versus/production/export-wave-i-2026-11-25.json"
         },
         "oneToOneFidelity": {
           "certified": false,
-          "reason": "Official 320×180 previews establish motifs and identities, not exact full-resolution reconstruction. Neutral stances, some hidden costume details and playable framing are adaptations.",
-          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_H_2026-11-25.md"
+          "reason": "Official previews are 320 by 180. Some fine details rely on historical portraits; Toledo lacks an inspected official close-up. Static neutral poses are presentation adaptations.",
+          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_I_2026-11-25.md"
         },
         "animationScope": {
           "newAnimationPoses": 0,
           "newAnimationCycles": 0,
-          "neutralReadyBases": 4,
+          "neutralReadyBases": 6,
           "newAttackEffectAssignments": 0,
           "newCombatKits": 0
         },
-        "browserReview": {
-          "status": "blocked",
-          "browserExecuted": false,
-          "screenshots": 0,
-          "reason": "Chromium launcher exists but /usr/lib/chromium/chromium is absent. H was checked through static CSS reconstruction, not browser capture."
-        },
-        "staticVisualQA": {
-          "status": "passed_with_limits",
-          "stageCompositions": 6,
-          "propBoundsContained": 12,
-          "propBoundsTested": 12,
-          "browserExecuted": false,
-          "evidence": "docs/standalone/qa-wave-h-2026-11-25/README.md",
-          "overviewArtworksInspected": 10,
-          "rgbaCutoutsChecked": 8,
-          "alphaThreshold": 16,
-          "parallaxOffset": 0,
-          "fighterPositions": [
-            22,
-            78
-          ],
-          "limits": [
-            "Portrait contain leaves 125.53 px above the artwork in the assumed 330x300 stage box.",
-            "Landscape reference fighter silhouettes extend onto plain lateral bands; all props remain inside the artwork.",
-            "Static reconstruction excludes HUD, movement, collisions, network requests and actual browser layout."
-          ]
-        },
-        "runtimeAssetAudit": {
+        "checkedAtUtc": "2026-11-25T10:13:10.034530+00:00",
+        "runtime": {
           "status": "passed",
-          "referencedAssets": 428,
-          "missingReferences": 0,
-          "evidence": "docs/standalone/ASSET_COVERAGE.json"
-        },
-        "reserveAudit": {
-          "status": "passed",
-          "artworks": 16,
-          "referencedFiles": 32,
-          "missingReferences": 0,
-          "includedInActiveRoster": false,
-          "evidence": "art/infernal-versus/production/reserve-assets.json"
-        },
-        "automatedQA": {
-          "status": "passed_after_build_recovery",
+          "evidence": "docs/standalone/QA_RUNTIME_WAVE_I_2026-11-25.json",
           "typecheck": "passed",
           "lint": "passed",
-          "suites": 44,
+          "testSuites": 44,
           "tests": 376,
-          "builds": 2,
-          "standaloneFiles": 1025,
-          "standaloneHashesVerified": 1025,
-          "standaloneBytes": 622972043,
-          "standaloneMiB": 594.11,
-          "note": "Initial npm run qa exited 1 on ENOSPC after passing typecheck, lint and tests. Only build phases were resumed, all exit 0; game source unchanged.",
-          "evidence": "docs/standalone/QA_RUNTIME_WAVE_H_2026-11-25.json"
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "standaloneHashes": 1031,
+          "standaloneBytes": 626287158,
+          "activeAssetPaths": 428,
+          "reserveAssetFiles": 44,
+          "missingFiles": 0,
+          "browserExecuted": false
         },
-        "workbookQA": {
+        "workbook": {
           "status": "passed",
-          "sheets": 23,
-          "formulaCount": 212,
-          "formulaErrors": 0,
-          "runtimeCellsCompared": 6087,
-          "runtimeCellMismatches": 0,
-          "historicalSheetsPreservedByteForByte": 11,
-          "renderedViewsInspected": 5,
-          "workbookSha256": "1bfaffe380e00692cb30017eb4af4a3e8420a54bff2bde24fef685618d2b341f",
-          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_H_2026-11-25.json"
+          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_I_2026-11-25.json",
+          "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx",
+          "sha256": "e7e029be8db051825ef059ae77076ed9ed400b0fbb0a9090bbbb08f50cfe491b",
+          "sheets": 29,
+          "formulas": 222,
+          "formulaCacheMismatches": 0,
+          "currentCellsCompared": 11577,
+          "cellMismatches": 0,
+          "historicalSheetsByteIdentical": 11,
+          "renderedAndInspectedViews": 29,
+          "visualEvidence": "docs/standalone/qa-wave-i-2026-11-25/workbook-visual-qa.json"
+        },
+        "campaignDesign": {
+          "status": "passed_with_documented_limits",
+          "evidence": "docs/standalone/QA_DESIGN_WAVE_I_2026-11-25.json",
+          "fighters": 43,
+          "campaigns": 43,
+          "chapters": 129,
+          "illustrationBriefs": 129,
+          "introEndingBriefs": 86,
+          "moveProposals": 172,
+          "finisherStoryboards": 43,
+          "loreAnchors": 109,
+          "sources": 27,
+          "newMechanics": 67,
+          "limitedEvidenceMoves": 127,
+          "existingCompatible": 105,
+          "canonicalTerm": false,
+          "runtimeCampaignsReplaced": false,
+          "runtimeMovesReplaced": false
+        },
+        "staticReview": {
+          "reviewedMasterImages": 6,
+          "alphaCompositeDiagnostics": 2,
+          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_I_2026-11-25.md",
+          "alphaEvidence": "docs/standalone/qa-wave-i-2026-11-25/alpha-compositing-qa.json",
+          "relativeCanonicalSizesVerified": false,
+          "inGameVisualReview": false
+        },
+        "diagnostics": {
+          "pngFiles": 31,
+          "workbookViews": 29,
+          "alphaComposites": 2,
+          "excludedFromProductionImageCounts": true
         }
       },
-      "blockedRequests": [
-        {
-          "id": "hz_clara_carmine-ready",
-          "sourceIdentityId": "hz_clara_carmine",
-          "status": "generation_refused",
-          "fileProduced": false,
-          "retryAfterRefusal": false,
-          "promptFile": "hz_clara_carmine-PROMPT.txt",
-          "requestId": "4854a26d-1530-4f6e-8e2f-b0d6a5257420",
-          "providerCode": "moderation_blocked",
-          "moderationStage": "output",
-          "providerCategories": [
-            "other"
-          ],
-          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 4854a26d-1530-4f6e-8e2f-b0d6a5257420.",
-          "reasonInterpretation": "No more specific reason supplied; no inference made.",
-          "imagegenRequest": {
-            "transparent_background": true,
-            "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite on a truly transparent RGBA canvas. Redraw CLARA CARMINE from Hazbin Hotel, her Season 1 Scrambled Eggs appearance. Reference image 1 is the historical project's full-body Clara portrait, used for the costume and full silhouette. Reference image 2 is an official Prime Video Respectless preview sheet: Clara is the dark-skinned woman with very large white swept-up curly hair at the far left of its upper-row frames, NOT the green-haired Zeezi next to her. Preserve Clara's dark warm gray-brown skin, slim long-legged proportions, red eyes with pale iris centers, white swept-up fluffy ponytail/quiff and small curled forelock, tall black pointed ear visible within the white hair, small confident smile, sleeveless black high-neck cropped top, dark gray tailored shorts with black waist detail, bare upper thighs, and long ivory-white thigh-high heeled boots with black edging. One composed neutral standing pose, shallow three-quarter facing right, one hand relaxed at hip and the other loose by side; entire figure visible, natural proportions, no pin-up pose. Match the show's clean sharp dark outlines and flat cel colors closely. Keep all hair, ears, fingertips and boots uncropped, 7 percent clear transparent space around the figure. No background, floor, shadow, aura, props, weapon, text, other people, panels, action or animation. Do not introduce new clothing or accessories.",
-            "inputReferenceRoles": [
-              "historical_project_full_body_portrait",
-              "official_episode_preview_contact_sheet"
-            ]
-          },
-          "references": [
-            {
-              "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
-              "kind": "official_clip",
-              "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
-              "approximatePreviewTimesSeconds": [
-                99,
-                100,
-                101
-              ],
-              "localEvidence": "references/respectless-L3-M11.jpg"
-            },
-            {
-              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_clara_carmine.png",
-              "kind": "historical_project_portrait",
-              "officialProvenanceCertified": false
-            }
-          ]
-        },
-        {
-          "id": "hz_odette_carmine-ready",
-          "sourceIdentityId": "hz_odette_carmine",
-          "status": "generation_refused",
-          "fileProduced": false,
-          "retryAfterRefusal": false,
-          "promptFile": "hz_odette_carmine-PROMPT.txt",
-          "requestId": "601456cf-dfb3-4006-941e-4e6d1b837ba2",
-          "providerCode": "moderation_blocked",
-          "moderationStage": "output",
-          "providerCategories": [
-            "other"
-          ],
-          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 601456cf-dfb3-4006-941e-4e6d1b837ba2.",
-          "reasonInterpretation": "No more specific reason supplied; no inference made.",
-          "imagegenRequest": {
-            "transparent_background": true,
-            "prompt": "Use case: identity-preserve. Asset type: single full-body static 2D game sprite, true transparent RGBA. Redraw ODETTE CARMINE from Hazbin Hotel, Season 1 Scrambled Eggs. Input 1: the historical project's full-body Odette portrait, complete costume/silhouette reference. Input 2: official Prime Video Respectless preview contact sheet; Odette is the pale woman with cream-blond high ponytail, red-lensed glasses and white coat at the far right of the top-row frames. Preserve her tall very slender angular silhouette, pale gray-white skin, large oval red-lensed glasses with thin black frame, stern composed mouth, angular pale cream-blond swept fringe and high ponytail secured by dark tie, high white coat collar with black inner lapels, fitted white lab-coat dress reaching below knees with a central black seam, black long gloves, thin black stockings and black high-heeled pointed boots. Hold the small plain gray clipboard at waist level as in the existing portrait. One calm neutral standing presentation pose in shallow three-quarter view facing right, free elbow relaxed, all body parts fully visible. Match the show's crisp dark line art, long angular anatomy, flat cel shading and exact existing palette. At least 7 percent clear transparent padding, no cropping. No scenery, floor, shadow, glow, lettering, labels, weapons, extra characters, panels, attacks, or animation frames. Do not redesign the lab coat, hair, glasses, or clipboard.",
-            "inputReferenceRoles": [
-              "historical_project_full_body_portrait",
-              "official_episode_preview_contact_sheet"
-            ]
-          },
-          "references": [
-            {
-              "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
-              "kind": "official_clip",
-              "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
-              "approximatePreviewTimesSeconds": [
-                99,
-                100,
-                101
-              ],
-              "localEvidence": "references/respectless-L3-M11.jpg"
-            },
-            {
-              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_odette_carmine.png",
-              "kind": "historical_project_portrait",
-              "officialProvenanceCertified": false
-            }
-          ]
-        },
-        {
-          "id": "hb_deerie-ready",
-          "sourceIdentityId": "hb_deerie",
-          "status": "generation_refused",
-          "fileProduced": false,
-          "retryAfterRefusal": false,
-          "promptFile": "hb_deerie-PROMPT.txt",
-          "requestId": "c95c6077-3650-493e-ad25-7bdcbf40b85a",
-          "providerCode": "moderation_blocked",
-          "moderationStage": "output",
-          "providerCategories": [
-            "other"
-          ],
-          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID c95c6077-3650-493e-ad25-7bdcbf40b85a.",
-          "reasonInterpretation": "No more specific reason supplied; no inference made.",
-          "imagegenRequest": {
-            "transparent_background": true,
-            "prompt": "Use case: identity-preserve. Asset type: one static full-body transparent 2D game sprite. Redraw DEERIE from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the project's historical full-body portrait. Input 2 is the official episode preview sheet; Deerie is the small golden deer-like cherub with coral-pink swept hair, large purple eyes and navy outfit in the upper right and middle panels. Preserve the large fawn ears with pale yellow centers, small pointed purple heart-shaped nose, pale golden fur/skin, huge purple eyes with white highlights, asymmetrical coral-pink hair swept across her forehead, light periwinkle shirt with long sleeves and pale collar, pink ribbon scarf tied at neck, dark purple double-breasted short romper with scalloped hem and two small light buttons, purple-tipped delicate fingers and hooves, small tail, pale narrow veined insectlike wings and one thin pale halo. One calm neutral presentation pose facing slightly right, arms relaxed, feet together as a gentle hover, full body including halo, ears, wings and feet visible. Retain the exact compact stylized proportions and sharp purple linework of the source; crisp flat cel colors. True empty transparent background and generous margins. No clouds, ground, cast shadow, glow, other figures, panels, captions, weapons, action, or animation. No costume redesign.",
-            "inputReferenceRoles": [
-              "historical_project_full_body_portrait",
-              "official_episode_preview_contact_sheet"
-            ]
-          },
-          "references": [
-            {
-              "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
-              "kind": "official_episode",
-              "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
-              "approximatePreviewTimesSeconds": [
-                740,
-                750,
-                760,
-                770
-              ],
-              "localEvidence": "references/cherub_official_board_08.jpg"
-            },
-            {
-              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_deerie.png",
-              "kind": "historical_project_portrait",
-              "officialProvenanceCertified": false
-            }
-          ]
-        },
-        {
-          "id": "hb_loopty_goopty-ready",
-          "sourceIdentityId": "hb_loopty_goopty",
-          "status": "generation_refused",
-          "fileProduced": false,
-          "retryAfterRefusal": false,
-          "promptFile": "hb_loopty_goopty-PROMPT.txt",
-          "requestId": "29fdb960-3740-4794-af29-8eb977866fd7",
-          "providerCode": "moderation_blocked",
-          "moderationStage": "output",
-          "providerCategories": [
-            "other"
-          ],
-          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 29fdb960-3740-4794-af29-8eb977866fd7.",
-          "reasonInterpretation": "No more specific reason supplied; no inference made.",
-          "imagegenRequest": {
-            "transparent_background": true,
-            "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite, transparent RGBA. Redraw LOOPTY GOOPTY in his Sinner demon incarnation from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the historical project portrait showing his full costume; input 2 is the official episode preview sheet, where demon Loopty is the extremely tall red-and-black figure with lime-green round glasses, spiral chest emblem and huge red cape in the upper middle/right and middle-left panels. The sepia human in the bottom panels is NOT the target. Preserve the very thin long-limbed body, angular red pointed face and nose, two long crooked red horn-like head projections, black brim band with small lime circular ornament, round lime-green spiral spectacles, curled black pointed moustache, black fitted torso with the conspicuous lime-green spiral symbol and lime collar, lime belt with downward-pointing center, red forearm gloves, extremely long narrow black trousers, elongated lime lower legs/boots, and flowing dark red full-length cape. One quiet dignified standing neutral pose facing slightly right, arms relaxed loosely by sides, hands open, both boots on the same baseline, no attack. Match clean sharp dark lines, flat cel color and exaggerated proportions from the show. Entire horns, cape tips, hands and feet must fit with transparent padding. No background, floor, shadow, glow, text, extra people, weapon, machine, panels or animation frames. Preserve reference costume; no invented embellishments.",
-            "inputReferenceRoles": [
-              "historical_project_full_body_portrait",
-              "official_episode_preview_contact_sheet"
-            ]
-          },
-          "references": [
-            {
-              "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
-              "kind": "official_episode",
-              "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
-              "approximatePreviewTimesSeconds": [
-                100,
-                110,
-                120
-              ],
-              "localEvidence": "references/cherub_official_board_01.jpg"
-            },
-            {
-              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_loopty_goopty.png",
-              "kind": "historical_project_portrait",
-              "officialProvenanceCertified": false
-            }
-          ]
-        }
-      ],
-      "priorBatch": {
-        "batchId": "wave-g-2026-11-25",
-        "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
-        "publishedCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82"
-      }
+      "blockedRequests": []
+    },
+    "campaignDesign": {
+      "edition": "V3",
+      "data": "docs/standalone/campaign-design-v3.json",
+      "readable": "docs/standalone/INFERNAL_VERSUS_CAMPAIGNS_V3.md",
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx",
+      "scope": "43 current playable fighters; individual campaign, rival, illustration briefs, moveset proposals and finisher storyboard.",
+      "narrativeStatus": "simulation_au_proposal",
+      "runtimeCampaignsReplaced": false,
+      "runtimeMovesReplaced": false,
+      "finisherSystemName": "Dernier Acte",
+      "canonicalTerm": false,
+      "newAnimationAssets": 0
     }
   }
 }

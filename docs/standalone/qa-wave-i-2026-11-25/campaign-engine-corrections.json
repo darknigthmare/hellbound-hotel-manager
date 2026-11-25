@@ -1,0 +1,337 @@
+[
+  {
+    "fighterId": "vaggie",
+    "slot": "heavy",
+    "field": "execution",
+    "before": "Une estocade engagée avance légèrement le corps.",
+    "after": "Une estocade engagée incline le buste ; le repère de combat reste fixe."
+  },
+  {
+    "fighterId": "vaggie",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Esquiver la ligne puis attaquer pendant le retrait.",
+    "after": "Reculer hors portée, puis attaquer pendant le retrait."
+  },
+  {
+    "fighterId": "sirpentious",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Sauter le balayage ou rester hors portée.",
+    "after": "Reculer hors portée, puis punir la récupération."
+  },
+  {
+    "fighterId": "lucifer",
+    "slot": "heavy",
+    "field": "execution",
+    "before": "Frappe du poing avec un pas court.",
+    "after": "Frappe du poing accompagnée d’un appui court sur place, sans déplacer le repère de combat."
+  },
+  {
+    "fighterId": "lucifer",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Esquiver la ligne et frapper au retour.",
+    "after": "Reculer hors portée et frapper au retour."
+  },
+  {
+    "fighterId": "rosie",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Garder bas ou reculer.",
+    "after": "Garder ou reculer hors portée."
+  },
+  {
+    "fighterId": "hz_mimzy",
+    "slot": "light",
+    "field": "execution",
+    "before": "Coup de paume bref accompagné d’un pas.",
+    "after": "Coup de paume bref accompagné d’un pas de danse sur place ; le repère de combat reste fixe."
+  },
+  {
+    "fighterId": "hb_blitzo",
+    "slot": "heavy",
+    "field": "execution",
+    "before": "Un pas croisé accompagne un coup de pied haut, sans téléportation.",
+    "after": "Un appui croisé sur place accompagne un coup de pied haut ; le repère de combat reste fixe."
+  },
+  {
+    "fighterId": "hb_blitzo",
+    "slot": "heavy",
+    "field": "guardrail",
+    "before": "Déplacement exact et fenêtre de punition sont du design de jeu.",
+    "after": "L’appui est une intention de pose, sans déplacement du lanceur. La fenêtre de punition doit être prototypée."
+  },
+  {
+    "fighterId": "hb_loona",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Passer sous la ligne ou garder puis punir.",
+    "after": "Reculer hors portée ou garder, puis punir la récupération."
+  },
+  {
+    "fighterId": "hb_fizzarolli",
+    "slot": "special",
+    "field": "counterplay",
+    "before": "Sauter l’axe ou punir son immobilité.",
+    "after": "Reculer hors portée ou garder, puis punir son immobilité."
+  },
+  {
+    "fighterId": "hb_beelzebub",
+    "slot": "heavy",
+    "field": "execution",
+    "before": "Balayage de bras accompagné d’un pas lourd.",
+    "after": "Balayage de bras accompagné d’un appui lourd sur place ; le repère de combat reste fixe."
+  },
+  {
+    "fighterId": "hb_beelzebub",
+    "slot": "heavy",
+    "field": "counterplay",
+    "before": "Quitter l’arc puis entrer pendant le retour.",
+    "after": "Reculer hors portée, puis entrer pendant le retour."
+  },
+  {
+    "fighterId": "hb_blitzo",
+    "field": "productionNotes.1",
+    "before": "La feinte à embranchement est un prototype à implémenter ; les trois autres gestes doivent être recalés sur les boîtes existantes.",
+    "after": "La feinte à embranchement et le projectile autonome exigent chacun un prototype ; seuls les gestes léger et lourd se recalquent sur le contact unique existant."
+  },
+  {
+    "fighterId": "vox",
+    "field": "productionNotes.1",
+    "before": "La zone de signature exige une logique de délai distincte du projectile actuel.",
+    "after": "La zone de signature et le projectile autonome demandent des mécaniques nouvelles ; le signal actuellement affiché reste un habillage visuel du contact existant."
+  },
+  {
+    "fighterId": "charlie",
+    "field": "finisher.beats.0",
+    "before": "Elle bloque le dernier assaut et détourne l’arme hors du cadre.",
+    "after": "Elle bloque le dernier assaut et détourne l’arme équipée hors du cadre ; face à une cible désarmée, elle écarte son avant-bras sans lui retirer le choix de reculer."
+  },
+  {
+    "fighterId": "vaggie",
+    "field": "finisher.beats.0",
+    "before": "La hampe détourne son arme vers le bas.",
+    "after": "La hampe détourne l’arme équipée vers le bas ; contre une cible désarmée, elle dévie ses avant-bras vers le côté."
+  },
+  {
+    "fighterId": "vaggie",
+    "field": "finisher.beats.1",
+    "before": "Vaggie accroche l’arme, la projette au loin et ferme la distance.",
+    "after": "Elle projette l’arme équipée au loin ; dans la variante désarmée, la hampe ferme le passage et force le vaincu à reculer vers la sortie."
+  },
+  {
+    "fighterId": "vaggie",
+    "field": "finisher.lastImage",
+    "before": "Vaggie face au spectateur, pointe abaissée, arme adverse isolée derrière elle.",
+    "after": "Vaggie face au spectateur, pointe abaissée, sortie dégagée. L’arme adverse n’apparaît derrière elle que dans la variante armée."
+  },
+  {
+    "fighterId": "vaggie",
+    "field": "finisher.outcome",
+    "before": "Adversaire désarmé et expulsé de l’arène.",
+    "after": "Adversaire désarmé ou repoussé, puis expulsé de l’arène."
+  },
+  {
+    "fighterId": "vaggie",
+    "field": "finisher.requiredAssets.1",
+    "before": "Arme adverse générique désarmée",
+    "after": "Arme correspondant réellement à la cible équipée ; variante de composition sans arme"
+  },
+  {
+    "fighterId": "lucifer",
+    "field": "finisher.setup",
+    "before": "Lucifer saisit l’arme adverse dans le cadre d’arène.",
+    "after": "Lucifer arrête le dernier assaut : il saisit l’arme équipée, ou intercepte les avant-bras d’une cible désarmée."
+  },
+  {
+    "fighterId": "lucifer",
+    "field": "finisher.beats.0",
+    "before": "Il la brise contre le sol dans une seule image d’impact.",
+    "after": "Il brise l’arme équipée contre le sol ; face à une cible désarmée, son impact fracasse un bord de comptoir AU à côté du vaincu, sans faire apparaître une arme."
+  },
+  {
+    "fighterId": "lucifer",
+    "field": "finisher.beats.1",
+    "before": "Il immobilise l’adversaire sous son regard, sans rallonger le supplice.",
+    "after": "Il garde l’adversaire acculé au passage, puis arrête volontairement l’affrontement."
+  },
+  {
+    "fighterId": "lucifer",
+    "field": "finisher.lastImage",
+    "before": "Canne de Lucifer nette, arme brisée au sol, regard déjà tourné vers Charlie hors champ.",
+    "after": "Canne de Lucifer nette, arme équipée brisée ou débris du comptoir au sol, regard déjà tourné vers Charlie hors champ."
+  },
+  {
+    "fighterId": "lucifer",
+    "field": "finisher.requiredAssets.0",
+    "before": "Arme d’arène brisée générique",
+    "after": "Déclinaisons de l’arme équipée brisée et du bord de comptoir AU pour la cible désarmée"
+  },
+  {
+    "fighterId": "emily",
+    "field": "finisher.beats.0",
+    "before": "Elle détourne l’arme vers le sol.",
+    "after": "Elle abaisse l’arme équipée vers le sol ; contre un adversaire désarmé comme Sera, elle dévie son avant-bras sans immobilisation douloureuse."
+  },
+  {
+    "fighterId": "sera",
+    "field": "finisher.beats.0",
+    "before": "Elle détourne l’arme vers un support de pierre.",
+    "after": "Elle détourne l’arme équipée vers un support de pierre ; contre une cible désarmée, elle écarte ses avant-bras et place le support entre eux."
+  },
+  {
+    "fighterId": "sera",
+    "field": "finisher.beats.1",
+    "before": "Le support se ferme sur l’arme, jamais sur l’âme du personnage.",
+    "after": "Le support se ferme sur l’arme équipée ; dans la variante désarmée, il se ferme à vide pour barrer le passage, sans emprisonner de membre ni d’âme."
+  },
+  {
+    "fighterId": "sera",
+    "field": "finisher.lastImage",
+    "before": "Arme immobilisée au premier plan, porte de l’audience ouverte derrière.",
+    "after": "Support fermé au premier plan, avec l’arme seulement si la cible en portait une ; porte de l’audience ouverte derrière."
+  },
+  {
+    "fighterId": "sera",
+    "field": "finisher.outcome",
+    "before": "Désarmement et suspension du duel, sans jugement éternel.",
+    "after": "Désarmement ou séparation, puis suspension du duel sans jugement éternel."
+  },
+  {
+    "fighterId": "lute",
+    "field": "finisher.setup",
+    "before": "Lute fixe l’arme adverse au sol.",
+    "after": "Lute bloque la ligne de retraite du vaincu et fixe au sol son arme si elle est équipée."
+  },
+  {
+    "fighterId": "lute",
+    "field": "finisher.beats.0",
+    "before": "Elle tranche la poignée de l’arme.",
+    "after": "Elle tranche la poignée de l’arme équipée ; contre une cible désarmée, elle tranche un montant de décor AU à côté d’elle."
+  },
+  {
+    "fighterId": "lute",
+    "field": "finisher.requiredAssets.1",
+    "before": "Arme générique à poignée brisée",
+    "after": "Poignée de l’arme équipée brisée ; montant de décor AU brisé pour la variante désarmée"
+  },
+  {
+    "fighterId": "carmilla",
+    "field": "finisher.beats.0",
+    "before": "Une frappe désarme la main adverse.",
+    "after": "Une frappe désarme la main équipée ; face à une cible désarmée, elle dévie les avant-bras et coupe l’appui du dernier assaut."
+  },
+  {
+    "fighterId": "carmilla",
+    "field": "finisher.beats.1",
+    "before": "Une seconde image montre les supports plier autour de l’arme abandonnée.",
+    "after": "Les supports se plient autour de l’arme abandonnée ; dans la variante désarmée, ils se referment à vide entre Carmilla et le vaincu."
+  },
+  {
+    "fighterId": "carmilla",
+    "field": "finisher.lastImage",
+    "before": "Chaussure en appui près d’une arme inutilisable, porte close en profondeur.",
+    "after": "Chaussure en appui près des supports pliés, arme visible seulement si la cible en portait une ; porte close en profondeur."
+  },
+  {
+    "fighterId": "carmilla",
+    "field": "finisher.requiredAssets.1",
+    "before": "Arme neutralisée générique",
+    "after": "Arme équipée neutralisée et déclinaison des supports vides pour la cible désarmée"
+  },
+  {
+    "fighterId": "zestial",
+    "field": "finisher.setup",
+    "before": "Zestial observe l’arme tendue vers lui.",
+    "after": "Zestial observe le dernier assaut, porté avec une arme équipée ou à mains nues."
+  },
+  {
+    "fighterId": "zestial",
+    "field": "finisher.beats.0",
+    "before": "Il détourne l’arme dans un support de table.",
+    "after": "Il détourne l’arme équipée dans un support de table ; face à une cible désarmée, il dévie l’avant-bras hors de la trajectoire du couvercle."
+  },
+  {
+    "fighterId": "zestial",
+    "field": "finisher.beats.1",
+    "before": "Il rabat le lourd couvercle d’un coffre de décor sur cette arme.",
+    "after": "Il rabat le lourd couvercle sur l’arme équipée ; dans la variante désarmée, il ferme le coffre à vide entre les deux combattants."
+  },
+  {
+    "fighterId": "zestial",
+    "field": "finisher.lastImage",
+    "before": "Dossier clos, arme prisonnière du coffre, main de Zestial immobile.",
+    "after": "Dossier clos, coffre fermé et main de Zestial immobile ; une arme n’est visible que dans la variante armée."
+  },
+  {
+    "fighterId": "zestial",
+    "field": "finisher.requiredAssets.2",
+    "before": "Image finale de l’arme immobilisée",
+    "after": "Image finale du coffre avec l’arme équipée et variante sans arme"
+  },
+  {
+    "fighterId": "hb_moxxie",
+    "field": "finisher.beats.1",
+    "before": "Il désarme d’un tir précis, puis repousse la table d’un coup qui coupe la silhouette.",
+    "after": "Il désarme d’un tir précis si une arme est équipée ; face à une cible désarmée, il tire dans une attache de la table AU. Dans les deux variantes, il repousse ensuite la table qui coupe la silhouette."
+  },
+  {
+    "fighterId": "charlie",
+    "field": "finisher.requiredAssets",
+    "before": [
+      "Clé isolée de l’hôtel, sans lettrage",
+      "Illustration finale du seuil avec deux issues lisibles"
+    ],
+    "after": [
+      "Clé isolée de l’hôtel, sans lettrage",
+      "Illustration finale du seuil avec deux issues lisibles",
+      "Variante de cible armée et désarmée, sans ajout d’arme à une incarnation qui n’en porte pas"
+    ]
+  },
+  {
+    "fighterId": "emily",
+    "field": "finisher.requiredAssets",
+    "before": [
+      "Chaise céleste isolée",
+      "Dossier sans texte",
+      "Illustration finale avec espace entre les personnages"
+    ],
+    "after": [
+      "Chaise céleste isolée",
+      "Dossier sans texte",
+      "Illustration finale avec espace entre les personnages",
+      "Variante de cible armée et désarmée, sans ajout d’arme à une incarnation qui n’en porte pas"
+    ]
+  },
+  {
+    "fighterId": "sera",
+    "field": "finisher.requiredAssets",
+    "before": [
+      "Support d’arme céleste",
+      "Porte latérale du tribunal",
+      "Image finale du dossier ouvert"
+    ],
+    "after": [
+      "Support d’arme céleste",
+      "Porte latérale du tribunal",
+      "Image finale du dossier ouvert",
+      "Variante de cible armée et désarmée, sans ajout d’arme à une incarnation qui n’en porte pas"
+    ]
+  },
+  {
+    "fighterId": "hb_moxxie",
+    "field": "finisher.requiredAssets",
+    "before": [
+      "Table et chaise isolées",
+      "Feuille anonyme",
+      "Image finale Moxxie de dos en trois quarts"
+    ],
+    "after": [
+      "Table et chaise isolées",
+      "Feuille anonyme",
+      "Image finale Moxxie de dos en trois quarts",
+      "Variante de cible armée et désarmée, sans ajout d’arme à une incarnation qui n’en porte pas"
+    ]
+  }
+]
