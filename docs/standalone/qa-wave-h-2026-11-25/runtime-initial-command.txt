@@ -1,0 +1,61 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 qa
+> npm run typecheck && npm run lint && npm run test && npm run build && npm run build:standalone && npm run check:standalone
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1
+
+
+ RUN  v4.1.10 /workspace/scratch/2d12edff6da7/hellbound-hotel-manager
+
+
+ Test Files  44 passed (44)
+      Tests  376 passed (376)
+   Start at  09:53:43
+   Duration  76.32s (transform 2.10s, setup 0ms, import 6.82s, tests 50.61s, environment 10.01s)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 build
+> tsc && vite build
+
+vite v8.1.4 building client environment for production...
+[2Ktransforming...✓ 1581 modules transformed.
+✗ Build failed in 3.48s
+error during build:
+Build failed with 1 error:
+
+[plugin vite:prepare-out-dir]
+Error: ENOSPC: no space left on device, copyfile '/workspace/scratch/2d12edff6da7/hellbound-hotel-manager/public/assets/vfx/infernal-versus/sirpentious-ray.webp' -> '/workspace/scratch/2d12edff6da7/hellbound-hotel-manager/dist/assets/vfx/infernal-versus/sirpentious-ray.webp'
+    at Object.copyFileSync (node:fs:3210:11)
+    at copyDir (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:2417:11)
+    at copyDir (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:2416:43)
+    at copyDir (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:2416:43)
+    at copyDir (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:2416:43)
+    at prepareOutDir (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:32765:4)
+    at PluginContextImpl.handler (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:32747:6)
+    at PluginContextImpl.handler (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:33271:13)
+    at plugin (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/rolldown/dist/shared/bindingify-input-options-XPJLJOD0.mjs:1596:12)
+    at plugin.<computed> (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/rolldown/dist/shared/bindingify-input-options-XPJLJOD0.mjs:1959:18)
+    at aggregateBindingErrorsIntoJsError (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:48:18)
+    at unwrapBindingResult (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:18:128)
+    at #build (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/rolldown/dist/shared/rolldown-build-CtPvmZgJ.mjs:3276:34)
+    at async buildEnvironment (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:33011:66)
+    at async Object.build (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:33433:19)
+    at async Object.buildApp (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/chunks/node.js:33430:153)
+    at async CAC.<anonymous> (file:///workspace/scratch/2d12edff6da7/hellbound-hotel-manager/node_modules/vite/dist/node/cli.js:776:3) {
+  errors: [Getter/Setter]
+}

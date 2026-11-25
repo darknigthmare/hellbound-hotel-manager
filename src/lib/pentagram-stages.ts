@@ -28,7 +28,9 @@ export type PentagramStageId = HotelStageId
   | 'sinsmas-balcony'
   | 'spring-broken-beach'
   | 'murder-family-house'
-  | 'cash-circus';
+  | 'cash-circus'
+  | 'ghost-hotel'
+  | 'apology-party';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -394,6 +396,8 @@ const SINSMAS_BALCONY = '/assets/stages/helluva/sinsmas-balcony';
 const SPRING_BROKEN_BEACH = '/assets/stages/helluva/spring-broken-beach';
 const MURDER_FAMILY_HOUSE = '/assets/stages/helluva/murder-family-house';
 const CASH_CIRCUS = '/assets/stages/helluva/cash-circus';
+const GHOST_HOTEL = '/assets/stages/helluva/ghost-hotel';
+const APOLOGY_PARTY = '/assets/stages/helluva/apology-party';
 
 export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES, {
   id: 'imp-reception',
@@ -783,6 +787,31 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
     bassPattern: [0, 12, 7, 3, 6, 12, 7, 11],
     leadPattern: [19, 15, null, 12, 22, 19, null, 15, 18, 15, null, 12, 17, 14, null, 11],
   },
+}, {
+  id: 'ghost-hotel',
+  name: 'One Star Wonder · Couloir',
+  district: 'Terre',
+  description: 'Papier peint rouge usé, lambris sombres et porte entrouverte entourent le couloir du One Star Wonder.',
+  loreBasis: 'Helluva Boss, Ghostf**kers, S2 E10. Le couloir, le chariot de linge et l’applique sont repérés dans les aperçus officiels. Perspective frontale élargie et placement des accessoires adaptés à la simulation AU.',
+  imagePath: `${GHOST_HOTEL}/room.webp`,
+  thumbnailPath: `${GHOST_HOTEL}/thumb.webp`,
+  scenery: { middle: `${GHOST_HOTEL}/prop-middle.webp`, near: `${GHOST_HOTEL}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#e4bd69', shadow: '#31101f', floor: '#420e27',
+  // Reuse an existing original score; this static-art batch adds no audio.
+  soundtrack: PENTAGRAM_STAGES[6].soundtrack,
+}, {
+  id: 'apology-party',
+  name: 'Apology Tour · Salle de fête',
+  district: 'Terre',
+  description: 'Une scène à rideaux roses et une galerie sous lumière violette encadrent la piste de fête.',
+  loreBasis: 'Helluva Boss, Apology Tour, S2 E9. Référence à la salle réelle avec scène et décorations de fête, hors séquence musicale imaginaire. Cadrage frontal, salle vidée et sol élargi pour la simulation AU.',
+  imagePath: `${APOLOGY_PARTY}/room.webp`,
+  thumbnailPath: `${APOLOGY_PARTY}/thumb.webp`,
+  scenery: { middle: `${APOLOGY_PARTY}/prop-middle.webp`, near: `${APOLOGY_PARTY}/prop-near.webp` },
+  imagePosition: 'center bottom',
+  accent: '#f070d0', shadow: '#20113e', floor: '#28104d',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ghost-hotel-room",
+    "prompt": "Use case: precise-object-edit. Asset type: one static 2D fighting-game background, Helluva Boss One Star Wonder corridor from Ghostf**kers S2E10. Input image 1 is the PRIMARY official color/layout reference; image 2 only supports wallpaper, carpet and door details. Recreate the same shabby burgundy-red damask corridor as a clean high-definition hand-drawn cel-animated raster environment, horizontal 16:9 canvas about 1672x941. Keep the design of the deep-red worn wallpaper, dark desaturated olive-green rectangular wood wainscoting and door frames, dark door opening slightly right of center, three small crooked old landscape picture frames to its left, muted magenta patterned carpet, sparse thin spiderwebs near upper corners. Camera at standing eye-height facing the wall, nearly frontal as image1, extending the same wall design to make a continuous stage. Remove ALL characters and the laundry cart; keep the bottom 30 percent of the image as unobstructed continuous level carpet for two fighters. Keep door opening and frames safely above the fight lane. Preserve dim warm yellow light coming from the right. Leave the wall sconce off the wall, as it will be supplied separately, with a plain quiet wallpaper patch near x77%, y40% reserved for that single lamp. No desk, no person, no creature, no text, no logos, no new thematic symbols, no posters, no extra furniture, no watermark. Do not make a montage or asset sheet. Output one opaque finished background without borders. Match the reference palette and silhouettes closely, do not add new architecture or turn it into a grand hotel.",
+    "reference_images": [
+      "references/ghost-hotel-corridor-front.png",
+      "references/ghost-hotel-corridor-depth.png"
+    ],
+    "transparent_background": false,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-c8f17313-6535-4795-b5c3-59df81a2ec67.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "apology-party-room",
+    "prompt": "Use case: precise-object-edit. Asset type: one static 2D fighting-game arena background, the real party hall from Helluva Boss Apology Tour S2E9. These official episode images are environment references. Image1 gives the real hall and its cyan/pink illumination; image2 gives the central actual band stage with vivid magenta curtain, pale ribcage-like decoration and dark curtain wings; image3 gives the upper balcony rails and strings of tiny lights. Draw a coherent empty version of that same room in the show's crisp hand-drawn cel-animated raster style, about 1672x941 pixels, 16:9. Straight horizontal eye-level fighting-game view, not a tilted camera. Back wall: the small magenta-lit performance stage centered, its pink curtain motif and two purple draped side curtains, with the narrow balcony/rail structure along the sides, teal and pink accent light, black-violet timber ceiling and sparse small orange/purple bulbs as seen. All characters removed. Bottom 30 percent is uninterrupted level dark violet dance floor, with subtle coherent floor planes and no obstacles. Remove the foreground audience completely, no performers, no instruments, no microphones. Leave both the cyan disco ball and the yellow ghost neon sign OUT of this background because each will be a separate sprite; reserve empty dark wall area on the upper right for the ghost neon, and ceiling space above left side for the cyan ball. Keep one backdrop only; no giant fantasy moon or stars from the musical imagination sequence. No letters, slogans, logos, random symbols, text boxes or watermark. Preserve the reference's violet-magenta-cyan palette, small room proportions and Halloween-party mood, not a generic cathedral or nightclub. One finished opaque background, no collage.",
+    "reference_images": [
+      "references/apology-party-hall-wide.png",
+      "references/apology-party-stage-front.png",
+      "references/apology-party-neon-ghost.png"
+    ],
+    "transparent_background": false,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-9a8aa0b2-ff9d-44aa-b4e2-841b4cccddbb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ghost-hotel-middle",
+    "prompt": "Use case: background-extraction with identity-preserving redraw. Asset type: a single static transparent 2D game prop. Extract and faithfully redraw ONLY the laundry service cart visible in the center of this official Helluva Boss One Star Wonder corridor image. The source image is the shape, object-count and palette reference, not a background to preserve. Draw the complete cart in high-definition hand-drawn cel-animation raster style: squat wide black/dark-teal rectangular wheeled hotel housekeeping trolley viewed almost front-on with slight visible top, low upright side rails, two visible shelves below its flat top, two stacks of pale beige folded towels resting on top, small white toiletry bottles on the middle shelf at left and a tidy white folded towel stack at right, two separate stacks of cool pale-blue folded towels on the bottom shelf, tiny black caster wheels. Match the source silhouette and arrangement, no decorative invention or extra equipment. Exactly one cart centered with generous transparent padding on all sides, all wheels and top towels visible, approximately square canvas. Keep all background genuinely transparent RGBA including the spaces between bars; no floor, no corridor, no characters, no person, no text, no ground shadow, no pedestal, no checkerboard painted into the image, no montage, no animation. Clean crisp lines, subdued burgundy ambient highlight consistent with the source; preserve native proportions.",
+    "reference_images": [
+      "references/ghost-hotel-corridor-front.png"
+    ],
+    "transparent_background": true,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-86c0154b-6c5a-4060-9610-53cbcb1a12e7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ghost-hotel-near",
+    "prompt": "Use case: background-extraction with identity-preserving redraw. Asset type: one transparent static 2D wall-lamp prop for Helluva Boss One Star Wonder. Use the provided official episode still as the exact visible lamp reference. Extract and redraw ONLY the single illuminated wall sconce on the right edge. Keep its simple elongated warm cream-yellow cylindrical shade, very gently curved top and bottom edges, fine dark outline, and narrow long tapered dark mounting support below the shade against the wall. Preserve the proportions from the source. Present one complete lamp straight on, centered on a tall transparent RGBA canvas with roomy margins, no character, no wallpaper, no wall section, no floor, no separate stand or base, no extra ornamental metalwork, no words, no watermark. The shade itself is opaque cream with a soft yellow glow using alpha only near its edge; surrounding pixels fully transparent, no opaque glow rectangle. Match the crisp 2D cel-animated style and warm light in the reference. Do not include the character or any other object.",
+    "reference_images": [
+      "references/ghost-hotel-sconce-close.png"
+    ],
+    "transparent_background": true,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-61458ab2-b87a-49a6-b70f-998d539e58fb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "apology-party-middle",
+    "prompt": "Use case: background-extraction with identity-preserving redraw. Asset type: one isolated transparent 2D neon-decoration sprite for the Helluva Boss Apology Tour party. From the provided official episode still, extract and redraw ONLY the LARGE glowing yellow-orange ghost-shaped neon sign at the far right. Ignore the small second ghost, the pink broken heart, all characters and railing. Reproduce this single ghost's simple slightly leaning rounded hood-shaped outer contour, long side arms flowing to an angular zig-zag hem with pointed ends, two small tilted glowing eyes and small oval open mouth, exactly the friendly surprised ghost shape in the reference. Thin bright pale-yellow neon tubing with orange-yellow rim glow, no opaque backing panel; the inside of the contour and entire exterior stay truly transparent RGBA. Full single sign centered with generous margin so glow never clips; approximately square image. Crisp high-definition hand-drawn cel-animation style consistent with the episode; no person, no cable or stand not in source, no words, no floor, no background, no extra motifs, no watermark, no montage, no animation.",
+    "reference_images": [
+      "references/apology-party-neon-ghost.png"
+    ],
+    "transparent_background": true,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-fce654f9-59c6-41ec-956b-9e59096f3274.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "apology-party-near",
+    "prompt": "Use case: background-extraction with identity-preserving redraw. Asset type: one isolated static transparent 2D disco-ball prop from Helluva Boss Apology Tour. Official input image1 provides the complete cyan disco ball hanging at the upper right of the actual party hall; image2 is a closer color and tile-pattern reference where the ball is partly cut off. Draw ONLY one complete luminous turquoise-cyan mirror ball with the same round silhouette and curved longitude/latitude tile grid, turquoise outer tiles and pale aqua central tiles, plus one short thin dark suspension stem centered on top. Clean high-definition 2D hand-drawn cel shading matching the scene; not photoreal chrome or a 3D render. Full sphere and stem visible, centered in a square transparent RGBA canvas with generous padding. Keep a restrained cyan edge glow using transparency; no projected beams, no floor, no people, no room, no curtains, no colored spotlights, no extra sparkles, no text, no opaque rectangle, no checkerboard baked in, no animation or montage. Preserve the simple tile geometry and cyan palette observed in the reference.",
+    "reference_images": [
+      "references/apology-party-hall-wide.png",
+      "references/apology-party-disco-ball.png"
+    ],
+    "transparent_background": true,
+    "tool": "built-in image_gen.imagegen",
+    "output_hint": "Generated images are saved to /workspace/scratch/9be6ab2142e0/generated_images as /workspace/scratch/9be6ab2142e0/generated_images/exec-c8c0e6ad-e6f4-4aee-8c9d-b02771e094d8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+]

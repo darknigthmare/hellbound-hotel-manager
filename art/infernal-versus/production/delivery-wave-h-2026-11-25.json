@@ -1,0 +1,1059 @@
+{
+  "date": "2026-11-25",
+  "batchId": "wave-h-2026-11-25",
+  "comparisonCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "manifest": "art/infernal-versus/production/delivery-wave-h-2026-11-25.json",
+  "reserveManifest": "art/infernal-versus/production/reserve-assets.json",
+  "newProduction": {
+    "playableFighters": 0,
+    "characterBases": 4,
+    "enemyBases": 0,
+    "animationPoses": 0,
+    "stageBackgrounds": 2,
+    "foregroundProps": 4,
+    "projectileImages": 0,
+    "totalNewArtworks": 10,
+    "derivedThumbnails": 2,
+    "newAttackEffectAssignments": 0,
+    "newStoryRoutes": 0,
+    "newStoryDuels": 0
+  },
+  "totals": {
+    "newGeneratedArtworks": 10,
+    "newMasterFiles": 10,
+    "publicImageFiles": 12,
+    "registeredPublicImageFiles": 8,
+    "reservePublicImageFiles": 4,
+    "totalImageFiles": 22,
+    "derivedThumbnails": 2
+  },
+  "runtime": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 30,
+    "threePlaneStages": 30,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 428,
+    "brokenReferences": []
+  },
+  "reserves": {
+    "characterBases": 9,
+    "enemyBases": 6,
+    "projectileImages": 1,
+    "artworks": 16,
+    "referencedFiles": 32,
+    "brokenReferences": []
+  },
+  "retainedComponents": [
+    {
+      "id": "hb_moxxie-bowtie",
+      "name": "Nœud papillon de Moxxie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "hb_millie-top",
+      "name": "Haut de Millie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
+      "export": "public/assets/sprites/parts/hb_millie-top.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "alastor-microphone-cane",
+      "name": "Canne-micro d’Alastor",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
+      "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "vaggie-exorcist-spear",
+      "name": "Lance d’exorciste de Vaggie",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
+      "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "carmine-industries-crate-variant",
+      "name": "Caisse Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "carmine-industries-chain",
+      "name": "Chaîne Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "wrath-ranch-lantern",
+      "name": "Lanterne de Wrath",
+      "kind": "Variante de décor",
+      "master": null,
+      "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
+      "status": "Export récupéré, hors scène active"
+    },
+    {
+      "id": "lucifer-top-hat",
+      "name": "Chapeau de Lucifer",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
+      "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    },
+    {
+      "id": "hb_moxxie-tail",
+      "name": "Queue de Moxxie",
+      "kind": "Partie séparée",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    }
+  ],
+  "verification": {
+    "status": "passed_with_documented_limits",
+    "exports": {
+      "status": "passed",
+      "unchangedMasterFiles": 10,
+      "losslessPixelExactWebP": 10,
+      "derivedThumbnails": 2,
+      "productionImageFiles": 22,
+      "evidence": "art/infernal-versus/production/export-wave-h-2026-11-25.json"
+    },
+    "oneToOneFidelity": {
+      "certified": false,
+      "reason": "Official 320×180 previews establish motifs and identities, not exact full-resolution reconstruction. Neutral stances, some hidden costume details and playable framing are adaptations.",
+      "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_H_2026-11-25.md"
+    },
+    "animationScope": {
+      "newAnimationPoses": 0,
+      "newAnimationCycles": 0,
+      "neutralReadyBases": 4,
+      "newAttackEffectAssignments": 0,
+      "newCombatKits": 0
+    },
+    "browserReview": {
+      "status": "blocked",
+      "browserExecuted": false,
+      "screenshots": 0,
+      "reason": "Chromium launcher exists but /usr/lib/chromium/chromium is absent. H was checked through static CSS reconstruction, not browser capture."
+    },
+    "staticVisualQA": {
+      "status": "passed_with_limits",
+      "stageCompositions": 6,
+      "propBoundsContained": 12,
+      "propBoundsTested": 12,
+      "browserExecuted": false,
+      "evidence": "docs/standalone/qa-wave-h-2026-11-25/README.md",
+      "overviewArtworksInspected": 10,
+      "rgbaCutoutsChecked": 8,
+      "alphaThreshold": 16,
+      "parallaxOffset": 0,
+      "fighterPositions": [
+        22,
+        78
+      ],
+      "limits": [
+        "Portrait contain leaves 125.53 px above the artwork in the assumed 330x300 stage box.",
+        "Landscape reference fighter silhouettes extend onto plain lateral bands; all props remain inside the artwork.",
+        "Static reconstruction excludes HUD, movement, collisions, network requests and actual browser layout."
+      ]
+    },
+    "runtimeAssetAudit": {
+      "status": "passed",
+      "referencedAssets": 428,
+      "missingReferences": 0,
+      "evidence": "docs/standalone/ASSET_COVERAGE.json"
+    },
+    "reserveAudit": {
+      "status": "passed",
+      "artworks": 16,
+      "referencedFiles": 32,
+      "missingReferences": 0,
+      "includedInActiveRoster": false,
+      "evidence": "art/infernal-versus/production/reserve-assets.json"
+    },
+    "automatedQA": {
+      "status": "passed_after_build_recovery",
+      "typecheck": "passed",
+      "lint": "passed",
+      "suites": 44,
+      "tests": 376,
+      "builds": 2,
+      "standaloneFiles": 1025,
+      "standaloneHashesVerified": 1025,
+      "standaloneBytes": 622972043,
+      "standaloneMiB": 594.11,
+      "note": "Initial npm run qa exited 1 on ENOSPC after passing typecheck, lint and tests. Only build phases were resumed, all exit 0; game source unchanged.",
+      "evidence": "docs/standalone/QA_RUNTIME_WAVE_H_2026-11-25.json"
+    },
+    "workbookQA": {
+      "status": "passed",
+      "sheets": 23,
+      "formulaCount": 212,
+      "formulaErrors": 0,
+      "runtimeCellsCompared": 6087,
+      "runtimeCellMismatches": 0,
+      "historicalSheetsPreservedByteForByte": 11,
+      "renderedViewsInspected": 5,
+      "workbookSha256": "1bfaffe380e00692cb30017eb4af4a3e8420a54bff2bde24fef685618d2b341f",
+      "evidence": "docs/standalone/QA_WORKBOOK_WAVE_H_2026-11-25.json"
+    }
+  },
+  "blockedRequests": [
+    {
+      "id": "hz_clara_carmine-ready",
+      "sourceIdentityId": "hz_clara_carmine",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hz_clara_carmine-PROMPT.txt",
+      "requestId": "4854a26d-1530-4f6e-8e2f-b0d6a5257420",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 4854a26d-1530-4f6e-8e2f-b0d6a5257420.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite on a truly transparent RGBA canvas. Redraw CLARA CARMINE from Hazbin Hotel, her Season 1 Scrambled Eggs appearance. Reference image 1 is the historical project's full-body Clara portrait, used for the costume and full silhouette. Reference image 2 is an official Prime Video Respectless preview sheet: Clara is the dark-skinned woman with very large white swept-up curly hair at the far left of its upper-row frames, NOT the green-haired Zeezi next to her. Preserve Clara's dark warm gray-brown skin, slim long-legged proportions, red eyes with pale iris centers, white swept-up fluffy ponytail/quiff and small curled forelock, tall black pointed ear visible within the white hair, small confident smile, sleeveless black high-neck cropped top, dark gray tailored shorts with black waist detail, bare upper thighs, and long ivory-white thigh-high heeled boots with black edging. One composed neutral standing pose, shallow three-quarter facing right, one hand relaxed at hip and the other loose by side; entire figure visible, natural proportions, no pin-up pose. Match the show's clean sharp dark outlines and flat cel colors closely. Keep all hair, ears, fingertips and boots uncropped, 7 percent clear transparent space around the figure. No background, floor, shadow, aura, props, weapon, text, other people, panels, action or animation. Do not introduce new clothing or accessories.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+          "kind": "official_clip",
+          "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+          "approximatePreviewTimesSeconds": [
+            99,
+            100,
+            101
+          ],
+          "localEvidence": "references/respectless-L3-M11.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_clara_carmine.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hz_odette_carmine-ready",
+      "sourceIdentityId": "hz_odette_carmine",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hz_odette_carmine-PROMPT.txt",
+      "requestId": "601456cf-dfb3-4006-941e-4e6d1b837ba2",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 601456cf-dfb3-4006-941e-4e6d1b837ba2.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single full-body static 2D game sprite, true transparent RGBA. Redraw ODETTE CARMINE from Hazbin Hotel, Season 1 Scrambled Eggs. Input 1: the historical project's full-body Odette portrait, complete costume/silhouette reference. Input 2: official Prime Video Respectless preview contact sheet; Odette is the pale woman with cream-blond high ponytail, red-lensed glasses and white coat at the far right of the top-row frames. Preserve her tall very slender angular silhouette, pale gray-white skin, large oval red-lensed glasses with thin black frame, stern composed mouth, angular pale cream-blond swept fringe and high ponytail secured by dark tie, high white coat collar with black inner lapels, fitted white lab-coat dress reaching below knees with a central black seam, black long gloves, thin black stockings and black high-heeled pointed boots. Hold the small plain gray clipboard at waist level as in the existing portrait. One calm neutral standing presentation pose in shallow three-quarter view facing right, free elbow relaxed, all body parts fully visible. Match the show's crisp dark line art, long angular anatomy, flat cel shading and exact existing palette. At least 7 percent clear transparent padding, no cropping. No scenery, floor, shadow, glow, lettering, labels, weapons, extra characters, panels, attacks, or animation frames. Do not redesign the lab coat, hair, glasses, or clipboard.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+          "kind": "official_clip",
+          "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+          "approximatePreviewTimesSeconds": [
+            99,
+            100,
+            101
+          ],
+          "localEvidence": "references/respectless-L3-M11.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_odette_carmine.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_deerie-ready",
+      "sourceIdentityId": "hb_deerie",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hb_deerie-PROMPT.txt",
+      "requestId": "c95c6077-3650-493e-ad25-7bdcbf40b85a",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID c95c6077-3650-493e-ad25-7bdcbf40b85a.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: one static full-body transparent 2D game sprite. Redraw DEERIE from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the project's historical full-body portrait. Input 2 is the official episode preview sheet; Deerie is the small golden deer-like cherub with coral-pink swept hair, large purple eyes and navy outfit in the upper right and middle panels. Preserve the large fawn ears with pale yellow centers, small pointed purple heart-shaped nose, pale golden fur/skin, huge purple eyes with white highlights, asymmetrical coral-pink hair swept across her forehead, light periwinkle shirt with long sleeves and pale collar, pink ribbon scarf tied at neck, dark purple double-breasted short romper with scalloped hem and two small light buttons, purple-tipped delicate fingers and hooves, small tail, pale narrow veined insectlike wings and one thin pale halo. One calm neutral presentation pose facing slightly right, arms relaxed, feet together as a gentle hover, full body including halo, ears, wings and feet visible. Retain the exact compact stylized proportions and sharp purple linework of the source; crisp flat cel colors. True empty transparent background and generous margins. No clouds, ground, cast shadow, glow, other figures, panels, captions, weapons, action, or animation. No costume redesign.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "approximatePreviewTimesSeconds": [
+            740,
+            750,
+            760,
+            770
+          ],
+          "localEvidence": "references/cherub_official_board_08.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_deerie.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_loopty_goopty-ready",
+      "sourceIdentityId": "hb_loopty_goopty",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hb_loopty_goopty-PROMPT.txt",
+      "requestId": "29fdb960-3740-4794-af29-8eb977866fd7",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 29fdb960-3740-4794-af29-8eb977866fd7.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite, transparent RGBA. Redraw LOOPTY GOOPTY in his Sinner demon incarnation from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the historical project portrait showing his full costume; input 2 is the official episode preview sheet, where demon Loopty is the extremely tall red-and-black figure with lime-green round glasses, spiral chest emblem and huge red cape in the upper middle/right and middle-left panels. The sepia human in the bottom panels is NOT the target. Preserve the very thin long-limbed body, angular red pointed face and nose, two long crooked red horn-like head projections, black brim band with small lime circular ornament, round lime-green spiral spectacles, curled black pointed moustache, black fitted torso with the conspicuous lime-green spiral symbol and lime collar, lime belt with downward-pointing center, red forearm gloves, extremely long narrow black trousers, elongated lime lower legs/boots, and flowing dark red full-length cape. One quiet dignified standing neutral pose facing slightly right, arms relaxed loosely by sides, hands open, both boots on the same baseline, no attack. Match clean sharp dark lines, flat cel color and exaggerated proportions from the show. Entire horns, cape tips, hands and feet must fit with transparent padding. No background, floor, shadow, glow, text, extra people, weapon, machine, panels or animation frames. Preserve reference costume; no invented embellishments.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "approximatePreviewTimesSeconds": [
+            100,
+            110,
+            120
+          ],
+          "localEvidence": "references/cherub_official_board_01.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_loopty_goopty.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    }
+  ],
+  "priorBatch": {
+    "batchId": "wave-g-2026-11-25",
+    "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
+    "publishedCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82"
+  },
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "oneToOneFidelityCertified": false,
+  "canonStatus": "source_grounded_game_adaptation",
+  "scope": "Missing static bases, two stages and four props only. No new animations, combat kits, audio, story routes or attack assignments.",
+  "beforeRuntime": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 28,
+    "threePlaneStages": 28,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 420,
+    "brokenReferences": []
+  },
+  "generation": {
+    "requests": 14,
+    "successfulOutputs": 10,
+    "acceptedArtworks": 10,
+    "supersededCandidates": 0,
+    "qualityCorrections": 0,
+    "refusedRequests": 4,
+    "retriesAfterRefusal": 0
+  },
+  "deferredAssets": [
+    {
+      "id": "husk-golden-die",
+      "primarySource": "https://www.youtube.com/watch?v=9sVoglgJjRg",
+      "sourceTitle": "Loser, Baby Sing-Along | Hazbin Hotel | Prime Video",
+      "inspection": "Public official storyboard previews, 320x180 native cells, especially boards 2–7.",
+      "result": "These inspected frames establish the casino and card motif, but do not resolve an isolated die geometry. No new projectile generated."
+    },
+    {
+      "id": "imp-grenade",
+      "primarySource": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+      "sourceTitle": "HELLUVA BOSS - Truth Seekers // S1: Episode 6",
+      "inspection": "Official storyboards around 900–1080 seconds plus separately labeled secondary fight excerpt previews.",
+      "result": "The isolated object contour and markings are insufficiently resolved. No new projectile generated."
+    }
+  ],
+  "cumulativeProduction": {
+    "initial": {
+      "drawings": 42,
+      "imageFiles": 86
+    },
+    "waveC": {
+      "drawings": 35,
+      "imageFiles": 73
+    },
+    "waveD": {
+      "drawings": 26,
+      "imageFiles": 55
+    },
+    "waveF": {
+      "drawings": 25,
+      "imageFiles": 53
+    },
+    "waveG": {
+      "drawings": 21,
+      "imageFiles": 45
+    },
+    "total": {
+      "drawings": 159,
+      "imageFiles": 334,
+      "pngMasters": 159,
+      "webpExports": 159,
+      "derivedThumbnails": 16
+    },
+    "scope": "Six traced production lots on PR #8. Diagnostic images excluded. G and H together deliver 31 artworks / 67 production image files after the previously published F head.",
+    "waveH": {
+      "drawings": 10,
+      "imageFiles": 22
+    }
+  },
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/base/hb_paimon-ready.png",
+      "bytes": 1363286,
+      "sha256": "db605cd7d1ee4d2fdfb4ed37928742ae31a4376ca3b8dbc5c6e1cbe139ae1981",
+      "gitBlobSha": "dbebef5306734827a7a0c62dbfa514b2db29b559",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        118,
+        47,
+        887,
+        1487
+      ],
+      "id": "hb_paimon-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_paimon-ready.webp",
+      "bytes": 914586,
+      "sha256": "4a7bd03a2e9107ffbec97f5ac86cecb8c152c93aa97e0b6c5f857ad2dd974aa6",
+      "gitBlobSha": "4a3cf26ec02829fc842db971cd754bacb4a9a3a3",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        118,
+        47,
+        887,
+        1487
+      ],
+      "id": "hb_paimon-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_cash_buckzo-ready.png",
+      "bytes": 648751,
+      "sha256": "0ced42d44b4653c91bacb02743bbb010d58346b77ad60574e0d6bd19c7d1cd6e",
+      "gitBlobSha": "a3bb5206c012b6d4d16596e247f9ca0139e5e2bc",
+      "dimensions": [
+        1225,
+        1284
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        71,
+        61,
+        1165,
+        1230
+      ],
+      "id": "hb_cash_buckzo-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_cash_buckzo-ready.webp",
+      "bytes": 389226,
+      "sha256": "78aeeb9f63a5889d3e909866c6add47e8e3b8382b7a8b16feb78896b09c9dcc3",
+      "gitBlobSha": "a3a3c35ac2f9a2b598ea2120a43efa9f4394b1b4",
+      "dimensions": [
+        1225,
+        1284
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        71,
+        61,
+        1165,
+        1230
+      ],
+      "id": "hb_cash_buckzo-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_joe-ready.png",
+      "bytes": 1323299,
+      "sha256": "6ddb68bd95d8e8d62e837d1ae448f72f2f6efe1e4aae1d5883bf38bb7c347bf4",
+      "gitBlobSha": "5d56c5880044b0e3c71896b94c9a5e977608a378",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        93,
+        38,
+        943,
+        1507
+      ],
+      "id": "hb_joe-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_joe-ready.webp",
+      "bytes": 868380,
+      "sha256": "ca8fea22a050317bbe62f6ff78a60a99a6ac5b845cab4909932ac47fa71af451",
+      "gitBlobSha": "a82596b13b961f28d10dad24162cc8d1d6b04b14",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        93,
+        38,
+        943,
+        1507
+      ],
+      "id": "hb_joe-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_lin-ready.png",
+      "bytes": 1428160,
+      "sha256": "c1f197155fcb69ace8f4e9e5eba2b914ce991ac7ec0b5bfb91a13ff0079be38b",
+      "gitBlobSha": "f6a866ba30842eb54c8356e209a40976db331793",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        120,
+        53,
+        954,
+        1492
+      ],
+      "id": "hb_lin-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_lin-ready.webp",
+      "bytes": 926998,
+      "sha256": "075d8af4f18320b59d6e5f24d3d1714ed7bfbf3fdc11beed347637abcd2a6e20",
+      "gitBlobSha": "db390919dda41370e077b14d9c0423dcbe072a93",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        120,
+        53,
+        954,
+        1492
+      ],
+      "id": "hb_lin-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/ghost-hotel-room-wave-h.png",
+      "bytes": 1584840,
+      "sha256": "e823efb79b28882f05fffd81515fc832727ca02d31e9b947cf166c4f3c45be37",
+      "gitBlobSha": "9df882da65b051585150dec59f7d1bf3f52ccbd2",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "ghost-hotel-room",
+      "group": "stage_background",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/ghost-hotel/room.webp",
+      "bytes": 1144300,
+      "sha256": "a5bb7f021135a3930cbaa5f224d3ba46999adfe2cc021dd868abffa47583fce3",
+      "gitBlobSha": "06682574101544109bee1341fad102c3c609148e",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "ghost-hotel-room",
+      "group": "stage_background",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/ghost-hotel/thumb.webp",
+      "bytes": 19782,
+      "sha256": "53a098ab205b058f697ee37d79886d2a56897c254f756a64e3c7f8c8e7474f50",
+      "gitBlobSha": "1a5843e0d3efe99cd7bfb47e521821c8cbff79ec",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "ghost-hotel-room",
+      "group": "stage_background",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/ghost-hotel-middle-wave-h.png",
+      "bytes": 872290,
+      "sha256": "3068f975391597fe7c7d5cc4bfc996fdcacc3bbe7b3f8679a0c90bd49d7b4725",
+      "gitBlobSha": "60e4c1cee46dfec5f678cc31b23858eeddde16d2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        105,
+        223,
+        1146,
+        1035
+      ],
+      "id": "ghost-hotel-middle",
+      "group": "stage_prop",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/ghost-hotel/prop-middle.webp",
+      "bytes": 490176,
+      "sha256": "029853d2ae1e94113c0cf37ed77efc88edb51d89c16520ca0393e34a9b1492a8",
+      "gitBlobSha": "b95cdfb729a4fe9fbca747b0a2a6af81d582e049",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        105,
+        223,
+        1146,
+        1035
+      ],
+      "id": "ghost-hotel-middle",
+      "group": "stage_prop",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/ghost-hotel-near-wave-h.png",
+      "bytes": 456125,
+      "sha256": "d8d48566df30b54161716f7f34ef96469fc7b337dd2e00b24961bacc97a34b5a",
+      "gitBlobSha": "14be407755f16ac19c2204f690b28f42564eb1f0",
+      "dimensions": [
+        887,
+        1774
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        250,
+        126,
+        630,
+        1646
+      ],
+      "id": "ghost-hotel-near",
+      "group": "stage_prop",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/ghost-hotel/prop-near.webp",
+      "bytes": 255226,
+      "sha256": "626d11236824a72386282dbb3431e62fcfc622506bf3548dd18bff581d70b848",
+      "gitBlobSha": "f739c088ae554748329d5bd0b6fec95dc6ccceba",
+      "dimensions": [
+        887,
+        1774
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        250,
+        126,
+        630,
+        1646
+      ],
+      "id": "ghost-hotel-near",
+      "group": "stage_prop",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/apology-party-room-wave-h.png",
+      "bytes": 1589149,
+      "sha256": "7cce34d77baeff8905edf469d4f69392635cdb88d963d02bf73beefcfe606e90",
+      "gitBlobSha": "f4aa67b840bdfc5c218a446e03e28611299dc9ec",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "apology-party-room",
+      "group": "stage_background",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/apology-party/room.webp",
+      "bytes": 1106670,
+      "sha256": "43b83f03cf724ed7e05ea7b99dea942ddfcc7a5e32bcfff84b1d97f1d8a8fee1",
+      "gitBlobSha": "c57c392a79924c4e9e9a74c1ad0c1d3c1b5b3a89",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "apology-party-room",
+      "group": "stage_background",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/apology-party/thumb.webp",
+      "bytes": 24804,
+      "sha256": "d9ef74dc51decd97535f3b2bc9fd569f93be342ce9bea35bd742e3fc3da52cc5",
+      "gitBlobSha": "224c167e1c04fe4340b9a368fd7addc96e17c473",
+      "dimensions": [
+        480,
+        270
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "alphaBounds16": null,
+      "id": "apology-party-room",
+      "group": "stage_background",
+      "kind": "thumbnail",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/apology-party-middle-wave-h.png",
+      "bytes": 1004416,
+      "sha256": "60668bde58658d8040b6e035e0b3b26c8b2a4b63ee8d746b986f25241cdb07aa",
+      "gitBlobSha": "82bac2be06852adedef327fd284565e443b7cce6",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaBounds16": [
+        224,
+        105,
+        1035,
+        1142
+      ],
+      "id": "apology-party-middle",
+      "group": "stage_prop",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/apology-party/prop-middle.webp",
+      "bytes": 649246,
+      "sha256": "c2b01c2d9c984674533a20e1ca62c0664dc5e27e72719ae713f88b57d4141310",
+      "gitBlobSha": "5544f050288e0beea44261cc67cb353f72f02e2b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaBounds16": [
+        224,
+        105,
+        1035,
+        1142
+      ],
+      "id": "apology-party-middle",
+      "group": "stage_prop",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/apology-party-near-wave-h.png",
+      "bytes": 1093903,
+      "sha256": "0f4f58de03e495c0c21ee25d88a040b1d9085f106edcaa935130939ecb28aeb5",
+      "gitBlobSha": "8e9a54993094bc9969d9f67cf7be95b2eb8650d2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        74,
+        1091,
+        1170
+      ],
+      "id": "apology-party-near",
+      "group": "stage_prop",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "active",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/apology-party/prop-near.webp",
+      "bytes": 680780,
+      "sha256": "5a6292bae5ee1807dbce9e3b5e2b7ea0192a1facbbf756af856d6df374305fb1",
+      "gitBlobSha": "5fd104c4c7b3cd4e1b70309246f83885a3faf487",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        74,
+        1091,
+        1170
+      ],
+      "id": "apology-party-near",
+      "group": "stage_prop",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "active",
+      "registered": true
+    }
+  ],
+  "reports": {
+    "delivery": "docs/standalone/DELIVERY_WAVE_H_2026-11-25.md",
+    "assetReview": "docs/standalone/REVIEW_ASSETS_WAVE_H_2026-11-25.md",
+    "runtime": "docs/standalone/QA_RUNTIME_WAVE_H_2026-11-25.json",
+    "workbook": "docs/standalone/QA_WORKBOOK_WAVE_H_2026-11-25.json",
+    "staticStages": "docs/standalone/qa-wave-h-2026-11-25/README.md"
+  },
+  "sourceManifestSha256": {
+    "characters-wave-h-2026-11-25.json": "69be9918587849dad6384249945326e120c3d790b14fccdedda792eec8e31684",
+    "character-prompts-wave-h-2026-11-25.json": "f99a6c4c575727a31fbb2a1b6e4460960de0e55ec9158f33e05ac05746bf07a5",
+    "stages-wave-h-2026-11-25.json": "e3c4384ae8d7d48f923360c0ca51a3578f7bbb6207c7e3fe9dd8aadf3f079222",
+    "stage-prompts-wave-h-2026-11-25.json": "db84f6dd1ee560436efdea28779c126d74aaf57566940c6def2aa636d315a99f",
+    "reserve-assets-wave-h-2026-11-25.json": "e29f215041f16b714dae9c1fb119f16ad58c8b548cf0a047cef85a4c91804002",
+    "export-wave-h-2026-11-25.json": "80366dc1a7924c20efc92763555d008c0f8dc3e806838a4a31d6f18ed7e1b5b0",
+    "deferred-projectiles-wave-h-2026-11-25.json": "526b492554ab92e730aaf4433e33aa9a530161b97b99182c4d71c9db06a87b1a",
+    "reserve-assets.json": "cc182b7aada6dd285f22349145066fbeb4cc6ff8dd324d73d343258326835365"
+  },
+  "diagnosticImages": {
+    "count": 13,
+    "directory": "docs/standalone/qa-wave-h-2026-11-25",
+    "excludedFromProductionArtworkAndImageFileCounts": true
+  }
+}

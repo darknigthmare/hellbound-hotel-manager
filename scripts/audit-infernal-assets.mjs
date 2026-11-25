@@ -97,7 +97,7 @@ const summary = {
 // Reserve artwork is deliberately outside the playable roster and the active
 // asset set. A delivered base image does not imply a combat kit or animation.
 const reserveCatalogue = JSON.parse(fs.readFileSync(path.join(root,
-  'art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json'), 'utf8'));
+  'art/infernal-versus/production/reserve-assets.json'), 'utf8'));
 const reservePaths = new Set();
 const reserveMissing = new Set();
 const reserveIds = new Set();
@@ -115,7 +115,7 @@ for (const entry of reserveCatalogue.assets) {
   }
 }
 const reserveSummary = {
-  catalogue: 'art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json',
+  catalogue: 'art/infernal-versus/production/reserve-assets.json',
   characterBases: reserveCatalogue.assets.filter(entry => entry.kind === 'character_base').length,
   enemyBases: reserveCatalogue.assets.filter(entry => entry.kind === 'enemy_base').length,
   projectileImages: reserveCatalogue.assets.filter(entry => entry.kind === 'projectile').length,
@@ -124,7 +124,7 @@ const reserveSummary = {
   brokenReferences: [...reserveMissing],
 };
 const report = { schemaVersion: 3, summary, reserveSummary, fighters, stages, attackEffects,
-  interpretation: 'Summary counts active registered files and authored key poses. ReserveSummary counts only the separate Wave G catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering.' };
+  interpretation: 'Summary counts active registered files and authored key poses. ReserveSummary counts the cumulative static reserve catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering.' };
 const destination = path.join(root, 'docs/standalone/ASSET_COVERAGE.json');
 fs.writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ active: summary, reserve: reserveSummary }, null, 2));

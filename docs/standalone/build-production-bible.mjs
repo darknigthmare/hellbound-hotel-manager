@@ -157,10 +157,11 @@ async function collectRuntimeTables(){
   for (const asset of reserve.assets) {
     assert.equal(asset.runtimeStatus, 'reserve', 'Base annoncée active dans le catalogue de réserve : ' + asset.id);
     for (const file of [asset.master, asset.export]) await fs.access(path.join(root, file));
-    reserveRows.push([reserveKinds[asset.kind], asset.name, 'Réserve statique · vague G',
+    const batchLabel = asset.batchId?.match(/^wave-([a-z])-/)?.[1]?.toUpperCase() ?? 'G';
+    reserveRows.push([reserveKinds[asset.kind], asset.name, 'Réserve statique · vague ' + batchLabel,
       asset.reference + '\n' + asset.export + '\n' + (asset.pose === 'ready' ? 'Une base READY. Aucun kit jouable ni cycle ajouté.' : 'Un projectile isolé. Aucune affectation à une attaque ni physique ajoutée.'),
       asset.fidelityNotes.join(' ')]);
-    reserveReferences.push(['Réserve vague G', asset.name,
+    reserveReferences.push(['Réserve vague ' + batchLabel, asset.name,
       asset.reference + ' ' + asset.fidelityNotes.join(' '), asset.references.map(reference => reference.url).join('\n')]);
   }
   const sets = [
@@ -265,9 +266,9 @@ const guideRows=[
   ['Références V2','Sources de travail',null,'Associer toute décision de fidélité à une scène et à une incarnation. Les scénarios de tournoi et de campagne sont originaux.'],
   ['Références V2','Sprites VFX uniques',null,'Images distinctes du registre actif, y compris les réemplois entre combattants. Adaptations AU ; sources, prompts et contrôles alpha dans les manifestes projectiles du 24 novembre.'],
   ['Atelier et recette','Attaques avec VFX',null,'Une ligne par association entre combattant, attaque et image. Les effets suivent le contact existant ; ils n’ajoutent ni collision autonome, ni dégâts, ni portée.'],
-  ['Atelier et recette','Bases de personnages en réserve',null,'Nouvelles bases statiques de la vague G. Les fichiers et incarnations sont renseignés dans Atelier et recette ; aucun kit jouable ajouté.'],
-  ['Atelier et recette','Bases d’ennemis en réserve',null,'Une image READY par ennemi de la vague G. Aucun comportement, coup ou cycle d’animation ajouté.'],
-  ['Atelier et recette','Projectiles en réserve',null,'Objets isolés de la vague G. Le compteur exclut les VFX déjà affectés aux attaques jouables.'],
+  ['Atelier et recette','Bases de personnages en réserve',null,'Bases statiques du catalogue cumulatif. Chaque vague, fichier et incarnation est renseigné dans Atelier et recette ; aucun kit jouable ajouté.'],
+  ['Atelier et recette','Bases d’ennemis en réserve',null,'Une image READY par ennemi du catalogue de réserve. Aucun comportement, coup ou cycle d’animation ajouté.'],
+  ['Atelier et recette','Projectiles en réserve',null,'Objets isolés du catalogue de réserve. Le compteur exclut les VFX déjà affectés aux attaques jouables.'],
 ];
 drawnTable(guide,'Infernal Versus · Guide de la V2',`${design.edition} · Les onze derniers onglets conservent intégralement les registres de la V1.`, ['Onglet','Mesure','Nombre','Mode de lecture'],[28,35,15,92],guideRows,'ProdV2Guide');
 guide.tabColor=palette.burgundy;

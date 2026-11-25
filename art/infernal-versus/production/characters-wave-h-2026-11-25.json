@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-h-2026-11-25",
+  "date": "2026-11-25",
+  "scope": "Static character bases only. No animations, attacks or kits.",
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "fidelityOneToOneCertified": false,
+  "requestedInitial": 6,
+  "additionalIndependentIdentities": 2,
+  "generationAttempts": 8,
+  "acceptedArtworks": 4,
+  "blockedCount": 4,
+  "assets": [
+    {
+      "id": "hb_paimon-ready",
+      "sourceIdentityId": "hb_paimon",
+      "name": "Paimon",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "source": "/workspace/scratch/9be6ab2142e0/production-h/characters/hb_paimon-ready.png",
+      "master": "art/infernal-versus/masters/base/hb_paimon-ready.png",
+      "runtime": "public/assets/sprites/reserve/hb_paimon-ready.webp",
+      "generator": "Built-in image_gen.imagegen",
+      "generationSource": "/workspace/scratch/9be6ab2142e0/generated_images/exec-623095b8-8431-48e6-9378-22a28dae4de2.png",
+      "promptFile": "hb_paimon-PROMPT.txt",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1363286,
+      "sha256": "db605cd7d1ee4d2fdfb4ed37928742ae31a4376ca3b8dbc5c6e1cbe139ae1981",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        118,
+        48,
+        887,
+        1487
+      ],
+      "fullyTransparentPixelFraction": 0.63097,
+      "maxOuterEdgeAlpha": 0,
+      "reference": "The Circus S2E1",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+          "kind": "official_episode",
+          "episode": "The Circus S2E1",
+          "approximatePreviewTimesSeconds": [
+            90,
+            100,
+            110,
+            120,
+            130
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/the-circus-L3-M1.jpg",
+          "localEvidenceSha256": "5f5f1e8afbb48c5a407abdeb82a72181f6ca81715bb34ce4f25df7e95dfdeaf3"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_paimon.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_paimon.png",
+          "localEvidenceSha256": "55779aadef3cbdcde728c1948fdcede7f92a320cb7cf17eac1abfb795eb3879a"
+        }
+      ],
+      "observedDetails": "Couronne et haute silhouette noire, masque facial blanc et rouge, col doré, cape bordeaux, doublure dorée et étoiles.",
+      "fidelityNotes": [
+        "Le costume inférieur et les pieds reprennent surtout le portrait historique du projet; la source officielle montre le haut et la cape.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "visualReview": {
+        "performed": true,
+        "sourceToOutputComparison": "Official preview sheets and historical portrait inspected before generation; generated output inspected full size.",
+        "silhouetteClipped": false,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "staticImages": 1
+      },
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game sprite, one character per image, transparent RGBA. Redraw PAIMON from Helluva Boss, his owl-shaped royal incarnation in The Circus S2E1. Input image 1 is the existing project's full-body portrait and silhouette reference. Input image 2 is the official episode preview contact sheet: only Paimon, the tall owl king visible on the upper two rows, is the canon color and face reference; do not reproduce the sheet or young Stolas. Preserve Paimon's identity, extremely tall slender proportions, long dark beak, narrow white double-eye face markings with red eyes, dark feathered crest and red/gold pointed crown, very high burgundy collar with golden interior, deep burgundy royal cape with warm gold lining and sparse small star marks, red waistcoat, narrow charcoal trousers and black birdlike feet. Draw one calm neutral presentation stance facing slightly to the viewer's right in a shallow three-quarter side view, arms relaxed with one hand lightly forward, both feet visible on the same baseline. Match the series' sharp dark linework and clean flat cel colors closely, no realism, no redesign. The entire crown, cape, hands and feet must fit with at least 7 percent clear transparent margin around the silhouette. No floor, shadow, background, text, labels, additional characters, panels, props, attack, effect, or animation frames. Keep all observed costume details; do not add armor or a weapon.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "export": "public/assets/sprites/reserve/hb_paimon-ready.webp",
+      "masterSha256": "db605cd7d1ee4d2fdfb4ed37928742ae31a4376ca3b8dbc5c6e1cbe139ae1981",
+      "exportSha256": "4a7bd03a2e9107ffbec97f5ac86cecb8c152c93aa97e0b6c5f857ad2dd974aa6",
+      "pixelExactExport": true,
+      "batchId": "wave-h-2026-11-25"
+    },
+    {
+      "id": "hb_cash_buckzo-ready",
+      "sourceIdentityId": "hb_cash_buckzo",
+      "name": "Cash Buckzo",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "source": "/workspace/scratch/9be6ab2142e0/production-h/characters/hb_cash_buckzo-ready.png",
+      "master": "art/infernal-versus/masters/base/hb_cash_buckzo-ready.png",
+      "runtime": "public/assets/sprites/reserve/hb_cash_buckzo-ready.webp",
+      "generator": "Built-in image_gen.imagegen",
+      "generationSource": "/workspace/scratch/9be6ab2142e0/generated_images/exec-95583674-f9d2-4aca-88e1-95b1e7fd3908.png",
+      "promptFile": "hb_cash_buckzo-PROMPT.txt",
+      "dimensions": [
+        1225,
+        1284
+      ],
+      "mode": "RGBA",
+      "bytes": 648751,
+      "sha256": "0ced42d44b4653c91bacb02743bbb010d58346b77ad60574e0d6bd19c7d1cd6e",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        71,
+        61,
+        1165,
+        1230
+      ],
+      "fullyTransparentPixelFraction": 0.741424,
+      "maxOuterEdgeAlpha": 1,
+      "reference": "The Circus S2E1",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+          "kind": "official_episode",
+          "episode": "The Circus S2E1",
+          "approximatePreviewTimesSeconds": [
+            270,
+            280,
+            300,
+            310,
+            320
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/the-circus-L3-M3.jpg",
+          "localEvidenceSha256": "a8c1cdab195dd1a69034054f785777bab957cbbe97a7b5518100de7558e33dd5"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_cash_buckzo.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_cash_buckzo.png",
+          "localEvidenceSha256": "75a37c1a8ba004c10d0c745f49d098bb7e834b126537a4ec651c6f02bd39e83f"
+        }
+      ],
+      "observedDetails": "Grandes cornes enroulées noires et blanches, petit chapeau mauve, visage rouge, yeux jaunes fatigués, petit bouc ivoire, tenue pâle/mauve.",
+      "fidelityNotes": [
+        "Pantalon rapiécé et queue complète complétés depuis le portrait historique, dont la queue était rognée au bord; extrémité reconstruite.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "visualReview": {
+        "performed": true,
+        "sourceToOutputComparison": "Official preview sheets and historical portrait inspected before generation; generated output inspected full size.",
+        "silhouetteClipped": false,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "staticImages": 1
+      },
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: one static full-body 2D sprite on truly transparent RGBA. Redraw CASH BUCKZO, the adult imp father from Helluva Boss, The Circus S2E1. Input 1: historical project portrait for his complete costume and proportions. Input 2: official The Circus preview contact sheet for identity and colors; Cash is the elderly red-faced imp with enormous backward curling black-and-white striped horns, small bent purplish top hat, tired yellow slit-pupil eyes and little ivory two-point chin beard. Preserve the long pointed beaked muzzle, black forehead imp marking, huge curled horns, tall slim slightly stooped body, pale off-white shirt and cuffs, muted mauve waistcoat, baggy patched taupe trousers, black lower legs/feet and long red tail with black bands and pointed end. Draw him alone in a calm standing neutral ready pose, three-quarter facing right, hands relaxed, full horns and tail visible, sharp clean cel-animation dark linework and flat color matching the references. Keep complete anatomy and at least 7 percent transparent empty padding on every side; tail must not be cropped like the historical portrait. No scenery, ground, cast shadow, glow, text, border, extra characters, panels, weapon, attack, or sequence. Preserve the established costume with no invented adornment.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "export": "public/assets/sprites/reserve/hb_cash_buckzo-ready.webp",
+      "masterSha256": "0ced42d44b4653c91bacb02743bbb010d58346b77ad60574e0d6bd19c7d1cd6e",
+      "exportSha256": "78aeeb9f63a5889d3e909866c6add47e8e3b8382b7a8b16feb78896b09c9dcc3",
+      "pixelExactExport": true,
+      "batchId": "wave-h-2026-11-25"
+    },
+    {
+      "id": "hb_joe-ready",
+      "sourceIdentityId": "hb_joe",
+      "name": "Joe",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "source": "/workspace/scratch/9be6ab2142e0/production-h/characters/hb_joe-ready.png",
+      "master": "art/infernal-versus/masters/base/hb_joe-ready.png",
+      "runtime": "public/assets/sprites/reserve/hb_joe-ready.webp",
+      "generator": "Built-in image_gen.imagegen",
+      "generationSource": "/workspace/scratch/9be6ab2142e0/generated_images/exec-bf7bb6eb-32cd-417d-966b-6cb06ae1a986.png",
+      "promptFile": "hb_joe-PROMPT.txt",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1323299,
+      "sha256": "6ddb68bd95d8e8d62e837d1ae448f72f2f6efe1e4aae1d5883bf38bb7c347bf4",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        93,
+        38,
+        943,
+        1507
+      ],
+      "fullyTransparentPixelFraction": 0.64071,
+      "maxOuterEdgeAlpha": 1,
+      "reference": "The Harvest Moon Festival S1E5",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "kind": "official_episode",
+          "episode": "The Harvest Moon Festival S1E5",
+          "approximatePreviewTimesSeconds": [
+            180,
+            190,
+            200,
+            210,
+            220,
+            240
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/harvest-L3-M2.jpg",
+          "localEvidenceSha256": "dc4075adb0ca06451f9d6629ed48e631a2258f3ca653c703aa36d1a2cf234fa8"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_joe.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_joe.png",
+          "localEvidenceSha256": "0ee3c5185a88f5c2bc26dac3ba4e924f06b97901fd8c90d111e3eaa2b880684e"
+        }
+      ],
+      "observedDetails": "Corps rouge massif, moustache et cheveux blancs, cornes annelées, yeux jaunes, bretelles sombres et motif blanc courbe au bras.",
+      "fidelityNotes": [
+        "Pose bras croisés et bas du costume renseignés par le portrait historique; courbure exacte du motif et angle de pose non certifiés.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "visualReview": {
+        "performed": true,
+        "sourceToOutputComparison": "Official preview sheets and historical portrait inspected before generation; generated output inspected full size.",
+        "silhouetteClipped": false,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "staticImages": 1
+      },
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: one full-body static 2D character sprite with true transparent background. Redraw JOE, Millie's adult father in Helluva Boss The Harvest Moon Festival S1E5. Input image 1 is the historical project portrait; input image 2 is the official episode preview contact sheet, with Joe the broad red male imp seen alongside Lin in the upper middle/right and middle panels. Preserve his stocky muscular body, rounded red face, thick black eyebrows, golden yellow slit-pupil eyes, short swept white hair and white moustache, two tall curved black-and-white banded horns as visible in the official episode, sleeveless dark brown vest/shirt, dark suspenders, black belt with square silver buckle, brown trousers, black hooved boots, slim red pointed tail and large white curling marking on the outer upper arm. One quiet neutral standing pose, arms comfortably folded, slightly three-quarter facing right, same humorous angular cel-animation style and proportions as the episode, clean dark linework, flat color. Both feet and entire horns/tail visible with empty transparent margin; don't crop. No scenery, ground, shadow, halo, text, weapons, effects, additional people, panels or animation. Do not add new costume detail or muscles beyond the reference.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "export": "public/assets/sprites/reserve/hb_joe-ready.webp",
+      "masterSha256": "6ddb68bd95d8e8d62e837d1ae448f72f2f6efe1e4aae1d5883bf38bb7c347bf4",
+      "exportSha256": "ca8fea22a050317bbe62f6ff78a60a99a6ac5b845cab4909932ac47fa71af451",
+      "pixelExactExport": true,
+      "batchId": "wave-h-2026-11-25"
+    },
+    {
+      "id": "hb_lin-ready",
+      "sourceIdentityId": "hb_lin",
+      "name": "Lin",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "source": "/workspace/scratch/9be6ab2142e0/production-h/characters/hb_lin-ready.png",
+      "master": "art/infernal-versus/masters/base/hb_lin-ready.png",
+      "runtime": "public/assets/sprites/reserve/hb_lin-ready.webp",
+      "generator": "Built-in image_gen.imagegen",
+      "generationSource": "/workspace/scratch/9be6ab2142e0/generated_images/exec-4ce67206-fbe3-4a53-90f6-3f4d0b9fd907.png",
+      "promptFile": "hb_lin-PROMPT.txt",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1428160,
+      "sha256": "c1f197155fcb69ace8f4e9e5eba2b914ce991ac7ec0b5bfb91a13ff0079be38b",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        120,
+        53,
+        954,
+        1492
+      ],
+      "fullyTransparentPixelFraction": 0.678404,
+      "maxOuterEdgeAlpha": 1,
+      "reference": "The Harvest Moon Festival S1E5",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "kind": "official_episode",
+          "episode": "The Harvest Moon Festival S1E5",
+          "approximatePreviewTimesSeconds": [
+            180,
+            190,
+            200,
+            210,
+            220
+          ],
+          "method": "Public official YouTube storyboard previews, visually inspected at 320 by 180 pixels; no full playback.",
+          "localEvidence": "references/harvest-L3-M2.jpg",
+          "localEvidenceSha256": "dc4075adb0ca06451f9d6629ed48e631a2258f3ca653c703aa36d1a2cf234fa8"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_lin.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false,
+          "localEvidence": "references/project_hb_lin.png",
+          "localEvidenceSha256": "c8b8f0b4ddd13f69a42fa612af03b1bb79249a0a45470315c9f30853fa81b75b"
+        }
+      ],
+      "observedDetails": "Cheveux gris ébouriffés, petites cornes annelées, visage rouge à marques blanches, foulard rouge, chemisier blanc, pantalon gris bleu et gants sombres.",
+      "fidelityNotes": [
+        "Le bas du pantalon, les sabots et les motifs précis de la queue sont surtout renseignés par le portrait historique; pas de modèle officiel HD complet.",
+        "Une seule pose neutre adaptée pour le jeu, sans animation ni kit jouable.",
+        "Contour visible entier, mais marges parfois inférieures aux 7 % demandés. Les pixels originaux et leur alpha sont conservés.",
+        "Les proportions et détails fins reposent sur des prévisualisations de définition limitée et sur le portrait historique. Fidélité 1:1 non certifiée.",
+        "Vue proche du trois-quarts frontal dans les sorties; lisibilité et orientation de profil au sein du moteur de combat encore à valider."
+      ],
+      "visualReview": {
+        "performed": true,
+        "sourceToOutputComparison": "Official preview sheets and historical portrait inspected before generation; generated output inspected full size.",
+        "silhouetteClipped": false,
+        "inGameChecked": false,
+        "fidelityOneToOneCertified": false,
+        "staticImages": 1
+      },
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: one full-body static 2D character sprite with true transparent background. Redraw LIN, Millie's adult mother from Helluva Boss The Harvest Moon Festival S1E5. Input image 1 is the project's historical full-body portrait, input image 2 is the official episode preview sheet; Lin is the red woman with spiky gray hair and white puff-sleeve blouse standing beside Joe in the upper middle/right and central panels. Preserve her short wild dark-gray bob, two slender black horns with narrow white rings, bright yellow eyes with black pupils, red face with small white circular cheek markings, red tied neckerchief, off-white short puffed sleeves and ruffled square neckline, dark fitted underbust/belt with round gray buckle, high-waisted dusty gray-blue trousers with rolled cuffs, long dark work gloves, cloven red-and-black hooves, and slender red tail with thin pale bands and white-tipped arrowhead. One calm neutral standing stance, shallow three-quarter view facing right, arms relaxed, confident friendly expression. Match sharp dark outlines, stylized proportions and clean flat cel coloring of the source. Full horns, hair, fingers, hooves and tail included with at least 7 percent clear transparent space. No background, floor, shadow, text, props, other characters, panels, attacks, special effects or animation frames. No costume redesign.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "export": "public/assets/sprites/reserve/hb_lin-ready.webp",
+      "masterSha256": "c1f197155fcb69ace8f4e9e5eba2b914ce991ac7ec0b5bfb91a13ff0079be38b",
+      "exportSha256": "075d8af4f18320b59d6e5f24d3d1714ed7bfbf3fdc11beed347637abcd2a6e20",
+      "pixelExactExport": true,
+      "batchId": "wave-h-2026-11-25"
+    }
+  ],
+  "blockedRequests": [
+    {
+      "id": "hz_clara_carmine-ready",
+      "sourceIdentityId": "hz_clara_carmine",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hz_clara_carmine-PROMPT.txt",
+      "requestId": "4854a26d-1530-4f6e-8e2f-b0d6a5257420",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 4854a26d-1530-4f6e-8e2f-b0d6a5257420.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite on a truly transparent RGBA canvas. Redraw CLARA CARMINE from Hazbin Hotel, her Season 1 Scrambled Eggs appearance. Reference image 1 is the historical project's full-body Clara portrait, used for the costume and full silhouette. Reference image 2 is an official Prime Video Respectless preview sheet: Clara is the dark-skinned woman with very large white swept-up curly hair at the far left of its upper-row frames, NOT the green-haired Zeezi next to her. Preserve Clara's dark warm gray-brown skin, slim long-legged proportions, red eyes with pale iris centers, white swept-up fluffy ponytail/quiff and small curled forelock, tall black pointed ear visible within the white hair, small confident smile, sleeveless black high-neck cropped top, dark gray tailored shorts with black waist detail, bare upper thighs, and long ivory-white thigh-high heeled boots with black edging. One composed neutral standing pose, shallow three-quarter facing right, one hand relaxed at hip and the other loose by side; entire figure visible, natural proportions, no pin-up pose. Match the show's clean sharp dark outlines and flat cel colors closely. Keep all hair, ears, fingertips and boots uncropped, 7 percent clear transparent space around the figure. No background, floor, shadow, aura, props, weapon, text, other people, panels, action or animation. Do not introduce new clothing or accessories.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+          "kind": "official_clip",
+          "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+          "approximatePreviewTimesSeconds": [
+            99,
+            100,
+            101
+          ],
+          "localEvidence": "references/respectless-L3-M11.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_clara_carmine.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hz_odette_carmine-ready",
+      "sourceIdentityId": "hz_odette_carmine",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hz_odette_carmine-PROMPT.txt",
+      "requestId": "601456cf-dfb3-4006-941e-4e6d1b837ba2",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 601456cf-dfb3-4006-941e-4e6d1b837ba2.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single full-body static 2D game sprite, true transparent RGBA. Redraw ODETTE CARMINE from Hazbin Hotel, Season 1 Scrambled Eggs. Input 1: the historical project's full-body Odette portrait, complete costume/silhouette reference. Input 2: official Prime Video Respectless preview contact sheet; Odette is the pale woman with cream-blond high ponytail, red-lensed glasses and white coat at the far right of the top-row frames. Preserve her tall very slender angular silhouette, pale gray-white skin, large oval red-lensed glasses with thin black frame, stern composed mouth, angular pale cream-blond swept fringe and high ponytail secured by dark tie, high white coat collar with black inner lapels, fitted white lab-coat dress reaching below knees with a central black seam, black long gloves, thin black stockings and black high-heeled pointed boots. Hold the small plain gray clipboard at waist level as in the existing portrait. One calm neutral standing presentation pose in shallow three-quarter view facing right, free elbow relaxed, all body parts fully visible. Match the show's crisp dark line art, long angular anatomy, flat cel shading and exact existing palette. At least 7 percent clear transparent padding, no cropping. No scenery, floor, shadow, glow, lettering, labels, weapons, extra characters, panels, attacks, or animation frames. Do not redesign the lab coat, hair, glasses, or clipboard.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+          "kind": "official_clip",
+          "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+          "approximatePreviewTimesSeconds": [
+            99,
+            100,
+            101
+          ],
+          "localEvidence": "references/respectless-L3-M11.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_odette_carmine.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_deerie-ready",
+      "sourceIdentityId": "hb_deerie",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hb_deerie-PROMPT.txt",
+      "requestId": "c95c6077-3650-493e-ad25-7bdcbf40b85a",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID c95c6077-3650-493e-ad25-7bdcbf40b85a.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: one static full-body transparent 2D game sprite. Redraw DEERIE from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the project's historical full-body portrait. Input 2 is the official episode preview sheet; Deerie is the small golden deer-like cherub with coral-pink swept hair, large purple eyes and navy outfit in the upper right and middle panels. Preserve the large fawn ears with pale yellow centers, small pointed purple heart-shaped nose, pale golden fur/skin, huge purple eyes with white highlights, asymmetrical coral-pink hair swept across her forehead, light periwinkle shirt with long sleeves and pale collar, pink ribbon scarf tied at neck, dark purple double-breasted short romper with scalloped hem and two small light buttons, purple-tipped delicate fingers and hooves, small tail, pale narrow veined insectlike wings and one thin pale halo. One calm neutral presentation pose facing slightly right, arms relaxed, feet together as a gentle hover, full body including halo, ears, wings and feet visible. Retain the exact compact stylized proportions and sharp purple linework of the source; crisp flat cel colors. True empty transparent background and generous margins. No clouds, ground, cast shadow, glow, other figures, panels, captions, weapons, action, or animation. No costume redesign.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "approximatePreviewTimesSeconds": [
+            740,
+            750,
+            760,
+            770
+          ],
+          "localEvidence": "references/cherub_official_board_08.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_deerie.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    },
+    {
+      "id": "hb_loopty_goopty-ready",
+      "sourceIdentityId": "hb_loopty_goopty",
+      "status": "generation_refused",
+      "fileProduced": false,
+      "retryAfterRefusal": false,
+      "promptFile": "hb_loopty_goopty-PROMPT.txt",
+      "requestId": "29fdb960-3740-4794-af29-8eb977866fd7",
+      "providerCode": "moderation_blocked",
+      "moderationStage": "output",
+      "providerCategories": [
+        "other"
+      ],
+      "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 29fdb960-3740-4794-af29-8eb977866fd7.",
+      "reasonInterpretation": "No more specific reason supplied; no inference made.",
+      "imagegenRequest": {
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite, transparent RGBA. Redraw LOOPTY GOOPTY in his Sinner demon incarnation from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the historical project portrait showing his full costume; input 2 is the official episode preview sheet, where demon Loopty is the extremely tall red-and-black figure with lime-green round glasses, spiral chest emblem and huge red cape in the upper middle/right and middle-left panels. The sepia human in the bottom panels is NOT the target. Preserve the very thin long-limbed body, angular red pointed face and nose, two long crooked red horn-like head projections, black brim band with small lime circular ornament, round lime-green spiral spectacles, curled black pointed moustache, black fitted torso with the conspicuous lime-green spiral symbol and lime collar, lime belt with downward-pointing center, red forearm gloves, extremely long narrow black trousers, elongated lime lower legs/boots, and flowing dark red full-length cape. One quiet dignified standing neutral pose facing slightly right, arms relaxed loosely by sides, hands open, both boots on the same baseline, no attack. Match clean sharp dark lines, flat cel color and exaggerated proportions from the show. Entire horns, cape tips, hands and feet must fit with transparent padding. No background, floor, shadow, glow, text, extra people, weapon, machine, panels or animation frames. Preserve reference costume; no invented embellishments.",
+        "inputReferenceRoles": [
+          "historical_project_full_body_portrait",
+          "official_episode_preview_contact_sheet"
+        ]
+      },
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "kind": "official_episode",
+          "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "approximatePreviewTimesSeconds": [
+            100,
+            110,
+            120
+          ],
+          "localEvidence": "references/cherub_official_board_01.jpg"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_loopty_goopty.png",
+          "kind": "historical_project_portrait",
+          "officialProvenanceCertified": false
+        }
+      ]
+    }
+  ],
+  "localEvidenceNote": "Original scratch paths identify the inspected inputs at production time. Reference thumbnails are not packaged as game assets; official URLs and hashes are retained."
+}

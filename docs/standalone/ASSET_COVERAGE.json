@@ -13,22 +13,22 @@
     "storyAssignments": 129,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 28,
-    "threePlaneStages": 28,
+    "stages": 30,
+    "threePlaneStages": 30,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
     "attackEffectImages": 14,
     "attackEffectAssignments": 28,
-    "referencedAssets": 420,
+    "referencedAssets": 428,
     "brokenReferences": []
   },
   "reserveSummary": {
-    "catalogue": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json",
-    "characterBases": 5,
+    "catalogue": "art/infernal-versus/production/reserve-assets.json",
+    "characterBases": 9,
     "enemyBases": 6,
     "projectileImages": 1,
-    "artworks": 12,
-    "referencedFiles": 24,
+    "artworks": 16,
+    "referencedFiles": 32,
     "brokenReferences": []
   },
   "fighters": [
@@ -1795,6 +1795,28 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/helluva/cash-circus/thumb.webp"
+    },
+    {
+      "id": "ghost-hotel",
+      "name": "One Star Wonder · Couloir",
+      "planes": [
+        "/assets/stages/helluva/ghost-hotel/room.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-middle.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/ghost-hotel/thumb.webp"
+    },
+    {
+      "id": "apology-party",
+      "name": "Apology Tour · Salle de fête",
+      "planes": [
+        "/assets/stages/helluva/apology-party/room.webp",
+        "/assets/stages/helluva/apology-party/prop-middle.webp",
+        "/assets/stages/helluva/apology-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/apology-party/thumb.webp"
     }
   ],
   "attackEffects": [
@@ -1980,5 +2002,5 @@
       "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
     }
   ],
-  "interpretation": "Summary counts active registered files and authored key poses. ReserveSummary counts only the separate Wave G catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering."
+  "interpretation": "Summary counts active registered files and authored key poses. ReserveSummary counts the cumulative static reserve catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering."
 }

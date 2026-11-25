@@ -64,26 +64,26 @@
     },
     "latestDelivery": {
       "date": "2026-11-25",
-      "batchId": "wave-g-2026-11-25",
+      "batchId": "wave-h-2026-11-25",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
-      "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
-      "scope": "Bases statiques manquantes, trois arènes et leurs six accessoires, projectiles isolés. Aucune nouvelle animation ni kit. Bases et projectiles en réserve ; décors sélectionnables. Fidélité 1:1 non certifiée."
+      "manifest": "art/infernal-versus/production/delivery-wave-h-2026-11-25.json",
+      "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+      "scope": "Quatre bases statiques manquantes en réserve, deux arènes sélectionnables et quatre accessoires. Aucune nouvelle animation ni kit. Quatre générations refusées, sans relance. Fidélité 1:1 non certifiée."
     },
     "currentRuntime": {
       "date": "2026-11-25",
-      "batchId": "wave-g-2026-11-25",
-      "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+      "batchId": "wave-h-2026-11-25",
+      "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
       "note": "Le bloc meta.implementation et les onze feuilles V1 restent historiques. Les tables V2 sont calculées depuis le runtime actuel.",
-      "stages": 28,
-      "threePlaneStages": 28,
+      "stages": 30,
+      "threePlaneStages": 30,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 420
+      "referencedAssets": 428
     }
   },
   "sources": [
@@ -9451,14 +9451,15 @@
       "name": "Hôtel hanté",
       "franchise": "Helluva Boss",
       "place": "Terre",
-      "status": "À produire",
+      "status": "Ajout PR",
       "priority": "P1",
       "lot": "V3",
       "source": "SRC-DESIGN; HB-GHOST",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique. Repérage S2E10",
-      "design": "Couloirs et salle de réception pour défi Rolando.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "reference": "Ghostf**kers S2E10, aperçus officiels vers 08:10, 09:10 et 10:00. Motifs observés ; détails fins reconstruits depuis 320×180. https://www.youtube.com/watch?v=5DV4IIKwqRI",
+      "design": "Papier peint bordeaux usé, lambris olive, porte entrouverte, cadres et tapis. Chariot de linge indépendant à gauche, placé derrière les combattants. Applique crème indépendante sur le mur droit ; piste de moquette dégagée.",
+      "asset": "public/assets/stages/helluva/ghost-hotel/room.webp ; prop-middle.webp ; prop-near.webp",
+      "acceptance": "Fichiers et exports vérifiés ; composition statique sur trois formats. Revue navigateur et performance mobile non exécutées. Fidélité 1:1 non certifiée.",
+      "runtimeStageId": "ghost-hotel"
     },
     {
       "id": "goetia-court",
@@ -9493,28 +9494,30 @@
       "name": "Plage terrestre",
       "franchise": "Helluva Boss",
       "place": "Terre",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P2",
       "lot": "V3",
       "source": "SRC-DESIGN",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique.",
-      "design": "Quai et mer, créature comme format boss distinct.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "reference": "Helluva Boss, Spring Broken S1E3. Fond et deux accessoires livrés dans la vague G ; ne pas produire un décor en doublon.",
+      "design": "Plage et promenade intégrées sous spring-broken-beach. La créature géante envisagée reste un format de boss non produit.",
+      "asset": "public/assets/stages/helluva/spring-broken-beach/room.webp ; prop-middle.webp ; prop-near.webp",
+      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées.",
+      "runtimeStageId": "spring-broken-beach"
     },
     {
       "id": "apology-party",
       "name": "Fête d’Apology Tour",
       "franchise": "Helluva Boss",
       "place": "Terre",
-      "status": "À produire",
+      "status": "Ajout PR",
       "priority": "P2",
       "lot": "V3",
       "source": "SRC-DESIGN",
-      "reference": "Lieu à rattacher à épisode exact avant production artistique.",
-      "design": "Jardin et scène séparés, costumes datés.",
-      "asset": "À créer",
-      "acceptance": "Référence validée, plans cohérents, sol/hurtboxes lisibles, performances mobile mesurées."
+      "reference": "Apology Tour S2E9, aperçus officiels vers 12:40, 13:10, 13:20 et 17:30. Salle réelle, hors numéro musical imaginaire. https://www.youtube.com/watch?v=tLD-OUkYtk4",
+      "design": "Salle réelle, galerie, scène à rideaux roses et éclairage violet. Néon fantôme jaune/orange séparé, accroché à droite. Boule à facettes cyan séparée, suspendue à gauche ; piste devant la scène.",
+      "asset": "public/assets/stages/helluva/apology-party/room.webp ; prop-middle.webp ; prop-near.webp",
+      "acceptance": "Fichiers et exports vérifiés ; composition statique sur trois formats. Revue navigateur et performance mobile non exécutées. Fidélité 1:1 non certifiée.",
+      "runtimeStageId": "apology-party"
     },
     {
       "id": "heaven-court",
@@ -12384,8 +12387,8 @@
     }
   ],
   "productionBible": {
-    "edition": "2026-11-25 · vague G",
-    "baseCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+    "edition": "2026-11-25 · vague H",
+    "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
     "fighterDesign": [
       {
         "fighter": "charlie",
@@ -13098,6 +13101,26 @@
         "ambient": "Éclairage fixe et partition procédurale originale Reprise sur la piste vide.",
         "composition": "Fond entier en contain bas-centre. Perspective aplatie et fragments repositionnés pour le duel AU ; aucune nouvelle scène d’histoire.",
         "reference": "The Circus S2E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=_spuxXnul0U. Piste vers 03:40, arche vers 04:00. Motifs inspectés ; aucun plan architectural exact certifié."
+      },
+      {
+        "id": "ghost-hotel",
+        "name": "One Star Wonder · Couloir",
+        "back": "Papier peint bordeaux usé, lambris olive, porte entrouverte, cadres et tapis.",
+        "middle": "Chariot de linge indépendant à gauche, placé derrière les combattants.",
+        "floor": "Applique crème indépendante sur le mur droit ; piste de moquette dégagée.",
+        "ambient": "Illustration et accessoires statiques ; aucun nouveau cycle animé.",
+        "composition": "Image complète à proportions conservées. Perspective élargie pour le duel. Trois formats statiques contrôlés ; rendu navigateur non exécuté.",
+        "reference": "Ghostf**kers S2E10, aperçus officiels vers 08:10, 09:10 et 10:00. Motifs observés ; détails fins reconstruits depuis 320×180. https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      },
+      {
+        "id": "apology-party",
+        "name": "Apology Tour · Salle de fête",
+        "back": "Salle réelle, galerie, scène à rideaux roses et éclairage violet.",
+        "middle": "Néon fantôme jaune/orange séparé, accroché à droite.",
+        "floor": "Boule à facettes cyan séparée, suspendue à gauche ; piste devant la scène.",
+        "ambient": "Néons et éclairage peints fixes ; aucun nouveau cycle animé.",
+        "composition": "Salle vide et piste élargie pour le duel. Fantôme et boule à facettes absents du fond pour éviter les doublons. Contrôle statique, hors navigateur.",
+        "reference": "Apology Tour S2E9, aperçus officiels vers 12:40, 13:10, 13:20 et 17:30. Salle réelle, hors numéro musical imaginaire. https://www.youtube.com/watch?v=tLD-OUkYtk4"
       }
     ],
     "modeDesign": [
@@ -14135,37 +14158,61 @@
         "Projectiles isolés",
         "Sprites en réserve et références vérifiées ; aucune nouvelle affectation moteur.",
         "art/infernal-versus/production/projectiles-wave-g-2026-11-25.json"
+      ],
+      [
+        "Vague H · épisode officiel",
+        "The Circus · S2E1",
+        "Paimon et Cash : silhouettes et costumes, complétés avec les portraits historiques. Aperçus 320×180 inspectés ; fidélité 1:1 non certifiée.",
+        "https://www.youtube.com/watch?v=_spuxXnul0U"
+      ],
+      [
+        "Vague H · épisode officiel",
+        "The Harvest Moon Festival · S1E5",
+        "Joe et Lin : cornes, visages et vêtements, complétés avec les portraits historiques. Aperçus 320×180 inspectés ; fidélité 1:1 non certifiée.",
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+      ],
+      [
+        "Vague H · épisode officiel",
+        "Ghostf**kers · S2E10",
+        "Couloir One Star Wonder, chariot de linge et applique. Aperçus 320×180 inspectés ; fidélité 1:1 non certifiée.",
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      [
+        "Vague H · épisode officiel",
+        "Apology Tour · S2E9",
+        "Salle réelle de fête, néon fantôme et boule à facettes cyan. Aperçus 320×180 inspectés ; fidélité 1:1 non certifiée.",
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
       ]
     ],
     "assetBatch": {
       "date": "2026-11-25",
-      "batchId": "wave-g-2026-11-25",
-      "comparisonCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+      "batchId": "wave-h-2026-11-25",
+      "comparisonCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
       "branch": "feat/infernal-versus-assets-20261124",
-      "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
-      "reserveManifest": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json",
+      "manifest": "art/infernal-versus/production/delivery-wave-h-2026-11-25.json",
+      "reserveManifest": "art/infernal-versus/production/reserve-assets.json",
       "newProduction": {
         "playableFighters": 0,
-        "characterBases": 5,
-        "enemyBases": 6,
+        "characterBases": 4,
+        "enemyBases": 0,
         "animationPoses": 0,
-        "stageBackgrounds": 3,
-        "foregroundProps": 6,
-        "projectileImages": 1,
-        "totalNewArtworks": 21,
-        "derivedThumbnails": 3,
+        "stageBackgrounds": 2,
+        "foregroundProps": 4,
+        "projectileImages": 0,
+        "totalNewArtworks": 10,
+        "derivedThumbnails": 2,
         "newAttackEffectAssignments": 0,
         "newStoryRoutes": 0,
         "newStoryDuels": 0
       },
       "totals": {
-        "newGeneratedArtworks": 21,
-        "newMasterFiles": 21,
-        "publicImageFiles": 24,
-        "registeredPublicImageFiles": 12,
-        "reservePublicImageFiles": 12,
-        "totalImageFiles": 45,
-        "derivedThumbnails": 3
+        "newGeneratedArtworks": 10,
+        "newMasterFiles": 10,
+        "publicImageFiles": 12,
+        "registeredPublicImageFiles": 8,
+        "reservePublicImageFiles": 4,
+        "totalImageFiles": 22,
+        "derivedThumbnails": 2
       },
       "runtime": {
         "fighters": 43,
@@ -14180,21 +14227,21 @@
         "storyAssignments": 129,
         "illustratedStoryAssignments": 26,
         "uniqueStoryIllustrations": 22,
-        "stages": 28,
-        "threePlaneStages": 28,
+        "stages": 30,
+        "threePlaneStages": 30,
         "twoPlaneStages": 0,
         "onePlaneStages": 0,
         "attackEffectImages": 14,
         "attackEffectAssignments": 28,
-        "referencedAssets": 420,
+        "referencedAssets": 428,
         "brokenReferences": []
       },
       "reserves": {
-        "characterBases": 5,
+        "characterBases": 9,
         "enemyBases": 6,
         "projectileImages": 1,
-        "artworks": 12,
-        "referencedFiles": 24,
+        "artworks": 16,
+        "referencedFiles": 32,
         "brokenReferences": []
       },
       "retainedComponents": [
@@ -14275,100 +14322,269 @@
       ],
       "verification": {
         "status": "passed_with_documented_limits",
-        "runtimeAssetAudit": {
-          "status": "passed",
-          "referencedAssets": 420,
-          "missingReferences": 0,
-          "evidence": "docs/standalone/ASSET_COVERAGE.json"
-        },
-        "reserveAudit": {
-          "status": "passed",
-          "artworks": 12,
-          "referencedFiles": 24,
-          "missingReferences": 0,
-          "includedInActiveRoster": false,
-          "evidence": "art/infernal-versus/production/reserve-assets-wave-g-2026-11-25.json"
-        },
         "exports": {
           "status": "passed",
-          "unchangedMasterFiles": 21,
-          "losslessPixelExactWebP": 21,
-          "derivedThumbnails": 3,
-          "productionImageFiles": 45,
-          "evidence": "art/infernal-versus/production/export-wave-g-2026-11-25.json"
+          "unchangedMasterFiles": 10,
+          "losslessPixelExactWebP": 10,
+          "derivedThumbnails": 2,
+          "productionImageFiles": 22,
+          "evidence": "art/infernal-versus/production/export-wave-h-2026-11-25.json"
         },
-        "automatedQA": {
-          "status": "passed",
-          "command": "npm run qa",
-          "exitCode": 0,
-          "suites": 44,
-          "tests": 376,
-          "typecheck": "passed",
-          "lint": "passed",
-          "builds": 2,
-          "standaloneFiles": 1013,
-          "standaloneHashesVerified": 1013,
-          "standaloneBytes": 615498785,
-          "standaloneMiB": 586.99,
-          "phase": "Final game source, CSS and public images. Later changes only finalize reports and verification metadata.",
-          "evidence": "docs/standalone/QA_RUNTIME_WAVE_G_2026-11-25.json"
+        "oneToOneFidelity": {
+          "certified": false,
+          "reason": "Official 320×180 previews establish motifs and identities, not exact full-resolution reconstruction. Neutral stances, some hidden costume details and playable framing are adaptations.",
+          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_H_2026-11-25.md"
+        },
+        "animationScope": {
+          "newAnimationPoses": 0,
+          "newAnimationCycles": 0,
+          "neutralReadyBases": 4,
+          "newAttackEffectAssignments": 0,
+          "newCombatKits": 0
         },
         "browserReview": {
           "status": "blocked",
           "browserExecuted": false,
           "screenshots": 0,
-          "reason": "Chromium launcher exists but /usr/lib/chromium/chromium is absent; bundled Playwright browser is also absent. No page was created and no DOM or interaction review occurred.",
-          "evidence": "docs/standalone/qa-wave-g-2026-11-25/browser-review.json"
-        },
-        "oneToOneFidelity": {
-          "certified": false,
-          "reason": "Official previews at 320×180 provide source motifs and identities, not full-resolution exact reconstruction. Neutral poses, playable framing and some hidden details are adapted or reconstructed.",
-          "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_G_2026-11-25.md"
-        },
-        "animationScope": {
-          "newAnimationPoses": 0,
-          "newAnimationCycles": 0,
-          "neutralReadyBases": 11,
-          "newAttackEffectAssignments": 0,
-          "note": "One static READY image per reserve identity; reserve projectile has no animation or gameplay integration."
-        },
-        "workbookQA": {
-          "status": "passed",
-          "sheets": 23,
-          "formulaCount": 212,
-          "formulaErrors": 0,
-          "runtimeCellsCompared": 6017,
-          "runtimeCellMismatches": 0,
-          "historicalSheetsPreservedByteForByte": 11,
-          "renderedViewsInspected": 4,
-          "workbookSha256": "09e94c83a17c868ca3438f57c5d2078bd2a38b59159ece832ce9b1fee8228e6d",
-          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_G_2026-11-25.json"
+          "reason": "Chromium launcher exists but /usr/lib/chromium/chromium is absent. H was checked through static CSS reconstruction, not browser capture."
         },
         "staticVisualQA": {
           "status": "passed_with_limits",
-          "stageCompositions": 9,
-          "propBoundsContained": 18,
-          "propBoundsTested": 18,
+          "stageCompositions": 6,
+          "propBoundsContained": 12,
+          "propBoundsTested": 12,
+          "browserExecuted": false,
+          "evidence": "docs/standalone/qa-wave-h-2026-11-25/README.md",
+          "overviewArtworksInspected": 10,
+          "rgbaCutoutsChecked": 8,
           "alphaThreshold": 16,
           "parallaxOffset": 0,
           "fighterPositions": [
             22,
             78
           ],
-          "browserExecuted": false,
-          "planterAlignedAndUnique": true,
           "limits": [
-            "730×242: fighters partly overlap the plain lateral bands because their positions use the whole arena while the artwork uses contain.",
-            "330×300: contain leaves 125.53 px of plain space above the artwork.",
-            "Static reconstruction excludes HUD, animation, collisions, network requests and real browser layout."
-          ],
-          "evidence": "docs/standalone/qa-wave-g-2026-11-25/STATIC_STAGE_QA.md"
+            "Portrait contain leaves 125.53 px above the artwork in the assumed 330x300 stage box.",
+            "Landscape reference fighter silhouettes extend onto plain lateral bands; all props remain inside the artwork.",
+            "Static reconstruction excludes HUD, movement, collisions, network requests and actual browser layout."
+          ]
+        },
+        "runtimeAssetAudit": {
+          "status": "passed",
+          "referencedAssets": 428,
+          "missingReferences": 0,
+          "evidence": "docs/standalone/ASSET_COVERAGE.json"
+        },
+        "reserveAudit": {
+          "status": "passed",
+          "artworks": 16,
+          "referencedFiles": 32,
+          "missingReferences": 0,
+          "includedInActiveRoster": false,
+          "evidence": "art/infernal-versus/production/reserve-assets.json"
+        },
+        "automatedQA": {
+          "status": "passed_after_build_recovery",
+          "typecheck": "passed",
+          "lint": "passed",
+          "suites": 44,
+          "tests": 376,
+          "builds": 2,
+          "standaloneFiles": 1025,
+          "standaloneHashesVerified": 1025,
+          "standaloneBytes": 622972043,
+          "standaloneMiB": 594.11,
+          "note": "Initial npm run qa exited 1 on ENOSPC after passing typecheck, lint and tests. Only build phases were resumed, all exit 0; game source unchanged.",
+          "evidence": "docs/standalone/QA_RUNTIME_WAVE_H_2026-11-25.json"
+        },
+        "workbookQA": {
+          "status": "passed",
+          "sheets": 23,
+          "formulaCount": 212,
+          "formulaErrors": 0,
+          "runtimeCellsCompared": 6087,
+          "runtimeCellMismatches": 0,
+          "historicalSheetsPreservedByteForByte": 11,
+          "renderedViewsInspected": 5,
+          "workbookSha256": "1bfaffe380e00692cb30017eb4af4a3e8420a54bff2bde24fef685618d2b341f",
+          "evidence": "docs/standalone/QA_WORKBOOK_WAVE_H_2026-11-25.json"
         }
       },
-      "blockedRequests": [],
+      "blockedRequests": [
+        {
+          "id": "hz_clara_carmine-ready",
+          "sourceIdentityId": "hz_clara_carmine",
+          "status": "generation_refused",
+          "fileProduced": false,
+          "retryAfterRefusal": false,
+          "promptFile": "hz_clara_carmine-PROMPT.txt",
+          "requestId": "4854a26d-1530-4f6e-8e2f-b0d6a5257420",
+          "providerCode": "moderation_blocked",
+          "moderationStage": "output",
+          "providerCategories": [
+            "other"
+          ],
+          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 4854a26d-1530-4f6e-8e2f-b0d6a5257420.",
+          "reasonInterpretation": "No more specific reason supplied; no inference made.",
+          "imagegenRequest": {
+            "transparent_background": true,
+            "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite on a truly transparent RGBA canvas. Redraw CLARA CARMINE from Hazbin Hotel, her Season 1 Scrambled Eggs appearance. Reference image 1 is the historical project's full-body Clara portrait, used for the costume and full silhouette. Reference image 2 is an official Prime Video Respectless preview sheet: Clara is the dark-skinned woman with very large white swept-up curly hair at the far left of its upper-row frames, NOT the green-haired Zeezi next to her. Preserve Clara's dark warm gray-brown skin, slim long-legged proportions, red eyes with pale iris centers, white swept-up fluffy ponytail/quiff and small curled forelock, tall black pointed ear visible within the white hair, small confident smile, sleeveless black high-neck cropped top, dark gray tailored shorts with black waist detail, bare upper thighs, and long ivory-white thigh-high heeled boots with black edging. One composed neutral standing pose, shallow three-quarter facing right, one hand relaxed at hip and the other loose by side; entire figure visible, natural proportions, no pin-up pose. Match the show's clean sharp dark outlines and flat cel colors closely. Keep all hair, ears, fingertips and boots uncropped, 7 percent clear transparent space around the figure. No background, floor, shadow, aura, props, weapon, text, other people, panels, action or animation. Do not introduce new clothing or accessories.",
+            "inputReferenceRoles": [
+              "historical_project_full_body_portrait",
+              "official_episode_preview_contact_sheet"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+              "kind": "official_clip",
+              "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+              "approximatePreviewTimesSeconds": [
+                99,
+                100,
+                101
+              ],
+              "localEvidence": "references/respectless-L3-M11.jpg"
+            },
+            {
+              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_clara_carmine.png",
+              "kind": "historical_project_portrait",
+              "officialProvenanceCertified": false
+            }
+          ]
+        },
+        {
+          "id": "hz_odette_carmine-ready",
+          "sourceIdentityId": "hz_odette_carmine",
+          "status": "generation_refused",
+          "fileProduced": false,
+          "retryAfterRefusal": false,
+          "promptFile": "hz_odette_carmine-PROMPT.txt",
+          "requestId": "601456cf-dfb3-4006-941e-4e6d1b837ba2",
+          "providerCode": "moderation_blocked",
+          "moderationStage": "output",
+          "providerCategories": [
+            "other"
+          ],
+          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 601456cf-dfb3-4006-941e-4e6d1b837ba2.",
+          "reasonInterpretation": "No more specific reason supplied; no inference made.",
+          "imagegenRequest": {
+            "transparent_background": true,
+            "prompt": "Use case: identity-preserve. Asset type: single full-body static 2D game sprite, true transparent RGBA. Redraw ODETTE CARMINE from Hazbin Hotel, Season 1 Scrambled Eggs. Input 1: the historical project's full-body Odette portrait, complete costume/silhouette reference. Input 2: official Prime Video Respectless preview contact sheet; Odette is the pale woman with cream-blond high ponytail, red-lensed glasses and white coat at the far right of the top-row frames. Preserve her tall very slender angular silhouette, pale gray-white skin, large oval red-lensed glasses with thin black frame, stern composed mouth, angular pale cream-blond swept fringe and high ponytail secured by dark tie, high white coat collar with black inner lapels, fitted white lab-coat dress reaching below knees with a central black seam, black long gloves, thin black stockings and black high-heeled pointed boots. Hold the small plain gray clipboard at waist level as in the existing portrait. One calm neutral standing presentation pose in shallow three-quarter view facing right, free elbow relaxed, all body parts fully visible. Match the show's crisp dark line art, long angular anatomy, flat cel shading and exact existing palette. At least 7 percent clear transparent padding, no cropping. No scenery, floor, shadow, glow, lettering, labels, weapons, extra characters, panels, attacks, or animation frames. Do not redesign the lab coat, hair, glasses, or clipboard.",
+            "inputReferenceRoles": [
+              "historical_project_full_body_portrait",
+              "official_episode_preview_contact_sheet"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://www.youtube.com/watch?v=bOarXIWBtWk",
+              "kind": "official_clip",
+              "title": "Respectless Sing-Along | Hazbin Hotel | Prime Video",
+              "approximatePreviewTimesSeconds": [
+                99,
+                100,
+                101
+              ],
+              "localEvidence": "references/respectless-L3-M11.jpg"
+            },
+            {
+              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/hazbin/portraits/hz_odette_carmine.png",
+              "kind": "historical_project_portrait",
+              "officialProvenanceCertified": false
+            }
+          ]
+        },
+        {
+          "id": "hb_deerie-ready",
+          "sourceIdentityId": "hb_deerie",
+          "status": "generation_refused",
+          "fileProduced": false,
+          "retryAfterRefusal": false,
+          "promptFile": "hb_deerie-PROMPT.txt",
+          "requestId": "c95c6077-3650-493e-ad25-7bdcbf40b85a",
+          "providerCode": "moderation_blocked",
+          "moderationStage": "output",
+          "providerCategories": [
+            "other"
+          ],
+          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID c95c6077-3650-493e-ad25-7bdcbf40b85a.",
+          "reasonInterpretation": "No more specific reason supplied; no inference made.",
+          "imagegenRequest": {
+            "transparent_background": true,
+            "prompt": "Use case: identity-preserve. Asset type: one static full-body transparent 2D game sprite. Redraw DEERIE from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the project's historical full-body portrait. Input 2 is the official episode preview sheet; Deerie is the small golden deer-like cherub with coral-pink swept hair, large purple eyes and navy outfit in the upper right and middle panels. Preserve the large fawn ears with pale yellow centers, small pointed purple heart-shaped nose, pale golden fur/skin, huge purple eyes with white highlights, asymmetrical coral-pink hair swept across her forehead, light periwinkle shirt with long sleeves and pale collar, pink ribbon scarf tied at neck, dark purple double-breasted short romper with scalloped hem and two small light buttons, purple-tipped delicate fingers and hooves, small tail, pale narrow veined insectlike wings and one thin pale halo. One calm neutral presentation pose facing slightly right, arms relaxed, feet together as a gentle hover, full body including halo, ears, wings and feet visible. Retain the exact compact stylized proportions and sharp purple linework of the source; crisp flat cel colors. True empty transparent background and generous margins. No clouds, ground, cast shadow, glow, other figures, panels, captions, weapons, action, or animation. No costume redesign.",
+            "inputReferenceRoles": [
+              "historical_project_full_body_portrait",
+              "official_episode_preview_contact_sheet"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+              "kind": "official_episode",
+              "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+              "approximatePreviewTimesSeconds": [
+                740,
+                750,
+                760,
+                770
+              ],
+              "localEvidence": "references/cherub_official_board_08.jpg"
+            },
+            {
+              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_deerie.png",
+              "kind": "historical_project_portrait",
+              "officialProvenanceCertified": false
+            }
+          ]
+        },
+        {
+          "id": "hb_loopty_goopty-ready",
+          "sourceIdentityId": "hb_loopty_goopty",
+          "status": "generation_refused",
+          "fileProduced": false,
+          "retryAfterRefusal": false,
+          "promptFile": "hb_loopty_goopty-PROMPT.txt",
+          "requestId": "29fdb960-3740-4794-af29-8eb977866fd7",
+          "providerCode": "moderation_blocked",
+          "moderationStage": "output",
+          "providerCategories": [
+            "other"
+          ],
+          "providerMessage": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 29fdb960-3740-4794-af29-8eb977866fd7.",
+          "reasonInterpretation": "No more specific reason supplied; no inference made.",
+          "imagegenRequest": {
+            "transparent_background": true,
+            "prompt": "Use case: identity-preserve. Asset type: single static full-body 2D game character sprite, transparent RGBA. Redraw LOOPTY GOOPTY in his Sinner demon incarnation from Helluva Boss C.H.E.R.U.B. S1E4. Input 1 is the historical project portrait showing his full costume; input 2 is the official episode preview sheet, where demon Loopty is the extremely tall red-and-black figure with lime-green round glasses, spiral chest emblem and huge red cape in the upper middle/right and middle-left panels. The sepia human in the bottom panels is NOT the target. Preserve the very thin long-limbed body, angular red pointed face and nose, two long crooked red horn-like head projections, black brim band with small lime circular ornament, round lime-green spiral spectacles, curled black pointed moustache, black fitted torso with the conspicuous lime-green spiral symbol and lime collar, lime belt with downward-pointing center, red forearm gloves, extremely long narrow black trousers, elongated lime lower legs/boots, and flowing dark red full-length cape. One quiet dignified standing neutral pose facing slightly right, arms relaxed loosely by sides, hands open, both boots on the same baseline, no attack. Match clean sharp dark lines, flat cel color and exaggerated proportions from the show. Entire horns, cape tips, hands and feet must fit with transparent padding. No background, floor, shadow, glow, text, extra people, weapon, machine, panels or animation frames. Preserve reference costume; no invented embellishments.",
+            "inputReferenceRoles": [
+              "historical_project_full_body_portrait",
+              "official_episode_preview_contact_sheet"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+              "kind": "official_episode",
+              "title": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+              "approximatePreviewTimesSeconds": [
+                100,
+                110,
+                120
+              ],
+              "localEvidence": "references/cherub_official_board_01.jpg"
+            },
+            {
+              "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_loopty_goopty.png",
+              "kind": "historical_project_portrait",
+              "officialProvenanceCertified": false
+            }
+          ]
+        }
+      ],
       "priorBatch": {
-        "batchId": "wave-f-2026-11-24",
-        "manifest": "art/infernal-versus/production/delivery-wave-f-2026-11-24.json"
+        "batchId": "wave-g-2026-11-25",
+        "manifest": "art/infernal-versus/production/delivery-wave-g-2026-11-25.json",
+        "publishedCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82"
       }
     }
   }
