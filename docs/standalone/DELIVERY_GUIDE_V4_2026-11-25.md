@@ -57,6 +57,8 @@ La commande complète `npm run qa` a terminé avec un code de sortie 0 :
 
 Le [rapport machine](QA_RUNTIME_GUIDE_V4_2026-11-25.json) distingue tests JSDOM, tests du moteur et vérification du build.
 
+La [Quality gate GitHub du premier commit V4](https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45621472744) a également réussi avec les 395 tests et les deux builds. Le premier aperçu Vercel a révélé une différence de contexte : `art/` était exclu alors que la galerie importe son catalogue. La configuration conserve désormais uniquement `art/infernal-versus/production/reserve-assets.json` dans ce dossier ; les 897 autres fichiers sous `art/` restent exclus. Un build dans un contexte isolé sans `docs/`, contenant ce seul catalogue et les 1 027 ressources publiques inchangées, a réussi. Le statut de l’aperçu suivant est suivi dans la PR.
+
 **La vérification visuelle dans un vrai navigateur n’a pas pu être exécutée.** Le wrapper Chromium existe dans l’environnement mais son binaire cible est absent ; le téléchargement officiel Playwright a répondu HTTP 403. Aucun résultat visuel, capture de jeu ou essai sur matériel de manette n’est annoncé pour cette édition.
 
 ## Ce qui reste à produire

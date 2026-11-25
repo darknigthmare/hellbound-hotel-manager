@@ -82,5 +82,35 @@
     "No new illustration, pose, animation or combat kit is counted as produced.",
     "Moves and finishing storyboards from V3 remain proposals except existing engine techniques.",
     "Browser layout, controller hardware and canonical visual fidelity were not certified in this environment."
-  ]
+  ],
+  "remoteQualityGate": {
+    "commit": "9a15e6d84e2f7fad90291aff2232fa3217973575",
+    "runId": 45621472744,
+    "url": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45621472744",
+    "result": "success",
+    "testSuites": 45,
+    "tests": 395,
+    "standaloneFilesVerified": 1031
+  },
+  "deploymentPackaging": {
+    "initialCommit": "9a15e6d84e2f7fad90291aff2232fa3217973575",
+    "initialVercelDeployment": "dpl_HJGFiukM3adir42diBNfeHnNtYKJ",
+    "initialError": "TS2307: ReserveGallery imported reserve-assets.json from art/, which .vercelignore removed before the build.",
+    "fix": "Allow only art/infernal-versus/production/reserve-assets.json and its parent directories; keep other source art and documentation excluded.",
+    "includedArtFiles": [
+      "art/infernal-versus/production/reserve-assets.json"
+    ],
+    "excludedArtFiles": 897,
+    "retainedPublicFiles": 1027,
+    "filteredBuild": {
+      "command": "npm run build",
+      "result": "passed",
+      "seconds": 14.55,
+      "context": "Separate build source tree with docs absent and only the gallery catalogue under art/. All 1027 unchanged public files and the exact installed dependencies were linked into the context.",
+      "runtimeImportsAudited": 305,
+      "runtimeAndConfigurationFilesAudited": 89,
+      "otherRuntimeImportsToExcludedDirectories": 0
+    },
+    "subsequentRemoteDeployment": "Tracked on the PR for the following packaging-fix commit."
+  }
 }

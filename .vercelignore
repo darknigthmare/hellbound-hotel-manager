@@ -1,4 +1,10 @@
-# Source-generation and QA evidence are versioned in Git but not needed by the Vite build.
-art/
+# Source-generation and QA evidence are versioned in Git but not served by Vite.
+# The gallery imports this one catalogue at build time; keep its parent directories traversable.
+art/*
+!art/infernal-versus/
+art/infernal-versus/*
+!art/infernal-versus/production/
+art/infernal-versus/production/*
+!art/infernal-versus/production/reserve-assets.json
 docs/
 scripts/__pycache__/
