@@ -46,7 +46,8 @@ export type PentagramStageId = HotelStageId
   | 'bee-lounge-s1'
   | 'asmodeus-bedroom-s2'
   | 'blitz-sinsmas-dream-s2'
-  | 'sloth-consultation-s2';
+  | 'sloth-consultation-s2'
+  | 'mammon-backstage-corridor-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1069,6 +1070,20 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   imagePosition: 'center bottom',
   accent: '#ef9fdb', shadow: '#321149', floor: '#7d367e',
   soundtrack: PENTAGRAM_STAGES[0].soundtrack,
+}, {
+  id: 'mammon-backstage-corridor-s2',
+  spoilerTier: 'season_2',
+  name: 'Mammon · Couloir des coulisses',
+  district: 'Anneau de l’Avarice',
+  description: 'Un couloir violet incliné mène vers un escalier cyan sous quatre plafonniers ronds.',
+  loreBasis: 'Helluva Boss, Mammon’s Magnificent Musical Mid-Season Special (S2E7). Couloir documenté par le décor de production 207_SHOT_269 de Jasper Luu. L’épisode corrobore le contexte des coulisses ; le cadrage et le duel sont adaptés à la simulation AU.',
+  imagePath: '/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp',
+  thumbnailPath: '/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp',
+  // An empty scenery set enables the contained room plane without adding props.
+  scenery: {},
+  imagePosition: 'center bottom',
+  accent: '#22d9ed', shadow: '#050926', floor: '#17063c',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

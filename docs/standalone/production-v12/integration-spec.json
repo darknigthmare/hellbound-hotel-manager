@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "baselineCommit": "771b7cdd98a5663975d9d7c7459a693283665082",
+  "status": "accepted_scope_locked",
+  "integrationAuthorizedBy": "/root",
+  "handoffs": [
+    "characters-handoff.json",
+    "environment-handoff.json",
+    "root-handoff.json"
+  ],
+  "acceptedAssets": [
+    {
+      "id": "hb_gigi-queen-bee-s1-base",
+      "category": "support_base",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "sourceIdentityId": "hb_gigi",
+      "stageId": null,
+      "frameCoverage": "full_body"
+    },
+    {
+      "id": "hb_russ-queen-bee-s1-base",
+      "category": "support_base",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "sourceIdentityId": "hb_russ",
+      "stageId": null,
+      "frameCoverage": "full_body"
+    },
+    {
+      "id": "mammon-backstage-corridor-s2-room",
+      "category": "stage",
+      "runtimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": "mammon-backstage-corridor-s2",
+      "frameCoverage": "complete_background"
+    },
+    {
+      "id": "mammon-backstage-cube-case",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "mammon-backstage-low-case",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "blitzo-lighter-production",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "millie-knife-production",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "moxxie-sniper-production",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    }
+  ],
+  "noRetryTargetIds": [
+    "blitzo-sniper-production",
+    "cherribomb",
+    "hb_belphegor",
+    "hb_deerie",
+    "hb_leviathan",
+    "hb_loopty_goopty",
+    "hb_stella",
+    "hb_stolas_family_butler",
+    "hz_ant_sinner",
+    "hz_clara_carmine",
+    "hz_dazzle",
+    "hz_eel_sinner",
+    "hz_egg_boiz",
+    "hz_fat_nuggets",
+    "hz_frank_egg_boi",
+    "hz_huskette_spider",
+    "hz_keekee",
+    "hz_odette_carmine",
+    "hz_razzle",
+    "hz_rooster",
+    "hz_salina",
+    "hz_shok_wav",
+    "hz_speaker_of_god",
+    "lute",
+    "lute-prosthetic-s2-ready",
+    "pentious-airship-s1"
+  ],
+  "attemptRegisters": [
+    "docs/standalone/production-v12/root-prompts.json",
+    "docs/standalone/production-v12/characters-prompts.json",
+    "docs/standalone/production-v12/environment-prompts.json",
+    "docs/standalone/production-v12/root-refused-attempts.json"
+  ],
+  "limits": [
+    "Le couloir de coulisses Mammon est documenté vide ; les caisses proviennent de la réserve voisine et restent des objets de galerie sans placement ajouté au couloir.",
+    "Seules les silhouettes entières provenant de références primaires qualifiées peuvent augmenter les bases autonomes.",
+    "Les trois props Erin Frost sont des modèles de production non datés ; season_2 est un plafond conservateur de filtrage, sans attribution à un épisode ou à S2."
+  ],
+  "authorizationBasis": "Root message: integrate after the three handoffs, limits and continuities are stable; no further authorization required.",
+  "supportingEvidence": [
+    "docs/standalone/production-v12/root-image-qa.json",
+    "docs/standalone/production-v12/characters-qa.json",
+    "docs/standalone/production-v12/characters-references.json",
+    "docs/standalone/production-v12/environment-qa.json",
+    "docs/standalone/production-v12/environment-references.json",
+    "production/v12/props/references/sources.json",
+    "production/v12/props/references/blitzo-sniper-model.jpg",
+    "production/v12/environment/references/mammon-official-metadata.json",
+    "docs/standalone/production-v12/root-props-episode-corroboration.json",
+    "production/v12/props/references/murder-family-official-0330s.png",
+    "production/v12/props/references/murder-family-official-0335s.png",
+    "production/v12/props/references/murder-family-official-0350s.png",
+    "production/v12/props/references/murder-family-official-0355s.png",
+    "production/v12/props/references/murder-family-official-0420s.png",
+    "production/v12/props/references/erin-portfolio-exploratory-60706067.jpg",
+    "production/v12/props/references/erin-portfolio-exploratory-60706071.jpg",
+    "production/v12/props/references/erin-portfolio-exploratory-60706075.jpg"
+  ],
+  "lockedAt": "2026-11-26T17:46:57.463715+00:00",
+  "acceptedAssetCount": 8
+}

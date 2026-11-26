@@ -1,0 +1,19 @@
+{
+  "edition": "V12",
+  "date": "2026-11-26",
+  "policy": "No retry, rephrasing or substitute asset for generator-refused targets.",
+  "attempts": [
+    {
+      "id": "blitzo-sniper-production",
+      "requestId": "2e209257-088e-48e3-b15c-47f716d0a09a",
+      "tool": "image_gen.imagegen",
+      "status": "refused_no_retry",
+      "code": "moderation_blocked",
+      "stage": "output",
+      "categories": ["illicit"],
+      "promptRecord": "docs/standalone/production-v12/root-prompts.json",
+      "producedAsset": false,
+      "retryCount": 0
+    }
+  ]
+}

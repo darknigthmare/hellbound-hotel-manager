@@ -1,0 +1,109 @@
+{
+  "edition": "V12",
+  "attempt": "v12-workbook-final-2",
+  "status": "correction_required",
+  "reviewedAt": "2026-11-26T17:59:39.292329+00:00",
+  "outputSha256": "d5005650b88ad6f84e2f59e9012371ef6ef5922e36323527d935a2ab79e02b2f",
+  "outputBytes": 656557,
+  "registerSha256": "2e4d2cda7933514279ac1dcb93a9e4c4ceb9023a35e17e3f39e370d6c1456bb4",
+  "renderedViews": [
+    {
+      "sheetName": "Production V12",
+      "range": "A1:E26",
+      "label": "production",
+      "authoringPreviewRelativePath": "previews/production.png",
+      "sha256": "e4c75b7fc251204678c63626cb382eb01ae3c77377d36f434e1b4bb5558ad746",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Production V12",
+      "range": "A29:E34",
+      "label": "livraisons-usage-0",
+      "authoringPreviewRelativePath": "previews/livraisons-usage-0.png",
+      "sha256": "a07d02251f404ba322d9200ad45cba81461538a230d61415489e0123c06e9594",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Production V12",
+      "range": "F29:H34",
+      "label": "livraisons-preuves-0",
+      "authoringPreviewRelativePath": "previews/livraisons-preuves-0.png",
+      "sha256": "f8cbe20a0805a212e084297e14fb49749559ecbc7e5425321cf3b812832e9493",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Production V12",
+      "range": "A35:E37",
+      "label": "livraisons-usage-1",
+      "authoringPreviewRelativePath": "previews/livraisons-usage-1.png",
+      "sha256": "eed2262e6c9b075eabfc8c731b5cea0e9356dfc1fbed8861b2e976b7672fa21e",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Production V12",
+      "range": "F35:H37",
+      "label": "livraisons-preuves-1",
+      "authoringPreviewRelativePath": "previews/livraisons-preuves-1.png",
+      "sha256": "27ea2a50392ec6db2e563111d90a7114738905826c5c22e925c1f1856dbc43ae",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Cibles V12",
+      "range": "A1:E10",
+      "label": "cibles-0",
+      "authoringPreviewRelativePath": "previews/cibles-0.png",
+      "sha256": "09a8c8453a2f32ae2706443a8dc3d217de184a5202f79f2a1ee3cf76441cd943",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Cibles V12",
+      "range": "A11:E16",
+      "label": "cibles-1",
+      "authoringPreviewRelativePath": "previews/cibles-1.png",
+      "sha256": "8c0f14c2eac1714aaa27420e7884a78d12f8d8f75abed6e6b96bf81f6c18d745",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Cibles V12",
+      "range": "A17:E22",
+      "label": "cibles-2",
+      "authoringPreviewRelativePath": "previews/cibles-2.png",
+      "sha256": "c748bff1b66f882164e4f5d6db3450ba2623bab5f164b4f081d72b41c7d9b3ad",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Cibles V12",
+      "range": "A23:E28",
+      "label": "cibles-3",
+      "authoringPreviewRelativePath": "previews/cibles-3.png",
+      "sha256": "1314716ad3498e1cbd4c5fb54e4f3a637a3818ac5e73df7ba0e69d237a489012",
+      "visuallyInspected": true
+    },
+    {
+      "sheetName": "Cibles V12",
+      "range": "A29:E34",
+      "label": "cibles-4",
+      "authoringPreviewRelativePath": "previews/cibles-4.png",
+      "sha256": "e47a35ea7d7f6d577d9950264ebcb1638f3a3956a9de338c1b47d973dcb35a23",
+      "visuallyInspected": true
+    }
+  ],
+  "findings": [
+    {
+      "severity": "text_count_mismatch",
+      "location": "Production V12 A25:E25",
+      "source": "browser-qa.json.summary",
+      "observed": "Les 8 nouvelles fiches de galerie",
+      "expected": "Les 7 nouvelles fiches de galerie",
+      "resolution": "Root corrected browser report classification: seven actual gallery members and one selectable stage. Reassemble the register and rebuild."
+    },
+    {
+      "severity": "generic_label",
+      "location": "Cibles V12 B8",
+      "observed": "Identité for a refused prop candidate without a character identity",
+      "resolution": "Builder fallback label changed to Cible and now honors an explicit candidate.category."
+    }
+  ],
+  "layoutFindings": "All ten render ranges inspected; no clipped text, overlap, illegible SHA or formula-error text observed. Initial summary needs corrected gallery count.",
+  "nativeExcelRecalculation": "not_run"
+}

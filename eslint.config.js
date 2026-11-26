@@ -10,12 +10,13 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    // Recovered browser QA scripts are preserved CommonJS evidence. Their
+    // Browser QA scripts are preserved CommonJS evidence. Their
     // page.evaluate callbacks intentionally use browser globals.
     files: [
       'docs/standalone/local-recovery-2026-11-26/**/*.cjs',
       'docs/standalone/production-v10/browser-harness/**/*.cjs',
-      'docs/standalone/production-v11/browser-harness/**/*.cjs'
+      'docs/standalone/production-v11/browser-harness/**/*.cjs',
+      'docs/standalone/production-v12/browser-harness/**/*.cjs'
     ],
     languageOptions: {
       sourceType: 'commonjs',

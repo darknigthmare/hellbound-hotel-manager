@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "createdAt": "2026-11-26T17:40:38.508536+00:00",
+  "status": "three_native_calls_completed",
+  "assets": [
+    {
+      "id": "mammon-backstage-corridor-s2-room",
+      "attempt": 1,
+      "tool": "image_gen.imagegen",
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE opaque wide 16:9 landscape background for the 2D fighting game Infernal Versus. Source: the supplied Jasper Luu production painting 207_SHOT_269 for Helluva Boss, Mammon's Magnificent Musical Mid-Season Special, season 2 episode 7. Redraw this specific empty backstage corridor, retaining its identity and the supplied camera: a slightly tilted low corridor view, deep navy and purple panel walls, a cyan-lit rectangular open doorway left of center with the same short staircase visible through it, the same dark wall-panel seams and sparse cracks, recessed circular ceiling lights receding above the doorway, and a continuous dark violet floor in the foreground with the narrow cyan/violet edge lines. Retain the strong cyan light spilling from the left-of-center doorway, magenta reflected wash on the left wall and near-black right wall. Preserve the doorway, ceiling, panel geometry, visible stairs, and sparse empty composition from this ONE reference. Adapt only the outer framing to a clean wide combat background, keeping the lower quarter clear and continuous for two fighters; do not add extra rooms or architecture. Refined hand-drawn television-animation background, crisp thin angular outlines, broad controlled cel-painted shadows and restrained gradients, no 3D rendering or photorealism. No people, creatures, furniture, boxes, props, signs, labels, lettering, watermark, interface, border, montage or split panels. One finished clean empty background; all pixels opaque. This is a source-guided gameplay adaptation, not a claim of pixel-exact reproduction.",
+      "referencedImagePaths": [
+        "production/v12/environment/references/jasper-207-shot-269-corridor.jpg"
+      ],
+      "transparentBackground": false,
+      "result": "accepted_with_documented_limits",
+      "nativePng": "production/v12/environment/masters/mammon-backstage-corridor-s2-room.png",
+      "nativePngSha256": "4044e2e3f45fb3591a064323081f04aec8a9bb325da7213389bddaecfc5e680c",
+      "nativeBytesPreserved": true,
+      "returnedFormat": "PNG data URL; no output_hint",
+      "refused": false,
+      "retry": false
+    },
+    {
+      "id": "mammon-backstage-cube-case",
+      "attempt": 1,
+      "tool": "image_gen.imagegen",
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE isolated complete static scenery prop on a truly transparent background. Reproduce ONLY the small cubic storage case shown in the supplied cropped Helluva Boss production painting 207_SHOT_245 by Jasper Luu. Keep the same elevated front three-quarter angle and exact overall shape: a squat cube-shaped closed box with a broad dark plum front panel, narrower left side panel, flat violet top panel, rigid burgundy/magenta framing strips and a thin warm ochre edge around the top. The front panel has just two blank muted-purple rectangular paper-like patches: one small nearly horizontal patch high at right, one larger tilted rectangular patch low at left. The left side has two similar blank purple patches, a small one high and a larger tilted one lower. Preserve the angular frame, dark indigo shading, reddish violet edge highlights, and the relationship of the top, front and left planes from the source. There are NO printed symbols or words on the patches. Isolate only this upper small cube; omit the larger box beneath it and every backdrop element. Do not add handles, hinges, rivets, wheels, feet, locks, metallic corners, stickers with text, gems or emblems. A single full cube silhouette, fully inside the image with at least ten percent transparent breathing room on all four sides; centered, no crop. Clean hand-drawn 2D television-animation linework and restrained cel shading, not photorealistic or 3D. No floor, cast shadow, room, characters, particles, typography, watermark, checkerboard, collage or extra object. True native alpha outside the case. This is a source-guided redrawing; preserve the visible design rather than decorate it.",
+      "referencedImagePaths": [
+        "production/v12/environment/references/jasper-207-shot-245-cube-crop.png"
+      ],
+      "transparentBackground": true,
+      "result": "accepted_with_documented_limits",
+      "nativePng": "production/v12/environment/masters/mammon-backstage-cube-case.png",
+      "nativePngSha256": "f53912d1fd6b95dda48365d00b4aab6c475b130191c6abf83fc7ceab01621e7b",
+      "nativeBytesPreserved": true,
+      "returnedFormat": "PNG data URL; no output_hint",
+      "refused": false,
+      "retry": false
+    },
+    {
+      "id": "mammon-backstage-low-case",
+      "attempt": 1,
+      "tool": "image_gen.imagegen",
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE isolated complete static scenery prop with a truly transparent background. From this supplied crop of Jasper Luu's Helluva Boss production painting 207_SHOT_245, redraw ONLY the large LOW WIDE RECTANGULAR STORAGE CASE underneath the small cubic case. Remove the small cube entirely; its presence in the reference is solely to identify the requested lower case. The requested asset is one broad closed rectangular crate, longer than it is tall, at the same elevated three-quarter view, with a large long left/front side panel, a narrower right end panel and the large flat dark-violet top. Preserve the case's rectangular proportions, rigid burgundy and magenta perimeter framing, thin warm orange upper rim, nearly black indigo side panels and restrained purple/magenta light. Preserve the two blank muted-violet patches on the long left/front face: one large tilted rectangular patch toward the upper-left and one smaller tilted rectangle just to its right; preserve the small blank horizontal patch high on the right end. These are plain rectangular patches, no text or invented insignia. The small cube occludes part of the flat top and a merchandise heap occludes a small part of the right end in the reference: complete ONLY the same already-visible flat plane and straight border continuation under those occlusions, with NO new hardware or decorative detail. The resulting single case must have its entire box silhouette and every corner visible, with ten percent transparent margins on all sides. No stacked boxes, smaller cube, other objects, floor, cast shadow, merchandise, haze, lettering, sign, watermark or checkerboard. No handles, hinges, wheels, feet, locks, bolts or gems. Clean precise hand-drawn 2D television-animation outlines and restrained cel shading consistent with the supplied source, not a realistic 3D render. True native transparent alpha outside this one low rectangular case.",
+      "referencedImagePaths": [
+        "production/v12/environment/references/jasper-207-shot-245-low-case-crop.png"
+      ],
+      "transparentBackground": true,
+      "result": "accepted_with_documented_limits",
+      "nativePng": "production/v12/environment/masters/mammon-backstage-low-case.png",
+      "nativePngSha256": "15c39cad6e8441a387399965c80fee4fced5d12a0360c74622993db73c6921c3",
+      "nativeBytesPreserved": true,
+      "returnedFormat": "PNG data URL; no output_hint",
+      "refused": false,
+      "retry": false
+    }
+  ],
+  "calls": 3,
+  "refusals": 0,
+  "retries": 0,
+  "postGenerationDrawingEdits": false,
+  "permittedPostprocess": "Base64 decoding to native PNG bytes, lossless WebP export, one thumbnail, diagnostic composites only."
+}

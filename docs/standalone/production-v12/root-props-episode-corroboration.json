@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "createdAt": "2026-11-26T17:45:58.542466+00:00",
+  "status": "bounded_primary_source_pass_complete_no_exact_model_episode_attribution",
+  "requestedEpisode": {
+    "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+    "videoId": "el_PChGfJN8",
+    "title": "HELLUVA BOSS - Murder Family // S1: Episode 1",
+    "author": "Vivziepop",
+    "lengthSeconds": 822,
+    "season": 1,
+    "episode": 1,
+    "publishDate": "2020-10-31T14:00:11-07:00",
+    "primary": true,
+    "metadataSource": "Public ytInitialPlayerResponse of the official watch page; no login, bypass or full-episode playback."
+  },
+  "samplingMethod": {
+    "nativeCellDimensions": [
+      320,
+      180
+    ],
+    "intervalSeconds": 5,
+    "overview": "Overview inspected every 15 seconds across the public episode storyboard; focused 5-second samples inspected around 300–425 s and 585–645 s.",
+    "selectedNativeCells": 5,
+    "fullEpisodeViewed": false,
+    "absenceCanBeConcluded": false
+  },
+  "assets": [
+    {
+      "id": "blitzo-lighter-production",
+      "episodeIdentityConfirmed": false,
+      "episodeCorroborationStatus": "not_corroborated_in_sampled_episode_frames",
+      "coarseObjectClassAndCharacterVisible": false,
+      "sourceModelQualifiedByArtistSheet": true,
+      "productionModelReference": {
+        "id": "blitzo-lighter-final-model",
+        "path": "production/v12/props/references/blitzo-lighter-final-model.jpg",
+        "sourceUrl": "https://cdnb.artstation.com/p/assets/images/images/058/983/811/large/erin-frost-blitzo-lighter.jpg?1675365040",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "sourceTitle": "Blitzo's Lighter_final Pass",
+        "artstationAssetId": 58983811,
+        "bytes": 126407,
+        "sha256": "5c4e5247cd51a93c1779bff27a42a83a0e23f0f7ecb75969e21246678aef82ce",
+        "dimensions": [
+          1500,
+          897
+        ],
+        "kind": "official_production_artist_model_sheet",
+        "primary": true,
+        "viewed": true
+      },
+      "sampledFrames": [
+        {
+          "path": "production/v12/props/references/murder-family-official-0330s.png",
+          "sha256": "30132b579539d722b897d67c3775c844ef3bcb4604d8c67d7fe02210d4b14c0a",
+          "bytes": 110315,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "id": "murder_family_330s",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=330s",
+          "kind": "official_episode_public_storyboard_cell",
+          "primary": true,
+          "viewed": true,
+          "videoId": "el_PChGfJN8",
+          "author": "Vivziepop",
+          "timeSeconds": 330,
+          "timecode": "05:30",
+          "storyboardLevel": 3,
+          "sheetIndex": 7,
+          "cropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "samplingIntervalSeconds": 5,
+          "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+          "role": "Petit élément près de la main et du visage de Blitzø ; identification du briquet fermé non établie."
+        },
+        {
+          "path": "production/v12/props/references/murder-family-official-0335s.png",
+          "sha256": "97edff3b34b931c5e28d0bd74cb257db6e61b46da2e83f47801b6bec4374b74e",
+          "bytes": 116566,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "id": "murder_family_335s",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=335s",
+          "kind": "official_episode_public_storyboard_cell",
+          "primary": true,
+          "viewed": true,
+          "videoId": "el_PChGfJN8",
+          "author": "Vivziepop",
+          "timeSeconds": 335,
+          "timecode": "05:35",
+          "storyboardLevel": 3,
+          "sheetIndex": 7,
+          "cropBox": [
+            320,
+            180,
+            640,
+            360
+          ],
+          "samplingIntervalSeconds": 5,
+          "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+          "role": "Vue adjacente de Blitzø ; ne résout pas les détails du briquet fermé."
+        }
+      ],
+      "finding": "Les plans retenus ne donnent pas une vue lisible du boîtier fermé bleu et de l’œil jaune cerclé de rouge de la planche. Un petit élément près du visage ne suffit pas à identifier ce modèle.",
+      "continuityRecommendation": "production_model_undated",
+      "spoilerFilterCeilingRecommendation": "season_2",
+      "spoilerFilterNote": "Plafond de filtre de précaution uniquement ; aucune attribution de ces modèles à la saison 2.",
+      "modelDateClaim": null,
+      "absenceFromEpisodeClaim": false,
+      "limits": [
+        "L’échantillonnage ponctuel ne prouve pas qu’un objet soit absent de l’épisode.",
+        "Les modèles sont qualifiés par leurs feuilles de production entières ; la date du portfolio ne date pas le modèle.",
+        "Aucune fidélité 1:1 ou QA runtime déduite de ces plans."
+      ],
+      "independentSpotCheck": {
+        "reviewer": "v12_register_bible",
+        "performed": true,
+        "result": "330 s et 420 s confirmés insuffisants pour identifier les détails exacts ; absence dans l’épisode non déduite."
+      }
+    },
+    {
+      "id": "millie-knife-production",
+      "episodeIdentityConfirmed": false,
+      "episodeCorroborationStatus": "object_class_visible_exact_model_not_corroborated",
+      "coarseObjectClassAndCharacterVisible": true,
+      "sourceModelQualifiedByArtistSheet": true,
+      "productionModelReference": {
+        "id": "millie-knife-model",
+        "path": "production/v12/props/references/millie-knife-model.jpg",
+        "sourceUrl": "https://cdna.artstation.com/p/assets/images/images/058/983/826/large/erin-frost-millie-knife.jpg?1675365062",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "sourceTitle": "Millie's Knife + Palette",
+        "artstationAssetId": 58983826,
+        "bytes": 69382,
+        "sha256": "f153d49f73d33ac8e2884ec24e43da5deb541a2f6f5cc8d61f8c823aca5b200d",
+        "dimensions": [
+          900,
+          1097
+        ],
+        "kind": "official_production_artist_model_sheet",
+        "primary": true,
+        "viewed": true
+      },
+      "sampledFrames": [
+        {
+          "path": "production/v12/props/references/murder-family-official-0420s.png",
+          "sha256": "8a9250a309662f218519f38e076e835453f0fa5fb7799efe46c23fa372796952",
+          "bytes": 66872,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "id": "murder_family_420s",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=420s",
+          "kind": "official_episode_public_storyboard_cell",
+          "primary": true,
+          "viewed": true,
+          "videoId": "el_PChGfJN8",
+          "author": "Vivziepop",
+          "timeSeconds": 420,
+          "timecode": "07:00",
+          "storyboardLevel": 3,
+          "sheetIndex": 9,
+          "cropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "samplingIntervalSeconds": 5,
+          "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+          "role": "Millie tient un couteau ; les découpes et détails du modèle Erin Frost ne sont pas identifiables à cette résolution."
+        }
+      ],
+      "finding": "Un couteau est visible dans la main de Millie à 420 s. La silhouette réduite ne permet pas de relier avec certitude les grandes découpes concaves et le liseré rouge précis du modèle complet.",
+      "continuityRecommendation": "production_model_undated",
+      "spoilerFilterCeilingRecommendation": "season_2",
+      "spoilerFilterNote": "Plafond de filtre de précaution uniquement ; aucune attribution de ces modèles à la saison 2.",
+      "modelDateClaim": null,
+      "absenceFromEpisodeClaim": false,
+      "limits": [
+        "L’échantillonnage ponctuel ne prouve pas qu’un objet soit absent de l’épisode.",
+        "Les modèles sont qualifiés par leurs feuilles de production entières ; la date du portfolio ne date pas le modèle.",
+        "Aucune fidélité 1:1 ou QA runtime déduite de ces plans."
+      ],
+      "independentSpotCheck": {
+        "reviewer": "v12_register_bible",
+        "performed": true,
+        "result": "330 s et 420 s confirmés insuffisants pour identifier les détails exacts ; absence dans l’épisode non déduite."
+      }
+    },
+    {
+      "id": "moxxie-sniper-production",
+      "episodeIdentityConfirmed": false,
+      "episodeCorroborationStatus": "not_corroborated_sampled_rifle_is_other_design",
+      "coarseObjectClassAndCharacterVisible": false,
+      "sourceModelQualifiedByArtistSheet": true,
+      "productionModelReference": {
+        "id": "moxxie-sniper-model",
+        "path": "production/v12/props/references/moxxie-sniper-model.jpg",
+        "sourceUrl": "https://cdnb.artstation.com/p/assets/images/images/058/983/833/large/erin-frost-moxxie-sniper-final-2.jpg?1675365066",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "sourceTitle": "Moxxie's Sniper",
+        "artstationAssetId": 58983833,
+        "bytes": 126631,
+        "sha256": "c4360ff5e0ef49c6208563b908a35151137f0b78ebde2dac8e1e317176513159",
+        "dimensions": [
+          1920,
+          1080
+        ],
+        "kind": "official_production_artist_model_sheet",
+        "primary": true,
+        "viewed": true
+      },
+      "sampledFrames": [
+        {
+          "path": "production/v12/props/references/murder-family-official-0350s.png",
+          "sha256": "13c4b40ea8bde10b0219323dcdb2bc324b869b3d6dcf8efc1e60273f2eb2eeda",
+          "bytes": 118632,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "id": "murder_family_350s",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=350s",
+          "kind": "official_episode_public_storyboard_cell",
+          "primary": true,
+          "viewed": true,
+          "videoId": "el_PChGfJN8",
+          "author": "Vivziepop",
+          "timeSeconds": 350,
+          "timecode": "05:50",
+          "storyboardLevel": 3,
+          "sheetIndex": 7,
+          "cropBox": [
+            320,
+            360,
+            640,
+            540
+          ],
+          "samplingIntervalSeconds": 5,
+          "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+          "role": "Fusil tenu par Blitzø près de la fenêtre ; ne qualifie pas le modèle de sniper Moxxie."
+        },
+        {
+          "path": "production/v12/props/references/murder-family-official-0355s.png",
+          "sha256": "e2943ee7d4e8d7ef384ae20143dcd9296a8b252095d30ca4290ecb69668eb9a4",
+          "bytes": 112750,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "id": "murder_family_355s",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=355s",
+          "kind": "official_episode_public_storyboard_cell",
+          "primary": true,
+          "viewed": true,
+          "videoId": "el_PChGfJN8",
+          "author": "Vivziepop",
+          "timeSeconds": 355,
+          "timecode": "05:55",
+          "storyboardLevel": 3,
+          "sheetIndex": 7,
+          "cropBox": [
+            640,
+            360,
+            960,
+            540
+          ],
+          "samplingIntervalSeconds": 5,
+          "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+          "role": "Autre vue du fusil tenu par Blitzø ; modèle Moxxie non identifié."
+        }
+      ],
+      "finding": "Les plans retenus montrent le fusil tenu par Blitzø. Sa silhouette anguleuse et son magasin correspondent davantage à la feuille explicitement titrée Blitzo’s Sniper qu’à la crosse à portée musicale et au corps du modèle Moxxie. Ils ne constituent pas une preuve d’apparition de ce dernier.",
+      "continuityRecommendation": "production_model_undated",
+      "spoilerFilterCeilingRecommendation": "season_2",
+      "spoilerFilterNote": "Plafond de filtre de précaution uniquement ; aucune attribution de ces modèles à la saison 2.",
+      "modelDateClaim": null,
+      "absenceFromEpisodeClaim": false,
+      "limits": [
+        "L’échantillonnage ponctuel ne prouve pas qu’un objet soit absent de l’épisode.",
+        "Les modèles sont qualifiés par leurs feuilles de production entières ; la date du portfolio ne date pas le modèle.",
+        "Aucune fidélité 1:1 ou QA runtime déduite de ces plans."
+      ],
+      "independentSpotCheck": {
+        "reviewer": "v12_register_bible",
+        "performed": false,
+        "result": "No separate spot check requested for this comparison."
+      }
+    }
+  ],
+  "selectedFrames": [
+    {
+      "path": "production/v12/props/references/murder-family-official-0330s.png",
+      "sha256": "30132b579539d722b897d67c3775c844ef3bcb4604d8c67d7fe02210d4b14c0a",
+      "bytes": 110315,
+      "dimensions": [
+        320,
+        180
+      ],
+      "mode": "RGB",
+      "id": "murder_family_330s",
+      "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=330s",
+      "kind": "official_episode_public_storyboard_cell",
+      "primary": true,
+      "viewed": true,
+      "videoId": "el_PChGfJN8",
+      "author": "Vivziepop",
+      "timeSeconds": 330,
+      "timecode": "05:30",
+      "storyboardLevel": 3,
+      "sheetIndex": 7,
+      "cropBox": [
+        0,
+        180,
+        320,
+        360
+      ],
+      "samplingIntervalSeconds": 5,
+      "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+      "role": "Petit élément près de la main et du visage de Blitzø ; identification du briquet fermé non établie."
+    },
+    {
+      "path": "production/v12/props/references/murder-family-official-0335s.png",
+      "sha256": "97edff3b34b931c5e28d0bd74cb257db6e61b46da2e83f47801b6bec4374b74e",
+      "bytes": 116566,
+      "dimensions": [
+        320,
+        180
+      ],
+      "mode": "RGB",
+      "id": "murder_family_335s",
+      "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=335s",
+      "kind": "official_episode_public_storyboard_cell",
+      "primary": true,
+      "viewed": true,
+      "videoId": "el_PChGfJN8",
+      "author": "Vivziepop",
+      "timeSeconds": 335,
+      "timecode": "05:35",
+      "storyboardLevel": 3,
+      "sheetIndex": 7,
+      "cropBox": [
+        320,
+        180,
+        640,
+        360
+      ],
+      "samplingIntervalSeconds": 5,
+      "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+      "role": "Vue adjacente de Blitzø ; ne résout pas les détails du briquet fermé."
+    },
+    {
+      "path": "production/v12/props/references/murder-family-official-0350s.png",
+      "sha256": "13c4b40ea8bde10b0219323dcdb2bc324b869b3d6dcf8efc1e60273f2eb2eeda",
+      "bytes": 118632,
+      "dimensions": [
+        320,
+        180
+      ],
+      "mode": "RGB",
+      "id": "murder_family_350s",
+      "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=350s",
+      "kind": "official_episode_public_storyboard_cell",
+      "primary": true,
+      "viewed": true,
+      "videoId": "el_PChGfJN8",
+      "author": "Vivziepop",
+      "timeSeconds": 350,
+      "timecode": "05:50",
+      "storyboardLevel": 3,
+      "sheetIndex": 7,
+      "cropBox": [
+        320,
+        360,
+        640,
+        540
+      ],
+      "samplingIntervalSeconds": 5,
+      "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+      "role": "Fusil tenu par Blitzø près de la fenêtre ; ne qualifie pas le modèle de sniper Moxxie."
+    },
+    {
+      "path": "production/v12/props/references/murder-family-official-0355s.png",
+      "sha256": "e2943ee7d4e8d7ef384ae20143dcd9296a8b252095d30ca4290ecb69668eb9a4",
+      "bytes": 112750,
+      "dimensions": [
+        320,
+        180
+      ],
+      "mode": "RGB",
+      "id": "murder_family_355s",
+      "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=355s",
+      "kind": "official_episode_public_storyboard_cell",
+      "primary": true,
+      "viewed": true,
+      "videoId": "el_PChGfJN8",
+      "author": "Vivziepop",
+      "timeSeconds": 355,
+      "timecode": "05:55",
+      "storyboardLevel": 3,
+      "sheetIndex": 7,
+      "cropBox": [
+        640,
+        360,
+        960,
+        540
+      ],
+      "samplingIntervalSeconds": 5,
+      "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+      "role": "Autre vue du fusil tenu par Blitzø ; modèle Moxxie non identifié."
+    },
+    {
+      "path": "production/v12/props/references/murder-family-official-0420s.png",
+      "sha256": "8a9250a309662f218519f38e076e835453f0fa5fb7799efe46c23fa372796952",
+      "bytes": 66872,
+      "dimensions": [
+        320,
+        180
+      ],
+      "mode": "RGB",
+      "id": "murder_family_420s",
+      "url": "https://www.youtube.com/watch?v=el_PChGfJN8&t=420s",
+      "kind": "official_episode_public_storyboard_cell",
+      "primary": true,
+      "viewed": true,
+      "videoId": "el_PChGfJN8",
+      "author": "Vivziepop",
+      "timeSeconds": 420,
+      "timecode": "07:00",
+      "storyboardLevel": 3,
+      "sheetIndex": 9,
+      "cropBox": [
+        0,
+        180,
+        320,
+        360
+      ],
+      "samplingIntervalSeconds": 5,
+      "transform": "Native 320×180 public storyboard cell crop only; no resizing, enhancement or retouching.",
+      "role": "Millie tient un couteau ; les découpes et détails du modèle Erin Frost ne sont pas identifiables à cette résolution."
+    }
+  ],
+  "portfolio": {
+    "url": "https://erinfrostart.artstation.com/projects/KONJ8G",
+    "author": "Erin Frost",
+    "title": "Props_Helluva Boss",
+    "projectCreatedAt": "2023-02-02T13:14:30.114-06:00",
+    "projectPublishedAt": "2023-02-02T13:14:30.093-06:00",
+    "dateInterpretation": "Dates du projet public uniquement ; ne datent ni les modèles ni leur première apparition.",
+    "extraImagesInspected": [
+      {
+        "path": "production/v12/props/references/erin-portfolio-exploratory-60706067.jpg",
+        "sha256": "95e555c388872fc7feb4f76863b683ee5a19be70aa56bbd793e9eb7b30856828",
+        "bytes": 147372,
+        "dimensions": [
+          1920,
+          989
+        ],
+        "mode": "RGB",
+        "url": "https://cdnb.artstation.com/p/assets/images/images/060/706/067/large/erin-frost-screen-shot-2023-03-18-at-8-11-09-am.jpg?1679141823",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true,
+        "viewed": true,
+        "artstationAssetId": 60706067,
+        "usedToQualifyDeliveredDesign": false,
+        "decision": "Excluded from episode attribution: these are ornamental rifle concept/colour variations; no caption ties the delivered lighter, knife or Moxxie sniper to an episode."
+      },
+      {
+        "path": "production/v12/props/references/erin-portfolio-exploratory-60706071.jpg",
+        "sha256": "060340e153b91645247c504e61f678fe9b75027b66a9b5bfc88d8923be59a0aa",
+        "bytes": 235584,
+        "dimensions": [
+          1920,
+          1115
+        ],
+        "mode": "RGB",
+        "url": "https://cdnb.artstation.com/p/assets/images/images/060/706/071/large/erin-frost-screen-shot-2023-03-18-at-8-13-50-am.jpg?1679141832",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true,
+        "viewed": true,
+        "artstationAssetId": 60706071,
+        "usedToQualifyDeliveredDesign": false,
+        "decision": "Excluded from episode attribution: these are ornamental rifle concept/colour variations; no caption ties the delivered lighter, knife or Moxxie sniper to an episode."
+      },
+      {
+        "path": "production/v12/props/references/erin-portfolio-exploratory-60706075.jpg",
+        "sha256": "947cb5cee178f2871786f036b171054ed39cebab8fcd12f4c578c53ac817d3f2",
+        "bytes": 188152,
+        "dimensions": [
+          1920,
+          1074
+        ],
+        "mode": "RGB",
+        "url": "https://cdnb.artstation.com/p/assets/images/images/060/706/075/large/erin-frost-screen-shot-2023-03-18-at-8-15-08-am.jpg?1679141838",
+        "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "author": "Erin Frost",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true,
+        "viewed": true,
+        "artstationAssetId": 60706075,
+        "usedToQualifyDeliveredDesign": false,
+        "decision": "Excluded from episode attribution: these are ornamental rifle concept/colour variations; no caption ties the delivered lighter, knife or Moxxie sniper to an episode."
+      }
+    ]
+  },
+  "comparisonReference": {
+    "id": "blitzo-sniper-model",
+    "path": "production/v12/props/references/blitzo-sniper-model.jpg",
+    "sourceUrl": "https://cdnb.artstation.com/p/assets/images/images/058/983/797/large/erin-frost-blitz-sniper-final.jpg?1675365016",
+    "primaryPortfolio": "https://erinfrostart.artstation.com/projects/KONJ8G",
+    "author": "Erin Frost",
+    "sourceTitle": "Blitzo's Sniper",
+    "artstationAssetId": 58983797,
+    "bytes": 124278,
+    "sha256": "f3ea1051a160a0d6e78241ab343e3d64ace7134670502d25ad9a175bd15b1bca",
+    "dimensions": [
+      1920,
+      993
+    ],
+    "kind": "official_production_artist_model_sheet",
+    "primary": true,
+    "viewed": true,
+    "role": "Explicitly named other rifle used to distinguish the sampled scene from the delivered Moxxie sniper model."
+  },
+  "decision": "Keep all three as qualified reserve production models with undated continuity. No S1E1 or S2 episode attribution is established by this pass.",
+  "runtimeChangesMade": false,
+  "fidelityOneToOneCertified": false
+}

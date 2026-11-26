@@ -1,0 +1,44 @@
+{
+  "edition": "V12",
+  "status": "browser_verified_with_documented_limits",
+  "stageId": "mammon-backstage-corridor-s2",
+  "backgroundAssetId": "mammon-backstage-corridor-s2-room",
+  "planes": [
+    "room"
+  ],
+  "placements": [],
+  "roomDimensions": [
+    1672,
+    941
+  ],
+  "sceneryNote": "Empty scenery set enables the contained background plane; neither storage case is placed in this corridor.",
+  "browserEvidence": {
+    "path": "docs/standalone/production-v12/browser-qa.json",
+    "sha256": "a362050c559926a4b2aaae3fd898d3a23c74388a3239d6df1c7e30d0a90f88b6",
+    "checksPassed": 171,
+    "checksFailed": 0,
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1,
+        "physicalDevice": false
+      }
+    ]
+  },
+  "limits": [
+    "Source-guided game framing, not pixel-identical canonical geometry.",
+    "Full background contained with solid-color margins dictated by viewport proportions."
+  ]
+}

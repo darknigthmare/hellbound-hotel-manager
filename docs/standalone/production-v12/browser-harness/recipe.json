@@ -1,0 +1,58 @@
+{
+  "edition": "V12",
+  "status": "runtime_frozen_execution_authorized",
+  "expectedGalleryCount": 128,
+  "expectedAssetIds": [
+    "hb_gigi-queen-bee-s1-base",
+    "hb_russ-queen-bee-s1-base",
+    "mammon-backstage-cube-case",
+    "mammon-backstage-low-case",
+    "blitzo-lighter-production",
+    "millie-knife-production",
+    "moxxie-sniper-production",
+    "mammon-backstage-corridor-s2-room"
+  ],
+  "stageId": "mammon-backstage-corridor-s2",
+  "stageRoomId": "mammon-backstage-corridor-s2-room",
+  "stageSceneryAssetIds": [],
+  "referenceDimensions": [
+    1672,
+    941
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "isMobile": false,
+      "hasTouch": false,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "physicalDevice": false
+    }
+  ],
+  "coverage": [
+    "Eight accepted V12 drawings observed in both viewports; the seven new gallery illustrations remain fully contained and undistorted.",
+    "Gigi and Russ explicitly appear as full-body reserve support bases, with no playable kit claim.",
+    "Production-model props carry their explicit undated-model provenance and do not assert an episode; season_2 is a conservative filter ceiling.",
+    "One new arena, its thumbnail, selection and contained empty corridor background; zero separate scenery props.",
+    "One training session per viewport using the existing Loona party costume, actual keyboard or touch movement, pause and resume.",
+    "Reference-link text and href values correspond to qualified catalogue sources; this does not imply browsing external destinations.",
+    "Explicit S1 filter scope for each new gallery entry, with the inherited separate S3 arena gate.",
+    "Zero failed HTTP/asset requests, browser exceptions, console errors, broken visible images or horizontal overflow.",
+    "Runtime input fingerprints remain identical before and after the browser pass."
+  ],
+  "limits": [
+    "Local Chromium, touch emulation only; no physical-device, cross-browser or deployed-preview visual test.",
+    "No new animation cycle or playable kit.",
+    "Canonical fidelity remains distinct from native/export pixel parity and rendered integration."
+  ],
+  "frozenCatalogueSha256": "3c06673fe0b3cf4fcf999a642c66ca49acca73d62438fc5afe805f8ac59186a9"
+}

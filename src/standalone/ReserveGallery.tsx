@@ -9,9 +9,9 @@ interface ReserveAsset {
   name: string;
   kind: ReserveKind;
   franchise?: 'Hazbin Hotel' | 'Helluva Boss';
-  continuity?: 'simulation_au' | 'season_1' | 'season_2' | 'season_3' | 'legacy_concept_2015' | 'legacy_concept_2017';
+  continuity?: 'simulation_au' | 'season_1' | 'season_2' | 'season_3' | 'legacy_concept_2015' | 'legacy_concept_2017' | 'production_model_undated';
   spoilerScope?: 'season_1' | 'season_2' | 'season_3';
-  frameCoverage?: 'bust' | 'full_body';
+  frameCoverage?: 'bust' | 'full_body' | 'full_object';
   runtimeStatus?: 'reserve' | 'selectable_costume' | 'stage_scenery';
   sourceIdentityId?: string | null;
   reference: string;
@@ -36,8 +36,10 @@ const assetStatus = (asset: ReserveAsset) => asset.runtimeStatus === 'selectable
 const historicalYear = (asset: ReserveAsset) => asset.continuity === 'legacy_concept_2015' ? 2015
   : asset.continuity === 'legacy_concept_2017' ? 2017 : null;
 const historicalLabel = (asset: ReserveAsset) => historicalYear(asset) ? ` · MODÈLE HISTORIQUE · ${historicalYear(asset)}` : '';
+const productionLabel = (asset: ReserveAsset) => asset.continuity === 'production_model_undated' ? ' · PLANCHE DE PRODUCTION' : '';
 const provenanceNote = (asset: ReserveAsset) => {
   if (asset.continuity === 'simulation_au') return 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.';
+  if (asset.continuity === 'production_model_undated') return 'Adaptation statique d’un objet identifié sur une planche de production de Helluva Boss. Son apparition précise dans un épisode reste à confirmer.';
   const year = historicalYear(asset);
   if (year) return `Modèle de conception de ${year}, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.`;
   return 'Dessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.';
@@ -93,14 +95,14 @@ export function ReserveGallery({ titleRef, allowSeasonTwo, allowSeasonThree, onS
     <p className="iv-small" role="status">{visible.length} dessin{visible.length > 1 ? 's' : ''} affiché{visible.length > 1 ? 's' : ''} sur {eligible.length} disponible{eligible.length > 1 ? 's' : ''} avec ce contenu.</p>
     {selected && <article className="iv-panel iv-reserve-detail" aria-label={`Détail de ${selected.name}`}>
       <img src={`/${selected.export.replace(/^public\//, '')}`} alt={selected.name} />
-      <div><p className="iv-eyebrow">{KINDS[selected.kind]}{selected.continuity === 'simulation_au' ? ' · CRÉATION ORIGINALE AU' : ''}{historicalLabel(selected)}{spoilerScope(selected) === 'season_3' ? ' · SAISON 3' : ''}</p><h2 ref={detailTitleRef} tabIndex={-1}>{selected.name}</h2><p>{assetStatus(selected)}{selected.frameCoverage === 'bust' ? ' · Buste' : selected.frameCoverage === 'full_body' ? ' · Silhouette entière' : ''} · {selected.dimensions.join(' × ')} pixels.</p><p className="iv-small">{provenanceNote(selected)}</p>
+      <div><p className="iv-eyebrow">{KINDS[selected.kind]}{selected.continuity === 'simulation_au' ? ' · CRÉATION ORIGINALE AU' : ''}{historicalLabel(selected)}{productionLabel(selected)}{spoilerScope(selected) === 'season_3' ? ' · SAISON 3' : ''}</p><h2 ref={detailTitleRef} tabIndex={-1}>{selected.name}</h2><p>{assetStatus(selected)}{selected.frameCoverage === 'bust' ? ' · Buste' : selected.frameCoverage === 'full_body' ? ' · Silhouette entière' : ''} · {selected.dimensions.join(' × ')} pixels.</p><p className="iv-small">{provenanceNote(selected)}</p>
         <details><summary>Références et détails du dessin</summary><ul>{selected.references.filter(reference => reference.kind.startsWith('official_') || reference.kind === 'project_design').map((reference, index) => <li key={index}><a href={reference.url} target="_blank" rel="noreferrer">{reference.episode ?? reference.title ?? (reference.kind === 'project_design' ? 'Design original du projet' : 'Référence officielle')}</a></li>)}</ul><ul>{selected.fidelityNotes.map((note, index) => <li key={index}>{note}</li>)}</ul></details>
         <button className="iv-secondary" onClick={() => { setSelectedId(null); selectedCardRef.current?.focus(); }}>Refermer l’aperçu</button>
       </div>
     </article>}
     <div className="iv-reserve-grid">{visible.map(asset => <button className="iv-reserve-card" key={asset.id} aria-pressed={selectedId === asset.id} onClick={event => { selectedCardRef.current = event.currentTarget; setSelectedId(asset.id); }}>
       <span className={`iv-reserve-image is-${asset.kind}`}><img src={`/${asset.export.replace(/^public\//, '')}`} alt="" loading="lazy" /></span>
-      <span className="iv-eyebrow">{KINDS[asset.kind]} · {asset.continuity === 'simulation_au' ? 'CRÉATION ORIGINALE AU' : (asset.franchise ?? 'Helluva Boss').toLocaleUpperCase()}{historicalLabel(asset)}{spoilerScope(asset) === 'season_3' ? ' · SAISON 3' : ''}</span><strong>{asset.name}</strong><small>Voir le dessin</small>
+      <span className="iv-eyebrow">{KINDS[asset.kind]} · {asset.continuity === 'simulation_au' ? 'CRÉATION ORIGINALE AU' : (asset.franchise ?? 'Helluva Boss').toLocaleUpperCase()}{historicalLabel(asset)}{productionLabel(asset)}{spoilerScope(asset) === 'season_3' ? ' · SAISON 3' : ''}</span><strong>{asset.name}</strong><small>Voir le dessin</small>
     </button>)}</div>
     {visible.length === 0 && <p className="iv-empty">Aucune création ne correspond à ces filtres.</p>}
   </section>;

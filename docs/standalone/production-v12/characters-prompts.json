@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "date": "2026-11-26",
+  "generationTool": "image_gen.imagegen",
+  "nativeOnly": true,
+  "noPythonRedraw": true,
+  "attempts": [
+    {
+      "id": "hb_gigi-queen-bee-s1-base",
+      "sourceIdentityId": "hb_gigi",
+      "attempt": 1,
+      "status": "accepted_independent_visual_and_pixel_review_with_limits",
+      "prompt": "Use case: identity-preserve. Asset type: ONE static full-body character base with actual transparent alpha, for a 2D game archive. Subject: Gigi, the female hellhound from Helluva Boss S1 Queen Bee, specifically the grey poodle-like woman at the FAR LEFT of BOTH supplied official episode frames. Image 1 is the closer view at 560 seconds; image 2 at 620 seconds establishes her entire silhouette and both feet. Isolate only Gigi. Preserve her large rounded charcoal-grey afro with the soft dusty-pink curled tuft on top, grey canine face partly hidden by hair, small dark muzzle, two large golden hoop earrings, slender charcoal-grey arms, pale dusty-pink sleeveless top, very wide light-beige high-waisted trousers that billow out at the lower legs, narrow beige ankle cuffs, two small dark pointed feet, and her rounded grey curled tail. The lower-body shape is established by the second reference: trousers must reach the ankles, with both complete feet visible beneath; no shorts, no skirt. Use a cheerful relaxed party stance based on the source with arms loosely lifted, both feet on one baseline, recognizable head-to-body proportions, and the complete tail in view. Preserve the source's broad silhouettes and colors; treat tiny fingers, seams and face details as a restrained clean drawing adaptation rather than inventing decorative details. Crisp hand-drawn 2D animation appearance, tapered dark outlines, flat cel colors with a single restrained shadow, no painterly texture. Exactly one full-body figure from top of afro to soles, centered with at least 10 percent transparent margin on every side. No Loona, Blitz, Russ or crowd. No party room, no floor, no pedestal, no cast-shadow disk, no glow, no text, no labels, no borders, no signature, no watermark, no sheet, no duplicated figure, no animation frames. Transparent pixels everywhere outside the finished character silhouette.",
+      "references": [
+        "production/v12/characters/references/queen-bee-official-560s.png",
+        "production/v12/characters/references/queen-bee-official-620s.png"
+      ],
+      "output": "production/v12/characters/masters/hb_gigi-queen-bee-s1-base.png",
+      "masterSha256": "8998a269b61108540785fd19a700652c3e51671d9621145e0ed528493f71bf87",
+      "nativePersistence": "Tool returned data:image/png;base64 only; exact native PNG bytes decoded directly without any PNG re-encode.",
+      "independentReview": "docs/standalone/production-v12/independent-visual-review.json"
+    },
+    {
+      "id": "hb_russ-queen-bee-s1-base",
+      "sourceIdentityId": "hb_russ",
+      "attempt": 1,
+      "status": "accepted_independent_visual_and_pixel_review_with_limits",
+      "prompt": "Use case: identity-preserve. Asset type: ONE static full-body character base with actual transparent alpha, for a 2D game archive. Subject: Russ, the stocky shaggy brown male hellhound from Helluva Boss S1 Queen Bee. In reference image 1 at 560 seconds he is the large brown shaggy dog at the LOWER RIGHT; in reference image 2 at 620 seconds he is the same short wide brown dog standing to the RIGHT of Blitz, fully visible from hair to both paws. Isolate only this exact character. Preserve his very broad rounded stocky body, huge shaggy reddish-brown mane and beard partly covering his small eyes, pointed ears half hidden in the mane, broad dark canine nose, short friendly toothy muzzle, brown T-shirt, plain dark desaturated grey-green loose lower garment and two wide dark-brown canine feet visible under its hems. Preserve the dark furry forearms, large relaxed paws and bushy brown tail. Use the entire second reference for the proportions and complete lower-body silhouette. Do not replace him with a slim wolf, human, glasses-wearing character, a plaid shirt or a generic uniform. The chest graphic is only a small pale angular geometric mark in the reference: preserve its general visual shape, without guessing words or adding a slogan; no invented readable inscription. Give him a calm relaxed three-quarter standing party pose, hands relaxed near his sides, both complete feet resting on one common baseline. Keep tiny finger shapes, teeth, clothing seams and the graphic restrained: the reference's broad silhouette and color blocking govern. Crisp hand-drawn 2D animation artwork, clean tapered dark outlines, flat cel colors and one restrained shadow, no painterly texture. One complete figure centered with transparent margin around all hair, ears, tail and feet. Exactly one still character, no other dogs, no Loona, no Blitz, no Gigi, no crowd, no party room, no floor, no platform, no shadow disk, no background glow, no labels, no border, no signature, no watermark, no sprite sheet and no animation frames. Native transparent background with fully transparent pixels outside the finished silhouette.",
+      "references": [
+        "production/v12/characters/references/queen-bee-official-560s.png",
+        "production/v12/characters/references/queen-bee-official-620s.png"
+      ],
+      "output": "production/v12/characters/masters/hb_russ-queen-bee-s1-base.png",
+      "masterSha256": "11fc4654845e05f571f48c3f8247820cb8596f493180077354867b572508279c",
+      "nativePersistence": "Tool returned data:image/png;base64 only; exact native PNG bytes decoded directly without any PNG re-encode.",
+      "independentReview": "docs/standalone/production-v12/independent-visual-review.json"
+    }
+  ],
+  "refusedAttempts": []
+}
