@@ -1,0 +1,77 @@
+TOUCH_TRACE [{"type":"pointerdown","detail":0,"pointerType":"touch","isTrusted":true,"pressed":"false"},{"type":"touchstart","detail":0,"isTrusted":true,"pressed":"true"},{"type":"pointerup","detail":0,"pointerType":"touch","isTrusted":true,"pressed":"true"},{"type":"lostpointercapture","detail":0,"pointerType":"touch","isTrusted":true,"pressed":"false"},{"type":"touchend","detail":0,"isTrusted":true,"pressed":"false"},{"type":"click","detail":0,"pointerType":"touch","isTrusted":true,"pressed":"false"}]
+TOUCH_AFTER {"action":"walk","position":"31.40","src":"/assets/production/v10/costumes/hb_loona-party-queen-bee.webp","complete":true,"width":1160}
+page.waitForFunction: Timeout 6000ms exceeded.
+    at action (/tmp/infernal-v10/touch-diagnostic.cjs:167:14)
+    at async inspectViewport (/tmp/infernal-v10/touch-diagnostic.cjs:226:7)
+    at async /tmp/infernal-v10/touch-diagnostic.cjs:329:70 {
+  log: [],
+  name: 'TimeoutError'
+}
+CHECK_FAILED hb_loona-party-queen-bee: observed in both viewports undefined
+CHECK_FAILED hb_moxxie-hallucination-truth-seekers: observed in both viewports undefined
+CHECK_FAILED charlie-demon-battle-s1-ready: observed in both viewports undefined
+CHECK_FAILED asmodeus-bedroom-candelabrum: observed in both viewports undefined
+CHECK_FAILED asmodeus-bedroom-console: observed in both viewports undefined
+CHECK_FAILED blitz-sinsmas-tree-snowglobe: observed in both viewports undefined
+CHECK_FAILED hz_melissa-model-s1-base: observed in both viewports undefined
+CHECK_FAILED hb_loo_loo-park-s1-base: observed in both viewports undefined
+CHECK_FAILED hz_crymini-legacy-2017-base: observed in both viewports undefined
+CHECK_FAILED asmodeus-bedroom-s2-room: observed in both viewports undefined
+CHECK_FAILED blitz-sinsmas-dream-s2-room: observed in both viewports undefined
+{
+  "status": "findings",
+  "checks": 41,
+  "checkedAssetIds": [],
+  "failedChecks": [
+    {
+      "name": "hb_loona-party-queen-bee: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hb_moxxie-hallucination-truth-seekers: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "charlie-demon-battle-s1-ready: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "asmodeus-bedroom-candelabrum: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "asmodeus-bedroom-console: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "blitz-sinsmas-tree-snowglobe: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hz_melissa-model-s1-base: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hb_loo_loo-park-s1-base: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hz_crymini-legacy-2017-base: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "asmodeus-bedroom-s2-room: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "blitz-sinsmas-dream-s2-room: observed in both viewports",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "page.waitForFunction: Timeout 6000ms exceeded.\n    at action (/tmp/infernal-v10/touch-diagnostic.cjs:167:14)\n    at async inspectViewport (/tmp/infernal-v10/touch-diagnostic.cjs:226:7)\n    at async /tmp/infernal-v10/touch-diagnostic.cjs:329:70",
+  "screenshots": 5
+}

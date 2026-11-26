@@ -1,0 +1,88 @@
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/local-recovery-2026-11-26/evidence/infernal-v10/browser/run-browser-qa.cjs
+    1:12   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    1:12   error  'require' is not defined                 no-undef
+    2:14   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    2:14   error  'require' is not defined                 no-undef
+    3:19   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    3:19   error  'require' is not defined                 no-undef
+    4:24   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    4:24   error  'require' is not defined                 no-undef
+    5:22   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    5:22   error  'require' is not defined                 no-undef
+    8:6    error  'process' is not defined                 no-undef
+    9:3    error  'console' is not defined                 no-undef
+   10:3    error  'process' is not defined                 no-undef
+   31:43   error  'setTimeout' is not defined              no-undef
+   44:16   error  'console' is not defined                 no-undef
+   70:20   error  'innerWidth' is not defined              no-undef
+   70:48   error  'innerHeight' is not defined             no-undef
+   71:20   error  'document' is not defined                no-undef
+   72:37   error  'document' is not defined                no-undef
+   72:76   error  'innerWidth' is not defined              no-undef
+   73:49   error  'document' is not defined                no-undef
+   74:30   error  'document' is not defined                no-undef
+   74:160  error  'innerHeight' is not defined             no-undef
+   84:15   error  'getComputedStyle' is not defined        no-undef
+   85:20   error  'document' is not defined                no-undef
+  107:132  error  'getComputedStyle' is not defined        no-undef
+  112:18   error  'getComputedStyle' is not defined        no-undef
+  147:36   error  'document' is not defined                no-undef
+  167:36   error  'document' is not defined                no-undef
+  208:40   error  'document' is not defined                no-undef
+  222:232  error  'innerWidth' is not defined              no-undef
+  244:42   error  'document' is not defined                no-undef
+  299:24   error  'process' is not defined                 no-undef
+  314:32   error  'fetch' is not defined                   no-undef
+  314:63   error  'AbortSignal' is not defined             no-undef
+  330:58   error  'console' is not defined                 no-undef
+  348:36   error  '__filename' is not defined              no-undef
+  348:63   error  '__filename' is not defined              no-undef
+  351:3    error  'console' is not defined                 no-undef
+
+/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/local-recovery-2026-11-26/evidence/infernal-v9/browser/run-browser-qa.cjs
+    1:12   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    1:12   error  'require' is not defined                 no-undef
+    2:14   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    2:14   error  'require' is not defined                 no-undef
+    3:19   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    3:19   error  'require' is not defined                 no-undef
+    4:24   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    4:24   error  'require' is not defined                 no-undef
+    5:22   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+    5:22   error  'require' is not defined                 no-undef
+   10:43   error  'setTimeout' is not defined              no-undef
+   18:102  error  'console' is not defined                 no-undef
+   28:63   error  'innerWidth' is not defined              no-undef
+   28:91   error  'innerHeight' is not defined             no-undef
+   28:119  error  'document' is not defined                no-undef
+   28:189  error  'document' is not defined                no-undef
+   28:228  error  'innerWidth' is not defined              no-undef
+   28:266  error  'document' is not defined                no-undef
+   28:388  error  'innerHeight' is not defined             no-undef
+   45:36   error  'document' is not defined                no-undef
+   77:36   error  'document' is not defined                no-undef
+   82:149  error  'getComputedStyle' is not defined        no-undef
+   84:247  error  'innerWidth' is not defined              no-undef
+  102:40   error  'document' is not defined                no-undef
+  109:36   error  'document' is not defined                no-undef
+  134:37   error  'window' is not defined                  no-undef
+  153:24   error  'process' is not defined                 no-undef
+  166:58   error  'console' is not defined                 no-undef
+  173:3    error  'console' is not defined                 no-undef
+
+✖ 68 problems (68 errors, 0 warnings)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+Error: lint failed: 1
+    at run (file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v10/verify-runtime.mjs:39:34)
+    at file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v10/verify-runtime.mjs:60:3

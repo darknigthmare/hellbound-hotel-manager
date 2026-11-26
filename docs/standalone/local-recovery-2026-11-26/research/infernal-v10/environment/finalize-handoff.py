@@ -1,0 +1,83 @@
+from pathlib import Path
+from PIL import Image
+from collections import Counter
+import json, hashlib
+
+ROOT = Path('/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager')
+TMP = Path('/tmp/infernal-v10/environment')
+OUT = ROOT / 'docs/standalone/production-v10'
+REF = ROOT / 'production/v10/environment/references'
+rows = json.loads((TMP / 'export-qa.json').read_text())
+prompts = json.loads((TMP / 'prompts-final.json').read_text())
+jasper = json.loads((TMP / 'jasper-images.json').read_text())
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def file_record(path):
+    r = {'path': str(path.relative_to(ROOT)), 'sha256': sha(path), 'bytes': path.stat().st_size}
+    if path.suffix.lower() in ['.png', '.jpg', '.webp']:
+        with Image.open(path) as im:
+            r['dimensions'] = list(im.size)
+    return r
+
+references = {}
+for key, index, filename, episode, title in [
+    ('jasper_oops_console_detail', 29, 'jasper-206-paint-00003.jpg', 'Oops — S2E6', '206 Paint 00003 — console, angle secondaire'),
+    ('jasper_oops_bedroom', 32, 'jasper-206-paint-00007.jpg', 'Oops — S2E6', '206 Paint 00007 — chambre, console entière et candélabre'),
+    ('jasper_sinsmas_dream', 65, 'jasper-212-00005.jpg', 'Sinsmas — S2E12', '212_00005 — cheminée de la vision familiale de Blitzø')]:
+    references[key] = {**file_record(REF / filename), 'id': key, 'url': jasper[index]['url'] + '?format=2500w', 'productionUrl': jasper[index]['url'], 'portfolioUrl': 'https://jasperluu.com/helluvaboss', 'author': 'Jasper Luu', 'kind': 'official_production_artist_portfolio_image', 'primary': True, 'title': title, 'episode': episode, 'coverage': 'Production painting without foreground actors; public CDN image inspected at 2500px width.'}
+
+for key, filename, parent, crop in [
+    ('candelabrum_crop', 'asmodeus-candelabrum-crop.png', 'jasper_oops_bedroom', [2230, 430, 2440, 755]),
+    ('snowglobe_crop', 'sinsmas-tree-snowglobe-crop.png', 'jasper_sinsmas_dream', [1470, 310, 1590, 415])]:
+    references[key] = {**file_record(REF / filename), 'id': key, 'url': references[parent]['url'], 'kind': 'exact_reference_crop', 'primary': True, 'parentReference': parent, 'cropPixels': crop, 'transform': 'PIL crop only; no retouching, invented pixels or enhancement.'}
+
+for key, name, second, board_index, crop in [
+    ('oops_official_10s', 'oops', 10, 0, [320, 0, 640, 180]),
+    ('sinsmas_official_850s', 'sinsmas', 850, 9, [320, 180, 640, 360])]:
+    meta = json.loads((TMP / f'{name}-reference.json').read_text())
+    board = next(b for b in meta['boards'] if b['index'] == board_index)
+    references[key] = {**file_record(REF / f'{name}-official-{second}s.png'), 'id': key, 'url': meta['watchUrl'] + f'&t={second}s', 'kind': 'official_youtube_native_storyboard_cell', 'primary': True, 'author': meta['author'], 'title': meta['title'], 'timestampSeconds': second, 'boardUrl': board['url'], 'sourceBoard': file_record(REF / f'{name}-board-{board_index:02}.jpg'), 'cropPixels': crop, 'intervalMs': meta['intervalMs'], 'fidelityLimit': 'Native public 320×180 preview cell, not a high-definition decoded episode frame; used to confirm scene identity, not to invent hidden detail.'}
+
+portfolio = {**file_record(REF / 'jasperluu-helluvaboss.html'), 'url': 'https://jasperluu.com/helluvaboss', 'kind': 'official_production_artist_portfolio', 'primary': True, 'author': 'Jasper Luu', 'title': 'Helluva Boss — Jasper Luu Illustration', 'creditStatement': 'Portfolio describes backgrounds designed and painted for SpindleHorse Toon’s Helluva Boss.'}
+
+specs = {
+    'asmodeus-bedroom-candelabrum': {'name': 'Asmodeus — candélabre de la chambre', 'category': 'prop', 'stageId': 'asmodeus-bedroom-s2', 'sourceKeys': ['candelabrum_crop', 'jasper_oops_bedroom', 'jasper_oops_console_detail', 'oops_official_10s'], 'frameCoverage': 'complete_prop', 'context': 'Chambre d’Asmodeus dans Oops S2E6 ; mobilier, aucune scène intime représentée.', 'notes': ['Trois bougies et trois coupelles, deux bras asymétriques, fût et pied complets, sans flammes.', 'La forme est redessinée depuis le crop complet ; couleur rose/violette retenue de la vue de chambre, avec détail structurel de la seconde planche.', 'Alpha natif conservé, y compris son maximum de 254 et quelques pixels très faiblement opaques ; rendu inspecté sur fonds clair et sombre, sans halo opaque visible.'], 'placement': {'referenceCanvas': [1602, 982], 'suggestedVisibleBounds': [1450, 278, 1542, 470], 'anchor': 'bottom_of_pedestal_on_console_top', 'uniformScaleRequired': True}},
+    'asmodeus-bedroom-console': {'name': 'Asmodeus — console de la chambre', 'category': 'prop', 'stageId': 'asmodeus-bedroom-s2', 'sourceKeys': ['jasper_oops_bedroom', 'jasper_oops_console_detail', 'oops_official_10s'], 'frameCoverage': 'complete_visible_prop_silhouette', 'context': 'Console de la chambre d’Asmodeus dans Oops S2E6.', 'notes': ['Trois tiroirs et trois pieds visibles ; console seule, dessus vide, sans miroir ni objets.', 'Deux angles de production documentent les tiroirs et les pieds ; perspective simplifiée pour l’asset séparé, contours arrière cachés non modélisés.', 'Le miroir mural reste incorporé au fond, car son contour complet est recoupé dans les deux vues examinées.'], 'placement': {'referenceCanvas': [1602, 982], 'suggestedVisibleBounds': [1290, 420, 1590, 647], 'anchor': 'feet_on_right_hand_room_floor_beneath_mirror', 'uniformScaleRequired': True}},
+    'asmodeus-bedroom-s2-room': {'name': 'Asmodeus — Chambre, Oops', 'category': 'stage', 'stageId': 'asmodeus-bedroom-s2', 'sourceKeys': ['jasper_oops_bedroom', 'oops_official_10s'], 'frameCoverage': 'complete_production_background_view', 'context': 'Chambre d’Asmodeus dans Oops S2E6, distincte du cabaret et de la rue Ozzie’s déjà livrés.', 'notes': ['Vue et géométrie générale de la planche 206 Paint 00007 conservées, avec lit circulaire, plateforme, armoire et miroir.', 'Console et tous ses objets retirés pour séparer le fond du mobilier ; seul le sol et le motif mural existants sont continués derrière leur ancienne silhouette.', 'Le cadrage reste une vue partielle canonique de cette chambre, pas une reconstruction de toutes ses parois ; motifs fins, ombres et proportions redessinés.']},
+    'blitz-sinsmas-dream-s2-room': {'name': 'Blitzø — Noël imaginé', 'category': 'stage', 'stageId': 'blitz-sinsmas-dream-s2', 'sourceKeys': ['jasper_sinsmas_dream', 'sinsmas_official_850s'], 'frameCoverage': 'complete_production_background_view', 'context': 'Vision/rêve de famille imaginé par Blitzø dans Sinsmas S2E12 ; ne désigne pas un domicile réel établi, le salon humain réel ou le balcon de Blitzø.', 'notes': ['Contexte confirmé par la prévisualisation officielle à 850s montrant Blitzø, Stolas, Loona et Octavia dans cette vision.', 'Les quatre chaussettes S, V, B, L, les fauteuils, la cheminée et la décoration de la planche 212_00005 sont conservés.', 'Seule la boule à neige contenant le sapin, entre les deux cadres de droite, a été retirée pour devenir un prop ; la boule contenant une maison reste dans le fond.', 'Photographies en silhouettes, petits jouets, textures et reflets redessinés ; fidélité artistique 1:1 non certifiée.']},
+    'blitz-sinsmas-tree-snowglobe': {'name': 'Noël imaginé de Blitzø — boule à neige au sapin', 'category': 'prop', 'stageId': 'blitz-sinsmas-dream-s2', 'sourceKeys': ['snowglobe_crop', 'jasper_sinsmas_dream', 'sinsmas_official_850s'], 'frameCoverage': 'complete_prop', 'context': 'Petit objet de la cheminée dans la vision familiale de Blitzø, Sinsmas S2E12.', 'notes': ['Globe complet et socle rouge visible ; sapin et teinte ambrée issus du petit objet de la planche 212_00005.', 'Les minuscules décorations rouges au pied du sapin et les reflets sont interprétés à partir d’un crop de 120×105 pixels ; leur nombre et leur géométrie ne sont pas certifiés 1:1.', 'La couleur intérieure du globe est un dessin opaque de verre teinté ; seuls l’extérieur et les marges sont transparents.'], 'placement': {'referenceCanvas': [1648, 954], 'suggestedVisibleBounds': [980, 211, 1041, 272], 'anchor': 'flat_base_on_mantel_between_two_right_frames', 'uniformScaleRequired': True}}
+}
+
+assets = []
+qa_assets = []
+for row in rows:
+    ident = row['id']; spec = specs[ident]; im = Image.open(ROOT / row['master']['path']).convert('RGBA'); alpha = im.getchannel('A'); counts = Counter(alpha.get_flattened_data())
+    assert sha(Path(row['nativePath'])) == row['master']['sha256']
+    assert im.tobytes() == Image.open(ROOT / row['export']['path']).convert('RGBA').tobytes()
+    source_refs = [references[k] for k in spec['sourceKeys']]
+    urls = list(dict.fromkeys(['https://jasperluu.com/helluvaboss'] + [r['url'] for r in source_refs]))
+    a = {'id': ident, 'name': spec['name'], 'category': spec['category'], 'franchise': 'Helluva Boss', 'continuity': 'season_2', 'spoilerScope': 'season_2', 'canonicalContext': spec['context'], 'frameCoverage': spec['frameCoverage'], 'runtimeStatus': 'selectable_stage' if spec['category'] == 'stage' else 'stage_scenery', 'stageId': spec['stageId'], 'accepted': True, 'addsStandaloneBase': False, 'master': row['master']['path'], 'export': row['export']['path'], 'runtime': '/' + row['export']['path'].removeprefix('public/'), 'masterSha256': row['master']['sha256'], 'exportSha256': row['export']['sha256'], 'masterBytes': row['master']['bytes'], 'exportBytes': row['export']['bytes'], 'dimensions': [row['width'], row['height']], 'nativeMode': row['mode'], 'alphaBounds16': row['visibleBoundsAlpha16'], 'alphaExtrema': row['alphaExtrema'], 'transparentPixelCount': counts[0], 'opaquePixelCount': counts[255], 'nearOpaquePixelCount250': sum(v for k,v in counts.items() if k >= 250), 'pixelExactExport': True, 'nativeMasterPreservedByteForByte': True, 'fidelityOneToOneCertified': False, 'inGameChecked': False, 'generationTool': 'image_gen.imagegen', 'generationSource': row['nativePath'], 'prompt': prompts[ident], 'referenceUrls': urls, 'sourceReferences': source_refs, 'references': [portfolio] + source_refs, 'fidelityNotes': spec['notes']}
+    if 'thumbnail' in row:
+        t = row['thumbnail']; a['thumbnail'] = {'path': t['path'], 'sha256': t['sha256'], 'bytes': t['bytes'], 'dimensions': [t['width'], t['height']], 'derivedResize': True, 'format': 'WebP lossless'}
+    if 'placement' in spec:
+        a['suggestedPlacement'] = spec['placement']
+    assets.append(a)
+    qa_assets.append({'id': ident, 'masterSha256': a['masterSha256'], 'exportSha256': a['exportSha256'], 'dimensions': a['dimensions'], 'mode': a['nativeMode'], 'alphaExtrema': a['alphaExtrema'], 'alphaBounds16': a['alphaBounds16'], 'transparentPixelCount': a['transparentPixelCount'], 'opaquePixelCount': a['opaquePixelCount'], 'nearOpaquePixelCount250': a['nearOpaquePixelCount250'], 'nativeCopyHashPassed': True, 'webpDecodedRgbaEqualityPassed': True, 'completeVisibleSilhouette': True, 'visualReviewed': True, 'accepted': True})
+
+handoff = {'edition': 'V10', 'date': '2026-11-26', 'status': 'final_environment_handoff', 'sourceBatch': 'static-v10-2026-11-26', 'acceptedDrawings': 5, 'stageDrawings': 2, 'propDrawings': 3, 'imageFiles': 12, 'nativeMasters': 5, 'losslessExports': 5, 'derivedThumbnails': 2, 'addsStandaloneBases': 0, 'assets': assets, 'stageSuggestions': [{'id': 'asmodeus-bedroom-s2', 'name': 'Asmodeus · Chambre, Oops', 'continuity': 'season_2', 'roomAssetId': 'asmodeus-bedroom-s2-room', 'propIds': ['asmodeus-bedroom-console', 'asmodeus-bedroom-candelabrum']}, {'id': 'blitz-sinsmas-dream-s2', 'name': 'Blitzø · Noël imaginé', 'continuity': 'season_2', 'canonicalState': 'vision_dream_not_established_real_home', 'roomAssetId': 'blitz-sinsmas-dream-s2-room', 'propIds': ['blitz-sinsmas-tree-snowglobe']}], 'attempts': [{'id': a['id'], 'status': 'accepted_first_generation', 'nativePath': a['generationSource'], 'sha256': a['masterSha256']} for a in assets], 'verification': {'sourceInspection': 'Primary production paintings and official public episode previews visually inspected before generation.', 'nativeMastersUnchanged': True, 'allFiveDecodedWebpRgbaExact': True, 'alphaCompositesReviewedLightAndDark': True, 'sourceVersusBackgroundComparisonsReviewed': True, 'inGameCheckedByThisAgent': False, 'fidelityOneToOneCertified': False, 'historicalRefusalsRetried': False, 'newAnimationGenerated': False, 'globalRegisterOrRuntimeModifiedByThisAgent': False}, 'sourceLedger': 'docs/standalone/production-v10/environment-references.json', 'qaReport': 'docs/standalone/production-v10/environment-qa.json', 'fidelityLimits': ['Nouvelles vues distinctes des 43 stages de la baseline V9 ; absence vérifiée dans runtime et catalogue avant sélection.', 'Les images conservent les découpes de cadrage de leurs planches, sans prétendre montrer un lieu complet à 360 degrés.', 'Mobiliers et détails fins sont redessinés ; comparaison artistique humaine requise, aucune certification pixel-à-pixel avec les sources.', 'Les scènes de rêve canoniques restent identifiées comme visions, sans déclarer de nouveaux faits narratifs réels.']}
+
+qa = {'edition': 'V10', 'scope': 'environment_assets_only', 'status': 'passed', 'date': '2026-11-26', 'acceptedDrawings': 5, 'fileCountExcludingReferencesAndQaPreviews': 12, 'assets': qa_assets, 'checks': {'nativeMasterHashesEqualGeneratorSources': 5, 'decodedLosslessWebpPixelEquality': 5, 'opaqueBackgrounds': 2, 'transparentPropCanvases': 3, 'allVisibleBoundsInsideCanvas': 5, 'thumbnailFiles': 2, 'singleAssetPerImage': 5, 'animations': 0, 'refusedTargetRetries': 0}, 'visualEvidence': [file_record(OUT / 'environment-alpha-review.jpg'), file_record(OUT / 'environment-reference-comparison.jpg')], 'visualFindings': ['Trois bougies sur le candélabre ; trois tiroirs et trois pieds visibles sur la console.', 'Console et candélabre absents du fond Asmodeus pour superposition en couches.', 'Quatre chaussettes dans le fond Noël, initiales S V B L de gauche à droite.', 'Seul le globe au sapin retiré du fond Noël ; globe de la maison à gauche conservé.', 'Globes et autres petits détails d’ornementation non certifiés 1:1.', 'Aucun fond opaque parasite observé sur les trois props avec composition claire et sombre.'], 'runtimeBrowserQa': 'Delegated to root after integration; not asserted by this report.'}
+
+ledger = {'edition': 'V10', 'date': '2026-11-26', 'primaryPortfolio': portfolio, 'sourceReferences': list(references.values()), 'qualificationDecisions': [{'target': 'asmodeus-bedroom-s2', 'status': 'qualified', 'reason': 'Large complete production view, independent furniture views and official Oops preview confirm same room; distinct from existing cabaret and exterior.'}, {'target': 'blitz-sinsmas-dream-s2', 'status': 'qualified_vision_only', 'reason': 'Large production painting, S V B L stockings and official 850s family vision establish the imagined variant. Initial tentative human-room label was rejected before generation.'}, {'target': 'asmodeus-bedroom-mirror', 'status': 'not_generated_as_separate_prop', 'reason': 'Upper shape cropped in examined production views; remains embedded in background.'}, {'target': 'dhorks-portal-chamber', 'status': 'duplicate_not_generated', 'reason': 'Already active in the baseline runtime despite incomplete summary list.'}, {'target': 'pentious-airship-s1', 'status': 'historical_refusal_no_retry', 'reason': 'Inherited refusal preserved; no generation attempted.'}], 'remainingInheritedGaps': ['extermination-roof', 'vox-tower-exterior', 'cherub-golden-arrow', 'dhorks-shuriken', 'big-woobly-animatronic', 'vees-weapon-s2', 'vees-weapon-site-s2', 'andrealphus-multiheaded-ice-construction-s2', 'hb-auction-main-room'], 'remainingGapsClosedByThisEnvironmentBatch': [], 'surveyNotes': ['Greg Bartlett’s remaining portfolio images were crop/angle repeats of existing rooms.', 'Jasper Luu’s public portfolio was surveyed to identify complete new environments instead of extrapolating missing architecture from obscured episode shots.', 'Official YouTube storyboards are native public previews; their small resolution is documented and not upscaled as evidence.']}
+
+for filename, data in [('environment-handoff.json', handoff), ('environment-qa.json', qa), ('environment-references.json', ledger)]:
+    path = OUT / filename; path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    print(filename, sha(path), path.stat().st_size)
+for a in assets:
+    for key in ['master', 'export']:
+        assert (ROOT / a[key]).exists()
+    for r in a['sourceReferences']:
+        assert sha(ROOT / r['path']) == r['sha256']
+print('PASS: 5 accepted drawings; 12 deliverable images; 5 native-copy hashes; 5 RGBA WebP equalities; all references and outputs exist.')

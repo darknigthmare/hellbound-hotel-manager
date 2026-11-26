@@ -72,25 +72,25 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v9-2026-11-26",
-      "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
+      "batchId": "static-v10-2026-11-26",
+      "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V9 ajoute une incarnation S1 de Lute, un buste narratif, quatre accessoires et un salon distinct. Les 43 kits et 109 bases restent inchangés ; aucun nouveau cycle animé. Sept masters acceptés, avec validation visuelle en jeu documentée séparément.",
-      "stages": 43,
-      "threePlaneStages": 35,
+      "note": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
+      "stages": 45,
+      "threePlaneStages": 36,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 687,
+      "referencedAssets": 700,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 106,
+      "reserveGalleryDrawings": 115,
       "stagePresentations": [
         "alive",
         "static",
@@ -98,42 +98,44 @@
       ],
       "illustrationAssignmentsV3": 127,
       "onePlaneStages": 7,
-      "twoPlaneStages": 1,
-      "costumeFamilies": 21,
+      "twoPlaneStages": 2,
+      "costumeFamilies": 24,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v9/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v10/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
-      "standaloneBases": 109,
-      "catalogueIdsWithoutStandaloneBase": 100,
-      "distinctProductionIdentitiesWithoutStandaloneBase": 99,
-      "assetCoverageReport": "docs/standalone/production-v9/active-asset-coverage.json",
+      "standaloneBases": 112,
+      "catalogueIdsWithoutStandaloneBase": 97,
+      "distinctProductionIdentitiesWithoutStandaloneBase": 96,
+      "assetCoverageReport": "docs/standalone/production-v10/active-asset-coverage.json",
+      "referencedAssetsStatus": "verified_current_v10_paths",
       "browserReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v9/browser-qa.json",
+        "report": "docs/standalone/production-v10/browser-qa.json",
         "checkedAssetIds": [
-          "lute-post-finale-s1-ready",
-          "stolas-grimoire-closed",
-          "hb_moxxies_mother-portrait-s2",
-          "loo-loo-thing-plush",
-          "bee-lounge-bar-stool",
-          "bee-lounge-honeycomb-divider",
-          "bee-lounge-s1-room"
+          "asmodeus-bedroom-candelabrum",
+          "asmodeus-bedroom-console",
+          "asmodeus-bedroom-s2-room",
+          "blitz-sinsmas-dream-s2-room",
+          "blitz-sinsmas-tree-snowglobe",
+          "charlie-demon-battle-s1-ready",
+          "hb_loo_loo-park-s1-base",
+          "hb_loona-party-queen-bee",
+          "hb_moxxie-hallucination-truth-seekers",
+          "hz_crymini-legacy-2017-base",
+          "hz_melissa-model-s1-base"
         ],
-        "automatedChecks": 99,
-        "scope": "Sept nouveaux assets V9, galerie, filtres de saison et parcours entraînement sur Chromium local ; desktop 1440×1000 et mobile émulé 390×844. Aucun audit rétrospectif complet ni test physique mobile."
+        "scope": "Local Vite development runtime; real Chromium; desktop and mobile touch emulation. UI navigation and real keyboard/pointer/touch interactions only; no game-state injection.",
+        "summary": "352 contrôles navigateur réussis sur Chromium réel : 322 dans le passage complet conservé et 30 dans le complément ciblé. Trois tenues V10 sélectionnées et observées dans six combats (ordinateur/mobile), deux nouveaux décors et trois accessoires vérifiés avec proportions et ancrages conservés pendant un déplacement, neuf fiches galerie inspectées, badge et note historique complète de Crymini visibles. Les trois groupes de liens officiels des costumes affichent leurs URL qualifiées. Formats ordinateur 1440×1000 et mobile émulé 390×844. Aucun débordement horizontal, asset manquant, 404, exception ou console.error observé. Les 167 empreintes runtime sont identiques entre les deux passages et à la finalisation."
       },
       "technicalReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v9/runtime-qa.json",
         "testsPassed": 413,
         "testSuites": 47,
-        "typecheck": "passed",
-        "lint": "passed",
         "managerBuild": "passed",
         "standaloneBuild": "passed",
-        "distributionHashes": 1291,
         "standardQaScriptPassed": false,
-        "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique."
+        "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+        "report": "docs/standalone/production-v10/runtime-qa.json"
       }
     },
     "latestIntegration": {
@@ -306,62 +308,126 @@
         "globalIllustrationAssignments": 11,
         "productionRegister": "docs/standalone/production-v8/delivery-register.json",
         "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v9-2026-11-26",
+        "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V9 ajoute une incarnation S1 de Lute, un buste narratif, quatre accessoires et un salon distinct. Les 43 kits et 109 bases restent inchangés ; aucun nouveau cycle animé. Sept masters acceptés, avec validation visuelle en jeu documentée séparément.",
+        "stages": 43,
+        "threePlaneStages": 35,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 687,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 106,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 7,
+        "twoPlaneStages": 1,
+        "costumeFamilies": 21,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v9/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+        "standaloneBases": 109,
+        "catalogueIdsWithoutStandaloneBase": 100,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 99,
+        "assetCoverageReport": "docs/standalone/production-v9/active-asset-coverage.json",
+        "browserReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v9/browser-qa.json",
+          "checkedAssetIds": [
+            "lute-post-finale-s1-ready",
+            "stolas-grimoire-closed",
+            "hb_moxxies_mother-portrait-s2",
+            "loo-loo-thing-plush",
+            "bee-lounge-bar-stool",
+            "bee-lounge-honeycomb-divider",
+            "bee-lounge-s1-room"
+          ],
+          "automatedChecks": 99,
+          "scope": "Sept nouveaux assets V9, galerie, filtres de saison et parcours entraînement sur Chromium local ; desktop 1440×1000 et mobile émulé 390×844. Aucun audit rétrospectif complet ni test physique mobile."
+        },
+        "technicalReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v9/runtime-qa.json",
+          "testsPassed": 413,
+          "testSuites": 47,
+          "typecheck": "passed",
+          "lint": "passed",
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "distributionHashes": 1291,
+          "standardQaScriptPassed": false,
+          "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique."
+        }
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v9-2026-11-26",
-      "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
+      "batchId": "static-v10-2026-11-26",
+      "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v9/delivery-register.json",
+      "register": "docs/standalone/production-v10/delivery-register.json",
       "status": "final_production_register",
       "counts": {
-        "distinctDrawings": 7,
-        "newDrawings": 7,
+        "distinctDrawings": 11,
+        "newDrawings": 11,
         "revisedDrawings": 0,
-        "masterPng": 7,
-        "losslessWebp": 7,
-        "thumbnails": 1,
-        "deliveredImageFiles": 15,
-        "deliveredImageBytes": 14294928,
-        "newStandaloneBases": 0,
-        "newCharacterBases": 0,
+        "masterPng": 11,
+        "losslessWebp": 11,
+        "thumbnails": 2,
+        "deliveredImageFiles": 24,
+        "deliveredImageBytes": 19950095,
+        "newStandaloneBases": 3,
+        "newCharacterBases": 3,
+        "newlyCoveredCatalogueIds": 3,
         "newPlayableKits": 0,
-        "newStaticCostumes": 1,
-        "newNarrativeIncarnations": 1,
-        "newStages": 1,
-        "newSceneryProps": 2,
-        "newReserveProps": 2,
+        "newStaticCostumes": 3,
+        "newNarrativeIncarnations": 0,
+        "newStages": 2,
+        "newSceneryProps": 3,
+        "newReserveProps": 0,
         "newAnimationCycles": 0,
-        "generatorRefused": 2,
-        "historicalVariantRequirementsReconciled": 0
+        "generatorRefused": 0,
+        "historicalVariantRequirementsReconciled": 0,
+        "historicalVariantRequirementsPartiallyCovered": 2
       },
-      "scope": "Sept dessins statiques retenus, quinze fichiers livrés et intégration V9 validée dans la portée des rapports techniques et navigateur. Aucun nouveau kit, base entière ni cycle animé.",
+      "scope": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
       "verification": {
-        "technicalReport": "docs/standalone/production-v9/runtime-qa.json",
-        "browserReport": "docs/standalone/production-v9/browser-qa.json",
-        "workbookReport": "docs/standalone/production-v9/workbook-qa.json",
-        "testsPassed": 413,
-        "testSuites": 47,
-        "browserChecks": 99,
-        "distributionHashes": 1291
+        "technicalReport": "docs/standalone/production-v10/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v10/browser-qa.json",
+        "workbookReport": "docs/standalone/production-v10/workbook-qa.json"
       }
     },
     "latestProductionBible": {
-      "edition": "V9",
+      "edition": "V10",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
-      "historicalSheetsPreserved": 48,
-      "historicalTablesPreserved": 57,
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V10.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
+      "historicalSheetsPreserved": 50,
+      "historicalTablesPreserved": 59,
       "appendedSheets": 2,
-      "finalSheets": 50,
-      "finalTables": 59,
-      "sha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
-      "bytes": 602294,
-      "register": "docs/standalone/production-v9/delivery-register.json",
-      "qa": "docs/standalone/production-v9/workbook-qa.json",
+      "finalSheets": 52,
+      "finalTables": 61,
+      "sha256": "f116bf8d5324b2a543852fb14d8c191882684647e73a04b14f9fbc14ce37737a",
+      "bytes": 622318,
+      "register": "docs/standalone/production-v10/delivery-register.json",
+      "qa": "docs/standalone/production-v10/workbook-qa.json",
       "status": "verified"
     },
     "staticDeliveryHistory": [
@@ -393,6 +459,46 @@
           "historicalVariantRequirementsReconciled": 9
         },
         "scope": "Dessins statiques, intégration et rapprochements documentés dans le registre V8. Aucun nouveau cycle animé."
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v9-2026-11-26",
+        "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 7,
+          "newDrawings": 7,
+          "revisedDrawings": 0,
+          "masterPng": 7,
+          "losslessWebp": 7,
+          "thumbnails": 1,
+          "deliveredImageFiles": 15,
+          "deliveredImageBytes": 14294928,
+          "newStandaloneBases": 0,
+          "newCharacterBases": 0,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 1,
+          "newNarrativeIncarnations": 1,
+          "newStages": 1,
+          "newSceneryProps": 2,
+          "newReserveProps": 2,
+          "newAnimationCycles": 0,
+          "generatorRefused": 2,
+          "historicalVariantRequirementsReconciled": 0
+        },
+        "scope": "Sept dessins statiques retenus, quinze fichiers livrés et intégration V9 validée dans la portée des rapports techniques et navigateur. Aucun nouveau kit, base entière ni cycle animé.",
+        "verification": {
+          "technicalReport": "docs/standalone/production-v9/runtime-qa.json",
+          "browserReport": "docs/standalone/production-v9/browser-qa.json",
+          "workbookReport": "docs/standalone/production-v9/workbook-qa.json",
+          "testsPassed": 413,
+          "testSuites": 47,
+          "browserChecks": 99,
+          "distributionHashes": 1291
+        }
       }
     ],
     "productionBibleHistory": [
@@ -404,6 +510,22 @@
         "historicalSheetsPreserved": 46,
         "appendedSheets": 2,
         "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      {
+        "edition": "V9",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
+        "historicalSheetsPreserved": 48,
+        "historicalTablesPreserved": 57,
+        "appendedSheets": 2,
+        "finalSheets": 50,
+        "finalTables": 59,
+        "sha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+        "bytes": 602294,
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "qa": "docs/standalone/production-v9/workbook-qa.json",
+        "status": "verified"
       }
     ]
   },
@@ -1351,6 +1473,30 @@
       "2026-11-26",
       "99 contrôles réussis et revue visuelle des captures ; portée limitée au parcours décrit.",
       "docs/standalone/production-v9/browser-qa.json"
+    ],
+    [
+      "SRC-V10-ASMODEUS-BEDROOM-S2",
+      "Référence primaire documentée",
+      "Asmodeus · Chambre, Oops",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-V10-BLITZ-SINSMAS-DREAM-S2",
+      "Référence primaire documentée",
+      "Blitzø · Noël imaginé",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-STATIC-V10",
+      "Dépôt / production",
+      "Production statique V10",
+      "2026-11-26",
+      "Livraisons, nouvelles bases entières, costumes, décors, limites et preuves de QA.",
+      "docs/standalone/production-v10/delivery-register.json"
     ]
   ],
   "tasks": [
@@ -3543,7 +3689,69 @@
       "validation": "Canon déclaré dans dépôt, non certification 1:1.",
       "loreFacts": "Princesse de l'Enfer; projet de rédemption.",
       "proposedKit": "Polyvalente; jauge de détermination, protection d'un allié, transformation limitée.",
-      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+      "coverageBeforeStaticV10": {
+        "id": "charlie",
+        "franchise": "Hazbin Hotel",
+        "name": "Charlie Morningstar",
+        "tier": "Principal",
+        "role": "Hotel founder",
+        "continuity": "season_1",
+        "canon": "canon",
+        "reference": "Hazbin Hotel Season 1",
+        "source": "SRC-HH-01; HH-OFFICIAL; CHARLIE",
+        "asset": "Atlas référencé",
+        "kit": "Kit explicite de base",
+        "target": "Roster V1",
+        "status": "Existant",
+        "next": "Approfondir animations et techniques après audit de référence.",
+        "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+        "loreFacts": "Princesse de l'Enfer; projet de rédemption.",
+        "proposedKit": "Polyvalente; jauge de détermination, protection d'un allié, transformation limitée.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      },
+      "qualificationV10": {
+        "status": "static_costume_delivered",
+        "assetId": "charlie-demon-battle-s1-ready",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Une seule variante réunit la tenue de combat et la forme partiellement démoniaque de la fin S1 ; elle ne compte pas deux dessins. Corps entier à 225 s, tête/queue à 145 s et torse/bras transformé à 220 s, cellules officielles 320×180. Le bras gauche rouge élargi, absent du premier essai, a été rétabli via le générateur ; la pose des mains est adaptée pour isoler Charlie. Le détail exact des doigts, coutures et pieds ne peut pas être certifié à la résolution des références. Fidélité 1:1 non certifiée. Toutes les cellules sources sont natives 320 × 180 ; aucun détail HD ne peut être certifié. Le volume, le sens et les grandes couleurs du bras sont étayés ; nombre exact, courbure et articulation des doigts redessinés, non certifiés. Pieds entiers à 225 s mais détails des pointes/chaussures non certifiables à cette résolution. Marges haut/bas très étroites (4 et 11 px) ; silhouette intacte, ne pas recadrer davantage. Incarnation statique combinée tenue finale + transformation partielle : un seul dessin, aucune animation ni conformité 1:1 certifiée.",
+        "references": [
+          "https://www.youtube.com/watch?v=7OIa6bri7aE",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Une seule variante réunit la tenue de combat et la forme partiellement démoniaque de la fin S1 ; elle ne compte pas deux dessins. Corps entier à 225 s, tête/queue à 145 s et torse/bras transformé à 220 s, cellules officielles 320×180. Le bras gauche rouge élargi, absent du premier essai, a été rétabli via le générateur ; la pose des mains est adaptée pour isoler Charlie. Le détail exact des doigts, coutures et pieds ne peut pas être certifié à la résolution des références. Fidélité 1:1 non certifiée. Toutes les cellules sources sont natives 320 × 180 ; aucun détail HD ne peut être certifié. Le volume, le sens et les grandes couleurs du bras sont étayés ; nombre exact, courbure et articulation des doigts redessinés, non certifiés. Pieds entiers à 225 s mais détails des pointes/chaussures non certifiables à cette résolution. Marges haut/bas très étroites (4 et 11 px) ; silhouette intacte, ne pas recadrer davantage. Incarnation statique combinée tenue finale + transformation partielle : un seul dessin, aucune animation ni conformité 1:1 certifiée.",
+      "staticIncarnations": [
+        {
+          "master": "production/v10/costumes/masters/charlie-demon-battle-s1-ready.png",
+          "export": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+          "masterSha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+          "exportSha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "season_1",
+          "assetId": "charlie-demon-battle-s1-ready",
+          "batchId": "static-v10-2026-11-26",
+          "references": [
+            "https://www.youtube.com/watch?v=7OIa6bri7aE",
+            "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+            "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+            "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+          ],
+          "register": "docs/standalone/production-v10/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
+        }
+      ]
     },
     {
       "id": "vaggie",
@@ -5284,6 +5492,75 @@
           "https://www.youtube.com/watch?v=tB5nUTSSqG4"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV10": {
+        "id": "hz_melissa",
+        "franchise": "Hazbin Hotel",
+        "name": "Melissa",
+        "tier": "Tertiaire",
+        "role": "Vees employee",
+        "continuity": "season_1",
+        "canon": "canon",
+        "reference": "Hazbin Hotel S1E02 and Season 2",
+        "source": "SRC-HH-01",
+        "asset": "Atlas référencé",
+        "kit": "Support ou codex",
+        "target": "PNJ / support / codex",
+        "status": "Partiel",
+        "next": "Conserver rôle narratif/spectateur; ne pas inventer pouvoirs.",
+        "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "reference_incomplete",
+          "notes": "Les plans primaires montrent les tenues après transformation par Velvette. La tenue par défaut tee-shirt rouge/pantalon violet du portrait n’est pas qualifiée ; ne pas mélanger les incarnations.",
+          "references": [
+            "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+            "https://www.youtube.com/watch?v=tB5nUTSSqG4"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV10": {
+        "status": "full_body_reserve_base_delivered",
+        "assetId": "hz_melissa-model-s1-base",
+        "notes": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique. Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée. Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré. Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord. Cette première base représente uniquement la tenue de mannequin S1 observée ; elle ne valide pas le tee-shirt rouge/pantalon violet de l’ancien cutout. La résolution des sources ne certifie pas les petits détails des mains, du décolleté ou des chaussures. Marge basse étroite sans coupure.",
+        "references": [
+          "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+          "https://www.youtube.com/watch?v=tB5nUTSSqG4",
+          "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+          "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique. Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée. Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré. Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord. Cette première base représente uniquement la tenue de mannequin S1 observée ; elle ne valide pas le tee-shirt rouge/pantalon violet de l’ancien cutout. La résolution des sources ne certifie pas les petits détails des mains, du décolleté ou des chaussures. Marge basse étroite sans coupure.",
+      "staticProduction": {
+        "master": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+        "export": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+        "masterSha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+        "exportSha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": true,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "hz_melissa-model-s1-base",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+          "https://www.youtube.com/watch?v=tB5nUTSSqG4",
+          "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+          "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_full_body_reserve_base",
+        "runtimeSelectable": false,
+        "primaryIncarnation": "Melissa · tenue de mannequin S1",
+        "sourceIdentityId": "hz_melissa"
       }
     },
     {
@@ -5660,6 +5937,70 @@
         "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV10": {
+        "id": "hz_crymini",
+        "franchise": "Hazbin Hotel",
+        "name": "Crymini",
+        "tier": "Tertiaire",
+        "role": "Legacy sinner concept",
+        "continuity": "pilot_legacy",
+        "canon": "pilot_legacy",
+        "reference": "Hazbin Hotel pilot-era official material",
+        "source": "SRC-HH-01",
+        "asset": "Atlas référencé",
+        "kit": "Kit générique à remplacer",
+        "target": "Candidat à qualifier",
+        "status": "Partiel",
+        "next": "Vérifier capacités, statut et éligibilité avant kit dédié.",
+        "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "legacy_pilot_reference_required",
+          "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle.",
+          "references": [],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV10": {
+        "status": "full_body_reserve_base_delivered",
+        "assetId": "hz_crymini-legacy-2017-base",
+        "notes": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle. spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1. Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1. Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s. Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017. Conception historique2017, pas une apparence S1/S2 ni une promesse d’apparition future. Source320×180 incluant l’interface du logiciel ; proportions, taches et petits traits sont redessinés. spoilerScope season_1 sert seulement au plafond des filtres ; continuity legacy_concept_2017 indique la provenance réelle.",
+        "references": [
+          "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+          "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle. spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1. Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1. Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s. Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017. Conception historique2017, pas une apparence S1/S2 ni une promesse d’apparition future. Source320×180 incluant l’interface du logiciel ; proportions, taches et petits traits sont redessinés. spoilerScope season_1 sert seulement au plafond des filtres ; continuity legacy_concept_2017 indique la provenance réelle.",
+      "staticProduction": {
+        "master": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+        "export": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+        "masterSha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+        "exportSha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": true,
+        "newIdentity": false,
+        "continuity": "legacy_concept_2017",
+        "assetId": "hz_crymini-legacy-2017-base",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+          "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_full_body_reserve_base",
+        "runtimeSelectable": false,
+        "primaryIncarnation": "Crymini · modèle historique 2017",
+        "sourceIdentityId": "hz_crymini"
       }
     },
     {
@@ -6384,7 +6725,69 @@
       "validation": "Fiche/asset existant ne signifie pas combattant livré.",
       "loreFacts": "Armes à feu, acrobatie; résistance au feu terrestre.",
       "proposedKit": "Précision, rechargement, couverture et visée risquée.",
-      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+      "coverageBeforeStaticV10": {
+        "id": "hb_moxxie",
+        "franchise": "Helluva Boss",
+        "name": "Moxxie",
+        "tier": "Principal",
+        "role": "Marksman and tactical planner",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss Season 1 (I.M.P. core cast)",
+        "source": "SRC-HH-02; HB-OFFICIAL; MOXXIE",
+        "asset": "Atlas référencé",
+        "kit": "Kit nommé ajouté dans la PR",
+        "target": "Roster V1",
+        "status": "Ajout PR",
+        "next": "Cinématiques Helluva dédiées et profondeur du kit à produire.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Armes à feu, acrobatie; résistance au feu terrestre.",
+        "proposedKit": "Précision, rechargement, couverture et visée risquée.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      },
+      "qualificationV10": {
+        "status": "static_costume_delivered",
+        "assetId": "hb_moxxie-hallucination-truth-seekers",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Incarnation de la séquence hallucinée et musicale de Truth Seekers ; aucune nouvelle identité. Silhouette complète en vue de dos trois quarts à 510 s, profil à 490 s, détail frontal du pin officiel. La pose de jeu est adaptée. Les revers roses non corroborés du premier essai ont été corrigés en charbon-violet via le générateur. Fidélité 1:1 non certifiée. Le pin est limité au torse ; il ne qualifie pas les pans inférieurs. Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés. Aucune animation ni conformité 1:1 certifiée.",
+        "references": [
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Incarnation de la séquence hallucinée et musicale de Truth Seekers ; aucune nouvelle identité. Silhouette complète en vue de dos trois quarts à 510 s, profil à 490 s, détail frontal du pin officiel. La pose de jeu est adaptée. Les revers roses non corroborés du premier essai ont été corrigés en charbon-violet via le générateur. Fidélité 1:1 non certifiée. Le pin est limité au torse ; il ne qualifie pas les pans inférieurs. Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés. Aucune animation ni conformité 1:1 certifiée.",
+      "staticIncarnations": [
+        {
+          "master": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
+          "export": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+          "masterSha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+          "exportSha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "season_1",
+          "assetId": "hb_moxxie-hallucination-truth-seekers",
+          "batchId": "static-v10-2026-11-26",
+          "references": [
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+          ],
+          "register": "docs/standalone/production-v10/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
+        }
+      ]
     },
     {
       "id": "hb_millie",
@@ -6424,7 +6827,69 @@
       "validation": "Fiche/asset existant ne signifie pas combattant livré.",
       "loreFacts": "Griffes, morsures, odorat et déguisement humain.",
       "proposedKit": "Poursuite, bonds; forme quadrupède comme état distinct.",
-      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+      "coverageBeforeStaticV10": {
+        "id": "hb_loona",
+        "franchise": "Helluva Boss",
+        "name": "Loona",
+        "tier": "Principal",
+        "role": "Reception, tracking and field support",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss Season 1 (I.M.P. core cast)",
+        "source": "SRC-HH-02; HB-OFFICIAL; LOONA",
+        "asset": "Atlas référencé",
+        "kit": "Kit nommé ajouté dans la PR",
+        "target": "Roster V1",
+        "status": "Ajout PR",
+        "next": "Cinématiques Helluva dédiées et profondeur du kit à produire.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Griffes, morsures, odorat et déguisement humain.",
+        "proposedKit": "Poursuite, bonds; forme quadrupède comme état distinct.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      },
+      "qualificationV10": {
+        "status": "static_costume_delivered",
+        "assetId": "hb_loona-party-queen-bee",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Costume entier corroboré par les cellules officielles à 40, 500 et 670 s ; détails du buste complétés par le pin officiel. Les plans de la vidéo sont des prévisualisations natives 320×180 ; proportions et petits détails redessinés, fidélité 1:1 non certifiée. Corps et bas du costume contrôlés sur deux cellules publiques natives 320 × 180 ; les petits détails des doigts, griffes et pattes ne peuvent pas être certifiés à partir de ces sources. Le pin officiel ne couvre que le buste et ne prouve pas le bas du costume. Marges haut/bas étroites ; aucun rognage visible mais ne pas recadrer davantage. Illustration statique interprétée ; conformité 1:1 et animation non certifiées.",
+        "references": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Costume entier corroboré par les cellules officielles à 40, 500 et 670 s ; détails du buste complétés par le pin officiel. Les plans de la vidéo sont des prévisualisations natives 320×180 ; proportions et petits détails redessinés, fidélité 1:1 non certifiée. Corps et bas du costume contrôlés sur deux cellules publiques natives 320 × 180 ; les petits détails des doigts, griffes et pattes ne peuvent pas être certifiés à partir de ces sources. Le pin officiel ne couvre que le buste et ne prouve pas le bas du costume. Marges haut/bas étroites ; aucun rognage visible mais ne pas recadrer davantage. Illustration statique interprétée ; conformité 1:1 et animation non certifiées.",
+      "staticIncarnations": [
+        {
+          "master": "production/v10/costumes/masters/hb_loona-party-queen-bee.png",
+          "export": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "masterSha256": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+          "exportSha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "season_1",
+          "assetId": "hb_loona-party-queen-bee",
+          "batchId": "static-v10-2026-11-26",
+          "references": [
+            "https://www.youtube.com/watch?v=D-2799Y07Zc",
+            "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin",
+            "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+            "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s"
+          ],
+          "register": "docs/standalone/production-v10/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
+        }
+      ]
     },
     {
       "id": "hb_stolas",
@@ -7726,6 +8191,72 @@
           "https://www.youtube.com/watch?v=kpnwRg268FQ"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV10": {
+        "id": "hb_loo_loo",
+        "franchise": "Helluva Boss",
+        "name": "Loo Loo",
+        "tier": "Tertiaire",
+        "role": "Loo Loo Land mascot and greeter",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S1E2",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "primary_feet_cropped",
+          "notes": "Loo Loo Land board4 cellule9 : mascotte pomme et jambes visibles, mais les bottes sont coupées au bord inférieur. Le dessin historique montre des bottes vertes à pointes rouges qui n’ont pas été corroborées par un plan entier de cette incarnation.",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV10": {
+        "status": "full_body_reserve_base_delivered",
+        "assetId": "hb_loo_loo-park-s1-base",
+        "notes": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures. Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées. Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1. Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez. Jambes et chaussures reposent sur un plan large de faible résolution ; les coutures des chaussures sont une simplification de jeu. La pose de salut est adaptée, les mains ne reprennent pas exactement le geste de la cellule72s. Fidélité 1:1 non certifiée.",
+        "references": [
+          "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+          "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "currentStaticCoverage": "Première silhouette entière qualifiée de cette identité de production, conservée en galerie de réserve. L’incarnation et ses limites restent explicites ; aucun kit jouable, cycle ni validation 1:1 ajouté. Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures. Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées. Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1. Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez. Jambes et chaussures reposent sur un plan large de faible résolution ; les coutures des chaussures sont une simplification de jeu. La pose de salut est adaptée, les mains ne reprennent pas exactement le geste de la cellule72s. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "master": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+        "export": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+        "masterSha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+        "exportSha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": true,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "hb_loo_loo-park-s1-base",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+          "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_full_body_reserve_base",
+        "runtimeSelectable": false,
+        "primaryIncarnation": "Loo Loo · mascotte S1",
+        "sourceIdentityId": "hb_loo_loo"
       }
     },
     {
@@ -12086,6 +12617,94 @@
         "inGameChecked": true,
         "browserReport": "docs/standalone/production-v9/browser-qa.json"
       }
+    },
+    {
+      "id": "asmodeus-bedroom-s2",
+      "name": "Asmodeus · Chambre, Oops",
+      "franchise": "Helluva Boss",
+      "place": "Chambre d’Asmodeus",
+      "continuity": "season_2",
+      "canonicalState": "episode_location",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V10-ASMODEUS-BEDROOM-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w; https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+      "design": "Chambre d’Asmodeus documentée dans Oops, distincte du cabaret Ozzie’s ; fond, miniature, console et candélabre séparés. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV10": true,
+      "status": "Partiel",
+      "runtimeId": "asmodeus-bedroom-s2",
+      "runtimeStageId": "asmodeus-bedroom-s2",
+      "runtimeStageIds": [
+        "asmodeus-bedroom-s2"
+      ],
+      "asset": "public/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+      "currentStaticCoverage": "Chambre d’Asmodeus documentée dans Oops, distincte du cabaret Ozzie’s ; fond, miniature, console et candélabre séparés. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V10. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v10-2026-11-26",
+        "assetIds": [
+          "asmodeus-bedroom-candelabrum",
+          "asmodeus-bedroom-console",
+          "asmodeus-bedroom-s2-room"
+        ],
+        "runtimeStageIds": [
+          "asmodeus-bedroom-s2"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/33c2bb48-03b6-43f7-8d84-efaf8b9daa07/206+Paint+00003.jpeg?format=2500w",
+          "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
+    },
+    {
+      "id": "blitz-sinsmas-dream-s2",
+      "name": "Blitzø · Noël imaginé",
+      "franchise": "Helluva Boss",
+      "place": "Vision de Noël de Blitzø",
+      "continuity": "season_2",
+      "canonicalState": "vision_dream_not_established_real_home",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V10-BLITZ-SINSMAS-DREAM-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/e5d4b837-79ad-4fdc-afbc-46a002ba77ab/212_00005.jpeg?format=2500w; https://www.youtube.com/watch?v=GisSNuVpbkM&t=850s",
+      "design": "Scène de Noël imaginée par Blitzø dans Sinsmas : fond, miniature et boule à neige séparée. Vision explicite, pas un domicile réel établi. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV10": true,
+      "status": "Partiel",
+      "runtimeId": "blitz-sinsmas-dream-s2",
+      "runtimeStageId": "blitz-sinsmas-dream-s2",
+      "runtimeStageIds": [
+        "blitz-sinsmas-dream-s2"
+      ],
+      "asset": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+      "currentStaticCoverage": "Scène de Noël imaginée par Blitzø dans Sinsmas : fond, miniature et boule à neige séparée. Vision explicite, pas un domicile réel établi. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V10. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v10-2026-11-26",
+        "assetIds": [
+          "blitz-sinsmas-dream-s2-room",
+          "blitz-sinsmas-tree-snowglobe"
+        ],
+        "runtimeStageIds": [
+          "blitz-sinsmas-dream-s2"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/e5d4b837-79ad-4fdc-afbc-46a002ba77ab/212_00005.jpeg?format=2500w",
+          "https://www.youtube.com/watch?v=GisSNuVpbkM&t=850s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
     }
   ],
   "campaigns": [
@@ -13613,11 +14232,67 @@
       "reference": "HH S1E8",
       "requirements": "cornes, yeux, main; lignes de séparation visuelle",
       "canonEvidence": "À vérifier sur images officielles",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "CHARLIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV10": {
+        "id": "VAR-001",
+        "fighter": "charlie",
+        "name": "Démone — transformation partielle",
+        "type": "Transformation",
+        "reference": "HH S1E8",
+        "requirements": "cornes, yeux, main; lignes de séparation visuelle",
+        "canonEvidence": "À vérifier sur images officielles",
+        "status": "À produire",
+        "priority": "P1",
+        "lot": "V3",
+        "source": "CHARLIE",
+        "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      },
+      "currentStaticCoverage": "Une seule illustration combine tenue du combat final S1 et transformation partielle (cornes, queue, bras gauche rouge agrandi). VAR-001 et VAR-002 pointent vers ce même dessin, compté une seule fois. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+      "qualificationV10": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "charlie-demon-battle-s1-ready",
+        "notes": "Une seule illustration combine tenue du combat final S1 et transformation partielle (cornes, queue, bras gauche rouge agrandi). VAR-001 et VAR-002 pointent vers ce même dessin, compté une seule fois. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+        "references": [
+          "https://www.youtube.com/watch?v=7OIa6bri7aE",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v10/costumes/masters/charlie-demon-battle-s1-ready.png",
+        "export": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+        "masterSha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+        "exportSha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "charlie-demon-battle-s1-ready",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=7OIa6bri7aE",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV10": "Pose statique sélectionnable ; aucune animation de transition, nouveau cycle, kit ou certification 1:1 livré."
     },
     {
       "id": "VAR-002",
@@ -13627,11 +14302,67 @@
       "reference": "HH S1E8",
       "requirements": "silhouette/armes; pas un simple changement de teinte",
       "canonEvidence": "À vérifier sur images officielles",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "CHARLIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV10": {
+        "id": "VAR-002",
+        "fighter": "charlie",
+        "name": "Tenue de combat du final S1",
+        "type": "Costume",
+        "reference": "HH S1E8",
+        "requirements": "silhouette/armes; pas un simple changement de teinte",
+        "canonEvidence": "À vérifier sur images officielles",
+        "status": "À produire",
+        "priority": "P1",
+        "lot": "V3",
+        "source": "CHARLIE",
+        "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      },
+      "currentStaticCoverage": "Une seule illustration combine tenue du combat final S1 et transformation partielle (cornes, queue, bras gauche rouge agrandi). VAR-001 et VAR-002 pointent vers ce même dessin, compté une seule fois. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+      "qualificationV10": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "charlie-demon-battle-s1-ready",
+        "notes": "Une seule illustration combine tenue du combat final S1 et transformation partielle (cornes, queue, bras gauche rouge agrandi). VAR-001 et VAR-002 pointent vers ce même dessin, compté une seule fois. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+        "references": [
+          "https://www.youtube.com/watch?v=7OIa6bri7aE",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v10/costumes/masters/charlie-demon-battle-s1-ready.png",
+        "export": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+        "masterSha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+        "exportSha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "charlie-demon-battle-s1-ready",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=7OIa6bri7aE",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV10": "Pose statique sélectionnable ; aucune animation de transition, nouveau cycle, kit ou certification 1:1 livré."
     },
     {
       "id": "VAR-003",
@@ -15778,6 +16509,118 @@
           "newIdentity": false
         }
       }
+    },
+    {
+      "id": "VAR-V10-hb_loona-party-queen-bee",
+      "fighter": "hb_loona",
+      "name": "Loona — robe de soirée, Queen Bee",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=D-2799Y07Zc; https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin; https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s; https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s",
+      "requirements": "Costume complet et cycles dédiés à qualifier.",
+      "canonEvidence": "Sources primaires visibles répertoriées ; détails fins non certifiés.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-STATIC-V10",
+      "createdByStaticV10": true,
+      "status": "Partiel",
+      "currentStaticCoverage": "Tenue entière statique distincte des costumes historiques de cette identité, sélectionnable avec son kit actuel. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+      "qualificationV10": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "hb_loona-party-queen-bee",
+        "notes": "Tenue entière statique distincte des costumes historiques de cette identité, sélectionnable avec son kit actuel. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+        "references": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v10/costumes/masters/hb_loona-party-queen-bee.png",
+        "export": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+        "masterSha256": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+        "exportSha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "hb_loona-party-queen-bee",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV10": "Pose statique sélectionnable ; aucune animation de transition, nouveau cycle, kit ou certification 1:1 livré."
+    },
+    {
+      "id": "VAR-V10-hb_moxxie-hallucination-truth-seekers",
+      "fighter": "hb_moxxie",
+      "name": "Moxxie — tenue de l’hallucination, Truth Seekers",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=yXErLiSbxXQ; https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin; https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s; https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s",
+      "requirements": "Costume complet et cycles dédiés à qualifier.",
+      "canonEvidence": "Sources primaires visibles répertoriées ; détails fins non certifiés.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-STATIC-V10",
+      "createdByStaticV10": true,
+      "status": "Partiel",
+      "currentStaticCoverage": "Tenue entière statique distincte des costumes historiques de cette identité, sélectionnable avec son kit actuel. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+      "qualificationV10": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "hb_moxxie-hallucination-truth-seekers",
+        "notes": "Tenue entière statique distincte des costumes historiques de cette identité, sélectionnable avec son kit actuel. Une pose READY est réutilisée pour les actions ; atlas animé, transitions et exigences complémentaires restent à produire.",
+        "references": [
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
+        "export": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+        "masterSha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+        "exportSha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "hb_moxxie-hallucination-truth-seekers",
+        "batchId": "static-v10-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+        ],
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV10": "Pose statique sélectionnable ; aucune animation de transition, nouveau cycle, kit ou certification 1:1 livré."
     }
   ],
   "kits": [

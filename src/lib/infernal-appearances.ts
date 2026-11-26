@@ -170,6 +170,15 @@ function costume(id: string, name: string, appearance: string, spoilerTier: 'sea
 }
 
 export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume[]>> = {
+  charlie: [{
+    id: 'charlie-demon-battle-s1-ready',
+    name: 'Combat final S1 · forme démoniaque',
+    appearance: 'Hazbin Hotel · final de la saison 1. Tenue de combat, cornes, queue et bras gauche transformé. Une illustration statique accompagne les techniques existantes.',
+    spoilerTier: 'season_1',
+    ready: '/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
   lute: [{
     ...costume('lute-pre-injury', 'Avant la blessure · saison 1', 'Hazbin Hotel · uniforme d’exorciste, incarnation avant la blessure du final S1'),
     // Reuse the published two-arm READY without duplicating the artwork.
@@ -191,7 +200,15 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     layout: 'portrait',
   }],
   vaggie: [costume('vaggie-exorcist', 'Uniforme d’exorciste', 'Hazbin Hotel · Welcome to Heaven, saison 1, épisode 6')],
-  hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3')],
+  hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3'), {
+    id: 'hb_loona-party-queen-bee',
+    name: 'Robe de soirée · Queen Bee',
+    appearance: 'Helluva Boss · Queen Bee, saison 1, épisode 8. Robe bordeaux de la fête de Beelzebub ; une illustration statique accompagne les techniques existantes.',
+    spoilerTier: 'season_1',
+    ready: '/assets/production/v10/costumes/hb_loona-party-queen-bee.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }],
   hb_blitzo: INFERNAL_V8_COSTUMES.hb_blitzo ?? [],
   hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2', 'season_2'), {
     id: 'hb_stolas-deposed-sinsmas',
@@ -211,6 +228,14 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     spoilerTier: 'season_2',
     appearance: 'Helluva Boss · Unhappy Campers, saison 2, épisode 5. Déguisement vestimentaire ; la même illustration reste affichée pendant toutes les actions.',
     ready: '/assets/sprites/costumes/hb_moxxie-moxxine.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
+  }, {
+    id: 'hb_moxxie-hallucination-truth-seekers',
+    name: 'Hallucination · Truth Seekers',
+    appearance: 'Helluva Boss · Truth Seekers, saison 1, épisode 6. Costume de la séquence musicale hallucinée ; une illustration statique accompagne les techniques existantes.',
+    spoilerTier: 'season_1',
+    ready: '/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp',
     layout: 'portrait',
     staticReadyOnly: true,
   }, ...(INFERNAL_V8_COSTUMES.hb_moxxie ?? [])],

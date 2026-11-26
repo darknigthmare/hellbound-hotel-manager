@@ -1483,10 +1483,12 @@ export function PentagramLiveFight({
                   }}
                   onClick={(event) => {
                     if (touchKeyboardClicksRef.current.delete(`${side}:${input}`)) return;
-                    // Keyboard and assistive-technology activation has no
-                    // pointer click detail: toggle in that case so the same
-                    // control remains usable without a held pointer.
-                    if (event.detail === 0) {
+                    // A touch can also end with a trusted click whose detail
+                    // is zero. Its pointerup has already released this control;
+                    // only keyboard/assistive activation should toggle it.
+                    const pointerType = 'pointerType' in event.nativeEvent
+                      ? event.nativeEvent.pointerType : '';
+                    if (event.detail === 0 && !pointerType) {
                       setTouchInput(side, input, !touchInputsRef.current[side][input]);
                     }
                   }}

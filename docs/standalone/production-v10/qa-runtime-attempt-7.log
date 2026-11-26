@@ -1,0 +1,22 @@
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/local-recovery-2026-11-26/evidence/infernal-v10/browser/run-browser-qa.cjs
+  68:16  error  'screen' is already defined as a built-in global variable  no-redeclare
+
+/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/local-recovery-2026-11-26/evidence/infernal-v9/browser/run-browser-qa.cjs
+  27:16  error  'screen' is already defined as a built-in global variable  no-redeclare
+
+✖ 2 problems (2 errors, 0 warnings)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+Error: lint failed: 1
+    at run (file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v10/verify-runtime.mjs:47:34)
+    at file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v10/verify-runtime.mjs:68:3

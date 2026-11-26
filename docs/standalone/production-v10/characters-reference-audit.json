@@ -1,0 +1,555 @@
+{
+  "edition": "V10",
+  "date": "2026-11-26",
+  "status": "closed_for_this_batch",
+  "scope": "Nouvelle qualification de bases entières ; aucune complétion de jambes à partir de bustes. Les recherches reportées restent ouvertes.",
+  "baselineSources": [
+    "docs/standalone/production-v9/delivery-register.json",
+    "docs/standalone/production-v7/catalogue-audit.json",
+    "docs/standalone/production-v5/source-ledgers/characters-audit.json",
+    "docs/standalone/production-v5/source-ledgers/characters-full-qualification.json"
+  ],
+  "baselineStandaloneBases": 109,
+  "baselineIdsWithoutBase": 100,
+  "baselineIdentitiesWithoutBase": 99,
+  "qualifiedAndDelivered": [
+    {
+      "assetId": "hz_melissa-model-s1-base",
+      "sourceIdentityId": "hz_melissa",
+      "previousGap": {
+        "id": "hz_melissa",
+        "name": "Melissa",
+        "status": "reference_incomplete",
+        "notes": "Les plans primaires montrent les tenues après transformation par Velvette. La tenue par défaut tee-shirt rouge/pantalon violet du portrait n’est pas qualifiée ; ne pas mélanger les incarnations."
+      },
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+        "https://www.youtube.com/watch?v=tB5nUTSSqG4"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/melissa-official-285s.png",
+          "sha256": "8fc2babb8b1d4139d996d6d6f2660ff9454ab76c0ae5ef9d52e215cdd07a1f2e",
+          "bytes": 100532,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s",
+          "sourceUrl": "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+          "timeSeconds": 285,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Full-body final outfit; native public preview frame.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/melissa-official-short-37s.png",
+          "sha256": "d55d0c8afeb84695d82457f410bbd2f73f4112ac2d76e77d7fd67f34c0c2f724",
+          "bytes": 30035,
+          "dimensions": [
+            101,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+          "sourceUrl": "https://www.youtube.com/watch?v=tB5nUTSSqG4",
+          "timeSeconds": 37,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Same full-body final outfit; portrait clip native frame.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/melissa-historical-face-only.png",
+          "sha256": "1c09b9dcff2966f79522cb38ca3363543d0f4f2b48ed05388e0a4606db15c522",
+          "bytes": 36585,
+          "dimensions": [
+            210,
+            163
+          ],
+          "viewed": true,
+          "url": null,
+          "kind": "historical_project_detail",
+          "primary": false,
+          "originalPath": "public/assets/sprites/hazbin/portraits/hz_melissa.png",
+          "originalSha256": "d4023a594b7d5bb479315dbc54d55405f10cfd5d8a813f0ae9f5c3687ef6f773",
+          "coverage": "Historical face-only detail, no body qualification.",
+          "transform": "Native face-only crop."
+        }
+      ],
+      "limitations": [
+        "La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique.",
+        "Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée.",
+        "Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré.",
+        "Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord."
+      ],
+      "masterSha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58"
+    },
+    {
+      "assetId": "hb_loo_loo-park-s1-base",
+      "sourceIdentityId": "hb_loo_loo",
+      "previousGap": {
+        "id": "hb_loo_loo",
+        "name": "Loo Loo",
+        "status": "primary_feet_cropped",
+        "notes": "Loo Loo Land board4 cellule9 : mascotte pomme et jambes visibles, mais les bottes sont coupées au bord inférieur. Le dessin historique montre des bottes vertes à pointes rouges qui n’ont pas été corroborées par un plan entier de cette incarnation."
+      },
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=2KlyodO-VlY"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/loo-loo-official-056s.png",
+          "sha256": "b4f4b9ac85a9f73a63e27f711d4c4854adac678ba3e4b86cbe38b56dbaf2b25e",
+          "bytes": 96597,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 56,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Wide overhead view, complete mascot; approximately 50px tall in native image.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-072s.png",
+          "sha256": "a2c166d973772264a4c3d44126e77230da4225c827ca354ff9c016f2bc2de31a",
+          "bytes": 111577,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 72,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Front face and glove construction; lower shoe edges cropped.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-090s.png",
+          "sha256": "1e76eca5dd5d9423f90e29a6b30be4f02bbae0233e237bb0f2fdc2210ce1862c",
+          "bytes": 89408,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=90s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 90,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Front face and leg colors; feet partially cropped.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        }
+      ],
+      "limitations": [
+        "Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures.",
+        "Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées.",
+        "Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1.",
+        "Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez."
+      ],
+      "masterSha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35"
+    },
+    {
+      "assetId": "hz_crymini-legacy-2017-base",
+      "sourceIdentityId": "hz_crymini",
+      "previousGap": {
+        "id": "hz_crymini",
+        "name": "Crymini",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      "continuity": "legacy_concept_2017",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=ga5qslLwkZo"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/crymini-official-595s.png",
+          "sha256": "c50d9ed08ba7859653ea1c5910876b38ffb9220a575924c483797aab6ff4687c",
+          "bytes": 93276,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s",
+          "sourceUrl": "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "timeSeconds": 595,
+          "kind": "official_creator_speedpaint_storyboard_frame",
+          "primary": true,
+          "coverage": "Complete 2017 painted concept on the right; governing full-body reference.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/crymini-official-590s.png",
+          "sha256": "eef1f71f00b3738e8598bbd0acdb425cfd540f02a07a2294d3ce94f553a74427",
+          "bytes": 94983,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+          "sourceUrl": "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "timeSeconds": 590,
+          "kind": "official_creator_speedpaint_storyboard_frame",
+          "primary": true,
+          "coverage": "Same final painted concept, slightly larger; hair very near upper image boundary.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/crymini-historical-detail.png",
+          "sha256": "f4c8f49c9cbd183c5d27fdeb6e040482c3226edc5d298676e26744bcb305bee2",
+          "bytes": 145404,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "viewed": true,
+          "url": null,
+          "kind": "historical_project_detail",
+          "primary": false,
+          "originalPath": "public/assets/sprites/hazbin/portraits/hz_crymini.png",
+          "originalSha256": "f4c8f49c9cbd183c5d27fdeb6e040482c3226edc5d298676e26744bcb305bee2",
+          "coverage": "Concordant detail supplement; full body independently corroborated by the official 2017 speedpaint.",
+          "transform": "Unmodified historical project cutout."
+        }
+      ],
+      "limitations": [
+        "Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle.",
+        "spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1.",
+        "Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1.",
+        "Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s.",
+        "Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017."
+      ],
+      "masterSha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987"
+    }
+  ],
+  "deferredCandidates": [
+    {
+      "sourceIdentityIds": [
+        "hb_stolas_family_butler"
+      ],
+      "status": "primary_full_view_too_small_for_detail",
+      "reason": "Le plan officiel de Just Look My Way à 4 s montre la silhouette complète à environ 40 px de haut ; le plan à 6 s apporte le haut. Détails chevilles/chaussures trop petits et partiellement masqués ; le portrait historique ne suffit pas à les qualifier. Le produit officiel disponible reste un buste.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=rATbtwj1qls&t=4s",
+        "https://www.youtube.com/watch?v=rATbtwj1qls&t=6s",
+        "https://sharkrobot.com/products/loo-loo-land-imp-butler-enamel-pin"
+      ],
+      "scratchReferences": [
+        "butler-official-004s.png",
+        "butler-official-006s.png"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hb_mister_butler"
+      ],
+      "status": "primary_lower_body_not_qualified",
+      "reason": "Le grand majordome dans la compilation officielle Prime Video est vu tenant le miroir, assis ou partiel. Les pieds de cette identité ne sont pas qualifiés. Identité distincte du petit majordome de la famille de Stolas.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=nJagvaOR630"
+      ],
+      "scratchReferences": [
+        "prime-childhood-meta.json"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hb_brennon_ragers"
+      ],
+      "status": "actual_identity_not_found_in_inspected_clip",
+      "reason": "Le clip officiel montre notamment Blitzø jouant sur le tournage ; une apparence de Blitzø ne remplace pas la base de Brennon Ragers. Aucun corps entier distinct qualifié pour Brennon dans les frames inspectées.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=zFSES2mzUU8"
+      ],
+      "scratchReferences": [
+        "prime-acting-meta.json"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hb_tilla"
+      ],
+      "status": "official_product_is_partial_bust",
+      "reason": "Le pin Nightmare Tilla fournit le visage et le haut uniquement. Aucun bas de corps entier corroboré et aucune extrapolation.",
+      "referenceUrls": [
+        "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin"
+      ],
+      "scratchReferences": [
+        "tilla-nightmare-pin.png"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hb_better_than_blitzo_guy"
+      ],
+      "status": "primary_lower_body_not_qualified",
+      "reason": "Les frames inspectées d’Apology Tour montrent surtout le haut et les hanches ; aucune paire de pieds clairement visible permettant de qualifier le corps entier.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+      ],
+      "scratchReferences": [],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hz_molly"
+      ],
+      "status": "family_artwork_cropped",
+      "reason": "Dans la fin de la vidéo officielle Family, les personnages sont coupés sous le buste/aux hanches. Cela ne qualifie pas un corps entier de Molly. Les nouvelles découvertes Spider Monster Siblings et FU Betta restent des pistes de recherche, non des références visuelles entières acceptées.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=hszG00dqzhM"
+      ],
+      "scratchReferences": [
+        "viv-family-board-14.jpg",
+        "viv-family-board-15.jpg"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hz_hellsa_von_eldritch"
+      ],
+      "status": "creator_reference_not_retrieved",
+      "reason": "Une publication de l’autrice de 2018 est identifiée mais aucune image complète primaire lisible n’a été récupérée pendant cette vague. Aucun modèle extrapolé.",
+      "referenceUrls": [
+        "https://twitter.com/VivziePop/status/1014241101941575681"
+      ],
+      "scratchReferences": [],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hz_villa"
+      ],
+      "status": "rough_animation_insufficient_for_complete_color_reference",
+      "reason": "Popular fournit un exercice animé ancien de Villa et Crymini ; les frames inspectées sont de petites esquisses souvent partielles et ne qualifient pas une nouvelle silhouette colorée complète de Villa.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=eEUoxQ4qSfs"
+      ],
+      "scratchReferences": [],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hz_arackniss"
+      ],
+      "status": "no_new_complete_reference_qualified",
+      "reason": "Classic Rivals représente d’autres personnages déjà couverts. La planche finale Friends R Family inspectée montre principalement des identités déjà couvertes et des bas hors cadre. Aucune nouvelle silhouette complète d’Arackniss n’est qualifiée par ces planches.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=iCRxmqj370I",
+        "https://www.youtube.com/watch?v=Z5Yr9zHGjyM"
+      ],
+      "scratchReferences": [
+        "viv-classic-rivals-meta.json",
+        "viv-friends-family-board-14.jpg"
+      ],
+      "generated": false,
+      "addsStandaloneBase": false
+    },
+    {
+      "sourceIdentityIds": [
+        "hb_vikki",
+        "hb_gigi",
+        "hb_russ",
+        "hb_miles"
+      ],
+      "status": "inherited_v7_primary_reference_gap",
+      "reason": "Les lacunes de vue entière identifiées en V7 n’ont pas été levées dans ce lot. Les portraits existants restent des repères partiels ou non qualifiés. Aucune nouvelle validation visuelle ni génération revendiquée.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=D-2799Y07Zc",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA"
+      ],
+      "scratchReferences": [],
+      "generated": false,
+      "addsStandaloneBase": false
+    }
+  ],
+  "unqualifiedDiscoveryOnly": [
+    {
+      "url": "https://www.youtube.com/watch?v=rQDMa2IXJs8",
+      "title": "SPEED DRAW - Spider Monster Siblings (Angel & Molly) - VivziePop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lx0nf2RRh4w",
+      "title": "SPEED DRAW- FU Betta- Vivziepop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=N5p-kUvGXz0",
+      "title": "SPEED DRAW- Ladies Rock- Vivziepop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=utiPTN-EMHs",
+      "title": "SPEED DRAW- House of the Rising Sun (Hazbin Hotel)- Vivziepop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=g3vmESfcrR0",
+      "title": "SPEED DRAW- Club Goers (Hazbin Hotel)- Vivziepop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=RKQxJ8oNzko",
+      "title": "SPEED DRAW- Demons Again (Hazbin Hotel) - Vivziepop",
+      "author": "Vivziepop",
+      "status": "metadata_discovered_full_body_not_qualified",
+      "generated": false
+    }
+  ],
+  "historicalRefusalExclusions": [
+    {
+      "id": "cherribomb",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "lute",
+      "status": "moderation_refusal_no_retry"
+    },
+    {
+      "id": "hz_frank_egg_boi",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_razzle",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_dazzle",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_keekee",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_eel_sinner",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_ant_sinner",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_huskette_spider",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_fat_nuggets",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_speaker_of_god",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_clara_carmine",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_odette_carmine",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hz_shok_wav",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_rooster",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_salina",
+      "status": "generator_refused"
+    },
+    {
+      "id": "hz_egg_boiz",
+      "status": "not_generated_related_refusal_preserved"
+    },
+    {
+      "id": "hb_stella",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hb_loopty_goopty",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hb_deerie",
+      "status": "historical_refusal_no_retry"
+    },
+    {
+      "id": "hb_leviathan",
+      "status": "v9_generator_refused_no_retry"
+    },
+    {
+      "id": "hb_belphegor",
+      "status": "v9_generator_refused_no_retry"
+    }
+  ],
+  "historicalRefusalsRetried": [],
+  "newRefusals": [],
+  "acceptedDrawings": 3,
+  "deliveredImageFiles": 6,
+  "remainingArithmeticAfterTheseThree": {
+    "idsWithoutBase": 97,
+    "identitiesWithoutBase": 96,
+    "standaloneBases": 112,
+    "note": "Arithmétique de ce lot de personnages uniquement ; registre final validé par assembleur central. Aucune identité neuve au catalogue."
+  },
+  "notes": [
+    "Le pin Tilla et les vues partielles ne sont pas comptés comme bases.",
+    "Le modèle Crymini est explicitement historique 2017 ; son filtre season_1 ne constitue pas une attribution à la saison 1.",
+    "Le premier Loo Loo a été corrigé pour retirer un nez non présent dans les sources. Le candidat écarté est conservé dans les métadonnées et exclu du compte livré.",
+    "Le lot s’arrête à trois bases qualifiées ; les découvertes de vidéos supplémentaires n’ont pas été promues en validation."
+  ],
+  "fidelityOneToOneCertified": false
+}

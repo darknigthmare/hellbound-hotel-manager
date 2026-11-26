@@ -2,8 +2,22 @@
 
 Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
+<!-- V10_CURRENT_START -->
+## Reprise actuelle — 26 novembre 2026, production statique V10
+
+La V10 livre **11 dessins distincts et 24 fichiers d’image** : trois bases entières de réserve (Melissa, Loo Loo et Crymini historique 2017), trois costumes statiques (Loona, Moxxie et Charlie), deux décors et trois objets séparés. Les masters PNG natifs, exports WebP sans perte et deux miniatures représentent **19 950 095 octets**. Voir le [rapport V10](DELIVERY_STATIC_V10_2026-11-26.md), le [registre](production-v10/delivery-register.json) et les [sources de production](production-v10/README.md).
+
+Le cumul atteint **112 bases autonomes**, **24 familles de costumes**, **45 arènes** et **115 entrées de galerie**, avec 43 kits actifs. Les bases nouvelles couvrent trois identités existantes ; 97 identifiants, soit 96 identités distinctes après l’alias connu, restent sans base entière. Crymini est marquée comme conception de 2017 ; le Noël de Blitzø comme vision familiale. Les costumes gardent une seule pose statique, et les deux exigences de Charlie pointent vers un seul dessin. Fidélité 1:1 non certifiée.
+
+La [recette navigateur](production-v10/browser-qa.json) passe **352 contrôles** pour les onze assets, sur ordinateur et mobile émulé, avec 68 captures conservées dont 51 relues. La [validation technique](production-v10/runtime-qa.json) passe **413 tests / 47 suites**, TypeScript, ESLint, les deux builds et 1 310 empreintes de distribution. Le [contrôle des chemins](production-v10/active-asset-coverage.json) vérifie 700 références sans fichier manquant. Les conditions locales, les limites mobiles et les tentatives antérieures sont documentées dans les rapports.
+
+La [bible V10](INFERNAL_VERSUS_BIBLE_V10.xlsx) contient **52 feuilles et 61 tableaux**. Ses 50 feuilles historiques, 49 relations et 59 tableaux V9 sont préservés octet par octet. Dix vues rendues sont inspectées ; la [QA du classeur](production-v10/workbook-qa.json) consigne les formules et limites de vérification.
+
+Les fichiers locaux historiques sont rassemblés dans l’[archive de reprise](local-recovery-2026-11-26/README.md) : **456 fichiers uniques**, plus trois fichiers d’accompagnement, avec **582 correspondances de source à destination vérifiées**. Cette archive conserve aussi les candidats remplacés, explicitement exclus des dessins retenus.
+<!-- V10_CURRENT_END -->
+
 <!-- V9_CURRENT_START -->
-## Reprise actuelle — 26 novembre 2026, production statique V9
+## Contenu conservé — 26 novembre 2026, production statique V9 (historique)
 
 La V9 contient **7 dessins retenus et 15 fichiers d’image** : 7 masters PNG, 7 exports WebP sans perte et une miniature, pour **14 294 928 octets**. Elle ajoute Lute après le final S1 comme tenue statique sélectionnable, un portrait à la taille de la mère de Moxxie, le grimoire fermé de Stolas, la peluche THING? et le salon du bar de Beelzebub avec tabouret et cloison séparés. Le [rapport de livraison V9](DELIVERY_STATIC_V9_2026-11-26.md), le [registre](production-v9/delivery-register.json) et les [sources de production](production-v9/README.md) décrivent chaque usage.
 

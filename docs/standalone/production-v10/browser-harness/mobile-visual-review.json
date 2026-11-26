@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "edition": "V10",
+  "createdAt": "2026-11-26T16:16:51.782943+00:00",
+  "reviewer": "independent mobile visual review / audit_local_hazbin",
+  "status": "passed_visual_review_with_limits",
+  "passed": true,
+  "scope": {
+    "sourceRun": "/tmp/infernal-v10/browser/browser-qa-run.json",
+    "sourceRunSha256": "8f1e5d563d9c31a228bb6d3490f0f0509b8b6c92234c853f241c1d8aa2fdaf10",
+    "screenshotsActuallyViewed": 10,
+    "selection": 3,
+    "stage": 3,
+    "galleryPage": 1,
+    "galleryArt": 3,
+    "method": "Chaque PNG listé a été affiché directement via view_image puis examiné visuellement ; aucune conclusion n’est fondée sur une vignette non affichée.",
+    "desktopReviewed": false
+  },
+  "summary": {
+    "blockingFindings": 0,
+    "nonBlockingFindings": [
+      "Les trois selects de tenue coupent leur libellé long dans le champ fermé ; le descriptif visible à côté précise la tenue.",
+      "La capture mobile de la fiche Crymini ne couvre pas le bas du texte, situé hors du viewport."
+    ],
+    "result": "Les dix captures mobiles demandées passent la revue de lisibilité, de cadrage des silhouettes et de composition visibles."
+  },
+  "limits": [
+    "Revue des pixels des captures fournies, pas une nouvelle session interactive ni un test sur appareil physique.",
+    "Les interactions, erreurs réseau et débordements DOM relèvent du rapport browser-qa-run.json ; ils n’ont pas été réexécutés par ce relecteur.",
+    "Les captures de scène figées ne suffisent pas à attester le comportement en mouvement, les techniques de combat ou l’absence d’animation de personnages.",
+    "Aucune fidélité absolue 1:1, exhaustivité canonique ou validation d’assets hors des dix SHA listés n’est revendiquée.",
+    "Les captures recadrées sur un composant ne démontrent pas à elles seules l’ensemble de la page ni tous les autres viewports."
+  ],
+  "reviews": [
+    {
+      "label": "mobile-hb_loona-party-queen-bee-selection",
+      "path": "/tmp/infernal-v10/browser/mobile-hb_loona-party-queen-bee-selection.png",
+      "sha256": "324df1ae03f3c51f0638af27ec3aea7cee45405caa0918e7288ae77c6fec5086",
+      "pixelDimensions": [
+        360,
+        534
+      ],
+      "kind": "selection",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Loona et sa tenue de soirée sont visibles, silhouette entière et queue non coupée.",
+        "Le titre, les trois techniques, le mannequin Immobile et le bouton Lancer le combat sont lisibles et séparés."
+      ],
+      "limits": [
+        "Le texte long de l’option sélectionnée est tronqué dans le select natif ; le paragraphe adjacent précise Queen Bee, saison 1, épisode 8."
+      ]
+    },
+    {
+      "label": "mobile-hb_moxxie-hallucination-truth-seekers-selection",
+      "path": "/tmp/infernal-v10/browser/mobile-hb_moxxie-hallucination-truth-seekers-selection.png",
+      "sha256": "37f8cc7c8f27ba05bfe75ee895a0ac89d5a82405b12e6e910deac0fc0964b606",
+      "pixelDimensions": [
+        360,
+        552
+      ],
+      "kind": "selection",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Moxxie et la tenue d’hallucination sont visibles en entier, avec tête, cornes, queue et pieds.",
+        "Le descriptif Truth Seekers, les techniques, le mannequin et le lancement du combat restent lisibles."
+      ],
+      "limits": [
+        "Le libellé long du select est tronqué ; l’épisode et la tenue sont identifiables dans le descriptif."
+      ]
+    },
+    {
+      "label": "mobile-charlie-demon-battle-s1-ready-selection",
+      "path": "/tmp/infernal-v10/browser/mobile-charlie-demon-battle-s1-ready-selection.png",
+      "sha256": "11591627fdbf87cf936d3c2d1393a1efe54291a96dd0e3383f3c0a5f5437fa98",
+      "pixelDimensions": [
+        360,
+        552
+      ],
+      "kind": "selection",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Charlie Morningstar, la tenue du combat final et la silhouette entière sont visibles.",
+        "Le titre de tenue revient à la ligne sans chevaucher le select ; le texte, les techniques et le bouton sont lisibles."
+      ],
+      "limits": [
+        "Le libellé long du select est tronqué ; le descriptif explicite finale saison 1, cornes, queue et bras gauche transformé."
+      ]
+    },
+    {
+      "label": "mobile-hb_loona-party-queen-bee-asmodeus-bedroom-s2-stage",
+      "path": "/tmp/infernal-v10/browser/mobile-hb_loona-party-queen-bee-asmodeus-bedroom-s2-stage.png",
+      "sha256": "27db723abf16cf41cff09cb9e2b88e1c7b718331174fd2f6750e051d0d085f7d",
+      "pixelDimensions": [
+        330,
+        301
+      ],
+      "kind": "stage",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Loona à gauche et Fizzarolli à droite restent distincts dans la chambre d’Asmodeus.",
+        "Les deux silhouettes et leurs pieds sont présents ; les deux indicateurs Ready sont séparés.",
+        "Le fond et les personnages sont rendus sans rectangle opaque parasite visible."
+      ],
+      "limits": [
+        "Le cadrage mobile ne montre qu’une partie du décor large.",
+        "Cette capture figée à Ready ne prouve ni le déroulement du combat ni son absence d’animation."
+      ]
+    },
+    {
+      "label": "mobile-hb_moxxie-hallucination-truth-seekers-blitz-sinsmas-dream-s2-stage",
+      "path": "/tmp/infernal-v10/browser/mobile-hb_moxxie-hallucination-truth-seekers-blitz-sinsmas-dream-s2-stage.png",
+      "sha256": "046405f41e0d87bc31170b25e9a111f00ec1c5cd04b48953ecdae6a7942a6c1e",
+      "pixelDimensions": [
+        330,
+        301
+      ],
+      "kind": "stage",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Moxxie à gauche et Fizzarolli à droite sont visibles devant le décor de rêve Sinsmas.",
+        "Les personnages restent distincts du foyer, du mobilier et des accessoires au premier plan.",
+        "Les deux indicateurs Ready sont visibles ; aucune coupe manifeste de tête ou de pied n’est observée."
+      ],
+      "limits": [
+        "Le cadrage mobile recadre le décor large.",
+        "Les positions et la visibilité sont examinées uniquement à l’instant de la capture."
+      ]
+    },
+    {
+      "label": "mobile-charlie-demon-battle-s1-ready-asmodeus-bedroom-s2-stage",
+      "path": "/tmp/infernal-v10/browser/mobile-charlie-demon-battle-s1-ready-asmodeus-bedroom-s2-stage.png",
+      "sha256": "99f983484397c648666cced30d7cce36c6a29191cb2391d6dd68dbdafbbbd2fa",
+      "pixelDimensions": [
+        330,
+        301
+      ],
+      "kind": "stage",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Charlie à gauche et Fizzarolli à droite sont lisibles dans la chambre d’Asmodeus.",
+        "Les cornes, cheveux, queue et pieds de Charlie restent dans le cadre ; les personnages ne se superposent pas.",
+        "Les indicateurs Ready sont visibles et les cutouts se composent correctement sur le décor."
+      ],
+      "limits": [
+        "La comparaison porte sur la lisibilité mobile et la composition visible, sans mesure de fidélité géométrique aux références."
+      ]
+    },
+    {
+      "label": "mobile-gallery-hz_crymini-legacy-2017-base",
+      "path": "/tmp/infernal-v10/browser/mobile-gallery-hz_crymini-legacy-2017-base.png",
+      "sha256": "ebc90df910af2d2d682064bbc0c14e93e5cffc36946a8248748ff2731015a27e",
+      "pixelDimensions": [
+        360,
+        848
+      ],
+      "kind": "gallery_page",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "La navigation et l’onglet Galerie actif sont lisibles.",
+        "La fiche affiche une seule illustration filtrée et indique 115 dessins disponibles.",
+        "Crymini apparaît en silhouette entière, avec cheveux, oreilles, queue et pieds à l’intérieur de l’image.",
+        "Le titre Crymini · modèle historique 2017 et la mention de silhouette entière sont visibles."
+      ],
+      "limits": [
+        "La fin du descriptif est sous le bas de cette capture de viewport ; la lecture de tout le texte nécessite le défilement et n’est pas établie par cette seule image.",
+        "La mention modèle historique est explicite ; cette revue ne requalifie pas ce dessin en incarnation actuelle."
+      ]
+    },
+    {
+      "label": "mobile-gallery-art-hz_melissa-model-s1-base",
+      "path": "/tmp/infernal-v10/browser/mobile-gallery-art-hz_melissa-model-s1-base.png",
+      "sha256": "8ebf8bc40634955bf78f333faf3f93e94c64e8298522ff065b32b8486eaa274f",
+      "pixelDimensions": [
+        322,
+        465
+      ],
+      "kind": "gallery_art",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Melissa est visible en entier, de la pointe des cheveux aux chaussures, avec une marge autour de la silhouette.",
+        "La robe rouge, les jambes et les mains sont distinctes ; aucun fond opaque parasite ni halo coloré marqué n’est visible sur le fond sombre."
+      ],
+      "limits": [
+        "Cette capture d’illustration isolée ne montre pas le titre ni le texte de sa fiche.",
+        "Un fond sombre unique ne constitue pas un contrôle exhaustif de chaque pixel alpha."
+      ]
+    },
+    {
+      "label": "mobile-gallery-art-hb_loo_loo-park-s1-base",
+      "path": "/tmp/infernal-v10/browser/mobile-gallery-art-hb_loo_loo-park-s1-base.png",
+      "sha256": "5752b1637b3a2010692ef052d0eebc8500cad144c523d9e4a6602abbb34e6402",
+      "pixelDimensions": [
+        322,
+        465
+      ],
+      "kind": "gallery_art",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "Loo Loo est entier, chapeau, feuille, main levée et deux chaussures compris.",
+        "Le visage montre les yeux, les joues rouges et le sourire ; aucun nez rouge rajouté n’est visible.",
+        "La silhouette se compose sur le fond de galerie sans rectangle parasite visible."
+      ],
+      "limits": [
+        "Cette capture d’illustration isolée ne prouve pas les libellés ou la provenance de la fiche."
+      ]
+    },
+    {
+      "label": "mobile-gallery-art-hz_crymini-legacy-2017-base",
+      "path": "/tmp/infernal-v10/browser/mobile-gallery-art-hz_crymini-legacy-2017-base.png",
+      "sha256": "5a26216a83d031f8c13a846d627bdddd3e2255f1729903da579704923a6f4025",
+      "pixelDimensions": [
+        322,
+        465
+      ],
+      "kind": "gallery_art",
+      "viewedUsing": "tools.view_image native screenshot",
+      "verdict": "pass",
+      "observations": [
+        "La silhouette de Crymini est entière, avec cheveux, oreilles, mains croisées, queue et pieds.",
+        "Les détails clairs et fuchsia restent distincts sur le fond sombre ; aucune coupe manifeste ou fond opaque parasite n’est visible."
+      ],
+      "limits": [
+        "Le cadrage de l’illustration ne montre pas son libellé ; le statut historique est vérifié dans la capture de fiche séparée."
+      ]
+    }
+  ]
+}

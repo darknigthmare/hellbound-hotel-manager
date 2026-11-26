@@ -1,0 +1,205 @@
+{
+  "edition": "V10",
+  "date": "2026-11-26",
+  "reviewer": "root",
+  "assets": [
+    {
+      "id": "hz_melissa-model-s1-base",
+      "sourceIdentityId": "hz_melissa",
+      "reviewer": "root (independent of generating agent)",
+      "acceptedForIntegration": true,
+      "status": "accepted_with_documented_limits",
+      "nativeMasterPath": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+      "masterSha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha16": [
+        208,
+        36,
+        659,
+        1525
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/melissa-official-short-37s.png",
+          "sha256": "d55d0c8afeb84695d82457f410bbd2f73f4112ac2d76e77d7fd67f34c0c2f724",
+          "dimensions": [
+            101,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+          "kind": "official_video_public_storyboard",
+          "role": "Prime Video — tenue de mannequin complète",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        },
+        {
+          "path": "production/v10/characters/references/melissa-official-285s.png",
+          "sha256": "8fc2babb8b1d4139d996d6d6f2660ff9454ab76c0ae5ef9d52e215cdd07a1f2e",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s",
+          "kind": "official_video_public_storyboard",
+          "role": "Prime Video — même tenue complète dans la scène de Velvette",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        }
+      ],
+      "observations": [
+        "Chevelure bleu-gris à queue haute, deux pointes noires, grands yeux clairs et silhouette élancée cohérents avec les plans.",
+        "Tenue rouge sans manches, ourlet clair, jambes noires et deux pieds pointus entièrement présents.",
+        "Composite gris réellement vu : alpha propre, sans fond résiduel visible."
+      ],
+      "limitations": [
+        "Cette première base représente uniquement la tenue de mannequin S1 observée ; elle ne valide pas le tee-shirt rouge/pantalon violet de l’ancien cutout.",
+        "La résolution des sources ne certifie pas les petits détails des mains, du décolleté ou des chaussures. Marge basse étroite sans coupure."
+      ],
+      "addsStandaloneBase": true,
+      "frameCoverage": "full_body",
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false
+    },
+    {
+      "id": "hb_loo_loo-park-s1-base",
+      "sourceIdentityId": "hb_loo_loo",
+      "reviewer": "root (independent of generating agent)",
+      "acceptedForIntegration": true,
+      "status": "accepted_with_documented_limits",
+      "nativeMasterPath": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+      "masterSha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+      "dimensions": [
+        1182,
+        1330
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        180,
+        125,
+        1037,
+        1199
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/loo-loo-official-056s.png",
+          "sha256": "b4f4b9ac85a9f73a63e27f711d4c4854adac678ba3e4b86cbe38b56dbaf2b25e",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+          "kind": "official_video_public_storyboard",
+          "role": "Prime Video — mascotte entière au parc",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-072s.png",
+          "sha256": "a2c166d973772264a4c3d44126e77230da4225c827ca354ff9c016f2bc2de31a",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s",
+          "kind": "official_video_public_storyboard",
+          "role": "Prime Video — tête et torse de la même mascotte",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        }
+      ],
+      "observations": [
+        "Corps-pomme rouge, coiffe/feuille verte, chapeau noir à bande rouge et sourire à une dent manquante conservés.",
+        "Deux bras noirs gantés de rouge, deux jambes noires et deux chaussures rouges entières.",
+        "Le petit nez rouge ajouté au premier essai a été retiré ; composite gris et master final inspectés."
+      ],
+      "limitations": [
+        "Jambes et chaussures reposent sur un plan large de faible résolution ; les coutures des chaussures sont une simplification de jeu.",
+        "La pose de salut est adaptée, les mains ne reprennent pas exactement le geste de la cellule72s. Fidélité 1:1 non certifiée."
+      ],
+      "addsStandaloneBase": true,
+      "frameCoverage": "full_body",
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false
+    },
+    {
+      "id": "hz_crymini-legacy-2017-base",
+      "sourceIdentityId": "hz_crymini",
+      "reviewer": "root (independent of generating agent)",
+      "acceptedForIntegration": true,
+      "status": "accepted_with_documented_limits",
+      "nativeMasterPath": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+      "masterSha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha16": [
+        122,
+        130,
+        828,
+        1405
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/crymini-official-590s.png",
+          "sha256": "eef1f71f00b3738e8598bbd0acdb425cfd540f02a07a2294d3ce94f553a74427",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+          "kind": "official_video_public_storyboard",
+          "role": "Vivziepop — SPEED DRAW Teenager, modèle de conception2017 entier",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        },
+        {
+          "path": "production/v10/characters/references/crymini-official-595s.png",
+          "sha256": "c50d9ed08ba7859653ea1c5910876b38ffb9220a575924c483797aab6ff4687c",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s",
+          "kind": "official_video_public_storyboard",
+          "role": "Vivziepop — deuxième vue du même dessin de conception",
+          "viewed": true,
+          "method": "Native public preview cell; no recovered HD detail is claimed."
+        }
+      ],
+      "observations": [
+        "Chevelure crème/magenta, oreilles, tenue au motif de crâne, bras croisés, grande queue magenta à pointe crème conservés.",
+        "Asymétrie des jambes sombre/claire avec bandes et taches conservée ; deux pieds entièrement visibles.",
+        "Master et composite gris inspectés ; silhouette isolée propre et sans élément du logiciel de dessin source."
+      ],
+      "limitations": [
+        "Conception historique2017, pas une apparence S1/S2 ni une promesse d’apparition future.",
+        "Source320×180 incluant l’interface du logiciel ; proportions, taches et petits traits sont redessinés.",
+        "spoilerScope season_1 sert seulement au plafond des filtres ; continuity legacy_concept_2017 indique la provenance réelle."
+      ],
+      "addsStandaloneBase": true,
+      "frameCoverage": "full_body",
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false
+    }
+  ],
+  "scope": "Comparaison visuelle réelle des3 masters entiers aux références primaires et composites alpha.",
+  "fidelityOneToOneCertified": false
+}

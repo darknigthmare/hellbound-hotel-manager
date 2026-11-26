@@ -43,7 +43,9 @@ export type PentagramStageId = HotelStageId
   | 'auction-glass-hall-s3'
   | 'ozzies-exterior-s1'
   | 'hellhound-adoption-s2'
-  | 'bee-lounge-s1';
+  | 'bee-lounge-s1'
+  | 'asmodeus-bedroom-s2'
+  | 'blitz-sinsmas-dream-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1021,6 +1023,37 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   imagePosition: 'center bottom',
   accent: '#80ded0', shadow: '#9e635f', floor: '#edb382',
   soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'asmodeus-bedroom-s2',
+  spoilerTier: 'season_2',
+  name: 'Asmodeus · Chambre privée',
+  district: 'Anneau de la Luxure',
+  description: 'Un lit circulaire, une cheminée cyan et des portes capitonnées éclairent une chambre violette.',
+  loreBasis: 'Helluva Boss, Oops (S2E6), ouverture dans les appartements d’Asmodeus. Décor de production de Jasper Luu corroboré par l’épisode. La console et le candélabre sont des dessins séparés ; le combat appartient à la simulation AU.',
+  imagePath: '/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp',
+  thumbnailPath: '/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp',
+  scenery: {
+    middle: '/assets/production/v10/environment/asmodeus-bedroom-console.webp',
+    near: '/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp',
+  },
+  sceneryParallax: { middle: 0.20, near: 0.20 },
+  imagePosition: 'center bottom',
+  accent: '#dc63e9', shadow: '#160744', floor: '#12043c',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'blitz-sinsmas-dream-s2',
+  spoilerTier: 'season_2',
+  name: 'Blitzø · Noël imaginé',
+  district: 'Vision de Sinsmas',
+  description: 'Une cheminée dorée, quatre bas à initiales et des souvenirs de famille composent le Noël rêvé de Blitzø.',
+  loreBasis: 'Helluva Boss, Sinsmas (S2E12). Vision familiale de Blitzø avec Stolas, Octavia et Loona, documentée par le décor de Jasper Luu et la séquence officielle. Ce salon représente une vision ; sa mise en combat est une adaptation AU. La boule à neige au sapin est un dessin séparé.',
+  imagePath: '/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp',
+  thumbnailPath: '/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp',
+  scenery: { middle: '/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp' },
+  sceneryParallax: { middle: 0.20 },
+  imagePosition: 'center bottom',
+  accent: '#ffd47a', shadow: '#5b1b12', floor: '#812d19',
+  soundtrack: PENTAGRAM_STAGES[0].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

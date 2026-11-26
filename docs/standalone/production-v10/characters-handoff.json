@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "edition": "V10",
+  "date": "2026-11-26",
+  "status": "final_handoff",
+  "scope": "Trois nouvelles bases statiques entières pour des identités déjà présentes au catalogue. Exports prêts pour réserve ; runtime, galerie globale, bible et commits gérés hors de ce handoff.",
+  "baseline": {
+    "edition": "V9",
+    "standaloneBases": 109,
+    "idsWithoutBase": 100,
+    "identitiesWithoutBase": 99,
+    "source": "docs/standalone/production-v9/delivery-register.json"
+  },
+  "counts": {
+    "acceptedCandidates": 3,
+    "newCharacterBases": 3,
+    "newCoveredCatalogueIdentities": 3,
+    "newCatalogueIdentities": 0,
+    "newDrawings": 3,
+    "deliverableImageFiles": 6,
+    "deliverableImageBytes": 5030833,
+    "newAnimationCycles": 0,
+    "newPlayableKits": 0
+  },
+  "assets": [
+    {
+      "assetId": "hz_melissa-model-s1-base",
+      "characterId": "hz_melissa",
+      "sourceIdentityId": "hz_melissa",
+      "name": "Melissa · tenue de mannequin S1",
+      "franchise": "Hazbin Hotel",
+      "kind": "complete-static-character-base",
+      "continuity": "season_1",
+      "status": "accepted_candidate",
+      "nativeOutputPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-d4f1462e-c7d5-4709-86c4-250c10419b56.png",
+      "masterPath": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+      "runtimePath": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+      "files": [
+        {
+          "path": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+          "sha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+          "bytes": 1000563,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+          "sha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8",
+          "bytes": 642200,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "newDrawingCount": 1,
+      "newBaseCount": 1,
+      "newPlayableKitCount": 0,
+      "newAnimationCycleCount": 0,
+      "primaryWholeBodyReferenceQualified": true,
+      "fidelityOneToOneCertified": false,
+      "references": [
+        {
+          "path": "production/v10/characters/references/melissa-official-285s.png",
+          "sha256": "8fc2babb8b1d4139d996d6d6f2660ff9454ab76c0ae5ef9d52e215cdd07a1f2e",
+          "bytes": 100532,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/melissa-official-short-37s.png",
+          "sha256": "d55d0c8afeb84695d82457f410bbd2f73f4112ac2d76e77d7fd67f34c0c2f724",
+          "bytes": 30035,
+          "dimensions": [
+            101,
+            180
+          ],
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/melissa-historical-face-only.png",
+          "sha256": "1c09b9dcff2966f79522cb38ca3363543d0f4f2b48ed05388e0a4606db15c522",
+          "bytes": 36585,
+          "dimensions": [
+            210,
+            163
+          ],
+          "viewed": true
+        }
+      ],
+      "primarySources": [
+        {
+          "url": "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+          "videoId": "GIp3E_O_1DA",
+          "title": "First 11 minutes of Hazbin Hotel Episode 2 | Prime Video",
+          "author": "Prime Video",
+          "published": "2024-01-26T14:00:10-08:00",
+          "width": 320,
+          "height": 180,
+          "count": 141,
+          "columns": 3,
+          "rows": 3,
+          "intervalMs": 5000
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=tB5nUTSSqG4",
+          "videoId": "tB5nUTSSqG4",
+          "title": "Velvette is our problematic queen | Hazbin Hotel | Prime Video",
+          "author": "Prime Video",
+          "published": "2025-12-01T11:01:03-08:00",
+          "width": 101,
+          "height": 180,
+          "count": 45,
+          "columns": 3,
+          "rows": 3,
+          "intervalMs": 1000
+        }
+      ],
+      "limitations": [
+        "La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique.",
+        "Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée.",
+        "Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré.",
+        "Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord."
+      ],
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1334789,
+        "threshold128Bbox": [
+          209,
+          36,
+          659,
+          1524
+        ],
+        "threshold128Margins": {
+          "left": 209,
+          "top": 36,
+          "right": 365,
+          "bottom": 12
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "canonicalContext": "Hazbin Hotel S1E2, tenue finale imposée par Velvette",
+      "id": "hz_melissa-model-s1-base",
+      "category": "character_base",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "newIdentity": false,
+      "accepted": true,
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Create ONE isolated full-body static 2D character cutout of Melissa from Hazbin Hotel, specifically the adult studio worker/model in the final outfit shown by the first two attached official Season 1 scene references. This is a clean non-sexual character asset for an illustrated character gallery, a single figure, no animation, no sprite sheet. Reproduce only the slim pale grey woman standing centered in the dressing alcove in references 1 and 2; do not draw Vox, Velvette, the alcove, subtitles, logos, or any other objects. Reference 3 is a historical face-only detail to clarify the same recognizable face and hairstyle; it is not the outfit reference. Preserve the tall, very slender overall silhouette; small angular pale grey head; two very large pale yellow round eyes with tiny warm red pupils and thin black brows; slightly worried neutral expression; tiny angular nose; dark slate-blue short hair framing the cheeks and a single very high ponytail bound by a little red band, long angular ponytail sweeping to the viewer's left. Keep the exact final scene clothing silhouette: simple dark red sleeveless long fitted top with thin shoulder straps and rounded neckline, a narrow pale white ruffled layer showing below its hem, extremely slim fully covered black legs, small black pointed ankle boots. Two slim bare pale grey arms hang naturally by her sides with small pointed fingers. Keep shoulders, hands, both legs, both boot tips, and the entire ponytail plainly separate and visible. Pose nearly front-facing with a slight three-quarter turn as in the official references, standing neutrally; no attack, no weapon, no invented accessories or body markings. Crisp dark outline, restrained flat cel colors, light minimal cel shading, consistent clean 2D cartoon line quality. Use a portrait 2:3 canvas with genuinely transparent alpha background. Center the complete silhouette and leave at least 10 percent empty transparent margin on every side, especially below both shoes and above the highest ponytail. No floor, no cast shadow, no glow, no background color, no frame, no text.",
+      "master": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+      "export": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+      "runtime": "/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+      "masterSha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+      "exportSha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8",
+      "masterBytes": 1000563,
+      "exportBytes": 642200,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "nativeMode": "RGBA",
+      "nativeMasterPreservedByteForByte": true,
+      "pixelExactExport": true,
+      "fidelityNotes": [
+        "La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique.",
+        "Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée.",
+        "Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré.",
+        "Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord."
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+        "https://www.youtube.com/watch?v=tB5nUTSSqG4"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/melissa-official-285s.png",
+          "sha256": "8fc2babb8b1d4139d996d6d6f2660ff9454ab76c0ae5ef9d52e215cdd07a1f2e",
+          "bytes": 100532,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s",
+          "sourceUrl": "https://www.youtube.com/watch?v=GIp3E_O_1DA",
+          "timeSeconds": 285,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Full-body final outfit; native public preview frame.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/melissa-official-short-37s.png",
+          "sha256": "d55d0c8afeb84695d82457f410bbd2f73f4112ac2d76e77d7fd67f34c0c2f724",
+          "bytes": 30035,
+          "dimensions": [
+            101,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+          "sourceUrl": "https://www.youtube.com/watch?v=tB5nUTSSqG4",
+          "timeSeconds": 37,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Same full-body final outfit; portrait clip native frame.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/melissa-historical-face-only.png",
+          "sha256": "1c09b9dcff2966f79522cb38ca3363543d0f4f2b48ed05388e0a4606db15c522",
+          "bytes": 36585,
+          "dimensions": [
+            210,
+            163
+          ],
+          "viewed": true,
+          "url": null,
+          "kind": "historical_project_detail",
+          "primary": false,
+          "originalPath": "public/assets/sprites/hazbin/portraits/hz_melissa.png",
+          "originalSha256": "d4023a594b7d5bb479315dbc54d55405f10cfd5d8a813f0ae9f5c3687ef6f773",
+          "coverage": "Historical face-only detail, no body qualification.",
+          "transform": "Native face-only crop."
+        }
+      ],
+      "independentReview": {
+        "reviewer": "/root",
+        "status": "accepted_candidate",
+        "scope": "Qualified primary frames and final alpha composite visually checked; central SHA-bound report prepared by root after this handoff.",
+        "confirmation": "No obvious blocking mismatch reported by root on 2026-11-26."
+      }
+    },
+    {
+      "assetId": "hb_loo_loo-park-s1-base",
+      "characterId": "hb_loo_loo",
+      "sourceIdentityId": "hb_loo_loo",
+      "name": "Loo Loo · mascotte S1",
+      "franchise": "Helluva Boss",
+      "kind": "complete-static-character-base",
+      "continuity": "season_1",
+      "status": "accepted_candidate",
+      "nativeOutputPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-9f07b46d-d099-43d0-9d93-c2b83e1a9fec.png",
+      "masterPath": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+      "runtimePath": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+      "files": [
+        {
+          "path": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+          "sha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+          "bytes": 664484,
+          "dimensions": [
+            1182,
+            1330
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+          "sha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec",
+          "bytes": 435040,
+          "dimensions": [
+            1182,
+            1330
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "newDrawingCount": 1,
+      "newBaseCount": 1,
+      "newPlayableKitCount": 0,
+      "newAnimationCycleCount": 0,
+      "primaryWholeBodyReferenceQualified": true,
+      "fidelityOneToOneCertified": false,
+      "references": [
+        {
+          "path": "production/v10/characters/references/loo-loo-official-056s.png",
+          "sha256": "b4f4b9ac85a9f73a63e27f711d4c4854adac678ba3e4b86cbe38b56dbaf2b25e",
+          "bytes": 96597,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-072s.png",
+          "sha256": "a2c166d973772264a4c3d44126e77230da4225c827ca354ff9c016f2bc2de31a",
+          "bytes": 111577,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-090s.png",
+          "sha256": "1e76eca5dd5d9423f90e29a6b30be4f02bbae0233e237bb0f2fdc2210ce1862c",
+          "bytes": 89408,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true
+        }
+      ],
+      "primarySources": [
+        {
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "videoId": "2KlyodO-VlY",
+          "title": "Moxxie & Millie Take Loo Loo Land | Helluva Boss | Clip | Prime Video",
+          "author": "Prime Video",
+          "published": "2025-10-28T12:00:05-07:00",
+          "width": 320,
+          "height": 180,
+          "count": 86,
+          "columns": 3,
+          "rows": 3,
+          "intervalMs": 2000
+        }
+      ],
+      "limitations": [
+        "Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures.",
+        "Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées.",
+        "Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1.",
+        "Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez."
+      ],
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPixels": 1120535,
+        "threshold128Bbox": [
+          181,
+          125,
+          1037,
+          1199
+        ],
+        "threshold128Margins": {
+          "left": 181,
+          "top": 125,
+          "right": 145,
+          "bottom": 131
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "canonicalContext": "Helluva Boss S1E2, clip officiel Prime Video publié en 2025",
+      "id": "hb_loo_loo-park-s1-base",
+      "category": "character_base",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "newIdentity": false,
+      "accepted": true,
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Correct this single Loo Loo mascot cutout using the official episode frames supplied as references 2–4. Keep the one complete apple mascot, its green scalloped crown, one leaf and small black top hat with red band, two black thin arms with red padded four-finger gloves, two thin black legs and red rounded shoes, welcoming standing pose, clean flat outlined cartoon style, and transparent background. Essential facial correction: REMOVE the outlined red oval nose currently beneath the left eye. This mascot in the official frames has NO separate nose shape: the space immediately below and between the circular eyes and above the grin is simply the continuous red surface of the apple. Make that area plain red with no oval, no bump, no extra contour. Keep the two red cheek circles toward the sides and the broad pale yellow grin with its black missing tooth and simple thin tooth-divider marks, following the face construction in references 2 and 3. Preserve the overall complete silhouette. Center it slightly smaller on the canvas so the leaf tip, raised fingertips, and both shoe soles each have at least 10 percent empty margin. The entire character must be visible with genuine transparent alpha; no background, halo, shadow, checkerboard, scene, lettering, or other object. One isolated static character drawing only.",
+      "master": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+      "export": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+      "runtime": "/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+      "masterSha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+      "exportSha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec",
+      "masterBytes": 664484,
+      "exportBytes": 435040,
+      "dimensions": [
+        1182,
+        1330
+      ],
+      "nativeMode": "RGBA",
+      "nativeMasterPreservedByteForByte": true,
+      "pixelExactExport": true,
+      "fidelityNotes": [
+        "Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures.",
+        "Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées.",
+        "Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1.",
+        "Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez."
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=2KlyodO-VlY"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/loo-loo-official-056s.png",
+          "sha256": "b4f4b9ac85a9f73a63e27f711d4c4854adac678ba3e4b86cbe38b56dbaf2b25e",
+          "bytes": 96597,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 56,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Wide overhead view, complete mascot; approximately 50px tall in native image.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-072s.png",
+          "sha256": "a2c166d973772264a4c3d44126e77230da4225c827ca354ff9c016f2bc2de31a",
+          "bytes": 111577,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 72,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Front face and glove construction; lower shoe edges cropped.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/loo-loo-official-090s.png",
+          "sha256": "1e76eca5dd5d9423f90e29a6b30be4f02bbae0233e237bb0f2fdc2210ce1862c",
+          "bytes": 89408,
+          "dimensions": [
+            320,
+            180
+          ],
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=2KlyodO-VlY&t=90s",
+          "sourceUrl": "https://www.youtube.com/watch?v=2KlyodO-VlY",
+          "timeSeconds": 90,
+          "kind": "official_episode_storyboard_frame",
+          "primary": true,
+          "coverage": "Front face and leg colors; feet partially cropped.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        }
+      ],
+      "independentReview": {
+        "reviewer": "/root",
+        "status": "accepted_candidate",
+        "scope": "Qualified primary frames and final alpha composite visually checked; central SHA-bound report prepared by root after this handoff.",
+        "confirmation": "No obvious blocking mismatch reported by root on 2026-11-26."
+      }
+    },
+    {
+      "assetId": "hz_crymini-legacy-2017-base",
+      "characterId": "hz_crymini",
+      "sourceIdentityId": "hz_crymini",
+      "name": "Crymini · modèle historique 2017",
+      "franchise": "Hazbin Hotel",
+      "kind": "complete-static-character-base",
+      "continuity": "legacy_concept_2017",
+      "canonicalContext": "Concept historique peint par Vivziepop dans Teenager, vidéo officielle publiée le 28 mai 2017 ; aucune attribution de cette tenue aux épisodes S1/S2.",
+      "nativeOutputPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-f3dbebcb-d363-470c-b4ff-064a2ca6eb29.png",
+      "masterPath": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+      "runtimePath": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+      "files": [
+        {
+          "path": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+          "sha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+          "bytes": 1412534,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+          "sha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289",
+          "bytes": 876012,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "newDrawingCount": 1,
+      "newBaseCount": 1,
+      "newPlayableKitCount": 0,
+      "newAnimationCycleCount": 0,
+      "primaryWholeBodyReferenceQualified": true,
+      "fidelityOneToOneCertified": false,
+      "references": [
+        {
+          "path": "production/v10/characters/references/crymini-official-595s.png",
+          "sha256": "c50d9ed08ba7859653ea1c5910876b38ffb9220a575924c483797aab6ff4687c",
+          "bytes": 93276,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/crymini-official-590s.png",
+          "sha256": "eef1f71f00b3738e8598bbd0acdb425cfd540f02a07a2294d3ce94f553a74427",
+          "bytes": 94983,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true
+        },
+        {
+          "path": "production/v10/characters/references/crymini-historical-detail.png",
+          "sha256": "f4c8f49c9cbd183c5d27fdeb6e040482c3226edc5d298676e26744bcb305bee2",
+          "bytes": 145404,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "viewed": true
+        }
+      ],
+      "primarySources": [
+        {
+          "videoId": "ga5qslLwkZo",
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "title": "SPEED DRAW-Teenager (Hazbin Hotel)- Vivziepop",
+          "author": "Vivziepop",
+          "width": 320,
+          "height": 180,
+          "count": 129,
+          "columns": 3,
+          "rows": 3,
+          "intervalMs": 5000,
+          "published": "2017-05-28T20:11:43-07:00",
+          "descriptionPrintLink": "https://sharkrobot.com/products/teenager",
+          "descriptionPrintLinkStatus": "404 au contrôle V10 ; provenance secondaire dans la description officielle, pas de référence image récupérée à ce lien."
+        }
+      ],
+      "limitations": [
+        "Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle.",
+        "spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1.",
+        "Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1.",
+        "Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s.",
+        "Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017."
+      ],
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1092815,
+        "threshold128Bbox": [
+          123,
+          131,
+          827,
+          1404
+        ],
+        "threshold128Margins": {
+          "left": 123,
+          "top": 131,
+          "right": 197,
+          "bottom": 132
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "id": "hz_crymini-legacy-2017-base",
+      "category": "character_base",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "newIdentity": false,
+      "accepted": true,
+      "status": "accepted_candidate",
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Create ONE complete isolated static 2D cutout of Crymini, specifically the 2017 early Hazbin Hotel concept incarnation shown on the RIGHT of the first two attached images from Vivziepop's official Teenager speedpainting. This is an archive character illustration of that exact legacy concept, not a modern series redesign. Reference 3 is the historical project cutout of the same concept, to make the silhouette and concordant small details easier to see. Use references 1 and 2 to fix the complete body, outfit and tail. Draw only Crymini; remove the other character, railing, room, painting software, captions and background. She is a compact anthropomorphic hyena-like cartoon girl with a pale cream pointed muzzle and cheek fur, small black nose, yellow eyes with warm red pupils and heavy dark eye shapes, three small freckles near the muzzle, a mildly unimpressed expression. Two pointed animal ears, NOT horns; large swept cream-white hair with saturated crimson-magenta lower sections, the huge swept bang partly across the forehead, and the large back mass in the reference. Keep the black studded collar and the red-and-black punk tunic top with its small white skull graphic, crossed arms with black forearm gloves and pale small hands. Preserve the distinctive asymmetrical legs exactly as shown: viewer-left leg dark black with pale diagonal slashes at the upper thigh, viewer-right leg pale cream with a column of dark magenta spots, slim pointed dark foot tips. Keep the large bushy crimson-magenta tail sweeping outward to viewer-right with the cream pointed tip tufts visible in the source, attached naturally behind her hips. No invented wings, jewelry, weapons or markings. Her pose is neutral standing with arms crossed, both feet separated and fully visible, fully clothed and non-sexual, matching the reference attitude. Crisp dark outlines and flat 2D cel colors with very restrained shading. Full figure including all hair, ear tips, tail tip and both feet, centered on a portrait canvas, occupying no more than 78 percent of canvas height with generous clear margins. TRUE transparent alpha background. No floor, shadow, glow, scene, border, text, logo or additional figures. One single static drawing, no animation and no sprite sheet.",
+      "master": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+      "export": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+      "runtime": "/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+      "masterSha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+      "exportSha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289",
+      "masterBytes": 1412534,
+      "exportBytes": 876012,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "nativeMode": "RGBA",
+      "nativeMasterPreservedByteForByte": true,
+      "pixelExactExport": true,
+      "fidelityNotes": [
+        "Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle.",
+        "spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1.",
+        "Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1.",
+        "Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s.",
+        "Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017."
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=ga5qslLwkZo"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v10/characters/references/crymini-official-595s.png",
+          "sha256": "c50d9ed08ba7859653ea1c5910876b38ffb9220a575924c483797aab6ff4687c",
+          "bytes": 93276,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s",
+          "sourceUrl": "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "timeSeconds": 595,
+          "kind": "official_creator_speedpaint_storyboard_frame",
+          "primary": true,
+          "coverage": "Complete 2017 painted concept on the right; governing full-body reference.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/crymini-official-590s.png",
+          "sha256": "eef1f71f00b3738e8598bbd0acdb425cfd540f02a07a2294d3ce94f553a74427",
+          "bytes": 94983,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "viewed": true,
+          "url": "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+          "sourceUrl": "https://www.youtube.com/watch?v=ga5qslLwkZo",
+          "timeSeconds": 590,
+          "kind": "official_creator_speedpaint_storyboard_frame",
+          "primary": true,
+          "coverage": "Same final painted concept, slightly larger; hair very near upper image boundary.",
+          "transform": "Native public storyboard cell crop only; no retouching, enhancement or invented pixels."
+        },
+        {
+          "path": "production/v10/characters/references/crymini-historical-detail.png",
+          "sha256": "f4c8f49c9cbd183c5d27fdeb6e040482c3226edc5d298676e26744bcb305bee2",
+          "bytes": 145404,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "viewed": true,
+          "url": null,
+          "kind": "historical_project_detail",
+          "primary": false,
+          "originalPath": "public/assets/sprites/hazbin/portraits/hz_crymini.png",
+          "originalSha256": "f4c8f49c9cbd183c5d27fdeb6e040482c3226edc5d298676e26744bcb305bee2",
+          "coverage": "Concordant detail supplement; full body independently corroborated by the official 2017 speedpaint.",
+          "transform": "Unmodified historical project cutout."
+        }
+      ],
+      "independentReview": {
+        "reviewer": "/root",
+        "status": "accepted_candidate",
+        "scope": "Qualified primary frames and final alpha composite visually checked; central SHA-bound report prepared by root after this handoff.",
+        "confirmation": "No obvious blocking mismatch reported by root on 2026-11-26."
+      }
+    }
+  ],
+  "discardedAttempts": [
+    {
+      "assetId": "hb_loo_loo-park-s1-base",
+      "nativeOutputPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-bd2d21cc-810a-4216-b268-009e4ab41b2d.png",
+      "sha256": "21a2df2adf7af79fb68bd6e6dba6348bee20b3d1fbcf00352b484d1628da3222",
+      "reason": "Nez rouge ovale ajouté, absent des frames officielles qualifiées. Remplacé par correction native imagegen.",
+      "newDrawingCount": 0,
+      "delivered": false,
+      "prompt": "Draw ONE complete isolated static 2D cutout of Loo Loo, the red apple-costumed theme park mascot from Helluva Boss, strictly based on the mascot in these three official episode reference frames. Reference 1 is the high wide shot that shows the entire mascot including both red shoes. References 2 and 3 show his face, leaf, hat, arms, glove construction and black legs more clearly. Isolate ONLY this mascot; no other characters, no park, no text, no logo, no platform. A nearly round tall RED APPLE forms the whole body and face; there is no separate human torso and no neck. Bright green scalloped apple-cap across the crown, a short dark stem, a single bright green leaf, and the small black top hat with a red band seen behind the leaf. Two huge round black eyes with pale yellow surrounds and small wedge highlights, round red cheeks, a very broad pale yellow grinning mouth with thin black stitched-looking tooth separators and a prominent black missing upper tooth. Short thin flexible black arms emerge from each side of the apple, red four-fingered padded mascot gloves with darker red round cuffs. Two thin BLACK legs extend below the apple and end in simple RED rounded mascot shoes, as in the official wide shot. Do not add green boots or white socks. Friendly slightly awkward neutral standing stance, both legs planted visibly apart, one gloved hand relaxed at side and one held in a small welcoming wave. Preserve the compact round silhouette and face construction from the attached official source. Clean bold dark outline and restrained flat cel shading, crisp readable cartoon game asset. Use a portrait canvas, scale the complete figure to about 76 percent of canvas height with at least 10 percent empty transparent margin above the leaf and below both soles and around both hands. GENUINE transparent alpha background, no floor, no cast shadow, no ambient glow, no smoke, no border, no lettering. Single full-body drawing only, not an animation or sprite sheet.",
+      "referencePaths": [
+        "production/v10/characters/references/loo-loo-official-056s.png",
+        "production/v10/characters/references/loo-loo-official-072s.png",
+        "production/v10/characters/references/loo-loo-official-090s.png"
+      ]
+    }
+  ],
+  "historicalRefusalsRetried": [],
+  "countingNotes": [
+    "Les références et les tentatives écartées ne sont pas des dessins livrés.",
+    "Aucune animation ni kit jouable ajouté.",
+    "Crymini compte comme base complète de son incarnation historique 2017, sans qualification de son modèle dans les épisodes.",
+    "Le filtre season_1 de Crymini représente uniquement un plafond de spoilers compatible avec la galerie."
+  ],
+  "newRefusals": [],
+  "relatedReports": {
+    "sourceAudit": "docs/standalone/production-v10/characters-reference-audit.json",
+    "imageQa": "docs/standalone/production-v10/characters-qa.json",
+    "prompts": "docs/standalone/production-v10/characters-prompts.json"
+  },
+  "provenanceMetadata": {
+    "path": "production/v10/characters/references/primary-video-metadata.json",
+    "sha256": "1f83eff570b0e3907a6bcc39291d3c6f9c0ca232dc0090c2a07ee5600bbc5c32"
+  }
+}

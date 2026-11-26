@@ -407,7 +407,7 @@ describe('guide integration and narrative compatibility', () => {
     fireEvent.change(screen.getByLabelText('Présentation des décors'), { target: { value: 'static' } });
     view.unmount();
     render(<InfernalVersus />);
-    expect(screen.getByText('43', { selector: 'strong' })).toBeTruthy();
+    expect(screen.getByText('combattants', { selector: 'span' }).querySelector('strong')?.textContent).toBe('43');
     click(/VERSUS CPU/);
     click('Lancer le combat');
     expect(runtime.last!.stagePresentation).toBe('static');

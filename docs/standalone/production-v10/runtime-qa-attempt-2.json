@@ -1,0 +1,24 @@
+{
+  "edition": "V10",
+  "status": "failed",
+  "startedAt": "2026-11-26T15:51:39.055Z",
+  "completedAt": "2026-11-26T15:52:43.784Z",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "gate": "lint",
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    {
+      "gate": "tests",
+      "command": "npm test",
+      "exitCode": 137
+    }
+  ],
+  "error": "Error: tests failed: 137"
+}
