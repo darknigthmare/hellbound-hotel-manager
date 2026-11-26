@@ -85,7 +85,7 @@ describe('Infernal Versus standalone progression', () => {
   });
 
   it('resumes long runs with the standalone arena rotation beyond the eight hotel stages', () => {
-    expect(STANDALONE_STAGES).toHaveLength(45);
+    expect(STANDALONE_STAGES).toHaveLength(46);
     let save = saveWithRun('survival');
     for (let index = 0; index < 8; index++) save = completeCurrent(save, `survival-stage-${index}`);
     save = importSave(exportSave(save, roster), roster);

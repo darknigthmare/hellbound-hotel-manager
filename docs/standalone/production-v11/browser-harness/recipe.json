@@ -1,0 +1,67 @@
+{
+  "edition": "V11",
+  "status": "runtime_frozen_execution_authorized",
+  "expectedGalleryCount": 121,
+  "expectedAssetIds": [
+    "hz_molly-legacy-2015-portrait",
+    "hb_mister_butler-circus-s2-portrait",
+    "hb_better_than_blitzo_guy-portrait-s2",
+    "sloth-consultation-container",
+    "fizzarolli-bozo-award",
+    "oops-clown-mask-trophy",
+    "sloth-consultation-s2-room"
+  ],
+  "stageId": "sloth-consultation-s2",
+  "stageRoomId": "sloth-consultation-s2-room",
+  "stageContainerId": "sloth-consultation-container",
+  "expectedContainerVisibleBoundsInRoom": [
+    776,
+    495,
+    1024,
+    723.4649375600384
+  ],
+  "anchorBasis": "Root-approved visible alpha>=128 bounds [138,114,1179,1073] in the 1317×1194 container, placed at uniform scale 0.23823246878001922 in the 1672×941 background; room and prop parallax 0.20. Browser alpha>=16 outer contour differs by at most one source pixel and is checked within 5 background pixels.",
+  "referenceDimensions": [
+    1672,
+    941
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "isMobile": false,
+      "hasTouch": false,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "physicalDevice": false
+    }
+  ],
+  "coverage": [
+    "Six V11 gallery cards and full native illustrations, with intended bust labels for all three narrative portraits.",
+    "Official reference lists visible and their href values identical to qualified catalogue entries; no external page request implied.",
+    "Molly legacy concept 2015 labelled explicitly, with no confusion with Crymini legacy concept 2017 retained from V10.",
+    "Season-1 filter keeps the historical Molly portrait and inherited Crymini concept according to their filter metadata while hiding the five new season-2 gallery assets.",
+    "New consultation arena thumbnail, selection and background load in the season-1-and-2 scope. The inherited roster S1/S2 selector does not gate S2 arenas; only S3 arena availability has a distinct option.",
+    "One training combat per viewport with a previously accepted fighter costume; the sole new container scenery keeps uniform scale, source placement and room parallax before and after real keyboard/touch movement.",
+    "No asset request failures, HTTP errors, page errors, console errors or horizontal overflow; complete runtime file hashes checked before and after."
+  ],
+  "limits": [
+    "Static V11 drawings only; no new fighter kit, standalone body base or animation cycle is implied by three portrait archives.",
+    "Local Chromium desktop and mobile touch emulation; not physical-device, cross-browser or production-deployment testing.",
+    "Image fidelity and native/export pixel parity are covered by the separate production audits; browser checks concern rendered integration.",
+    "The S1/S2 content selector does not hide S2 arenas in the inherited UI. Gallery/roster/costumes follow it; arena availability has a separate S3 gate."
+  ],
+  "placementSource": {
+    "path": "docs/standalone/production-v11/runtime-placement.json",
+    "sha256": "0811971be62e9f86c99805b358c86989d9ebecdafb7c42bf92bb9d942411473c"
+  },
+  "frozenCatalogueSha256": "2bcdd7812191a3c5bc9c27916e9db17a40affda85a46cfef877d35890ba91b3e"
+}

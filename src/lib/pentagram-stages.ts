@@ -45,7 +45,8 @@ export type PentagramStageId = HotelStageId
   | 'hellhound-adoption-s2'
   | 'bee-lounge-s1'
   | 'asmodeus-bedroom-s2'
-  | 'blitz-sinsmas-dream-s2';
+  | 'blitz-sinsmas-dream-s2'
+  | 'sloth-consultation-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1053,6 +1054,20 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   sceneryParallax: { middle: 0.20 },
   imagePosition: 'center bottom',
   accent: '#ffd47a', shadow: '#5b1b12', floor: '#812d19',
+  soundtrack: PENTAGRAM_STAGES[0].soundtrack,
+}, {
+  id: 'sloth-consultation-s2',
+  spoilerTier: 'season_2',
+  name: 'Sloth · Salle de consultation',
+  district: 'Anneau de la Paresse',
+  description: 'Meubles roses, radio à dents et instruments rangés composent une salle de consultation violette.',
+  loreBasis: 'Helluva Boss, Western Energy (S2E4). Salle de consultation documentée par le décor de production de Jasper Luu et le plan officiel à 630 secondes. Elle est distincte de la salle d’attente déjà disponible. Le conteneur est un dessin séparé ; son placement et le duel sont adaptés à la simulation AU.',
+  imagePath: '/assets/production/v11/environment/sloth-consultation-s2-room.webp',
+  thumbnailPath: '/assets/production/v11/environment/sloth-consultation-s2-thumb.webp',
+  scenery: { middle: '/assets/production/v11/environment/sloth-consultation-container.webp' },
+  sceneryParallax: { middle: 0.20 },
+  imagePosition: 'center bottom',
+  accent: '#ef9fdb', shadow: '#321149', floor: '#7d367e',
   soundtrack: PENTAGRAM_STAGES[0].soundtrack,
 }];
 

@@ -2,8 +2,22 @@
 
 Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
+<!-- V11_CURRENT_START -->
+## Reprise actuelle — 26 novembre 2026, production statique V11
+
+La V11 livre **7 dessins distincts et 15 fichiers d’image** : trois portraits partiels (Molly historique 2015, Mister Butler dans The Circus, Better Than Blitzo Guy dans Apology Tour), une salle de consultation de Sloth, son conteneur séparé et deux trophées distincts de la vitrine d’Oops. Les masters PNG natifs, les WebP sans perte et une miniature représentent **14 006 984 octets**. Voir le [rapport V11](DELIVERY_STATIC_V11_2026-11-26.md), le [registre final](production-v11/delivery-register.json) et les [sources de production](production-v11/README.md).
+
+Le cumul atteint **46 arènes et 121 entrées de galerie**, avec **112 bases autonomes**, **24 familles de costumes** et 43 kits actifs. Les trois portraits restent partiels : **97 identifiants**, soit **96 identités distinctes après l’alias connu**, attendent toujours une base entière. Les 115 fiches historiques sont préservées. Molly conserve son année 2015 et Crymini son année 2017. Aucun cycle animé n’est ajouté ; fidélité 1:1 non certifiée. Le refus du petit majordome reste consigné et n’a pas été relancé ; il est distinct du grand Mister Butler accepté.
+
+Les [contrôles techniques V11](production-v11/runtime-qa.json) passent **413 tests / 47 suites**, TypeScript, ESLint, les deux builds et **1 312 empreintes de distribution**. Le [relevé actif](production-v11/active-asset-coverage.json) vérifie **708 chemins sans référence cassée**. La [recette navigateur](production-v11/browser-qa.json) passe **170 contrôles**, couvre les sept dessins et conserve **48 captures inspectées** sur ordinateur et mobile émulé. Les marges du fond, les filtres et les corrections de recette sont explicités dans les preuves.
+
+La [Bible V11](INFERNAL_VERSUS_BIBLE_V11.xlsx) contient **54 feuilles et 63 tableaux**. Elle conserve les 52 feuilles, 51 relations et 61 tableaux V10 octet par octet. Neuf vues rendues sont inspectées et les six nouvelles formules vérifiées. Le [même classeur Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) est mis à jour en V11 ; les **638 528 octets** téléchargés sont identiques au fichier local final, selon la [preuve Drive](production-v11/drive-publication.json).
+
+Les lots V10 et V11 représentent ensemble **18 dessins distincts et 39 fichiers d’image**, pour **33 957 079 octets**, depuis la V9 publiée. L’archive de reprise et les preuves historiques restent conservées avec le jalon V10.
+<!-- V11_CURRENT_END -->
+
 <!-- V10_CURRENT_START -->
-## Reprise actuelle — 26 novembre 2026, production statique V10
+## Contenu conservé — 26 novembre 2026, production statique V10 (historique)
 
 La V10 livre **11 dessins distincts et 24 fichiers d’image** : trois bases entières de réserve (Melissa, Loo Loo et Crymini historique 2017), trois costumes statiques (Loona, Moxxie et Charlie), deux décors et trois objets séparés. Les masters PNG natifs, exports WebP sans perte et deux miniatures représentent **19 950 095 octets**. Voir le [rapport V10](DELIVERY_STATIC_V10_2026-11-26.md), le [registre](production-v10/delivery-register.json) et les [sources de production](production-v10/README.md).
 

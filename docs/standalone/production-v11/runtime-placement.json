@@ -1,0 +1,51 @@
+{
+  "edition": "V11",
+  "status": "browser_verified_with_documented_limits",
+  "placements": [
+    {
+      "assetId": "sloth-consultation-container",
+      "stageId": "sloth-consultation-s2",
+      "plane": "middle",
+      "roomDimensions": [
+        1672,
+        941
+      ],
+      "assetDimensions": [
+        1317,
+        1194
+      ],
+      "alphaThreshold": 128,
+      "alphaBbox": [
+        138,
+        114,
+        1179,
+        1073
+      ],
+      "targetVisibleBbox": [
+        776,
+        495,
+        1024,
+        723.4649375600384
+      ],
+      "uniformScaleInRoomPixels": 0.23823246878001922,
+      "parallax": 0.2,
+      "placementBasis": "Preserve the container location beside the right-hand cabinet, derived from the full primary background and adapted to the generated1672×941room frame. This is an explicit game-layout adaptation, not a claim of pixel-identical source geometry."
+    }
+  ],
+  "browserEvidence": {
+    "path": "docs/standalone/production-v11/browser-qa.json",
+    "sha256": "c0131630b80d0a88ac9a737facc49acb8af0b43ce269339b85eb04cae0681026",
+    "checksPassed": 170,
+    "checksFailed": 0,
+    "viewports": [
+      "desktop 1440×1000",
+      "mobile emulated 390×844"
+    ],
+    "review": "All 48 final captures inspected; container ratio, alpha, frame anchoring and shared parallax verified before and after movement. Runtime source and image hashes unchanged."
+  },
+  "limits": [
+    "Mobile portrait layout contains the full native background and leaves a solid-color band above it; no cropped-frame claim.",
+    "The asset is a decorative separate plane, with no new collision or gameplay mechanic.",
+    "This is a documented layout adaptation from the primary reference, not a certification of pixel-identical source geometry."
+  ]
+}

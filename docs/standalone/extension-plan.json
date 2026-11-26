@@ -72,25 +72,25 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v10-2026-11-26",
-      "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+      "batchId": "static-v11-2026-11-26",
+      "baseCommit": "40c0ab9d12cdae867a131c59c25fd55da85dbafd",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
-      "stages": 45,
+      "note": "V11 : 7 dessins retenus — 3 portraits partiels, 1 arène et 3 objets dont 2 en réserve. Aucune nouvelle base entière, costume, mécanique ou animation. Un refus de génération conservé sans relance.",
+      "stages": 46,
       "threePlaneStages": 36,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 700,
+      "referencedAssets": 708,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 115,
+      "reserveGalleryDrawings": 121,
       "stagePresentations": [
         "alive",
         "static",
@@ -98,34 +98,30 @@
       ],
       "illustrationAssignmentsV3": 127,
       "onePlaneStages": 7,
-      "twoPlaneStages": 2,
+      "twoPlaneStages": 3,
       "costumeFamilies": 24,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v10/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v11/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
       "standaloneBases": 112,
       "catalogueIdsWithoutStandaloneBase": 97,
       "distinctProductionIdentitiesWithoutStandaloneBase": 96,
-      "assetCoverageReport": "docs/standalone/production-v10/active-asset-coverage.json",
-      "referencedAssetsStatus": "verified_current_v10_paths",
+      "assetCoverageReport": "docs/standalone/production-v11/active-asset-coverage.json",
+      "referencedAssetsStatus": "verified_current_v11_paths",
       "browserReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v10/browser-qa.json",
+        "report": "docs/standalone/production-v11/browser-qa.json",
         "checkedAssetIds": [
-          "asmodeus-bedroom-candelabrum",
-          "asmodeus-bedroom-console",
-          "asmodeus-bedroom-s2-room",
-          "blitz-sinsmas-dream-s2-room",
-          "blitz-sinsmas-tree-snowglobe",
-          "charlie-demon-battle-s1-ready",
-          "hb_loo_loo-park-s1-base",
-          "hb_loona-party-queen-bee",
-          "hb_moxxie-hallucination-truth-seekers",
-          "hz_crymini-legacy-2017-base",
-          "hz_melissa-model-s1-base"
+          "fizzarolli-bozo-award",
+          "hb_better_than_blitzo_guy-portrait-s2",
+          "hb_mister_butler-circus-s2-portrait",
+          "hz_molly-legacy-2015-portrait",
+          "oops-clown-mask-trophy",
+          "sloth-consultation-container",
+          "sloth-consultation-s2-room"
         ],
-        "scope": "Local Vite development runtime; real Chromium; desktop and mobile touch emulation. UI navigation and real keyboard/pointer/touch interactions only; no game-state injection.",
-        "summary": "352 contrôles navigateur réussis sur Chromium réel : 322 dans le passage complet conservé et 30 dans le complément ciblé. Trois tenues V10 sélectionnées et observées dans six combats (ordinateur/mobile), deux nouveaux décors et trois accessoires vérifiés avec proportions et ancrages conservés pendant un déplacement, neuf fiches galerie inspectées, badge et note historique complète de Crymini visibles. Les trois groupes de liens officiels des costumes affichent leurs URL qualifiées. Formats ordinateur 1440×1000 et mobile émulé 390×844. Aucun débordement horizontal, asset manquant, 404, exception ou console.error observé. Les 167 empreintes runtime sont identiques entre les deux passages et à la finalisation."
+        "scope": "One new arena and scenery prop; six new gallery entries. Local Chromium desktop and mobile touch emulation, real UI interactions, no game-state injection.",
+        "summary": "170 contrôles navigateur réussis sur Chromium : sept assets V11 vérifiés sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Le nouveau décor de consultation de Sloth, sa vignette et son conteneur séparé ont été observés dans deux combats d’entraînement ; proportions, ancrage et parallaxe commune restent cohérents avant et après déplacement. Six fiches de galerie et leurs références sont présentes, les trois portraits sont explicitement des bustes, Molly conserve la provenance historique 2015 et Crymini celle de 2017. Les six fiches respectent leur filtre S1/S2 applicable ; la disponibilité des arènes conserve son réglage S3 distinct. Aucune erreur réseau, exception, console.error, image manquante ou débordement horizontal observé. Empreintes runtime inchangées."
       },
       "technicalReview": {
         "status": "passed",
@@ -135,7 +131,7 @@
         "standaloneBuild": "passed",
         "standardQaScriptPassed": false,
         "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
-        "report": "docs/standalone/production-v10/runtime-qa.json"
+        "report": "docs/standalone/production-v11/runtime-qa.json"
       }
     },
     "latestIntegration": {
@@ -374,60 +370,129 @@
           "standardQaScriptPassed": false,
           "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique."
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v10-2026-11-26",
+        "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
+        "stages": 45,
+        "threePlaneStages": 36,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 700,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 115,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 7,
+        "twoPlaneStages": 2,
+        "costumeFamilies": 24,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v10/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+        "standaloneBases": 112,
+        "catalogueIdsWithoutStandaloneBase": 97,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 96,
+        "assetCoverageReport": "docs/standalone/production-v10/active-asset-coverage.json",
+        "referencedAssetsStatus": "verified_current_v10_paths",
+        "browserReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v10/browser-qa.json",
+          "checkedAssetIds": [
+            "asmodeus-bedroom-candelabrum",
+            "asmodeus-bedroom-console",
+            "asmodeus-bedroom-s2-room",
+            "blitz-sinsmas-dream-s2-room",
+            "blitz-sinsmas-tree-snowglobe",
+            "charlie-demon-battle-s1-ready",
+            "hb_loo_loo-park-s1-base",
+            "hb_loona-party-queen-bee",
+            "hb_moxxie-hallucination-truth-seekers",
+            "hz_crymini-legacy-2017-base",
+            "hz_melissa-model-s1-base"
+          ],
+          "scope": "Local Vite development runtime; real Chromium; desktop and mobile touch emulation. UI navigation and real keyboard/pointer/touch interactions only; no game-state injection.",
+          "summary": "352 contrôles navigateur réussis sur Chromium réel : 322 dans le passage complet conservé et 30 dans le complément ciblé. Trois tenues V10 sélectionnées et observées dans six combats (ordinateur/mobile), deux nouveaux décors et trois accessoires vérifiés avec proportions et ancrages conservés pendant un déplacement, neuf fiches galerie inspectées, badge et note historique complète de Crymini visibles. Les trois groupes de liens officiels des costumes affichent leurs URL qualifiées. Formats ordinateur 1440×1000 et mobile émulé 390×844. Aucun débordement horizontal, asset manquant, 404, exception ou console.error observé. Les 167 empreintes runtime sont identiques entre les deux passages et à la finalisation."
+        },
+        "technicalReview": {
+          "status": "passed",
+          "testsPassed": 413,
+          "testSuites": 47,
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "standardQaScriptPassed": false,
+          "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+          "report": "docs/standalone/production-v10/runtime-qa.json"
+        }
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v10-2026-11-26",
-      "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+      "batchId": "static-v11-2026-11-26",
+      "baseCommit": "40c0ab9d12cdae867a131c59c25fd55da85dbafd",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v10/delivery-register.json",
+      "register": "docs/standalone/production-v11/delivery-register.json",
       "status": "final_production_register",
       "counts": {
-        "distinctDrawings": 11,
-        "newDrawings": 11,
+        "distinctDrawings": 7,
+        "newDrawings": 7,
         "revisedDrawings": 0,
-        "masterPng": 11,
-        "losslessWebp": 11,
-        "thumbnails": 2,
-        "deliveredImageFiles": 24,
-        "deliveredImageBytes": 19950095,
-        "newStandaloneBases": 3,
-        "newCharacterBases": 3,
-        "newlyCoveredCatalogueIds": 3,
+        "masterPng": 7,
+        "losslessWebp": 7,
+        "thumbnails": 1,
+        "deliveredImageFiles": 15,
+        "deliveredImageBytes": 14006984,
+        "newStandaloneBases": 0,
+        "newCharacterBases": 0,
+        "newlyCoveredCatalogueIds": 0,
         "newPlayableKits": 0,
-        "newStaticCostumes": 3,
-        "newNarrativeIncarnations": 0,
-        "newStages": 2,
-        "newSceneryProps": 3,
-        "newReserveProps": 0,
+        "newStaticCostumes": 0,
+        "newNarrativeIncarnations": 3,
+        "newPortraits": 3,
+        "newStages": 1,
+        "newSceneryProps": 1,
+        "newReserveProps": 2,
         "newAnimationCycles": 0,
-        "generatorRefused": 0,
+        "generatorRefused": 1,
         "historicalVariantRequirementsReconciled": 0,
-        "historicalVariantRequirementsPartiallyCovered": 2
+        "historicalVariantRequirementsPartiallyCovered": 0
       },
-      "scope": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
+      "scope": "V11 : 7 dessins retenus — 3 portraits partiels, 1 arène et 3 objets dont 2 en réserve. Aucune nouvelle base entière, costume, mécanique ou animation. Un refus de génération conservé sans relance.",
       "verification": {
-        "technicalReport": "docs/standalone/production-v10/runtime-qa.json",
-        "browserReport": "docs/standalone/production-v10/browser-qa.json",
-        "workbookReport": "docs/standalone/production-v10/workbook-qa.json"
+        "technicalReport": "docs/standalone/production-v11/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v11/browser-qa.json",
+        "workbookReport": "docs/standalone/production-v11/workbook-qa.json"
       }
     },
     "latestProductionBible": {
-      "edition": "V10",
+      "edition": "V11",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V10.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
-      "historicalSheetsPreserved": 50,
-      "historicalTablesPreserved": 59,
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V11.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V10.xlsx",
+      "historicalSheetsPreserved": 52,
+      "historicalTablesPreserved": 61,
       "appendedSheets": 2,
-      "finalSheets": 52,
-      "finalTables": 61,
-      "sha256": "f116bf8d5324b2a543852fb14d8c191882684647e73a04b14f9fbc14ce37737a",
-      "bytes": 622318,
-      "register": "docs/standalone/production-v10/delivery-register.json",
-      "qa": "docs/standalone/production-v10/workbook-qa.json",
+      "finalSheets": 54,
+      "finalTables": 63,
+      "sha256": "c5ce2434fe38ceeb9d627d0ce511573bc4e7a2b7c7da8db0928e044b912612c0",
+      "bytes": 638528,
+      "register": "docs/standalone/production-v11/delivery-register.json",
+      "qa": "docs/standalone/production-v11/workbook-qa.json",
       "status": "verified"
     },
     "staticDeliveryHistory": [
@@ -499,6 +564,44 @@
           "browserChecks": 99,
           "distributionHashes": 1291
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v10-2026-11-26",
+        "baseCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 11,
+          "newDrawings": 11,
+          "revisedDrawings": 0,
+          "masterPng": 11,
+          "losslessWebp": 11,
+          "thumbnails": 2,
+          "deliveredImageFiles": 24,
+          "deliveredImageBytes": 19950095,
+          "newStandaloneBases": 3,
+          "newCharacterBases": 3,
+          "newlyCoveredCatalogueIds": 3,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 3,
+          "newNarrativeIncarnations": 0,
+          "newStages": 2,
+          "newSceneryProps": 3,
+          "newReserveProps": 0,
+          "newAnimationCycles": 0,
+          "generatorRefused": 0,
+          "historicalVariantRequirementsReconciled": 0,
+          "historicalVariantRequirementsPartiallyCovered": 2
+        },
+        "scope": "V10 : 11 dessins retenus, 3 nouvelles bases entières en réserve, 3 costumes statiques et 2 arènes. Aucun kit ni cycle animé nouveau.",
+        "verification": {
+          "technicalReport": "docs/standalone/production-v10/runtime-qa.json",
+          "browserReport": "docs/standalone/production-v10/browser-qa.json",
+          "workbookReport": "docs/standalone/production-v10/workbook-qa.json"
+        }
       }
     ],
     "productionBibleHistory": [
@@ -525,6 +628,22 @@
         "bytes": 602294,
         "register": "docs/standalone/production-v9/delivery-register.json",
         "qa": "docs/standalone/production-v9/workbook-qa.json",
+        "status": "verified"
+      },
+      {
+        "edition": "V10",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V10.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
+        "historicalSheetsPreserved": 50,
+        "historicalTablesPreserved": 59,
+        "appendedSheets": 2,
+        "finalSheets": 52,
+        "finalTables": 61,
+        "sha256": "f116bf8d5324b2a543852fb14d8c191882684647e73a04b14f9fbc14ce37737a",
+        "bytes": 622318,
+        "register": "docs/standalone/production-v10/delivery-register.json",
+        "qa": "docs/standalone/production-v10/workbook-qa.json",
         "status": "verified"
       }
     ]
@@ -1497,6 +1616,22 @@
       "2026-11-26",
       "Livraisons, nouvelles bases entières, costumes, décors, limites et preuves de QA.",
       "docs/standalone/production-v10/delivery-register.json"
+    ],
+    [
+      "SRC-V11-SLOTH-CONSULTATION-S2",
+      "Référence primaire documentée",
+      "Sloth · salle de consultation S2",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-STATIC-V11",
+      "Dépôt / production",
+      "Production statique V11",
+      "2026-11-26",
+      "Trois portraits partiels, une arène, trois objets, zéro nouvelle base entière, limites et preuves de QA.",
+      "docs/standalone/production-v11/delivery-register.json"
     ]
   ],
   "tasks": [
@@ -5129,6 +5264,77 @@
           "https://www.youtube.com/watch?v=ZE2GuxyfQls"
         ],
         "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "coverageBeforeStaticV11": {
+        "id": "hz_molly",
+        "franchise": "Hazbin Hotel",
+        "name": "Molly",
+        "tier": "Secondaire",
+        "role": "Heaven resident",
+        "continuity": "season_1",
+        "canon": "canon",
+        "reference": "Hazbin Hotel S1E06 and Season 2",
+        "source": "SRC-HH-01",
+        "asset": "Atlas référencé",
+        "kit": "Support ou codex",
+        "target": "PNJ / support / codex",
+        "status": "Partiel",
+        "next": "Conserver rôle narratif/spectateur; ne pas inventer pouvoirs.",
+        "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "reference_incomplete",
+          "notes": "Tête et tenue corroborées dans Welcome to Heaven, mais pieds et anatomie inférieure encore masqués ou coupés. Ne pas compléter des membres à partir du portrait seul. Attendre une vue primaire entière de cette incarnation.",
+          "references": [
+            "https://www.youtube.com/watch?v=a9s6FRLNJAo",
+            "https://www.youtube.com/watch?v=he543NS0bq8"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        },
+        "qualificationV8": {
+          "status": "existing_reference_gap_new_clip_fetch_rate_limited",
+          "notes": "V7 signale le bas du corps occulté. Nouveau clip officiel Heaven ZE2GuxyfQls repéré, récupération publique HTTP429 ; pas de nouvelle preuve entière inspectée ni nouvelle génération.",
+          "references": [
+            "https://www.youtube.com/watch?v=ZE2GuxyfQls"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json"
+        }
+      },
+      "qualificationV11": {
+        "status": "partial_narrative_illustration_delivered",
+        "assetId": "hz_molly-legacy-2015-portrait",
+        "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle. La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps. Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée. spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1. Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés. À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes. Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle.",
+        "references": [
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json"
+      },
+      "currentStaticCoverage": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle. La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps. Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée. spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1. Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés. À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes. Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle.",
+      "staticProduction": {
+        "master": "production/v11/characters/masters/hz_molly-legacy-2015-portrait.png",
+        "export": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "masterSha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+        "exportSha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "legacy_concept_2015",
+        "assetId": "hz_molly-legacy-2015-portrait",
+        "batchId": "static-v11-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "narrative_bust_only",
+        "fullBodyBaseStillMissing": true
       }
     },
     {
@@ -8163,6 +8369,68 @@
           "https://www.youtube.com/watch?v=tLD-OUkYtk4"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV11": {
+        "id": "hb_better_than_blitzo_guy",
+        "franchise": "Helluva Boss",
+        "name": "Better Than Blitzo Guy",
+        "tier": "Tertiaire",
+        "role": "Partygoer who dances with Stolas",
+        "continuity": "season_2",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S2E9",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "incarnation_and_occlusion_gap",
+          "notes": "Apology Tour board10 cellules8/9 montre le haut et un débardeur portant du texte ; le vieux cutout a des marques rouges différentes. Les vues de danse/crowd examinées ne réunissent pas costume exact et chaussures lisibles. Une copie du cutout ne serait pas une reproduction prouvée de cette scène.",
+          "references": [
+            "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV11": {
+        "status": "partial_narrative_illustration_delivered",
+        "assetId": "hb_better_than_blitzo_guy-portrait-s2",
+        "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière. Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180. La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition. Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement. Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1. La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt. Portrait uniquement : le manque de base autonome entière reste ouvert. Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue.",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json"
+      },
+      "currentStaticCoverage": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière. Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180. La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition. Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement. Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1. La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt. Portrait uniquement : le manque de base autonome entière reste ouvert. Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue.",
+      "staticProduction": {
+        "master": "production/v11/characters/masters/hb_better_than_blitzo_guy-portrait-s2.png",
+        "export": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "masterSha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+        "exportSha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_2",
+        "assetId": "hb_better_than_blitzo_guy-portrait-s2",
+        "batchId": "static-v11-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "narrative_bust_only",
+        "fullBodyBaseStillMissing": true
       }
     },
     {
@@ -9404,7 +9672,48 @@
           "https://www.youtube.com/watch?v=kpnwRg268FQ"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
-      }
+      },
+      "coverageBeforeStaticV11": {
+        "id": "hb_stolas_family_butler",
+        "franchise": "Helluva Boss",
+        "name": "Stolas' Family Butler",
+        "tier": "Tertiaire",
+        "role": "Domestic servant to Stolas' household",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S1E2",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "primary_lower_body_occluded",
+          "notes": "Loo Loo Land board2 cellule6, puis début du board3 : petit majordome tenu par Stolas ou avec plateau, bas du corps masqué. Les plans assis d’Ozzie’s ne complètent pas des pieds lisibles.",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV11": {
+        "status": "generator_refused_after_identification_correction",
+        "notes": "Premier candidat exclu pour mauvaise identité. Correction fondée sur pin officiel refusée par générateur ; aucune relance après refus. Aucun portrait ni base entière de cette identité livré. Le portrait du grand Mister Butler appartient à une identité distincte.",
+        "references": [
+          "https://sharkrobot.com/products/loo-loo-land-imp-butler-enamel-pin"
+        ],
+        "refusalRequestId": "0ee97349-10dd-49cc-bbdd-56a249c92276",
+        "register": "docs/standalone/production-v11/delivery-register.json",
+        "accepted": false,
+        "deliveredImageFiles": 0,
+        "retryAfterRefusal": false
+      },
+      "currentStaticCoverage": "Premier candidat exclu pour mauvaise identité. Correction fondée sur pin officiel refusée par générateur ; aucune relance après refus. Aucun portrait ni base entière de cette identité livré. Le portrait du grand Mister Butler appartient à une identité distincte."
     },
     {
       "id": "hb_mister_butler",
@@ -9432,6 +9741,68 @@
           "https://www.youtube.com/watch?v=_spuxXnul0U"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV11": {
+        "id": "hb_mister_butler",
+        "franchise": "Helluva Boss",
+        "name": "Mister Butler",
+        "tier": "Tertiaire",
+        "role": "Butler serving the Goetia family",
+        "continuity": "season_2",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S2E1",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "primary_lower_body_occluded",
+          "notes": "The Circus board0 cellules3/4, board1 cellule7 et board3 cellule1 : tête/haut du grand majordome, derrière table ou miroir. Ces plans ne fixent pas les chaussures et la silhouette entière.",
+          "references": [
+            "https://www.youtube.com/watch?v=_spuxXnul0U"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV11": {
+        "status": "partial_narrative_illustration_delivered",
+        "assetId": "hb_mister_butler-circus-s2-portrait",
+        "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land. Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée. Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie. Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée. Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés. Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants. Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée.",
+        "references": [
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json"
+      },
+      "currentStaticCoverage": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land. Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée. Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie. Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée. Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés. Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants. Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée.",
+      "staticProduction": {
+        "master": "production/v11/characters/masters/hb_mister_butler-circus-s2-portrait.png",
+        "export": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "masterSha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+        "exportSha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_2",
+        "assetId": "hb_mister_butler-circus-s2-portrait",
+        "batchId": "static-v11-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "narrative_bust_only",
+        "fullBodyBaseStillMissing": true
       }
     },
     {
@@ -12700,6 +13071,49 @@
           "https://jasperluu.com/helluvaboss",
           "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/e5d4b837-79ad-4fdc-afbc-46a002ba77ab/212_00005.jpeg?format=2500w",
           "https://www.youtube.com/watch?v=GisSNuVpbkM&t=850s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
+    },
+    {
+      "id": "sloth-consultation-s2",
+      "name": "Sloth · salle de consultation S2",
+      "franchise": "Helluva Boss",
+      "place": "Salle de consultation de Sloth",
+      "continuity": "season_2",
+      "canonicalState": "episode_location",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V11-SLOTH-CONSULTATION-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg; https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s",
+      "design": "Salle de consultation de Sloth documentée dans Western Energy S2E4 : fond, miniature et conteneur séparé. Intérieur distinct de la salle d’attente et de la façade déjà livrées ; aucune substitution de ces lieux historiques. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV11": true,
+      "status": "Partiel",
+      "runtimeId": "sloth-consultation-s2",
+      "runtimeStageId": "sloth-consultation-s2",
+      "runtimeStageIds": [
+        "sloth-consultation-s2"
+      ],
+      "asset": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "currentStaticCoverage": "Salle de consultation de Sloth documentée dans Western Energy S2E4 : fond, miniature et conteneur séparé. Intérieur distinct de la salle d’attente et de la façade déjà livrées ; aucune substitution de ces lieux historiques. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V11. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v11-2026-11-26",
+        "assetIds": [
+          "sloth-consultation-s2-room",
+          "sloth-consultation-container"
+        ],
+        "runtimeStageIds": [
+          "sloth-consultation-s2"
+        ],
+        "register": "docs/standalone/production-v11/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
         ],
         "animationCycles": 0,
         "fidelityOneToOneCertified": false,

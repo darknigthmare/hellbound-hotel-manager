@@ -1,0 +1,3697 @@
+{
+  "schemaVersion": 1,
+  "edition": "V11",
+  "date": "2026-11-26",
+  "status": "final_production_register",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "prNumber": 8,
+  "baselineCommit": "40c0ab9d12cdae867a131c59c25fd55da85dbafd",
+  "equivalentLocalBaselineCommit": "40c0ab9d12cdae867a131c59c25fd55da85dbafd",
+  "baselineTree": "a720f430d081c3e4ebd8b2ba35e8810ec9937c4d",
+  "baselinePublicationStatus": "local_checkpoint_pending_remote_publication",
+  "publishedAncestorCommit": "241d43ad6b95c7a10fe05155f35c0990c165b771",
+  "baseline": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 112,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 72,
+    "catalogueIdsWithoutStandaloneBase": 97,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 96,
+    "reserveGalleryEntries": 115,
+    "runtimeCostumeFamilies": 24,
+    "activeStages": 45,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "counts": {
+    "distinctDrawings": 7,
+    "newDrawings": 7,
+    "revisedDrawings": 0,
+    "masterPng": 7,
+    "losslessWebp": 7,
+    "thumbnails": 1,
+    "deliveredImageFiles": 15,
+    "deliveredImageBytes": 14006984,
+    "newStandaloneBases": 0,
+    "newCharacterBases": 0,
+    "newlyCoveredCatalogueIds": 0,
+    "newPlayableKits": 0,
+    "newStaticCostumes": 0,
+    "newNarrativeIncarnations": 3,
+    "newPortraits": 3,
+    "newStages": 1,
+    "newSceneryProps": 1,
+    "newReserveProps": 2,
+    "newAnimationCycles": 0,
+    "generatorRefused": 1,
+    "historicalVariantRequirementsReconciled": 0,
+    "historicalVariantRequirementsPartiallyCovered": 0
+  },
+  "cumulativeCounts": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 112,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 72,
+    "catalogueIdsWithoutStandaloneBase": 97,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 96,
+    "reserveGalleryEntries": 121,
+    "runtimeCostumeFamilies": 24,
+    "activeStages": 46,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "baseCoverageReconciliation": {
+    "sourceAudit": "docs/standalone/production-v7/catalogue-audit.json",
+    "historicalRegisterEditions": [
+      "V7",
+      "V8",
+      "V9",
+      "V10"
+    ],
+    "knownAliases": [
+      {
+        "productionIdentityId": "hz_travis",
+        "catalogueIds": [
+          "hz_travis",
+          "hb_travis"
+        ],
+        "reusableOnlyWhenSameIncarnation": true
+      }
+    ],
+    "coveredProductionIdentitiesBefore": [
+      "abel",
+      "adam",
+      "alastor",
+      "angeldust",
+      "baxter",
+      "carmilla",
+      "charlie",
+      "emily",
+      "hb_ace",
+      "hb_agent_one",
+      "hb_agent_two",
+      "hb_alessio",
+      "hb_andrealphus",
+      "hb_apple",
+      "hb_arick_burnz",
+      "hb_asmodeus",
+      "hb_barbie_wire",
+      "hb_bea_cherub",
+      "hb_beau_cherub",
+      "hb_beelzebub",
+      "hb_bethany_ghostfucker",
+      "hb_bigfoot_waiter",
+      "hb_blitzo",
+      "hb_bombproof",
+      "hb_cash_buckzo",
+      "hb_catfish_monster",
+      "hb_chazwick_thurman",
+      "hb_cletus",
+      "hb_coco",
+      "hb_collin",
+      "hb_counselor_jimmy",
+      "hb_crimson",
+      "hb_dennis",
+      "hb_dr_somna",
+      "hb_elder_jaws",
+      "hb_emberlynn_pinkle",
+      "hb_fizzarolli",
+      "hb_frank_mctickly_wrigglers",
+      "hb_gerardo_velazquez",
+      "hb_gerardos_wife",
+      "hb_glam",
+      "hb_glitz",
+      "hb_gorilla_suit_guy",
+      "hb_hellhound_adoption_lady",
+      "hb_honey_cherub",
+      "hb_jesse",
+      "hb_joe",
+      "hb_josh",
+      "hb_karen_client",
+      "hb_kat",
+      "hb_keenie",
+      "hb_kendra",
+      "hb_kiki",
+      "hb_lin",
+      "hb_loo_loo",
+      "hb_loona",
+      "hb_luigi_paesano",
+      "hb_lyle_lipton",
+      "hb_mammon",
+      "hb_martha",
+      "hb_marthas_son",
+      "hb_milky",
+      "hb_millie",
+      "hb_moxxie",
+      "hb_mr_mayor",
+      "hb_mrs_mayberry",
+      "hb_muffy",
+      "hb_octavia",
+      "hb_paimon",
+      "hb_paulie_paesano",
+      "hb_rachel_cherub",
+      "hb_ralphie",
+      "hb_rita",
+      "hb_robo_fizz",
+      "hb_rolando",
+      "hb_sallie_may",
+      "hb_satan",
+      "hb_stolas",
+      "hb_striker",
+      "hb_toledo_the_igor",
+      "hb_uggie",
+      "hb_vassago",
+      "hb_verosika",
+      "hb_vortex",
+      "hb_wally_wackford",
+      "hb_yogirt",
+      "husk",
+      "hz_crymini",
+      "hz_hatchet",
+      "hz_huskette_cat",
+      "hz_huskette_imp",
+      "hz_katie_killjoy",
+      "hz_maestro",
+      "hz_melissa",
+      "hz_mimzy",
+      "hz_prick",
+      "hz_st_peter",
+      "hz_susan",
+      "hz_tom_trench",
+      "lucifer",
+      "niffty",
+      "rosie",
+      "sera",
+      "sim_applicant_ember",
+      "sim_applicant_marlow",
+      "sirpentious",
+      "vaggie",
+      "valentino",
+      "velvette",
+      "vox",
+      "zeezi",
+      "zestial"
+    ],
+    "coveredProductionIdentitiesAfter": [
+      "abel",
+      "adam",
+      "alastor",
+      "angeldust",
+      "baxter",
+      "carmilla",
+      "charlie",
+      "emily",
+      "hb_ace",
+      "hb_agent_one",
+      "hb_agent_two",
+      "hb_alessio",
+      "hb_andrealphus",
+      "hb_apple",
+      "hb_arick_burnz",
+      "hb_asmodeus",
+      "hb_barbie_wire",
+      "hb_bea_cherub",
+      "hb_beau_cherub",
+      "hb_beelzebub",
+      "hb_bethany_ghostfucker",
+      "hb_bigfoot_waiter",
+      "hb_blitzo",
+      "hb_bombproof",
+      "hb_cash_buckzo",
+      "hb_catfish_monster",
+      "hb_chazwick_thurman",
+      "hb_cletus",
+      "hb_coco",
+      "hb_collin",
+      "hb_counselor_jimmy",
+      "hb_crimson",
+      "hb_dennis",
+      "hb_dr_somna",
+      "hb_elder_jaws",
+      "hb_emberlynn_pinkle",
+      "hb_fizzarolli",
+      "hb_frank_mctickly_wrigglers",
+      "hb_gerardo_velazquez",
+      "hb_gerardos_wife",
+      "hb_glam",
+      "hb_glitz",
+      "hb_gorilla_suit_guy",
+      "hb_hellhound_adoption_lady",
+      "hb_honey_cherub",
+      "hb_jesse",
+      "hb_joe",
+      "hb_josh",
+      "hb_karen_client",
+      "hb_kat",
+      "hb_keenie",
+      "hb_kendra",
+      "hb_kiki",
+      "hb_lin",
+      "hb_loo_loo",
+      "hb_loona",
+      "hb_luigi_paesano",
+      "hb_lyle_lipton",
+      "hb_mammon",
+      "hb_martha",
+      "hb_marthas_son",
+      "hb_milky",
+      "hb_millie",
+      "hb_moxxie",
+      "hb_mr_mayor",
+      "hb_mrs_mayberry",
+      "hb_muffy",
+      "hb_octavia",
+      "hb_paimon",
+      "hb_paulie_paesano",
+      "hb_rachel_cherub",
+      "hb_ralphie",
+      "hb_rita",
+      "hb_robo_fizz",
+      "hb_rolando",
+      "hb_sallie_may",
+      "hb_satan",
+      "hb_stolas",
+      "hb_striker",
+      "hb_toledo_the_igor",
+      "hb_uggie",
+      "hb_vassago",
+      "hb_verosika",
+      "hb_vortex",
+      "hb_wally_wackford",
+      "hb_yogirt",
+      "husk",
+      "hz_crymini",
+      "hz_hatchet",
+      "hz_huskette_cat",
+      "hz_huskette_imp",
+      "hz_katie_killjoy",
+      "hz_maestro",
+      "hz_melissa",
+      "hz_mimzy",
+      "hz_prick",
+      "hz_st_peter",
+      "hz_susan",
+      "hz_tom_trench",
+      "lucifer",
+      "niffty",
+      "rosie",
+      "sera",
+      "sim_applicant_ember",
+      "sim_applicant_marlow",
+      "sirpentious",
+      "vaggie",
+      "valentino",
+      "velvette",
+      "vox",
+      "zeezi",
+      "zestial"
+    ],
+    "newlyCoveredCatalogueIds": [],
+    "newStandaloneBaseIdentities": []
+  },
+  "assets": [
+    {
+      "id": "hz_molly-legacy-2015-portrait",
+      "name": "Molly · portrait historique 2015",
+      "sourceIdentityId": "hz_molly",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "handoffCategory": "character_portrait",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Molly · portrait historique 2015",
+      "continuity": "legacy_concept_2015",
+      "spoilerTier": "season_1",
+      "spoilerScope": "season_1",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Portrait narratif partiel de galerie ; la base entière reste manquante.",
+      "frameCoverage": "bust",
+      "master": "production/v11/characters/masters/hz_molly-legacy-2015-portrait.png",
+      "export": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "exportUrl": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "width": 1312,
+      "height": 1199,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 838436,
+      "alphaFullPixels": 685,
+      "visibleBBoxAlpha16": [
+        54,
+        46,
+        1235,
+        1135
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+      "exportSha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781",
+      "masterBytes": 1202626,
+      "exportBytes": 759480,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/molly-legacy-2015-144s.png",
+          "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "timeSeconds": 144,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "f4fee948c0ef4ecf815cfe2dfc64beae491e7b4bc8900abb1629466517f325eb",
+          "bytes": 56477,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        },
+        {
+          "path": "production/v11/characters/references/molly-legacy-2015-148s.png",
+          "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+          "timeSeconds": 148,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "7ce4bbba6f92897968aca3056c41da5e90a56f140cd96c51d89e62f1635ad1f0",
+          "bytes": 44053,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle.",
+        "La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps.",
+        "Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée.",
+        "spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1.",
+        "Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés.",
+        "À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes.",
+        "Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle."
+      ],
+      "limits": [
+        "Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle.",
+        "La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps.",
+        "Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée.",
+        "spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1.",
+        "Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés.",
+        "À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes.",
+        "Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle."
+      ],
+      "visualReview": {
+        "id": "hz_molly-legacy-2015-portrait",
+        "kind": "character_portrait",
+        "nativeMasterPath": "production/v11/characters/masters/hz_molly-legacy-2015-portrait.png",
+        "masterSha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "bust",
+        "continuity": "Hazbin Hotel / modèle historique 2015, distinct du modèle Heaven diffusé",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/characters/references/molly-legacy-2015-144s.png",
+            "sha256": "f4fee948c0ef4ecf815cfe2dfc64beae491e7b4bc8900abb1629466517f325eb",
+            "dimensions": [
+              320,
+              180
+            ],
+            "visuallyInspected": true,
+            "role": "Cellule du dessin officiel historique à 144 s; référence partielle du design rose.",
+            "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s"
+          },
+          {
+            "path": "production/v11/characters/references/molly-legacy-2015-148s.png",
+            "sha256": "7ce4bbba6f92897968aca3056c41da5e90a56f140cd96c51d89e62f1635ad1f0",
+            "dimensions": [
+              320,
+              180
+            ],
+            "visuallyInspected": true,
+            "role": "Cellule du dessin officiel historique à 148 s; même incarnation.",
+            "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+          }
+        ],
+        "visualComparison": [
+          "Volumes de cheveux crème/rose, grands yeux sombres, nœud fuchsia, torse sombre rayé et bras multiples cohérents avec le dessin historique fourni.",
+          "Portrait coupé sous la taille avec quatre mains représentées; pas de bas du corps inventé pour constituer une base entière.",
+          "Composite sur gris et clair propre, extrémités visibles des mains et chevelure entièrement cadrées."
+        ],
+        "limits": [
+          "Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés.",
+          "À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes.",
+          "Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/characters/masters/hz_molly-legacy-2015-portrait.png",
+          "sha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+          "bytes": 1202626,
+          "dimensions": [
+            1312,
+            1199
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "alphaZeroPixels": 838436,
+          "alphaFullPixels": 685,
+          "alphaPartialPixels": 733967,
+          "visibleBBoxAlpha16": [
+            54,
+            46,
+            1235,
+            1135
+          ],
+          "independentComposite": "docs/standalone/production-v11/independent-diagnostics/hz_molly-legacy-2015-portrait-alpha-composite.jpg"
+        },
+        "alphaCompositeInspected": true,
+        "duplicateCheck": {
+          "duplicate": false,
+          "sourceIdentityId": "hz_molly",
+          "basis": "Identité référencée comme manquante dans la V10; aucune entrée de portrait/base de Molly dans les 115 assets de réserve au moment du contrôle."
+        },
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+          "exportSha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "sourcePublicationValidation": {
+          "url": "https://www.youtube.com/watch?v=XBccdYyWGLo",
+          "author": "Vivziepop",
+          "title": "SPEED CHARACTER- Molly (Hazbin Hotel) - VivziePop",
+          "published": "2015-08-26",
+          "source": "Official creator video metadata and description retrieved during this revision."
+        },
+        "integrationRequirement": "Conserver continuity=legacy_concept_2015 et afficher explicitement le modèle historique 2015 sur carte et détail. Le filtre season_1 est un plafond technique ; aucune attribution à la S1.",
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "productionIdentityId": "hz_molly",
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "name": "Mister Butler · portrait The Circus",
+      "sourceIdentityId": "hb_mister_butler",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "handoffCategory": "character_portrait",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Mister Butler · portrait The Circus",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Portrait narratif partiel de galerie ; la base entière reste manquante.",
+      "frameCoverage": "bust",
+      "master": "production/v11/characters/masters/hb_mister_butler-circus-s2-portrait.png",
+      "export": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "exportUrl": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "dimensions": [
+        1182,
+        1331
+      ],
+      "width": 1182,
+      "height": 1331,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 1131882,
+      "alphaFullPixels": 1177,
+      "visibleBBoxAlpha16": [
+        275,
+        44,
+        962,
+        1285
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+      "exportSha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447",
+      "masterBytes": 727882,
+      "exportBytes": 413306,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/mister-butler-60s.png",
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "timeSeconds": 60,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "206c91af1344632f1069acf1b51f769ccba50be19c3be61f3b93cc3bbc23268c",
+          "bytes": 110496,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        },
+        {
+          "path": "production/v11/characters/references/mister-butler-150s.png",
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+          "timeSeconds": 150,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "285cd96f25b3e40ae881879bbe4c322be67a7b9d159bd0a117f8d905e57443dd",
+          "bytes": 84763,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land.",
+        "Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée.",
+        "Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie.",
+        "Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée.",
+        "Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés.",
+        "Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants.",
+        "Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée."
+      ],
+      "limits": [
+        "Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land.",
+        "Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée.",
+        "Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie.",
+        "Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée.",
+        "Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés.",
+        "Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants.",
+        "Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée."
+      ],
+      "visualReview": {
+        "id": "hb_mister_butler-circus-s2-portrait",
+        "kind": "character_portrait",
+        "nativeMasterPath": "production/v11/characters/masters/hb_mister_butler-circus-s2-portrait.png",
+        "masterSha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "bust",
+        "continuity": "Helluva Boss / The Circus / saison 2",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/characters/references/mister-butler-60s.png",
+            "sha256": "206c91af1344632f1069acf1b51f769ccba50be19c3be61f3b93cc3bbc23268c",
+            "dimensions": [
+              320,
+              180
+            ],
+            "visuallyInspected": true,
+            "role": "Cellule vidéo officielle fournie à 60 s; tête et haut du grand majordome."
+          },
+          {
+            "path": "production/v11/characters/references/mister-butler-150s.png",
+            "sha256": "285cd96f25b3e40ae881879bbe4c322be67a7b9d159bd0a117f8d905e57443dd",
+            "dimensions": [
+              320,
+              180
+            ],
+            "visuallyInspected": true,
+            "role": "Cellule vidéo officielle fournie à 150 s; grand majordome tenant le miroir."
+          }
+        ],
+        "visualComparison": [
+          "Identité du grand majordome cohérente : visage rouge allongé, deux grandes cornes rayées, chevelure et moustache blanches, regard jaune mi-clos et costume sombre.",
+          "Contours des cornes et cheveux entièrement visibles; coupe sous le buste intentionnelle, sans membres prétendument complets.",
+          "Composite sur gris et clair propre, sans halo de fond visible."
+        ],
+        "limits": [
+          "Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés.",
+          "Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants.",
+          "Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/characters/masters/hb_mister_butler-circus-s2-portrait.png",
+          "sha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+          "bytes": 727882,
+          "dimensions": [
+            1182,
+            1331
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "alphaZeroPixels": 1131882,
+          "alphaFullPixels": 1177,
+          "alphaPartialPixels": 440183,
+          "visibleBBoxAlpha16": [
+            275,
+            44,
+            962,
+            1285
+          ],
+          "independentComposite": "docs/standalone/production-v11/independent-diagnostics/hb_mister_butler-circus-s2-portrait-alpha-composite.jpg"
+        },
+        "alphaCompositeInspected": true,
+        "duplicateCheck": {
+          "duplicate": false,
+          "sourceIdentityId": "hb_mister_butler",
+          "basis": "Identité mentionnée comme référence partielle dans la V10; aucun portrait/base de cette identité enregistré dans les 115 entrées de réserve à l’instant de revue."
+        },
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+          "exportSha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "productionIdentityId": "hb_mister_butler",
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "name": "Better Than Blitzo Guy · portrait Apology Tour",
+      "sourceIdentityId": "hb_better_than_blitzo_guy",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "handoffCategory": "character_portrait",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Better Than Blitzo Guy · portrait Apology Tour",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Portrait narratif partiel de galerie ; la base entière reste manquante.",
+      "frameCoverage": "bust",
+      "master": "production/v11/characters/masters/hb_better_than_blitzo_guy-portrait-s2.png",
+      "export": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "exportUrl": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 878613,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha16": [
+        123,
+        38,
+        1408,
+        1010
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+      "exportSha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a",
+      "masterBytes": 1506787,
+      "exportBytes": 948576,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/better-guy-970s.png",
+          "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "timeSeconds": 970,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_episode_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "e05530ac6e9a9fa0cac2a589afd8db062ecf3411776524a9eeb8a090cb1ccf64",
+          "bytes": 81982,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        },
+        {
+          "path": "production/v11/characters/references/better-guy-980s.png",
+          "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+          "timeSeconds": 980,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_episode_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "7cd846068d7646ff667935ac845d1fc269c09e03ecc2a611546523614291b8ce",
+          "bytes": 86079,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière.",
+        "Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180.",
+        "La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition.",
+        "Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement.",
+        "Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1.",
+        "La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt.",
+        "Portrait uniquement : le manque de base autonome entière reste ouvert.",
+        "Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue."
+      ],
+      "limits": [
+        "Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière.",
+        "Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180.",
+        "La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition.",
+        "Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement.",
+        "Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1.",
+        "La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt.",
+        "Portrait uniquement : le manque de base autonome entière reste ouvert.",
+        "Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue."
+      ],
+      "visualReview": {
+        "id": "hb_better_than_blitzo_guy-portrait-s2",
+        "kind": "narrative_archive",
+        "nativeMasterPath": "production/v11/characters/masters/hb_better_than_blitzo_guy-portrait-s2.png",
+        "masterSha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "bust",
+        "continuity": "Helluva Boss / Apology Tour S2E9",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/characters/references/better-guy-970s.png",
+            "sha256": "e05530ac6e9a9fa0cac2a589afd8db062ecf3411776524a9eeb8a090cb1ccf64",
+            "dimensions": [
+              320,
+              180
+            ],
+            "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+            "visuallyInspected": true,
+            "role": "Plan officiel Apology Tour ; visage, cheveux, cornes, ailes et tenue supérieure."
+          },
+          {
+            "path": "production/v11/characters/references/better-guy-980s.png",
+            "sha256": "7cd846068d7646ff667935ac845d1fc269c09e03ecc2a611546523614291b8ce",
+            "dimensions": [
+              320,
+              180
+            ],
+            "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+            "visuallyInspected": true,
+            "role": "Plan officiel Apology Tour ; visage, cheveux, cornes, ailes et tenue supérieure."
+          }
+        ],
+        "visualComparison": [
+          "Visage rouge, longs cheveux blancs, cornes noires, regard jaune, carrure, ailes et collier cohérents avec les deux frames officielles de 970 et 980 s.",
+          "Portrait volontairement limité aux épaules et au haut de poitrine ; aucune jambe, chaussure ou inscription du débardeur extrapolée.",
+          "Version corrigée : bordure basse incurvée fermée et composites gris/blanc sans halo visible ni bande rectangulaire. Les couleurs présentes dans le RGB hors alpha ne sont pas visibles après composition."
+        ],
+        "limits": [
+          "Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1.",
+          "La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt.",
+          "Portrait uniquement : le manque de base autonome entière reste ouvert.",
+          "Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/characters/masters/hb_better_than_blitzo_guy-portrait-s2.png",
+          "sha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+          "bytes": 1506787,
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "alphaExtrema": [
+            0,
+            254
+          ],
+          "alphaZeroPixels": 878613,
+          "alphaFullPixels": 0,
+          "alphaPartialPixels": 694251,
+          "visibleBBoxAlpha16": [
+            123,
+            38,
+            1408,
+            1010
+          ],
+          "export": {
+            "path": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+            "sha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a",
+            "pixelExact": true
+          },
+          "independentComposite": "docs/standalone/production-v11/independent-diagnostics/better-guy-attempt2-alpha-composite.jpg"
+        },
+        "alphaCompositeInspected": true,
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+          "exportSha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "supersededAttempt": {
+          "sha256": "7813addc4579344dff9382b7c540bde18b9a8aabf79180c50751fa9d31e053fc",
+          "status": "excluded_superseded",
+          "countedAsDeliveredDrawing": false
+        },
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "productionIdentityId": "hb_better_than_blitzo_guy",
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "name": "Sloth · salle de consultation S2",
+      "sourceIdentityId": null,
+      "category": "stage",
+      "kind": "stage",
+      "handoffCategory": "stage_background",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Sloth · salle de consultation S2",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "selectable_stage",
+      "eligibility": "stage",
+      "runtimeUsage": "Arène sélectionnable sloth-consultation-s2 : fond, miniature et objets séparés ; mise en scène de combat AU.",
+      "frameCoverage": "complete_background",
+      "master": "production/v11/environment/masters/sloth-consultation-s2-room.png",
+      "export": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "exportUrl": "/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "alphaZeroPixels": 0,
+      "alphaFullPixels": 1573352,
+      "visibleBBoxAlpha16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+      "exportSha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939",
+      "masterBytes": 1503657,
+      "exportBytes": 1002014,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+        "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            8622,
+            5156
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1495
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio.",
+          "nativeFrameDimensions": [
+            2500,
+            1495
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Le ratio 1672×941 et le cadrage sont adaptés au duel; disposition et proportions ne sont pas un calque pixel pour pixel.",
+        "Ce contrôle compare les images fournies; il ne valide ni placement en jeu, ni collisions, ni parallaxe.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "limits": [
+        "Le ratio 1672×941 et le cadrage sont adaptés au duel; disposition et proportions ne sont pas un calque pixel pour pixel.",
+        "Ce contrôle compare les images fournies; il ne valide ni placement en jeu, ni collisions, ni parallaxe.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "visualReview": {
+        "id": "sloth-consultation-s2-room",
+        "kind": "stage_background",
+        "nativeMasterPath": "production/v11/environment/masters/sloth-consultation-s2-room.png",
+        "masterSha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "complete_background",
+        "continuity": "Helluva Boss / Western Energy S2E4, salle de consultation de Sloth",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/environment/references/jasper-15.jpg",
+            "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+            "dimensions": [
+              2500,
+              1495
+            ],
+            "visuallyInspected": true,
+            "role": "Fond de production attribué à Jasper Luu, salle de consultation et conteneur; contexte fourni par le lot.",
+            "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg"
+          }
+        ],
+        "visualComparison": [
+          "Palette lilas/violet/rose, séparation murale, étagère gauche, placards supérieurs et meubles bas à droite cohérents avec le fond source.",
+          "Radio à bouche dentée, distributeur mural et robinet conservés.",
+          "Conteneur au sol retiré du fond; plinthe et carrelage prolongés dans la zone retirée.",
+          "Piste avant dégagée et continuité du sol lisibles, aucun personnage, HUD, porte ou meuble supplémentaire visible."
+        ],
+        "limits": [
+          "Le ratio 1672×941 et le cadrage sont adaptés au duel; disposition et proportions ne sont pas un calque pixel pour pixel.",
+          "Ce contrôle compare les images fournies; il ne valide ni placement en jeu, ni collisions, ni parallaxe.",
+          "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/environment/masters/sloth-consultation-s2-room.png",
+          "sha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+          "bytes": 1503657,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "alphaExtrema": [
+            255,
+            255
+          ],
+          "alphaZeroPixels": 0,
+          "alphaFullPixels": 1573352,
+          "alphaPartialPixels": 0,
+          "visibleBBoxAlpha16": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "export": {
+            "path": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+            "sha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939",
+            "pixelExact": true
+          }
+        },
+        "alphaCompositeInspected": false,
+        "duplicateCheck": {
+          "duplicate": false,
+          "basis": "Comparaison visuelle avec public/assets/stages/helluva/sloth-hospital/room.webp et lecture du stage sloth-hospital : celui-ci est une salle d’attente avec sièges et réception, distincte de la consultation."
+        },
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+          "exportSha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "episodeCorroboration": {
+          "url": "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s",
+          "videoId": "KJy7T24rhg0",
+          "title": "HELLUVA BOSS - WESTERN ENERGY // S2: Episode 4",
+          "author": "Vivziepop",
+          "published": "2023-05-20",
+          "timeSeconds": 630,
+          "scratchFramePath": "/tmp/infernal-v11-audit/western-energy-official-630s.png",
+          "frameSha256": "33facd9eb0655714a57feac7d6bd2256f28c6dd95b5121c3fc14cbdfc7d6e5b9",
+          "dimensions": [
+            320,
+            180
+          ],
+          "role": "Frame visuellement inspectée : consultation avec le médecin, radio à bouche dentée, meubles roses et conteneur corroborant Jasper15. La planche de production fixe la vue dégagée ; le plan épisode confirme le contexte S2E4.",
+          "primary": true,
+          "transform": "Native public storyboard cell crop only; no retouching or enhancement."
+        },
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "stageId": "sloth-consultation-s2",
+      "thumbnail": {
+        "path": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+        "sha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261",
+        "bytes": 13468,
+        "dimensions": [
+          480,
+          270
+        ]
+      },
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "sloth-consultation-container",
+      "name": "Sloth · conteneur de consultation",
+      "sourceIdentityId": null,
+      "category": "prop",
+      "kind": "prop",
+      "handoffCategory": "prop",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Sloth · conteneur de consultation",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "stage_scenery",
+      "eligibility": "stage",
+      "runtimeUsage": "Objet séparé du décor sloth-consultation-s2, également consultable dans la galerie.",
+      "frameCoverage": "full_object",
+      "master": "production/v11/environment/masters/sloth-consultation-container.png",
+      "export": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+      "exportUrl": "/assets/production/v11/environment/sloth-consultation-container.webp",
+      "dimensions": [
+        1317,
+        1194
+      ],
+      "width": 1317,
+      "height": 1194,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 768744,
+      "alphaFullPixels": 1082,
+      "visibleBBoxAlpha16": [
+        138,
+        113,
+        1180,
+        1073
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+      "exportSha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db",
+      "masterBytes": 1172967,
+      "exportBytes": 733282,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+        "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            8622,
+            5156
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1495
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio.",
+          "nativeFrameDimensions": [
+            2500,
+            1495
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Le nombre, l’implantation et la taille relative des seringues ont été redessinés; cette géométrie ne doit pas être présentée comme une reproduction exacte.",
+        "Conteneur destiné à une couche de décor; son échelle et son ancrage doivent être contrôlés dans l’arène.",
+        "Les valeurs alpha de la silhouette sont souvent 251–254; l’absence de fond est réelle, sans promesse d’opacité intérieure strictement égale à 255.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "limits": [
+        "Le nombre, l’implantation et la taille relative des seringues ont été redessinés; cette géométrie ne doit pas être présentée comme une reproduction exacte.",
+        "Conteneur destiné à une couche de décor; son échelle et son ancrage doivent être contrôlés dans l’arène.",
+        "Les valeurs alpha de la silhouette sont souvent 251–254; l’absence de fond est réelle, sans promesse d’opacité intérieure strictement égale à 255.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "visualReview": {
+        "id": "sloth-consultation-container",
+        "kind": "scenery_prop",
+        "nativeMasterPath": "production/v11/environment/masters/sloth-consultation-container.png",
+        "masterSha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "full_object",
+        "continuity": "Helluva Boss / Western Energy S2E4, salle de consultation de Sloth",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/environment/references/jasper-15.jpg",
+            "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+            "dimensions": [
+              2500,
+              1495
+            ],
+            "visuallyInspected": true,
+            "role": "Fond de production attribué à Jasper Luu, salle de consultation et conteneur; contexte fourni par le lot.",
+            "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg"
+          }
+        ],
+        "visualComparison": [
+          "Boîte trapézoïdale violette, face et côté gauche, bordure rose, poignée souriante à deux boutons et doublure crème festonnée repris.",
+          "Contenu de seringues cohérent avec l’objet visible dans la référence; un seul objet cohésif, entièrement cadré.",
+          "Composite sur gris et clair sans rectangle opaque ni halo d’arrière-plan visible."
+        ],
+        "limits": [
+          "Le nombre, l’implantation et la taille relative des seringues ont été redessinés; cette géométrie ne doit pas être présentée comme une reproduction exacte.",
+          "Conteneur destiné à une couche de décor; son échelle et son ancrage doivent être contrôlés dans l’arène.",
+          "Les valeurs alpha de la silhouette sont souvent 251–254; l’absence de fond est réelle, sans promesse d’opacité intérieure strictement égale à 255.",
+          "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/environment/masters/sloth-consultation-container.png",
+          "sha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+          "bytes": 1172967,
+          "dimensions": [
+            1317,
+            1194
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "alphaZeroPixels": 768744,
+          "alphaFullPixels": 1082,
+          "alphaPartialPixels": 802672,
+          "visibleBBoxAlpha16": [
+            138,
+            113,
+            1180,
+            1073
+          ],
+          "export": {
+            "path": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+            "sha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db",
+            "pixelExact": true
+          },
+          "independentComposite": "docs/standalone/production-v11/independent-diagnostics/sloth-consultation-container-alpha-composite.jpg"
+        },
+        "alphaCompositeInspected": true,
+        "duplicateCheck": {
+          "duplicate": false,
+          "basis": "Catalogue V10 de 115 entrées : le seul prop Sloth spécifique trouvé est le siège-coque; aucun conteneur de consultation ni identifiant correspondant."
+        },
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+          "exportSha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "episodeCorroboration": {
+          "url": "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s",
+          "videoId": "KJy7T24rhg0",
+          "title": "HELLUVA BOSS - WESTERN ENERGY // S2: Episode 4",
+          "author": "Vivziepop",
+          "published": "2023-05-20",
+          "timeSeconds": 630,
+          "scratchFramePath": "/tmp/infernal-v11-audit/western-energy-official-630s.png",
+          "frameSha256": "33facd9eb0655714a57feac7d6bd2256f28c6dd95b5121c3fc14cbdfc7d6e5b9",
+          "dimensions": [
+            320,
+            180
+          ],
+          "role": "Frame visuellement inspectée : consultation avec le médecin, radio à bouche dentée, meubles roses et conteneur corroborant Jasper15. La planche de production fixe la vue dégagée ; le plan épisode confirme le contexte S2E4.",
+          "primary": true,
+          "transform": "Native public storyboard cell crop only; no retouching or enhancement."
+        },
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "stageId": "sloth-consultation-s2",
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "fizzarolli-bozo-award",
+      "name": "Vitrine d’Asmodeus · BOZO AWARD",
+      "sourceIdentityId": null,
+      "category": "prop",
+      "kind": "prop",
+      "handoffCategory": "prop",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Vitrine d’Asmodeus · BOZO AWARD",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Objet de réserve consultable dans la galerie ; aucune nouvelle mécanique ni base entière déduite.",
+      "frameCoverage": "full_object",
+      "master": "production/v11/environment/masters/fizzarolli-bozo-award.png",
+      "export": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "exportUrl": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1014489,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha16": [
+        64,
+        92,
+        960,
+        1488
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+      "exportSha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9",
+      "masterBytes": 1469138,
+      "exportBytes": 980182,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-30.jpg",
+          "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+          "bytes": 289350,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4340,
+            2660
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1532
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio.",
+          "nativeFrameDimensions": [
+            2500,
+            1532
+          ],
+          "independentlyVisuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "La géométrie de la tête et l’épaisseur des contours sont interprétées; aucune fidélité absolue 1:1.",
+        "La marge basse visible est d’environ 48 pixels sur 1536; cadrage intégral, mais plus serré que les 8 % demandés dans le prompt.",
+        "Alpha maximum mesuré à 254; rendu visuel propre, sans opacité intérieure strictement 255."
+      ],
+      "limits": [
+        "La géométrie de la tête et l’épaisseur des contours sont interprétées; aucune fidélité absolue 1:1.",
+        "La marge basse visible est d’environ 48 pixels sur 1536; cadrage intégral, mais plus serré que les 8 % demandés dans le prompt.",
+        "Alpha maximum mesuré à 254; rendu visuel propre, sans opacité intérieure strictement 255."
+      ],
+      "visualReview": {
+        "id": "fizzarolli-bozo-award",
+        "kind": "gallery_prop",
+        "nativeMasterPath": "production/v11/environment/masters/fizzarolli-bozo-award.png",
+        "masterSha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+        "status": "accepted_with_limits",
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "frameCoverage": "full_object",
+        "continuity": "Helluva Boss / saison 2, trophée de la référence de production 206",
+        "fidelityOneToOneCertified": false,
+        "addsStandaloneBase": false,
+        "inGameChecked": false,
+        "references": [
+          {
+            "path": "production/v11/environment/references/jasper-30.jpg",
+            "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+            "dimensions": [
+              2500,
+              1532
+            ],
+            "visuallyInspected": true,
+            "role": "Fond de production attribué à Jasper Luu; le trophée BOZO AWARD se trouve à droite.",
+            "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg"
+          }
+        ],
+        "visualComparison": [
+          "Tête de clown crème, nez rose, sourire pêche, cornes bleu-violet et touffes latérales bordeaux repris.",
+          "Nœud violet, corps de trophée effilé, texte BOZO AWARD sur deux lignes, fleur rose à cinq pétales et socle à plaque rose lisibles.",
+          "Objet intégral, sans fleurs, autre trophée, vitrine ni comptoir repris du fond.",
+          "Le halo coloré observable dans le RGB brut est invisible dans les composites alpha gris et clair; aucun nettoyage destructif requis."
+        ],
+        "limits": [
+          "La géométrie de la tête et l’épaisseur des contours sont interprétées; aucune fidélité absolue 1:1.",
+          "La marge basse visible est d’environ 48 pixels sur 1536; cadrage intégral, mais plus serré que les 8 % demandés dans le prompt.",
+          "Alpha maximum mesuré à 254; rendu visuel propre, sans opacité intérieure strictement 255."
+        ],
+        "pixelAudit": {
+          "path": "production/v11/environment/masters/fizzarolli-bozo-award.png",
+          "sha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+          "bytes": 1469138,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "alphaExtrema": [
+            0,
+            254
+          ],
+          "alphaZeroPixels": 1014489,
+          "alphaFullPixels": 0,
+          "alphaPartialPixels": 558375,
+          "visibleBBoxAlpha16": [
+            64,
+            92,
+            960,
+            1488
+          ],
+          "export": {
+            "path": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+            "sha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9",
+            "pixelExact": true
+          },
+          "independentComposite": "docs/standalone/production-v11/independent-diagnostics/fizzarolli-bozo-award-alpha-composite.jpg"
+        },
+        "alphaCompositeInspected": true,
+        "duplicateCheck": {
+          "duplicate": false,
+          "basis": "Aucune entrée BOZO AWARD correspondante dans le catalogue V10 de 115 entrées."
+        },
+        "revisionReview": {
+          "reviewer": "/root/reference_audit",
+          "masterSha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+          "exportSha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9",
+          "pixelExactExport": true,
+          "sourceImagesAndCompositesViewed": true,
+          "inGameChecked": false
+        },
+        "evidencePath": "docs/standalone/production-v11/independent-visual-review.json"
+      },
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    },
+    {
+      "id": "oops-clown-mask-trophy",
+      "name": "Trophée au masque de clown · vitrine Oops",
+      "sourceIdentityId": null,
+      "category": "prop",
+      "kind": "prop",
+      "handoffCategory": "prop",
+      "handoffRuntimeStatus": "reserve",
+      "franchise": "Helluva Boss",
+      "incarnation": "Trophée au masque de clown · vitrine Oops",
+      "continuity": "season_2",
+      "spoilerTier": "season_2",
+      "spoilerScope": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Objet de réserve consultable dans la galerie ; aucune nouvelle mécanique ni base entière déduite.",
+      "frameCoverage": "complete_visible_prop_silhouette",
+      "master": "production/v11/environment/masters/oops-clown-mask-trophy.png",
+      "export": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+      "exportUrl": "/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+      "dimensions": [
+        963,
+        1633
+      ],
+      "width": 963,
+      "height": 1633,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 891685,
+      "alphaFullPixels": 1142,
+      "visibleBBoxAlpha16": [
+        57,
+        44,
+        906,
+        1583
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+      "exportSha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0",
+      "masterBytes": 990429,
+      "exportBytes": 583190,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0",
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-30.jpg",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "title": "206 Paint 00004 — trophée central de la vitrine",
+          "kind": "official_production_artist_portfolio_image",
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "portfolioDeclaredDimensions": "4340x2660",
+          "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+          "role": "Référence principale : silhouette complète du trophée central, du petit ornement supérieur au socle elliptique. Le trophée BOZO AWARD à droite est un autre objet.",
+          "nativeFrameDimensions": [
+            2500,
+            1532
+          ],
+          "independentlyVisuallyInspected": true
+        },
+        {
+          "path": "production/v11/environment/references/oops-clown-mask-trophy-crop.png",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "title": "Recadrage exact du trophée central",
+          "kind": "exact_reference_crop",
+          "dimensions": [
+            530,
+            900
+          ],
+          "sha256": "34b51842852becb3603d115dac3334c4c800c72fc42e17d49ada172de9b5c4a5",
+          "cropBoxInParent": [
+            980,
+            390,
+            1510,
+            1290
+          ],
+          "parentPath": "production/v11/environment/references/jasper-30.jpg",
+          "role": "Recadrage de lecture et seconde image de référence du générateur ; aucun pixel redessiné.",
+          "nativeFrameDimensions": [
+            530,
+            900
+          ],
+          "independentlyVisuallyInspected": false
+        },
+        {
+          "path": "production/v10/environment/references/oops-official-10s.png",
+          "url": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+          "title": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+          "kind": "official_youtube_native_storyboard_cell",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "086669148598707a3c860ebd51c50f0ea2b3ee2941f8b3efb607030ac72bcf72",
+          "role": "Contexte de l’appartement/chambre seulement. La cellule native à 10 s ne certifie pas les détails du trophée central ; aucun timestamp de gros plan du trophée n’est revendiqué.",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "independentlyVisuallyInspected": false
+        }
+      ],
+      "fidelityNotes": [
+        "Nom descriptif uniquement : aucune cérémonie, inscription ou propriété du trophée n’est inventée. L’objet est distinct du BOZO AWARD déjà produit.",
+        "La planche primaire 206 Paint 00004 montre le trophée entier. Le fichier local consulté est de 2500×1532 ; le crop exact fait 530×900. Les traits et reflets ont été redessinés.",
+        "L’ornement supérieur conserve seulement ses deux lobes violets visibles. Sa nature et la géométrie des parties cachées ne sont pas établies.",
+        "Le rattachement à Oops repose sur le groupe de production 206 et le contexte de chambre corroboré dans le plan large officiel à 10 s. Aucun gros plan vidéo précisément horodaté du trophée n’a été qualifié.",
+        "Marges visibles 44–57 px au seuil alpha 16 : la demande de 8 % n’est pas atteinte, mais le trophée entier reste dans le cadre. Ne pas recadrer davantage.",
+        "Quelques pixels d’alpha inférieur à 16 atteignent les bords. L’alpha natif a été conservé ; aucun halo opaque n’a été observé sur les composites clair/sombre.",
+        "Illustration statique adaptée aux formes et couleurs du fond de production. Conformité 1:1, animation et validation en jeu non certifiées.",
+        "Les limites de marge, de très faible alpha et de provenance de plan consignées restent applicables.",
+        "Cette acceptation visuelle ne constitue pas une validation dans le jeu."
+      ],
+      "limits": [
+        "Nom descriptif uniquement : aucune cérémonie, inscription ou propriété du trophée n’est inventée. L’objet est distinct du BOZO AWARD déjà produit.",
+        "La planche primaire 206 Paint 00004 montre le trophée entier. Le fichier local consulté est de 2500×1532 ; le crop exact fait 530×900. Les traits et reflets ont été redessinés.",
+        "L’ornement supérieur conserve seulement ses deux lobes violets visibles. Sa nature et la géométrie des parties cachées ne sont pas établies.",
+        "Le rattachement à Oops repose sur le groupe de production 206 et le contexte de chambre corroboré dans le plan large officiel à 10 s. Aucun gros plan vidéo précisément horodaté du trophée n’a été qualifié.",
+        "Marges visibles 44–57 px au seuil alpha 16 : la demande de 8 % n’est pas atteinte, mais le trophée entier reste dans le cadre. Ne pas recadrer davantage.",
+        "Quelques pixels d’alpha inférieur à 16 atteignent les bords. L’alpha natif a été conservé ; aucun halo opaque n’a été observé sur les composites clair/sombre.",
+        "Illustration statique adaptée aux formes et couleurs du fond de production. Conformité 1:1, animation et validation en jeu non certifiées.",
+        "Les limites de marge, de très faible alpha et de provenance de plan consignées restent applicables.",
+        "Cette acceptation visuelle ne constitue pas une validation dans le jeu."
+      ],
+      "visualReview": {
+        "status": "accepted_with_limits",
+        "reviewer": "root",
+        "masterSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+        "referencePath": "production/v11/environment/references/jasper-30.jpg",
+        "method": "Root directly inspected the final trophy and Jasper30 primary painting, then accepted via collaboration message.",
+        "observations": [
+          "Orbites, ornements cyan, nez rose, tige et socle cohérents avec la référence.",
+          "Proportions redessinées ; les deux lobes supérieurs sont reproduits sans attribution de nature."
+        ],
+        "limits": [
+          "Les limites de marge, de très faible alpha et de provenance de plan consignées restent applicables.",
+          "Cette acceptation visuelle ne constitue pas une validation dans le jeu."
+        ],
+        "acceptedForIntegration": true,
+        "correctionRequired": false,
+        "evidencePath": "docs/standalone/production-v11/continuation-environment-handoff.json",
+        "references": [
+          {
+            "path": "production/v11/environment/references/jasper-30.jpg",
+            "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+            "portfolioUrl": "https://jasperluu.com/helluvaboss",
+            "title": "206 Paint 00004 — trophée central de la vitrine",
+            "kind": "official_production_artist_portfolio_image",
+            "dimensions": [
+              2500,
+              1532
+            ],
+            "portfolioDeclaredDimensions": "4340x2660",
+            "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+            "role": "Référence principale : silhouette complète du trophée central, du petit ornement supérieur au socle elliptique. Le trophée BOZO AWARD à droite est un autre objet."
+          }
+        ]
+      },
+      "independentReview": "docs/standalone/production-v11/continuation-environment-handoff.json",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "staticReadyOnly": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": true,
+      "newlyCoveredCatalogueIds": [],
+      "runtimeVerification": "docs/standalone/production-v11/browser-qa.json"
+    }
+  ],
+  "candidateStates": [
+    {
+      "id": "hz_molly",
+      "sourceIdentityId": "hz_molly",
+      "name": "Molly · portrait historique 2015",
+      "status": "partial_narrative_illustration_delivered",
+      "accepted": true,
+      "assetId": "hz_molly-legacy-2015-portrait",
+      "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle. La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps. Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée. spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1. Source native 320×180 montrant une interface de dessin; le personnage occupe une fraction de l’image. Détails fins des doigts, rayures et visage redessinés. À afficher explicitement comme modèle historique 2015; ne pas remplacer silencieusement la Molly de Heaven des épisodes. Un portrait historique ne complète ni une base entière du modèle historique, ni celle de l’incarnation Heaven actuelle.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+      ]
+    },
+    {
+      "id": "hb_mister_butler",
+      "sourceIdentityId": "hb_mister_butler",
+      "name": "Mister Butler · portrait The Circus",
+      "status": "partial_narrative_illustration_delivered",
+      "accepted": true,
+      "assetId": "hb_mister_butler-circus-s2-portrait",
+      "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land. Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée. Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie. Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée. Références natives 320×180 : petits détails des vêtements, boutons, ombrages et proportions fines interprétés. Portrait distinct du petit majordome de la famille de Stolas; ne pas fusionner leurs identifiants. Ni jambes ni chaussures dans ce portrait; aucune lacune de base autonome entière n’est fermée.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+      ]
+    },
+    {
+      "id": "hb_better_than_blitzo_guy",
+      "sourceIdentityId": "hb_better_than_blitzo_guy",
+      "name": "Better Than Blitzo Guy · portrait Apology Tour",
+      "status": "partial_narrative_illustration_delivered",
+      "accepted": true,
+      "assetId": "hb_better_than_blitzo_guy-portrait-s2",
+      "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière. Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180. La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition. Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement. Détails des maillons, boucles, mèches et contours redessinés depuis des frames natives 320×180 ; aucune certification 1:1. La marge basse au seuil alpha 16 est de 14 px sur 1024 ; le contour est entier, mais la marge est plus serrée que demandé au prompt. Portrait uniquement : le manque de base autonome entière reste ouvert. Aucun contrôle navigateur, de placement ou de comportement en jeu dans cette revue.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+      ]
+    },
+    {
+      "id": "hb_stolas_family_butler",
+      "sourceIdentityId": "hb_stolas_family_butler",
+      "status": "generator_refused_after_identification_correction",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Premier candidat exclu pour mauvaise identité. Correction fondée sur pin officiel refusée par générateur ; aucune relance après refus.",
+      "referenceUrls": [
+        "https://sharkrobot.com/products/loo-loo-land-imp-butler-enamel-pin"
+      ]
+    }
+  ],
+  "variantStates": [],
+  "stageReconciliation": [
+    {
+      "planId": "sloth-consultation-s2",
+      "runtimeStageIds": [
+        "sloth-consultation-s2"
+      ],
+      "assetIds": [
+        "sloth-consultation-s2-room",
+        "sloth-consultation-container"
+      ],
+      "currentStaticCoverage": "Salle de consultation de Sloth documentée dans Western Energy S2E4 : fond, miniature et conteneur séparé. Intérieur distinct de la salle d’attente et de la façade déjà livrées ; aucune substitution de ces lieux historiques. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+        "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
+      ]
+    }
+  ],
+  "attemptRegisters": [
+    "docs/standalone/production-v11/root-prompts.json",
+    "docs/standalone/production-v11/characters-prompts.json",
+    "docs/standalone/production-v11/environment-handoff.json",
+    "docs/standalone/production-v11/characters-handoff.json",
+    "docs/standalone/production-v11/continuation-environment-handoff.json",
+    "docs/standalone/production-v11/refused-attempts.json"
+  ],
+  "remaining": {
+    "personalIllustrations": [
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "personalIllustrationsStatus": "historical_policy_refusal_no_retry",
+    "technicalReferenceGaps": [
+      "pentious-airship-pilot",
+      "cherub-golden-arrow",
+      "dhorks-shuriken",
+      "vees-weapon-s2",
+      "andrealphus-multiheaded-ice-construction-s2",
+      "big-woobly-animatronic"
+    ],
+    "stageReferenceGaps": [
+      "extermination-roof",
+      "vox-tower-exterior",
+      "vees-weapon-site-s2",
+      "hb-auction-main-room"
+    ],
+    "partiallyCoveredPlannedStages": [
+      "vox-tower",
+      "sloth-hospital",
+      "hb-australia",
+      "hb-auction",
+      "hb-ice-palace"
+    ],
+    "partiallyCoveredPlannedStageDetails": [
+      {
+        "id": "vox-tower",
+        "visualStatus": "specific_rooms_delivered",
+        "notes": "Bureau de Vox S2 livré en V6 ; ne vaut pas reconstitution de toute la tour."
+      },
+      {
+        "id": "sloth-hospital",
+        "visualStatus": "interior_and_exterior_delivered",
+        "notes": "Salle d’attente V5 conservée et façade/parvis V7 effectivement livrés séparément. La lacune visuelle de façade est résolue. Vérification navigateur et performances mobiles encore manquantes."
+      },
+      {
+        "id": "hb-australia",
+        "visualStatus": "specific_desert_view_delivered",
+        "notes": "Fond désert et deux objets V7 livrés. Le reste du lieu n’est pas reconstitué ; composition adaptée au combat, QA navigateur/mobile non exécutée."
+      },
+      {
+        "id": "hb-auction",
+        "visualStatus": "partial_specific_hall_view",
+        "notes": "Un hall vitré cyan livré avec banc et ornement séparés ; ni salle de vente complète ni carte globale. QA navigateur/mobile non exécutée."
+      },
+      {
+        "id": "hb-ice-palace",
+        "visualStatus": "partial_existing_pavilion_and_initial_dragon",
+        "notes": "Le pavillon/jardin glacé S2E12 est déjà couvert par sinsmas-frozen-pavilion ; aucun second palais identique n’est ajouté. Le dragon initial à une tête est livré en V7. La construction multi-têtes entière et les piliers spécifiques du boss restent hors de la couverture statique qualifiée."
+      }
+    ],
+    "environmentQualification": [
+      {
+        "id": "pentious-airship-pilot",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_machine_reference",
+        "accepted": false,
+        "notes": "L’incarnation du pilote 2019 reste sans vue entière assez nette : petite silhouette extérieure sous les effets et détails d’appendices non résolus. Le modèle S1 ne la remplace pas. Aucune génération de cette cible en V7.",
+        "referenceIds": [
+          "ENV-V7-PENTIOUS-PILOT-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=Zlmswo0S0e0"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "pilot_2019",
+        "nextEvidence": "Vue primaire entière et dégagée de l’aéronef du pilote 2019, assez grande pour fixer les appendices, proportions et contours."
+      },
+      {
+        "id": "pentious-airship-s1",
+        "category": "machine",
+        "status": "moderation_refusal_no_retry",
+        "accepted": false,
+        "notes": "La planche de production qualifie une incarnation S1 entière, distincte du pilote. Le générateur natif a refusé la sortie ; aucun fichier livré, aucune relance ni voie de contournement.",
+        "referenceIds": [
+          "ENV-V7-PENTIOUS-S1-MODEL"
+        ],
+        "referenceUrls": [
+          "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-8-BG-PentiousAirshipS1_RO_v01.jpg"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "requestId": "8308a393-fbe3-4cd8-80fb-6861112f3e4c",
+        "moderationStage": "output",
+        "moderationCategories": [
+          "other"
+        ],
+        "nextEvidence": "Aucune relance dans ce lot ; conserver le refus et la distinction entre incarnations."
+      },
+      {
+        "id": "cherub-golden-arrow",
+        "category": "projectile",
+        "status": "deferred_insufficient_projectile_reference",
+        "accepted": false,
+        "notes": "Les scènes d’action inspectées ne donnent pas simultanément une pointe, une hampe et un empennage entiers et lisibles. Une lueur ou l’arme de lancement ne suffit pas à définir le projectile ; attribution personnelle non extrapolée depuis V5.",
+        "referenceIds": [
+          "ENV-V7-CHERUB-ARROW-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=1ZFseYPmkAk"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "nextEvidence": "Vue primaire assez nette de la flèche entière, sans main, personnage ni effet masquant sa silhouette."
+      },
+      {
+        "id": "dhorks-shuriken",
+        "category": "projectile",
+        "status": "deferred_insufficient_projectile_reference",
+        "accepted": false,
+        "notes": "Le nombre et la forme des pointes ainsi que l’éventuel trou central restent illisibles dans les plans d’action disponibles. Aucune étoile de ninja générique n’est substituée.",
+        "referenceIds": [
+          "ENV-V7-DHORKS-SHURIKEN-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "nextEvidence": "Vue primaire dégagée permettant de compter les pointes et d’identifier le contour intérieur sans flou de mouvement."
+      },
+      {
+        "id": "extermination-roof",
+        "category": "stage",
+        "status": "deferred_insufficient_architecture",
+        "accepted": false,
+        "notes": "Ancien hôtel du final S1 : garde-corps, sol rouge et débris partiels sont visibles, mais personnages et logo masquent la géométrie générale. Le clip officiel avait un contrôle d’accès documenté en V6 ; aucun contournement ni nouvelle affirmation d’accès. Aucun toit générique ou hôtel S2 substitué.",
+        "referenceIds": [
+          "ENV-V7-ROOF-OFFICIAL",
+          "ENV-V7-ROOF-REHOST"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=IKUfXKnfEpA",
+          "https://www.pinterest.com/pin/adam-nearly-kills-alastor--949767008908163404/"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1_finale",
+        "planRequirementIds": [
+          "extermination-roof"
+        ],
+        "nextEvidence": "Vue primaire dégagée du toit de l’ancien hôtel S1, avec sol, rebords et accès suffisamment visibles pour une arène datée."
+      },
+      {
+        "id": "vox-tower-exterior",
+        "category": "stage",
+        "status": "deferred_distinct_exterior_not_qualified",
+        "accepted": false,
+        "notes": "Le bureau S2 existe depuis V6 ; une façade complète de la tour, les câblages séparés et les écrans réglables ne sont pas documentés ni livrés par cette seule pièce.",
+        "referenceIds": [
+          "ENV-V7-VOX-OFFICE-HISTORICAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=PNqlp9t7ies"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "vox-tower"
+        ],
+        "coveredRuntimeStageIds": [
+          "vox-office-s2"
+        ],
+        "nextEvidence": "Vue primaire de la façade entière et références distinctes pour les câbles et écrans demandés."
+      },
+      {
+        "id": "vees-weapon-s2",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_machine_reference",
+        "accepted": false,
+        "notes": "Les clips officiels montrent l’arme et son déploiement. Les vues larges sont petites ; museau, support arrière et socle ne sont pas conjointement lisibles à une échelle suffisante. Aucun canon complet n’est inventé.",
+        "referenceIds": [
+          "ENV-V7-VEES-WEAPON-CLIP",
+          "ENV-V7-VEES-HOPE-CLIP"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=WQb3QOdO6is",
+          "https://www.youtube.com/watch?v=y0aLqu548A4"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "hh-s2-weapon"
+        ],
+        "nextEvidence": "Plan primaire entier et dégagé de l’arme S2 ou modèle de production montrant son contour, son extrémité et sa base."
+      },
+      {
+        "id": "vees-weapon-site-s2",
+        "category": "stage",
+        "status": "deferred_insufficient_architecture",
+        "accepted": false,
+        "notes": "Le site et la plate-forme circulaire sont attestés, mais la foule, l’arme et les effets masquent les limites du sol et l’architecture nécessaire à un fond autonome. La mission boss/évacuation du plan n’est pas une preuve visuelle supplémentaire.",
+        "referenceIds": [
+          "ENV-V7-VEES-WEAPON-CLIP",
+          "ENV-V7-VEES-HOPE-CLIP"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=WQb3QOdO6is",
+          "https://www.youtube.com/watch?v=y0aLqu548A4"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "hh-s2-weapon"
+        ],
+        "nextEvidence": "Vue primaire assez large et dégagée de la place et de la plate-forme, avec le sol et ses limites."
+      },
+      {
+        "id": "andrealphus-multiheaded-ice-construction-s2",
+        "category": "machine",
+        "status": "deferred_complete_multiheaded_static_form",
+        "accepted": false,
+        "notes": "Le dragon initial à une tête est livré. Vers 04:35 du clip officiel, deux têtes et le haut du corps apparaissent mais le bas est coupé ; la phase d’effondrement n’établit pas une configuration intacte entière. Le manque concerne aussi un dessin statique, pas seulement une animation.",
+        "referenceIds": [
+          "ENV-V7-ICE-DRAGON-CLIP",
+          "ENV-V7-SINSMAS-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=i3xrV1BWKNQ",
+          "https://www.youtube.com/watch?v=GisSNuVpbkM"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "variantRequirementIds": [
+          "VAR-034"
+        ],
+        "variantCoverage": "partial",
+        "coveredAssetIds": [
+          "andrealphus-ice-dragon-s2"
+        ],
+        "nextEvidence": "Vue primaire entière et intacte de chaque configuration multi-têtes visée, avec corps, pattes et queue simultanément visibles."
+      },
+      {
+        "id": "hb-auction-main-room",
+        "category": "stage",
+        "status": "deferred_main_room_layout",
+        "accepted": false,
+        "notes": "Le hall vitré cyan est livré en trois dessins, avec une couverture partielle du lieu. Les vues de la salle principale et du stand d’enchères n’établissent pas le sol entier. Les pièces du flash-back Stolas/Vassago ne sont pas mélangées au lieu présent.",
+        "referenceIds": [
+          "ENV-V7-AUCTION-HALL-CLIP",
+          "ENV-V7-AUCTION-BACKSTORY-CLIP",
+          "ENV-V7-HB-S3-TRAILER",
+          "ENV-V7-HB-S3-INDEX"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "https://www.youtube.com/watch?v=FdMp_-d5xeg",
+          "https://www.youtube.com/watch?v=-Fq4VRxhdKI",
+          "https://www.primevideo.com/detail/0GEB35CUYRCDVXUV0UXQY9FHIF"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_3",
+        "planRequirementIds": [
+          "hb-auction"
+        ],
+        "planCoverage": "partial_specific_hall_view",
+        "coveredRuntimeStageIds": [
+          "auction-glass-hall-s3"
+        ],
+        "nextEvidence": "Vue primaire dégagée de la salle principale des enchères S3E5, distinguée explicitement du hall cyan et des intérieurs du flash-back."
+      },
+      {
+        "id": "big-woobly-animatronic",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_animatronic_reference",
+        "accepted": false,
+        "notes": "Animatronique dinosaure de Loo Loo Land lié à hb_big_woobly. À 570 s, le bas est hors cadre ; à 650 s, les pieds/jambes minuscules se confondent avec le rebord et les triangles verts du premier plan. Aucun combattant ni nouvelle identité n’est créé.",
+        "referenceIds": [
+          "ENV-V7-LOOLOO-ANIMATRONIC"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "checkedAt": "2026-11-26",
+        "sourceIdentityId": "hb_big_woobly",
+        "continuity": "season_1",
+        "rawKind": "animatronic",
+        "nextEvidence": "Vue primaire entière où pieds, jambes, bras, guitare et contours du corps sont lisibles sans reconstruire des parties masquées."
+      },
+      {
+        "id": "vox-angel-projection-s2",
+        "sourceIdentityId": "vox",
+        "status": "primary_lower_body_occluded",
+        "accepted": false,
+        "assetId": null,
+        "notes": "Dans Brighter, ailes et projection théâtrale visibles vers156–160s, mais bas du corps derrière la tour de téléviseurs. Pas de silhouette reconstruite.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=156s"
+        ],
+        "category": "Variante"
+      },
+      {
+        "id": "vox-human-late-tux-s2",
+        "sourceIdentityId": "vox",
+        "status": "primary_lower_body_details_unresolved",
+        "accepted": false,
+        "assetId": null,
+        "notes": "Tuxedo noir, nœud rouge et visage sans lunettes confirmés ; vues entières au piano et sous lumière rouge encore petites/occultées. Ne pas réutiliser arbitrairement les chaussures ou jambes du costume précédent.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=100s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=126s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=140s"
+        ],
+        "category": "Variante"
+      },
+      {
+        "id": "hb_blitzo-bethany-ghostfuckers",
+        "category": "Costume",
+        "status": "held_reference_gap",
+        "notes": "Le haut/perruque/chapeau sont corroborés. Asymétrie des jambes et grandes bottes à talon du rendu ne sont pas confirmées par les vues primaires inspectées ; aucune exportation ni intégration runtime."
+      }
+    ],
+    "runtimeValidationGaps": [
+      "V8-browser-visual-review"
+    ],
+    "refusedThisWave": [
+      "hb_stolas_family_butler"
+    ],
+    "characterReferenceGaps": [
+      {
+        "id": "cherribomb",
+        "name": "Cherri Bomb",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "lute",
+        "name": "Lute",
+        "status": "moderation_refusal_no_retry",
+        "notes": "Incarnation distincte qualifiée puis refusée par le générateur natif ; aucun fichier, aucune relance. La base pré-blessure existante reste distincte.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=5eZonu8XsEs"
+        ]
+      },
+      {
+        "id": "hz_lilith",
+        "name": "Lilith Morningstar",
+        "status": "primary_reference_retrieval_blocked",
+        "notes": "Clip officiel Prime Video Brasil identifié mais récupération publique HTTP429. Portrait familial fourni par A24/Prime dans VFXVoice identifié mais téléchargement local403 ; aucune silhouette entière inspectée exploitable. Pas de génération.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4",
+          "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
+        ]
+      },
+      {
+        "id": "hz_frank_egg_boi",
+        "name": "Frank",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_razzle",
+        "name": "Razzle",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_dazzle",
+        "name": "Dazzle",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_keekee",
+        "name": "KeeKee",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_la_catrina_sinner",
+        "name": "La Catrina sinner",
+        "status": "primary_hem_and_edges_unresolved",
+        "notes": "Board1 cellule2 à20s, à gauche du plan : sombrero, cheveux verts et robe identifiables. Board4 cellule7 à84s, à droite de Charlie, complète tête et robe. Le bord gauche tronque une partie de la première vue ; le bas de la robe touche/coupe le bord inférieur dans la seconde et les figures voisines occultent les bras. Ensemble des extrémités non certifié."
+      },
+      {
+        "id": "hz_eel_sinner",
+        "name": "Eel sinner",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_egyptian_sinner",
+        "name": "Egyptian sinner",
+        "status": "primary_body_occluded_in_group",
+        "notes": "Board4 cellule7 à84s et scènes du hall montrent le groupe autour du comptoir, avec le grand personnage pâle à accessoires dorés près des autres pensionnaires. Pas de vue isolée entière où tête, mains et extrémités inférieures du modèle historique sont simultanément identifiables ; ne pas compléter le bas depuis un simple rapprochement de palette."
+      },
+      {
+        "id": "hz_ant_sinner",
+        "name": "Ant sinner",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_kitty",
+        "name": "Kitty",
+        "status": "reference_incomplete",
+        "notes": "Sujet minuscule et partiellement caché dans la pièce de Valentino vers 300 s ; pas de corps entier exploitable à ce stade. Portrait historique non compté comme base autonome."
+      },
+      {
+        "id": "hz_huskette_spider",
+        "name": "Huskette spider-like waitress",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_reporter_demon",
+        "name": "Reporter demon",
+        "status": "reporter_identity_outfit_unresolved",
+        "notes": "Boards4–5 : journalistes autour de Vox, notamment cellule8 du board4 à215s et cellule2 du board5 à230s. Plusieurs journalistes à cornes et museau animal portent des tenues distinctes ; la correspondance avec le cutout trapu gris-brun, grandes optiques rouges, cravate rouge et veste grise reste non résolue. Ne pas attribuer les jambes d’un autre journaliste."
+      },
+      {
+        "id": "hz_goldfish_sinner",
+        "name": "Goldfish sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout orange/blanc à coiffure nageoire avec les plans du hall, puis foule du clip Hell Attacks Heaven. Le personnage exact n’est pas retrouvé avec certitude dans ces plans. Cette observation est limitée à ces clips ; aucune conclusion d’absence dans les épisodes S2E1/S2E7 complets."
+      },
+      {
+        "id": "hz_fangirl_goat",
+        "name": "Goat-like fangirl sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout à grosses cornes de bélier, peau sombre et haut rose avec les plans du hall. Les personnages féminins proches de Baxter dans board2 ne constituent pas une correspondance certaine de cette tête et de ces cornes ; ne pas substituer Salina ni un autre personnage. Salina a par ailleurs un refus V7 maintenu."
+      },
+      {
+        "id": "hz_fangirl_apple_tree",
+        "name": "Apple-tree fangirl sinner",
+        "status": "primary_details_resolution_gap",
+        "notes": "Board2 cellule3 à40s, à droite de Charlie : tête végétale verte, silhouette en vert, jambes et pieds visibles dans le plan. Les vues voisines montrent la tête derrière Charlie. Seconde revue par root : cadrage global entier dans la cellule native320×180, mais pieds, doigts au comptoir et implantation des branches/fruits insuffisamment définis pour contrôler ces détails. Pas de génération. La limite est la résolution des détails, pas un corps tronqué."
+      },
+      {
+        "id": "hz_conjoined_twins",
+        "name": "Conjoined Twin sinners",
+        "status": "group_view_not_resolved",
+        "notes": "Plans du hall et de l’escalier, notamment board1 cellule6 à28s et board4 cellule7 à84s, confrontés au cutout bicéphale jaune/vert. Les petites silhouettes de groupe n’établissent pas avec certitude le corps partagé entier et ses quatre extrémités. Une foule ne doit pas servir à inventer la jonction anatomique."
+      },
+      {
+        "id": "hz_western_sinner",
+        "name": "Western sinner",
+        "status": "primary_lower_body_cropped",
+        "notes": "Board4 cellule9 à88s : silhouette au chapeau et poncho rouge à droite du plan, tête et tenue supérieure visibles. Cadrage arrêté au torse/bas de poncho ; jambes, gants et chaussures du cutout ne sont pas vérifiés dans ce plan."
+      },
+      {
+        "id": "hz_goth_bird_sinner",
+        "name": "Goth bird-like sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout au plumage noir/blanc, coiffure couvrant un œil et ornement rouge avec les plans du hall et du bar. Aucune correspondance entière certaine identifiée dans les images consultées ; le Rooster visible dans ces plans est une autre identité et son refus V7 demeure."
+      },
+      {
+        "id": "hz_rose_sinner",
+        "name": "Rose-like sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout à tête de rose rouge et œil central jaune avec les groupes du hall et de l’escalier. Pas de vue entière identifiée dans ces séquences publiques retenues. L’élément floral d’un costume ou d’un décor n’est pas assimilé à ce personnage."
+      },
+      {
+        "id": "hz_fat_nuggets",
+        "name": "Fat Nuggets",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_speaker_of_god",
+        "name": "Speaker of God",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_molly",
+        "name": "Molly",
+        "status": "existing_reference_gap_new_clip_fetch_rate_limited",
+        "notes": "V7 signale le bas du corps occulté. Nouveau clip officiel Heaven ZE2GuxyfQls repéré, récupération publique HTTP429 ; pas de nouvelle preuve entière inspectée ni nouvelle génération.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=ZE2GuxyfQls"
+        ]
+      },
+      {
+        "id": "hz_clara_carmine",
+        "name": "Clara Carmine",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_odette_carmine",
+        "name": "Odette Carmine",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_shok_wav",
+        "name": "Shok.wav",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_rooster",
+        "name": "Rooster",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_ethan",
+        "name": "Ethan",
+        "status": "primary_identity_confirmed_lower_body_missing",
+        "notes": "Board5 cellules3/4 à235/240s : assistant au presse-papiers, peau gris bleuté, œil rouge et mèche claire auprès de Vox. Cette présence est dans S1E2, contrairement à la seule mention saison2 du catalogue. Les vues identifiables cadrent le haut ; elles ne qualifient pas jambes, chaussures et queue entières. Ne pas confondre continuité de la scène et preuve d’un full body."
+      },
+      {
+        "id": "hz_melissa",
+        "name": "Melissa",
+        "status": "reference_incomplete",
+        "notes": "Les plans primaires montrent les tenues après transformation par Velvette. La tenue par défaut tee-shirt rouge/pantalon violet du portrait n’est pas qualifiée ; ne pas mélanger les incarnations."
+      },
+      {
+        "id": "hz_salina",
+        "name": "Salina",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_zack_rabbit",
+        "name": "Zack Rabbit",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_myk_mic_guy",
+        "name": "Myk the Mic Guy",
+        "status": "press_group_identity_unresolved",
+        "notes": "Board4 cellule5 à200s : plusieurs microphones et journalistes, dont une figure cyclope à cornes. Le cutout Myk possède une morphologie rouge/noire et des éléments de tête spécifiques. Un microphone ou un œil unique n’établit pas l’identité ; pas de correspondance entière certaine dans les plans consultés."
+      },
+      {
+        "id": "hz_man_meat",
+        "name": "Man Meat",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_buddy_mcsluggy",
+        "name": "Buddy McSluggy",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_bryrin",
+        "name": "Bryrin",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_tiffany_titfucker",
+        "name": "Tiffany Titfucker",
+        "status": "mentioned_only_no_canonical_visual",
+        "notes": "La fiche source précise « mentioned only, never shown ». L’absence de portrait ne prouve pas un fichier perdu et ne permet pas d’inventer une apparence canon."
+      },
+      {
+        "id": "hz_egg_boiz",
+        "name": "Egg Boiz",
+        "status": "not_generated_related_refusal_preserved",
+        "notes": "Compilation officielle inspectée. Frank a un refus historique ; aucun Egg Boi renommé ou générique n’est généré pour contourner cette cible. Les incarnations célestes ne sont pas produites dans ce lot.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=c56SWmqnU5E"
+        ]
+      },
+      {
+        "id": "hz_rocky",
+        "name": "Rocky",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_dia",
+        "name": "Dia",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_summer",
+        "name": "Summer",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_arackniss",
+        "name": "Arackniss",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_angel_father",
+        "name": "Angel Dust’s father",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_crymini",
+        "name": "Crymini",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_villa",
+        "name": "Villa",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_hellsa_von_eldritch",
+        "name": "Helsa von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_seviathan_von_eldritch",
+        "name": "Seviathan von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_frederick_von_eldritch",
+        "name": "Frederick von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_bethesda_von_eldritch",
+        "name": "Bethesda von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_roo",
+        "name": "Roo",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_eve",
+        "name": "Eve",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_british_gentleman",
+        "name": "British Gentleman",
+        "status": "primary_full_body_reference_required",
+        "notes": "Correction de la classification initiale héritée : le clip officiel du procès de Pentious montre cet homme dans le flashback de la saison2 à174s ; ce n’est pas une preuve de personnage du pilote. Vue du haut seulement ; tenue entière encore à qualifier."
+      },
+      {
+        "id": "hz_female_victim",
+        "name": "Female Victim",
+        "status": "primary_full_body_reference_required",
+        "notes": "Correction de la classification initiale héritée : femme du flashback S2 Storyteller, confirmée à174s dans le clip officiel du procès. Le corps entier et les chaussures ne sont pas visibles de manière exploitable dans les vues inspectées. Aucune représentation de violence produite."
+      },
+      {
+        "id": "hz_the_killer",
+        "name": "The Killer",
+        "status": "primary_details_obscured",
+        "notes": "Sir Pentious’ Trial : chapeau/manteau/scarf confirmés à216s et silhouette entière de dos à234–238s. Le personnage reste dans l’ombre ; face, détail des fermetures et chaussures non qualifiés. Pas de confusion avec le British Gentleman moustachu du début du flashback."
+      },
+      {
+        "id": "hz_human_hunter",
+        "name": "Human Hunter",
+        "status": "primary_full_body_reference_required",
+        "notes": "Origine officielle d’Alastor : bottes, jambes et chien vus en fin de séquence ; haut du corps et visage hors champ. Le portrait historique entier ne peut pas être validé par ces plans."
+      },
+      {
+        "id": "hz_harry",
+        "name": "Harry",
+        "status": "primary_full_body_reference_required",
+        "notes": "Brighter officiel inspecté en entier : les portraits du catalogue correspondent aux candidats de jeu télévisé, pas aux présentateurs assassinés. À92s le plateau montre les candidats derrière les pupitres ; les jambes/chaussures sont masquées. Aucune base entière produite depuis les seules découpes historiques."
+      },
+      {
+        "id": "hz_carrie",
+        "name": "Carrie",
+        "status": "primary_full_body_reference_required",
+        "notes": "Candidate du jeu télévisé aperçue derrière un pupitre dans Brighter à92s, distincte de la présentatrice blonde du journal. Les vues officielles inspectées ne montrent pas la silhouette complète avec chaussures ; portrait historique insuffisant à lui seul."
+      },
+      {
+        "id": "hz_larry",
+        "name": "Larry",
+        "status": "primary_full_body_reference_required",
+        "notes": "Candidat du jeu télévisé dans Brighter : ne pas confondre avec le présentateur roux de talk-show. Le plan du plateau à92s masque le bas du corps. Découpe historique également tronquée sous les jambes ; pas de base autonome produite."
+      },
+      {
+        "id": "hz_robert_bob_sinclaire",
+        "name": "Robert “Bob” Sinclaire",
+        "status": "primary_full_body_reference_required",
+        "notes": "Visage, cheveux gris, chemise, cravate et bretelles confirmés derrière le bureau dans Brighter à98s. Le pantalon et les chaussures ne sont pas lisibles dans les plans consultés. La découpe historique contient aussi les pieds parasites d’une autre figure au-dessus de la tête ; elle n’est pas traitée comme un modèle primaire."
+      },
+      {
+        "id": "hz_crying_exorcist",
+        "name": "Crying Exorcist",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_travis",
+        "name": "Travis",
+        "status": "primary_scene_required",
+        "notes": "Aucun plan primaire complet de l’incarnation S1 n’a été qualifié dans cette passe. La piste Poison est une vidéo lyrique. Les IDs hz_travis/hb_travis restent une identité de production à rapprocher, sans deux bases inventées."
+      },
+      {
+        "id": "hz_gator_sinner",
+        "name": "Gator sinner",
+        "status": "crowd_identity_unresolved",
+        "notes": "Boards3 et13 : groupes de spectateurs devant des écrans, avec plusieurs démons gris/verts au museau allongé. Aucune correspondance certaine du modèle historique à collerette, manteau violet et ventre rayé n’est établie en corps entier ; le premier démon reptilien vert d’une foule ne suffit pas à identifier cet ID."
+      },
+      {
+        "id": "hz_velvette_assistant",
+        "name": "Velvette's assistant",
+        "status": "wide_shot_identity_not_resolved",
+        "notes": "Board5 cellule5 à245s présente l’atelier en plan large avec plusieurs silhouettes ; les cellules6–9 et le short Velvette donnent surtout les modèles et Velvette. Le cutout attendu représente un assistant canin gris, haut rose, téléphone et longue queue. Les modèles changeant de tenue dans les plans rapprochés sont d’autres personnages. Le plan large ne résout pas avec certitude visage, mains et pieds de cet assistant."
+      },
+      {
+        "id": "hz_shark_gang_leader",
+        "name": "Shark Gang Leader",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique détaillé disponible, mais aucun plan primaire entier de cette identité exacte qualifié dans les vues inspectées ; ne pas confondre les différents requins de la série. Le groupe à la fin du clip officiel Loser, Baby est cadré en haut du corps : ce plan ne lève pas le manque."
+      },
+      {
+        "id": "hz_cactus_sinner",
+        "name": "Cactus sinner",
+        "status": "episode_scope_not_covered_by_inspected_clips",
+        "notes": "Le cutout vert épineux en chemise rose et pantalon clair a été confronté aux petits groupes des clips disponibles. Le catalogue désigne S2E4 It’s A Deal ; les vues analysées ici couvrent principalement S1E2, Hazbin Guarantee S2E1 et Hell Attacks Heaven S2E7. Aucun plan primaire correspondant de S2E4 n’a été identifié dans ce complément."
+      },
+      {
+        "id": "hz_jack_in_box_sinner",
+        "name": "Jack-in-the-box sinner",
+        "status": "finale_scene_not_in_selected_weapon_clip",
+        "notes": "Le cutout à ressort, haut-de-forme et nœud rouge a été confronté aux plans de foule du clip Hell Attacks Heaven. Le catalogue désigne Curtain Call S2E8, tandis que ce clip couvre l’attaque S2E7. Aucune silhouette complète de ce modèle de finale n’est prouvée par ce corpus."
+      },
+      {
+        "id": "hz_orphan_imp",
+        "name": "Orphan Imp",
+        "status": "exact_intro_scene_not_in_selected_song_clip",
+        "notes": "Le modèle d’orphelin en casquette et veste bleues a été comparé au hall de Hazbin Guarantee. Le clip musical n’établit pas sa scène de New Pentious. Une silhouette enfantine quelconque n’est pas assignée à cet ID ; future production narrative seulement si référence de la même incarnation."
+      },
+      {
+        "id": "hz_top_hat_demon",
+        "name": "Top Hat Demon",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_roadkill_sinner",
+        "name": "Roadkill sinner",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hb_stella",
+        "name": "Stella",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_stella-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_leviathan",
+        "name": "Leviathan",
+        "status": "inherited_specific_reference_gap",
+        "notes": "Mastermind : deux têtes et haut du corps confirmés vers560s dans l’audit V5, mais jambes et bas de robe non établis. Aucune nouvelle vue primaire complète obtenue en V7 ; le portrait tronqué n’autorise pas de bas inventé."
+      },
+      {
+        "id": "hb_belphegor",
+        "name": "Belphegor",
+        "status": "inherited_specific_reference_gap",
+        "notes": "Mastermind : petit personnage endormi derrière les autres péchés, silhouette complète et détails du corps insuffisamment lisibles dans l’audit V5. Aucune nouvelle fiche primaire complète obtenue en V7."
+      },
+      {
+        "id": "hb_tilla",
+        "name": "Tilla",
+        "status": "primary_photo_cropped",
+        "notes": "Les vues de famille et souvenirs sont de petites photos ou visions : Ozzie’s board10 garde surtout Blitz et son téléphone ; Ghostf**kers board13 cellule6 montre une photo de famille coupée. Aucune silhouette entière de la même incarnation n’est établie, et une image de pilote ne doit pas compléter arbitrairement le design de série."
+      },
+      {
+        "id": "hb_moxxies_mother",
+        "name": "Moxxie's mother",
+        "status": "primary_subject_not_resolved",
+        "notes": "Exes and Oohs boards8–9 : le dîner échantillonné montre surtout Crimson et le jeune Moxxie ; la scène du bateau et la chaussure flottante ne donnent pas une vue identifiable entière de la mère. Le problème précis de V5 demeure, sans inventer robe ni pieds."
+      },
+      {
+        "id": "hb_loopty_goopty",
+        "name": "Loopty Goopty",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_loopty_goopty-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_deerie",
+        "name": "Deerie",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_deerie-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_better_than_blitzo_guy",
+        "name": "Better Than Blitzo Guy",
+        "status": "incarnation_and_occlusion_gap",
+        "notes": "Apology Tour board10 cellules8/9 montre le haut et un débardeur portant du texte ; le vieux cutout a des marques rouges différentes. Les vues de danse/crowd examinées ne réunissent pas costume exact et chaussures lisibles. Une copie du cutout ne serait pas une reproduction prouvée de cette scène."
+      },
+      {
+        "id": "hb_loo_loo",
+        "name": "Loo Loo",
+        "status": "primary_feet_cropped",
+        "notes": "Loo Loo Land board4 cellule9 : mascotte pomme et jambes visibles, mais les bottes sont coupées au bord inférieur. Le dessin historique montre des bottes vertes à pointes rouges qui n’ont pas été corroborées par un plan entier de cette incarnation."
+      },
+      {
+        "id": "hb_miles",
+        "name": "Miles",
+        "status": "primary_lower_body_occluded",
+        "notes": "Mammon board9 cellule9 et board10 cellule1 : jeune fan identifié avec Fizz, mais bas du corps et pieds hors cadre ou masqués. Le cutout entier seul ne suffit pas. Toute future livraison de ce personnage mineur restera narrative sans kit de combat."
+      },
+      {
+        "id": "hb_vikki",
+        "name": "Vikki",
+        "status": "staff_art_lower_body_gap",
+        "notes": "Dessin de production CalisDraws de la fête Queen Bee et plans primaires V6 : poodle rose identifiable, robe grise à volants, mais extrémités du bas masquées ou au bord. Aucune vue entière supplémentaire qualifiée dans cette passe."
+      },
+      {
+        "id": "hb_gigi",
+        "name": "Gigi",
+        "status": "staff_art_lower_body_gap",
+        "notes": "Dessin de production CalisDraws de Queen Bee : chevelure rose, haut sombre et short rose identifiables ; partie sous les genoux non établie dans les vues retenues. Aucun mélange avec un costume ultérieur de Sinsmas."
+      },
+      {
+        "id": "hb_russ",
+        "name": "Russ",
+        "status": "staff_art_lower_body_gap",
+        "notes": "Dessin de production CalisDraws de Queen Bee : lunettes et haut à carreaux identifiables ; jambes et chaussures couvertes. Aucun modèle entier primaire supplémentaire qualifié."
+      },
+      {
+        "id": "hb_brennon_ragers",
+        "name": "Brennon Ragers",
+        "status": "identity_not_resolved_in_full_body_scene",
+        "notes": "Seeing Stars : les panneaux et dialogues citent Brennon, tandis que le personnage qui joue sur le plateau est Blitz pris pour lui. Les plans consultés ne prouvent pas un corps entier du véritable acteur humain ; le déguisement de Blitz ne peut pas lui être attribué."
+      },
+      {
+        "id": "hb_skips",
+        "name": "Skips",
+        "status": "historical_portrait_incarnation_mismatch_unresolved",
+        "notes": "Unhappy Campers board4 cellules6/7 à410/420s montre le dealer interrogé : cheveux clairs, haut bleu et gants clairs dans les plans du torse. Le portrait hb_skips.png présente cheveux longs sombres à mèche claire, crop-top noir et jean évasé. La correspondance entre ce cutout, le concept nommé Skips et le personnage final doit être résolue ; pas de copie du portrait sous une fausse preuve primaire. La fiche de concept mentionnée publiquement n’a pas été accessible par l’outil web."
+      },
+      {
+        "id": "hb_queef",
+        "name": "Queef",
+        "status": "primary_lower_body_occluded",
+        "notes": "Oops board2 cellules8/9 à250/260s : quieve albino près de Fizz, bouche et os visibles mais bas coupé ou corps masqué. Board3 cellule3 montre d’autres quieves sombres, pas une preuve du corps entier du même albino. Les niveaux de storyboards utilisables restent espacés de10s. Relecture indépendante props_stages."
+      },
+      {
+        "id": "hb_driveso",
+        "name": "Driveso",
+        "status": "incarnation_clothing_conflict",
+        "notes": "Mission Drivezo boards3–5 : corps d’abord dans le véhicule, puis scène blessée sur la route. Le vieux cutout a pantalon sombre/brun alors que le plan retenu montre du bleu ; aucune référence entière intacte du même costume n’est établie."
+      },
+      {
+        "id": "hb_joe_smoe",
+        "name": "Joe Smoe",
+        "status": "primary_vehicle_occlusion",
+        "notes": "Le client/cible Joe Smoe est présenté en photo ou dans une voiture. Les plans retenus n’établissent pas ses jambes et chaussures de façon entière ; le pantalon et les pieds du cutout ne sont pas vérifiés."
+      },
+      {
+        "id": "hb_william_diddle",
+        "name": "William Diddle",
+        "status": "primary_desk_occlusion",
+        "notes": "Mission Big Boss board0 cellule5 : William Diddle derrière son bureau, bas du corps invisible. Les plans ultérieurs de sa mort ne permettent pas de restituer une silhouette entière intacte."
+      },
+      {
+        "id": "hb_adrian",
+        "name": "Adrian",
+        "status": "primary_table_occlusion",
+        "notes": "Mission Bigfoot board2 cellule4 et vues de bar : Adrian est le petit homme au chapeau et à longue barbe bleutée, derrière table/comptoir ; jambes et bottes cachées. Il ne faut pas l’assimiler au grand Bigfoot de la forêt."
+      },
+      {
+        "id": "hb_gerald",
+        "name": "Gerald",
+        "status": "primary_counter_occlusion",
+        "notes": "Barbie’s Bad Day boards0–1 : patron de pharmacie violet visible au comptoir ; siège et comptoir couvrent le bas du corps. Aucune silhouette entière corroborée."
+      },
+      {
+        "id": "hb_rick",
+        "name": "Rick",
+        "status": "primary_counter_occlusion",
+        "notes": "Barbie’s Bad Day board3 cellules6/8 : employé du comptoir alimentaire identifiable au buste ; comptoir masque pantalon et pieds."
+      },
+      {
+        "id": "hb_stolas_family_butler",
+        "name": "Stolas' Family Butler",
+        "status": "primary_lower_body_occluded",
+        "notes": "Loo Loo Land board2 cellule6, puis début du board3 : petit majordome tenu par Stolas ou avec plateau, bas du corps masqué. Les plans assis d’Ozzie’s ne complètent pas des pieds lisibles."
+      },
+      {
+        "id": "hb_mister_butler",
+        "name": "Mister Butler",
+        "status": "primary_lower_body_occluded",
+        "notes": "The Circus board0 cellules3/4, board1 cellule7 et board3 cellule1 : tête/haut du grand majordome, derrière table ou miroir. Ces plans ne fixent pas les chaussures et la silhouette entière."
+      },
+      {
+        "id": "hb_marthas_daughter",
+        "name": "Martha's Daughter",
+        "status": "primary_child_lower_body_occluded",
+        "notes": "Murder Family board4 cellule2 : fille dans le chariot, bas couvert. Board8 cellule4 : à table, bas masqué. Board15 cellule5 : en partie derrière son frère lors du retour de Moxxie, bottes non lisibles. Le modèle ancien ne suffit pas à certifier le bas ; future livraison narrative uniquement."
+      },
+      {
+        "id": "hb_harold_patriot",
+        "name": "Harold",
+        "status": "primary_bed_occlusion",
+        "notes": "Ghostf**kers board6 cellules1/3/4 : client à l’hôtel dans une scène de lit, couvertures et cadrage masquent le bas du corps. Le cutout en sous-vêtements n’établit pas à lui seul une base entière de ce plan."
+      },
+      {
+        "id": "hb_dolores",
+        "name": "Dolores",
+        "status": "primary_bed_occlusion",
+        "notes": "Ghostf**kers board6 cellules1/3/4 : cliente dans la scène de lit, corps partiellement couvert/coupé. Les détails de robe de nuit et pieds du cutout ne sont pas corroborés dans les plans retenus."
+      },
+      {
+        "id": "hb_travis",
+        "name": "Travis",
+        "status": "shared_alias_owned_by_root",
+        "notes": "Alias de hz_travis, traité par root avec la qualification Hazbin. Aucun dessin HB séparé et aucun double incrément d’identité."
+      },
+      {
+        "id": "hb_tour_guide_guy",
+        "name": "Tour Guide Guy",
+        "status": "primary_vehicle_occlusion",
+        "notes": "C.H.E.R.U.B board2 cellule8 à250s et board3 cellule1 à270s : torse, chapeau et mains visibles ; bus/rampe couvrent jambes et bas. Cadence publique de10s sans autre niveau utile plus fin. Relecture indépendante props_stages."
+      },
+      {
+        "id": "hb_big_woobly",
+        "name": "Big Woobly",
+        "status": "deferred_insufficient_whole_animatronic_reference",
+        "notes": "Animatronique dinosaure de Loo Loo Land lié à hb_big_woobly. À 570 s, le bas est hors cadre ; à 650 s, les pieds/jambes minuscules se confondent avec le rebord et les triangles verts du premier plan. Aucun combattant ni nouvelle identité n’est créé."
+      },
+      {
+        "id": "hb_diddle_secretary",
+        "name": "William Diddle's Secretary",
+        "status": "primary_feet_cropped",
+        "notes": "Mission Big Boss board1 cellules7–9 et board2 cellule7 montrent la secrétaire jusqu’aux genoux, pieds coupés. Board5 cellule9 donne une très petite silhouette près de porte, insuffisante pour vérifier ses chaussures."
+      }
+    ],
+    "limitations": [
+      "Le catalogue inclut individus, groupes, pilote, AU et entrées futures ; 100 IDs restent sans base autonome, soit 99 identités après alias connu.",
+      "Les nouvelles incarnations et tenues ne créent aucune nouvelle identité, base de personnage ou technique de combat.",
+      "Chaque nouveau costume utilise une seule image statique ; aucun nouveau cycle animé.",
+      "Les adaptations de composition et les limites des sources sont documentées ; fidélité 1:1 non certifiée.",
+      "V9 ne réduit pas les 100 identifiants de catalogue (99 identités après alias connu) sans base autonome par défaut.",
+      "Le portrait de la mère de Moxxie n’est pas une silhouette complète ; la tenue Lute n’ajoute ni identité ni kit.",
+      "Les contrôles navigateur V9 portent sur les nouveaux assets et les parcours décrits dans browser-qa.json ; ils ne valident pas rétrospectivement tout le catalogue.",
+      "V10 ajoute 3 premières silhouettes entières : 97 IDs et 96 identités après alias restent sans base autonome.",
+      "Un costume, un buste, un accessoire ou un lieu ne réduit pas les identités sans base entière. Les deux variantes Charlie partagent un seul dessin.",
+      "Les deux arènes V10 ne résolvent pas les lacunes historiques d’autres lieux ; Noël est une vision de Blitzø.",
+      "Les contrôles V10 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "V11 ajoute 0 premières silhouettes entières : 97 IDs et 96 identités après alias restent sans base autonome.",
+      "Les trois portraits V11 restent des bustes ; aucun bas du corps ni nouvelle base entière n’est déduit. Molly conserve l’incarnation historique 2015.",
+      "La consultation de Sloth est un intérieur distinct de la salle d’attente et de la façade ; les deux trophées restent des objets de galerie.",
+      "Les contrôles V11 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue."
+    ],
+    "inheritedFrom": "docs/standalone/production-v10/delivery-register.json",
+    "inheritedRefusedV8": [
+      "lute-prosthetic-s2-ready"
+    ],
+    "v9PartialCharacterCoverage": [
+      {
+        "id": "hb_moxxies_mother",
+        "sourceIdentityId": "hb_moxxies_mother",
+        "name": "Mère de Moxxie",
+        "status": "portrait_delivered_full_body_still_missing",
+        "accepted": true,
+        "assetId": "hb_moxxies_mother-portrait-s2",
+        "notes": "Buste à la taille livré. Le bas du corps n’est pas corroboré ; aucune base entière supplémentaire comptée.",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin"
+        ]
+      }
+    ],
+    "inheritedRefusedV9": [
+      "hb_leviathan",
+      "hb_belphegor"
+    ],
+    "resolvedFullBodyIdentitiesV10": [
+      "hz_melissa",
+      "hb_loo_loo",
+      "hz_crymini"
+    ],
+    "inheritedRefusedV10": [],
+    "resolvedFullBodyIdentitiesV11": []
+  },
+  "qa": {
+    "edition": "V11",
+    "status": "passed",
+    "startedAt": "2026-11-26T16:44:25.084Z",
+    "completedAt": "2026-11-26T16:46:09.740Z",
+    "summary": "413 tests dans 47 suites ; typecheck, lint, builds manager et standalone puis contrôle d’intégrité de la distribution.",
+    "command": "NODE_OPTIONS=--max-old-space-size=512 node docs/standalone/production-v11/verify-runtime.mjs",
+    "standardQaScriptPassed": false,
+    "resourcePolicy": "Sequential gates; 512 MiB Node heap limit per process and deferred bundler import. Existing tests, worker count and isolation are unchanged.",
+    "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+    "testsPassed": 413,
+    "testSuites": 47,
+    "validatedAcceptedDrawings": 7,
+    "managerBuild": "passed",
+    "standaloneBuild": "passed",
+    "gates": [
+      {
+        "gate": "typecheck",
+        "command": "npm run typecheck",
+        "exitCode": 0,
+        "nodeOptions": "--max-old-space-size=512"
+      },
+      {
+        "gate": "lint",
+        "command": "npm run lint",
+        "exitCode": 0,
+        "nodeOptions": "--max-old-space-size=512"
+      },
+      {
+        "gate": "tests",
+        "command": "npm test",
+        "exitCode": 0,
+        "nodeOptions": "--max-old-space-size=512"
+      },
+      {
+        "gate": "manager-build",
+        "status": "passed",
+        "publicFilesLinked": 1308
+      },
+      {
+        "gate": "standalone-build",
+        "status": "passed",
+        "publicFilesLinked": 1308
+      },
+      {
+        "gate": "standalone-packaging",
+        "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/finalize-standalone.mjs",
+        "exitCode": 0,
+        "nodeOptions": "--max-old-space-size=512"
+      },
+      {
+        "gate": "standalone-integrity",
+        "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-standalone.mjs",
+        "exitCode": 0,
+        "nodeOptions": "--max-old-space-size=512"
+      }
+    ],
+    "standaloneIntegrityOutput": "Standalone verified: 1312 hashes, boot assets present, hotel/cloud persistence excluded.",
+    "standaloneManifest": "dist-combat/standalone-manifest.json",
+    "standaloneManifestSha256": "98b0ef298a595dc14f16ecc21d9e122e04a55f62e94921d4a07c6e319f7bb9d0",
+    "runtimeInputFiles": [
+      {
+        "path": "art/infernal-versus/production/reserve-assets.json",
+        "sha256": "2bcdd7812191a3c5bc9c27916e9db17a40affda85a46cfef877d35890ba91b3e"
+      },
+      {
+        "path": "eslint.config.js",
+        "sha256": "66c5f187d2df56180c2bd048fd913a4d231e581d4e7693eeaf403cb8e6a97f3d"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "1cf9fb66502c135d075c48f7beba3381d930e67d6a099809d0f09ed2735bbf3b"
+      },
+      {
+        "path": "package.json",
+        "sha256": "e00b540ef924857bd308c8168294091d641a8401f8677be2f3a619fc58b3461f"
+      },
+      {
+        "path": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+        "sha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec"
+      },
+      {
+        "path": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+        "sha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289"
+      },
+      {
+        "path": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+        "sha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8"
+      },
+      {
+        "path": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+        "sha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e"
+      },
+      {
+        "path": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+        "sha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e"
+      },
+      {
+        "path": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+        "sha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9"
+      },
+      {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp",
+        "sha256": "b7b3963458eae6ff869a015e7d186d22eb3030f3168b21dcd3f9cc8b2269636d"
+      },
+      {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-console.webp",
+        "sha256": "5637edde69fd2c439ca76c8d8e3b52e44200732c12412fa1ae80f9902155c8ca"
+      },
+      {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+        "sha256": "175eeebf55b4ff5ab938314fbd7eb3cfe7c1357c7a38d99bbebd3100bc0d570e"
+      },
+      {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp",
+        "sha256": "55257c9e538c3f720dd8eddbc5bffe60f53f3745836c2021098d7e7f6a0cb17d"
+      },
+      {
+        "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+        "sha256": "19781e8dcae0ecb1a6ae6910fa96464b05a6108cd4d39c51a53c8a3806efe0a8"
+      },
+      {
+        "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp",
+        "sha256": "b1da9452d5bf3d6864299ce24872ebdf8feb6c72d3d807342dec70492d8bfd48"
+      },
+      {
+        "path": "public/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp",
+        "sha256": "fba024e005b3432597b7f05976fc1f4c3345959e60a212e3fbbb333b9640042b"
+      },
+      {
+        "path": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "sha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a"
+      },
+      {
+        "path": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "sha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447"
+      },
+      {
+        "path": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "sha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781"
+      },
+      {
+        "path": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+        "sha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9"
+      },
+      {
+        "path": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+        "sha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0"
+      },
+      {
+        "path": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+        "sha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db"
+      },
+      {
+        "path": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+        "sha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939"
+      },
+      {
+        "path": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+        "sha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261"
+      },
+      {
+        "path": "scripts/check-standalone.mjs",
+        "sha256": "00b60adcb96840850aa10c6382706b62a53fb897ef7ae4240f31b6600d6e7a97"
+      },
+      {
+        "path": "scripts/finalize-standalone.mjs",
+        "sha256": "f22347170b1223585a14775f1a0f27b0639fd45e48810c10ae777126ec263ec5"
+      },
+      {
+        "path": "src/App.tsx",
+        "sha256": "fa394ec5f78cd0ef97e42dbb15d35ab1d6dc42d290052597db2602fddbb4be06"
+      },
+      {
+        "path": "src/cloudAccount.ts",
+        "sha256": "0f5d979f8951c4103d143c32ed440a91a83a82d4beaf6309674514b31014b991"
+      },
+      {
+        "path": "src/components/CanonBadge.tsx",
+        "sha256": "4da5c555a528df444eb4713acb880a1e95162c2c2d391e0d59c6ed1626a3a44c"
+      },
+      {
+        "path": "src/components/ConfirmDialog.tsx",
+        "sha256": "f7d7daba61792c1354feb938edcc41b89e1c4722954fd18913125c3f64a9165d"
+      },
+      {
+        "path": "src/components/ContentPackCard.tsx",
+        "sha256": "ca99b9125848e409adc6af83e09c7c6ccc2d588df337358dbd144c5272524fd6"
+      },
+      {
+        "path": "src/components/HazbinAtlasGallery.tsx",
+        "sha256": "3e3889b27d8f45847af37f0cad71683eb151c90dca428b1e9aa115d38b6e8e10"
+      },
+      {
+        "path": "src/components/HazbinRoster.tsx",
+        "sha256": "3a4c170c637ad91b714886f7c60f081ff6dc07434462e807c4d6ffedfb70f476"
+      },
+      {
+        "path": "src/components/HelluvaAtlasGallery.tsx",
+        "sha256": "bfc97c7bef997b6fd3ec7ed30db734bfa29cf4a34856dc6e83a44e4589bb4ddb"
+      },
+      {
+        "path": "src/components/HelluvaRoster.tsx",
+        "sha256": "ba28953d9faab8377f3a746488ab214abbb1de87dc4af4a11a8f1c149f99832d"
+      },
+      {
+        "path": "src/components/HotelOpening.tsx",
+        "sha256": "4c76433b83215a854ccb79fea55e63e022abc4ce742de96581a34001472a88bf"
+      },
+      {
+        "path": "src/components/InfernalAttackEffects.tsx",
+        "sha256": "1ce3a9bc623514d6af4c0c7b02b50f55f68138b0beb930026cf151db4ebf5864"
+      },
+      {
+        "path": "src/components/InfernalMoveList.tsx",
+        "sha256": "a16f4db3b6454f84fe8b4b0beb5b6616507f2efa7d38845e73c26f12e1d58b57"
+      },
+      {
+        "path": "src/components/InfernalStageLayers.tsx",
+        "sha256": "efc2da3a43f5f1624ab307b89abe4b3d63f841259f4cde48a5e2f72e37e77ed8"
+      },
+      {
+        "path": "src/components/MissionCompass.tsx",
+        "sha256": "e19c5d358936a737ad686487925f203fce3e8d0d61b6d242cb3d0b5cf13bf9a2"
+      },
+      {
+        "path": "src/components/PentagramLiveFight.tsx",
+        "sha256": "7a888c904f8a80ee3325613d7bf19891ee3f19b063c97c4655a348b87ae574d1"
+      },
+      {
+        "path": "src/components/PentagramStageSpectators.tsx",
+        "sha256": "f691fea129a829a4b52351049260883483df1eba47d8733b22d4877bd35d0a48"
+      },
+      {
+        "path": "src/components/ProgressiveText.tsx",
+        "sha256": "b7857296d3b68fc6b901e996a34b7b9e7b44a84636b0caa27a796ce8355404f3"
+      },
+      {
+        "path": "src/components/RiskBadge.tsx",
+        "sha256": "dbc6bfee7b6dbc87220477f70f26ca9fec6b1e7f3ae49c6710be9d0033e54589"
+      },
+      {
+        "path": "src/components/Sidebar.tsx",
+        "sha256": "5b52d09ecbc7023d5a05957cd2ea597aeb371eb8424f8b1a5e3f67eec53e156e"
+      },
+      {
+        "path": "src/components/SpoilerBadge.tsx",
+        "sha256": "7cafbaaa58bb56bd3313958cea98711958b7086d19cac94bb65c40ef3884f6df"
+      },
+      {
+        "path": "src/components/Topbar.tsx",
+        "sha256": "e11df73213d475c29333a097990adb82119d93f8ce9083206d12b545d5702d13"
+      },
+      {
+        "path": "src/components/useDialogFocus.ts",
+        "sha256": "18fee03ed0905156f7626f1ffcfcf3cabe64b277f687fde6a2599a830047b26f"
+      },
+      {
+        "path": "src/components/usePentagramCombatSoundtrack.ts",
+        "sha256": "da8d760b9068bf6cac558c6352060d1e06dbb1b47cbef0a661126ad08e784b7a"
+      },
+      {
+        "path": "src/data/hazbin-directory.ts",
+        "sha256": "76b0df014ec201ec00d3aef4b139f6e861843836c98b65f836f58ef8eec307d7"
+      },
+      {
+        "path": "src/db/localDb.ts",
+        "sha256": "80e2cf2e518078a2ba399570f6892e8fa22e067cbaae41fe650f0210936899c6"
+      },
+      {
+        "path": "src/db/seed.ts",
+        "sha256": "c6ac0036f6d14703ad79ac48782cb81a519cafcd7d68154b6290cda8a5a737d0"
+      },
+      {
+        "path": "src/expansions/helluva-boss/data.ts",
+        "sha256": "fc0fd7b783f3f91a4c294a8d333cdf311cebd577a77bd55b4afe578731eecfea"
+      },
+      {
+        "path": "src/expansions/helluva-boss/engine.ts",
+        "sha256": "8628fa5615ff1fe321ceb4e5c468417d6746446e9f408b3ab957d7fbdbf9771f"
+      },
+      {
+        "path": "src/expansions/helluva-boss/spoilers.ts",
+        "sha256": "46ecffcfa589c6cceb90c25c3c59050b0a9871ad650d2c35a6e39a616c348a4d"
+      },
+      {
+        "path": "src/lib/campaign-day.ts",
+        "sha256": "e8234c158e8eab900d7674d791e415cdff819c86a653decc1f35ca30c1004844"
+      },
+      {
+        "path": "src/lib/character-sprites.ts",
+        "sha256": "6240c0427fa453f85720333862956aa697f3f95ef4c78d3a5742e2d9d12a0970"
+      },
+      {
+        "path": "src/lib/export-import.ts",
+        "sha256": "89c78a9c9e59ea5c6dd44c3359ea707ea59d1c69f53dd84bde13f5ecd37a3b26"
+      },
+      {
+        "path": "src/lib/first-arrival-tutorial.ts",
+        "sha256": "34a5f783086b654e654016c7631d78d89829281465388cac82284e4da2bfd6c2"
+      },
+      {
+        "path": "src/lib/hazbin-arena-fighters.ts",
+        "sha256": "87f5a79721bf1853e9d59614b4f7873987ad16b66fe63b3e33ccf64505f9c55f"
+      },
+      {
+        "path": "src/lib/hotel-operations.ts",
+        "sha256": "081430f0191837c3e65c199e912e6c7d26746f883332c3d34a9106c2462c784c"
+      },
+      {
+        "path": "src/lib/hotel-prologue.ts",
+        "sha256": "0b755e1b6ef00b223b25cacbb360e8e670db50924f47462693d16f56972be919"
+      },
+      {
+        "path": "src/lib/hotel-shift-resolution.ts",
+        "sha256": "53cc59ff965667fbe9d5baeaddf80ce69b7aec91accaac5f14fbcfee7c3183c8"
+      },
+      {
+        "path": "src/lib/hotel-shift.ts",
+        "sha256": "7013ded6ca80e274dc7075d468e8dec235d511d1ec086f2f0c85f200f594820c"
+      },
+      {
+        "path": "src/lib/infernal-appearances.ts",
+        "sha256": "47c59df1445d5829d34c02a645cf92e9e938f6fdcf106e2f938ae7afa0604094"
+      },
+      {
+        "path": "src/lib/infernal-attack-effects.ts",
+        "sha256": "7c40d6b61c0ef3bd32c6b849d174620163af435b06a6ff5607eed6a43ef0b661"
+      },
+      {
+        "path": "src/lib/infernal-costumes-v8.ts",
+        "sha256": "a9b83e87375c05fe2e68b4d4fbf3bb5ca39e458794326a546d8569bed03b7cb2"
+      },
+      {
+        "path": "src/lib/infernal-finishers.ts",
+        "sha256": "53bb87b5ce59214075aee5cd95f5e178f2a769d88e3ed6b34ee138ab1cc25f03"
+      },
+      {
+        "path": "src/lib/infernal-pose-anchors.ts",
+        "sha256": "525feecb75716361b53f4f6cfe09f3e296d26b8fabcbf7fbe242f5628d555161"
+      },
+      {
+        "path": "src/lib/lore-validation.ts",
+        "sha256": "a57edcef3abd94b2a9f909a10b06a93b4edf33f44988e395bde20c5ca978059c"
+      },
+      {
+        "path": "src/lib/mission-compass.ts",
+        "sha256": "61047709cfda6153222b4d1de0827fdc0c72073e158c8601cb85465beee704e9"
+      },
+      {
+        "path": "src/lib/onboarding.ts",
+        "sha256": "b10ec05af3e22b5141e05e457cfc015bf6e3b73ef4d437409c13e0db72172523"
+      },
+      {
+        "path": "src/lib/pentagram-ai.ts",
+        "sha256": "9730f337b7f1e9afc4a2fee7213bb3a92114dbcb3499f91f971390fb60b96eab"
+      },
+      {
+        "path": "src/lib/pentagram-animation.ts",
+        "sha256": "2aae433933448991f16c0d052b691b5d87a061e4fb254cc31402ea488e640dfd"
+      },
+      {
+        "path": "src/lib/pentagram-cinematics.ts",
+        "sha256": "ecc4d1395de8593dfa01dc9c6e43d3c8795946eb56e127dc9c3d54d24901a9cf"
+      },
+      {
+        "path": "src/lib/pentagram-combat.ts",
+        "sha256": "b3156ab54f090446a09c99a1d0b77c2b5b3fcdcc5a60bc27a4f908d4b83d4522"
+      },
+      {
+        "path": "src/lib/pentagram-fighters.ts",
+        "sha256": "2bf2a649e2385581e9c5ba86b4e24b68fe24e5f286e23549a1e4df93d83311a6"
+      },
+      {
+        "path": "src/lib/pentagram-soundtrack-worker-client.ts",
+        "sha256": "83a600158875394774a770341dc0524133dd7e745c6c9c15e3a5686241888084"
+      },
+      {
+        "path": "src/lib/pentagram-soundtrack.ts",
+        "sha256": "ba887d00bf279c6d031ba73e119e7ec605006f9042a91dd1371d66fdfc452cb5"
+      },
+      {
+        "path": "src/lib/pentagram-spectators.ts",
+        "sha256": "bfabec0d73860164ef08038afba008ea8248093cd45de0f8a91bf785a27c58bc"
+      },
+      {
+        "path": "src/lib/pentagram-stages.ts",
+        "sha256": "c4f92bf560f2393acb1dd52a874d85193c484b1d5189bc262676daf6b5fe39ee"
+      },
+      {
+        "path": "src/lib/rules-engine.ts",
+        "sha256": "e6a0f9ec47a4e8e1e6e32832be4b37114dd894bdefcd041a1f28ed8f100adfd5"
+      },
+      {
+        "path": "src/lib/sprite-animation-registry.ts",
+        "sha256": "871c053bdb525e19f6e7e90a5d3b44d27f8f24673ba71cff552b88e9dfea03bf"
+      },
+      {
+        "path": "src/main.tsx",
+        "sha256": "4b67d4405109a8312669246cb4bd73137052388652e62bf0c5222243642fad02"
+      },
+      {
+        "path": "src/pages/Characters.tsx",
+        "sha256": "baf0faa7543a5287375f399f629c07e65f3854e779cce2e861b5eb4dd529d0ce"
+      },
+      {
+        "path": "src/pages/Dashboard.tsx",
+        "sha256": "0ce76e825ba81385d3663988b5515f537d55531acb6351ef7bf4b8380fb9d9fe"
+      },
+      {
+        "path": "src/pages/Extensions.tsx",
+        "sha256": "f3cccfbb2954784dd23d1a6bdf4d107841582e5ab699c24a25201ad509d462a2"
+      },
+      {
+        "path": "src/pages/FirstArrivalTutorial.tsx",
+        "sha256": "3089280e9ee3352db775424fa70f9361a5806ac34edc7ede62d73ba00e08be33"
+      },
+      {
+        "path": "src/pages/HelluvaBoss.tsx",
+        "sha256": "b73a0ffb58edfcfe1f4c413de59da9c373fdfda14163232f185affcb028e6694"
+      },
+      {
+        "path": "src/pages/HotelShift.tsx",
+        "sha256": "471ec6083050ef678ca93507befdcf9915477b5679125a78330aeef7015c106d"
+      },
+      {
+        "path": "src/pages/Incidents.tsx",
+        "sha256": "d00ec1b5acc327b8df899ada192b94e4a1b613b1de47cc434ad4ab2624dcea2e"
+      },
+      {
+        "path": "src/pages/LoreCodex.tsx",
+        "sha256": "9e860143860ef6b55959c320ef8e83083baca7b47c5c676b7ef197f03266ff86"
+      },
+      {
+        "path": "src/pages/PentagramArena.tsx",
+        "sha256": "25af38c233669e753999e016951af1eecb91f5ca6dc4cb405307cfd302fc6de5"
+      },
+      {
+        "path": "src/pages/Rehabilitation.tsx",
+        "sha256": "fa80752f889b972835877bca3efbef2d09f6926c5d39d1e9a20b617fd987762f"
+      },
+      {
+        "path": "src/pages/Relations.tsx",
+        "sha256": "b86a09bf0b01a6555c74dbeb52deef9315703eb9d68479ba0118a13d8cf99b41"
+      },
+      {
+        "path": "src/pages/Reputation.tsx",
+        "sha256": "4600b56de9a6d63c767a1cb0a47b459c4655a1b102376935982a57964ca47d15"
+      },
+      {
+        "path": "src/pages/Resources.tsx",
+        "sha256": "5b3712b0f4a7053343201e58ead0e3f477ed80a8cb6921f65cc35efaf291d833"
+      },
+      {
+        "path": "src/pages/Rooms.tsx",
+        "sha256": "a960de39aa8878dd4248d3e1a24d543316f9ecfee03bda5860f86ceee895fb7c"
+      },
+      {
+        "path": "src/pages/Settings.tsx",
+        "sha256": "cb453fbad6bd61e247fe384725d84b0029505fd1f265043873b6712f01391bae"
+      },
+      {
+        "path": "src/pages/Staff.tsx",
+        "sha256": "10619ef15df4e46c320862a2bf9b7d0055d5fd9e329ed98e528ae38d195bfe26"
+      },
+      {
+        "path": "src/pages/Timeline.tsx",
+        "sha256": "1f5771dc803e6a115cb18b4f76da1da829f718ca903acd8fd452d65939e69902"
+      },
+      {
+        "path": "src/standalone/InfernalVersus.tsx",
+        "sha256": "ad81bf917dbff77b23b6bf8883b3624d3c12a755ff7f33594c2532f1aade1928"
+      },
+      {
+        "path": "src/standalone/NarrativeCollection.tsx",
+        "sha256": "9803f1530611de700c2dca16c9ce4659c6d5b8d09ab453f09542687959c7a2ea"
+      },
+      {
+        "path": "src/standalone/ReserveGallery.tsx",
+        "sha256": "f281f8f7ca094779124b81bd46d898231944ef110d9fa14aaaf2c5a11d8ee08c"
+      },
+      {
+        "path": "src/standalone/RunInterlude.tsx",
+        "sha256": "c6936564e1aac6cdb5d3fe1f4ee34481071e19ef28ff6160fe9e04e5eb57c65a"
+      },
+      {
+        "path": "src/standalone/campaign-global.ts",
+        "sha256": "28e70c580345c0cf5494b4f40c471dfd0a4b358f3c837347cb95d5b5ee686549"
+      },
+      {
+        "path": "src/standalone/campaign-illustrations-v4.ts",
+        "sha256": "576a0e74cd1b60fa6d67dbe6a96ac7db8c37c702e384c02eb800937ba9b916bb"
+      },
+      {
+        "path": "src/standalone/campaign-legacy.ts",
+        "sha256": "085fcd34e3a3c6eff78d2d52ac13c26112866e23da1bf76ba9ea83e20c06a05a"
+      },
+      {
+        "path": "src/standalone/campaign-v3.ts",
+        "sha256": "e536e004d302a2826e955e2892eb9bd32a1f856d16594c20bac5eff64ccb50ea"
+      },
+      {
+        "path": "src/standalone/campaign.ts",
+        "sha256": "db9d1a3756a49cd5219d5702ee9b467f70a2e580aa40572625354e4d75935627"
+      },
+      {
+        "path": "src/standalone/infernal-versus.css",
+        "sha256": "d4a4d288006958616ea4d7bdb0cb224659990c9b29390a74c7c01c89cef39a3f"
+      },
+      {
+        "path": "src/standalone/main.tsx",
+        "sha256": "36d436d0ce722abf7cedcea18aeea4f8a125ad52f956367695b10ac0192b5810"
+      },
+      {
+        "path": "src/standalone/progression.ts",
+        "sha256": "ab6522c73db62c64c0cc7991af88963ec8231b97967f539e4a1d119286420282"
+      },
+      {
+        "path": "src/standalone/reserve-gallery.css",
+        "sha256": "d6aacae45122dd695d0dd2aa47bcfe8b2e1562f2890df5f17aa8f3a903f90a8f"
+      },
+      {
+        "path": "src/standalone/roster.ts",
+        "sha256": "3b196f488f1c23ea6d9e501a441c2135fc59985b0f2a7ded706c91bb26463c69"
+      },
+      {
+        "path": "src/standalone/run-interlude.css",
+        "sha256": "a62cb2268ac8a7a79b285ff1a3debc38d303d38e49594a7372adc0e7bd97b5b7"
+      },
+      {
+        "path": "src/styles/first-arrival-tutorial.css",
+        "sha256": "c2bf69de5cfd162555ae8d16a7ca8da78bc80ff540881399c25708ed3280f326"
+      },
+      {
+        "path": "src/styles/hazbin-directory.css",
+        "sha256": "aebc18b26320e8f05fb66ab288ad11873920dbbb3564ddf5ff26b473282268c1"
+      },
+      {
+        "path": "src/styles/helluva-boss.css",
+        "sha256": "0f3a374c786262bef33834209624ebef213a85aeb02307b23c1b4dfdf57b8079"
+      },
+      {
+        "path": "src/styles/hotel-opening.css",
+        "sha256": "af0efb134e6526cf357fcfdd50d27734d916145e158995b3cdd5bae6f38cef4c"
+      },
+      {
+        "path": "src/styles/hotel-shift.css",
+        "sha256": "de489e76f3567740d974b2ac352babc52070a27fbf421524cd63803261f1ff84"
+      },
+      {
+        "path": "src/styles/infernal-attack-effects.css",
+        "sha256": "86c1b216be70871aefc2e7d1474bf9ee8fd9622d5cd76af98fdd1882ca67f287"
+      },
+      {
+        "path": "src/styles/infernal-authored-poses.css",
+        "sha256": "f6dbe4ef390f5ab19790d7fb6cc98cee157fa6cc7950b47e9f3ccf69137c966a"
+      },
+      {
+        "path": "src/styles/mission-compass.css",
+        "sha256": "2f6f03441494fa5c7d1e3d2777d2ae197fe12d138ff5e748515e41b164aa31df"
+      },
+      {
+        "path": "src/styles/pentagram-arena.css",
+        "sha256": "b55e14ecc9674e41c2f8611a878b4758f32de666751593aba25863328da33d68"
+      },
+      {
+        "path": "src/styles/progressive-text.css",
+        "sha256": "69ee94395069b194d30eefdcb58f0f305cf6198620d7f1e142b4d220e0a3590b"
+      },
+      {
+        "path": "src/styles/theme.css",
+        "sha256": "2a8ad31eb3360ee87a64fc0c2301acbd58af643d2c20d734ac27dad0360b6087"
+      },
+      {
+        "path": "src/tests/accessibility.test.tsx",
+        "sha256": "f837da0faa604304edf8577e2805f3aacc191cc716c72aa888b8996ac615d0ad"
+      },
+      {
+        "path": "src/tests/active-gameplay-gates.test.tsx",
+        "sha256": "26f2feabac5c12421f9ef669b44c27d248b9723727582115b6d8812a4542f918"
+      },
+      {
+        "path": "src/tests/campaign-day.test.ts",
+        "sha256": "88486434a38878649323a362e829a1d877e623f4cb0e9ba451a805346a9d5b4b"
+      },
+      {
+        "path": "src/tests/dashboard-hero.test.tsx",
+        "sha256": "c44f8a61a43b99946f076981d5074fc1d4ed0f6c749d7c5f857d3f3730ef07cc"
+      },
+      {
+        "path": "src/tests/data-integrity.test.ts",
+        "sha256": "4406865cedb014c06b710baa3d21bacb080c3d48b892221e02629b2c528036ce"
+      },
+      {
+        "path": "src/tests/first-arrival-tutorial.test.ts",
+        "sha256": "b14af54a10bcbb31a2c515330827876edb9ed2bf3d9129b2b841e59c4efa1821"
+      },
+      {
+        "path": "src/tests/gameplay-safety.test.ts",
+        "sha256": "d41b105ab9d2579bbc0da33f65eed262ad6b3e5e4070e619bfbe52101abe3709"
+      },
+      {
+        "path": "src/tests/hazbin-animation-banks.test.ts",
+        "sha256": "07c9472d906932f21c69f554529e3249a6b5c31ccb5e7a70565a24e58a27e5fe"
+      },
+      {
+        "path": "src/tests/hazbin-arena-fighters.test.ts",
+        "sha256": "b537c0c4b92ecc0d0ac58561726af69ad997f040428283e6ff96c02724ce21d5"
+      },
+      {
+        "path": "src/tests/hazbin-cinematic-banks.test.ts",
+        "sha256": "441856e809e898b2f9b52a6501148ed1b94d99b52f125aaecb85994e77fe0a21"
+      },
+      {
+        "path": "src/tests/hazbin-directory.test.tsx",
+        "sha256": "438964f6d25f9f1aafbd75c289758dc3cc3258a41afe9ef69df43e461e4a49e0"
+      },
+      {
+        "path": "src/tests/hazbin-sprite-manifest.test.ts",
+        "sha256": "9418b72aa9eb542da49142b2082bf7e30a8ce46fb85b34414eccdc0f2b14f59d"
+      },
+      {
+        "path": "src/tests/helluva-animation-banks.test.ts",
+        "sha256": "0ec8af3725a1849f25200ae2ffece971c407c320dfef2c79346a17b2d357d4dd"
+      },
+      {
+        "path": "src/tests/helluva-directory.test.tsx",
+        "sha256": "55e0cca8856c07ff93e8a7e04f615cb84f3f94fb20a940e4b1f30b77cd340e1a"
+      },
+      {
+        "path": "src/tests/helluva-expansion.test.ts",
+        "sha256": "3e13a23a59dd89f6ff7141dc72be8a162213facc680d9bdeebd536f1da0304bc"
+      },
+      {
+        "path": "src/tests/helluva-spoilers.test.tsx",
+        "sha256": "e47c7273b531d45306a58e5a6befd136146307c7321a5137ff91e045e8d3102f"
+      },
+      {
+        "path": "src/tests/hotel-operations.test.ts",
+        "sha256": "5b8032287a2ff1fcd6c0a729bfa1986ff04f24096c0812de686c0230c393f558"
+      },
+      {
+        "path": "src/tests/hotel-prologue.test.ts",
+        "sha256": "618663b1a3243192c0d4476ef24221a5adfafae8437a5e9cfa50e8b7557d5cf0"
+      },
+      {
+        "path": "src/tests/hotel-shift-resolution.test.ts",
+        "sha256": "742918d408c9bcf2851849f75b8054543a44d0870b99e4ec33d6113f0ba4ccfa"
+      },
+      {
+        "path": "src/tests/hotel-shift.test.ts",
+        "sha256": "7e2f5fb9eecd2f5a78a47c760ba0099ef430ac82566cc5b8cec758c4b99e0dc1"
+      },
+      {
+        "path": "src/tests/infernal-attack-effects-live.test.tsx",
+        "sha256": "cc2b37360791aac727e1c88c36831af5a79c036d63a0e307a645f5293cc1f1f7"
+      },
+      {
+        "path": "src/tests/infernal-attack-effects.test.ts",
+        "sha256": "b6ffe1a12977b4789d5057a32af30024ee49513995a0145e0b761c0c45a5b450"
+      },
+      {
+        "path": "src/tests/infernal-authored-poses.test.ts",
+        "sha256": "9af7a37ebc0ff6dc88c1f2d0947a118f71d22097238cae6c7463ffc87db8920d"
+      },
+      {
+        "path": "src/tests/infernal-pose-anchors.test.ts",
+        "sha256": "58ff092db40adf7dff769aa6a4026f646965c244da45186765d235594b25c3a1"
+      },
+      {
+        "path": "src/tests/infernal-production.test.ts",
+        "sha256": "a7b213601e064db045ad81885bfb3efd251d632b8dc74d662954d3bc178c44c8"
+      },
+      {
+        "path": "src/tests/infernal-signatures.test.ts",
+        "sha256": "630b5dc352bb771026cb99f60a18baedd7d7aa62ba957575ef2b89c49aef4303"
+      },
+      {
+        "path": "src/tests/mission-compass.test.tsx",
+        "sha256": "c8e8fb79d138132b0833825fc7239240062a0946a9e27bdae06f280c896cecdf"
+      },
+      {
+        "path": "src/tests/onboarding-ui.test.tsx",
+        "sha256": "6bbba66d9681d165e530da1252844d8df17f418646897ab980e6712edc3b2b19"
+      },
+      {
+        "path": "src/tests/onboarding.test.ts",
+        "sha256": "1d3969e9f9ea589c48724fe93bc920eefcf3b699fb3d0bf5e72f05857522fc82"
+      },
+      {
+        "path": "src/tests/pentagram-ai.test.ts",
+        "sha256": "631ede26cc7e79368604d4af7d45bbb5687ae9e0dca09f80473da657979d72b2"
+      },
+      {
+        "path": "src/tests/pentagram-cinematics.test.ts",
+        "sha256": "e41096976b017ec2f11767510f791c906eaf71e3adc3dec2d24cc4d9c30a8473"
+      },
+      {
+        "path": "src/tests/pentagram-combat.test.ts",
+        "sha256": "7fd8c83cd783e385bc019851cdc0b32216a2e177bd11e4e363631e7b81109808"
+      },
+      {
+        "path": "src/tests/pentagram-fighters.test.ts",
+        "sha256": "8eb1b7bfc7fabc0c2d643a17a4a9ef205814c3f7be4711ae8172fe570d131639"
+      },
+      {
+        "path": "src/tests/pentagram-live-inputs.test.tsx",
+        "sha256": "e9e28f3ccb7581dab34af76ad17ac1096731f73ce468d221bc1a74b12a6ed3e1"
+      },
+      {
+        "path": "src/tests/pentagram-soundtrack-hook.test.tsx",
+        "sha256": "e2b689dcf38c02df7cedea957583de9e1dd27fe43ea9e57d377432abd03216be"
+      },
+      {
+        "path": "src/tests/pentagram-soundtrack-worker-client.test.ts",
+        "sha256": "5889de092bf60e206e4b0a0e510281b83228944d3f5339ddc3f47a177de08817"
+      },
+      {
+        "path": "src/tests/pentagram-spectators.test.ts",
+        "sha256": "531b19c23c67781fbb43e54b8e58fc1e6005164eec022ca77a30bc5ea084b717"
+      },
+      {
+        "path": "src/tests/pentagram-stages.test.ts",
+        "sha256": "2befebbb0d23b4380932db19e03ea7d34c7fe46ddce2e91f1b91c64530818a1a"
+      },
+      {
+        "path": "src/tests/rules.test.ts",
+        "sha256": "9b417129f9311686d4b82aec5f41b68e4ed49f6956542fb20afa2d7f0aadab57"
+      },
+      {
+        "path": "src/tests/standalone-campaign-cup.test.ts",
+        "sha256": "c6f329b192933cd6336ae60f03ade113436552ef9c4365f40336e8abc7ac80c8"
+      },
+      {
+        "path": "src/tests/standalone-illustrations.test.tsx",
+        "sha256": "52c05b8d50cdb1ff9e6abc652ef6a5435d75f249c95cd23c0a5232299111913c"
+      },
+      {
+        "path": "src/tests/standalone-live-fight.test.tsx",
+        "sha256": "4bc3c4f15789508e89a0352394b4bf8378b1e7fb30efa640a78360eb2a19568d"
+      },
+      {
+        "path": "src/tests/standalone-narrative.test.ts",
+        "sha256": "3942ccf7dc9ecc3327e18efe1f94a5881630f3d61044dcfd8cabfce991ee7b48"
+      },
+      {
+        "path": "src/tests/standalone-progression.test.ts",
+        "sha256": "c471024fbc7812d104f54e2db72d3150b8e04cd0d059e9dfa5a3201fb5a03850"
+      },
+      {
+        "path": "src/tests/standalone-roster.test.ts",
+        "sha256": "711b383aa4f5d47e1234ee9530eacbf6570f77afc3791dad69195efea6fb6939"
+      },
+      {
+        "path": "src/tests/standalone-season-three.test.tsx",
+        "sha256": "dfbd0e2d70116ce76e601d164cb5ad89e96b1c13d5289b9ba87221e55895f390"
+      },
+      {
+        "path": "src/tests/standalone-ui.test.tsx",
+        "sha256": "530329d642a959d307e740d4c28bc67c83d0cf3e2f18bc6bf625968f92d39d4d"
+      },
+      {
+        "path": "src/types/index.ts",
+        "sha256": "59ca2495d6801f1cc08f1f51146f1e24c7ae095d252c841823e144faa5efcd99"
+      },
+      {
+        "path": "src/vite-env.d.ts",
+        "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+      },
+      {
+        "path": "src/workers/pentagram-soundtrack.worker.ts",
+        "sha256": "6d6e9090fa7539b69791698a2a9f1845f05d3f158cfbf51d6816a490ad0980c2"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "e6ac431e2ce5d315fb368a7b1d91a12080cf08efa3b68da2d93f313b9dd92dbf"
+      },
+      {
+        "path": "vite.config.ts",
+        "sha256": "e231111484e7e1244bd4f780ed9e5af03b2b49794af535138521a988844be4bd"
+      }
+    ],
+    "runtimeInputFingerprint": "329c8152d3e4e2cd1d1e563b39ef61e603636a81a33342dbb8817c408f5a58b7",
+    "log": "docs/standalone/production-v11/qa-runtime.log",
+    "activeAssetCoverage": "docs/standalone/production-v11/active-asset-coverage.json",
+    "referencedAssets": 708,
+    "inGameChecked": true,
+    "checkedAssetIds": [
+      "fizzarolli-bozo-award",
+      "hb_better_than_blitzo_guy-portrait-s2",
+      "hb_mister_butler-circus-s2-portrait",
+      "hz_molly-legacy-2015-portrait",
+      "oops-clown-mask-trophy",
+      "sloth-consultation-container",
+      "sloth-consultation-s2-room"
+    ],
+    "browserReport": "docs/standalone/production-v11/browser-qa.json",
+    "browserStatus": "170 contrôles navigateur réussis sur Chromium : sept assets V11 vérifiés sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Le nouveau décor de consultation de Sloth, sa vignette et son conteneur séparé ont été observés dans deux combats d’entraînement ; proportions, ancrage et parallaxe commune restent cohérents avant et après déplacement. Six fiches de galerie et leurs références sont présentes, les trois portraits sont explicitement des bustes, Molly conserve la provenance historique 2015 et Crymini celle de 2017. Les six fiches respectent leur filtre S1/S2 applicable ; la disponibilité des arènes conserve son réglage S3 distinct. Aucune erreur réseau, exception, console.error, image manquante ou débordement horizontal observé. Empreintes runtime inchangées.",
+    "logSha256": "7de51b43508cf44dc02c141c7d9479de42facada765f4dd5c5896c2eb5a9f0c8",
+    "standaloneFilesVerified": 1312
+  },
+  "sourceFiles": [
+    {
+      "path": "docs/standalone/production-v11/environment-handoff.json",
+      "sha256": "6e691a6721b003bf17209ad9b2396c9a3716eea77dc8e1b179b9911212842087"
+    },
+    {
+      "path": "docs/standalone/production-v11/characters-handoff.json",
+      "sha256": "efbd6bbb5a305fd441458088dcb6fc87bac093de9a0fe872095d7966fcbc07bb"
+    },
+    {
+      "path": "docs/standalone/production-v11/continuation-environment-handoff.json",
+      "sha256": "7e01290ace9825b097b25b21835839541db02502e09a743cddcd4c3ad33c5dd4"
+    },
+    {
+      "path": "docs/standalone/production-v11/independent-visual-review.json",
+      "sha256": "fd774b480914154a88efc9257521221e5500129c040cb38f72835561fddfea8c"
+    },
+    {
+      "path": "docs/standalone/production-v11/refused-attempts.json",
+      "sha256": "f7a18731c9afedcc38013d704f2b576e71bfa0c9cce3bc9f0c819dd7afb5a145"
+    },
+    {
+      "path": "docs/standalone/production-v11/root-prompts.json",
+      "sha256": "be688e2e2aeca04e8e8ac360e0a11efb394d63ae8550fcd2513c3fa48de6cbc0"
+    },
+    {
+      "path": "docs/standalone/production-v11/characters-prompts.json",
+      "sha256": "51b68f1e90799f58b3eb31530640906df3c78eef083fa1b8d539674cf9a6bb8b"
+    },
+    {
+      "path": "docs/standalone/production-v11/characters-image-qa.json",
+      "sha256": "c404126b44b0f7c08f849033fe39b896b5f316bc083641ad4b956a2a0340aba0"
+    },
+    {
+      "path": "docs/standalone/production-v11/environment-image-qa.json",
+      "sha256": "98a7086f02acc6cbfa99d8bcc694148865f0d30c92a3ec2f7b2a2073cbefd9c7"
+    },
+    {
+      "path": "docs/standalone/production-v11/active-asset-coverage.json",
+      "sha256": "83658ca0a51314e3bff8ee1d44aeac17c7aeaa1c8474e4ca6a8531e6a3077726"
+    },
+    {
+      "path": "docs/standalone/production-v11/runtime-qa.json",
+      "sha256": "154a760c2e42bf4f41f3132449959c5f6dec66d011d548deaca9fb8a7e45253f"
+    },
+    {
+      "path": "docs/standalone/production-v11/browser-qa.json",
+      "sha256": "c0131630b80d0a88ac9a737facc49acb8af0b43ce269339b85eb04cae0681026"
+    },
+    {
+      "path": "production/v11/characters/references/molly-legacy-2015-144s.png",
+      "sha256": "f4fee948c0ef4ecf815cfe2dfc64beae491e7b4bc8900abb1629466517f325eb"
+    },
+    {
+      "path": "production/v11/characters/references/molly-legacy-2015-148s.png",
+      "sha256": "7ce4bbba6f92897968aca3056c41da5e90a56f140cd96c51d89e62f1635ad1f0"
+    },
+    {
+      "path": "production/v11/characters/references/mister-butler-60s.png",
+      "sha256": "206c91af1344632f1069acf1b51f769ccba50be19c3be61f3b93cc3bbc23268c"
+    },
+    {
+      "path": "production/v11/characters/references/mister-butler-150s.png",
+      "sha256": "285cd96f25b3e40ae881879bbe4c322be67a7b9d159bd0a117f8d905e57443dd"
+    },
+    {
+      "path": "production/v11/characters/references/better-guy-970s.png",
+      "sha256": "e05530ac6e9a9fa0cac2a589afd8db062ecf3411776524a9eeb8a090cb1ccf64"
+    },
+    {
+      "path": "production/v11/characters/references/better-guy-980s.png",
+      "sha256": "7cd846068d7646ff667935ac845d1fc269c09e03ecc2a611546523614291b8ce"
+    },
+    {
+      "path": "production/v11/environment/references/jasper-15.jpg",
+      "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0"
+    },
+    {
+      "path": "production/v11/environment/references/jasper-30.jpg",
+      "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a"
+    },
+    {
+      "path": "production/v11/environment/references/oops-clown-mask-trophy-crop.png",
+      "sha256": "34b51842852becb3603d115dac3334c4c800c72fc42e17d49ada172de9b5c4a5"
+    },
+    {
+      "path": "production/v10/environment/references/oops-official-10s.png",
+      "sha256": "086669148598707a3c860ebd51c50f0ea2b3ee2941f8b3efb607030ac72bcf72"
+    }
+  ],
+  "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+  "independentReviewSources": [
+    "docs/standalone/production-v11/independent-visual-review.json",
+    "docs/standalone/production-v11/continuation-environment-handoff.json"
+  ],
+  "fidelityOneToOneCertified": false
+}

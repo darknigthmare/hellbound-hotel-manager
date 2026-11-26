@@ -1,0 +1,23 @@
+{
+  "edition": "V11",
+  "attempts": [
+    {
+      "id": "v11-workbook-final-1",
+      "startedAt": "2026-11-26T16:58:19.185023+00:00",
+      "command": "NODE_OPTIONS=--max-old-space-size=1024 primary Node build-bible-v11.mjs --final",
+      "status": "final_exported_reimported_and_visually_reviewed",
+      "registerSha256": "236045325769fd9fbcc339be52dc1bed2001a99b39375b094fa3e68748c57346",
+      "completedAt": "2026-11-26T16:58:25.795920+00:00",
+      "exitCode": 0,
+      "processPeakRssKiB": 462940,
+      "log": "docs/standalone/production-v11/workbook-final-output.txt",
+      "logSha256": "5add6f297d2cb5f828ea31ba486e37ae5d4390b4d7a16bbf7553f0e52423cf02",
+      "visualReview": "passed_with_documented_limits",
+      "renderedViews": 9,
+      "finalSheets": 54,
+      "finalTables": 63,
+      "outputSha256": "c5ce2434fe38ceeb9d627d0ce511573bc4e7a2b7c7da8db0928e044b912612c0",
+      "reviewReport": "docs/standalone/production-v11/workbook-qa.json"
+    }
+  ]
+}

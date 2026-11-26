@@ -9,7 +9,7 @@ interface ReserveAsset {
   name: string;
   kind: ReserveKind;
   franchise?: 'Hazbin Hotel' | 'Helluva Boss';
-  continuity?: 'simulation_au' | 'season_1' | 'season_2' | 'season_3' | 'legacy_concept_2017';
+  continuity?: 'simulation_au' | 'season_1' | 'season_2' | 'season_3' | 'legacy_concept_2015' | 'legacy_concept_2017';
   spoilerScope?: 'season_1' | 'season_2' | 'season_3';
   frameCoverage?: 'bust' | 'full_body';
   runtimeStatus?: 'reserve' | 'selectable_costume' | 'stage_scenery';
@@ -33,10 +33,13 @@ const assets = reserveCatalogue.assets as ReserveAsset[];
 const assetStatus = (asset: ReserveAsset) => asset.runtimeStatus === 'selectable_costume'
   ? 'Tenue statique disponible dans le vestiaire'
   : asset.runtimeStatus === 'stage_scenery' ? 'Accessoire intégré au décor' : STATUS[asset.kind];
-const historicalLabel = (asset: ReserveAsset) => asset.continuity === 'legacy_concept_2017' ? ' · MODÈLE HISTORIQUE · 2017' : '';
+const historicalYear = (asset: ReserveAsset) => asset.continuity === 'legacy_concept_2015' ? 2015
+  : asset.continuity === 'legacy_concept_2017' ? 2017 : null;
+const historicalLabel = (asset: ReserveAsset) => historicalYear(asset) ? ` · MODÈLE HISTORIQUE · ${historicalYear(asset)}` : '';
 const provenanceNote = (asset: ReserveAsset) => {
   if (asset.continuity === 'simulation_au') return 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.';
-  if (asset.continuity === 'legacy_concept_2017') return 'Modèle de conception de 2017, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.';
+  const year = historicalYear(asset);
+  if (year) return `Modèle de conception de ${year}, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.`;
   return 'Dessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.';
 };
 
