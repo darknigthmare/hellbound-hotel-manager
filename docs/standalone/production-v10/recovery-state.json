@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "edition": "V10",
+  "recordedAt": "2026-11-26T16:08:10.728Z",
+  "status": "assets_saved_integration_and_release_incomplete",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "recoveryBranch": "recovery/infernal-v10-static-20261126",
+  "publishedPr": {
+    "number": 8,
+    "branch": "feat/infernal-versus-assets-20261124",
+    "head": "241d43ad6b95c7a10fe05155f35c0990c165b771",
+    "edition": "V9",
+    "unchangedAtCheckpoint": true
+  },
+  "baselineTree": "7e21f39032470c4bed35ac043f9bbc02ed468542",
+  "counts": {
+    "distinctDrawings": 11,
+    "masterPng": 11,
+    "losslessWebp": 11,
+    "thumbnails": 2,
+    "deliveredImageFiles": 24,
+    "deliveredImageBytes": 19950095,
+    "newStandaloneBases": 3,
+    "newStaticCostumes": 3,
+    "newStages": 2,
+    "newSceneryProps": 3,
+    "newPlayableKits": 0,
+    "newAnimationCycles": 0,
+    "newGeneratorRefusals": 0,
+    "historicalRefusalsRetried": 0
+  },
+  "localIntegrationCountsUnpublished": {
+    "catalogueIds": 209,
+    "distinctIdentities": 208,
+    "activeFighters": 43,
+    "standaloneBases": 112,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 72,
+    "catalogueIdsWithoutBase": 97,
+    "distinctIdentitiesWithoutBase": 96,
+    "reserveGalleryEntries": 115,
+    "costumeFamilies": 24,
+    "stages": 45,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11
+  },
+  "assets": [
+    {
+      "id": "hb_loona-party-queen-bee",
+      "name": "Loona — robe de soirée, Queen Bee",
+      "group": "costumes",
+      "category": "static_costume",
+      "identity": "hb_loona",
+      "dimensions": [
+        1160,
+        1355
+      ],
+      "continuity": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s",
+        "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+        "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin"
+      ],
+      "limits": "Plans entiers officiels 320×180 ; pin limité au buste. Une pose statique READY. Marges haut/bas étroites sans rognage constaté.",
+      "master": {
+        "path": "production/v10/costumes/masters/hb_loona-party-queen-bee.png",
+        "gitBlobSha": "f205f5ebf63958390c4723e34a24120857ee33e9",
+        "remoteSha": "f205f5ebf63958390c4723e34a24120857ee33e9",
+        "size": 851118,
+        "sha256": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+        "gitBlobSha": "11d9c8d01ad893ab8ed15bf780a3a1bb7e176873",
+        "remoteSha": "11d9c8d01ad893ab8ed15bf780a3a1bb7e176873",
+        "size": 492918,
+        "sha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "hb_moxxie-hallucination-truth-seekers",
+      "name": "Moxxie — hallucination, Truth Seekers",
+      "group": "costumes",
+      "category": "static_costume",
+      "identity": "hb_moxxie",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "continuity": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+        "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s",
+        "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin"
+      ],
+      "limits": "Silhouette entière arrière trois quarts, profil et pin du buste. Doublure rose initiale corrigée en charbon-violet avec le générateur. Pose de jeu adaptée.",
+      "master": {
+        "path": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
+        "gitBlobSha": "1283f385270dd99719b91fbe315f2b0f8b666d7a",
+        "remoteSha": "1283f385270dd99719b91fbe315f2b0f8b666d7a",
+        "size": 600930,
+        "sha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+        "gitBlobSha": "8af057d46353ccdf225de240dadfaa50042651d5",
+        "remoteSha": "8af057d46353ccdf225de240dadfaa50042651d5",
+        "size": 365692,
+        "sha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "charlie-demon-battle-s1-ready",
+      "name": "Charlie — transformation du combat final S1",
+      "group": "costumes",
+      "category": "static_costume",
+      "identity": "charlie",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "continuity": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+        "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s",
+        "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s"
+      ],
+      "limits": "Bras gauche rouge agrandi corrigé avec le générateur. Une seule illustration pour VAR-001 et VAR-002, qui restent partiellement couvertes. Références 320×180 ; marge haute 4px au contrôle local.",
+      "master": {
+        "path": "production/v10/costumes/masters/charlie-demon-battle-s1-ready.png",
+        "gitBlobSha": "964f0f766639549c59844cdcfa0e36dfa0c2a8c3",
+        "remoteSha": "964f0f766639549c59844cdcfa0e36dfa0c2a8c3",
+        "size": 1329456,
+        "sha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+        "gitBlobSha": "e8342c17b5039ddbcf33bca8e1746d8bb0ee14cc",
+        "remoteSha": "e8342c17b5039ddbcf33bca8e1746d8bb0ee14cc",
+        "size": 882068,
+        "sha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "hz_melissa-model-s1-base",
+      "name": "Melissa — tenue de mannequin S1",
+      "group": "characters",
+      "category": "reserve_full_body_base",
+      "identity": "hz_melissa",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "continuity": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=tB5nUTSSqG4&t=37s",
+        "https://www.youtube.com/watch?v=GIp3E_O_1DA&t=285s"
+      ],
+      "limits": "Première base entière de cette identité dans la tenue de mannequin observée. Ne qualifie pas le tee-shirt et pantalon violet de l'ancien cutout. Sources 101×180 et 320×180, marge basse 12px sans coupe.",
+      "master": {
+        "path": "production/v10/characters/masters/hz_melissa-model-s1-base.png",
+        "gitBlobSha": "ac0789fe8dcbe04a6b0475cee8932b9a39def0af",
+        "remoteSha": "ac0789fe8dcbe04a6b0475cee8932b9a39def0af",
+        "size": 1000563,
+        "sha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+        "gitBlobSha": "9d9698469e5b09a1fd51361406e2e3b9ede5fb98",
+        "remoteSha": "9d9698469e5b09a1fd51361406e2e3b9ede5fb98",
+        "size": 642200,
+        "sha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": true,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "hb_loo_loo-park-s1-base",
+      "name": "Loo Loo — mascotte S1",
+      "group": "characters",
+      "category": "reserve_full_body_base",
+      "identity": "hb_loo_loo",
+      "dimensions": [
+        1182,
+        1330
+      ],
+      "continuity": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=2KlyodO-VlY&t=56s",
+        "https://www.youtube.com/watch?v=2KlyodO-VlY&t=72s",
+        "https://www.youtube.com/watch?v=2KlyodO-VlY&t=90s"
+      ],
+      "limits": "Le plan large qualifie les jambes noires et chaussures rouges. Nez initial non corroboré supprimé avec le générateur. Petits détails des chaussures et geste de salut adaptés.",
+      "master": {
+        "path": "production/v10/characters/masters/hb_loo_loo-park-s1-base.png",
+        "gitBlobSha": "d2fe638aad7a9dd874b3212c310df593842db794",
+        "remoteSha": "d2fe638aad7a9dd874b3212c310df593842db794",
+        "size": 664484,
+        "sha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+        "gitBlobSha": "e7832bf276b9906c059392869174c163fccb4967",
+        "remoteSha": "e7832bf276b9906c059392869174c163fccb4967",
+        "size": 435040,
+        "sha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": true,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "hz_crymini-legacy-2017-base",
+      "name": "Crymini — modèle historique 2017",
+      "group": "characters",
+      "category": "reserve_full_body_base",
+      "identity": "hz_crymini",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "continuity": "legacy_concept_2017",
+      "spoilerScope": "season_1",
+      "references": [
+        "https://www.youtube.com/watch?v=ga5qslLwkZo&t=590s",
+        "https://www.youtube.com/watch?v=ga5qslLwkZo&t=595s"
+      ],
+      "limits": "Dessin de conception Vivziepop publié le 28 mai 2017. Corps entier visible dans des cellules 320 × 180 avec l’interface du logiciel. Le plafond de filtre S1 ne date pas le modèle en S1 ; présence et modèle de série récente non établis.",
+      "master": {
+        "path": "production/v10/characters/masters/hz_crymini-legacy-2017-base.png",
+        "gitBlobSha": "d3b57e71970b20a96ef84d397fd011f34884402a",
+        "remoteSha": "d3b57e71970b20a96ef84d397fd011f34884402a",
+        "size": 1412534,
+        "sha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+        "gitBlobSha": "630f02969489d2a6b6e7c165b17cb01143ed637c",
+        "remoteSha": "630f02969489d2a6b6e7c165b17cb01143ed637c",
+        "size": 876012,
+        "sha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": true,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "asmodeus-bedroom-s2-room",
+      "name": "Chambre d’Asmodeus — Oops",
+      "group": "environment",
+      "category": "stage_background",
+      "dimensions": [
+        1602,
+        982
+      ],
+      "continuity": "season_2",
+      "stageId": "asmodeus-bedroom-s2",
+      "references": [
+        "https://jasperluu.com/helluvaboss",
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s"
+      ],
+      "limits": "Fond opaque, adapté au combat AU. Console et candélabre retirés du fond pour être intégrés séparément. Distinct du cabaret Ozzie’s.",
+      "master": {
+        "path": "production/v10/environment/masters/asmodeus-bedroom-s2-room.png",
+        "gitBlobSha": "00b26d894a7f2e966c62f0267d4d9e144812bc51",
+        "remoteSha": "00b26d894a7f2e966c62f0267d4d9e144812bc51",
+        "size": 1793317,
+        "sha256": "89a8a182921937eab3420fbebd4b387daf4110b4df4d9889be7962cd22fd682e",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+        "gitBlobSha": "686751cf73ff06d70613a0e172165dac29e5ffc0",
+        "remoteSha": "686751cf73ff06d70613a0e172165dac29e5ffc0",
+        "size": 1314492,
+        "sha256": "175eeebf55b4ff5ab938314fbd7eb3cfe7c1357c7a38d99bbebd3100bc0d570e",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "asmodeus-bedroom-console",
+      "name": "Console de la chambre d’Asmodeus",
+      "group": "environment",
+      "category": "scenery_prop",
+      "dimensions": [
+        1540,
+        1021
+      ],
+      "continuity": "season_2",
+      "stageId": "asmodeus-bedroom-s2",
+      "references": [
+        "https://jasperluu.com/helluvaboss"
+      ],
+      "limits": "Trois tiroirs et trois pieds courbés. Perspective simplifiée explicitement pour la présentation du jeu ; fond transparent.",
+      "master": {
+        "path": "production/v10/environment/masters/asmodeus-bedroom-console.png",
+        "gitBlobSha": "6d137c9bcb270b091e6bba2fa0c6d0aa2f87f0a8",
+        "remoteSha": "6d137c9bcb270b091e6bba2fa0c6d0aa2f87f0a8",
+        "size": 719156,
+        "sha256": "c07e1589c753c16da1e6a41a258dc3729f3d613379b81e67e244c551c1393326",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-console.webp",
+        "gitBlobSha": "ab5fc32bb41f58f476823bf8b280b211190d988f",
+        "remoteSha": "ab5fc32bb41f58f476823bf8b280b211190d988f",
+        "size": 459458,
+        "sha256": "5637edde69fd2c439ca76c8d8e3b52e44200732c12412fa1ae80f9902155c8ca",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "asmodeus-bedroom-candelabrum",
+      "name": "Candélabre de la chambre d’Asmodeus",
+      "group": "environment",
+      "category": "scenery_prop",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "continuity": "season_2",
+      "stageId": "asmodeus-bedroom-s2",
+      "references": [
+        "https://jasperluu.com/helluvaboss"
+      ],
+      "limits": "Trois bougies violettes non allumées, haute au centre, moyenne à gauche et basse à droite ; tige rouge courbée. Référence recadrée de 210 × 325 pixels.",
+      "master": {
+        "path": "production/v10/environment/masters/asmodeus-bedroom-candelabrum.png",
+        "gitBlobSha": "e5f4e16d7a6a21ed5a2ee5f4d3886fa535405b54",
+        "remoteSha": "e5f4e16d7a6a21ed5a2ee5f4d3886fa535405b54",
+        "size": 1178596,
+        "sha256": "e2fa34f0421cb5d80c7f95d11642359d7ac5e8f6ad8c7ec07d80adb8462a7416",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp",
+        "gitBlobSha": "eb540130e5d5b407abf550bbdff3891040be22fd",
+        "remoteSha": "eb540130e5d5b407abf550bbdff3891040be22fd",
+        "size": 745634,
+        "sha256": "b7b3963458eae6ff869a015e7d186d22eb3030f3168b21dcd3f9cc8b2269636d",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "blitz-sinsmas-dream-s2-room",
+      "name": "Noël imaginé par Blitzø — Sinsmas",
+      "group": "environment",
+      "category": "stage_background",
+      "dimensions": [
+        1648,
+        954
+      ],
+      "continuity": "season_2",
+      "stageId": "blitz-sinsmas-dream-s2",
+      "references": [
+        "https://jasperluu.com/helluvaboss",
+        "https://www.youtube.com/watch?v=GisSNuVpbkM&t=850s"
+      ],
+      "limits": "Vision familiale, pas un domicile réel établi. Quatre chaussettes S/V/B/L ; fond opaque, adaptation au combat AU.",
+      "master": {
+        "path": "production/v10/environment/masters/blitz-sinsmas-dream-s2-room.png",
+        "gitBlobSha": "77fd62fa4f471b851593e1f09621ac88759b66c0",
+        "remoteSha": "77fd62fa4f471b851593e1f09621ac88759b66c0",
+        "size": 1704754,
+        "sha256": "ba840c7ee2ce6e3e703067b0c147b643d105a7bdaef05aea4ec432d5765da327",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+        "gitBlobSha": "d12709e9188b227bb3a860c1209245227696cc09",
+        "remoteSha": "d12709e9188b227bb3a860c1209245227696cc09",
+        "size": 1239826,
+        "sha256": "19781e8dcae0ecb1a6ae6910fa96464b05a6108cd4d39c51a53c8a3806efe0a8",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    },
+    {
+      "id": "blitz-sinsmas-tree-snowglobe",
+      "name": "Boule à neige au sapin",
+      "group": "environment",
+      "category": "scenery_prop",
+      "dimensions": [
+        1341,
+        1173
+      ],
+      "continuity": "season_2",
+      "stageId": "blitz-sinsmas-dream-s2",
+      "references": [
+        "https://jasperluu.com/helluvaboss"
+      ],
+      "limits": "Verre ambré, sapin et cadeaux rouges ; détails internes interprétés depuis un recadrage de 120 × 105 pixels. Fond transparent.",
+      "master": {
+        "path": "production/v10/environment/masters/blitz-sinsmas-tree-snowglobe.png",
+        "gitBlobSha": "5fce3ee12fbee6ff54950831d9b4c7ca27638b36",
+        "remoteSha": "5fce3ee12fbee6ff54950831d9b4c7ca27638b36",
+        "size": 614411,
+        "sha256": "c8309c1bd381cba8dacb5b00bf37804a134e41487420aeae930c7ac3400cd02f",
+        "status": "verified"
+      },
+      "webp": {
+        "path": "public/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp",
+        "gitBlobSha": "1b04e948708c80ed250ba1c6d91f83321e0643cd",
+        "remoteSha": "1b04e948708c80ed250ba1c6d91f83321e0643cd",
+        "size": 340848,
+        "sha256": "fba024e005b3432597b7f05976fc1f4c3345959e60a212e3fbbb333b9640042b",
+        "status": "verified"
+      },
+      "visualReviewPerformedLocally": true,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "addsStandaloneBase": false,
+      "addsPlayableKit": false
+    }
+  ],
+  "thumbnails": [
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp",
+      "gitBlobSha": "320f4e833ffc680a1b640258b65130ad9d596639",
+      "remoteSha": "320f4e833ffc680a1b640258b65130ad9d596639",
+      "size": 157032,
+      "sha256": "55257c9e538c3f720dd8eddbc5bffe60f53f3745836c2021098d7e7f6a0cb17d",
+      "status": "verified",
+      "response": {
+        "sha": "320f4e833ffc680a1b640258b65130ad9d596639",
+        "isError": false,
+        "message": "Action completed."
+      }
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp",
+      "gitBlobSha": "349a3b611d0d2f1814e2fe874776076bfbd4fcbe",
+      "remoteSha": "349a3b611d0d2f1814e2fe874776076bfbd4fcbe",
+      "size": 129556,
+      "sha256": "b1da9452d5bf3d6864299ce24872ebdf8feb6c72d3d807342dec70492d8bfd48",
+      "status": "verified",
+      "response": {
+        "sha": "349a3b611d0d2f1814e2fe874776076bfbd4fcbe",
+        "isError": false,
+        "message": "Action completed."
+      }
+    }
+  ],
+  "immutableInventory": {
+    "path": "docs/standalone/production-v10/github-immutable-blobs.json",
+    "blobSha": "56c71a3f4dd78f5eb51089b4489f3176f5e9d2ee",
+    "files": 51,
+    "bytes": 26529119
+  },
+  "validation": {
+    "imageReview": "Eleven accepted masters inspected locally and PNG/WebP pixel identity checked before disconnect; original detailed QA files are not yet all recovered.",
+    "runtimePaths": {
+      "lastObservedPaths": 700,
+      "brokenPaths": 0,
+      "status": "local_audit_completed_before_disconnect"
+    },
+    "technical": {
+      "status": "incomplete",
+      "standaloneTypecheckWith512MiB": "passed",
+      "targetedGalleryTestAfterFix": {
+        "passed": 1,
+        "skipped": 19
+      },
+      "fullV10TestSuite": "not_passed",
+      "builds": "not_completed",
+      "attemptNotes": "Several processes ended with exit137. One existing UI test matched two strong elements containing43 after the number of default stages reached43. The assertion was scoped to the combattants label and the targeted test then passed. Final aggregate QA result was unreadable after the executor disconnected; it is not claimed successful."
+    },
+    "browser": {
+      "status": "not_completed",
+      "checkedAssets": 0,
+      "attempt": "Initial attempt failed before app load with ERR_CONNECTION_REFUSED. Harness was fixed to require GET200 before launching Chromium and before navigation. No final run was completed."
+    },
+    "workbook": {
+      "status": "not_created",
+      "baseline": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
+      "baselineSha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+      "baselineSheets": 50,
+      "baselineTables": 59,
+      "expectedV10Sheets": 52,
+      "expectedV10Tables": 61,
+      "attempt": "Preparation checks and formulas passed, but Artifact Tool export was interrupted with exit137. No V10 workbook was produced."
+    },
+    "drive": {
+      "fileId": "10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU",
+      "edition": "V9",
+      "updatedToV10": false
+    },
+    "release": {
+      "finalV10Published": false,
+      "merged": false
+    }
+  },
+  "localWorkToRecover": {
+    "root": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager",
+    "localBaselineHead": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+    "runtimeFiles": [
+      "src/lib/infernal-appearances.ts",
+      "src/lib/pentagram-stages.ts",
+      "src/styles/pentagram-arena.css",
+      "src/standalone/ReserveGallery.tsx",
+      "art/infernal-versus/production/reserve-assets.json",
+      "src/tests/standalone-progression.test.ts",
+      "src/tests/standalone-ui.test.tsx"
+    ],
+    "lastGallerySha256": "af10a9f80626669e974b81bb843e9571a83aaa41a1def5cc4a95f1a2876dc473",
+    "gallerySourceFix": "The three costume references were classified as official_video_public_storyboard or official_licensed_product to make the actual official links visible. The 106 historical gallery entries were preserved.",
+    "draftFiles": [
+      "docs/standalone/extension-plan.json",
+      "docs/standalone/production-v10/delivery-register.json",
+      "docs/standalone/production-v10/assemble-register.py",
+      "docs/standalone/production-v10/build-bible-v10.mjs",
+      "docs/standalone/production-v10/verify-runtime.mjs",
+      "docs/standalone/production-v10/audit-runtime-coverage.mjs",
+      "docs/standalone/production-v10/independent-review-root.json",
+      "docs/standalone/production-v10/README.md",
+      "docs/standalone/DELIVERY_STATIC_V10_2026-11-26.md"
+    ],
+    "environmentStatus": "unavailable"
+  },
+  "nextSteps": [
+    "Restore the local runtime edits and original QA/provenance files from the executor if it becomes available; do not overwrite them with the older V9 runtime from this checkpoint branch.",
+    "Verify all recovered bytes against the immutable inventory.",
+    "Run sequential technical gates and browser checks on all 11 accepted assets on desktop/mobile before claiming inGameChecked.",
+    "Finalize the register and create the V10 workbook while preserving all 50 historical worksheets, 59 tables and 158 historical OOXML parts; inspect rendered views.",
+    "Replace the same Drive file only after the workbook is verified, then download and compare bytes.",
+    "Publish the complete validated V10 on the original PR branch with an expected-head check and verify CI/deployment for the new commit."
+  ],
+  "limitations": [
+    "Static drawings only; no new animation cycles or playable kits.",
+    "Crymini is historical 2017, not a proven recent-season incarnation.",
+    "Charlie VAR-001 and VAR-002 share one accepted drawing and remain partially covered.",
+    "Some source images are 320 × 180 pixels; fine details are adapted.",
+    "No 1:1 fidelity certification.",
+    "This checkpoint is an asset/provenance recovery snapshot, not a validated V10 application release."
+  ],
+  "recoveredSupportingFiles": [
+    {
+      "path": "docs/standalone/production-v10/recovery-catalogue-plan-bible.json",
+      "sha": "910597ad78a785ea5bfa3857710236cb6e98525e",
+      "kind": "state_summary"
+    },
+    {
+      "path": "docs/standalone/production-v10/recovery/run-browser-qa.cjs",
+      "sha": "73afb6301b3ced82a6f9586f34891467510663ef",
+      "kind": "prepared_script_not_completed_qa"
+    },
+    {
+      "path": "docs/standalone/production-v10/recovery/finalize-browser-qa.py",
+      "sha": "62b6ec58742f0b1d10b48324fafd5125db039f61",
+      "kind": "prepared_script_not_completed_qa"
+    },
+    {
+      "path": "docs/standalone/production-v10/recovery/characters-prompts-recovered.json",
+      "sha": "992147618251d5fb9312b13bf4c5355474c8580c",
+      "kind": "recovered_from_authoring_context"
+    }
+  ]
+}

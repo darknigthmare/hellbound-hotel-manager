@@ -1,0 +1,175 @@
+{
+  "environment": {
+    "status": "unavailable",
+    "lastError": "exec-server transport disconnected; executor key changed during session recovery",
+    "heavyTasksRunningByThisAgent": false
+  },
+  "baseline": {
+    "remoteCommit": "241d43ad6b95c7a10fe05155f35c0990c165b771",
+    "localCommit": "29b21d219c435225638fc47a5cd7959b6c1c8586",
+    "tree": "7e21f39032470c4bed35ac043f9bbc02ed468542"
+  },
+  "v10": {
+    "catalogueSha256": "af10a9f80626669e974b81bb843e9571a83aaa41a1def5cc4a95f1a2876dc473",
+    "registerStatus": "draft_production_register",
+    "counts": {
+      "distinctDrawings": 11,
+      "masterPng": 11,
+      "losslessWebp": 11,
+      "thumbnails": 2,
+      "deliveredImageFiles": 24,
+      "deliveredImageBytes": 19950095,
+      "newStandaloneBases": 3,
+      "newCharacterBases": 3,
+      "newlyCoveredCatalogueIds": 3,
+      "newPlayableKits": 0,
+      "newStaticCostumes": 3,
+      "newStages": 2,
+      "newSceneryProps": 3,
+      "newAnimationCycles": 0,
+      "generatorRefused": 0
+    },
+    "cumulativeCounts": {
+      "catalogueIds": 209,
+      "distinctProductionIdentitiesAfterKnownAlias": 208,
+      "activeFighters": 43,
+      "standaloneBases": 112,
+      "activeStandaloneBases": 40,
+      "reserveStandaloneBases": 72,
+      "catalogueIdsWithoutStandaloneBase": 97,
+      "distinctProductionIdentitiesWithoutStandaloneBase": 96,
+      "reserveGalleryEntries": 115,
+      "runtimeCostumeFamilies": 24,
+      "activeStages": 45,
+      "illustratedPersonalScenes": 127,
+      "personalScenes": 129,
+      "illustratedGlobalScenes": 11,
+      "globalScenesIncludingBookends": 11
+    },
+    "baseIdentityIds": [
+      "hz_melissa",
+      "hb_loo_loo",
+      "hz_crymini"
+    ],
+    "costumeIds": [
+      "hb_loona-party-queen-bee",
+      "hb_moxxie-hallucination-truth-seekers",
+      "charlie-demon-battle-s1-ready"
+    ],
+    "stageIds": [
+      "asmodeus-bedroom-s2",
+      "blitz-sinsmas-dream-s2"
+    ],
+    "localFilesOwned": [
+      "art/infernal-versus/production/reserve-assets.json",
+      "docs/standalone/extension-plan.json",
+      "docs/standalone/production-v10/assemble-register.py",
+      "docs/standalone/production-v10/build-bible-v10.mjs",
+      "docs/standalone/production-v10/delivery-register.json",
+      "docs/standalone/production-v10/catalogue-plan-qa.json",
+      "docs/standalone/production-v10/assembler-preparation-qa.json",
+      "docs/standalone/production-v10/workbook-attempts.json"
+    ],
+    "workbook": {
+      "created": false,
+      "attempts": [
+        {
+          "mode": "prepare",
+          "exitCode": 137,
+          "completedPhases": [
+            "image/source hash validation",
+            "counts",
+            "Artifact Tool recalculation",
+            "change/recalculate/restore formula checks",
+            "formula-error scan"
+          ],
+          "failedPhase": "export additions",
+          "partialXlsxCreated": false
+        }
+      ],
+      "baselineSha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+      "expectedHistoricalSheets": 50,
+      "expectedHistoricalTables": 59,
+      "expectedHistoricalParts": 158,
+      "expectedFinalSheets": 52,
+      "expectedFinalTables": 61,
+      "fallbackDesignedButNotImplemented": "Separate Workbook.toProto / Workbook.load authoring checkpoint, XLSX export, rendering, packaging and final import in isolated primary-Node processes; no documented streaming export option."
+    },
+    "durablePreloadReportedBy": "/root/reference_audit",
+    "durablePreload": {
+      "manifestPath": "/tmp/infernal-v10/github-immutable-blobs.json",
+      "manifestSha256": "9fede13c404dd4e4cb8484b80bc73da7990af27dff82921140691fcf29f4b0d5",
+      "files": 51,
+      "bytes": 26529119,
+      "verifiedRemoteGitBlobs": 51,
+      "treeCommitOrRefCreated": false,
+      "manifestGitBlobSha": "56c71a3f4dd78f5eb51089b4489f3176f5e9d2ee"
+    },
+    "finalQa": false,
+    "noFinalPublication": true,
+    "acceptedCostumeMasterSha256": {
+      "hb_loona-party-queen-bee": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+      "hb_moxxie-hallucination-truth-seekers": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+      "charlie-demon-battle-s1-ready": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6"
+    },
+    "referenceKindCorrection": {
+      "gallerySha256": "af10a9f80626669e974b81bb843e9571a83aaa41a1def5cc4a95f1a2876dc473",
+      "costumeReferenceCount": 9,
+      "videoKind": "official_video_public_storyboard",
+      "productKind": "official_licensed_product",
+      "verifiedVideoIds": [
+        "D-2799Y07Zc",
+        "yXErLiSbxXQ",
+        "7OIa6bri7aE"
+      ],
+      "licensedProductPaths": [
+        "/products/queen-bee-party-dress-loona-enamel-pin",
+        "/products/truth-seekers-hallucination-moxxie-enamel-pin"
+      ]
+    },
+    "planChanges": {
+      "historicalGalleryEntriesPreserved": 106,
+      "historicalPlanStagesPreserved": 37,
+      "historicalPlanVariantRowsPreserved": 50,
+      "newlyAppendedVariantIds": [
+        "VAR-V10-hb_loona-party-queen-bee",
+        "VAR-V10-hb_moxxie-hallucination-truth-seekers"
+      ],
+      "existingVariantIdsPartiallyCoveredByOneSharedCharlieDrawing": [
+        "VAR-001",
+        "VAR-002"
+      ],
+      "newVariantStatus": "Partiel",
+      "costumeStaticReadyOnly": true,
+      "legacyCharacter": {
+        "id": "hz_crymini",
+        "continuity": "legacy_concept_2017",
+        "spoilerScope": "season_1",
+        "scopeNote": "season_1 is the gallery filtering bucket only, never a claim of a season-one incarnation."
+      },
+      "stageCanonScope": {
+        "asmodeus-bedroom-s2": "Asmodeus bedroom in Oops; separate from Ozzie's cabaret.",
+        "blitz-sinsmas-dream-s2": "Blitzo's imagined Christmas scene in Sinsmas; not an established real home."
+      },
+      "alias": {
+        "productionIdentityId": "hz_travis",
+        "catalogueIds": [
+          "hz_travis",
+          "hb_travis"
+        ],
+        "countedAsNewBase": false
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "checkpointType": "recovery_status_only_not_a_final_delivery_register",
+  "createdFrom": "Direct observations and recorded tool results in recover_v8 conversation; filesystem inaccessible at checkpoint time.",
+  "recoveryLimits": [
+    "The normalized gallery, extension plan, draft register, assembler and builder were written locally but not uploaded by this agent before the executor disappeared.",
+    "No byte-for-byte verified full source copy is held in this agent's functions.store. Authoring inputs remain in the conversation, but this checkpoint does not reconstruct or certify unavailable files.",
+    "The low-memory phase split was designed from documented Workbook.toProto()/Workbook.load() APIs but had not been applied.",
+    "The V10 workbook did not exist at the last observation. Only V9 remains the verified workbook.",
+    "Final technical and browser QA were not completed by this agent; no passing final QA is claimed.",
+    "No tree, commit, ref or PR mutation is authorized by the existence of this checkpoint."
+  ]
+}
