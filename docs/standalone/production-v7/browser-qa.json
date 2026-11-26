@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-26",
+  "status": "blocked_before_browser_launch",
+  "runtimeViewsObserved": [],
+  "screenshotsProduced": 0,
+  "desktopMobileVisualValidation": false,
+  "currentEnvironmentCheck": {
+    "command": "/usr/bin/chromium --version",
+    "exitCode": 127,
+    "output": "/usr/bin/chromium: 9: [: 5225713664: unexpected operator\n/usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found",
+    "wrapperPresent": true,
+    "referencedBrowserExecutablePresent": false,
+    "browserAutomationConnectorAvailable": false
+  },
+  "cause": [
+    "The installed launcher still points to an absent Chromium executable.",
+    "No live browser session was opened, so no runtime visual or interaction result is claimed."
+  ],
+  "previousDownloadFailure": {
+    "report": "docs/standalone/production-v6/browser-qa.json",
+    "date": "2026-11-25",
+    "provider": "Official Playwright Chromium download",
+    "httpStatus": 403,
+    "repeatedInV7": false,
+    "alternativeMirrorAttempted": false
+  },
+  "checksNotPerformed": [
+    "Desktop and mobile page rendering, gallery filtering and image decode in a browser.",
+    "Arena framing and authored scene legibility in a live duel.",
+    "Browser console, network, focus and overflow assertions."
+  ],
+  "fidelityOneToOneCertified": false
+}

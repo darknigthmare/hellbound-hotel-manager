@@ -2460,15 +2460,16 @@
   translate: 0 26.5%;
 }
 
-/* Waves F, G and H keep the complete master visible. Props share its contained bounds,
+/* Waves F, G, H and the V7 three-layer stages keep the complete master visible.
+   Props share its contained bounds,
    including transparent canvas margins; scenery stays behind the fighters. */
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) {
   --infernal-contained-stage-height: clamp(330px, 42vw, 520px);
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) :is(.arena-lane-grid,.arena-crowd-lights) {
   display: none;
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) .infernal-room-plane {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) .infernal-room-plane {
   inset: 0 -10px;
   box-sizing: border-box;
   padding: 0 20px;
@@ -2478,7 +2479,7 @@
   background-repeat: no-repeat;
   background-position: center bottom;
 }
-.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) :is(.infernal-desk-plane,.infernal-near-plane) {
   display: none;
   z-index: 1;
   height: auto;
@@ -2512,17 +2513,17 @@
   left: 31%; right: auto; top: auto; bottom: clamp(64px, 15vw, 230px);
   object-position: center top;
 }
-.arena-combat-stage:is([data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+.arena-combat-stage:is([data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) :is(.infernal-desk-plane,.infernal-near-plane) {
   inset: auto;
   translate: none;
 }
 @media (max-width: 700px) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) {
     --infernal-contained-stage-height: clamp(300px, 72vw, 430px);
   }
 }
 @media (max-height: 600px) and (orientation: landscape) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) {
     --infernal-contained-stage-height: 62vh;
   }
   .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
@@ -2531,20 +2532,20 @@
 }
 @supports (height: 1svh) {
   @media (max-height: 600px) and (orientation: landscape) {
-    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) {
+    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) {
       --infernal-contained-stage-height: 62svh;
     }
   }
 }
 @supports (container-type: size) and (width: 1cqw) {
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) {
     /* Definite height preserves the existing responsive minimum under size
        containment. The absolutely positioned layers cannot size this box. */
     height: var(--infernal-contained-stage-height);
     min-height: var(--infernal-contained-stage-height);
     container-type: size;
   }
-  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"]) :is(.infernal-desk-plane,.infernal-near-plane) {
     display: block;
     --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
     --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
@@ -2633,6 +2634,43 @@
     --wave-prop-width: calc(var(--wave-art-width) * 0.133546326);
     left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.130000000 - var(--wave-prop-width) * 0.495614035);
     bottom: calc(var(--wave-art-height) * 0.712608185 - var(--wave-prop-width) * 0.066985646);
+  }
+  /* Sloth exterior V7: the bench and the smaller left roadside lamp were
+     removed from the room master. Restore each once on the pavement, using
+     native alpha margins; both remain behind the combatants. */
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .09);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .272 - var(--wave-prop-width) * .105975);
+    bottom: calc(var(--wave-art-height) * .146 - var(--wave-prop-width) * .058625);
+  }
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .054);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .225 - var(--wave-prop-width) * .493785);
+    bottom: calc(var(--wave-art-height) * .10 - var(--wave-prop-width) * .056630);
+  }
+  /* Australia S3: one rock and one tuft occupy the cleared lower-left
+     patches. Native transparent margins keep their visible bases grounded. */
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .155);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .147 - var(--wave-prop-width) * .207644);
+    bottom: calc(var(--wave-art-height) * .152 - var(--wave-prop-width) * .055249);
+  }
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .113);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .252 - var(--wave-prop-width) * .109357);
+    bottom: calc(var(--wave-art-height) * .068 - var(--wave-prop-width) * .054115);
+  }
+  /* Auction hall S3: restore the nearest right-wall bench and its adjacent
+     ornament once each; the other benches remain part of the room artwork. */
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .224);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .782 - var(--wave-prop-width) * .069335);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .042841);
+  }
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .075);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .735 - var(--wave-prop-width) * .252537);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .036077);
   }
 }
 

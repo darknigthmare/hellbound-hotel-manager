@@ -1,0 +1,1177 @@
+{
+  "schemaVersion": 1,
+  "edition": "V7",
+  "date": "2026-11-26",
+  "status": "individual_qualification_complete",
+  "scope": "Les56 IDs Helluva sans base dans V5 :6 déjà livrés V6,50 candidats V7 ; plus6 exigences de variantes statiques. Les groupes/AU/futurs globaux restent dans catalogue-audit V7 et ne sont pas convertis en personnages inventés.",
+  "baselineCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+  "fidelityOneToOneCertified": false,
+  "newAnimationCycles": 0,
+  "counts": {
+    "catalogueIdsChecked": 56,
+    "preexistingV6": 6,
+    "candidateIdsV7": 50,
+    "identityDrawingsDeliveredByThisAgent": 19,
+    "costumeDrawings": 2,
+    "narrativeArchiveDrawings": 2,
+    "actualDistinctDrawings": 23,
+    "identityStatuses": {
+      "historical_refusal_no_retry": 3,
+      "inherited_specific_reference_gap": 2,
+      "primary_photo_cropped": 1,
+      "primary_subject_not_resolved": 1,
+      "delivered_v7_static_adaptation": 19,
+      "incarnation_and_occlusion_gap": 1,
+      "primary_feet_cropped": 2,
+      "primary_lower_body_occluded": 4,
+      "staff_art_lower_body_gap": 3,
+      "identity_not_resolved_in_full_body_scene": 1,
+      "historical_portrait_incarnation_mismatch_unresolved": 1,
+      "incarnation_clothing_conflict": 1,
+      "primary_vehicle_occlusion": 2,
+      "primary_desk_occlusion": 1,
+      "primary_table_occlusion": 1,
+      "primary_counter_occlusion": 2,
+      "already_delivered_v6": 6,
+      "primary_child_lower_body_occluded": 1,
+      "primary_bed_occlusion": 2,
+      "shared_alias_owned_by_root": 1,
+      "primary_prop_lower_body_unresolved": 1
+    }
+  },
+  "identities": [
+    {
+      "id": "hb_stella",
+      "name": "Stella",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [
+        "hb_stella-ready"
+      ],
+      "runtimePlayable": false,
+      "status": "historical_refusal_no_retry",
+      "reason": "Refus historique hb_stella-ready conservé. Aucune génération V7 de cette identité.",
+      "referenceFiles": [],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_leviathan",
+      "name": "Leviathan",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "inherited_specific_reference_gap",
+      "reason": "Mastermind : deux têtes et haut du corps confirmés vers560s dans l’audit V5, mais jambes et bas de robe non établis. Aucune nouvelle vue primaire complète obtenue en V7 ; le portrait tronqué n’autorise pas de bas inventé.",
+      "referenceFiles": [],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_belphegor",
+      "name": "Belphegor",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "inherited_specific_reference_gap",
+      "reason": "Mastermind : petit personnage endormi derrière les autres péchés, silhouette complète et détails du corps insuffisamment lisibles dans l’audit V5. Aucune nouvelle fiche primaire complète obtenue en V7.",
+      "referenceFiles": [],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_tilla",
+      "name": "Tilla",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_photo_cropped",
+      "reason": "Les vues de famille et souvenirs sont de petites photos ou visions : Ozzie’s board10 garde surtout Blitz et son téléphone ; Ghostf**kers board13 cellule6 montre une photo de famille coupée. Aucune silhouette entière de la même incarnation n’est établie, et une image de pilote ne doit pas compléter arbitrairement le design de série.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/ozzies-board-10.jpg",
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-13.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=8zyGQquL8VM",
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_moxxies_mother",
+      "name": "Moxxie's mother",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_subject_not_resolved",
+      "reason": "Exes and Oohs boards8–9 : le dîner échantillonné montre surtout Crimson et le jeune Moxxie ; la scène du bateau et la chaussure flottante ne donnent pas une vue identifiable entière de la mère. Le problème précis de V5 demeure, sans inventer robe ni pieds.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/exes-board-8.jpg",
+        "/home/agent/hazbin-v7-reference-sources/exes-board-9.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=j1BfO7VlIw4"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_loopty_goopty",
+      "name": "Loopty Goopty",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [
+        "hb_loopty_goopty-ready"
+      ],
+      "runtimePlayable": false,
+      "status": "historical_refusal_no_retry",
+      "reason": "Refus historique hb_loopty_goopty-ready conservé. Aucune génération V7 de cette identité.",
+      "referenceFiles": [],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_deerie",
+      "name": "Deerie",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [
+        "hb_deerie-ready"
+      ],
+      "runtimePlayable": false,
+      "status": "historical_refusal_no_retry",
+      "reason": "Refus historique hb_deerie-ready conservé. Aucune génération V7 de cette identité.",
+      "referenceFiles": [],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_arick_burnz",
+      "name": "Arick “Burnie” Burnz",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_arick_burnz-ready",
+      "master": "art/infernal-versus/masters/base/hb_arick_burnz-ready.png",
+      "export": "public/assets/sprites/reserve/hb_arick_burnz-ready.webp",
+      "continuity": "season_2",
+      "reason": "Official Mammon special board10 cell3 at920s establishes head, glasses and light-green T-shirt; cell5 at940s shows full narrow body, trousers, feet and tail on a round venue display. Historical cutout supports the frontal still and proportions. No combat kit.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_arick_burnz.png",
+        "/home/agent/hazbin-v7-reference-sources/mammon-board-10.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=rRymSi8SmqA"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_emberlynn_pinkle",
+      "name": "Emberlynn Pinkle",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_emberlynn_pinkle-ready",
+      "master": "art/infernal-versus/masters/base/hb_emberlynn_pinkle-ready.png",
+      "export": "public/assets/sprites/reserve/hb_emberlynn_pinkle-ready.webp",
+      "continuity": "specials",
+      "reason": "Official storyboard board13 cells8/9, 248/250 seconds, corroborates exact rehost frame; larger secondary frame inspected at498x498. Whole silhouette/costume visible. No implication of playable combat kit.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/emberlynn-demon-rehost.png",
+        "/home/agent/hazbin-v7-reference-sources/emberlynn-board-13.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=3-NrCcr8Bcg",
+        "https://tenor.com/view/helluva-boss-emberlynn-pinkle-emberlynn-helluva-blitzo-blitz-helluva-boss-gif-12402984158320039705",
+        "https://media.tenor.com/rCBAYM92lxkAAAAe/helluva-boss-emberlynn-pinkle.png"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_kendra",
+      "name": "Kendra",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_kendra-ready",
+      "master": "art/infernal-versus/masters/base/hb_kendra-ready.png",
+      "export": "public/assets/sprites/reserve/hb_kendra-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Barbie's Bad Day board5 cells7/8 at255/260s establish Kendra's full silhouette and boots; cell9 at265s shows upper body. Official SharkRobot Barbie/Kendra pin supplies clear palette, bandana, mesh top and shorts detail. Old hb_kendra.png actually depicts Barbie Wire and was deliberately excluded. Lower details rely on small320×180 frames; static reconstruction is not certified1:1.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/kendra-official-pin.png",
+        "/home/agent/hazbin-v7-reference-sources/barbie-board-5.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo",
+        "https://sharkrobot.com/collections/helluva-boss",
+        "https://sharkrobot.com/cdn/shop/files/BarbieKendraPin2.png?height=666&v=1777319206"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_rita",
+      "name": "Rita",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_rita-ready",
+      "master": "art/infernal-versus/masters/base/hb_rita-ready.png",
+      "export": "public/assets/sprites/reserve/hb_rita-ready.webp",
+      "continuity": "season_2",
+      "reason": "Official Ghostf**kers board2 cell3 at200s shows Rita close-up; cell8 at250s shows full character beside I.M.P desk. Primary full-body appearance is small; historical cutout used for four-arm anatomy and fine outfit details. Colors normalized to cutout from scene lighting.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_rita.png",
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_better_than_blitzo_guy",
+      "name": "Better Than Blitzo Guy",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "incarnation_and_occlusion_gap",
+      "reason": "Apology Tour board10 cellules8/9 montre le haut et un débardeur portant du texte ; le vieux cutout a des marques rouges différentes. Les vues de danse/crowd examinées ne réunissent pas costume exact et chaussures lisibles. Une copie du cutout ne serait pas une reproduction prouvée de cette scène.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/apology-board-10.jpg",
+        "/home/agent/hazbin-v7-reference-sources/apology-board-13.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_loo_loo",
+      "name": "Loo Loo",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_feet_cropped",
+      "reason": "Loo Loo Land board4 cellule9 : mascotte pomme et jambes visibles, mais les bottes sont coupées au bord inférieur. Le dessin historique montre des bottes vertes à pointes rouges qui n’ont pas été corroborées par un plan entier de cette incarnation.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/looloo-board-4.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_jesse",
+      "name": "Jesse",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_jesse-ready",
+      "master": "art/infernal-versus/masters/base/hb_jesse-ready.png",
+      "export": "public/assets/sprites/reserve/hb_jesse-ready.webp",
+      "continuity": "season_1",
+      "reason": "Targeted correction of extra arm, restoring original cutout pose. Same source incarnation as attempt1, Ozzie's official board3 cells4–5 at300–310s. First draft excluded from runtime.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/jesse-rejected-three-arms.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_jesse.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=8zyGQquL8VM"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_miles",
+      "name": "Miles",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_lower_body_occluded",
+      "reason": "Mammon board9 cellule9 et board10 cellule1 : jeune fan identifié avec Fizz, mais bas du corps et pieds hors cadre ou masqués. Le cutout entier seul ne suffit pas. Toute future livraison de ce personnage mineur restera narrative sans kit de combat.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/mammon-board-9.jpg",
+        "/home/agent/hazbin-v7-reference-sources/mammon-board-10.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=rRymSi8SmqA"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_vikki",
+      "name": "Vikki",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "staff_art_lower_body_gap",
+      "reason": "Dessin de production CalisDraws de la fête Queen Bee et plans primaires V6 : poodle rose identifiable, robe grise à volants, mais extrémités du bas masquées ou au bord. Aucune vue entière supplémentaire qualifiée dans cette passe.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6-reference-sources/calis-queen-bee-party.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=D-2799Y07Zc"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_gigi",
+      "name": "Gigi",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "staff_art_lower_body_gap",
+      "reason": "Dessin de production CalisDraws de Queen Bee : chevelure rose, haut sombre et short rose identifiables ; partie sous les genoux non établie dans les vues retenues. Aucun mélange avec un costume ultérieur de Sinsmas.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6-reference-sources/calis-queen-bee-party.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=D-2799Y07Zc"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_russ",
+      "name": "Russ",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "staff_art_lower_body_gap",
+      "reason": "Dessin de production CalisDraws de Queen Bee : lunettes et haut à carreaux identifiables ; jambes et chaussures couvertes. Aucun modèle entier primaire supplémentaire qualifié.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6-reference-sources/calis-queen-bee-party.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=D-2799Y07Zc"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_bethany_ghostfucker",
+      "name": "Bethany Ghostfucker",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_bethany_ghostfucker-ready",
+      "master": "art/infernal-versus/masters/base/hb_bethany_ghostfucker-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bethany_ghostfucker-ready.webp",
+      "continuity": "season_2",
+      "reason": "Official Ghostf**kers board1 cell4 at120s displays Bethany's full figure on Blitzo's television, corroborating witch hat, braid, short dress, patterned leggings and boots. Historical cutout clarifies the TV image's desaturated colors. Fictional TV character still, no action or combat kit.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_bethany_ghostfucker.png",
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_karen_client",
+      "name": "Karen Client",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_karen_client-ready",
+      "master": "art/infernal-versus/masters/base/hb_karen_client-ready.png",
+      "export": "public/assets/sprites/reserve/hb_karen_client-ready.webp",
+      "continuity": "season_2",
+      "reason": "Official Sinsmas public storyboard board8 cell1 at720s establishes the full client from hair/horns to both black shoes; cells2/3 show face and blouse. Historic cutout agrees with primary episode. Narrative NPC static only; no new animation or kit.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_karen_client.png",
+        "/home/agent/hazbin-v7-reference-sources/sinsmas-board-8.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GisSNuVpbkM"
+      ],
+      "narrativeOnly": true,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_brennon_ragers",
+      "name": "Brennon Ragers",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "identity_not_resolved_in_full_body_scene",
+      "reason": "Seeing Stars : les panneaux et dialogues citent Brennon, tandis que le personnage qui joue sur le plateau est Blitz pris pour lui. Les plans consultés ne prouvent pas un corps entier du véritable acteur humain ; le déguisement de Blitz ne peut pas lui être attribué.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/stars-board-8.jpg",
+        "/home/agent/hazbin-v7-reference-sources/stars-board-9.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_uggie",
+      "name": "Uggie",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_uggie-ready",
+      "master": "art/infernal-versus/masters/base/hb_uggie-ready.png",
+      "export": "public/assets/sprites/reserve/hb_uggie-ready.webp",
+      "continuity": "season_2",
+      "reason": "Seeing Stars official storyboard board9 cell2 at820s shows the full pug on the set floor, cell9 at890s the eyes/muzzle/collar. Same incarnation verified against historic cutout. Static narrative animal/companion only; no combat kit.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_uggie.png",
+        "/home/agent/hazbin-v7-reference-sources/stars-board-9.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+      ],
+      "narrativeOnly": true,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_skips",
+      "name": "Skips",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "historical_portrait_incarnation_mismatch_unresolved",
+      "reason": "Unhappy Campers board4 cellules6/7 à410/420s montre le dealer interrogé : cheveux clairs, haut bleu et gants clairs dans les plans du torse. Le portrait hb_skips.png présente cheveux longs sombres à mèche claire, crop-top noir et jean évasé. La correspondance entre ce cutout, le concept nommé Skips et le personnage final doit être résolue ; pas de copie du portrait sous une fausse preuve primaire. La fiche de concept mentionnée publiquement n’a pas été accessible par l’outil web.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/campers-board-4.jpg",
+        "/home/agent/hazbin-v7-reference-sources/campers-board-8.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=lYu1ysDULwA"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_queef",
+      "name": "Queef",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_lower_body_occluded",
+      "reason": "Oops board2 cellules8/9 à250/260s : quieve albino près de Fizz, bouche et os visibles mais bas coupé ou corps masqué. Board3 cellule3 montre d’autres quieves sombres, pas une preuve du corps entier du même albino. Les niveaux de storyboards utilisables restent espacés de10s. Relecture indépendante props_stages.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/oops-board-2.jpg",
+        "/home/agent/hazbin-v7-reference-sources/oops-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_ace",
+      "name": "Ace",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_ace-ready",
+      "master": "art/infernal-versus/masters/base/hb_ace-ready.png",
+      "export": "public/assets/sprites/reserve/hb_ace-ready.webp",
+      "continuity": "season_1",
+      "reason": "Production lineup attributed to CalisDraws; artist public oEmbed confirms Spring Broken design credit. Full Ace at far right. This S1 incarnation differs from catalogue's initially cited Chaz Funeral short; no assertion that the short-only costume is covered.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6-reference-sources/calis-succubi-sheet.jpg"
+      ],
+      "referenceUrls": [
+        "https://twitter.com/CalisDraws/status/1355948687814520837",
+        "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+        "https://www.youtube.com/watch?v=RghsgkZKedg"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_gerardo_velazquez",
+      "name": "Gerardo Velazquez",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_gerardo_velazquez-ready",
+      "master": "art/infernal-versus/masters/base/hb_gerardo_velazquez-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gerardo_velazquez-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Mission: Chupacabras board3 cell7 at165s shows Gerardo's whole body and boots; cell2 at140s shows torso/face/hat. Historical cutout used for details consistent with primary scene; primary board cells320×180.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gerardo_velazquez.png",
+        "/home/agent/hazbin-v7-reference-sources/chupacabras-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pngogrW4iC4"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_frank_mctickly_wrigglers",
+      "name": "Frank McTickly Wrigglers",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_frank_mctickly_wrigglers-ready",
+      "master": "art/infernal-versus/masters/base/hb_frank_mctickly_wrigglers-ready.png",
+      "export": "public/assets/sprites/reserve/hb_frank_mctickly_wrigglers-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Orphan Time, public storyboard board2 cell3 at100 seconds shows full figure. Board1 also inspected for face. Existing cutout only complementary detail, source shot governs green sweater.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_frank_mctickly_wrigglers.png",
+        "/home/agent/hazbin-v7-reference-sources/orphan-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=-1b7uCyONb0"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_driveso",
+      "name": "Driveso",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "incarnation_clothing_conflict",
+      "reason": "Mission Drivezo boards3–5 : corps d’abord dans le véhicule, puis scène blessée sur la route. Le vieux cutout a pantalon sombre/brun alors que le plan retenu montre du bleu ; aucune référence entière intacte du même costume n’est établie.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-3.jpg",
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-4.jpg",
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-5.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=52_V04weeC4"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_joe_smoe",
+      "name": "Joe Smoe",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_vehicle_occlusion",
+      "reason": "Le client/cible Joe Smoe est présenté en photo ou dans une voiture. Les plans retenus n’établissent pas ses jambes et chaussures de façon entière ; le pantalon et les pieds du cutout ne sont pas vérifiés.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-0.jpg",
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-1.jpg",
+        "/home/agent/hazbin-v7-reference-sources/drivezo-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=52_V04weeC4"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_paulie_paesano",
+      "name": "Paulie Paesano",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_paulie_paesano-ready",
+      "master": "art/infernal-versus/masters/base/hb_paulie_paesano-ready.png",
+      "export": "public/assets/sprites/reserve/hb_paulie_paesano-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Whacked Off, board1 cell3=55s and cell5=65s show full figure; board2 has closer face and red-edged pale lapels. Historical cutout confirms fine trouser striping, not treated as primary source.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_paulie_paesano.png",
+        "/home/agent/hazbin-v7-reference-sources/whacked-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=dlThyclyHtw"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_luigi_paesano",
+      "name": "Luigi Paesano",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_luigi_paesano-ready",
+      "master": "art/infernal-versus/masters/base/hb_luigi_paesano-ready.png",
+      "export": "public/assets/sprites/reserve/hb_luigi_paesano-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Whacked Off: board6 cell6 at295s shows full short stocky figure with car and companions; board1 cell1 at45s shows face/upper garment. Historical cutout supports detail; low-resolution primary full view limits fine fidelity.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_luigi_paesano.png",
+        "/home/agent/hazbin-v7-reference-sources/whacked-board-6.jpg",
+        "/home/agent/hazbin-v7-reference-sources/whacked-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=dlThyclyHtw"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_william_diddle",
+      "name": "William Diddle",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_desk_occlusion",
+      "reason": "Mission Big Boss board0 cellule5 : William Diddle derrière son bureau, bas du corps invisible. Les plans ultérieurs de sa mort ne permettent pas de restituer une silhouette entière intacte.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/bigboss-board-0.jpg",
+        "/home/agent/hazbin-v7-reference-sources/bigboss-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4obZtz2jEmo"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_adrian",
+      "name": "Adrian",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_table_occlusion",
+      "reason": "Mission Bigfoot board2 cellule4 et vues de bar : Adrian est le petit homme au chapeau et à longue barbe bleutée, derrière table/comptoir ; jambes et bottes cachées. Il ne faut pas l’assimiler au grand Bigfoot de la forêt.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/bigfoot-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=LPzQl8gwulw"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_mr_mayor",
+      "name": "Mr. Mayor",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_mr_mayor-ready",
+      "master": "art/infernal-versus/masters/base/hb_mr_mayor-ready.png",
+      "export": "public/assets/sprites/reserve/hb_mr_mayor-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Mission: Bigfoot board2 cell4 at105s shows Mr. Mayor's full suited body with sash, huge bare feet and top hat; cell3 at100s face/sash. Historical cutout clarifies colors/details. Primary lower body is small in frame.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_mr_mayor.png",
+        "/home/agent/hazbin-v7-reference-sources/bigfoot-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=LPzQl8gwulw"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_gerald",
+      "name": "Gerald",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_counter_occlusion",
+      "reason": "Barbie’s Bad Day boards0–1 : patron de pharmacie violet visible au comptoir ; siège et comptoir couvrent le bas du corps. Aucune silhouette entière corroborée.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/barbie-board-0.jpg",
+        "/home/agent/hazbin-v7-reference-sources/barbie-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_rick",
+      "name": "Rick",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_counter_occlusion",
+      "reason": "Barbie’s Bad Day board3 cellules6/8 : employé du comptoir alimentaire identifiable au buste ; comptoir masque pantalon et pieds.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/barbie-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_coco",
+      "name": "Coco",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_apple",
+      "name": "Apple",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_kat",
+      "name": "Kat",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_milky",
+      "name": "Milky",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_kiki",
+      "name": "Kiki",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_josh",
+      "name": "Josh",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "already_delivered_v6",
+      "reason": "Base V6 existante : aucun dessin V7 supplémentaire pour la même incarnation.",
+      "referenceFiles": [
+        "docs/standalone/production-v6/delivery-register.json"
+      ],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_stolas_family_butler",
+      "name": "Stolas' Family Butler",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_lower_body_occluded",
+      "reason": "Loo Loo Land board2 cellule6, puis début du board3 : petit majordome tenu par Stolas ou avec plateau, bas du corps masqué. Les plans assis d’Ozzie’s ne complètent pas des pieds lisibles.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/looloo-board-2.jpg",
+        "/home/agent/hazbin-v7-reference-sources/looloo-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_mister_butler",
+      "name": "Mister Butler",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_lower_body_occluded",
+      "reason": "The Circus board0 cellules3/4, board1 cellule7 et board3 cellule1 : tête/haut du grand majordome, derrière table ou miroir. Ces plans ne fixent pas les chaussures et la silhouette entière.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/circus-board-0.jpg",
+        "/home/agent/hazbin-v7-reference-sources/circus-board-1.jpg",
+        "/home/agent/hazbin-v7-reference-sources/circus-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=_spuxXnul0U"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_marthas_daughter",
+      "name": "Martha's Daughter",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_child_lower_body_occluded",
+      "reason": "Murder Family board4 cellule2 : fille dans le chariot, bas couvert. Board8 cellule4 : à table, bas masqué. Board15 cellule5 : en partie derrière son frère lors du retour de Moxxie, bottes non lisibles. Le modèle ancien ne suffit pas à certifier le bas ; future livraison narrative uniquement.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/family-board-4.jpg",
+        "/home/agent/hazbin-v7-reference-sources/family-board-8.jpg",
+        "/home/agent/hazbin-v7-reference-sources/family-board-15.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=el_PChGfJN8"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_marthas_son",
+      "name": "Martha's Son",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_marthas_son-ready",
+      "master": "art/infernal-versus/masters/base/hb_marthas_son-ready.png",
+      "export": "public/assets/sprites/reserve/hb_marthas_son-ready.webp",
+      "continuity": "season_1",
+      "reason": "Murder Family official board4 cell2 at185s shows the full child from cap to both green-brown boots, in rear three-quarter view; historic cutout supplies the corresponding front. Narrative gallery only, no combat kit, no weapon, no animation. Front facial linework remains an adaptation from the historical cutout.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_marthas_son.png",
+        "/home/agent/hazbin-v7-reference-sources/martha-son-primary-185s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=el_PChGfJN8"
+      ],
+      "narrativeOnly": true,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_harold_patriot",
+      "name": "Harold",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_bed_occlusion",
+      "reason": "Ghostf**kers board6 cellules1/3/4 : client à l’hôtel dans une scène de lit, couvertures et cadrage masquent le bas du corps. Le cutout en sous-vêtements n’établit pas à lui seul une base entière de ce plan.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-6.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_dolores",
+      "name": "Dolores",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_bed_occlusion",
+      "reason": "Ghostf**kers board6 cellules1/3/4 : cliente dans la scène de lit, corps partiellement couvert/coupé. Les détails de robe de nuit et pieds du cutout ne sont pas corroborés dans les plans retenus.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-6.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_hellhound_adoption_lady",
+      "name": "Hellhound Adoption Center Lady",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_hellhound_adoption_lady-ready",
+      "master": "art/infernal-versus/masters/base/hb_hellhound_adoption_lady-ready.png",
+      "export": "public/assets/sprites/reserve/hb_hellhound_adoption_lady-ready.webp",
+      "continuity": "season_2",
+      "reason": "Seeing Stars official public storyboard board9 cell4 at840s shows the complete adult refuge attendant next to Blitz; cells5/6 show face and dress. Historical cutout used only after primary silhouette correspondence. Narrative NPC static only; no combat kit or animation.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_hellhound_adoption_lady.png",
+        "/home/agent/hazbin-v7-reference-sources/stars-board-9.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+      ],
+      "narrativeOnly": true,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_travis",
+      "name": "Travis",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "shared_alias_owned_by_root",
+      "reason": "Alias de hz_travis, traité par root avec la qualification Hazbin. Aucun dessin HB séparé et aucun double incrément d’identité.",
+      "referenceFiles": [],
+      "referenceUrls": [],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_tour_guide_guy",
+      "name": "Tour Guide Guy",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_vehicle_occlusion",
+      "reason": "C.H.E.R.U.B board2 cellule8 à250s et board3 cellule1 à270s : torse, chapeau et mains visibles ; bus/rampe couvrent jambes et bas. Cadence publique de10s sans autre niveau utile plus fin. Relecture indépendante props_stages.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/cherub-board-2.jpg",
+        "/home/agent/hazbin-v7-reference-sources/cherub-board-3.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1ZFseYPmkAk"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_big_woobly",
+      "name": "Big Woobly",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_prop_lower_body_unresolved",
+      "reason": "Animatronique dinosaure : Loo Loo Land board6 cellule4 à570s donne tête/col/guitare, bas hors cadre ; board7 cellule3 à650s montre le groupe entier mais jambes/pieds minuscules confondus avec rebord et triangles verts du premier plan. Revue indépendante props_stages confirme le report de cette machine/PNJ, pas de silhouette complète qualifiée.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/looloo-board-6.jpg",
+        "/home/agent/hazbin-v7-reference-sources/looloo-board-7.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_gerardos_wife",
+      "name": "Gerardo's Wife",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_gerardos_wife-ready",
+      "master": "art/infernal-versus/masters/base/hb_gerardos_wife-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gerardos_wife-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Mission: Chupacabras board1 cell3 at55s shows the wife outside farmhouse full-length with navy blouse, white apron, red skirt and bare feet. Historical cutout clarifies unshadowed colors and hair streaks. This is the farmhouse incarnation, not the later action costume.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gerardos_wife.png",
+        "/home/agent/hazbin-v7-reference-sources/chupacabras-board-1.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pngogrW4iC4"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_diddle_secretary",
+      "name": "William Diddle's Secretary",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "primary_feet_cropped",
+      "reason": "Mission Big Boss board1 cellules7–9 et board2 cellule7 montrent la secrétaire jusqu’aux genoux, pieds coupés. Board5 cellule9 donne une très petite silhouette près de porte, insuffisante pour vérifier ses chaussures.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/bigboss-board-1.jpg",
+        "/home/agent/hazbin-v7-reference-sources/bigboss-board-2.jpg",
+        "/home/agent/hazbin-v7-reference-sources/bigboss-board-5.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4obZtz2jEmo"
+      ],
+      "newDrawing": false
+    },
+    {
+      "id": "hb_bigfoot_waiter",
+      "name": "Bigfoot Waiter",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_bigfoot_waiter-ready",
+      "master": "art/infernal-versus/masters/base/hb_bigfoot_waiter-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bigfoot_waiter-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Mission: Bigfoot board0 cell5 at20s shows the waiter full-length at the diner booth, including cap, turquoise polo, flared trousers, black shoes and drink. Historical cutout clarifies face and small outfit details.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_bigfoot_waiter.png",
+        "/home/agent/hazbin-v7-reference-sources/bigfoot-board-0.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=LPzQl8gwulw"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    },
+    {
+      "id": "hb_gorilla_suit_guy",
+      "name": "Gorilla Suit Guy",
+      "baselineState": "Base autonome absente",
+      "historicalRefusals": [],
+      "runtimePlayable": false,
+      "status": "delivered_v7_static_adaptation",
+      "assetId": "hb_gorilla_suit_guy-ready",
+      "master": "art/infernal-versus/masters/base/hb_gorilla_suit_guy-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gorilla_suit_guy-ready.webp",
+      "continuity": "specials",
+      "reason": "Official Mission: Bigfoot board4 cells4–5 at195–200s establish the intact gorilla mascot costume with both covered legs and feet before the attack. Historical cutout depicts later exposed prosthesis and is used ONLY for face/upper costume. Delivered incarnation explicitly excludes later injury/prosthesis.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gorilla_suit_guy.png",
+        "/home/agent/hazbin-v7-reference-sources/bigfoot-board-4.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=LPzQl8gwulw"
+      ],
+      "narrativeOnly": false,
+      "newDrawing": true
+    }
+  ],
+  "variants": [
+    {
+      "id": "VAR-017",
+      "name": "Déguisements de contrats",
+      "sourceIdentityId": "hb_blitzo",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "variant_scope_undefined",
+      "reason": "« Déguisements de contrats » est une collection sans liste de tenues ni scène unique. Pas d’image fabriquée pour satisfaire artificiellement une variante agrégée ; inventorier séparément chaque contrat, époque et costume.",
+      "referenceFiles": [],
+      "referenceUrls": []
+    },
+    {
+      "id": "VAR-020",
+      "name": "Passé — queue de cheval",
+      "sourceIdentityId": "hb_millie",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "delivered_v7_static_costume",
+      "assetId": "hb_millie_past_ponytail-ready",
+      "category": "costume",
+      "kind": "costume_base",
+      "frameCoverage": "full_body",
+      "reason": "VAR-020. Official Ghostf**kers public storyboards: board10 cell1 at900s whole silhouette; cells2/4 at910/930s head/torso; board9 cell5 at850s lower costume and tail. Parent independently confirmed reasonable static qualification. No HD model; small/occluded portions reconstructed from complementary320×180 frames, not exact1:1.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-10.jpg",
+        "/home/agent/hazbin-v7-reference-sources/ghosts-board-9.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ]
+    },
+    {
+      "id": "VAR-022",
+      "name": "Forme quadrupède",
+      "sourceIdentityId": "hb_loona",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "delivered_v7_static_costume",
+      "assetId": "hb_loona_quadruped-ready",
+      "category": "costume",
+      "kind": "costume_base",
+      "frameCoverage": "full_body",
+      "reason": "VAR-022. Official Sinsmas board12 cells6/9 at1130/1160s show transformed body/tail and frontal head/legs; native static pose reconstruction from these complementary320×180 views. Parent independently confirmed qualification. No HD model; portions obscured by mane or perspective reconstructed; no1:1 certification, no rig/animation.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/sinsmas-board-12.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GisSNuVpbkM"
+      ]
+    },
+    {
+      "id": "VAR-023",
+      "name": "Passé — refuge",
+      "sourceIdentityId": "hb_loona",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "delivered_v7_narrative_archive",
+      "assetId": "hb_loona_shelter_archive-ready",
+      "category": "archive",
+      "kind": "narrative_portrait",
+      "frameCoverage": "bust",
+      "reason": "VAR-023 explicitly requests a narrative/portrait archive. Seeing Stars official board9 cell7 at870s establishes only Loona's head, clothing and folded upper-body pose in the refuge. A bust is therefore produced, with no invented lower body, no default identity base, and no combat kit. One320×180 source frame; no HD model or1:1 certification. Independent review: top of hair is outside the original frame and was reconstructed; represented bust complete, not a complete full-body subject.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/loona-shelter-primary-870s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+      ]
+    },
+    {
+      "id": "VAR-027",
+      "name": "Grande forme démoniaque",
+      "sourceIdentityId": "hb_stolas",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "primary_silhouette_incomplete",
+      "reason": "Truth Seekers boards12–13 : grande forme de Stolas vue dans l’obscurité rouge, silhouette et extrémités partiellement masquées ; ensuite retour au corps habituel. Le rig/échelle ne sont pas inférés depuis une ombre. Parent a confirmé le report de cette forme.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/truth-board-12.jpg",
+        "/home/agent/hazbin-v7-reference-sources/truth-board-13.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=yXErLiSbxXQ"
+      ]
+    },
+    {
+      "id": "VAR-031",
+      "name": "Passé — avant accident",
+      "sourceIdentityId": "hb_fizzarolli",
+      "runtimePlayable": false,
+      "newIdentityBase": false,
+      "animationFrames": 0,
+      "status": "delivered_v7_narrative_archive",
+      "assetId": "hb_fizzarolli_before_accident-ready",
+      "category": "archive",
+      "kind": "narrative_portrait",
+      "frameCoverage": "full_body",
+      "reason": "VAR-031. Mammon official opening flashback: board1 cell6 at140s shows full young Fizz before the accident; board2 cells1/2/5/9 at180/190/220/260s provide face, shirt, long unbroken horns and natural limbs. Specific Mammon-fan outfit retained; no retroactive prostheses. Narrative gallery only; no new default identity base or combat kit. Details reconstructed from320×180 views; no1:1 certification.",
+      "referenceFiles": [
+        "/home/agent/hazbin-v7-reference-sources/fizz-past-primary-140s.png",
+        "/home/agent/hazbin-v7-reference-sources/mammon-board-2.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=rRymSi8SmqA"
+      ]
+    }
+  ],
+  "countingRules": [
+    "Un seul dessin par master PNG retenu ; le WebP lossless n’est pas un second dessin.",
+    "Les archives de Loona et Fizz ne créent aucune nouvelle base identité. Le buste refuge ne prétend pas être une silhouette entière.",
+    "Les variantes Millie/Loona sont des costumes/formes statiques, sans animation.",
+    "Travis est un alias commun HH/HB et reste à la charge de root.",
+    "Les3 résultats natifs perdus,1 appel interrompu et1 brouillon anatomique rejeté ne sont pas livrés."
+  ]
+}

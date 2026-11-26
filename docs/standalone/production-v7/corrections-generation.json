@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "edition": "V7",
+  "date": "2026-11-26",
+  "baselineCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+  "status": "frozen_after_independent_review",
+  "generator": "native image_gen.imagegen",
+  "attempts": [
+    {
+      "assetId": "hb_apple-ready-v7",
+      "operation": "targeted_native_edit",
+      "status": "success",
+      "prompt": "Use case: precise-object-edit.\nEdit target: image1 is the existing transparent full-body Apple sprite from the project. Image2 is a close crop of the original production design showing the exact marking on the lower leg at image-right. This is a small fidelity correction, not a redesign.\nChange ONLY the marking on Apple's lower leg at the right of image1. Replace the current two separate pale round dots and simple black hook with the exact irregular motif visible in image2, same side, same scale on the calf, same vertical orientation. The reference has a dark raspberry-red central shape outlined black, not the bright pink skin color; a pale narrow droplet opening at the upper right and a pale double-lobed/notched opening at the upper left; an irregular lobed red lower contour; black ribbon-like shapes descending around it; and a small pale diagonal mark inside the rounded black droplet at the bottom. Follow the supplied crop directly rather than drawing a new symbol.\nPreserve EVERYTHING outside that calf marking: the complete body outline, leg shape, limb placement, pose, all clothing and folds, pentagram pendant, bracelets, fingers, shoes, tail and its three-pronged tip, hair, horns, wings, facial expression, all colors, exact canvas and framing, original line weight and transparency. Keep the existing complete silhouette uncut. Maintain real transparent RGBA. No new background, glow, lettering, extra character, accessory, alternate view or animation frame. Output one corrected full-body sprite only.",
+      "inputPaths": [
+        "art/infernal-versus/masters/base/hb_apple-ready.png",
+        "/home/agent/hazbin-v7-reference-sources/apple-calf-calis-detail.png"
+      ],
+      "outputMaster": "art/infernal-versus/masters/base/hb_apple-ready-v7.png",
+      "outputMasterSha256": "fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a"
+    }
+  ],
+  "assets": [
+    {
+      "id": "hb_apple-ready-v7",
+      "replacesAssetId": "hb_apple-ready",
+      "sourceIdentityId": "hb_apple",
+      "category": "revision",
+      "name": "Apple — correction du motif du mollet",
+      "franchise": "Helluva Boss",
+      "incarnation": "Spring Broken S1E3 — même base, motif du mollet corrigé",
+      "continuity": "season_1",
+      "spoilerTier": "season_1",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "master": "art/infernal-versus/masters/base/hb_apple-ready-v7.png",
+      "export": "public/assets/sprites/reserve/hb_apple-ready-v7.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1244603,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        233,
+        26,
+        854,
+        1522
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a",
+      "exportSha256": "eebe2ad6c1ef4230d3df2df60b33a40c83b52754c8c0e468fc2fa5de8968a6c7",
+      "masterBytes": 1352984,
+      "exportBytes": 891116,
+      "referenceUrls": [
+        "https://twitter.com/CalisDraws/status/1355948687814520837",
+        "https://www.zerochan.net/3210579",
+        "https://www.youtube.com/watch?v=RghsgkZKedg"
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "previousMaster": "art/infernal-versus/masters/base/hb_apple-ready.png",
+      "previousMasterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+      "limits": [
+        "Correction native ciblée ; les deux disques pâles V6 remplacés par forme framboise, cavités irrégulières et rubans noirs observés.",
+        "Courbes fines redessinées ; aucune dérive majeure du reste du corps détectée, mais invariance pixel par pixel non revendiquée.",
+        "Originaux V6 conservés, révision suffixée -v7. Une correction ne crée ni base supplémentaire ni nouvelle entrée galerie.",
+        "Planche de production attribuée à CalisDraws, bitmap hébergé secondairement ; fidélité 1:1 non certifiée."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    }
+  ]
+}

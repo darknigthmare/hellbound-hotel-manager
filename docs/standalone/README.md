@@ -17,7 +17,19 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
-## Reprise actuelle — 25 novembre 2026, production statique V6
+<!-- V7_CURRENT_START -->
+## Reprise actuelle — 26 novembre 2026, production statique V7
+
+La production statique V7 livre **45 dessins distincts** : 44 nouveaux dessins et 1 correction d’un dessin existant. Les fichiers livrables comprennent **45 masters PNG, 45 exports WebP sans perte et 3 miniatures**, soit **93 fichiers d’image** (80 143 856 octets). Chaque personnage, objet, machine, fond et élément de décor possède son fichier séparé. Aucun cycle animé n’est ajouté.
+
+La [bible V7](INFERNAL_VERSUS_BIBLE_V7.xlsx), le [rapport de livraison](DELIVERY_STATIC_V7_2026-11-26.md) et le [registre](production-v7/delivery-register.json) décrivent 109 bases autonomes (40 actives et 69 en réserve), 84 entrées de galerie et 40 arènes. Le roster conserve ses 43 kits. Les deux arènes S3 nécessitent une activation explicite ; les anciennes sauvegardes les gardent masquées.
+
+Apple utilise sa correction V7 sans nouvelle entrée. Les archives Loona/Fizz restent narratives. Les trois nouvelles arènes comportent chacune un fond et deux éléments séparés. Les 9 refus V7 ne fournissent aucun fichier. 100 IDs (99 identités distinctes) restent sans base, avec leur motif individuel. Aucun nouveau cycle animé n’est ajouté.
+
+47 suites et 413 tests passent. TypeScript, ESLint, les builds manager et standalone, et le contrôle de 1 263 fichiers de distribution passent. Deux essais de build standard ont été interrompus avec le code 137 pendant la copie des images. La validation locale utilise ensuite une compilation équivalente avec copie publique désactivée temporairement et fichiers publics assemblés par liens physiques ; les empreintes et le contrôle standalone sont vérifiés. Cette procédure ne constitue pas une réussite locale de la commande npm run qa standard. Le [contrôle runtime](production-v7/active-asset-coverage.json) trouve 659 chemins valides. La revue statique est documentée, mais le [contrôle navigateur](production-v7/browser-qa.json) et les performances mobiles ne sont pas exécutés ; fidélité 1:1 non certifiée. Les 43 feuilles historiques sont conservées et trois feuilles V7 ajoutées. Le [classeur Drive](https://drive.google.com/file/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU) garde le même identifiant.
+<!-- V7_CURRENT_END -->
+
+## Contenu conservé — 25 novembre 2026, production statique V6 (historique)
 
 La [bible V6](INFERNAL_VERSUS_BIBLE_V6.xlsx) conserve les 40 feuilles V5 et ajoute **Production V6, Cibles V6 et Repères V6**. Le [rapport de livraison](DELIVERY_STATIC_V6_2026-11-25.md) et le [registre V6](production-v6/delivery-register.json) décrivent **9 dessins distincts et 20 fichiers d’image** : six bases Helluva, une machine D.H.O.R.K.S. isolée et deux fonds d’arène. Les trois retouches ciblées remplacent leurs versions initiales et ne sont pas comptées comme des dessins supplémentaires.
 

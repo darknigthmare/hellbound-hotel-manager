@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "edition": "V7",
+  "date": "2026-11-26",
+  "baselineCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+  "generator": "native image_gen.imagegen",
+  "attempts": [
+    {
+      "assetId": "hz_st_peter-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Use case: identity-preserve.\nAsset type: one static transparent character base for the Infernal Versus reserve gallery.\nInput images: image 1 is the official Prime Video frame from Welcome to Heaven (Hazbin Hotel S1E6), the PRIMARY identity and costume reference. Image 2 is an existing project reference cutout, a secondary guide to the complete silhouette, not an invitation to redesign.\nPrimary request: create one clean full-body isolated St. Peter in his Hazbin Hotel season 1 incarnation. Match the character seen in these references as closely as possible. A single neutral standing presentation pose, wings relaxed but legible, both hands lowered, feet visible. Preserve his slim elongated proportions, white face, cyan eyes, arched blue eyebrows, short curly blond hair and small curled forelock, thin pale-gold floating oval halo, red/coral bow tie, pale cream long sleeves with peach cuffs, light cyan sleeveless long vest/robe, peach-gold vertical cross motif and trim at hem, two narrow white pointed feet, two pale cream feather wings edged cyan. Gentle closed smile.\nStyle: crisp 2D television animation line work, flat cel colors, restrained shadows, coherent with the original series, no photorealism and no pixel-art reinterpretation.\nComposition: full silhouette centered with 7 percent clear margin around halo, outer wing feathers and feet; portrait canvas around 1024 by 1536; actual transparent RGBA background.\nConstraints: exactly one character, one static pose, no scene, no other angels or people, no scenery, no text, no labels, no panel or contact sheet, no weapons, no new accessories, no floating glow that obscures the silhouette. Do not add an animation cycle. Preserve the costume, palette, anatomy and wing shape from the supplied references.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/st-peter-official-001s.png",
+        "public/assets/sprites/hazbin/portraits/hz_st_peter.png"
+      ],
+      "outputMaster": "art/infernal-versus/masters/base/hz_st_peter-ready.png",
+      "outputMasterSha256": "3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48"
+    },
+    {
+      "assetId": "hz_susan-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Use case: identity-preserve.\nAsset type: a single static full-body transparent character base for the Infernal Versus reserve gallery.\nInput image 1: an official Prime Video frame of Susan in Hazbin Hotel S1E7, Ready for This, at 44 seconds of the clip. This is the primary design reference. Image 2: the project's historical Susan cutout, a secondary guide to the whole silhouette; do not add details that conflict with the episode.\nRequest: reproduce Susan alone, the elderly cannibal-town lady, in a calm upright neutral presentation pose with her cane, preserving the exact costume and recognizable silhouette in these references. Keep her short pale ivory bob, large round narrow-framed spectacles with bluish lenses and dark sockets behind, lined cheeks, small disapproving mouth, burgundy low brimmed hat with tall blue and dark navy feathers sweeping up and to the left, fluffy dark charcoal/navy feather collar, very slender dark bodice and arms, long burgundy Victorian skirt with a pale mauve side drape and light pink waist bow. Her slim crooked dark walking cane is held in the hand at the right side of the image; it reaches the floor. The robe, trailing hem and every feather must be complete.\nStyle: original-series crisp 2D animation linework, cel shading, restrained flat colors; no extra texture, no realism, no cute redesign or altered proportions.\nComposition: one full body including hat/feathers, entire dress hem and cane tip, centered, about 7 percent clear space all sides, portrait canvas approximately1024x1536. Real transparent RGBA background.\nConstraints: no scenery, no other characters, no caption or lettering, no labels, no ground shadow, no vignette. Exactly one static character with her existing cane, no alternate poses, panels, action frames, or animation cycle. Preserve her age, angular silhouette and established clothing rather than redesigning.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/susan-official-044s.png",
+        "public/assets/sprites/hazbin/portraits/hz_susan.png"
+      ],
+      "outputMaster": "art/infernal-versus/masters/base/hz_susan-ready.png",
+      "outputMasterSha256": "038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708"
+    },
+    {
+      "assetId": "hz_speaker_of_god-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserve.\nAsset type: single static full-body transparent character base, Infernal Versus reserve gallery.\nInput images 1, 2 and 3: actual official Prime Video frames from A Little Slice of Heaven, Hazbin Hotel season 2, Speaker of God in the heavenly court. These fix her face, palette and feather anatomy. Image 4: historical project cutout, secondary silhouette guide for her quieter compact-wing presentation. Create the same Speaker of God in that compact, calm floating posture, not the enormous spread-wing manifestation.\nSubject: the tall luminous phoenix-like female angel from these references, alone, whole body. Preserve the stylized pale gold and ivory feathered face with pointed gold beak, narrow bright eyes, long wine-purple lashes flowing outward, filigree curls around forehead and cheeks, broad sweeping pale-gold head plumage, small ornate crest/crown above the head, long ivory/golden feather locks framing her neck and torso, soft peach inner torso/robe, layered tapered feather robe ending in curling pale feather tips. Keep the symmetrical folded wing shapes seen in the secondary cutout, pale-gold upper feathers and ivory inner feathers. The thin pale oval halo below her floating robe belongs to this reference silhouette and remains separated below it.\nStyle: match the source's crisp 2D animation contour and flat pastel cel colors, fine restrained gold outlines. No photorealistic lighting, no human skin redesign.\nComposition: one character in calm centered three-quarter frontal presentation, portrait canvas around1024x1536; full crest, wings, robe tips and lower halo entirely visible, at least 7percent transparent margin. Real transparent RGBA.\nConstraints: only this character, no court architecture, no Sera, Lute, St.Peter or other people; no text, border, logos or captions; no new jewelry or costume; no huge radiant background, fog or opaque aura. Do not turn her into an ordinary human, goat or conventional halo angel. No alternate forms in the same image, no animation frames. Preserve characteristic silhouette and expression from these references.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/speaker-official-415s.png",
+        "/home/agent/hazbin-v7-reference-sources/speaker-official-430s.png",
+        "/home/agent/hazbin-v7-reference-sources/speaker-official-465s.png",
+        "public/assets/sprites/hazbin/portraits/hz_speaker_of_god.png"
+      ],
+      "error": {
+        "type": "image_generation_user_error",
+        "code": "moderation_blocked",
+        "stage": "output",
+        "categories": [
+          "other"
+        ],
+        "requestId": "60965284-0782-4dfa-8b96-be46a4d44eda"
+      },
+      "outputFiles": [],
+      "retry": false
+    },
+    {
+      "assetId": "hz_rooster-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserve. Asset type: one isolated static full-body character base for the Infernal Versus reserve gallery. Input image 1 is a primary official frame from Prime Video's Hazbin Guarantee (Trust Us), Hazbin Hotel S2E1. Input image 2 is a historical project cutout, secondary guide to the whole silhouette. Preserve the character's design as shown, with only a neutral presentation pose adapted for the game. Style: crisp original-series 2D animated line art, flat cel colors and restrained shading. Full silhouette including every appendage and feet centered on a real transparent RGBA background, at least7 percent clear margin on every side, portrait canvas approximately1024x1536. Exactly one character, one pose; no companions, no scenery, no text or labels, no frame/panel/contact sheet, no new objects or clothing, no animation cycle.\nSubject: Rooster, the tall lanky red-brown avian demon at the LEFT of input image1, NOT the purple ant or the small scientist. Preserve the long pointed gray-brown beak, tired half-lidded yellow eye, swept rust-red feathers, asymmetric long red crest/horn-like feathers and dark feather tip with small turquoise marks visible in image2. Narrow white collared shirt with rolled long sleeves and cuffs, black suspenders, narrow dark tie, black tapered trousers. His dark brown feathered hands relaxed at waist height. Long multiple rust/crimson tail feathers fan behind him to the left, skinny bird legs and complete clawed feet. Keep the weary neutral expression, tall angular body proportions and original costume.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/rooster-ant-official-086s.png",
+        "public/assets/sprites/hazbin/portraits/hz_rooster.png"
+      ],
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID aaf444e5-f35c-4cc9-b881-48f4bcd456e1.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "outputFiles": [],
+      "retry": false
+    },
+    {
+      "assetId": "hz_ant_sinner-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserve. Asset type: one isolated static full-body character base for the Infernal Versus reserve gallery. Input image 1 is a primary official frame from Prime Video's Hazbin Guarantee (Trust Us), Hazbin Hotel S2E1. Input image 2 is a historical project cutout, secondary guide to the whole silhouette. Preserve the character's design as shown, with only a neutral presentation pose adapted for the game. Style: crisp original-series 2D animated line art, flat cel colors and restrained shading. Full silhouette including every appendage and feet centered on a real transparent RGBA background, at least7 percent clear margin on every side, portrait canvas approximately1024x1536. Exactly one character, one pose; no companions, no scenery, no text or labels, no frame/panel/contact sheet, no new objects or clothing, no animation cycle.\nSubject: the purple ant-like sinner at the RIGHT of image1, NOT the bird at left or the small scientist. Preserve thin black bent antennae rising above a small light-mauve fedora with dark band, purple side hair, ivory long pointed insect face, large black eye sockets and sharp restrained grin. Light purple suit jacket, dark lapels, pale shirt, dark slim tie, two buttons, dark indigo rectangular cuffs, black gloves. Two thin black legs with shaggy lower edges and complete dark feet. His large rounded tapering abdomen extends behind to image-right, with alternating broad lavender and dark-purple bands; its entire end must be visible. Calm standing three-quarter presentation with arms lowered. Retain the exact recognizable insect silhouette and suit rather than giving him a generic human body.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/rooster-ant-official-086s.png",
+        "public/assets/sprites/hazbin/portraits/hz_ant_sinner.png"
+      ],
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID d5e0eb83-d62a-49eb-82c5-33e384c55327.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "outputFiles": [],
+      "retry": false
+    },
+    {
+      "assetId": "hz_eel_sinner-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserve. Asset type: one isolated static full-body character base for the Infernal Versus reserve gallery. Input image 1 is a primary official frame from Prime Video's Hazbin Guarantee (Trust Us), Hazbin Hotel S2E1. Input image 2 is a historical project cutout, secondary guide to the whole silhouette. Preserve the character's design as shown, with only a neutral presentation pose adapted for the game. Style: crisp original-series 2D animated line art, flat cel colors and restrained shading. Full silhouette including every appendage and feet centered on a real transparent RGBA background, at least7 percent clear margin on every side, portrait canvas approximately1024x1536. Exactly one character, one pose; no companions, no scenery, no text or labels, no frame/panel/contact sheet, no new objects or clothing, no animation cycle.\nSubject: the green-and-gray eel-like sinner toward the RIGHT side of image1 with a white hat and red vest, isolated exactly as the full silhouette in image2. Keep his long dark-gray curved eel head, swept snout, light-gray lower jaw with pointed teeth, green half-lidded slit eyes, long pale gill marks and three green-and-black striped fin appendages behind the head. White narrow brim hat with red band, white collared shirt, red bow tie, vivid red vest with black buttons and triangular light shirt insert, long white sleeves and dark blue cuffs/gloves. Below the waist he has the long tapering dark-gray eel tail extending on the ground toward the right; preserve this canonical tail anatomy, no added human legs. Slender arms, one hand resting lightly at hip and the other lowered. Full head, fins and entire tail tip visible.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/eel-official-084s.png",
+        "public/assets/sprites/hazbin/portraits/hz_eel_sinner.png"
+      ],
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID ce13e4c0-91e9-48ef-bc1b-f57e8485f310.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "outputFiles": [],
+      "retry": false
+    },
+    {
+      "assetId": "hz_salina-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserve. Asset type: single neutral full-body transparent character base for Infernal Versus.\nInput images1 and2 are actual official Prime Video frames of Salina from Hazbin Guarantee (Trust Us), Hazbin Hotel S2E1. Image3 is a historical project cutout of her complete default outfit, with unrelated stray fragments near top and bottom; those fragments must NOT be copied. Only Salina is the subject.\nRecreate Salina alone in her ORIGINAL plain gray-and-black hotel outfit, before the makeover. Preserve her angular pale-gray face, narrow orange-yellow almond eyes with fine pupils, long dark lashes, no nose emphasis, asymmetrical swept dark-gray long hair with its thin upright strands, slender neck, pointed white lapels and high collar over a fitted black long-sleeved top, small dark tie, high-waisted gray straight trousers with buttons, tiny pointed black-and-white shoes. Her long hair ends alongside her hips. Neutral reserved expression, hands relaxed together at waist, complete slim silhouette. Follow the shapes/colors in the references as closely as possible.\nStyle: crisp 2D television animation linework and flat cel colors, no texture, 3D, photorealism or cute redesign. One static drawing, not an animation pose sequence.\nComposition: full body centered on genuinely transparent RGBA background, entire hair/strands, hands and shoes visible with about7percent margin all sides; portrait canvas around1024x1536.\nConstraints: no other characters, no scenery, no text, labels, frames or logos; no camera, money, scissors or microphones; no red performance dress or changed hairstyle; no stray collage pieces from the project cutout. Preserve established anatomy and clothing without inventing decorations.",
+      "inputPaths": [
+        "/home/agent/hazbin-v7-reference-sources/salina-official-120s.png",
+        "/home/agent/hazbin-v7-reference-sources/salina-official-152s.png",
+        "public/assets/sprites/hazbin/portraits/hz_salina.png"
+      ],
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 2e16da44-8004-4fb6-bdc4-9e9f94d92854.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "outputFiles": [],
+      "retry": false
+    },
+    {
+      "id": "hz_shok_wav-ready",
+      "sourceIdentityId": "hz_shok_wav",
+      "name": "Shok.wav",
+      "category": "enemy_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Shok.wav, forme requin électronique de la saison 2 ; base statique autonome.",
+      "referencePaths": [
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_shok_wav.png",
+        "/home/agent/hazbin-v7-reference-sources/shok-binder-official-2.jpg",
+        "/home/agent/hazbin-v7-reference-sources/sam-3m5zkfbys4k26.jpg",
+        "/home/agent/hazbin-v7-reference-sources/shok-official-vox-dei-048s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=C86kilmGHGY&t=48s",
+        "https://hazbinhotel.com/products/hazbin-hotel-trading-cards-shok-wav-binder",
+        "https://bsky.app/profile/probablyfakeblonde.bsky.social/post/3m5zkfbys4k26"
+      ],
+      "sourceNote": "Silhouette historique complète corroborée par croquis primaire Sam Miller et plans couleur Prime VOX DEI ; détails tête/couleurs du produit officiel illustré par Onyx. Le produit n’est pas une feuille modèle, et les plans natifs 159×90 restent peu détaillés.",
+      "prompt": "Create exactly ONE clean standalone full-body static 2D game reserve asset of SHOK.WAV from Hazbin Hotel season 2, on a genuinely transparent background. All references are supplied for visual identity; do not reproduce a product or collage. Reference 1 gives the complete curling shark-shaped cyber-creature silhouette. Reference 2 is an official art product: use ONLY the character's face, cyan teeth, red eyes and dark cyan-patterned body details, not the binder, logo, text, pink background, texture or stitching. Reference 3 is a production artist sketch corroborating the complete fish anatomy, fins and hooked tail: ignore the second vignette, all text and the tiny other character in the mouth. Reference 4 is the official episode color appearance. Depict Shok.wav alone, full body, facing left in a clear three-quarter profile with a gently curved complete tail; preserve the blocky electronic head with a large single red vertical-pupil frontal eye, small red triangular side eyes, the broad jaw of large cyan teeth, two thin antennae with red tips, dark violet-black shark body, glowing cyan oval circuit markings along the side and tail, pointed fins and crescent tail tips. Keep the shark anatomy, not a humanoid or toy. Clean controlled black linework and cel colors matching the show, no added costume or accessories. Mouth may be slightly open but contains nothing. One finished drawing only, no animation frames, no labels, no sheet, no border, no cast shadow, no scenery, no watermark. Fit the entire head, antennae, all fins and complete tail within the canvas with clear transparent breathing room on every side. Preserve the reference proportions as closely as possible without inventing unseen decorations.",
+      "status": "generator_refused",
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 7a43dba6-802a-4a70-a414-96ab9196c307.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "requestId": "7a43dba6-802a-4a70-a414-96ab9196c307",
+      "noRetry": true
+    },
+    {
+      "id": "hz_maestro-ready",
+      "sourceIdentityId": "hz_maestro",
+      "name": "Maestro",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-010s.png",
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_maestro.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=10s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Maestro, incarnation S2 visible dans Bad With Us à10s et110s ; scène primaire320×180 et ancienne découpe complète corroborée. Les détails fins et le tracé des cornes/pieds restent adaptés.",
+      "prompt": "Create exactly ONE standalone full-body static character asset, actual transparent RGBA background, clean 2D television-animation linework and flat cel colors consistent with Hazbin Hotel. The official Prime Video Bad With Us frames are PRIMARY references and the older project cutout is a secondary complete-silhouette guide. Preserve this character's recognizable anatomy, proportions, costume and colors; use the combined views to resolve appearance. Single calm standing presentation, entire silhouette and appendages inside the canvas with visible margins, one character, no other figures, no scene, no background, no text or captions, no sheet, no animation, no invented accessories. Do not reproduce cropped neighbors, scene lighting or subtitles. The character is MAESTRO. On the group frame he is at the far left, tall and extremely slender. Reproduce the elongated purple-gray skull-shaped face, cyan almond eyes, cyan flame-like crest and collar aura, two large dark angular outward-branching antler shapes around the head, narrow dark formal jacket with cyan diamond-shaped neck area and three small cyan buttons, cyan slender hands, extremely thin long dark legs with inward-curled pointed feet. Standing alone, arms relaxed, no microphone. Capture the restrained cyan/lavender/near-black palette, keep the sharp organic horn contours and flame crest complete.",
+      "status": "success",
+      "operation": "generate_reference_guided",
+      "outputMaster": "art/infernal-versus/masters/base/hz_maestro-ready.png",
+      "outputMasterSha256": "a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010"
+    },
+    {
+      "id": "hz_prick-ready",
+      "sourceIdentityId": "hz_prick",
+      "name": "Prick",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-070s.png",
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_prick.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=70s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Prick, tenue western attestée en S2 Bad With Us ; catalogue initial S1, référence produite explicitementS2. Vue primaire du haut du corps et plan de groupe pour les jambes ; découpe historique complémentaire.",
+      "prompt": "Create exactly ONE standalone full-body static character asset, actual transparent RGBA background, clean 2D television-animation linework and flat cel colors consistent with Hazbin Hotel. The official Prime Video Bad With Us frames are PRIMARY references and the older project cutout is a secondary complete-silhouette guide. Preserve this character's recognizable anatomy, proportions, costume and colors; use the combined views to resolve appearance. Single calm standing presentation, entire silhouette and appendages inside the canvas with visible margins, one character, no other figures, no scene, no background, no text or captions, no sheet, no animation, no invented accessories. Do not reproduce cropped neighbors, scene lighting or subtitles. The character is PRICK, the short stocky cactus-like western overlord in the references. Reproduce his round off-white skull-like face with jagged zigzag smile, black eye outlines with yellow eyes, gray-brown broad-brim cowboy hat and small pale skull ornament, red neckerchief, muted green broad cactus upper arms dotted with small oval cactus marks and short thorns, black gloves, charcoal western vest and long dark coat tails, dark flared trousers, sharply pointed dark boots. Both hands relaxed and empty. Keep the squat upper-body proportions, narrow hips and exact clothing layers, without adding a gun or belt decoration.",
+      "status": "success",
+      "operation": "generate_reference_guided",
+      "outputMaster": "art/infernal-versus/masters/base/hz_prick-ready.png",
+      "outputMasterSha256": "3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f"
+    },
+    {
+      "id": "hz_hatchet-ready",
+      "sourceIdentityId": "hz_hatchet",
+      "name": "Hatchet",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-072s.png",
+        "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_hatchet.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=72s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Hatchet, tenue attestée en S2 Bad With Us ; catalogue initialS1. Vue principaleS2 et découpe historique complète, sans accessoire ajouté ; silhouette fine redessinée.",
+      "prompt": "Create exactly ONE standalone full-body static character asset, actual transparent RGBA background, clean 2D television-animation linework and flat cel colors consistent with Hazbin Hotel. The official Prime Video Bad With Us frames are PRIMARY references and the older project cutout is a secondary complete-silhouette guide. Preserve this character's recognizable anatomy, proportions, costume and colors; use the combined views to resolve appearance. Single calm standing presentation, entire silhouette and appendages inside the canvas with visible margins, one character, no other figures, no scene, no background, no text or captions, no sheet, no animation, no invented accessories. Do not reproduce cropped neighbors, scene lighting or subtitles. The character is HATCHET, the slender red-haired black-and-white spiky overlord. Reproduce the angular white long-beaked face with sharp yellow teeth in a small grin, narrow red/black eye contours, spiky swept red hair, two long backward-pointing black horn-like shapes with red segments, small black collar/bow, black sleeveless narrow vest over white long sleeves with dark stripe bands, fitted dark gray flared trousers with small vertical pale marks, dark shoes with red toe sections, long thin black tail curving outward with its red-tipped forked/spiked end fully visible. Keep both empty hands relaxed at sides, black and white hand markings from the reference; omit the handheld club rather than creating a separate prop. One full individual, not a battle scene.",
+      "status": "success",
+      "operation": "generate_reference_guided",
+      "outputMaster": "art/infernal-versus/masters/base/hz_hatchet-ready.png",
+      "outputMasterSha256": "ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e"
+    },
+    {
+      "id": "hz_huskette_cat-ready",
+      "sourceIdentityId": "hz_huskette_cat",
+      "name": "Huskette féline",
+      "prompt": "Create exactly ONE clean full-body static character base from Hazbin Hotel season 2, isolated on actual transparent RGBA. Use the official Prime Video Love In A Bottle frames as primary visual references and the historical cutout as a supplementary complete silhouette reference. Reproduce the character's recognizable costume, colors and proportions closely in crisp 2D television-animation linework with flat cel shading. One calm neutral standing presentation, hands resting naturally at sides, complete head, shoes and tail inside the canvas with clear margins. Exactly one individual, no group, no scene, no bottles or trays, no text, no subtitle, no extra accessories, no glow, no cast shadow, no animation sheet. Preserve the costume actually shown; do not replace it with generic clothing. Choose the CAT-LIKE HUSKETTE: she is the rightmost of the three performers in the full-body official frame and the sole figure in the cutout. Her small tilted black top hat has a red band, her angular bob hair alternates black and red with straight short red bangs, black mask-like face markings surround amber-gold eyes on a light pink face, and a red bow tie holds a small gold bell. Match the fitted black sleeveless vest with small warm buttons, pink lower costume, long dark gloves, long asymmetrical dark/red flared boots with pink heart motifs, and thin curved red-and-black feline tail. Retain the tall slender proportions and cheerful small smile. Only this one character, not either companion.",
+      "category": "support_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "sourceNote": "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-074s.png",
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-072s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_huskette_cat.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+      ],
+      "status": "success",
+      "operation": "generate_reference_guided",
+      "outputMaster": "art/infernal-versus/masters/base/hz_huskette_cat-ready.png",
+      "outputMasterSha256": "b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12"
+    },
+    {
+      "id": "hz_huskette_spider-ready",
+      "sourceIdentityId": "hz_huskette_spider",
+      "name": "Huskette arachnéenne",
+      "prompt": "Create exactly ONE clean full-body static character base from Hazbin Hotel season 2, isolated on actual transparent RGBA. Use the official Prime Video Love In A Bottle frames as primary visual references and the historical cutout as a supplementary complete silhouette reference. Reproduce the character's recognizable costume, colors and proportions closely in crisp 2D television-animation linework with flat cel shading. One calm neutral standing presentation, hands resting naturally at sides, complete head, shoes and tail inside the canvas with clear margins. Exactly one individual, no group, no scene, no bottles or trays, no text, no subtitle, no extra accessories, no glow, no cast shadow, no animation sheet. Preserve the costume actually shown; do not replace it with generic clothing. Choose the SPIDER-LIKE HUSKETTE: she is the central pale pink performer with fluffy deep-red shoulder fur, and the sole figure in the cutout. Preserve the pale pink face and short fluffy pale hair, golden-yellow eyes framed by broad black lash shapes, the black cat-ear-shaped head ornament with warm inner circles and small tilted red/black hat, small warm bow/bell at the neck, prominent deep-red fluffy shoulder trim, fitted pink-and-black stage uniform with small dark center buttons and warm accent, long black gloves, black thigh-high stockings, and small pink-and-black pointed heeled shoes. Preserve the exact visible limb configuration and rounded shoulder silhouette from the references. Her arms relaxed, hands empty, one modest smile. Only this individual.",
+      "category": "support_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "sourceNote": "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-074s.png",
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-072s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_huskette_spider.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+      ],
+      "status": "generator_refused",
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID e98e3599-cad3-4b7c-a62f-9271cc4fab2f.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "noRetry": true
+    },
+    {
+      "id": "hz_huskette_imp-ready",
+      "sourceIdentityId": "hz_huskette_imp",
+      "name": "Huskette imp",
+      "prompt": "Create exactly ONE clean full-body static character base from Hazbin Hotel season 2, isolated on actual transparent RGBA. Use the official Prime Video Love In A Bottle frames as primary visual references and the historical cutout as a supplementary complete silhouette reference. Reproduce the character's recognizable costume, colors and proportions closely in crisp 2D television-animation linework with flat cel shading. One calm neutral standing presentation, hands resting naturally at sides, complete head, shoes and tail inside the canvas with clear margins. Exactly one individual, no group, no scene, no bottles or trays, no text, no subtitle, no extra accessories, no glow, no cast shadow, no animation sheet. Preserve the costume actually shown; do not replace it with generic clothing. Choose the IMP-LIKE HUSKETTE: she is the leftmost short red performer in the full-body frame and the sole figure in the cutout. Preserve her red skin, yellow-gold eyes with thick black eyelids, small pale cheek dots, dark hair in two rounded side buns, black cat-ear-shaped headpiece with orange details, warm orange bow tie and pale pink chest insert, fitted black buttoned uniform with pink lower panels, long black gloves, fitted dark legs ending in long pink flared boot shafts with small black circular accents and dark pointed feet, and long red tail with a dark heart-shaped tuft. Keep the compact proportions distinct from her taller companions. Both hands relaxed and empty. Only this one individual.",
+      "category": "support_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "sourceNote": "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-074s.png",
+        "/home/agent/hazbin-v7-reference-sources/huskettes-official-072s.png",
+        "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_huskette_imp.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+      ],
+      "status": "success",
+      "operation": "generate_reference_guided",
+      "outputMaster": "art/infernal-versus/masters/base/hz_huskette_imp-ready.png",
+      "outputMasterSha256": "e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6"
+    },
+    {
+      "id": "sirpentious-redeemed-ready",
+      "sourceIdentityId": "sirpentious",
+      "name": "Sir Pentious — racheté au Paradis",
+      "category": "costume",
+      "kind": "costume_base",
+      "variantRequirementIds": [
+        "VAR-010"
+      ],
+      "frameCoverage": "full_body",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Incarnation rachetée au Paradis, tenue claire avec halo, S2.",
+      "sourceNote": "Silhouette complète observée dans la compilation officielle Heaven à575s et dans le procès officiel à144s ; détail du visage/chapeau à136s. Queue serpentine, petit plumage d’épaules et costume clair distincts du modèle pécheur. Vues natives320×180 ; détails fins et pose de présentation adaptés. VAR-010 : une incarnation statique, pas d’atlas ni transition animée. Aucune livraison physique antérieure retrouvée dans les arbres vérifiés.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=he543NS0bq8&t=575s",
+        "https://www.youtube.com/watch?v=SiEdVUI2s84&t=144s",
+        "https://www.youtube.com/watch?v=SiEdVUI2s84&t=136s"
+      ],
+      "referencePaths": [
+        "/home/agent/hazbin-v7-reference-sources/pentious-redeemed-full-575s.png",
+        "/home/agent/hazbin-v7-reference-sources/pentious-redeemed-full-144s.png",
+        "/home/agent/hazbin-v7-reference-sources/pentious-redeemed-face-136s.png"
+      ],
+      "prompt": "Create exactly ONE clean complete static illustration of Sir Pentious in his redeemed Heaven incarnation from Hazbin Hotel season 2, guided closely by the attached official Prime Video frames. One isolated character on actual transparent RGBA, crisp 2D animation linework and flat cel shading. Preserve his very long purple snake body with its rounded coiled tail base, pale cream zigzag belly/waist details, dark navy face, yellow eyes with red pupils, long pale cream cobra hood with warm orange inner lining, pale formal fitted coat with violet seam details, dark bow with red heart accent, two slim arms, small pale feathered wings at shoulder level, very tall pale top hat with central yellow/red eye motif and heart ornaments, dark hat brim, and thin floating pale golden halo above it. The first frame shows his COMPLETE silhouette; include the entire snake tail, hood, hat, halo, arms and small shoulder wings with clear space all around. Pose him upright and relaxed with empty hands; one gentle reserved expression. He has no human legs or shoes. The reference contains other figures: OMIT Emily and all winged egg companions entirely. Only Sir Pentious, no scenery, no court seat, no weapon, no text or subtitle, no logo, no floor shadow, no animation sheet. Keep the distinctive redeemed palette and anatomy from the official frames; do not turn him into a generic angel or use his dark sinner uniform.",
+      "status": "generator_refused",
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID facf52ec-6102-4e72-8ed7-6beed7a064b2.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    }
+  ],
+  "assets": [
+    {
+      "id": "hz_st_peter-ready",
+      "sourceIdentityId": "hz_st_peter",
+      "category": "character_base",
+      "name": "St. Peter",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Série S1 — tenue de Welcome to Heaven, S1E6",
+      "spoilerTier": "season_1",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "master": "art/infernal-versus/masters/base/hz_st_peter-ready.png",
+      "export": "public/assets/sprites/reserve/hz_st_peter-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 917794,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        82,
+        69,
+        933,
+        1496
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48",
+      "exportSha256": "3bccd0b5b7523d68efc598cfb50034b608f20d9e8936f710f17fadac95cb2749",
+      "masterBytes": 1546699,
+      "exportBytes": 967134,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=a9s6FRLNJAo&t=1s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=a9s6FRLNJAo&t=1s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "/home/agent/hazbin-v7-reference-sources/st-peter-official-001s.png",
+          "viewed": true
+        },
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_st_peter.png",
+          "kind": "historical_project_cutout_secondary",
+          "viewed": true,
+          "limit": "Origine du détourage non certifiée ; silhouette corroborée dans le clip."
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "limits": [
+        "Pose neutre et sourire fermé adaptés ; proportions et courbures des cheveux/plumes ne sont pas certifiées 1:1.",
+        "Source primaire inspectée à 320×180 ; portrait historique pour les détails de tenue corroborés.",
+        "Marge sous les pieds d'environ 2,6 %, inférieure à la cible 7 %, silhouette entière.",
+        "Alpha natif conservé (maximum 254) ; le halo RGB hors silhouette disparaît une fois l'alpha composité."
+      ],
+      "visualReview": {
+        "status": "accepted_with_documented_limits",
+        "subjectComplete": true,
+        "transparencyVisuallyChecked": true,
+        "notes": "Halo, cheveux, ailes, nœud corail, robe cyan et croix dorée concordent aux attributs principaux. Contrôle en composition RGBA effectué."
+      },
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_susan-ready",
+      "sourceIdentityId": "hz_susan",
+      "category": "character_base",
+      "name": "Susan",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Série S1 — tenue de Hello Rosie! S1E7",
+      "spoilerTier": "season_1",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "master": "art/infernal-versus/masters/base/hz_susan-ready.png",
+      "export": "public/assets/sprites/reserve/hz_susan-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1135717,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        133,
+        66,
+        865,
+        1481
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708",
+      "exportSha256": "d9ebfa2619e14175952447bc29bfa2d35f25ba07ba6f830ed30db7319187f5ca",
+      "masterBytes": 1366022,
+      "exportBytes": 862006,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=D4VOQAHN6oM&t=44s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=D4VOQAHN6oM&t=44s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "/home/agent/hazbin-v7-reference-sources/susan-official-044s.png",
+          "viewed": true
+        },
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_susan.png",
+          "kind": "historical_project_cutout_secondary",
+          "viewed": true,
+          "limit": "Origine du détourage non certifiée ; tenue et silhouette corroborées dans le clip."
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "limits": [
+        "Pose neutre adaptée, traits du visage et plis reconstitués à partir d'une source primaire limitée à 320×180.",
+        "La figure reste petite dans le plan officiel ; détail du bas de robe et de la canne renseigné par le portrait historique.",
+        "Marges verticales inférieures à 7 %, silhouette entière.",
+        "Alpha natif maximum 254 conservé."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_maestro-ready",
+      "sourceIdentityId": "hz_maestro",
+      "name": "Maestro",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=10s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Maestro, incarnation S2 visible dans Bad With Us à10s et110s ; scène primaire320×180 et ancienne découpe complète corroborée. Les détails fins et le tracé des cornes/pieds restent adaptés.",
+      "master": "art/infernal-versus/masters/base/hz_maestro-ready.png",
+      "export": "public/assets/sprites/reserve/hz_maestro-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1336183,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        229,
+        12,
+        795,
+        1509
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010",
+      "exportSha256": "a962d2579c2c540fa5349dff1f2b3942f9ae06dc2cf2cee8b30f5bfb3570d3cc",
+      "masterBytes": 1094343,
+      "exportBytes": 691306,
+      "franchise": "Hazbin Hotel",
+      "status": "independent_review_accepted",
+      "accepted": true,
+      "animationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "limits": [
+        "Maestro, incarnation S2 visible dans Bad With Us à10s et110s ; scène primaire320×180 et ancienne découpe complète corroborée. Les détails fins et le tracé des cornes/pieds restent adaptés."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_prick-ready",
+      "sourceIdentityId": "hz_prick",
+      "name": "Prick",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=70s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Prick, tenue western attestée en S2 Bad With Us ; catalogue initial S1, référence produite explicitementS2. Vue primaire du haut du corps et plan de groupe pour les jambes ; découpe historique complémentaire.",
+      "master": "art/infernal-versus/masters/base/hz_prick-ready.png",
+      "export": "public/assets/sprites/reserve/hz_prick-ready.webp",
+      "width": 1086,
+      "height": 1448,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 1068582,
+      "alphaFullPixels": 2280,
+      "visibleBBoxAlpha50": [
+        197,
+        19,
+        867,
+        1426
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f",
+      "exportSha256": "3447968c395a5907375eaddb246d0e95aec8c10d1c0269a5e049e33534bb6169",
+      "masterBytes": 776003,
+      "exportBytes": 477492,
+      "franchise": "Hazbin Hotel",
+      "status": "independent_review_accepted",
+      "accepted": true,
+      "animationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "limits": [
+        "Prick, tenue western attestée en S2 Bad With Us ; catalogue initial S1, référence produite explicitementS2. Vue primaire du haut du corps et plan de groupe pour les jambes ; découpe historique complémentaire."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_hatchet-ready",
+      "sourceIdentityId": "hz_hatchet",
+      "name": "Hatchet",
+      "category": "character_base",
+      "continuity": "season_2",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=72s",
+        "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+      ],
+      "sourceNote": "Hatchet, tenue attestée en S2 Bad With Us ; catalogue initialS1. Vue principaleS2 et découpe historique complète, sans accessoire ajouté ; silhouette fine redessinée.",
+      "master": "art/infernal-versus/masters/base/hz_hatchet-ready.png",
+      "export": "public/assets/sprites/reserve/hz_hatchet-ready.webp",
+      "width": 1145,
+      "height": 1374,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 1324947,
+      "alphaFullPixels": 2757,
+      "visibleBBoxAlpha50": [
+        301,
+        21,
+        969,
+        1352
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e",
+      "exportSha256": "585ece5d51ce8ed69946e5a5c0672d2bbedaf0b8ffda0f4afa290af804e17da3",
+      "masterBytes": 484980,
+      "exportBytes": 317510,
+      "franchise": "Hazbin Hotel",
+      "status": "independent_review_accepted",
+      "accepted": true,
+      "animationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "limits": [
+        "Hatchet, tenue attestée en S2 Bad With Us ; catalogue initialS1. Vue principaleS2 et découpe historique complète, sans accessoire ajouté ; silhouette fine redessinée."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_huskette_cat-ready",
+      "sourceIdentityId": "hz_huskette_cat",
+      "name": "Huskette féline",
+      "category": "support_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "sourceNote": "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+      ],
+      "master": "art/infernal-versus/masters/base/hz_huskette_cat-ready.png",
+      "export": "public/assets/sprites/reserve/hz_huskette_cat-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1194025,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        150,
+        35,
+        737,
+        1517
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12",
+      "exportSha256": "e2da3b5d8240161baadb4d9d35e916cb628e2fa1ec7410f335a22a5109f4efe6",
+      "masterBytes": 1167603,
+      "exportBytes": 758246,
+      "status": "independent_review_accepted",
+      "accepted": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "limits": [
+        "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    },
+    {
+      "id": "hz_huskette_imp-ready",
+      "sourceIdentityId": "hz_huskette_imp",
+      "name": "Huskette imp",
+      "category": "support_base",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "incarnation": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "sourceNote": "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+        "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+      ],
+      "master": "art/infernal-versus/masters/base/hz_huskette_imp-ready.png",
+      "export": "public/assets/sprites/reserve/hz_huskette_imp-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1147102,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        131,
+        37,
+        775,
+        1504
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6",
+      "exportSha256": "69dca25715d86b8bbeb192a4fe6194a7bd8a9df569bf31e792aa455179ad4b72",
+      "masterBytes": 1236794,
+      "exportBytes": 806856,
+      "status": "independent_review_accepted",
+      "accepted": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "limits": [
+        "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180."
+      ],
+      "independentReview": "docs/standalone/production-v7/reviews-v7.json"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "hz_speaker_of_god",
+      "status": "generation_refused_no_retry",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=he543NS0bq8&t=415s"
+      ],
+      "notes": "Référence primaire inspectée ; refus natif catégorie other, motif détaillé non fourni ; aucun fichier compté."
+    },
+    {
+      "id": "hz_rooster",
+      "status": "generation_refused_no_retry",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=0BEt1xCSBG0&t=86s"
+      ],
+      "notes": "Refus natif moderation_blocked sortie, catégorie other ; aucun fichier livré."
+    },
+    {
+      "id": "hz_ant_sinner",
+      "status": "generation_refused_no_retry",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=0BEt1xCSBG0&t=86s"
+      ],
+      "notes": "Refus natif moderation_blocked sortie, catégorie other ; aucun fichier livré."
+    },
+    {
+      "id": "hz_eel_sinner",
+      "status": "generation_refused_no_retry",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=0BEt1xCSBG0&t=84s"
+      ],
+      "notes": "Refus natif moderation_blocked sortie, catégorie other ; aucun fichier livré."
+    },
+    {
+      "id": "hz_salina",
+      "status": "generation_refused_no_retry",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=0BEt1xCSBG0&t=120s"
+      ],
+      "notes": "Refus natif catégorie other, aucun fichier livré ni relance."
+    }
+  ],
+  "status": "frozen_after_independent_review"
+}

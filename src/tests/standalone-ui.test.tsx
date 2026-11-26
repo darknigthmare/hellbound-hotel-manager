@@ -427,6 +427,41 @@ describe('guide integration and narrative compatibility', () => {
     expect(screen.getByRole('link', { name: /C.H.E.R.U.B., S1E4/ }).getAttribute('href')).toContain('1ZFseYPmkAk');
   });
 
+  it('requires a saved season-three opt-in and safely replaces a hidden selected arena', () => {
+    const legacy = createDefaultSave();
+    delete legacy.options.allowSeasonThree;
+    legacy.run = buildRun('arcade', 'charlie', STANDALONE_FIGHTER_IDS, [], 81);
+    const original = JSON.stringify(legacy);
+    localStorage.setItem(STANDALONE_STORAGE_KEY, original);
+    const view = render(<InfernalVersus />);
+    click(/VERSUS CPU/);
+    const option = screen.getByLabelText('Autoriser les décors et créations de saison 3') as HTMLInputElement;
+    expect(option.checked).toBe(false);
+    expect(screen.queryByRole('button', { name: /Australie · Désert S3/ })).toBeNull();
+    expect(localStorage.getItem(STANDALONE_STORAGE_KEY)).toBe(original);
+    fireEvent.click(option);
+    expect(saved().options.allowSeasonThree).toBe(true);
+    click(/Australie · Désert S3/);
+    fireEvent.click(option);
+    expect(screen.queryByRole('button', { name: /Australie · Désert S3/ })).toBeNull();
+    expect(document.querySelector('img[src*="australia-desert-s3"]')).toBeNull();
+    click('Lancer le combat');
+    expect(runtime.last!.stage.id).toBe('hotel-lobby');
+    expect(saved().run).toEqual(legacy.run);
+    expect(saved().stats).toEqual(legacy.stats);
+    click('Fixture quit');
+    click('Options');
+    fireEvent.click(screen.getByLabelText('Autoriser les décors et créations de saison 3'));
+    view.unmount();
+    render(<InfernalVersus />);
+    click(/VERSUS CPU/);
+    expect((screen.getByLabelText('Autoriser les décors et créations de saison 3') as HTMLInputElement).checked).toBe(true);
+    click(/Australie · Désert S3/);
+    click('Lancer le combat');
+    expect(runtime.last!.stage.id).toBe('australia-desert-s3');
+    expect(localStorage.getItem('hellbound_hotel_db_state')).toBe('hotel-save-sentinel');
+  });
+
   it('saves a static costume and passes it to combat after reloading', () => {
     const view = render(<InfernalVersus />);
     click(/VERSUS CPU/);

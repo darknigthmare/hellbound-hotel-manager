@@ -6,10 +6,10 @@ import { ArrowLeft, ArrowRight, BookOpen, Download, Flame, Gamepad2, Settings, S
 import { PentagramLiveFight } from '../components/PentagramLiveFight';
 import { usePentagramCombatSoundtrack } from '../components/usePentagramCombatSoundtrack';
 import { buildCombatantDefinition } from '../lib/pentagram-fighters';
-import { STANDALONE_STAGES as PENTAGRAM_STAGES, getPentagramStage, type PentagramStageId } from '../lib/pentagram-stages';
+import { getPentagramStage, type PentagramStageId } from '../lib/pentagram-stages';
 import type { CombatState } from '../lib/pentagram-combat';
 import { STANDALONE_BOSS_IDS, STANDALONE_FIGHTER_IDS, STANDALONE_ROSTER, STANDALONE_TIMELINE, getStandaloneFighter, getStandalonePortrait } from './roster';
-import { applyMatchResult, buildRun, buildCampaignRun, getRunEncounter, exportSave, importSave, loadSave, retryRun, saveProgress, MAX_IMPORT_LENGTH, type RunMode, type StandaloneMode, type StandaloneOptions, type StandaloneRun, type StandaloneSave } from './progression';
+import { applyMatchResult, buildRun, buildCampaignRun, getAvailableStandaloneStages, getRunEncounter, exportSave, importSave, loadSave, retryRun, saveProgress, MAX_IMPORT_LENGTH, type RunMode, type StandaloneMode, type StandaloneOptions, type StandaloneRun, type StandaloneSave } from './progression';
 import '../styles/theme.css';
 import '../styles/pentagram-arena.css';
 import './infernal-versus.css';
@@ -86,7 +86,10 @@ export function InfernalVersus() {
     const outfit = getInfernalCostume(fighterId, save.wardrobe?.[side]?.[fighterId]);
     return outfit && (allowSeasonTwo || outfit.spoilerTier !== 'season_2') ? outfit.id : undefined;
   };
-  const stage = getPentagramStage(match?.stageId ?? stageId);
+  const allowSeasonThree = save.options.allowSeasonThree === true;
+  const availableStages = getAvailableStandaloneStages(save.options);
+  const selectedStage = availableStages.find(arena => arena.id === stageId) ?? availableStages[0];
+  const stage = getPentagramStage(match?.stageId ?? selectedStage.id);
   const combatants = useMemo(() => {
     if (!match) return null;
     const one = getStandaloneFighter(match.one);
@@ -122,15 +125,17 @@ export function InfernalVersus() {
     updateSave({ ...current, wardrobe: { ...current.wardrobe, [activeSide]: selections } });
   };
   const launch = (next: Match) => {
+    const allowedStages = getAvailableStandaloneStages(saveRef.current.options);
+    const nextStage = allowedStages.find(arena => arena.id === next.stageId) ?? allowedStages[0];
     setNotice('');
-    setMatch(next);
+    setMatch({ ...next, stageId: nextStage.id });
     setScreen('fight');
-    if (saveRef.current.options.soundtrack) void soundtrack.start(getPentagramStage(next.stageId).soundtrack);
+    if (saveRef.current.options.soundtrack) void soundtrack.start(nextStage.soundtrack);
   };
   const launchRun = (run: StandaloneRun) => {
     if (run.status !== 'active') return;
     if (!canShowNarrative(run)) { setNotice('Ce récit est masqué par le filtre de contenu. Choisissez « Saisons 1 et 2 » pour le reprendre.'); return; }
-    const encounter = getRunEncounter(run);
+    const encounter = getRunEncounter(run, saveRef.current.options);
     launch({ id: identifier(), one: encounter.fighterId, two: encounter.opponentId, mode: run.mode, stageId: encounter.stageId, runIndex: run.index, allowSeasonTwo: run.mode === 'campaign' || run.rosterIds.some(id => getStandaloneFighter(id)?.spoiler === 'season_2') });
   };
   const enterRun = (next: StandaloneRun) => {
@@ -151,7 +156,7 @@ export function InfernalVersus() {
       } else {
         if (!eligibleIds.includes(oneId) || !eligibleIds.includes(twoId)) throw new Error('Choisissez deux combattants disponibles avec les filtres sélectionnés.');
         updateSave(saveRef.current);
-        launch({ id: identifier(), one: oneId, two: twoId, mode, stageId, allowSeasonTwo: scope === 'all' });
+        launch({ id: identifier(), one: oneId, two: twoId, mode, stageId: selectedStage.id, allowSeasonTwo: scope === 'all' });
       }
     } catch (error) { setNotice(error instanceof Error ? error.message : 'Le duel ne peut pas démarrer.'); }
   };
@@ -247,7 +252,7 @@ export function InfernalVersus() {
             <h1 ref={titleRef} tabIndex={-1}>Tous les démons<br /><em>ont leurs rivaux.</em></h1>
             <p className="iv-hero-copy">Les résidents de l’hôtel et les figures de Helluva Boss se retrouvent dans l’arène. Choisissez votre camp. Faites monter la tension.</p>
             <button className="iv-primary" onClick={() => openSetup('versus')}>Entrer dans l’arène <ArrowRight size={18} /></button>
-            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.length}</strong> combattants</span><span><strong>{PENTAGRAM_STAGES.length}</strong> arènes</span><span><strong>{MODES.length}</strong> modes</span></div>
+            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.length}</strong> combattants</span><span><strong>{availableStages.length}</strong> arènes disponibles</span><span><strong>{MODES.length}</strong> modes</span></div>
           </div>
           <div className="iv-hero-cast" aria-hidden="true"><Portrait id="charlie" /><Portrait id="hb_blitzo" /><span>LET’S MAKE<br />A SCENE.</span></div>
         </section>
@@ -309,7 +314,7 @@ export function InfernalVersus() {
             <button className="iv-primary" onClick={startMatch} disabled={mode === 'story' && !storyAvailable(oneId, eligibleIds, narrativeFilters)}>{isRunMode(mode) ? 'Démarrer le parcours' : 'Lancer le combat'} <Swords size={18} /></button>
           </aside>
         </div>
-        {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{getPentagramStage(stageId).name}</span></div><div className="iv-stage-grid">{PENTAGRAM_STAGES.map(arena => <button key={arena.id} onClick={() => setStageId(arena.id)} aria-pressed={stageId === arena.id}><img src={arena.thumbnailPath} alt="" loading="lazy" /><span>{arena.name}</span></button>)}</div></section>}
+        {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{selectedStage.name}</span></div><label className="iv-check"><input type="checkbox" checked={allowSeasonThree} onChange={event => changeOption('allowSeasonThree', event.target.checked)} /> Autoriser les décors et créations de saison 3</label><div className="iv-stage-grid">{availableStages.map(arena => <button key={arena.id} onClick={() => setStageId(arena.id)} aria-pressed={selectedStage.id === arena.id}><img src={arena.thumbnailPath} alt="" loading="lazy" /><span>{arena.name}</span></button>)}</div></section>}
       </>}
 
       {screen === 'interlude' && run && <RunInterlude run={run} allowSeasonTwo={scope === 'all'} titleRef={titleRef} onHome={exitMatch} onFight={() => launchRun(run)} />}
@@ -334,11 +339,21 @@ export function InfernalVersus() {
         </article>)}</div>
       </>}
 
-      {screen === 'gallery' && <ReserveGallery titleRef={titleRef} allowSeasonTwo={scope === 'all'} onScopeChange={allow => updateFranchise(franchise, allow ? 'all' : 'season_1')} />}
+      {screen === 'gallery' && <ReserveGallery titleRef={titleRef} allowSeasonTwo={scope === 'all'} allowSeasonThree={allowSeasonThree} onScopeChange={allow => updateFranchise(franchise, allow ? 'all' : 'season_1')} onSeasonThreeChange={allow => changeOption('allowSeasonThree', allow)} />}
 
       {screen === 'options' && <>
         <p className="iv-eyebrow">À VOTRE MESURE</p><h1 ref={titleRef} tabIndex={-1}>Options & progression</h1>
-        <div className="iv-options-grid"><section className="iv-panel"><h2>Confort de jeu</h2><label className="iv-check"><input type="checkbox" checked={save.options.soundtrack} onChange={event => changeOption('soundtrack', event.target.checked)} /> Musique originale des arènes</label><label className="iv-check"><input type="checkbox" checked={save.options.reducedMotion} onChange={event => changeOption('reducedMotion', event.target.checked)} /> Réduire mouvements et flashes</label><label>Présentation des décors<select value={save.options.stagePresentation ?? 'alive'} onChange={event => changeOption('stagePresentation', event.target.value as StandaloneOptions['stagePresentation'])}><option value="alive">Décor vivant</option><option value="reduced">Ambiance réduite</option><option value="static">Décor statique</option></select></label><p className="iv-small">L’ambiance réduite fixe la caméra et ralentit les figurants ; le décor statique les immobilise. Les règles du combat restent identiques.</p><label>Difficulté par défaut<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label><p className="iv-small">Les réglages de réduction des mouvements du système sont également respectés.</p></section>
+        <div className="iv-options-grid"><section className="iv-panel">
+          <h2>Confort de jeu</h2>
+          <label className="iv-check"><input type="checkbox" checked={save.options.soundtrack} onChange={event => changeOption('soundtrack', event.target.checked)} /> Musique originale des arènes</label>
+          <label className="iv-check"><input type="checkbox" checked={save.options.reducedMotion} onChange={event => changeOption('reducedMotion', event.target.checked)} /> Réduire mouvements et flashes</label>
+          <label>Présentation des décors<select value={save.options.stagePresentation ?? 'alive'} onChange={event => changeOption('stagePresentation', event.target.value as StandaloneOptions['stagePresentation'])}><option value="alive">Décor vivant</option><option value="reduced">Ambiance réduite</option><option value="static">Décor statique</option></select></label>
+          <p className="iv-small">L’ambiance réduite fixe la caméra et ralentit les figurants ; le décor statique les immobilise. Les règles du combat restent identiques.</p>
+          <label className="iv-check"><input type="checkbox" checked={allowSeasonThree} onChange={event => changeOption('allowSeasonThree', event.target.checked)} /> Autoriser les décors et créations de saison 3</label>
+          <p className="iv-small">Contenu des arènes : {allowSeasonThree ? 'saisons 1, 2 et 3' : 'saisons 1 et 2'}. Ce choix s’applique aussi à la rotation des parcours.</p>
+          <label>Difficulté par défaut<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label>
+          <p className="iv-small">Les réglages de réduction des mouvements du système sont également respectés.</p>
+        </section>
           <section className="iv-panel"><h2>Sauvegarde</h2><p>Votre palmarès, vos options et le parcours en cours sont enregistrés automatiquement sur cet appareil.</p><div className="iv-inline-actions"><button className="iv-secondary" onClick={downloadSave}><Download size={16} /> Exporter</button><label className="iv-file-label"><Upload size={16} /> Importer<input type="file" accept=".json,application/json" onChange={event => void prepareImport(event)} /></label></div>{initial.status === 'invalid' && !canPersist && <button className="iv-secondary" onClick={() => { const raw = browserStorage()?.getItem('hellbound_infernal_versus_v1'); if (raw) { const url = URL.createObjectURL(new Blob([raw], { type: 'application/json' })); const a = document.createElement('a'); a.href = url; a.download = 'infernal-versus-recovery.json'; a.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000); } }}>Exporter la donnée à récupérer</button>}{pendingImport && <div className="iv-import-confirm" role="group" aria-label="Confirmer l’import"><p>{pendingImport.stats.matches} duels · {pendingImport.stats.wins} victoires. Cette sauvegarde remplacera votre progression Infernal Versus.</p><button className="iv-primary" onClick={() => { updateSave(pendingImport); setPendingImport(null); setNotice('Sauvegarde importée.'); }}>Confirmer l’import</button><button className="iv-secondary" onClick={() => setPendingImport(null)}>Annuler</button></div>}</section>
           <section className="iv-panel iv-controls"><h2>Commandes</h2><table><thead><tr><th>Action</th><th>Joueur 1</th><th>Joueur 2</th></tr></thead><tbody><tr><td>Déplacement</td><td>Q / A · D</td><td>← · →</td></tr><tr><td>Garde / accroupi</td><td>E · S</td><td>Maj. droite · ↓</td></tr><tr><td>Saut / provocation</td><td>Z / W · R</td><td>↑ · U</td></tr><tr><td>Léger / lourd / spécial</td><td>F · G · H</td><td>J · K · L</td></tr><tr><td>Signature (selon le combattant)</td><td>T</td><td>I</td></tr><tr><td>Pause / quitter</td><td colSpan={2}>P · Échap</td></tr><tr><td>Manche suivante</td><td colSpan={2}>Entrée</td></tr></tbody></table><p className="iv-small">Les boutons tactiles sont disponibles pendant chaque combat. Le spécial consomme la jauge de tension.</p></section>
           <section className="iv-panel"><h2>Derniers duels</h2>{save.recentResults.length === 0 ? <p>Aucun résultat enregistré.</p> : <ol className="iv-history">{save.recentResults.slice(0, 8).map(result => <li key={result.id}><span>{getStandaloneFighter(result.fighterId)?.character.name} / {getStandaloneFighter(result.opponentId)?.character.name}</span><strong>{result.outcome === 'won' ? 'Victoire J1' : result.outcome === 'lost' ? 'Défaite J1' : 'Égalité'}</strong></li>)}</ol>}</section>

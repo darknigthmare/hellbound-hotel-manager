@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "edition": "V7",
+  "date": "2026-11-26",
+  "status": "passed",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T00:55:41.758047+00:00",
+      "seconds": 7.452,
+      "log": "docs/standalone/production-v7/validation-logs/typecheck.log",
+      "logSha256": "cba1c4e9280db711fc43b89dca4ef654f95d82f94cbc037e3c8830a64d034c62",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=768"
+      }
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T00:55:49.210301+00:00",
+      "seconds": 9.719,
+      "log": "docs/standalone/production-v7/validation-logs/lint.log",
+      "logSha256": "8ee0364c4829a6cae1e3577acc9ba62bacb9224fdb771a8f61b7957af4219b59",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=768"
+      }
+    },
+    {
+      "name": "test",
+      "command": "npm run test",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T00:55:58.929174+00:00",
+      "seconds": 64.272,
+      "log": "docs/standalone/production-v7/validation-logs/test.log",
+      "logSha256": "6456f44361914adb6c99e77c05c804e2165c496f28d2f14bff8e2ccefd2fad15",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=768"
+      }
+    },
+    {
+      "name": "build-memory-safe",
+      "command": "npm run build -- --config /home/agent/hazbin-v7-qa-config/vite.config.mjs",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T01:01:02.715228+00:00",
+      "seconds": 9.407,
+      "log": "docs/standalone/production-v7/validation-logs/build-memory-safe.log",
+      "logSha256": "03aeb12ff82a3388ffdda2a9f5fdeaf282c4b8fe927010f5661f63fa7a4ebc5e",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    },
+    {
+      "name": "standalone-tsc",
+      "command": "npx tsc",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T01:01:12.200291+00:00",
+      "seconds": 8.373,
+      "log": "docs/standalone/production-v7/validation-logs/standalone-tsc.log",
+      "logSha256": "9aac3da9a7039a99c345545c32f286aa65c358d571bfce7e00d94625d095c829",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    },
+    {
+      "name": "standalone-vite-memory-safe",
+      "command": "npx vite build --mode standalone --config /home/agent/hazbin-v7-qa-config/vite.config.mjs",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T01:01:20.574022+00:00",
+      "seconds": 0.916,
+      "log": "docs/standalone/production-v7/validation-logs/standalone-vite-memory-safe.log",
+      "logSha256": "673fb08cfe795c2e14cf8a23ecb61a00f9120c715e7f87416fd5f7891b7218cf",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    },
+    {
+      "name": "standalone-finalize",
+      "command": "node scripts/finalize-standalone.mjs",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T01:01:21.561577+00:00",
+      "seconds": 1.05,
+      "log": "docs/standalone/production-v7/validation-logs/standalone-finalize.log",
+      "logSha256": "d919e6140cf923c4b32b6ae5a71bad7fd9b3c8993625795944336282116e0c20",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    },
+    {
+      "name": "check-standalone",
+      "command": "npm run check:standalone",
+      "exitCode": 0,
+      "startedAt": "2026-11-26T01:01:22.612198+00:00",
+      "seconds": 1.26,
+      "log": "docs/standalone/production-v7/validation-logs/check-standalone.log",
+      "logSha256": "d6898897aba3b71ed449ed3630a13fb121caf14344b9a2a5760536a659c1bec3",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    }
+  ],
+  "interruptedAttempts": [
+    {
+      "name": "build",
+      "command": "npm run build",
+      "exitCode": 137,
+      "startedAt": "2026-11-26T00:57:03.201713+00:00",
+      "seconds": 8.127,
+      "log": "docs/standalone/production-v7/validation-logs/build.log",
+      "logSha256": "a2e20b412dc1d39bc03d14d0470df9009d6935c5d0b1beba217bf8a710434f15",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=768"
+      }
+    },
+    {
+      "name": "build-bounded-retry",
+      "command": "NODE_OPTIONS=--max-old-space-size=384 RAYON_NUM_THREADS=2 npm run build",
+      "exitCode": 137,
+      "log": "docs/standalone/production-v7/validation-logs/build-retry.log",
+      "logSha256": "a2e20b412dc1d39bc03d14d0470df9009d6935c5d0b1beba217bf8a710434f15",
+      "environment": {
+        "NODE_OPTIONS": "--max-old-space-size=384",
+        "RAYON_NUM_THREADS": "2"
+      }
+    }
+  ],
+  "browserStatus": "blocked_before_browser_launch",
+  "inGameChecked": false,
+  "buildMethod": "Original Vite config imported by a temporary config overriding only build.copyPublicDir=false. Identical public files linked into each output after bundling. Source tree and original config unchanged.",
+  "applicationPublicFiles": {
+    "files": 1259,
+    "bytes": 905712197,
+    "method": "hardlinks_to_identical_public_inodes",
+    "allLinksVerified": true
+  },
+  "applicationBuildOutputRemovedAfterSuccess": "/home/agent/hazbin-v6/dist",
+  "standalonePublicFiles": {
+    "files": 1259,
+    "bytes": 905712197,
+    "method": "hardlinks_to_identical_public_inodes",
+    "allLinksVerified": true
+  },
+  "testsPassed": 413,
+  "testSuites": 47,
+  "completedAt": "2026-11-26T01:01:23.872486+00:00",
+  "temporaryBuildConfig": "import originalConfig from '/home/agent/hazbin-v6/vite.config.ts';\nexport default async environment => {\n  const original = await originalConfig(environment);\n  return { ...original, build: { ...original.build, copyPublicDir: false } };\n};\n",
+  "sourceIntegrity": {
+    "schemaVersion": 1,
+    "edition": "V7",
+    "status": "passed",
+    "baselineCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+    "trackedPublicChanged": false,
+    "frozenNewPublicFilesVerified": 48,
+    "publicFileCount": 1259,
+    "publicFileManifestSha256": "5941cebd90bf9bfe7bd607f921486b9403af6a68e6f1ffa230315ff4c6f3178b",
+    "finalizerWritePathsDisjointFromPublic": true,
+    "finalizerWrites": [
+      "dist-combat/combat.html renamed to dist-combat/index.html",
+      "dist-combat/standalone-manifest.json"
+    ],
+    "unclassifiedPublicFiles": [],
+    "report": "docs/standalone/production-v7/build-source-integrity.json"
+  },
+  "standardBuildStatus": "environment_resource_failure_exit_137",
+  "standardQaScriptPassed": false,
+  "standaloneFilesVerified": 1263,
+  "standaloneManifest": {
+    "path": "dist-combat/standalone-manifest.json",
+    "sha256": "8e1edcfc77de4f8a653b912d44080e644c9275da4443f4dc36dbd01b60dfb99a",
+    "files": 1263,
+    "bytes": 906689882
+  },
+  "managerBuild": "passed_with_equivalent_memory_safe_assembly",
+  "standaloneBuild": "passed_with_equivalent_memory_safe_assembly",
+  "command": "Contrôles exécutés séparément : npm run typecheck ; npm run lint ; npm run test ; npm run build -- --config /home/agent/hazbin-v7-qa-config/vite.config.mjs ; npx tsc ; npx vite build --mode standalone --config /home/agent/hazbin-v7-qa-config/vite.config.mjs ; node scripts/finalize-standalone.mjs ; npm run check:standalone ; assemblage des ressources publiques par liens physiques vérifiés."
+}

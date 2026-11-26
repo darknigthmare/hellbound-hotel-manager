@@ -37,7 +37,10 @@ export type PentagramStageId = HotelStageId
   | 'cherub-opera-stage'
   | 'dhorks-portal-chamber'
   | 'hellaverse-training'
-  | 'vox-office-s2';
+  | 'vox-office-s2'
+  | 'sloth-hospital-exterior'
+  | 'australia-desert-s3'
+  | 'auction-glass-hall-s3';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -58,6 +61,7 @@ export interface PentagramStage {
   district: string;
   description: string;
   loreBasis: string;
+  spoilerTier?: 'season_1' | 'season_2' | 'season_3';
   imagePath: string;
   thumbnailPath: string;
   scenery?: { middle?: string; near?: string };
@@ -913,6 +917,57 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   accent: '#52e7fb', shadow: '#071c35', floor: '#12516c',
   // Reuse the existing Vees score; this static-art addition introduces no audio.
   soundtrack: PENTAGRAM_STAGES[6].soundtrack,
+}, {
+  id: 'sloth-hospital-exterior',
+  spoilerTier: 'season_2',
+  name: 'Hôpital de Sloth · Façade et parvis',
+  district: 'Anneau de la Paresse · St. An’s',
+  description: 'La tour rose de l’hôpital domine une chaussée dégagée, avec un banc mauve et un lampadaire au bord du parvis.',
+  loreBasis: 'Helluva Boss, Western Energy (S2E4) : extérieur de St. An’s Hospital, distinct de la salle d’attente. La chaussée dégagée et les trois plans séparés adaptent le cadrage à la simulation AU. La signalétique fine et les petits accessoires sont simplifiés ; aucune fidélité canonique 1:1 n’est certifiée.',
+  imagePath: '/assets/stages/helluva/sloth-hospital-exterior/room.webp',
+  thumbnailPath: '/assets/stages/helluva/sloth-hospital-exterior/thumb.webp',
+  scenery: {
+    middle: '/assets/stages/helluva/sloth-hospital-exterior/prop-middle.webp',
+    near: '/assets/stages/helluva/sloth-hospital-exterior/prop-near.webp',
+  },
+  imagePosition: 'center bottom',
+  accent: '#f5b3d4', shadow: '#49204e', floor: '#4a185d',
+  // Same original score as the existing hospital interior.
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'australia-desert-s3',
+  spoilerTier: 'season_3',
+  name: 'Australie · Désert S3',
+  district: 'Monde humain · Australie',
+  description: 'Un désert rose et ocre, un arbre nu et des collines basses encadrent une piste ouverte, avec un rocher et une touffe sèche au premier plan.',
+  loreBasis: 'Helluva Boss saison 3, Gimpy Gimpy (S3E3) : désert australien documenté par la bande-annonce officielle S3 et une image Prime Video. Les personnages sont retirés et deux petits éléments sont dessinés séparément pour la simulation AU. Les contours masqués de l’arbre et le cadrage sont adaptés ; aucune fidélité canonique 1:1 n’est certifiée.',
+  imagePath: '/assets/stages/helluva/australia-desert-s3/room.webp',
+  thumbnailPath: '/assets/stages/helluva/australia-desert-s3/thumb.webp',
+  scenery: {
+    middle: '/assets/stages/helluva/australia-desert-s3/prop-middle.webp',
+    near: '/assets/stages/helluva/australia-desert-s3/prop-near.webp',
+  },
+  imagePosition: 'center bottom',
+  accent: '#d8b49b', shadow: '#715770', floor: '#b77b65',
+  // Existing original exterior score; the static scenery adds no audio.
+  soundtrack: PENTAGRAM_STAGES[2].soundtrack,
+}, {
+  id: 'auction-glass-hall-s3',
+  spoilerTier: 'season_3',
+  name: 'Enchères S3 · Hall vitré',
+  district: 'Helluva Boss S3 · Hall aux vitraux cyan',
+  description: 'Des voûtes vitrées cyan et de longs panneaux muraux encadrent un sol sombre ; un banc à losanges et un grand ornement bordent la piste.',
+  loreBasis: 'Helluva Boss saison 3, clip officiel Prime Video Stolas and Blitzø’s Relationship Takes an Emotional Turn : vue du hall vitré cyan. Ce hall couvre une vue précise du repérage des enchères, sans reconstituer la salle principale. Le cadrage, les motifs fins et le placement des objets sont adaptés à la simulation AU ; aucune fidélité canonique 1:1 n’est certifiée.',
+  imagePath: '/assets/stages/helluva/auction-glass-hall-s3/room.webp',
+  thumbnailPath: '/assets/stages/helluva/auction-glass-hall-s3/thumb.webp',
+  scenery: {
+    middle: '/assets/stages/helluva/auction-glass-hall-s3/prop-middle.webp',
+    near: '/assets/stages/helluva/auction-glass-hall-s3/prop-near.webp',
+  },
+  imagePosition: 'center bottom',
+  accent: '#73e9df', shadow: '#0e2036', floor: '#0d2734',
+  // Existing original score, not music or dialogue from the episode.
+  soundtrack: PENTAGRAM_STAGES[0].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

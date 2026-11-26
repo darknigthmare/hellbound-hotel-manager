@@ -65,7 +65,7 @@ describe('versioned narrative and save compatibility', () => {
     const loaded = loadSave(storage, STANDALONE_FIGHTER_IDS);
     expect(loaded.status).toBe('ok');
     expect(storage.setItem).not.toHaveBeenCalled();
-    expect(loaded.save.options).toEqual({ ...old.options, stagePresentation: 'reduced' });
+    expect(loaded.save.options).toEqual({ ...old.options, stagePresentation: 'reduced', allowSeasonThree: false });
     expect(loaded.save.run).toEqual({ ...old.run, routeVersion: 1 });
     expect(getRunStory(loaded.save.run!)?.title).toBe('Une place à la table');
     expect(getRunEncounter(loaded.save.run!)).toEqual({ fighterId: 'charlie', opponentId: 'alastor', stageId: 'hotel-bar' });

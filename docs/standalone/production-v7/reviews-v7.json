@@ -1,0 +1,2378 @@
+{
+  "schemaVersion": 1,
+  "edition": "V7",
+  "date": "2026-11-26",
+  "reviewer": "independent_runtime_bible_agent",
+  "scope": "Comparaison visuelle des masters sélectionnés et des références indiquées ; deux compositions alpha par sujet. Les exports binaires et les fichiers sources ne sont pas modifiés par la revue.",
+  "status": "all_frozen_deliveries_independently_reviewed",
+  "reviews": [
+    {
+      "id": "hz_st_peter-ready",
+      "name": "St. Peter",
+      "continuity": "season_1",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/st-peter-official-001s.png",
+          "url": "https://www.youtube.com/watch?v=a9s6FRLNJAo&t=1s",
+          "role": "primary_official_clip_frame",
+          "limits": "Image primaire 320×180 ; le sujet est petit et partiellement encadré par les autres personnages.",
+          "sha256": "ed263042bf02017636241863421b53ab7011228ad81e34e163e25d944ea86a9d",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_st_peter.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage plus grand utilisé pour comparer les détails. Sa provenance initiale n’est pas nouvellement certifiée par cette revue.",
+          "sha256": "dcd5f16e10c3abb3eb318921b45072ef408bd0fd4e644733848302ee5f5f2ef6",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Halo flottant, coiffure blonde bouclée, visage blanc et grands yeux cyan.",
+        "Nœud corail, manches crème à revers pêche, longue robe cyan bordée de pêche et croix verticale.",
+        "Deux grandes ailes crème au bord cyan, deux mains et deux pieds pointus visibles."
+      ],
+      "limits": [
+        "Pose de présentation et sourire fermé adaptés à partir de plans expressifs.",
+        "Courbes des cheveux, taille de la croix, espacement et courbure des plumes redessinés ; correspondance 1:1 non démontrée.",
+        "Marge sous les pieds faible, déjà documentée par l’auteur ; aucune extrémité visiblement coupée."
+      ],
+      "master": "art/infernal-versus/masters/base/hz_st_peter-ready.png",
+      "masterSha256": "3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_st_peter-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hz_st_peter-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_ace-ready",
+      "name": "Ace",
+      "continuity": "season_1",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v6-reference-sources/calis-succubi-sheet.jpg",
+          "url": "https://twitter.com/CalisDraws/status/1355948687814520837",
+          "imageUrl": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+          "role": "secondary_copy_of_artist_production_lineup",
+          "limits": "Personnage nommé Ace à l’extrême droite. Le billet de l’artiste fournit l’attribution déjà documentée par la production ; cette revue compare la copie de planche.",
+          "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Silhouette masculine très haute et mince, peau rouge, grands cheveux sombres, longues cornes noires, barbe pointue et boucle d’oreille.",
+        "Haut noir court déchiré avec motif rayé, pantalon très long évasé, chaussures à talons pointues.",
+        "Petites ailes noires, unique manchette à droite de l’image, queue rouge et noire terminée par une pointe ramifiée."
+      ],
+      "limits": [
+        "La disposition des rayures du motif de torse et les courbes exactes de l’extrémité de queue sont redessinées.",
+        "Pose, courbe du dos et position des bras adaptées ; proportions générales concordantes sans certification de modèle 1:1.",
+        "Marges haute et basse très faibles mais cornes, chaussures et queue restent entièrement visibles.",
+        "L’incarnation inspectée est Spring Broken S1. Elle ne certifie pas la tenue de la scène Chaz Funeral initialement citée par le catalogue."
+      ],
+      "master": "art/infernal-versus/masters/base/hb_ace-ready.png",
+      "masterSha256": "64eb24d74834b1eed06d7bee3ffa627932909852d4b950fbc077220d8cb8fb2a",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_ace-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hb_ace-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_emberlynn_pinkle-ready",
+      "name": "Emberlynn Pinkle",
+      "continuity": "specials",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/emberlynn-board-13.jpg",
+          "url": "https://www.youtube.com/watch?v=3-NrCcr8Bcg",
+          "role": "primary_official_short_storyboard",
+          "limits": "Cases 8 et 9 de la planche, autour de 248/250 secondes selon le journal source. Le personnage y est petit.",
+          "sha256": "9a60367e8b0e9fde9b22713e400a54f89708166e4375ad14eaee41ec99c5f4a8",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/emberlynn-demon-rehost.png",
+          "url": "https://tenor.com/view/helluva-boss-emberlynn-pinkle-emberlynn-helluva-blitzo-blitz-helluva-boss-gif-12402984158320039705",
+          "imageUrl": "https://media.tenor.com/rCBAYM92lxkAAAAe/helluva-boss-emberlynn-pinkle.png",
+          "role": "secondary_rehost_of_matching_frame",
+          "limits": "Photogramme 498×498, cohérent avec la silhouette et la tenue de la case primaire.",
+          "sha256": "3464ba28e8d94a5009ce14effa18d73a8e2f92a110e0319583ae63693c2da6d1",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Trois yeux à iris cyan, grands contours noirs et sclères roses, visage cyan, nez en cœur et grande chevelure rose à oreilles pointues.",
+        "Sweat noir à bordures roses et motif de patte dégoulinante, jupe rose à carreaux, bas noirs pointus.",
+        "Deux petites ailes de chauve-souris et queue rose touffue à pointe cyan ; mains cyan lisibles."
+      ],
+      "limits": [
+        "La vue de présentation est moins plongeante que le photogramme officiel.",
+        "Les courbes de la chevelure, la longueur apparente du corps et les ailes ont été redessinées.",
+        "La disposition exacte des marques roses des bas, des rayures de jupe et des petits détails faciaux reste approximative.",
+        "La forme démoniaque de la fin du court-métrage est la seule incarnation inspectée ; aucune forme humaine ou animation n’est livrée par ce dessin."
+      ],
+      "master": "art/infernal-versus/masters/base/hb_emberlynn_pinkle-ready.png",
+      "masterSha256": "457cc8590da01845f6fcb388b98a167a2962d93df49a61cd674aadf6de053874",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_emberlynn_pinkle-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hb_emberlynn_pinkle-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_susan-ready",
+      "name": "Susan",
+      "continuity": "season_1",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/susan-official-044s.png",
+          "url": "https://www.youtube.com/watch?v=D4VOQAHN6oM&t=44s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan primaire 320×180 ; silhouette entière petite, canne sombre peu séparée du fond.",
+          "sha256": "d996d53365e4c9512f4c9a916f32cb8dcb21936c6b6de040931949ec772f12ed",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_susan.png",
+          "url": null,
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique complémentaire ; sa provenance initiale n’est pas nouvellement certifiée par cette revue.",
+          "sha256": "f446d8eca387511ee43351c5eaeb52554d583bf399919228c1eb85dbcead29e7",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Chapeau bordeaux avec longues plumes bleues, cheveux pâles, très grandes lunettes rondes et visage âgé.",
+        "Étole sombre, robe bordeaux avec drapé rose, nœud de taille et traîne allongée.",
+        "Canne coudée tenue à droite de l’image et main posée sur la taille."
+      ],
+      "limits": [
+        "Rides, expression fermée et proportion des lunettes redessinées à partir d’une référence primaire petite.",
+        "Courbes de plumes, volume du drapé et plis de la robe adaptés ; correspondance 1:1 non démontrée.",
+        "Marge basse réduite mais traîne et canne entièrement contenues."
+      ],
+      "master": "art/infernal-versus/masters/base/hz_susan-ready.png",
+      "masterSha256": "038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_susan-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hz_susan-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_frank_mctickly_wrigglers-ready",
+      "name": "Frank McTickly Wrigglers",
+      "continuity": "specials",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/orphan-board-2.jpg",
+          "url": "https://www.youtube.com/watch?v=-1b7uCyONb0&t=100s",
+          "role": "primary_official_episode_storyboard",
+          "limits": "Planche publique : cellule de la rangée haute à droite, 100 s, silhouette entière ; autres cellules pour le visage.",
+          "sha256": "82477082a6e09535a341dae3d769ea607135f9856f2f3ef8e507125ec9ace40b",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_frank_mctickly_wrigglers.png",
+          "url": null,
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique complémentaire ; sa provenance initiale n’est pas nouvellement certifiée par cette revue.",
+          "sha256": "67b10dd8b8738c0c4e3ae2d14f1460a4384c061e7f8bc6b1811c2f2971a10f8e",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Cheveux bouclés et moustache orange, peau claire, petits iris bleus et silhouette mince.",
+        "Pull vert conforme au plan primaire, col blanc, poignets et bas blancs, pantalon beige à revers.",
+        "Deux chaussures brunes et deux mains entières, pose neutre debout."
+      ],
+      "limits": [
+        "Le vieux détourage est bleu-vert ; la référence officielle inspectée prévaut pour le pull vert.",
+        "Expression, géométrie des boucles, longueur des jambes et plis du pantalon redessinés ; fidélité 1:1 non démontrée.",
+        "Dégradés légers présents dans les aplats et marges verticales faibles, sans recadrage du sujet."
+      ],
+      "master": "art/infernal-versus/masters/base/hb_frank_mctickly_wrigglers-ready.png",
+      "masterSha256": "a981b84d565ba797bdbc6b33034583395000e82aeca0e9150f5b61e2bba50a31",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_frank_mctickly_wrigglers-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hb_frank_mctickly_wrigglers-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_paulie_paesano-ready",
+      "name": "Paulie Paesano",
+      "continuity": "specials",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/whacked-board-1.jpg",
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw&t=55s",
+          "role": "primary_official_episode_storyboard",
+          "limits": "Silhouette entière à 55 s et 65 s, personnage petit dans un long couloir.",
+          "sha256": "1f47704eafec39244968b0ec3a7fade40718ba5cb969b264f833c38a40ca58fa",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/whacked-board-2.jpg",
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw&t=105s",
+          "role": "primary_official_episode_storyboard",
+          "limits": "Plans rapprochés : mèche blanche, nœud rouge et revers pâles bordés de rouge visibles.",
+          "sha256": "86e999a9c834dac5df2716468b3d0d7db16b293d66506e6521ff8b723624cc3f",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_paulie_paesano.png",
+          "url": null,
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique complémentaire ; sa provenance initiale n’est pas nouvellement certifiée par cette revue.",
+          "sha256": "680004e7686c555241a583a97677b67132550b978ba51e0c37943ddc46ab25a9",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Silhouette longue et mince, cheveux noirs à large mèche blanche et liserés chauds, sourcils marqués.",
+        "Veste sombre à revers pâles bordés de rouge, nœud papillon et bouton rouges, poignets pâles.",
+        "Pantalon sombre rayé et chaussures pointues aux bouts rouges."
+      ],
+      "limits": [
+        "Bras abaissés adaptés par rapport au détourage historique ; longueur et traits fins du visage redessinés.",
+        "Espacement des rayures et amplitude des revers reconstruits ; la source primaire rapprochée confirme les revers mais pas leur mesure exacte.",
+        "Marges verticales faibles mais cheveux et chaussures complets ; pas de certification 1:1."
+      ],
+      "master": "art/infernal-versus/masters/base/hb_paulie_paesano-ready.png",
+      "masterSha256": "a0e44f5c2f39849db09bc5c82ee0fe8fbb822d94a5f5abf31bd3df847c36932e",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_paulie_paesano-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hb_paulie_paesano-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_luigi_paesano-ready",
+      "name": "Luigi Paesano",
+      "continuity": "specials",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/whacked-board-6.jpg",
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw&t=295s",
+          "role": "primary_official_episode_storyboard",
+          "limits": "Silhouette entière à 295 s auprès de la voiture et des deux compagnons ; sujet petit.",
+          "sha256": "064d649433e3e35888cb5e101a8ec8ff185f8fc54ac4ee3f0d914c3e6c1b8ee9",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/whacked-board-1.jpg",
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw&t=45s",
+          "role": "primary_official_episode_storyboard",
+          "limits": "Plan à 45 s : visage et haut de tenue.",
+          "sha256": "1f47704eafec39244968b0ec3a7fade40718ba5cb969b264f833c38a40ca58fa",
+          "viewed": true
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_luigi_paesano.png",
+          "url": null,
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique complémentaire ; sa provenance initiale n’est pas nouvellement certifiée par cette revue.",
+          "sha256": "1bfeb68c2d583725347fd254e63bd3197e7792ebf218f7cad111ce8091a0c4fb",
+          "viewed": true
+        }
+      ],
+      "matched": [
+        "Silhouette courte et trapue, cheveux noirs à larges mèches blanches, paupières lourdes et air renfrogné.",
+        "Veste bleu sombre avec revers lavande bordés de rouge, gilet clair à deux boutons rouges et foulard bleu.",
+        "Pantalon sombre rayé rouge, chaussures claires bordées de noir et mains dans le dos."
+      ],
+      "limits": [
+        "La pose des mains derrière le dos est reprise du détourage complémentaire ; elles ne sont pas détaillées par le petit plan primaire.",
+        "Courbes du visage, largeur des revers et espacements des rayures redessinés.",
+        "Silhouette et tenue concordantes ; fidélité 1:1 non certifiée en l’absence de comparaison au modèle de production natif."
+      ],
+      "master": "art/infernal-versus/masters/base/hb_luigi_paesano-ready.png",
+      "masterSha256": "afee39d63ae2d3e928d86880703af2756109c69e4f42881edd345a1175e9e275",
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et détourée. Aucun fond parasite visible dans les deux compositions RGBA inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_luigi_paesano-ready-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/hb_luigi_paesano-ready-dark.png",
+          "background": "dark",
+          "viewed": true
+        }
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_apple-ready-v7",
+      "name": "Apple — correction du motif du mollet",
+      "continuity": "season_1",
+      "category": "revision",
+      "replacesAssetId": "hb_apple-ready",
+      "master": "art/infernal-versus/masters/base/hb_apple-ready-v7.png",
+      "status": "accepted_targeted_revision_with_documented_limits",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v6-reference-sources/calis-succubi-sheet.jpg",
+          "url": "https://twitter.com/CalisDraws/status/1355948687814520837",
+          "role": "secondary_copy_of_artist_production_lineup",
+          "limits": "Copie de la planche attribuée à CalisDraws, Apple troisième personnage ; provenance primaire de l’attribution consignée en V6, bitmap secondaire.",
+          "viewed": true,
+          "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/apple-calf-calis-detail.png",
+          "url": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+          "role": "unaltered_native_detail_of_secondary_lineup",
+          "limits": "Extraction native x1343 y1252 x1446 y1457 de la planche 4096×1704, sans amélioration ni redessin.",
+          "viewed": true,
+          "sha256": "e6e16bec204da07237ce79c8503568ddd7a0c3ffdac56d162acce97f31dd4cf2"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/art/infernal-versus/masters/base/hb_apple-ready.png",
+          "role": "historical_v6_master_before_revision",
+          "limits": "Version V6 conservée à l’identique. Comparaison visuelle des parties hors correction et du motif divergent.",
+          "viewed": true,
+          "sha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0"
+        }
+      ],
+      "matched": [
+        "La forme centrale rouge framboise sombre remplace les deux disques indépendants du motif V6.",
+        "La réserve claire verticale à droite et la réserve claire à deux lobes à gauche reprennent la structure de la planche.",
+        "Les plages noires descendantes, les lobes irréguliers et la goutte noire terminale avec son petit trait clair oblique sont rétablis.",
+        "Aucune dérive majeure visible du visage, des cheveux, cornes, ailes, bretelles, pendentif, bracelets, queue et chaussures par rapport à V6."
+      ],
+      "limits": [
+        "Les courbes fines et la largeur exacte des formes restent redessinées ; amélioration visuelle ciblée sans certification 1:1.",
+        "La revue porte sur le dessin et l’alpha composité. La fidélité à un modèle de production natif et le rendu en jeu ne sont pas certifiés.",
+        "Cette révision remplace l’image affichée de la même identité ; elle ne crée ni nouvelle base ni nouvelle entrée de galerie."
+      ],
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Correction locale réussie. Silhouette entière et fond transparent propre dans les compositions claire et sombre inspectées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/apple-v7-light.png",
+          "background": "light",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/apple-v7-dark.png",
+          "background": "dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/apple-calf-v7-zoom.png",
+          "background": "detail",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_gerardo_velazquez-ready",
+      "name": "Gerardo Velazquez",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_gerardo_velazquez-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/chupacabras-board-3.jpg",
+          "url": "https://www.youtube.com/watch?v=pngogrW4iC4",
+          "role": "primary_official_storyboard",
+          "limits": "Cellule 7 à 165 s : silhouette entière et bottes ; cellule 2 à 140 s : tête, sombrero et motifs du gilet. Plans natifs 320×180.",
+          "viewed": true,
+          "sha256": "e4a0aee2ad04fd9abe113f212774ae5b90b20cdb9eb91fd724a7b86de0d994ca"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gerardo_velazquez.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique pour les détails corroborés ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "cd1b75a0679b77c9aa9a8dbbbed7eb57827f6b9c66564501ebeec9c05f76885a"
+        }
+      ],
+      "matched": [
+        "Petit gabarit ventru, moustache noire recourbée, cheveux gris aux tempes et sombrero brun à bande rouge et points jaunes.",
+        "Chemise crème, gilet noir à crânes jaunes et os rouges croisés, pantalon bordeaux, boucle crâne et bottes noires."
+      ],
+      "limits": [
+        "Inclinaison et largeur du sombrero, courbes du ventre, longueur des jambes et expression redessinées.",
+        "Les microdétails des broderies et du visage sont complétés par le détourage historique, sans certification du modèle original."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, sans fond parasite visible sur les compositions claire et sombre. Adaptation statique acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_gerardo_velazquez-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "977670ef042fad07cc7d3c9c66b05b1a3a563563b074ac72c6da6d748d319410",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_gerardos_wife-ready",
+      "name": "Gerardo’s Wife — tenue de la ferme",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_gerardos_wife-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/chupacabras-board-1.jpg",
+          "url": "https://www.youtube.com/watch?v=pngogrW4iC4",
+          "role": "primary_official_storyboard",
+          "limits": "Cellule 3 à 55 s : apparition entière nocturne, jupe rouge, tablier blanc, blouse sombre et pieds nus.",
+          "viewed": true,
+          "sha256": "eb4876f452239b950dc84877c27bc6a7ed44a224a0aa9c18820a63dc30e66923"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gerardos_wife.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique pour les détails corroborés ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "8cff158358c1f82e9402bf7273171230b39f9f5d5ce0f53df1e52cad89b0e60e"
+        }
+      ],
+      "matched": [
+        "Chevelure noire volumineuse à deux mèches grises, teint brun, boucles dorées et collier à croix.",
+        "Blouse bleu marine, tablier clair marqué, jupe rouge et deux pieds nus ; pose mains aux hanches cohérente avec le détourage."
+      ],
+      "limits": [
+        "Contours des mèches, plis du tablier, petits dessins des orteils et expression adaptés.",
+        "Palette normale issue du détourage secondaire ; le plan primaire est nocturne. Cette livraison représente uniquement la tenue de la ferme."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, sans fond parasite visible sur les compositions claire et sombre. Adaptation statique acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_gerardos_wife-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "d89c98c1fcf93b18452f2339fa972538464d57059333e2f196945153c5e7a78b",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_mr_mayor-ready",
+      "name": "Mr. Mayor",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_mr_mayor-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/bigfoot-board-2.jpg",
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "role": "primary_official_storyboard",
+          "limits": "Cellule 4 à 105 s : costume entier, jambes et pieds ; cellule 3 à 100 s : visage et écharpe. Bas du corps petit dans le plan.",
+          "viewed": true,
+          "sha256": "d9d4ae8e2893bae85146ab4a9875625999d7e69ee915c35b761acebef4d5a985"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_mr_mayor.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique pour les détails corroborés ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "8363f2412f8ab19e8916518ffc19f0aeefb05664c3b8dff0922237028f1733ad"
+        }
+      ],
+      "matched": [
+        "Corps très large, longues jambes minces, grosses mains crème et grands pieds velus roux.",
+        "Petit haut-de-forme bleu à bande rouge, costume bleu, épaules et chevilles déchirées, écharpe jaune portant MAYOR en rouge."
+      ],
+      "limits": [
+        "Épaisseur des bras, rapports tête/torse, lettres et touffes de fourrure redessinés.",
+        "La pose neutre et les détails des pieds reprennent le détourage secondaire, corroboré à petite échelle par le plan officiel."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, sans fond parasite visible sur les compositions claire et sombre. Adaptation statique acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_mr_mayor-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "7e35332e55ce0b13c490f8306d0d9132c619cd0eb0652dc4b72111b5f0d67bdc",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_bigfoot_waiter-ready",
+      "name": "Bigfoot Waiter",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_bigfoot_waiter-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/bigfoot-board-0.jpg",
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "role": "primary_official_storyboard",
+          "limits": "Cellule 5 à 20 s : serveur entier près de la banquette, tasse, casquette, pantalon évasé et chaussures.",
+          "viewed": true,
+          "sha256": "11b8563e071316d93c3272c31d3fa78c9bbd06dcd79841a3a04d2ad71912d83d"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_bigfoot_waiter.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique pour les détails corroborés ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "1f4aa943ed0ccb2fe1f244ca9a1ac9632a2edc62237bcbfce11a38258567082e"
+        }
+      ],
+      "matched": [
+        "Silhouette adulte très mince, long nez, petite moustache, cheveux bleu nuit ondulés et yeux mi-clos.",
+        "Casquette et polo turquoise à bordures jaunes, pantalon gris brun évasé, ceinture noire et chaussures pointues.",
+        "Mug transparent, boisson violacée et mousse claire présents sans fond parasite."
+      ],
+      "limits": [
+        "Tête, jambes et mug proportionnellement redessinés ; longueur du nez et boucle de cheveux légèrement différentes.",
+        "Alpha natif presque opaque conservé : aucune correction de l’image n’a été ajoutée par cette revue."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, sans fond parasite visible sur les compositions claire et sombre. Adaptation statique acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_bigfoot_waiter-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "c9fd2185be3cb96e127745c3ca2d2fc656f9079c0b0fbfdef9bfef7e92c956e6",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_gorilla_suit_guy-ready",
+      "name": "Gorilla Suit Guy — costume avant attaque",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_gorilla_suit_guy-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/bigfoot-board-4.jpg",
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "role": "primary_official_storyboard",
+          "limits": "Cellules 4–5 à 195–200 s : costume complet devant le magasin, deux jambes couvertes et deux pieds avec orteils.",
+          "viewed": true,
+          "sha256": "25dfa805ec70fa2015b90726b087e318409f0d5d00ebe14fd1a116c44db58204"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_gorilla_suit_guy.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage de la phase ultérieure, réservé au visage et au haut du costume. Jambes remplacées dans la livraison par l’incarnation primaire antérieure.",
+          "viewed": true,
+          "sha256": "8eea33e004a11066c105fe4498568a51b7aee3dd6373f75e87fe82158b215972"
+        }
+      ],
+      "matched": [
+        "Costume brun arrondi, visage et mains beige rosé, sourcils inclinés, narines larges et canines blanches.",
+        "Deux jambes couvertes de fourrure et deux pieds complets conformes à la scène avant l’attaque ; aucune prothèse exposée ajoutée."
+      ],
+      "limits": [
+        "La pose de promotion avec pancarte devient une pose neutre, mains vides ; courbes du ventre et des touffes redessinées.",
+        "Le portrait historique représente une phase ultérieure avec prothèse exposée : utilisé uniquement pour le haut du costume, pas pour les jambes."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, sans fond parasite visible sur les compositions claire et sombre. Adaptation statique acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_gorilla_suit_guy-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "6be167c1909312212d60f3c02c5fe19026f0754b294805f11ea9f60c0ac85746",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "valentino-money-shot-s1",
+      "name": "Valentino · Pistolet bijouté S1",
+      "continuity": "season_1",
+      "master": "art/infernal-versus/masters/props/valentino-money-shot-s1.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/valentino-jewelled-gun-s1-model.jpg",
+          "url": "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-12-HH02_PP-GunValentinoFavouriteJewelled_MC_v01.jpg",
+          "role": "official_production_art_reprinted",
+          "limits": "A production sheet establishes design, not gameplay behaviour or a date later than season one.",
+          "viewed": true,
+          "sha256": "f372713c7dfea7cfeaa8cb628b55d6b629920f559ac2d1d78f5cd6e9ac16c455"
+        }
+      ],
+      "matched": [
+        "Canon très long rose, inscription VALENTINO en points clairs, liseré jaune, barillet rose et monture rayée noir/blanc.",
+        "Pontet en cœur jaune ouvert et trois cœurs roses bordés de jaune sur la poignée noire, silhouette latérale entière."
+      ],
+      "limits": [
+        "Rapports de longueur, courbes de la poignée, petits traits du barillet et espacement des points de lettres redessinés.",
+        "Revue de l’objet statique seul ; aucune pose de tir, balistique ou animation ajoutée."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/valentino-money-shot-s1-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "9e57e0595c5bf315de8ea2c20086c47631835a8f43a1718c5cbbf398c869ab8c",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "sloth-hospital-exterior-room",
+      "name": "Hôpital de Sloth · Façade et parvis S2",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/stages/sloth-hospital-exterior-room.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/western-energy-180s-hospital.jpg",
+          "url": "https://www.youtube.com/watch?v=KJy7T24rhg0",
+          "role": "official_episode_public_storyboard",
+          "limits": "Native preview 320×180; small details corroborated against rehosted full episode screenshot.",
+          "viewed": true,
+          "sha256": "860cef025e983eb71a4034977c4de1c80198f0aa273308c47f4125adcf699d71"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sloth-hospital-exterior-rehost.png",
+          "url": "https://static.wikia.nocookie.net/hazbinhotel/images/3/3f/Sloth_Ring.png/revision/latest/scale-to-width-down/1200?cb=20230520195811",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Neither fan art nor a production model sheet; tiny furniture contours remain low resolution. Removing van and characters exposes pavement reconstructed from adjacent visible areas.",
+          "viewed": true,
+          "sha256": "65cf6bc4f3c32411095ec72694c35d2836fbac60a5e00b9b1c5f0281bc369802"
+        }
+      ],
+      "matched": [
+        "Tour centrale rose de St. An’s, trois ailes latérales, auvent à yeux, portes, globes et faisceaux verticaux conservés.",
+        "Ciel rose et îlots flottants, chaussée violette et parvis dégagé cohérents avec le plan officiel.",
+        "Banc et petit lampadaire retirés du fond puis rétablis une seule fois dans la composition statique des trois dessins."
+      ],
+      "limits": [
+        "Véhicule et personnages de la scène source absents ; pavement et zones auparavant masquées reconstruits pour la simulation.",
+        "Échelle de la façade, perspective, lettres des panneaux, fenêtres et motifs fins adaptés.",
+        "La composition inspectée reproduit mathématiquement les ancrages CSS sur un canevas 1672×941 ; ce n’est pas une capture navigateur."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": false,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Fond opaque et composition des trois dessins inspectés ; pas de capture navigateur.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-room-view.jpg",
+          "background": "opaque_full_stage",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "c7b5e82caafbbfa03cf98507582fd45254ddf1f3c0b9d3b3703d9d87d4bcc6d5",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "sloth-hospital-exterior-bench",
+      "name": "Hôpital de Sloth · Banc extérieur",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/stages/sloth-hospital-exterior-bench.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/western-energy-180s-hospital.jpg",
+          "url": "https://www.youtube.com/watch?v=KJy7T24rhg0",
+          "role": "official_episode_public_storyboard",
+          "limits": "Native preview 320×180; small details corroborated against rehosted full episode screenshot.",
+          "viewed": true,
+          "sha256": "860cef025e983eb71a4034977c4de1c80198f0aa273308c47f4125adcf699d71"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sloth-hospital-exterior-rehost.png",
+          "url": "https://static.wikia.nocookie.net/hazbinhotel/images/3/3f/Sloth_Ring.png/revision/latest/scale-to-width-down/1200?cb=20230520195811",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Neither fan art nor a production model sheet; tiny furniture contours remain low resolution. Removing van and characters exposes pavement reconstructed from adjacent visible areas.",
+          "viewed": true,
+          "sha256": "65cf6bc4f3c32411095ec72694c35d2836fbac60a5e00b9b1c5f0281bc369802"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sloth-hospital-bench-reference.png",
+          "url": "https://static.wikia.nocookie.net/hazbinhotel/images/3/3f/Sloth_Ring.png/revision/latest/scale-to-width-down/1200?cb=20230520195811",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Neither fan art nor a production model sheet; tiny furniture contours remain low resolution. Removing van and characters exposes pavement reconstructed from adjacent visible areas.",
+          "viewed": true,
+          "sha256": "80fbda217bf553afea523d92599bf7af8031a051b1a66d85af3abd10264a5cd5"
+        }
+      ],
+      "matched": [
+        "Banc mauve à dossier festonné, deux accoudoirs en volute, bord clair et deux pieds visibles.",
+        "Détourage propre ; posé sur le parvis à gauche de l’entrée dans la composition des ancrages CSS."
+      ],
+      "limits": [
+        "Référence du meuble de 102×52 seulement : nombre exact de festons, reliefs et teintes fines interprétés.",
+        "Accessoire de décor statique ; intégration navigateur non vérifiée."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-bench-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "85df7929f6fee3cbf314077f07d949ef1ab2ccac2a187988bba95b923a6edd67",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "sloth-hospital-exterior-lamp",
+      "name": "Hôpital de Sloth · Lampadaire et panneau",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/stages/sloth-hospital-exterior-lamp.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/western-energy-180s-hospital.jpg",
+          "url": "https://www.youtube.com/watch?v=KJy7T24rhg0",
+          "role": "official_episode_public_storyboard",
+          "limits": "Native preview 320×180; small details corroborated against rehosted full episode screenshot.",
+          "viewed": true,
+          "sha256": "860cef025e983eb71a4034977c4de1c80198f0aa273308c47f4125adcf699d71"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sloth-hospital-exterior-rehost.png",
+          "url": "https://static.wikia.nocookie.net/hazbinhotel/images/3/3f/Sloth_Ring.png/revision/latest/scale-to-width-down/1200?cb=20230520195811",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Neither fan art nor a production model sheet; tiny furniture contours remain low resolution. Removing van and characters exposes pavement reconstructed from adjacent visible areas.",
+          "viewed": true,
+          "sha256": "65cf6bc4f3c32411095ec72694c35d2836fbac60a5e00b9b1c5f0281bc369802"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sloth-hospital-small-lamp-reference.png",
+          "url": "https://static.wikia.nocookie.net/hazbinhotel/images/3/3f/Sloth_Ring.png/revision/latest/scale-to-width-down/1200?cb=20230520195811",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Neither fan art nor a production model sheet; tiny furniture contours remain low resolution. Removing van and characters exposes pavement reconstructed from adjacent visible areas.",
+          "viewed": true,
+          "sha256": "c552d17be6f04796f8312be7390641ae6ee83b09cd65ed971b282182c792fba4"
+        }
+      ],
+      "matched": [
+        "Mât rose incliné, socle mauve, globe ovale à bande oblique et panneau vertical présents.",
+        "Silhouette isolée, globe et socle complets sur les deux fonds ; placement cohérent au bord du parvis dans la composition."
+      ],
+      "limits": [
+        "Référence native de l’objet 60×199 : petits raccords, lettrage DROP OFF et détails du socle redessinés.",
+        "Ancrage CSS simulé hors navigateur ; aucune vérification de superposition réelle avec des combattants."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-lamp-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/sloth-hospital-exterior-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "8ca2f37e1c3ce394a2f8afaba6214a17e9fb38f3c178f1600af7cb409182abf8",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "cherub-cletus-mech-s2",
+      "name": "Cletus · Mecha D.H.O.R.K.S. S2",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-cletus-mech-s2.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-870s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "9255e94404a7ddc7692d2eca0e10bb1943fecc7bc7841fc52a661114feb2e3f7"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-660s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "1e8fa150106708a10dd0351ce49d46ab8fef7140591430cb265b12b706ee7bf3"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/cherubs-mech-pin-0.jpg",
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "role": "official_licensed_merchandise",
+          "limits": "Licensed stylised pin is evidence for head/chest details only, not entire body proportion or panel geometry.",
+          "viewed": true,
+          "sha256": "58a23ed9b9fa2e30c7894b81d3302ec328ccd8cdf89bd31491a36e61bb6d14a0"
+        }
+      ],
+      "matched": [
+        "Casque à deux grandes oreilles roses, visière anguleuse violette, face blanche et joues roses.",
+        "Cuirasse rouge à insigne rond de crâne, épaules roses, membres violets, deux poings, pieds pointus et longue queue effilée."
+      ],
+      "limits": [
+        "Pin officiel limité à tête/torse ; il ne certifie pas la géométrie du corps entier.",
+        "Articulations, plaques des avant-bras/jambes, proportions et courbe de queue adaptés depuis des plans 320×180.",
+        "VAR-035 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/cherub-cletus-mech-s2-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "8c7548fabb09faa82df62f02688e0acdf87a3cf5ce88f6449579b5e09cc42447",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "cherub-collin-mech-s2",
+      "name": "Collin · Mecha D.H.O.R.K.S. S2",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-collin-mech-s2.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-870s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "9255e94404a7ddc7692d2eca0e10bb1943fecc7bc7841fc52a661114feb2e3f7"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-660s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "1e8fa150106708a10dd0351ce49d46ab8fef7140591430cb265b12b706ee7bf3"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-920s-collin.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "ef2d8a6945d70740f1cffb85677a890ab3db68fb55b2921a68fa6f97c79915b2"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/cherubs-mech-pin-0.jpg",
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "role": "official_licensed_merchandise",
+          "limits": "Licensed stylised pin is evidence for head/chest details only, not entire body proportion or panel geometry.",
+          "viewed": true,
+          "sha256": "58a23ed9b9fa2e30c7894b81d3302ec328ccd8cdf89bd31491a36e61bb6d14a0"
+        }
+      ],
+      "matched": [
+        "Casque violet à côtés pointus, touffe blanche au front, visière sombre et nœud papillon.",
+        "Canon intégré à un avant-bras, autre main présente, armure violette et longue queue visibles."
+      ],
+      "limits": [
+        "Microdétails, boutons, raccords du canon, longueur des jambes et plaques redessinés depuis les petits plans officiels.",
+        "Pin officiel confirme surtout tête/poitrine ; pose neutre et visière fermée adaptées.",
+        "VAR-036 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/cherub-collin-mech-s2-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "c0b65ced71e02fda6e969303fb74f42e051b1ba0d12f8a46a0559dcc1ae57cc9",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "cherub-keenie-mech-s2",
+      "name": "Keenie · Mecha D.H.O.R.K.S. S2",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-keenie-mech-s2.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-870s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "9255e94404a7ddc7692d2eca0e10bb1943fecc7bc7841fc52a661114feb2e3f7"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/full-moon-660s-mechs.jpg",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "role": "official_episode_public_storyboard",
+          "limits": "320×180 frames; body seams and exact proportions cannot be certified. Standing neutral poses adapt the shown designs.",
+          "viewed": true,
+          "sha256": "1e8fa150106708a10dd0351ce49d46ab8fef7140591430cb265b12b706ee7bf3"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/cherubs-mech-pin-0.jpg",
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "role": "official_licensed_merchandise",
+          "limits": "Licensed stylised pin is evidence for head/chest details only, not entire body proportion or panel geometry.",
+          "viewed": true,
+          "sha256": "58a23ed9b9fa2e30c7894b81d3302ec328ccd8cdf89bd31491a36e61bb6d14a0"
+        }
+      ],
+      "matched": [
+        "Casque jaune à longues pointes, visière rose, face claire et croix rouge sur la poitrine.",
+        "Cuirasse et plaques jaunes, membres sombres très minces, deux mains griffues, pieds pointus et queue à pointe jaune."
+      ],
+      "limits": [
+        "Longueur/angle des pointes, hanches, genoux, gantelets et courbe de queue adaptés depuis des plans 320×180.",
+        "Palette du pin officiel plus claire que celle des scènes nocturnes ; aucune certification de nuance exacte.",
+        "VAR-037 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/cherub-keenie-mech-s2-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "7e3ba7f34b6fbca4caeeba78d1a5f3b8ea452b9de415d4c496575fc197b844c1",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "andrealphus-ice-dragon-s2",
+      "name": "Andrealphus · Dragon de glace à une tête S2",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/machines/andrealphus-ice-dragon-s2.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/dragon-clip-board-5.jpg",
+          "url": "https://www.youtube.com/watch?v=i3xrV1BWKNQ",
+          "role": "official_clip_public_storyboard",
+          "limits": "Clip timings are not episode timings. Later heads are different phase; native preview cells 320×180.",
+          "viewed": true,
+          "sha256": "b91de6148c4a98865641c797c6a637d66784d87d02d0e9f9a186b1effdef13b9"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/andrealphus-dragon-rehost.jpg",
+          "url": "https://www.imdb.com/title/tt27860205/mediaviewer/rm381393922/",
+          "role": "secondary_episode_screenshot_corroborated",
+          "limits": "Gallery upload authorship is not treated as a production-model guarantee. The single head is the only generated phase.",
+          "viewed": true,
+          "sha256": "f7234b4b080a35cde571c2312025c81c0bac7cdeda0678141a987c2363af4247"
+        }
+      ],
+      "matched": [
+        "Construction de glace à une tête, quatre pattes, long cou plié et queue courbe à pointe en plume/losange.",
+        "Grandes cornes cyan à facettes, gueule ouverte dentée, langue bleue, corps blanc bleuté et griffes visibles.",
+        "Silhouette entière, extrémités et creux de la gueule propres sur fonds clair/sombre."
+      ],
+      "limits": [
+        "Épines du cou, motifs géométriques des cornes, facettes de glace et angles des pattes légèrement redessinés.",
+        "Capture IMDb corroborée par le clip Prime ; ce n’est pas un modèle de production natif.",
+        "VAR-034 seulement partielle : phase initiale à une tête, pas la phase hydre à plusieurs têtes ; construction séparée du corps d’Andrealphus."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence propre sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/andrealphus-ice-dragon-s2-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "b4f82d1b3f016037701ec7649827870f88f29982e582c01e1e4fc24ae13a28da",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_arick_burnz-ready",
+      "name": "Arick « Burnie » Burnz",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_arick_burnz-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/mammon-board-10.jpg",
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+          "role": "primary_official_storyboard",
+          "limits": "Tête à 920 s, corps entier vu de dos dans l’écran rond à 940 s. Plans natifs 320×180.",
+          "viewed": true,
+          "sha256": "7605e2bb8ad8d2be5993ec20e74b8d7905abe2b90fab7a85eeb7e88524dfe11c"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_arick_burnz.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détails concordants du détourage historique ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "ae0dad2a869c5fc4b1d301340158b1e9cf9283fb8125aa84ece3979bdeec8eee"
+        }
+      ],
+      "matched": [
+        "Cornes courtes rayées, cheveux blonds, lunettes rectangulaires vertes et peau rouge.",
+        "Tee-shirt vert clair, pantalon noir, pieds rouges nus et queue à pointe triangulaire ; pose mains aux hanches."
+      ],
+      "limits": [
+        "La vue primaire complète est petite et de dos ; face, doigts et proportion des pieds complétés par le détourage historique.",
+        "Teinte du tee-shirt, courbe des cornes et du visage redessinées ; pas de certification de nuance ou de tracé exact."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_arick_burnz-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "d4935cce338b7b19b7586709f474bd916ae0ddb92db41b5d2195cd12889d944e",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_rita-ready",
+      "name": "Rita",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_rita-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/ghosts-board-2.jpg",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "role": "primary_official_storyboard",
+          "limits": "Gros plan à 200 s et corps entier très petit près du bureau à 250 s.",
+          "viewed": true,
+          "sha256": "13e5c00e58cc883aa825ed81972effa292f40a59375967b533205606e427f36c"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_rita.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détails concordants du détourage historique ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "72cbf9f72cf86ec625ea59456fec47561192d5ea399bb265a916b9d694999d4a"
+        }
+      ],
+      "matched": [
+        "Deux cornes jaunes, frange blonde, coiffure et queue volumineuses, grands yeux blancs à pupilles roses.",
+        "Quatre bras complets avec longues griffes jaunes, tenue violette/rose, bijoux dorés et deux pieds."
+      ],
+      "limits": [
+        "Coiffure et queue plus saturées bleu/vert que le détourage historique ; le plan primaire est lui-même éclairé en vert. Palette exacte non certifiée.",
+        "Corps entier minuscule dans la source primaire : forme des quatre bras, doigts et accessoires fins complétée par le détourage."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_rita-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "739fcc4609f2c955e3b07935b7aa091bb23ef474e7160f6eeeb03a07bf21d957",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_bethany_ghostfucker-ready",
+      "name": "Bethany — personnage de télévision",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_bethany_ghostfucker-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/ghosts-board-1.jpg",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "role": "primary_official_storyboard",
+          "limits": "Apparition entière dans l’écran de télévision à 120 s ; image native désaturée et petite.",
+          "viewed": true,
+          "sha256": "43f549bac22a229e5aa684fc28832af9f2c6d9d6d8b02e38c0a1ed107d84baef"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_bethany_ghostfucker.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détails concordants du détourage historique ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "a6b286479b980423f810e24d3898c7bd3bda5ec768d7c38a471754624ff46045"
+        }
+      ],
+      "matched": [
+        "Chapeau de sorcière violet et rose à crâne rouge, grande tresse blonde et visage partiellement couvert.",
+        "Robe courte violette à empreintes rouges, ceinture rose, leggings clairs à motifs rouges et bottes pointues violettes."
+      ],
+      "limits": [
+        "Palette restaurée d’après le détourage historique ; la source primaire de télévision ne prouve pas des couleurs exactes.",
+        "Courbes du chapeau, tresse, empreintes et proportions des jambes redessinées ; pose statique du personnage fictif de télévision."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_bethany_ghostfucker-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "e9a79ab1f5f765dfda1ca7b73d3da9241db9a6812dc878407623420ed3a17e36",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_jesse-ready",
+      "name": "Jesse",
+      "continuity": "season_1",
+      "master": "art/infernal-versus/masters/base/hb_jesse-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/ozzies-board-3.jpg",
+          "url": "https://www.youtube.com/watch?v=8zyGQquL8VM",
+          "role": "primary_official_storyboard",
+          "limits": "Haut du corps vers 300 s puis personnage entier à l’entrée avec Stolas vers 310 s, très petit.",
+          "viewed": true,
+          "sha256": "2262e5842e44b79430e62dd99dd76dff1015e1e17f294ffbcd6152aee972242a"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_jesse.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détails concordants du détourage historique ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "d75dc1b7b17cfb7eb957afc857ff46614cec9690eb29402cdb36f004b167d678"
+        }
+      ],
+      "matched": [
+        "Exactement deux bras : un levé derrière la tête, l’autre replié sur la hanche ; aucune troisième main ou bras supplémentaire visible.",
+        "Cheveux blancs, cornes rayées, torse rouge à croix noires, nœud noir à bouton doré, manchettes blanches, pantalon évasé et chaussures blanches/jaunes.",
+        "Aile rouge et queue rouge complètes sur les fonds clair et sombre."
+      ],
+      "limits": [
+        "Rapports de hauteur des jambes, taille de l’aile, expression et courbe de queue redessinés.",
+        "La revue accepte uniquement le master final corrigé ; le brouillon signalé à trois bras n’appartient pas à la livraison."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_jesse-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "05c98622926c0971494bf0f8a6951eb9dea79f88aaac6fcedafc2db901f3bcf6",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_millie_past_ponytail-ready",
+      "name": "Millie — passé, queue de cheval",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_millie_past_ponytail-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/ghosts-board-10.jpg",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "role": "primary_official_storyboard",
+          "limits": "Flashback de Ghostf**kers : silhouette en action à 900 s, tête/torse à 910–930 s, bas de tenue et queue vers 850 s.",
+          "viewed": true,
+          "sha256": "da4deff649a296428e539472185c76246f367230c7649e434bd6b60a1386feab"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/ghosts-board-9.jpg",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "role": "primary_official_storyboard",
+          "limits": "Flashback de Ghostf**kers : silhouette en action à 900 s, tête/torse à 910–930 s, bas de tenue et queue vers 850 s.",
+          "viewed": true,
+          "sha256": "41d6f50b5e19bfa1e7455503148197889583f621c55ddcd46a06addf7cc85c4b"
+        }
+      ],
+      "matched": [
+        "Grande queue de cheval sombre, cornes fines à traits blancs, yeux jaunes, peau rouge et queue à pointe.",
+        "Veste courte bordeaux à col clouté et poignets jaunes, haut noir, ventre découvert, ceinture, pantalon sombre à ornements latéraux et bottes."
+      ],
+      "limits": [
+        "Pose neutre recomposée depuis des plans d’action 320×180 ; longueur de la chevelure, franges, coutures et chaussures interprétées.",
+        "Incarnation du passé montrée en S2 ; VAR-020 statique uniquement, sans nouvelle base identitaire ni cycle animé."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_millie_past_ponytail-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "6604845ef0663316163df3224886f9f6a7c6a97b314593d2930c37dfbe38326f",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_loona_quadruped-ready",
+      "name": "Loona — forme quadrupède",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_loona_quadruped-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sinsmas-board-12.jpg",
+          "url": "https://www.youtube.com/watch?v=GisSNuVpbkM",
+          "role": "primary_official_storyboard",
+          "limits": "Sinsmas : corps/queue vers 1130 s et tête/jambes vers 1160 s ; vues complémentaires 320×180.",
+          "viewed": true,
+          "sha256": "58ac0d605c025e361475dd4e1a5f83360f0c07e683a3707bceac68737edd80e2"
+        }
+      ],
+      "matched": [
+        "Forme de loup sur quatre pattes, grande crinière claire, oreilles pointues sombres à motifs clairs et yeux rouges.",
+        "Collier noir à pointes claires, corps sombre à dessous clair et très grande queue sombre bordée de clair ; extrémités complètes."
+      ],
+      "limits": [
+        "La pose de profil au repos est recomposée depuis des vues en mouvement ; proportions des pattes, doigts, placement des mèches et courbe de queue ne sont pas certifiés.",
+        "VAR-022 couvert par une illustration statique seulement ; aucun rig, transition de transformation ou animation."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec les réserves documentées.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_loona_quadruped-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "81ede70bf3b3b37a0cb039aceff68645919b2fa1fe991858643f613340c46af4",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_maestro-ready",
+      "name": "Maestro",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_maestro-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-010s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=10s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "180d8a48dcea826a7d8fb37f9929e247d29059aec2043ea4bba97793f1403536"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "35eb83f6d8c3e8c6f6871c6a95f25ab123580bc310082179763ceb52c0e31c16"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_maestro.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage complet du dépôt utilisé pour les détails concordants ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "5f826c35938c2ed2a2ec6c05dce5f69dc0d4b81117b5fadd6f2e4f93c094018a"
+        }
+      ],
+      "matched": [
+        "Masque violet allongé aux yeux cyan, flamme turquoise et grandes cornes noires en boucles.",
+        "Veste sombre à boutons cyan, forme cyan au torse, main fine visible et deux jambes noires terminées en volutes."
+      ],
+      "limits": [
+        "Le cadrage primaire à 110 s coupe une partie de la corne au bord gauche ; détail complet rapproché du détourage secondaire.",
+        "Contours des cornes, longueur du masque, forme de flamme, main et pieds redessinés. Un bras seulement est exposé dans cette pose.",
+        "Marge haute faible mais flamme entière ; aucun bord coupé observé."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, fonds clair et sombre propres. Adaptation statique S2 acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_maestro-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_prick-ready",
+      "name": "Prick",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_prick-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-070s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=70s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "06429a629663f1fd25cf54c360904ceff4a905db3b6c32acef37871d9b4dbefc"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "35eb83f6d8c3e8c6f6871c6a95f25ab123580bc310082179763ceb52c0e31c16"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_prick.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage complet du dépôt utilisé pour les détails concordants ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "e3b14e5714273334d98cc0c675b876a3feffdf27bba06941fc9610e7ce22b368"
+        }
+      ],
+      "matched": [
+        "Tête claire à yeux jaunes et bouche dentée, chapeau western irrégulier orné d’un crâne et bandana rouge.",
+        "Épaules vertes de cactus à épines, mains noires griffues, costume sombre à pans longs, ceinture rouge et bottes pointues."
+      ],
+      "limits": [
+        "Jambes partiellement masquées derrière Vox dans le groupe : bas du costume complété par le détourage secondaire.",
+        "Silhouette redressée et plus symétrique, bras baissés ; rapports torse/jambes, taille des manches et position des épines adaptés.",
+        "Incarnation qualifiée S2. La mention S1 du catalogue de départ ne désigne pas la portée de ce dessin."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, fonds clair et sombre propres. Adaptation statique S2 acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_prick-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_hatchet-ready",
+      "name": "Hatchet",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_hatchet-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-072s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=72s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "54c4a6efd497074796bcd18ba6c48709addc60c9782bcf6c0f65226ef5120bca"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/overlords-official-110s.png",
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "role": "primary_official_clip_frame",
+          "limits": "Plan officiel Bad With Us S2, 320×180 ; détails fins et portions masquées non certifiés.",
+          "viewed": true,
+          "sha256": "35eb83f6d8c3e8c6f6871c6a95f25ab123580bc310082179763ceb52c0e31c16"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_hatchet.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage complet du dépôt utilisé pour les détails concordants ; provenance initiale non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "b1ebfa80a94e00a26939d1025c2cab41aaac818b10203d54a2d0048c6bce5d65"
+        }
+      ],
+      "matched": [
+        "Profil au long museau clair denté, coiffure rouge et deux longues pointes noires à zones rouges.",
+        "Nœud rouge, gilet sombre, manches blanches segmentées, pantalon noir à petites marques, bouts de chaussures rouges et queue à pointes rouges."
+      ],
+      "limits": [
+        "Gros plan et plan de groupe primaires petits ou masqués ; proportions des membres et les petits traits sont complétés par le détourage historique.",
+        "Pose neutre sans la batte du portrait, contours des cheveux/pointes et courbe de queue redessinés.",
+        "Incarnation qualifiée S2 ; aucune portée S1 ni animation déduite du catalogue historique."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée, fonds clair et sombre propres. Adaptation statique S2 acceptée avec les limites ci-dessus.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_hatchet-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "australia-desert-s3-room",
+      "name": "Australie · Désert S3",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/australia-desert-s3-room.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-trailer-48s.jpg",
+          "url": "https://www.youtube.com/watch?v=-Fq4VRxhdKI&t=48s",
+          "role": "official_trailer_public_frame",
+          "limits": "Vue large native 320×180 ; personnages et koala masquent localement les branches et le sol.",
+          "viewed": true,
+          "sha256": "51da9b11aead8730e45f57619169c409ca4d73698e2eb2a776ba24245e0dfcdd"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-prime-still.jpg",
+          "url": "https://m.media-amazon.com/images/S/pv-target-images/a98be88f56bedcc51fbc3255b2f387b02f0421063b4accb6d0e28f734325bb8e._SX1080_FMjpg_.jpg",
+          "role": "official_prime_video_episode_still",
+          "limits": "Photogramme officiel 1080×608 depuis la fiche Prime Video de saison 3 ; figures au premier plan, sans modèle de production séparé.",
+          "viewed": true,
+          "sha256": "e37cce788aef4fdd9dd95bf7848cd8069488dd419add4469ec5e46dadfdcf454"
+        }
+      ],
+      "matched": [
+        "Sol rose ocre, ciel gris lilas, plateaux bas à l’horizon, arbre dénudé à gauche et petit arbre feuillu central concordent avec les deux vues officielles.",
+        "Traits verticaux et courbes du ciel repris comme formes observées, sans leur attribuer une signification.",
+        "Personnages et koala absents ; un rocher et une touffe rétablis une seule fois sur les emplacements dégagés dans la composition des trois dessins."
+      ],
+      "limits": [
+        "Cadrage et répartition des pierres adaptés à une piste de combat ; zones de sol et branches auparavant masquées reconstruites.",
+        "Détail des branches, végétation, atmosphère et espacement des contours interprétés ; conformité 1:1 non certifiée.",
+        "Composition calculée depuis les ancrages CSS sur un canevas 1672×941 ; aucune capture navigateur ni validation de superposition avec les combattants."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": false,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Fond et composition des trois dessins inspectés ; pas de capture navigateur.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-room-view.jpg",
+          "background": "opaque_full_stage",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "d0b2026e9b374d1139c2cfff65ce225582aa2b47821137d35727b6509a654731",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "australia-desert-s3-rock",
+      "name": "Australie · Rocher du désert S3",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/australia-desert-s3-rock.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-trailer-48s.jpg",
+          "url": "https://www.youtube.com/watch?v=-Fq4VRxhdKI&t=48s",
+          "role": "official_trailer_public_frame",
+          "limits": "Vue large native 320×180 ; personnages et koala masquent localement les branches et le sol.",
+          "viewed": true,
+          "sha256": "51da9b11aead8730e45f57619169c409ca4d73698e2eb2a776ba24245e0dfcdd"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-prime-still.jpg",
+          "url": "https://m.media-amazon.com/images/S/pv-target-images/a98be88f56bedcc51fbc3255b2f387b02f0421063b4accb6d0e28f734325bb8e._SX1080_FMjpg_.jpg",
+          "role": "official_prime_video_episode_still",
+          "limits": "Photogramme officiel 1080×608 depuis la fiche Prime Video de saison 3 ; figures au premier plan, sans modèle de production séparé.",
+          "viewed": true,
+          "sha256": "e37cce788aef4fdd9dd95bf7848cd8069488dd419add4469ec5e46dadfdcf454"
+        }
+      ],
+      "matched": [
+        "Un seul rocher bas gris lilas, sommet anguleux décentré et facettes mauves repris du photogramme Prime.",
+        "Objet complet et détourage lisible sur fonds clair/sombre ; base visible correctement posée au premier plan gauche dans la composition CSS simulée."
+      ],
+      "limits": [
+        "Écart léger de silhouette et d’espacement des facettes ; les contours fins de la petite référence sont lissés.",
+        "Ombre portée de la capture retirée pour isoler la pierre ; intégration navigateur non vérifiée."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence lisible sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-rock-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "ddf4363987e61c2c50cef875c0083f7ace4944a28f9cb1e08eecb0882a3dcfe3",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "australia-desert-s3-grass",
+      "name": "Australie · Touffe sèche S3",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/australia-desert-s3-grass.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-trailer-48s.jpg",
+          "url": "https://www.youtube.com/watch?v=-Fq4VRxhdKI&t=48s",
+          "role": "official_trailer_public_frame",
+          "limits": "Vue large native 320×180 ; personnages et koala masquent localement les branches et le sol.",
+          "viewed": true,
+          "sha256": "51da9b11aead8730e45f57619169c409ca4d73698e2eb2a776ba24245e0dfcdd"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/hb-australia-prime-still.jpg",
+          "url": "https://m.media-amazon.com/images/S/pv-target-images/a98be88f56bedcc51fbc3255b2f387b02f0421063b4accb6d0e28f734325bb8e._SX1080_FMjpg_.jpg",
+          "role": "official_prime_video_episode_still",
+          "limits": "Photogramme officiel 1080×608 depuis la fiche Prime Video de saison 3 ; figures au premier plan, sans modèle de production séparé.",
+          "viewed": true,
+          "sha256": "e37cce788aef4fdd9dd95bf7848cd8069488dd419add4469ec5e46dadfdcf454"
+        }
+      ],
+      "matched": [
+        "Touffe isolée olive et ocre, feuilles pointues rayonnant depuis une base commune, cohérente avec la végétation du plan officiel.",
+        "Contour entier inspecté sur fonds clair/sombre ; placement au premier plan gauche, à droite du rocher, selon les ancrages CSS."
+      ],
+      "limits": [
+        "Nombre exact, courbures et longueurs des petites feuilles adaptés ; la référence ne permet pas une certification de chaque trait.",
+        "Pas d’ombre au sol ni de morceau de terrain intégré ; composition statique contrôlée hors navigateur seulement."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Silhouette entière et transparence lisible sur fonds clair et sombre.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-grass-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/australia-desert-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "3ba89001e2688e513a7d8e19c15d8b08d98f0bf893e1e738e9923fbf9f762e81",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_kendra-ready",
+      "name": "Kendra",
+      "continuity": "specials",
+      "master": "art/infernal-versus/masters/base/hb_kendra-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/barbie-board-5.jpg",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+          "role": "primary_official_preview_contact_sheet",
+          "limits": "Corps entier aux cellules 7/8 à 255/260 s ; détail supérieur cellule 9. Petites images natives 320×180 éclairées en vert.",
+          "viewed": true,
+          "sha256": "8c78cf24c21cf20532887a90589558cb74b96d1c26ebe0343b031805ac3c693c"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/kendra-official-pin.png",
+          "url": "https://sharkrobot.com/cdn/shop/files/BarbieKendraPin2.png?height=666&v=1777319206",
+          "role": "official_licensed_merchandise_design",
+          "limits": "Kendra est la figure de droite ; dessin imprimé sur pin en cœur, bas des jambes absent. Ce produit apporte la palette et les détails supérieurs, pas un modèle entier.",
+          "viewed": true,
+          "sha256": "a0e7a45510584e404fb230070d36f9f7d13b91552b7879aeba690380e341d563"
+        }
+      ],
+      "matched": [
+        "Peau rouge, coiffure violette bouclée, foulard blanc, petites cornes rayées et queue rouge à parties claires concordent avec Kendra, à droite sur le pin officiel.",
+        "Haut court noir sur manches grises, short sombre à bord festonné clair, double rangée de clous dorés et bottes noires à bandes claires.",
+        "Silhouette entière, deux bras mains aux hanches, pieds et queue isolés sur les deux fonds."
+      ],
+      "limits": [
+        "L’ancien portrait hb_kendra.png représente Barbie Wire et a été exclu ; le pin officiel et les plans complets de Kendra sont les références retenues.",
+        "Palette résolue par le produit officiel ; teinte et texture du haut, nombre de petites marques et proportions des bottes interprétés depuis les petites vues de l’épisode.",
+        "Marge haute très réduite mais foulard complet ; pose et expression recomposées depuis les deux sources."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites ; seul le master matérialisé final est accepté.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_kendra-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "ddea4cb2ccab7b59d91fb5de44363902b3db9ae96b0904a10c0fd8b753e8db6c",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_karen_client-ready",
+      "name": "Karen — cliente de Sinsmas",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_karen_client-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/sinsmas-board-8.jpg",
+          "url": "https://www.youtube.com/watch?v=GisSNuVpbkM",
+          "role": "primary_official_preview_contact_sheet",
+          "limits": "Silhouette entière cellule 1 à 720 s ; visage et blouse cellules 2/3, natif 320×180.",
+          "viewed": true,
+          "sha256": "2758ea1ec80324fc48d95aeea9248cd51d459280e794cfe9a6009792512ed1b0"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_karen_client.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Concordance visuelle avec la source primaire ; provenance initiale du détourage non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "00793afb0bcf2907f1f8a92a999cd5bc8a5b5d7700b5b114f9d2416ccdfb7994"
+        }
+      ],
+      "matched": [
+        "Grande coiffure magenta, deux cornes sombres courbées, visage vert grisé, longs cils et expression lasse.",
+        "Blouse crème à boutons, foulard rose, jupe bordeaux, jambes gris vert et chaussures pointues noires présents.",
+        "Deux bras, l’un à la hanche et l’autre baissé ; chevelure, cornes et talons entiers sur les deux fonds."
+      ],
+      "limits": [
+        "Longueur et courbure des cornes, forme de la coiffure, proportions des jambes et doigts adaptés ; correspondance exacte non certifiée.",
+        "Pose de présentation recomposée depuis le plan de dialogue et le détourage historique ; personnage narratif statique sans kit de combat."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites ; seul le master matérialisé final est accepté.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_karen_client-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "a4668c5864df09593d0b714552d7fa23dd76d129f7da0b74565ec66bde3283ba",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_hellhound_adoption_lady-ready",
+      "name": "Responsable du refuge des hellhounds",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_hellhound_adoption_lady-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/stars-board-9.jpg",
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "role": "primary_official_preview_contact_sheet",
+          "limits": "Corps entier cellule 4 à 840 s ; visage et vêtement cellules 5/6, natif 320×180.",
+          "viewed": true,
+          "sha256": "517800f4aa0085c436b3526e21402d1bfb4ddb7a114d7390cb8c5d10790d75ec"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_hellhound_adoption_lady.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Concordance visuelle avec la source primaire ; provenance initiale du détourage non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "8980ab047c278c9f2579a69577e26996695b26d105faf1348c92edd64a5172e7"
+        }
+      ],
+      "matched": [
+        "Hellhound grise à long museau, yeux maquillés turquoise, lunettes, cheveux blancs attachés et oreilles pointues.",
+        "Robe sombre à col haut et manches longues, collier de perles, jambes grises et chaussures noires à petits talons.",
+        "Pose de trois quarts concordante avec le détourage ; main visible, coiffure et deux chaussures entières."
+      ],
+      "limits": [
+        "Courbe du museau, volume du corps, plis et espacement des perles redessinés ; nombre de détails fins non certifié.",
+        "Un bras est masqué par le corps dans cette vue ; aucun objet tenu. Illustration narrative statique seulement."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites ; seul le master matérialisé final est accepté.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_hellhound_adoption_lady-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "6945a7d34cbaf131164cd814f6fc3dbb1710e2a3f67db45a2ca8e3295dfacd33",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_uggie-ready",
+      "name": "Uggie",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_uggie-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/stars-board-9.jpg",
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "role": "primary_official_preview_contact_sheet",
+          "limits": "Carlin entier sur le plateau cellule 2 à 820 s ; yeux, museau et collier cellule 9 à 890 s.",
+          "viewed": true,
+          "sha256": "517800f4aa0085c436b3526e21402d1bfb4ddb7a114d7390cb8c5d10790d75ec"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_uggie.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Concordance visuelle avec la source primaire ; provenance initiale du détourage non nouvellement certifiée.",
+          "viewed": true,
+          "sha256": "b273c1474dc4ae8de137ca7061b29148ffc49ef11244497cec23c71a06a5b278"
+        }
+      ],
+      "matched": [
+        "Carlin beige à grand regard noir et blanc, museau brun, oreilles repliées à intérieur rose et petite langue rose.",
+        "Collier rouge à médaille ronde bleu gris, queue enroulée et quatre petites pattes visibles dans la pose assise.",
+        "Silhouette animale entière et détourage propre sur fonds clair et sombre."
+      ],
+      "limits": [
+        "Rapports de taille de la tête et du corps, courbes des babines, détails des yeux et des pattes adaptés depuis le détourage corroboré.",
+        "Animal narratif statique ; aucun kit de combat, animation ou comportement ajouté."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites ; seul le master matérialisé final est accepté.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_uggie-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "1c421fa1d6ad0c83d74279f783fb7bf81bdfd3c72178c075b46f804761d10213",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_huskette_cat-ready",
+      "name": "Huskette féline",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_huskette_cat-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/huskettes-official-072s.png",
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s",
+          "role": "primary_official_public_frame",
+          "limits": "Love In A Bottle officiel Prime : haut du corps à 72 s, silhouettes dansées complètes à 74 s ; images natives 320×180.",
+          "viewed": true,
+          "sha256": "9b26657345661705a9869937df1a6a5befeb089914f3dc8ab979e2d47fa6727d"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/huskettes-official-074s.png",
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+          "role": "primary_official_public_frame",
+          "limits": "Love In A Bottle officiel Prime : haut du corps à 72 s, silhouettes dansées complètes à 74 s ; images natives 320×180.",
+          "viewed": true,
+          "sha256": "026dc786c88c99856e9184969fe9a6931b7bb706a9161312e1d4e184152fddeb"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_huskette_cat.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique concordant avec le personnage et la tenue des deux plans primaires ; provenance initiale non recertifiée.",
+          "viewed": true,
+          "sha256": "5ff263344a0b6a9a2d891ef1c89f2b70d13a028aeaf836eeb249ca74593da9a5"
+        }
+      ],
+      "matched": [
+        "Chatte rose, carré bicolore rouge/noir, oreilles félines, haut-de-forme incliné, yeux jaunes orangés et masque noir.",
+        "Nœud rouge à clochette dorée, gilet sombre, gants et jambes asymétriques rouge/noir à cœurs roses, queue rouge à extrémité noire.",
+        "Deux bras et deux jambes complets, tête, chapeau et queue entiers dans la pose de présentation."
+      ],
+      "limits": [
+        "Gestes dansés remplacés par une pose debout ; hauteur des jambes, courbes des pieds, petits boutons et bijou abdominal redessinés.",
+        "Plans officiels natifs 320×180 ; le détourage historique précise les petits motifs mais sa provenance initiale n’est pas recertifiée."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_huskette_cat-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hz_huskette_imp-ready",
+      "name": "Huskette imp",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_huskette_imp-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/huskettes-official-072s.png",
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s",
+          "role": "primary_official_public_frame",
+          "limits": "Love In A Bottle officiel Prime : haut du corps à 72 s, silhouettes dansées complètes à 74 s ; images natives 320×180.",
+          "viewed": true,
+          "sha256": "9b26657345661705a9869937df1a6a5befeb089914f3dc8ab979e2d47fa6727d"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/huskettes-official-074s.png",
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+          "role": "primary_official_public_frame",
+          "limits": "Love In A Bottle officiel Prime : haut du corps à 72 s, silhouettes dansées complètes à 74 s ; images natives 320×180.",
+          "viewed": true,
+          "sha256": "026dc786c88c99856e9184969fe9a6931b7bb706a9161312e1d4e184152fddeb"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/hazbin/portraits/hz_huskette_imp.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique concordant avec le personnage et la tenue des deux plans primaires ; provenance initiale non recertifiée.",
+          "viewed": true,
+          "sha256": "8342ce7b594133e8b164d87e96713af37521fa4abb188cb81a683825c6b8ae38"
+        }
+      ],
+      "matched": [
+        "Peau rouge, yeux jaunes orangés, marques sombres sur le front, coiffure noire en volumes arrondis et ornements de tête triangulaires.",
+        "Nœud orangé, plastron rose, tenue noire/rose, gants sombres, bas roses à points noirs et pieds noirs.",
+        "Queue rouge à pointe noire en cœur et motif rouge intérieur ; deux bras et deux jambes complets, doigts et extrémités entiers."
+      ],
+      "limits": [
+        "Pose dansée remplacée par une station symétrique ; proportions de la coiffure et des jambes, forme des doigts et contours des ornements adaptés.",
+        "Plans officiels natifs 320×180 ; détails de costume complétés par le détourage historique concordant. Aucun rig ni animation de danse."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation statique acceptée avec limites explicites.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hz_huskette_imp-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "auction-glass-hall-s3-room",
+      "name": "Hall vitré S3 · Vue d’ensemble",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/auction-glass-hall-s3-room.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-corridor-275s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Vue large à 275 s, banc droit vide et architecture du hall ; image native 320×180.",
+          "viewed": true,
+          "sha256": "324f4c6814bd0e041198abccfd145799be29e8449604eb81ca07404597e59f31"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-corridor-175s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Vue large à 175 s ; personnages devant certains bancs, image native 320×180.",
+          "viewed": true,
+          "sha256": "ceccd69de2d8d0e8185e5776dafda026bc538a976a19d6df242e758d25e24f3c"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-vase-225s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Banc de face à 225 s et ornement latéral ; personnages masquant une partie du dossier, bas de l’ornement proche du bord.",
+          "viewed": true,
+          "sha256": "31c14b97142201a00ba5857db93c6c7a3f165f362930553f8775dbcf444964c8"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-detail-185s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Détail du dossier lisse, motif doré et partie haute de l’ornement à 185 s ; image native 320×180.",
+          "viewed": true,
+          "sha256": "29a21f129bfcc19ad903d85b77050f743cfc27a034168c901d11223ace2e46dc"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-emotions-thumbnail.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "official_hd_video_thumbnail",
+          "limits": "Miniature officielle HD 1280×720 ; confirme vitrages et colonnes, mais personnages et texte masquent le premier plan.",
+          "viewed": true,
+          "sha256": "d15fe14b6515c5f0e9e0a99ff2f423d06a23b5211528dddc5d0acc97f50e882d"
+        }
+      ],
+      "matched": [
+        "Suite de voûtes vitrées cyan, hautes fenêtres quadrillées, piliers bleu sombre, panneaux muraux rouge/or et sol réfléchissant cohérents avec les vues officielles.",
+        "Trois bancs intégrés au fond corrigé présentent le dossier cyan lisse et les losanges dorés observés ; le premier candidat à capitonnage ne fait pas partie de cette acceptation.",
+        "Un quatrième banc et un ornement isolés rétablis à droite dans la composition des ancrages CSS, avec leurs bases au niveau du sol."
+      ],
+      "limits": [
+        "Vue particulière du hall seulement ; salle d’enchères principale et plan complet du lieu non couverts.",
+        "Angle bas, intensité lumineuse, quadrillage, reflets au sol et motifs muraux adaptés depuis les vues 320×180 et la miniature HD.",
+        "Composition calculée sur canevas 1672×941 à partir des ancrages CSS ; aucun contrôle navigateur ni superposition réelle avec les combattants."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": false,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Master final et composition des trois dessins inspectés ; aucune capture navigateur.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-room-view.jpg",
+          "background": "opaque_full_stage",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "cccc521b1693d0e529f0f5e26dd5ff5c30d0078afa952b106bdca807dfe59fbb",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "auction-glass-hall-s3-bench",
+      "name": "Hall vitré S3 · Banc cyan",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/auction-glass-hall-s3-bench.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-corridor-275s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Vue large à 275 s, banc droit vide et architecture du hall ; image native 320×180.",
+          "viewed": true,
+          "sha256": "324f4c6814bd0e041198abccfd145799be29e8449604eb81ca07404597e59f31"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-vase-225s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Banc de face à 225 s et ornement latéral ; personnages masquant une partie du dossier, bas de l’ornement proche du bord.",
+          "viewed": true,
+          "sha256": "31c14b97142201a00ba5857db93c6c7a3f165f362930553f8775dbcf444964c8"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-detail-185s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Détail du dossier lisse, motif doré et partie haute de l’ornement à 185 s ; image native 320×180.",
+          "viewed": true,
+          "sha256": "29a21f129bfcc19ad903d85b77050f743cfc27a034168c901d11223ace2e46dc"
+        }
+      ],
+      "matched": [
+        "Dossier cyan lisse à bande de losanges, assise simple, cadre et accoudoirs courbes dorés, quatre pieds visibles.",
+        "Banc entier et isolé sur les deux fonds ; utilisé une seule fois dans l’emplacement libre au premier plan droit."
+      ],
+      "limits": [
+        "Perspective, nombre exact de losanges, courbures des accoudoirs et écartement des pieds adaptés ; détails partiellement masqués dans les plans proches.",
+        "Base placée selon les coordonnées CSS ; absence de certification 1:1 ou de validation navigateur."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Master final et composition des trois dessins inspectés ; aucune capture navigateur.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-bench-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "c4bb99e0806168ea6915da3e76c9a4c74beca200e2c73fa753eb6e0774a6eb7a",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "auction-glass-hall-s3-ornament",
+      "name": "Hall vitré S3 · Ornement cyan",
+      "continuity": "season_3",
+      "master": "art/infernal-versus/masters/stages/auction-glass-hall-s3-ornament.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-corridor-275s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Vue large à 275 s, banc droit vide et architecture du hall ; image native 320×180.",
+          "viewed": true,
+          "sha256": "324f4c6814bd0e041198abccfd145799be29e8449604eb81ca07404597e59f31"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-vase-225s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Banc de face à 225 s et ornement latéral ; personnages masquant une partie du dossier, bas de l’ornement proche du bord.",
+          "viewed": true,
+          "sha256": "31c14b97142201a00ba5857db93c6c7a3f165f362930553f8775dbcf444964c8"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/envv7-auction-bench-detail-185s.jpg",
+          "url": "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "role": "primary_official_public_frame",
+          "limits": "Détail du dossier lisse, motif doré et partie haute de l’ornement à 185 s ; image native 320×180.",
+          "viewed": true,
+          "sha256": "29a21f129bfcc19ad903d85b77050f743cfc27a034168c901d11223ace2e46dc"
+        }
+      ],
+      "matched": [
+        "Corps vertical sombre à bandes cyan en zigzag, sommet anguleux prolongé d’une boucle et losange clair suspendu.",
+        "Silhouette entière, boucle transparente, pied et contours nets sur les deux fonds ; posé à côté du banc droit dans la composition."
+      ],
+      "limits": [
+        "Fonction non établie : la dénomination reste « ornement », sans supposer vase, lampe, plante ou créature.",
+        "Hauteur de la boucle, facettes, espacements des zigzags et proportions du corps adaptés depuis plusieurs petites vues complémentaires.",
+        "Aucun contrôle du rendu navigateur ni certification de conformité 1:1."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Adaptation statique acceptée avec limites explicites. Master final et composition des trois dessins inspectés ; aucune capture navigateur.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-ornament-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        },
+        {
+          "path": "/tmp/hazbin-v7-review/auction-glass-hall-s3-css-composite.jpg",
+          "background": "static_css_coordinate_simulation_not_browser",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "e79bdbbb32da09a0ad83c51e0666e2bb9e7355c5166c02b84de2e7d76c984bb8",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_marthas_son-ready",
+      "name": "Fils de Martha",
+      "continuity": "season_1",
+      "master": "art/infernal-versus/masters/base/hb_marthas_son-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/martha-son-primary-185s.png",
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "role": "primary_official_public_frame",
+          "limits": "Murder Family à 185 s : corps entier vu de dos/trois quarts, natif 320×180.",
+          "viewed": true,
+          "sha256": "a47a6821d4f8e9e3e977ff6234100175928235c27ec36036eff859f65610afa6"
+        },
+        {
+          "path": "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_marthas_son.png",
+          "role": "historical_project_cutout_secondary",
+          "limits": "Détourage historique ; tenue et proportions corroborées par le plan primaire de dos, visage de face non entièrement vérifié par ce plan.",
+          "viewed": true,
+          "sha256": "93133bb9e8c75c6d9f43d69b2f1a21768369dddd97fa643e2c33881a7d6dfade"
+        }
+      ],
+      "matched": [
+        "Bonnet brun à queue rayée, chemise crème, bretelles, short brun, ceinture et bottes vert/brun concordent avec la vue de l’épisode.",
+        "Deux bras et deux jambes complets ; dessin de face isolé, tête et bottes entières sur les deux fonds."
+      ],
+      "limits": [
+        "Le visage de face, les petites taches et les doigts proviennent du détourage historique ; la source primaire examinée montre surtout le dos.",
+        "Proportions de la tête, plis, mèches du bonnet et détails des bottes redessinés. Base narrative en galerie uniquement ; aucun kit de combat ni animation."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "frameCoverage": "full_body",
+      "representedFrameComplete": true,
+      "deliveryCategory": "support_base",
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation narrative statique acceptée avec limites explicites.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_marthas_son-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "2fd732c242d5fcae2de7f131c5e7479fd0c911d329a4a76326a5fdf37acc75c1",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_loona_shelter_archive-ready",
+      "name": "Loona — archive du refuge",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_loona_shelter_archive-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/loona-shelter-primary-870s.png",
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "role": "primary_official_public_frame",
+          "limits": "Seeing Stars à 870 s : tête et haut du corps de Loona au refuge ; bas du corps et sommet de certaines mèches hors champ, natif 320×180.",
+          "viewed": true,
+          "sha256": "c69c951521d76535305a24d1aa6d99cabf6e9270604c43f64a20fee3f31b392b"
+        }
+      ],
+      "matched": [
+        "Pose recroquevillée, regard baissé, grande mèche claire asymétrique, museau sombre, collier noir à pointes et bras serrés contre le torse.",
+        "Vêtement bordeaux et manches sombres à bandes claires conservés ; autre hellhound et barreaux retirés.",
+        "Buste isolé à coupe basse intentionnelle ; transparence propre sur fonds clair et sombre."
+      ],
+      "limits": [
+        "VAR-023 livré en buste narratif seulement : aucun bassin, jambe, pied, corps entier autonome ou kit de combat livré.",
+        "Le contour supérieur de la chevelure, partiellement hors champ dans la petite source, est reconstitué ; tracé et couleur exacte non certifiés.",
+        "Expressions, motifs de manches et proportions du buste adaptés depuis une seule vue sombre 320×180."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": false,
+      "frameCoverage": "bust",
+      "representedFrameComplete": true,
+      "deliveryCategory": "narrative_archive",
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Archive en buste acceptée dans son cadrage documenté ; aucune silhouette entière revendiquée.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_loona_shelter_archive-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "a192515cf99d5764be7d872ee09a0f4258b91d2c7ffaa0a75d19b28619efc144",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_fizzarolli_before_accident-ready",
+      "name": "Fizzarolli — archive avant l’accident",
+      "continuity": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_fizzarolli_before_accident-ready.png",
+      "sources": [
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/fizz-past-primary-140s.png",
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+          "role": "primary_official_public_frame",
+          "limits": "Flashback du spécial Mammon : Fizz entier à gauche à 140 s ; planche 2 cellules 1/2/5/9 pour tête, tenue et membres naturels. Images natives 320×180.",
+          "viewed": true,
+          "sha256": "975f292fbbd4113164eed66c83ddfa294ed704fd20d59d267f78c1c905082929"
+        },
+        {
+          "path": "/home/agent/hazbin-v7-reference-sources/mammon-board-2.jpg",
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+          "role": "primary_official_preview_contact_sheet",
+          "limits": "Flashback du spécial Mammon : Fizz entier à gauche à 140 s ; planche 2 cellules 1/2/5/9 pour tête, tenue et membres naturels. Images natives 320×180.",
+          "viewed": true,
+          "sha256": "69c391f948be88ee80222718a06508145d4f805de309621fb524de81bd04c185"
+        }
+      ],
+      "matched": [
+        "Incarnation jeune avant l’accident : peau rouge intacte, longues cornes rayées non cassées, petit toupet sombre et yeux jaune vert.",
+        "Tee-shirt Mammon jaune vert au motif sombre et bords découpés, pantalon sombre, petits pieds clairs/sombres et queue rayée à pointe.",
+        "Deux bras et deux jambes naturels sans articulations mécaniques, prothèses ni marque blanche de brûlure ; silhouette entière isolée."
+      ],
+      "limits": [
+        "VAR-031 livré comme archive narrative de cette tenue précise du flashback ; aucun nouveau kit ni nouvelle identité de base.",
+        "Pose reposée recomposée depuis les plans ; couleurs résolues malgré l’éclairage vert, proportions des cornes, doigts et chaussures adaptées.",
+        "Les petits motifs et contours fins de la référence 320×180 ne permettent pas de certification 1:1."
+      ],
+      "status": "accepted_as_documented_static_adaptation_with_limits",
+      "subjectComplete": true,
+      "frameCoverage": "full_body",
+      "representedFrameComplete": true,
+      "deliveryCategory": "narrative_archive",
+      "alphaCompositedOnLightAndDark": true,
+      "visualResult": "Silhouette complète et isolée sur les deux fonds. Adaptation narrative statique acceptée avec limites explicites.",
+      "requestedCorrection": null,
+      "inspectedViews": [
+        {
+          "path": "/tmp/hazbin-v7-review/hb_fizzarolli_before_accident-ready-comparison.jpg",
+          "background": "light_and_dark",
+          "viewed": true
+        }
+      ],
+      "masterSha256": "fca21607b6b1ce7f20c9cfc38b3300d015365fc26dea519284954c7cec20d1c0",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "inGameChecked": false,
+  "fidelityOneToOneCertified": false,
+  "reviewedDrawingCount": 45
+}

@@ -1,0 +1,2341 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-26",
+  "status": "final_workbook_validated",
+  "registerStatus": "final_production_register",
+  "registerSha256": "d0cf3b3c652c4e315397f77fd8cbd54d00a774eca69d27a6f26b2d481717dd13",
+  "inputSources": [
+    {
+      "path": "docs/standalone/production-v7/delivery-register.json",
+      "sha256": "d0cf3b3c652c4e315397f77fd8cbd54d00a774eca69d27a6f26b2d481717dd13"
+    },
+    {
+      "path": "docs/standalone/production-v7/catalogue-audit.json",
+      "sha256": "329f9a4c2bc10c1beec45cdf9a1be1851b72d66d73dd0507f943c5ebb7a8f0ba"
+    },
+    {
+      "path": "docs/standalone/production-v7/references.json",
+      "sha256": "23e34fc9933fd5b2314ff2041bb68e876865618d85e541f184de0c5d8d03e77c"
+    },
+    {
+      "path": "docs/standalone/production-v7/browser-qa.json",
+      "sha256": "62e91e561d62e7eef4fd1df0a06f4f9fcdbcb217dc3f14c26b9549b4d90db45e"
+    },
+    {
+      "path": "docs/standalone/production-v7/hazbin-generation.json",
+      "sha256": "1ee6afaaf7294c605dd7126dd764d92a354514c3810be7a1bca8a607dbf44a3a"
+    },
+    {
+      "path": "docs/standalone/production-v7/helluva-generation.json",
+      "sha256": "49b693c555ae4e7654797e8d00859791c61a9bdf987c0edf30456d774229f4d4"
+    },
+    {
+      "path": "docs/standalone/production-v7/environment-generation.json",
+      "sha256": "3af6d16323bd06b96cb6faddd2fb391e69273e64a2e074c5c78baa023ded7558"
+    },
+    {
+      "path": "docs/standalone/production-v7/corrections-generation.json",
+      "sha256": "1a14462cb7ca7e383c185a1b966ffb421a9c3b8e21df26770c4dfaacea360ea6"
+    },
+    {
+      "path": "docs/standalone/production-v7/reviews-v7.json",
+      "sha256": "d237cd20fa6f165f843bb94689da12e7c663520d15f91514adae8018f26e8288"
+    },
+    {
+      "path": "docs/standalone/production-v7/environment-references.json",
+      "sha256": "fbe6b872fbdc3515ef024068d1554f60ce16a783514b8289c74d0ed172c91060"
+    },
+    {
+      "path": "docs/standalone/production-v7/environment-audit.json",
+      "sha256": "8b6d4cb221819772fd2ca4cb3452ffdcf4a39d7e52706605ea454897a2fbe0a2"
+    },
+    {
+      "path": "docs/standalone/production-v7/hazbin-qualification.json",
+      "sha256": "5f5ae3cbcab3f4c3e1bf14201b14ab3adfbc8fdab64648ad0a3648c7d6bfa3b9"
+    },
+    {
+      "path": "docs/standalone/production-v7/hazbin-qualification-extra.json",
+      "sha256": "6d7ee40f23ca716d0bcf13d4edefb30a8f338c650f1d308d08bbbec48085cf3d"
+    },
+    {
+      "path": "docs/standalone/production-v7/hazbin-variant-qualification.json",
+      "sha256": "ee769788d9839fdcbbea0fa69ae70d3dfaeb6648e62761298c7be6e40efc7c1d"
+    },
+    {
+      "path": "docs/standalone/production-v7/helluva-qualification.json",
+      "sha256": "be4062217e3e1782f37e3e250bce1ead36cba4f0ced2575f5b0448a3d798c00b"
+    },
+    {
+      "path": "docs/standalone/production-v7/helluva-reference-index.json",
+      "sha256": "ede76cc8fcea14c0135d1d3892af64df42ddd11826942ffcbc69809b70788637"
+    },
+    {
+      "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V6.xlsx",
+      "sha256": "62e0b3e56a95d27750c82107c40821dfe57906136d7f038a3d14744514fcee68"
+    }
+  ],
+  "newSheetNames": [
+    "Production V7",
+    "Cibles V7",
+    "Repères V7"
+  ],
+  "metrics": {
+    "distinctDrawings": 45,
+    "newDrawings": 44,
+    "revisedDrawings": 1,
+    "masterPng": 45,
+    "losslessWebp": 45,
+    "thumbnails": 3,
+    "deliveredImageFiles": 93,
+    "deliveredImageBytes": 80143856,
+    "characterBases": 24,
+    "enemyBases": 0,
+    "supportBases": 2,
+    "props": 1,
+    "projectiles": 0,
+    "machines": 4,
+    "costumes": 2,
+    "narrativeArchives": 2,
+    "stages": 3,
+    "stageLayers": 6,
+    "newGalleryEntries": 35,
+    "generatorRefused": 9,
+    "generatedAwaitingReview": 0,
+    "newAnimationCycles": 0,
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 109,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 69,
+    "catalogueIdsWithoutStandaloneBase": 100,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 99,
+    "reserveGalleryEntries": 84,
+    "runtimeCostumeFamilies": 11,
+    "activeStages": 40,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "summaryValues": [
+    45,
+    93,
+    26,
+    83,
+    109,
+    209,
+    100,
+    208,
+    99,
+    84,
+    40,
+    43,
+    11,
+    127,
+    11,
+    126,
+    9,
+    11,
+    0,
+    6,
+    2
+  ],
+  "deliveredImageFilesChecked": 93,
+  "deliveredImageSha256": [
+    {
+      "path": "art/infernal-versus/masters/base/hz_st_peter-ready.png",
+      "sha256": "3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_st_peter-ready.webp",
+      "sha256": "3bccd0b5b7523d68efc598cfb50034b608f20d9e8936f710f17fadac95cb2749"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_susan-ready.png",
+      "sha256": "038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_susan-ready.webp",
+      "sha256": "d9ebfa2619e14175952447bc29bfa2d35f25ba07ba6f830ed30db7319187f5ca"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_maestro-ready.png",
+      "sha256": "a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_maestro-ready.webp",
+      "sha256": "a962d2579c2c540fa5349dff1f2b3942f9ae06dc2cf2cee8b30f5bfb3570d3cc"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_prick-ready.png",
+      "sha256": "3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_prick-ready.webp",
+      "sha256": "3447968c395a5907375eaddb246d0e95aec8c10d1c0269a5e049e33534bb6169"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_hatchet-ready.png",
+      "sha256": "ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_hatchet-ready.webp",
+      "sha256": "585ece5d51ce8ed69946e5a5c0672d2bbedaf0b8ffda0f4afa290af804e17da3"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_huskette_cat-ready.png",
+      "sha256": "b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_huskette_cat-ready.webp",
+      "sha256": "e2da3b5d8240161baadb4d9d35e916cb628e2fa1ec7410f335a22a5109f4efe6"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hz_huskette_imp-ready.png",
+      "sha256": "e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hz_huskette_imp-ready.webp",
+      "sha256": "69dca25715d86b8bbeb192a4fe6194a7bd8a9df569bf31e792aa455179ad4b72"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_ace-ready.png",
+      "sha256": "64eb24d74834b1eed06d7bee3ffa627932909852d4b950fbc077220d8cb8fb2a"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_ace-ready.webp",
+      "sha256": "a2d0a28e226f515ba15efe0917358854d8d7012a99ef6c5cebf7234ad9d0b286"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_emberlynn_pinkle-ready.png",
+      "sha256": "457cc8590da01845f6fcb388b98a167a2962d93df49a61cd674aadf6de053874"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_emberlynn_pinkle-ready.webp",
+      "sha256": "c89be2c56febb82de7fb7ace50c7691b1554a57791b7176dc491824b2285a0c4"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_frank_mctickly_wrigglers-ready.png",
+      "sha256": "a981b84d565ba797bdbc6b33034583395000e82aeca0e9150f5b61e2bba50a31"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_frank_mctickly_wrigglers-ready.webp",
+      "sha256": "7f573ba2068ad9cc2ad3ebe3d515ed2d45af498af628275c90a52104e305edbc"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_paulie_paesano-ready.png",
+      "sha256": "a0e44f5c2f39849db09bc5c82ee0fe8fbb822d94a5f5abf31bd3df847c36932e"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_paulie_paesano-ready.webp",
+      "sha256": "bec73e2acc3daa18830a166a52830960dcb68b2f025fcdbc0b9775acddc60a48"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_luigi_paesano-ready.png",
+      "sha256": "afee39d63ae2d3e928d86880703af2756109c69e4f42881edd345a1175e9e275"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_luigi_paesano-ready.webp",
+      "sha256": "5dac920436b09218b032da7e7007dbab1ffb374a9b2fb9bfd98a346ffddc0d09"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_gerardo_velazquez-ready.png",
+      "sha256": "977670ef042fad07cc7d3c9c66b05b1a3a563563b074ac72c6da6d748d319410"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_gerardo_velazquez-ready.webp",
+      "sha256": "d2d01b8266e31f2d7ab877e4dfe0764b9ed89f4916e2ff866ca28f2f1b5e4dd2"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_gerardos_wife-ready.png",
+      "sha256": "d89c98c1fcf93b18452f2339fa972538464d57059333e2f196945153c5e7a78b"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_gerardos_wife-ready.webp",
+      "sha256": "3776b681c3c07565ba704a32dc5be705f24f44dc4de092b920ae389e54d367f1"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_mr_mayor-ready.png",
+      "sha256": "7e35332e55ce0b13c490f8306d0d9132c619cd0eb0652dc4b72111b5f0d67bdc"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_mr_mayor-ready.webp",
+      "sha256": "24a429c8498c650ed83a0459cdc5e1d8bb25951993a18def3662f767ee786479"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_bigfoot_waiter-ready.png",
+      "sha256": "c9fd2185be3cb96e127745c3ca2d2fc656f9079c0b0fbfdef9bfef7e92c956e6"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_bigfoot_waiter-ready.webp",
+      "sha256": "346356d522f82d686e0596d55fd3aa0a32a4e2c8c89d28d24a6ab3897629daa5"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_gorilla_suit_guy-ready.png",
+      "sha256": "6be167c1909312212d60f3c02c5fe19026f0754b294805f11ea9f60c0ac85746"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_gorilla_suit_guy-ready.webp",
+      "sha256": "cdb5c1215c74be870054390be792be891ab2dec1cb57401240b7179f39a4eb3f"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_arick_burnz-ready.png",
+      "sha256": "d4935cce338b7b19b7586709f474bd916ae0ddb92db41b5d2195cd12889d944e"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_arick_burnz-ready.webp",
+      "sha256": "30cd61ae2c6b269f2ada5b4bfc2a17976d46abccedb7e18da095413baaef6eda"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_rita-ready.png",
+      "sha256": "739fcc4609f2c955e3b07935b7aa091bb23ef474e7160f6eeeb03a07bf21d957"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_rita-ready.webp",
+      "sha256": "4b01860b28b17fb50150c3b41bb362f2745720420ab0199715bf107b1f9c3b69"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_bethany_ghostfucker-ready.png",
+      "sha256": "e9a79ab1f5f765dfda1ca7b73d3da9241db9a6812dc878407623420ed3a17e36"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_bethany_ghostfucker-ready.webp",
+      "sha256": "4b008b2662faef998f6a0d79937ed4429604e5392ebd799173129ffbf00eea78"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_jesse-ready.png",
+      "sha256": "05c98622926c0971494bf0f8a6951eb9dea79f88aaac6fcedafc2db901f3bcf6"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_jesse-ready.webp",
+      "sha256": "74d8004ca7c88809eac8adfbdd30dee56d3996a997898ac6ded93aca02558517"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_millie_past_ponytail-ready.png",
+      "sha256": "6604845ef0663316163df3224886f9f6a7c6a97b314593d2930c37dfbe38326f"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_millie_past_ponytail-ready.webp",
+      "sha256": "099bd0a8b3fbf46b203cd1dc649ffae9b5aa3641bac6f451e42ad7b8262d76d4"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_loona_quadruped-ready.png",
+      "sha256": "81ede70bf3b3b37a0cb039aceff68645919b2fa1fe991858643f613340c46af4"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_loona_quadruped-ready.webp",
+      "sha256": "8fec28d6dc027f5a1ace69405038c5ef54ba10d6bd386492131f765a568a4df3"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_karen_client-ready.png",
+      "sha256": "a4668c5864df09593d0b714552d7fa23dd76d129f7da0b74565ec66bde3283ba"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_karen_client-ready.webp",
+      "sha256": "ba931b7cdb8feea5ca50cfa3a1e662c0c2254fef0f6b8571620a5509f8fe5175"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_kendra-ready.png",
+      "sha256": "ddea4cb2ccab7b59d91fb5de44363902b3db9ae96b0904a10c0fd8b753e8db6c"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_kendra-ready.webp",
+      "sha256": "54b52fdce406f0f1b47191facda055e83b5cf049353aa8b01c2a2885149085e5"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_hellhound_adoption_lady-ready.png",
+      "sha256": "6945a7d34cbaf131164cd814f6fc3dbb1710e2a3f67db45a2ca8e3295dfacd33"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_hellhound_adoption_lady-ready.webp",
+      "sha256": "cb03d9a0a667a7f36fa4d5e056505616838c15ad2ccadf8af6e36bf8632bd7a2"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_uggie-ready.png",
+      "sha256": "1c421fa1d6ad0c83d74279f783fb7bf81bdfd3c72178c075b46f804761d10213"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_uggie-ready.webp",
+      "sha256": "27417dee4ea29b16a25dc6c4d7516f052e3464c058edcfdcea90d5e36732cbe6"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_marthas_son-ready.png",
+      "sha256": "2fd732c242d5fcae2de7f131c5e7479fd0c911d329a4a76326a5fdf37acc75c1"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_marthas_son-ready.webp",
+      "sha256": "079590d781d692124055d89080943e7a213a33949e4b86d9ce9bc5b20e1c91e7"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_loona_shelter_archive-ready.png",
+      "sha256": "a192515cf99d5764be7d872ee09a0f4258b91d2c7ffaa0a75d19b28619efc144"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_loona_shelter_archive-ready.webp",
+      "sha256": "d19a024fd174aaa36558ad8747e1daf52ce40923263824aea6af1a472ed413f7"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_fizzarolli_before_accident-ready.png",
+      "sha256": "fca21607b6b1ce7f20c9cfc38b3300d015365fc26dea519284954c7cec20d1c0"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_fizzarolli_before_accident-ready.webp",
+      "sha256": "ae836e5779cdbc36a21fbd83ccfc1322e00ff0a10326ba59c97d351c30f978af"
+    },
+    {
+      "path": "art/infernal-versus/masters/props/valentino-money-shot-s1.png",
+      "sha256": "9e57e0595c5bf315de8ea2c20086c47631835a8f43a1718c5cbbf398c869ab8c"
+    },
+    {
+      "path": "public/assets/props/infernal-versus/valentino-money-shot-s1.webp",
+      "sha256": "4ec0cdbbbc555e8c3945569cf643c7f92527b725772382a1b86d5fe4758fa1e9"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sloth-hospital-exterior-room.png",
+      "sha256": "c7b5e82caafbbfa03cf98507582fd45254ddf1f3c0b9d3b3703d9d87d4bcc6d5"
+    },
+    {
+      "path": "public/assets/stages/helluva/sloth-hospital-exterior/room.webp",
+      "sha256": "234e9f42c7e715fbb130c663f578e321a5b2fa655de07a5da4ba12b6711c81b5"
+    },
+    {
+      "path": "public/assets/stages/helluva/sloth-hospital-exterior/thumb.webp",
+      "sha256": "c85f04fdab878c96abaff5e7043281837f6549fa3fa08e4ff2ab175975b6da91"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sloth-hospital-exterior-bench.png",
+      "sha256": "85df7929f6fee3cbf314077f07d949ef1ab2ccac2a187988bba95b923a6edd67"
+    },
+    {
+      "path": "public/assets/stages/helluva/sloth-hospital-exterior/prop-middle.webp",
+      "sha256": "4df128d73c9e52227082f51c26da0ed1e8fcccd0a0baea1cf008cd86640d0ec3"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/sloth-hospital-exterior-lamp.png",
+      "sha256": "8ca2f37e1c3ce394a2f8afaba6214a17e9fb38f3c178f1600af7cb409182abf8"
+    },
+    {
+      "path": "public/assets/stages/helluva/sloth-hospital-exterior/prop-near.webp",
+      "sha256": "74413b923df84bc4cf43db7c1c5517cef2b16adef06b238b1a3de3a37c931f13"
+    },
+    {
+      "path": "art/infernal-versus/masters/machines/cherub-cletus-mech-s2.png",
+      "sha256": "8c7548fabb09faa82df62f02688e0acdf87a3cf5ce88f6449579b5e09cc42447"
+    },
+    {
+      "path": "public/assets/machines/infernal-versus/cherub-cletus-mech-s2.webp",
+      "sha256": "989e18ba478652c760d724071bf79cb75a1613cc39391459846468d21b49de41"
+    },
+    {
+      "path": "art/infernal-versus/masters/machines/cherub-collin-mech-s2.png",
+      "sha256": "c0b65ced71e02fda6e969303fb74f42e051b1ba0d12f8a46a0559dcc1ae57cc9"
+    },
+    {
+      "path": "public/assets/machines/infernal-versus/cherub-collin-mech-s2.webp",
+      "sha256": "79ce93d4d84326bd8fa1d322336245e18ecdfd56e7e773b0bdc775c05391e7e0"
+    },
+    {
+      "path": "art/infernal-versus/masters/machines/cherub-keenie-mech-s2.png",
+      "sha256": "7e3ba7f34b6fbca4caeeba78d1a5f3b8ea452b9de415d4c496575fc197b844c1"
+    },
+    {
+      "path": "public/assets/machines/infernal-versus/cherub-keenie-mech-s2.webp",
+      "sha256": "a99a92399a42bc9d1609d52b367a747d55e799aecc30d76ea2a4e05e1c3e50f7"
+    },
+    {
+      "path": "art/infernal-versus/masters/machines/andrealphus-ice-dragon-s2.png",
+      "sha256": "b4f82d1b3f016037701ec7649827870f88f29982e582c01e1e4fc24ae13a28da"
+    },
+    {
+      "path": "public/assets/machines/infernal-versus/andrealphus-ice-dragon-s2.webp",
+      "sha256": "afa27511f2ed717ba6fc6e6e4edfda8bd7b30da04be9571b8c67caca07c412da"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/australia-desert-s3-room.png",
+      "sha256": "d0b2026e9b374d1139c2cfff65ce225582aa2b47821137d35727b6509a654731"
+    },
+    {
+      "path": "public/assets/stages/helluva/australia-desert-s3/room.webp",
+      "sha256": "3ba1b98640aee605c2b228fbd9e57af731cb22e8f965764036b082782e0431b2"
+    },
+    {
+      "path": "public/assets/stages/helluva/australia-desert-s3/thumb.webp",
+      "sha256": "0c3accc9c9bc410215f5ce139a3c1573bd37341fb0e25f10651ed5751752cac4"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/australia-desert-s3-rock.png",
+      "sha256": "ddf4363987e61c2c50cef875c0083f7ace4944a28f9cb1e08eecb0882a3dcfe3"
+    },
+    {
+      "path": "public/assets/stages/helluva/australia-desert-s3/prop-middle.webp",
+      "sha256": "614b9c798f2a325bd3e4e4fae7c6de02cb1c5b47f72f3407a636514538f6bf2d"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/australia-desert-s3-grass.png",
+      "sha256": "3ba89001e2688e513a7d8e19c15d8b08d98f0bf893e1e738e9923fbf9f762e81"
+    },
+    {
+      "path": "public/assets/stages/helluva/australia-desert-s3/prop-near.webp",
+      "sha256": "5ddc2a628ee2ee5b89307f96dea2c51b5dbb74b904e11fad3997394c240a9a7c"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/auction-glass-hall-s3-room.png",
+      "sha256": "cccc521b1693d0e529f0f5e26dd5ff5c30d0078afa952b106bdca807dfe59fbb"
+    },
+    {
+      "path": "public/assets/stages/helluva/auction-glass-hall-s3/room.webp",
+      "sha256": "3a5ab01968d8e46a7250de6a57887aed184a7bcf1f2aca3baaf6f39e03245f60"
+    },
+    {
+      "path": "public/assets/stages/helluva/auction-glass-hall-s3/thumb.webp",
+      "sha256": "4222194778e884f11b8d44ae82b96360bafd5c811c0a02c103144fd6f4853cfa"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/auction-glass-hall-s3-bench.png",
+      "sha256": "c4bb99e0806168ea6915da3e76c9a4c74beca200e2c73fa753eb6e0774a6eb7a"
+    },
+    {
+      "path": "public/assets/stages/helluva/auction-glass-hall-s3/prop-middle.webp",
+      "sha256": "0a55eaaa0af9b4dcf8b6b16bf7ae3692f26e6ca8e94d4696208fd25e5ec1e329"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/auction-glass-hall-s3-ornament.png",
+      "sha256": "e79bdbbb32da09a0ad83c51e0666e2bb9e7355c5166c02b84de2e7d76c984bb8"
+    },
+    {
+      "path": "public/assets/stages/helluva/auction-glass-hall-s3/prop-near.webp",
+      "sha256": "1349b16b40d3d997b010d721bed73873661b44fcf0876fe7d2df3fc777dd7fa3"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_apple-ready-v7.png",
+      "sha256": "fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_apple-ready-v7.webp",
+      "sha256": "eebe2ad6c1ef4230d3df2df60b33a40c83b52754c8c0e468fc2fa5de8968a6c7"
+    }
+  ],
+  "recalculation": "Artifact Tool",
+  "inputChangeCheck": "passed_candidate_change_recalculate_restore",
+  "nativeExcelRecalculation": "not_run",
+  "formulaErrorCells": 0,
+  "formulaErrorScope": [
+    "Production V7",
+    "Cibles V7",
+    "Repères V7"
+  ],
+  "exportedAdditionsReimport": "passed",
+  "historicalWorkbookAuthoring": "none",
+  "packaging": {
+    "baseline": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V6.xlsx",
+    "baselineSha256": "62e0b3e56a95d27750c82107c40821dfe57906136d7f038a3d14744514fcee68",
+    "output": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
+    "outputSha256": "8c0e2d2f09011c2ef6e19c6a86cc22cab270e9923f33d311b725dc5ff88cbea9",
+    "originalSheetCount": 43,
+    "originalSheetOrder": [
+      "Guide V3",
+      "Modes V2",
+      "Histoires",
+      "Duels de campagne",
+      "Données moteur",
+      "Techniques signatures",
+      "Tenues et gardes",
+      "Finitions",
+      "Plans des arènes",
+      "Illustrations",
+      "Atelier et recette",
+      "Références V3",
+      "Campagnes V3",
+      "Chapitres V3",
+      "Illustrations V3",
+      "Movesets V3",
+      "Derniers Actes",
+      "Continuité V3",
+      "Synthèse",
+      "Chantiers",
+      "Parité CQC",
+      "Personnages",
+      "Kits combat",
+      "Variantes",
+      "Techniques",
+      "Arènes",
+      "Parcours",
+      "Recette",
+      "Sources",
+      "Guide V4",
+      "Fiches V4",
+      "Campagne globale",
+      "Réserves V4",
+      "Recette V4",
+      "Production V5",
+      "Catalogue V5",
+      "Variantes V5",
+      "Illustrations V5",
+      "Livraisons V5",
+      "Suites V5",
+      "Production V6",
+      "Cibles V6",
+      "Repères V6"
+    ],
+    "addedSheets": [
+      "Production V7",
+      "Cibles V7",
+      "Repères V7"
+    ],
+    "finalSheetCount": 46,
+    "openingSheet": "Production V7",
+    "openingSheetIndex": 43,
+    "preservedOriginalParts": 135,
+    "preservedWorksheetXmlParts": 43,
+    "preservedWorksheetSha256": {
+      "xl/worksheets/sheet1.xml": "3cf0654a83b400483875ce26c6888545b8e69ea2e7ba58adcd3a52f955b45f67",
+      "xl/worksheets/sheet2.xml": "f7f28d05d24df5fc916da546d9a6156e640adc2adea04c7d4ee63d72eb21ce53",
+      "xl/worksheets/sheet3.xml": "15b0a78b937a31cd7646657063bec2319fd5b6c4b76a76ba242fa7ff4edbcf29",
+      "xl/worksheets/sheet4.xml": "3f2bf2eb457099aec3f34f99268c9451942db44dcef6317f1cf25057d8b11d38",
+      "xl/worksheets/sheet5.xml": "761f61fe5380b3a66a61a94fcd3a21142928cba1c63a0a630ff19cc861d6d9d7",
+      "xl/worksheets/sheet6.xml": "4381cddf48093e42dd1782325a4cc00995e43c7c169fdfa7e6564ad97cad0cf0",
+      "xl/worksheets/sheet7.xml": "e079ba22938b6c72ba753e87b0018fbfd677abfdf75a0936f28eccfef430a1bb",
+      "xl/worksheets/sheet8.xml": "b8cb1b46c901a5b04b423b486f975f371522d62b98398730e205def1db013da0",
+      "xl/worksheets/sheet9.xml": "a516957a0e7c3e070a8e8eb5b07cdf19e348a8e91afc237eb206602970fe6f13",
+      "xl/worksheets/sheet10.xml": "f5d3a78cc157d8d0f90151273ccf88b6cca92fded2ed07653a9e39a9425ff456",
+      "xl/worksheets/sheet11.xml": "cb35c910670e7d59301da917521c15a6bf0ee19385779478271130d66e20753a",
+      "xl/worksheets/sheet12.xml": "3a2f59b0b8a229954d8e4f25ad9e1e862c610b3c9c63a0760695d8e4abe89976",
+      "xl/worksheets/sheet13.xml": "ab003fcbf204af1c11dd1e468a858139bf0f3f819b070efcd70786c1976aff31",
+      "xl/worksheets/sheet14.xml": "b1845a6af0b48f11438d836b43adc69c81902fe7fd203ee6a9ebeb46ffc512b9",
+      "xl/worksheets/sheet15.xml": "e35026a6cf3a1e388b2c5f1c02605b0ea56bf7396e20f0e965681e2060675a3e",
+      "xl/worksheets/sheet16.xml": "d4e572544ff411c3c5cfefe4bdc92907b2897e42a4e2a4aabb603837c5d273b9",
+      "xl/worksheets/sheet17.xml": "1293e22f05121962e0a3d67f830dbadd4f4ec7411ac592c9ce2b77f1357024ca",
+      "xl/worksheets/sheet18.xml": "673aa63354777b1f24986d9d5165b9088f32512119a569031d90f5f44d91bf86",
+      "xl/worksheets/sheet19.xml": "0ca123ebf3f79b0a54d99f6f9308ab72b737bf6e79f24c08823411d8420d3747",
+      "xl/worksheets/sheet20.xml": "861b9cde9b4ada4ef72f4168113d052363ed8133d51abb9814012461c4e4a68a",
+      "xl/worksheets/sheet21.xml": "3600fc2dd42fa61fe32fd2939d365fd3600a1c20e0da1e93cf2ccc13b08b1f26",
+      "xl/worksheets/sheet22.xml": "c4650e784ce728da091e822d809a93e3541cef8f401d42c1efa60d8568a663d2",
+      "xl/worksheets/sheet23.xml": "82d48e8fcce9c080d7d799ae64dd2fdcef65e24a33713bcf2deea23209262cc0",
+      "xl/worksheets/sheet24.xml": "dbe3ff059190b3adb48a6c02cc9a7d9ff5b86c49138950de51e42a531237ed20",
+      "xl/worksheets/sheet25.xml": "340fd57ea509fc92da0d1622a901f85645b82e00d5e82d950d6545046aae5ee5",
+      "xl/worksheets/sheet26.xml": "5a60d9cdf6f83453b5de1ae3019aa167ed8cbd45f523fd38c61511a1cc625f07",
+      "xl/worksheets/sheet27.xml": "96225d90bc05499316433d0098e860d36c42d031a9560f924170e7eca6013f00",
+      "xl/worksheets/sheet28.xml": "8f0944b55d72aa5eba06ebdf967057f4c8d63edf7c162975191946ad881a35e7",
+      "xl/worksheets/sheet29.xml": "8b2cdd073bb47789c40996db2ed7e1c43d00b9217fb233af7d044c08bacafc2a",
+      "xl/worksheets/sheet30.xml": "8737aa70238e1ee4ed5f5f229bd5e91b0980e5e5a06fa9a3b8a9b52af0938572",
+      "xl/worksheets/sheet31.xml": "a4869d6c52a709fd60f20021f321b6e6e8315bee393570ff11c114042cd7a849",
+      "xl/worksheets/sheet32.xml": "a89fd5d0486f9e1a5fb9477bf8695933672bafb99865b5cce0ba6b2559ac09f0",
+      "xl/worksheets/sheet33.xml": "fa50e1ae8b103ec30f006c428168ee0f9ecf9114728924527dc1b8de59bf8b48",
+      "xl/worksheets/sheet34.xml": "3a4c7b085aaae943f8150eddd31d6757c151bd98c552dd0edcd8ce02e0fb6c49",
+      "xl/worksheets/sheet35.xml": "a31d02b40b8348d0c0cffe66899a67e02de577e01d1849cebb496991ac7fd05d",
+      "xl/worksheets/sheet36.xml": "a894be96ffed6e0793a3201576b2788415d469c1452125b49e59180206d09056",
+      "xl/worksheets/sheet37.xml": "7d70349e4445a0ccd8d16017839a443fefb4328f7e10dcceb48d31690813a6e3",
+      "xl/worksheets/sheet38.xml": "9b99123da316aeb27cf11f94150abda0d0bb53fef74604a96c5bce004c96049a",
+      "xl/worksheets/sheet39.xml": "ec9d6ba03212ad0d88a27ff258b1b0cd96aa6396e3860b8b7e32241e13618180",
+      "xl/worksheets/sheet40.xml": "791f6605ad366f049ad0f7400b195c7d95676d42029f24cc28e0b4862ff3caa5",
+      "xl/worksheets/sheet41.xml": "33d89b5beed1e6da0ed5f92c7e1cc011072571a3b4f8865c15e55a3b1eb11229",
+      "xl/worksheets/sheet42.xml": "053e64b7cc9d32cb7294f1faf37a78e84705f887cfda9c84efa1e22b3c057f60",
+      "xl/worksheets/sheet43.xml": "3d112bee3376a4e97c83f72340ab41d816a35a65817168e2699795de548e7cee"
+    },
+    "preservedTableXmlParts": 48,
+    "originalPartsChangedUnexpectedly": [],
+    "formulasInAddedSheets": {
+      "Production V7": 12,
+      "Cibles V7": 0,
+      "Repères V7": 0
+    },
+    "newFormulaErrorCells": 0,
+    "zipAndXmlValidation": "passed",
+    "nativeExcelRecalculation": "not_run",
+    "preservationMethod": "Original OOXML parts retained byte for byte except append-only package manifests, shared strings and styles."
+  },
+  "renderedViews": [
+    {
+      "sheet": "Production V7",
+      "range": "A1:C33",
+      "file": "/tmp/bible-v7-builder/previews-final/production.png",
+      "sha256": "2b9c882b114cc1ec9dba4ee7bdbad2b34a59770b3fcdae8b537365af187aa61f",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A34:C41",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-0.png",
+      "sha256": "9861475d0aa3ce568d07b58a74e11658bf2e8de0ea4b24ef25ffa43f423c90b2",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A42:C48",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-1.png",
+      "sha256": "029ae83e03154ec7cb86364ecc373a81d95911e512a89811c36c763f4bfc0be8",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A49:C55",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-2.png",
+      "sha256": "2fb7690bad447d03dfadaeeb0e27064bac0d6c6e2c58dd35385ed3e28250fcc4",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A56:C62",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-3.png",
+      "sha256": "f17829c93bd039dafc484f43cca5acd9b6485542e7fb624560302cfadc2a5711",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A63:C69",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-4.png",
+      "sha256": "105098f9c23e682f48dc67233dd03a385a124fa5c396bda36fced1c704cea07c",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A70:C76",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-5.png",
+      "sha256": "606a0724e5d32c73806612fd8d56c9d77d72d0dec9ada3d66ea7327742a86bfb",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Production V7",
+      "range": "A77:C80",
+      "file": "/tmp/bible-v7-builder/previews-final/livraisons-6.png",
+      "sha256": "152bc8573378fa68354499b1a29bd2bd98890b957a92d05bf453a8b588db441d",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A1:E11",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-0.png",
+      "sha256": "4c5a7f2b269bcc5c0a3a726e4e9c8509200829c87df34b8b1257378be76a839d",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A12:E18",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-1.png",
+      "sha256": "d9b65776b6fc29a3218d293500ded03b1a48e8e88fb2aa3fea93d3a0038d3c67",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A19:E25",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-2.png",
+      "sha256": "6b8b5914c5dfcc97addc22746e46d1ae33b82c538dac11333496dcfbb91b8884",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A26:E32",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-3.png",
+      "sha256": "88ac515fa03f107397b12e3387ac9348eac618fc7e40f411240e59ddd80c138d",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A33:E39",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-4.png",
+      "sha256": "9d12588aad7593e31b9165ff85ad854b9ed2c522c07a201e45a7662790740463",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A40:E46",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-5.png",
+      "sha256": "1ee33d5a2fe63d5779049b1160bfea0724bdc726724acd0387b11ffcdad8de47",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A47:E53",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-6.png",
+      "sha256": "0f4a5ff37326740e641e0a20860762ba31ee7e24a7593231b2687bd2ff77181e",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A54:E60",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-7.png",
+      "sha256": "6918763c2e2190b756821591284a9defb62150d90f1234d764c9164b30a997bf",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A61:E67",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-8.png",
+      "sha256": "a0976e68bf8e52eff4593c1a0d68ad2110f8cb5aae8ad6231420cfbca27d0a83",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A68:E74",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-9.png",
+      "sha256": "fe6cde263c21bc0e0ee3f1becebf86af5ceb29e34d8ae3e18ce098be3e10d2d5",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A75:E81",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-10.png",
+      "sha256": "600e8d7ac8d58bee8d3a18a339a52122053b620eeef6efcad7e79dd4cd6c30ff",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A82:E88",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-11.png",
+      "sha256": "056099d99032b1a55933c6e79bd892893bc83374b3b730ce0542db421ef91af7",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A89:E95",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-12.png",
+      "sha256": "7753d70f7ff7644df9e84fbe064a4d5c843e34afb606424f2256535eb746f4b9",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A96:E102",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-13.png",
+      "sha256": "8f458452dbaaf0f152d79d61e798e91ea314c64d068d230ceee8692a74fba37b",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A103:E109",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-14.png",
+      "sha256": "4b1c034015a1e1d298e25daaa57344999fd76c2c0a9394306c9155df1bc1a19c",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A110:E116",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-15.png",
+      "sha256": "f58f9a710505cc3a82cf19ae6c3d957d8929aa547e0fc4ffda466293c52ccaf2",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A117:E123",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-16.png",
+      "sha256": "f1ce8094a7fbaa238f285138cac2540b921ccaf26c9cf5122f3483e3b15ea9fe",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A124:E130",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-17.png",
+      "sha256": "4be774a047f9ac3bf091779bc4ab9a6433375913d4ae98b41a848630579833ef",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Cibles V7",
+      "range": "A131:E131",
+      "file": "/tmp/bible-v7-builder/previews-final/cibles-18.png",
+      "sha256": "599465960a15221a252975a86f8b8ad45acba698bd70e46d64a4964116ba0ec6",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/helluva",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A1:D11",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-0.png",
+      "sha256": "42ebaf76b0d7c1a6efb073fcc9bb5200ed426668323ff8c2251c9e061c648cca",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A12:D18",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-1.png",
+      "sha256": "24c9d56b9001b49f451144e561c92f1d3cde457ac6008f113d8a70d35ee808f9",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A19:D25",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-2.png",
+      "sha256": "c934fd87f25e3daa7c14a0b9c374d4e35863b1152cee8d2636b6ac95680f6cd0",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A26:D32",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-3.png",
+      "sha256": "9aaf834f3d827f146df3d6f16df8710d884b432bcf9084ae288aebd3fab0dc13",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A33:D39",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-4.png",
+      "sha256": "be75403ce09ab511d16b963958a75bd13955a6002434743323ffb7094805c517",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A40:D46",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-5.png",
+      "sha256": "2e098bc30c2954c91215d3962d439b228c1f9a3f6b9ac963f31f25dc9e783fdd",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A47:D53",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-6.png",
+      "sha256": "873353e3b6e283d3bedf106f4daf51f1678e6a5abad5405396731efd6d12e52b",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A54:D60",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-7.png",
+      "sha256": "9945ab1ccaf485a8ec036fd083b4047736055c3b2f342ab8f17f37625f3935bd",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A61:D67",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-8.png",
+      "sha256": "3ed3978780b9aeedd834d1353e9003749eedc4eb22e261f0c5019b79dad269e6",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A68:D74",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-9.png",
+      "sha256": "63792f4eded39c9c3a6936d0b1bae00532aeb7316c4173f41f2c144fabef6f29",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A75:D81",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-10.png",
+      "sha256": "1c123815dc8cb7d395d1694f25664a55ab04fa155636ffe3accd0901f325ed78",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A82:D88",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-11.png",
+      "sha256": "1f2a1613303748b22aa77be7f95d8a5becba86037f4f98900b3818212834082f",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A89:D95",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-12.png",
+      "sha256": "4c31abd9b4727865660142e304db100f83f090a30a92b8a40d6c8d741e52288a",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A96:D100",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-13.png",
+      "sha256": "63b5ad11abd0eab25f098d680b9f18904ddb26638c913e1f800184c499e9815d",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/props_stages",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A102:D109",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-0.png",
+      "sha256": "f1f50bfa29f941b8c2007a6651bb8db209557d012edece9bf092ebea68ec39c9",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A110:D116",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-1.png",
+      "sha256": "2c1827d731c5bb99ed47aa6031c16641636cac196230a863cc7d78cec8256545",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A117:D123",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-2.png",
+      "sha256": "37f4d4ab6eefc6cf699afd34a6841612748fc2bce54b1862c2e65b1fab95b60a",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A124:D130",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-3.png",
+      "sha256": "9fcc3326cf1b89a1d7e7f55b7ae2c196eaab6651edfd524587f71d9821822899",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A131:D137",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-4.png",
+      "sha256": "0f42934e11105462ef6f41ed847402846d3ad74437e5f5cfd7342ccbe4dd38ee",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A138:D140",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Variants-5.png",
+      "sha256": "13ec1c6ac4390763a48daa91ebf000fcb906cd112954f7ff0a95137755702c89",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A142:D149",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Remaining-0.png",
+      "sha256": "e5f2d89f53c7544ac54344dabd9c62beaaa4cac6b8f8dd1638edb075ee035767",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A150:D156",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Remaining-1.png",
+      "sha256": "1d9bb969b6272977c0763f6ce38eee7f228d86d6a780e3d0e38498ea6cb63ba2",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A157:D160",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Remaining-2.png",
+      "sha256": "09282aa0b2a199feb123ccfa5ed8c910de30c1b8b6c77cc22e0ba31da779c13e",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A162:D169",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Trace-0.png",
+      "sha256": "5a348d1d074e27b09809a67951109cc808469de293a823e8cee146b33b4069e9",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A170:D176",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Trace-1.png",
+      "sha256": "94bd2e49e385e6d40514538066d148e12411e5bc8822cf4bb5db54e0af01557b",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    },
+    {
+      "sheet": "Repères V7",
+      "range": "A177:D180",
+      "file": "/tmp/bible-v7-builder/previews-final/StaticV7Trace-2.png",
+      "sha256": "61621294bc5dabe65d1d6a14ee1d8f289e71e727480c008a6df1fbe11b374077",
+      "visualReview": {
+        "status": "passed",
+        "reviewer": "/root/runtime_bible",
+        "viewed": true
+      }
+    }
+  ],
+  "visualReview": {
+    "status": "passed",
+    "expectedViews": 53,
+    "viewedViews": 53,
+    "openIssues": 0,
+    "inspectionMethod": "Artifact Tool render of the final exported/reimported workbook; all PNGs inspected with view_image. Unchanged previews carried forward only after SHA256 equality.",
+    "reviewEvidence": [
+      {
+        "reviewer": "/root/runtime_bible",
+        "sourceReport": "/tmp/workbook-v7-own-review.json",
+        "sourceReportSha256": "c2d4e2a1578b2504b514c8caa018d8a4ddba69dc74d11ca8d36daae3326ed853",
+        "status": "passed_after_targeted_correction"
+      },
+      {
+        "reviewer": "/root/helluva",
+        "sourceReport": "/tmp/workbook-v7-cibles-review.json",
+        "sourceReportSha256": "70857420237f2c4b120d795a4dd01f689cbd2c87acaee0b02697639f313a9234",
+        "status": "passed_after_targeted_correction"
+      },
+      {
+        "reviewer": "/root/props_stages",
+        "sourceReport": "/tmp/workbook-v7-sources-review.json",
+        "sourceReportSha256": "5de6d03690012e05e0ff5c428170641a903a7630bad03cdfb947a4d754c9e394",
+        "status": "passed"
+      }
+    ],
+    "files": [
+      {
+        "filename": "production.png",
+        "sha256": "2b9c882b114cc1ec9dba4ee7bdbad2b34a59770b3fcdae8b537365af187aa61f",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1515
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-0.png",
+        "sha256": "9861475d0aa3ce568d07b58a74e11658bf2e8de0ea4b24ef25ffa43f423c90b2",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1480
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-1.png",
+        "sha256": "029ae83e03154ec7cb86364ecc373a81d95911e512a89811c36c763f4bfc0be8",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1711
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-2.png",
+        "sha256": "2fb7690bad447d03dfadaeeb0e27064bac0d6c6e2c58dd35385ed3e28250fcc4",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1433
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-3.png",
+        "sha256": "f17829c93bd039dafc484f43cca5acd9b6485542e7fb624560302cfadc2a5711",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1497
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-4.png",
+        "sha256": "105098f9c23e682f48dc67233dd03a385a124fa5c396bda36fced1c704cea07c",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1561
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-5.png",
+        "sha256": "606a0724e5d32c73806612fd8d56c9d77d72d0dec9ada3d66ea7327742a86bfb",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          1647
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "filename": "livraisons-6.png",
+        "sha256": "152bc8573378fa68354499b1a29bd2bd98890b957a92d05bf453a8b588db441d",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          1900,
+          980
+        ],
+        "issues": [],
+        "observations": "Texte lisible, marges et retours à la ligne complets. Chiffres, catégories, incarnations, fichiers et limites cohérents."
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-0.png",
+        "range": "A1:E11",
+        "sha256": "4c5a7f2b269bcc5c0a3a726e4e9c8509200829c87df34b8b1257378be76a839d",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Titre, avertissement de portée, en-têtes et six premières identités intégralement visibles. Refus historiques distincts de la référence à qualifier et de l’incarnation Lute à préciser."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          549
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-0.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-1.png",
+        "range": "A12:E18",
+        "sha256": "d9b65776b6fc29a3218d293500ded03b1a48e8e88fb2aa3fea93d3a0038d3c67",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : D13/D15 affichent les plans, les parties coupées ou masquées et la limite des extrémités ; E13/E15 affichent la référence primaire. Les nouvelles lignes restent entièrement visibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          708
+        ],
+        "initialSha256": "5ed8fee848a341bba49aa62bfb09691c17d49c52700c1966e483c9d8af5b738a",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Texte entièrement contenu dans les cellules. Refus V7 Eel/Ant et intégration Huskette cat clairement distincts. Les lignes Catrina/Egyptian perdent les notes et sources de l’audit complémentaire."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D13:E13",
+              "D15:E15"
+            ],
+            "identityIds": [
+              "hz_la_catrina_sinner",
+              "hz_egyptian_sinner"
+            ],
+            "description": "Les limites spécifiques du chapeau/ourlet de La Catrina et du corps d’Egyptian masqué dans le groupe sont résumées en C, mais D/E ne donnent ni notes d’inspection ni références primaires.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-1.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-2.png",
+        "range": "A19:E25",
+        "sha256": "6b8b5914c5dfcc97addc22746e46d1ae33b82c538dac11333496dcfbb91b8884",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : les cinq notes et leurs références sont visibles. D24 précise désormais cadrage global entier à 40 s et résolution insuffisante des pieds, doigts, branches/fruits ; aucune confusion avec un corps tronqué. Aucun débordement."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          900
+        ],
+        "initialSha256": "9b7610b4e6d6ddc99a9dcfec4c91fd74efe8d4767df119463205ef0cc44b547c",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Les cinq lignes courtes et le long bloc Huskette imp sont intégralement visibles. Statut du pommier correctement formulé comme résolution insuffisante, mais cadrage entier et détails manquants non expliqués en D/E."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D21:E21",
+              "D22:E22",
+              "D23:E23",
+              "D24:E24",
+              "D25:E25"
+            ],
+            "identityIds": [
+              "hz_reporter_demon",
+              "hz_goldfish_sinner",
+              "hz_fangirl_goat",
+              "hz_fangirl_apple_tree",
+              "hz_conjoined_twins"
+            ],
+            "description": "D/E restent génériques pour les cinq identités inspectées. Le pommier doit notamment indiquer que le cadrage est entier mais que les pieds, doigts au comptoir et branches/fruits ne sont pas assez définis ; ne pas le présenter comme corps tronqué.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-2.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-3.png",
+        "range": "A26:E32",
+        "sha256": "88ac515fa03f107397b12e3387ac9348eac618fc7e40f411240e59ddd80c138d",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : Western, Goth bird et Rose disposent de limites individuelles et de références visibles. Distinction entre corps hors cadre et identité non retrouvée respectée. Aucun texte tronqué."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          708
+        ],
+        "initialSha256": "91e793bcde487f93c9187e862801f34d7677be18b41281104597869342481805",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Long bloc St. Peter visible en entier et réserves 1:1 explicites. Molly conserve une limite anatomique claire. Western/Goth bird/Rose utilisent encore le texte générique D/E."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D26:E26",
+              "D27:E27",
+              "D28:E28"
+            ],
+            "identityIds": [
+              "hz_western_sinner",
+              "hz_goth_bird_sinner",
+              "hz_rose_sinner"
+            ],
+            "description": "La distinction Western bas hors cadre / autres sujets non situés dans les clips inspectés est visible en C, mais la portée des vues et leurs sources ne sont pas transmise en D/E.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-3.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-4.png",
+        "range": "A33:E39",
+        "sha256": "9d12588aad7593e31b9165ff85ad854b9ed2c522c07a201e45a7662790740463",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Maestro, Prick, Hatchet et Susan : longs blocs et URL visibles en entier. Portée S2 et absence de certification exacte lisibles. Shok.wav conserve son refus V7."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          1263
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-4.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-5.png",
+        "range": "A40:E46",
+        "sha256": "1ee33d5a2fe63d5779049b1160bfea0724bdc726724acd0387b11ffcdad8de47",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : Ethan est explicitement identifié dans S1E2 avec le bas non qualifié ; Myk garde l’ambiguïté du groupe de presse. Notes et URL visibles en entier."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          580
+        ],
+        "initialSha256": "e37bd10e1402e735f27212b1f7ce66233d85206e5a5225c22bb0146147091847",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Melissa expose correctement le conflit de tenues. Refus Rooster/Salina visibles. Ethan et Myk ont un statut précis mais perdent les détails et les sources de l’audit complémentaire."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D41:E41",
+              "D45:E45"
+            ],
+            "identityIds": [
+              "hz_ethan",
+              "hz_myk_mic_guy"
+            ],
+            "description": "Ethan et Myk ont des statuts individuels mais D/E génériques. L’identification d’Ethan dans S1E2 et la partie inférieure non démontrée, ainsi que l’ambiguïté de Myk dans le groupe de presse, doivent être propagées depuis les notes gelées.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-5.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-6.png",
+        "range": "A47:E53",
+        "sha256": "0f4a5ff37326740e641e0a20860762ba31ee7e24a7593231b2687bd2ff77181e",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Aucun débordement. Les lignes non inspectées gardent « Référence à qualifier » ; Tiffany est séparée comme identité citée sans visuel, sans apparence inventée."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          452
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-6.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-7.png",
+        "range": "A54:E60",
+        "sha256": "6918763c2e2190b756821591284a9defb62150d90f1234d764c9164b30a997bf",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Aucun clipping. Les portées futures/semi-canon et pilote 2019 sont distinctes ; les limites de non-fusion avec la série actuelle sont visibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          516
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-7.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-8.png",
+        "range": "A61:E67",
+        "sha256": "a0976e68bf8e52eff4593c1a0d68ad2110f8cb5aae8ad6231420cfbca27d0a83",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Correction British Gentleman/Female Victim en saison 2 visible. The Killer distingue silhouette entière et détails dans l’ombre ; Human Hunter distingue jambes visibles et haut hors champ. Textes intégralement visibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          644
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-8.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-9.png",
+        "range": "A68:E74",
+        "sha256": "fe6cde263c21bc0e0ee3f1becebf86af5ceb29e34d8ae3e18ce098be3e10d2d5",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : Gator expose les plans de foule et l’absence de correspondance certaine en pied, avec son URL. Ligne agrandie sans clipping ; les autres lignes restent visibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          729
+        ],
+        "initialSha256": "3a320e8b5b1335a1e300747fd8ab527023522bb3c6268e7bd9e42c37611f5f08",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Harry, Carrie, Larry et Bob : limites du plateau/bureau et distinctions d’identité lisibles. Travis conserve la relation d’alias. Gator perd seulement la note et la source de l’audit complémentaire."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D74:E74"
+            ],
+            "identityIds": [
+              "hz_gator_sinner"
+            ],
+            "description": "Le statut cible l’identité dans la foule ; D/E ne reprennent pas la scène inspectée, la limite d’identification et sa référence.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-9.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-10.png",
+        "range": "A75:E81",
+        "sha256": "600e8d7ac8d58bee8d3a18a339a52122053b620eeef6efcad7e79dd4cd6c30ff",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Revue du rendu corrigé : les quatre notes individuelles et leurs références sont visibles. Les épisodes/scènes hors périmètre sont distingués d’une identité incertaine ; les entrées pilote restent inchangées. Aucun débordement."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          708
+        ],
+        "initialSha256": "313bcd39401f80073e6567975d7da40efe581f1b566f5d819d9c283a32d8a027",
+        "reViewedAfterCorrection": true,
+        "visualInspectionCount": 2,
+        "initialObservations": [
+          "Tous les textes tiennent dans les lignes. Shark Gang Leader et entrées pilote restent précis. Assistant de Velvette/Cactus/Jack-in-the-box/Orphan Imp ont des statuts ciblés mais les détails D/E sont génériques."
+        ],
+        "resolvedIssues": [
+          {
+            "severity": "medium",
+            "type": "missing_specific_qualification_notes_and_sources",
+            "cells": [
+              "D75:E75",
+              "D77:E77",
+              "D78:E78",
+              "D79:E79"
+            ],
+            "identityIds": [
+              "hz_velvette_assistant",
+              "hz_cactus_sinner",
+              "hz_jack_in_box_sinner",
+              "hz_orphan_imp"
+            ],
+            "description": "Les quatre statuts sont individuels mais D/E n’expliquent pas les clips consultés ni la différence entre identité incertaine et scène/épisode absent du périmètre des clips inspectés.",
+            "recommendation": "Projeter les notes et références déjà gelées dans hazbin-qualification-extra.json, sans recherche ni changement de statut. Revoir visuellement uniquement les rendus modifiés.",
+            "status": "resolved",
+            "resolution": "Les notes et sources gelées ont été propagées dans les colonnes D/E ; le PNG corrigé a été rouvert avec view_image et vérifié."
+          }
+        ],
+        "reviewer": "/root/helluva",
+        "filename": "cibles-10.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-11.png",
+        "range": "A82:E88",
+        "sha256": "056099d99032b1a55933c6e79bd892893bc83374b3b730ce0542db421ef91af7",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Refus Stella/Loopty/Deerie conservés. Leviathan, Belphegor, Tilla et mère de Moxxie gardent les limites spécifiques des plans. Toutes les lignes et sources sont lisibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          580
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-11.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-12.png",
+        "range": "A89:E95",
+        "sha256": "7753d70f7ff7644df9e84fbe064a4d5c843e34afb606424f2256535eb746f4b9",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Les blocs Arick, Emberlynn, Kendra, Rita et Jesse sont entièrement visibles. Kendra exclut le portrait erroné ; Rita signale la palette incertaine ; Jesse ne livre que la version corrigée à deux bras. Statuts français."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          1561
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-12.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-13.png",
+        "range": "A96:E102",
+        "sha256": "8f458452dbaaf0f152d79d61e798e91ea314c64d068d230ceee8692a74fba37b",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Miles reste narratif sans kit de combat, Vikki/Gigi/Russ conservent les limites du bas du corps. Bethany/Karen affichent des réserves détaillées ; Brennon est distingué du déguisement de Blitz. Aucun texte coupé."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          985
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-13.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-14.png",
+        "range": "A103:E109",
+        "sha256": "4b1c034015a1e1d298e25daaa57344999fd76c2c0a9394306c9155df1bc1a19c",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Les blocs Uggie/Ace/Gerardo/Frank et les réserves Skips/Queef/Driveso sont entiers. Incarnation S1 de Ace et priorité au pull vert de Frank clairement visibles. Aucun débordement."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          1476
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-14.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-15.png",
+        "range": "A110:E116",
+        "sha256": "f58f9a710505cc3a82cf19ae6c3d957d8929aa547e0fc4ffda466293c52ccaf2",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Paulie/Luigi/Mr. Mayor : toutes les notes et sources visibles. Joe Smoe, William Diddle, Adrian et Gerald gardent des obstacles précis ; Adrian reste distinct du grand Bigfoot. Statuts français."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          1113
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-15.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-16.png",
+        "range": "A117:E123",
+        "sha256": "f1ce8094a7fbaa238f285138cac2540b921ccaf26c9cf5122f3483e3b15ea9fe",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Les six limites de cadrage/masquage et le bloc du fils de Martha sont entièrement visibles. Livraison narrative du fils de Martha, front secondaire et absence de kit/animation explicitement indiqués."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          793
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-16.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-17.png",
+        "range": "A124:E130",
+        "sha256": "4be774a047f9ac3bf091779bc4ab9a6433375913d4ae98b41a848630579833ef",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "Blocs adoption lady, épouse de Gerardo et Bigfoot Waiter visibles en entier. Alias Travis, Tour Guide, Big Woobly et secrétaire ont des statuts et limites cohérents. Incarnation fermière de l’épouse explicitement conservée."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          1071
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-17.png"
+      },
+      {
+        "file": "/tmp/bible-v7-builder/previews-final/cibles-18.png",
+        "range": "A131:E131",
+        "sha256": "599465960a15221a252975a86f8b8ad45acba698bd70e46d64a4964116ba0ec6",
+        "viewed": true,
+        "textVisible": true,
+        "clippingObserved": false,
+        "overflowObserved": false,
+        "statusFrench": true,
+        "limitsConsistency": "consistent",
+        "observations": [
+          "L’unique ligne finale est entière. Gorilla Suit Guy distingue costume intact avant attaque et référence historique ultérieure à prothèse. Statut français et limite d’adaptation clairement visibles."
+        ],
+        "issues": [],
+        "dimensions": [
+          2830,
+          292
+        ],
+        "visualInspectionCount": 1,
+        "reViewedAfterCorrection": false,
+        "reviewer": "/root/helluva",
+        "filename": "cibles-18.png"
+      },
+      {
+        "file": "StaticV7Sources-0.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-0.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          805
+        ],
+        "sha256": "42ebaf76b0d7c1a6efb073fcc9bb5200ed426668323ff8c2251c9e061c648cca",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Titre Repères V7, sous-titre 89 URL / 92 codes source, en-têtes A–D et lignes 6–11 lisibles. Notes et URL complètes, y compris la longue URL Sloth ; aucun chevauchement observé.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-0.png"
+      },
+      {
+        "file": "StaticV7Sources-1.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-1.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          793
+        ],
+        "sha256": "24c9d56b9001b49f451144e561c92f1d3cde457ac6008f113d8a70d35ee808f9",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 12–18 lisibles. La longue note du dragon conserve la distinction une tête / plusieurs têtes et la limite VAR-034. Titres repliés proprement et notes complètes.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-1.png"
+      },
+      {
+        "file": "StaticV7Sources-2.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-2.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          921
+        ],
+        "sha256": "c934fd87f25e3daa7c14a0b9c374d4e35863b1152cee8d2636b6ac95680f6cd0",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 19–25 lisibles. La longue URL de la capture Australie est renvoyée à la ligne sans coupure visible ; notes du pilote, du hall et du flash-back entièrement visibles.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-2.png"
+      },
+      {
+        "file": "StaticV7Sources-3.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-3.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          921
+        ],
+        "sha256": "9aaf834f3d827f146df3d6f16df8710d884b432bcf9084ae288aebd3fab0dc13",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 26–32 lisibles. Historique d’accès du toit, limite de façade Vox et notes de Big Woobly complets ; aucun texte débordant dans la colonne voisine.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-3.png"
+      },
+      {
+        "file": "StaticV7Sources-4.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-4.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          815
+        ],
+        "sha256": "be75403ce09ab511d16b963958a75bd13955a6002434743323ffb7094805c517",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 33–39 lisibles. Le long identifiant de nature en ligne 38 se replie sur deux lignes ; il demeure complet. Notes des références négatives et limites anatomiques visibles.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-4.png"
+      },
+      {
+        "file": "StaticV7Sources-5.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-5.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          2244
+        ],
+        "sha256": "2e098bc30c2954c91215d3962d439b228c1f9a3f6b9ac963f31f25dc9e783fdd",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 40–46 lisibles malgré les notes de preuves locales très longues. HH-EXTRA-GUARANTEE se poursuit explicitement à la ligne 42, et HH-EXTRA-EP2 à la ligne 44, avec marqueur (suite). Pas de clipping vertical ; HH-EXTRA-WEAPON se poursuit dans la vue suivante.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-5.png"
+      },
+      {
+        "file": "StaticV7Sources-6.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-6.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          623
+        ],
+        "sha256": "873353e3b6e283d3bedf106f4daf51f1678e6a5abad5405396731efd6d12e52b",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 47–53 lisibles. La ligne 47 porte HH-EXTRA-WEAPON et (suite), avec les octets/dimensions restants de la note commencée ligne 46. Les titres et URL suivants sont visibles ; les retours de ligne ne suppriment aucun suffixe apparent.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-6.png"
+      },
+      {
+        "file": "StaticV7Sources-7.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-7.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          580
+        ],
+        "sha256": "9945ab1ccaf485a8ec036fd083b4047736055c3b2f342ab8f17f37625f3935bd",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 54–60 lisibles. Les URL utilisées comme titres se replient dans A, y compris les suffixes de temps, tandis que D conserve leur forme complète. Aucun chevauchement.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-7.png"
+      },
+      {
+        "file": "StaticV7Sources-8.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-8.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          687
+        ],
+        "sha256": "3ed3978780b9aeedd834d1353e9003749eedc4eb22e261f0c5019b79dad269e6",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 61–67 lisibles. Longues URL Twitter, Zerochan et Tenor repliées correctement dans A ; URL complètes dans D, aucun débordement observé.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-8.png"
+      },
+      {
+        "file": "StaticV7Sources-9.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-9.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          580
+        ],
+        "sha256": "63792f4eded39c9c3a6936d0b1bae00532aeb7316c4173f41f2c144fabef6f29",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 68–74 lisibles. Codes, URL-titres, nature et URL de référence visibles dans leurs colonnes ; aucun clipping ni chevauchement.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-9.png"
+      },
+      {
+        "file": "StaticV7Sources-10.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-10.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          623
+        ],
+        "sha256": "1c123815dc8cb7d395d1694f25664a55ab04fa155636ffe3accd0901f325ed78",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 75–81 lisibles. Titres contenant les longues URL Shark Robot et VFX Voice renvoyés à la ligne ; suffixes et paramètres visibles. Aucun clipping.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-10.png"
+      },
+      {
+        "file": "StaticV7Sources-11.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-11.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          580
+        ],
+        "sha256": "1f2a1613303748b22aa77be7f95d8a5becba86037f4f98900b3818212834082f",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 82–88 lisibles. Suffixes de temps des URL-titres visibles sur la ligne suivante, URL complètes à droite ; aucun chevauchement.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-11.png"
+      },
+      {
+        "file": "StaticV7Sources-12.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-12.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          580
+        ],
+        "sha256": "4c31abd9b4727865660142e304db100f83f090a30a92b8a40d6c8d741e52288a",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 89–95 lisibles. Textes et suffixes de temps restent dans leurs cellules ; aucune coupure verticale ou horizontale observée.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-12.png"
+      },
+      {
+        "file": "StaticV7Sources-13.png",
+        "path": "/tmp/bible-v7-builder/previews-final/StaticV7Sources-13.png",
+        "viewed": true,
+        "method": "view_image",
+        "dimensions": [
+          2690,
+          420
+        ],
+        "sha256": "63b5ad11abd0eab25f098d680b9f18904ddb26638c913e1f800184c499e9815d",
+        "status": "visual_pass",
+        "issues": [],
+        "observations": "Lignes 96–100 lisibles jusqu’à la dernière entrée V7-REF-092. Fin de tableau nette ; dernier titre et dernière URL complets, aucun clipping.",
+        "reviewer": "/root/props_stages",
+        "filename": "StaticV7Sources-13.png"
+      },
+      {
+        "filename": "StaticV7Variants-0.png",
+        "sha256": "f1f50bfa29f941b8c2007a6651bb8db209557d012edece9bf092ebea68ec39c9",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          584
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Variants-1.png",
+        "sha256": "2c1827d731c5bb99ed47aa6031c16641636cac196230a863cc7d78cec8256545",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          665
+        ],
+        "issues": [],
+        "observations": "Vue réinspectée après correction : la note courante et les URLs disponibles remplacent les consignes historiques dépassées. Statuts français, texte complet, aucun débordement.",
+        "previousSha256": "4d1a54ba792cd579a5b4689cab41571f659a4a788bff065d336e30fa8c47efce",
+        "reViewedAfterCorrection": true
+      },
+      {
+        "filename": "StaticV7Variants-2.png",
+        "sha256": "37f4d4ab6eefc6cf699afd34a6841612748fc2bce54b1862c2e65b1fab95b60a",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          729
+        ],
+        "issues": [],
+        "observations": "Vue réinspectée après correction : la note courante et les URLs disponibles remplacent les consignes historiques dépassées. Statuts français, texte complet, aucun débordement.",
+        "previousSha256": "e3a92d10f02d5bd990792781c15a85150195a87c0f7e3f72005bf564fbb26664",
+        "reViewedAfterCorrection": true
+      },
+      {
+        "filename": "StaticV7Variants-3.png",
+        "sha256": "9fcc3326cf1b89a1d7e7f55b7ae2c196eaab6651edfd524587f71d9821822899",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          900
+        ],
+        "issues": [],
+        "observations": "Vue réinspectée après correction : la note courante et les URLs disponibles remplacent les consignes historiques dépassées. Statuts français, texte complet, aucun débordement.",
+        "previousSha256": "3b962f93ef1c51ac2357847a113df34ef7a3b8f4242e72cde9027212441b91a3",
+        "reViewedAfterCorrection": true
+      },
+      {
+        "filename": "StaticV7Variants-4.png",
+        "sha256": "0f42934e11105462ef6f41ed847402846d3ad74437e5f5cfd7342ccbe4dd38ee",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          900
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Variants-5.png",
+        "sha256": "13ec1c6ac4390763a48daa91ebf000fcb906cd112954f7ff0a95137755702c89",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          644
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Remaining-0.png",
+        "sha256": "e5f2d89f53c7544ac54344dabd9c62beaaa4cac6b8f8dd1638edb075ee035767",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          369
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Remaining-1.png",
+        "sha256": "1d9bb969b6272977c0763f6ce38eee7f228d86d6a780e3d0e38498ea6cb63ba2",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          365
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Remaining-2.png",
+        "sha256": "09282aa0b2a199feb123ccfa5ed8c910de30c1b8b6c77cc22e0ba31da779c13e",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          263
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Trace-0.png",
+        "sha256": "5a348d1d074e27b09809a67951109cc808469de293a823e8cee146b33b4069e9",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          352
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Trace-1.png",
+        "sha256": "94bd2e49e385e6d40514538066d148e12411e5bc8822cf4bb5db54e0af01557b",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          327
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      },
+      {
+        "filename": "StaticV7Trace-2.png",
+        "sha256": "61621294bc5dabe65d1d6a14ee1d8f289e71e727480c008a6df1fbe11b374077",
+        "viewed": true,
+        "reviewer": "/root/runtime_bible",
+        "dimensions": [
+          2690,
+          220
+        ],
+        "issues": [],
+        "observations": "Cellules complètes et lisibles, distinctions entre bases, archives et variantes visibles ; réserves et traces lisibles."
+      }
+    ],
+    "resolvedFindings": [
+      "Les 17 qualifications HH supplémentaires propagent leurs preuves, limites et URLs individuelles depuis le registre corrigé.",
+      "Les statuts variant_scope_undefined et primary_silhouette_incomplete sont libellés en français.",
+      "Les notes courantes de variantes prévalent sur les anciennes consignes : Pentious racheté reste refusé sans fichier ni relance ; VAR-017 et VAR-027 conservent leur qualification précise."
+    ],
+    "limits": [
+      "Le contrôle porte sur les 3 nouveaux onglets ; les 43 feuilles historiques sont conservées à l’octet, sans nouvelle correction éditoriale.",
+      "Aucun recalcul dans Microsoft Excel natif ; recalcul, export, réimport et test de modification/restauration réalisés dans Artifact Tool.",
+      "Ce rendu de classeur ne constitue pas une validation navigateur du jeu."
+    ]
+  },
+  "browserValidation": {
+    "status": "blocked_before_browser_launch",
+    "report": "docs/standalone/production-v7/browser-qa.json"
+  },
+  "fidelityOneToOneCertified": false,
+  "output": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
+  "finalIntegrity": {
+    "status": "passed",
+    "inputSourceHashesRechecked": 17,
+    "historicalWorksheetPayloadsByteIdentical": 43,
+    "historicalOrderPreserved": true,
+    "addedSheetCount": 3,
+    "finalSheetCount": 46,
+    "builderEslint": "passed"
+  },
+  "outputFile": {
+    "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
+    "sha256": "8c0e2d2f09011c2ef6e19c6a86cc22cab270e9923f33d311b725dc5ff88cbea9",
+    "bytes": 570951
+  }
+}

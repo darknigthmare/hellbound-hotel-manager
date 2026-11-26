@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "scope": "Cumulative static reserve catalogue. Entries are not playable combat kits or animation cycles.",
   "sourceBatches": [
     "wave-g-2026-11-25",
     "wave-h-2026-11-25",
     "wave-i-2026-11-25",
     "wave-j-2026-11-25",
-    "wave-k-2026-11-25"
+    "wave-k-2026-11-25",
+    "static-v7-2026-11-26"
   ],
   "fidelityOneToOneCertified": false,
   "assets": [
@@ -2484,59 +2485,79 @@
       "runtimeStatus": "reserve",
       "sourceIdentityId": "hb_apple",
       "spoilerScope": "season_1",
-      "master": "art/infernal-versus/masters/base/hb_apple-ready.png",
-      "export": "public/assets/sprites/reserve/hb_apple-ready.webp",
+      "master": "art/infernal-versus/masters/base/hb_apple-ready-v7.png",
+      "export": "public/assets/sprites/reserve/hb_apple-ready-v7.webp",
       "dimensions": [
         1024,
         1536
-      ],
-      "alphaBounds16": [
-        234,
-        29,
-        854,
-        1522
       ],
       "alphaRange": [
         0,
         254
       ],
-      "masterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
-      "exportSha256": "c8670e10dbf84b81dbcad4251f8993f58a6d9c001f099d1aa10f0a51ab2b1f9d",
+      "masterSha256": "fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a",
+      "exportSha256": "eebe2ad6c1ef4230d3df2df60b33a40c83b52754c8c0e468fc2fa5de8968a6c7",
       "pixelExactExport": true,
       "fidelityOneToOneCertified": false,
       "inGameChecked": false,
-      "batchId": "wave-k-2026-11-25",
+      "batchId": "static-v7-2026-11-26",
       "animationCycles": 0,
-      "visualReview": "Master inspecté avec la planche de production ; silhouette entière, un seul sujet et alpha vérifiés. Revue indépendante documentée dans production-v6. Contrôle navigateur non exécuté.",
-      "reference": "Spring Broken S1E3 · planche de production CalisDraws",
+      "visualReview": "Comparaison indépendante du master fc30fac0d4fb5b73a1e93b94814d782dbce8fc18e277a4dcb816fdabfefdf68a dans docs/standalone/production-v7/reviews-v7.json.",
+      "reference": "Spring Broken S1E3 — même base, motif du mollet corrigé",
       "references": [
         {
           "url": "https://twitter.com/CalisDraws/status/1355948687814520837",
           "kind": "official_production_artist",
-          "title": "CalisDraws · planche des designs de Spring Broken",
-          "method": "Attribution et date recoupées par X oEmbed ; bitmap inspecté sur une copie secondaire documentée."
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
-          "kind": "official_episode",
-          "episode": "Spring Broken S1E3",
-          "method": "Recoupe partielle des prévisualisations officielles ; aucune prétention à six vues démon complètes dans cet épisode."
+          "title": "https://twitter.com/CalisDraws/status/1355948687814520837"
         },
         {
           "url": "https://www.zerochan.net/3210579",
-          "kind": "secondary_bitmap_host",
-          "title": "Copie de la planche attribuée à CalisDraws"
+          "kind": "supporting_reference",
+          "title": "https://www.zerochan.net/3210579"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=RghsgkZKedg"
         }
       ],
-      "intendedRole": "Base statique dans la galerie de réserve ; aucun kit jouable ou cycle animé supplémentaire.",
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
       "fidelityNotes": [
-        "Cheveux blonds, salopette grise, cornes, ailes, queue, talons et emplacement du motif du mollet conservés.",
-        "Bracelets rétablis au poignet à gauche de l’image.",
-        "Deux branches noires de la pointe de queue rétablies.",
-        "Le motif du mollet reste divergent : deux ronds clairs et une boucle noire, au lieu du motif irrégulier visible sur la planche Calis.",
-        "Aucune certification de fidélité 1:1 ; le détail du mollet reste explicitement à corriger.",
-        "Pose neutre adaptée au jeu ; fidélité artistique 1:1 non certifiée.",
-        "Pixels du master conservés dans le WebP sans perte ; cette égalité technique ne mesure pas la fidélité au modèle de référence."
+        "Correction native ciblée ; les deux disques pâles V6 remplacés par forme framboise, cavités irrégulières et rubans noirs observés.",
+        "Courbes fines redessinées ; aucune dérive majeure du reste du corps détectée, mais invariance pixel par pixel non revendiquée.",
+        "Originaux V6 conservés, révision suffixée -v7. Une correction ne crée ni base supplémentaire ni nouvelle entrée galerie.",
+        "Planche de production attribuée à CalisDraws, bitmap hébergé secondairement ; fidélité 1:1 non certifiée.",
+        "Les courbes fines et la largeur exacte des formes restent redessinées ; amélioration visuelle ciblée sans certification 1:1.",
+        "La revue porte sur le dessin et l’alpha composité. La fidélité à un modèle de production natif et le rendu en jeu ne sont pas certifiés.",
+        "Cette révision remplace l’image affichée de la même identité ; elle ne crée ni nouvelle base ni nouvelle entrée de galerie.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "sourceTimelineScope": "season_1",
+      "revisionHistory": [
+        {
+          "batchId": "wave-k-2026-11-25",
+          "master": "art/infernal-versus/masters/base/hb_apple-ready.png",
+          "export": "public/assets/sprites/reserve/hb_apple-ready.webp",
+          "masterSha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+          "exportSha256": "c8670e10dbf84b81dbcad4251f8993f58a6d9c001f099d1aa10f0a51ab2b1f9d",
+          "fidelityNotes": [
+            "Cheveux blonds, salopette grise, cornes, ailes, queue, talons et emplacement du motif du mollet conservés.",
+            "Bracelets rétablis au poignet à gauche de l’image.",
+            "Deux branches noires de la pointe de queue rétablies.",
+            "Le motif du mollet reste divergent : deux ronds clairs et une boucle noire, au lieu du motif irrégulier visible sur la planche Calis.",
+            "Aucune certification de fidélité 1:1 ; le détail du mollet reste explicitement à corriger.",
+            "Pose neutre adaptée au jeu ; fidélité artistique 1:1 non certifiée.",
+            "Pixels du master conservés dans le WebP sans perte ; cette égalité technique ne mesure pas la fidélité au modèle de référence."
+          ]
+        }
+      ],
+      "currentRevisionId": "hb_apple-ready-v7",
+      "visibleBBoxAlpha50": [
+        233,
+        26,
+        854,
+        1522
       ]
     },
     {
@@ -2725,6 +2746,1921 @@
         "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées.",
         "Pose neutre adaptée au jeu ; fidélité artistique 1:1 non certifiée.",
         "Pixels du master conservés dans le WebP sans perte ; cette égalité technique ne mesure pas la fidélité au modèle de référence."
+      ]
+    },
+    {
+      "id": "hz_st_peter-ready",
+      "name": "St. Peter",
+      "franchise": "Hazbin Hotel",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_st_peter",
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/base/hz_st_peter-ready.png",
+      "export": "public/assets/sprites/reserve/hz_st_peter-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48",
+      "exportSha256": "3bccd0b5b7523d68efc598cfb50034b608f20d9e8936f710f17fadac95cb2749",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Série S1 — tenue de Welcome to Heaven, S1E6",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=a9s6FRLNJAo&t=1s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=a9s6FRLNJAo&t=1s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 3049f0cc3d110c5b91d600d39c7f038964ad1d0b394e5c46f9267f2af9924e48 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Pose neutre et sourire fermé adaptés ; proportions et courbures des cheveux/plumes ne sont pas certifiées 1:1.",
+        "Source primaire inspectée à 320×180 ; portrait historique pour les détails de tenue corroborés.",
+        "Marge sous les pieds d'environ 2,6 %, inférieure à la cible 7 %, silhouette entière.",
+        "Alpha natif conservé (maximum 254) ; le halo RGB hors silhouette disparaît une fois l'alpha composité.",
+        "Pose de présentation et sourire fermé adaptés à partir de plans expressifs.",
+        "Courbes des cheveux, taille de la croix, espacement et courbure des plumes redessinés ; correspondance 1:1 non démontrée.",
+        "Marge sous les pieds faible, déjà documentée par l’auteur ; aucune extrémité visiblement coupée.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha50": [
+        82,
+        69,
+        933,
+        1496
+      ]
+    },
+    {
+      "id": "hz_susan-ready",
+      "name": "Susan",
+      "franchise": "Hazbin Hotel",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_susan",
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/base/hz_susan-ready.png",
+      "export": "public/assets/sprites/reserve/hz_susan-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708",
+      "exportSha256": "d9ebfa2619e14175952447bc29bfa2d35f25ba07ba6f830ed30db7319187f5ca",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Série S1 — tenue de Hello Rosie! S1E7",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=D4VOQAHN6oM&t=44s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=D4VOQAHN6oM&t=44s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 038a4b52b431b3b2263b38723c6eebee4e4a70ad8487174d197e3e98872b1708 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Pose neutre adaptée, traits du visage et plis reconstitués à partir d'une source primaire limitée à 320×180.",
+        "La figure reste petite dans le plan officiel ; détail du bas de robe et de la canne renseigné par le portrait historique.",
+        "Marges verticales inférieures à 7 %, silhouette entière.",
+        "Alpha natif maximum 254 conservé.",
+        "Rides, expression fermée et proportion des lunettes redessinées à partir d’une référence primaire petite.",
+        "Courbes de plumes, volume du drapé et plis de la robe adaptés ; correspondance 1:1 non démontrée.",
+        "Marge basse réduite mais traîne et canne entièrement contenues.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha50": [
+        133,
+        66,
+        865,
+        1481
+      ]
+    },
+    {
+      "id": "hb_ace-ready",
+      "name": "Ace",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_ace",
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/base/hb_ace-ready.png",
+      "export": "public/assets/sprites/reserve/hb_ace-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "64eb24d74834b1eed06d7bee3ffa627932909852d4b950fbc077220d8cb8fb2a",
+      "exportSha256": "a2d0a28e226f515ba15efe0917358854d8d7012a99ef6c5cebf7234ad9d0b286",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Production lineup attributed to CalisDraws; artist public oEmbed confirms Spring Broken design credit. Full Ace at far right. This S1 incarnation differs from catalogue's initially cited Chaz Funeral short; no assertion that the short-only costume is covered.",
+      "references": [
+        {
+          "url": "https://twitter.com/CalisDraws/status/1355948687814520837",
+          "kind": "official_production_artist",
+          "title": "https://twitter.com/CalisDraws/status/1355948687814520837"
+        },
+        {
+          "url": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+          "kind": "supporting_reference",
+          "title": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=RghsgkZKedg"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 64eb24d74834b1eed06d7bee3ffa627932909852d4b950fbc077220d8cb8fb2a dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La disposition des rayures du motif de torse et les courbes exactes de l’extrémité de queue sont redessinées.",
+        "Pose, courbe du dos et position des bras adaptées ; proportions générales concordantes sans certification de modèle 1:1.",
+        "Marges haute et basse très faibles mais cornes, chaussures et queue restent entièrement visibles.",
+        "L’incarnation inspectée est Spring Broken S1. Elle ne certifie pas la tenue de la scène Chaz Funeral initialement citée par le catalogue.",
+        "Production lineup attributed to CalisDraws; artist public oEmbed confirms Spring Broken design credit. Full Ace at far right. This S1 incarnation differs from catalogue's initially cited Chaz Funeral short; no assertion that the short-only costume is covered.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        223,
+        12,
+        762,
+        1523
+      ]
+    },
+    {
+      "id": "hb_emberlynn_pinkle-ready",
+      "name": "Emberlynn Pinkle",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_emberlynn_pinkle",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_emberlynn_pinkle-ready.png",
+      "export": "public/assets/sprites/reserve/hb_emberlynn_pinkle-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "457cc8590da01845f6fcb388b98a167a2962d93df49a61cd674aadf6de053874",
+      "exportSha256": "c89be2c56febb82de7fb7ace50c7691b1554a57791b7176dc491824b2285a0c4",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Demon form at the ending of Mission: Weeaboo-boo",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=3-NrCcr8Bcg",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=3-NrCcr8Bcg"
+        },
+        {
+          "url": "https://tenor.com/view/helluva-boss-emberlynn-pinkle-emberlynn-helluva-blitzo-blitz-helluva-boss-gif-12402984158320039705",
+          "kind": "supporting_reference",
+          "title": "https://tenor.com/view/helluva-boss-emberlynn-pinkle-emberlynn-helluva-blitzo-blitz-helluva-boss-gif-12402984158320039705"
+        },
+        {
+          "url": "https://media.tenor.com/rCBAYM92lxkAAAAe/helluva-boss-emberlynn-pinkle.png",
+          "kind": "supporting_reference",
+          "title": "https://media.tenor.com/rCBAYM92lxkAAAAe/helluva-boss-emberlynn-pinkle.png"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 457cc8590da01845f6fcb388b98a167a2962d93df49a61cd674aadf6de053874 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La vue de présentation est moins plongeante que le photogramme officiel.",
+        "Les courbes de la chevelure, la longueur apparente du corps et les ailes ont été redessinées.",
+        "La disposition exacte des marques roses des bas, des rayures de jupe et des petits détails faciaux reste approximative.",
+        "La forme démoniaque de la fin du court-métrage est la seule incarnation inspectée ; aucune forme humaine ou animation n’est livrée par ce dessin.",
+        "Official storyboard board13 cells8/9, 248/250 seconds, corroborates exact rehost frame; larger secondary frame inspected at498x498. Whole silhouette/costume visible. No implication of playable combat kit.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        171,
+        19,
+        1056,
+        1296
+      ]
+    },
+    {
+      "id": "hb_frank_mctickly_wrigglers-ready",
+      "name": "Frank McTickly Wrigglers",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_frank_mctickly_wrigglers",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_frank_mctickly_wrigglers-ready.png",
+      "export": "public/assets/sprites/reserve/hb_frank_mctickly_wrigglers-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a981b84d565ba797bdbc6b33034583395000e82aeca0e9150f5b61e2bba50a31",
+      "exportSha256": "7f573ba2068ad9cc2ad3ebe3d515ed2d45af498af628275c90a52104e305edbc",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Orphan Time, public storyboard board2 cell3 at100 seconds shows full figure. Board1 also inspected for face. Existing cutout only complementary detail, source shot governs green sweater.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=-1b7uCyONb0",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=-1b7uCyONb0"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master a981b84d565ba797bdbc6b33034583395000e82aeca0e9150f5b61e2bba50a31 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Le vieux détourage est bleu-vert ; la référence officielle inspectée prévaut pour le pull vert.",
+        "Expression, géométrie des boucles, longueur des jambes et plis du pantalon redessinés ; fidélité 1:1 non démontrée.",
+        "Dégradés légers présents dans les aplats et marges verticales faibles, sans recadrage du sujet.",
+        "Official Orphan Time, public storyboard board2 cell3 at100 seconds shows full figure. Board1 also inspected for face. Existing cutout only complementary detail, source shot governs green sweater.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        270,
+        34,
+        727,
+        1496
+      ]
+    },
+    {
+      "id": "hb_paulie_paesano-ready",
+      "name": "Paulie Paesano",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_paulie_paesano",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_paulie_paesano-ready.png",
+      "export": "public/assets/sprites/reserve/hb_paulie_paesano-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a0e44f5c2f39849db09bc5c82ee0fe8fbb822d94a5f5abf31bd3df847c36932e",
+      "exportSha256": "bec73e2acc3daa18830a166a52830960dcb68b2f025fcdbc0b9775acddc60a48",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Whacked Off, board1 cell3=55s and cell5=65s show full figure; board2 has closer face and red-edged pale lapels. Historical cutout confirms fine trouser striping, not treated as primary source.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=dlThyclyHtw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master a0e44f5c2f39849db09bc5c82ee0fe8fbb822d94a5f5abf31bd3df847c36932e dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Bras abaissés adaptés par rapport au détourage historique ; longueur et traits fins du visage redessinés.",
+        "Espacement des rayures et amplitude des revers reconstruits ; la source primaire rapprochée confirme les revers mais pas leur mesure exacte.",
+        "Marges verticales faibles mais cheveux et chaussures complets ; pas de certification 1:1.",
+        "Official Whacked Off, board1 cell3=55s and cell5=65s show full figure; board2 has closer face and red-edged pale lapels. Historical cutout confirms fine trouser striping, not treated as primary source.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        338,
+        28,
+        704,
+        1509
+      ]
+    },
+    {
+      "id": "hb_luigi_paesano-ready",
+      "name": "Luigi Paesano",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_luigi_paesano",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_luigi_paesano-ready.png",
+      "export": "public/assets/sprites/reserve/hb_luigi_paesano-ready.webp",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "masterSha256": "afee39d63ae2d3e928d86880703af2756109c69e4f42881edd345a1175e9e275",
+      "exportSha256": "5dac920436b09218b032da7e7007dbab1ffb374a9b2fb9bfd98a346ffddc0d09",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Whacked Off: board6 cell6 at295s shows full short stocky figure with car and companions; board1 cell1 at45s shows face/upper garment. Historical cutout supports detail; low-resolution primary full view limits fine fidelity.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=dlThyclyHtw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=dlThyclyHtw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master afee39d63ae2d3e928d86880703af2756109c69e4f42881edd345a1175e9e275 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La pose des mains derrière le dos est reprise du détourage complémentaire ; elles ne sont pas détaillées par le petit plan primaire.",
+        "Courbes du visage, largeur des revers et espacements des rayures redessinés.",
+        "Silhouette et tenue concordantes ; fidélité 1:1 non certifiée en l’absence de comparaison au modèle de production natif.",
+        "Official Whacked Off: board6 cell6 at295s shows full short stocky figure with car and companions; board1 cell1 at45s shows face/upper garment. Historical cutout supports detail; low-resolution primary full view limits fine fidelity.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        182,
+        68,
+        911,
+        1397
+      ]
+    },
+    {
+      "id": "hb_gerardo_velazquez-ready",
+      "name": "Gerardo Velazquez",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_gerardo_velazquez",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_gerardo_velazquez-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gerardo_velazquez-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "977670ef042fad07cc7d3c9c66b05b1a3a563563b074ac72c6da6d748d319410",
+      "exportSha256": "d2d01b8266e31f2d7ab877e4dfe0764b9ed89f4916e2ff866ca28f2f1b5e4dd2",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mission: Chupacabras board3 cell7 at165s shows Gerardo's whole body and boots; cell2 at140s shows torso/face/hat. Historical cutout used for details consistent with primary scene; primary board cells320×180.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=pngogrW4iC4",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pngogrW4iC4"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 977670ef042fad07cc7d3c9c66b05b1a3a563563b074ac72c6da6d748d319410 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Inclinaison et largeur du sombrero, courbes du ventre, longueur des jambes et expression redessinées.",
+        "Les microdétails des broderies et du visage sont complétés par le détourage historique, sans certification du modèle original.",
+        "Official Mission: Chupacabras board3 cell7 at165s shows Gerardo's whole body and boots; cell2 at140s shows torso/face/hat. Historical cutout used for details consistent with primary scene; primary board cells320×180.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        222,
+        42,
+        974,
+        1270
+      ]
+    },
+    {
+      "id": "hb_gerardos_wife-ready",
+      "name": "Gerardo's Wife",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_gerardos_wife",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_gerardos_wife-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gerardos_wife-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "d89c98c1fcf93b18452f2339fa972538464d57059333e2f196945153c5e7a78b",
+      "exportSha256": "3776b681c3c07565ba704a32dc5be705f24f44dc4de092b920ae389e54d367f1",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mission: Chupacabras board1 cell3 at55s shows the wife outside farmhouse full-length with navy blouse, white apron, red skirt and bare feet. Historical cutout clarifies unshadowed colors and hair streaks. This is the farmhouse incarnation, not the later action costume.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=pngogrW4iC4",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pngogrW4iC4"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master d89c98c1fcf93b18452f2339fa972538464d57059333e2f196945153c5e7a78b dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Contours des mèches, plis du tablier, petits dessins des orteils et expression adaptés.",
+        "Palette normale issue du détourage secondaire ; le plan primaire est nocturne. Cette livraison représente uniquement la tenue de la ferme.",
+        "Official Mission: Chupacabras board1 cell3 at55s shows the wife outside farmhouse full-length with navy blouse, white apron, red skirt and bare feet. Historical cutout clarifies unshadowed colors and hair streaks. This is the farmhouse incarnation, not the later action costume.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        298,
+        77,
+        882,
+        1257
+      ]
+    },
+    {
+      "id": "hb_mr_mayor-ready",
+      "name": "Mr. Mayor",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_mr_mayor",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_mr_mayor-ready.png",
+      "export": "public/assets/sprites/reserve/hb_mr_mayor-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "7e35332e55ce0b13c490f8306d0d9132c619cd0eb0652dc4b72111b5f0d67bdc",
+      "exportSha256": "24a429c8498c650ed83a0459cdc5e1d8bb25951993a18def3662f767ee786479",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mission: Bigfoot board2 cell4 at105s shows Mr. Mayor's full suited body with sash, huge bare feet and top hat; cell3 at100s face/sash. Historical cutout clarifies colors/details. Primary lower body is small in frame.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=LPzQl8gwulw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 7e35332e55ce0b13c490f8306d0d9132c619cd0eb0652dc4b72111b5f0d67bdc dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Épaisseur des bras, rapports tête/torse, lettres et touffes de fourrure redessinés.",
+        "La pose neutre et les détails des pieds reprennent le détourage secondaire, corroboré à petite échelle par le plan officiel.",
+        "Official Mission: Bigfoot board2 cell4 at105s shows Mr. Mayor's full suited body with sash, huge bare feet and top hat; cell3 at100s face/sash. Historical cutout clarifies colors/details. Primary lower body is small in frame.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        96,
+        56,
+        1102,
+        1257
+      ]
+    },
+    {
+      "id": "hb_bigfoot_waiter-ready",
+      "name": "Bigfoot Waiter",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_bigfoot_waiter",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_bigfoot_waiter-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bigfoot_waiter-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "c9fd2185be3cb96e127745c3ca2d2fc656f9079c0b0fbfdef9bfef7e92c956e6",
+      "exportSha256": "346356d522f82d686e0596d55fd3aa0a32a4e2c8c89d28d24a6ab3897629daa5",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mission: Bigfoot board0 cell5 at20s shows the waiter full-length at the diner booth, including cap, turquoise polo, flared trousers, black shoes and drink. Historical cutout clarifies face and small outfit details.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=LPzQl8gwulw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master c9fd2185be3cb96e127745c3ca2d2fc656f9079c0b0fbfdef9bfef7e92c956e6 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Tête, jambes et mug proportionnellement redessinés ; longueur du nez et boucle de cheveux légèrement différentes.",
+        "Alpha natif presque opaque conservé : aucune correction de l’image n’a été ajoutée par cette revue.",
+        "Official Mission: Bigfoot board0 cell5 at20s shows the waiter full-length at the diner booth, including cap, turquoise polo, flared trousers, black shoes and drink. Historical cutout clarifies face and small outfit details.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        182,
+        70,
+        786,
+        1480
+      ]
+    },
+    {
+      "id": "hb_gorilla_suit_guy-ready",
+      "name": "Gorilla Suit Guy — costume before attack",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_gorilla_suit_guy",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_gorilla_suit_guy-ready.png",
+      "export": "public/assets/sprites/reserve/hb_gorilla_suit_guy-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "6be167c1909312212d60f3c02c5fe19026f0754b294805f11ea9f60c0ac85746",
+      "exportSha256": "cdb5c1215c74be870054390be792be891ab2dec1cb57401240b7179f39a4eb3f",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mission: Bigfoot board4 cells4–5 at195–200s establish the intact gorilla mascot costume with both covered legs and feet before the attack. Historical cutout depicts later exposed prosthesis and is used ONLY for face/upper costume. Delivered incarnation explicitly excludes later injury/prosthesis.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=LPzQl8gwulw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=LPzQl8gwulw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 6be167c1909312212d60f3c02c5fe19026f0754b294805f11ea9f60c0ac85746 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La pose de promotion avec pancarte devient une pose neutre, mains vides ; courbes du ventre et des touffes redessinées.",
+        "Le portrait historique représente une phase ultérieure avec prothèse exposée : utilisé uniquement pour le haut du costume, pas pour les jambes.",
+        "Official Mission: Bigfoot board4 cells4–5 at195–200s establish the intact gorilla mascot costume with both covered legs and feet before the attack. Historical cutout depicts later exposed prosthesis and is used ONLY for face/upper costume. Delivered incarnation explicitly excludes later injury/prosthesis.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        287,
+        60,
+        917,
+        1251
+      ]
+    },
+    {
+      "id": "valentino-money-shot-s1",
+      "name": "Valentino · Pistolet bijouté S1",
+      "franchise": "Hazbin Hotel",
+      "kind": "prop",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": null,
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/props/valentino-money-shot-s1.png",
+      "export": "public/assets/props/infernal-versus/valentino-money-shot-s1.webp",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "masterSha256": "9e57e0595c5bf315de8ea2c20086c47631835a8f43a1718c5cbbf398c869ab8c",
+      "exportSha256": "4ec0cdbbbc555e8c3945569cf643c7f92527b725772382a1b86d5fe4758fa1e9",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Valentino · Pistolet bijouté S1",
+      "references": [
+        {
+          "url": "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/",
+          "kind": "supporting_reference",
+          "title": "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
+        },
+        {
+          "url": "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-12-HH02_PP-GunValentinoFavouriteJewelled_MC_v01.jpg",
+          "kind": "official_production_art_reprinted",
+          "title": "Valentino favourite jewelled gun · official production model sheet"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 9e57e0595c5bf315de8ea2c20086c47631835a8f43a1718c5cbbf398c869ab8c dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "No in-game visual validation or 1:1 certification.",
+        "Dotted lettering spacing and tiny decorative contours differ slightly from model sheet.",
+        "Static isolated prop, no new attack, projectile or functional firing mechanic.",
+        "Rapports de longueur, courbes de la poignée, petits traits du barillet et espacement des points de lettres redessinés.",
+        "Revue de l’objet statique seul ; aucune pose de tir, balistique ou animation ajoutée.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        19,
+        2132,
+        708
+      ]
+    },
+    {
+      "id": "cherub-cletus-mech-s2",
+      "name": "Cletus · Mecha D.H.O.R.K.S. S2",
+      "franchise": "Helluva Boss",
+      "kind": "machine",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": null,
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-cletus-mech-s2.png",
+      "export": "public/assets/machines/infernal-versus/cherub-cletus-mech-s2.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "8c7548fabb09faa82df62f02688e0acdf87a3cf5ce88f6449579b5e09cc42447",
+      "exportSha256": "989e18ba478652c760d724071bf79cb75a1613cc39391459846468d21b49de41",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Cletus · Mecha D.H.O.R.K.S. S2",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · The Full Moon · S2E8"
+        },
+        {
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "kind": "official_licensed_merchandise",
+          "title": "Mech Suit Cherubs · official SpindleHorse enamel pin"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 8c7548fabb09faa82df62f02688e0acdf87a3cf5ce88f6449579b5e09cc42447 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Official episode storyboard frames establish the assembled body silhouette at low resolution; official licensed pin corroborates helmet and chest design only.",
+        "Neutral standing pose, tiny panel seams, proportions and unshown surfaces are an adaptation, not a 1:1 reconstruction.",
+        "Static assembled mech variant only; no new base identity, gameplay kit or animation.",
+        "Native alpha range 0–254 is preserved without synthetic opacity replacement.",
+        "Independent visual review and in-game display validation pending.",
+        "Pin officiel limité à tête/torse ; il ne certifie pas la géométrie du corps entier.",
+        "Articulations, plaques des avant-bras/jambes, proportions et courbe de queue adaptés depuis des plans 320×180.",
+        "VAR-035 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBoundingBox": [
+        0,
+        9,
+        1004,
+        1536
+      ]
+    },
+    {
+      "id": "cherub-collin-mech-s2",
+      "name": "Collin · Mecha D.H.O.R.K.S. S2",
+      "franchise": "Helluva Boss",
+      "kind": "machine",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": null,
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-collin-mech-s2.png",
+      "export": "public/assets/machines/infernal-versus/cherub-collin-mech-s2.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "c0b65ced71e02fda6e969303fb74f42e051b1ba0d12f8a46a0559dcc1ae57cc9",
+      "exportSha256": "79ce93d4d84326bd8fa1d322336245e18ecdfd56e7e773b0bdc775c05391e7e0",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Collin · Mecha D.H.O.R.K.S. S2",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · The Full Moon · S2E8"
+        },
+        {
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "kind": "official_licensed_merchandise",
+          "title": "Mech Suit Cherubs · official SpindleHorse enamel pin"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master c0b65ced71e02fda6e969303fb74f42e051b1ba0d12f8a46a0559dcc1ae57cc9 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Official episode storyboard frames establish the assembled body silhouette at low resolution; official licensed pin corroborates helmet and chest design only.",
+        "Neutral standing pose, tiny panel seams, proportions and unshown surfaces are an adaptation, not a 1:1 reconstruction.",
+        "Static assembled mech variant only; no new base identity, gameplay kit or animation.",
+        "Native alpha range 0–254 is preserved without synthetic opacity replacement.",
+        "Independent visual review and in-game display validation pending.",
+        "Microdétails, boutons, raccords du canon, longueur des jambes et plaques redessinés depuis les petits plans officiels.",
+        "Pin officiel confirme surtout tête/poitrine ; pose neutre et visière fermée adaptées.",
+        "VAR-036 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBoundingBox": [
+        0,
+        0,
+        1012,
+        1518
+      ]
+    },
+    {
+      "id": "cherub-keenie-mech-s2",
+      "name": "Keenie · Mecha D.H.O.R.K.S. S2",
+      "franchise": "Helluva Boss",
+      "kind": "machine",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": null,
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/machines/cherub-keenie-mech-s2.png",
+      "export": "public/assets/machines/infernal-versus/cherub-keenie-mech-s2.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "7e3ba7f34b6fbca4caeeba78d1a5f3b8ea452b9de415d4c496575fc197b844c1",
+      "exportSha256": "a99a92399a42bc9d1609d52b367a747d55e799aecc30d76ea2a4e05e1c3e50f7",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Keenie · Mecha D.H.O.R.K.S. S2",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · The Full Moon · S2E8"
+        },
+        {
+          "url": "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs",
+          "kind": "official_licensed_merchandise",
+          "title": "Mech Suit Cherubs · official SpindleHorse enamel pin"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 7e3ba7f34b6fbca4caeeba78d1a5f3b8ea452b9de415d4c496575fc197b844c1 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Official episode storyboard frames establish the assembled body silhouette at low resolution; official licensed pin corroborates helmet and chest design only.",
+        "Neutral standing pose, tiny panel seams, proportions and unshown surfaces are an adaptation, not a 1:1 reconstruction.",
+        "Static assembled mech variant only; no new base identity, gameplay kit or animation.",
+        "Native alpha range 0–254 is preserved without synthetic opacity replacement.",
+        "Independent visual review and in-game display validation pending.",
+        "Longueur/angle des pointes, hanches, genoux, gantelets et courbe de queue adaptés depuis des plans 320×180.",
+        "Palette du pin officiel plus claire que celle des scènes nocturnes ; aucune certification de nuance exacte.",
+        "VAR-037 couvert par un dessin statique du mecha ; aucun kit animé ni nouvelle identité de base.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBoundingBox": [
+        0,
+        23,
+        998,
+        1510
+      ]
+    },
+    {
+      "id": "andrealphus-ice-dragon-s2",
+      "name": "Andrealphus · Dragon de glace à une tête S2",
+      "franchise": "Helluva Boss",
+      "kind": "machine",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": null,
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/machines/andrealphus-ice-dragon-s2.png",
+      "export": "public/assets/machines/infernal-versus/andrealphus-ice-dragon-s2.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "masterSha256": "b4f82d1b3f016037701ec7649827870f88f29982e582c01e1e4fc24ae13a28da",
+      "exportSha256": "afa27511f2ed717ba6fc6e6e4edfda8bd7b30da04be9571b8c67caca07c412da",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Andrealphus · Dragon de glace à une tête S2",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=GisSNuVpbkM",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · Sinsmas · S2E12 finale"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=i3xrV1BWKNQ",
+          "kind": "official_clip_public_storyboard",
+          "title": "Blitzø Saves Stolas from Andrealphus' Ice Dragon | Helluva Boss | Clip | Prime Video"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt27860205/mediaviewer/rm381393922/",
+          "kind": "secondary_episode_screenshot_corroborated",
+          "title": "Sinsmas · complete one-headed ice dragon frame"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master b4f82d1b3f016037701ec7649827870f88f29982e582c01e1e4fc24ae13a28da dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "One-headed initial ice construction only; VAR-034 multiheaded hydra, transitions, attacks and boss phase remain undelivered.",
+        "Neck spines, fine facial crystal facets and tiny foot contours vary from source; no 1:1 certification.",
+        "The complete reference pose and all four feet are retained, with no scene or human figures included.",
+        "Native alpha is preserved without opacity repainting.",
+        "Independent visual and runtime review pending.",
+        "Épines du cou, motifs géométriques des cornes, facettes de glace et angles des pattes légèrement redessinés.",
+        "Capture IMDb corroborée par le clip Prime ; ce n’est pas un modèle de production natif.",
+        "VAR-034 seulement partielle : phase initiale à une tête, pas la phase hydre à plusieurs têtes ; construction séparée du corps d’Andrealphus.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBoundingBox": [
+        0,
+        5,
+        1512,
+        1024
+      ]
+    },
+    {
+      "id": "hz_maestro-ready",
+      "name": "Maestro",
+      "franchise": "Hazbin Hotel",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_maestro",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_maestro-ready.png",
+      "export": "public/assets/sprites/reserve/hz_maestro-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010",
+      "exportSha256": "a962d2579c2c540fa5349dff1f2b3942f9ae06dc2cf2cee8b30f5bfb3570d3cc",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Maestro, incarnation S2 visible dans Bad With Us à10s et110s ; scène primaire320×180 et ancienne découpe complète corroborée. Les détails fins et le tracé des cornes/pieds restent adaptés.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=10s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=10s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master a2a6ab24c0203aa4aa9ca1313fd837a4054c4dc0aa65e2f2c5333054b6fa3010 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Maestro, incarnation S2 visible dans Bad With Us à10s et110s ; scène primaire320×180 et ancienne découpe complète corroborée. Les détails fins et le tracé des cornes/pieds restent adaptés.",
+        "Le cadrage primaire à 110 s coupe une partie de la corne au bord gauche ; détail complet rapproché du détourage secondaire.",
+        "Contours des cornes, longueur du masque, forme de flamme, main et pieds redessinés. Un bras seulement est exposé dans cette pose.",
+        "Marge haute faible mais flamme entière ; aucun bord coupé observé.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha50": [
+        229,
+        12,
+        795,
+        1509
+      ]
+    },
+    {
+      "id": "hz_prick-ready",
+      "name": "Prick",
+      "franchise": "Hazbin Hotel",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_prick",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_prick-ready.png",
+      "export": "public/assets/sprites/reserve/hz_prick-ready.webp",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "masterSha256": "3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f",
+      "exportSha256": "3447968c395a5907375eaddb246d0e95aec8c10d1c0269a5e049e33534bb6169",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Prick, tenue western attestée en S2 Bad With Us ; catalogue initial S1, référence produite explicitementS2. Vue primaire du haut du corps et plan de groupe pour les jambes ; découpe historique complémentaire.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=70s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=70s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 3667a275f843d674737a5239f2a70f7fab1d863175cb57f5ba08540816f5288f dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Prick, tenue western attestée en S2 Bad With Us ; catalogue initial S1, référence produite explicitementS2. Vue primaire du haut du corps et plan de groupe pour les jambes ; découpe historique complémentaire.",
+        "Jambes partiellement masquées derrière Vox dans le groupe : bas du costume complété par le détourage secondaire.",
+        "Silhouette redressée et plus symétrique, bras baissés ; rapports torse/jambes, taille des manches et position des épines adaptés.",
+        "Incarnation qualifiée S2. La mention S1 du catalogue de départ ne désigne pas la portée de ce dessin.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha50": [
+        197,
+        19,
+        867,
+        1426
+      ]
+    },
+    {
+      "id": "hz_hatchet-ready",
+      "name": "Hatchet",
+      "franchise": "Hazbin Hotel",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_hatchet",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_hatchet-ready.png",
+      "export": "public/assets/sprites/reserve/hz_hatchet-ready.webp",
+      "dimensions": [
+        1145,
+        1374
+      ],
+      "masterSha256": "ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e",
+      "exportSha256": "585ece5d51ce8ed69946e5a5c0672d2bbedaf0b8ffda0f4afa290af804e17da3",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Hatchet, tenue attestée en S2 Bad With Us ; catalogue initialS1. Vue principaleS2 et découpe historique complète, sans accessoire ajouté ; silhouette fine redessinée.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=72s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=72s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=1USxshmIk_A&t=110s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master ac7bf54c5cca3cab71b4669fa6d37be9c985920acfc86463680817ca5353ce9e dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Hatchet, tenue attestée en S2 Bad With Us ; catalogue initialS1. Vue principaleS2 et découpe historique complète, sans accessoire ajouté ; silhouette fine redessinée.",
+        "Gros plan et plan de groupe primaires petits ou masqués ; proportions des membres et les petits traits sont complétés par le détourage historique.",
+        "Pose neutre sans la batte du portrait, contours des cheveux/pointes et courbe de queue redessinés.",
+        "Incarnation qualifiée S2 ; aucune portée S1 ni animation déduite du catalogue historique.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha50": [
+        301,
+        21,
+        969,
+        1352
+      ]
+    },
+    {
+      "id": "hb_arick_burnz-ready",
+      "name": "Arick “Burnie” Burnz",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_arick_burnz",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_arick_burnz-ready.png",
+      "export": "public/assets/sprites/reserve/hb_arick_burnz-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "d4935cce338b7b19b7586709f474bd916ae0ddb92db41b5d2195cd12889d944e",
+      "exportSha256": "30cd61ae2c6b269f2ada5b4bfc2a17976d46abccedb7e18da095413baaef6eda",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Mammon special board10 cell3 at920s establishes head, glasses and light-green T-shirt; cell5 at940s shows full narrow body, trousers, feet and tail on a round venue display. Historical cutout supports the frontal still and proportions. No combat kit.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=rRymSi8SmqA"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master d4935cce338b7b19b7586709f474bd916ae0ddb92db41b5d2195cd12889d944e dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La vue primaire complète est petite et de dos ; face, doigts et proportion des pieds complétés par le détourage historique.",
+        "Teinte du tee-shirt, courbe des cornes et du visage redessinées ; pas de certification de nuance ou de tracé exact.",
+        "Official Mammon special board10 cell3 at920s establishes head, glasses and light-green T-shirt; cell5 at940s shows full narrow body, trousers, feet and tail on a round venue display. Historical cutout supports the frontal still and proportions. No combat kit.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        294,
+        41,
+        974,
+        1270
+      ]
+    },
+    {
+      "id": "hb_rita-ready",
+      "name": "Rita",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_rita",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_rita-ready.png",
+      "export": "public/assets/sprites/reserve/hb_rita-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "739fcc4609f2c955e3b07935b7aa091bb23ef474e7160f6eeeb03a07bf21d957",
+      "exportSha256": "4b01860b28b17fb50150c3b41bb362f2745720420ab0199715bf107b1f9c3b69",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Ghostf**kers board2 cell3 at200s shows Rita close-up; cell8 at250s shows full character beside I.M.P desk. Primary full-body appearance is small; historical cutout used for four-arm anatomy and fine outfit details. Colors normalized to cutout from scene lighting.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 739fcc4609f2c955e3b07935b7aa091bb23ef474e7160f6eeeb03a07bf21d957 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Coiffure et queue plus saturées bleu/vert que le détourage historique ; le plan primaire est lui-même éclairé en vert. Palette exacte non certifiée.",
+        "Corps entier minuscule dans la source primaire : forme des quatre bras, doigts et accessoires fins complétée par le détourage.",
+        "Official Ghostf**kers board2 cell3 at200s shows Rita close-up; cell8 at250s shows full character beside I.M.P desk. Primary full-body appearance is small; historical cutout used for four-arm anatomy and fine outfit details. Colors normalized to cutout from scene lighting.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        192,
+        34,
+        1010,
+        1279
+      ]
+    },
+    {
+      "id": "hb_bethany_ghostfucker-ready",
+      "name": "Bethany",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_bethany_ghostfucker",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_bethany_ghostfucker-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bethany_ghostfucker-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "e9a79ab1f5f765dfda1ca7b73d3da9241db9a6812dc878407623420ed3a17e36",
+      "exportSha256": "4b008b2662faef998f6a0d79937ed4429604e5392ebd799173129ffbf00eea78",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Ghostf**kers board1 cell4 at120s displays Bethany's full figure on Blitzo's television, corroborating witch hat, braid, short dress, patterned leggings and boots. Historical cutout clarifies the TV image's desaturated colors. Fictional TV character still, no action or combat kit.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master e9a79ab1f5f765dfda1ca7b73d3da9241db9a6812dc878407623420ed3a17e36 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Palette restaurée d’après le détourage historique ; la source primaire de télévision ne prouve pas des couleurs exactes.",
+        "Courbes du chapeau, tresse, empreintes et proportions des jambes redessinées ; pose statique du personnage fictif de télévision.",
+        "Official Ghostf**kers board1 cell4 at120s displays Bethany's full figure on Blitzo's television, corroborating witch hat, braid, short dress, patterned leggings and boots. Historical cutout clarifies the TV image's desaturated colors. Fictional TV character still, no action or combat kit.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        178,
+        36,
+        774,
+        1500
+      ]
+    },
+    {
+      "id": "hb_jesse-ready",
+      "name": "Jesse",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_jesse",
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/base/hb_jesse-ready.png",
+      "export": "public/assets/sprites/reserve/hb_jesse-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "05c98622926c0971494bf0f8a6951eb9dea79f88aaac6fcedafc2db901f3bcf6",
+      "exportSha256": "74d8004ca7c88809eac8adfbdd30dee56d3996a997898ac6ded93aca02558517",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Targeted correction of extra arm, restoring original cutout pose. Same source incarnation as attempt1, Ozzie's official board3 cells4–5 at300–310s. First draft excluded from runtime.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=8zyGQquL8VM",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=8zyGQquL8VM"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 05c98622926c0971494bf0f8a6951eb9dea79f88aaac6fcedafc2db901f3bcf6 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Rapports de hauteur des jambes, taille de l’aile, expression et courbe de queue redessinés.",
+        "La revue accepte uniquement le master final corrigé ; le brouillon signalé à trois bras n’appartient pas à la livraison.",
+        "Targeted correction of extra arm, restoring original cutout pose. Same source incarnation as attempt1, Ozzie's official board3 cells4–5 at300–310s. First draft excluded from runtime.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        172,
+        73,
+        957,
+        1481
+      ]
+    },
+    {
+      "id": "hb_millie_past_ponytail-ready",
+      "name": "Millie — passé, queue de cheval",
+      "franchise": "Helluva Boss",
+      "kind": "costume_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_millie",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_millie_past_ponytail-ready.png",
+      "export": "public/assets/sprites/reserve/hb_millie_past_ponytail-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "6604845ef0663316163df3224886f9f6a7c6a97b314593d2930c37dfbe38326f",
+      "exportSha256": "099bd0a8b3fbf46b203cd1dc649ffae9b5aa3641bac6f451e42ad7b8262d76d4",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "VAR-020. Official Ghostf**kers public storyboards: board10 cell1 at900s whole silhouette; cells2/4 at910/930s head/torso; board9 cell5 at850s lower costume and tail. Parent independently confirmed reasonable static qualification. No HD model; small/occluded portions reconstructed from complementary320×180 frames, not exact1:1.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 6604845ef0663316163df3224886f9f6a7c6a97b314593d2930c37dfbe38326f dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Pose neutre recomposée depuis des plans d’action 320×180 ; longueur de la chevelure, franges, coutures et chaussures interprétées.",
+        "Incarnation du passé montrée en S2 ; VAR-020 statique uniquement, sans nouvelle base identitaire ni cycle animé.",
+        "VAR-020. Official Ghostf**kers public storyboards: board10 cell1 at900s whole silhouette; cells2/4 at910/930s head/torso; board9 cell5 at850s lower costume and tail. Parent independently confirmed reasonable static qualification. No HD model; small/occluded portions reconstructed from complementary320×180 frames, not exact1:1.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        109,
+        12,
+        822,
+        1525
+      ]
+    },
+    {
+      "id": "hb_loona_quadruped-ready",
+      "name": "Loona — forme quadrupède",
+      "franchise": "Helluva Boss",
+      "kind": "costume_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_loona",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_loona_quadruped-ready.png",
+      "export": "public/assets/sprites/reserve/hb_loona_quadruped-ready.webp",
+      "dimensions": [
+        1921,
+        819
+      ],
+      "masterSha256": "81ede70bf3b3b37a0cb039aceff68645919b2fa1fe991858643f613340c46af4",
+      "exportSha256": "8fec28d6dc027f5a1ace69405038c5ef54ba10d6bd386492131f765a568a4df3",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "VAR-022. Official Sinsmas board12 cells6/9 at1130/1160s show transformed body/tail and frontal head/legs; native static pose reconstruction from these complementary320×180 views. Parent independently confirmed qualification. No HD model; portions obscured by mane or perspective reconstructed; no1:1 certification, no rig/animation.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=GisSNuVpbkM",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · Sinsmas · S2E12 finale"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 81ede70bf3b3b37a0cb039aceff68645919b2fa1fe991858643f613340c46af4 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "La pose de profil au repos est recomposée depuis des vues en mouvement ; proportions des pattes, doigts, placement des mèches et courbe de queue ne sont pas certifiés.",
+        "VAR-022 couvert par une illustration statique seulement ; aucun rig, transition de transformation ou animation.",
+        "VAR-022. Official Sinsmas board12 cells6/9 at1130/1160s show transformed body/tail and frontal head/legs; native static pose reconstruction from these complementary320×180 views. Parent independently confirmed qualification. No HD model; portions obscured by mane or perspective reconstructed; no1:1 certification, no rig/animation.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        217,
+        12,
+        1785,
+        807
+      ]
+    },
+    {
+      "id": "hz_huskette_cat-ready",
+      "name": "Huskette féline",
+      "franchise": "Hazbin Hotel",
+      "kind": "support_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_huskette_cat",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_huskette_cat-ready.png",
+      "export": "public/assets/sprites/reserve/hz_huskette_cat-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12",
+      "exportSha256": "e2da3b5d8240161baadb4d9d35e916cb628e2fa1ec7410f335a22a5109f4efe6",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master b8a2d23e1bef95e80c4f204d52f37fa4c0332a41b428543b4dd4674ab85f0d12 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+        "Gestes dansés remplacés par une pose debout ; hauteur des jambes, courbes des pieds, petits boutons et bijou abdominal redessinés.",
+        "Plans officiels natifs 320×180 ; le détourage historique précise les petits motifs mais sa provenance initiale n’est pas recertifiée.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha50": [
+        150,
+        35,
+        737,
+        1517
+      ]
+    },
+    {
+      "id": "hz_huskette_imp-ready",
+      "name": "Huskette imp",
+      "franchise": "Hazbin Hotel",
+      "kind": "support_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hz_huskette_imp",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hz_huskette_imp-ready.png",
+      "export": "public/assets/sprites/reserve/hz_huskette_imp-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6",
+      "exportSha256": "69dca25715d86b8bbeb192a4fe6194a7bd8a9df569bf31e792aa455179ad4b72",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Tenue de service du Magic Kat dans Love In A Bottle, S2.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=74s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=pR2HHbBrvbA&t=72s"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master e67ce25af99e6f40711f84e229439bf6b07e925cabb48b7a0f3fd81d304d79c6 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Plans officiels Prime de Love In A Bottle à72s/74s : tête/tenue et silhouette entière ; découpe historique complémentaire. Les gestes de danse sont adaptés en présentation statique, détails fins limités par les plans natifs320×180.",
+        "Pose dansée remplacée par une station symétrique ; proportions de la coiffure et des jambes, forme des doigts et contours des ornements adaptés.",
+        "Plans officiels natifs 320×180 ; détails de costume complétés par le détourage historique concordant. Aucun rig ni animation de danse.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha50": [
+        131,
+        37,
+        775,
+        1504
+      ]
+    },
+    {
+      "id": "hb_karen_client-ready",
+      "name": "Karen — cliente de Sinsmas",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_karen_client",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_karen_client-ready.png",
+      "export": "public/assets/sprites/reserve/hb_karen_client-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a4668c5864df09593d0b714552d7fa23dd76d129f7da0b74565ec66bde3283ba",
+      "exportSha256": "ba931b7cdb8feea5ca50cfa3a1e662c0c2254fef0f6b8571620a5509f8fe5175",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Sinsmas public storyboard board8 cell1 at720s establishes the full client from hair/horns to both black shoes; cells2/3 show face and blouse. Historic cutout agrees with primary episode. Narrative NPC static only; no new animation or kit.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=GisSNuVpbkM",
+          "kind": "official_episode_public_storyboard",
+          "title": "HELLUVA BOSS · Sinsmas · S2E12 finale"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master a4668c5864df09593d0b714552d7fa23dd76d129f7da0b74565ec66bde3283ba dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Longueur et courbure des cornes, forme de la coiffure, proportions des jambes et doigts adaptés ; correspondance exacte non certifiée.",
+        "Pose de présentation recomposée depuis le plan de dialogue et le détourage historique ; personnage narratif statique sans kit de combat.",
+        "Official Sinsmas public storyboard board8 cell1 at720s establishes the full client from hair/horns to both black shoes; cells2/3 show face and blouse. Historic cutout agrees with primary episode. Narrative NPC static only; no new animation or kit.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        248,
+        13,
+        768,
+        1523
+      ]
+    },
+    {
+      "id": "hb_kendra-ready",
+      "name": "Kendra",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_kendra",
+      "sourceTimelineScope": "specials",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_kendra-ready.png",
+      "export": "public/assets/sprites/reserve/hb_kendra-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "ddea4cb2ccab7b59d91fb5de44363902b3db9ae96b0904a10c0fd8b753e8db6c",
+      "exportSha256": "54b52fdce406f0f1b47191facda055e83b5cf049353aa8b01c2a2885149085e5",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Official Barbie's Bad Day board5 cells7/8 at255/260s establish Kendra's full silhouette and boots; cell9 at265s shows upper body. Official SharkRobot Barbie/Kendra pin supplies clear palette, bandana, mesh top and shorts detail. Old hb_kendra.png actually depicts Barbie Wire and was deliberately excluded. Lower details rely on small320×180 frames; static reconstruction is not certified1:1.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=PyICIy6fkDo"
+        },
+        {
+          "url": "https://sharkrobot.com/collections/helluva-boss",
+          "kind": "supporting_reference",
+          "title": "https://sharkrobot.com/collections/helluva-boss"
+        },
+        {
+          "url": "https://sharkrobot.com/cdn/shop/files/BarbieKendraPin2.png?height=666&v=1777319206",
+          "kind": "supporting_reference",
+          "title": "https://sharkrobot.com/cdn/shop/files/BarbieKendraPin2.png?height=666&v=1777319206"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master ddea4cb2ccab7b59d91fb5de44363902b3db9ae96b0904a10c0fd8b753e8db6c dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "L’ancien portrait hb_kendra.png représente Barbie Wire et a été exclu ; le pin officiel et les plans complets de Kendra sont les références retenues.",
+        "Palette résolue par le produit officiel ; teinte et texture du haut, nombre de petites marques et proportions des bottes interprétés depuis les petites vues de l’épisode.",
+        "Marge haute très réduite mais foulard complet ; pose et expression recomposées depuis les deux sources.",
+        "Official Barbie's Bad Day board5 cells7/8 at255/260s establish Kendra's full silhouette and boots; cell9 at265s shows upper body. Official SharkRobot Barbie/Kendra pin supplies clear palette, bandana, mesh top and shorts detail. Old hb_kendra.png actually depicts Barbie Wire and was deliberately excluded. Lower details rely on small320×180 frames; static reconstruction is not certified1:1.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        188,
+        7,
+        843,
+        1525
+      ]
+    },
+    {
+      "id": "hb_hellhound_adoption_lady-ready",
+      "name": "Responsable du refuge des hellhounds",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_hellhound_adoption_lady",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_hellhound_adoption_lady-ready.png",
+      "export": "public/assets/sprites/reserve/hb_hellhound_adoption_lady-ready.webp",
+      "dimensions": [
+        1142,
+        1378
+      ],
+      "masterSha256": "6945a7d34cbaf131164cd814f6fc3dbb1710e2a3f67db45a2ca8e3295dfacd33",
+      "exportSha256": "cb03d9a0a667a7f36fa4d5e056505616838c15ad2ccadf8af6e36bf8632bd7a2",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Seeing Stars official public storyboard board9 cell4 at840s shows the complete adult refuge attendant next to Blitz; cells5/6 show face and dress. Historical cutout used only after primary silhouette correspondence. Narrative NPC static only; no combat kit or animation.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 6945a7d34cbaf131164cd814f6fc3dbb1710e2a3f67db45a2ca8e3295dfacd33 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Courbe du museau, volume du corps, plis et espacement des perles redessinés ; nombre de détails fins non certifié.",
+        "Un bras est masqué par le corps dans cette vue ; aucun objet tenu. Illustration narrative statique seulement.",
+        "Seeing Stars official public storyboard board9 cell4 at840s shows the complete adult refuge attendant next to Blitz; cells5/6 show face and dress. Historical cutout used only after primary silhouette correspondence. Narrative NPC static only; no combat kit or animation.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        216,
+        51,
+        894,
+        1319
+      ]
+    },
+    {
+      "id": "hb_uggie-ready",
+      "name": "Uggie",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_uggie",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_uggie-ready.png",
+      "export": "public/assets/sprites/reserve/hb_uggie-ready.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "1c421fa1d6ad0c83d74279f783fb7bf81bdfd3c72178c075b46f804761d10213",
+      "exportSha256": "27417dee4ea29b16a25dc6c4d7516f052e3464c058edcfdcea90d5e36732cbe6",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Seeing Stars official storyboard board9 cell2 at820s shows the full pug on the set floor, cell9 at890s the eyes/muzzle/collar. Same incarnation verified against historic cutout. Static narrative animal/companion only; no combat kit.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 1c421fa1d6ad0c83d74279f783fb7bf81bdfd3c72178c075b46f804761d10213 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Rapports de taille de la tête et du corps, courbes des babines, détails des yeux et des pattes adaptés depuis le détourage corroboré.",
+        "Animal narratif statique ; aucun kit de combat, animation ou comportement ajouté.",
+        "Seeing Stars official storyboard board9 cell2 at820s shows the full pug on the set floor, cell9 at890s the eyes/muzzle/collar. Same incarnation verified against historic cutout. Static narrative animal/companion only; no combat kit.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        120,
+        48,
+        1135,
+        1206
+      ]
+    },
+    {
+      "id": "hb_marthas_son-ready",
+      "name": "Fils de Martha",
+      "franchise": "Helluva Boss",
+      "kind": "character_base",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_marthas_son",
+      "sourceTimelineScope": "season_1",
+      "spoilerScope": "season_1",
+      "master": "art/infernal-versus/masters/base/hb_marthas_son-ready.png",
+      "export": "public/assets/sprites/reserve/hb_marthas_son-ready.webp",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "masterSha256": "2fd732c242d5fcae2de7f131c5e7479fd0c911d329a4a76326a5fdf37acc75c1",
+      "exportSha256": "079590d781d692124055d89080943e7a213a33949e4b86d9ce9bc5b20e1c91e7",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "reference": "Murder Family official board4 cell2 at185s shows the full child from cap to both green-brown boots, in rear three-quarter view; historic cutout supplies the corresponding front. Narrative gallery only, no combat kit, no weapon, no animation. Front facial linework remains an adaptation from the historical cutout.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=el_PChGfJN8"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master 2fd732c242d5fcae2de7f131c5e7479fd0c911d329a4a76326a5fdf37acc75c1 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "Le visage de face, les petites taches et les doigts proviennent du détourage historique ; la source primaire examinée montre surtout le dos.",
+        "Proportions de la tête, plis, mèches du bonnet et détails des bottes redessinés. Base narrative en galerie uniquement ; aucun kit de combat ni animation.",
+        "Murder Family official board4 cell2 at185s shows the full child from cap to both green-brown boots, in rear three-quarter view; historic cutout supplies the corresponding front. Narrative gallery only, no combat kit, no weapon, no animation. Front facial linework remains an adaptation from the historical cutout.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        216,
+        29,
+        1002,
+        1279
+      ]
+    },
+    {
+      "id": "hb_loona_shelter_archive-ready",
+      "name": "Loona — archive du refuge",
+      "franchise": "Helluva Boss",
+      "kind": "narrative_archive",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_loona",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_loona_shelter_archive-ready.png",
+      "export": "public/assets/sprites/reserve/hb_loona_shelter_archive-ready.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "masterSha256": "a192515cf99d5764be7d872ee09a0f4258b91d2c7ffaa0a75d19b28619efc144",
+      "exportSha256": "d19a024fd174aaa36558ad8747e1daf52ce40923263824aea6af1a472ed413f7",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "frameCoverage": "bust",
+      "reference": "VAR-023 explicitly requests a narrative/portrait archive. Seeing Stars official board9 cell7 at870s establishes only Loona's head, clothing and folded upper-body pose in the refuge. A bust is therefore produced, with no invented lower body, no default identity base, and no combat kit. One320×180 source frame; no HD model or1:1 certification. Independent review: top of hair is outside the original frame and was reconstructed; represented bust complete, not a complete full-body subject.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=4J0xFUyz1nw",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=4J0xFUyz1nw"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master a192515cf99d5764be7d872ee09a0f4258b91d2c7ffaa0a75d19b28619efc144 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "VAR-023 livré en buste narratif seulement : aucun bassin, jambe, pied, corps entier autonome ou kit de combat livré.",
+        "Le contour supérieur de la chevelure, partiellement hors champ dans la petite source, est reconstitué ; tracé et couleur exacte non certifiés.",
+        "Expressions, motifs de manches et proportions du buste adaptés depuis une seule vue sombre 320×180.",
+        "VAR-023 explicitly requests a narrative/portrait archive. Seeing Stars official board9 cell7 at870s establishes only Loona's head, clothing and folded upper-body pose in the refuge. A bust is therefore produced, with no invented lower body, no default identity base, and no combat kit. One320×180 source frame; no HD model or1:1 certification. Independent review: top of hair is outside the original frame and was reconstructed; represented bust complete, not a complete full-body subject.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        174,
+        8,
+        1230,
+        1191
+      ]
+    },
+    {
+      "id": "hb_fizzarolli_before_accident-ready",
+      "name": "Fizzarolli — archive avant l’accident",
+      "franchise": "Helluva Boss",
+      "kind": "narrative_archive",
+      "pose": "ready",
+      "runtimeStatus": "reserve",
+      "sourceIdentityId": "hb_fizzarolli",
+      "sourceTimelineScope": "season_2",
+      "spoilerScope": "season_2",
+      "master": "art/infernal-versus/masters/base/hb_fizzarolli_before_accident-ready.png",
+      "export": "public/assets/sprites/reserve/hb_fizzarolli_before_accident-ready.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "fca21607b6b1ce7f20c9cfc38b3300d015365fc26dea519284954c7cec20d1c0",
+      "exportSha256": "ae836e5779cdbc36a21fbd83ccfc1322e00ff0a10326ba59c97d351c30f978af",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "batchId": "static-v7-2026-11-26",
+      "animationCycles": 0,
+      "frameCoverage": "full_body",
+      "reference": "VAR-031. Mammon official opening flashback: board1 cell6 at140s shows full young Fizz before the accident; board2 cells1/2/5/9 at180/190/220/260s provide face, shirt, long unbroken horns and natural limbs. Specific Mammon-fan outfit retained; no retroactive prostheses. Narrative gallery only; no new default identity base or combat kit. Details reconstructed from320×180 views; no1:1 certification.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+          "kind": "official_episode_or_clip",
+          "title": "https://www.youtube.com/watch?v=rRymSi8SmqA"
+        }
+      ],
+      "intendedRole": "Illustration statique dans la galerie de réserve ; aucun kit jouable ni cycle ajouté.",
+      "visualReview": "Comparaison indépendante du master fca21607b6b1ce7f20c9cfc38b3300d015365fc26dea519284954c7cec20d1c0 dans docs/standalone/production-v7/reviews-v7.json.",
+      "fidelityNotes": [
+        "VAR-031 livré comme archive narrative de cette tenue précise du flashback ; aucun nouveau kit ni nouvelle identité de base.",
+        "Pose reposée recomposée depuis les plans ; couleurs résolues malgré l’éclairage vert, proportions des cornes, doigts et chaussures adaptées.",
+        "Les petits motifs et contours fins de la référence 320×180 ne permettent pas de certification 1:1.",
+        "VAR-031. Mammon official opening flashback: board1 cell6 at140s shows full young Fizz before the accident; board2 cells1/2/5/9 at180/190/220/260s provide face, shirt, long unbroken horns and natural limbs. Specific Mammon-fan outfit retained; no retroactive prostheses. Narrative gallery only; no new default identity base or combat kit. Details reconstructed from320×180 views; no1:1 certification.",
+        "Pose ou présentation statique adaptée ; conformité artistique 1:1 non certifiée.",
+        "WebP sans perte identique aux pixels RGBA du master ; cette égalité technique ne mesure pas la fidélité au modèle."
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        130,
+        28,
+        784,
+        1499
       ]
     }
   ]
