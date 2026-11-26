@@ -1,0 +1,2824 @@
+.arena-page {
+  width: min(100%, 1480px);
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+.arena-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: -24px -24px 22px;
+  padding: 36px 32px 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(212, 175, 55, 0.14), transparent 30%),
+    linear-gradient(120deg, rgba(96, 9, 21, 0.78), rgba(18, 10, 13, 0.96) 65%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.34);
+}
+
+.arena-hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 360px;
+  height: 360px;
+  right: -95px;
+  bottom: -255px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(168, 32, 42, 0.08), 0 0 0 70px rgba(212, 175, 55, 0.04);
+}
+
+.arena-hero h1 {
+  margin: 4px 0 6px;
+  padding: 0;
+  border: 0;
+  color: #fff6df;
+  font-size: clamp(2rem, 4vw, 3.65rem);
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.arena-hero p {
+  max-width: 720px;
+  color: #d5c9ca;
+  font-size: 0.94rem;
+}
+
+.arena-kicker,
+.arena-status span,
+.arena-section-heading > div > span,
+.arena-fighter__slot {
+  color: var(--color-gold);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.arena-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.arena-status {
+  min-width: 185px;
+  padding: 13px 16px;
+  background: rgba(8, 5, 6, 0.58);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.arena-status span,
+.arena-status strong {
+  display: block;
+}
+
+.arena-status strong {
+  margin-top: 3px;
+  color: var(--color-text-main);
+  font-family: var(--font-title);
+}
+
+.arena-lore-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  color: #f4df9a;
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: var(--radius-md);
+}
+
+.arena-lore-notice svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.arena-lore-notice h2 {
+  margin-bottom: 2px;
+  color: var(--color-gold);
+  font-size: 0.88rem;
+}
+
+.arena-lore-notice p {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.arena-selection-screen {
+  min-height: 560px;
+  padding: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.24);
+}
+
+.arena-stage-picker {
+  min-height: 530px;
+  padding: clamp(12px, 2vw, 22px);
+}
+
+.arena-stage-picker__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.arena-stage-picker__header > div > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gold);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.arena-stage-picker__header h2 {
+  margin-top: 3px;
+  color: #fff4d1;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.arena-stage-picker__header p {
+  max-width: 520px;
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  text-align: right;
+}
+
+.arena-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.arena-stage-choice {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  min-height: 154px;
+  padding: 12px;
+  overflow: hidden;
+  color: var(--color-text-main);
+  background-color: var(--arena-stage-shadow, #260910);
+  background-image:
+    linear-gradient(180deg, rgba(8, 4, 7, 0.1), rgba(8, 4, 7, 0.93)),
+    var(--arena-stage-art, none),
+    linear-gradient(135deg, var(--arena-stage-shadow, #260910), var(--arena-stage-floor, #18090d));
+  background-position: center, var(--arena-stage-position, center), center;
+  background-repeat: no-repeat;
+  background-size: auto, cover, auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 -42px 70px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.arena-stage-choice::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 55%, color-mix(in srgb, var(--arena-stage-accent, #d4af37) 17%, transparent));
+  pointer-events: none;
+}
+
+.arena-stage-choice:hover {
+  border-color: color-mix(in srgb, var(--arena-stage-accent, #d4af37) 72%, white);
+  transform: translateY(-2px);
+}
+
+.arena-stage-choice:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--arena-stage-accent, #d4af37) 68%, transparent);
+  outline-offset: 2px;
+}
+
+.arena-stage-choice.is-selected {
+  border-color: var(--arena-stage-accent, var(--color-gold));
+  box-shadow:
+    inset 0 -42px 70px rgba(0, 0, 0, 0.32),
+    0 0 0 2px color-mix(in srgb, var(--arena-stage-accent, #d4af37) 34%, transparent),
+    0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.arena-stage-choice__district {
+  align-self: flex-start;
+  padding: 4px 7px;
+  color: #fff6df;
+  background: rgba(6, 3, 5, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arena-stage-choice__copy {
+  align-self: flex-end;
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.arena-stage-choice__copy strong {
+  color: #fff6df;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  text-shadow: 0 2px 10px #000;
+}
+
+.arena-stage-choice__copy small {
+  overflow: hidden;
+  color: #d9ccce;
+  font-size: 0.65rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  text-shadow: 0 2px 8px #000;
+}
+
+.arena-stage-lore-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 10px;
+  color: var(--color-text-muted);
+  font-size: 0.66rem;
+  line-height: 1.45;
+}
+
+.arena-stage-lore-note svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--color-gold);
+}
+
+.arena-stage-lore-note strong {
+  color: #f3dda0;
+}
+
+.arena-soundtrack-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 11px 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: var(--radius-sm);
+}
+
+.arena-soundtrack-option > svg {
+  color: var(--color-gold);
+}
+
+.arena-soundtrack-option strong,
+.arena-soundtrack-option span {
+  display: block;
+}
+
+.arena-soundtrack-option strong {
+  color: #fff4d1;
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+}
+
+.arena-soundtrack-option div > span {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+}
+
+.arena-soundtrack-option label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 9px;
+  color: var(--color-text-main);
+  background: rgba(168, 32, 42, 0.18);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.66rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.arena-soundtrack-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+
+.arena-stage-launch-row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.arena-stage-launch-row > div {
+  min-width: 0;
+  text-align: center;
+}
+
+.arena-stage-launch-row strong,
+.arena-stage-launch-row span {
+  display: block;
+}
+
+.arena-stage-launch-row strong {
+  overflow: hidden;
+  color: #fff4d1;
+  font-family: var(--font-title);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-stage-launch-row span {
+  margin-top: 3px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+.arena-stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(14px, 3vw, 42px);
+  min-height: 560px;
+  padding: 28px clamp(18px, 4vw, 52px);
+  overflow: hidden;
+  background-color: var(--arena-stage-shadow, #160b0e);
+  background-image:
+    linear-gradient(180deg, rgba(10, 6, 8, 0.36), rgba(10, 6, 8, 0.94)),
+    radial-gradient(ellipse at center bottom, rgba(181, 27, 44, 0.36), transparent 58%),
+    var(--arena-stage-art, none),
+    linear-gradient(90deg, var(--arena-stage-shadow, #160b0e), var(--arena-stage-floor, #311017) 50%, var(--arena-stage-shadow, #160b0e));
+  background-position: center, center, var(--arena-stage-position, center), center;
+  background-repeat: no-repeat;
+  background-size: auto, auto, cover, auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.54);
+}
+
+.arena-stage::before,
+.arena-stage::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  right: -8%;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 50%;
+}
+
+.arena-stage::before {
+  height: 180px;
+  bottom: -115px;
+  box-shadow: 0 -18px 75px rgba(168, 32, 42, 0.15);
+}
+
+.arena-stage::after {
+  height: 90px;
+  bottom: -55px;
+}
+
+.arena-stage__glow {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(transparent, rgba(212, 175, 55, 0.2), transparent);
+  box-shadow: 0 0 80px 30px rgba(168, 32, 42, 0.14);
+}
+
+.arena-fighter {
+  min-width: 0;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(28, 17, 19, 0.65), rgba(12, 8, 9, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.arena-fighter__slot {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.arena-fighter__portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(190px, 22vw, 270px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(212, 175, 55, 0.16), transparent 42%),
+    linear-gradient(135deg, rgba(168, 32, 42, 0.12), rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(168, 32, 42, 0.5);
+  border-radius: var(--radius-sm);
+}
+
+.arena-fighter__portrait > span {
+  color: rgba(212, 175, 55, 0.22);
+  font-family: var(--font-title);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+}
+
+.arena-fighter__portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.58));
+}
+
+.arena-fighter > label {
+  display: block;
+  margin: 12px 0 5px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arena-fighter select {
+  width: 100%;
+}
+
+.arena-fighter__identity {
+  margin-top: 13px;
+}
+
+.arena-fighter__identity h2 {
+  overflow: hidden;
+  color: #fff4d1;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-fighter__identity p {
+  overflow: hidden;
+  color: var(--color-gold);
+  font-size: 0.76rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-fighter__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.arena-fighter__facts div,
+.arena-fighter__moves {
+  min-width: 0;
+  padding: 7px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 3px;
+}
+
+.arena-fighter__facts dt {
+  color: var(--color-text-muted);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arena-fighter__facts dd,
+.arena-fighter__moves span,
+.arena-fighter__moves strong {
+  overflow: hidden;
+  color: var(--color-text-main);
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-fighter__moves {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.arena-fighter__moves strong {
+  color: #ffd86f;
+}
+
+.arena-kit-evidence {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  margin-top: 7px;
+  padding: 3px 7px;
+  color: #d8cda9;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 999px;
+  font-size: 0.56rem;
+  letter-spacing: 0.04em;
+}
+
+.arena-kit-evidence.is-simulation {
+  color: #cfc4dc;
+  background: rgba(142, 63, 255, 0.08);
+  border-color: rgba(142, 63, 255, 0.24);
+}
+
+.arena-threat-meter {
+  height: 5px;
+  margin-top: 11px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.arena-threat-meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold-dark), var(--color-primary-hover));
+}
+
+.arena-combat-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 10px;
+  margin-top: 10px;
+}
+
+.arena-combat-stats div,
+.arena-combat-stats dd {
+  min-width: 0;
+}
+
+.arena-combat-stats dt {
+  color: var(--color-text-muted);
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.arena-combat-stats dd {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 22px;
+  gap: 6px;
+}
+
+.arena-combat-stats dd > span {
+  height: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.arena-combat-stats i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #8e3fff, #ffd86f);
+}
+
+.arena-combat-stats strong {
+  color: #fff4d1;
+  font-size: 0.62rem;
+  text-align: right;
+}
+
+.arena-roster-picker {
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.24);
+}
+
+.arena-roster-picker__header {
+  display: grid;
+  align-items: end;
+  grid-template-columns: minmax(210px, 1fr) auto minmax(210px, 0.72fr);
+  gap: 12px;
+}
+
+.arena-roster-picker__header > div:first-child > span {
+  color: var(--color-gold);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.arena-roster-picker__header h2 {
+  margin-top: 2px;
+  color: #fff4d1;
+  font-size: 1rem;
+}
+
+.arena-roster-picker__slots {
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+}
+
+.arena-roster-picker__slots button {
+  min-height: 34px;
+  max-width: 180px;
+  overflow: hidden;
+  padding: 6px 10px;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.arena-roster-picker__slots button.is-active {
+  color: #fff4d1;
+  background: rgba(168, 32, 42, 0.34);
+  border-color: rgba(212, 175, 55, 0.38);
+}
+
+.arena-roster-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 0 10px;
+  color: var(--color-gold);
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.arena-roster-search:focus-within {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.14);
+}
+
+.arena-roster-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 0;
+  color: var(--color-text-main);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 0.72rem;
+}
+
+.arena-mini-roster {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.arena-roster-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  color: #fff4d1;
+  background: rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.arena-roster-tile img {
+  position: absolute;
+  inset: 2px 2px 13px;
+  width: calc(100% - 4px);
+  height: calc(100% - 15px);
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.arena-roster-tile > span {
+  color: rgba(212, 175, 55, 0.35);
+  font-family: var(--font-title);
+  font-size: 1rem;
+}
+
+.arena-roster-tile small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 2px 3px;
+  color: #fff4d1;
+  background: rgba(8, 5, 6, 0.78);
+  font-size: 0.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-roster-tile.is-selected {
+  border-color: var(--color-gold);
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.45), 0 0 16px rgba(212, 175, 55, 0.2);
+}
+
+.arena-roster-tile:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1);
+  opacity: 0.35;
+}
+
+.arena-roster-empty {
+  grid-column: 1 / -1;
+  padding: 18px;
+  color: var(--color-text-muted);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.arena-roster-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.arena-roster-pagination .btn {
+  min-width: 34px;
+  min-height: 32px;
+  padding: 5px;
+}
+
+.arena-roster-pagination span {
+  min-width: 100px;
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.arena-versus {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 8vw, 92px);
+  aspect-ratio: 1;
+  color: #fff4d1;
+  background: radial-gradient(circle, var(--color-primary) 0 48%, #5a111b 50% 64%, transparent 66%);
+  font-family: var(--font-title);
+  font-size: clamp(1.15rem, 2.5vw, 2rem);
+  font-weight: 800;
+  text-shadow: 0 2px 5px #000;
+  filter: drop-shadow(0 0 15px rgba(201, 44, 56, 0.55));
+}
+
+.arena-action-row {
+  position: sticky;
+  z-index: 8;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 14px 0 26px;
+  padding: 14px 16px;
+  background: rgba(20, 13, 14, 0.94);
+  border: 1px solid rgba(168, 32, 42, 0.44);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(14px);
+}
+
+.arena-action-row strong,
+.arena-action-row span {
+  display: block;
+}
+
+.arena-action-row strong {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+}
+
+.arena-action-row span {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+}
+
+.arena-match-options {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.arena-match-options label {
+  display: grid;
+  gap: 4px;
+  min-width: 142px;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.arena-match-options select {
+  min-height: 36px;
+  padding-block: 6px;
+  font-size: 0.72rem;
+  text-transform: none;
+}
+
+.arena-fight-panel {
+  min-height: 650px;
+  margin-bottom: 26px;
+  padding: clamp(14px, 2vw, 22px);
+  background:
+    radial-gradient(circle at 50% 0, rgba(168, 32, 42, 0.16), transparent 40%),
+    rgba(12, 8, 9, 0.96);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.54);
+}
+
+.arena-fight-panel__top,
+.arena-hud {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.arena-fight-panel__top {
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 14px;
+}
+
+.arena-fight-panel h2 {
+  color: #fff4d1;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+.arena-live-kicker {
+  color: var(--color-gold);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.arena-round-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.arena-round-counter strong {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  aspect-ratio: 1;
+  color: #fff4d1;
+  background: rgba(168, 32, 42, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-radius: 50%;
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+}
+
+.arena-fight-toolbar,
+.arena-fight-actions {
+  display: flex;
+  align-items: center;
+}
+
+.arena-fight-toolbar {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.arena-fight-actions {
+  gap: 7px;
+}
+
+.arena-fight-actions .btn {
+  min-height: 36px;
+  padding: 7px 12px;
+  font-size: 0.68rem;
+}
+
+.arena-soundtrack-toggle {
+  gap: 5px;
+}
+
+.arena-soundtrack-toggle[aria-pressed='true'] {
+  color: #fff4d1;
+  border-color: rgba(212, 175, 55, 0.52);
+  box-shadow: inset 0 0 18px rgba(212, 175, 55, 0.08);
+}
+
+.arena-hud {
+  margin-bottom: 12px;
+}
+
+.arena-hud > div {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+}
+
+.arena-hud__fighter.is-p2 {
+  text-align: right;
+}
+
+.arena-hud strong,
+.arena-hud small {
+  display: block;
+}
+
+.arena-hud strong {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+}
+
+.arena-round-wins {
+  display: flex;
+  gap: 5px;
+  min-height: 11px;
+  margin-top: 3px;
+}
+
+.arena-round-wins.is-p2 {
+  justify-content: flex-end;
+}
+
+.arena-round-wins i {
+  display: block;
+  width: 19px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+.arena-round-wins i.is-earned {
+  background: linear-gradient(90deg, #d4af37, #ff596f);
+  border-color: rgba(255, 216, 111, 0.7);
+  box-shadow: 0 0 9px rgba(212, 175, 55, 0.42);
+}
+
+.arena-hud small {
+  margin-top: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+.arena-hud .arena-combo-count {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 216, 111, 0.65);
+  border-radius: 6px;
+  background: rgba(45, 10, 28, 0.88);
+  color: #ffe4a0;
+  font-family: var(--font-title);
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.055em;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  animation: arena-combo-appear 180ms ease-out both;
+}
+
+.arena-hud__fighter.is-p2 .arena-combo-count {
+  margin-left: auto;
+}
+
+@keyframes arena-combo-appear {
+  from { opacity: 0; transform: translateY(5px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.arena-health {
+  display: block;
+  height: 12px;
+  margin-top: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+}
+
+.arena-health > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #26d07c, #ffd86f);
+  transition: width 160ms ease;
+}
+
+.arena-health.is-p2 > span {
+  margin-left: auto;
+  background: linear-gradient(90deg, #ffd86f, #ff5971);
+}
+
+.arena-tension {
+  display: block;
+  height: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.arena-tension > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #8e3fff, #f2c94c);
+  box-shadow: 0 0 10px rgba(142, 63, 255, 0.5);
+}
+
+.arena-tension.is-p2 > span {
+  margin-left: auto;
+  background: linear-gradient(90deg, #f2c94c, #ff4f86);
+}
+
+.arena-combat-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(330px, 42vw, 520px);
+  overflow: hidden;
+  outline: none;
+  touch-action: none;
+  user-select: none;
+  overscroll-behavior: contain;
+  background-color: var(--arena-stage-shadow, #251016);
+  background-image:
+    linear-gradient(180deg, rgba(7, 3, 5, 0.18), rgba(7, 3, 5, 0.52) 58%, rgba(7, 3, 5, 0.86) 100%),
+    radial-gradient(circle at 15% 18%, rgba(255, 70, 108, 0.13), transparent 22%),
+    radial-gradient(circle at 85% 14%, rgba(212, 175, 55, 0.11), transparent 24%),
+    radial-gradient(ellipse at center bottom, rgba(212, 175, 55, 0.18), transparent 45%),
+    var(--arena-stage-art, none),
+    linear-gradient(180deg, var(--arena-stage-shadow, #251016) 0 58%, var(--arena-stage-floor, #13090c) 58% 100%);
+  background-position:
+    center,
+    center,
+    center,
+    center,
+    var(--arena-stage-position, center),
+    center;
+  background-repeat: no-repeat;
+  background-size: auto, auto, auto, auto, cover, auto;
+  border: 1px solid rgba(168, 32, 42, 0.45);
+  border-radius: var(--radius-sm);
+}
+
+.arena-combat-stage:focus-visible {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.24), 0 0 42px rgba(168, 32, 42, 0.24);
+}
+
+.arena-fight-state {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  color: #fff4d1;
+  background: radial-gradient(circle, rgba(5, 3, 4, 0.26), rgba(5, 3, 4, 0.62));
+  text-align: center;
+  text-shadow: 0 4px 18px #000;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.arena-fight-state strong {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 10vw, 6.5rem);
+  letter-spacing: 0.08em;
+}
+
+.arena-fight-state span {
+  color: #f0dca5;
+  font-size: clamp(0.62rem, 1.5vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.arena-fight-state.is-fight strong {
+  color: #ffd86f;
+  animation: arena-countdown-strike 450ms cubic-bezier(0.18, 0.86, 0.3, 1) both;
+}
+
+.arena-fight-state.is-paused {
+  background: rgba(5, 3, 4, 0.78);
+}
+
+.arena-cinematic-overlay {
+  position: absolute;
+  z-index: 4;
+  top: 7%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  width: min(86%, 760px);
+  padding: 10px 18px;
+  color: #fff4d1;
+  background:
+    linear-gradient(90deg, transparent, rgba(9, 5, 7, 0.9) 14% 86%, transparent);
+  text-align: center;
+  text-shadow: 0 3px 14px #000;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: arena-cinematic-title-in 360ms ease-out both;
+}
+
+.arena-cinematic-overlay > span,
+.arena-cinematic-overlay > small {
+  color: var(--color-gold);
+  font-size: clamp(0.56rem, 1.4vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.arena-cinematic-overlay > strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 22px);
+  max-width: 100%;
+  margin: 3px 0;
+  font-family: var(--font-title);
+  font-size: clamp(1.05rem, 3vw, 2.15rem);
+}
+
+.arena-cinematic-overlay b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-cinematic-overlay i {
+  color: #ff596f;
+  font-size: 0.72em;
+  font-style: normal;
+}
+
+.arena-cinematic-overlay.is-victory > strong {
+  color: #ffd86f;
+}
+
+.arena-cinematic-overlay.is-draw > strong {
+  color: #d8c7ff;
+}
+
+.arena-crowd-lights {
+  position: absolute;
+  inset: 0 0 42%;
+  opacity: 0.42;
+  background:
+    radial-gradient(circle at 12% 48%, #ff476b 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 22%, #d4af37 0 2px, transparent 3px),
+    radial-gradient(circle at 47% 36%, #ff476b 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 19%, #d4af37 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 46%, #ff476b 0 2px, transparent 3px);
+  background-size: 145px 86px;
+  filter: blur(0.4px) drop-shadow(0 0 8px rgba(255, 89, 113, 0.7));
+}
+
+.arena-lane-grid {
+  position: absolute;
+  inset: 58% -8% -18%;
+  transform: perspective(380px) rotateX(58deg);
+  background:
+    linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.arena-stage-spectators {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.arena-stage-spectator {
+  position: absolute;
+  left: var(--arena-spectator-x);
+  bottom: var(--arena-spectator-bottom);
+  width: clamp(82px, 12vw, 154px);
+  aspect-ratio: 1;
+  transform: translate3d(-50%, 0, 0) scale(var(--arena-spectator-scale, 1));
+  transform-origin: center bottom;
+  transition: left 90ms linear;
+  animation: arena-spectator-support 2100ms ease-in-out infinite alternate;
+  will-change: left, transform, translate;
+}
+
+.arena-stage-spectator.is-far {
+  z-index: 0;
+  opacity: 0.5;
+  filter: saturate(0.72) brightness(0.68) blur(0.35px);
+}
+
+.arena-stage-spectator.is-mid {
+  z-index: 1;
+  opacity: 0.72;
+  filter: saturate(0.82) brightness(0.78);
+}
+
+.arena-stage-spectator__sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: 0% var(--arena-spectator-row);
+  background-repeat: no-repeat;
+  background-size: 600% 400%;
+  filter: drop-shadow(0 10px 9px rgba(0, 0, 0, 0.55));
+  transform: scaleX(var(--arena-spectator-facing, 1));
+  animation: arena-spectator-idle-frames 940ms steps(1, end) infinite;
+}
+
+/* Scenery preferences are independent of fighter animations and combat rules. */
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator,
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator {
+  animation: none;
+  transition: none;
+  will-change: auto;
+}
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator__sprite {
+  animation-duration: 1880ms;
+}
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator__sprite {
+  animation: none;
+  background-position-x: 0%;
+}
+.arena-combat-stage:is([data-stage-presentation="reduced"], [data-stage-presentation="static"]) :is(.arena-stage__glow, .arena-crowd-lights) {
+  animation: none;
+  transition: none;
+}
+
+.arena-combatant {
+  --arena-facing-scale: 1;
+  position: absolute;
+  z-index: 2;
+  left: var(--arena-x);
+  bottom: 9%;
+  width: clamp(168px, 25vw, 310px);
+  height: min(78%, 360px);
+  transform: translate3d(-50%, 0, 0);
+  transform-origin: center bottom;
+  will-change: left, transform;
+}
+
+.arena-combatant img,
+.arena-sprite-frame,
+.arena-combatant strong {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+  transform: translateX(-50%);
+}
+
+.arena-combatant[data-facing="left"] {
+  --arena-facing-scale: -1;
+}
+
+.arena-combatant img,
+.arena-combatant .arena-sprite-frame {
+  transform: translateX(-50%) scaleX(var(--arena-facing-scale));
+}
+
+.arena-sprite-frame {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 600% 400%;
+  image-rendering: auto;
+}
+
+.arena-combatant strong {
+  display: grid;
+  place-items: center;
+  color: rgba(212, 175, 55, 0.35);
+  font-family: var(--font-title);
+  font-size: 3rem;
+}
+
+.arena-fighter-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 58%;
+  height: 11%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.58), transparent 68%);
+  transform: translateX(-50%);
+}
+
+.arena-action-trail {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 24%;
+  width: 52%;
+  height: 42%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 216, 111, 0.5), transparent);
+  border-radius: 50%;
+  filter: blur(7px);
+  transform: translateX(-50%) skewX(-12deg);
+  pointer-events: none;
+}
+
+.arena-combatant.is-heavy .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(255, 174, 79, 0.72), transparent);
+  filter: blur(9px);
+}
+
+.arena-combatant.is-special .arena-action-trail {
+  background: linear-gradient(90deg, transparent, rgba(180, 93, 255, 0.78), rgba(255, 216, 111, 0.42), transparent);
+  filter: blur(11px);
+}
+
+.arena-hit-spark {
+  position: absolute;
+  z-index: 4;
+  top: 42%;
+  left: 76%;
+  width: 34%;
+  aspect-ratio: 1;
+  background:
+    linear-gradient(45deg, transparent 42%, #fff5c3 43% 56%, transparent 57%),
+    linear-gradient(-45deg, transparent 42%, #ff596f 43% 56%, transparent 57%);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px #ffca55);
+  animation: arena-hit-spark 220ms steps(3, end) both;
+  pointer-events: none;
+}
+
+/* A weapon-like slash reads differently from a magical burst. */
+/* Gameplay style themes are visual adaptations, not canon power claims. */
+.arena-hit-spark.is-arcane:not(.is-guard) {
+  box-shadow: 0 0 14px 5px rgba(172, 102, 255, 0.32);
+}
+
+.arena-hit-spark.is-guard {
+  background:
+    radial-gradient(circle, transparent 28%, rgba(122, 210, 255, 0.95) 31% 39%, transparent 43%),
+    linear-gradient(90deg, transparent 46%, rgba(184, 230, 255, 0.85) 49% 51%, transparent 54%);
+  filter: drop-shadow(0 0 9px rgba(122, 210, 255, 0.65));
+}
+
+.arena-hit-spark.is-heavy {
+  background:
+    linear-gradient(35deg, transparent 39%, #fff0b0 40% 52%, transparent 53%),
+    linear-gradient(-35deg, transparent 39%, #ff9a4a 40% 52%, transparent 53%);
+}
+
+.arena-hit-spark.is-special {
+  background:
+    radial-gradient(circle, #fff3cc 0 12%, #b96aff 18% 36%, transparent 65%),
+    conic-gradient(from 20deg, transparent, #f6c35d, transparent, #a35aff, transparent);
+  filter: drop-shadow(0 0 13px rgba(184, 106, 255, 0.8));
+}
+
+.arena-combatant.is-hit .arena-hit-spark:not(.is-guard):not(.is-special) {
+  filter: drop-shadow(0 0 12px #ffca55) brightness(1.2);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-hit-spark,
+.arena-combat-stage[data-phase="outro"] .arena-hit-spark {
+  display: none;
+}
+
+.arena-combatant.is-two .arena-hit-spark {
+  right: 76%;
+  left: auto;
+}
+
+.arena-combat-stage.is-hitstop .arena-combatant,
+.arena-combat-stage.is-hitstop .arena-sprite-frame,
+.arena-combat-stage.is-hitstop .arena-combatant img,
+.arena-combat-stage.is-hitstop .arena-stage-spectator,
+.arena-combat-stage.is-hitstop .arena-stage-spectator__sprite {
+  animation-play-state: paused;
+}
+
+.arena-combat-stage[data-phase="paused"] .arena-combatant,
+.arena-combat-stage[data-phase="paused"] .arena-sprite-frame,
+.arena-combat-stage[data-phase="paused"] .arena-combatant img,
+.arena-combat-stage[data-phase="paused"] .arena-action-trail,
+.arena-combat-stage[data-phase="paused"] .arena-hit-spark,
+.arena-combat-stage[data-phase="paused"] .arena-stage-spectator,
+.arena-combat-stage[data-phase="paused"] .arena-stage-spectator__sprite {
+  animation-play-state: paused !important;
+}
+
+.arena-combatant.is-guard .arena-sprite-frame,
+.arena-combatant.is-guard img {
+  filter: drop-shadow(0 0 18px rgba(120, 185, 255, 0.7)) drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+}
+
+.arena-combatant.is-special .arena-sprite-frame,
+.arena-combatant.is-special img {
+  filter: drop-shadow(0 0 24px rgba(255, 214, 91, 0.9)) drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+}
+
+.arena-combatant[data-animation-bank="offense"][data-pose-column="1"] .arena-action-trail,
+.arena-combatant[data-animation-bank="offense"][data-pose-column="4"] .arena-action-trail,
+.arena-combatant[data-animation-bank="base"][data-pose-column="4"] .arena-action-trail {
+  animation: arena-trail-flash 260ms ease-out;
+}
+
+.arena-combatant.is-hit {
+  animation: arena-hit-shake 180ms steps(2, end);
+}
+
+.arena-combatant.is-jump {
+  z-index: 3;
+  animation: arena-jump-arc var(--arena-action-ms, 680ms) cubic-bezier(0.3, 0.02, 0.34, 1);
+}
+
+.arena-combatant.is-jump .arena-fighter-shadow {
+  animation: arena-jump-shadow var(--arena-action-ms, 680ms) ease-in-out;
+}
+
+.arena-combatant.is-crouch .arena-fighter-shadow {
+  width: 48%;
+  opacity: 0.78;
+}
+
+.arena-combatant.is-taunt .arena-sprite-frame,
+.arena-combatant.is-taunt img {
+  filter:
+    drop-shadow(0 0 14px rgba(255, 89, 113, 0.48))
+    drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+}
+
+.arena-combatant.is-one.is-light {
+  animation: arena-lunge-one-light var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-one.is-heavy {
+  animation: arena-lunge-one-heavy var(--arena-action-ms, 460ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-one.is-special {
+  animation: arena-lunge-one-special var(--arena-action-ms, 700ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-two.is-light {
+  animation: arena-lunge-two-light var(--arena-action-ms, 340ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-two.is-heavy {
+  animation: arena-lunge-two-heavy var(--arena-action-ms, 460ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-two.is-special {
+  animation: arena-lunge-two-special var(--arena-action-ms, 700ms) cubic-bezier(0.2, 0.86, 0.24, 1);
+}
+
+.arena-combatant.is-heavy {
+  animation-duration: var(--arena-action-ms, 460ms);
+}
+
+.arena-combatant.is-special {
+  animation-duration: var(--arena-action-ms, 700ms);
+}
+
+.arena-combatant.is-idle:not([data-animation-bank="movement"]) .arena-sprite-frame,
+.arena-combatant.is-idle img {
+  animation: arena-idle-breathe 1600ms ease-in-out infinite alternate;
+}
+
+.arena-combatant.is-walk:not([data-animation-bank="movement"]) .arena-sprite-frame,
+.arena-combatant.is-walk img {
+  animation: arena-walk-bob 420ms ease-in-out infinite alternate;
+}
+
+.arena-combatant.is-victory {
+  animation: arena-victory-pulse 900ms ease-in-out infinite alternate;
+}
+
+/* Keep result poses legible while preserving the existing sprite animations. */
+.arena-combatant.is-victory .arena-sprite-frame,
+.arena-combatant.is-victory img {
+  filter: drop-shadow(0 0 15px rgba(255, 216, 111, 0.55));
+}
+
+.arena-combatant.is-ko .arena-sprite-frame,
+.arena-combatant.is-ko img {
+  filter: grayscale(0.55) brightness(0.82);
+}
+
+.arena-combat-stage[data-phase="results"] .arena-combatant {
+  animation-play-state: paused;
+}
+
+.arena-combatant.is-cinematic .arena-guard-badge {
+  display: none;
+}
+
+.arena-combatant.is-cinematic .arena-sprite-frame {
+  filter:
+    drop-shadow(0 0 12px rgba(255, 216, 111, 0.18))
+    drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+}
+
+.arena-combatant.is-cinematic.is-draw .arena-sprite-frame {
+  filter:
+    saturate(0.88)
+    drop-shadow(0 18px 16px rgba(0, 0, 0, 0.62));
+}
+
+.arena-combatant.is-ko {
+  opacity: 0.55;
+  filter: grayscale(0.75);
+  transform: translate3d(-50%, 10px, 0) rotate(4deg);
+}
+
+.arena-guard-badge {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 3px 7px;
+  color: #fff4d1;
+  background: rgba(8, 5, 6, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-radius: 999px;
+  font-size: 0.6rem;
+  text-overflow: ellipsis;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.arena-ko {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: #fff4d1;
+  background: rgba(5, 3, 4, 0.58);
+  font-family: var(--font-title);
+  text-align: center;
+  text-shadow: 0 4px 18px #000;
+  text-transform: uppercase;
+}
+
+.arena-ko strong {
+  font-size: clamp(2rem, 8vw, 5rem);
+}
+
+.arena-ko span {
+  color: #f0dca5;
+  font-family: var(--font-body);
+  font-size: clamp(0.62rem, 1.5vw, 0.82rem);
+  letter-spacing: 0.05em;
+}
+
+.arena-touch-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.arena-touch-controls.is-solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.arena-touch-controls__player {
+  min-width: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.arena-touch-controls__player.is-two {
+  border-color: rgba(255, 89, 113, 0.25);
+}
+
+.arena-touch-controls__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.arena-touch-controls__header strong {
+  overflow: hidden;
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arena-touch-controls__header span {
+  color: var(--color-text-muted);
+  font-size: 0.56rem;
+  text-align: right;
+}
+
+.arena-touch-controls__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.arena-touch-button {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  min-width: 44px;
+  min-height: 52px;
+  padding: 5px 3px;
+  color: #fff4d1;
+  background: linear-gradient(180deg, rgba(63, 38, 44, 0.94), rgba(24, 14, 17, 0.98));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.arena-touch-button.is-held {
+  touch-action: none;
+}
+
+.arena-touch-button.is-attack {
+  color: #ffe5e9;
+  touch-action: manipulation;
+  background: linear-gradient(180deg, rgba(132, 25, 43, 0.9), rgba(54, 12, 21, 0.98));
+  border-color: rgba(255, 89, 113, 0.4);
+}
+
+.arena-touch-button.is-pose {
+  color: #fff0b8;
+  touch-action: manipulation;
+  background: linear-gradient(180deg, rgba(90, 48, 114, 0.92), rgba(31, 16, 45, 0.98));
+  border-color: rgba(203, 139, 255, 0.44);
+}
+
+.arena-touch-button > span {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.arena-touch-button small {
+  overflow: hidden;
+  max-width: 100%;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.arena-touch-button[aria-pressed='true'],
+.arena-touch-button:active {
+  color: #19080c;
+  background: linear-gradient(180deg, #ffe08a, #d4af37);
+  border-color: #fff1b5;
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.32);
+  transform: translateY(1px);
+}
+
+.arena-touch-button:focus-visible {
+  outline: 2px solid #fff4d1;
+  outline-offset: 2px;
+}
+
+.arena-touch-button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+  opacity: 0.42;
+}
+
+.arena-live-instructions {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.82fr) minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.arena-keymap,
+.arena-live-instructions > p {
+  min-width: 0;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+}
+
+.arena-keymap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arena-keymap.is-p2 {
+  text-align: right;
+}
+
+.arena-keymap strong {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.76rem;
+}
+
+.arena-keymap span,
+.arena-live-instructions > p {
+  color: var(--color-text-muted);
+  font-size: 0.66rem;
+}
+
+.arena-live-instructions > p {
+  display: grid;
+  place-items: center;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.arena-live-instructions small {
+  display: block;
+  margin-top: 4px;
+  color: #bdaeb0;
+  font-size: 0.6rem;
+}
+
+.arena-live-instructions kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  min-height: 20px;
+  padding: 1px 5px;
+  color: #fff4d1;
+  background: linear-gradient(180deg, #3a2529, #1c1114);
+  border: 1px solid rgba(212, 175, 55, 0.34);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+.arena-live-event {
+  min-height: 34px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  color: #f3dda0;
+  background: rgba(168, 32, 42, 0.14);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 3px;
+  font-size: 0.74rem;
+}
+
+.arena-combat-log {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  list-style: none;
+}
+
+.arena-combat-log li {
+  padding: 8px 10px;
+  color: var(--color-text-muted);
+  background: rgba(0, 0, 0, 0.18);
+  border-left: 3px solid rgba(212, 175, 55, 0.36);
+  border-radius: 3px;
+  font-size: 0.74rem;
+}
+
+@keyframes arena-lunge-one-light {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-one-heavy {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-one-special {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% - 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% + 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-light {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-heavy {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-lunge-two-special {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  24% { transform: translate3d(calc(-50% + 7px), 1px, 0) scale(0.99); }
+  56% { transform: translate3d(calc(-50% - 22px), -4px, 0) scale(1.035); }
+}
+
+@keyframes arena-hit-shake {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  35% { transform: translate3d(calc(-50% - 6px), 2px, 0); }
+  70% { transform: translate3d(calc(-50% + 5px), -1px, 0); }
+}
+
+@keyframes arena-jump-arc {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  18% { transform: translate3d(-50%, -22px, 0) scale(0.99); }
+  48% { transform: translate3d(-50%, -96px, 0) scale(1.02); }
+  72% { transform: translate3d(-50%, -58px, 0) scale(1.01); }
+  90% { transform: translate3d(-50%, 5px, 0) scale(0.985); }
+}
+
+@keyframes arena-jump-shadow {
+  0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+  48% { opacity: 0.34; transform: translateX(-50%) scale(0.58); }
+}
+
+@keyframes arena-victory-pulse {
+  from { filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.15)); }
+  to { filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.62)); }
+}
+
+@keyframes arena-idle-breathe {
+  from { transform: translateX(-50%) scaleX(var(--arena-facing-scale)) translateY(0) scaleY(1); }
+  to { transform: translateX(-50%) scaleX(var(--arena-facing-scale)) translateY(-4px) scaleY(1.012); }
+}
+
+@keyframes arena-walk-bob {
+  from { transform: translateX(-50%) scaleX(var(--arena-facing-scale)) translateY(1px) rotate(-0.6deg); }
+  to { transform: translateX(-50%) scaleX(var(--arena-facing-scale)) translateY(-5px) rotate(0.6deg); }
+}
+
+@keyframes arena-trail-flash {
+  0% { opacity: 0; transform: translateX(-62%) scaleX(0.65) skewX(-12deg); }
+  45% { opacity: 0.82; transform: translateX(-50%) scaleX(1.08) skewX(-12deg); }
+  100% { opacity: 0; transform: translateX(-38%) scaleX(1.35) skewX(-12deg); }
+}
+
+@keyframes arena-hit-spark {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.25) rotate(0); }
+  35% { opacity: 1; transform: translate(-50%, -50%) scale(1.12) rotate(18deg); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.6) rotate(35deg); }
+}
+
+@keyframes arena-countdown-strike {
+  from { opacity: 0; transform: scale(1.45); }
+  45% { opacity: 1; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes arena-cinematic-title-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .arena-mini-roster {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .arena-stage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .arena-roster-picker__header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arena-roster-picker__header > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .arena-stage {
+    min-height: 560px;
+    padding-inline: 18px;
+  }
+
+  .arena-fighter__facts,
+  .arena-fighter__moves {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 860px) {
+  .arena-hero {
+    margin: -18px -18px 22px;
+  }
+
+  .arena-live-instructions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arena-live-instructions > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .arena-hero,
+  .arena-action-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .arena-action-row {
+    position: static;
+  }
+
+  .arena-status {
+    min-width: 0;
+  }
+
+  .arena-stage,
+  .arena-fight-panel__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-stage {
+    align-items: stretch;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .arena-roster-picker__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-stage-picker__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .arena-stage-picker__header p {
+    text-align: left;
+  }
+
+  .arena-stage-launch-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-roster-picker__header > div:first-child {
+    grid-column: auto;
+  }
+
+  .arena-roster-picker__slots button {
+    flex: 1;
+    max-width: none;
+  }
+
+  .arena-mini-roster {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .arena-versus {
+    justify-self: center;
+    width: 58px;
+  }
+
+  .arena-fighter__portrait {
+    height: 180px;
+  }
+
+  .arena-fighter__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .arena-fighter__moves {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arena-action-row .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .arena-match-options {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .arena-match-options label {
+    min-width: 0;
+  }
+
+  .arena-soundtrack-option {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .arena-soundtrack-option label {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .arena-round-counter {
+    justify-content: space-between;
+  }
+
+  .arena-fight-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .arena-fight-actions {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .arena-fight-actions .btn {
+    flex: 1 1 120px;
+    min-width: 0;
+  }
+
+  .arena-combatant {
+    width: clamp(124px, 38vw, 190px);
+  }
+
+  .arena-stage-spectator {
+    width: clamp(68px, 18vw, 116px);
+  }
+
+  .arena-fight-panel {
+    min-height: 560px;
+  }
+
+  .arena-combat-stage {
+    min-height: clamp(300px, 72vw, 430px);
+  }
+
+  .arena-touch-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-live-instructions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-live-instructions > p {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .arena-keymap.is-p2,
+  .arena-hud__fighter.is-p2 {
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+  .arena-fighter__facts,
+  .arena-fighter__moves {
+    grid-template-columns: 1fr;
+  }
+
+  .arena-mini-roster {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .arena-stage-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arena-stage-choice {
+    min-height: 132px;
+  }
+
+  .arena-touch-controls__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .arena-touch-controls__header span {
+    text-align: left;
+  }
+
+  .arena-touch-controls__grid {
+    grid-template-columns: repeat(3, minmax(44px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .arena-hero {
+    margin: -14px -14px 22px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .arena-combat-stage {
+    min-height: 62svh;
+  }
+
+  .arena-combatant {
+    width: clamp(104px, 20vw, 190px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arena-stage-spectator,
+  .arena-stage-spectator__sprite,
+  .arena-combatant,
+  .arena-combatant.is-hit,
+  .arena-combatant.is-jump,
+  .arena-combatant.is-taunt,
+  .arena-combatant.is-one.is-light,
+  .arena-combatant.is-one.is-heavy,
+  .arena-combatant.is-one.is-special,
+  .arena-combatant.is-two.is-light,
+  .arena-combatant.is-two.is-heavy,
+  .arena-combatant.is-two.is-special,
+  .arena-combatant.is-victory,
+  .arena-combatant.is-idle .arena-sprite-frame,
+  .arena-combatant.is-idle img,
+  .arena-combatant.is-walk .arena-sprite-frame,
+  .arena-combatant.is-walk img,
+  .arena-action-trail,
+  .arena-hit-spark,
+  .arena-health > span,
+  .arena-tension > span,
+  .arena-combo-count {
+    animation: none;
+    transition: none;
+  }
+}
+
+@keyframes arena-spectator-support {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes arena-spectator-idle-frames {
+  0%,
+  48%,
+  100% {
+    background-position: 0% var(--arena-spectator-row);
+  }
+  50%,
+  98% {
+    background-position: 20% var(--arena-spectator-row);
+  }
+}
+
+/* Three illustrated layers follow the midpoint between the fighters. */
+.infernal-room-plane, .infernal-desk-plane, .infernal-near-plane {
+  position: absolute;
+  pointer-events: none;
+}
+.infernal-room-plane {
+  inset: -1% -3%;
+  background-position: center 58%;
+  background-size: cover;
+  filter: brightness(.83);
+}
+.infernal-desk-plane { width: 33%; left: 69%; bottom: 16%; }
+.infernal-near-plane { z-index: 3; width: 23%; top: 1%; left: -4%; }
+.arena-combat-stage:is([data-stage="imp-reception"],[data-stage="ozzies-cabaret"],[data-stage="hotel-lobby"],[data-stage="hotel-bar"],[data-stage="cannibal-town-square"],[data-stage="carmine-industries"],[data-stage="wrath-ranch"],[data-stage="heaven-court"],[data-stage="pentious-workshop"],[data-stage="looloo-land"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
+.arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-desk-plane { width: 28%; left: 1%; bottom: 17%; }
+.arena-combat-stage[data-stage="ozzies-cabaret"] .infernal-near-plane {
+  width: auto;
+  height: 83%;
+  max-width: 24%;
+  object-fit: contain;
+  object-position: right top;
+  top: -3%;
+  right: -5%;
+  left: auto;
+}
+
+.arena-combat-stage[data-stage="vee-broadcast-studio"] .infernal-desk-plane {
+  width: auto; height: 37%; right: 5%; left: auto; bottom: 23%;
+}
+.arena-combat-stage[data-stage="vee-broadcast-studio"] .infernal-near-plane {
+  width: auto; height: 25%; left: 1%; top: -3%;
+}
+
+.arena-combat-stage[data-stage="hotel-lobby"] .infernal-desk-plane {
+  width: auto; height: 42%; right: -1%; left: auto; bottom: 14%;
+}
+.arena-combat-stage[data-stage="hotel-lobby"] .infernal-near-plane {
+  width: 38%; height: auto; left: -3%; top: -10%;
+}
+.arena-combat-stage[data-stage="hotel-bar"] .infernal-desk-plane {
+  width: auto; height: 29%; left: 80%; bottom: 13%;
+}
+.arena-combat-stage[data-stage="hotel-bar"] .infernal-near-plane {
+  width: auto; height: 33%; left: 6%; top: -3%;
+}
+.arena-combat-stage[data-stage="cannibal-town-square"] .infernal-near-plane {
+  width: auto; height: 28%; max-width: 40%; left: -3%; top: -3%;
+  object-fit: contain; object-position: left top;
+}
+.arena-combat-stage[data-stage="cannibal-town-square"] .infernal-desk-plane {
+  width: auto; height: 39%; right: 2%; left: auto; bottom: 17%;
+}
+.arena-combat-stage[data-stage="hotel-exterior"] .infernal-desk-plane {
+  width: auto; height: 32%; right: 2%; left: auto; bottom: 16%;
+}
+.arena-combat-stage[data-stage="hotel-exterior"] .infernal-near-plane {
+  width: auto; height: 37%; left: 1%; top: -4%;
+}
+.arena-combat-stage[data-stage="pentagram-rooftops"] .infernal-desk-plane {
+  width: auto; height: 28%; right: 2%; left: auto; bottom: 19%;
+}
+.arena-combat-stage[data-stage="pentagram-rooftops"] .infernal-near-plane {
+  width: auto; height: 37%; left: -2%; top: auto; bottom: -5%;
+}
+.arena-combat-stage[data-stage="heaven-embassy"] .infernal-desk-plane {
+  width: 29%; right: 1%; left: auto; bottom: 19%;
+}
+.arena-combat-stage[data-stage="heaven-embassy"] .infernal-near-plane {
+  width: auto; height: 34%; left: 1%; top: -5%;
+}
+.arena-combat-stage:is([data-stage="hotel-exterior"],[data-stage="pentagram-rooftops"],[data-stage="heaven-embassy"]) :is(.arena-lane-grid,.arena-crowd-lights) { display: none; }
+.arena-combat-stage[data-stage="wrath-ranch"] .infernal-desk-plane {
+  width: 24%; left: 1%; bottom: 14%;
+}
+.arena-combat-stage[data-stage="wrath-ranch"] .infernal-near-plane {
+  width: 72%; left: 20%; top: -5%;
+}
+.arena-combat-stage[data-stage="heaven-court"] .infernal-desk-plane {
+  width: auto; height: 39%; left: 3%; bottom: 15%;
+}
+.arena-combat-stage[data-stage="heaven-court"] .infernal-near-plane {
+  width: auto; height: 35%; right: -1%; left: auto; top: -4%;
+}
+.arena-combat-stage[data-stage="pentious-workshop"] .infernal-desk-plane {
+  width: 34%; right: 1%; left: auto; bottom: 18%;
+}
+.arena-combat-stage[data-stage="pentious-workshop"] .infernal-near-plane {
+  width: auto; height: 48%; left: 1%; top: -10%;
+}
+.arena-combat-stage[data-stage="looloo-land"] .infernal-desk-plane {
+  width: auto; height: 51%; left: -1%; bottom: 15%;
+}
+.arena-combat-stage[data-stage="looloo-land"] .infernal-near-plane {
+  width: 72%; left: 19%; top: -5%;
+}
+/* These props have transparent square canvases; place their visible bases on
+   the rear floor (middle) or near floor (stool), not at the canvas edge. */
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) .infernal-desk-plane {
+  z-index: 1;
+  width: auto;
+  object-fit: contain;
+  object-position: left bottom;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-desk-plane {
+  height: 40%; max-width: 34%; left: clamp(20px, 5%, 60px); bottom: 13%;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-near-plane {
+  width: auto; height: 50%; max-width: 28%;
+  right: clamp(26px, 4%, 60px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-desk-plane {
+  height: 54%; max-width: 32%; left: 0; bottom: 18%;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-near-plane {
+  width: auto; height: 36%; max-width: 22%;
+  right: clamp(32px, 5%, 72px); left: auto; top: auto; bottom: -1%;
+  object-fit: contain; object-position: right bottom;
+}
+.arena-combat-stage[data-stage="carmine-industries"] .infernal-desk-plane {
+  width: auto; height: 44%; left: 1%; bottom: 14%;
+}
+.arena-combat-stage[data-stage="carmine-industries"] .infernal-near-plane {
+  width: 25%; right: -3%; left: auto; top: auto; bottom: -1%;
+}
+
+/* Wave C props keep their full square alpha canvases and natural aspect ratio.
+   Edge margins account for up to 25.675px (middle) / 47.4px (near) of
+   horizontal parallax; the visible silhouettes stay inside at 300px width. */
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-room-plane {
+  background-position: center 65%;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-desk-plane {
+  z-index: 1;
+  width: clamp(100px, 27%, 250px); height: auto;
+  left: clamp(12px, 2%, 32px); right: auto; top: auto; bottom: 14%;
+  object-fit: contain; object-position: left bottom;
+}
+.arena-combat-stage[data-stage="dhorks"] .infernal-near-plane {
+  width: clamp(85px, 21%, 230px); height: auto;
+  right: clamp(48px, 4%, 64px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="crimson-mansion"] .infernal-near-plane {
+  width: clamp(90px, 22%, 220px); height: auto;
+  right: clamp(24px, 3%, 48px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+.arena-combat-stage[data-stage="mammon-show"] .infernal-near-plane {
+  width: clamp(130px, 30%, 300px); height: auto;
+  right: clamp(0px, 1%, 16px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+
+/* Wave D preserves complete room art with contain and a bottom anchor.
+   Wide arenas have tinted side bands; narrow arenas may have a top band.
+   Room padding reserves 10px per side for its 7.9px parallax maximum.
+   Props keep their full square alpha canvases. Their independent vertical
+   translate compensates transparent padding without replacing parallax.
+   Margins include the 25.675px middle / 47.4px near horizontal extremes. */
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  height: auto;
+  top: auto;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-desk-plane {
+  z-index: 1;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-desk-plane {
+  width: clamp(90px, 20%, 210px);
+  left: clamp(18px, 18%, 220px); right: auto; bottom: 14%;
+  translate: 0 26%;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(48px, 5%, 72px); left: auto; bottom: 4px;
+  translate: 0 34%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-desk-plane {
+  width: clamp(100px, 24%, 230px);
+  left: clamp(20px, 18%, 220px); right: auto; bottom: 26%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(46px, 4%, 64px); left: auto; bottom: 4px;
+  translate: 0 28.3%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-desk-plane {
+  width: clamp(60px, 20%, 170px);
+  right: clamp(48px, 17%, 204px); left: auto; bottom: 14%;
+  translate: 0 9.5%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  left: clamp(40px, 4%, 64px); right: auto; bottom: 4px;
+  translate: 0 26.5%;
+}
+
+/* Waves F, G, H and the V7 three-layer stages keep the complete master visible.
+   Props share its contained bounds,
+   including transparent canvas margins; scenery stays behind the fighters. */
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+  --infernal-contained-stage-height: clamp(330px, 42vw, 520px);
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  display: none;
+  z-index: 1;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+/* The complete master remains the fallback without container query units.
+   Enhanced layers become visible only with the shared image coordinate frame. */
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+  width: clamp(84px, 19%, 190px);
+  left: clamp(20px, 4%, 52px); right: auto; top: auto; bottom: clamp(52px, 10vw, 160px);
+}
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+  width: clamp(80px, 17%, 160px);
+  right: clamp(48px, 6%, 80px); left: auto; top: auto; bottom: clamp(42px, 8vw, 130px);
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+  width: clamp(90px, 22%, 205px);
+  left: clamp(22px, 4%, 56px); right: auto; top: auto; bottom: 13%;
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+  width: clamp(92px, 23%, 220px);
+  right: clamp(46px, 5%, 76px); left: auto; top: auto; bottom: 0;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+  width: clamp(108px, 25%, 250px);
+  left: clamp(24px, 5%, 64px); right: auto; top: auto; bottom: 12%;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+  width: clamp(140px, 38%, 430px);
+  left: 31%; right: auto; top: auto; bottom: clamp(64px, 15vw, 230px);
+  object-position: center top;
+}
+.arena-combat-stage:is([data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  inset: auto;
+  translate: none;
+}
+@media (max-width: 700px) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    --infernal-contained-stage-height: clamp(300px, 72vw, 430px);
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    --infernal-contained-stage-height: 62vh;
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    bottom: 8%;
+  }
+}
+@supports (height: 1svh) {
+  @media (max-height: 600px) and (orientation: landscape) {
+    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+      --infernal-contained-stage-height: 62svh;
+    }
+  }
+}
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    /* Definite height preserves the existing responsive minimum under size
+       containment. The absolutely positioned layers cannot size this box. */
+    height: var(--infernal-contained-stage-height);
+    min-height: var(--infernal-contained-stage-height);
+    container-type: size;
+  }
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+    display: block;
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
+    --wave-art-side: calc((100% - var(--wave-art-width)) / 2);
+    width: var(--wave-prop-width);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+    --wave-prop-width: clamp(56px, calc(var(--wave-art-width) * .18), 190px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .60 - var(--wave-prop-width) * .725678);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+    --wave-prop-width: clamp(42px, calc(var(--wave-art-width) * .14), 140px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .58 - var(--wave-prop-width) * .865231);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+    --wave-prop-width: clamp(70px, calc(var(--wave-art-width) * .20), 205px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .14 - var(--wave-prop-width) * .270335);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+    --wave-prop-width: clamp(72px, calc(var(--wave-art-width) * .22), 220px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .07 - var(--wave-prop-width) * .215311);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+    --wave-prop-width: clamp(84px, calc(var(--wave-art-width) * .25), 250px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .21 - var(--wave-prop-width) * .279107);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .65);
+    left: calc((100% - var(--wave-prop-width)) / 2);
+    bottom: calc(var(--wave-art-height) * .94 - var(--wave-prop-width) * .563796);
+  }
+  /* Wave G uses the same contained image frame. The subtraction removes each
+     PNG's transparent bottom margin without changing its native aspect ratio. */
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .16);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .055664);
+  }
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .32);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .12 - var(--wave-prop-width) * .038872);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .132);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .572 - var(--wave-prop-width) * .5);
+    bottom: calc(var(--wave-art-height) * .359 - var(--wave-prop-width) * .120631);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .45);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01);
+    bottom: calc(var(--wave-art-height) * .015 - var(--wave-prop-width) * .034070);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .34);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .235 - var(--wave-prop-width) * .096685);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .28);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .26 - var(--wave-prop-width) * .107422);
+  }
+  /* Wave H: source-guided placement in the same image coordinate frame. */
+  .arena-combat-stage[data-stage="ghost-hotel"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.240922190);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.060000000 - var(--wave-prop-width) * 0.083732057);
+    bottom: calc(var(--wave-art-height) * 0.170000000 - var(--wave-prop-width) * 0.174641148);
+  }
+  .arena-combat-stage[data-stage="ghost-hotel"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.098526859);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.780000000 - var(--wave-prop-width) * 0.496054115);
+    bottom: calc(var(--wave-art-height) * 0.520000000 - var(--wave-prop-width) * 0.144306652);
+  }
+  .arena-combat-stage[data-stage="apology-party"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.129557971);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.870000000 - var(--wave-prop-width) * 0.501993620);
+    bottom: calc(var(--wave-art-height) * 0.630000000 - var(--wave-prop-width) * 0.090111643);
+  }
+  .arena-combat-stage[data-stage="apology-party"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.133546326);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.130000000 - var(--wave-prop-width) * 0.495614035);
+    bottom: calc(var(--wave-art-height) * 0.712608185 - var(--wave-prop-width) * 0.066985646);
+  }
+  /* Sloth exterior V7: the bench and the smaller left roadside lamp were
+     removed from the room master. Restore each once on the pavement, using
+     native alpha margins; both remain behind the combatants. */
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .09);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .272 - var(--wave-prop-width) * .105975);
+    bottom: calc(var(--wave-art-height) * .146 - var(--wave-prop-width) * .058625);
+  }
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .054);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .225 - var(--wave-prop-width) * .493785);
+    bottom: calc(var(--wave-art-height) * .10 - var(--wave-prop-width) * .056630);
+  }
+  /* Australia S3: one rock and one tuft occupy the cleared lower-left
+     patches. Native transparent margins keep their visible bases grounded. */
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .155);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .147 - var(--wave-prop-width) * .207644);
+    bottom: calc(var(--wave-art-height) * .152 - var(--wave-prop-width) * .055249);
+  }
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .113);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .252 - var(--wave-prop-width) * .109357);
+    bottom: calc(var(--wave-art-height) * .068 - var(--wave-prop-width) * .054115);
+  }
+  /* Auction hall S3: restore the nearest right-wall bench and its adjacent
+     ornament once each; the other benches remain part of the room artwork. */
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .224);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .782 - var(--wave-prop-width) * .069335);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .042841);
+  }
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .075);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .735 - var(--wave-prop-width) * .252537);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .036077);
+  }
+}
+
+/* V8 objects use the same contained image frame as their source room.
+   Attached documents and chains share the room's parallax in the registry. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="ozzies-exterior-s1"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .13);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .58 - var(--wave-prop-width) * .0265);
+    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .0372);
+  }
+  .arena-combat-stage[data-stage="hellhound-adoption-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .085);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .925 - var(--wave-prop-width) * .5);
+    bottom: calc(var(--wave-art-height) * .46 - var(--wave-prop-width) * .14);
+  }
+  .arena-combat-stage[data-stage="hellhound-adoption-s2"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .34);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .24 - var(--wave-prop-width) * .0276);
+    bottom: calc(var(--wave-art-height) * .64 - var(--wave-prop-width) * .018);
+  }
+}
+
+/* V9 lounge props retain their native alpha margins. Their visible bases share
+   the source room coordinate system and the room's parallax ratio. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="bee-lounge-s1"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .1501);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01794 - var(--wave-prop-width) * .14528);
+    bottom: calc(var(--wave-art-height) * .14984 - var(--wave-prop-width) * .11676);
+  }
+  .arena-combat-stage[data-stage="bee-lounge-s1"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .188483);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .72667 - var(--wave-prop-width) * .175781);
+    bottom: calc(var(--wave-art-height) * .24017 - var(--wave-prop-width) * .185547);
+  }
+}
+
+/* Static stage expansions: complete background, no generated prop layers.
+   Contain preserves the authored framing; coloured bands extend the floor.
+   The combat lane and its collision bounds stay independent of the image. */
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) {
+  background-color: var(--arena-stage-floor);
+  background-image:
+    linear-gradient(180deg, rgba(7, 3, 5, .12), rgba(7, 3, 5, .24)),
+    var(--arena-stage-art, none);
+  background-position: center, var(--arena-stage-position, center bottom);
+  background-size: auto, contain;
+  background-repeat: no-repeat;
+}
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+/* End static stage expansions. */
+
+.infernal-finish-choice {
+  position: absolute;
+  z-index: 5;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .6rem;
+  width: max-content;
+  max-width: 90%;
+  padding: .8rem 1rem;
+  border: 1px solid #d4af37;
+  background: #210d18f5;
+  color: #ffe9bc;
+}
+.infernal-finish-choice > span { flex-basis: 100%; text-align: center; }
+.infernal-finish-effect {
+  --finish-paint: radial-gradient(ellipse at var(--impact-x) 64%, #ffee8ab8 1%, #d223325e 30%, #170516ba 83%);
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--finish-paint);
+  animation: infernal-finish-sweep 1.5s ease-out both;
+}
+.fx-radio { --finish-paint: repeating-radial-gradient(ellipse at var(--impact-x) 67%, transparent 0 7%, #e829377c 7.5% 8%, transparent 8.5% 12%); }
+.fx-signal { --finish-paint: repeating-linear-gradient(0deg,#35edfe6b 0 2px, transparent 3px 12px),linear-gradient(90deg,#081932b0,transparent,#16a7b773); }
+.fx-halo { --finish-paint: radial-gradient(ellipse at var(--impact-x) 56%, transparent 12%, #fff1a9ba 13%, transparent 16%, #f2c05594 29%, transparent 31%); }
+.fx-blade { --finish-paint: linear-gradient(144deg, transparent 40%,#f3e0ccaa 41%,transparent 42% 47%,#c82f56be 48%,transparent 50%); }
+.fx-frost { --finish-paint: repeating-conic-gradient(from 45deg at var(--impact-x) 63%, #94e7ff96 0deg,transparent 9deg 40deg); }
+.fx-curtain { --finish-paint: linear-gradient(96deg,#7a0a2fee,transparent 39% 61%,#7a0a2fee),radial-gradient(at var(--impact-x) 54%,#ffe7a365,transparent 35%); }
+.fx-shadow { --finish-paint: radial-gradient(at var(--impact-x) 63%,#1b0924a9 4%,#b3429b7a 14%,transparent 31%,#08050dc9 90%); }
+@keyframes infernal-finish-sweep { 0% { opacity: 0; transform: scale(.96); } 43%,65% { opacity: 1; } 100% { opacity: .35; transform: scale(1.06); } }
+[data-reduced-motion="true"] .infernal-finish-effect { animation: none; opacity: .65; }
+.infernal-movelist { padding: .8rem 1rem; border: 1px solid #734445; border-radius: 6px; color: #f3dfcb; background: #21131b; }
+.infernal-movelist summary { cursor: pointer; color: #ffda91; font-weight: 700; }
+.infernal-movelist p { margin: .75rem 0; }
+.infernal-movelist-scroll { overflow-x: auto; margin: 1rem 0; }
+.infernal-movelist table { width: 100%; border-collapse: collapse; font-size: .88rem; text-align: left; }
+.infernal-movelist :is(td,th) { padding: .4rem .55rem; border-bottom: 1px solid #513938; }
+.infernal-movelist caption { text-align: left; color: #ffc3a7; font-weight: 700; }
+
+.arena-combatant img.infernal-individual-pose {
+  width: 150%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  bottom: -3%;
+}
+
+/* V10 props share each room’s native aspect ratio, alpha margins and parallax. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] :is(.infernal-desk-plane,.infernal-near-plane) {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1602 / 982));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 982 / 1602));
+  }
+  .arena-combat-stage[data-stage="blitz-sinsmas-dream-s2"] :is(.infernal-desk-plane,.infernal-near-plane) {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1648 / 954));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 954 / 1648));
+  }
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.2407258039);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.8052434457 - var(--wave-prop-width) * 0.1058441558);
+    bottom: calc(var(--wave-art-height) * 0.3415196407 - var(--wave-prop-width) * 0.0324675325);
+  }
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.0886975745);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.9051186017 - var(--wave-prop-width) * 0.1699218750);
+    bottom: calc(var(--wave-art-height) * 0.5214770853 - var(--wave-prop-width) * 0.0996093750);
+  }
+  .arena-combat-stage[data-stage="blitz-sinsmas-dream-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.0685587419);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.5946601942 - var(--wave-prop-width) * 0.2199850858);
+    bottom: calc(var(--wave-art-height) * 0.7149730127 - var(--wave-prop-width) * 0.1737509321);
+  }
+}
+
+/* V11 consultation prop uses the room frame, including transparent margins. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="sloth-consultation-s2"] .infernal-desk-plane {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
+    --wave-prop-width: calc(var(--wave-art-width) * 0.1876508142);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.4641148325 - var(--wave-prop-width) * 0.1047835991);
+    bottom: calc(var(--wave-art-height) * 0.2311743490 - var(--wave-prop-width) * 0.0918754746);
+  }
+}

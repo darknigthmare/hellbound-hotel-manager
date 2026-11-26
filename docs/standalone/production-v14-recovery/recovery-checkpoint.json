@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-11-26 22:34:03 UTC",
+  "title": "Infernal Versus V14 recovery checkpoint",
+  "status": "recovery_only_v14_not_fully_validated_or_published",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "branch": "recovery/infernal-v14-20261126",
+  "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+  "baseTree": "7c0138b8bde5fea9566e37248502356944741862",
+  "environment": {
+    "execution": "unavailable",
+    "lastFailure": "No usable execution environment is available",
+    "localFileSurvival": "unknown_not_assumed_lost",
+    "localRepositoryLastKnown": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager",
+    "noOperatingSystemCommandsUsedForThisRecovery": true
+  },
+  "scope": {
+    "newNativeDrawings": 7,
+    "newCostumes": 3,
+    "newStages": 2,
+    "newReserveProps": 2,
+    "newCombatKits": 0,
+    "newAnimationCycles": 0,
+    "newFullIdentityBases": 0,
+    "newRefusals": 0,
+    "regenerationPerformedForRecovery": false
+  },
+  "recovered": {
+    "nativePngCount": 7,
+    "nativePngBytes": 10038031,
+    "allNativeSha256MatchAcceptedMasters": true,
+    "sourceSnapshotCount": 8,
+    "sourceSnapshotsMatchingKnownFrozenSha256": 2,
+    "reconstructedSourceSnapshots": 6,
+    "webpExportsRecovered": 0,
+    "stageThumbnailsRecovered": 0,
+    "originalSourceReferenceImagesRecovered": 0,
+    "originalPromptFilesRecovered": 0,
+    "originalFullQaReportsRecovered": 0
+  },
+  "nativeFiles": [
+    {
+      "id": "sloth-cloud-dispenser-s2",
+      "path": "production/v14/props/masters/sloth-cloud-dispenser-s2.png",
+      "sha": "d6bd431ae9102ff8f5a44644c0fae13b9960e921",
+      "sha256": "9b533db0840fcf6465cd748161aab19ce876eeb477ccf788afdf493fcff3e5ee",
+      "bytes": 1045158,
+      "dimensions": [
+        1054,
+        1493
+      ],
+      "colorType": 6,
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "uploaded": true,
+      "bitDepth": 8,
+      "recoveredBy": "/root",
+      "gitBlobShaIndependentlyComputedAndMatched": true
+    },
+    {
+      "id": "crimson-green-chandelier-s2",
+      "path": "production/v14/props/masters/crimson-green-chandelier-s2.png",
+      "sha": "ad7652d11f6d47bbc4727e4766ab22fa22372d3d",
+      "sha256": "9e19eb3269c9628b9b3fab6748ff5cc6cd4a8a3d25e8e924c688a1cc92c2204b",
+      "bytes": 761872,
+      "dimensions": [
+        1420,
+        1108
+      ],
+      "colorType": 6,
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "uploaded": true,
+      "bitDepth": 8,
+      "recoveredBy": "/root",
+      "gitBlobShaIndependentlyComputedAndMatched": true
+    },
+    {
+      "id": "hb_blitzo-flashback-ghostfuckers-s2",
+      "path": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+      "sha": "4a391f05ba4a0b96a66d82b4afa6b14e787ac661",
+      "sha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c",
+      "bytes": 1324673,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "colorType": 6,
+      "bitDepth": 8,
+      "recoveredBy": "/root/v14_characters",
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "gitBlobShaIndependentlyComputedAndMatched": true,
+      "uploaded": true
+    },
+    {
+      "id": "hb_millie-dress-disguise-training-short",
+      "path": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+      "sha": "8e198f263bb2c42358269bb93104a80f05a7c024",
+      "sha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+      "bytes": 1717766,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "colorType": 6,
+      "bitDepth": 8,
+      "recoveredBy": "/root/v14_characters",
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "gitBlobShaIndependentlyComputedAndMatched": true,
+      "uploaded": true
+    },
+    {
+      "id": "hb_moxxie-dress-disguise-training-short",
+      "path": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+      "sha": "17230409dea45fe489657e3285445fca5a68e8a5",
+      "sha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+      "bytes": 1777345,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "colorType": 6,
+      "bitDepth": 8,
+      "recoveredBy": "/root/v14_characters",
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "gitBlobShaIndependentlyComputedAndMatched": true,
+      "uploaded": true
+    },
+    {
+      "id": "full-moon-shop-s2-room",
+      "path": "production/v14/environment/masters/full-moon-shop-s2-room.png",
+      "sha": "8442953441e40057a6235ba9c2a0b560c539def3",
+      "sha256": "9f776088715c41122791315f83c0dcba0af681419923eb4434edd6e5cdbda049",
+      "bytes": 1816681,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "colorType": 2,
+      "bitDepth": 8,
+      "recoveredBy": "/root/v14_environment",
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "gitBlobShaIndependentlyComputedAndMatched": true,
+      "uploaded": true
+    },
+    {
+      "id": "crimson-dining-room-s2-room",
+      "path": "production/v14/environment/masters/crimson-dining-room-s2-room.png",
+      "sha": "b7a4afb58f85efcc973ad245ebba5a84e915af5d",
+      "sha256": "23a8ec847d00196e73d4568ea8efeeed20a5d2c25b508380e60794ac25bb737a",
+      "bytes": 1594536,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "colorType": 2,
+      "bitDepth": 8,
+      "recoveredBy": "/root/v14_environment",
+      "nativeResultSha256MatchesAcceptedMaster": true,
+      "gitBlobShaIndependentlyComputedAndMatched": true,
+      "uploaded": true
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/components/PentagramLiveFight.tsx.txt",
+      "bytes": 63244,
+      "sha256": "fa2713710ba97f34dc2e520bd8d70f6f136d20f735b723d892e7593c0045e572",
+      "gitBlobSha": "6f611d87d2e0e1ecbd599663205f422b39936f87",
+      "exactKnownFrozenBytes": true,
+      "originalPath": "src/components/PentagramLiveFight.tsx",
+      "sha": "6f611d87d2e0e1ecbd599663205f422b39936f87",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/tests/infernal-preload.test.tsx.txt",
+      "bytes": 7747,
+      "sha256": "4be6416cb8a65a0ad825d920b4257fc6eb535577c762bafbed9b24ced956a202",
+      "gitBlobSha": "069312af3af3766699b098ce37136939a433c417",
+      "exactKnownFrozenBytes": true,
+      "originalPath": "src/tests/infernal-preload.test.tsx",
+      "sha": "069312af3af3766699b098ce37136939a433c417",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/lib/infernal-appearances.ts.txt",
+      "bytes": 14748,
+      "sha256": "ffc9ff07308e1215ac724f30e0d9ffdc5a738ff3f22dfb16d3e65e338b0d863c",
+      "gitBlobSha": "eafa1774da59fcdf49dfe50b8d6f1e50b2c3e9b5",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed from immutable V13 source and recorded V14 edits; original V14 per-file hash unavailable. Three static costume additions; existing arrays preserved.",
+      "originalPath": "src/lib/infernal-appearances.ts",
+      "sha": "eafa1774da59fcdf49dfe50b8d6f1e50b2c3e9b5",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/lib/pentagram-stages.ts.txt",
+      "bytes": 57682,
+      "sha256": "cd5f40e1f320b7e2fc08ac63893bf7d1eea743e477962211de6d1042273ce329",
+      "gitBlobSha": "8a05047ed4eccadb97788613fbf57f63734db5bd",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed stage IDs and two scenery-free room definitions from the recorded edits. Recovery text is not a new tested runtime build.",
+      "originalPath": "src/lib/pentagram-stages.ts",
+      "sha": "8a05047ed4eccadb97788613fbf57f63734db5bd",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/standalone/ReserveGallery.tsx.txt",
+      "bytes": 10172,
+      "sha256": "1756f1496b39051f4effc9f9ade450dfda5ac35d5eeb44a8e5317602b874611a",
+      "gitBlobSha": "9db8488b7cd246f41796e6ddd4a2fa11f2b9bba4",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed official_short_2026 display label and provenance note; S2 visibility scope is not a numbered-season claim. Existing Tilla note preserved.",
+      "originalPath": "src/standalone/ReserveGallery.tsx",
+      "sha": "9db8488b7cd246f41796e6ddd4a2fa11f2b9bba4",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/styles/pentagram-arena.css.txt",
+      "bytes": 88455,
+      "sha256": "1f657486c5423d844b064563058dd48255e31ba276dc9032849b0b70d80abb32",
+      "gitBlobSha": "4c0a13a228f1beacbad68ea1942672cd80e1e74a",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed the ten recorded contained-room selector extensions; no other CSS changes.",
+      "originalPath": "src/styles/pentagram-arena.css",
+      "sha": "4c0a13a228f1beacbad68ea1942672cd80e1e74a",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/src/tests/standalone-progression.test.ts.txt",
+      "bytes": 10836,
+      "sha256": "ba39a01b7b8846d80364149bb7e103e0fd7886ad9bc74ae993c96a38dc6377b4",
+      "gitBlobSha": "5dbd518fadb71c7cd1ca906158bd3cfbf2a0a670",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed one recorded stage-count expectation from 49 to 51.",
+      "originalPath": "src/tests/standalone-progression.test.ts",
+      "sha": "5dbd518fadb71c7cd1ca906158bd3cfbf2a0a670",
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/source/eslint.config.js.txt",
+      "bytes": 1453,
+      "sha256": "1517f6b125e45ca14c890c7b352df44f84d24c88eefedfb6761326296a7486f3",
+      "gitBlobSha": "a48e10b0387bc312b9381521067386b5b0bf96ea",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed recorded CommonJS harness scope for V14.",
+      "originalPath": "eslint.config.js",
+      "sha": "a48e10b0387bc312b9381521067386b5b0bf96ea",
+      "uploaded": true
+    }
+  ],
+  "recoveryDocumentFiles": [
+    {
+      "path": "docs/standalone/production-v14-recovery/source-index.json",
+      "sha": "1c31d854c9e6b57114286fb9dc433082f558c2f8",
+      "sha256": "b5f93104486325340955e3e2e3c919769f426d6664f2800e669ba716d9269da5",
+      "bytes": 5668,
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/validation-and-resume.md",
+      "sha": "9c8f876fb593dcd9c62296603ff59c3b89ce797d",
+      "sha256": "f5dec2a923bac080b0e1c01fa25ab5aba78cee10a7262a25f5a6d504abfbd2a3",
+      "bytes": 8284,
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/asset-recovery.json",
+      "sha": "b2c0cc38c9e971a86b10e630e3a7afbcc353e428",
+      "sha256": "6649c788ec5b58572fa452f76b4401ae7903fd7f302bbb896965683aea0744d2",
+      "bytes": 15789,
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/README.md",
+      "sha": "60d2742bc3d4932077f47ec96baa30f13fed12e0",
+      "sha256": "75655333eb09d6fe6935e23b8df5566e8426672e5ef8b7bbfddb19df97ab2151",
+      "bytes": 7372,
+      "uploaded": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/register-bible-handoff.md",
+      "sha": "363102026c1d106ef6450d2cb887f51453b5280a",
+      "sha256": "cbed361bb0070e0bb90d0474354469237563182e306e6efabe406025dec25913",
+      "bytes": 19345,
+      "uploaded": true,
+      "readbackVerifiedByRoot": true
+    },
+    {
+      "path": "docs/standalone/production-v14-recovery/recovery-crypto.js.txt",
+      "sha": "64d2266b9416f95385b9705b332e676ffdd2aba0",
+      "sha256": "9d5c01b0837212562c72c68596984a7b9810aee34e1634b47c3c628d2b78e0ce",
+      "bytes": 4346,
+      "kind": "recovery-helper"
+    }
+  ],
+  "validation": {
+    "artwork": {
+      "state": "accepted_with_limits_before_outage",
+      "evidenceOrigin": "session_record",
+      "freshRecoveryProof": "native byte hashes only; no new visual review or derivative pixel check claimed"
+    },
+    "beforePreloadFix": {
+      "state": "passed_before_outage",
+      "tests": 413,
+      "suites": 47,
+      "gates": [
+        "typescript",
+        "eslint",
+        "vitest",
+        "manager_build",
+        "standalone_build",
+        "packaging",
+        "integrity"
+      ],
+      "activeAssetPaths": 735,
+      "brokenActivePaths": 0,
+      "distributionHashes": 1339,
+      "runtimeInputFiles": 207,
+      "runtimeFingerprint": "ca3c1a332dc73948242883555a48a0799f280ceef45ff6a4a4a2a23b9ea6013b",
+      "distributionManifestSha256": "5808603285ebaef26f73a371f6adcd8b6169c9c13c2113510ed1276322b57886",
+      "reportsRecovered": false
+    },
+    "preloadFixTargetedTests": {
+      "state": "passed_before_outage",
+      "tests": 6,
+      "suites": 1,
+      "seconds": 1.46,
+      "scope": "Real React effect exercised with Image.src/decode instrumented in jsdom, not native image decoding",
+      "frozenSourceCopiesRecoveredExactly": true,
+      "fullReportRecovered": false
+    },
+    "latestFullTechnicalPassAfterFix": {
+      "state": "unknown",
+      "reason": "Started but result was not read before execution environment became unavailable",
+      "lastKnownSessionId": 7472
+    },
+    "browser": {
+      "completePassedSegments": 0,
+      "plannedSegments": 8,
+      "viewportSizes": [
+        [
+          1440,
+          1000
+        ],
+        [
+          390,
+          844
+        ]
+      ],
+      "initialOutcomes": [
+        "desktop Blitz/shop: native crash on combat entry",
+        "desktop Moxxie/dining: native crash on combat entry",
+        "desktop gallery: click stability timeout",
+        "mobile Blitz/shop: interrupted"
+      ],
+      "postFixCanaryExecuted": false,
+      "latestInstrumentationPatchApplied": "unconfirmed",
+      "reportsAndCapturesRecovered": false
+    },
+    "finalRegister": {
+      "state": "not_assembled",
+      "finalGateMustNotBeWeakened": true
+    },
+    "workbookV14": {
+      "state": "not_created",
+      "fileExists": false
+    },
+    "finalV14Publication": {
+      "state": "not_published"
+    }
+  },
+  "provisionalLocalCounts": {
+    "status": "draft_before_outage_not_remote_release",
+    "galleryEntries": 138,
+    "stages": 51,
+    "stagesWithoutSeason3": 49,
+    "season3OptInStages": 2,
+    "costumeFamilies": 27,
+    "playableKits": 43,
+    "fullIdentityBases": 114,
+    "activeIdentityBases": 40,
+    "reserveIdentityBases": 74,
+    "catalogueIds": 209,
+    "distinctIdentities": 208
+  },
+  "lastKnownUnrecoveredFiles": [
+    {
+      "path": "docs/standalone/production-v14/characters-handoff.json",
+      "sha256": "e0de20e683ad2ceb037b99389ef4b550e2b536d9f38f13dcf68cc47d712e52a6",
+      "description": "Frozen character handoff",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/characters-qa.json",
+      "sha256": "7c57937f4e1399b6eaea43a68e0fc77a423d37c11e926b10a4bcfb8854e70863",
+      "description": "Character pixel/alpha checks",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/characters-references.json",
+      "sha256": "d5597e0a4071961897a2320305387e6977c100d3772fde017eef3301471ab65a",
+      "description": "Character reference provenance",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/characters-prompts.json",
+      "sha256": "a6273532d2cc29046305c7329bfc0107d33779566ded9a7c285ecde1c662f835",
+      "description": "Native generation prompts; preserve original text",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/characters-independent-environment-review.json",
+      "sha256": "3df25deaf697d4eb23bfbe335f4aad7eec89c1715404cbf011d7690e569bb1b8",
+      "description": "Independent character visual review",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/props-independent-review.json",
+      "sha256": "8282cb8d79caf7464e4b6242e2924d7998aadf627a6c8c7efba2cf3b30694c66",
+      "description": "Independent prop visual review",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/independent-visual-review.json",
+      "sha256": "4d3f9341a9e782c6cfcee259465f67e9f33852858708add7e769cbeed5e51b06",
+      "description": "Aggregate review of seven artworks, accepted with limits",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/integration-spec.json",
+      "sha256": "ff3636ddfcfc02fc6f031ea3e7f9ce30f9c2fab281f27bce46b75e4f8c539ff3",
+      "description": "Seven accepted targets and integration authorization",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "26bea49d2bddc42c45c53d47d4245fe6f046be1c4dbbad6e94ab9fe2bf2ffe5f",
+      "description": "V14 local draft gallery of 138 entries; historical 133 preserved",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/extension-plan.json",
+      "sha256": "81ecc954a14613b0b713bb7c82ab1f630b1e0c4ace00ecc0fda9d1cb9f28771d",
+      "description": "V14 draft extension plan",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/runtime-preload-review.json",
+      "sha256": "7d23adcc87c4a29a080cc2fa4ac0b4ec8d8640374aefc94748d24bf76d1e210d",
+      "description": "Last confirmed report before attempted path-only edit at outage; later edit execution unconfirmed",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/wardrobe-initial-supplementary-review.json",
+      "sha256": "ac9262f392ca137bc6064e5d9819db94c0c8f07a68f1d7cd96516ca8aefb2204",
+      "description": "Partial wardrobe visual observations, not browser pass",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/delivery-register.json",
+      "sha256": "c7efa014f6128e9837110d493ed4f2ef5900e5371f49d0f8a7c768c376283b5a",
+      "description": "Local draft register, not final",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "register_bible_agent_session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/catalogue-plan-qa.json",
+      "sha256": "dfeb81a7b8df9462724f1818a075b72afd61f60da9ef1cce4b977dec28bce442",
+      "description": "Local draft register/gallery/plan reconciliation proof",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "register_bible_agent_session_record"
+    },
+    {
+      "path": "docs/standalone/production-v14/props-reference-review.json",
+      "sha256": "f48cc4be90313e7688d9a4fd275749c29f28f4bbebef02342ef6989c17b514cf",
+      "description": "Recorded source review for props",
+      "status": "last_observed_before_execution_outage_not_recovered_in_this_checkpoint",
+      "evidenceOrigin": "register_bible_agent_session_record"
+    }
+  ],
+  "otherLastKnownLocalArtifacts": [
+    "Seven exact-RGBA lossless WebP exports and two 480x270 stage thumbnails",
+    "production/v14 source-reference images, crops and comparison composites",
+    "docs/standalone/production-v14/environment-handoff.json",
+    "docs/standalone/production-v14/root-handoff.json",
+    "docs/standalone/production-v14/assemble-register.py",
+    "docs/standalone/production-v14/build-bible-v14.mjs",
+    "docs/standalone/production-v14/workbook-ooxml-check.py",
+    "docs/standalone/production-v14/verify-runtime.py",
+    "docs/standalone/production-v14/technical-attempts/",
+    "docs/standalone/production-v14/browser-harness/failed-segments/"
+  ],
+  "sourceCopyPolicy": "All V14 source copies are documentary .txt files under docs/standalone/production-v14-recovery/source; no active V13 source path replaced by this checkpoint.",
+  "remoteStateObserved": {
+    "pr": {
+      "url": "https://github.com/darknigthmare/hellbound-hotel-manager/pull/8",
+      "title": "Infernal Versus — V13 : 7 nouveaux dessins, 49 arènes et bible vérifiée",
+      "headRef": "feat/infernal-versus-assets-20261124",
+      "headCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "state": "open",
+      "merged": false,
+      "modifiedByRecovery": false
+    },
+    "drive": {
+      "fileId": "10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU",
+      "name": "INFERNAL_VERSUS_BIBLE_V13.xlsx",
+      "size": 674412,
+      "modifiedTime": "2026-11-26T20:39:34.348Z",
+      "lastKnownReadbackSha256": "5a365b5483c40641670dd4b5520dbab42389f4769488b137e4aedbcd563f098b",
+      "sha256Scope": "earlier V13 byte readback, not recalculated in this metadata-only recovery check",
+      "modifiedByRecovery": false
+    }
+  },
+  "governance": {
+    "neverRetryIds": [
+      "blitzo-sniper-production",
+      "cherribomb",
+      "hb_belphegor",
+      "hb_deerie",
+      "hb_leviathan",
+      "hb_loopty_goopty",
+      "hb_stella",
+      "hb_stolas_family_butler",
+      "hz_ant_sinner",
+      "hz_clara_carmine",
+      "hz_dazzle",
+      "hz_eel_sinner",
+      "hz_egg_boiz",
+      "hz_fat_nuggets",
+      "hz_frank_egg_boi",
+      "hz_huskette_spider",
+      "hz_keekee",
+      "hz_odette_carmine",
+      "hz_razzle",
+      "hz_rooster",
+      "hz_salina",
+      "hz_shok_wav",
+      "hz_speaker_of_god",
+      "lute",
+      "lute-prosthetic-s2-ready",
+      "pentious-airship-s1",
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "additionalHistoricalExclusion": "Redeemed Pentious V7 refusal remains excluded; recover exact historical record rather than inventing an ID.",
+    "protectedSources": "No bypass of the Erin Frost 403 or other protected references.",
+    "deferredTargets": [
+      "Sloth radio: bottom occluded",
+      "Crimson blue plant: pot cropped"
+    ],
+    "mergePullRequest": false,
+    "changeVercelProtection": false
+  },
+  "nextSteps": [
+    "Inspect surviving local files and compare hashes; do not overwrite surviving work blindly.",
+    "Restore exact native masters, derivatives, provenance, scripts and draft registries; label reconstructions explicitly.",
+    "Run current complete technical QA; retain failure logs.",
+    "Run one bounded desktop Moxxie/dining canary, then all required browser segments and visual capture review if it passes.",
+    "Assemble final register only when its existing proof gates pass.",
+    "Build V14 workbook preserving historical OOXML; update the same Drive file only after validation and verify readback.",
+    "Publish validated V14 into the existing PR, check CI and preview; do not merge."
+  ],
+  "manifestNote": "This document inventories recovery entries, not itself. Git commit/tree IDs are supplied by the containing Git objects after creation.",
+  "expectedNewFilesIncludingThisManifest": 22
+}

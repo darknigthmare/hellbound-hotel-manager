@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "recovery_only_not_active_runtime",
+  "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+  "scope": "Source snapshots are documentary .txt copies. They have not been applied to active V13 runtime paths in this checkpoint.",
+  "files": [
+    {
+      "path": "src/components/PentagramLiveFight.tsx",
+      "bytes": 63244,
+      "sha256": "fa2713710ba97f34dc2e520bd8d70f6f136d20f735b723d892e7593c0045e572",
+      "gitBlobSha": "6f611d87d2e0e1ecbd599663205f422b39936f87",
+      "exactKnownFrozenBytes": true,
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/components/PentagramLiveFight.tsx.txt",
+      "validationScope": "Matches SHA-256 of the frozen file observed before execution outage; latest complete post-fix QA still unknown."
+    },
+    {
+      "path": "src/tests/infernal-preload.test.tsx",
+      "bytes": 7747,
+      "sha256": "4be6416cb8a65a0ad825d920b4257fc6eb535577c762bafbed9b24ced956a202",
+      "gitBlobSha": "069312af3af3766699b098ce37136939a433c417",
+      "exactKnownFrozenBytes": true,
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/tests/infernal-preload.test.tsx.txt",
+      "validationScope": "Matches SHA-256 of the frozen file observed before execution outage; latest complete post-fix QA still unknown."
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "bytes": 14748,
+      "sha256": "ffc9ff07308e1215ac724f30e0d9ffdc5a738ff3f22dfb16d3e65e338b0d863c",
+      "gitBlobSha": "eafa1774da59fcdf49dfe50b8d6f1e50b2c3e9b5",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed from immutable V13 source and recorded V14 edits; original V14 per-file hash unavailable. Three static costume additions; existing arrays preserved.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/lib/infernal-appearances.ts.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "bytes": 57682,
+      "sha256": "cd5f40e1f320b7e2fc08ac63893bf7d1eea743e477962211de6d1042273ce329",
+      "gitBlobSha": "8a05047ed4eccadb97788613fbf57f63734db5bd",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed stage IDs and two scenery-free room definitions from the recorded edits. Recovery text is not a new tested runtime build.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/lib/pentagram-stages.ts.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "bytes": 10172,
+      "sha256": "1756f1496b39051f4effc9f9ade450dfda5ac35d5eeb44a8e5317602b874611a",
+      "gitBlobSha": "9db8488b7cd246f41796e6ddd4a2fa11f2b9bba4",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed official_short_2026 display label and provenance note; S2 visibility scope is not a numbered-season claim. Existing Tilla note preserved.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/standalone/ReserveGallery.tsx.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "bytes": 88455,
+      "sha256": "1f657486c5423d844b064563058dd48255e31ba276dc9032849b0b70d80abb32",
+      "gitBlobSha": "4c0a13a228f1beacbad68ea1942672cd80e1e74a",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed the ten recorded contained-room selector extensions; no other CSS changes.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/styles/pentagram-arena.css.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    },
+    {
+      "path": "src/tests/standalone-progression.test.ts",
+      "bytes": 10836,
+      "sha256": "ba39a01b7b8846d80364149bb7e103e0fd7886ad9bc74ae993c96a38dc6377b4",
+      "gitBlobSha": "5dbd518fadb71c7cd1ca906158bd3cfbf2a0a670",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed one recorded stage-count expectation from 49 to 51.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/src/tests/standalone-progression.test.ts.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    },
+    {
+      "path": "eslint.config.js",
+      "bytes": 1453,
+      "sha256": "1517f6b125e45ca14c890c7b352df44f84d24c88eefedfb6761326296a7486f3",
+      "gitBlobSha": "a48e10b0387bc312b9381521067386b5b0bf96ea",
+      "exactKnownFrozenBytes": false,
+      "reconstructedFrom": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "notes": "Reconstructed recorded CommonJS harness scope for V14.",
+      "recoveryPath": "docs/standalone/production-v14-recovery/source/eslint.config.js.txt",
+      "validationScope": "Reconstructed from immutable baseline and recorded changes; not rerun or compared to the inaccessible original V14 file."
+    }
+  ]
+}
