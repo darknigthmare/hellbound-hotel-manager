@@ -72,14 +72,14 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v7-2026-11-26",
-      "baseCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+      "batchId": "static-v8-2026-11-26",
+      "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V7 actualise la production statique et son registre. Les kits jouables, techniques, fins et cycles animés restent des périmètres distincts. V1–V6 restent archivées dans la bible ; fidélité 1:1 non certifiée.",
-      "stages": 40,
+      "note": "V8 actualise la production statique et les rapprochements de livraisons historiques. Les kits, techniques, cycles animés et contrôles visuels restent des périmètres distincts. Fidélité 1:1 non certifiée.",
+      "stages": 42,
       "threePlaneStages": 33,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
@@ -90,7 +90,7 @@
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 84,
+      "reserveGalleryDrawings": 100,
       "stagePresentations": [
         "alive",
         "static",
@@ -99,9 +99,9 @@
       "illustrationAssignmentsV3": 127,
       "onePlaneStages": 7,
       "twoPlaneStages": 0,
-      "costumeFamilies": 11,
+      "costumeFamilies": 20,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v7/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v8/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
     },
     "latestIntegration": {
@@ -206,50 +206,79 @@
         "globalIllustrationAssignments": 11,
         "productionRegister": "docs/standalone/production-v6/delivery-register.json",
         "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v7-2026-11-26",
+        "baseCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V7 actualise la production statique et son registre. Les kits jouables, techniques, fins et cycles animés restent des périmètres distincts. V1–V6 restent archivées dans la bible ; fidélité 1:1 non certifiée.",
+        "stages": 40,
+        "threePlaneStages": 33,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 659,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 84,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 7,
+        "twoPlaneStages": 0,
+        "costumeFamilies": 11,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v7/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v7-2026-11-26",
-      "baseCommit": "b0e76e35edfda695ec788bce67823073980d9217",
+      "batchId": "static-v8-2026-11-26",
+      "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v7/delivery-register.json",
+      "register": "docs/standalone/production-v8/delivery-register.json",
       "status": "final_production_register",
       "counts": {
-        "distinctDrawings": 45,
-        "newDrawings": 44,
-        "revisedDrawings": 1,
-        "masterPng": 45,
-        "losslessWebp": 45,
-        "thumbnails": 3,
-        "deliveredImageFiles": 93,
-        "deliveredImageBytes": 80143856,
-        "characterBases": 24,
-        "enemyBases": 0,
-        "supportBases": 2,
-        "props": 1,
-        "projectiles": 0,
-        "machines": 4,
-        "costumes": 2,
-        "narrativeArchives": 2,
-        "stages": 3,
-        "stageLayers": 6,
-        "newGalleryEntries": 35,
-        "generatorRefused": 9,
-        "generatedAwaitingReview": 0,
-        "newAnimationCycles": 0
+        "distinctDrawings": 18,
+        "newDrawings": 18,
+        "revisedDrawings": 0,
+        "masterPng": 18,
+        "losslessWebp": 18,
+        "thumbnails": 2,
+        "deliveredImageFiles": 38,
+        "deliveredImageBytes": 35541033,
+        "newCharacterBases": 0,
+        "newPlayableKits": 0,
+        "newStaticCostumes": 9,
+        "newNarrativeIncarnations": 4,
+        "newStages": 2,
+        "newSceneryProps": 3,
+        "newAnimationCycles": 0,
+        "generatorRefused": 1,
+        "historicalVariantRequirementsReconciled": 9
       },
-      "scope": "Productions statiques séparées, correction Apple et arènes intégrées. Aucun cycle animé ni nouveau kit jouable. Références, refus et limites tracés dans la bible V7."
+      "scope": "Dessins statiques, intégration et rapprochements documentés dans le registre V8. Aucun nouveau cycle animé."
     },
     "latestProductionBible": {
-      "edition": "V7",
+      "edition": "V8",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V6.xlsx",
-      "historicalSheetsPreserved": 43,
-      "appendedSheets": 3,
-      "register": "docs/standalone/production-v7/delivery-register.json"
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
+      "historicalSheetsPreserved": 46,
+      "appendedSheets": 2,
+      "register": "docs/standalone/production-v8/delivery-register.json"
     }
   },
   "sources": [
@@ -3593,6 +3622,14 @@
         "notes": "La tenue pré-blessure possède déjà public/assets/sprites/individual/lute-ready.webp. Le compte historique distingue la base par défaut de ce costume. Définir une incarnation différente avant une nouvelle commande.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "qualificationV8": {
+        "status": "moderation_refusal_no_retry",
+        "notes": "Incarnation distincte qualifiée puis refusée par le générateur natif ; aucun fichier, aucune relance. La base pré-blessure existante reste distincte.",
+        "references": [
+          "https://www.youtube.com/watch?v=5eZonu8XsEs"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
       }
     },
     {
@@ -3779,6 +3816,15 @@
         "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "qualificationV8": {
+        "status": "primary_reference_retrieval_blocked",
+        "notes": "Clip officiel Prime Video Brasil identifié mais récupération publique HTTP429. Portrait familial fourni par A24/Prime dans VFXVoice identifié mais téléchargement local403 ; aucune silhouette entière inspectée exploitable. Pas de génération.",
+        "references": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4",
+          "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
       }
     },
     {
@@ -4563,6 +4609,14 @@
           "https://www.youtube.com/watch?v=he543NS0bq8"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "qualificationV8": {
+        "status": "existing_reference_gap_new_clip_fetch_rate_limited",
+        "notes": "V7 signale le bas du corps occulté. Nouveau clip officiel Heaven ZE2GuxyfQls repéré, récupération publique HTTP429 ; pas de nouvelle preuve entière inspectée ni nouvelle génération.",
+        "references": [
+          "https://www.youtube.com/watch?v=ZE2GuxyfQls"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
       }
     },
     {
@@ -5138,6 +5192,14 @@
         "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "qualificationV8": {
+        "status": "not_generated_related_refusal_preserved",
+        "notes": "Compilation officielle inspectée. Frank a un refus historique ; aucun Egg Boi renommé ou générique n’est généré pour contourner cette cible. Les incarnations célestes ne sont pas produites dans ce lot.",
+        "references": [
+          "https://www.youtube.com/watch?v=c56SWmqnU5E"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
       }
     },
     {
@@ -11406,6 +11468,138 @@
         "register": "docs/standalone/production-v7/delivery-register.json",
         "fidelityOneToOneCertified": false
       }
+    },
+    {
+      "id": "ozzies-exterior-s1",
+      "name": "Ozzie’s — extérieur et rue de Lust",
+      "franchise": "Helluva Boss",
+      "place": "Lust — rue extérieure",
+      "continuity": "season_1",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "design": "Façade extérieure en cœur et rue nocturne documentées. Premier plan élargi horizontalement pour le combat ; cordon de file d’attente séparé.",
+      "registryNote": "Nouvelle exigence extérieure distincte de ozzies / ozzies-cabaret, qui désigne la salle intérieure existante.",
+      "status": "Partiel",
+      "runtimeId": "ozzies-exterior-s1",
+      "runtimeStageId": "ozzies-exterior-s1",
+      "reference": "https://backgroundart.net/art/helluva07.jpg",
+      "createdByStaticV8": true,
+      "acceptance": "Décor et calques enregistrés ; recadrage, appuis, parallaxe, lisibilité en duel et performance mobile à valider selon le rapport QA. Fidélité 1:1 non certifiée.",
+      "currentStaticCoverage": "Nouvelle arène extérieure : fond illustré, miniature et barrière séparée. Intérieur du cabaret distinct ; combat AU, musique existante réutilisée.",
+      "runtimeStageIds": [
+        "ozzies-exterior-s1"
+      ],
+      "asset": "public/assets/production/v8/environment/ozzies-exterior-s1-room.webp",
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetIds": [
+          "ozzies-exterior-s1-room",
+          "ozzies-exterior-rope-barrier"
+        ],
+        "runtimeStageIds": [
+          "ozzies-exterior-s1"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "references": [
+          "https://backgroundart.net/art/helluva07.jpg"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/environment/ozzies-exterior-s1-room.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Nouvelle arène extérieure : fond illustré, miniature et barrière séparée. Intérieur du cabaret distinct ; combat AU, musique existante réutilisée.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetIds": [
+            "ozzies-exterior-s1-room",
+            "ozzies-exterior-rope-barrier"
+          ],
+          "runtimeStageIds": [
+            "ozzies-exterior-s1"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "references": [
+            "https://backgroundart.net/art/helluva07.jpg"
+          ],
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false
+        },
+        "runtimeStageId": "ozzies-exterior-s1",
+        "runtimeStageIds": [
+          "ozzies-exterior-s1"
+        ]
+      }
+    },
+    {
+      "id": "hellhound-adoption-s2",
+      "name": "Refuge Hellhound — couloir d’adoption",
+      "franchise": "Helluva Boss",
+      "place": "Refuge d’adoption — couloir",
+      "continuity": "season_2",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "design": "Couloir de cages et éclairage cyan documentés. Sol élargi pour le combat ; enseigne et dossier proche séparés du fond.",
+      "registryNote": "Nouvelle exigence de lieu, rattachée uniquement au couloir du refuge documenté.",
+      "status": "Partiel",
+      "runtimeId": "hellhound-adoption-s2",
+      "runtimeStageId": "hellhound-adoption-s2",
+      "reference": "https://backgroundart.net/art/helluva03.jpg",
+      "createdByStaticV8": true,
+      "acceptance": "Décor et calques enregistrés ; recadrage, appuis, parallaxe, lisibilité en duel et performance mobile à valider selon le rapport QA. Fidélité 1:1 non certifiée.",
+      "currentStaticCoverage": "Nouvelle arène du couloir vide du refuge : fond illustré, miniature, enseigne et dossier séparés. Aucun personnage ni événement de combat canonique ajouté.",
+      "runtimeStageIds": [
+        "hellhound-adoption-s2"
+      ],
+      "asset": "public/assets/production/v8/environment/hellhound-adoption-s2-room.webp",
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetIds": [
+          "hellhound-adoption-s2-room",
+          "hellhound-adoption-sign",
+          "hellhound-adoption-clipboard"
+        ],
+        "runtimeStageIds": [
+          "hellhound-adoption-s2"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "references": [
+          "https://backgroundart.net/art/helluva03.jpg"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/environment/hellhound-adoption-s2-room.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Nouvelle arène du couloir vide du refuge : fond illustré, miniature, enseigne et dossier séparés. Aucun personnage ni événement de combat canonique ajouté.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetIds": [
+            "hellhound-adoption-s2-room",
+            "hellhound-adoption-sign",
+            "hellhound-adoption-clipboard"
+          ],
+          "runtimeStageIds": [
+            "hellhound-adoption-s2"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "references": [
+            "https://backgroundart.net/art/helluva03.jpg"
+          ],
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false
+        },
+        "runtimeStageId": "hellhound-adoption-s2",
+        "runtimeStageIds": [
+          "hellhound-adoption-s2"
+        ]
+      }
     }
   ],
   "campaigns": [
@@ -12961,11 +13155,39 @@
       "reference": "HH passé S1E6",
       "requirements": "uniforme, masque, ailes et état de l'œil selon instant",
       "canonEvidence": "Chronologie distincte",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "VAGGIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/vaggie-exorcist.webp",
+      "currentStaticCoverage": "Uniforme d’exorciste déjà sélectionnable avec six poses clés. Les transitions animées restent distinctes.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Uniforme d’exorciste déjà sélectionnable avec six poses clés. Les transitions animées restent distinctes.",
+        "references": [],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-Pre-V7 (see catalogue audit)",
+        "assetId": "vaggie-exorcist",
+        "export": "public/assets/sprites/costumes/vaggie-exorcist.webp",
+        "exportSha256": "cf87a3620500a88da05572a2dbadcd97761cd39d5c3eb56250fa14134f886145",
+        "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+        "runtimeStatus": "six_key_poses",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 6,
+        "staticReadyOnly": false,
+        "register": "docs/standalone/production-v7/catalogue-audit.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-004",
@@ -13111,7 +13333,15 @@
       "priority": "P1",
       "lot": "V3",
       "source": "SRC-20261124-LUTE; SRC-WAVE-C-COSTUMES",
-      "acceptance": "Six images distinctes enregistrées ; marges verticales corrigées pour les cinq poses au sol. Pivot horizontal, échelle relative, animations longues et fidélité 1:1 à vérifier en jeu."
+      "acceptance": "Six images distinctes enregistrées ; marges verticales corrigées pour les cinq poses au sol. Pivot horizontal, échelle relative, animations longues et fidélité 1:1 à vérifier en jeu.",
+      "qualificationV8": {
+        "status": "prosthetic_incarnation_refused_no_retry",
+        "notes": "Lute saison 2, bras prothétique : génération refusée, aucun nouveau dessin. La couverture historique partielle reste conservée.",
+        "references": [
+          "https://www.youtube.com/watch?v=5eZonu8XsEs"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      }
     },
     {
       "id": "VAR-014",
@@ -13163,7 +13393,7 @@
       "reference": "HB contrats humains",
       "requirements": "chaque tenue rattachée à une scène et une époque",
       "canonEvidence": "Liste exacte à inventorier",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "BLITZO",
@@ -13173,6 +13403,21 @@
         "notes": "« Déguisements de contrats » est une collection sans liste de tenues ni scène unique. Pas d’image fabriquée pour satisfaire artificiellement une variante agrégée ; inventorier séparément chaque contrat, époque et costume.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "currentStaticCoverage": "Tenues documentées individuellement dans les exigences V8 liées. Collection de déguisements encore ouverte ; aucun dessin supplémentaire compté pour cette fiche agrégée.",
+      "qualificationV8": {
+        "status": "partial_collection_with_individual_requirements",
+        "variantRequirementIds": [
+          "VAR-V8-hb_blitzo-bodyguard-looloo",
+          "VAR-V8-hb_blitzo-harvest-festival",
+          "VAR-V8-hb_blitzo-ghost-apology-tour"
+        ],
+        "notes": "Tenues documentées individuellement dans les exigences V8 liées. Collection de déguisements encore ouverte ; aucun dessin supplémentaire compté pour cette fiche agrégée.",
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "newDrawings": 0
       }
     },
     {
@@ -13183,11 +13428,43 @@
       "reference": "HB S2E5",
       "requirements": "vêtements et coiffure; pas de bonus mécanique automatique",
       "canonEvidence": "À vérifier visuellement",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "MOXXIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_moxxie-moxxine.webp",
+      "currentStaticCoverage": "Déguisement Moxxine V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Déguisement Moxxine V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_moxxie-moxxine",
+        "export": "public/assets/sprites/costumes/hb_moxxie-moxxine.webp",
+        "exportSha256": "b38951a7c8b3e389232f3e6c6a785d229e22896b641137bb86332913fc9c8fc9",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "static_ready_only",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": true,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-019",
@@ -13197,11 +13474,43 @@
       "reference": "HB S2E5",
       "requirements": "silhouette et vêtements distincts",
       "canonEvidence": "À vérifier visuellement",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "MILLIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_millie-millerd.webp",
+      "currentStaticCoverage": "Déguisement Millerd V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Déguisement Millerd V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_millie-millerd",
+        "export": "public/assets/sprites/costumes/hb_millie-millerd.webp",
+        "exportSha256": "57aa4e51143d2f0c3c7adef96c470bf130c65929d61f001d2d97901705a0aee8",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "static_ready_only",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": true,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-020",
@@ -13248,11 +13557,39 @@
       "reference": "HB S1E3; S2E8",
       "requirements": "proportions humaines, oreilles, chaussures et cheveux",
       "canonEvidence": "Repérage secondaire",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "LOONA",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_loona-human-disguise.webp",
+      "currentStaticCoverage": "Apparence humaine déjà sélectionnable avec six poses clés. Ne pas la produire de nouveau à partir du statut ancien.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Apparence humaine déjà sélectionnable avec six poses clés. Ne pas la produire de nouveau à partir du statut ancien.",
+        "references": [],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-Pre-V7 (see catalogue audit)",
+        "assetId": "hb_loona-human-disguise",
+        "export": "public/assets/sprites/costumes/hb_loona-human-disguise.webp",
+        "exportSha256": "b3df51f0ca5ac7dd4c1793fbcb8d4fdf97ff8c5c737699b7e66ab0abd3eae1eb",
+        "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+        "runtimeStatus": "six_key_poses",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 6,
+        "staticReadyOnly": false,
+        "register": "docs/standalone/production-v7/catalogue-audit.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-022",
@@ -13351,11 +13688,43 @@
       "reference": "HB S2E12 / S3",
       "requirements": "absence des pouvoirs retirés; pas de récupération présumée",
       "canonEvidence": "S3 à revoir avant figer état",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "STOLAS",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp",
+      "currentStaticCoverage": "Tenue bordeaux de Sinsmas V5 déjà sélectionnable. Le costume ne modifie pas les techniques : la perte canonique des pouvoirs reste un périmètre mécanique distinct.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Tenue bordeaux de Sinsmas V5 déjà sélectionnable. Le costume ne modifie pas les techniques : la perte canonique des pouvoirs reste un périmètre mécanique distinct.",
+        "references": [
+          "https://www.youtube.com/watch?v=GisSNuVpbkM"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_stolas-deposed-sinsmas",
+        "export": "public/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp",
+        "exportSha256": "8d6d7b6075ebc8b19e3913dc7469c4828cf6727b5e7c41a890aad3401513e374",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "static_ready_only",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": true,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=GisSNuVpbkM"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-026",
@@ -13365,11 +13734,39 @@
       "reference": "HB S2E2",
       "requirements": "vêtements, forme humaine, profil d'archive",
       "canonEvidence": "Repérage secondaire",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "STOLAS",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_stolas-human-disguise.webp",
+      "currentStaticCoverage": "Apparence humaine de Seeing Stars déjà sélectionnable avec six poses clés. Aucun nouveau dessin ni changement mécanique.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Apparence humaine de Seeing Stars déjà sélectionnable avec six poses clés. Aucun nouveau dessin ni changement mécanique.",
+        "references": [],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-Pre-V7 (see catalogue audit)",
+        "assetId": "hb_stolas-human-disguise",
+        "export": "public/assets/sprites/costumes/hb_stolas-human-disguise.webp",
+        "exportSha256": "9c94613a9358146c735625f7785b4231ff3b3393b062bab145047d8d1f24258b",
+        "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+        "runtimeStatus": "six_key_poses",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 6,
+        "staticReadyOnly": false,
+        "register": "docs/standalone/production-v7/catalogue-audit.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-027",
@@ -13429,11 +13826,43 @@
       "reference": "HB S2E6–7",
       "requirements": "chapeau, prothèses, différentes silhouettes",
       "canonEvidence": "À vérifier visuellement",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "FIZZ",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp",
+      "currentStaticCoverage": "Tenue domestique Oops V5 déjà sélectionnable en illustration unique. La famille de scène existe séparément ; les autres variantes éventuelles ne sont pas déclarées complètes.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Tenue domestique Oops V5 déjà sélectionnable en illustration unique. La famille de scène existe séparément ; les autres variantes éventuelles ne sont pas déclarées complètes.",
+        "references": [
+          "https://www.youtube.com/watch?v=y1sF6ZeASU0"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_fizzarolli-casual-oops",
+        "export": "public/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp",
+        "exportSha256": "8188fd5c23c504839485f9800b1adf3f5a40f2b7bed9413467dfabf5ac732730",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "static_ready_only",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": true,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=y1sF6ZeASU0"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-031",
@@ -13481,11 +13910,43 @@
       "reference": "HB S2E5",
       "requirements": "effet relié au cristal; modèle humain distinct",
       "canonEvidence": "Repérage secondaire",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "BARBIE",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_barbie_wire-human-disguise.webp",
+      "currentStaticCoverage": "Déguisement humain V5 déjà livré en galerie de réserve. Barbie reste un personnage sans kit jouable ; aucun effet de cristal ni transformation animée ajouté.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Déguisement humain V5 déjà livré en galerie de réserve. Barbie reste un personnage sans kit jouable ; aucun effet de cristal ni transformation animée ajouté.",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_barbie_wire-human-disguise",
+        "export": "public/assets/sprites/costumes/hb_barbie_wire-human-disguise.webp",
+        "exportSha256": "48ef285003c1846197f0c97ba55e070250f34b67baf9a1177b3f5cc8ec61c082",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "reserve_gallery",
+        "runtimeSelectable": false,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": false,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=lYu1ysDULwA"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-033",
@@ -13495,11 +13956,43 @@
       "reference": "HB S1E3",
       "requirements": "silhouette humaine; traces distinctives",
       "canonEvidence": "Repérage secondaire",
-      "status": "À produire",
+      "status": "Partiel",
       "priority": "P1",
       "lot": "V3",
       "source": "VORTEX",
-      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation."
+      "acceptance": "Référence visuelle validée, atlas complet et animation de transition si forme. Coûts/hitboxes restent adaptation.",
+      "coverageBeforeStaticV8": {
+        "status": "À produire"
+      },
+      "asset": "public/assets/sprites/costumes/hb_vortex-human-disguise.webp",
+      "currentStaticCoverage": "Apparence humaine V5 déjà sélectionnable en illustration unique. La même image couvre les actions ; aucun cycle nouveau.",
+      "qualificationV8": {
+        "status": "existing_delivery_reconciled",
+        "notes": "Apparence humaine V5 déjà sélectionnable en illustration unique. La même image couvre les actions ; aucun cycle nouveau.",
+        "references": [
+          "https://www.youtube.com/watch?v=RghsgkZKedg"
+        ],
+        "register": "docs/standalone/production-v8/existing-variant-reconciliation.json"
+      },
+      "staticProduction": {
+        "batchId": "historical-V5",
+        "assetId": "hb_vortex-human-disguise",
+        "export": "public/assets/sprites/costumes/hb_vortex-human-disguise.webp",
+        "exportSha256": "94cd50d40ddd7aad87dd6e5a4c5636b74e387c416b785778805969ec17529d22",
+        "historicalDeliveryEdition": "V5",
+        "runtimeStatus": "static_ready_only",
+        "runtimeSelectable": true,
+        "distinctPoseFiles": 1,
+        "staticReadyOnly": true,
+        "register": "docs/standalone/production-v5-register.json",
+        "reconciliation": "docs/standalone/production-v8/existing-variant-reconciliation.json",
+        "references": [
+          "https://www.youtube.com/watch?v=RghsgkZKedg"
+        ],
+        "newDrawings": 0,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
     },
     {
       "id": "VAR-034",
@@ -13657,6 +14150,1089 @@
           "https://sharkrobot.com/collections/helluva-boss/products/mech-suit-cherubs"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      }
+    },
+    {
+      "id": "VAR-V8-alastor-human-s2-ready",
+      "createdByStaticV8": true,
+      "fighter": "alastor",
+      "name": "Alastor humain — flashback saison 2",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "type": "Incarnation documentée",
+      "reference": "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s ; https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s ; https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+      "acceptance": "Archive ou forme statique documentée en galerie uniquement ; aucune aptitude au combat ni transition jouable déduite.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "alastor-human-s2-ready",
+        "master": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+        "export": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+        "masterSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+        "exportSha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a",
+        "continuity": "season_2",
+        "incarnation": "Alastor humain — flashback saison 2",
+        "references": [
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+          "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve_gallery",
+        "runtimeSelectable": false,
+        "gameplayEligibility": "galleryOnly",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "alastor-human-s2-ready",
+          "master": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+          "export": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+          "masterSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+          "exportSha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a",
+          "continuity": "season_2",
+          "incarnation": "Alastor humain — flashback saison 2",
+          "references": [
+            "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+            "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+            "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "reserve_gallery",
+          "runtimeSelectable": false,
+          "gameplayEligibility": "galleryOnly",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-vox-human-weather-s2-ready",
+      "createdByStaticV8": true,
+      "fighter": "vox",
+      "name": "Vox humain — présentateur météo, saison 2",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "type": "Incarnation documentée",
+      "reference": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s ; https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s ; https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+      "acceptance": "Archive ou forme statique documentée en galerie uniquement ; aucune aptitude au combat ni transition jouable déduite.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "vox-human-weather-s2-ready",
+        "master": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+        "export": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+        "masterSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+        "exportSha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0",
+        "continuity": "season_2",
+        "incarnation": "Vox humain — présentateur météo, saison 2",
+        "references": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve_gallery",
+        "runtimeSelectable": false,
+        "gameplayEligibility": "galleryOnly",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "vox-human-weather-s2-ready",
+          "master": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+          "export": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+          "masterSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+          "exportSha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0",
+          "continuity": "season_2",
+          "incarnation": "Vox humain — présentateur météo, saison 2",
+          "references": [
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "reserve_gallery",
+          "runtimeSelectable": false,
+          "gameplayEligibility": "galleryOnly",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-vox-human-talkshow-s2-ready",
+      "createdByStaticV8": true,
+      "fighter": "vox",
+      "name": "Vox humain — costume du talk-show, saison 2",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "type": "Incarnation documentée",
+      "reference": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s ; https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s ; https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+      "acceptance": "Archive ou forme statique documentée en galerie uniquement ; aucune aptitude au combat ni transition jouable déduite.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "vox-human-talkshow-s2-ready",
+        "master": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+        "export": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+        "masterSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+        "exportSha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733",
+        "continuity": "season_2",
+        "incarnation": "Vox humain — costume du talk-show, saison 2",
+        "references": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve_gallery",
+        "runtimeSelectable": false,
+        "gameplayEligibility": "galleryOnly",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "vox-human-talkshow-s2-ready",
+          "master": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+          "export": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+          "masterSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+          "exportSha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733",
+          "continuity": "season_2",
+          "incarnation": "Vox humain — costume du talk-show, saison 2",
+          "references": [
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+            "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "reserve_gallery",
+          "runtimeSelectable": false,
+          "gameplayEligibility": "galleryOnly",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-emily-six-wings-s2-ready",
+      "createdByStaticV8": true,
+      "fighter": "emily",
+      "name": "Emily — six ailes déployées, saison 2",
+      "franchise": "Hazbin Hotel",
+      "continuity": "season_2",
+      "type": "Incarnation documentée",
+      "reference": "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s ; https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s ; https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+      "acceptance": "Archive ou forme statique documentée en galerie uniquement ; aucune aptitude au combat ni transition jouable déduite.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "emily-six-wings-s2-ready",
+        "master": "production/v8/hazbin/native/emily-six-wings-s2-ready.png",
+        "export": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+        "masterSha256": "c02c840423bae808607c4b9497a48466a3d3cf26a496a6b2ba2fad887ad65cf0",
+        "exportSha256": "d2b439cb4d718a25d294670d436bc18b61002a2ecfc7edad988edf76b528f43a",
+        "continuity": "season_2",
+        "incarnation": "Emily — six ailes déployées, saison 2",
+        "references": [
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+          "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "reserve_gallery",
+        "runtimeSelectable": false,
+        "gameplayEligibility": "galleryOnly",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, présenté en galerie, hors sélection de costume de combat. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "emily-six-wings-s2-ready",
+          "master": "production/v8/hazbin/native/emily-six-wings-s2-ready.png",
+          "export": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+          "masterSha256": "c02c840423bae808607c4b9497a48466a3d3cf26a496a6b2ba2fad887ad65cf0",
+          "exportSha256": "d2b439cb4d718a25d294670d436bc18b61002a2ecfc7edad988edf76b528f43a",
+          "continuity": "season_2",
+          "incarnation": "Emily — six ailes déployées, saison 2",
+          "references": [
+            "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+            "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+            "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "reserve_gallery",
+          "runtimeSelectable": false,
+          "gameplayEligibility": "galleryOnly",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_blitzo-bodyguard-looloo",
+      "createdByStaticV8": true,
+      "fighter": "hb_blitzo",
+      "name": "Blitzø — Bodyguard, Loo Loo Land",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_blitzo-bodyguard-looloo",
+        "master": "production/v8/helluva/masters/hb_blitzo-bodyguard-looloo.png",
+        "export": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+        "masterSha256": "9acbd8679116a53c3e3083b09bf7031205c66b460695f97dd0f39529308d8385",
+        "exportSha256": "97ffeeb0fc9cc4fb466180d1b537b44b88811fc1b98ae6b97aa291b70cf9c71c",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E2 — Blitzø — Bodyguard, Loo Loo Land",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_blitzo-bodyguard-looloo",
+          "master": "production/v8/helluva/masters/hb_blitzo-bodyguard-looloo.png",
+          "export": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+          "masterSha256": "9acbd8679116a53c3e3083b09bf7031205c66b460695f97dd0f39529308d8385",
+          "exportSha256": "97ffeeb0fc9cc4fb466180d1b537b44b88811fc1b98ae6b97aa291b70cf9c71c",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E2 — Blitzø — Bodyguard, Loo Loo Land",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_moxxie-bodyguard-looloo",
+      "createdByStaticV8": true,
+      "fighter": "hb_moxxie",
+      "name": "Moxxie — Bodyguard, Loo Loo Land",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_moxxie-bodyguard-looloo",
+        "master": "production/v8/helluva/masters/hb_moxxie-bodyguard-looloo.png",
+        "export": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+        "masterSha256": "a1a7f65eb04d40d66fd08f7cc88ba977cc0ebe4f6829b1574fec304c88a727ee",
+        "exportSha256": "a97273addb71506fd42fd4e34e25430cc80f3c041def0ce5a02009cfc3ebee9d",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E2 — Moxxie — Bodyguard, Loo Loo Land",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_moxxie-bodyguard-looloo",
+          "master": "production/v8/helluva/masters/hb_moxxie-bodyguard-looloo.png",
+          "export": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+          "masterSha256": "a1a7f65eb04d40d66fd08f7cc88ba977cc0ebe4f6829b1574fec304c88a727ee",
+          "exportSha256": "a97273addb71506fd42fd4e34e25430cc80f3c041def0ce5a02009cfc3ebee9d",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E2 — Moxxie — Bodyguard, Loo Loo Land",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_millie-bodyguard-looloo",
+      "createdByStaticV8": true,
+      "fighter": "hb_millie",
+      "name": "Millie — Bodyguard, Loo Loo Land",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_millie-bodyguard-looloo",
+        "master": "production/v8/helluva/masters/hb_millie-bodyguard-looloo.png",
+        "export": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+        "masterSha256": "ff53a4df47608e07569876402e910873458e270ddcb0abd9f441d3703043311a",
+        "exportSha256": "4d157ac0212c8996739eea02518648328beb79baede089e84962778cdf93e0b1",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E2 — Millie — Bodyguard, Loo Loo Land",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_millie-bodyguard-looloo",
+          "master": "production/v8/helluva/masters/hb_millie-bodyguard-looloo.png",
+          "export": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+          "masterSha256": "ff53a4df47608e07569876402e910873458e270ddcb0abd9f441d3703043311a",
+          "exportSha256": "4d157ac0212c8996739eea02518648328beb79baede089e84962778cdf93e0b1",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E2 — Millie — Bodyguard, Loo Loo Land",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_stolas-tourist-looloo",
+      "createdByStaticV8": true,
+      "fighter": "hb_stolas",
+      "name": "Stolas — Touriste, Loo Loo Land",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_stolas-tourist-looloo",
+        "master": "production/v8/helluva/masters/hb_stolas-tourist-looloo.png",
+        "export": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+        "masterSha256": "6b5caa488ee7231b94a59bffdf9575d3efca4f19359b02090007ab126daf07dc",
+        "exportSha256": "84eaa30fbb310dd9b3e78f2ce03649fa8da253cd970396d737812a4f217ba378",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E2 — Stolas — Touriste, Loo Loo Land",
+        "references": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_stolas-tourist-looloo",
+          "master": "production/v8/helluva/masters/hb_stolas-tourist-looloo.png",
+          "export": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+          "masterSha256": "6b5caa488ee7231b94a59bffdf9575d3efca4f19359b02090007ab126daf07dc",
+          "exportSha256": "84eaa30fbb310dd9b3e78f2ce03649fa8da253cd970396d737812a4f217ba378",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E2 — Stolas — Touriste, Loo Loo Land",
+          "references": [
+            "https://www.youtube.com/watch?v=kpnwRg268FQ"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_millie-staff-ghostfuckers",
+      "createdByStaticV8": true,
+      "fighter": "hb_millie",
+      "name": "Millie — Staff, Ghostf**kers",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=5DV4IIKwqRI",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_millie-staff-ghostfuckers",
+        "master": "production/v8/helluva/masters/hb_millie-staff-ghostfuckers.png",
+        "export": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+        "masterSha256": "d85aef368f925cb5fc16a5e12b0e3add8fffd50d5f2f0c03c41ccf5945488928",
+        "exportSha256": "c3d7a464ebd4dc4ada16a0b73058f444fa82558f18a44790cfb6cd5cbc30df52",
+        "continuity": "season_2",
+        "incarnation": "Série — S2E10 — Millie — Staff, Ghostf**kers",
+        "references": [
+          "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_millie-staff-ghostfuckers",
+          "master": "production/v8/helluva/masters/hb_millie-staff-ghostfuckers.png",
+          "export": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+          "masterSha256": "d85aef368f925cb5fc16a5e12b0e3add8fffd50d5f2f0c03c41ccf5945488928",
+          "exportSha256": "c3d7a464ebd4dc4ada16a0b73058f444fa82558f18a44790cfb6cd5cbc30df52",
+          "continuity": "season_2",
+          "incarnation": "Série — S2E10 — Millie — Staff, Ghostf**kers",
+          "references": [
+            "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_blitzo-harvest-festival",
+      "createdByStaticV8": true,
+      "fighter": "hb_blitzo",
+      "name": "Blitzø — Harvest Moon Festival",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_blitzo-harvest-festival",
+        "master": "production/v8/helluva/masters/hb_blitzo-harvest-festival.png",
+        "export": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+        "masterSha256": "93cc3139d51c29edbae0a5081a814b33485ff440e959d597b037097429114920",
+        "exportSha256": "00f7436f72b9d42c8dadf5ef83e567371fc31adfbbdf08e567ed281a4c336a89",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E5 — Blitzø — Harvest Moon Festival",
+        "references": [
+          "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_blitzo-harvest-festival",
+          "master": "production/v8/helluva/masters/hb_blitzo-harvest-festival.png",
+          "export": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+          "masterSha256": "93cc3139d51c29edbae0a5081a814b33485ff440e959d597b037097429114920",
+          "exportSha256": "00f7436f72b9d42c8dadf5ef83e567371fc31adfbbdf08e567ed281a4c336a89",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E5 — Blitzø — Harvest Moon Festival",
+          "references": [
+            "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_millie-harvest-festival",
+      "createdByStaticV8": true,
+      "fighter": "hb_millie",
+      "name": "Millie — Harvest Moon Festival",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=h2ZmVAdezF8 ; https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_millie-harvest-festival",
+        "master": "production/v8/helluva/masters/hb_millie-harvest-festival.png",
+        "export": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+        "masterSha256": "042e5c8f481046e476bd50f5ed5ac68e0d226d3403d332ca958679f8ce48d0c3",
+        "exportSha256": "0ff99e4b00da69916642057dbe07b0e92ae19d2221ed68204e13018ccc1d9620",
+        "continuity": "season_1",
+        "incarnation": "Série — S1E5 — Millie — Harvest Moon Festival",
+        "references": [
+          "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+          "https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+        "continuity": "season_1",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_millie-harvest-festival",
+          "master": "production/v8/helluva/masters/hb_millie-harvest-festival.png",
+          "export": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+          "masterSha256": "042e5c8f481046e476bd50f5ed5ac68e0d226d3403d332ca958679f8ce48d0c3",
+          "exportSha256": "0ff99e4b00da69916642057dbe07b0e92ae19d2221ed68204e13018ccc1d9620",
+          "continuity": "season_1",
+          "incarnation": "Série — S1E5 — Millie — Harvest Moon Festival",
+          "references": [
+            "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+            "https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_stolas-vampire-apology-tour",
+      "createdByStaticV8": true,
+      "fighter": "hb_stolas",
+      "name": "Stolas — Vampire, Apology Tour",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=tLD-OUkYtk4 ; https://sharkrobot.com/products/apology-tour-standee",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+          "https://sharkrobot.com/products/apology-tour-standee"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_stolas-vampire-apology-tour",
+        "master": "production/v8/helluva/masters/hb_stolas-vampire-apology-tour.png",
+        "export": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+        "masterSha256": "a9242184455a932f8c4100709553526190cfe6d308e44509d532b6a8de68846c",
+        "exportSha256": "4db1c4a620b5040b34adc131a3e7c6dfae86c56ffd8c4aa1b355b5fa9eabe4cc",
+        "continuity": "season_2",
+        "incarnation": "Série — S2E9 — Stolas — Vampire, Apology Tour",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+          "https://sharkrobot.com/products/apology-tour-standee"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_stolas-vampire-apology-tour",
+          "master": "production/v8/helluva/masters/hb_stolas-vampire-apology-tour.png",
+          "export": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+          "masterSha256": "a9242184455a932f8c4100709553526190cfe6d308e44509d532b6a8de68846c",
+          "exportSha256": "4db1c4a620b5040b34adc131a3e7c6dfae86c56ffd8c4aa1b355b5fa9eabe4cc",
+          "continuity": "season_2",
+          "incarnation": "Série — S2E9 — Stolas — Vampire, Apology Tour",
+          "references": [
+            "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+            "https://sharkrobot.com/products/apology-tour-standee"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
+      }
+    },
+    {
+      "id": "VAR-V8-hb_blitzo-ghost-apology-tour",
+      "createdByStaticV8": true,
+      "fighter": "hb_blitzo",
+      "name": "Blitzø — Fantôme, Apology Tour",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "type": "Costume",
+      "reference": "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+      "requirements": "Tenue ou incarnation précisément référencée ; couverture statique distincte des poses, transitions, animations et mécaniques.",
+      "canonEvidence": "Références et écarts documentés dans le registre V8 ; fidélité 1:1 non certifiée.",
+      "status": "Partiel",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-DESIGN",
+      "asset": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+      "acceptance": "Pose statique sélectionnable ; autres poses, cycles et transitions restent un périmètre distinct. Contrôle en jeu selon le rapport QA.",
+      "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+      "qualificationV8": {
+        "status": "accepted_static_variant",
+        "notes": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v8-2026-11-26",
+        "assetId": "hb_blitzo-ghost-apology-tour",
+        "master": "production/v8/helluva/masters/hb_blitzo-ghost-apology-tour.png",
+        "export": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+        "masterSha256": "b8ab6ef6d8dad30867a1128c11ed1d7a24f3434e098061a0e447d9cdfc58eae2",
+        "exportSha256": "f4193ee5cc7592221938efe653bba67005aab88c5c23e039fa59a3edf0335a20",
+        "continuity": "season_2",
+        "incarnation": "Série — S2E9 — Blitzø — Fantôme, Apology Tour",
+        "references": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+        ],
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_static_costume",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "runtimePlayable": false,
+        "staticReadyOnly": true,
+        "newIdentity": false
+      },
+      "coverageBeforeStaticV8": {
+        "status": "Partiel",
+        "asset": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+        "continuity": "season_2",
+        "currentStaticCoverage": "Un dessin statique de cette tenue/incarnation, sélectionnable comme costume avec les autres poses non livrées par V8. Aucun cycle animé ni nouvelle identité.",
+        "staticProduction": {
+          "batchId": "static-v8-2026-11-26",
+          "assetId": "hb_blitzo-ghost-apology-tour",
+          "master": "production/v8/helluva/masters/hb_blitzo-ghost-apology-tour.png",
+          "export": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+          "masterSha256": "b8ab6ef6d8dad30867a1128c11ed1d7a24f3434e098061a0e447d9cdfc58eae2",
+          "exportSha256": "f4193ee5cc7592221938efe653bba67005aab88c5c23e039fa59a3edf0335a20",
+          "continuity": "season_2",
+          "incarnation": "Série — S2E9 — Blitzø — Fantôme, Apology Tour",
+          "references": [
+            "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_static_costume",
+          "runtimeSelectable": true,
+          "gameplayEligibility": "wearable",
+          "runtimePlayable": false,
+          "staticReadyOnly": true,
+          "newIdentity": false
+        }
       }
     }
   ],

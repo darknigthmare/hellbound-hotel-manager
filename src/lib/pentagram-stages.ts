@@ -40,7 +40,9 @@ export type PentagramStageId = HotelStageId
   | 'vox-office-s2'
   | 'sloth-hospital-exterior'
   | 'australia-desert-s3'
-  | 'auction-glass-hall-s3';
+  | 'auction-glass-hall-s3'
+  | 'ozzies-exterior-s1'
+  | 'hellhound-adoption-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -65,6 +67,8 @@ export interface PentagramStage {
   imagePath: string;
   thumbnailPath: string;
   scenery?: { middle?: string; near?: string };
+  /** Wall-mounted objects can share the room's motion instead of sliding across it. */
+  sceneryParallax?: { middle?: number; near?: number };
   imagePosition: string;
   accent: string;
   shadow: string;
@@ -968,6 +972,37 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   accent: '#73e9df', shadow: '#0e2036', floor: '#0d2734',
   // Existing original score, not music or dialogue from the episode.
   soundtrack: PENTAGRAM_STAGES[0].soundtrack,
+}, {
+  id: 'ozzies-exterior-s1',
+  spoilerTier: 'season_1',
+  name: 'Ozzie’s · Rue de Lust',
+  district: 'Anneau de la Luxure',
+  description: 'La façade magenta et son entrée en cœur éclairent une rue nocturne aux reflets violets.',
+  loreBasis: 'Helluva Boss, Ozzie’s (S1E7). Extérieur distinct de la salle du cabaret, documenté par le décor de production de Greg Bartlett. Le sol frontal est élargi pour la simulation AU ; les cordons de file sont séparés du fond. Les enseignes lointaines et la perspective sont redessinées.',
+  imagePath: '/assets/production/v8/environment/ozzies-exterior-s1-room.webp',
+  thumbnailPath: '/assets/production/v8/environment/ozzies-exterior-s1-thumb.webp',
+  scenery: { middle: '/assets/production/v8/environment/ozzies-exterior-rope-barrier.webp' },
+  sceneryParallax: { middle: 0.35 },
+  imagePosition: 'center bottom',
+  accent: '#f55bce', shadow: '#1d0d43', floor: '#36154c',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'hellhound-adoption-s2',
+  spoilerTier: 'season_2',
+  name: 'Refuge des hellhounds · Couloir',
+  district: 'Centre d’adoption',
+  description: 'Des portes grillagées et des néons cyan bordent un couloir usé, avec son enseigne suspendue.',
+  loreBasis: 'Helluva Boss, Seeing Stars (S2E2), souvenir du centre d’adoption. Couloir vide documenté par le décor de production de Greg Bartlett. Le premier plan est élargi pour la simulation AU ; enseigne et clipboard proche sont dessinés séparément. Aucun occupant ni combat de cette scène n’est présenté comme canonique.',
+  imagePath: '/assets/production/v8/environment/hellhound-adoption-s2-room.webp',
+  thumbnailPath: '/assets/production/v8/environment/hellhound-adoption-s2-thumb.webp',
+  scenery: {
+    middle: '/assets/production/v8/environment/hellhound-adoption-clipboard.webp',
+    near: '/assets/production/v8/environment/hellhound-adoption-sign.webp',
+  },
+  sceneryParallax: { middle: 0.20, near: 0.20 },
+  imagePosition: 'center bottom',
+  accent: '#76e9ec', shadow: '#102329', floor: '#35464a',
+  soundtrack: PENTAGRAM_STAGES[5].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

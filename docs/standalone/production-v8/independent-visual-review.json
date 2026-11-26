@@ -1,0 +1,1571 @@
+{
+  "edition": "V8",
+  "reviewedAt": "2026-11-26T08:47:21.633234+00:00",
+  "reviewer": "independent asset review (agent recover_local_assets)",
+  "scope": "Local exported still images compared visually with supplied source frames or production artwork; no runtime or browser validation implied.",
+  "fidelityOneToOneCertified": false,
+  "assets": [
+    {
+      "id": "ozzies-exterior-s1-room",
+      "kind": "stage_background",
+      "status": "accepted_static_adaptation",
+      "acceptedForIntegration": true,
+      "masterPath": "production/v8/environment/masters/ozzies-exterior-s1-room.png",
+      "masterSha256": "9584007dbcf717d866e8039bd721aee6a47edfb6c07e7f78478d527858fde2ae",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "sourceReference": {
+        "sha256": "5a799c6398f70478747f6a027f929aa76a0a7b9f9c3b5fba3c9680cc80d34079",
+        "dimensions": [
+          1920,
+          1177
+        ],
+        "urls": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva07.jpg"
+        ],
+        "attribution": "Greg Bartlett, Helluva Boss production background, as attributed in environment-generation.json",
+        "referenceFileName": "helluva07.jpg"
+      },
+      "method": "Both complete local images opened independently at review time; composition, recognizable landmarks, palette, foreground and visible defects compared.",
+      "matches": [
+        "Ozzie’s facade remains on the right, with the large concentric heart entrance and readable OZZIE’S sign.",
+        "Roof lantern, heart ornaments, magenta-plum columns, orange windows and red/gold drapery retain the reference location identity.",
+        "Neon storefront street recedes left of centre; wet reflections, violet-blue night sky and broad sky streaks remain recognizable.",
+        "Empty composition contains no baked-in character or vehicle."
+      ],
+      "differences": [
+        {
+          "severity": "intentional_gameplay_adaptation",
+          "detail": "Aspect ratio and framing changed from 1920 × 1177 to approximately 16:9; facade size, storefront spacing and perspective were recomposed."
+        },
+        {
+          "severity": "intentional_gameplay_adaptation",
+          "detail": "The lower fifth is a broad horizontal wet-paving strip; the source road instead continues strongly in depth toward the bottom edge."
+        },
+        {
+          "severity": "intentional_gameplay_adaptation",
+          "detail": "Queue posts and velvet ropes visible outside the source entrance are absent from this background; a separate prop/layer remains to be checked."
+        },
+        {
+          "severity": "visible_fidelity_limit",
+          "detail": "Door/steps, facade curvature, lantern and column proportions differ; fine signage and distant storefront details are simplified or redrawn."
+        },
+        {
+          "severity": "visible_fidelity_limit",
+          "detail": "Surface reflections and saturation are stronger/more polished in places; this is an adapted redrawing, not a traced or pixel-identical production background."
+        },
+        {
+          "severity": "native_resolution_limit",
+          "detail": "Native PNG is 1672 × 941, below the 2560 × 1440 preference in the generation prompt; no upscaling or higher-resolution master is asserted."
+        }
+      ],
+      "acceptanceReason": "Recognizable reference-backed location, coherent clean static scene and clear horizontal lane; accepted as an adapted stage illustration with explicit fidelity limits.",
+      "remainingChecks": [
+        "Review any separate velvet-rope layer against the entrance and source before delivery.",
+        "Check character contrast, ground baseline, cropping and parallax alignment in the running game."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_blitzo-bodyguard-looloo",
+      "name": "Blitzø — Bodyguard, Loo Loo Land",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/helluva/candidates/hb_blitzo-bodyguard-looloo.png",
+      "masterSha256": "9acbd8679116a53c3e3083b09bf7031205c66b460695f97dd0f39529308d8385",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        114,
+        23,
+        829,
+        1520
+      ],
+      "visibleMarginsAlpha128": [
+        114,
+        23,
+        195,
+        16
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+        "production/v8/helluva/references/looloo-blitz-details.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Native PNG inspected, then generator-owner diagnostic batch1-contact.png inspected on grey to assess actual transparency; official-episode local frames compared.",
+      "matches": [
+        "Cornes annelées, peau rouge et plaque blanche du visage, lunettes noires, casquette rouge/blanc et long manteau sombre reconnaissables.",
+        "Une seule silhouette entière avec queue, mains, cornes et chaussures visibles."
+      ],
+      "differences": [
+        "Contours de la casquette et motif, longueur des pans du manteau et forme de la queue réinterprétés.",
+        "Marges haut/bas serrées ; aucune coupe visible dans le fichier examiné."
+      ],
+      "sharedLimits": [
+        "References are low-resolution episode frames (320 × 180); costume identity is checkable but precise contours and fine features are not certified.",
+        "Single static pose only; no animation cycle, mechanical completeness or runtime readability established.",
+        "Native alpha maximum 254, preserved as delivered."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-blitz-details.png",
+          "sha256": "e04b5b944d0e9005b8e33a99bda2bb0ec58cc026718f4f15c11b2ffa077e6358",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ],
+      "masterPath": "production/v8/helluva/masters/hb_blitzo-bodyguard-looloo.png",
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+        "sha256": "97ffeeb0fc9cc4fb466180d1b537b44b88811fc1b98ae6b97aa291b70cf9c71c",
+        "bytes": 746916,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      }
+    },
+    {
+      "id": "hb_moxxie-bodyguard-looloo",
+      "name": "Moxxie — Bodyguard, Loo Loo Land",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/helluva/candidates/hb_moxxie-bodyguard-looloo.png",
+      "masterSha256": "a1a7f65eb04d40d66fd08f7cc88ba977cc0ebe4f6829b1574fec304c88a727ee",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        125,
+        55,
+        678,
+        1499
+      ],
+      "visibleMarginsAlpha128": [
+        125,
+        55,
+        346,
+        37
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+        "production/v8/helluva/references/looloo-millie-moxxie-details.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Native PNG inspected, then generator-owner diagnostic batch1-contact.png inspected on grey to assess actual transparency; official-episode local frames compared.",
+      "matches": [
+        "Cheveux blancs, cornes annelées, lunettes noires, taches claires du visage, nœud rouge, veste noire et ceinture grise visibles.",
+        "Une silhouette entière, mains libres, queue et pieds présents."
+      ],
+      "differences": [
+        "Le panneau diagonal noir et blanc sous le nœud peut se lire comme une cravate supplémentaire ; la référence comporte un motif angulaire mais ne justifie pas une correspondance exacte du détail.",
+        "Proportions et courbe des jambes/queue adaptées à la pose debout."
+      ],
+      "sharedLimits": [
+        "References are low-resolution episode frames (320 × 180); costume identity is checkable but precise contours and fine features are not certified.",
+        "Single static pose only; no animation cycle, mechanical completeness or runtime readability established.",
+        "Native alpha maximum 254, preserved as delivered."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-millie-moxxie-details.png",
+          "sha256": "23524212fec0cef16a99e2301bef9051f2e8a6804c38f432fc3eea4a3338a85e",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ],
+      "masterPath": "production/v8/helluva/masters/hb_moxxie-bodyguard-looloo.png",
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+        "sha256": "a97273addb71506fd42fd4e34e25430cc80f3c041def0ce5a02009cfc3ebee9d",
+        "bytes": 727566,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      }
+    },
+    {
+      "id": "hb_millie-bodyguard-looloo",
+      "name": "Millie — Bodyguard, Loo Loo Land",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/helluva/candidates/hb_millie-bodyguard-looloo.png",
+      "masterSha256": "ff53a4df47608e07569876402e910873458e270ddcb0abd9f441d3703043311a",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        149,
+        38,
+        875,
+        1507
+      ],
+      "visibleMarginsAlpha128": [
+        149,
+        38,
+        149,
+        29
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+        "production/v8/helluva/references/looloo-millie-moxxie-details.png",
+        "production/v8/helluva/references/looloo-board-5.jpg"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Native PNG inspected, then generator-owner diagnostic batch1-contact.png inspected on grey to assess actual transparency; official-episode local frames compared.",
+      "matches": [
+        "Peau rouge, coiffure noire, fines cornes, costume sombre, col/cravate et ceinture grise correspondent à la tenue générale.",
+        "Silhouette seule, complète, lunettes noires, queue, mains et pieds présents.",
+        "Lunettes confirmées directement dans le panneau supérieur gauche du storyboard looloo-board-5.jpg, examiné en complément."
+      ],
+      "differences": [
+        "La combinaison costume/lunettes est confirmée par le storyboard ; la pose et les contours restent adaptés.",
+        "Contour de coiffure, cornes, queue et coupe du costume redessinés ; détails fins non certifiés."
+      ],
+      "sharedLimits": [
+        "References are low-resolution episode frames (320 × 180); costume identity is checkable but precise contours and fine features are not certified.",
+        "Single static pose only; no animation cycle, mechanical completeness or runtime readability established.",
+        "Native alpha maximum 254, preserved as delivered."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-millie-moxxie-details.png",
+          "sha256": "23524212fec0cef16a99e2301bef9051f2e8a6804c38f432fc3eea4a3338a85e",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-board-5.jpg",
+          "sha256": "6af66e23fb2cf2255a7d9a5a9e555a6dfd7710e1c7abbd30de6d5be97789f4c3",
+          "dimensions": [
+            960,
+            540
+          ]
+        }
+      ],
+      "masterPath": "production/v8/helluva/masters/hb_millie-bodyguard-looloo.png",
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+        "sha256": "4d157ac0212c8996739eea02518648328beb79baede089e84962778cdf93e0b1",
+        "bytes": 700162,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      }
+    },
+    {
+      "id": "hb_stolas-tourist-looloo",
+      "name": "Stolas — Touriste, Loo Loo Land",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/helluva/candidates/hb_stolas-tourist-looloo.png",
+      "masterSha256": "6b5caa488ee7231b94a59bffdf9575d3efca4f19359b02090007ab126daf07dc",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        201,
+        24,
+        720,
+        1528
+      ],
+      "visibleMarginsAlpha128": [
+        201,
+        24,
+        304,
+        8
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/looloo-stolas-details.png",
+        "production/v8/helluva/references/looloo-stolas-whole-scene.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Native PNG inspected, then generator-owner diagnostic batch1-contact.png inspected on grey to assess actual transparency; official-episode local frames compared.",
+      "matches": [
+        "Chemise blanche à grandes fleurs rouges, short rouge, casquette rouge, face de chouette claire, longues jambes et pieds aviaires reconnaissables.",
+        "Silhouette entière et isolée, sans costume royal ni accessoire supplémentaire."
+      ],
+      "differences": [
+        "Motif ovale de casquette et queue sont agrandis ; distribution des fleurs et proportions locales différentes.",
+        "Marge basse visible de 8 pixels seulement sur 1536 ; aucun bout de pied coupé observé, mais contrôler le cadrage runtime."
+      ],
+      "sharedLimits": [
+        "References are low-resolution episode frames (320 × 180); costume identity is checkable but precise contours and fine features are not certified.",
+        "Single static pose only; no animation cycle, mechanical completeness or runtime readability established.",
+        "Native alpha maximum 254, preserved as delivered."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/looloo-stolas-details.png",
+          "sha256": "d72e6fae706c040cc9aaef720a48944840a72478c3af6498aaadaf04bfc46aeb",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-stolas-whole-scene.png",
+          "sha256": "0c6b76cf01bb2501fc524afad1595ee2b32ae4f42e5b7da8a6c61ba673fb43c0",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ],
+      "masterPath": "production/v8/helluva/masters/hb_stolas-tourist-looloo.png",
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+        "sha256": "84eaa30fbb310dd9b3e78f2ce03649fa8da253cd970396d737812a4f217ba378",
+        "bytes": 653432,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      }
+    },
+    {
+      "id": "alastor-human-s2-ready",
+      "name": "Alastor humain — flashback saison 2",
+      "kind": "incarnation_base",
+      "status": "accepted_static_archive_candidate",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+      "masterSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        318,
+        32,
+        906,
+        1510
+      ],
+      "visibleMarginsAlpha128": [
+        318,
+        32,
+        118,
+        26
+      ],
+      "referencePaths": [
+        "production/v8/hazbin/references/alastor-human-body-2s.png",
+        "production/v8/hazbin/references/alastor-human-face-4s.png",
+        "production/v8/hazbin/references/alastor-human-uniform-20s.png",
+        "production/v8/hazbin/references/alastor-human-legs-68s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=68s"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Three governing local frames plus supplementary leg view compared with the white-background diagnostic render; native alpha metadata inspected.",
+      "matches": [
+        "Human skin tone, swept curls, spectacles, narrow smiling face, burgundy waistcoat, red tie and dark sleeve garters identify the referenced incarnation.",
+        "Complete single human silhouette with hair, hand, shoes and no demonic ears, antlers or tail."
+      ],
+      "differences": [
+        "Standing gesture, expressive face, hand proportions and waistcoat detail are adapted from the source frames.",
+        "Source frames are 320 × 180; tiny freckles, glasses contour and cloth details are not certified.",
+        "Visible margins of 32 pixels above and 26 below are below the 7 percent request but no crop is observed."
+      ],
+      "newIdentity": false,
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "exportVerification": {
+        "path": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+        "sha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a",
+        "bytes": 704142,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "referenceFiles": [
+        {
+          "path": "production/v8/hazbin/references/alastor-human-body-2s.png",
+          "sha256": "41736498118db5fef4cb7af51090a0736ef5980723aa7d251fbf3cff29739540",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/alastor-human-face-4s.png",
+          "sha256": "ffd840a4615bc1bfb3c904275cf73f076c4ec30b6b3a2695c35ff31664ba6cd8",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/alastor-human-uniform-20s.png",
+          "sha256": "ac2427e48557e1f43466c47f82aee7f625d462d7db00686294c93a253cf411c8",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/alastor-human-legs-68s.png",
+          "sha256": "d004a0e55475f4dab7a84e368d499e127eeb3eb3796a24e057b08cb4d3215ab1",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hellhound-adoption-s2-room",
+      "kind": "stage_background",
+      "status": "accepted_static_adaptation",
+      "acceptedForIntegration": true,
+      "masterPath": "production/v8/environment/masters/hellhound-adoption-s2-room.png",
+      "masterSha256": "5e44a3e68eea6f333de98694ce11a10ab707ffbf112557fd61eaf4639c8963d5",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sourceReference": {
+        "referenceFileName": "helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "dimensions": [
+          1920,
+          1104
+        ],
+        "urls": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva03.jpg"
+        ],
+        "attribution": "Greg Bartlett, as attributed by environment-generation.json"
+      },
+      "method": "Complete generated native PNG and complete local source production artwork opened and compared visually.",
+      "matches": [
+        "Long couloir gris/bleu, cages de part et d’autre, néons cyan, plâtre fissuré, conduites et porte du fond cohérents avec la référence.",
+        "Absence volontaire de l’enseigne suspendue et du clipboard proche ; autres dossiers de cage conservés.",
+        "Aucun personnage/animal intégré ; sol dégagé pour la voie de combat."
+      ],
+      "differences": [
+        "Cadrage élargi en 16:9 et sol de premier plan agrandi ; rythme des barreaux, conduites, fissures, reflets et écartements redessinés.",
+        "Petit équipement d’entretien près de la porte du fond omis ; perspective et proportions ne sont pas identiques.",
+        "Définition native 1672 × 941, sans master supérieur certifié."
+      ],
+      "remainingChecks": [
+        "Contrôler le recadrage et la hauteur de sol en jeu.",
+        "Les calques d’enseigne et clipboard doivent rester accrochés à leur support lors des mouvements."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "ozzies-exterior-rope-barrier",
+      "kind": "stage_layer",
+      "status": "accepted_static_prop_with_style_limits",
+      "acceptedForIntegration": true,
+      "masterPath": "production/v8/environment/masters/ozzies-exterior-rope-barrier.png",
+      "masterSha256": "e28f7738ec652f2dce6cb36078e76f3896b10f764165a81bbeeda1bb707a2be2",
+      "nativeDimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        163,
+        112,
+        1611,
+        813
+      ],
+      "visibleMarginsAlpha128": [
+        163,
+        112,
+        163,
+        74
+      ],
+      "sourceReference": {
+        "referenceFileName": "helluva07.jpg",
+        "sha256": "5a799c6398f70478747f6a027f929aa76a0a7b9f9c3b5fba3c9680cc80d34079",
+        "dimensions": [
+          1920,
+          1177
+        ],
+        "urls": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva07.jpg"
+        ],
+        "attribution": "Greg Bartlett, as attributed by environment-generation.json"
+      },
+      "method": "Complete generated native PNG and complete local source production artwork opened and compared visually.",
+      "matches": [
+        "Un tronçon complet à deux potelets gris avec boules et bases circulaires reliés par un cordon bordeaux.",
+        "Reflets magenta cohérents avec l’environnement Ozzie’s ; aucune base ni extrémité coupée visible."
+      ],
+      "differences": [
+        "Potelets, boules, bases et corde nettement plus épais que les barrières fines du décor source.",
+        "Reflets métalliques plus lisses et brillants ; perspective plus frontale et symétrique que dans la référence."
+      ],
+      "remainingChecks": [
+        "Placer à une petite échelle crédible près de l’entrée, sans recouvrir la voie utile.",
+        "Vérifier le contact des deux bases au sol et la cohérence de style dans la composition."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hellhound-adoption-sign",
+      "kind": "stage_layer",
+      "status": "accepted_static_prop",
+      "acceptedForIntegration": true,
+      "masterPath": "production/v8/environment/masters/hellhound-adoption-sign.png",
+      "masterSha256": "6571ad5e0c1359ed9c99f4cf61e8ec65b8cb90740626d010142d5bbea3059078",
+      "nativeDimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        261,
+        22,
+        1521,
+        851
+      ],
+      "visibleMarginsAlpha128": [
+        261,
+        22,
+        253,
+        36
+      ],
+      "sourceReference": {
+        "referenceFileName": "helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "dimensions": [
+          1920,
+          1104
+        ],
+        "urls": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva03.jpg"
+        ],
+        "attribution": "Greg Bartlett, as attributed by environment-generation.json"
+      },
+      "method": "Complete generated native PNG and complete local source production artwork opened and compared visually.",
+      "matches": [
+        "Texte HELLHOUND ADOPTION correct sur deux lignes, empreinte jaune à quatre doigts, panneau rouge/brun usé.",
+        "Deux segments de chaîne, attaches et contours du panneau complets ; aucune lettre manquante."
+      ],
+      "differences": [
+        "Lettrage, entailles des bords, rayures et longueurs de chaînes redessinés.",
+        "Angle et épaisseur du panneau approximatifs, sans certification de correspondance exacte."
+      ],
+      "remainingChecks": [
+        "Aligner les extrémités des chaînes avec le plafond et conserver leur attache pendant la parallaxe."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hellhound-adoption-clipboard",
+      "kind": "stage_layer",
+      "status": "accepted_static_prop",
+      "acceptedForIntegration": true,
+      "masterPath": "production/v8/environment/masters/hellhound-adoption-clipboard.png",
+      "masterSha256": "fa10a7fa34174751d9c4006899c2e37888104760f33aa9eafcafae3914a787bb",
+      "nativeDimensions": [
+        1269,
+        1240
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        334,
+        150,
+        925,
+        1064
+      ],
+      "visibleMarginsAlpha128": [
+        334,
+        150,
+        344,
+        176
+      ],
+      "sourceReference": {
+        "referenceFileName": "helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "dimensions": [
+          1920,
+          1104
+        ],
+        "urls": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva03.jpg"
+        ],
+        "attribution": "Greg Bartlett, as attributed by environment-generation.json"
+      },
+      "method": "Complete generated native PNG and complete local source production artwork opened and compared visually.",
+      "matches": [
+        "Planche brune mince, pince grise, papier pâle, bloc jaune et note orange inclinée correspondent à l’objet de la cage proche.",
+        "Objet entier isolé ; aucun nom ou texte personnel inventé, lignes de dossier schématiques."
+      ],
+      "differences": [
+        "Pince et contours simplifiés/agrandis ; perspective et position fine de la note adaptées.",
+        "Traitements d’ombre plus doux que le petit objet de la référence."
+      ],
+      "remainingChecks": [
+        "Attacher à la grille proche avec le même déplacement de parallaxe que son mur porteur."
+      ],
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "vox-human-weather-s2-ready",
+      "name": "Vox humain — présentateur météo, saison 2",
+      "kind": "incarnation_base",
+      "status": "accepted_static_archive_candidate",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+      "masterSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        332,
+        12,
+        682,
+        1524
+      ],
+      "visibleMarginsAlpha128": [
+        332,
+        12,
+        342,
+        12
+      ],
+      "referencePaths": [
+        "production/v8/hazbin/references/vox-weather-body-14s.png",
+        "production/v8/hazbin/references/vox-weather-face-12s.png",
+        "production/v8/hazbin/references/vox-weather-torso-10s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Three specified local reference frames compared visually with the candidate composited on white; native alpha metadata inspected.",
+      "matches": [
+        "Coiffure angulaire sombre à mèche claire, lunettes rectangulaires, visage humain et silhouette mince reconnaissables.",
+        "Figure entière, sans tête-écran ni attribut démoniaque ; mains et chaussures visibles.",
+        "Costume brun sombre, chemise claire, cravate sombre et petite broche météo lisibles."
+      ],
+      "differences": [
+        "Pose neutre, proportions de la coiffure/du visage et coupe fine des vêtements adaptées.",
+        "Références 320 × 180 insuffisantes pour certifier petits contours, broche ou boutons à l’identique.",
+        "Marges verticales serrées, sans coupe visible observée."
+      ],
+      "newIdentity": false,
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "exportVerification": {
+        "path": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+        "sha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0",
+        "bytes": 670660,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "referenceFiles": [
+        {
+          "path": "production/v8/hazbin/references/vox-weather-body-14s.png",
+          "sha256": "4b624af2add6f214722f4bafaec99e0744a1f07bee253d60a89ac1685e961671",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/vox-weather-face-12s.png",
+          "sha256": "83846eb46ec2efdfc70b651f598beb8c76d62e91f4f860961b0948b4703c0119",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/vox-weather-torso-10s.png",
+          "sha256": "13a9751f5382f0ef4e99915759c217ac758a28ecb8352f84661ba7336bce9974",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vox-human-talkshow-s2-ready",
+      "name": "Vox humain — costume du talk-show, saison 2",
+      "kind": "incarnation_base",
+      "status": "accepted_static_archive_candidate",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+      "masterSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        333,
+        10,
+        695,
+        1526
+      ],
+      "visibleMarginsAlpha128": [
+        333,
+        10,
+        329,
+        10
+      ],
+      "referencePaths": [
+        "production/v8/hazbin/references/vox-talkshow-body-58s.png",
+        "production/v8/hazbin/references/vox-talkshow-face-62s.png",
+        "production/v8/hazbin/references/vox-talkshow-shoes-66s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+      ],
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "method": "Three specified local reference frames compared visually with the candidate composited on white; native alpha metadata inspected.",
+      "matches": [
+        "Coiffure angulaire sombre à mèche claire, lunettes rectangulaires, visage humain et silhouette mince reconnaissables.",
+        "Figure entière, sans tête-écran ni attribut démoniaque ; mains et chaussures visibles.",
+        "Veste claire bleu-vert, revers et pantalon verts plus foncés, nœud papillon et boutons noirs, chaussures à petite pointe claire lisibles."
+      ],
+      "differences": [
+        "Pose neutre, proportions de la coiffure/du visage et coupe fine des vêtements adaptées.",
+        "Références 320 × 180 insuffisantes pour certifier petits contours, broche ou boutons à l’identique.",
+        "Marges verticales serrées, sans coupe visible observée."
+      ],
+      "newIdentity": false,
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "exportVerification": {
+        "path": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+        "sha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733",
+        "bytes": 738516,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "referenceFiles": [
+        {
+          "path": "production/v8/hazbin/references/vox-talkshow-body-58s.png",
+          "sha256": "6291ad34b852039ff53e76f061744988f4e9ae90e938f55a79594df7e9fe293a",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/vox-talkshow-face-62s.png",
+          "sha256": "418ab0e9271f622cbf3c6cee92e95a0d06ee239c6a23d13349c0de82f1b532ee",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/vox-talkshow-shoes-66s.png",
+          "sha256": "c8b0abc855b1e325943597aac2c85bb1fafc9c909a8572e53d3f9f7866d924d0",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hb_millie-staff-ghostfuckers",
+      "name": "Millie — STAFF, Ghostf**kers",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/helluva/candidates/hb_millie-staff-ghostfuckers.png",
+      "referencePaths": [
+        "production/v8/helluva/references/ghosts-millie-whole-scene.png",
+        "production/v8/helluva/references/ghosts-millie-close.png",
+        "production/v8/helluva/references/ghosts-costume-details.png",
+        "production/v8/helluva/references/ghosts-costume-lowerbody.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "method": "Official episode local full-body, close and complementary views compared with batch2-contact.png on grey.",
+      "matches": [
+        "Bonnet violet à revers jaune, cheveux noirs, visage rouge/yeux jaunes, haut court STAFF, pantalon violet aux revers jaunes et bottines sombres cohérents.",
+        "STAFF lisible ; une seule silhouette entière avec mains, queue et pieds visibles, sans cornes inventées au-dessus du bonnet."
+      ],
+      "differences": [
+        "Pose, largeur du pantalon, détails du bonnet et contours du visage réinterprétés.",
+        "Références 320 × 180 : détails du vêtement et de l’anatomie non certifiés à l’identique."
+      ],
+      "acceptedForCostumeSelection": true,
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        128,
+        67,
+        805,
+        1511
+      ],
+      "visibleMarginsAlpha128": [
+        128,
+        67,
+        219,
+        25
+      ],
+      "masterSha256": "d85aef368f925cb5fc16a5e12b0e3add8fffd50d5f2f0c03c41ccf5945488928",
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "masterPath": "production/v8/helluva/masters/hb_millie-staff-ghostfuckers.png",
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+        "sha256": "c3d7a464ebd4dc4ada16a0b73058f444fa82558f18a44790cfb6cd5cbc30df52",
+        "bytes": 864816,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/ghosts-millie-whole-scene.png",
+          "sha256": "df4eb60bd820e5cfa2a4fc92d871e7e2fc6f8b7d9ac4877cdfb9816d359d0928",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-millie-close.png",
+          "sha256": "74bbde271d1adc2e1ee1b444c127e23f6af8b73cf2d3c89f528c821e141b34f7",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-costume-details.png",
+          "sha256": "0002f29af38499cf95443dad81db81b041e3e6d38b082e7c65e83874d3dcf624",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-costume-lowerbody.png",
+          "sha256": "e5706a3dda7ec1d604777c504c8ba11f31fe225f6af6221e368afdb56d74f259",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emily-six-wings-s2-ready",
+      "name": "Emily — six ailes déployées, saison 2",
+      "kind": "costume",
+      "status": "accepted_static_gallery_variant",
+      "acceptedForIntegration": true,
+      "reviewedPath": "production/v8/hazbin/native/emily-six-wings-s2-ready.png",
+      "referencePaths": [
+        "production/v8/hazbin/references/emily-seraph-body.png",
+        "production/v8/hazbin/references/emily-seraph-face-195s.png",
+        "production/v8/hazbin/references/emily-seraph-group.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+      ],
+      "method": "Three specified local reference frames compared with white-background diagnostic output; native alpha metadata inspected.",
+      "matches": [
+        "Trois paires d’ailes distinctes (six ailes), halo à ornements, cheveux clairs, visage et robe courte à motif identifient la forme montrée.",
+        "Une seule silhouette entière en vol ; mains, extrémités des ailes et pieds visibles."
+      ],
+      "differences": [
+        "Courbe et nombre exact des plumes, proportions, ourlet et geste adaptés.",
+        "Références 320 × 180 et marges supérieures serrées ; détails fins non certifiés.",
+        "Posture en suspension et grande envergure : aucun fonctionnement comme costume de combat établi."
+      ],
+      "acceptedRuntimeUsage": [
+        "reserve_gallery"
+      ],
+      "acceptedForCostumeSelection": false,
+      "newIdentity": false,
+      "nativeDimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        132,
+        12,
+        1395,
+        1000
+      ],
+      "visibleMarginsAlpha128": [
+        132,
+        12,
+        141,
+        24
+      ],
+      "masterSha256": "c02c840423bae808607c4b9497a48466a3d3cf26a496a6b2ba2fad887ad65cf0",
+      "referenceResolution": [
+        320,
+        180
+      ],
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "exportVerification": {
+        "path": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+        "sha256": "d2b439cb4d718a25d294670d436bc18b61002a2ecfc7edad988edf76b528f43a",
+        "bytes": 1022146,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "referenceFiles": [
+        {
+          "path": "production/v8/hazbin/references/emily-seraph-body.png",
+          "sha256": "e290e5887856bf7689fc036e9c14daab137a389539b408095d05e7069fa84c1a",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/emily-seraph-face-195s.png",
+          "sha256": "79635d0bc1512d549ca5b54ea9313fa1984cab264b2fd836926751c562bacc4c",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/hazbin/references/emily-seraph-group.png",
+          "sha256": "c47cb10f5727141efffb87d3259b7a1c04499d464ff5a9a1d134b0107232c5ee",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hb_blitzo-harvest-festival",
+      "name": "Blitzø — Harvest Moon Festival",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "acceptedForCostumeSelection": true,
+      "masterPath": "production/v8/helluva/masters/hb_blitzo-harvest-festival.png",
+      "masterSha256": "93cc3139d51c29edbae0a5081a814b33485ff440e959d597b037097429114920",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        126,
+        17,
+        726,
+        1519
+      ],
+      "visibleMarginsAlpha128": [
+        126,
+        17,
+        298,
+        17
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/harvest-blitz-whole-scene.png",
+        "production/v8/helluva/references/harvest-blitz-details.png"
+      ],
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/harvest-blitz-whole-scene.png",
+          "sha256": "3e687b4f82b74a2db36384e92f096957303c3ade0e0b88e699bbe9b9b657634d",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/harvest-blitz-details.png",
+          "sha256": "5abb406b9222f2c46c32d2dd040457535d5b140c9b703d084634c66a3846a25e",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+      ],
+      "method": "Episode reference images and named supplementary merchandise views compared with diagnostic contact sheet; revised Blitz Harvest native also opened independently. Final PNG/WebP decoded RGBA byte comparison.",
+      "matches": [
+        "Chemise blanche aux manches retroussées, bretelles sombres, pantalon et chaussures sombres à pointes rouges, silhouette de Blitzø reconnaissables.",
+        "Version corrigée : croix rouges de la tache blanche du visage et marques rouges des manches supprimées ; marques de peau des avant-bras conservées.",
+        "Silhouette complète, doigts, grandes cornes, queue et pieds visibles."
+      ],
+      "differences": [
+        "Pose neutre, forme fine des scarifications, contours de chaussures et proportions réinterprétés.",
+        "Sources de série 320 × 180 ; détails fins non certifiés."
+      ],
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+        "sha256": "00f7436f72b9d42c8dadf5ef83e567371fc31adfbbdf08e567ed281a4c336a89",
+        "bytes": 820408,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false,
+      "reviewedPath": "production/v8/helluva/candidates/hb_blitzo-harvest-festival-revised.png",
+      "supersededCandidatePath": "production/v8/helluva/candidates/hb_blitzo-harvest-festival.png",
+      "withinBatchCorrectionCountsAsExtraDrawing": false
+    },
+    {
+      "id": "hb_millie-harvest-festival",
+      "name": "Millie — Harvest Moon Festival",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "acceptedForCostumeSelection": true,
+      "masterPath": "production/v8/helluva/masters/hb_millie-harvest-festival.png",
+      "masterSha256": "042e5c8f481046e476bd50f5ed5ac68e0d226d3403d332ca958679f8ce48d0c3",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        146,
+        24,
+        816,
+        1518
+      ],
+      "visibleMarginsAlpha128": [
+        146,
+        24,
+        208,
+        18
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/harvest-millie-whole-scene.png",
+        "production/v8/helluva/references/harvest-millie-details.png",
+        "production/v8/helluva/references/millie-harvest-official-pin.png"
+      ],
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/harvest-millie-whole-scene.png",
+          "sha256": "31596acf90596fc9a45ce463be2e35863e8a892bc78c3b6d8cf4c71d375741b1",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/harvest-millie-details.png",
+          "sha256": "eb31326a1df2d6ef1132326d9cebf334b95326f867552d786a85a29c6600200f",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/millie-harvest-official-pin.png",
+          "sha256": "7d5fc44fe377f3d9240d02868e4b726923c3737020cdd009e7353e61a25506ea",
+          "dimensions": [
+            1500,
+            1500
+          ]
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+      ],
+      "method": "Episode reference images and named supplementary merchandise views compared with diagnostic contact sheet; revised Blitz Harvest native also opened independently. Final PNG/WebP decoded RGBA byte comparison.",
+      "matches": [
+        "Bandana rouge noué, haut noir sans manches, short noir, bottines et identité de Millie cohérents avec les références.",
+        "Une silhouette entière avec cornes, mains, queue et pieds ; aucun pantalon long ni chapeau ajouté."
+      ],
+      "differences": [
+        "Pose assise de la référence principale transformée en station debout ; coupe du short, coiffure et petits boutons adaptés.",
+        "Plan de série petit ; le produit dérivé ne corrobore que le haut du corps."
+      ],
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+        "sha256": "0ff99e4b00da69916642057dbe07b0e92ae19d2221ed68204e13018ccc1d9620",
+        "bytes": 807722,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_stolas-vampire-apology-tour",
+      "name": "Stolas — Vampire, Apology Tour",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "acceptedForCostumeSelection": true,
+      "masterPath": "production/v8/helluva/masters/hb_stolas-vampire-apology-tour.png",
+      "masterSha256": "a9242184455a932f8c4100709553526190cfe6d308e44509d532b6a8de68846c",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        57,
+        14,
+        965,
+        1518
+      ],
+      "visibleMarginsAlpha128": [
+        57,
+        14,
+        59,
+        18
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/apology-stolas-whole-scene.png",
+        "production/v8/helluva/references/apology-stolas-details.png",
+        "production/v8/helluva/references/apology-stolas-blitz-costumes.png",
+        "production/v8/helluva/references/apology-tour-official-standee-0.png"
+      ],
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/apology-stolas-whole-scene.png",
+          "sha256": "0c3ebaa03c6a99e3e3ab098346174c4bac5dff06d9206da86f26f79aff257323",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/apology-stolas-details.png",
+          "sha256": "0f25fad56d50411141e294403e209e989ec7bf7d25922b7f2c1af01e23db1ac2",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/apology-stolas-blitz-costumes.png",
+          "sha256": "0e77991e8ef5b024ecf37e637b54db7f08dbfcdecb8a41969153db95c4e98b54",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/apology-tour-official-standee-0.png",
+          "sha256": "8b78493b1bf530c326f7392daa201bf3228d05c43e66ca4199260eabc6fdacba",
+          "dimensions": [
+            1500,
+            1500
+          ]
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+      ],
+      "method": "Episode reference images and named supplementary merchandise views compared with diagnostic contact sheet; revised Blitz Harvest native also opened independently. Final PNG/WebP decoded RGBA byte comparison.",
+      "matches": [
+        "Haut-de-forme sombre à motif doré, petits yeux supérieurs, face claire, col relevé, cape à doublure bordeaux, gemme rouge et jabot reconnaissables.",
+        "Longues jambes/pieds aviaires et queue entiers ; le plein pied du produit dérivé corrobore la silhouette de l’épisode."
+      ],
+      "differences": [
+        "Pose debout sobre adaptée ; contour des plumes, ouverture et bord inférieur de cape, proportions et reflets du costume redessinés.",
+        "Les petits plans d’épisode ne certifient pas chaque détail du vêtement."
+      ],
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+        "sha256": "4db1c4a620b5040b34adc131a3e7c6dfae86c56ffd8c4aa1b355b5fa9eabe4cc",
+        "bytes": 865434,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_blitzo-ghost-apology-tour",
+      "name": "Blitzø — Fantôme, Apology Tour",
+      "kind": "costume",
+      "status": "accepted_static_candidate_with_fidelity_limits",
+      "acceptedForIntegration": true,
+      "acceptedForCostumeSelection": true,
+      "masterPath": "production/v8/helluva/masters/hb_blitzo-ghost-apology-tour.png",
+      "masterSha256": "b8ab6ef6d8dad30867a1128c11ed1d7a24f3434e098061a0e447d9cdfc58eae2",
+      "nativeDimensions": [
+        1052,
+        1495
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        130,
+        33,
+        922,
+        1462
+      ],
+      "visibleMarginsAlpha128": [
+        130,
+        33,
+        130,
+        33
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/apology-blitz-whole-scene.png",
+        "production/v8/helluva/references/apology-blitz-seated-scene.png",
+        "production/v8/helluva/references/apology-blitz-details.png"
+      ],
+      "referenceFiles": [
+        {
+          "path": "production/v8/helluva/references/apology-blitz-whole-scene.png",
+          "sha256": "83845aa6e05d704ef4c8fd8d3a9585e0d4c9d67acee17025bf74c45012a4464c",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/apology-blitz-seated-scene.png",
+          "sha256": "4158b5116c35928024805ab7e12a523ff1a30fc4941e9b522c4a943a8e7b5185",
+          "dimensions": [
+            320,
+            180
+          ]
+        },
+        {
+          "path": "production/v8/helluva/references/apology-blitz-details.png",
+          "sha256": "7084f7cdd07abb3a1d571acffb72f119cc08e9e31c717335738d790708b9b567",
+          "dimensions": [
+            320,
+            180
+          ]
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+      ],
+      "method": "Episode reference images and named supplementary merchandise views compared with diagnostic contact sheet; revised Blitz Harvest native also opened independently. Final PNG/WebP decoded RGBA byte comparison.",
+      "matches": [
+        "Drap blanc à taches rouges, ouverture autour du visage rouge/blanc de Blitzø, yeux jaunes et silhouette drapée reconnaissables.",
+        "Ourlet complet ; pieds, cornes et queue restent masqués par le drap comme dans la vue entière, sans anatomie inventée."
+      ],
+      "differences": [
+        "Plis, emplacement/taille des taches et ouverture du visage recomposés pour la pose statique.",
+        "Références de série 320 × 180 ; contours fins non certifiés."
+      ],
+      "exportVerification": {
+        "path": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+        "sha256": "f4193ee5cc7592221938efe653bba67005aab88c5c23e039fa59a3edf0335a20",
+        "bytes": 560592,
+        "comparison": "All decoded RGBA bytes, including hidden RGB at alpha zero",
+        "pixelExactExport": true,
+        "dimensions": [
+          1052,
+          1495
+        ]
+      },
+      "animationFrames": 0,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "browserAvailability": {
+    "status": "local_browser_probe_completed",
+    "playwrightInstalled": true,
+    "localBrowserExecutableAvailable": false,
+    "installationPerformed": false,
+    "runtimeTestsPerformed": false,
+    "scope": "Local read-only probe only; separate browser/cloud QA remains independently assessable."
+  },
+  "candidatesNotAccepted": [
+    {
+      "id": "hb_blitzo-bethany-ghostfuckers",
+      "name": "Blitzø — Bethany, Ghostf**kers",
+      "status": "held_lower_body_reference_gap",
+      "acceptedForIntegration": false,
+      "countsAsDelivered": false,
+      "reviewedPath": "production/v8/helluva/candidates/hb_blitzo-bethany-ghostfuckers.png",
+      "masterSha256": "a7b9b4835f633ce556fbb509c66dd473eaeb1074a111fadd39d77d786e426754",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        84,
+        11,
+        848,
+        1531
+      ],
+      "referencePaths": [
+        "production/v8/helluva/references/ghosts-blitz-millie-whole-scene.png",
+        "production/v8/helluva/references/ghosts-costume-details.png",
+        "production/v8/helluva/references/ghosts-costume-lowerbody.png",
+        "production/v8/helluva/references/blitz-ghosts-official-pin-1.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "method": "Local official-episode views and supplementary merchandise close-up compared with the candidate on grey.",
+      "matches": [
+        "Haut sombre, perruque blonde à tresse, chapeau de sorcière violet avec emblème et visage de Blitzø reconnaissables."
+      ],
+      "blockingFindings": [
+        "Répartition asymétrique lilas/rouge des jambes et forme/hauteur des bottes de la sortie insuffisamment établies par les vues disponibles.",
+        "Vue entière très petite et en mouvement à 610 s ; vue tardive assise à 1480 s coupant les pieds ; gros plan de produit limité au haut du corps."
+      ],
+      "requiredNextEvidence": "Vue primaire entière et plus lisible de la même tenue, avec les deux jambes et bottes ; comparaison du bas avant sélection comme costume.",
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "fidelityOneToOneCertified": false
+    }
+  ]
+}

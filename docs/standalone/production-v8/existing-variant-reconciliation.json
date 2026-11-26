@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "edition": "V8",
+  "date": "2026-11-26",
+  "status": "verified_existing_variant_mapping",
+  "variants": [
+    {
+      "requirementId": "VAR-003",
+      "assetId": "vaggie-exorcist",
+      "runtime": "six_key_poses",
+      "notes": "Uniforme d’exorciste déjà sélectionnable avec six poses clés. Les transitions animées restent distinctes.",
+      "fighter": "vaggie",
+      "name": "Exorciste — archive",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/vaggie-exorcist.webp",
+      "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+      "runtimeSelectable": true,
+      "staticReadyOnly": false,
+      "distinctPoseFiles": 6,
+      "referenceUrls": [],
+      "sourceRegister": "docs/standalone/production-v7/catalogue-audit.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist.webp",
+          "bytes": 116716,
+          "sha256": "cf87a3620500a88da05572a2dbadcd97761cd39d5c3eb56250fa14134f886145"
+        },
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist-strike.webp",
+          "bytes": 112674,
+          "sha256": "212c75ff780ea99e23d7c837920f6c70264fd70744932ae35ca7ae0020273462"
+        },
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist-recoil.webp",
+          "bytes": 156870,
+          "sha256": "5d09eea23cd0f6cea1be3ecc97922ec23b90f39c8067438217b2b8114b7782b2"
+        },
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist-heavy.webp",
+          "bytes": 123052,
+          "sha256": "ffc913abfe9803b690d6fcd0c78b75ed2707faba30b01b3c89a37378f34f0551"
+        },
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist-crouch.webp",
+          "bytes": 99150,
+          "sha256": "da9e59cb39d8ff9faf3da1920c4f602d7e0a5f61985a7297a30f990c92b9e241"
+        },
+        {
+          "path": "public/assets/sprites/costumes/vaggie-exorcist-jump.webp",
+          "bytes": 122894,
+          "sha256": "c7b51103d571d33615d38297d7162eb8c919dba0c1e39f77242818480368e152"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-018",
+      "assetId": "hb_moxxie-moxxine",
+      "runtime": "static_ready_only",
+      "notes": "Déguisement Moxxine V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+      "fighter": "hb_moxxie",
+      "name": "Moxxine — camping",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_moxxie-moxxine.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": true,
+      "staticReadyOnly": true,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=lYu1ysDULwA"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_moxxie-moxxine.webp",
+          "bytes": 886024,
+          "sha256": "b38951a7c8b3e389232f3e6c6a785d229e22896b641137bb86332913fc9c8fc9"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-019",
+      "assetId": "hb_millie-millerd",
+      "runtime": "static_ready_only",
+      "notes": "Déguisement Millerd V5 déjà sélectionnable. Une illustration reste affichée dans toutes les actions ; aucun cycle nouveau.",
+      "fighter": "hb_millie",
+      "name": "Millerd — camping",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_millie-millerd.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": true,
+      "staticReadyOnly": true,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=lYu1ysDULwA"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_millie-millerd.webp",
+          "bytes": 816148,
+          "sha256": "57aa4e51143d2f0c3c7adef96c470bf130c65929d61f001d2d97901705a0aee8"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-021",
+      "assetId": "hb_loona-human-disguise",
+      "runtime": "six_key_poses",
+      "notes": "Apparence humaine déjà sélectionnable avec six poses clés. Ne pas la produire de nouveau à partir du statut ancien.",
+      "fighter": "hb_loona",
+      "name": "Déguisement humain",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_loona-human-disguise.webp",
+      "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+      "runtimeSelectable": true,
+      "staticReadyOnly": false,
+      "distinctPoseFiles": 6,
+      "referenceUrls": [],
+      "sourceRegister": "docs/standalone/production-v7/catalogue-audit.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise.webp",
+          "bytes": 82790,
+          "sha256": "b3df51f0ca5ac7dd4c1793fbcb8d4fdf97ff8c5c737699b7e66ab0abd3eae1eb"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise-strike.webp",
+          "bytes": 99024,
+          "sha256": "be3d3efa62ad27636beee9c34e42f3e3631a7a4afd8466618a8b6dfe26ff7c7d"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise-recoil.webp",
+          "bytes": 101222,
+          "sha256": "f8d02ded665a94ef1ea7da5ec5b73ed57215c135c6f92dbec808fe67b77fe827"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise-heavy.webp",
+          "bytes": 79240,
+          "sha256": "29768332ec92dc6315106823420654d6bbb8fe0be43324c3a83d752a02a31cc8"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise-crouch.webp",
+          "bytes": 107188,
+          "sha256": "313409a64578c0662111c9c771922e47d82a23fa405c888d921918fafcdd4982"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_loona-human-disguise-jump.webp",
+          "bytes": 103962,
+          "sha256": "20fd8bfc3b4ec53b489b1f3b29aca545bd89658eabdb39ec821ee610bc6a8ec0"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-025",
+      "assetId": "hb_stolas-deposed-sinsmas",
+      "runtime": "static_ready_only",
+      "notes": "Tenue bordeaux de Sinsmas V5 déjà sélectionnable. Le costume ne modifie pas les techniques : la perte canonique des pouvoirs reste un périmètre mécanique distinct.",
+      "fighter": "hb_stolas",
+      "name": "Déchu — après Mastermind",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": true,
+      "staticReadyOnly": true,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GisSNuVpbkM"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp",
+          "bytes": 601198,
+          "sha256": "8d6d7b6075ebc8b19e3913dc7469c4828cf6727b5e7c41a890aad3401513e374"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-026",
+      "assetId": "hb_stolas-human-disguise",
+      "runtime": "six_key_poses",
+      "notes": "Apparence humaine de Seeing Stars déjà sélectionnable avec six poses clés. Aucun nouveau dessin ni changement mécanique.",
+      "fighter": "hb_stolas",
+      "name": "Déguisement humain",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_stolas-human-disguise.webp",
+      "historicalDeliveryEdition": "Pre-V7 (see catalogue audit)",
+      "runtimeSelectable": true,
+      "staticReadyOnly": false,
+      "distinctPoseFiles": 6,
+      "referenceUrls": [],
+      "sourceRegister": "docs/standalone/production-v7/catalogue-audit.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise.webp",
+          "bytes": 98990,
+          "sha256": "9c94613a9358146c735625f7785b4231ff3b3393b062bab145047d8d1f24258b"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise-strike.webp",
+          "bytes": 125004,
+          "sha256": "5fbebeb363a228d5d2439e52fa4755bca712ea0aee06b578f19120a83283972d"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise-recoil.webp",
+          "bytes": 124556,
+          "sha256": "35d383cb78f6f2a1230a936f7c835964e4169367c40b090b569e2fee618e5e86"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise-heavy.webp",
+          "bytes": 145362,
+          "sha256": "6e29bd380df6282c59662bd01f4a4b631b43da043ff8efce6713f21c6efee78f"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise-crouch.webp",
+          "bytes": 156290,
+          "sha256": "7aa7f7686d01425e890720e74dc02f168f89e402d7203630514a3aab1752c884"
+        },
+        {
+          "path": "public/assets/sprites/costumes/hb_stolas-human-disguise-jump.webp",
+          "bytes": 148818,
+          "sha256": "20ece6d4b0e5f46b04db8631d35d04aa69c150e4cc865db696d5ca6acfd8ce39"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-030",
+      "assetId": "hb_fizzarolli-casual-oops",
+      "runtime": "static_ready_only",
+      "notes": "Tenue domestique Oops V5 déjà sélectionnable en illustration unique. La famille de scène existe séparément ; les autres variantes éventuelles ne sont pas déclarées complètes.",
+      "fighter": "hb_fizzarolli",
+      "name": "Scène / tenue de repos",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": true,
+      "staticReadyOnly": true,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp",
+          "bytes": 332234,
+          "sha256": "8188fd5c23c504839485f9800b1adf3f5a40f2b7bed9413467dfabf5ac732730"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-032",
+      "assetId": "hb_barbie_wire-human-disguise",
+      "runtime": "reserve_gallery",
+      "notes": "Déguisement humain V5 déjà livré en galerie de réserve. Barbie reste un personnage sans kit jouable ; aucun effet de cristal ni transformation animée ajouté.",
+      "fighter": "hb_barbie_wire",
+      "name": "Déguisement humain",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_barbie_wire-human-disguise.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": false,
+      "staticReadyOnly": false,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=lYu1ysDULwA"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_barbie_wire-human-disguise.webp",
+          "bytes": 760110,
+          "sha256": "48ef285003c1846197f0c97ba55e070250f34b67baf9a1177b3f5cc8ec61c082"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    },
+    {
+      "requirementId": "VAR-033",
+      "assetId": "hb_vortex-human-disguise",
+      "runtime": "static_ready_only",
+      "notes": "Apparence humaine V5 déjà sélectionnable en illustration unique. La même image couvre les actions ; aucun cycle nouveau.",
+      "fighter": "hb_vortex",
+      "name": "Déguisement humain",
+      "previousStatus": "À produire",
+      "proposedStatus": "Partiel",
+      "currentExport": "public/assets/sprites/costumes/hb_vortex-human-disguise.webp",
+      "historicalDeliveryEdition": "V5",
+      "runtimeSelectable": true,
+      "staticReadyOnly": true,
+      "distinctPoseFiles": 1,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=RghsgkZKedg"
+      ],
+      "sourceRegister": "docs/standalone/production-v5-register.json",
+      "files": [
+        {
+          "path": "public/assets/sprites/costumes/hb_vortex-human-disguise.webp",
+          "bytes": 741894,
+          "sha256": "94cd50d40ddd7aad87dd6e5a4c5636b74e387c416b785778805969ec17529d22"
+        }
+      ],
+      "newDrawings": 0,
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "verificationScope": "Existing file bytes and runtime registry. No new image review or browser execution asserted."
+    }
+  ],
+  "counts": {
+    "reconciledRequirements": 9,
+    "runtimeSelectable": 8,
+    "reserveOnly": 1,
+    "verifiedPublicImageFiles": 24,
+    "newDrawings": 0,
+    "newAnimationCycles": 0
+  },
+  "sourceFiles": [
+    {
+      "path": "docs/standalone/production-v7/catalogue-audit.json",
+      "sha256": "329f9a4c2bc10c1beec45cdf9a1be1851b72d66d73dd0507f943c5ebb7a8f0ba"
+    },
+    {
+      "path": "docs/standalone/production-v5-register.json",
+      "sha256": "35fbb8f4936b06302c316be42c988736bb68afdb5767b779f4e85e3f3caafab0"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "baaaceff3cee5a42745b9437809c42b908d867b84298f00f62010c2170c2a435"
+    },
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "6ee561cdcd5c070d09a49cc710b51427768dfc91bf9776a098278d6e57adcc12"
+    }
+  ]
+}

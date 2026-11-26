@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": 1,
+  "edition": "production-v8-helluva",
+  "date": "2026-11-26",
+  "status": "static_batch_complete",
+  "baselineCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+  "counts": {
+    "acceptedStaticCostumes": 9,
+    "newCharacterBases": 0,
+    "initialCandidates": 10,
+    "nativeEditCalls": 1,
+    "nativeImageOutputs": 11,
+    "heldCandidates": 1,
+    "newAnimationCycles": 0,
+    "newPlayableKits": 0
+  },
+  "assets": [
+    {
+      "id": "hb_blitzo-bodyguard-looloo",
+      "name": "Blitzø — Bodyguard, Loo Loo Land",
+      "sourceIdentityId": "hb_blitzo",
+      "fighterId": "hb_blitzo",
+      "costumeId": "hb_blitzo-bodyguard-looloo",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E2 — Blitzø — Bodyguard, Loo Loo Land",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_blitzo-bodyguard-looloo.png",
+      "export": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+      "ready": "/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "9acbd8679116a53c3e3083b09bf7031205c66b460695f97dd0f39529308d8385",
+      "exportSha256": "97ffeeb0fc9cc4fb466180d1b537b44b88811fc1b98ae6b97aa291b70cf9c71c",
+      "masterBytes": 1211890,
+      "exportBytes": 746916,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        114,
+        23,
+        829,
+        1520
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Loo Loo Land // S1 Episode 2",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=380s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 380,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-blitz-details.png",
+          "sha256": "e04b5b944d0e9005b8e33a99bda2bb0ec58cc026718f4f15c11b2ffa077e6358",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=470s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 470,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Peau rouge, tache blanche du visage, cornes annelées, lunettes noires et casquette blanc/rouge.",
+          "Longue veste noire à revers blancs, chemise/cravate, chaussures pointues et queue complète."
+        ],
+        "limits": [
+          "Motif de casquette simplifié ; longueurs des pans du manteau et queue redessinées.",
+          "Références primaires 320×180 : les coutures et proportions ne sont pas certifiées 1:1.",
+          "Marge inférieure très faible mais aucune extrémité visiblement coupée."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "9acbd8679116a53c3e3083b09bf7031205c66b460695f97dd0f39529308d8385"
+      },
+      "fidelityNotes": [
+        "Motif de casquette simplifié ; longueurs des pans du manteau et queue redessinées.",
+        "Références primaires 320×180 : les coutures et proportions ne sont pas certifiées 1:1.",
+        "Marge inférieure très faible mais aucune extrémité visiblement coupée.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_moxxie-bodyguard-looloo",
+      "name": "Moxxie — Bodyguard, Loo Loo Land",
+      "sourceIdentityId": "hb_moxxie",
+      "fighterId": "hb_moxxie",
+      "costumeId": "hb_moxxie-bodyguard-looloo",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E2 — Moxxie — Bodyguard, Loo Loo Land",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_moxxie-bodyguard-looloo.png",
+      "export": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+      "ready": "/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a1a7f65eb04d40d66fd08f7cc88ba977cc0ebe4f6829b1574fec304c88a727ee",
+      "exportSha256": "a97273addb71506fd42fd4e34e25430cc80f3c041def0ce5a02009cfc3ebee9d",
+      "masterBytes": 1191598,
+      "exportBytes": 727566,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        125,
+        55,
+        678,
+        1499
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Loo Loo Land // S1 Episode 2",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=380s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 380,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-millie-moxxie-details.png",
+          "sha256": "23524212fec0cef16a99e2301bef9051f2e8a6804c38f432fc3eea4a3338a85e",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=400s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 400,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Chevelure blanche, cornes annelées, lunettes noires et nœud rouge.",
+          "Costume noir, col blanc, taille grise et pieds complets."
+        ],
+        "limits": [
+          "Le panneau diagonal noir/blanc sous le nœud peut se lire comme une cravate ; ce détail ne peut être certifié depuis les sources 320×180.",
+          "Proportions et dessin des plis adaptés à une pose statique."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "a1a7f65eb04d40d66fd08f7cc88ba977cc0ebe4f6829b1574fec304c88a727ee"
+      },
+      "fidelityNotes": [
+        "Le panneau diagonal noir/blanc sous le nœud peut se lire comme une cravate ; ce détail ne peut être certifié depuis les sources 320×180.",
+        "Proportions et dessin des plis adaptés à une pose statique.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_millie-bodyguard-looloo",
+      "name": "Millie — Bodyguard, Loo Loo Land",
+      "sourceIdentityId": "hb_millie",
+      "fighterId": "hb_millie",
+      "costumeId": "hb_millie-bodyguard-looloo",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E2 — Millie — Bodyguard, Loo Loo Land",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_millie-bodyguard-looloo.png",
+      "export": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+      "ready": "/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "ff53a4df47608e07569876402e910873458e270ddcb0abd9f441d3703043311a",
+      "exportSha256": "4d157ac0212c8996739eea02518648328beb79baede089e84962778cdf93e0b1",
+      "masterBytes": 1141190,
+      "exportBytes": 700162,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        149,
+        38,
+        875,
+        1507
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Loo Loo Land // S1 Episode 2",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/looloo-bodyguards-whole-scene.png",
+          "sha256": "f811ac541b62a4eade5963e158d059e6931d2676de2580a40efaf878058f0414",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=380s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 380,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-millie-moxxie-details.png",
+          "sha256": "23524212fec0cef16a99e2301bef9051f2e8a6804c38f432fc3eea4a3338a85e",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=400s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 400,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-board-5.jpg",
+          "sha256": "6af66e23fb2cf2255a7d9a5a9e555a6dfd7710e1c7abbd30de6d5be97789f4c3",
+          "dimensions": [
+            960,
+            540
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": null,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Bob sombre, cornes fines, lunettes noires, peau rouge et queue à pointe.",
+          "Veste noire, col blanc et cravate sombre, taille grise et chaussures noires."
+        ],
+        "limits": [
+          "Chevelure plus volumineuse ; silhouette et proportions adaptées.",
+          "Les petits détails du costume sont redessinés depuis des images 320×180."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "ff53a4df47608e07569876402e910873458e270ddcb0abd9f441d3703043311a"
+      },
+      "fidelityNotes": [
+        "Chevelure plus volumineuse ; silhouette et proportions adaptées.",
+        "Les petits détails du costume sont redessinés depuis des images 320×180.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_stolas-tourist-looloo",
+      "name": "Stolas — Touriste, Loo Loo Land",
+      "sourceIdentityId": "hb_stolas",
+      "fighterId": "hb_stolas",
+      "costumeId": "hb_stolas-tourist-looloo",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E2 — Stolas — Touriste, Loo Loo Land",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_stolas-tourist-looloo.png",
+      "export": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+      "ready": "/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "6b5caa488ee7231b94a59bffdf9575d3efca4f19359b02090007ab126daf07dc",
+      "exportSha256": "84eaa30fbb310dd9b3e78f2ce03649fa8da253cd970396d737812a4f217ba378",
+      "masterBytes": 1077883,
+      "exportBytes": 653432,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        201,
+        24,
+        720,
+        1528
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=kpnwRg268FQ"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Loo Loo Land // S1 Episode 2",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/looloo-stolas-details.png",
+          "sha256": "d72e6fae706c040cc9aaef720a48944840a72478c3af6498aaadaf04bfc46aeb",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=360s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 360,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-stolas-whole-scene.png",
+          "sha256": "0c6b76cf01bb2501fc524afad1595ee2b32ae4f42e5b7da8a6c61ba673fb43c0",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ&t=480s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 480,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/looloo-board-5.jpg",
+          "sha256": "6af66e23fb2cf2255a7d9a5a9e555a6dfd7710e1c7abbd30de6d5be97789f4c3",
+          "dimensions": [
+            960,
+            540
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": null,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Visage de hibou blanc en cœur, yeux rouges, casquette rouge à motif oculaire.",
+          "Chemise blanche à motifs floraux rouges, short rouge, longues jambes d’oiseau sombres et queue grise."
+        ],
+        "limits": [
+          "Motif de casquette agrandi et queue plus ample ; détails floraux simplifiés.",
+          "Sources 320×180 ; proportions/couleurs fines non certifiées 1:1.",
+          "Marge inférieure de quelques pixels mais aucune extrémité visiblement coupée."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "6b5caa488ee7231b94a59bffdf9575d3efca4f19359b02090007ab126daf07dc"
+      },
+      "fidelityNotes": [
+        "Motif de casquette agrandi et queue plus ample ; détails floraux simplifiés.",
+        "Sources 320×180 ; proportions/couleurs fines non certifiées 1:1.",
+        "Marge inférieure de quelques pixels mais aucune extrémité visiblement coupée.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_millie-staff-ghostfuckers",
+      "name": "Millie — Staff, Ghostf**kers",
+      "sourceIdentityId": "hb_millie",
+      "fighterId": "hb_millie",
+      "costumeId": "hb_millie-staff-ghostfuckers",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "incarnation": "Série — S2E10 — Millie — Staff, Ghostf**kers",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_millie-staff-ghostfuckers.png",
+      "export": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+      "ready": "/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "d85aef368f925cb5fc16a5e12b0e3add8fffd50d5f2f0c03c41ccf5945488928",
+      "exportSha256": "c3d7a464ebd4dc4ada16a0b73058f444fa82558f18a44790cfb6cd5cbc30df52",
+      "masterBytes": 1330470,
+      "exportBytes": 864816,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        128,
+        67,
+        805,
+        1511
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Ghostf**kers // S2 Episode 10",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/ghosts-millie-whole-scene.png",
+          "sha256": "df4eb60bd820e5cfa2a4fc92d871e7e2fc6f8b7d9ac4877cdfb9816d359d0928",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=770s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 770,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-millie-close.png",
+          "sha256": "74bbde271d1adc2e1ee1b444c127e23f6af8b73cf2d3c89f528c821e141b34f7",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=580s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 580,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-costume-details.png",
+          "sha256": "0002f29af38499cf95443dad81db81b041e3e6d38b082e7c65e83874d3dcf624",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=400s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 400,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/ghosts-costume-lowerbody.png",
+          "sha256": "e5706a3dda7ec1d604777c504c8ba11f31fe225f6af6221e368afdb56d74f259",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=1480s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 1480,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Bonnet violet à revers jaune, bob sombre, visage rouge et yeux jaunes.",
+          "Débardeur noir STAFF lisible, pantalon violet à revers jaunes et bottes courtes sombres."
+        ],
+        "limits": [
+          "Visage, proportions, jambes et plis redessinés depuis les plans primaires 320×180.",
+          "Motif du bonnet simplifié et pose calme recomposée ; aucune certification 1:1."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "d85aef368f925cb5fc16a5e12b0e3add8fffd50d5f2f0c03c41ccf5945488928"
+      },
+      "fidelityNotes": [
+        "Visage, proportions, jambes et plis redessinés depuis les plans primaires 320×180.",
+        "Motif du bonnet simplifié et pose calme recomposée ; aucune certification 1:1.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_blitzo-harvest-festival",
+      "name": "Blitzø — Harvest Moon Festival",
+      "sourceIdentityId": "hb_blitzo",
+      "fighterId": "hb_blitzo",
+      "costumeId": "hb_blitzo-harvest-festival",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E5 — Blitzø — Harvest Moon Festival",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_blitzo-harvest-festival.png",
+      "export": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+      "ready": "/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "93cc3139d51c29edbae0a5081a814b33485ff440e959d597b037097429114920",
+      "exportSha256": "00f7436f72b9d42c8dadf5ef83e567371fc31adfbbdf08e567ed281a4c336a89",
+      "masterBytes": 1280284,
+      "exportBytes": 820408,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        126,
+        17,
+        726,
+        1519
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - The Harvest Moon Festival // S1 Episode 5",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/harvest-blitz-whole-scene.png",
+          "sha256": "3e687b4f82b74a2db36384e92f096957303c3ade0e0b88e699bbe9b9b657634d",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=h2ZmVAdezF8&t=540s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 540,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/harvest-blitz-details.png",
+          "sha256": "5abb406b9222f2c46c32d2dd040457535d5b140c9b703d084634c66a3846a25e",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=h2ZmVAdezF8&t=450s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 450,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Cornes longues annelées, visage rouge/blanc, grands yeux jaunes et queue fine à pointe.",
+          "Chemise blanche à manches retroussées, bretelles sombres, pantalon et chaussures sombres à pointe rouge."
+        ],
+        "limits": [
+          "Pose neutre et expression recomposées depuis les sources 320×180 ; silhouette, proportions des cornes et coupe du pantalon adaptées.",
+          "Une correction native a retiré les croix rouges non corroborées du visage et les taches rouges ajoutées sur les manches ; les deux versions et le prompt de correction sont conservés."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "93cc3139d51c29edbae0a5081a814b33485ff440e959d597b037097429114920"
+      },
+      "fidelityNotes": [
+        "Pose neutre et expression recomposées depuis les sources 320×180 ; silhouette, proportions des cornes et coupe du pantalon adaptées.",
+        "Une correction native a retiré les croix rouges non corroborées du visage et les taches rouges ajoutées sur les manches ; les deux versions et le prompt de correction sont conservés.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_millie-harvest-festival",
+      "name": "Millie — Harvest Moon Festival",
+      "sourceIdentityId": "hb_millie",
+      "fighterId": "hb_millie",
+      "costumeId": "hb_millie-harvest-festival",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "incarnation": "Série — S1E5 — Millie — Harvest Moon Festival",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_millie-harvest-festival.png",
+      "export": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+      "ready": "/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "042e5c8f481046e476bd50f5ed5ac68e0d226d3403d332ca958679f8ce48d0c3",
+      "exportSha256": "0ff99e4b00da69916642057dbe07b0e92ae19d2221ed68204e13018ccc1d9620",
+      "masterBytes": 1239673,
+      "exportBytes": 807722,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        146,
+        24,
+        816,
+        1518
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=h2ZmVAdezF8",
+        "https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - The Harvest Moon Festival // S1 Episode 5",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/harvest-millie-whole-scene.png",
+          "sha256": "31596acf90596fc9a45ce463be2e35863e8a892bc78c3b6d8cf4c71d375741b1",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=h2ZmVAdezF8&t=600s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 600,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/harvest-millie-details.png",
+          "sha256": "eb31326a1df2d6ef1132326d9cebf334b95326f867552d786a85a29c6600200f",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=h2ZmVAdezF8&t=270s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 270,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/millie-harvest-official-pin.png",
+          "sha256": "7d5fc44fe377f3d9240d02868e4b726923c3737020cdd009e7353e61a25506ea",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "sourceUrl": "https://sharkrobot.com/products/harvest-moon-wrath-ring-millie-enamel-pin",
+          "sourceKind": "licensed_merchandise_corroboration",
+          "timeSeconds": null,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Bob sombre, cornes fines à traits blancs, peau rouge, grands yeux jaunes et queue à pointe.",
+          "Bandana rouge, haut noir sans manches, short noir à boutons clairs et bottes noires."
+        ],
+        "limits": [
+          "La pose debout est recomposée depuis une vue primaire assise 320×180 ; coupe du short, proportions des jambes et chaussures adaptées.",
+          "Le pin officiel corrobore le haut et le visage, pas le bas du corps ; aucun détail fin certifié 1:1."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "042e5c8f481046e476bd50f5ed5ac68e0d226d3403d332ca958679f8ce48d0c3"
+      },
+      "fidelityNotes": [
+        "La pose debout est recomposée depuis une vue primaire assise 320×180 ; coupe du short, proportions des jambes et chaussures adaptées.",
+        "Le pin officiel corrobore le haut et le visage, pas le bas du corps ; aucun détail fin certifié 1:1.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_stolas-vampire-apology-tour",
+      "name": "Stolas — Vampire, Apology Tour",
+      "sourceIdentityId": "hb_stolas",
+      "fighterId": "hb_stolas",
+      "costumeId": "hb_stolas-vampire-apology-tour",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "incarnation": "Série — S2E9 — Stolas — Vampire, Apology Tour",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette entière, extrémités visibles complètes.",
+      "master": "production/v8/helluva/masters/hb_stolas-vampire-apology-tour.png",
+      "export": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+      "ready": "/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSha256": "a9242184455a932f8c4100709553526190cfe6d308e44509d532b6a8de68846c",
+      "exportSha256": "4db1c4a620b5040b34adc131a3e7c6dfae86c56ffd8c4aa1b355b5fa9eabe4cc",
+      "masterBytes": 1331446,
+      "exportBytes": 865434,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha128": [
+        57,
+        14,
+        965,
+        1518
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+        "https://sharkrobot.com/products/apology-tour-standee"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Apology Tour // S2 Episode 9",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/apology-stolas-whole-scene.png",
+          "sha256": "0c3ebaa03c6a99e3e3ab098346174c4bac5dff06d9206da86f26f79aff257323",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=720s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 720,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/apology-stolas-details.png",
+          "sha256": "0f25fad56d50411141e294403e209e989ec7bf7d25922b7f2c1af01e23db1ac2",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=760s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 760,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/apology-stolas-blitz-costumes.png",
+          "sha256": "0e77991e8ef5b024ecf37e637b54db7f08dbfcdecb8a41969153db95c4e98b54",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=810s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 810,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/apology-tour-official-standee-0.png",
+          "sha256": "8b78493b1bf530c326f7392daa201bf3228d05c43e66ca4199260eabc6fdacba",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "sourceUrl": "https://sharkrobot.com/products/apology-tour-standee",
+          "sourceKind": "licensed_merchandise_corroboration",
+          "timeSeconds": null,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Visage de hibou blanc, petits yeux rouges supérieurs, haut-de-forme à marque de couronne dorée.",
+          "Cape sombre doublée bordeaux, haut col, cravate claire et gemme rouge/dorée, boutons dorés, queue grise et pieds d’oiseau entiers."
+        ],
+        "limits": [
+          "Pose calme recomposée ; yeux principaux fermés/mi-clos comme dans un plan de référence.",
+          "Longueur et courbure de la cape/queue, proportions, boutons et plis adaptés ; le standee officiel corrobore le costume sans fournir un modèle 1:1."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "a9242184455a932f8c4100709553526190cfe6d308e44509d532b6a8de68846c"
+      },
+      "fidelityNotes": [
+        "Pose calme recomposée ; yeux principaux fermés/mi-clos comme dans un plan de référence.",
+        "Longueur et courbure de la cape/queue, proportions, boutons et plis adaptés ; le standee officiel corrobore le costume sans fournir un modèle 1:1.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_blitzo-ghost-apology-tour",
+      "name": "Blitzø — Fantôme, Apology Tour",
+      "sourceIdentityId": "hb_blitzo",
+      "fighterId": "hb_blitzo",
+      "costumeId": "hb_blitzo-ghost-apology-tour",
+      "category": "costume",
+      "kind": "costume_base",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "incarnation": "Série — S2E9 — Blitzø — Fantôme, Apology Tour",
+      "status": "accepted_static_candidate",
+      "accepted": true,
+      "eligibility": "wearable",
+      "staticReadyOnly": true,
+      "layout": "portrait",
+      "frameCoverage": "full_body",
+      "frameCoverageNote": "Silhouette costumière entière ; cornes, corps, jambes, pieds et queue sont masqués par le drap, comme dans la source primaire à 1220 secondes. Aucun membre caché reconstruit.",
+      "master": "production/v8/helluva/masters/hb_blitzo-ghost-apology-tour.png",
+      "export": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+      "ready": "/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+      "dimensions": [
+        1052,
+        1495
+      ],
+      "masterSha256": "b8ab6ef6d8dad30867a1128c11ed1d7a24f3434e098061a0e447d9cdfc58eae2",
+      "exportSha256": "f4193ee5cc7592221938efe653bba67005aab88c5c23e039fa59a3edf0335a20",
+      "masterBytes": 972144,
+      "exportBytes": 560592,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha128": [
+        130,
+        33,
+        922,
+        1462
+      ],
+      "runtimeUsage": "Costume statique à raccorder au combattant existant ; aucune modification de kit",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4"
+      ],
+      "referenceTitle": "Vivziepop — HELLUVA BOSS - Apology Tour // S2 Episode 9",
+      "referenceCaptures": [
+        {
+          "path": "production/v8/helluva/references/apology-blitz-whole-scene.png",
+          "sha256": "83845aa6e05d704ef4c8fd8d3a9585e0d4c9d67acee17025bf74c45012a4464c",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=1220s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 1220,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/apology-blitz-seated-scene.png",
+          "sha256": "4158b5116c35928024805ab7e12a523ff1a30fc4941e9b522c4a943a8e7b5185",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=990s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 990,
+          "inspected": true
+        },
+        {
+          "path": "production/v8/helluva/references/apology-blitz-details.png",
+          "sha256": "7084f7cdd07abb3a1d571acffb72f119cc08e9e31c717335738d790708b9b567",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sourceUrl": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=840s",
+          "sourceKind": "official_episode_storyboard",
+          "timeSeconds": 840,
+          "inspected": true
+        }
+      ],
+      "promptRegister": "docs/standalone/production-v8/helluva-generation.json",
+      "visualReview": {
+        "status": "accepted_as_documented_static_adaptation_with_limits",
+        "matched": [
+          "Visage rouge/blanc et yeux jaunes identifiables dans l’ouverture du drap.",
+          "Drap clair à taches rouges enveloppant tout le corps, cornes/pieds/queue masqués et ourlet intégral."
+        ],
+        "limits": [
+          "Taches, plis et proportions du drapé recomposés depuis les images primaires 320×180.",
+          "Aucune anatomie cachée inventée : costume enveloppant uniquement, sans pieds ou queue exposés ; silhouette entière du drap et une seule pose."
+        ],
+        "subjectComplete": true,
+        "masterSha256": "b8ab6ef6d8dad30867a1128c11ed1d7a24f3434e098061a0e447d9cdfc58eae2"
+      },
+      "fidelityNotes": [
+        "Taches, plis et proportions du drapé recomposés depuis les images primaires 320×180.",
+        "Aucune anatomie cachée inventée : costume enveloppant uniquement, sans pieds ou queue exposés ; silhouette entière du drap et une seule pose.",
+        "Alpha natif conservé, sans suppression du fond ni retouche de pixels.",
+        "Une seule image READY statique. Aucune nouvelle animation, identité ou technique de combat."
+      ],
+      "newAnimationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    }
+  ],
+  "pendingCandidates": [],
+  "unacceptedCandidates": [
+    "hb_blitzo-bethany-ghostfuckers"
+  ],
+  "heldCandidates": [
+    {
+      "id": "hb_blitzo-bethany-ghostfuckers",
+      "status": "held_reference_gap",
+      "delivered": false,
+      "reason": "Le haut/perruque/chapeau sont corroborés. Asymétrie des jambes et grandes bottes à talon du rendu ne sont pas confirmées par les vues primaires inspectées ; aucune exportation ni intégration runtime.",
+      "historicalSafetyRefusal": false,
+      "attemptCount": 1
+    }
+  ],
+  "qa": {
+    "allExportsPixelExact": true,
+    "nativeAlphaPreserved": true,
+    "sourceScreenshotsInspected": true,
+    "inGameChecked": false
+  },
+  "independentReview": "docs/standalone/production-v8/independent-visual-review.json",
+  "fidelityOneToOneCertified": false
+}

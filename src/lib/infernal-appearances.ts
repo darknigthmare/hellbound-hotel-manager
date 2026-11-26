@@ -1,5 +1,6 @@
 import type { CombatAction } from './pentagram-combat';
 import type { PentagramCinematicKind } from './pentagram-cinematics';
+import { INFERNAL_V8_COSTUMES } from './infernal-costumes-v8';
 
 export const INFERNAL_STANCES: Readonly<Record<string, string>> = {
   charlie: '/assets/sprites/stances/charlie.webp',
@@ -183,6 +184,7 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
   }],
   vaggie: [costume('vaggie-exorcist', 'Uniforme d’exorciste', 'Hazbin Hotel · Welcome to Heaven, saison 1, épisode 6')],
   hb_loona: [costume('hb_loona-human-disguise', 'Apparence humaine', 'Helluva Boss · Spring Broken, saison 1, épisode 3')],
+  hb_blitzo: INFERNAL_V8_COSTUMES.hb_blitzo ?? [],
   hb_stolas: [costume('hb_stolas-human-disguise', 'Apparence humaine', 'Helluva Boss · Seeing Stars, saison 2, épisode 2', 'season_2'), {
     id: 'hb_stolas-deposed-sinsmas',
     name: 'Stolas déchu · illustration statique',
@@ -191,7 +193,7 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     ready: '/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp',
     layout: 'portrait',
     staticReadyOnly: true,
-  }],
+  }, ...(INFERNAL_V8_COSTUMES.hb_stolas ?? [])],
   hb_moxxie: [{
     ...costume('hb_moxxie-harvest-festival', 'Tenue du festival des moissons', 'Helluva Boss · The Harvest Moon Festival, saison 1, épisode 5'),
     layout: 'portrait',
@@ -203,7 +205,7 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     ready: '/assets/sprites/costumes/hb_moxxie-moxxine.webp',
     layout: 'portrait',
     staticReadyOnly: true,
-  }],
+  }, ...(INFERNAL_V8_COSTUMES.hb_moxxie ?? [])],
   hb_millie: [{
     id: 'hb_millie-millerd',
     name: 'Millerd · illustration statique',
@@ -212,7 +214,7 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     ready: '/assets/sprites/costumes/hb_millie-millerd.webp',
     layout: 'portrait',
     staticReadyOnly: true,
-  }],
+  }, ...(INFERNAL_V8_COSTUMES.hb_millie ?? [])],
   hb_vortex: [{
     id: 'hb_vortex-human-disguise',
     name: 'Apparence humaine · illustration statique',

@@ -12,6 +12,7 @@ interface ReserveAsset {
   continuity?: 'simulation_au';
   spoilerScope?: 'season_1' | 'season_2' | 'season_3';
   frameCoverage?: 'bust' | 'full_body';
+  runtimeStatus?: 'reserve' | 'selectable_costume' | 'stage_scenery';
   sourceIdentityId?: string | null;
   reference: string;
   export: string;
@@ -29,6 +30,9 @@ const STATUS: Record<ReserveKind, string> = {
   narrative_archive: 'Archive narrative statique', projectile: 'Projectile visuel en réserve', prop: 'Accessoire statique en réserve', machine: 'Machine statique en réserve',
 };
 const assets = reserveCatalogue.assets as ReserveAsset[];
+const assetStatus = (asset: ReserveAsset) => asset.runtimeStatus === 'selectable_costume'
+  ? 'Tenue statique disponible dans le vestiaire'
+  : asset.runtimeStatus === 'stage_scenery' ? 'Accessoire intégré au décor' : STATUS[asset.kind];
 
 /** Incarnation-specific evidence takes priority over a character's first appearance. */
 function spoilerScope(asset: ReserveAsset): 'season_1' | 'season_2' | 'season_3' {
@@ -71,7 +75,7 @@ export function ReserveGallery({ titleRef, allowSeasonTwo, allowSeasonThree, onS
   return <section className="iv-reserve-gallery">
     <p className="iv-eyebrow">BASES VISUELLES & OBJETS</p>
     <h1 ref={titleRef} tabIndex={-1}>La galerie des créations</h1>
-    <p className="iv-lead">{assets.length} dessins à explorer en plein cadre. Chaque création reste une illustration statique en réserve ; les fiches précisent les références et les détails encore à valider.</p>
+    <p className="iv-lead">{assets.length} dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider.</p>
     <div className="iv-filter-row">
       <label>Catégorie<select value={kind} onChange={event => { setSelectedId(null); setKind(event.target.value as ReserveKind | 'all'); }}><option value="all">Toutes les créations</option>{Object.entries(KINDS).filter(([value]) => assets.some(asset => asset.kind === value)).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       <label>Contenu de la galerie<select value={allowSeasonTwo ? (allowSeasonThree ? 'season_3' : 'all') : 'season_1'} onChange={event => { setSelectedId(null); onScopeChange(event.target.value !== 'season_1'); onSeasonThreeChange(event.target.value === 'season_3'); }}><option value="season_1">Saison 1 uniquement</option><option value="all">Saisons 1 et 2</option><option value="season_3">Saisons 1, 2 et 3 — spoilers autorisés</option></select></label>
@@ -80,7 +84,7 @@ export function ReserveGallery({ titleRef, allowSeasonTwo, allowSeasonThree, onS
     <p className="iv-small" role="status">{visible.length} dessin{visible.length > 1 ? 's' : ''} affiché{visible.length > 1 ? 's' : ''} sur {eligible.length} disponible{eligible.length > 1 ? 's' : ''} avec ce contenu.</p>
     {selected && <article className="iv-panel iv-reserve-detail" aria-label={`Détail de ${selected.name}`}>
       <img src={`/${selected.export.replace(/^public\//, '')}`} alt={selected.name} />
-      <div><p className="iv-eyebrow">{KINDS[selected.kind]}{selected.continuity === 'simulation_au' ? ' · CRÉATION ORIGINALE AU' : ''}{spoilerScope(selected) === 'season_3' ? ' · SAISON 3' : ''}</p><h2 ref={detailTitleRef} tabIndex={-1}>{selected.name}</h2><p>{STATUS[selected.kind]}{selected.frameCoverage === 'bust' ? ' · Buste' : selected.frameCoverage === 'full_body' ? ' · Silhouette entière' : ''} · {selected.dimensions.join(' × ')} pixels.</p><p className="iv-small">{selected.continuity === 'simulation_au' ? 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.' : 'Dessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.'}</p>
+      <div><p className="iv-eyebrow">{KINDS[selected.kind]}{selected.continuity === 'simulation_au' ? ' · CRÉATION ORIGINALE AU' : ''}{spoilerScope(selected) === 'season_3' ? ' · SAISON 3' : ''}</p><h2 ref={detailTitleRef} tabIndex={-1}>{selected.name}</h2><p>{assetStatus(selected)}{selected.frameCoverage === 'bust' ? ' · Buste' : selected.frameCoverage === 'full_body' ? ' · Silhouette entière' : ''} · {selected.dimensions.join(' × ')} pixels.</p><p className="iv-small">{selected.continuity === 'simulation_au' ? 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.' : 'Dessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.'}</p>
         <details><summary>Références et détails du dessin</summary><ul>{selected.references.filter(reference => reference.kind.startsWith('official_') || reference.kind === 'project_design').map((reference, index) => <li key={index}><a href={reference.url} target="_blank" rel="noreferrer">{reference.episode ?? reference.title ?? (reference.kind === 'project_design' ? 'Design original du projet' : 'Référence officielle')}</a></li>)}</ul><ul>{selected.fidelityNotes.map((note, index) => <li key={index}>{note}</li>)}</ul></details>
         <button className="iv-secondary" onClick={() => { setSelectedId(null); selectedCardRef.current?.focus(); }}>Refermer l’aperçu</button>
       </div>

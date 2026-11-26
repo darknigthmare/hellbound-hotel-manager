@@ -1,0 +1,65 @@
+{
+  "id": "vox-human-weather-s2-ready",
+  "characterId": "vox",
+  "sourceIdentityId": "vox",
+  "name": "Vox humain — présentateur météo, saison 2",
+  "category": "costume",
+  "continuity": "season_2",
+  "frameCoverage": "full_body",
+  "status": "accepted_static_candidate",
+  "referenceUrls": [
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+  ],
+  "referencePaths": [
+    "production/v8/hazbin/references/vox-weather-body-14s.png",
+    "production/v8/hazbin/references/vox-weather-face-12s.png",
+    "production/v8/hazbin/references/vox-weather-torso-10s.png"
+  ],
+  "prompt": "Create ONE complete full-body static 2D character sprite of HUMAN VOX from Hazbin Hotel Season 2 as directly shown in the supplied official Prime Video Brighter frames. Preserve his pointed human face, pale skin, green eyes, rectangular black spectacles, narrow long-limbed build, angular upswept dark hair with its pale streak and confident narrow grin. No television head, no antennas, no demon anatomy. Match the show's sharp black cartoon outlines, flat colors and restrained cel shading. A calm upright three-quarter pose facing screen-right, both feet visible and clearly separate, hands relaxed. Keep the entire hair, fingers and shoes within generous transparent margins. True fully transparent RGBA background with opaque character fills. No floor, scenery, cast shadow, glow, lettering, logo, frame, extra character, other pose, multi-panel sheet or animation. Draw this one specific official outfit, without combining different costumes. The weather-presenter costume: use Image 1 at14 seconds for the whole body and exact dark brown/burgundy suit and narrow trousers; Image 2 at12 seconds supplies the face, hair, glasses and suit front; Image 3 at10 seconds supplies the collar, pale shirt and thin light tie and the small golden lapel accent visible in this incarnation. Brown pointed-shoulder suit jacket, pale shirt, light muted tie, matching dark trousers and black pointed low shoes. Do not add a microphone, weapon, map pointer or weather board. The pose is a neutral static adaptation for the archive.",
+  "transparent_background": true,
+  "fidelityOneToOneCertified": false,
+  "newIdentity": false,
+  "nativePath": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+  "exportPath": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+  "exportUrl": "/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+  "sourceSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+  "exportSha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0",
+  "animationFrames": 0,
+  "poseCount": 1,
+  "qa": {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      254
+    ],
+    "transparentPixelFraction": 0.8279819488525391,
+    "alphaBounds": [
+      91,
+      8,
+      938,
+      1536
+    ],
+    "visualCompared": true,
+    "technicalAlpha": true,
+    "findings": [
+      "Comparaison du corps entier, coiffure, lunettes, tenue, pieds avec les images officielles désignées dans referencePaths.",
+      "Une seule figure entière isolée, sans crop visible des cheveux ou chaussures ; pose adaptée statique.",
+      "Vraie transparence vérifiée sur fond blanc. Alpha intérieur maximal 254 ; pixels résiduels très faibles jusqu’au bord bas, sans fond visible en composition."
+    ],
+    "limits": [
+      "Les sources sont des miniatures officielles natives 320×180, insuffisantes pour certifier tous les détails fins.",
+      "Marge supérieure serrée malgré la demande de marge généreuse ; aucune coupe visuelle détectée.",
+      "Aucun cycle, animation ni kit de combat ; fidélité 1:1 non certifiée."
+    ]
+  },
+  "countsAsDelivered": true,
+  "gameplayEligibility": "galleryOnly",
+  "generatedNativeBasename": "exec-0e89a4a2-c5a0-40d3-8193-f3bef84ca97a.png",
+  "master": "production/v8/hazbin/native/vox-human-weather-s2-ready.png"
+}

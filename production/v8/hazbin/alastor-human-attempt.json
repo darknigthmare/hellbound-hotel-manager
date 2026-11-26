@@ -1,0 +1,59 @@
+{
+  "id": "alastor-human-s2-ready",
+  "characterId": "alastor",
+  "sourceIdentityId": "alastor",
+  "name": "Alastor humain — flashback saison 2",
+  "category": "costume",
+  "continuity": "season_2",
+  "frameCoverage": "full_body",
+  "status": "accepted_static_candidate",
+  "referenceUrls": [
+    "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+    "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+    "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+  ],
+  "referencePaths": [
+    "production/v8/hazbin/references/alastor-human-body-2s.png",
+    "production/v8/hazbin/references/alastor-human-face-4s.png",
+    "production/v8/hazbin/references/alastor-human-uniform-20s.png"
+  ],
+  "prompt": "Use case: identity-preserving single static character sprite for Infernal Versus. Draw the HUMAN incarnation of ALASTOR from the official Hazbin Hotel Season 2 flashback, as shown in the three supplied Prime Video reference frames. Image 1 (2 seconds) governs his complete slender body, dark fitted trousers, low black pointed shoes, waistcoat silhouette and daylight palette. Image 2 (4 seconds) governs his warm brown skin, swept dark brown-black curls with reddish highlights, narrow oval spectacles, freckles, angular smiling face and long red necktie. Image 3 (20 seconds) governs the ivory shirt sleeves, dark sleeve garters, burgundy waistcoat and its long pointed lower contour. Keep exactly this human costume and anatomy. One complete full-body character, in a calm upright standing pose, three-quarter side view facing screen-right, one relaxed open hand, the other by his side. Reproduce the show's crisp expressive black 2D animation outlines and flat cel colors. Match his tall narrow human proportions; no deer antlers, no demon ears, no tail, no supernatural transformation. Show the whole hairstyle, fingers and both shoes inside the canvas with at least 7 percent transparent padding on every side. True transparent RGBA background. No floor, scene, cast shadow, words, logos, frame, glass, microphone, weapon, other character, second pose, multi-panel sheet or animation. This is a single clothed human character portrait intended as a static archive/costume sprite.",
+  "transparent_background": true,
+  "fidelityOneToOneCertified": false,
+  "newIdentity": false,
+  "countsAsDelivered": true,
+  "nativePath": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+  "exportPath": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+  "exportUrl": "/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+  "sourceSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+  "exportSha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a",
+  "animationFrames": 0,
+  "poseCount": 1,
+  "qa": {
+    "visualCompared": true,
+    "technicalAlpha": true,
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      254
+    ],
+    "transparentPixelFraction": 0.8425127665201823,
+    "findings": [
+      "Visage brun humain, chevelure bouclée, lunettes, cravate rouge, gilet bordeaux et garrots de manche conformes aux trois vues officielles inspectées.",
+      "Une silhouette entière isolée ; pieds, cheveux et doigts visibles. Les marges haut/bas sont plus petites que le prompt, sans coupe observée.",
+      "Comparaison sur fonds blanc et gris : vraie transparence, aucun halo de fond visible ; alpha intérieur maximal 254, limitation conservée."
+    ],
+    "limits": [
+      "Les références natives ne font que 320×180 : détails fins non certifiés.",
+      "La pose debout est une adaptation de jeu ; aucun cycle ni kit de combat créé.",
+      "Proportions/expressivité dessinées approximatives ; certification 1:1 non revendiquée."
+    ]
+  },
+  "gameplayEligibility": "galleryOnly",
+  "generatedNativeBasename": "exec-b775df5a-b143-477e-ba03-55a866a1d3a0.png",
+  "master": "production/v8/hazbin/native/alastor-human-s2-ready.png"
+}
