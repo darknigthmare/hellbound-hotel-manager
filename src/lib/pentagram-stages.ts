@@ -47,7 +47,9 @@ export type PentagramStageId = HotelStageId
   | 'asmodeus-bedroom-s2'
   | 'blitz-sinsmas-dream-s2'
   | 'sloth-consultation-s2'
-  | 'mammon-backstage-corridor-s2';
+  | 'mammon-backstage-corridor-s2'
+  | 'dhorks-control-room-s1'
+  | 'unhappy-campers-boathouse-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1084,6 +1086,32 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   imagePosition: 'center bottom',
   accent: '#22d9ed', shadow: '#050926', floor: '#17063c',
   soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'dhorks-control-room-s1',
+  spoilerTier: 'season_1',
+  name: 'D.H.O.R.K.S. · Salle de surveillance',
+  district: 'Terre',
+  description: 'Une console au bouton rouge fait face aux moniteurs éteints, à la vitre brisée et aux portes à hublots.',
+  loreBasis: 'Helluva Boss, Truth Seekers (S1E6). Salle de surveillance documentée par la peinture de production TS_HB6_261B de Rebecca Reynolds, distincte de la salle d’interrogatoire et de la chambre du portail. Le sol du premier plan est prolongé pour le duel de simulation AU.',
+  imagePath: '/assets/production/v13/environment/dhorks-control-room-s1-room.webp',
+  thumbnailPath: '/assets/production/v13/environment/dhorks-control-room-s1-thumb.webp',
+  scenery: {},
+  imagePosition: 'center bottom',
+  accent: '#e34242', shadow: '#101013', floor: '#252327',
+  soundtrack: PENTAGRAM_STAGES[3].soundtrack,
+}, {
+  id: 'unhappy-campers-boathouse-s2',
+  spoilerTier: 'season_2',
+  name: 'Unhappy Campers · Hangar à bateaux',
+  district: 'Camp terrestre',
+  description: 'Deux fenêtres roses éclairent une barque à moteur, des sacs empilés et une bâche déchirée dans un hangar délabré.',
+  loreBasis: 'Helluva Boss, Unhappy Campers (S2E5). Hangar documenté par les peintures de production de Jasper Luu et les plans officiels à 1030 et 1150 secondes. Le quai du premier plan est prolongé en une bande continue pour les duels ; cette géométrie jouable est une adaptation de simulation AU.',
+  imagePath: '/assets/production/v13/environment/unhappy-campers-boathouse-s2-room.webp',
+  thumbnailPath: '/assets/production/v13/environment/unhappy-campers-boathouse-s2-thumb.webp',
+  scenery: {},
+  imagePosition: 'center bottom',
+  accent: '#f39bb8', shadow: '#24151c', floor: '#552f3d',
+  soundtrack: PENTAGRAM_STAGES[0].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

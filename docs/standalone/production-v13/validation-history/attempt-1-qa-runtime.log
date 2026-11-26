@@ -1,0 +1,22 @@
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1
+
+
+ RUN  v4.1.10 /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+Killed
+Error: tests failed: 137
+    at run (file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/verify-runtime.mjs:50:34)
+    at file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/verify-runtime.mjs:72:17

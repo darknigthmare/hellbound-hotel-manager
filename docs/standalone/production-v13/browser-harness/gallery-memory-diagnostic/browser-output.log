@@ -1,0 +1,31 @@
+2026-11-26T20:16:47.197Z pw:browser <ws connecting> ws://[::1]:35759/4f7ca83b9bb4aa0eef60d98313ba6116
+2026-11-26T20:16:47.206Z pw:browser <ws connected> ws://[::1]:35759/4f7ca83b9bb4aa0eef60d98313ba6116
+2026-11-26T20:17:33.714Z pw:browser <ws disconnected> ws://[::1]:35759/4f7ca83b9bb4aa0eef60d98313ba6116 code=1001 reason=Browser closed
+Error: desktop gallery context close: deadline 4000 ms exceeded
+    at Timeout.<anonymous> (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/diagnose-gallery-memory.cjs:34:106)
+    at listOnTimeout (node:internal/timers:685:17)
+    at process.processTimers (node:internal/timers:618:7)
+CHECK_FAILED single diagnostic gallery session completed and closed gracefully undefined
+{
+  "status": "findings",
+  "checks": 61,
+  "checkedAssetIds": [
+    "hb_vikki-queen-bee-s1-portrait",
+    "hb_tilla-nightmare-merch-portrait",
+    "spring-broken-red-cup",
+    "dhorks-red-button-panel-s1",
+    "asmodeus-bedroom-pitcher"
+  ],
+  "failedChecks": [
+    {
+      "name": "single diagnostic gallery session completed and closed gracefully",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "Error: desktop gallery context close: deadline 4000 ms exceeded\n    at Timeout.<anonymous> (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/diagnose-gallery-memory.cjs:34:106)\n    at listOnTimeout (node:internal/timers:685:17)\n    at process.processTimers (node:internal/timers:618:7)",
+  "screenshots": 17
+}

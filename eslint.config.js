@@ -16,7 +16,8 @@ export default tseslint.config(
       'docs/standalone/local-recovery-2026-11-26/**/*.cjs',
       'docs/standalone/production-v10/browser-harness/**/*.cjs',
       'docs/standalone/production-v11/browser-harness/**/*.cjs',
-      'docs/standalone/production-v12/browser-harness/**/*.cjs'
+      'docs/standalone/production-v12/browser-harness/**/*.cjs',
+      'docs/standalone/production-v13/browser-harness/**/*.cjs'
     ],
     languageOptions: {
       sourceType: 'commonjs',

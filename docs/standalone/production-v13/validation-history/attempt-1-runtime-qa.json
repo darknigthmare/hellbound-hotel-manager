@@ -1,0 +1,27 @@
+{
+  "edition": "V13",
+  "status": "failed",
+  "startedAt": "2026-11-26T19:51:36.277Z",
+  "completedAt": "2026-11-26T19:52:26.739Z",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "nodeOptions": "--max-old-space-size=512"
+    },
+    {
+      "gate": "lint",
+      "command": "npm run lint",
+      "exitCode": 0,
+      "nodeOptions": "--max-old-space-size=512"
+    },
+    {
+      "gate": "tests",
+      "command": "npm test",
+      "exitCode": 137,
+      "nodeOptions": "--max-old-space-size=512"
+    }
+  ],
+  "error": "Error: tests failed: 137"
+}

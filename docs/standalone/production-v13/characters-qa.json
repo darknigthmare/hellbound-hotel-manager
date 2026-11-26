@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "date": "2026-11-26",
+  "checkedAt": "2026-11-26T19:50:32.767648+00:00",
+  "status": "accepted_art_local_and_independent_review_complete_runtime_pending",
+  "reviewer": "/root/v13_characters",
+  "images": [
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "master": "production/v13/characters/masters/hb_vikki-queen-bee-s1-portrait.png",
+      "export": "public/assets/production/v13/characters/hb_vikki-queen-bee-s1-portrait.webp",
+      "masterSha256": "bfa88c86c3eaef2a96cdab251fa8116668660c00f9edc613a5d2a2830dca8468",
+      "exportSha256": "196ed1f90a72a604d1383a960b6b11a2e46346992c5bab95cb7d6869fee20fc5",
+      "masterBytes": 1031145,
+      "exportBytes": 554880,
+      "nativeBytesUnchanged": true,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 897575,
+      "alphaFullPixels": 740,
+      "alphaPartialPixels": 674773,
+      "visibleBBoxAlpha16": [
+        237,
+        12,
+        1063,
+        1197
+      ],
+      "canvasEdgeVisibleAlpha16": false,
+      "marginsAlpha16": [
+        237,
+        12,
+        249,
+        2
+      ],
+      "diagnosticComposites": [
+        "docs/standalone/production-v13/characters-diagnostics/hb_vikki-queen-bee-s1-portrait-light.jpg",
+        "docs/standalone/production-v13/characters-diagnostics/hb_vikki-queen-bee-s1-portrait-dark.jpg"
+      ]
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "master": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+      "export": "public/assets/production/v13/characters/hb_tilla-nightmare-merch-portrait.webp",
+      "diagnosticComposites": [
+        "docs/standalone/production-v13/characters-diagnostics/hb_tilla-nightmare-merch-portrait-light.jpg",
+        "docs/standalone/production-v13/characters-diagnostics/hb_tilla-nightmare-merch-portrait-dark.jpg"
+      ],
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "masterSha256": "fba5329a4e077168b82afc87bd456e6b6bf8507c75f2b4ccbc9f7fd7752389da",
+      "exportSha256": "b785f83d6fbab4c2dbc0f9884595f84a3e50b2646f96a928f71f99ace504f5ef",
+      "masterBytes": 900260,
+      "exportBytes": 572944,
+      "nativeBytesUnchanged": true,
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 977892,
+      "alphaFullPixels": 2721,
+      "alphaPartialPixels": 591903,
+      "visibleBBoxAlpha16": [
+        152,
+        150,
+        1104,
+        1235
+      ],
+      "canvasEdgeVisibleAlpha16": false,
+      "marginsAlpha16": [
+        152,
+        150,
+        150,
+        19
+      ]
+    }
+  ],
+  "checks": {
+    "nativePngPreserved": true,
+    "losslessWebpRgbaEquality": true,
+    "realTransparentAlpha": true,
+    "allImagesVisuallyInspected": true,
+    "lightAndDarkCompositesInspected": true,
+    "noVisibleCanvasEdgeContactAlpha16": true,
+    "noFullBodyClaim": true,
+    "noGeneratedAnimation": true,
+    "historicalRefusalsRetried": 0
+  },
+  "visualFindings": [
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "findings": [
+        "Portrait volontairement limité à la tête, au cou et au haut de la blouse ; la base entière de Vikki reste manquante.",
+        "Référence native de 320 × 180 px. Les contours fins du visage, les yeux, la fourrure et la coiffure sont redessinés ; aucune fidélité 1:1 certifiée.",
+        "Le dessin suit le museau vers la gauche de la référence. La mention vers la droite du prompt original était imprécise et n’est pas utilisée comme preuve de conformité.",
+        "Marges mesurées au seuil alpha 16 : haut 12 px, bas 2 px ; aucun pixel visible de la silhouette ne touche le bord. Le cadrage doit rester en contain dans la galerie.",
+        "Une seule pose statique narrative ; aucun kit, cycle animé, nouvelle identité ou base entière."
+      ]
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "findings": [
+        "Portrait Nightmare adapté d’une marchandise officielle illustrée par Kain. Ce dessin de produit ne certifie pas le modèle exact d’un épisode.",
+        "Continuité official_merchandise_undated. Le filtre season_2 est un plafond conservateur de divulgation, pas une attribution à un épisode ou une date canonique.",
+        "Flammes vertes à paillettes et bord métallique retirés par le générateur ; contours des cheveux, mains et vêtement réinterprétés en cel-shading, palette plus saturée que la photographie du pin.",
+        "Le premier essai ajoutait une petite corne au-dessus de la chevelure gauche et une extension bordeaux à la grande corne. Une correction native ciblée les a supprimées. Une seconde retouche native a réduit la marque blanche haute de la grande corne pour suivre la petite forme partielle photographiée sur le pin ; les deux essais précédents sont archivés hors livraisons.",
+        "Buste seulement, sans extension du bas du corps. Tilla reste un personnage d’archive décédé, jamais présenté comme ressuscité, recrutable ou jouable.",
+        "Marge basse de 19 px au seuil alpha 16, aucun contact avec le bord. Aucun nouveau kit, cycle animé, nouvelle identité ou base entière.",
+        "La marque blanche supérieure est reproduite d’après la photographie du produit officiel ; son statut de motif dessiné ou de reflet n’est pas établi. Elle ne constitue pas une affirmation de troisième bande dans le canon d’un épisode."
+      ]
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "independentReview": [
+    {
+      "assetId": "hb_vikki-queen-bee-s1-portrait",
+      "reviewer": "/root",
+      "decision": "accepted_with_documented_limits",
+      "report": "docs/standalone/production-v13/independent-visual-review.json",
+      "masterSha256": "bfa88c86c3eaef2a96cdab251fa8116668660c00f9edc613a5d2a2830dca8468",
+      "notes": "Source 320 × 180 et marge basse de 2 px conservées comme limites explicites ; aucun nouveau compte de base entière."
+    },
+    {
+      "assetId": "hb_tilla-nightmare-merch-portrait",
+      "reviewer": "/root",
+      "decision": "accepted_with_documented_limits",
+      "report": "docs/standalone/production-v13/independent-visual-review.json",
+      "masterSha256": "fba5329a4e077168b82afc87bd456e6b6bf8507c75f2b4ccbc9f7fd7752389da",
+      "notes": "Master final et crop de corne revus. La marque haute est partielle ; les deux bandes inférieures et la silhouette sont conservées visuellement. Ni la nature canonique de cette petite marque ni une fidélité 1:1 ne sont certifiées."
+    }
+  ],
+  "inspectionCrops": [
+    {
+      "path": "docs/standalone/production-v13/characters-diagnostics/tilla-source-horn-detail.png",
+      "parent": "production/v13/characters/references/tilla-nightmare-official-pin.png",
+      "cropBox": [
+        800,
+        150,
+        1020,
+        600
+      ],
+      "dimensions": [
+        220,
+        450
+      ],
+      "sha256": "f327082b04431b5e46109096c6b0b7e495721f87e7275d7af333068a854bcd9b",
+      "transform": "Native pixel crop for inspection only, no resizing or repainting.",
+      "viewed": true
+    },
+    {
+      "path": "docs/standalone/production-v13/characters-diagnostics/tilla-generated-horn-detail.png",
+      "parent": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+      "cropBox": [
+        690,
+        120,
+        835,
+        485
+      ],
+      "dimensions": [
+        145,
+        365
+      ],
+      "sha256": "22aa711b27b3d2c7d713425d711b7c23929ae663d976bc6efa1ac8b5af01aec4",
+      "transform": "Native pixel crop for inspection only, no resizing or repainting.",
+      "viewed": true
+    },
+    {
+      "path": "docs/standalone/production-v13/characters-diagnostics/tilla-generated-horn-detail-attempt-2.png",
+      "parent": "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-2.png",
+      "cropBox": [
+        690,
+        120,
+        835,
+        485
+      ],
+      "dimensions": [
+        145,
+        365
+      ],
+      "sha256": "bdc7c693d5d452c92e0c112e414bdb7b3e4816f29f6dcf34219acc2ce4206a90",
+      "transform": "Native pixel crop for inspection only, no resizing or repainting.",
+      "viewed": true
+    }
+  ],
+  "targetedCorrectionComparison": {
+    "previousMaster": "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-2.png",
+    "currentMaster": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+    "requestedEditBox": [
+      720,
+      140,
+      810,
+      230
+    ],
+    "changedPixelsAllChannels": 595814,
+    "changedPixelsOutsideRequestedEditBox": 591156,
+    "meanAbsoluteRgbaDifferenceOutsideRequestedEditBox": 1.4792114117983963,
+    "pixelExactOutsideEditBox": false,
+    "interpretation": "Native generative edit; visual preservation of the remainder, not asserted pixel-identical to the previous PNG."
+  }
+}

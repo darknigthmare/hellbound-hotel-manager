@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "reviewer": "/root with independent props review by /root/v13_register_bible",
+  "reviewedAt": "2026-11-26T19:50:42.813953+00:00",
+  "status": "seven_masters_accepted_with_limits_runtime_pending",
+  "scope": "Comparaison artistique indépendante des sept masters et de leurs références primaires. Exports et hashes contrôlés séparément. Aucun résultat navigateur revendiqué par cette revue.",
+  "fidelityOneToOneCertified": false,
+  "catalogueSnapshot": {
+    "baselineCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+    "reserveEntries": 128,
+    "edition": "V12"
+  },
+  "summary": {
+    "reviewedMasters": 7,
+    "acceptedWithLimits": 7,
+    "newStandaloneBaseDelta": 0,
+    "discardedCharacterAttempts": 2,
+    "runtimeValidatedByThisReview": false
+  },
+  "assets": [
+    {
+      "id": "spring-broken-red-cup",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/spring-broken-red-cup.png",
+      "masterSha256": "8bbe82a8a48638aff827136ddc543cb7a7dde07b52fe8680efeb767523350674",
+      "nativeDimensions": [
+        1536,
+        1024
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v13/environment/references/rebecca-hb4-166.png",
+          "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+          "dimensions": [
+            1500,
+            844
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "author": "Rebecca Reynolds",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/beach-red-cup-reference.png",
+          "sha256": "ebcd088bd08d4520be0cab70a2b8e65cb599e2a69982a68f23c892971be6aa51",
+          "dimensions": [
+            74,
+            61
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            787,
+            363,
+            861,
+            424
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Un seul gobelet rouge couché, ouverture ovale claire à gauche et fond à droite, contour complet.",
+        "Aucun sable, liquide, logo, second objet ni ombre de sol ajouté.",
+        "Rim, couleurs générales et forme effilée sont repris du crop primaire."
+      ],
+      "limits": [
+        "Source primaire de détail74×61px. Contour, petits traits intérieurs, reflets et proportions sont interprétés à haute résolution.",
+        "Une pose statique de réserve ; absence de fonction jouable propre à ce dessin."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/spring-broken-red-cup-alpha-diagnostic.png",
+        "sha256": "4ba6c1e1b2331b8bce5c6975c648c043b6d5717e323db88f898cd70143c4b1d2",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/spring-broken-red-cup.png",
+        "sha256": "8bbe82a8a48638aff827136ddc543cb7a7dde07b52fe8680efeb767523350674",
+        "bytes": 1066399,
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 1135953,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 436911,
+        "visibleBBoxAlpha16": [
+          303,
+          217,
+          1208,
+          840
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/spring-broken-red-cup.webp",
+          "sha256": "d2482985b97eb772da84004a84ae932237029b79406e77ac346609129f0659ae",
+          "bytes": 676420,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    },
+    {
+      "id": "dhorks-red-button-panel-s1",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/dhorks-red-button-panel-s1.png",
+      "masterSha256": "a6fd1cb10bf3f3f33cdb860de857650f4746dcf12586d779d575ad39771c2b64",
+      "nativeDimensions": [
+        1061,
+        1483
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v13/environment/references/rebecca-hb6-261b.png",
+          "sha256": "80c45b6511321b8adfc2d5663c8b0b24384ea2499c64b664002f0621d8cf36f8",
+          "dimensions": [
+            1500,
+            527
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "author": "Rebecca Reynolds",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/dhorks-red-button-reference.png",
+          "sha256": "09434d157e93c77f9ff5589a4ebb727ef705c97a21d6e59c23355c7dac9d4157",
+          "dimensions": [
+            73,
+            102
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            477,
+            284,
+            550,
+            386
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Texte RED BUTTON lisible et exact, gros bouton rouge sur cadre gris rectangulaire.",
+        "Perspective oblique et zones à rayures diagonales conservées, panneau entier avec marge.",
+        "Aucun morceau de mur, débris ou personnage conservé."
+      ],
+      "limits": [
+        "Source primaire de détail73×102px. Typographie, épaisseur du cadre, rayures et texture sont réinterprétées.",
+        "Des reflets ponctuels et une texture plus détaillée que la source apparaissent sur le bouton et le panneau. Ces détails ne sont pas des éléments canoniques certifiés.",
+        "Aucune fonction de commande, voyant ou circuit n’est déduite du dessin de réserve."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/dhorks-red-button-panel-s1-alpha-diagnostic.png",
+        "sha256": "2542f4ea8d6f4eb04b9693333068f1514bb24564dff96f004dea8450df2deed4",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/dhorks-red-button-panel-s1.png",
+        "sha256": "a6fd1cb10bf3f3f33cdb860de857650f4746dcf12586d779d575ad39771c2b64",
+        "bytes": 861762,
+        "dimensions": [
+          1061,
+          1483
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 918601,
+        "alphaFullPixels": 104,
+        "alphaPartialPixels": 654758,
+        "visibleBBoxAlpha16": [
+          183,
+          210,
+          848,
+          1228
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/dhorks-red-button-panel-s1.webp",
+          "sha256": "bcd796421a9b8a76983cf7436d7c889499b403d9cd6f4ce6969b4b52eb0f02ed",
+          "bytes": 461486,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    },
+    {
+      "id": "asmodeus-bedroom-pitcher",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/asmodeus-bedroom-pitcher.png",
+      "masterSha256": "c0a4677434d4c028e89eeb3a00f7a39678779d86ada51a26882e5039208bc17c",
+      "nativeDimensions": [
+        1287,
+        1222
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v10/environment/references/jasper-206-paint-00007.jpg",
+          "sha256": "bde53558b7255b3511d0e083360be3ecdb4f282a577867095a26ccdf9f37e978",
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/asmodeus-pitcher-reference-v2.png",
+          "sha256": "0bb3c190c59e1b4a7400c0e005b466a5eee5c6c993c4d99151492daf640efe1b",
+          "dimensions": [
+            135,
+            165
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            2075,
+            475,
+            2210,
+            640
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Pichet fermé rouge violet, corps conique, bec à gauche, anse anguleuse à droite.",
+        "Couvercle et bouton décoratif pointu entiers, sans coupure du sommet.",
+        "Aucun meuble, bougie, contenu ou second objet ajouté."
+      ],
+      "limits": [
+        "Source primaire de détail135×165px. Proportions du bec, de l’anse et du bouton de couvercle légèrement adaptées.",
+        "Les reflets et nuances sont redessinés sous la palette de la chambre ; aucune matière ou contenance non visible n’est déduite.",
+        "Une seule pose statique de réserve, pas de nouvelle arène ou mécanique."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/asmodeus-bedroom-pitcher-alpha-diagnostic.png",
+        "sha256": "610fd4c5d43bb1e284aa88ab679adadd28a8603a61b6930f2ccda5f76ba06cae",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/asmodeus-bedroom-pitcher.png",
+        "sha256": "c0a4677434d4c028e89eeb3a00f7a39678779d86ada51a26882e5039208bc17c",
+        "bytes": 696767,
+        "dimensions": [
+          1287,
+          1222
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1048292,
+        "alphaFullPixels": 1057,
+        "alphaPartialPixels": 523365,
+        "visibleBBoxAlpha16": [
+          269,
+          108,
+          1052,
+          1099
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/asmodeus-bedroom-pitcher.webp",
+          "sha256": "af19924634ea33535f0f9c2d991dc9b304c8e90ff193b0a61c5b694eac365f96",
+          "bytes": 370444,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    },
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "kind": "narrative_archive",
+      "reviewer": "/root",
+      "nativeMasterPath": "production/v13/characters/masters/hb_vikki-queen-bee-s1-portrait.png",
+      "masterSha256": "bfa88c86c3eaef2a96cdab251fa8116668660c00f9edc613a5d2a2830dca8468",
+      "nativeDimensions": [
+        1312,
+        1199
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v13/characters/references/queen-bee-official-090s.png",
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "sha256": "89c7635ad8f0d3185fa0038b0c24d930cb92ec41eb8d3c6bb77df885b5d72a5e",
+          "bytes": 110810,
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=90s",
+          "title": "HELLUVA BOSS — QUEEN BEE, S1 Episode 8",
+          "author": "Vivziepop",
+          "timeSeconds": 90,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_episode_public_preview_frame",
+          "transform": "Native 320×180 storyboard cell preserved byte-for-byte from V12. No enhancement or repainting.",
+          "qualification": "Vikki is the pink poodle at left. Complete hair, face, neck and blouse collar are qualified for the intentionally cropped upper-chest portrait only.",
+          "inheritedFrom": "docs/standalone/production-v12/characters-references.json",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Pompadour rose, visage crème, museau tourné vers la gauche, expression sceptique, col clair et haut de blouse comparés au personnage situé à gauche du plan Queen Bee.",
+        "Portrait seul. Le recadrage de buste est volontaire ; aucune taille, jambe ou chaussure reconstruite.",
+        "Le fichier reste contenu dans son canevas ; la marge basse de 2 px impose un affichage contain."
+      ],
+      "limitations": [
+        "Portrait volontairement limité à la tête, au cou et au haut de la blouse ; la base entière de Vikki reste manquante.",
+        "Référence native de 320 × 180 px. Les contours fins du visage, les yeux, la fourrure et la coiffure sont redessinés ; aucune fidélité 1:1 certifiée.",
+        "Le dessin suit le museau vers la gauche de la référence. La mention vers la droite du prompt original était imprécise et n’est pas utilisée comme preuve de conformité.",
+        "Marges mesurées au seuil alpha 16 : haut 12 px, bas 2 px ; aucun pixel visible de la silhouette ne touche le bord. Le cadrage doit rester en contain dans la galerie.",
+        "Une seule pose statique narrative ; aucun kit, cycle animé, nouvelle identité ou base entière."
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "New ID and native master hash against baseline V12. Portrait identity remains uncovered as a full-body base; the two environment views are distinct from existing stages."
+      }
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "kind": "narrative_archive",
+      "reviewer": "/root",
+      "nativeMasterPath": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+      "masterSha256": "fba5329a4e077168b82afc87bd456e6b6bf8507c75f2b4ccbc9f7fd7752389da",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v13/characters/references/tilla-nightmare-official-pin.png",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "mode": "RGBA",
+          "sha256": "123eccea648cb093af9263188a9d06592d8b369b8189341189d05af3bab9d832",
+          "bytes": 2685344,
+          "url": "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin",
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0284/5558/files/NightmareTilla.png?v=1751388885",
+          "publicMetadataUrl": "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin.js",
+          "title": "Nightmare Tilla — Glitter Enamel Pin",
+          "author": "Kain",
+          "vendor": "Vivziepop / official Helluva Boss store",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_merchandise_product_image",
+          "transform": "Original product PNG downloaded unchanged from its public product JSON image URL.",
+          "qualification": "The complete illustrated bust has identifiable face, hair, asymmetrical damaged horns, collar/brooch and clasped hands. Green glitter flames and metallic border are merchandise decoration, excluded from the adaptation.",
+          "dateScope": "Product publication/modification dates do not establish episode continuity; official_merchandise_undated.",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Visage rouge, yeux jaunes, chevelure bordeaux à mèches roses, vêtement violet, broche crâne et mains jointes comparés à la photographie officielle du pin Nightmare.",
+        "La première correction native a supprimé la corne et l’extension ajoutées ; la deuxième a ramené la marque blanche haute à une petite zone partielle. Les deux bandes inférieures restent présentes.",
+        "La petite marque est reproduite d’après ce qui est visible sur la photographie ; sa nature canonique n’est pas certifiée. Flammes vertes, paillettes et bord métallique exclus.",
+        "Portrait d’archive d’un produit officiel sans attribution à un épisode et sans personnage jouable ou ressuscité."
+      ],
+      "limitations": [
+        "Portrait Nightmare adapté d’une marchandise officielle illustrée par Kain. Ce dessin de produit ne certifie pas le modèle exact d’un épisode.",
+        "Continuité official_merchandise_undated. Le filtre season_2 est un plafond conservateur de divulgation, pas une attribution à un épisode ou une date canonique.",
+        "Flammes vertes à paillettes et bord métallique retirés par le générateur ; contours des cheveux, mains et vêtement réinterprétés en cel-shading, palette plus saturée que la photographie du pin.",
+        "Le premier essai ajoutait une petite corne au-dessus de la chevelure gauche et une extension bordeaux à la grande corne. Une correction native ciblée les a supprimées. Une seconde retouche native a réduit la marque blanche haute de la grande corne pour suivre la petite forme partielle photographiée sur le pin ; les deux essais précédents sont archivés hors livraisons.",
+        "Buste seulement, sans extension du bas du corps. Tilla reste un personnage d’archive décédé, jamais présenté comme ressuscité, recrutable ou jouable.",
+        "Marge basse de 19 px au seuil alpha 16, aucun contact avec le bord. Aucun nouveau kit, cycle animé, nouvelle identité ou base entière.",
+        "La marque blanche supérieure est reproduite d’après la photographie du produit officiel ; son statut de motif dessiné ou de reflet n’est pas établi. Elle ne constitue pas une affirmation de troisième bande dans le canon d’un épisode."
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "New ID and native master hash against baseline V12. Portrait identity remains uncovered as a full-body base; the two environment views are distinct from existing stages."
+      }
+    },
+    {
+      "id": "dhorks-control-room-s1-room",
+      "kind": "stage_background",
+      "reviewer": "/root",
+      "nativeMasterPath": "production/v13/environment/masters/dhorks-control-room-s1-room.png",
+      "masterSha256": "074bef4967328823d2c7a8528911a2e068650af5187c5f20dd4e1636d93b7e95",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "complete_background",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v13/environment/references/rebecca-hb6-261b.png",
+          "sha256": "80c45b6511321b8adfc2d5663c8b0b24384ea2499c64b664002f0621d8cf36f8",
+          "bytes": 211878,
+          "dimensions": [
+            1500,
+            527
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png?format=1500w",
+          "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "author": "Rebecca Reynolds",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Console à gauche, banque de moniteurs, vitre brisée, portes arrière à hublots et éclairages fluorescents conservés après comparaison avec TS_HB6_261B.",
+        "Sol avant prolongé pour le format du jeu ; les taches et petits débris sont redessinés. Un seul fond statique, sans prop séparé superposé."
+      ],
+      "limitations": [
+        "Le cadrage source très large est adapté à1672×941 en étendant le même sol avant ; aucune ouverture ni pièce nouvelle ajoutée.",
+        "Console à gauche, banque de moniteurs, vitre brisée, deux portes à hublots et éclairages fluorescents conservés.",
+        "Les petites éclaboussures et débris sont redessinés, sans égalité pixel à pixel avec la référence ; la bande basse reste libre de gros obstacles.",
+        "Le bouton intégré est repris de la peinture, sans ajout d’un prop superposé. Un seul plan de décor."
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "New ID and native master hash against baseline V12. Portrait identity remains uncovered as a full-body base; the two environment views are distinct from existing stages."
+      }
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2-room",
+      "kind": "stage_background",
+      "reviewer": "/root",
+      "nativeMasterPath": "production/v13/environment/masters/unhappy-campers-boathouse-s2-room.png",
+      "masterSha256": "5729ece4c020f75e1ef99edc7eac427a13ddefa77742d128f1ed8ff97a4f1850",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "complete_background",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v13/environment/references/jasper-21.jpg",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg?format=2500w",
+          "sourceName": "02.jpeg",
+          "originalSourceDimensions": [
+            13438,
+            6159
+          ],
+          "dimensions": [
+            2500,
+            1146
+          ],
+          "sha256": "5e7e33dc8789816f3f437f95ab8ea78d1206f6f9c43add9934547145a3be3713",
+          "bytes": 304324,
+          "mode": "RGB",
+          "author": "Jasper Luu",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v13/environment/references/jasper-22.jpg",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/43145640-919c-43bb-a18d-a5435ce38ba2/03.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/43145640-919c-43bb-a18d-a5435ce38ba2/03.jpeg?format=2500w",
+          "sourceName": "03.jpeg",
+          "originalSourceDimensions": [
+            7684,
+            3759
+          ],
+          "dimensions": [
+            2500,
+            1223
+          ],
+          "sha256": "9cf6a3abfbf256ee4ea312344b9c47128813cb1b44a4d6f6681b8886bcc2bed3",
+          "bytes": 274155,
+          "mode": "RGB",
+          "author": "Jasper Luu",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Deux fenêtres, sacs, barque à moteur, bassin, bâche déchirée et charpente conservés d’après les peintures primaires de Jasper Luu.",
+        "Le quai avant est prolongé en bande de combat continue. Cette adaptation AU est explicitement conservée comme limite ; elle ne certifie pas la géométrie exacte du lieu canonique."
+      ],
+      "limitations": [
+        "Deux fenêtres, pile de sacs, barque et moteur, bassin sombre, bâche déchirée, charpente et planches délabrées conservés.",
+        "La bande de quai existante au premier plan est prolongée pour offrir un sol de combat continu ; le bassin et la barque restent derrière cette bande. Cette géométrie jouable est une adaptation AU explicitement documentée.",
+        "Le cadrage passe de2500×1146 à1672×941 ; les proportions, espacements, textures et petites déchirures sont adaptés.",
+        "Aucun objet supplémentaire créé dans le décor. Un seul plan statique, sans animation du bateau ou de l’eau."
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "New ID and native master hash against baseline V12. Portrait identity remains uncovered as a full-body base; the two environment views are distinct from existing stages."
+      }
+    }
+  ],
+  "supportingReviews": [
+    {
+      "path": "docs/standalone/production-v13/props-independent-review.json",
+      "sha256": "a92be1003c385d082ab717812b23e0ec1572a418f3ee556487af9040500906ad"
+    },
+    {
+      "path": "docs/standalone/production-v13/props-reference-review.json",
+      "sha256": "8e7604ef7652d4c26f45435eb0954df4598840842383be5df00605c5096ac637"
+    },
+    {
+      "path": "docs/standalone/production-v13/environment-independent-art-review.json",
+      "sha256": "fd67cb872a855c3e938e62b55eed2b63fe715f1ba67f1d001dc514f47dee3af6"
+    }
+  ],
+  "primaryPortfolioVerification": [
+    {
+      "url": "https://rebeccareynolds.me/portfolio/backgrounds",
+      "observed": "Primary production background portfolio, including HB4_166 and TS_HB6_261B."
+    },
+    {
+      "url": "https://jasperluu.com/helluvaboss",
+      "observed": "Primary Helluva Boss production background portfolio; boat-house paintings and 206 Paint 00007."
+    },
+    {
+      "url": "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin",
+      "observed": "Official Nightmare Tilla product, illustration credited to Kain. Product provenance alone does not establish episode chronology."
+    }
+  ]
+}

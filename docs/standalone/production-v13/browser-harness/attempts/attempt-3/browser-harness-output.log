@@ -1,0 +1,60 @@
+TRAINING_CONTROL_DIAGNOSTIC {"viewport":"desktop","stageId":"dhorks-control-room-s1","labelCounts":{"exact":0,"prefix":1,"role":1},"controls":[{"tag":"SELECT","labels":[{"textContent":"UniversLes deux universHazbin HotelHelluva Boss","innerText":"UNIVERS\nLes deux univers\nHazbin Hotel\nHelluva Boss"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"ContenuSaisons 1 et 2Saison 1 uniquement","innerText":"CONTENU\nSaisons 1 et 2\nSaison 1 uniquement"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":"Rechercher","innerText":"RECHERCHER"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"Tenue de Charlie MorningstarTenue habituelleCombat final S1 · forme démoniaque","innerText":"TENUE DE CHARLIE MORNINGSTAR\nTenue habituelle\nCombat final S1 · forme démoniaque"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"MannequinImmobileGarde permanente","innerText":"MANNEQUIN\nImmobile\nGarde permanente"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":" Autoriser les décors et créations de saison 3","innerText":"AUTORISER LES DÉCORS ET CRÉATIONS DE SAISON 3"}],"ariaLabel":null}]}
+CHROMIUM_PERFORMANCE desktop dhorks-control-room-s1: before launch {"metrics":{"Nodes":1029,"LayoutCount":27,"RecalcStyleCount":54,"ScriptDuration":0.134452,"TaskDuration":0.562002,"JSHeapUsedSize":17854664,"JSHeapTotalSize":26243072}}
+LAUNCH_START desktop dhorks-control-room-s1 2026-11-26T20:03:30.760Z
+LAUNCH_CLICK_RETURNED desktop dhorks-control-room-s1 2026-11-26T20:03:30.997Z
+LAUNCH_STAGE_VISIBLE desktop dhorks-control-room-s1 2026-11-26T20:03:31.558Z
+CHROMIUM_PERFORMANCE desktop dhorks-control-room-s1: stage visible {"metrics":{"Nodes":1517,"LayoutCount":29,"RecalcStyleCount":64,"ScriptDuration":0.302081,"TaskDuration":1.78481,"JSHeapUsedSize":20469256,"JSHeapTotalSize":27029504}}
+page.waitForFunction: Target crashed 
+    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:242:16)
+    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:356:46 {
+  log: [],
+  name: 'Error'
+}
+CHECK_FAILED hb_vikki-queen-bee-s1-portrait: observed in both viewports undefined
+CHECK_FAILED hb_tilla-nightmare-merch-portrait: observed in both viewports undefined
+CHECK_FAILED spring-broken-red-cup: observed in both viewports undefined
+CHECK_FAILED dhorks-red-button-panel-s1: observed in both viewports undefined
+CHECK_FAILED asmodeus-bedroom-pitcher: observed in both viewports undefined
+CHECK_FAILED dhorks-control-room-s1-room: observed in both viewports undefined
+CHECK_FAILED unhappy-campers-boathouse-s2-room: observed in both viewports undefined
+{
+  "status": "findings",
+  "checks": 15,
+  "checkedAssetIds": [],
+  "failedChecks": [
+    {
+      "name": "hb_vikki-queen-bee-s1-portrait: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hb_tilla-nightmare-merch-portrait: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "spring-broken-red-cup: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "dhorks-red-button-panel-s1: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "asmodeus-bedroom-pitcher: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "dhorks-control-room-s1-room: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "unhappy-campers-boathouse-s2-room: observed in both viewports",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "page.waitForFunction: Target crashed \n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:242:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:356:46",
+  "screenshots": 2
+}

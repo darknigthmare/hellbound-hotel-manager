@@ -1,0 +1,27 @@
+{
+  "edition": "V13",
+  "tool": "image_gen.imagegen",
+  "policy": "One static drawing per call. No retry of a generator refusal. Native PNG preserved, no new animation.",
+  "prompts": [
+    {
+      "id": "dhorks-control-room-s1-room",
+      "stageId": "dhorks-control-room-s1",
+      "name": "D.H.O.R.K.S. · Salle de surveillance",
+      "referencePaths": [
+        "production/v13/environment/references/rebecca-hb6-261b.png"
+      ],
+      "transparentBackground": false,
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE opaque wide 16:9 landscape background for the 2D fighting game Infernal Versus. Reference: the supplied Rebecca Reynolds production background TS_HB6_261B for Helluva Boss, Truth Seekers, season 1 episode 6. Redraw this specific damaged surveillance/control room, keeping its identity and the supplied low camera: long angular grey-metal console along the LEFT wall, mismatched dark rectangular security monitors above it, a large cracked observation window behind the console, the single small rectangular RED BUTTON panel with its round bright red button on the console front, grey wall panels and two closed dark metal doors with round portholes near the RIGHT rear. Keep the rectangular white fluorescent ceiling panels, the small red wall lamp on the far right, damaged ceiling edges, existing sparse dark-red stains, and scattered small glass fragments. Match the source's desaturated charcoal-grey palette with restrained pale cool fluorescent light and isolated red accents. Preserve the left-console/right-door spatial relationship and the source's asymmetrical room. Adapt the outer framing only from the very wide source into 16:9 by showing more of the SAME flat grey foreground floor. Keep the lower quarter continuous and readable as a combat strip; keep the small debris behind that strip. Do not add a corridor, an open doorway, extra architecture, portal machinery or large obstacles. Refined hand-drawn television-animation background, crisp angular linework, broad controlled cel-painted shadows and restrained texture; not 3D or photorealistic. No people, no creatures, no bodies, no interface, no logo, no watermark, no border, no split panels. Preserve only the tiny existing label RED BUTTON; add no other lettering. One complete finished empty background; all pixels opaque. This is a source-guided gameplay camera adaptation, not a claim of exact canonical level geometry."
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2-room",
+      "stageId": "unhappy-campers-boathouse-s2",
+      "name": "Unhappy Campers · Hangar à bateaux",
+      "referencePaths": [
+        "production/v13/environment/references/jasper-21.jpg"
+      ],
+      "transparentBackground": false,
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE opaque wide 16:9 landscape background for the 2D fighting game Infernal Versus. Reference: Jasper Luu's supplied production painting 02.jpeg, the wooden camp boathouse seen in Helluva Boss, Unhappy Campers, season 2 episode 5. Redraw this exact room and keep its defining layout: rotting vertical mauve-brown wooden boards, exposed large roof beams and a few cobwebs, TWO pink-lit rectangular four-pane windows on the back wall, a stack of pale tied sacks with one dark band below the left of those windows, one muted olive-green small motorboat resting in the dark water opening slightly right of centre, its little dark outboard motor visible at the boat's left end, and the large torn dark hanging canvas on the RIGHT wall below the triangular and circular roof windows. Keep the side-wall wooden framing on the left, the rear wooden landing and steps, the broken plank edges, the dark water basin and the exact warm pink-orange light direction. Preserve the empty asymmetrical composition and those objects from this ONE source. For gameplay only, minimally extend the EXISTING nearest foreground plank walkway into a continuous clear strip across the bottom quarter, keeping the boat and dark water opening BEHIND this front strip. This extension is the only structural adaptation. Do not fill the water basin, remove the boat, invent new furniture, add supplies, create rooms or add decorative props. Refined hand-drawn television-animation background, crisp angular outlines, controlled cel-painted shadows and restrained textures, not 3D or photorealism. No characters, creatures, people, lettering, paint-only stamp, watermark, interface, border, collage or split panels. One complete finished empty background; all pixels opaque. This is a documented source-guided gameplay adaptation, not an exact canonical floor plan."
+    }
+  ]
+}

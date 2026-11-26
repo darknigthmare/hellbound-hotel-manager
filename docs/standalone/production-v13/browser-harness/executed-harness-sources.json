@@ -1,0 +1,64 @@
+{
+  "edition": "V13",
+  "schemaVersion": 1,
+  "createdAt": "2026-11-26T20:34:24.665667+00:00",
+  "purpose": "Preserve exact executed harness sources while resolving no-unsafe-finally in active helpers without changing runtime, raw browser reports, aggregate evidence or screenshot pixels.",
+  "correction": "The finally block only records a context-close error. After the awaited viewport function returns, its owning session checks that recorded error before marking the segment completed. This also covers early return from combat-only try blocks. Primary operation errors continue to propagate unchanged.",
+  "assertionsChanged": false,
+  "browserRerun": false,
+  "rawReportsModified": false,
+  "aggregateModified": false,
+  "capturesModified": false,
+  "eslintConfigurationModified": false,
+  "entries": [
+    {
+      "originalPath": "docs/standalone/production-v13/browser-harness/run-browser-qa.cjs",
+      "archivedPath": "docs/standalone/production-v13/browser-harness/executed-sources/run-browser-qa.executed.cjs.txt",
+      "sha256": "2e115e6262690276cc8bf689425b14ef0abdc498df9dbc06cdc52dcc6e36cdf7",
+      "correctedActivePath": "docs/standalone/production-v13/browser-harness/run-browser-qa.cjs",
+      "correctedActiveSha256": "ccb578566304d06fcb8ddc1a6e8e950303a24211df427570f7024a15a23da60d",
+      "executedSourceRun": {
+        "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+        "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+        "harnessSha256": "2e115e6262690276cc8bf689425b14ef0abdc498df9dbc06cdc52dcc6e36cdf7"
+      },
+      "preservation": "Exact executed bytes copied to a non-executable historical data file before atomically replacing the active helper."
+    },
+    {
+      "originalPath": "docs/standalone/production-v13/browser-harness/diagnose-gallery-software.cjs",
+      "archivedPath": "docs/standalone/production-v13/browser-harness/executed-sources/diagnose-gallery-software.executed.cjs.txt",
+      "sha256": "b81626ef2016235a3e28efd4d55ae95c2d49fc56455ce9f8bf6cf32addb57508",
+      "correctedActivePath": "docs/standalone/production-v13/browser-harness/diagnose-gallery-software.cjs",
+      "correctedActiveSha256": "b627b6d3fce5640a344b0cfbc3569977290f77ab097989ad47f0e17277f34f15",
+      "executedSourceRun": {
+        "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+        "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+        "harnessSha256": "b81626ef2016235a3e28efd4d55ae95c2d49fc56455ce9f8bf6cf32addb57508"
+      },
+      "preservation": "Exact executed bytes copied to a non-executable historical data file before atomically replacing the active helper."
+    },
+    {
+      "originalPath": "docs/standalone/production-v13/browser-harness/run-mobile-browser-qa.cjs",
+      "archivedPath": "docs/standalone/production-v13/browser-harness/executed-sources/run-mobile-browser-qa.executed.cjs.txt",
+      "sha256": "af4d262410b08b296975c068ba9d6624f05c54c2393990afd909f8afb5e8c55e",
+      "correctedActivePath": "docs/standalone/production-v13/browser-harness/run-mobile-browser-qa.cjs",
+      "correctedActiveSha256": "27f4befa2a42a44d5aa72ee5de8f91914e3a6f94de82f52bb03ebb6081c2f2ed",
+      "executedSourceRun": {
+        "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+        "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+        "harnessSha256": "af4d262410b08b296975c068ba9d6624f05c54c2393990afd909f8afb5e8c55e"
+      },
+      "preservation": "Exact executed bytes copied to a non-executable historical data file before atomically replacing the active helper."
+    },
+    {
+      "originalPath": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/run-browser-qa.cjs",
+      "archivedPath": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/run-browser-qa.cjs.txt",
+      "sha256": "2e115e6262690276cc8bf689425b14ef0abdc498df9dbc06cdc52dcc6e36cdf7",
+      "preservation": "Historical copy renamed as data only; bytes unchanged.",
+      "executedSourceRun": {
+        "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+        "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7"
+      }
+    }
+  ]
+}

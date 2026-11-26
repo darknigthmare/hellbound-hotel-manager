@@ -1,0 +1,30 @@
+{
+  "edition": "V13",
+  "attempts": [
+    {
+      "id": "v13-workbook-final-1",
+      "startedAt": "2026-11-26T20:35:31.434485+00:00",
+      "command": "Primary Node build-bible-v13.mjs --final; NODE_OPTIONS=--max-old-space-size=1024",
+      "status": "final_exported_reimported_and_visually_reviewed",
+      "registerSha256": "5b91dbfcd5489be01ac2cdc72a3b6f1e353dbd2bea2fe0ce55fb3b13a5c7781d",
+      "builderSha256": "c8368bca3e8691db8226f82c2cddfe7e0ba140d1956f4ab57f50d5697698b916",
+      "log": "docs/standalone/production-v13/workbook-final-output.txt",
+      "completedAt": "2026-11-26T20:35:37.248253+00:00",
+      "elapsedSeconds": 5.811312366997299,
+      "exitCode": 0,
+      "processPeakRssKiB": 470196,
+      "userCpuSeconds": 6.687755,
+      "systemCpuSeconds": 1.309795,
+      "measurement": "Python subprocess + resource.getrusage(RUSAGE_CHILDREN), Linux ru_maxrss in KiB",
+      "logSha256": "34a3d8640125cb2d4315aea959dfe5f79d50022325ae4dcc6ff687de91eae05a",
+      "outputSha256": "5a365b5483c40641670dd4b5520dbab42389f4769488b137e4aedbcd563f098b",
+      "outputBytes": 674412,
+      "visualReview": "passed_with_documented_limits",
+      "renderedViews": 10,
+      "finalSheets": 58,
+      "finalTables": 67,
+      "reviewReport": "docs/standalone/production-v13/workbook-qa.json",
+      "reviewReportSha256": "884651d9ddadabc5bb4843da1590f92e8a3463555bb7c5b18b236bb6f958a043"
+    }
+  ]
+}

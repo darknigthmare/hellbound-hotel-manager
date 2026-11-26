@@ -72,57 +72,56 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v12-2026-11-26",
-      "baseCommit": "771b7cdd98a5663975d9d7c7459a693283665082",
+      "batchId": "static-v13-2026-11-26",
+      "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V12 : 8 dessins retenus ; 2 nouvelles bases entières de réserve, 0 costumes statiques, 1 arènes, 7 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 1 refus de génération conservés sans relance.",
-      "stages": 47,
+      "note": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+      "stages": 49,
       "threePlaneStages": 36,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 717,
+      "referencedAssets": 726,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 128,
+      "reserveGalleryDrawings": 133,
       "stagePresentations": [
         "alive",
         "static",
         "reduced"
       ],
       "illustrationAssignmentsV3": 127,
-      "onePlaneStages": 8,
+      "onePlaneStages": 10,
       "twoPlaneStages": 3,
       "costumeFamilies": 24,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v12/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v13/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
       "standaloneBases": 114,
       "catalogueIdsWithoutStandaloneBase": 95,
       "distinctProductionIdentitiesWithoutStandaloneBase": 94,
-      "assetCoverageReport": "docs/standalone/production-v12/active-asset-coverage.json",
-      "referencedAssetsStatus": "verified_current_v12_paths",
+      "assetCoverageReport": "docs/standalone/production-v13/active-asset-coverage.json",
+      "referencedAssetsStatus": "verified_current_v13_paths",
       "browserReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v12/browser-qa.json",
+        "report": "docs/standalone/production-v13/browser-qa.json",
         "checkedAssetIds": [
-          "blitzo-lighter-production",
-          "hb_gigi-queen-bee-s1-base",
-          "hb_russ-queen-bee-s1-base",
-          "mammon-backstage-corridor-s2-room",
-          "mammon-backstage-cube-case",
-          "mammon-backstage-low-case",
-          "millie-knife-production",
-          "moxxie-sniper-production"
+          "asmodeus-bedroom-pitcher",
+          "dhorks-control-room-s1-room",
+          "dhorks-red-button-panel-s1",
+          "hb_tilla-nightmare-merch-portrait",
+          "hb_vikki-queen-bee-s1-portrait",
+          "spring-broken-red-cup",
+          "unhappy-campers-boathouse-s2-room"
         ],
-        "scope": "One new arena with no separate scenery plane; seven new gallery entries. Local Chromium desktop and mobile touch emulation, real UI interactions, no game-state injection.",
-        "summary": "171 contrôles navigateur réussis sur Chromium : 8 dessins V12 vérifiés sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Le couloir des coulisses de Mammon et sa vignette ont été observés dans deux combats d’entraînement ; le fond entier reste contenu avant et après déplacement, sans prop ajouté. Les 7 nouvelles fiches de galerie et leurs références sont présentes ; les deux personnages sont libellés comme silhouettes entières de réserve. Les filtres respectent la portée explicite des fiches, sans attribuer un épisode aux planches de production non datées. Aucune erreur réseau, exception, console.error, image manquante ou débordement horizontal observé. Empreintes runtime inchangées."
+        "scope": "Targeted qualification of seven V13 creations, assembled from six completed independent browser segments on an identical production package. This is not one continuous browser pass. Previous failed runs retain their original status.",
+        "summary": "Validation ciblée de 7 dessins V13 : agrégation documentée de 184 assertions d’interaction et de 16 contrôles d’intégrité, issus de six segments Chromium achevés sur le même bundle livré. Les 56 captures sélectionnées ont toutes été relues sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Les deux nouvelles arènes et leurs vignettes ont été observées dans quatre combats d’entraînement ; les fonds restent entiers avant et après déplacement, sans prop superposé. Les cinq nouvelles fiches et leurs références sont lisibles. Vikki et Tilla restent des bustes statiques ; le badge PRODUIT OFFICIEL de Tilla et son apparition en épisode non confirmée sont explicites. Les trois objets restent en réserve. Les filtres de saison sont vérifiés pour chaque fiche, avec Tilla absente en S1 et présente en S1+S2. Crymini 2017 et le costume existant de Loona sont conservés. Aucun échec d’assertion, crash ni erreur réseau ou console dans les segments retenus ; empreintes des sources et du bundle inchangées. Les sept essais antérieurs incomplets restent archivés comme échecs. Cette qualification ne certifie ni une longue session continue ni le défilement prolongé des 133 fiches."
       },
       "technicalReview": {
         "status": "passed",
@@ -132,7 +131,7 @@
         "standaloneBuild": "passed",
         "standardQaScriptPassed": false,
         "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
-        "report": "docs/standalone/production-v12/runtime-qa.json"
+        "report": "docs/standalone/production-v13/runtime-qa.json"
       }
     },
     "latestIntegration": {
@@ -503,63 +502,128 @@
           "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
           "report": "docs/standalone/production-v11/runtime-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v12-2026-11-26",
+        "baseCommit": "771b7cdd98a5663975d9d7c7459a693283665082",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V12 : 8 dessins retenus ; 2 nouvelles bases entières de réserve, 0 costumes statiques, 1 arènes, 7 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 1 refus de génération conservés sans relance.",
+        "stages": 47,
+        "threePlaneStages": 36,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 717,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 128,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 8,
+        "twoPlaneStages": 3,
+        "costumeFamilies": 24,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v12/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+        "standaloneBases": 114,
+        "catalogueIdsWithoutStandaloneBase": 95,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 94,
+        "assetCoverageReport": "docs/standalone/production-v12/active-asset-coverage.json",
+        "referencedAssetsStatus": "verified_current_v12_paths",
+        "browserReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v12/browser-qa.json",
+          "checkedAssetIds": [
+            "blitzo-lighter-production",
+            "hb_gigi-queen-bee-s1-base",
+            "hb_russ-queen-bee-s1-base",
+            "mammon-backstage-corridor-s2-room",
+            "mammon-backstage-cube-case",
+            "mammon-backstage-low-case",
+            "millie-knife-production",
+            "moxxie-sniper-production"
+          ],
+          "scope": "One new arena with no separate scenery plane; seven new gallery entries. Local Chromium desktop and mobile touch emulation, real UI interactions, no game-state injection.",
+          "summary": "171 contrôles navigateur réussis sur Chromium : 8 dessins V12 vérifiés sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Le couloir des coulisses de Mammon et sa vignette ont été observés dans deux combats d’entraînement ; le fond entier reste contenu avant et après déplacement, sans prop ajouté. Les 7 nouvelles fiches de galerie et leurs références sont présentes ; les deux personnages sont libellés comme silhouettes entières de réserve. Les filtres respectent la portée explicite des fiches, sans attribuer un épisode aux planches de production non datées. Aucune erreur réseau, exception, console.error, image manquante ou débordement horizontal observé. Empreintes runtime inchangées."
+        },
+        "technicalReview": {
+          "status": "passed",
+          "testsPassed": 413,
+          "testSuites": 47,
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "standardQaScriptPassed": false,
+          "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+          "report": "docs/standalone/production-v12/runtime-qa.json"
+        }
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v12-2026-11-26",
-      "baseCommit": "771b7cdd98a5663975d9d7c7459a693283665082",
+      "batchId": "static-v13-2026-11-26",
+      "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v12/delivery-register.json",
+      "register": "docs/standalone/production-v13/delivery-register.json",
       "status": "final_production_register",
       "counts": {
-        "distinctDrawings": 8,
-        "newDrawings": 8,
+        "distinctDrawings": 7,
+        "newDrawings": 7,
         "revisedDrawings": 0,
-        "masterPng": 8,
-        "losslessWebp": 8,
-        "thumbnails": 1,
-        "deliveredImageFiles": 17,
-        "deliveredImageBytes": 12046957,
-        "newStandaloneBases": 2,
+        "masterPng": 7,
+        "losslessWebp": 7,
+        "thumbnails": 2,
+        "deliveredImageFiles": 16,
+        "deliveredImageBytes": 13863846,
+        "newStandaloneBases": 0,
         "newCharacterBases": 0,
-        "newlyCoveredCatalogueIds": 2,
+        "newlyCoveredCatalogueIds": 0,
         "newPlayableKits": 0,
         "newStaticCostumes": 0,
-        "newNarrativeIncarnations": 0,
-        "newPortraits": 0,
-        "newStages": 1,
+        "newNarrativeIncarnations": 2,
+        "newPortraits": 2,
+        "newStages": 2,
         "newSceneryProps": 0,
-        "newReserveProps": 5,
+        "newReserveProps": 3,
         "newReserveProjectiles": 0,
         "newReserveMachines": 0,
         "newAnimationCycles": 0,
-        "generatorRefused": 1,
+        "generatorRefused": 0,
         "historicalVariantRequirementsReconciled": 0,
         "historicalVariantRequirementsPartiallyCovered": 0
       },
-      "scope": "V12 : 8 dessins retenus ; 2 nouvelles bases entières de réserve, 0 costumes statiques, 1 arènes, 7 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 1 refus de génération conservés sans relance.",
+      "scope": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
       "verification": {
-        "technicalReport": "docs/standalone/production-v12/runtime-qa.json",
-        "browserReport": "docs/standalone/production-v12/browser-qa.json",
-        "workbookReport": "docs/standalone/production-v12/workbook-qa.json"
+        "technicalReport": "docs/standalone/production-v13/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v13/browser-qa.json",
+        "workbookReport": "docs/standalone/production-v13/workbook-qa.json"
       }
     },
     "latestProductionBible": {
-      "edition": "V12",
+      "edition": "V13",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V12.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V11.xlsx",
-      "historicalSheetsPreserved": 54,
-      "historicalTablesPreserved": 63,
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V12.xlsx",
+      "historicalSheetsPreserved": 56,
+      "historicalTablesPreserved": 65,
       "appendedSheets": 2,
-      "finalSheets": 56,
-      "finalTables": 65,
-      "sha256": "f3a454dd6e87171336c6741997bb81ac5d9d96d544127d381b4aef60c693e2bd",
-      "bytes": 656556,
-      "register": "docs/standalone/production-v12/delivery-register.json",
-      "qa": "docs/standalone/production-v12/workbook-qa.json",
+      "finalSheets": 58,
+      "finalTables": 67,
+      "sha256": "5a365b5483c40641670dd4b5520dbab42389f4769488b137e4aedbcd563f098b",
+      "bytes": 674412,
+      "register": "docs/standalone/production-v13/delivery-register.json",
+      "qa": "docs/standalone/production-v13/workbook-qa.json",
       "status": "verified"
     },
     "staticDeliveryHistory": [
@@ -708,6 +772,47 @@
           "browserReport": "docs/standalone/production-v11/browser-qa.json",
           "workbookReport": "docs/standalone/production-v11/workbook-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v12-2026-11-26",
+        "baseCommit": "771b7cdd98a5663975d9d7c7459a693283665082",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v12/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 8,
+          "newDrawings": 8,
+          "revisedDrawings": 0,
+          "masterPng": 8,
+          "losslessWebp": 8,
+          "thumbnails": 1,
+          "deliveredImageFiles": 17,
+          "deliveredImageBytes": 12046957,
+          "newStandaloneBases": 2,
+          "newCharacterBases": 0,
+          "newlyCoveredCatalogueIds": 2,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 0,
+          "newNarrativeIncarnations": 0,
+          "newPortraits": 0,
+          "newStages": 1,
+          "newSceneryProps": 0,
+          "newReserveProps": 5,
+          "newReserveProjectiles": 0,
+          "newReserveMachines": 0,
+          "newAnimationCycles": 0,
+          "generatorRefused": 1,
+          "historicalVariantRequirementsReconciled": 0,
+          "historicalVariantRequirementsPartiallyCovered": 0
+        },
+        "scope": "V12 : 8 dessins retenus ; 2 nouvelles bases entières de réserve, 0 costumes statiques, 1 arènes, 7 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 1 refus de génération conservés sans relance.",
+        "verification": {
+          "technicalReport": "docs/standalone/production-v12/runtime-qa.json",
+          "browserReport": "docs/standalone/production-v12/browser-qa.json",
+          "workbookReport": "docs/standalone/production-v12/workbook-qa.json"
+        }
       }
     ],
     "productionBibleHistory": [
@@ -766,6 +871,22 @@
         "bytes": 638528,
         "register": "docs/standalone/production-v11/delivery-register.json",
         "qa": "docs/standalone/production-v11/workbook-qa.json",
+        "status": "verified"
+      },
+      {
+        "edition": "V12",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V12.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V11.xlsx",
+        "historicalSheetsPreserved": 54,
+        "historicalTablesPreserved": 63,
+        "appendedSheets": 2,
+        "finalSheets": 56,
+        "finalTables": 65,
+        "sha256": "f3a454dd6e87171336c6741997bb81ac5d9d96d544127d381b4aef60c693e2bd",
+        "bytes": 656556,
+        "register": "docs/standalone/production-v12/delivery-register.json",
+        "qa": "docs/standalone/production-v12/workbook-qa.json",
         "status": "verified"
       }
     ]
@@ -1770,6 +1891,30 @@
       "2026-11-26",
       "8 dessins retenus, 2 bases entières, 0 costumes statiques, 1 arènes ; limites et preuves de QA.",
       "docs/standalone/production-v12/delivery-register.json"
+    ],
+    [
+      "SRC-V13-DHORKS-CONTROL-ROOM-S1",
+      "Référence primaire documentée",
+      "D.H.O.R.K.S. · Salle de surveillance",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://rebeccareynolds.me/portfolio/backgrounds"
+    ],
+    [
+      "SRC-V13-UNHAPPY-CAMPERS-BOATHOUSE-S2",
+      "Référence primaire documentée",
+      "Unhappy Campers · Hangar à bateaux",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-STATIC-V13",
+      "Dépôt / production",
+      "Production statique V13",
+      "2026-11-26",
+      "7 dessins retenus, 0 bases entières, 0 costumes statiques, 2 arènes ; limites et preuves de QA.",
+      "docs/standalone/production-v13/delivery-register.json"
     ]
   ],
   "tasks": [
@@ -8060,6 +8205,67 @@
           "https://www.youtube.com/watch?v=5DV4IIKwqRI"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV13": {
+        "id": "hb_tilla",
+        "franchise": "Helluva Boss",
+        "name": "Tilla",
+        "tier": "Secondaire",
+        "role": "Deceased mother of Blitzø and Barbie Wire",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S1E7 and S2E6",
+        "source": "SRC-HH-02; TILLA",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "PNJ / souvenir",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène. Rôle conseillé par catalogue: PNJ / souvenir.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Identité rattachée aux souvenirs familiaux.",
+        "proposedKit": "Souvenirs; aucun profil de combat.",
+        "loreEvidence": "Repérage secondaire; validation primaire requise",
+        "qualificationV7": {
+          "status": "primary_photo_cropped",
+          "notes": "Les vues de famille et souvenirs sont de petites photos ou visions : Ozzie’s board10 garde surtout Blitz et son téléphone ; Ghostf**kers board13 cellule6 montre une photo de famille coupée. Aucune silhouette entière de la même incarnation n’est établie, et une image de pilote ne doit pas compléter arbitrairement le design de série.",
+          "references": [
+            "https://www.youtube.com/watch?v=8zyGQquL8VM",
+            "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV13": {
+        "status": "partial_narrative_illustration_delivered",
+        "assetId": "hb_tilla-nightmare-merch-portrait",
+        "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait Nightmare adapté d’une marchandise officielle illustrée par Kain. Ce dessin de produit ne certifie pas le modèle exact d’un épisode. Continuité official_merchandise_undated. Le filtre season_2 est un plafond conservateur de divulgation, pas une attribution à un épisode ou une date canonique. Flammes vertes à paillettes et bord métallique retirés par le générateur ; contours des cheveux, mains et vêtement réinterprétés en cel-shading, palette plus saturée que la photographie du pin. Le premier essai ajoutait une petite corne au-dessus de la chevelure gauche et une extension bordeaux à la grande corne. Une correction native ciblée les a supprimées. Une seconde retouche native a réduit la marque blanche haute de la grande corne pour suivre la petite forme partielle photographiée sur le pin ; les deux essais précédents sont archivés hors livraisons. Buste seulement, sans extension du bas du corps. Tilla reste un personnage d’archive décédé, jamais présenté comme ressuscité, recrutable ou jouable. Marge basse de 19 px au seuil alpha 16, aucun contact avec le bord. Aucun nouveau kit, cycle animé, nouvelle identité ou base entière. La marque blanche supérieure est reproduite d’après la photographie du produit officiel ; son statut de motif dessiné ou de reflet n’est pas établi. Elle ne constitue pas une affirmation de troisième bande dans le canon d’un épisode.",
+        "references": [
+          "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json"
+      },
+      "currentStaticCoverage": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait Nightmare adapté d’une marchandise officielle illustrée par Kain. Ce dessin de produit ne certifie pas le modèle exact d’un épisode. Continuité official_merchandise_undated. Le filtre season_2 est un plafond conservateur de divulgation, pas une attribution à un épisode ou une date canonique. Flammes vertes à paillettes et bord métallique retirés par le générateur ; contours des cheveux, mains et vêtement réinterprétés en cel-shading, palette plus saturée que la photographie du pin. Le premier essai ajoutait une petite corne au-dessus de la chevelure gauche et une extension bordeaux à la grande corne. Une correction native ciblée les a supprimées. Une seconde retouche native a réduit la marque blanche haute de la grande corne pour suivre la petite forme partielle photographiée sur le pin ; les deux essais précédents sont archivés hors livraisons. Buste seulement, sans extension du bas du corps. Tilla reste un personnage d’archive décédé, jamais présenté comme ressuscité, recrutable ou jouable. Marge basse de 19 px au seuil alpha 16, aucun contact avec le bord. Aucun nouveau kit, cycle animé, nouvelle identité ou base entière. La marque blanche supérieure est reproduite d’après la photographie du produit officiel ; son statut de motif dessiné ou de reflet n’est pas établi. Elle ne constitue pas une affirmation de troisième bande dans le canon d’un épisode.",
+      "staticProduction": {
+        "master": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+        "export": "public/assets/production/v13/characters/hb_tilla-nightmare-merch-portrait.webp",
+        "masterSha256": "fba5329a4e077168b82afc87bd456e6b6bf8507c75f2b4ccbc9f7fd7752389da",
+        "exportSha256": "b785f83d6fbab4c2dbc0f9884595f84a3e50b2646f96a928f71f99ace504f5ef",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "official_merchandise_undated",
+        "assetId": "hb_tilla-nightmare-merch-portrait",
+        "batchId": "static-v13-2026-11-26",
+        "references": [
+          "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "narrative_bust_only",
+        "fullBodyBaseStillMissing": true
       }
     },
     {
@@ -8826,6 +9032,66 @@
           "https://www.youtube.com/watch?v=D-2799Y07Zc"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV13": {
+        "id": "hb_vikki",
+        "franchise": "Helluva Boss",
+        "name": "Vikki",
+        "tier": "Tertiaire",
+        "role": "Partygoer and hostile acquaintance of Loona",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S1E8",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "staff_art_lower_body_gap",
+          "notes": "Dessin de production CalisDraws de la fête Queen Bee et plans primaires V6 : poodle rose identifiable, robe grise à volants, mais extrémités du bas masquées ou au bord. Aucune vue entière supplémentaire qualifiée dans cette passe.",
+          "references": [
+            "https://www.youtube.com/watch?v=D-2799Y07Zc"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV13": {
+        "status": "partial_narrative_illustration_delivered",
+        "assetId": "hb_vikki-queen-bee-s1-portrait",
+        "notes": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait volontairement limité à la tête, au cou et au haut de la blouse ; la base entière de Vikki reste manquante. Référence native de 320 × 180 px. Les contours fins du visage, les yeux, la fourrure et la coiffure sont redessinés ; aucune fidélité 1:1 certifiée. Le dessin suit le museau vers la gauche de la référence. La mention vers la droite du prompt original était imprécise et n’est pas utilisée comme preuve de conformité. Marges mesurées au seuil alpha 16 : haut 12 px, bas 2 px ; aucun pixel visible de la silhouette ne touche le bord. Le cadrage doit rester en contain dans la galerie. Une seule pose statique narrative ; aucun kit, cycle animé, nouvelle identité ou base entière.",
+        "references": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=90s"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json"
+      },
+      "currentStaticCoverage": "Illustration narrative partielle ; aucune base entière supplémentaire comptée. Portrait volontairement limité à la tête, au cou et au haut de la blouse ; la base entière de Vikki reste manquante. Référence native de 320 × 180 px. Les contours fins du visage, les yeux, la fourrure et la coiffure sont redessinés ; aucune fidélité 1:1 certifiée. Le dessin suit le museau vers la gauche de la référence. La mention vers la droite du prompt original était imprécise et n’est pas utilisée comme preuve de conformité. Marges mesurées au seuil alpha 16 : haut 12 px, bas 2 px ; aucun pixel visible de la silhouette ne touche le bord. Le cadrage doit rester en contain dans la galerie. Une seule pose statique narrative ; aucun kit, cycle animé, nouvelle identité ou base entière.",
+      "staticProduction": {
+        "master": "production/v13/characters/masters/hb_vikki-queen-bee-s1-portrait.png",
+        "export": "public/assets/production/v13/characters/hb_vikki-queen-bee-s1-portrait.webp",
+        "masterSha256": "bfa88c86c3eaef2a96cdab251fa8116668660c00f9edc613a5d2a2830dca8468",
+        "exportSha256": "196ed1f90a72a604d1383a960b6b11a2e46346992c5bab95cb7d6869fee20fc5",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_1",
+        "assetId": "hb_vikki-queen-bee-s1-portrait",
+        "batchId": "static-v13-2026-11-26",
+        "references": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=90s"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "narrative_bust_only",
+        "fullBodyBaseStillMissing": true
       }
     },
     {
@@ -13443,6 +13709,95 @@
           "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c124e785-c6cf-48fc-88cd-7617a471dd28/207_SHOT_269.jpeg",
           "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
           "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
+    },
+    {
+      "id": "dhorks-control-room-s1",
+      "name": "D.H.O.R.K.S. · Salle de surveillance",
+      "franchise": "Helluva Boss",
+      "place": "Salle de surveillance endommagée, console à gauche et portes à hublots à droite, peinture TS_HB6_261B.",
+      "continuity": "season_1",
+      "canonicalState": "episode_location",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V13-DHORKS-CONTROL-ROOM-S1",
+      "reference": "https://rebeccareynolds.me/portfolio/backgrounds; https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png; https://www.youtube.com/watch?v=yXErLiSbxXQ&t=30s; https://www.youtube.com/watch?v=yXErLiSbxXQ&t=1180s; https://www.youtube.com/watch?v=yXErLiSbxXQ&t=1200s",
+      "design": "Helluva Boss, Truth Seekers, S1E6. Le portfolio de Rebecca Reynolds fournit la peinture TS_HB6_261B. Les cellules officielles observées corroborent le contexte des moniteurs et de la salle endommagée ; elles ne rendent pas lisible la composition vide exacte. Le cadrage source très large est adapté à1672×941 en étendant le même sol avant ; aucune ouverture ni pièce nouvelle ajoutée. Console à gauche, banque de moniteurs, vitre brisée, deux portes à hublots et éclairages fluorescents conservés. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV13": true,
+      "status": "Partiel",
+      "runtimeId": "dhorks-control-room-s1",
+      "runtimeStageId": "dhorks-control-room-s1",
+      "runtimeStageIds": [
+        "dhorks-control-room-s1"
+      ],
+      "asset": "public/assets/production/v13/environment/dhorks-control-room-s1-room.webp",
+      "currentStaticCoverage": "Helluva Boss, Truth Seekers, S1E6. Le portfolio de Rebecca Reynolds fournit la peinture TS_HB6_261B. Les cellules officielles observées corroborent le contexte des moniteurs et de la salle endommagée ; elles ne rendent pas lisible la composition vide exacte. Le cadrage source très large est adapté à1672×941 en étendant le même sol avant ; aucune ouverture ni pièce nouvelle ajoutée. Console à gauche, banque de moniteurs, vitre brisée, deux portes à hublots et éclairages fluorescents conservés. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V13. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v13-2026-11-26",
+        "assetIds": [
+          "dhorks-control-room-s1-room"
+        ],
+        "runtimeStageIds": [
+          "dhorks-control-room-s1"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "references": [
+          "https://rebeccareynolds.me/portfolio/backgrounds",
+          "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=30s",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=1180s",
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=1200s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2",
+      "name": "Unhappy Campers · Hangar à bateaux",
+      "franchise": "Helluva Boss",
+      "place": "Hangar à bateaux du camp : planches délabrées, deux fenêtres roses, sacs, barque et bâche sombre, peinture02.jpeg.",
+      "continuity": "season_2",
+      "canonicalState": "episode_location",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V13-UNHAPPY-CAMPERS-BOATHOUSE-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/43145640-919c-43bb-a18d-a5435ce38ba2/03.jpeg; https://www.youtube.com/watch?v=lYu1ysDULwA&t=960s; https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s; https://www.youtube.com/watch?v=lYu1ysDULwA&t=1150s",
+      "design": "Helluva Boss, Unhappy Campers, S2E5. Les cellules officielles960s et1030s confirment le hangar, les deux fenêtres, les sacs et la barque de la peinture02.jpeg ;1150s confirme le mur et la porte du contrechamp03.jpeg. Deux fenêtres, pile de sacs, barque et moteur, bassin sombre, bâche déchirée, charpente et planches délabrées conservés. La bande de quai existante au premier plan est prolongée pour offrir un sol de combat continu ; le bassin et la barque restent derrière cette bande. Cette géométrie jouable est une adaptation AU explicitement documentée. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV13": true,
+      "status": "Partiel",
+      "runtimeId": "unhappy-campers-boathouse-s2",
+      "runtimeStageId": "unhappy-campers-boathouse-s2",
+      "runtimeStageIds": [
+        "unhappy-campers-boathouse-s2"
+      ],
+      "asset": "public/assets/production/v13/environment/unhappy-campers-boathouse-s2-room.webp",
+      "currentStaticCoverage": "Helluva Boss, Unhappy Campers, S2E5. Les cellules officielles960s et1030s confirment le hangar, les deux fenêtres, les sacs et la barque de la peinture02.jpeg ;1150s confirme le mur et la porte du contrechamp03.jpeg. Deux fenêtres, pile de sacs, barque et moteur, bassin sombre, bâche déchirée, charpente et planches délabrées conservés. La bande de quai existante au premier plan est prolongée pour offrir un sol de combat continu ; le bassin et la barque restent derrière cette bande. Cette géométrie jouable est une adaptation AU explicitement documentée. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V13. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v13-2026-11-26",
+        "assetIds": [
+          "unhappy-campers-boathouse-s2-room"
+        ],
+        "runtimeStageIds": [
+          "unhappy-campers-boathouse-s2"
+        ],
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/43145640-919c-43bb-a18d-a5435ce38ba2/03.jpeg",
+          "https://www.youtube.com/watch?v=lYu1ysDULwA&t=960s",
+          "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s",
+          "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1150s"
         ],
         "animationCycles": 0,
         "fidelityOneToOneCertified": false,

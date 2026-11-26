@@ -13,7 +13,8 @@
     "static-v9-2026-11-26",
     "static-v10-2026-11-26",
     "static-v11-2026-11-26",
-    "static-v12-2026-11-26"
+    "static-v12-2026-11-26",
+    "static-v13-2026-11-26"
   ],
   "fidelityOneToOneCertified": false,
   "assets": [
@@ -7006,6 +7007,290 @@
         "status": "exact_model_not_corroborated_by_examined_s1e1_samples",
         "usedAsGenerationReference": false
       }
+    },
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "name": "Vikki · portrait Queen Bee S1",
+      "kind": "narrative_archive",
+      "franchise": "Helluva Boss",
+      "sourceIdentityId": "hb_vikki",
+      "spoilerScope": "season_1",
+      "continuity": "season_1",
+      "frameCoverage": "bust",
+      "runtimeStatus": "reserve",
+      "master": "production/v13/characters/masters/hb_vikki-queen-bee-s1-portrait.png",
+      "export": "public/assets/production/v13/characters/hb_vikki-queen-bee-s1-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "masterSha256": "bfa88c86c3eaef2a96cdab251fa8116668660c00f9edc613a5d2a2830dca8468",
+      "exportSha256": "196ed1f90a72a604d1383a960b6b11a2e46346992c5bab95cb7d6869fee20fc5",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "animationCycles": 0,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "alphaBounds16": [
+        237,
+        12,
+        1063,
+        1197
+      ],
+      "batchId": "static-v13-2026-11-26",
+      "reference": "Vikki · portrait Queen Bee S1",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=90s",
+          "kind": "official_creator_episode_public_preview_frame",
+          "title": "HELLUVA BOSS — QUEEN BEE, S1 Episode 8"
+        }
+      ],
+      "intendedRole": "Portrait narratif partiel de galerie ; la base entière reste manquante.",
+      "visualReview": "docs/standalone/production-v13/independent-visual-review.json",
+      "fidelityNotes": [
+        "Portrait volontairement limité à la tête, au cou et au haut de la blouse ; la base entière de Vikki reste manquante.",
+        "Référence native de 320 × 180 px. Les contours fins du visage, les yeux, la fourrure et la coiffure sont redessinés ; aucune fidélité 1:1 certifiée.",
+        "Le dessin suit le museau vers la gauche de la référence. La mention vers la droite du prompt original était imprécise et n’est pas utilisée comme preuve de conformité.",
+        "Marges mesurées au seuil alpha 16 : haut 12 px, bas 2 px ; aucun pixel visible de la silhouette ne touche le bord. Le cadrage doit rester en contain dans la galerie.",
+        "Une seule pose statique narrative ; aucun kit, cycle animé, nouvelle identité ou base entière."
+      ],
+      "reviewStatus": "independent_review_accepted",
+      "inGameChecked": false,
+      "fullBodyBaseStillMissing": true,
+      "productionIdentityId": "hb_vikki"
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "name": "Tilla · portrait Nightmare — marchandise officielle",
+      "kind": "narrative_archive",
+      "franchise": "Helluva Boss",
+      "sourceIdentityId": "hb_tilla",
+      "spoilerScope": "season_2",
+      "continuity": "official_merchandise_undated",
+      "frameCoverage": "bust",
+      "runtimeStatus": "reserve",
+      "master": "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+      "export": "public/assets/production/v13/characters/hb_tilla-nightmare-merch-portrait.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSha256": "fba5329a4e077168b82afc87bd456e6b6bf8507c75f2b4ccbc9f7fd7752389da",
+      "exportSha256": "b785f83d6fbab4c2dbc0f9884595f84a3e50b2646f96a928f71f99ace504f5ef",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "animationCycles": 0,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "alphaBounds16": [
+        153,
+        150,
+        1104,
+        1235
+      ],
+      "batchId": "static-v13-2026-11-26",
+      "reference": "Tilla · portrait Nightmare — marchandise officielle",
+      "references": [
+        {
+          "url": "https://sharkrobot.com/products/nightmare-tilla-glitter-enamel-pin",
+          "kind": "official_merchandise_product_image",
+          "title": "Nightmare Tilla — Glitter Enamel Pin"
+        }
+      ],
+      "intendedRole": "Portrait narratif partiel de galerie ; la base entière reste manquante.",
+      "visualReview": "docs/standalone/production-v13/independent-visual-review.json",
+      "fidelityNotes": [
+        "Portrait Nightmare adapté d’une marchandise officielle illustrée par Kain. Ce dessin de produit ne certifie pas le modèle exact d’un épisode.",
+        "Continuité official_merchandise_undated. Le filtre season_2 est un plafond conservateur de divulgation, pas une attribution à un épisode ou une date canonique.",
+        "Flammes vertes à paillettes et bord métallique retirés par le générateur ; contours des cheveux, mains et vêtement réinterprétés en cel-shading, palette plus saturée que la photographie du pin.",
+        "Le premier essai ajoutait une petite corne au-dessus de la chevelure gauche et une extension bordeaux à la grande corne. Une correction native ciblée les a supprimées. Une seconde retouche native a réduit la marque blanche haute de la grande corne pour suivre la petite forme partielle photographiée sur le pin ; les deux essais précédents sont archivés hors livraisons.",
+        "Buste seulement, sans extension du bas du corps. Tilla reste un personnage d’archive décédé, jamais présenté comme ressuscité, recrutable ou jouable.",
+        "Marge basse de 19 px au seuil alpha 16, aucun contact avec le bord. Aucun nouveau kit, cycle animé, nouvelle identité ou base entière.",
+        "La marque blanche supérieure est reproduite d’après la photographie du produit officiel ; son statut de motif dessiné ou de reflet n’est pas établi. Elle ne constitue pas une affirmation de troisième bande dans le canon d’un épisode."
+      ],
+      "reviewStatus": "independent_review_accepted",
+      "inGameChecked": false,
+      "fullBodyBaseStillMissing": true,
+      "productionIdentityId": "hb_tilla",
+      "canonicalContext": "Portrait Nightmare Tilla adapté du produit officiel Vivziepop / Shark Robot illustré par Kain. Ce modèle de marchandise ne constitue pas une feuille de modèle d’épisode ; son épisode exact n’est pas établi. Personnage décédé conservé exclusivement en archive narrative.",
+      "spoilerScopeBasis": "season_2 est uniquement le plafond conservateur du filtre de divulgation ; il ne date pas cette illustration de marchandise et ne l’attribue à aucun épisode précis."
+    },
+    {
+      "id": "spring-broken-red-cup",
+      "name": "Spring Broken · gobelet rouge renversé",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "sourceIdentityId": null,
+      "spoilerScope": "season_1",
+      "continuity": "season_1",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "master": "production/v13/props/masters/spring-broken-red-cup.png",
+      "export": "public/assets/production/v13/props/spring-broken-red-cup.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "masterSha256": "8bbe82a8a48638aff827136ddc543cb7a7dde07b52fe8680efeb767523350674",
+      "exportSha256": "d2482985b97eb772da84004a84ae932237029b79406e77ac346609129f0659ae",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "animationCycles": 0,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "alphaBounds16": [
+        303,
+        217,
+        1208,
+        840
+      ],
+      "batchId": "static-v13-2026-11-26",
+      "reference": "Spring Broken · gobelet rouge renversé",
+      "references": [
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "Spring Broken · gobelet rouge renversé"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "kind": "native_crop_of_primary_production_painting",
+          "title": "Spring Broken · gobelet rouge renversé"
+        }
+      ],
+      "intendedRole": "Objet de réserve consultable dans la galerie ; aucune nouvelle mécanique ni base entière déduite.",
+      "visualReview": "docs/standalone/production-v13/independent-visual-review.json",
+      "fidelityNotes": [
+        "Un seul gobelet rouge couché, ouverture ovale claire à gauche et fond à droite, contour complet.",
+        "Aucun sable, liquide, logo, second objet ni ombre de sol ajouté.",
+        "Rim, couleurs générales et forme effilée sont repris du crop primaire.",
+        "Source primaire de détail74×61px. Contour, petits traits intérieurs, reflets et proportions sont interprétés à haute résolution.",
+        "Une pose statique de réserve ; absence de fonction jouable propre à ce dessin.",
+        "Dessin statique unique sur alpha natif. L’égalité RGBA vérifie seulement la conversion PNG vers WebP, pas une fidélité canonique 1:1.",
+        "Objet de galerie uniquement ; aucune interaction, nouvelle mécanique, animation ou base entière de personnage ajoutée."
+      ],
+      "reviewStatus": "independent_review_accepted",
+      "inGameChecked": false,
+      "canonicalContext": "Objet visible entier dans HB4_166, peinture de production de Rebecca Reynolds. Le contexte de la plage de Spring Broken (S1E3) est corroboré par la cellule publique officielle à 760 s ; le numéro HB4 est un numéro de production, pas une attribution à S1E4."
+    },
+    {
+      "id": "dhorks-red-button-panel-s1",
+      "name": "D.H.O.R.K.S. · panneau du bouton rouge S1",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "sourceIdentityId": null,
+      "spoilerScope": "season_1",
+      "continuity": "season_1",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "master": "production/v13/props/masters/dhorks-red-button-panel-s1.png",
+      "export": "public/assets/production/v13/props/dhorks-red-button-panel-s1.webp",
+      "dimensions": [
+        1061,
+        1483
+      ],
+      "masterSha256": "a6fd1cb10bf3f3f33cdb860de857650f4746dcf12586d779d575ad39771c2b64",
+      "exportSha256": "bcd796421a9b8a76983cf7436d7c889499b403d9cd6f4ce6969b4b52eb0f02ed",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "animationCycles": 0,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "alphaBounds16": [
+        183,
+        210,
+        848,
+        1228
+      ],
+      "batchId": "static-v13-2026-11-26",
+      "reference": "D.H.O.R.K.S. · panneau du bouton rouge S1",
+      "references": [
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "D.H.O.R.K.S. · panneau du bouton rouge S1"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "kind": "native_crop_of_primary_production_painting",
+          "title": "D.H.O.R.K.S. · panneau du bouton rouge S1"
+        }
+      ],
+      "intendedRole": "Objet de réserve consultable dans la galerie ; aucune nouvelle mécanique ni base entière déduite.",
+      "visualReview": "docs/standalone/production-v13/independent-visual-review.json",
+      "fidelityNotes": [
+        "Texte RED BUTTON lisible et exact, gros bouton rouge sur cadre gris rectangulaire.",
+        "Perspective oblique et zones à rayures diagonales conservées, panneau entier avec marge.",
+        "Aucun morceau de mur, débris ou personnage conservé.",
+        "Source primaire de détail73×102px. Typographie, épaisseur du cadre, rayures et texture sont réinterprétées.",
+        "Des reflets ponctuels et une texture plus détaillée que la source apparaissent sur le bouton et le panneau. Ces détails ne sont pas des éléments canoniques certifiés.",
+        "Aucune fonction de commande, voyant ou circuit n’est déduite du dessin de réserve.",
+        "Dessin statique unique sur alpha natif. L’égalité RGBA vérifie seulement la conversion PNG vers WebP, pas une fidélité canonique 1:1.",
+        "Objet de galerie uniquement ; aucune interaction, nouvelle mécanique, animation ou base entière de personnage ajoutée."
+      ],
+      "reviewStatus": "independent_review_accepted",
+      "inGameChecked": false,
+      "canonicalContext": "Panneau complet de la peinture TS_HB6_261B, salle de surveillance de Truth Seekers (S1E6). Les échantillons publics de l’épisode corroborent le lieu ; la forme détaillée du panneau est qualifiée par la peinture primaire, sans prétendre qu’elle est lisible dans ces petits échantillons."
+    },
+    {
+      "id": "asmodeus-bedroom-pitcher",
+      "name": "Asmodeus · carafe de la chambre",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "sourceIdentityId": null,
+      "spoilerScope": "season_2",
+      "continuity": "season_2",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "master": "production/v13/props/masters/asmodeus-bedroom-pitcher.png",
+      "export": "public/assets/production/v13/props/asmodeus-bedroom-pitcher.webp",
+      "dimensions": [
+        1287,
+        1222
+      ],
+      "masterSha256": "c0a4677434d4c028e89eeb3a00f7a39678779d86ada51a26882e5039208bc17c",
+      "exportSha256": "af19924634ea33535f0f9c2d991dc9b304c8e90ff193b0a61c5b694eac365f96",
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "animationCycles": 0,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "alphaBounds16": [
+        269,
+        108,
+        1052,
+        1099
+      ],
+      "batchId": "static-v13-2026-11-26",
+      "reference": "Asmodeus · carafe de la chambre",
+      "references": [
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "206 Paint 00007 — chambre, console entière et candélabre"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "kind": "native_crop_of_primary_production_painting",
+          "title": "Asmodeus · carafe de la chambre"
+        }
+      ],
+      "intendedRole": "Objet de réserve consultable dans la galerie ; aucune nouvelle mécanique ni base entière déduite.",
+      "visualReview": "docs/standalone/production-v13/independent-visual-review.json",
+      "fidelityNotes": [
+        "Pichet fermé rouge violet, corps conique, bec à gauche, anse anguleuse à droite.",
+        "Couvercle et bouton décoratif pointu entiers, sans coupure du sommet.",
+        "Aucun meuble, bougie, contenu ou second objet ajouté.",
+        "Source primaire de détail135×165px. Proportions du bec, de l’anse et du bouton de couvercle légèrement adaptées.",
+        "Les reflets et nuances sont redessinés sous la palette de la chambre ; aucune matière ou contenance non visible n’est déduite.",
+        "Une seule pose statique de réserve, pas de nouvelle arène ou mécanique.",
+        "Dessin statique unique sur alpha natif. L’égalité RGBA vérifie seulement la conversion PNG vers WebP, pas une fidélité canonique 1:1.",
+        "Objet de galerie uniquement ; aucune interaction, nouvelle mécanique, animation ou base entière de personnage ajoutée."
+      ],
+      "reviewStatus": "independent_review_accepted",
+      "inGameChecked": false,
+      "canonicalContext": "Carafe entière sur la console de la chambre d’Asmodeus dans 206 Paint 00007, peinture primaire de Jasper Luu déjà qualifiée pour Oops (S2E6) dans le registre V10. Aucun placement automatique de cet objet de réserve dans l’arène existante."
     }
   ]
 }

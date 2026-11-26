@@ -1,0 +1,28 @@
+{
+  "edition": "V13",
+  "status": "diagnostic_findings_not_acceptance",
+  "sourceRunSha256": "90bbe958130f7c9a41a678192edae6c44da3cb85836cba84602bd2989b1aa2f8",
+  "samplingIntervalMs": 500,
+  "samples": 88,
+  "startAvailableMiB": 1807.5,
+  "minimumAvailableMiB": 1239.5,
+  "peakBrowserTreeRssMiB": 731.0,
+  "peakRendererRssMiB": 405.6,
+  "lastBrowserTreeRssMiB": 528.2,
+  "rendererCrashEvents": [],
+  "browserCleanup": {
+    "pid": 19,
+    "startedAt": "2026-11-26T20:17:30.512Z",
+    "method": "graceful",
+    "exitCode": 0,
+    "signalCode": null,
+    "finishedAt": "2026-11-26T20:17:33.722Z"
+  },
+  "interpretation": "Native memory was measured throughout one gallery-only reproduction. Host available memory remained above 1.2 GiB; these readings do not establish exhaustion or the cause of earlier native crashes. Five details and individual S1 scope checks completed, but whole-catalogue restoration did not finish.",
+  "limits": [
+    "500 ms sampling can miss shorter allocation peaks and does not reveal an unseen process/container memory quota.",
+    "Explicit before/after markers were attached to the later S1+S2 restoration and were not reached; periodic samples cover the earlier S1 restoration attempt.",
+    "The diagnostic final exception is a bounded context-close timeout; that finally-block error masked the preceding operation exception. No specific primary exception or definitive audio/asset cause is claimed.",
+    "This is one diagnostic attempt, not an acceptance pass."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "edition": "V13",
+  "status": "runtime_frozen_execution_authorized",
+  "expectedGalleryCount": 133,
+  "expectedAssetIds": [
+    "hb_vikki-queen-bee-s1-portrait",
+    "hb_tilla-nightmare-merch-portrait",
+    "spring-broken-red-cup",
+    "dhorks-red-button-panel-s1",
+    "asmodeus-bedroom-pitcher",
+    "dhorks-control-room-s1-room",
+    "unhappy-campers-boathouse-s2-room"
+  ],
+  "referenceDimensions": [
+    1672,
+    941
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "isMobile": false,
+      "hasTouch": false,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "physicalDevice": false
+    }
+  ],
+  "coverage": [
+    "Seven accepted V13 drawings observed in both viewports; five new gallery illustrations stay fully contained and unwarped.",
+    "Vikki and Tilla are explicitly labelled busts, with no full-body or playable kit claim.",
+    "Tilla official-product badge on card and detail, explicit unconfirmed-episode provenance; conservative season2 filter ceiling is not episode dating.",
+    "Two new arenas, their thumbnails, selection and full backgrounds, zero separate scenery props.",
+    "Two training sessions per viewport using the existing Loona party costume, actual keyboard or native touch movement, pause and resume.",
+    "Reference-link text and href values correspond to qualified catalogue sources; external pages not opened.",
+    "Explicit S1/S2 gallery filters, inherited Crymini2017 provenance, distinct S3 arena availability gate.",
+    "Zero failed HTTP or asset requests, browser exceptions, console errors, broken visible images or horizontal overflow.",
+    "Runtime input fingerprints remain identical before and after the browser pass."
+  ],
+  "limits": [
+    "Local Chromium, touch emulation only; no physical-device, cross-browser or deployed-preview visual test.",
+    "No new animation cycle or playable kit.",
+    "Canonical fidelity remains distinct from native/export pixel parity and rendered integration."
+  ],
+  "frozenCatalogueSha256": "2befb196576e802a515282cda014479a05ee042c36b285bc110e8dccf4a0d87a",
+  "stages": [
+    {
+      "id": "dhorks-control-room-s1",
+      "roomId": "dhorks-control-room-s1-room"
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2",
+      "roomId": "unhappy-campers-boathouse-s2-room"
+    }
+  ],
+  "merchandiseBadge": "PRODUIT OFFICIEL",
+  "merchandiseProvenance": "Portrait adapté d’un produit officiel. L’apparition exacte de cette incarnation dans un épisode n’est pas confirmée.",
+  "authorization": {
+    "by": "/root",
+    "receivedAt": "2026-11-26T19:58:54.184625+00:00",
+    "technicalReview": "docs/standalone/production-v13/runtime-qa.json",
+    "rootRuntimeFingerprint": "ac0c4bce3fb2b3a05132e25fd62e5893a4cee5f701f232392d8b0629e139b161",
+    "rootRuntimeInputCount": 198
+  },
+  "server": {
+    "kind": "validated_production_build",
+    "root": "dist-combat",
+    "command": "python -m http.server",
+    "entry": "index.html",
+    "manifestSha256": "70e25f9bbae2f3c26c74b06a02654e86b95825b703f66041b52cbef2028f94d7",
+    "authorizedBy": "/root",
+    "reason": "Reduce native resource use after archived Vite/Chromium renderer failures; validate the already packaged artifact directly."
+  },
+  "executionStrategy": {
+    "browserIsolation": "Fresh owned BrowserServer for each stage combat and each gallery, per viewport",
+    "segments": 6,
+    "defaultSoundtrack": "enabled; verified through Options without changing it",
+    "globalDeadlineMs": 480000,
+    "perSegmentDeadlineMs": 120000,
+    "browserGracefulCloseDeadlineMs": 5000,
+    "browserKillDeadlineMs": 5000,
+    "continuousSessionCertified": false,
+    "authorizedBy": "/root",
+    "limits": "Earlier long-session transition timeouts and native renderer failures remain archived; no definitive cause or audio defect is inferred."
+  }
+}
