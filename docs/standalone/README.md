@@ -2,6 +2,24 @@
 
 Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
+<!-- V9_CURRENT_START -->
+## Reprise actuelle — 26 novembre 2026, production statique V9
+
+La V9 contient **7 dessins retenus et 15 fichiers d’image** : 7 masters PNG, 7 exports WebP sans perte et une miniature, pour **14 294 928 octets**. Elle ajoute Lute après le final S1 comme tenue statique sélectionnable, un portrait à la taille de la mère de Moxxie, le grimoire fermé de Stolas, la peluche THING? et le salon du bar de Beelzebub avec tabouret et cloison séparés. Le [rapport de livraison V9](DELIVERY_STATIC_V9_2026-11-26.md), le [registre](production-v9/delivery-register.json) et les [sources de production](production-v9/README.md) décrivent chaque usage.
+
+Le cumul est de **43 combattants, 43 arènes, 21 familles de costumes, 106 entrées de galerie et 109 bases autonomes**. Le portrait de la mère reste partiel ; la tenue de Lute ne crée ni identité, ni base autonome, ni kit. Les 100 identifiants de catalogue sans base, soit 99 identités après l’alias connu, restent ouverts. Aucun cycle animé n’est ajouté.
+
+La [revue indépendante](production-v9/independent-review-root.json) accepte les sept masters. La cloison finale possède **8 rangées principales et 38 ouvertures**, avec contour inférieur complet. Les trois essais remplacés sont exclus du décompte. Le grimoire adapte la reliure d’un produit officiel spiralé ; les références de Lute sont des prévisualisations de 320 × 180. **Fidélité 1:1 non certifiée.**
+
+<!-- V9_QA_STATUS_START -->
+Le [contrôle navigateur V9](production-v9/browser-qa.json) passe **99 vérifications sur 99**, avec les sept assets explicitement couverts en Chromium local, sur bureau et mobile émulé. Il comprend la tenue de Lute, le salon, les six aperçus de galerie et les filtres de saison. Le [relevé actif](production-v9/active-asset-coverage.json) vérifie **687 chemins sans référence cassée**. Les observations navigateur ne constituent pas une recette exhaustive de tous les modes ou un test sur appareil physique.
+
+La [validation technique finale](production-v9/runtime-qa.json) passe **413 tests dans 47 suites**, TypeScript, ESLint, les builds manager et standalone et **1 291 empreintes de distribution**. Les builds ont utilisé `copyPublicDir: false` puis des liens physiques pour les fichiers publics ; la commande unique `npm run qa` n’a pas été exécutée. Le registre V9 est finalisé. La [bible V9](INFERNAL_VERSUS_BIBLE_V9.xlsx) contient **50 feuilles**, dont les 48 historiques V8 préservées, et 59 tableaux. La [QA du classeur](production-v9/workbook-qa.json) documente neuf rendus relus, six formules contrôlées dans les ajouts et aucune erreur de formule dans les deux nouveaux onglets.
+
+Le [classeur de suivi Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) est mis à jour en V9 au même identifiant. Les métadonnées ont été relues et les **602 294 octets** du fichier téléchargé correspondent octet par octet au classeur local final ; la [preuve de publication](production-v9/drive-publication.json) conserve son SHA-256.
+<!-- V9_QA_STATUS_END -->
+<!-- V9_CURRENT_END -->
+
 ## Lancer et construire
 
 ```bash
@@ -17,8 +35,14 @@ npm run check:standalone
 
 Le fichier `dist-combat/index.html` est autonome vis-à-vis du manager. Aucun chargement de `App`, `localDb`, `cloudAccount` ou sauvegarde de gestion n'est nécessaire. Le build réutilise les assets du dépôt; ces images sont chargées à la demande par le navigateur. Le build s'utilise via HTTP à la racine du domaine, pas par double-clic `file://` ni sous un sous-chemin arbitraire.
 
+## V8 récupérée et publiée — 26 novembre 2026
+
+La production V8 a été récupérée puis publiée sur la branche de la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8), avant la continuation V9. Son [registre final](production-v8/delivery-register.json) conserve **18 dessins distincts et 38 fichiers d’image** : 18 PNG, 18 WebP et deux miniatures. Les neuf costumes statiques, quatre incarnations narratives, deux arènes et trois accessoires de décor sont décrits dans les [sources V8](production-v8/README.md).
+
+La [bible V8](INFERNAL_VERSUS_BIBLE_V8.xlsx) conserve 48 feuilles. À cette étape, le cumul était de 43 combattants, 42 arènes, 20 familles de costumes, 100 entrées de galerie et 109 bases autonomes. Les résultats et limites V8 restent historiques ; la validation V9 est suivie séparément dans la section courante ci-dessus.
+
 <!-- V7_CURRENT_START -->
-## Reprise actuelle — 26 novembre 2026, production statique V7
+## Contenu conservé — 26 novembre 2026, production statique V7 (historique)
 
 La production statique V7 livre **45 dessins distincts** : 44 nouveaux dessins et 1 correction d’un dessin existant. Les fichiers livrables comprennent **45 masters PNG, 45 exports WebP sans perte et 3 miniatures**, soit **93 fichiers d’image** (80 143 856 octets). Chaque personnage, objet, machine, fond et élément de décor possède son fichier séparé. Aucun cycle animé n’est ajouté.
 

@@ -175,6 +175,14 @@ export const INFERNAL_COSTUMES: Readonly<Record<string, readonly InfernalCostume
     // Reuse the published two-arm READY without duplicating the artwork.
     ready: '/assets/sprites/individual/lute-ready.webp',
     layout: 'portrait',
+  }, {
+    id: 'lute-post-finale-s1-ready',
+    name: 'Après le final S1 · illustration statique',
+    appearance: 'Hazbin Hotel · scène finale de la saison 1. Bras gauche absent, ailes déployées et halo d’Adam. Une seule illustration reste visible pendant toutes les actions ; le kit de combat conserve ses règles.',
+    spoilerTier: 'season_1',
+    ready: '/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp',
+    layout: 'portrait',
+    staticReadyOnly: true,
   }],
   carmilla: [{
     ...costume('carmilla-loose-hair', 'Cheveux lâchés', 'Hazbin Hotel · Hello Rosie! / Out for Love, saison 1, épisode 7'),

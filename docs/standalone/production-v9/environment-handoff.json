@@ -1,0 +1,272 @@
+{
+  "edition": "V9",
+  "date": "2026-11-26",
+  "acceptedDrawings": 3,
+  "imageFiles": 7,
+  "nativeMasters": 3,
+  "losslessExports": 3,
+  "derivedThumbnails": 1,
+  "assets": [
+    {
+      "id": "bee-lounge-s1-room",
+      "name": "Beelzebub — salon du bar",
+      "category": "stage",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "runtimeStatus": "selectable_stage",
+      "stageId": "bee-lounge-s1",
+      "accepted": true,
+      "master": "production/v9/environment/masters/bee-lounge-s1-room.png",
+      "export": "public/assets/production/v9/environment/bee-lounge-s1-room.webp",
+      "masterSha256": "6dd0ff3eb5f93af9765385b4522580c698b217238612b8f25b2157d3e79e5ac8",
+      "exportSha256": "b3c1f6b6bf3bec67a0a56dcaf9a061653d10dc3cecebee7b0931e2ecf45a3f4d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "alphaBounds16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "transparentPixelCount": 0,
+      "opaquePixelCount": 1573352,
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "/workspace/scratch/b07af32d1b2c/generated_images/exec-1ae1e629-71ff-4cd3-b9a7-8d4f01aca6e3.png",
+      "prompt": "Use case: stylized-concept. Asset: one landscape background for a 2D fighting game, 16:9 composition. Repaint the supplied official Helluva Boss background layout as the side bar lounge at Beelzebub's reception, preserving the room's characteristic geometry and color relationships: warm peach-orange walls and floor, broad cream ceiling covered in a delicate honeycomb pattern, curved orange honeycomb-faced bar entering from the left, cyan honeycomb wallpaper behind the bar, two pale yellow columns with coral capitals, central rectangular archway into a rounded teal booth with hexagon upholstery and a long golden pedestal table, pale cyan rectangular aquarium-like window above the booth, turquoise geometric rug beginning at lower right. Keep the left teal honeycomb room-divider screen in place. Remove the RIGHT honeycomb divider screen completely, leaving only its peach wall behind it, because it will be a separate layer. Remove ALL bar stools entirely because they will be separate props. Preserve the clean confident hand-drawn 2D animation linework and flat shaded materials of the reference, with no photoreal textures. Adjust ONLY the foreground floor perspective enough to provide a continuous unobstructed horizontal playable strip across the bottom 25 percent. Keep room corners, doorway connections and column feet plausible. No people, no characters, no words, no signs, no HUD, no watermark, no object pasted across the combat strip. Entire scene opaque. Single background image.",
+      "referenceUrls": [
+        "https://backgroundart.net/helluvaboss.html",
+        "https://backgroundart.net/art/helluva05.jpg"
+      ],
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_production_artist_portfolio",
+          "title": "Greg Bartlett — Helluva Boss layout and paint portfolio"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "kind": "official_production_art",
+          "episode": "Queen Bee S1E8",
+          "title": "Beelzebub side lounge production layout"
+        }
+      ],
+      "fidelityNotes": [
+        "Cadrage et sol avant adaptés au combat 2D, avec la banquette et le bar conservés.",
+        "Les tabourets et la cloison droite ont été retirés du fond pour leur placement en couches distinctes.",
+        "Les motifs fins, reflets et proportions sont redessinés ; fidélité artistique 1:1 non certifiée."
+      ],
+      "thumbnail": {
+        "path": "public/assets/production/v9/environment/bee-lounge-s1-thumb.webp",
+        "sha256": "98f9413579fdc17398daf1ab9a914fed2d1cf6caa636b73514c5373f0bea97e2",
+        "dimensions": [
+          480,
+          270
+        ],
+        "derivedResize": true
+      }
+    },
+    {
+      "id": "bee-lounge-bar-stool",
+      "name": "Beelzebub — tabouret cyan du salon",
+      "category": "prop",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "runtimeStatus": "stage_scenery",
+      "stageId": "bee-lounge-s1",
+      "accepted": true,
+      "master": "production/v9/environment/masters/bee-lounge-bar-stool.png",
+      "export": "public/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+      "masterSha256": "c3eb5ee70dea43c4d947f8e621f38bb754a04fd87f3b511ac68bf1601d9aafd9",
+      "exportSha256": "1ba8c4cdbabe7e836b32cc3b1b17914c4a29808211cb49309bf9d8a7f7e689a0",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "alphaBounds16": [
+        163,
+        131,
+        942,
+        1271
+      ],
+      "transparentPixelCount": 1249166,
+      "opaquePixelCount": 534,
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "/workspace/scratch/b07af32d1b2c/generated_images/exec-62c13514-9dbd-4cf9-9367-438f96ebc97c.png",
+      "prompt": "Use case: precise-object-edit. Derive exactly ONE isolated game prop from the supplied Helluva Boss production background: the nearest bar stool visible at the far lower-left of the reference. Only reproduce that stool, as a hand-painted 2D animation-cel object. Its silhouette is a wide low rounded rectangular/oval deep teal seat with lighter cyan honeycomb hexagon upholstery, supported by one very slender pale cyan silver stem that flares smoothly into a broad curved trumpet foot. Preserve the seat-to-stem proportions and the cyan/teal/gold-edge colors in the reference. View from the same slightly elevated three-quarter front angle so the padded top and front edge of the seat are visible. Do not add a backrest, armrests, wheels, legs, footrest rings, buttons or an invented ornamental pedestal. Entire single stool in frame, centered with at least 10 percent transparent margin around all edges. Clean tapered outlines, restrained cel shadows, no photographic texture. Fully transparent background and real alpha, no checkerboard, no floor, no cast shadow, no other furniture or objects, no text or labels. A production sprite ready for a separate background layer.",
+      "referenceUrls": [
+        "https://backgroundart.net/helluvaboss.html",
+        "https://backgroundart.net/art/helluva05.jpg"
+      ],
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_production_artist_portfolio",
+          "title": "Greg Bartlett — Helluva Boss layout and paint portfolio"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "kind": "official_production_art",
+          "episode": "Queen Bee S1E8",
+          "title": "Beelzebub side lounge production layout"
+        }
+      ],
+      "fidelityNotes": [
+        "Le pied cyan évasé et la sellerie à alvéoles suivent le tabouret visible dans la référence.",
+        "L’épaisseur des liserés et le dessin des reflets sont adaptés à la taille de jeu.",
+        "Un seul tabouret indépendant ; les positions sont un choix de composition de la simulation."
+      ]
+    },
+    {
+      "id": "bee-lounge-honeycomb-divider",
+      "name": "Beelzebub — cloison à alvéoles du salon",
+      "category": "prop",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "spoilerScope": "season_1",
+      "runtimeStatus": "stage_scenery",
+      "stageId": "bee-lounge-s1",
+      "accepted": true,
+      "master": "production/v9/environment/masters/bee-lounge-honeycomb-divider.png",
+      "export": "public/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+      "masterSha256": "d74f2a5bc619e45b15c865c190f60e85c605ba21b44f83727969b7906327b6d5",
+      "exportSha256": "f608fc643c7ef6df6e36b2919fbf032e6cb960d70aba9aabcbf0dd2478341661",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alphaBounds16": [
+        180,
+        160,
+        844,
+        1346
+      ],
+      "transparentPixelCount": 1202768,
+      "opaquePixelCount": 0,
+      "pixelExactExport": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "/workspace/scratch/b07af32d1b2c/generated_images/exec-b19773d7-952e-4847-b40b-0a9d261a6205.png",
+      "prompt": "Make a FRAMING-ONLY correction to this one isolated turquoise honeycomb divider. Preserve EXACTLY its existing geometry: three aligned vertical columns of EIGHT complete hexagonal holes each, with two intermediate offset columns of SEVEN holes each, THIRTY-EIGHT holes total. Preserve every row, bar, flat cel color, fine dark teal outer outline, and narrow peach highlight. Do not redesign, add, remove or rearrange any hexagon.\nZoom out: uniformly reduce the entire existing object to about 80 percent of its present scale and center it on a portrait canvas. Finish the tiny dark outline clipped at the bottom edge so the entire bottom contour is visibly complete. There must be a generous EMPTY TRANSPARENT MARGIN BELOW THE LOWEST DARK OUTLINE, at least 120 pixels on a 1536-pixel-tall canvas. Also leave transparent margins above and at both sides. The single complete lattice should fit safely INSIDE the canvas, occupying roughly80 percent of the canvas height.\nThis is a single static 2D game prop. True transparent RGBA background outside AND inside all38 openings. No green background, no glow, no shadow, no floor, no base or feet, no additional frames, no objects, no lettering, no display board, no checkerboard. Preserve the correct eight-row structure while fixing only the cut-off framing.",
+      "referenceUrls": [
+        "https://backgroundart.net/helluvaboss.html",
+        "https://backgroundart.net/art/helluva05.jpg"
+      ],
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_production_artist_portfolio",
+          "title": "Greg Bartlett — Helluva Boss layout and paint portfolio"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "kind": "official_production_art",
+          "episode": "Queen Bee S1E8",
+          "title": "Beelzebub side lounge production layout"
+        }
+      ],
+      "fidelityNotes": [
+        "La source comporte huit grandes rangées et38ouvertures (3×8+2×7), désormais conservées.",
+        "Les trois candidats écartés avaient neuf rangées, six rangées, puis huit rangées sans marge basse ; ils ne comptent pas comme livrables.",
+        "Contour entier et transparence contrôlés ; l’épaisseur des montants et les contours fins sont redessinés, sans certification1:1."
+      ]
+    }
+  ],
+  "stageSuggestion": {
+    "id": "bee-lounge-s1",
+    "name": "Beelzebub · Salon du bar",
+    "district": "Anneau de la Gourmandise",
+    "description": "Le bar aux alvéoles dorées et sa banquette cyan bordent une piste dégagée.",
+    "distinctFrom": "bee-party (grand escalier et salle principale déjà intégrés)",
+    "imagePosition": "center bottom",
+    "accent": "#37d8d7",
+    "shadow": "#5d372c",
+    "floor": "#c77e65",
+    "scenery": {
+      "middle": "bee-lounge-honeycomb-divider",
+      "near": "bee-lounge-bar-stool"
+    },
+    "parallax": {
+      "middle": 0.2,
+      "near": 0.2
+    },
+    "nativePlacementPixels": {
+      "dividerVisibleBounds": [
+        1215,
+        350,
+        1445,
+        715
+      ],
+      "stoolVisibleBounds": [
+        130,
+        610,
+        300,
+        865
+      ]
+    },
+    "placementNotes": [
+      "Fixer la cloison à la même parallaxe que le mur (0.20) et réserver son emplacement vide à droite de la banquette.",
+      "Aligner le tabouret avec le bord gauche du bar et le sol. Garder les objets derrière les combattants.",
+      "Mesurer les marges transparentes réelles avant de convertir les coordonnées natives en CSS. Aucun placement navigateur vérifié par ce sous-agent."
+    ]
+  },
+  "attempts": [
+    {
+      "source": "/workspace/scratch/b07af32d1b2c/generated_images/exec-fc77321b-b291-483e-bef2-2a6c7a7ee51c.png",
+      "accepted": false,
+      "reason": "Nine main rows /43 openings instead of the source eight rows /38. Initial source count was wrong.",
+      "prompt": "Use case: precise-object-edit. Create exactly ONE isolated decorative room-divider screen from the supplied Helluva Boss production background: the tall cyan/teal honeycomb metal lattice panel standing to the RIGHT of the central booth doorway. Preserve the screen's complete outer silhouette and construction from the reference. It is a narrow vertical panel made entirely of linked OPEN regular hexagon rings, no solid infill. Structure: three main columns, each six hexagon openings high, with five rows of two offset interstitial hexagon openings between them, for twenty-eight open hexagons total. Teal front surfaces, restrained darker teal depth edges, thin warm peach-gold rim highlights matching the reference. Front-facing with very subtle thickness, straight vertical alignment, panel proportions approximately width 0.6 times height. All inner openings must be fully transparent. Clean confident animation-cel linework, flat colored metal, no photoreal texture. No added feet, no base stand, no top bar, no wall, no background, no shadows, no room, no people, no text, no watermark. Entire single screen centered with at least 10 percent transparent margins. This will be placed as a separate fixed architectural layer over the matching lounge background.",
+      "countedAsDelivered": false,
+      "id": "bee-lounge-honeycomb-divider-attempt-1",
+      "sha256": "638c116be078eaa5e2565ed40bb25e4b83e248710e3e5af0a4d6dd4419c509ae"
+    },
+    {
+      "source": "/workspace/scratch/b07af32d1b2c/generated_images/exec-d5a014e6-5f03-47d7-9904-e7d7a0d01ef1.png",
+      "prompt": "Correct only the HEIGHT / HEXAGON COUNT of the supplied isolated honeycomb divider (image 1), using the official room reference (image 2). The current divider is too tall: it has nine large hexagonal holes down each of its three main columns. Rebuild the complete panel so each of the three main columns has EXACTLY SIX large hexagonal holes from top to bottom, and each of the two interstitial columns has EXACTLY FIVE smaller offset hexagonal holes. Thus exactly 28 open holes total, no extra row. It must be a shorter, wider-looking panel matching the original room screen: its metal silhouette's width should be approximately 60 percent of its height. Preserve the same teal metal, peach-gold rims, ring thickness, line style and front-facing perspective. Do not crop the existing nine-row screen; produce the corrected complete six-row silhouette, all bottom and top rings complete, with real transparent holes and transparent background, clean alpha, centered with comfortable margins. No feet, no floor, no shadows, no text, no labels. One panel only.",
+      "accepted": false,
+      "countedAsDelivered": false,
+      "reason": "Six main rows /28 openings; incorrect source count, rejected by independent review.",
+      "id": "bee-lounge-honeycomb-divider-attempt-2",
+      "sha256": "dc447e4569e0124938d95180534aea41e8678ab42a9969dec3f01bceaa934a4f"
+    },
+    {
+      "source": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6e7a8c55-8b0a-4f08-8823-530dec3cc221.png",
+      "accepted": false,
+      "countedAsDelivered": false,
+      "reason": "Eight main rows / 38 openings, but the bottom dark contour touches the canvas edge.",
+      "prompt": "Correct this isolated game scenery asset using the source crop as the exact geometric reference. Deliver ONE freestanding teal honeycomb room-divider, straight front view, centered, complete silhouette with generous transparent margin. Transparent background and genuinely transparent hexagonal openings.\nThe FIRST reference is the authoritative source: faithfully copy its honeycomb geometry. It has EXACTLY EIGHT hexagonal openings stacked vertically in each of the three aligned main columns (left, middle, right). Between them are two offset columns of EXACTLY SEVEN openings each. Total: 3*8 + 2*7 = THIRTY-EIGHT fully enclosed hexagonal openings. Count all eight main rows from top to bottom; do not omit, add or merge any row. Preserve the source crop's tall, slender overall silhouette and the proportion of each flat-top hexagon, thin turquoise bars, dark teal outlines and narrow pale-peach highlights. The two offset columns begin half a row below the main columns and finish half a row above them.\nThe SECOND reference is the current isolated asset, which is wrong because it contains only six main rows. Replace that six-row geometry with the authoritative eight-row geometry of the FIRST reference. Prefer the flat, clean 2D animation appearance of the source over the thick beveled bars of the second image. Keep clean connected outlines and consistent bar thickness.\nRemove the peach wall, ceiling, floor and other background completely; retain only the single turquoise lattice. No frame, legs, base, scenery, shadows, duplicate object, text, labels, checkerboard, glow or invented ornament. One unanimated 2D prop asset, portrait canvas. Preserve all 38 separate transparent holes and the full outer silhouette.",
+      "id": "bee-lounge-honeycomb-divider-attempt-3",
+      "sha256": "d95b7d64980e3e1e36f8e27a2bf7c317c8e0b88d2d0a59f83d717ff8b0542606"
+    },
+    {
+      "source": "/workspace/scratch/b07af32d1b2c/generated_images/exec-b19773d7-952e-4847-b40b-0a9d261a6205.png",
+      "accepted": true,
+      "countedAsDelivered": true,
+      "reason": "Eight main rows / 38 openings and complete contour with safe transparent margins.",
+      "prompt": "Make a FRAMING-ONLY correction to this one isolated turquoise honeycomb divider. Preserve EXACTLY its existing geometry: three aligned vertical columns of EIGHT complete hexagonal holes each, with two intermediate offset columns of SEVEN holes each, THIRTY-EIGHT holes total. Preserve every row, bar, flat cel color, fine dark teal outer outline, and narrow peach highlight. Do not redesign, add, remove or rearrange any hexagon.\nZoom out: uniformly reduce the entire existing object to about 80 percent of its present scale and center it on a portrait canvas. Finish the tiny dark outline clipped at the bottom edge so the entire bottom contour is visibly complete. There must be a generous EMPTY TRANSPARENT MARGIN BELOW THE LOWEST DARK OUTLINE, at least 120 pixels on a 1536-pixel-tall canvas. Also leave transparent margins above and at both sides. The single complete lattice should fit safely INSIDE the canvas, occupying roughly80 percent of the canvas height.\nThis is a single static 2D game prop. True transparent RGBA background outside AND inside all38 openings. No green background, no glow, no shadow, no floor, no base or feet, no additional frames, no objects, no lettering, no display board, no checkerboard. Preserve the correct eight-row structure while fixing only the cut-off framing.",
+      "id": "bee-lounge-honeycomb-divider-attempt-4",
+      "sha256": "d74f2a5bc619e45b15c865c190f60e85c605ba21b44f83727969b7906327b6d5"
+    }
+  ],
+  "sourceReference": {
+    "path": "/tmp/infernal-v9/environment/helluva05.jpg",
+    "sha256": "dccfdc90d47ec3f34a80157fd9f3e30e3a489dfff44f573f14d7a23da99f117d",
+    "redistributed": false
+  },
+  "verification": {
+    "pngWebpDecodedRGBAIdentical": true,
+    "sourceMasterHashesPreserved": true,
+    "visualInspection": "Generated full backgrounds/props inspected in this turn; source production layout compared. Browser/in-game validation pending.",
+    "independentReview": "docs/standalone/production-v9/independent-review-root.json"
+  }
+}

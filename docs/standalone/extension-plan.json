@@ -72,25 +72,25 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v8-2026-11-26",
-      "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+      "batchId": "static-v9-2026-11-26",
+      "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V8 actualise la production statique et les rapprochements de livraisons historiques. Les kits, techniques, cycles animés et contrôles visuels restent des périmètres distincts. Fidélité 1:1 non certifiée.",
-      "stages": 42,
-      "threePlaneStages": 33,
+      "note": "V9 ajoute une incarnation S1 de Lute, un buste narratif, quatre accessoires et un salon distinct. Les 43 kits et 109 bases restent inchangés ; aucun nouveau cycle animé. Sept masters acceptés, avec validation visuelle en jeu documentée séparément.",
+      "stages": 43,
+      "threePlaneStages": 35,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 659,
+      "referencedAssets": 687,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 100,
+      "reserveGalleryDrawings": 106,
       "stagePresentations": [
         "alive",
         "static",
@@ -98,11 +98,43 @@
       ],
       "illustrationAssignmentsV3": 127,
       "onePlaneStages": 7,
-      "twoPlaneStages": 0,
-      "costumeFamilies": 20,
+      "twoPlaneStages": 1,
+      "costumeFamilies": 21,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v8/delivery-register.json",
-      "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
+      "productionRegister": "docs/standalone/production-v9/delivery-register.json",
+      "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+      "standaloneBases": 109,
+      "catalogueIdsWithoutStandaloneBase": 100,
+      "distinctProductionIdentitiesWithoutStandaloneBase": 99,
+      "assetCoverageReport": "docs/standalone/production-v9/active-asset-coverage.json",
+      "browserReview": {
+        "status": "passed",
+        "report": "docs/standalone/production-v9/browser-qa.json",
+        "checkedAssetIds": [
+          "lute-post-finale-s1-ready",
+          "stolas-grimoire-closed",
+          "hb_moxxies_mother-portrait-s2",
+          "loo-loo-thing-plush",
+          "bee-lounge-bar-stool",
+          "bee-lounge-honeycomb-divider",
+          "bee-lounge-s1-room"
+        ],
+        "automatedChecks": 99,
+        "scope": "Sept nouveaux assets V9, galerie, filtres de saison et parcours entraînement sur Chromium local ; desktop 1440×1000 et mobile émulé 390×844. Aucun audit rétrospectif complet ni test physique mobile."
+      },
+      "technicalReview": {
+        "status": "passed",
+        "report": "docs/standalone/production-v9/runtime-qa.json",
+        "testsPassed": 413,
+        "testSuites": 47,
+        "typecheck": "passed",
+        "lint": "passed",
+        "managerBuild": "passed",
+        "standaloneBuild": "passed",
+        "distributionHashes": 1291,
+        "standardQaScriptPassed": false,
+        "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique."
+      }
     },
     "latestIntegration": {
       "date": "2026-11-25",
@@ -240,46 +272,140 @@
         "globalIllustrationAssignments": 11,
         "productionRegister": "docs/standalone/production-v7/delivery-register.json",
         "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v8-2026-11-26",
+        "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V8 actualise la production statique et les rapprochements de livraisons historiques. Les kits, techniques, cycles animés et contrôles visuels restent des périmètres distincts. Fidélité 1:1 non certifiée.",
+        "stages": 42,
+        "threePlaneStages": 33,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 659,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 100,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 7,
+        "twoPlaneStages": 0,
+        "costumeFamilies": 20,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v8/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3."
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v8-2026-11-26",
-      "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+      "batchId": "static-v9-2026-11-26",
+      "baseCommit": "751432195e2e618f2a617ae2c58595a5a0b5b47a",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v8/delivery-register.json",
+      "register": "docs/standalone/production-v9/delivery-register.json",
       "status": "final_production_register",
       "counts": {
-        "distinctDrawings": 18,
-        "newDrawings": 18,
+        "distinctDrawings": 7,
+        "newDrawings": 7,
         "revisedDrawings": 0,
-        "masterPng": 18,
-        "losslessWebp": 18,
-        "thumbnails": 2,
-        "deliveredImageFiles": 38,
-        "deliveredImageBytes": 35541033,
+        "masterPng": 7,
+        "losslessWebp": 7,
+        "thumbnails": 1,
+        "deliveredImageFiles": 15,
+        "deliveredImageBytes": 14294928,
+        "newStandaloneBases": 0,
         "newCharacterBases": 0,
         "newPlayableKits": 0,
-        "newStaticCostumes": 9,
-        "newNarrativeIncarnations": 4,
-        "newStages": 2,
-        "newSceneryProps": 3,
+        "newStaticCostumes": 1,
+        "newNarrativeIncarnations": 1,
+        "newStages": 1,
+        "newSceneryProps": 2,
+        "newReserveProps": 2,
         "newAnimationCycles": 0,
-        "generatorRefused": 1,
-        "historicalVariantRequirementsReconciled": 9
+        "generatorRefused": 2,
+        "historicalVariantRequirementsReconciled": 0
       },
-      "scope": "Dessins statiques, intégration et rapprochements documentés dans le registre V8. Aucun nouveau cycle animé."
+      "scope": "Sept dessins statiques retenus, quinze fichiers livrés et intégration V9 validée dans la portée des rapports techniques et navigateur. Aucun nouveau kit, base entière ni cycle animé.",
+      "verification": {
+        "technicalReport": "docs/standalone/production-v9/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v9/browser-qa.json",
+        "workbookReport": "docs/standalone/production-v9/workbook-qa.json",
+        "testsPassed": 413,
+        "testSuites": 47,
+        "browserChecks": 99,
+        "distributionHashes": 1291
+      }
     },
     "latestProductionBible": {
-      "edition": "V8",
+      "edition": "V9",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
-      "historicalSheetsPreserved": 46,
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V9.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
+      "historicalSheetsPreserved": 48,
+      "historicalTablesPreserved": 57,
       "appendedSheets": 2,
-      "register": "docs/standalone/production-v8/delivery-register.json"
-    }
+      "finalSheets": 50,
+      "finalTables": 59,
+      "sha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+      "bytes": 602294,
+      "register": "docs/standalone/production-v9/delivery-register.json",
+      "qa": "docs/standalone/production-v9/workbook-qa.json",
+      "status": "verified"
+    },
+    "staticDeliveryHistory": [
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v8-2026-11-26",
+        "baseCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v8/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 18,
+          "newDrawings": 18,
+          "revisedDrawings": 0,
+          "masterPng": 18,
+          "losslessWebp": 18,
+          "thumbnails": 2,
+          "deliveredImageFiles": 38,
+          "deliveredImageBytes": 35541033,
+          "newCharacterBases": 0,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 9,
+          "newNarrativeIncarnations": 4,
+          "newStages": 2,
+          "newSceneryProps": 3,
+          "newAnimationCycles": 0,
+          "generatorRefused": 1,
+          "historicalVariantRequirementsReconciled": 9
+        },
+        "scope": "Dessins statiques, intégration et rapprochements documentés dans le registre V8. Aucun nouveau cycle animé."
+      }
+    ],
+    "productionBibleHistory": [
+      {
+        "edition": "V8",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V8.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V7.xlsx",
+        "historicalSheetsPreserved": 46,
+        "appendedSheets": 2,
+        "register": "docs/standalone/production-v8/delivery-register.json"
+      }
+    ]
   },
   "sources": [
     [
@@ -1153,6 +1279,78 @@
       "2026-11-24",
       "Motifs observés séparés des trajectoires et associations de jeu.",
       "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json"
+    ],
+    [
+      "SRC-STATIC-V9",
+      "Dépôt / production",
+      "Production statique V9",
+      "2026-11-26",
+      "Sept dessins statiques, cadrages, limites et refus ; aucune nouvelle base ni animation.",
+      "docs/standalone/production-v9/delivery-register.json"
+    ],
+    [
+      "SRC-V9-GRIMOIRE",
+      "Produit officiel sous licence",
+      "Stolas Grimoire Sticker Book — Spindlehorse",
+      "2026-11-26",
+      "Motifs de couverture uniquement ; reliure du livre de jeu adaptée.",
+      "https://sharkrobot.com/products/stolas-grimoire-sticker-book"
+    ],
+    [
+      "SRC-V9-MOTHER",
+      "Produit officiel sous licence",
+      "Exes and Oohs Moxxie's Mom Enamel Pin — Spindlehorse",
+      "2026-11-26",
+      "Portrait avec rose ; aucune preuve des jambes ou des chaussures.",
+      "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin"
+    ],
+    [
+      "SRC-V9-LUTE",
+      "Extrait officiel",
+      "Prime Video Brasil — Lute après final S1",
+      "2026-11-26",
+      "Cellules natives de prévisualisation 320×180 ; forme entière S1, aucune prothèse S2.",
+      "https://www.youtube.com/watch?v=q9lzr9zsUT4"
+    ],
+    [
+      "SRC-V9-THING",
+      "Produit officiel sous licence",
+      "Loo Loo Land Thing Plush Acrylic Keychain — Spindlehorse",
+      "2026-11-26",
+      "Objet peluche isolé ; contour de porte-clés retiré.",
+      "https://sharkrobot.com/products/loo-loo-land-thing-plush-acrylic-keychain"
+    ],
+    [
+      "SRC-V9-BEE-LOUNGE",
+      "Portfolio de production",
+      "Greg Bartlett — salon de Beelzebub",
+      "2026-11-26",
+      "Layout et peinture de production, salon latéral distinct de la grande salle ; https://backgroundart.net/helluvaboss.html.",
+      "https://backgroundart.net/art/helluva05.jpg"
+    ],
+    [
+      "SRC-V9-DIVIDER-CORRECTIONS",
+      "Dépôt / revue de production",
+      "Cloison à huit rangées — corrections V9",
+      "2026-11-26",
+      "Trois essais écartés, master final retenu, géométrie et transparence ; aucun dessin supplémentaire compté.",
+      "docs/standalone/production-v9/divider-corrections.json"
+    ],
+    [
+      "SRC-V9-ACTIVE-COVERAGE",
+      "Dépôt / audit",
+      "Couverture des assets actifs V9",
+      "2026-11-26",
+      "687 chemins actifs vérifiés, zéro référence cassée ; compteurs des kits, arènes, costumes, récits et galerie.",
+      "docs/standalone/production-v9/active-asset-coverage.json"
+    ],
+    [
+      "SRC-V9-BROWSER-QA",
+      "Dépôt / recette navigateur",
+      "Sept assets V9 — Chromium desktop et mobile émulé",
+      "2026-11-26",
+      "99 contrôles réussis et revue visuelle des captures ; portée limitée au parcours décrit.",
+      "docs/standalone/production-v9/browser-qa.json"
     ]
   ],
   "tasks": [
@@ -2694,7 +2892,42 @@
       "depends": "HV-025",
       "acceptance": "Conditions d'accès déclarées dans l'équipement.",
       "source": "GRIMOIRE; BARBIE; STOLAS",
-      "path": ""
+      "path": "",
+      "coverageBeforeStaticV9": {
+        "id": "LOR-10",
+        "domain": "Lore",
+        "title": "Portails et objets",
+        "detail": "Distinguer pouvoir personnel, grimoire, cristal et équipement; ne pas donner un objet à toutes les incarnations.",
+        "status": "À vérifier",
+        "priority": "P1",
+        "lot": "V2",
+        "effort": "M",
+        "depends": "HV-025",
+        "acceptance": "Conditions d'accès déclarées dans l'équipement.",
+        "source": "GRIMOIRE; BARBIE; STOLAS",
+        "path": ""
+      },
+      "staticProductionV9": {
+        "batchId": "static-v9-2026-11-26",
+        "assetId": "stolas-grimoire-closed",
+        "master": "production/v9/props/masters/stolas-grimoire-closed.png",
+        "export": "public/assets/production/v9/props/stolas-grimoire-closed.webp",
+        "masterSha256": "b72f753eb11ead277194f2168cfcc5eec83d9ee395ec9790b1d758f3192dc2ad",
+        "exportSha256": "1c58556142cabfca3e0279940ac52fa5e3900ab82f1200c6ca63537c6be9ee39",
+        "frameCoverage": "whole_object",
+        "runtimeStatus": "reserve",
+        "references": [
+          "https://sharkrobot.com/products/stolas-grimoire-sticker-book"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "animationCycles": 0,
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "fidelityOneToOneCertified": false,
+        "coverage": "closed_prop_only",
+        "runtimePlayable": false
+      },
+      "currentStaticCoverage": "Grimoire fermé livré comme accessoire de réserve. Conditions d’accès, ouverture, portails et attribution par incarnation restent à vérifier ; aucun pouvoir implémenté par ce dessin."
     },
     {
       "id": "LOR-11",
@@ -3630,7 +3863,78 @@
           "https://www.youtube.com/watch?v=5eZonu8XsEs"
         ],
         "register": "docs/standalone/production-v8/delivery-register.json"
-      }
+      },
+      "coverageBeforeStaticV9": {
+        "id": "lute",
+        "franchise": "Hazbin Hotel",
+        "name": "Lute",
+        "tier": "Secondaire",
+        "role": "Exorcist officer",
+        "continuity": "season_1",
+        "canon": "canon",
+        "reference": "Hazbin Hotel Season 1",
+        "source": "SRC-HH-01; HH-OFFICIAL; LUTE",
+        "asset": "Atlas référencé",
+        "kit": "Kit explicite de base",
+        "target": "Roster V1",
+        "status": "Existant",
+        "next": "Approfondir animations et techniques après audit de référence.",
+        "validation": "Canon déclaré dans dépôt, non certification 1:1.",
+        "loreFacts": "Épée angélique; états chronologiques distincts.",
+        "proposedKit": "Duelliste agressive; contres et attaques aériennes.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+        "qualificationV7": {
+          "status": "incarnation_definition_required_existing_pre_injury_base",
+          "notes": "La tenue pré-blessure possède déjà public/assets/sprites/individual/lute-ready.webp. Le compte historique distingue la base par défaut de ce costume. Définir une incarnation différente avant une nouvelle commande.",
+          "references": [],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        },
+        "qualificationV8": {
+          "status": "moderation_refusal_no_retry",
+          "notes": "Incarnation distincte qualifiée puis refusée par le générateur natif ; aucun fichier, aucune relance. La base pré-blessure existante reste distincte.",
+          "references": [
+            "https://www.youtube.com/watch?v=5eZonu8XsEs"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json"
+        }
+      },
+      "qualificationV9": {
+        "status": "accepted_static_s1_post_finale_incarnation",
+        "notes": "La forme après le final S1 est maintenant illustrée par une pose entière statique sélectionnable, bras gauche absent et sans prothèse. La tenue pré-blessure et le défaut historiques restent distincts. Aucun cycle, nouveau kit ou nouvelle base d’identité compté ; l’incarnation S2 prothétique reste refusée en V8, sans relance.",
+        "assetId": "lute-post-finale-s1-ready",
+        "references": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "browserReport": "docs/standalone/production-v9/browser-qa.json"
+      },
+      "currentStaticCoverage": "La forme après le final S1 est maintenant illustrée par une pose entière statique sélectionnable, bras gauche absent et sans prothèse. La tenue pré-blessure et le défaut historiques restent distincts. Aucun cycle, nouveau kit ou nouvelle base d’identité compté ; l’incarnation S2 prothétique reste refusée en V8, sans relance.",
+      "staticIncarnations": [
+        {
+          "batchId": "static-v9-2026-11-26",
+          "assetId": "lute-post-finale-s1-ready",
+          "master": "production/v9/hazbin/masters/lute-post-finale-s1-ready.png",
+          "export": "public/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "masterSha256": "26b952b8e35f16e4b697cdcc36c2361df3ac32bc1cfd61bca459f33516ca3dac",
+          "exportSha256": "e4a9dfc00d2ba5f2e73d11206fb430acd146e4fd0445678e71ef11d345ee7edd",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "references": [
+            "https://www.youtube.com/watch?v=q9lzr9zsUT4"
+          ],
+          "register": "docs/standalone/production-v9/delivery-register.json",
+          "animationCycles": 0,
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "fidelityOneToOneCertified": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true,
+          "inGameChecked": true,
+          "browserReport": "docs/standalone/production-v9/browser-qa.json"
+        }
+      ]
     },
     {
       "id": "carmilla",
@@ -6756,6 +7060,43 @@
           "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV9": {
+        "id": "hb_leviathan",
+        "franchise": "Helluva Boss",
+        "name": "Leviathan",
+        "tier": "Secondaire",
+        "role": "Sin of Envy",
+        "continuity": "season_2",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S2E11",
+        "source": "SRC-HH-02; SINS",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "PNJ / candidate",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène. Rôle conseillé par catalogue: PNJ / candidate.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Identité de Péché repérée.",
+        "proposedKit": "Codex et tribunal; aucune technique offensive supposée.",
+        "loreEvidence": "Repérage secondaire; validation primaire requise",
+        "qualificationV7": {
+          "status": "inherited_specific_reference_gap",
+          "notes": "Mastermind : deux têtes et haut du corps confirmés vers560s dans l’audit V5, mais jambes et bas de robe non établis. Aucune nouvelle vue primaire complète obtenue en V7 ; le portrait tronqué n’autorise pas de bas inventé.",
+          "references": [
+            "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV9": {
+        "status": "moderation_refusal_no_retry",
+        "notes": "Génération native refusée ; aucun nouveau dessin ni fichier livré, aucune relance. La base entière reste manquante.",
+        "assetId": null,
+        "attemptId": "hb_leviathan-portrait-s2",
+        "requestId": "6c5b900a-d3ec-42a2-8d28-849189c5e253",
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "attemptRegister": "docs/standalone/production-v9/refused-attempts.json"
       }
     },
     {
@@ -6784,6 +7125,43 @@
           "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV9": {
+        "id": "hb_belphegor",
+        "franchise": "Helluva Boss",
+        "name": "Belphegor",
+        "tier": "Secondaire",
+        "role": "Sin of Sloth",
+        "continuity": "season_2",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S2E11",
+        "source": "SRC-HH-02; SINS",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "PNJ / candidate",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène. Rôle conseillé par catalogue: PNJ / candidate.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Identité de Péché repérée.",
+        "proposedKit": "Codex et tribunal; pouvoirs précis à vérifier.",
+        "loreEvidence": "Repérage secondaire; validation primaire requise",
+        "qualificationV7": {
+          "status": "inherited_specific_reference_gap",
+          "notes": "Mastermind : petit personnage endormi derrière les autres péchés, silhouette complète et détails du corps insuffisamment lisibles dans l’audit V5. Aucune nouvelle fiche primaire complète obtenue en V7.",
+          "references": [
+            "https://www.youtube.com/watch?v=IoVB5Hn2m_k"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV9": {
+        "status": "moderation_refusal_no_retry",
+        "notes": "Génération native refusée ; aucun nouveau dessin ni fichier livré, aucune relance. La base entière reste manquante.",
+        "assetId": null,
+        "attemptId": "hb_belphegor-ready-v9",
+        "requestId": "2449b8fb-a6a0-428f-846e-a54f2a924981",
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "attemptRegister": "docs/standalone/production-v9/refused-attempts.json"
       }
     },
     {
@@ -6901,6 +7279,69 @@
           "https://www.youtube.com/watch?v=j1BfO7VlIw4"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "coverageBeforeStaticV9": {
+        "id": "hb_moxxies_mother",
+        "franchise": "Helluva Boss",
+        "name": "Moxxie's mother",
+        "tier": "Secondaire",
+        "role": "Deceased mother of Moxxie",
+        "continuity": "season_2",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss S2E3",
+        "source": "SRC-HH-02",
+        "asset": "Atlas référencé",
+        "kit": "Aucun kit combat dédié",
+        "target": "Candidat / PNJ à qualifier",
+        "status": "Partiel",
+        "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Fiche existante non revalidée scène par scène.",
+        "proposedKit": "À définir selon capacités attestées et rôle retenu.",
+        "loreEvidence": "Inventaire du dépôt; validation primaire à faire.",
+        "qualificationV7": {
+          "status": "primary_subject_not_resolved",
+          "notes": "Exes and Oohs boards8–9 : le dîner échantillonné montre surtout Crimson et le jeune Moxxie ; la scène du bateau et la chaussure flottante ne donnent pas une vue identifiable entière de la mère. Le problème précis de V5 demeure, sans inventer robe ni pieds.",
+          "references": [
+            "https://www.youtube.com/watch?v=j1BfO7VlIw4"
+          ],
+          "register": "docs/standalone/production-v7/delivery-register.json"
+        }
+      },
+      "qualificationV9": {
+        "status": "accepted_bust_full_body_gap_remains",
+        "notes": "Portrait avec rose livré jusqu’à la taille d’après un produit officiel. Le buste ne couvre ni jambes ni chaussures et ne comble pas la base entière manquante.",
+        "assetId": "hb_moxxies_mother-portrait-s2",
+        "references": [
+          "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "browserReport": "docs/standalone/production-v9/browser-qa.json"
+      },
+      "currentStaticCoverage": "Portrait avec rose livré jusqu’à la taille d’après un produit officiel. Le buste ne couvre ni jambes ni chaussures et ne comble pas la base entière manquante.",
+      "staticProduction": {
+        "batchId": "static-v9-2026-11-26",
+        "assetId": "hb_moxxies_mother-portrait-s2",
+        "master": "production/v9/helluva/masters/hb_moxxies_mother-portrait-s2.png",
+        "export": "public/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp",
+        "masterSha256": "69ef5089b7141800160e69f6178e5099eeda9475cdf9da81dadf929a65804083",
+        "exportSha256": "f5a4fee3f78248bf9a66dfc0b6760a5f5e63a4bbd2015594d8f3041ce7537ffd",
+        "frameCoverage": "bust",
+        "runtimeStatus": "reserve",
+        "references": [
+          "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "animationCycles": 0,
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "fidelityOneToOneCertified": false,
+        "coverage": "narrative_bust_only",
+        "runtimePlayable": false,
+        "fullBodyBaseStillMissing": true,
+        "inGameChecked": true,
+        "browserReport": "docs/standalone/production-v9/browser-qa.json",
+        "browserScope": "gallery_preview_only"
       }
     },
     {
@@ -11600,6 +12041,51 @@
           "hellhound-adoption-s2"
         ]
       }
+    },
+    {
+      "id": "bee-lounge-s1",
+      "name": "Beelzebub — salon du bar",
+      "franchise": "Helluva Boss",
+      "place": "Gluttony — salon latéral",
+      "continuity": "season_1",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V9-BEE-LOUNGE",
+      "reference": "https://backgroundart.net/art/helluva05.jpg",
+      "design": "Salon latéral documenté : bar courbe, banquette turquoise, plafond alvéolé et tapis. Sol avant dégagé ; tabouret et cloison droite séparés.",
+      "registryNote": "Nouvelle arène du salon latéral, distincte de bee-party qui reste la grande salle de réception. Aucun alias ni remplacement de bee-party.",
+      "createdByStaticV9": true,
+      "status": "Partiel",
+      "runtimeId": "bee-lounge-s1",
+      "runtimeStageId": "bee-lounge-s1",
+      "runtimeStageIds": [
+        "bee-lounge-s1"
+      ],
+      "asset": "public/assets/production/v9/environment/bee-lounge-s1-room.webp",
+      "currentStaticCoverage": "Fond et miniature du salon, tabouret et cloison droite isolés. La cloison retenue conserve huit rangées principales et 38 ouvertures. Décor statique de simulation AU, distinct de la grande salle bee-party.",
+      "acceptance": "Fond, miniature, deux objets et leur composition contrôlés dans le parcours navigateur V9 sur desktop et mobile émulé. Test mobile physique, profilage de performances et certification 1:1 non réalisés.",
+      "staticProduction": {
+        "batchId": "static-v9-2026-11-26",
+        "assetIds": [
+          "bee-lounge-s1-room",
+          "bee-lounge-bar-stool",
+          "bee-lounge-honeycomb-divider"
+        ],
+        "runtimeStageIds": [
+          "bee-lounge-s1"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "references": [
+          "https://backgroundart.net/helluvaboss.html",
+          "https://backgroundart.net/art/helluva05.jpg"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "accepted_static_art_browser_checked",
+        "correctionRegister": "docs/standalone/production-v9/divider-corrections.json",
+        "inGameChecked": true,
+        "browserReport": "docs/standalone/production-v9/browser-qa.json"
+      }
     }
   ],
   "campaigns": [
@@ -13341,7 +13827,65 @@
           "https://www.youtube.com/watch?v=5eZonu8XsEs"
         ],
         "register": "docs/standalone/production-v8/delivery-register.json"
-      }
+      },
+      "coverageBeforeStaticV9": {
+        "id": "VAR-013",
+        "fighter": "lute",
+        "name": "Avant / après final S1",
+        "type": "Incarnation",
+        "reference": "HH S1E8 puis S2",
+        "requirements": "Costume lute-pre-injury sélectionnable : READY S1 réutilisé et cinq nouvelles poses (léger, réaction, lourd, accroupissement, saut), deux bras normaux. Incarnation par défaut et portrait historiques distincts, pas de transition chronologique animée.",
+        "canonEvidence": "Chronologie distincte",
+        "status": "Partiel",
+        "priority": "P1",
+        "lot": "V3",
+        "source": "SRC-20261124-LUTE; SRC-WAVE-C-COSTUMES",
+        "acceptance": "Six images distinctes enregistrées ; marges verticales corrigées pour les cinq poses au sol. Pivot horizontal, échelle relative, animations longues et fidélité 1:1 à vérifier en jeu.",
+        "qualificationV8": {
+          "status": "prosthetic_incarnation_refused_no_retry",
+          "notes": "Lute saison 2, bras prothétique : génération refusée, aucun nouveau dessin. La couverture historique partielle reste conservée.",
+          "references": [
+            "https://www.youtube.com/watch?v=5eZonu8XsEs"
+          ],
+          "register": "docs/standalone/production-v8/delivery-register.json"
+        }
+      },
+      "currentStaticCoverage": "La forme après le final S1 est maintenant illustrée par une pose entière statique sélectionnable, bras gauche absent et sans prothèse. La tenue pré-blessure et le défaut historiques restent distincts. Aucun cycle, nouveau kit ou nouvelle base d’identité compté ; l’incarnation S2 prothétique reste refusée en V8, sans relance.",
+      "qualificationV9": {
+        "status": "partial_static_s1_incarnation_delivered",
+        "notes": "La forme après le final S1 est maintenant illustrée par une pose entière statique sélectionnable, bras gauche absent et sans prothèse. La tenue pré-blessure et le défaut historiques restent distincts. Aucun cycle, nouveau kit ou nouvelle base d’identité compté ; l’incarnation S2 prothétique reste refusée en V8, sans relance.",
+        "assetId": "lute-post-finale-s1-ready",
+        "references": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json"
+      },
+      "staticProduction": {
+        "batchId": "static-v9-2026-11-26",
+        "assetId": "lute-post-finale-s1-ready",
+        "master": "production/v9/hazbin/masters/lute-post-finale-s1-ready.png",
+        "export": "public/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "masterSha256": "26b952b8e35f16e4b697cdcc36c2361df3ac32bc1cfd61bca459f33516ca3dac",
+        "exportSha256": "e4a9dfc00d2ba5f2e73d11206fb430acd146e4fd0445678e71ef11d345ee7edd",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "references": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4"
+        ],
+        "register": "docs/standalone/production-v9/delivery-register.json",
+        "animationCycles": 0,
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "fidelityOneToOneCertified": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "gameplayEligibility": "wearable",
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "inGameChecked": true,
+        "browserReport": "docs/standalone/production-v9/browser-qa.json"
+      },
+      "acceptanceV9": "Le READY S1 après final est sélectionnable et sa pose reste statique pendant les actions observées sur desktop et mobile émulé. Les six images historiques pré-blessure sont conservées ; aucun cycle de cette nouvelle incarnation, transition chronologique ou prothèse S2 n’est livré."
     },
     {
       "id": "VAR-014",

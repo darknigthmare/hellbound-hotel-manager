@@ -39,7 +39,7 @@ def main():
     files = []
     for entry in mapping:
         runtime_status = entry.get('runtimeStatus', 'active')
-        if runtime_status not in ('active', 'reserve'):
+        if runtime_status not in ('active', 'reserve', 'selectable_costume'):
             raise ValueError('Unexpected runtime status: ' + runtime_status)
         source = Path(entry['source'])
         master = ROOT / entry['master']
@@ -59,7 +59,7 @@ def main():
         for role, path in [('master', master), ('runtime', runtime)]:
             files.append({**describe(path), 'id': entry['id'], 'group': entry['group'], 'kind': role,
                           'pixelExactToMaster': role == 'runtime', 'runtimeStatus': runtime_status,
-                          'registered': role == 'runtime' and runtime_status == 'active'})
+                          'registered': role == 'runtime' and runtime_status in ('active', 'selectable_costume')})
         if entry.get('thumbnail'):
             thumbnail = ROOT / entry['thumbnail']
             thumbnail.parent.mkdir(parents=True, exist_ok=True)
@@ -68,7 +68,7 @@ def main():
             small.save(thumbnail, format='WEBP', quality=92, method=6)
             files.append({**describe(thumbnail), 'id': entry['id'], 'group': entry['group'],
                           'kind': 'thumbnail', 'pixelExactToMaster': False, 'runtimeStatus': runtime_status,
-                          'registered': runtime_status == 'active'})
+                          'registered': runtime_status in ('active', 'selectable_costume')})
     report = {'masterCount': len(mapping), 'fileCount': len(files),
               'allRuntimeExportsPixelExact': True, 'files': files}
     target = ROOT / sys.argv[2]

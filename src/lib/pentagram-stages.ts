@@ -42,7 +42,8 @@ export type PentagramStageId = HotelStageId
   | 'australia-desert-s3'
   | 'auction-glass-hall-s3'
   | 'ozzies-exterior-s1'
-  | 'hellhound-adoption-s2';
+  | 'hellhound-adoption-s2'
+  | 'bee-lounge-s1';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1003,6 +1004,23 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   imagePosition: 'center bottom',
   accent: '#76e9ec', shadow: '#102329', floor: '#35464a',
   soundtrack: PENTAGRAM_STAGES[5].soundtrack,
+}, {
+  id: 'bee-lounge-s1',
+  spoilerTier: 'season_1',
+  name: 'Beelzebub · Salon du bar',
+  district: 'Anneau de la Gourmandise',
+  description: 'Un bar courbe, des colonnes abricot et une banquette turquoise ouvrent un salon aux motifs d’alvéoles.',
+  loreBasis: 'Helluva Boss, Queen Bee (S1E8). Salon latéral documenté par le décor de production de Greg Bartlett, distinct de la grande salle de bee-party. Le sol avant est adapté au combat de la simulation AU. Le tabouret cyan et la cloison alvéolée sont des dessins séparés ; détails fins et proportions restent à comparer à la série.',
+  imagePath: '/assets/production/v9/environment/bee-lounge-s1-room.webp',
+  thumbnailPath: '/assets/production/v9/environment/bee-lounge-s1-thumb.webp',
+  scenery: {
+    middle: '/assets/production/v9/environment/bee-lounge-bar-stool.webp',
+    near: '/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp',
+  },
+  sceneryParallax: { middle: 0.20, near: 0.20 },
+  imagePosition: 'center bottom',
+  accent: '#80ded0', shadow: '#9e635f', floor: '#edb382',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];
