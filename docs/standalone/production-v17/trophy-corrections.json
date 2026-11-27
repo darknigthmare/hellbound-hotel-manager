@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "date": "2026-11-27",
+  "status": "two_corrections_accepted_with_documented_limits",
+  "purpose": "Correct source-visible geometry rejected by the initial independent V17 audit; keep initial native candidates unchanged and excluded from accepted delivery counts.",
+  "tool": "image_gen.imagegen",
+  "mode": "built_in",
+  "intent": "edit",
+  "transparentBackground": true,
+  "generationCalls": 2,
+  "generatedCandidates": 2,
+  "refusals": 0,
+  "acceptedCurrentCandidates": 2,
+  "reviewerRole": "The initial independent reviewer executed these coordinator-requested corrections and re-inspected them. This V2 check is an operator re-review, not a separate independent generation review.",
+  "referenceCrops": [
+    {
+      "path": "production/v17/props/references/jasper-crimson-204-horned-detail.png",
+      "sourcePath": "production/v17/props/references/jasper-crimson-204.jpg",
+      "cropBox": [
+        1065,
+        350,
+        1300,
+        520
+      ],
+      "dimensions": [
+        235,
+        170
+      ],
+      "sha256": "edb578f86aa97ffec315ee328fe2e2e6d5670c28602d0471ff0177d197939f3e",
+      "transform": "Native-pixel rectangular reference crop only; no enlargement, paint, recolouring or removal."
+    },
+    {
+      "path": "production/v17/props/references/jasper-crimson-204-jaw-detail.png",
+      "sourcePath": "production/v17/props/references/jasper-crimson-204.jpg",
+      "cropBox": [
+        1285,
+        365,
+        1425,
+        545
+      ],
+      "dimensions": [
+        140,
+        180
+      ],
+      "sha256": "426aee692249310d966b237750bd66e95a374fe1f0726167673a30c5d9d69b04",
+      "transform": "Native-pixel rectangular reference crop only; no enlargement, paint, recolouring or removal."
+    }
+  ],
+  "assets": [
+    {
+      "id": "crimson-horned-wall-trophy-s2",
+      "nativePath": "/workspace/scratch/3ca8c3f75b61/generated_images/exec-bdeff3de-de7e-4821-9384-dde3bd863d58.png",
+      "master": "production/v17/props/masters/crimson-horned-wall-trophy-s2-v2.png",
+      "masterSha256": "4beb449a1a06f611a3e68786c3118e9f27e7facedb41a790b46defc8d693e751",
+      "masterBytes": 483206,
+      "export": "public/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "exportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "exportBytes": 265150,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "rgbaExactExport": true,
+      "rgbaPixelSha256": "27abfbc55d6d3ad747f97818866a502e809727f6d94b7b1506105a3522b4ea57",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bounds": [
+          71,
+          186,
+          1186,
+          1117
+        ],
+        "bounds8": [
+          185,
+          319,
+          1067,
+          899
+        ],
+        "edgeMaxAlpha": 0,
+        "edgePixelsNonzero": 0,
+        "alpha1To7Pixels": 8662,
+        "fullyTransparentPixels": 1241996,
+        "fullyOpaquePixels": 889
+      },
+      "version": "v2",
+      "prompt": "Use case: precise-object-edit. Asset type: one isolated static 2D wall-decoration prop, transparent alpha. Input 1 is the primary source artwork 204.jpg. Input 2 is the rejected isolated candidate to EDIT. Input 3 is an unaltered native crop of the exact object from input 1 and is the authority for all geometry. Correct only this one horned plaque to match input 3 closely. The target is the frontal trophy at source x=1065..1300,y=350..520, immediately right of the chandelier on the flat back wall. The prior candidate incorrectly invented a shield-like pointed lower centre. REPLACE its backing shape with the source's broad almost rectangular panel: long nearly horizontal upper span, shallow stepped/chamfered corners, inward side notches, and a lower span that is nearly horizontal/slightly bowed with clipped angled corners. NO central lower point, NO scalloped shield lobes. Match the source's actual horn curvature, relative thickness, pale band placement, and narrower hanging tuft with its uneven downward tips; preserve the slight left/right asymmetry. Keep the familiar muted green backing, black horns, pale green bands, eyeless tuft and thin dark navy cel outline seen in the source. Correct source-visible shapes without inventing details; do not add eyes, teeth, skull, anatomy, rings or mounting hardware. One complete plaque only, both horn tips and the whole corrected panel fully inside a transparent square canvas with comfortable margins. No wall, furniture, chandelier, neighbouring trophy, cast shadow, text, signature, sticker outline or baked checkerboard. Preserve authentic 2D background-paint style, with restrained flat scene shading; the source crop's actual silhouette takes precedence over the attractive but inaccurate candidate.",
+      "referencedImagePaths": [
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/references/jasper-crimson-204.jpg",
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/masters/crimson-horned-wall-trophy-s2.png",
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/references/jasper-crimson-204-horned-detail.png"
+      ],
+      "inputRoles": [
+        "Primary production painting, visual authority",
+        "Rejected isolated candidate, edit target",
+        "Unaltered native source detail, geometry authority"
+      ],
+      "previousCandidate": {
+        "master": "production/v17/props/masters/crimson-horned-wall-trophy-s2.png",
+        "masterSha256": "1fe5b4e49583e95fc44c6578a45272c56449879ef3de6066470609de84204b45",
+        "export": "production/v17/props/rejected-exports/crimson-horned-wall-trophy-s2.webp",
+        "exportSha256": "d93303bee4cf1e10bacd1ca93c93b9072d3da187f38ef96d86e5b76e66ea6e42",
+        "status": "superseded_rejected_geometry",
+        "preserved": true
+      },
+      "masterCopiedWithoutReencoding": true,
+      "conversion": "Pillow WEBP lossless=True quality=100 method=6 exact=True; decoded RGBA identical to native PNG.",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewStatus": "operator_review_accepted_with_documented_limits",
+      "observations": [
+        "The backing is now broadly rectangular, with a long upper span, shallow inset corners and a nearly horizontal lower rim. The rejected central shield point is removed.",
+        "The black curved horns, pale rings and hanging eyeless tuft correspond to the intended frontal rear-wall trophy; the tuft is narrower and retains uneven lower tips.",
+        "Both horn tips and every visible edge remain inside the canvas. Light and dark alpha composites show one clean static object with no wall or opaque background."
+      ],
+      "limitations": [
+        "Horn curvature, exact pale-band lengths, tuft proportions and corner-rounding remain regularized compared with the small source crop.",
+        "The generated colours and lower green highlight retain a clean digital finish; the original scene lighting and fine paint texture are not reproduced exactly.",
+        "8662 native pixels at alpha 1–7 remain outside the strong silhouette; the master and lossless export preserve these pixels without thresholding.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "crimson-fanged-jaw-wall-trophy-s2",
+      "nativePath": "/workspace/scratch/3ca8c3f75b61/generated_images/exec-3c92e169-c820-413a-8189-0098d25a5eec.png",
+      "master": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2-v2.png",
+      "masterSha256": "44121e257de5d3379a5f315826eca48e5542683d5dbe627e025d164cdf010494",
+      "masterBytes": 921196,
+      "export": "public/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+      "exportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "exportBytes": 519144,
+      "dimensions": [
+        1266,
+        1242
+      ],
+      "mode": "RGBA",
+      "rgbaExactExport": true,
+      "rgbaPixelSha256": "864531bc7dbb734b227771868df8d8c78a66f8fade0306b3bec395eb30b37f97",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          19,
+          1220,
+          1242
+        ],
+        "bounds8": [
+          189,
+          77,
+          1076,
+          1109
+        ],
+        "edgeMaxAlpha": 1,
+        "edgePixelsNonzero": 136,
+        "alpha1To7Pixels": 21087,
+        "fullyTransparentPixels": 912405,
+        "fullyOpaquePixels": 1112
+      },
+      "version": "v2",
+      "prompt": "Use case: precise-object-edit. Asset type: one isolated static 2D wall-decoration prop, transparent alpha. Input 1 is the primary source artwork 204.jpg. Input 2 is the rejected isolated candidate to EDIT. Input 3 is an unaltered native crop of the exact target from input 1, and is the authority for the corrected silhouette and teeth. The target is the small green jaw plaque at source x=1285..1425,y=365..545, immediately RIGHT of the frontal striped-horn plaque and LEFT of the corner/window wall. Rebuild the candidate to closely match input 3. The current candidate is far too wide and has an invented large pointed upper crest and lower shield point. In the source the overall backing is TALLER THAN WIDE, with a rounded scalloped/bilobed top visible above the mouth and a rounded scalloped base visible below. It is NOT a wide shield. Preserve that actual tall backing outline with its green lower rim; remove the invented sharp upper and lower points. Within this backing, match the exact source mouth: upward-arched top lip with outward tips, angular lower opening, large downward central tooth and surrounding asymmetric clustered triangular teeth, with upward teeth filling the bottom half as pictured. Do not replace this arrangement with five identical widely spaced fangs. Follow the real tooth silhouettes, direction, overlaps and spacing in input 3, retaining the very dark forest-green interior. Keep the muted moss-green backing, pale green lip edge, dark blue-green contour and simple 2D cel-painted shading. No eyes, horns, tongue, limbs, new skull anatomy or realistic texture. One complete decorative prop only, centered with generous transparent margins, whole scalloped backing and jaw tips visible. No wall, wallpaper, furniture, neighbouring objects, drop shadow, text, signature or baked checkerboard. The source crop's shape and proportions override the rejected candidate's design; preserve transparency.",
+      "referencedImagePaths": [
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/references/jasper-crimson-204.jpg",
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2.png",
+        "/workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/production/v17/props/references/jasper-crimson-204-jaw-detail.png"
+      ],
+      "inputRoles": [
+        "Primary production painting, visual authority",
+        "Rejected isolated candidate, edit target",
+        "Unaltered native source detail, geometry authority"
+      ],
+      "previousCandidate": {
+        "master": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2.png",
+        "masterSha256": "ab6dfca15404dfcee7f35a0db076b6bab0a794449ac830a5fe229c27a8562369",
+        "export": "production/v17/props/rejected-exports/crimson-fanged-jaw-wall-trophy-s2.webp",
+        "exportSha256": "2fa6bc61ef7d11633999d20080552521d5ee4806a06174f4dc535c18ce977728",
+        "status": "superseded_rejected_geometry",
+        "preserved": true
+      },
+      "masterCopiedWithoutReencoding": true,
+      "conversion": "Pillow WEBP lossless=True quality=100 method=6 exact=True; decoded RGBA identical to native PNG.",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewStatus": "operator_review_accepted_with_documented_limits",
+      "observations": [
+        "The corrected backing is taller than wide with rounded scallops visible above and below the mouth; the invented pointed shield crest and base are removed.",
+        "The mouth now follows the source's high arched upper lip, central downward tooth and irregularly grouped side and lower teeth.",
+        "The whole lip tips, scalloped backing and tooth silhouettes are contained. Light and dark alpha composites show no opaque background or neighbouring trophy."
+      ],
+      "limitations": [
+        "Fine tooth widths, the placement of smaller side teeth and the exact curvature of the lower lip remain interpretations of a small source crop.",
+        "The drawing is brighter and smoother than the scene-lit original, and its scallops are more regular. Exact palette and micro-contour fidelity is not certified.",
+        "The solid alpha>=8 object begins 77 pixels from the top of the 1242-pixel canvas; this upper margin is smaller than the requested generous framing but no solid contour is cut.",
+        "136 border pixels have alpha 1 and 21087 pixels have alpha 1–7 in the native image. These faint native samples remain unchanged; no solid edge touches the border.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "inGameChecked": false,
+  "fidelityOneToOneCertified": false
+}

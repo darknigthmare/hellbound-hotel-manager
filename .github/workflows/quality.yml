@@ -28,3 +28,14 @@ jobs:
 
       - name: Type-check, test and build
         run: npm run qa
+
+      - name: Upload verified standalone bundle
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: infernal-versus-standalone
+          path: dist-combat/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+

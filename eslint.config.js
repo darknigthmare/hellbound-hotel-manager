@@ -20,7 +20,8 @@ export default tseslint.config(
       'docs/standalone/production-v13/browser-harness/**/*.cjs',
       'docs/standalone/production-v14/browser-harness/**/*.cjs',
       'docs/standalone/production-v15/**/*.cjs',
-      'docs/standalone/production-v16/**/*.cjs'
+      'docs/standalone/production-v16/**/*.cjs',
+      'docs/standalone/production-v17/**/*.cjs'
     ],
     languageOptions: {
       sourceType: 'commonjs',

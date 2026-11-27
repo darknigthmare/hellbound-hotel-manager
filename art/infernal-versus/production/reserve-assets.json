@@ -16,7 +16,9 @@
     "static-v12-2026-11-26",
     "static-v13-2026-11-26",
     "static-v14-2026-11-26",
-    "static-v15-2026-11-27"
+    "static-v15-2026-11-27",
+    "static-v16-2026-11-27",
+    "static-v17-2026-11-27"
   ],
   "fidelityOneToOneCertified": false,
   "assets": [
@@ -8499,6 +8501,484 @@
       "sourceExport": "production/v16/characters/exports/hb_rick-barbie-bad-day-portrait.webp",
       "exportUrl": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
       "sourceWorkTitle": "Barbie’s Bad Day"
+    },
+    {
+      "id": "spring-broken-blue-can-s1",
+      "name": "Spring Broken · Canette bleue",
+      "continuity": "season_1",
+      "reference": "HELLUVA BOSS — SPRING BROKEN // S1: Episode 3 ; fond de production HB4_166.png — Rebecca Reynolds",
+      "sourceReferences": [
+        {
+          "path": "production/v17/props/references/rebecca-hb4-166.png",
+          "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+          "bytes": 457454,
+          "dimensions": [
+            1500,
+            844
+          ],
+          "mode": "P",
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "author": "Rebecca Reynolds",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "kind": "official_production_artist_portfolio",
+          "title": "Rebecca Reynolds · fond de production"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "HB4_166.png"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg&t=760s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA BOSS — SPRING BROKEN // S1: Episode 3 · contexte hérité"
+        }
+      ],
+      "fidelityNotes": [
+        "Objet isolé redessiné depuis un fond de production primaire. Les détails fins et proportions sont adaptés, sans certification 1:1.",
+        "La datation du décor est héritée du dossier de sources antérieur ; aucune nouvelle relecture intégrale de l’épisode.",
+        "Alpha natif conservé, y compris les pixels très faibles dans les marges. Export WebP identique en RGBA au PNG.",
+        "The body/front-face ratio, label curve, highlights and pull-tab detail are regularized relative to the small painted source. This is a source-derived redraw, not an exact reproduction.",
+        "Fine stippling and small contour variations in the original are not reproduced exactly.",
+        "Native low-alpha specks remain outside the solid object: 3988 pixels at alpha 1–7. They were preserved without thresholding.",
+        "This review does not establish actual gallery scale, runtime appearance or precise episode-frame identity."
+      ],
+      "generation": {
+        "attempts": 1,
+        "status": "succeeded",
+        "prompt": "Use case: stylized-concept. Asset type: one isolated static 2D scenery prop for the game Infernal Versus, on a truly transparent background.\nInput image is a primary Helluva Boss background painting by Rebecca Reynolds, HB4_166. Use it only as a visual reference. Redraw ONLY the single blue beverage can lying in the very bottom-right foreground, approximately x=1165..1310 and y=670..839 in the 1500x844 reference. Do not select the green bottle, the other cans, the red cups or the barrels.\nPreserve that exact can's pose: it lies diagonally back/up-left to front/down-right, with its large elliptical circular end facing the viewer toward the bottom right. Preserve the short muted blue/slate cylindrical body, orange-red label band across the side, blue-grey dark rim around the warm reddish front circular end, and small orange-red pull tab drawn on that end. Keep the same asymmetrical perspective, line contour, flat cel shading and restrained warm/purple ambient colors seen in the painting. Do not invent typography, a brand, extra rings, liquid or a replacement generic beer-can design.\nOne object only, entire contour inside the image. Center it on a square transparent canvas with at least 12 percent clear transparent margin on every side, sufficiently large to inspect the fine outline. Match the original 2D animation background painting style with clean dark contour and minimal surface texture. No sand, cast ground shadow, beach, bottles, extra can, border, caption, watermark, or checkerboard pattern baked into the image. This is one static source-derived prop, not a sprite sheet or photorealistic product render.",
+        "referencedImagePaths": [
+          "production/v17/props/references/rebecca-hb4-166.png"
+        ],
+        "transparentBackground": true,
+        "nativeOutputPreserved": true
+      },
+      "operatorVisualReview": {
+        "status": "accepted-as-static-source-derived-redraw",
+        "sourceInspected": true,
+        "nativeResultInspected": true,
+        "wholeContourVisible": true,
+        "identityMatchesSelectedObject": true,
+        "noExtraObject": true,
+        "visibleAlpha8Bounds": [
+          301,
+          215,
+          932,
+          1047
+        ],
+        "limitations": [
+          "The small source object limits confidence in fine contour, ring-pull and surface details.",
+          "The generated ribbon, highlights and cylinder proportions are smoothed/regularized relative to the painting; exact one-to-one fidelity is not certified.",
+          "The native alpha channel contains faint alpha 1–7 pixels outside the visually solid silhouette, and the interior is mostly alpha 253–254. They were preserved unchanged."
+        ]
+      },
+      "category": "prop",
+      "kind": "prop",
+      "subtype": "static_scenery_prop",
+      "franchise": "Helluva Boss",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun objet interactif ou véhicule pilotable.",
+      "sourceIdentityId": null,
+      "productionIdentityId": null,
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newAnimationCycles": 0,
+      "newPlayableKits": 0,
+      "master": "production/v17/props/masters/spring-broken-blue-can-s1.png",
+      "export": "public/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+      "masterSha256": "9518fa3141049abfa995883507a61e8ca8f1e3dd79c9e5cbde95490fe186c93c",
+      "exportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "masterBytes": 563119,
+      "exportBytes": 315158,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "pixelExactExport": true,
+      "rgbaPixelSha256": "0f91dd1a6c064885585e2f8bcf1528f03b33bea64d2d019ca849f86db2a6bb75",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        301,
+        215,
+        932,
+        1047
+      ],
+      "referenceUrls": [
+        "https://rebeccareynolds.me/portfolio/backgrounds",
+        "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+        "https://www.youtube.com/watch?v=RghsgkZKedg&t=760s"
+      ],
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "batchId": "static-v17-2026-11-27",
+      "visualReview": "docs/standalone/production-v17/independent-visual-review.json",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "crimson-horned-wall-trophy-s2",
+      "name": "Crimson · Trophée mural à cornes",
+      "continuity": "season_2",
+      "reference": "HELLUVA BOSS — EXES AND OOHS // S2: Episode 3 ; fond de production 204.jpg — Jasper Luu",
+      "sourceReferences": [
+        {
+          "path": "production/v17/props/references/jasper-crimson-204.jpg",
+          "sha256": "f8df1851fcd23c388e86008ed2adea7ab2e9aeeb7d008b90add4b893562d4e81",
+          "bytes": 488424,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://jasperluu.com/helluvaboss",
+          "kind": "official_production_artist_portfolio",
+          "title": "Jasper Luu · fond de production"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "204.jpg"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA BOSS — EXES AND OOHS // S2: Episode 3 · contexte hérité"
+        }
+      ],
+      "fidelityNotes": [
+        "Objet isolé redessiné depuis un fond de production primaire. Les détails fins et proportions sont adaptés, sans certification 1:1.",
+        "La datation du décor est héritée du dossier de sources antérieur ; aucune nouvelle relecture intégrale de l’épisode.",
+        "Alpha natif conservé, y compris les pixels très faibles dans les marges. Export WebP identique en RGBA au PNG.",
+        "Horn curvature, exact pale-band lengths, tuft proportions and corner-rounding remain regularized compared with the small source crop.",
+        "The generated colours and lower green highlight retain a clean digital finish; the original scene lighting and fine paint texture are not reproduced exactly.",
+        "8662 native pixels at alpha 1–7 remain outside the strong silhouette; the master and lossless export preserve these pixels without thresholding.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "generation": {
+        "attempts": 2,
+        "status": "succeeded",
+        "prompt": "Use case: stylized-concept. Asset type: one isolated static 2D wall decoration prop for the game Infernal Versus, on a truly transparent background.\nInput image is a primary Helluva Boss background painting by Jasper Luu, 204.jpg, Crimson's dining room. Use it only as a visual reference. Redraw ONLY the single complete small horned wall trophy on the rear wall immediately to the right of the hanging chandelier and left of the open-mouthed oval wall trophy, centered roughly x=1175,y=460 in the 2500x1532 reference. It is the nearly frontal plaque above the large chair, NOT the larger central chandelier, not a chair or one of the trophies on the perspective right-hand wall.\nPreserve the complete green decorative backing plaque, its stepped/scalloped outline and green glowing lower rim. Preserve the small downward-pointing tufted green-gray face/skull ornament with no visible eyes, and the two wide black horns curving sideways then upward, each with pale cream/green annular bands. Keep its dark navy contour, the exact left/right asymmetry visible in the reference, green light, flat cel-painted shadows and the original low-detail animated-background design. Do not add eyes, antlers, teeth, hanging chains, new anatomy, red flesh, extra horns or a generic animal skull.\nOne complete decorative object only, centered on a transparent square canvas with at least 12 percent transparent margin on every side and room around both horn tips. Preserve the reference's frontal viewpoint. No wall, wallpaper, furniture, chandelier, drop shadow, blood, second object, text, signature or watermark. This is an isolated static redraw of the pictured ornament, not a character, not a new creature and not a photorealistic taxidermy object.",
+        "referencedImagePaths": [
+          "production/v17/props/references/jasper-crimson-204.jpg"
+        ],
+        "transparentBackground": true,
+        "nativeOutputPreserved": true,
+        "correctionRecord": "docs/standalone/production-v17/trophy-corrections.json"
+      },
+      "operatorVisualReview": {
+        "status": "accepted-as-static-source-derived-redraw",
+        "sourceInspected": true,
+        "nativeResultInspected": true,
+        "wholeContourVisible": true,
+        "identityMatchesSelectedObject": true,
+        "noExtraObject": true,
+        "visibleAlpha8Bounds": [
+          187,
+          335,
+          1063,
+          920
+        ],
+        "limitations": [
+          "The small source plaque does not provide enough detail to certify exact band counts, tiny contours or material texture.",
+          "The generated plaque is more symmetrical and its lighting/tufts are regularized relative to the background; exact one-to-one fidelity is not certified.",
+          "The native alpha channel contains faint alpha 1–7 pixels outside the visually solid silhouette, and the interior is mostly alpha 252–254. They were preserved unchanged."
+        ]
+      },
+      "category": "prop",
+      "kind": "prop",
+      "subtype": "static_scenery_prop",
+      "franchise": "Helluva Boss",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun objet interactif ou véhicule pilotable.",
+      "sourceIdentityId": null,
+      "productionIdentityId": null,
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newAnimationCycles": 0,
+      "newPlayableKits": 0,
+      "master": "production/v17/props/masters/crimson-horned-wall-trophy-s2-v2.png",
+      "export": "public/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "masterSha256": "4beb449a1a06f611a3e68786c3118e9f27e7facedb41a790b46defc8d693e751",
+      "exportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "masterBytes": 483206,
+      "exportBytes": 265150,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "pixelExactExport": true,
+      "rgbaPixelSha256": "27abfbc55d6d3ad747f97818866a502e809727f6d94b7b1506105a3522b4ea57",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        186,
+        320,
+        1067,
+        899
+      ],
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+        "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s"
+      ],
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "batchId": "static-v17-2026-11-27",
+      "visualReview": "docs/standalone/production-v17/independent-visual-review.json",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "unhappy-campers-outboard-motor-s2",
+      "name": "Unhappy Campers · Moteur hors-bord",
+      "continuity": "season_2",
+      "reference": "Unhappy Campers S2E5 · fond du hangar à bateaux ; peinture de production de Jasper Luu",
+      "sourceReferences": [
+        {
+          "path": "production/v17/props/references/jasper-boathouse-21.jpg",
+          "sha256": "5e7e33dc8789816f3f437f95ab8ea78d1206f6f9c43add9934547145a3be3713",
+          "bytes": 304324,
+          "dimensions": [
+            2500,
+            1146
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://jasperluu.com/helluvaboss",
+          "kind": "official_production_artist_portfolio",
+          "title": "Jasper Luu · fond de production"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s",
+          "kind": "official_episode_or_clip",
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux · contexte hérité"
+        }
+      ],
+      "fidelityNotes": [
+        "Carter, grille, bouton, arbre et hélice visibles dans la peinture. Le moteur est séparé du bateau, sans inventer son revers. Les facettes et proportions fines sont régularisées.",
+        "Un objet par image. Redessin statique isolé ; aucune certification 1:1.",
+        "Export WebP sans perte, RGBA identique au PNG natif ; aucune modification de l’alpha.",
+        "The grille slats, casing proportions, shaft thickness/length and propeller details are smoothed and interpreted from a small painted object.",
+        "The shaft occupies more visual length relative to the casing than in the source; exact dimensional matching is not certified.",
+        "The visible object has approximately 104 pixels above and 58 pixels below at alpha >=8, so the lower margin is narrower than the requested generous framing, while the complete propeller remains visible.",
+        "The master has no fully opaque alpha-255 pixels; most solid drawing pixels are alpha 128–254. Correct alpha compositing was used and no threshold was applied.",
+        "This review does not establish actual gallery scale, runtime appearance or an operating motor mechanism."
+      ],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: stylized-concept. Asset type: one separate static transparent game machinery prop for Infernal Versus. Primary request: isolate and redraw ONLY the small OUTBOARD MOTOR attached to the green rowboat in the provided official production painting for Helluva Boss, Unhappy Campers. The reference is visual authority. The motor sits near the centre bottom of the image, in front of the boat's left end: angular dark grey/purple six-sided engine casing, warm rectangular slatted grille on its upper left face, one small round brown-red button on its upper right face, darker lower casing, a short cylindrical horizontal mounting part at lower left, a very slim long dark shaft descending along the OUTSIDE of the hull, and the tiny brown/red propeller at its foot. Preserve the same three-quarter projection and the exact visible silhouette of this motor, from the casing top to the propeller tip. Preserve its restrained slate, muted plum, brown and dark-outline palette. Do not extrapolate unseen rear surfaces or add an operating tiller or extra cables. No boat, water, dock, wall, sacks, rope, people, scene lighting glow, support or additional equipment. Crisp 2D animation background linework with flat subtle shading matching the source. Draw exactly one motor centred on a genuinely transparent canvas, full object including complete shaft and propeller, comfortable clear margin all around, no cropped extremity, no text or signature or checkerboard. This is a static machinery cutout, not a functioning vehicle or animation, and fine details are an adaptation of the reference.",
+        "referencedImagePaths": [
+          "production/v17/props/references/jasper-boathouse-21.jpg"
+        ],
+        "transparentBackground": true,
+        "attempts": 1
+      },
+      "operatorVisualReview": {
+        "status": "accepted_with_documented_limits",
+        "wholeContourVisible": true,
+        "sourceInspected": true
+      },
+      "category": "prop",
+      "kind": "prop",
+      "subtype": "static_scenery_prop",
+      "franchise": "Helluva Boss",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun objet interactif ou véhicule pilotable.",
+      "sourceIdentityId": null,
+      "productionIdentityId": null,
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newAnimationCycles": 0,
+      "newPlayableKits": 0,
+      "master": "production/v17/props/masters/unhappy-campers-outboard-motor-s2.png",
+      "export": "public/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+      "masterSha256": "57903676cf4391aa3d9daaf26f5aee14f376063dc93ef2235611e1f7cc06eaa4",
+      "exportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "masterBytes": 973519,
+      "exportBytes": 631828,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "pixelExactExport": true,
+      "rgbaPixelSha256": "6cac6a37ba0ee41bbbf1f095d2ffa8fec66fcab51a14f9d05abafb75485853db",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        203,
+        104,
+        823,
+        1478
+      ],
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+        "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s"
+      ],
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "batchId": "static-v17-2026-11-27",
+      "visualReview": "docs/standalone/production-v17/independent-visual-review.json",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "crimson-fanged-jaw-wall-trophy-s2",
+      "name": "Crimson · Trophée mural à mâchoire",
+      "continuity": "season_2",
+      "reference": "Exes and Oohs S2E3 · salle à manger de Crimson ; peinture de production de Jasper Luu",
+      "sourceReferences": [
+        {
+          "path": "production/v17/props/references/jasper-crimson-204.jpg",
+          "sha256": "f8df1851fcd23c388e86008ed2adea7ab2e9aeeb7d008b90add4b893562d4e81",
+          "bytes": 488424,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://jasperluu.com/helluvaboss",
+          "kind": "official_production_artist_portfolio",
+          "title": "Jasper Luu · fond de production"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "kind": "official_production_artist_portfolio_image",
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "kind": "official_episode_or_clip",
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson · contexte hérité"
+        }
+      ],
+      "fidelityNotes": [
+        "Mâchoire décorative horizontale à droite du trophée à cornes sur le mur du fond. La courbe, le nombre/profil exact des dents et les ombres sont adaptés depuis un petit motif. Aucune espèce ni anatomie attribuée.",
+        "Un objet par image. Redessin statique isolé ; aucune certification 1:1.",
+        "Export WebP sans perte, RGBA identique au PNG natif ; aucune modification de l’alpha.",
+        "Fine tooth widths, the placement of smaller side teeth and the exact curvature of the lower lip remain interpretations of a small source crop.",
+        "The drawing is brighter and smoother than the scene-lit original, and its scallops are more regular. Exact palette and micro-contour fidelity is not certified.",
+        "The solid alpha>=8 object begins 77 pixels from the top of the 1242-pixel canvas; this upper margin is smaller than the requested generous framing but no solid contour is cut.",
+        "136 border pixels have alpha 1 and 21087 pixels have alpha 1–7 in the native image. These faint native samples remain unchanged; no solid edge touches the border.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: stylized-concept. Asset type: one separate static transparent scenery prop for Infernal Versus. Primary request: redraw ONLY the broad GREEN FANGED JAW WALL TROPHY on the flat back wall of Crimson's dining room in the supplied official Helluva Boss production painting. Identify the correct object precisely: it is just to the RIGHT of the complete horizontal striped-horn trophy, just LEFT of the corner where the long window wall begins, ABOVE the small dark round-jaw plaque. Its centre is approximately 54 percent of the image width and 30 percent of the image height. It is a broad arched green upper jaw with a pointed peaked crest at its centre, a dark wide open mouth, long sparse triangular green teeth projecting down and up, and a scalloped soft-green wall plaque behind and below. It has NO horns, NO eyes, NO head, NO tongue and NO limbs. Do not choose any of the many other oval-mouth or horned trophies in the picture. Use the actual contours, visible tooth shapes and asymmetry of this one source object; keep the nearly front-on wall projection and the dark blue-green outline, muted moss green plaque, pale green edges, dark forest-green mouth. This is stylised cartoon decor, no realistic bones, gore or organic texture. Exactly ONE complete wall-mounted prop isolated on true transparent alpha. No wallpaper, wall, chandelier, chairs, table, window, other trophies, added mounting screws, label, words, signature, duplicate views or checkerboard. Keep entire plaque and jaw safely inside generous transparent margins. Match crisp 2D cel background-art linework and simple shading. Do not make up a creature species or claim anatomical meaning: this is the visible decorative shape only.",
+        "referencedImagePaths": [
+          "production/v17/props/references/jasper-crimson-204.jpg"
+        ],
+        "transparentBackground": true,
+        "attempts": 2,
+        "correctionRecord": "docs/standalone/production-v17/trophy-corrections.json"
+      },
+      "operatorVisualReview": {
+        "status": "accepted_with_documented_limits",
+        "wholeContourVisible": true,
+        "sourceInspected": true
+      },
+      "category": "prop",
+      "kind": "prop",
+      "subtype": "static_scenery_prop",
+      "franchise": "Helluva Boss",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "runtimeStatus": "reserve",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun objet interactif ou véhicule pilotable.",
+      "sourceIdentityId": null,
+      "productionIdentityId": null,
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newAnimationCycles": 0,
+      "newPlayableKits": 0,
+      "master": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2-v2.png",
+      "export": "public/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+      "masterSha256": "44121e257de5d3379a5f315826eca48e5542683d5dbe627e025d164cdf010494",
+      "exportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "masterBytes": 921196,
+      "exportBytes": 519144,
+      "dimensions": [
+        1266,
+        1242
+      ],
+      "mode": "RGBA",
+      "pixelExactExport": true,
+      "rgbaPixelSha256": "864531bc7dbb734b227771868df8d8c78a66f8fade0306b3bec395eb30b37f97",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        189,
+        77,
+        1076,
+        1107
+      ],
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+        "https://www.youtube.com/watch?v=j1BfO7VlIw4"
+      ],
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "batchId": "static-v17-2026-11-27",
+      "visualReview": "docs/standalone/production-v17/independent-visual-review.json",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
     }
   ]
 }
