@@ -1,0 +1,22 @@
+
+<--- Last few GCs --->
+
+[17:0x38a64000]     3623 ms: Mark-Compact (reduce) 253.5 (257.9) -> 252.2 (255.7) MB, pooled: 0 MB, 59.78 / 0.00 ms  (+ 0.1 ms in 34 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 69 ms) (average mu = 0.304, current mu [17:0x38a64000]     3705 ms: Mark-Compact 253.5 (256.2) -> 250.6 (258.8) MB, pooled: 0 MB, 77.41 / 0.00 ms  (average mu = 0.185, current mu = 0.057) allocation failure; scavenge might not succeed
+
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0x91df90  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 2: 0x75bb9f node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 3: 0xc77280  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 4: 0xc7737f  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 5: 0xf272b5  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 6: 0xf272e2  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 7: 0xf27664  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 8: 0xf393ca  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 9: 0xf3d880  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+10: 0x1a420c1  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+Error: typecheck failed: null
+    at run (file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/verify-runtime.mjs:69:34)
+    at file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/verify-runtime.mjs:89:3
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

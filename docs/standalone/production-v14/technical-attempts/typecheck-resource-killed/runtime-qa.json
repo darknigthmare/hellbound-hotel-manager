@@ -1,0 +1,15 @@
+{
+  "edition": "V14",
+  "status": "failed",
+  "startedAt": "2026-11-26T21:52:44.912Z",
+  "completedAt": "2026-11-26T21:52:47.392Z",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 137,
+      "nodeOptions": "--max-old-space-size=384 --max-semi-space-size=8"
+    }
+  ],
+  "error": "Error: typecheck failed: 137"
+}

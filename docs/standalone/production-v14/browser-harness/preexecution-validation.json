@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-26T22:05:19.892887+00:00",
+  "harnessSha256": "298a1c3168937d9fc854dac4678ae29d5242a7c8a019b588e1f0c3e3e6f7fc4b",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/node_modules/.bin/eslint",
+        "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "pythonCompile": "passed"
+}

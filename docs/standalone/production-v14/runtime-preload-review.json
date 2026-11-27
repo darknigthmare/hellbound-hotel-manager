@@ -1,0 +1,115 @@
+{
+  "edition": "V14",
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-26T22:13:33.948904+00:00",
+  "status": "targeted_preloader_tests_passed_full_runtime_revalidation_pending",
+  "finding": "Le préchargeur demandait et décodait les banques et poses de base même lorsque costumePose renvoyait READY pendant toutes les phases. Les journaux du parcours Moxxie échoué contiennent les quatre GET de poses inutilisées.",
+  "evidence": [
+    "src/components/PentagramLiveFight.tsx — effet de préchargement et priorité de individualPose",
+    "src/lib/infernal-appearances.ts — costumePose retourne immédiatement ready pour staticReadyOnly",
+    "src/lib/character-sprites.ts — registres stables ; banques communes aux personnages helluva-core",
+    "src/expansions/helluva-boss/data.ts — Blitzø, Moxxie, Millie et Loona partagent helluva-core",
+    "/tmp/infernal-v14/browser/desktop-moxxie-dining/static-server-log.txt"
+  ],
+  "scope": {
+    "changed": "Sous infernalRules, exclure les banques, poses habituelles et impactSprite de chaque côté staticReadyOnly. Précharger son READY ; conserver les effets d’attaque et detachedProp séparés.",
+    "preserved": [
+      "Banques et poses de tout adversaire normal, y compris même identité ou même famille de banques.",
+      "Costumes multiposes et mode hors infernal.",
+      "Rendu, mécanique, timings, dessins, cycles et handoffs figés.",
+      "Préchargement différé à 900 ms ; aucun changement général de politique de cache ou de décodage."
+    ],
+    "inputsAfterTargetedTests": [
+      {
+        "path": "src/components/PentagramLiveFight.tsx",
+        "bytes": 63244,
+        "sha256": "fa2713710ba97f34dc2e520bd8d70f6f136d20f735b723d892e7593c0045e572"
+      },
+      {
+        "path": "src/tests/infernal-preload.test.tsx",
+        "bytes": 7747,
+        "sha256": "4be6416cb8a65a0ad825d920b4257fc6eb535577c762bafbed9b24ced956a202"
+      }
+    ]
+  },
+  "quantification": {
+    "method": "Dimensions lues dans les en-têtes PNG/WebP ; largeur × hauteur × 4. Calcul RGBA théorique, sans mesure de RSS, de cache navigateur ni de mémoire GPU.",
+    "helluvaCore": {
+      "uniqueBanks": 8,
+      "dimensionsPerBank": [
+        1536,
+        1024
+      ],
+      "rgbaBytesPerBank": 6291456,
+      "totalRgbaBytes": 50331648,
+      "totalMiB": 48,
+      "initialUniqueBanks": 4,
+      "additionalDeferredUniqueBanks": 4,
+      "note": "Le base sert aussi aux cinématiques ; sa répétition entre listes immédiate et différée reste inchangée pour les côtés normaux."
+    },
+    "cases": [
+      {
+        "match": "Blitzø flashback contre Blitzø normal, parcours initial",
+        "uniqueBanksAvoided": 0,
+        "unusedUniqueBasePosesAvoided": 0,
+        "explanation": "Le mannequin normal partage toutes ces ressources. Les Set les conservaient déjà une fois par groupe de préchargement ; aucun gain de banques uniques dans ce duel."
+      },
+      {
+        "match": "Moxxie robe contre Blitzø normal",
+        "uniqueBanksAvoided": 0,
+        "unusedUniqueBasePosesAvoided": 4,
+        "rgbaBytesAvoidedForPoses": 25165824,
+        "theoreticalMiB": 24
+      },
+      {
+        "match": "Millie robe contre Blitzø normal",
+        "uniqueBanksAvoided": 0,
+        "unusedUniqueBasePosesAvoided": 2,
+        "rgbaBytesAvoidedForPoses": 12582912,
+        "theoreticalMiB": 12
+      },
+      {
+        "match": "Blitzø et Moxxie tous deux en costumes statiques",
+        "uniqueBanksAvoided": 8,
+        "theoreticalBankMiB": 48,
+        "verifiedPreloaderRequestsAfterChange": 3,
+        "requests": "Deux READY et leur effet de balle commun ; aucune banque ni pose habituelle."
+      }
+    ]
+  },
+  "validation": {
+    "command": "NODE_OPTIONS='--max-old-space-size=384 --max-semi-space-size=4' node node_modules/vitest/vitest.mjs run --maxWorkers=1 src/tests/infernal-preload.test.tsx",
+    "exitCode": 0,
+    "testsPassed": 6,
+    "suitesPassed": 1,
+    "durationSeconds": 1.46,
+    "log": {
+      "path": "docs/standalone/production-v14/runtime-preload-tests.log",
+      "bytes": 242,
+      "sha256": "eccf11160c3d1465dc00a8c5637f0c2943f1286600f963446e1496cc988acaae"
+    },
+    "coverage": [
+      "Deux côtés statiques et effet partagé.",
+      "Adversaire normal d’une autre banque, avec accessoire de finish.",
+      "Banque partagée avec Moxxie statique en joueur 2.",
+      "Duel miroir statique contre normal.",
+      "Costume multipose existant.",
+      "Mode hors infernal."
+    ],
+    "method": "Montage du vrai composant React et observation des créations Image, src affectés et appels decode. Image/decode sont instrumentés sous jsdom ; aucun décodage natif ni réseau Chromium exécuté.",
+    "initialAttempt": {
+      "testsFailed": 6,
+      "reason": "La fixture utilisait le hall par défaut, qui précharge aussi les spectateurs. La fixture finale utilise la vraie boutique V14 sans spectateurs ; aucun changement de runtime effectué pour cette correction de test.",
+      "log": {
+        "path": "docs/standalone/production-v14/technical-attempts/preload-initial-fixture.log",
+        "bytes": 9284,
+        "sha256": "085f91a95f55334bb1ac27150c4434a690a45fc2b2ed0fd7671f3caeede5b419"
+      }
+    }
+  },
+  "limits": [
+    "Le correctif ne démontre pas la cause des Target crashed et ne prétend pas les résoudre.",
+    "Aucun navigateur, build, typecheck ou lint lancé par cette passe ; la validation complète du nouveau runtime reste à effectuer par root.",
+    "Les succès techniques antérieurs au correctif ne certifient pas ce nouvel état."
+  ]
+}

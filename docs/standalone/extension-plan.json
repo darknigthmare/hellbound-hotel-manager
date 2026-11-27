@@ -72,66 +72,66 @@
     },
     "currentRuntime": {
       "date": "2026-11-26",
-      "batchId": "static-v13-2026-11-26",
-      "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+      "batchId": "static-v14-2026-11-26",
+      "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
-      "stages": 49,
+      "note": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+      "stages": 51,
       "threePlaneStages": 36,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 726,
+      "referencedAssets": 735,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 133,
+      "reserveGalleryDrawings": 138,
       "stagePresentations": [
         "alive",
         "static",
         "reduced"
       ],
       "illustrationAssignmentsV3": 127,
-      "onePlaneStages": 10,
+      "onePlaneStages": 12,
       "twoPlaneStages": 3,
-      "costumeFamilies": 24,
+      "costumeFamilies": 27,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v13/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v14/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
       "standaloneBases": 114,
       "catalogueIdsWithoutStandaloneBase": 95,
       "distinctProductionIdentitiesWithoutStandaloneBase": 94,
-      "assetCoverageReport": "docs/standalone/production-v13/active-asset-coverage.json",
-      "referencedAssetsStatus": "verified_current_v13_paths",
+      "assetCoverageReport": "docs/standalone/production-v14/active-asset-coverage.json",
+      "referencedAssetsStatus": "verified_current_v14_paths",
       "browserReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v13/browser-qa.json",
+        "report": "docs/standalone/production-v14/browser-qa.json",
         "checkedAssetIds": [
-          "asmodeus-bedroom-pitcher",
-          "dhorks-control-room-s1-room",
-          "dhorks-red-button-panel-s1",
-          "hb_tilla-nightmare-merch-portrait",
-          "hb_vikki-queen-bee-s1-portrait",
-          "spring-broken-red-cup",
-          "unhappy-campers-boathouse-s2-room"
+          "crimson-dining-room-s2-room",
+          "crimson-green-chandelier-s2",
+          "full-moon-shop-s2-room",
+          "hb_blitzo-flashback-ghostfuckers-s2",
+          "hb_millie-dress-disguise-training-short",
+          "hb_moxxie-dress-disguise-training-short",
+          "sloth-cloud-dispenser-s2"
         ],
-        "scope": "Targeted qualification of seven V13 creations, assembled from six completed independent browser segments on an identical production package. This is not one continuous browser pass. Previous failed runs retain their original status.",
-        "summary": "Validation ciblée de 7 dessins V13 : agrégation documentée de 184 assertions d’interaction et de 16 contrôles d’intégrité, issus de six segments Chromium achevés sur le même bundle livré. Les 56 captures sélectionnées ont toutes été relues sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Les deux nouvelles arènes et leurs vignettes ont été observées dans quatre combats d’entraînement ; les fonds restent entiers avant et après déplacement, sans prop superposé. Les cinq nouvelles fiches et leurs références sont lisibles. Vikki et Tilla restent des bustes statiques ; le badge PRODUIT OFFICIEL de Tilla et son apparition en épisode non confirmée sont explicites. Les trois objets restent en réserve. Les filtres de saison sont vérifiés pour chaque fiche, avec Tilla absente en S1 et présente en S1+S2. Crymini 2017 et le costume existant de Loona sont conservés. Aucun échec d’assertion, crash ni erreur réseau ou console dans les segments retenus ; empreintes des sources et du bundle inchangées. Les sept essais antérieurs incomplets restent archivés comme échecs. Cette qualification ne certifie ni une longue session continue ni le défilement prolongé des 133 fiches."
+        "scope": "Seven V14 drawings: three selectable static costumes and two stages in desktop training, one full mobile touch combat journey, and five gallery entries including two props at both viewport sizes.",
+        "summary": "Sept dessins V14 contrôlés dans le jeu : 286 assertions d’interaction et 34 contrôles d’intégrité, issus de six sessions Chromium indépendantes. Trois costumes et deux arènes en combat desktop ; parcours Blitzø/Full Moon complet en émulation tactile mobile ; cinq fiches galerie, provenance des courts 2026 et filtres de contenu sur les deux formats. Dix captures inspectées. Aucun cycle d’animation ni kit supplémentaire."
       },
       "technicalReview": {
         "status": "passed",
-        "testsPassed": 413,
-        "testSuites": 47,
+        "testsPassed": 419,
+        "testSuites": 48,
         "managerBuild": "passed",
         "standaloneBuild": "passed",
-        "standardQaScriptPassed": false,
-        "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
-        "report": "docs/standalone/production-v13/runtime-qa.json"
+        "standardQaScriptPassed": true,
+        "buildMethod": "Commandes standard npm du dépôt, sans modification des tests, configurations ou options de copie.",
+        "report": "docs/standalone/production-v14/runtime-qa.json"
       }
     },
     "latestIntegration": {
@@ -567,15 +567,79 @@
           "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
           "report": "docs/standalone/production-v12/runtime-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v13-2026-11-26",
+        "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+        "stages": 49,
+        "threePlaneStages": 36,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 726,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 133,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 10,
+        "twoPlaneStages": 3,
+        "costumeFamilies": 24,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v13/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+        "standaloneBases": 114,
+        "catalogueIdsWithoutStandaloneBase": 95,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 94,
+        "assetCoverageReport": "docs/standalone/production-v13/active-asset-coverage.json",
+        "referencedAssetsStatus": "verified_current_v13_paths",
+        "browserReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v13/browser-qa.json",
+          "checkedAssetIds": [
+            "asmodeus-bedroom-pitcher",
+            "dhorks-control-room-s1-room",
+            "dhorks-red-button-panel-s1",
+            "hb_tilla-nightmare-merch-portrait",
+            "hb_vikki-queen-bee-s1-portrait",
+            "spring-broken-red-cup",
+            "unhappy-campers-boathouse-s2-room"
+          ],
+          "scope": "Targeted qualification of seven V13 creations, assembled from six completed independent browser segments on an identical production package. This is not one continuous browser pass. Previous failed runs retain their original status.",
+          "summary": "Validation ciblée de 7 dessins V13 : agrégation documentée de 184 assertions d’interaction et de 16 contrôles d’intégrité, issus de six segments Chromium achevés sur le même bundle livré. Les 56 captures sélectionnées ont toutes été relues sur ordinateur 1440×1000 et mobile tactile émulé 390×844. Les deux nouvelles arènes et leurs vignettes ont été observées dans quatre combats d’entraînement ; les fonds restent entiers avant et après déplacement, sans prop superposé. Les cinq nouvelles fiches et leurs références sont lisibles. Vikki et Tilla restent des bustes statiques ; le badge PRODUIT OFFICIEL de Tilla et son apparition en épisode non confirmée sont explicites. Les trois objets restent en réserve. Les filtres de saison sont vérifiés pour chaque fiche, avec Tilla absente en S1 et présente en S1+S2. Crymini 2017 et le costume existant de Loona sont conservés. Aucun échec d’assertion, crash ni erreur réseau ou console dans les segments retenus ; empreintes des sources et du bundle inchangées. Les sept essais antérieurs incomplets restent archivés comme échecs. Cette qualification ne certifie ni une longue session continue ni le défilement prolongé des 133 fiches."
+        },
+        "technicalReview": {
+          "status": "passed",
+          "testsPassed": 413,
+          "testSuites": 47,
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "standardQaScriptPassed": false,
+          "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+          "report": "docs/standalone/production-v13/runtime-qa.json"
+        }
       }
     ],
     "latestStaticDelivery": {
       "date": "2026-11-26",
-      "batchId": "static-v13-2026-11-26",
-      "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+      "batchId": "static-v14-2026-11-26",
+      "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v13/delivery-register.json",
+      "register": "docs/standalone/production-v14/delivery-register.json",
       "status": "final_production_register",
       "counts": {
         "distinctDrawings": 7,
@@ -585,17 +649,17 @@
         "losslessWebp": 7,
         "thumbnails": 2,
         "deliveredImageFiles": 16,
-        "deliveredImageBytes": 13863846,
+        "deliveredImageBytes": 16890823,
         "newStandaloneBases": 0,
         "newCharacterBases": 0,
         "newlyCoveredCatalogueIds": 0,
         "newPlayableKits": 0,
-        "newStaticCostumes": 0,
-        "newNarrativeIncarnations": 2,
-        "newPortraits": 2,
+        "newStaticCostumes": 3,
+        "newNarrativeIncarnations": 0,
+        "newPortraits": 0,
         "newStages": 2,
         "newSceneryProps": 0,
-        "newReserveProps": 3,
+        "newReserveProps": 2,
         "newReserveProjectiles": 0,
         "newReserveMachines": 0,
         "newAnimationCycles": 0,
@@ -603,27 +667,27 @@
         "historicalVariantRequirementsReconciled": 0,
         "historicalVariantRequirementsPartiallyCovered": 0
       },
-      "scope": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+      "scope": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
       "verification": {
-        "technicalReport": "docs/standalone/production-v13/runtime-qa.json",
-        "browserReport": "docs/standalone/production-v13/browser-qa.json",
-        "workbookReport": "docs/standalone/production-v13/workbook-qa.json"
+        "technicalReport": "docs/standalone/production-v14/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v14/browser-qa.json",
+        "workbookReport": "docs/standalone/production-v14/workbook-qa.json"
       }
     },
     "latestProductionBible": {
-      "edition": "V13",
+      "edition": "V14",
       "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V12.xlsx",
-      "historicalSheetsPreserved": 56,
-      "historicalTablesPreserved": 65,
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V14.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
+      "historicalSheetsPreserved": 58,
+      "historicalTablesPreserved": 67,
       "appendedSheets": 2,
-      "finalSheets": 58,
-      "finalTables": 67,
-      "sha256": "5a365b5483c40641670dd4b5520dbab42389f4769488b137e4aedbcd563f098b",
-      "bytes": 674412,
-      "register": "docs/standalone/production-v13/delivery-register.json",
-      "qa": "docs/standalone/production-v13/workbook-qa.json",
+      "finalSheets": 60,
+      "finalTables": 69,
+      "sha256": "5c5aaf76a14be77c5b87e97ba6cb4aa48d1207a1b251224176815b81a9e3bb52",
+      "bytes": 692823,
+      "register": "docs/standalone/production-v14/delivery-register.json",
+      "qa": "docs/standalone/production-v14/workbook-qa.json",
       "status": "verified"
     },
     "staticDeliveryHistory": [
@@ -813,6 +877,47 @@
           "browserReport": "docs/standalone/production-v12/browser-qa.json",
           "workbookReport": "docs/standalone/production-v12/workbook-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v13-2026-11-26",
+        "baseCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 7,
+          "newDrawings": 7,
+          "revisedDrawings": 0,
+          "masterPng": 7,
+          "losslessWebp": 7,
+          "thumbnails": 2,
+          "deliveredImageFiles": 16,
+          "deliveredImageBytes": 13863846,
+          "newStandaloneBases": 0,
+          "newCharacterBases": 0,
+          "newlyCoveredCatalogueIds": 0,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 0,
+          "newNarrativeIncarnations": 2,
+          "newPortraits": 2,
+          "newStages": 2,
+          "newSceneryProps": 0,
+          "newReserveProps": 3,
+          "newReserveProjectiles": 0,
+          "newReserveMachines": 0,
+          "newAnimationCycles": 0,
+          "generatorRefused": 0,
+          "historicalVariantRequirementsReconciled": 0,
+          "historicalVariantRequirementsPartiallyCovered": 0
+        },
+        "scope": "V13 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 0 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+        "verification": {
+          "technicalReport": "docs/standalone/production-v13/runtime-qa.json",
+          "browserReport": "docs/standalone/production-v13/browser-qa.json",
+          "workbookReport": "docs/standalone/production-v13/workbook-qa.json"
+        }
       }
     ],
     "productionBibleHistory": [
@@ -887,6 +992,22 @@
         "bytes": 656556,
         "register": "docs/standalone/production-v12/delivery-register.json",
         "qa": "docs/standalone/production-v12/workbook-qa.json",
+        "status": "verified"
+      },
+      {
+        "edition": "V13",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V12.xlsx",
+        "historicalSheetsPreserved": 56,
+        "historicalTablesPreserved": 65,
+        "appendedSheets": 2,
+        "finalSheets": 58,
+        "finalTables": 67,
+        "sha256": "5a365b5483c40641670dd4b5520dbab42389f4769488b137e4aedbcd563f098b",
+        "bytes": 674412,
+        "register": "docs/standalone/production-v13/delivery-register.json",
+        "qa": "docs/standalone/production-v13/workbook-qa.json",
         "status": "verified"
       }
     ]
@@ -1915,6 +2036,30 @@
       "2026-11-26",
       "7 dessins retenus, 0 bases entières, 0 costumes statiques, 2 arènes ; limites et preuves de QA.",
       "docs/standalone/production-v13/delivery-register.json"
+    ],
+    [
+      "SRC-V14-FULL-MOON-SHOP-S2",
+      "Référence primaire documentée",
+      "The Full Moon · Boutique gothique",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-V14-CRIMSON-DINING-ROOM-S2",
+      "Référence primaire documentée",
+      "Crimson · Salle à manger",
+      "2026-11-26",
+      "Lieu et objets inspectés ; arène de combat statique adaptée, aucune fidélité 1:1 certifiée.",
+      "https://jasperluu.com/helluvaboss"
+    ],
+    [
+      "SRC-STATIC-V14",
+      "Dépôt / production",
+      "Production statique V14",
+      "2026-11-26",
+      "7 dessins retenus, 0 bases entières, 3 costumes statiques, 2 arènes ; limites et preuves de QA.",
+      "docs/standalone/production-v14/delivery-register.json"
     ]
   ],
   "tasks": [
@@ -7194,7 +7339,65 @@
       "validation": "Fiche/asset existant ne signifie pas combattant livré.",
       "loreFacts": "Assassin I.M.P; armement exact à horodater.",
       "proposedKit": "Hybride pistolet et mêlée; ressources de contrat.",
-      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+      "coverageBeforeStaticV14": {
+        "id": "hb_blitzo",
+        "franchise": "Helluva Boss",
+        "name": "Blitzø",
+        "tier": "Principal",
+        "role": "Founder and field leader",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss Season 1 (I.M.P. series premise)",
+        "source": "SRC-HH-02; HB-OFFICIAL; BLITZO",
+        "asset": "Atlas référencé",
+        "kit": "Kit nommé ajouté dans la PR",
+        "target": "Roster V1",
+        "status": "Ajout PR",
+        "next": "Cinématiques Helluva dédiées et profondeur du kit à produire.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Assassin I.M.P; armement exact à horodater.",
+        "proposedKit": "Hybride pistolet et mêlée; ressources de contrat.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      },
+      "qualificationV14": {
+        "status": "static_costume_delivered",
+        "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Silhouette entière : cornes, queue et deux bottes complètes, pose des mains issue du standee officiel. La demande initiale de marge de 5 % n’est pas atteinte ; marges visibles mesurées haut 13 px et bas 9 px. Aucun bord de silhouette coupé. L’épisode officiel à 930 s corrobore l’incarnation et la tenue. Le standee complet fournit la pose et les détails, et ne constitue pas un nouveau plan d’épisode.",
+        "references": [
+          "https://sharkrobot.com/products/flashback-blitz-standee",
+          "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      },
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Silhouette entière : cornes, queue et deux bottes complètes, pose des mains issue du standee officiel. La demande initiale de marge de 5 % n’est pas atteinte ; marges visibles mesurées haut 13 px et bas 9 px. Aucun bord de silhouette coupé. L’épisode officiel à 930 s corrobore l’incarnation et la tenue. Le standee complet fournit la pose et les détails, et ne constitue pas un nouveau plan d’épisode.",
+      "staticIncarnations": [
+        {
+          "master": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+          "export": "public/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp",
+          "masterSha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c",
+          "exportSha256": "b38f0e7b1645eb6bc9cab3179684cd880202a60f4b538f95afe3ee72fd8c94d3",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "season_2",
+          "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+          "batchId": "static-v14-2026-11-26",
+          "references": [
+            "https://sharkrobot.com/products/flashback-blitz-standee",
+            "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s"
+          ],
+          "register": "docs/standalone/production-v14/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
+        }
+      ]
     },
     {
       "id": "hb_moxxie",
@@ -7247,7 +7450,7 @@
         ],
         "register": "docs/standalone/production-v10/delivery-register.json"
       },
-      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Incarnation de la séquence hallucinée et musicale de Truth Seekers ; aucune nouvelle identité. Silhouette complète en vue de dos trois quarts à 510 s, profil à 490 s, détail frontal du pin officiel. La pose de jeu est adaptée. Les revers roses non corroborés du premier essai ont été corrigés en charbon-violet via le générateur. Fidélité 1:1 non certifiée. Le pin est limité au torse ; il ne qualifie pas les pans inférieurs. Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés. Aucune animation ni conformité 1:1 certifiée.",
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux blancs, taches claires des joues, yeux mi-clos et une main à la taille différencient Moxxie de Millie. Deux plumes et deux nœuds à l’ourlet présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
       "staticIncarnations": [
         {
           "master": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
@@ -7275,8 +7478,105 @@
           "runtimeSelectable": true,
           "staticReadyOnly": true,
           "defaultBaseUnchanged": true
+        },
+        {
+          "master": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+          "export": "public/assets/production/v14/characters/hb_moxxie-dress-disguise-training-short.webp",
+          "masterSha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+          "exportSha256": "af35e202dbeaf4951ca3d478224d33ed182884dc922db5dd3b56b587a09a39b7",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "official_short_2026",
+          "assetId": "hb_moxxie-dress-disguise-training-short",
+          "batchId": "static-v14-2026-11-26",
+          "references": [
+            "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+            "https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s"
+          ],
+          "register": "docs/standalone/production-v14/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
         }
-      ]
+      ],
+      "coverageBeforeStaticV14": {
+        "id": "hb_moxxie",
+        "franchise": "Helluva Boss",
+        "name": "Moxxie",
+        "tier": "Principal",
+        "role": "Marksman and tactical planner",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss Season 1 (I.M.P. core cast)",
+        "source": "SRC-HH-02; HB-OFFICIAL; MOXXIE",
+        "asset": "Atlas référencé",
+        "kit": "Kit nommé ajouté dans la PR",
+        "target": "Roster V1",
+        "status": "Ajout PR",
+        "next": "Cinématiques Helluva dédiées et profondeur du kit à produire.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Armes à feu, acrobatie; résistance au feu terrestre.",
+        "proposedKit": "Précision, rechargement, couverture et visée risquée.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+        "qualificationV10": {
+          "status": "static_costume_delivered",
+          "assetId": "hb_moxxie-hallucination-truth-seekers",
+          "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Incarnation de la séquence hallucinée et musicale de Truth Seekers ; aucune nouvelle identité. Silhouette complète en vue de dos trois quarts à 510 s, profil à 490 s, détail frontal du pin officiel. La pose de jeu est adaptée. Les revers roses non corroborés du premier essai ont été corrigés en charbon-violet via le générateur. Fidélité 1:1 non certifiée. Le pin est limité au torse ; il ne qualifie pas les pans inférieurs. Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés. Aucune animation ni conformité 1:1 certifiée.",
+          "references": [
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+            "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+          ],
+          "register": "docs/standalone/production-v10/delivery-register.json"
+        },
+        "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Incarnation de la séquence hallucinée et musicale de Truth Seekers ; aucune nouvelle identité. Silhouette complète en vue de dos trois quarts à 510 s, profil à 490 s, détail frontal du pin officiel. La pose de jeu est adaptée. Les revers roses non corroborés du premier essai ont été corrigés en charbon-violet via le générateur. Fidélité 1:1 non certifiée. Le pin est limité au torse ; il ne qualifie pas les pans inférieurs. Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés. Aucune animation ni conformité 1:1 certifiée.",
+        "staticIncarnations": [
+          {
+            "master": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
+            "export": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+            "masterSha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+            "exportSha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9",
+            "frameCoverage": "full_body",
+            "runtimeStatus": "selectable_costume",
+            "addsStandaloneBase": false,
+            "newIdentity": false,
+            "continuity": "season_1",
+            "assetId": "hb_moxxie-hallucination-truth-seekers",
+            "batchId": "static-v10-2026-11-26",
+            "references": [
+              "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+              "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+              "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+              "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s"
+            ],
+            "register": "docs/standalone/production-v10/delivery-register.json",
+            "animationCycles": 0,
+            "fidelityOneToOneCertified": false,
+            "runtimePlayable": false,
+            "coverage": "one_static_incarnation",
+            "runtimeSelectable": true,
+            "staticReadyOnly": true,
+            "defaultBaseUnchanged": true
+          }
+        ]
+      },
+      "qualificationV14": {
+        "status": "static_costume_delivered",
+        "assetId": "hb_moxxie-dress-disguise-training-short",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux blancs, taches claires des joues, yeux mi-clos et une main à la taille différencient Moxxie de Millie. Deux plumes et deux nœuds à l’ourlet présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      }
     },
     {
       "id": "hb_millie",
@@ -7296,7 +7596,65 @@
       "validation": "Fiche/asset existant ne signifie pas combattant livré.",
       "loreFacts": "Combat rapproché et armes blanches.",
       "proposedKit": "Pression de mêlée, hache, lancer et combos courts.",
-      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      "loreEvidence": "Identité primaire; capacités et visuels à valider par scène",
+      "coverageBeforeStaticV14": {
+        "id": "hb_millie",
+        "franchise": "Helluva Boss",
+        "name": "Millie",
+        "tier": "Principal",
+        "role": "Close-quarters operative",
+        "continuity": "season_1",
+        "canon": "Canon déclaré dans dépôt",
+        "reference": "Helluva Boss Season 1 (I.M.P. core cast)",
+        "source": "SRC-HH-02; HB-OFFICIAL; MILLIE",
+        "asset": "Atlas référencé",
+        "kit": "Kit nommé ajouté dans la PR",
+        "target": "Roster V1",
+        "status": "Ajout PR",
+        "next": "Cinématiques Helluva dédiées et profondeur du kit à produire.",
+        "validation": "Fiche/asset existant ne signifie pas combattant livré.",
+        "loreFacts": "Combat rapproché et armes blanches.",
+        "proposedKit": "Pression de mêlée, hache, lancer et combos courts.",
+        "loreEvidence": "Identité primaire; capacités et visuels à valider par scène"
+      },
+      "qualificationV14": {
+        "status": "static_costume_delivered",
+        "assetId": "hb_millie-dress-disguise-training-short",
+        "notes": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux noirs, yeux ouverts et deux mains réunies sur la poignée différencient Millie de Moxxie. Les deux plumes et les deux nœuds de l’ourlet sont présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      },
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable ; même pose pendant toutes les actions du kit existant. Aucune nouvelle base d’identité, mécanique ou animation. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux noirs, yeux ouverts et deux mains réunies sur la poignée différencient Millie de Moxxie. Les deux plumes et les deux nœuds de l’ourlet sont présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+      "staticIncarnations": [
+        {
+          "master": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+          "export": "public/assets/production/v14/characters/hb_millie-dress-disguise-training-short.webp",
+          "masterSha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+          "exportSha256": "49ced3541c9ffda50f8fdbbebc4d818ec70db048ff4e896b4f42e11cce65e44c",
+          "frameCoverage": "full_body",
+          "runtimeStatus": "selectable_costume",
+          "addsStandaloneBase": false,
+          "newIdentity": false,
+          "continuity": "official_short_2026",
+          "assetId": "hb_millie-dress-disguise-training-short",
+          "batchId": "static-v14-2026-11-26",
+          "references": [
+            "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+            "https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s"
+          ],
+          "register": "docs/standalone/production-v14/delivery-register.json",
+          "animationCycles": 0,
+          "fidelityOneToOneCertified": false,
+          "runtimePlayable": false,
+          "coverage": "one_static_incarnation",
+          "runtimeSelectable": true,
+          "staticReadyOnly": true,
+          "defaultBaseUnchanged": true
+        }
+      ]
     },
     {
       "id": "hb_loona",
@@ -13803,6 +14161,90 @@
         "fidelityOneToOneCertified": false,
         "productionStatus": "independent_review_accepted"
       }
+    },
+    {
+      "id": "full-moon-shop-s2",
+      "name": "The Full Moon · Boutique gothique",
+      "franchise": "Helluva Boss",
+      "place": "Helluva Boss — boutique gothique de The Full Moon, S2E8",
+      "continuity": "season_2",
+      "canonicalState": "Peinture de production 208_00003 de Jasper Luu, contexte corroboré par le storyboard officiel à 710 s. Vue vide et carrelage prolongé pour le combat : adaptation Simulation AU, sans fidélité 1:1 certifiée.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V14-FULL-MOON-SHOP-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg; https://www.youtube.com/watch?v=Fj9YRsV1pEw&t=710s",
+      "design": "Une cloison rouge à deux rangées de huit ogives, un escalier de chaque côté, un comptoir à gauche et un carrelage rouge dégagé au premier plan. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV14": true,
+      "status": "Partiel",
+      "runtimeId": "full-moon-shop-s2",
+      "runtimeStageId": "full-moon-shop-s2",
+      "runtimeStageIds": [
+        "full-moon-shop-s2"
+      ],
+      "asset": "public/assets/production/v14/environment/full-moon-shop-s2-room.webp",
+      "currentStaticCoverage": "Une cloison rouge à deux rangées de huit ogives, un escalier de chaque côté, un comptoir à gauche et un carrelage rouge dégagé au premier plan. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V14. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v14-2026-11-26",
+        "assetIds": [
+          "full-moon-shop-s2-room"
+        ],
+        "runtimeStageIds": [
+          "full-moon-shop-s2"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg",
+          "https://www.youtube.com/watch?v=Fj9YRsV1pEw&t=710s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
+    },
+    {
+      "id": "crimson-dining-room-s2",
+      "name": "Crimson · Salle à manger",
+      "franchise": "Helluva Boss",
+      "place": "Helluva Boss — demeure de Crimson, salle à manger, Exes and Oohs S2E3",
+      "continuity": "season_2",
+      "canonicalState": "Peinture 206.jpg de Jasper Luu, salle recoupée aux instants 580 s, 630 s et 670 s de l’épisode officiel. Cadrage 16:9 et parquet prolongé pour la simulation AU ; le petit support du lustre est coupé au bord supérieur. Le prop séparé conserve son contour entier. Aucune fidélité 1:1 certifiée.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-V14-CRIMSON-DINING-ROOM-S2",
+      "reference": "https://jasperluu.com/helluvaboss; https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg; https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+      "design": "Trois fenêtres vertes encadrent une table, de grands dossiers sombres, des chaises bordeaux et un mur de trophées ; cheminée à gauche, double porte à droite. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "registryNote": "Nouvelle arène distincte ; aucune lacune d’un ancien lieu n’est résolue par substitution.",
+      "createdByStaticV14": true,
+      "status": "Partiel",
+      "runtimeId": "crimson-dining-room-s2",
+      "runtimeStageId": "crimson-dining-room-s2",
+      "runtimeStageIds": [
+        "crimson-dining-room-s2"
+      ],
+      "asset": "public/assets/production/v14/environment/crimson-dining-room-s2-room.webp",
+      "currentStaticCoverage": "Trois fenêtres vertes encadrent une table, de grands dossiers sombres, des chaises bordeaux et un mur de trophées ; cheminée à gauche, double porte à droite. Décor statique ; sol et présentation du duel adaptés à la simulation AU, aucun nouvel audio commercial.",
+      "acceptance": "Composition et échelle adaptées ; validation en jeu limitée aux rapports V14. Fidélité 1:1 non certifiée.",
+      "staticProduction": {
+        "batchId": "static-v14-2026-11-26",
+        "assetIds": [
+          "crimson-dining-room-s2-room"
+        ],
+        "runtimeStageIds": [
+          "crimson-dining-room-s2"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "references": [
+          "https://jasperluu.com/helluvaboss",
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s"
+        ],
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "productionStatus": "independent_review_accepted"
+      }
     }
   ],
   "campaigns": [
@@ -17719,6 +18161,162 @@
         "gameplayEligibility": "wearable"
       },
       "acceptanceV10": "Pose statique sélectionnable ; aucune animation de transition, nouveau cycle, kit ou certification 1:1 livré."
+    },
+    {
+      "id": "VAR-V14-hb_blitzo-flashback-ghostfuckers-s2",
+      "fighter": "hb_blitzo",
+      "name": "Blitzø · tenue du flashback, Ghostf**kers",
+      "type": "Costume",
+      "reference": "https://sharkrobot.com/products/flashback-blitz-standee; https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s",
+      "requirements": "Costume complet et cycles dédiés à qualifier.",
+      "canonEvidence": "Sources primaires répertoriées ; détails fins non certifiés.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-STATIC-V14",
+      "createdByStaticV14": true,
+      "status": "Partiel",
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Silhouette entière : cornes, queue et deux bottes complètes, pose des mains issue du standee officiel. La demande initiale de marge de 5 % n’est pas atteinte ; marges visibles mesurées haut 13 px et bas 9 px. Aucun bord de silhouette coupé. L’épisode officiel à 930 s corrobore l’incarnation et la tenue. Le standee complet fournit la pose et les détails, et ne constitue pas un nouveau plan d’épisode.",
+      "qualificationV14": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+        "notes": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Silhouette entière : cornes, queue et deux bottes complètes, pose des mains issue du standee officiel. La demande initiale de marge de 5 % n’est pas atteinte ; marges visibles mesurées haut 13 px et bas 9 px. Aucun bord de silhouette coupé. L’épisode officiel à 930 s corrobore l’incarnation et la tenue. Le standee complet fournit la pose et les détails, et ne constitue pas un nouveau plan d’épisode.",
+        "references": [
+          "https://sharkrobot.com/products/flashback-blitz-standee",
+          "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+        "export": "public/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp",
+        "masterSha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c",
+        "exportSha256": "b38f0e7b1645eb6bc9cab3179684cd880202a60f4b538f95afe3ee72fd8c94d3",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "season_2",
+        "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+        "batchId": "static-v14-2026-11-26",
+        "references": [
+          "https://sharkrobot.com/products/flashback-blitz-standee",
+          "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV14": "Pose statique sélectionnable ; aucun cycle, kit ou certification 1:1 ajouté."
+    },
+    {
+      "id": "VAR-V14-hb_millie-dress-disguise-training-short",
+      "fighter": "hb_millie",
+      "name": "Millie · robe et ombrelle, IMP Training Video",
+      "type": "Costume",
+      "reference": "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain; https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s",
+      "requirements": "Costume complet et cycles dédiés à qualifier.",
+      "canonEvidence": "Sources primaires répertoriées ; détails fins non certifiés.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-STATIC-V14",
+      "createdByStaticV14": true,
+      "status": "Partiel",
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux noirs, yeux ouverts et deux mains réunies sur la poignée différencient Millie de Moxxie. Les deux plumes et les deux nœuds de l’ourlet sont présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+      "qualificationV14": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "hb_millie-dress-disguise-training-short",
+        "notes": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux noirs, yeux ouverts et deux mains réunies sur la poignée différencient Millie de Moxxie. Les deux plumes et les deux nœuds de l’ourlet sont présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+        "export": "public/assets/production/v14/characters/hb_millie-dress-disguise-training-short.webp",
+        "masterSha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+        "exportSha256": "49ced3541c9ffda50f8fdbbebc4d818ec70db048ff4e896b4f42e11cce65e44c",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "official_short_2026",
+        "assetId": "hb_millie-dress-disguise-training-short",
+        "batchId": "static-v14-2026-11-26",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV14": "Pose statique sélectionnable ; aucun cycle, kit ou certification 1:1 ajouté."
+    },
+    {
+      "id": "VAR-V14-hb_moxxie-dress-disguise-training-short",
+      "fighter": "hb_moxxie",
+      "name": "Moxxie · robe et ombrelle, IMP Training Video",
+      "type": "Costume",
+      "reference": "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain; https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s",
+      "requirements": "Costume complet et cycles dédiés à qualifier.",
+      "canonEvidence": "Sources primaires répertoriées ; détails fins non certifiés.",
+      "priority": "P2",
+      "lot": "V3",
+      "source": "SRC-STATIC-V14",
+      "createdByStaticV14": true,
+      "status": "Partiel",
+      "currentStaticCoverage": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux blancs, taches claires des joues, yeux mi-clos et une main à la taille différencient Moxxie de Millie. Deux plumes et deux nœuds à l’ourlet présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+      "qualificationV14": {
+        "status": "partial_static_incarnation_delivered",
+        "assetId": "hb_moxxie-dress-disguise-training-short",
+        "notes": "Une incarnation entière statique sélectionnable avec le kit existant. Une seule pose est réutilisée pendant les actions ; cycles dédiés, transitions et autres exigences restent à produire. Plusieurs lignes éventuelles désignent le même dessin, compté une seule fois. Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit. PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération. Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents. Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres. Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée. Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3. La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2. La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte. Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé. Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain. Cheveux blancs, taches claires des joues, yeux mi-clos et une main à la taille différencient Moxxie de Millie. Deux plumes et deux nœuds à l’ourlet présents. Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour.",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json"
+      },
+      "staticProduction": {
+        "master": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+        "export": "public/assets/production/v14/characters/hb_moxxie-dress-disguise-training-short.webp",
+        "masterSha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+        "exportSha256": "af35e202dbeaf4951ca3d478224d33ed182884dc922db5dd3b56b587a09a39b7",
+        "frameCoverage": "full_body",
+        "runtimeStatus": "selectable_costume",
+        "addsStandaloneBase": false,
+        "newIdentity": false,
+        "continuity": "official_short_2026",
+        "assetId": "hb_moxxie-dress-disguise-training-short",
+        "batchId": "static-v14-2026-11-26",
+        "references": [
+          "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s"
+        ],
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false,
+        "runtimePlayable": false,
+        "coverage": "one_static_incarnation",
+        "runtimeSelectable": true,
+        "staticReadyOnly": true,
+        "defaultBaseUnchanged": true,
+        "gameplayEligibility": "wearable"
+      },
+      "acceptanceV14": "Pose statique sélectionnable ; aucun cycle, kit ou certification 1:1 ajouté."
     }
   ],
   "kits": [

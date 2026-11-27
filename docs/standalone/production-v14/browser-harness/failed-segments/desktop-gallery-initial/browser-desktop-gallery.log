@@ -1,0 +1,62 @@
+locator.click: Timeout 18000ms exceeded.
+Call log:
+[2m  - waiting for locator('.iv-reserve-card').filter({ has: locator('img[src="/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp"]') })[22m
+[2m    - locator resolved to <button aria-pressed="false" class="iv-reserve-card">…</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+
+    at openGalleryAsset (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:203:14)
+    at async inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:325:32)
+    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)
+    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11 {
+  log: [
+    `  - waiting for locator('.iv-reserve-card').filter({ has: locator('img[src="/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp"]') })`,
+    '    - locator resolved to <button aria-pressed="false" class="iv-reserve-card">…</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable'
+  ],
+  name: 'TimeoutError'
+}
+CHECK_FAILED hb_blitzo-flashback-ghostfuckers-s2: observed in requested desktop segment undefined
+CHECK_FAILED hb_millie-dress-disguise-training-short: observed in requested desktop segment undefined
+CHECK_FAILED hb_moxxie-dress-disguise-training-short: observed in requested desktop segment undefined
+CHECK_FAILED sloth-cloud-dispenser-s2: observed in requested desktop segment undefined
+CHECK_FAILED crimson-green-chandelier-s2: observed in requested desktop segment undefined
+CHECK_FAILED one independent browser session completed and closed gracefully undefined
+{
+  "status": "findings",
+  "checks": 16,
+  "checkedAssetIds": [],
+  "failedChecks": [
+    {
+      "name": "hb_blitzo-flashback-ghostfuckers-s2: observed in requested desktop segment",
+      "passed": false
+    },
+    {
+      "name": "hb_millie-dress-disguise-training-short: observed in requested desktop segment",
+      "passed": false
+    },
+    {
+      "name": "hb_moxxie-dress-disguise-training-short: observed in requested desktop segment",
+      "passed": false
+    },
+    {
+      "name": "sloth-cloud-dispenser-s2: observed in requested desktop segment",
+      "passed": false
+    },
+    {
+      "name": "crimson-green-chandelier-s2: observed in requested desktop segment",
+      "passed": false
+    },
+    {
+      "name": "one independent browser session completed and closed gracefully",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "locator.click: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.iv-reserve-card').filter({ has: locator('img[src=\"/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp\"]') })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-pressed=\"false\" class=\"iv-reserve-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n    at openGalleryAsset (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:203:14)\n    at async inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:325:32)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11",
+  "screenshots": 0
+}

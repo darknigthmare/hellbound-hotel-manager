@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "date": "2026-11-26",
+  "createdAt": "2026-11-26T21:45:08.629837+00:00",
+  "baselineCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+  "status": "complete_accepted_with_limits",
+  "scope": "Two new static full-background arenas. No new animation cycles, playable kits or isolated props produced by environment agent. Runtime integration and browser verification owned by root/followup.",
+  "assets": [
+    {
+      "id": "full-moon-shop-s2-room",
+      "name": "The Full Moon · Boutique gothique",
+      "category": "stage",
+      "kind": "stage_background",
+      "stageId": "full-moon-shop-s2",
+      "runtimeStatus": "selectable_stage",
+      "intendedRuntimeStatus": "selectable_stage",
+      "sourceLocation": "Boutique gothique rouge, cloison centrale à deux rangées de 8 ogives, escalier de chaque côté et comptoir à gauche.",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "complete_background",
+      "accepted": true,
+      "producerAccepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v14/environment/masters/full-moon-shop-s2-room.png",
+      "export": "public/assets/production/v14/environment/full-moon-shop-s2-room.webp",
+      "runtime": "/assets/production/v14/environment/full-moon-shop-s2-room.webp",
+      "masterSha256": "9f776088715c41122791315f83c0dcba0af681419923eb4434edd6e5cdbda049",
+      "exportSha256": "6a891c5c1a53abed70fbebaf94d36755e9ada094c194ab44f38ba5c350337a86",
+      "masterBytes": 1816681,
+      "exportBytes": 1368976,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "nativeMode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alphaZeroPixels": 0,
+      "pixelExactExport": true,
+      "pixelExactMethod": "Direct equality of all decoded RGBA bytes, including RGB channels when alpha is255.",
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Native data:image/png;base64 payload returned by image_gen; decoded in base64-aligned chunks directly to PNG bytes. No output_hint or tool-local path returned. No image re-encoding of master.",
+      "nativePngBytesUnchanged": true,
+      "prompt": "Use case: stylized-concept.\nAsset type: one static opaque 16:9 landscape background for the 2D fighting game Infernal Versus.\nInput image 1 is a primary architectural reference: Jasper Luu production painting 208_00003 from Helluva Boss, The Full Moon, season 2 episode 8. Generate one complete redraw of THIS particular empty red gothic shop interior, preserving its frontal low camera, its architecture and the source composition.\nKeep the broad central wall of two stacked rows of narrow pointed gothic red panels with heart finials, framed by near-black angular pillars. Preserve the dark stairs rising along BOTH sides of this wall, their pointed side rails with small red heart motifs, the partly visible angular counter at the far LEFT, and the padded burgundy wall and small wall-mounted hanging accessories on the RIGHT. Keep the central red-and-burgundy rectangular tiled floor with tiny dark diamond motifs. Palette: saturated crimson and dark burgundy, near-black navy outlines, restrained hot pink edge light, sharp flat cel-painted shadows. Refined 2D television animation background; clear angular line work and restrained painted texture.\nComposition adaptation: convert the wide source to 16:9 by extending ONLY the SAME existing foreground tiled floor toward the camera; keep the building structures behind a continuous flat lower-quarter combat strip. Do not introduce any new rooms, doorways, architecture, shelves, furniture or foreground obstacles. Preserve the left counter, twin stairs and central double row of heart panels as shown. All objects must be painted into the single background, not a separate overlay.\nExactly one empty background, no people, no creatures, no UI, no logos, no watermark, no border, no panels, no lettering. Entire image opaque. This is a source-guided gameplay camera and foreground-floor adaptation (Simulation AU), not a claim of exact canonical level geometry.",
+      "transparentBackgroundRequested": false,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg",
+        "https://www.youtube.com/watch?v=Fj9YRsV1pEw&t=710s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-208-00003.jpg",
+          "sha256": "9ef6aa97909c9a6c6b224b295efe984e39aa40ee046b4b37ad50a0ddc26d698f",
+          "bytes": 378514,
+          "dimensions": [
+            2500,
+            1022
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "originalSourceDimensions": [
+            6484,
+            2650
+          ],
+          "role": "primary_stage_layout"
+        }
+      ],
+      "episodeCorroboration": {
+        "metadata": {
+          "path": "production/v14/environment/references/full-moon-episode-evidence.json",
+          "sha256": "775deba69c5a603a74d25e7a5a9f5468c4dc0c3959ce402c16473f733591ec36",
+          "bytes": 1101
+        },
+        "evidence": {
+          "edition": "V14",
+          "videoId": "Fj9YRsV1pEw",
+          "url": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+          "title": "HELLUVA BOSS - THE FULL MOON // S2: Episode 8",
+          "author": "Vivziepop",
+          "source": "Existing V8 official public episode storyboard cell and metadata; inspected during V14, no full episode playback claimed.",
+          "metadataSource": "production/v8/helluva/references/fullmoon-metadata.json",
+          "metadataSha256": "882621672aef96f9ab16b8e647063471745f9ffd0db4479b9406ebdc1bb6af6b",
+          "timeSeconds": 710,
+          "storyboardLevel": 3,
+          "cellDimensions": [
+            320,
+            180
+          ],
+          "intervalMs": 10000,
+          "boardPath": "production/v8/helluva/references/fullmoon-board-7.jpg",
+          "boardSha256": "004e1001435c239cf18eccbde30bb25ca59ed9d99b5ea14301660ccdd90e0b26",
+          "cropBox": [
+            640,
+            360,
+            960,
+            540
+          ],
+          "viewed": true,
+          "level": "same_shop_counter_and_double_gothic_panel_wall_corroborated",
+          "limits": [
+            "Native 320×180 public storyboard cell at710s; exact empty architecture is supplied by the primary production painting, not inferred from the partial episode view."
+          ]
+        },
+        "level": "same_shop_counter_and_double_gothic_panel_wall_corroborated"
+      },
+      "canonicalContext": "Helluva Boss, The Full Moon, S2E8. La peinture 208_00003 de Jasper Luu fournit la boutique vide. La cellule officielle à 710 s corrobore le comptoir et la cloison rouge à deux rangées d’ogives.",
+      "fidelityNotes": [
+        "Architecture frontale, comptoir gauche, escalier de chaque côté, panneaux en coeur et mur matelassé droit conservés.",
+        "Huit ogives confirmées dans chaque rangée par inspection rapprochée. Un premier comptage erroné de 6 dans l’aperçu réduit a été corrigé avant toute nouvelle génération ; aucun deuxième appel.",
+        "Le cadrage source 2500×1022 est adapté à 1672×941 en prolongeant seulement le même carrelage rouge au premier plan.",
+        "Petits traits, couleurs et motifs redessinés ; aucune égalité pixel à pixel avec la peinture source ni fidélité 1:1 certifiée."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReferenceReview": {
+        "reviewer": "/root",
+        "decision": "accepted_source_and_distinct_location",
+        "sourceComparison": [
+          "Aucune des 49 arènes existantes ne montre cette boutique.",
+          "ozzies-cabaret et ozzies-exterior-s1 sont des lieux/vues distincts ; aucun décor DHORKS ou hangar V13 répété."
+        ]
+      },
+      "independentArtReview": {
+        "status": "accepted_with_limits",
+        "reviewer": "/root",
+        "record": "docs/standalone/production-v14/environment-independent-art-review.json",
+        "decisionReceivedInTeamMessage": true
+      },
+      "files": [
+        {
+          "path": "production/v14/environment/masters/full-moon-shop-s2-room.png",
+          "sha256": "9f776088715c41122791315f83c0dcba0af681419923eb4434edd6e5cdbda049",
+          "bytes": 1816681,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v14/environment/full-moon-shop-s2-room.webp",
+          "sha256": "6a891c5c1a53abed70fbebaf94d36755e9ada094c194ab44f38ba5c350337a86",
+          "bytes": 1368976,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v14/environment/full-moon-shop-s2-thumb.webp",
+          "sha256": "35af0227dded9d8240d50f95c4050456d71e69a82f27248663e49bd2b3a038e2",
+          "bytes": 141706,
+          "dimensions": [
+            480,
+            270
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "thumbnail": "public/assets/production/v14/environment/full-moon-shop-s2-thumb.webp",
+      "thumbnailUrl": "/assets/production/v14/environment/full-moon-shop-s2-thumb.webp",
+      "thumbnailSha256": "35af0227dded9d8240d50f95c4050456d71e69a82f27248663e49bd2b3a038e2",
+      "thumbnailBytes": 141706,
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "presentationProposal": {
+        "referenceFrame": {
+          "width": 1672,
+          "height": 941
+        },
+        "layerCount": 1,
+        "imagePosition": "center bottom",
+        "scenery": [],
+        "colors": {
+          "accent": "#ed124d",
+          "shadow": "#1b1022",
+          "floor": "#6c102b"
+        },
+        "note": "Single full opaque background, contained without warping. Foreground floor is adapted for gameplay; responsive framing and fighter baseline require current runtime verification."
+      }
+    },
+    {
+      "id": "crimson-dining-room-s2-room",
+      "name": "Crimson · Salle à manger",
+      "category": "stage",
+      "kind": "stage_background",
+      "stageId": "crimson-dining-room-s2",
+      "runtimeStatus": "selectable_stage",
+      "intendedRuntimeStatus": "selectable_stage",
+      "sourceLocation": "Salle àmanger verte de Crimson : trois fenêtres, table et grands dossiers, cheminée gauche, double porte droite, trophées muraux.",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "complete_background",
+      "accepted": true,
+      "producerAccepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v14/environment/masters/crimson-dining-room-s2-room.png",
+      "export": "public/assets/production/v14/environment/crimson-dining-room-s2-room.webp",
+      "runtime": "/assets/production/v14/environment/crimson-dining-room-s2-room.webp",
+      "masterSha256": "23a8ec847d00196e73d4568ea8efeeed20a5d2c25b508380e60794ac25bb737a",
+      "exportSha256": "ad7dc6fa9f2e0b283d142f1eedd124b80f3816a67127aa4b2e5a36009ec17b88",
+      "masterBytes": 1594536,
+      "exportBytes": 1124176,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "nativeMode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alphaZeroPixels": 0,
+      "pixelExactExport": true,
+      "pixelExactMethod": "Direct equality of all decoded RGBA bytes, including RGB channels when alpha is255.",
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Native data:image/png;base64 payload returned by image_gen; decoded in base64-aligned chunks directly to PNG bytes. No output_hint or tool-local path returned. No image re-encoding of master.",
+      "nativePngBytesUnchanged": true,
+      "prompt": "Use case: stylized-concept.\nAsset type: one static opaque 16:9 landscape arena background for Infernal Versus.\nInput image 1 is the sole layout reference: Jasper Luu production background 206.jpg, Crimson's dining room from Helluva Boss, Exes and Oohs, season 2 episode 3. Redraw this particular empty dining room, preserving its frontal camera, its green light and all main architectural features.\nPreserve the long horizontal dining table in the middle distance, the three large dark rounded heart-shaped chair backs nearest the camera, the tall burgundy head chairs at the two ends, and the smaller burgundy chairs beyond the table. Keep their original overlap and arrangement. The left wall contains the large dark arched fireplace with a few logs; the right wall contains the closed double doors with two round pale knobs. Along the rear wall retain exactly three tall green-lit windows with olive curtains. Preserve the dense row of mounted stylized horn and tooth trophies across the upper walls, the dark teal patterned wallpaper, green edging on the wall panels, the two visible tall potted plants, and the centered hanging light with two pale green rounded glass shades and slender curving arms.\nUse the source's near-black ceiling, deep blue-green wood floor, olive curtains, burgundy chair upholstery and controlled luminous green accents. Keep the quiet dark palette readable with crisp angular television-animation linework, broad cel-painted shadows and restrained texture. No photorealistic or 3D rendering.\nComposition for a 16:9 fight screen: keep the SAME lateral extent of the reference room, reduce only the empty dark ceiling region, and extend the SAME existing wooden foreground floor toward the camera. Keep the dining furniture wholly behind an unobstructed continuous lower-quarter combat strip; do not delete the table or chairs, replace the room, invent new architecture or enlarge the fireplace. Do not add dinnerware or new decorations. Preserve the supplied occlusions; no invented hidden furniture details.\nExactly one full finished empty background, all pixels opaque. No people, creatures, bodies, UI, lettering, logos, watermark, border or split panels. No detached prop overlays. This source-guided framing and foreground-floor adaptation is Simulation AU for gameplay; it does not certify exact canonical room geometry.",
+      "transparentBackgroundRequested": false,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+        "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "sha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "bytes": 344285,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "originalSourceDimensions": [
+            4340,
+            2660
+          ],
+          "role": "primary_stage_layout_and_complete_chandelier"
+        }
+      ],
+      "episodeCorroboration": {
+        "metadata": {
+          "path": "production/v14/environment/references/exes-episode-evidence.json",
+          "sha256": "3614196dd963b7d48f050b21cb11b3aa9e85486c80043011c0222844663f3de4",
+          "bytes": 4062
+        },
+        "evidence": {
+          "edition": "V14",
+          "date": "2026-11-26T21:40:51.588018+00:00",
+          "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "videoId": "j1BfO7VlIw4",
+          "title": "HELLUVA BOSS - EXES AND OOHS // S2: Episode 3",
+          "author": "Vivziepop",
+          "lengthSeconds": 1508,
+          "playabilityStatus": "OK",
+          "source": "Public watch-page ytInitialPlayerResponse and native public storyboard cells, no full episode playback.",
+          "storyboardLevel": 3,
+          "cellWidth": 320,
+          "cellHeight": 180,
+          "intervalMs": 10000,
+          "frames": [
+            {
+              "timeSeconds": 580,
+              "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=580s",
+              "path": "production/v14/environment/references/exes-official-580s.png",
+              "sha256": "549f22dea35322b09ba558789c6ebcd15a2752d585e0fb183c9efb78e3b983f1",
+              "dimensions": [
+                320,
+                180
+              ],
+              "boardPath": "production/v14/environment/references/exes-official-board-06.jpg",
+              "boardSha256": "d8a56d57c98a703012f7371cdf573be5960da26867d7046cd55049f4c2e2462a",
+              "boardUrl": "https://i.ytimg.com/sb/j1BfO7VlIw4/storyboard3_L3/M6.jpg?sqp=-oaymwGhAUg48quKqQOYAYgBAZUBAAAEQpgBMqABPKgBBLIBQBANDBAVHyYtDg4PEhcrLCkPDhAVHyoyKQ8RFBgmPTgtERQeKjFLRzYVHCkuOUdNPyUuNz1HUlFFM0BCQ0xERkO6AUARERUjRENDQxETFi9DQ0NDFRYpQ0NDQ0MjL0NDQ0NDQ0RDQ0NDQ0JCQ0NDQ0NCQkJDQ0NDQkJCQkNDQ0JCQkJCovOX_wMGCLiTh6kG&sigh=rs$AOn4CLBiOlRkNqWQ7n1zrqvxsjeKjc_exA",
+              "cropBox": [
+                320,
+                180,
+                640,
+                360
+              ],
+              "viewed": true,
+              "kind": "official_episode_public_storyboard_cell",
+              "primary": true,
+              "author": "Vivziepop"
+            },
+            {
+              "timeSeconds": 630,
+              "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+              "path": "production/v14/environment/references/exes-official-630s.png",
+              "sha256": "9bead72a53e29b23ed6b81eb76910f3e31d22cace789092ee08f2803e31642d0",
+              "dimensions": [
+                320,
+                180
+              ],
+              "boardPath": "production/v14/environment/references/exes-official-board-07.jpg",
+              "boardSha256": "0c25f56790f2d7ce84e5372d84f634e7a218086b01351fba9b1783c78962997d",
+              "boardUrl": "https://i.ytimg.com/sb/j1BfO7VlIw4/storyboard3_L3/M7.jpg?sqp=-oaymwGhAUg48quKqQOYAYgBAZUBAAAEQpgBMqABPKgBBLIBQBANDBAVHyYtDg4PEhcrLCkPDhAVHyoyKQ8RFBgmPTgtERQeKjFLRzYVHCkuOUdNPyUuNz1HUlFFM0BCQ0xERkO6AUARERUjRENDQxETFi9DQ0NDFRYpQ0NDQ0MjL0NDQ0NDQ0RDQ0NDQ0JCQ0NDQ0NCQkJDQ0NDQkJCQkNDQ0JCQkJCovOX_wMGCLiTh6kG&sigh=rs$AOn4CLBiOlRkNqWQ7n1zrqvxsjeKjc_exA",
+              "cropBox": [
+                0,
+                0,
+                320,
+                180
+              ],
+              "viewed": true,
+              "kind": "official_episode_public_storyboard_cell",
+              "primary": true,
+              "author": "Vivziepop"
+            },
+            {
+              "timeSeconds": 670,
+              "url": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=670s",
+              "path": "production/v14/environment/references/exes-official-670s.png",
+              "sha256": "b7fd700187aa597e06f26093dbbc06910b4be8d77346eb5320d83157030d06dd",
+              "dimensions": [
+                320,
+                180
+              ],
+              "boardPath": "production/v14/environment/references/exes-official-board-07.jpg",
+              "boardSha256": "0c25f56790f2d7ce84e5372d84f634e7a218086b01351fba9b1783c78962997d",
+              "boardUrl": "https://i.ytimg.com/sb/j1BfO7VlIw4/storyboard3_L3/M7.jpg?sqp=-oaymwGhAUg48quKqQOYAYgBAZUBAAAEQpgBMqABPKgBBLIBQBANDBAVHyYtDg4PEhcrLCkPDhAVHyoyKQ8RFBgmPTgtERQeKjFLRzYVHCkuOUdNPyUuNz1HUlFFM0BCQ0xERkO6AUARERUjRENDQxETFi9DQ0NDFRYpQ0NDQ0MjL0NDQ0NDQ0RDQ0NDQ0JCQ0NDQ0NCQkJDQ0NDQkJCQkNDQ0JCQkJCovOX_wMGCLiTh6kG&sigh=rs$AOn4CLBiOlRkNqWQ7n1zrqvxsjeKjc_exA",
+              "cropBox": [
+                320,
+                180,
+                640,
+                360
+              ],
+              "viewed": true,
+              "kind": "official_episode_public_storyboard_cell",
+              "primary": true,
+              "author": "Vivziepop"
+            }
+          ],
+          "level": "episode_location_and_furniture_corroborated",
+          "limits": [
+            "Native public storyboard cells are 320×180 sampled every 10 seconds; no full-resolution or exhaustive episode playback claimed.",
+            "The empty production painting supplies the complete room; episode samples include characters and tableware."
+          ]
+        },
+        "level": "episode_location_and_furniture_corroborated"
+      },
+      "canonicalContext": "Helluva Boss, Exes and Oohs, S2E3. La peinture 206.jpg de Jasper Luu fournit la salle à manger vide. Les cellules officielles à 580s, 630s et 670s corroborent table, chaises, fenêtres vertes, trophées, portes et parties du lustre.",
+      "fidelityNotes": [
+        "Trois fenêtres vertes, trois grands dossiers sombres vus de dos, table horizontale, grandes chaises d’extrémité, cheminée gauche et double porte droite conservés.",
+        "Le cadrage 16:9 réduit le plafond vide et prolonge le même parquet au premier plan pour le combat, adaptation Simulation AU.",
+        "Le petit support du lustre au plafond est coupé en haut par le cadrage final ; cette limite concerne le fond, pas le prop isolé entier produit séparément par root.",
+        "Le prompt historique disait two shades : description imprécise de deux groupes aux ouvertures chevauchées. La source visuelle fait autorité ; aucune suppression de parties demandée après inspection.",
+        "Les minuscules trophées et motifs sont redessinés ; aucune fidélité 1:1 certifiée. Aucun prop ajouté en surimpression."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReferenceReview": {
+        "reviewer": "/root",
+        "decision": "accepted_source_and_distinct_location",
+        "sourceComparison": [
+          "crimson-mansion montre le salon ordinaire : fauteuil, vitrine, lampe à franges, boiseries et cheminée.",
+          "Cette vue est la salle à manger meublée de table et sept chaises visibles, avec trois fenêtres ; ce n’est pas une répétition du salon."
+        ]
+      },
+      "independentArtReview": {
+        "status": "accepted_with_limits",
+        "reviewer": "/root",
+        "record": "docs/standalone/production-v14/environment-independent-art-review.json",
+        "decisionReceivedInTeamMessage": true
+      },
+      "files": [
+        {
+          "path": "production/v14/environment/masters/crimson-dining-room-s2-room.png",
+          "sha256": "23a8ec847d00196e73d4568ea8efeeed20a5d2c25b508380e60794ac25bb737a",
+          "bytes": 1594536,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v14/environment/crimson-dining-room-s2-room.webp",
+          "sha256": "ad7dc6fa9f2e0b283d142f1eedd124b80f3816a67127aa4b2e5a36009ec17b88",
+          "bytes": 1124176,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v14/environment/crimson-dining-room-s2-thumb.webp",
+          "sha256": "def4928c8d53be6a285d05c6312eca5e1a7e14410d1501a40f331844d9722874",
+          "bytes": 124726,
+          "dimensions": [
+            480,
+            270
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "thumbnail": "public/assets/production/v14/environment/crimson-dining-room-s2-thumb.webp",
+      "thumbnailUrl": "/assets/production/v14/environment/crimson-dining-room-s2-thumb.webp",
+      "thumbnailSha256": "def4928c8d53be6a285d05c6312eca5e1a7e14410d1501a40f331844d9722874",
+      "thumbnailBytes": 124726,
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "presentationProposal": {
+        "referenceFrame": {
+          "width": 1672,
+          "height": 941
+        },
+        "layerCount": 1,
+        "imagePosition": "center bottom",
+        "scenery": [],
+        "colors": {
+          "accent": "#5dcf60",
+          "shadow": "#061511",
+          "floor": "#0b1e28"
+        },
+        "note": "Single full opaque background, contained without warping. Foreground floor is adapted for gameplay; responsive framing and fighter baseline require current runtime verification."
+      }
+    }
+  ],
+  "counts": {
+    "acceptedDrawings": 2,
+    "nativeImagegenOutputs": 2,
+    "refusedAttempts": 0,
+    "pngMasters": 2,
+    "exactWebps": 2,
+    "thumbnailWebps": 2,
+    "newStagesProposed": 2
+  },
+  "refusedAttempts": [],
+  "priorRefusalAudit": {
+    "register": "docs/standalone/production-v13/integration-spec.json",
+    "registerSha256": "f0bdf13b086f3f8e51c1f0af584e3095549e100a2d55110fbd421c0d12e5065b",
+    "noRetryTargetIds": [
+      "blitzo-sniper-production",
+      "cherribomb",
+      "hb_belphegor",
+      "hb_deerie",
+      "hb_leviathan",
+      "hb_loopty_goopty",
+      "hb_stella",
+      "hb_stolas_family_butler",
+      "hz_ant_sinner",
+      "hz_clara_carmine",
+      "hz_dazzle",
+      "hz_eel_sinner",
+      "hz_egg_boiz",
+      "hz_fat_nuggets",
+      "hz_frank_egg_boi",
+      "hz_huskette_spider",
+      "hz_keekee",
+      "hz_odette_carmine",
+      "hz_razzle",
+      "hz_rooster",
+      "hz_salina",
+      "hz_shok_wav",
+      "hz_speaker_of_god",
+      "lute",
+      "lute-prosthetic-s2-ready",
+      "pentious-airship-s1",
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "selectedTargetsPreviouslyRefused": false,
+    "newRefusals": [],
+    "refusedGeneratorsRetried": false,
+    "accessRestrictionsBypassed": false
+  },
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "integrationNotes": [
+    "Each arena uses one opaque background layer; scenery object must remain empty.",
+    "The isolated chandelier is a separate root-produced reserve/gallery item, not an extra overlay on this room.",
+    "Current desktop/mobile browser checks await an explicit frozen build signal; prior V13 failures and limits remain applicable."
+  ],
+  "stageSuggestions": [
+    {
+      "id": "full-moon-shop-s2",
+      "name": "The Full Moon · Boutique gothique",
+      "place": "Helluva Boss — boutique gothique de The Full Moon, S2E8",
+      "design": "Une cloison rouge à deux rangées de huit ogives, un escalier de chaque côté, un comptoir à gauche et un carrelage rouge dégagé au premier plan.",
+      "canonicalState": "Peinture de production 208_00003 de Jasper Luu, contexte corroboré par le storyboard officiel à 710 s. Vue vide et carrelage prolongé pour le combat : adaptation Simulation AU, sans fidélité 1:1 certifiée."
+    },
+    {
+      "id": "crimson-dining-room-s2",
+      "name": "Crimson · Salle à manger",
+      "place": "Helluva Boss — demeure de Crimson, salle à manger, Exes and Oohs S2E3",
+      "design": "Trois fenêtres vertes encadrent une table, de grands dossiers sombres, des chaises bordeaux et un mur de trophées ; cheminée à gauche, double porte à droite.",
+      "canonicalState": "Peinture 206.jpg de Jasper Luu, salle recoupée aux instants 580 s, 630 s et 670 s de l’épisode officiel. Cadrage 16:9 et parquet prolongé pour la simulation AU ; le petit support du lustre est coupé au bord supérieur. Le prop séparé conserve son contour entier. Aucune fidélité 1:1 certifiée."
+    }
+  ]
+}

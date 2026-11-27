@@ -1,0 +1,50 @@
+{
+  "status": "interrupted_at_root_request",
+  "interruptedAt": "2026-11-26T22:09:23.432358+00:00",
+  "reason": "Root requested pause for a bounded renderer preload correction and a new runtime freeze. Mobile segment had already started when the message arrived.",
+  "termination": {
+    "method": "SIGINT to owned execution session",
+    "execSessionId": 86176,
+    "exitCode": 130,
+    "gracefulHarnessFinallyCertified": false
+  },
+  "closureProbe": {
+    "port5180ConnectEx": 111,
+    "matchingExecutablesInProbeNamespace": [],
+    "scope": "Probe namespace only; execution session itself exited with130."
+  },
+  "acceptedAsCompletedSegment": false,
+  "partialCheckpointKeptExact": true,
+  "files": [
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/running-browser-qa-checkpoint.json",
+      "sha256": "8ffe8bd36cbb44735392cc1b99c728040cdaacef38a012d7ec51faefe1a2c3b8",
+      "bytes": 45204
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/browser-mobile-blitzo-shop.log",
+      "sha256": "69c9f6feb5b78e3464a0d237d25b8cd223ec60a88a89f7f1017d3041d82eae7d",
+      "bytes": 1435
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/mobile-home.png",
+      "sha256": "be9c954542aeafeb56fd34e2b3879f41b1e9dc512b20a34ef03dce3de42e25f6",
+      "bytes": 258839
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/mobile-blitzo-shop-wardrobe-art.png",
+      "sha256": "9e0bb3d9fd72e1bb7d1f0fa707952b2d47905e3d102bce4e5dad02785af6c21e",
+      "bytes": 10996
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/mobile-blitzo-shop-wardrobe-selection.png",
+      "sha256": "bd5337493df95a7e3216f58559a1f442edec6cbc7120abc040a8d78300b87227",
+      "bytes": 3111
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/mobile-full-moon-shop-s2-selection.png",
+      "sha256": "b763a2e9cb89b7d5d27eff8596fffa03f8340f8abf845c23185c27a0fa6b8309",
+      "bytes": 27362
+    }
+  ]
+}

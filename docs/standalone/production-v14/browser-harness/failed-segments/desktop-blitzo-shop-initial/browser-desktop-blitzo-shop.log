@@ -1,0 +1,43 @@
+TRAINING_CONTROL_DIAGNOSTIC {"viewport":"desktop","stageId":"full-moon-shop-s2","labelCounts":{"exact":0,"prefix":1,"role":1},"controls":[{"tag":"SELECT","labels":[{"textContent":"UniversLes deux universHazbin HotelHelluva Boss","innerText":"UNIVERS\nLes deux univers\nHazbin Hotel\nHelluva Boss"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"ContenuSaisons 1 et 2Saison 1 uniquement","innerText":"CONTENU\nSaisons 1 et 2\nSaison 1 uniquement"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":"Rechercher","innerText":"RECHERCHER"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"Tenue de Charlie MorningstarTenue habituelleCombat final S1 · forme démoniaque","innerText":"TENUE DE CHARLIE MORNINGSTAR\nTenue habituelle\nCombat final S1 · forme démoniaque"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"MannequinImmobileGarde permanente","innerText":"MANNEQUIN\nImmobile\nGarde permanente"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":" Autoriser les décors et créations de saison 3","innerText":"AUTORISER LES DÉCORS ET CRÉATIONS DE SAISON 3"}],"ariaLabel":null}]}
+CHROMIUM_PERFORMANCE desktop full-moon-shop-s2: before launch {"metrics":{"Nodes":496,"LayoutCount":30,"RecalcStyleCount":70,"ScriptDuration":0.140189,"TaskDuration":2.896096,"JSHeapUsedSize":6096168,"JSHeapTotalSize":9027584}}
+LAUNCH_START desktop full-moon-shop-s2 2026-11-26T22:05:31.835Z
+LAUNCH_CLICK_RETURNED desktop full-moon-shop-s2 2026-11-26T22:06:04.371Z
+CHROMIUM_PERFORMANCE desktop full-moon-shop-s2: launch failure {"error":"Performance.getMetrics did not return within 5000 ms."}
+locator.waitFor: Target crashed 
+Call log:
+[2m  - waiting for locator('[data-stage="full-moon-shop-s2"]') to be visible[22m
+
+    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:280:19)
+    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)
+    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11 {
+  log: [
+    `  - waiting for locator('[data-stage="full-moon-shop-s2"]') to be visible`
+  ],
+  name: 'Error'
+}
+CHECK_FAILED one independent browser session completed and closed gracefully undefined
+CHECK_FAILED no native renderer crash undefined
+{
+  "status": "findings",
+  "checks": 19,
+  "checkedAssetIds": [
+    "full-moon-shop-s2-room",
+    "hb_blitzo-flashback-ghostfuckers-s2"
+  ],
+  "failedChecks": [
+    {
+      "name": "one independent browser session completed and closed gracefully",
+      "passed": false
+    },
+    {
+      "name": "no native renderer crash",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "locator.waitFor: Target crashed \nCall log:\n\u001b[2m  - waiting for locator('[data-stage=\"full-moon-shop-s2\"]') to be visible\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:280:19)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11",
+  "screenshots": 4
+}

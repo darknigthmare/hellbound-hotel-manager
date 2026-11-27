@@ -1,0 +1,127 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 qa
+> npm run typecheck && npm run lint && npm run test && npm run build && npm run build:standalone && npm run check:standalone
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1
+
+
+ RUN  v4.1.10 /mnt/data/hellbound-hotel-manager
+
+
+ Test Files  48 passed (48)
+      Tests  419 passed (419)
+   Start at  00:09:21
+   Duration  68.53s (transform 1.79s, setup 0ms, import 5.97s, tests 47.73s, environment 8.07s)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 build
+> tsc && vite build
+
+vite v8.1.4 building client environment for production...
+[2Ktransforming...✓ 1590 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                         0.92 kB │ gzip:   0.48 kB
+dist/combat.html                                        1.36 kB │ gzip:   0.55 kB
+dist/assets/pentagram-soundtrack.worker-CBvUN8-1.js     2.36 kB
+dist/assets/ProgressiveText-DsgHUKup.css                0.92 kB │ gzip:   0.44 kB
+dist/assets/FirstArrivalTutorial-B8KJiE_z.css           5.61 kB │ gzip:   1.74 kB
+dist/assets/Characters-BdH7QJsm.css                     9.99 kB │ gzip:   2.36 kB
+dist/assets/hotel-C4IJ5-HD.css                         10.98 kB │ gzip:   2.92 kB
+dist/assets/hotel-shift-HwXuB7DY.css                   11.44 kB │ gzip:   3.05 kB
+dist/assets/combat-Do1EpkJC.css                        21.03 kB │ gzip:   5.45 kB
+dist/assets/helluva-boss-DSLHhi1a.css                  21.69 kB │ gzip:   4.33 kB
+dist/assets/theme-LOu-HXWq.css                         23.81 kB │ gzip:   5.65 kB
+dist/assets/pentagram-arena-Bro5HDb_.css               73.48 kB │ gzip:  12.75 kB
+dist/assets/chevron-right-BR4Rc3b3.js                   0.12 kB │ gzip:   0.13 kB
+dist/assets/plus-CK2gJjGn.js                            0.14 kB │ gzip:   0.14 kB
+dist/assets/gauge-C7bwgPb4.js                           0.17 kB │ gzip:   0.16 kB
+dist/assets/info-K1X7gx3r.js                            0.19 kB │ gzip:   0.17 kB
+dist/assets/map-pin-Dfq6pg5d.js                         0.19 kB │ gzip:   0.18 kB
+dist/assets/history-ZX5QSXa0.js                         0.23 kB │ gzip:   0.19 kB
+dist/assets/circle-alert-DgDCU2cv.js                    0.24 kB │ gzip:   0.18 kB
+dist/assets/triangle-alert-CWlHo5Y_.js                  0.25 kB │ gzip:   0.21 kB
+dist/assets/award-Lu6mEUnr.js                           0.26 kB │ gzip:   0.22 kB
+dist/assets/smile-vJUMJcTM.js                           0.28 kB │ gzip:   0.21 kB
+dist/assets/images-DTaTBTaN.js                          0.31 kB │ gzip:   0.24 kB
+dist/assets/trash-2-DWcbyQaH.js                         0.35 kB │ gzip:   0.24 kB
+dist/assets/helluva-boss-RK1BQii9.js                    0.37 kB │ gzip:   0.26 kB
+dist/assets/upload-BM5RI5ZP.js                          0.46 kB │ gzip:   0.26 kB
+dist/assets/ProgressiveText-Da2GsEnd.js                 0.60 kB │ gzip:   0.40 kB
+dist/assets/trophy-0JySdDwn.js                          0.68 kB │ gzip:   0.38 kB
+dist/assets/useDialogFocus-BCa20m14.js                  1.27 kB │ gzip:   0.59 kB
+dist/assets/CanonBadge-TGMMg9IS.js                      1.84 kB │ gzip:   0.88 kB
+dist/assets/ConfirmDialog-xFGqWXyy.js                   2.09 kB │ gzip:   1.04 kB
+dist/assets/Extensions-BEc6sEvC.js                      7.06 kB │ gzip:   2.56 kB
+dist/assets/Timeline-yIwv_kxS.js                        8.31 kB │ gzip:   2.93 kB
+dist/assets/Settings-5PInwXxT.js                       11.63 kB │ gzip:   4.03 kB
+dist/assets/Reputation-CVEMvDep.js                     12.37 kB │ gzip:   3.40 kB
+dist/assets/Rooms-GXtyHrGg.js                          13.96 kB │ gzip:   4.15 kB
+dist/assets/PentagramArena-DK0eqhSY.js                 14.16 kB │ gzip:   4.66 kB
+dist/assets/Resources-B4PNUAIg.js                      14.85 kB │ gzip:   4.49 kB
+dist/assets/Incidents-C_dehLQR.js                      16.53 kB │ gzip:   4.75 kB
+dist/assets/Staff-BP8uUcAR.js                          17.12 kB │ gzip:   5.00 kB
+dist/assets/FirstArrivalTutorial-BQ-4T3Br.js           17.38 kB │ gzip:   5.97 kB
+dist/assets/LoreCodex-DzeV4ArA.js                      21.21 kB │ gzip:   5.77 kB
+dist/assets/Relations-BK6V5WYa.js                      21.37 kB │ gzip:   6.16 kB
+dist/assets/HelluvaBoss-CSI1QCjS.js                    22.99 kB │ gzip:   6.82 kB
+dist/assets/HotelShift-CFIr2cp8.js                     25.14 kB │ gzip:   8.08 kB
+dist/assets/Dashboard-BwUVisXu.js                      32.36 kB │ gzip:   9.06 kB
+dist/assets/Rehabilitation-BgcEiMKa.js                 35.10 kB │ gzip:   9.08 kB
+dist/assets/Characters-Ci4Nns7Q.js                     38.73 kB │ gzip:  10.21 kB
+dist/assets/character-sprites-Bnj9GMrx.js              60.62 kB │ gzip:  11.32 kB
+dist/assets/usePentagramCombatSoundtrack-D4zT-E4w.js   61.20 kB │ gzip:  18.59 kB
+dist/assets/pentagram-arena-DdYBzOry.js                83.69 kB │ gzip:  23.24 kB
+dist/assets/jsx-runtime-HIWfy808.js                    88.65 kB │ gzip:  24.88 kB
+dist/assets/theme-ZxisjbOe.js                         140.93 kB │ gzip:  46.29 kB
+dist/assets/hotel-B9BsoD2H.js                         186.24 kB │ gzip:  55.99 kB
+dist/assets/combat-DTFhGwrv.js                        593.73 kB │ gzip: 142.24 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.73s
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 build:standalone
+> tsc && vite build --mode standalone && node scripts/finalize-standalone.mjs
+
+vite v8.1.4 building client environment for standalone...
+[2Ktransforming...✓ 1532 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-combat/combat.html                                         0.62 kB │ gzip:   0.39 kB
+dist-combat/assets/pentagram-soundtrack.worker-CBvUN8-1.js      2.36 kB
+dist-combat/assets/combat-Bdnqs-oJ.css                        118.33 kB │ gzip:  22.64 kB
+dist-combat/assets/combat-DrD9I4LU.js                       1,007.96 kB │ gzip: 256.93 kB
+
+✓ built in 1.51s
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Standalone ready: 1339 files, 912.7 MiB. Serve dist-combat/ as the web root.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 check:standalone
+> node scripts/check-standalone.mjs
+
+Standalone verified: 1339 hashes, boot assets present, hotel/cloud persistence excluded.

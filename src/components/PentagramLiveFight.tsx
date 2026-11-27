@@ -937,9 +937,15 @@ export function PentagramLiveFight({
   const fighterTwoSprite = getCombatSpriteAsset(fighterTwo.id);
   useEffect(() => {
     if (typeof window.Image !== 'function') return;
-    const activeSprites = [fighterOneSprite, fighterTwoSprite].filter(
-      (sprite): sprite is NonNullable<typeof sprite> => sprite !== undefined,
-    );
+    const fighterAssets = [
+      { fighterId: fighterOne.id, sprite: fighterOneSprite, outfit: infernalRules ? getInfernalCostume(fighterOne.id, costumeOne) : undefined },
+      { fighterId: fighterTwo.id, sprite: fighterTwoSprite, outfit: infernalRules ? getInfernalCostume(fighterTwo.id, costumeTwo) : undefined },
+    ];
+    // Keep shared banks whenever either side still renders its normal sprite.
+    const activeSprites = fighterAssets
+      .filter(({ outfit }) => !outfit?.staticReadyOnly)
+      .map(({ sprite }) => sprite)
+      .filter((sprite): sprite is NonNullable<typeof sprite> => sprite !== undefined);
     const priorityUrls = new Set(activeSprites.flatMap(sprite => (
       [
         sprite.animationSheets.movement,
@@ -957,14 +963,17 @@ export function PentagramLiveFight({
       sprite.cinematicSheets.draw,
     ]));
     if (infernalRules) {
-      for (const [fighterId, costumeId] of [[fighterOne.id, costumeOne], [fighterTwo.id, costumeTwo]]) {
-        const poses = INFERNAL_ACTION_POSES[fighterId!];
-        const outfit = getInfernalCostume(fighterId!, costumeId);
-        const finish = INFERNAL_FINISHES[fighterId!];
-        const urls = [INFERNAL_STANCES[fighterId!], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
+      for (const { fighterId, outfit } of fighterAssets) {
+        const poses = INFERNAL_ACTION_POSES[fighterId];
+        const finish = INFERNAL_FINISHES[fighterId];
+        const urls = outfit?.staticReadyOnly ? [outfit.ready] : [
+          INFERNAL_STANCES[fighterId], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
           outfit?.ready, outfit?.strike, outfit?.heavy, outfit?.recoil, outfit?.crouch, outfit?.jump,
-          finish?.impactSprite, finish?.detachedProp,
-          ...getInfernalAttackEffectEntries().filter(([id]) => id === fighterId).map(([, effect]) => effect.image)];
+          finish?.impactSprite,
+        ];
+        // These separate effects remain visible even when the fighter is static.
+        urls.push(finish?.detachedProp,
+          ...getInfernalAttackEffectEntries().filter(([id]) => id === fighterId).map(([, effect]) => effect.image));
         for (const url of urls) if (url) priorityUrls.add(url);
       }
     }

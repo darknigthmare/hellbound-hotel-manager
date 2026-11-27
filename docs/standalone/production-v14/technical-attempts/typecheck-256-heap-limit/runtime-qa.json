@@ -1,0 +1,15 @@
+{
+  "edition": "V14",
+  "status": "failed",
+  "startedAt": "2026-11-26T21:55:16.429Z",
+  "completedAt": "2026-11-26T21:55:20.487Z",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": null,
+      "nodeOptions": "--max-old-space-size=256 --max-semi-space-size=8"
+    }
+  ],
+  "error": "Error: typecheck failed: null"
+}

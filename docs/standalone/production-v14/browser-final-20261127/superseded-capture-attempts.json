@@ -1,0 +1,25 @@
+{
+  "scope": "Deux reprises de méthode de capture seulement ; aucune modification du jeu et aucun crash. Les images partielles ne sont pas comptées parmi les dix preuves retenues.",
+  "attempts": [
+    {
+      "attempt": "mobile-gallery-initial-capture",
+      "startedAt": "2026-11-26T23:13:02.243Z",
+      "finishedAt": "2026-11-26T23:13:08.971Z",
+      "automatedStatus": "passed_targeted_segment_checks_pending_visual_review",
+      "automatedChecks": 77,
+      "failedChecks": 0,
+      "sourceRunSha256": "d3f4ebbc83b093e5d6c902b11239bebbff75e6af8e6b2edc5a7b63f240f5c082",
+      "reasonExcludedFromRetainedVisualEvidence": "Capture de tout le panneau plus haut que le conteneur visible : recadrage partiel derrière l’en-tête."
+    },
+    {
+      "attempt": "mobile-gallery-window-scroll-capture",
+      "startedAt": "2026-11-26T23:14:04.418Z",
+      "finishedAt": "2026-11-26T23:14:13.490Z",
+      "automatedStatus": "passed_targeted_segment_checks_pending_visual_review",
+      "automatedChecks": 77,
+      "failedChecks": 0,
+      "sourceRunSha256": "38551816eb02b83330a741eda9900a567b9ff97de0de51a5446c288e1172209e",
+      "reasonExcludedFromRetainedVisualEvidence": "Défilement window sans effet car le défilement est dans .iv-main ; image partielle."
+    }
+  ]
+}

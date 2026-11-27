@@ -49,7 +49,9 @@ export type PentagramStageId = HotelStageId
   | 'sloth-consultation-s2'
   | 'mammon-backstage-corridor-s2'
   | 'dhorks-control-room-s1'
-  | 'unhappy-campers-boathouse-s2';
+  | 'unhappy-campers-boathouse-s2'
+  | 'full-moon-shop-s2'
+  | 'crimson-dining-room-s2';
 
 export interface PentagramSoundtrackScore {
   id: string;
@@ -1112,6 +1114,32 @@ export const STANDALONE_STAGES: readonly PentagramStage[] = [...PENTAGRAM_STAGES
   imagePosition: 'center bottom',
   accent: '#f39bb8', shadow: '#24151c', floor: '#552f3d',
   soundtrack: PENTAGRAM_STAGES[0].soundtrack,
+}, {
+  id: 'full-moon-shop-s2',
+  spoilerTier: 'season_2',
+  name: 'The Full Moon · Boutique gothique',
+  district: 'Enfer',
+  description: 'Deux escaliers encadrent une cloison à ogives rouges, un comptoir noir et un carrelage aux motifs de cœur.',
+  loreBasis: 'Helluva Boss, The Full Moon (S2E8). Boutique documentée par la peinture de production 208_00003 de Jasper Luu et le plan officiel à 710 secondes. Le sol du premier plan est prolongé pour le duel de simulation AU ; le décor reste un seul plan illustré.',
+  imagePath: '/assets/production/v14/environment/full-moon-shop-s2-room.webp',
+  thumbnailPath: '/assets/production/v14/environment/full-moon-shop-s2-thumb.webp',
+  scenery: {},
+  imagePosition: 'center bottom',
+  accent: '#fa214f', shadow: '#201021', floor: '#a91434',
+  soundtrack: PENTAGRAM_STAGES[1].soundtrack,
+}, {
+  id: 'crimson-dining-room-s2',
+  spoilerTier: 'season_2',
+  name: 'Crimson · Salle à manger',
+  district: 'Anneau de l’Avarice',
+  description: 'Une grande table et des dossiers en cœur occupent une salle éclairée par trois fenêtres vertes, entourée de trophées.',
+  loreBasis: 'Helluva Boss, Exes and Oohs (S2E3). Salle à manger documentée par la peinture de production 206 de Jasper Luu et les plans officiels à 580, 630 et 670 secondes. Le cadrage réduit le plafond et prolonge le plancher pour le combat AU. Le lustre fait partie du fond ; sa version isolée reste en réserve dans la galerie.',
+  imagePath: '/assets/production/v14/environment/crimson-dining-room-s2-room.webp',
+  thumbnailPath: '/assets/production/v14/environment/crimson-dining-room-s2-thumb.webp',
+  scenery: {},
+  imagePosition: 'center bottom',
+  accent: '#84df77', shadow: '#071710', floor: '#102c31',
+  soundtrack: PENTAGRAM_STAGES[5].soundtrack,
 }];
 
 export const DEFAULT_PENTAGRAM_STAGE = PENTAGRAM_STAGES[0];

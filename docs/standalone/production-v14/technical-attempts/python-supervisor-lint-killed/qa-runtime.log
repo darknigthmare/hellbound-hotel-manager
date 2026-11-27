@@ -1,0 +1,11 @@
+
+=== typecheck: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node node_modules/typescript/bin/tsc --noEmit ===
+
+=== lint: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node node_modules/eslint/bin/eslint.js . --max-warnings=0 ===
+lint failed with return code -9
+Traceback (most recent call last):
+  File "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/verify-runtime.py", line 102, in <module>
+    run([NODE, 'node_modules/eslint/bin/eslint.js', '.', '--max-warnings=0'], 'lint')
+  File "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/verify-runtime.py", line 83, in run
+    raise RuntimeError(f'{gate} failed with return code {result.returncode}')
+RuntimeError: lint failed with return code -9
