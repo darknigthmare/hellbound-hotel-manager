@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-27T06:26:53.633669+00:00",
+  "status": "workflow-validation-failure-before-job",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "1b29779f269ea567f3eb42ad5d1250f4efd6f66b",
+  "executionRunId": 45951489338,
+  "executionRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45951489338",
+  "observed": {
+    "workflowPath": ".github/workflows/gallery-v17-verify.yml",
+    "event": "push",
+    "runStatus": "completed",
+    "runConclusion": "failure",
+    "createdAt": "2026-11-27T06:22:58Z",
+    "updatedAt": "2026-11-27T06:22:58Z",
+    "jobs": [],
+    "browserExecuted": false,
+    "screenshots": 0
+  },
+  "annotation": {
+    "exactText": null,
+    "accessible": false,
+    "limitation": "The connector rejects the check-suite check-runs endpoint as unsupported; no exact GitHub validation annotation was retrieved."
+  },
+  "identifiedWorkflowError": {
+    "basis": "Independent source inspection and official GitHub context-availability documentation, not a retrieved run annotation.",
+    "key": "jobs.verify_gallery.env",
+    "invalidExpressions": [
+      "IV_V17_BUILD_DIR: ${{ runner.temp }}/infernal-v17-verified",
+      "IV_V17_PLAYWRIGHT_MODULES: ${{ runner.temp }}/infernal-v17-playwright/node_modules",
+      "PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/infernal-v17-playwright-browsers"
+    ],
+    "permittedContexts": [
+      "github",
+      "needs",
+      "strategy",
+      "matrix",
+      "vars",
+      "secrets",
+      "inputs"
+    ],
+    "documentation": "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability"
+  },
+  "correction": {
+    "scope": "Only initialize three paths in the first bash step through GITHUB_ENV using RUNNER_TEMP; retain GH_TOKEN at job level.",
+    "originalWorkflowSha256": "3cbf04f07d0100a27c7936a81f763601c33d03e4c31c0a5a354a469aa365ec1b",
+    "correctedWorkflowSha256": "5ef5c5ec6ab5c4b29640eaf8b7c8d280e9c53fe56b633a32bd27b97db4decb95",
+    "validation": [
+      "YAML parsed",
+      "All bash run blocks passed bash -n",
+      "Embedded Python parsed"
+    ],
+    "browserAcceptanceClaimed": false
+  }
+}

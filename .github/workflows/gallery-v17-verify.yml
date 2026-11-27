@@ -17,11 +17,17 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
-      IV_V17_BUILD_DIR: ${{ runner.temp }}/infernal-v17-verified
-      IV_V17_PLAYWRIGHT_MODULES: ${{ runner.temp }}/infernal-v17-playwright/node_modules
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/infernal-v17-playwright-browsers
       GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Initialize acceptance paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' \
+            "IV_V17_BUILD_DIR=$RUNNER_TEMP/infernal-v17-verified" \
+            "IV_V17_PLAYWRIGHT_MODULES=$RUNNER_TEMP/infernal-v17-playwright/node_modules" \
+            "PLAYWRIGHT_BROWSERS_PATH=$RUNNER_TEMP/infernal-v17-playwright-browsers" >> "$GITHUB_ENV"
+
       - name: Check out only acceptance inputs
         uses: actions/checkout@v4
         with:
