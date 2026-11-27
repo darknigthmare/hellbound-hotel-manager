@@ -1,0 +1,48 @@
+{
+  "edition": "V16",
+  "status": "preparation_completed_and_superseded_by_verified_export",
+  "checkedAt": "2026-11-27T00:55:22.872056+00:00",
+  "baselineWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V15.xlsx",
+  "baselineSha256": "b98174db5b2c641e8f088cf3b3919e34ff7da581b693c4ee93679fa135c71450",
+  "baselineSheets": 68,
+  "baselineTables": 77,
+  "appendedSheets": [
+    "Production V16",
+    "Cibles V16"
+  ],
+  "expectedFinalSheets": 70,
+  "expectedFinalTables": 79,
+  "expectedDrawings": 2,
+  "expectedNewStandaloneBases": 0,
+  "expectedStandaloneBases": 115,
+  "expectedGalleryEntries": 145,
+  "files": [
+    {
+      "path": "docs/standalone/production-v16/build-bible-v16.mjs",
+      "sha256": "9bb4a76e0440227b46185d5b2899b8250c05cc84f97c3348067e0efd816d013f"
+    },
+    {
+      "path": "docs/standalone/production-v16/workbook-ooxml-check.py",
+      "sha256": "682bb3eabf5612eb330bcfcc3060512d43233296ba2eed009374fe805865c7e2"
+    },
+    {
+      "path": "docs/standalone/production-v16/workbook-build.md",
+      "sha256": "dad0efc5c7e578ba704cbfdec0f578d73f8514eca88b046c583920fe389b0f79"
+    }
+  ],
+  "checks": {
+    "javascriptSyntax": "passed",
+    "pythonSyntax": "passed",
+    "artifactToolBaselineImportAndRender": "passed",
+    "baselinePreviewByteIdenticalToV15Final": true
+  },
+  "baselinePreviewEvidence": "docs/standalone/production-v15/workbook-previews/final-production.png",
+  "baselinePreviewSha256": "7f7bfe0d53947f7a884fcc99a11e99e59c0c2a56af10944fa0ea0fc364bf540c",
+  "exportGate": "Requires final_production_register, passed QA and explicit in-game coverage for both accepted bust portraits.",
+  "exportAndFormulaChecks": "passed_see_final_workbook_qa",
+  "nativeExcelRecalculation": "not_run",
+  "historicalExtensions": "Inherited unchanged from V15; no duplicate extension sheets.",
+  "finalWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V16.xlsx",
+  "finalWorkbookSha256": "5a4c82a521c4bfb90bf91485a2c531e0cb047ded7d8535e0f798cd0ad109c704",
+  "finalWorkbookReview": "docs/standalone/production-v16/workbook-qa.json"
+}

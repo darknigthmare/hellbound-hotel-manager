@@ -2,8 +2,28 @@
 
 Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
+<!-- V16_CURRENT_START -->
+## État courant — 27 novembre 2026, production statique V16
+
+La reprise V14–V16 apporte **14 dessins distincts et 30 fichiers d’image**, pour **27 181 961 octets** : trois costumes statiques, deux arènes, deux accessoires de décor, la base entière de Queef et six archives de personnages. Les lots V14 et V15 récupèrent les productions déjà présentes ; la V16 ajoute les portraits séparés de **Gerald et Rick dans Barbie’s Bad Day**. Chaque dessin possède son master PNG et son export WebP sans perte ; les deux arènes possèdent aussi leur miniature.
+
+| Lot | Contenu | Dessins | Fichiers d’image | Suivi |
+|---|---|---:|---:|---|
+| V14 | Blitzø en flashback, Millie et Moxxie en robe ; boutique de Full Moon, salle à manger de Crimson ; distributeur nuage et lustre vert | 7 | 16 | [Sources](production-v14/README.md) · [Registre](production-v14/delivery-register.json) |
+| V15 | Queef en base entière ; portraits Roo et Top Hat Demon ; silhouettes narratives Eve et Lilith | 5 | 10 | [Sources](production-v15/README.md) · [Registre](production-v15/delivery-register.json) |
+| V16 | Gerald et Rick, deux bustes narratifs statiques | 2 | 4 | [Sources](production-v16/README.md) · [Registre](production-v16/delivery-register.json) |
+
+Le cumul est de **145 entrées de galerie, 51 arènes, 27 familles de costumes, 115 bases autonomes et 43 kits jouables**. Le catalogue reste à 209 identifiants et 208 identités distinctes après l’alias connu. **94 identifiants, soit 93 identités, attendent encore une base entière.** Les bustes et silhouettes restent qualifiés comme archives partielles ; aucun nouveau cycle animé ni kit jouable n’est ajouté par ces trois lots. Les références officielles, reproductions secondaires et adaptations sont distinguées dans les registres ; la fidélité 1:1 n’est pas certifiée.
+
+Le [guide général et ses deux extensions](COMBAT_GUIDES.md) couvrent 68 rubriques, dont 38 nouvelles, avec 16 nouvelles fiches, huit duos prioritaires, dix concepts de bonus et 40 scénarios de recette. Le [socle local de déblocage](guide-extensions-20261127/runtime-integration.json) implémente sept règles optionnelles sur Lucifer, Stolas, les costumes Bodyguard de Blitzø et Moxxie, les Portes célestes, la Cour des Goetia et Boss Rush. L’option est désactivée par défaut, y compris dans les anciennes sauvegardes. Les sceaux, silhouettes, conditions textuelles et gardes de lancement sont en place. Le mode Duo, ses attaques combinées, les taunts, les nouveaux bonus et les droits d’abonnement restent documentés dans l’extension ; aucun backend de paiement n’est livré.
+
+La [QA complète V16](production-v16/runtime-qa.json) réussit la commande standard `npm run qa` : **439 tests dans 51 suites**, TypeScript, ESLint, builds manager et standalone, et **1 346 empreintes de distribution**. Le [relevé des assets actifs](production-v16/active-asset-coverage.json) vérifie **742 chemins sans référence cassée**. La [recette de galerie V16](production-v16/browser-gallery-qa.json) passe huit contrôles et conserve [quatre captures inspectées](production-v16/browser-visual-review.json), sur ordinateur et mobile émulé. Les [déblocages](../../art/audits/unlock-slots-20261127/browser-qa.json) disposent de 28 contrôles navigateur et huit captures inspectées. Ces observations locales ne constituent pas un test sur appareil physique.
+
+La [bible V16](INFERNAL_VERSUS_BIBLE_V16.xlsx) contient **70 feuilles et 79 tableaux**. Les 68 feuilles et 77 tableaux V15 sont préservés octet par octet ; seules Production V16 et Cibles V16 sont ajoutées. Les [preuves du classeur](production-v16/workbook-qa.json) documentent six formules contrôlées, 584 cellules comparées après réimport et la revue visuelle de six plages. Le [fichier Excel partagé](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) est mis à jour en V16 au même identifiant et dans le même dossier. Ses **786 503 octets** téléchargés sont identiques au classeur local validé, selon la [preuve de remplacement Drive](production-v16/drive-publication.json).
+<!-- V16_CURRENT_END -->
+
 <!-- V11_CURRENT_START -->
-## Reprise actuelle — 26 novembre 2026, production statique V11
+## Contenu conservé — 26 novembre 2026, production statique V11 (historique)
 
 La V11 livre **7 dessins distincts et 15 fichiers d’image** : trois portraits partiels (Molly historique 2015, Mister Butler dans The Circus, Better Than Blitzo Guy dans Apology Tour), une salle de consultation de Sloth, son conteneur séparé et deux trophées distincts de la vitrine d’Oops. Les masters PNG natifs, les WebP sans perte et une miniature représentent **14 006 984 octets**. Voir le [rapport V11](DELIVERY_STATIC_V11_2026-11-26.md), le [registre final](production-v11/delivery-register.json) et les [sources de production](production-v11/README.md).
 

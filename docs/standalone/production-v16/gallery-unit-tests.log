@@ -1,0 +1,26 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1 src/tests/standalone-reserve-provenance.test.tsx src/tests/standalone-season-three.test.tsx src/tests/standalone-ui.test.tsx --reporter=default --reporter=json --outputFile=docs/standalone/production-v16/gallery-unit-tests.json
+
+
+ RUN  v4.1.10 /mnt/data/hellbound-hotel-manager
+
+ ✓ src/tests/standalone-ui.test.tsx (20 tests) 5638ms
+     ✓ completes five Arcade matches, deduplicates callbacks and resumes the route after reload  693ms
+     ✓ supports local mirror matches and counts separate rematches only once each  325ms
+     ✓ plays nine campaign chapters with changing actors, a retry, reload and a permanent epilogue  550ms
+     ✓ requires a saved season-three opt-in and safely replaces a hidden selected arena  666ms
+     ✓ saves a static costume and passes it to combat after reloading  400ms
+     ✓ hides a saved season-two costume in season-one selection and combat without deleting it  421ms
+ ✓ src/tests/standalone-reserve-provenance.test.tsx (7 tests) 2601ms
+     ✓ identifies 'Gerald' as a Barbie’s Bad Day portrait and keeps the strict filter effective  905ms
+     ✓ identifies 'Rick' as a Barbie’s Bad Day portrait and keeps the strict filter effective  602ms
+ ✓ src/tests/standalone-season-three.test.tsx (4 tests) 218ms
+
+ Test Files  3 passed (3)
+      Tests  31 passed (31)
+   Start at  01:57:56
+   Duration  11.90s (transform 744ms, setup 0ms, import 1.32s, tests 8.46s, environment 1.66s)
+
+JSON report written to /mnt/data/hellbound-hotel-manager/docs/standalone/production-v16/gallery-unit-tests.json

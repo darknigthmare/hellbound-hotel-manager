@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "date": "2026-11-27",
+  "createdAt": "2026-11-27T00:57:34.463070+00:00",
+  "status": "integrated_in_gallery_pending_runtime_verification",
+  "sourceHandoff": {
+    "path": "docs/standalone/production-v16/characters-handoff.json",
+    "sha256": "935ba3fe2f0eec3c6af39faf631b69997c9864d2744bac51df134306414f4dbc"
+  },
+  "independentReview": {
+    "path": "docs/standalone/production-v16/independent-visual-review.json",
+    "sha256": "5f393e714c1bd57dd798060141ff2d1120dc23aab124beb6ece36f87bb4bb467"
+  },
+  "baseline": {
+    "galleryEntries": 143,
+    "reserveCatalogueSha256": "3d802c4a077c30a29c6f7de9a315baa6c94feedf4ffe637b3c1b447d5a73af90",
+    "preservedEntries": 143,
+    "comparison": "The first143 asset objects remain strictly equal; only the two V16 assets are appended."
+  },
+  "counts": {
+    "integratedPortraits": 2,
+    "galleryEntries": 145,
+    "newStandaloneBases": 0,
+    "newPlayableKits": 0,
+    "newAnimationCycles": 0
+  },
+  "assets": [
+    {
+      "id": "hb_gerald-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_gerald-barbie-bad-day-portrait.png",
+      "export": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1230,
+        1278
+      ],
+      "mode": "RGBA",
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "masterBytes": 743664,
+      "exportBytes": 465368,
+      "rgbaPixelSha256": "07d9e8d0682cdc9197600dbeeb101f75b360ee5cebbb6320de4dc2a8a36582a1",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        175,
+        45,
+        1003,
+        1240
+      ],
+      "alpha16Margins": {
+        "left": 175,
+        "top": 45,
+        "right": 227,
+        "bottom": 38
+      },
+      "edgeMaxAlpha": 1,
+      "edgePixelsWithNonzeroAlpha": 129,
+      "edgePixelsAlpha16OrMore": 0,
+      "name": "Gerald · Barbie’s Bad Day · portrait",
+      "sourceIdentityId": "hb_gerald",
+      "productionIdentityId": "hb_gerald",
+      "franchise": "Helluva Boss",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "official_short_2026",
+      "spoilerScope": "season_2",
+      "spoilerScopeBasis": "Conservative gallery disclosure ceiling; not a claim this short is a numbered season-two episode.",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie. Aucun kit jouable ni cycle animé.",
+      "reference": "HELLUVA SHORTS 11, Barbie’s Bad Day, Vivziepop. Références officielles natives 320 × 180 ; portrait limité aux parties visibles.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 20 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 60 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/gerald-official-20s.png",
+          "sha256": "e954dd4be4e2053eb0aaa1fb184b37a8992887b2e5c8fd50a028aead6c6eb0d6",
+          "bytes": 100374,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 20,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-00.jpg",
+          "cropBox": [
+            320,
+            180,
+            640,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        },
+        {
+          "path": "production/v16/characters/references/gerald-official-60s.png",
+          "sha256": "5ce399543407c3918d1d6e8bdbb8bdc02bfa8cf86952130274a1bc6bf02785ad",
+          "bytes": 103457,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 60,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-01.jpg",
+          "cropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        }
+      ],
+      "fidelityNotes": [
+        "Les références sont des préviews natives de 320 × 180, pas une model sheet. La tête n’occupe qu’une partie de chaque cellule; courbes des yeux, volume des cheveux, longueur des cornes et rainures du col sont redessinés.",
+        "La couleur source subit l’éclairage magenta de la pharmacie; la palette du portrait isolé et ses légers dégradés ne constituent pas une référence colorimétrique exacte.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 175 px à gauche, 45 px en haut, 227 px à droite et 38 px en bas. Le confort vertical reste inférieur aux dix pour cent souhaités par le prompt, sans coupe des extrémités.",
+        "Le PNG conserve de faibles pixels natifs hors silhouette: alpha 1 au bord gauche et inférieur; maximum 3 dans les 35 dernières lignes. Aucun nettoyage, seuillage ou recoloriage n’a été effectué. Une inspection à plus grande échelle peut rendre ces traces plus perceptibles.",
+        "Les principaux aplats utilisent surtout alpha 253–254, donc ils ne sont pas tous entièrement opaques. L’export respecte exactement cette transparence native.",
+        "Portrait limité à la tête et au haut du torse : aucune base entière, aucun nouveau kit jouable et aucun cycle d’animation.",
+        "La portée de filtre season_2 est un plafond de divulgation conservateur ; Barbie’s Bad Day est un court officiel publié le 25 avril 2026 et ne reçoit aucune saison numérotée dans cette fiche."
+      ],
+      "visualObservations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Gerald conserve visage violet, lourdes paupières, iris turquoise, chevelure rose pâle, cornes, appendice aqua et col montant vert. Le cadrage volontaire s’arrête au haut du torse."
+      ],
+      "visualReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "imageQa": "docs/standalone/production-v16/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v16-2026-11-27",
+      "intendedExportUrl": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "runtimePlayable": false,
+      "runtimeSelectable": false,
+      "intendedRole": "Portrait narratif statique consultable dans la galerie.",
+      "operatorVisualReview": "docs/standalone/production-v16/image-qa.json",
+      "independentReviewLimits": [
+        "Les références sont des préviews natives de 320 × 180, pas une model sheet. La tête n’occupe qu’une partie de chaque cellule; courbes des yeux, volume des cheveux, longueur des cornes et rainures du col sont redessinés.",
+        "La couleur source subit l’éclairage magenta de la pharmacie; la palette du portrait isolé et ses légers dégradés ne constituent pas une référence colorimétrique exacte.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 175 px à gauche, 45 px en haut, 227 px à droite et 38 px en bas. Le confort vertical reste inférieur aux dix pour cent souhaités par le prompt, sans coupe des extrémités.",
+        "Le PNG conserve de faibles pixels natifs hors silhouette: alpha 1 au bord gauche et inférieur; maximum 3 dans les 35 dernières lignes. Aucun nettoyage, seuillage ou recoloriage n’a été effectué. Une inspection à plus grande échelle peut rendre ces traces plus perceptibles.",
+        "Les principaux aplats utilisent surtout alpha 253–254, donc ils ne sont pas tous entièrement opaques. L’export respecte exactement cette transparence native."
+      ],
+      "publicationDate": "2026-04-25",
+      "publicationEvidence": {
+        "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+        "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+        "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+        "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+        "publishDate": "2026-04-25T10:00:36-07:00",
+        "uploadDate": "2026-04-25T10:00:36-07:00",
+        "primary": true,
+        "verified": true
+      },
+      "continuityBasis": "Official YouTube playerMicroformatRenderer publishDate/uploadDate verified as 2026-04-25T10:00:36-07:00; short 11 Barbie’s Bad Day, not IMP Training Video.",
+      "sourceExport": "production/v16/characters/exports/hb_gerald-barbie-bad-day-portrait.webp",
+      "exportUrl": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "sourceWorkTitle": "Barbie’s Bad Day"
+    },
+    {
+      "id": "hb_rick-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_rick-barbie-bad-day-portrait.png",
+      "export": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "masterBytes": 799322,
+      "exportBytes": 466362,
+      "rgbaPixelSha256": "04fa433e5d61e9bf73741aea70af17d6a7593cba7de551c746c2598a1d976000",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        197,
+        55,
+        1083,
+        1150
+      ],
+      "alpha16Margins": {
+        "left": 197,
+        "top": 55,
+        "right": 229,
+        "bottom": 49
+      },
+      "edgeMaxAlpha": 0,
+      "edgePixelsWithNonzeroAlpha": 0,
+      "edgePixelsAlpha16OrMore": 0,
+      "name": "Rick · Barbie’s Bad Day · portrait",
+      "sourceIdentityId": "hb_rick",
+      "productionIdentityId": "hb_rick",
+      "franchise": "Helluva Boss",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "official_short_2026",
+      "spoilerScope": "season_2",
+      "spoilerScopeBasis": "Conservative gallery disclosure ceiling; not a claim this short is a numbered season-two episode.",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie. Aucun kit jouable ni cycle animé.",
+      "reference": "HELLUVA SHORTS 11, Barbie’s Bad Day, Vivziepop. Références officielles natives 320 × 180 ; portrait limité aux parties visibles.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 160 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 165 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/rick-official-160s.png",
+          "sha256": "f7fbbe98e05758cc807014a18ec7cac5d566e21672afff06d29d9c46bb22dbbf",
+          "bytes": 82379,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 160,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "cropBox": [
+            640,
+            180,
+            960,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Rick derrière le comptoir : visage, coiffure, casquette, col et haut du tablier visibles ; une extrémité de corne touche le bord supérieur de la frame."
+        },
+        {
+          "path": "production/v16/characters/references/rick-official-165s.png",
+          "sha256": "ea8cf945df2aa8dc69454e11e2670f71eff5ed12d857a214cc77a87b4cb8b097",
+          "bytes": 101901,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 165,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "cropBox": [
+            0,
+            360,
+            320,
+            540
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "supporting_same_scene_rear_head_and_complete_horn_tips",
+          "qualification": "Dos du même employé : casquette rose et deux cornes noires à bande claire visibles entièrement. Ne fournit pas de visage supplémentaire."
+        },
+        {
+          "path": "production/v16/characters/references/hb_rick-historical-repository-portrait.png",
+          "sha256": "771d4fd0165cd7226bf641e563c5c351334c04af5b3e0980942a05697e0a580f",
+          "bytes": 145939,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "kind": "historical_repository_cutout",
+          "primary": false,
+          "viewed": true,
+          "sourcePath": "public/assets/sprites/helluva/portraits/hb_rick.png",
+          "role": "secondary_identity_and_colour_support_sent_to_generator",
+          "provenance": "Historical project cutout; detailed original extraction/author not independently verified. Does not establish hidden anatomy or episode-exact full-body design."
+        }
+      ],
+      "fidelityNotes": [
+        "La vue primaire de face à 160 s touche/coupe une extrémité de corne. Les vues de dos à 165 et 170 s corroborent les deux pointes et les bandes claires; leur projection de face demeure une interprétation.",
+        "Les références primaires sont natives 320 × 180. Les taches de rousseur, la petite marque du nez, la bouche, les coutures, la longueur des cornes et l’angle de la casquette ne sont pas certifiés à l’identique.",
+        "Le portrait historique du dépôt fourni à la génération est un support secondaire dont la provenance d’extraction détaillée n’est pas prouvée. Il ne qualifie aucun corps entier dans cette livraison.",
+        "La couleur source subit l’éclairage vert de la boutique; le portrait isolé propose une palette et de légers dégradés redessinés.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 197 px à gauche, 55 px en haut, 229 px à droite et 49 px en bas. Elles restent plus étroites verticalement que les dix pour cent demandés, sans coupe des pointes ou épaules.",
+        "Quelques pixels faibles subsistent dans les marges, sans alpha non nul sur le bord du canevas. Les aplats sont surtout à alpha 253–254. L’export conserve ces pixels sans retouche.",
+        "Portrait limité à la tête et au haut du torse : aucune base entière, aucun nouveau kit jouable et aucun cycle d’animation.",
+        "La portée de filtre season_2 est un plafond de divulgation conservateur ; Barbie’s Bad Day est un court officiel publié le 25 avril 2026 et ne reçoit aucune saison numérotée dans cette fiche."
+      ],
+      "visualObservations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Rick conserve visage rouge, yeux jaunes mi-clos, chevelure blanche, petite barbiche claire, casquette rose, deux cornes noires à bande claire, col de chemise et tablier rose. Le bas du tablier et le reste du corps sont absents."
+      ],
+      "visualReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "imageQa": "docs/standalone/production-v16/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v16-2026-11-27",
+      "intendedExportUrl": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "runtimePlayable": false,
+      "runtimeSelectable": false,
+      "intendedRole": "Portrait narratif statique consultable dans la galerie.",
+      "operatorVisualReview": "docs/standalone/production-v16/image-qa.json",
+      "independentReviewLimits": [
+        "La vue primaire de face à 160 s touche/coupe une extrémité de corne. Les vues de dos à 165 et 170 s corroborent les deux pointes et les bandes claires; leur projection de face demeure une interprétation.",
+        "Les références primaires sont natives 320 × 180. Les taches de rousseur, la petite marque du nez, la bouche, les coutures, la longueur des cornes et l’angle de la casquette ne sont pas certifiés à l’identique.",
+        "Le portrait historique du dépôt fourni à la génération est un support secondaire dont la provenance d’extraction détaillée n’est pas prouvée. Il ne qualifie aucun corps entier dans cette livraison.",
+        "La couleur source subit l’éclairage vert de la boutique; le portrait isolé propose une palette et de légers dégradés redessinés.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 197 px à gauche, 55 px en haut, 229 px à droite et 49 px en bas. Elles restent plus étroites verticalement que les dix pour cent demandés, sans coupe des pointes ou épaules.",
+        "Quelques pixels faibles subsistent dans les marges, sans alpha non nul sur le bord du canevas. Les aplats sont surtout à alpha 253–254. L’export conserve ces pixels sans retouche."
+      ],
+      "publicationDate": "2026-04-25",
+      "publicationEvidence": {
+        "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+        "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+        "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+        "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+        "publishDate": "2026-04-25T10:00:36-07:00",
+        "uploadDate": "2026-04-25T10:00:36-07:00",
+        "primary": true,
+        "verified": true
+      },
+      "continuityBasis": "Official YouTube playerMicroformatRenderer publishDate/uploadDate verified as 2026-04-25T10:00:36-07:00; short 11 Barbie’s Bad Day, not IMP Training Video.",
+      "sourceExport": "production/v16/characters/exports/hb_rick-barbie-bad-day-portrait.webp",
+      "exportUrl": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "sourceWorkTitle": "Barbie’s Bad Day"
+    }
+  ],
+  "publicationEvidence": {
+    "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+    "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+    "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+    "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+    "publishDate": "2026-04-25T10:00:36-07:00",
+    "uploadDate": "2026-04-25T10:00:36-07:00",
+    "primary": true,
+    "verified": true
+  },
+  "inGameChecked": false,
+  "fidelityOneToOneCertified": false
+}

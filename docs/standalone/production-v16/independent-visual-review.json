@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "date": "2026-11-27",
+  "reviewedAt": "2026-11-27T00:53:25.870302+00:00",
+  "reviewer": "/root/finish_unlocks",
+  "reviewType": "independent_visual_review",
+  "status": "accepted_with_documented_limits",
+  "scope": "Deux portraits statiques examinés avant intégration runtime; masters, cinq cellules primaires, un support secondaire et deux diagnostics de trois fonds. Aucun retouche, génération ou contrôle dans le jeu effectué par ce réviseur.",
+  "summary": {
+    "acceptedDrawings": 2,
+    "rejectedDrawings": 0,
+    "portraits": 2,
+    "newIdentityBases": 0,
+    "newPlayableKits": 0,
+    "newAnimationCycles": 0,
+    "correctionsRequired": 0
+  },
+  "addsStandaloneBase": false,
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "sourceDocument": {
+    "path": "docs/standalone/production-v16/characters-handoff.json",
+    "sha256": "328932c3aa4c63bcc9ac3e8a9ebfdb0ec8d60eee868613fb8ac59deda4ca2a88"
+  },
+  "assets": [
+    {
+      "id": "hb_gerald-barbie-bad-day-portrait",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "nativeMasterPath": "production/v16/characters/masters/hb_gerald-barbie-bad-day-portrait.png",
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "masterBytes": 743664,
+      "nativeDimensions": [
+        1230,
+        1278
+      ],
+      "exportPath": "production/v16/characters/exports/hb_gerald-barbie-bad-day-portrait.webp",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "exportBytes": 465368,
+      "pixelExactRGBAExport": true,
+      "rgbaPixelSha256": "07d9e8d0682cdc9197600dbeeb101f75b360ee5cebbb6320de4dc2a8a36582a1",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "addStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "runtimeEligibility": "galleryOnly",
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/gerald-official-20s.png",
+          "sha256": "e954dd4be4e2053eb0aaa1fb184b37a8992887b2e5c8fd50a028aead6c6eb0d6",
+          "nativeDimensions": [
+            320,
+            180
+          ],
+          "primary": true,
+          "visuallyInspected": true,
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+          "timeSeconds": 20,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-00.jpg",
+          "sourceBoardSha256": "8ddac2b50d3352065a78c10756ddb09f5cb3227f324b3127ba3346712d0c3122",
+          "nativeCropBox": [
+            320,
+            180,
+            640,
+            360
+          ],
+          "pixelsEqualToNativeBoardCell": true,
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        },
+        {
+          "path": "production/v16/characters/references/gerald-official-60s.png",
+          "sha256": "5ce399543407c3918d1d6e8bdbb8bdc02bfa8cf86952130274a1bc6bf02785ad",
+          "nativeDimensions": [
+            320,
+            180
+          ],
+          "primary": true,
+          "visuallyInspected": true,
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s",
+          "timeSeconds": 60,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-01.jpg",
+          "sourceBoardSha256": "cf670a26d794c1c429586a94b52027be7515933ef2d362563d24e37cdfb0c11c",
+          "nativeCropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "pixelsEqualToNativeBoardCell": true,
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        }
+      ],
+      "secondaryReferences": [],
+      "nativeAlphaDiagnostic": {
+        "path": "production/v16/characters/references/diagnostics/hb_gerald-barbie-bad-day-portrait-three-backgrounds.png",
+        "sha256": "c989fd18ba1d626dbcd84932e63d7731db84f2aeb8eb4d253b1a5f56f4b8f5e5",
+        "dimensions": [
+          1500,
+          700
+        ],
+        "visuallyInspected": true,
+        "backgrounds": [
+          "#eeeeee",
+          "#888888",
+          "#14131c"
+        ],
+        "method": "Capture Chromium du PNG natif sur trois fonds, reçue de l’opérateur et vérifiée par empreinte; inspectée indépendamment. Aucun montage ou nettoyage par le réviseur."
+      },
+      "independentAlphaAnalysis": {
+        "method": "Lecture du canal alpha natif avec Pillow/NumPy; aucune écriture image.",
+        "boundsAlpha16": [
+          175,
+          45,
+          1003,
+          1240
+        ],
+        "boundsAlpha128": [
+          176,
+          46,
+          1002,
+          1239
+        ],
+        "marginsAlpha16": {
+          "left": 175,
+          "top": 45,
+          "right": 227,
+          "bottom": 38
+        },
+        "alphaZeroPixels": 1118351,
+        "alpha255Pixels": 1609,
+        "partialAlphaPixels": 451980,
+        "edgeMaximumAlpha": 1,
+        "edgePixelsNonzero": 129,
+        "edgePixelsAlpha16OrMore": 0,
+        "last35RowsMaximumAlpha": 3,
+        "mostCommonAlphaValues": [
+          {
+            "alpha": 0,
+            "pixels": 1118351
+          },
+          {
+            "alpha": 253,
+            "pixels": 234385
+          },
+          {
+            "alpha": 254,
+            "pixels": 165607
+          },
+          {
+            "alpha": 1,
+            "pixels": 13690
+          },
+          {
+            "alpha": 252,
+            "pixels": 11904
+          },
+          {
+            "alpha": 251,
+            "pixels": 3527
+          },
+          {
+            "alpha": 2,
+            "pixels": 2421
+          },
+          {
+            "alpha": 250,
+            "pixels": 1886
+          }
+        ]
+      },
+      "observations": [
+        "Un seul personnage, présenté de la tête au haut du torse. Les deux cornes, l’appendice central, les oreilles et la chevelure restent entièrement dans le canevas.",
+        "Visage violet, paupières lourdes, yeux turquoise mi-clos, chevelure rose pâle et col montant vert correspondent aux signes visibles dans les deux cellules primaires. Le visage conserve une expression lasse.",
+        "La coupe inférieure en arc termine volontairement le portrait sous le col. Il n’y a ni mains, ni jambes, ni queue inventées derrière le comptoir.",
+        "Les vues sur fonds clair, gris et sombre ne montrent pas de plaque opaque ou de halo gênant au format de galerie inspecté. Le bas cyan très apparent dans certaines vues RGBA brutes devient pratiquement transparent dans la composition normale."
+      ],
+      "limits": [
+        "Les références sont des préviews natives de 320 × 180, pas une model sheet. La tête n’occupe qu’une partie de chaque cellule; courbes des yeux, volume des cheveux, longueur des cornes et rainures du col sont redessinés.",
+        "La couleur source subit l’éclairage magenta de la pharmacie; la palette du portrait isolé et ses légers dégradés ne constituent pas une référence colorimétrique exacte.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 175 px à gauche, 45 px en haut, 227 px à droite et 38 px en bas. Le confort vertical reste inférieur aux dix pour cent souhaités par le prompt, sans coupe des extrémités.",
+        "Le PNG conserve de faibles pixels natifs hors silhouette: alpha 1 au bord gauche et inférieur; maximum 3 dans les 35 dernières lignes. Aucun nettoyage, seuillage ou recoloriage n’a été effectué. Une inspection à plus grande échelle peut rendre ces traces plus perceptibles.",
+        "Les principaux aplats utilisent surtout alpha 253–254, donc ils ne sont pas tous entièrement opaques. L’export respecte exactement cette transparence native."
+      ]
+    },
+    {
+      "id": "hb_rick-barbie-bad-day-portrait",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "nativeMasterPath": "production/v16/characters/masters/hb_rick-barbie-bad-day-portrait.png",
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "masterBytes": 799322,
+      "nativeDimensions": [
+        1312,
+        1199
+      ],
+      "exportPath": "production/v16/characters/exports/hb_rick-barbie-bad-day-portrait.webp",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "exportBytes": 466362,
+      "pixelExactRGBAExport": true,
+      "rgbaPixelSha256": "04fa433e5d61e9bf73741aea70af17d6a7593cba7de551c746c2598a1d976000",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "addStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "runtimeEligibility": "galleryOnly",
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/rick-official-160s.png",
+          "sha256": "f7fbbe98e05758cc807014a18ec7cac5d566e21672afff06d29d9c46bb22dbbf",
+          "nativeDimensions": [
+            320,
+            180
+          ],
+          "primary": true,
+          "visuallyInspected": true,
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+          "timeSeconds": 160,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "sourceBoardSha256": "265a9949a77ec854ea67c2304a2976c8dc630e4a7b9fb89fd4984701b39f7001",
+          "nativeCropBox": [
+            640,
+            180,
+            960,
+            360
+          ],
+          "pixelsEqualToNativeBoardCell": true,
+          "qualification": "Rick derrière le comptoir : visage, coiffure, casquette, col et haut du tablier visibles ; une extrémité de corne touche le bord supérieur de la frame."
+        },
+        {
+          "path": "production/v16/characters/references/rick-official-165s.png",
+          "sha256": "ea8cf945df2aa8dc69454e11e2670f71eff5ed12d857a214cc77a87b4cb8b097",
+          "nativeDimensions": [
+            320,
+            180
+          ],
+          "primary": true,
+          "visuallyInspected": true,
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s",
+          "timeSeconds": 165,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "sourceBoardSha256": "265a9949a77ec854ea67c2304a2976c8dc630e4a7b9fb89fd4984701b39f7001",
+          "nativeCropBox": [
+            0,
+            360,
+            320,
+            540
+          ],
+          "pixelsEqualToNativeBoardCell": true,
+          "qualification": "Dos du même employé : casquette rose et deux cornes noires à bande claire visibles entièrement. Ne fournit pas de visage supplémentaire."
+        },
+        {
+          "path": "production/v16/characters/references/rick-official-170s.png",
+          "sha256": "d21a86c9c637ad1c6db7dfca39623b351152d6fcc1f6d17d5de5efc75bb0fb9c",
+          "nativeDimensions": [
+            320,
+            180
+          ],
+          "primary": true,
+          "visuallyInspected": true,
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=170s",
+          "timeSeconds": 170,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "sourceBoardSha256": "265a9949a77ec854ea67c2304a2976c8dc630e4a7b9fb89fd4984701b39f7001",
+          "nativeCropBox": [
+            320,
+            360,
+            640,
+            540
+          ],
+          "pixelsEqualToNativeBoardCell": true,
+          "qualification": "Dos du même employé : casquette rose et deux cornes noires à bande claire visibles entièrement. Ne fournit pas de visage supplémentaire."
+        }
+      ],
+      "secondaryReferences": [
+        {
+          "path": "production/v16/characters/references/hb_rick-historical-repository-portrait.png",
+          "sha256": "771d4fd0165cd7226bf641e563c5c351334c04af5b3e0980942a05697e0a580f",
+          "nativeDimensions": [
+            512,
+            512
+          ],
+          "primary": false,
+          "visuallyInspected": true,
+          "role": "Identité et détails d’uniforme uniquement; aucune autorité sur les parties cachées ou un corps entier.",
+          "provenanceLimit": "Extraction historique du dépôt, origine détaillée non certifiée."
+        }
+      ],
+      "nativeAlphaDiagnostic": {
+        "path": "production/v16/characters/references/diagnostics/hb_rick-barbie-bad-day-portrait-three-backgrounds.png",
+        "sha256": "a860ce761a295a6ae95c2c88af9af44867fa8f34dd0b1bc2806de4af264ee1b1",
+        "dimensions": [
+          1500,
+          700
+        ],
+        "visuallyInspected": true,
+        "backgrounds": [
+          "#eeeeee",
+          "#888888",
+          "#14131c"
+        ],
+        "method": "Capture Chromium du PNG natif sur trois fonds, reçue de l’opérateur et vérifiée par empreinte; inspectée indépendamment. Aucun montage ou nettoyage par le réviseur."
+      },
+      "independentAlphaAnalysis": {
+        "method": "Lecture du canal alpha natif avec Pillow/NumPy; aucune écriture image.",
+        "boundsAlpha16": [
+          197,
+          55,
+          1083,
+          1150
+        ],
+        "boundsAlpha128": [
+          198,
+          56,
+          1082,
+          1150
+        ],
+        "marginsAlpha16": {
+          "left": 197,
+          "top": 55,
+          "right": 229,
+          "bottom": 49
+        },
+        "alphaZeroPixels": 1031501,
+        "alpha255Pixels": 711,
+        "partialAlphaPixels": 540876,
+        "edgeMaximumAlpha": 0,
+        "edgePixelsNonzero": 0,
+        "edgePixelsAlpha16OrMore": 0,
+        "last35RowsMaximumAlpha": 0,
+        "mostCommonAlphaValues": [
+          {
+            "alpha": 0,
+            "pixels": 1031501
+          },
+          {
+            "alpha": 253,
+            "pixels": 363471
+          },
+          {
+            "alpha": 254,
+            "pixels": 134896
+          },
+          {
+            "alpha": 252,
+            "pixels": 10850
+          },
+          {
+            "alpha": 1,
+            "pixels": 5684
+          },
+          {
+            "alpha": 251,
+            "pixels": 3907
+          },
+          {
+            "alpha": 2,
+            "pixels": 2749
+          },
+          {
+            "alpha": 250,
+            "pixels": 2548
+          }
+        ]
+      },
+      "observations": [
+        "Un seul personnage, tête et haut du torse; les pointes des deux cornes, toute la casquette et les mèches latérales restent à l’intérieur du canevas.",
+        "Visage rouge, yeux jaunes mi-clos, cheveux blancs, casquette rose portée à l’envers, cornes noires à bande claire et petite barbiche sont cohérents avec les vues primaires et le support secondaire identifié.",
+        "La chemise claire, les bretelles et le haut du tablier rose reprennent l’uniforme visible. La coupe s’arrête au haut du buste; le reste du tablier, les mains, la queue et les jambes sont absents.",
+        "Les trois fonds montrent une découpe lisible, sans doublon, décor résiduel opaque ou extrémité significative coupée. Les couleurs restent lisibles sur clair et sombre."
+      ],
+      "limits": [
+        "La vue primaire de face à 160 s touche/coupe une extrémité de corne. Les vues de dos à 165 et 170 s corroborent les deux pointes et les bandes claires; leur projection de face demeure une interprétation.",
+        "Les références primaires sont natives 320 × 180. Les taches de rousseur, la petite marque du nez, la bouche, les coutures, la longueur des cornes et l’angle de la casquette ne sont pas certifiés à l’identique.",
+        "Le portrait historique du dépôt fourni à la génération est un support secondaire dont la provenance d’extraction détaillée n’est pas prouvée. Il ne qualifie aucun corps entier dans cette livraison.",
+        "La couleur source subit l’éclairage vert de la boutique; le portrait isolé propose une palette et de légers dégradés redessinés.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 197 px à gauche, 55 px en haut, 229 px à droite et 49 px en bas. Elles restent plus étroites verticalement que les dix pour cent demandés, sans coupe des pointes ou épaules.",
+        "Quelques pixels faibles subsistent dans les marges, sans alpha non nul sur le bord du canevas. Les aplats sont surtout à alpha 253–254. L’export conserve ces pixels sans retouche."
+      ]
+    }
+  ],
+  "sharedLimits": [
+    "Un portrait de buste ne ferme aucun manque de base entière dans le catalogue.",
+    "Le nombre de pixels de la génération ne remplace pas les détails absents des sources primaires de 320 × 180.",
+    "L’acceptation concerne une adaptation visuelle qualifiée pour la galerie, sans certification canonique, colorimétrique ou géométrique 1:1.",
+    "L’intitulé official_short_2026 et le filtre season_2 du handoff ne sont pas validés comme date de publication ou saison numérotée par cette revue; les cellules primaires inspectées n’établissent pas cette date.",
+    "L’intégration, la sélection, le comportement en jeu et le rendu dans la galerie restent à vérifier séparément."
+  ]
+}

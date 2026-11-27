@@ -14,6 +14,7 @@ interface ReserveAsset {
   frameCoverage?: 'bust' | 'full_body' | 'full_object';
   runtimeStatus?: 'reserve' | 'selectable_costume' | 'stage_scenery';
   sourceIdentityId?: string | null;
+  sourceWorkTitle?: string;
   reference: string;
   export: string;
   dimensions: number[];
@@ -45,7 +46,12 @@ const provenanceNote = (asset: ReserveAsset) => {
   if (asset.continuity === 'simulation_au') return 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.';
   if (asset.continuity === 'production_model_undated') return 'Adaptation statique d’un objet identifié sur une planche de production de Helluva Boss. Son apparition précise dans un épisode reste à confirmer.';
   if (asset.continuity === 'official_merchandise_undated') return 'Dessin adapté d’un produit officiel. L’apparition exacte de cette incarnation dans un épisode n’est pas confirmée.';
-  if (asset.continuity === 'official_short_2026') return 'Costume du court officiel IMP Training Video (2026). La pose s’appuie sur le porte-clés officiel ; cette fiche ne l’attribue pas à une saison numérotée.';
+  if (asset.continuity === 'official_short_2026') {
+    if (asset.sourceWorkTitle) return `${asset.kind === 'costume_base' ? 'Costume' : asset.kind === 'narrative_archive' ? 'Portrait' : 'Dessin'} du court officiel ${asset.sourceWorkTitle} (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.`;
+    if (asset.id === 'hb_millie-dress-disguise-training-short' || asset.id === 'hb_moxxie-dress-disguise-training-short') return 'Costume du court officiel IMP Training Video (2026). La pose s’appuie sur le porte-clés officiel ; cette fiche ne l’attribue pas à une saison numérotée.';
+    return 'Dessin issu d’un court officiel de 2026. Consultez ses références pour identifier l’œuvre et les détails représentés ; cette fiche ne l’attribue pas à une saison numérotée.';
+  }
+  if (asset.id === 'hb_blitzo-flashback-ghostfuckers-s2') return 'Costume du flashback de Ghostf**kers (S2E10). La pose s’appuie sur le standee officiel ; le plan de l’épisode corrobore la tenue.';
   if (asset.continuity === 'pilot_legacy') return 'Portrait du pilote de 2019. Cette fiche conserve son incarnation historique, distincte des saisons de la série.';
   if (asset.continuity === 'season_1_storybook') return 'Silhouette narrative de l’ouverture de la saison 1. Cette archive illustre le récit ; elle ne constitue pas un modèle détaillé de combat ni une preuve de capacités.';
   const year = historicalYear(asset);

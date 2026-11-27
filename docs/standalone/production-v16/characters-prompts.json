@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "date": "2026-11-27",
+  "tool": "image_gen.imagegen",
+  "prompts": [
+    {
+      "id": "hb_gerald-barbie-bad-day-portrait",
+      "prompt": "Use case: stylized-concept.\nAsset type: one static transparent character portrait for the Infernal Versus narrative gallery.\nPrimary request: depict GERALD, the purple pharmacy employee in HELLUVA SHORTS 11, BARBIE'S BAD DAY. The two attached native official frames are the visual authority. In image 1 he is the small purple character sitting at the RIGHT behind the counter; ignore the red character at left. Image 2 shows the same employee closer and is for face, pale hair and mint collar details.\n\nDraw exactly ONE head-and-upper-chest portrait of Gerald, with the sleepy half-lidded turquoise eyes, purple face and long pointed drooping ears, large pale pink wavy side-swept hair, the two dark purple horn shapes and the slim aqua stalk with a turquoise teardrop-shaped tip between them, as the source actually shows. Preserve the heavy upper eyelids, slight frown, long narrow neck and high ribbed mint-green collar. Include the upper shoulders and only the upper chest of his mint-green sweater. Keep the same subdued tired expression and slight three-quarter view from the official frames. Use those visible shapes, without adding teeth, jewellery, clothing symbols or other features. The source does not qualify his entire body, so do not depict legs, feet, tail, apron, chair or hands. The lower edge is an intentional smooth upper-chest portrait crop, not a full-body sprite.\n\nStyle: crisp 2D animated cel linework and flat colour regions matching the attached episode frames; preserve his unusual proportions, avoid 3D or photorealistic shading. Entire head, ears, hair, both horns and the top of the central stalk must be inside the canvas with generous transparent margins (about ten percent around upper and side extremities). Do not reproduce the purple shop lighting as a glow around the asset. Genuinely transparent alpha background. No pharmacy, counter, papers, cigarette or vape, bottle, other person, words, watermark, frame, shadow, checkerboard or duplicate poses. One character per image. This is a visual adaptation of a small official frame, not a claim of exact model-sheet fidelity.",
+      "transparentBackground": true,
+      "references": [
+        "production/v16/characters/references/gerald-official-20s.png",
+        "production/v16/characters/references/gerald-official-60s.png"
+      ],
+      "nativeOutput": "/workspace/scratch/eb7d72680997/generated_images/exec-e492b922-2b13-4df1-98c0-efb30a3fdb94.png",
+      "status": "generated_operator_visual_review_accepted_with_limits"
+    },
+    {
+      "id": "hb_rick-barbie-bad-day-portrait",
+      "prompt": "Use case: stylized-concept.\nAsset type: one static transparent head-and-upper-chest portrait for the Infernal Versus narrative gallery.\nPrimary request: depict RICK, the red imp deli employee in HELLUVA SHORTS 11, BARBIE'S BAD DAY. Image 1 is the official FRONT view at 160 seconds: the red character behind the counter is Rick. Image 2 is the official BACK view at 165 seconds: use only the employee at RIGHT to verify his complete backward pink cap and the two slender black horns with pale bands; ignore the red woman at left. Image 3 is the historical repository cutout of Rick and is secondary identity support only, not authority for hidden anatomy or for adding any unseen lower body.\n\nExactly ONE static portrait of the same employee. Keep his red/maroon imp face, sleepy half-lidded yellow eyes, displeased expression with a slightly open crooked mouth as in the official front view, pale cheek freckles, small pale chin tuft, fluffy white hair swept across the forehead and sticking out to both sides, the backward pink cap, and two small black horns with the white bands visible in the official rear view. Preserve the angular face and slender neck. Show only the upper chest, including his off-white short-sleeve collared work shirt and the upper rectangular panel and straps of his muted pink apron. Preserve the official outfit shapes; do not add a legible name tag, logo, extra pattern, jewelry or props. Keep the face turned slightly towards screen-left as in the source. The portrait ends deliberately at upper chest, above the elbow/hand area: no hands, arms below the sleeve start, waist, tail, trousers, feet, counter or hidden anatomy.\n\nCrisp 2D animation cel linework and simple flat colors faithful to the given character references; no 3D, photorealism, painted texture or dramatic lighting. Fit the entire hair silhouette, pink cap, both full horn tips and both shoulders comfortably inside the canvas with generous transparent margins. Genuinely transparent alpha background. No shop, bottles, tentacles, other characters, words, watermark, frame, checkerboard, duplicate pose, cast shadow or glow. One character per image. This remains an adaptation from small official frames, not a certified exact production model.",
+      "transparentBackground": true,
+      "references": [
+        "production/v16/characters/references/rick-official-160s.png",
+        "production/v16/characters/references/rick-official-165s.png",
+        "public/assets/sprites/helluva/portraits/hb_rick.png"
+      ],
+      "status": "generated_operator_visual_review_accepted_with_limits",
+      "nativeOutput": "/workspace/scratch/eb7d72680997/generated_images/exec-553eebea-f2cc-4344-81bc-aa8ac85d26e0.png"
+    }
+  ]
+}

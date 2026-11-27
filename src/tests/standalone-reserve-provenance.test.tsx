@@ -13,6 +13,43 @@ function GalleryWithScope() {
 }
 
 describe('reserve artwork provenance', () => {
+  it.each([
+    { name: 'Gerald', id: 'hb_gerald-barbie-bad-day-portrait', time: '20s' },
+    { name: 'Rick', id: 'hb_rick-barbie-bad-day-portrait', time: '160s' },
+  ])('identifies $name as a Barbie’s Bad Day portrait and keeps the strict filter effective', ({ name, id, time }) => {
+    render(<GalleryWithScope />);
+    const title = `${name} · Barbie’s Bad Day · portrait`;
+    fireEvent.click(screen.getByRole('button', { name: new RegExp(title) }));
+    const detail = within(screen.getByRole('article', { name: `Détail de ${title}` }));
+    expect(detail.getByText(/COURT OFFICIEL · 2026/)).toBeTruthy();
+    expect(detail.getByText(/Portrait du court officiel Barbie’s Bad Day \(2026\)/)).toBeTruthy();
+    expect(detail.getByText(/Archive narrative statique · Buste/)).toBeTruthy();
+    expect(detail.queryByText(/IMP Training Video|porte-clés/)).toBeNull();
+    expect(detail.getByRole('img', { name: title }).getAttribute('src')).toBe(`/assets/production/v16/characters/${id}.webp`);
+    fireEvent.click(detail.getByText('Références et détails du dessin'));
+    expect(detail.getByRole('link', { name: new RegExp(`${parseInt(time)} s$`) }).getAttribute('href')).toBe(`https://www.youtube.com/watch?v=PyICIy6fkDo&t=${time}`);
+    fireEvent.change(screen.getByLabelText('Contenu de la galerie'), { target: { value: 'season_1' } });
+    expect(screen.queryByRole('article', { name: `Détail de ${title}` })).toBeNull();
+    expect(screen.queryByRole('button', { name: /(?:Gerald|Rick) · Barbie’s Bad Day · portrait/ })).toBeNull();
+    fireEvent.change(screen.getByLabelText('Contenu de la galerie'), { target: { value: 'all' } });
+    expect(screen.getByRole('button', { name: new RegExp(title) })).toBeTruthy();
+  });
+
+  it.each([
+    { name: /Millie · robe et ombrelle, IMP Training Video/, note: /Costume du court officiel IMP Training Video.*porte-clés officiel/, product: /Millie side/, url: 'https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain' },
+    { name: /Moxxie · robe et ombrelle, IMP Training Video/, note: /Costume du court officiel IMP Training Video.*porte-clés officiel/, product: /Moxxie side/, url: 'https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain' },
+    { name: /Blitzø · tenue du flashback, Ghostf/, note: /Costume du flashback de Ghostf.*standee officiel/, product: /Flashback Blitz Standee/, url: 'https://sharkrobot.com/products/flashback-blitz-standee' },
+  ])('preserves the V14 costume’s own work and product provenance ($product)', ({ name, note, product, url }) => {
+    render(<GalleryWithScope />);
+    fireEvent.click(screen.getByRole('button', { name }));
+    const detail = within(screen.getByRole('article'));
+    expect(detail.getByText(note)).toBeTruthy();
+    expect(detail.getByText(/Tenue statique disponible dans le vestiaire/)).toBeTruthy();
+    expect(detail.queryByText(/Portrait du court officiel Barbie’s Bad Day/)).toBeNull();
+    fireEvent.click(detail.getByText('Références et détails du dessin'));
+    expect(detail.getByRole('link', { name: product }).getAttribute('href')).toBe(url);
+  });
+
   it('qualifies historical and secondary Roo evidence without presenting it as an episode model', () => {
     render(<GalleryWithScope />);
     fireEvent.click(screen.getByRole('button', { name: /Roo · concept 2019 · portrait/ }));
