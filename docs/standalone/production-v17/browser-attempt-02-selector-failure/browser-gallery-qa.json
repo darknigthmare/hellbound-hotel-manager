@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "startedAt": "2026-11-27T06:28:21.850Z",
+  "status": "failed",
+  "scope": "Real CI-built standalone HTML and assets served unchanged from dist-combat. Normal gallery clicks/taps, category and name search, full decoded images, visible reference links, close/focus return, and season filtering on desktop/mobile. No combat, animation, remote-reference availability or 1:1 fidelity claim.",
+  "build": {
+    "sourceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+    "runtimeSourceCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+    "ciRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+    "artifactId": null,
+    "artifactArchiveSha256": null,
+    "transportArtifacts": [
+      {
+        "artifactId": 15175519470,
+        "name": "infernal-versus-standalone-part-00",
+        "zipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+        "partName": "standalone.tar.part-00",
+        "partSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f"
+      },
+      {
+        "artifactId": 15176277382,
+        "name": "infernal-versus-standalone-part-01",
+        "zipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+        "partName": "standalone.tar.part-01",
+        "partSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e"
+      }
+    ],
+    "combinedArchive": {
+      "format": "tar",
+      "sha256": "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8",
+      "bytes": 964085760,
+      "physicalArchiveStored": true,
+      "reconstructedFromOrderedParts": true
+    },
+    "transferProof": {
+      "path": "docs/standalone/production-v17/browser-artifact-transfer.json",
+      "sha256": "204a612654068f1d106b027cdb6a5c81afb6fd3a2af360e3139d10b5b98a2a85"
+    },
+    "archiveDigestVerification": "matched-local-archive-bytes",
+    "bundleDirectory": "/home/runner/work/_temp/infernal-v17-verified/dist-combat",
+    "orderedTarPartsRehashedThisRun": true,
+    "localArchiveRehashedThisRun": true,
+    "standaloneManifestSha256": "112ff25cf0e74ca403a2a8bc08a7d5d0ab290ea6fdca9defedb8f44d829c3c38",
+    "manifestVerifiedFiles": 1350,
+    "manifestVerifiedBytes": 962706019,
+    "entrySha256": "273f35e140224d883c38d3291b368dfd226c0e7560bfbc3ccc5953cbb356cb2f",
+    "allManifestBytesVerified": true
+  },
+  "execution": {
+    "node": "v22.23.5",
+    "chromiumExecutable": "/home/runner/work/_temp/infernal-v17-playwright-browsers/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell",
+    "executionRunId": "45951963794",
+    "executionRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45951963794",
+    "location": "github-actions-runner",
+    "playwrightModule": "/home/runner/work/_temp/infernal-v17-playwright/node_modules/playwright/index.js",
+    "stateInjection": false,
+    "imageSubstitution": false,
+    "requestInterception": false,
+    "cssOverride": false,
+    "realStaticBundle": true,
+    "playwrightVersion": "1.62.1",
+    "chromiumExecutableSha256": "e11fc9ce65c96313476f7ee9844b6fb6a9220fb048693cfe9eee00acf4170a9f",
+    "chromiumVersion": "151.0.7922.34"
+  },
+  "localExpectationFiles": {
+    "docs/standalone/production-v17/check-gallery-browser.cjs": "58d6c628f3e8e272553104fcb11b8212bc17fe57a815b99cac0ecaef1b0f31f8",
+    "docs/standalone/production-v17/delivery-register.json": "ab38186a6583394fe319db008118aad49fb2648155b0303fa7eb64980a975ef7",
+    "art/infernal-versus/production/reserve-assets.json": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb"
+  },
+  "checks": [],
+  "screenshots": [
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-failure.png",
+      "sha256": "052af633465666027fdaf6c0220a32299e1f9825c0ee6913991627019ee3d2ce",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "scope": "Actual viewport at failed assertion."
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedLocalResponses": [],
+  "requestFailures": [],
+  "assetResponses": [],
+  "visualReview": {
+    "status": "pending-human-inspection",
+    "note": "Automated success does not certify the artwork. Inspect saved browser screenshots separately."
+  },
+  "server": "http://127.0.0.1:36535/index.html",
+  "error": "locator.selectOption: Timeout 12000ms exceeded.\nCall log:\n  - waiting for getByLabel('Catégorie', { exact: true })\n\n    at /home/runner/work/hellbound-hotel-manager/hellbound-hotel-manager/docs/standalone/production-v17/check-gallery-browser.cjs:353:22",
+  "finishedAt": "2026-11-27T06:28:39.083Z"
+}

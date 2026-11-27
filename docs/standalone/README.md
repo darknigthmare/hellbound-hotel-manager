@@ -2,8 +2,38 @@
 
 Mode combat autonome de Hellbound Hotel Manager. Depuis Pentagram Arena, ouvrez **Infernal Versus**. L’entrée Web directe est `/combat.html`.
 
+<!-- V17_CURRENT_START -->
+## État courant — 27 novembre 2026, production statique V17
+
+**Quatre accessoires sont intégrés à la galerie ; production, CI, transfert, recette navigateur et Bible V17 sont vérifiés. Drive est mis à jour à l’identique.** Le raccordement des images est publié au commit [`2a7c956`](https://github.com/darknigthmare/hellbound-hotel-manager/commit/2a7c956ceedfb4f3a845af67c621290f7fd41654), dans la [PR nº 8](https://github.com/darknigthmare/hellbound-hotel-manager/pull/8). Les sections historiques ci-dessous concernent leurs versions respectives.
+
+La [production V17](production-v17/README.md) ajoute la **canette bleue de Spring Broken**, les **deux trophées muraux de Crimson corrigés en V2** et le **moteur hors-bord d’Unhappy Campers**. Six générations ont produit **quatre dessins retenus et deux candidats rejetés**. Le lot accepté contient **4 PNG natifs et 4 WebP sans perte**, soit **8 fichiers et 4 672 320 octets**. Les masters rejetés sont conservés ; leurs exports sont archivés hors du dossier public et exclus de la livraison.
+
+| Indicateur courant | Total V17 |
+| --- | ---: |
+| Entrées de galerie | **149** |
+| Bases autonomes | 115 |
+| Kits jouables | 43 |
+| Arènes | 51 |
+| Familles de costumes | 27 |
+| Identifiants sans base entière | 94 |
+| Identités distinctes sans base entière | 93 |
+
+Les objets restent des accessoires statiques de réserve. Aucun personnage, costume, kit, cycle animé, placement d’arène ou projectile jouable n’est ajouté. La [revue artistique](production-v17/independent-visual-review.json) et les [corrections](production-v17/trophy-corrections.json) conservent les écarts observés. La parité RGBA des exports est vérifiée ; **la fidélité 1:1 n’est pas certifiée**.
+
+La [QA principale V17](production-v17/runtime-qa.json), **Quality gate nº 103**, passe `npm run qa` : **439 tests dans 51 suites**, TypeScript, ESLint, les builds manager et standalone, puis **1 350 empreintes de distribution**. Le bundle provient du commit **`d56202b178d1ecd8cab7e3a4a876aa50501be815`** ; ce commit adapte uniquement le packaging depuis le raccordement initial. La [QA nº 102](production-v17/runtime-qa-initial.json) reste archivée.
+
+La [recette navigateur](production-v17/browser-gallery-qa.json) s’exécute séparément dans **[Gallery nº 3, run 45952367618](https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45952367618)**, sur la tête de workflow `8c0f9953ac798838f354399c029c79e1d139ffd7`. Elle inspecte le bundle nº 103 intact, passe **14 contrôles** et produit **20 captures toutes relues**, en 1440 × 1000 et 390 × 844 émulé. Recherche, filtres, quatre images entières, références, fermeture et retour du focus sont vérifiés ; aucune erreur page, console, HTTP locale ou requête échouée n’est observée. La [revue visuelle](production-v17/browser-visual-review.json) précise les limites de défilement, de mobile émulé et de portée ; aucun nouveau combat ou cycle animé n’est validé par cette recette.
+
+Le premier artifact unique du run nº 102 dépassait la limite de 512 MiB ; son [échec](production-v17/browser-artifact-transfer-initial-limit.json) est conservé. Le [transfert fractionné vérifié](production-v17/browser-artifact-transfer.json) du run nº 103 reconstitue l’archive complète et vérifie ses empreintes, le manifeste et ses 1 350 fichiers. L’[audit de couverture](production-v17/active-asset-coverage.json) confirme **746 références actives sur 746**, sans chemin cassé ni divergence.
+
+Les quatre booléens `inGameChecked` ont été renseignés après cette recette. La [preuve de finalisation du catalogue](production-v17/catalogue-finalization.json) confirme que tous les autres champs sont identiques. La galerie ne lit pas ces booléens, mais leur modification dans le JSON importé peut changer les octets du JavaScript compilé : l’identité des bundles n’est pas revendiquée. Les preuves ci-dessus demeurent rattachées aux builds et exécutions indiqués.
+
+La [Bible V17](INFERNAL_VERSUS_BIBLE_V17.xlsx) est vérifiée : **72 feuilles et 81 tableaux**, **809 356 octets**. Elle ajoute Production V17 (quatre livraisons) et Cibles V17 (111 lignes de suivi), en conservant à l’octet **220 parties historiques**, dont les **70 feuilles et 79 tableaux V16**. La [QA du classeur](production-v17/workbook-qa.json) contrôle Artifact Tool, réimport, OOXML et rendus ; aucun recalcul Excel natif n’est revendiqué. Le [même fichier Drive](https://docs.google.com/spreadsheets/d/10Yj1iCApht1WkmkI2ZpAZfsznSRoMjZU/edit?usp=drivesdk&ouid=102406458049746863092&rtpof=true&sd=true) est remplacé en V17 et son téléchargement est identique au fichier validé, selon la [preuve de publication](production-v17/drive-publication.json). Le [guide général et les deux extensions](COMBAT_GUIDES.md), leurs **68 rubriques**, et les **sept règles optionnelles de déblocage de V15** sont conservés. Les mécanismes d’équipe, extensions de taunts, nouveaux bonus et droits d’abonnement restent distingués de leur réalisation effective.
+<!-- V17_CURRENT_END -->
+
 <!-- V16_CURRENT_START -->
-## État courant — 27 novembre 2026, production statique V16
+## Contenu conservé — 27 novembre 2026, production statique V16 (historique)
 
 La reprise V14–V16 apporte **14 dessins distincts et 30 fichiers d’image**, pour **27 181 961 octets** : trois costumes statiques, deux arènes, deux accessoires de décor, la base entière de Queef et six archives de personnages. Les lots V14 et V15 récupèrent les productions déjà présentes ; la V16 ajoute les portraits séparés de **Gerald et Rick dans Barbie’s Bad Day**. Chaque dessin possède son master PNG et son export WebP sans perte ; les deux arènes possèdent aussi leur miniature.
 

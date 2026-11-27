@@ -1,0 +1,17 @@
+2026-11-27T06:00:48.0703523Z HEAD is now at 7454b9d Merge d56202b178d1ecd8cab7e3a4a876aa50501be815 into 0c63b5635d05c9ed9b42e5e2fc58359f60d25a67
+2026-11-27T06:01:32.7087529Z ##[group]Run npm run qa
+2026-11-27T06:01:32.8000762Z > npm run typecheck && npm run lint && npm run test && npm run build && npm run build:standalone && npm run check:standalone
+2026-11-27T06:01:32.8897889Z > tsc --noEmit
+2026-11-27T06:01:42.0250310Z > eslint . --max-warnings=0
+2026-11-27T06:01:59.1655103Z > vitest run --maxWorkers=1
+2026-11-27T06:03:19.6383434Z  Test Files  51 passed (51)
+2026-11-27T06:03:19.6384056Z       Tests  439 passed (439)
+2026-11-27T06:03:19.7610011Z > tsc && vite build
+2026-11-27T06:03:31.3923085Z > tsc && vite build --mode standalone && node scripts/finalize-standalone.mjs
+2026-11-27T06:03:43.9947986Z Standalone ready: 1350 files, 918.1 MiB. Serve dist-combat/ as the web root.
+2026-11-27T06:03:45.3351495Z Standalone verified: 1350 hashes, boot assets present, hotel/cloud persistence excluded.
+2026-11-27T06:03:54.6315261Z SHA256 digest of uploaded artifact zip is 79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea
+2026-11-27T06:03:55.2001117Z Artifact infernal-versus-standalone-part-00 has been successfully uploaded! Final size is 503317009 bytes. Artifact ID is 15175519470
+2026-11-27T06:04:01.0643488Z SHA256 digest of uploaded artifact zip is f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f
+2026-11-27T06:04:01.6070515Z Artifact infernal-versus-standalone-part-01 has been successfully uploaded! Final size is 460769809 bytes. Artifact ID is 15176277382
+

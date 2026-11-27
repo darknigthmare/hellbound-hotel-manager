@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "startedAt": "2026-11-27T06:31:57.303Z",
+  "status": "passed",
+  "scope": "Real CI-built standalone HTML and assets served unchanged from dist-combat. Normal gallery clicks/taps, category and name search, full decoded images, visible reference links, close/focus return, and season filtering on desktop/mobile. No combat, animation, remote-reference availability or 1:1 fidelity claim.",
+  "build": {
+    "sourceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+    "runtimeSourceCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+    "ciRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+    "artifactId": null,
+    "artifactArchiveSha256": null,
+    "transportArtifacts": [
+      {
+        "artifactId": 15175519470,
+        "name": "infernal-versus-standalone-part-00",
+        "zipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+        "partName": "standalone.tar.part-00",
+        "partSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f"
+      },
+      {
+        "artifactId": 15176277382,
+        "name": "infernal-versus-standalone-part-01",
+        "zipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+        "partName": "standalone.tar.part-01",
+        "partSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e"
+      }
+    ],
+    "combinedArchive": {
+      "format": "tar",
+      "sha256": "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8",
+      "bytes": 964085760,
+      "physicalArchiveStored": true,
+      "reconstructedFromOrderedParts": true
+    },
+    "transferProof": {
+      "path": "docs/standalone/production-v17/browser-artifact-transfer.json",
+      "sha256": "32fa79966bc1f2f4722ae2f9fb54f3e7e365acc0c0472c96d1c8090c8f76528d"
+    },
+    "archiveDigestVerification": "matched-local-archive-bytes",
+    "bundleDirectory": "/home/runner/work/_temp/infernal-v17-verified/dist-combat",
+    "orderedTarPartsRehashedThisRun": true,
+    "localArchiveRehashedThisRun": true,
+    "standaloneManifestSha256": "112ff25cf0e74ca403a2a8bc08a7d5d0ab290ea6fdca9defedb8f44d829c3c38",
+    "manifestVerifiedFiles": 1350,
+    "manifestVerifiedBytes": 962706019,
+    "entrySha256": "273f35e140224d883c38d3291b368dfd226c0e7560bfbc3ccc5953cbb356cb2f",
+    "allManifestBytesVerified": true
+  },
+  "execution": {
+    "node": "v22.23.5",
+    "chromiumExecutable": "/home/runner/work/_temp/infernal-v17-playwright-browsers/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell",
+    "executionRunId": "45952367618",
+    "executionRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45952367618",
+    "location": "github-actions-runner",
+    "playwrightModule": "/home/runner/work/_temp/infernal-v17-playwright/node_modules/playwright/index.js",
+    "stateInjection": false,
+    "imageSubstitution": false,
+    "requestInterception": false,
+    "cssOverride": false,
+    "realStaticBundle": true,
+    "playwrightVersion": "1.62.1",
+    "chromiumExecutableSha256": "e11fc9ce65c96313476f7ee9844b6fb6a9220fb048693cfe9eee00acf4170a9f",
+    "chromiumVersion": "151.0.7922.34"
+  },
+  "localExpectationFiles": {
+    "docs/standalone/production-v17/check-gallery-browser.cjs": "cdb50e7fb1ec8b2738497b02f0915fbcdff2d75b583c8658e7375b980a7aa2dc",
+    "docs/standalone/production-v17/delivery-register.json": "ab38186a6583394fe319db008118aad49fb2648155b0303fa7eb64980a975ef7",
+    "art/infernal-versus/production/reserve-assets.json": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb"
+  },
+  "checks": [
+    {
+      "viewport": "desktop",
+      "check": "real_home_to_gallery_and_accessories_filter",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "assetId": "spring-broken-blue-can-s1",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "complete": true,
+        "naturalWidth": 1254,
+        "naturalHeight": 1254,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 98,
+          "y": 261.875,
+          "width": 608,
+          "height": 680,
+          "top": 261.875,
+          "right": 706,
+          "bottom": 941.875,
+          "left": 98
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nSpring Broken · Canette bleue\n\nAccessoire statique en réserve · 1254 × 1254 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Rebecca Reynolds · fond de production",
+          "href": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HB4_166.png",
+          "href": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HELLUVA BOSS — SPRING BROKEN // S1: Episode 3 · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=RghsgkZKedg&t=760s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "fetchedExportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1440,
+        "mainScrollWidth": 1440
+      },
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+        "complete": true,
+        "naturalWidth": 1254,
+        "naturalHeight": 1254,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 98,
+          "y": 261.875,
+          "width": 608,
+          "height": 680,
+          "top": 261.875,
+          "right": 706,
+          "bottom": 941.875,
+          "left": 98
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nCrimson · Trophée mural à cornes\n\nAccessoire statique en réserve · 1254 × 1254 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "204.jpg",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HELLUVA BOSS — EXES AND OOHS // S2: Episode 3 · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "fetchedExportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1440,
+        "mainScrollWidth": 1440
+      },
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 98,
+          "y": 261.875,
+          "width": 608,
+          "height": 680,
+          "top": 261.875,
+          "right": 706,
+          "bottom": 941.875,
+          "left": 98
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nUnhappy Campers · Moteur hors-bord\n\nAccessoire statique en réserve · 1024 × 1536 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "fetchedExportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1440,
+        "mainScrollWidth": 1440
+      },
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+        "complete": true,
+        "naturalWidth": 1266,
+        "naturalHeight": 1242,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 98,
+          "y": 261.875,
+          "width": 608,
+          "height": 680,
+          "top": 261.875,
+          "right": 706,
+          "bottom": 941.875,
+          "left": 98
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nCrimson · Trophée mural à mâchoire\n\nAccessoire statique en réserve · 1266 × 1242 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "fetchedExportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1440,
+        "mainScrollWidth": 1440
+      },
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "check": "season_one_retains_can_hides_all_three_season_two_props_and_closes_detail",
+      "results": [
+        {
+          "id": "spring-broken-blue-can-s1",
+          "expectedVisible": true,
+          "actualCards": 1
+        },
+        {
+          "id": "crimson-horned-wall-trophy-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        },
+        {
+          "id": "unhappy-campers-outboard-motor-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        },
+        {
+          "id": "crimson-fanged-jaw-wall-trophy-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "check": "restore_scope_restores_all_four_props_without_horizontal_overflow",
+      "horizontalOverflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1440,
+        "mainScrollWidth": 1440
+      },
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "check": "real_home_to_gallery_and_accessories_filter",
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "spring-broken-blue-can-s1",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "complete": true,
+        "naturalWidth": 1254,
+        "naturalHeight": 1254,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nSpring Broken · Canette bleue\n\nAccessoire statique en réserve · 1254 × 1254 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Rebecca Reynolds · fond de production",
+          "href": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HB4_166.png",
+          "href": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HELLUVA BOSS — SPRING BROKEN // S1: Episode 3 · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=RghsgkZKedg&t=760s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "fetchedExportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      },
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+        "complete": true,
+        "naturalWidth": 1254,
+        "naturalHeight": 1254,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nCrimson · Trophée mural à cornes\n\nAccessoire statique en réserve · 1254 × 1254 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "204.jpg",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "HELLUVA BOSS — EXES AND OOHS // S2: Episode 3 · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "fetchedExportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      },
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nUnhappy Campers · Moteur hors-bord\n\nAccessoire statique en réserve · 1024 × 1536 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/2aa9fc40-b5d7-4586-8fac-80ba40db8d48/02.jpeg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Unhappy Campers S2E5 · fond du hangar à bateaux · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=lYu1ysDULwA&t=1030s",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "fetchedExportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      },
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "check": "search_open_decode_contain_references_close",
+      "decodedImage": {
+        "src": "/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+        "currentSrc": "http://127.0.0.1:34067/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+        "complete": true,
+        "naturalWidth": 1266,
+        "naturalHeight": 1242,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ACCESSOIRES\n\nCrimson · Trophée mural à mâchoire\n\nAccessoire statique en réserve · 1266 × 1242 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "Jasper Luu · fond de production",
+          "href": "https://jasperluu.com/helluvaboss",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+          "visibleAfterNormalScroll": true
+        },
+        {
+          "title": "Exes and Oohs S2E3 · salle à manger de Crimson · contexte hérité",
+          "href": "https://www.youtube.com/watch?v=j1BfO7VlIw4",
+          "visibleAfterNormalScroll": true
+        }
+      ],
+      "exportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "fetchedExportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "closeReturnedFocus": true,
+      "horizontalOverflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      },
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "check": "season_one_retains_can_hides_all_three_season_two_props_and_closes_detail",
+      "results": [
+        {
+          "id": "spring-broken-blue-can-s1",
+          "expectedVisible": true,
+          "actualCards": 1
+        },
+        {
+          "id": "crimson-horned-wall-trophy-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        },
+        {
+          "id": "unhappy-campers-outboard-motor-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        },
+        {
+          "id": "crimson-fanged-jaw-wall-trophy-s2",
+          "expectedVisible": false,
+          "actualCards": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "check": "restore_scope_restores_all_four_props_without_horizontal_overflow",
+      "horizontalOverflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      },
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-image.png",
+      "sha256": "720a49ba31fb30687533fd1c322507ce635a4136fc2e30ceea626e38b913d74a",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-references.png",
+      "sha256": "a77e75e5a92da6a4c0c13355245c97688e0b76cda5aad03736dc93be79ad95c5",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "654193134608173eed67f0b196a9955c5778f751b9c0bc3aabf68bc458f3d26d",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "7344330ff113eb233a810b029a15349749fd5f421832a0d70d434d69f8f94b72",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "495801b912821a79fc9ebb670efcc79c340008500e9ff7689b1015c9c7190da3",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "8e5477c977853945d0f2e46295257a473902244132acc70f89f6d664fb1618ce",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "46d7d6cca909b54aad6cd244de87759b2de901baf93b2e30823c46eaf141a3a8",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "2e6068e71eaeee5abd58da4d94d0dd3a7bfb825b6c92383c2ac415ec527ea12a",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-retains-can.png",
+      "sha256": "1b0896f0178cb82e524bd2d0b1a2573e9765548e1cfc0a632b0d27519d01bbbd",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Season-one scope retains the new can."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-hides-season-two.png",
+      "sha256": "971c5777b6fae62e0c16e41910e49b41751ad95ecb851926823b35905adaf244",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Season-one scope excludes the queried season-two prop; all three exclusions checked in report."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-image.png",
+      "sha256": "f600a5cdcab6d5324b8dc795de84381475a9b08039fe195d6edbb8d0374d2d0e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-references.png",
+      "sha256": "4d65a4bd8a062434dbcef062b65d9aacd0c506d60954ccb4f7aa03bef25d567e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "20c9070813c302e5c156fdc88cfef000cd94ae2bf67dec574dedd89c7c3653bb",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "e5122cf72a3e38c86db47f4c85600631c8f00f3a1e67fb5439dc5d5b631ce8ce",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "8fc54ccb2a43c0ac957435e9b070f250d1a572086de284b941596d9207f97308",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "94147bfac596fb8e36053be6bedc4207ff2fc47d2bd132f3316d5cafb412e196",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "b1cd2b163ccce481335ab8a3a5e0c0654d69c14d793e5a255a52038bb50a21e4",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "9d92d592e4e754b67690ade026865ae07dd6c3caa939f9b9a91ee1de8a93252b",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-retains-can.png",
+      "sha256": "898ef7dd0449b04bb8cad9205f51698becb587ad1daed91e5a6aee02a899254e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Season-one scope retains the new can."
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-hides-season-two.png",
+      "sha256": "b9c5ffdeaca9135924a10e3c83c2a80cd758287f2780fb85f1b814e54a9589f1",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Season-one scope excludes the queried season-two prop; all three exclusions checked in report."
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedLocalResponses": [],
+  "requestFailures": [],
+  "assetResponses": [
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:34067/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+      "status": 200
+    }
+  ],
+  "visualReview": {
+    "status": "pending-human-inspection",
+    "note": "Automated success does not certify the artwork. Inspect saved browser screenshots separately."
+  },
+  "server": "http://127.0.0.1:34067/index.html",
+  "finishedAt": "2026-11-27T06:32:07.286Z"
+}

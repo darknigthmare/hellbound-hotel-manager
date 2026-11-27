@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "passed",
+  "recordedAt": "2026-11-27T06:37:29.276499+00:00",
+  "scope": "Only four post-browser inGameChecked tracking booleans changed. This is not compiled-bundle byte equivalence.",
+  "cataloguePath": "art/infernal-versus/production/reserve-assets.json",
+  "before": {
+    "bytes": 451446,
+    "sha256": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb",
+    "gitBlobSha": "0f582905c992b9c9082ef8e9a7de876b34d00a32",
+    "sourceCommit": "8c0f9953ac798838f354399c029c79e1d139ffd7"
+  },
+  "after": {
+    "bytes": 451442,
+    "sha256": "9f089a5d7b0c53ab61435edfba48604b85c1692bfeec3bcf57904de21565d170",
+    "gitBlobSha": "061bc3241d16b78656f1b073a70e2b107fda5e7c"
+  },
+  "changes": [
+    {
+      "assetId": "spring-broken-blue-can-s1",
+      "path": "assets[145].inGameChecked",
+      "from": false,
+      "to": true
+    },
+    {
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "path": "assets[146].inGameChecked",
+      "from": false,
+      "to": true
+    },
+    {
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "path": "assets[147].inGameChecked",
+      "from": false,
+      "to": true
+    },
+    {
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "path": "assets[148].inGameChecked",
+      "from": false,
+      "to": true
+    }
+  ],
+  "otherParsedContentIdentical": true,
+  "serializationPreserved": true,
+  "entries": 149,
+  "runtimeReaderReview": "docs/standalone/production-v17/metadata-scope-review.json",
+  "browserReport": "docs/standalone/production-v17/browser-gallery-qa.json",
+  "browserVisualReview": "docs/standalone/production-v17/browser-visual-review.json",
+  "browserBuildSourceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+  "browserExecutionRunId": 45952367618,
+  "compiledBundleByteEqualityClaimed": false
+}

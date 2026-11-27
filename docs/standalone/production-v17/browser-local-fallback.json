@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "not_used_for_validation",
+  "purpose": "Attempt to open the verified local bundle in the provided browser after the local Chromium binary was found missing.",
+  "localUrl": "http://127.0.0.1:4177/index.html",
+  "observations": [
+    {
+      "action": "Open local game URL",
+      "result": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "action": "Observe resulting browser error page",
+      "result": "Browser URL policy denied access to the internal error page; no page content was observed."
+    }
+  ],
+  "screenshots": 0,
+  "gameplayOrGalleryChecks": 0,
+  "serverStopped": true,
+  "furtherAttemptsOnBlockedBrowser": false,
+  "resolution": "Run the existing automated gallery recipe inside the authorized GitHub Actions runner and retrieve only its reports and screenshots.",
+  "fidelityOneToOneCertified": false
+}

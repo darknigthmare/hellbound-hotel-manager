@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "stage": "artifact-materialization",
+  "status": "blocked-by-documented-connector-size-limit",
+  "runtimeCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "ciMergeCommit": "ed6b9fcd903cbccf45ad6baae90fcc33cf612062",
+  "verifiedRuntimeTree": "42cf1d4e84e08f739eee3a50a22a986843802933",
+  "ciRunId": 45947747957,
+  "ciRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45947747957",
+  "ciConclusion": "success",
+  "artifact": {
+    "id": 15176285543,
+    "name": "infernal-versus-standalone",
+    "size_in_bytes": 963249821,
+    "url": "https://api.github.com/repos/darknigthmare/hellbound-hotel-manager/actions/artifacts/15176285543",
+    "archive_download_url": "https://api.github.com/repos/darknigthmare/hellbound-hotel-manager/actions/artifacts/15176285543/zip",
+    "expired": false,
+    "created_at": "2026-11-27T05:54:12Z",
+    "expires_at": "2026-12-04T05:54:03Z",
+    "updated_at": "2026-11-27T05:54:12Z",
+    "digest": "sha256:03c52a056894f49c8e4a7e0846939b839d09babacf21e24d1a1742b36259eaf3",
+    "workflow_run": {
+      "id": 45947747957,
+      "repository_id": 1284241923,
+      "head_repository_id": 1284241923,
+      "head_branch": "feat/infernal-versus-assets-20261124",
+      "head_sha": "2a7c956ceedfb4f3a845af67c621290f7fd41654"
+    }
+  },
+  "downloadAttempt": {
+    "tool": "github.download_workflow_artifact",
+    "artifactId": 15176285543,
+    "fileName": "infernal-versus-v17-ci-15176285543.zip",
+    "success": false,
+    "error": "InvalidInputException: Artifact exceeds max size of 536870912 bytes: 963249821 bytes.",
+    "bytesMaterialized": 0
+  },
+  "browserLaunched": false,
+  "bundleModified": false,
+  "followup": "Use additional CI transfer artifacts below the documented 512 MiB connector limit, recombine original archive bytes locally, verify CI digest, then inspect/extract the unchanged real bundle."
+}

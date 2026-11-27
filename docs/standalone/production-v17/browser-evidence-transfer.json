@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-evidence-archive",
+  "recordedAt": "2026-11-27T06:33:56.657799+00:00",
+  "buildRunId": 45948785155,
+  "buildSourceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+  "runtimeSourceCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "executionRunId": 45952367618,
+  "executionRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45952367618",
+  "executionWorkflowHeadCommit": "8c0f9953ac798838f354399c029c79e1d139ffd7",
+  "artifact": {
+    "id": 15176917537,
+    "name": "infernal-versus-v17-gallery-evidence",
+    "sizeBytes": 4900799,
+    "apiZipSha256": "cf4afa00378cc3b408a0b25581cc63aa20160c8d8c1bf5170ed500e82079cc9e",
+    "actualZipSha256": "cf4afa00378cc3b408a0b25581cc63aa20160c8d8c1bf5170ed500e82079cc9e",
+    "archivePath": "/workspace/scratch/3ca8c3f75b61/browser-evidence-v17/run-45952367618/infernal-versus-v17-gallery-evidence-run-45952367618.zip",
+    "zipCrcAndSafePathChecksPassed": true
+  },
+  "observedAutomatedResult": {
+    "status": "passed",
+    "checks": 14,
+    "screenshots": 20,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "failedLocalResponses": 0,
+    "requestFailures": []
+  },
+  "integrity": {
+    "screenshotDigestsMatched": 20,
+    "expectationFileVerification": [
+      {
+        "path": "docs/standalone/production-v17/check-gallery-browser.cjs",
+        "expectedSha256": "cdb50e7fb1ec8b2738497b02f0915fbcdff2d75b583c8658e7375b980a7aa2dc",
+        "actualLocalSha256": "cdb50e7fb1ec8b2738497b02f0915fbcdff2d75b583c8658e7375b980a7aa2dc",
+        "matched": true
+      },
+      {
+        "path": "docs/standalone/production-v17/delivery-register.json",
+        "expectedSha256": "ab38186a6583394fe319db008118aad49fb2648155b0303fa7eb64980a975ef7",
+        "actualExecutionCommitSha256": "ab38186a6583394fe319db008118aad49fb2648155b0303fa7eb64980a975ef7",
+        "currentLocalSha256AtEvidenceReceipt": "d7258929b9b51817bf7beb332d060ae5c2e6a0397b3ee392527e240d6aa58f64",
+        "executionCommit": "8c0f9953ac798838f354399c029c79e1d139ffd7",
+        "executionBlobSha": "b099a63f98136e0bc4b39a4671b2b5956e4fcac4",
+        "currentLocalDiffers": true,
+        "note": "The coordinating agent is updating the local delivery register after browser acceptance; the exact register read by CI was retrieved from its immutable execution commit and matched the report."
+      },
+      {
+        "path": "art/infernal-versus/production/reserve-assets.json",
+        "expectedSha256": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb",
+        "actualLocalSha256": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb",
+        "matched": true
+      }
+    ],
+    "executedWorkflowMatchesLocalAuditCopy": true,
+    "rawReportsCopiedUnchanged": true
+  },
+  "files": [
+    {
+      "path": "docs/standalone/production-v17/browser-artifact-transfer.json",
+      "sha256": "32fa79966bc1f2f4722ae2f9fb54f3e7e365acc0c0472c96d1c8090c8f76528d",
+      "bytes": 5856
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-engine-ci.json",
+      "sha256": "184b8d424bab5ad80e071c88350ae1aaec76007718dd33a7ccb3c12673e30589",
+      "bytes": 572
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "46d7d6cca909b54aad6cd244de87759b2de901baf93b2e30823c46eaf141a3a8",
+      "bytes": 416642
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "2e6068e71eaeee5abd58da4d94d0dd3a7bfb825b6c92383c2ac415ec527ea12a",
+      "bytes": 503613
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "654193134608173eed67f0b196a9955c5778f751b9c0bc3aabf68bc458f3d26d",
+      "bytes": 355061
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "7344330ff113eb233a810b029a15349749fd5f421832a0d70d434d69f8f94b72",
+      "bytes": 426722
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-hides-season-two.png",
+      "sha256": "971c5777b6fae62e0c16e41910e49b41751ad95ecb851926823b35905adaf244",
+      "bytes": 189793
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-retains-can.png",
+      "sha256": "1b0896f0178cb82e524bd2d0b1a2573e9765548e1cfc0a632b0d27519d01bbbd",
+      "bytes": 245781
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-image.png",
+      "sha256": "720a49ba31fb30687533fd1c322507ce635a4136fc2e30ceea626e38b913d74a",
+      "bytes": 365748
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-references.png",
+      "sha256": "a77e75e5a92da6a4c0c13355245c97688e0b76cda5aad03736dc93be79ad95c5",
+      "bytes": 435914
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "495801b912821a79fc9ebb670efcc79c340008500e9ff7689b1015c9c7190da3",
+      "bytes": 353906
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "8e5477c977853945d0f2e46295257a473902244132acc70f89f6d664fb1618ce",
+      "bytes": 433375
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "b1cd2b163ccce481335ab8a3a5e0c0654d69c14d793e5a255a52038bb50a21e4",
+      "bytes": 165350
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "9d92d592e4e754b67690ade026865ae07dd6c3caa939f9b9a91ee1de8a93252b",
+      "bytes": 96189
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "20c9070813c302e5c156fdc88cfef000cd94ae2bf67dec574dedd89c7c3653bb",
+      "bytes": 143897
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "e5122cf72a3e38c86db47f4c85600631c8f00f3a1e67fb5439dc5d5b631ce8ce",
+      "bytes": 93984
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-hides-season-two.png",
+      "sha256": "b9c5ffdeaca9135924a10e3c83c2a80cd758287f2780fb85f1b814e54a9589f1",
+      "bytes": 87406
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-retains-can.png",
+      "sha256": "898ef7dd0449b04bb8cad9205f51698becb587ad1daed91e5a6aee02a899254e",
+      "bytes": 151779
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-image.png",
+      "sha256": "f600a5cdcab6d5324b8dc795de84381475a9b08039fe195d6edbb8d0374d2d0e",
+      "bytes": 146258
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-references.png",
+      "sha256": "4d65a4bd8a062434dbcef062b65d9aacd0c506d60954ccb4f7aa03bef25d567e",
+      "bytes": 95324
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "8fc54ccb2a43c0ac957435e9b070f250d1a572086de284b941596d9207f97308",
+      "bytes": 139963
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "94147bfac596fb8e36053be6bedc4207ff2fc47d2bd132f3316d5cafb412e196",
+      "bytes": 97703
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery-qa.json",
+      "sha256": "0548061e39fa49a479f9f24b31ed2360e2a6cd94fcf2c33478de0cae8cdbe4c8",
+      "bytes": 36317
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery-run.log",
+      "sha256": "c96ca44dac12ee695bf9d75ebb7a86cfc3d121a2a627ff6c20f2fc17263907c2",
+      "bytes": 520
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-workflow-executed.yml",
+      "sha256": "5ef5c5ec6ab5c4b29640eaf8b7c8d280e9c53fe56b633a32bd27b97db4decb95",
+      "bytes": 18049
+    }
+  ]
+}

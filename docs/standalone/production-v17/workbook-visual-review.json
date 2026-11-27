@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "passed",
+  "reviewedAt": "2026-11-27T06:42:07.449451+00:00",
+  "workbookPath": "docs/standalone/INFERNAL_VERSUS_BIBLE_V17.xlsx",
+  "workbookSha256": "d7e00ef9529d28e8df61ee78a043809418074f4478275c1a60069a5e91295bff",
+  "workbookBytes": 809356,
+  "registerSha256": "2ace657cfdc6ce57727740fc81b5a134e723d440fb4dba997520c7f48c5843b0",
+  "reviewMethod": "AI agents opened the PNGs through view_image and inspected the visible output. No human review is claimed.",
+  "newWorksheetViewsInspected": 22,
+  "completeWorkbookViewsInspected": 2,
+  "coverage": {
+    "Production V17": [
+      "A1:E26",
+      "A29:E33",
+      "F29:H33"
+    ],
+    "Cibles V17": [
+      "A1:E116"
+    ]
+  },
+  "reviewers": [
+    {
+      "agent": "/root/bible_v17",
+      "views": 5,
+      "scope": "Three Production additions views and two complete-workbook representative views."
+    },
+    {
+      "agent": "/root/recover_assets",
+      "views": 19,
+      "scope": "All cibles-0 through cibles-18 additions views; rows 1 through 116."
+    }
+  ],
+  "findings": [
+    "All four delivery rows and their source, limit and hash columns are visible without clipping.",
+    "All 111 target rows were reviewed across 19 contiguous views; the title, headers and alternating row fills are intact.",
+    "The two representative views rendered from the complete final workbook are byte-identical to the corresponding additions renders."
+  ],
+  "limitations": [
+    "Microsoft Excel native rendering, recalculation and print pagination were not run.",
+    "The historical worksheets were preserved byte for byte, not all re-rendered; the V16 baseline summary preview was inspected separately during preparation.",
+    "This checks workbook presentation. Technical and browser QA results are sourced from the final production register and their dedicated reports; this is not a new game acceptance run.",
+    "No one-to-one image fidelity certification is made. Wide table previews require zoom for detailed reading."
+  ],
+  "views": [
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/production.png",
+      "sheetName": "Production V17",
+      "range": "A1:E26",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/bible_v17",
+      "status": "passed",
+      "finding": "Title, 22 summary indicators, computed counts and full technical/browser scope fit their cells. The long scope in row 25 is visible without clipping.",
+      "pixels": [
+        1700,
+        1513
+      ],
+      "bytes": 206993,
+      "sha256": "4dc94a016fa2df01ec0303edc089639a824f52fd3e08b04f9a63969d05e4ba9e"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/livraisons-usage-0.png",
+      "sheetName": "Production V17",
+      "range": "A29:E33",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/bible_v17",
+      "status": "passed",
+      "finding": "All four delivery identities, category/file/base values and master/export paths are visible. Row heights follow the longer evidence columns in the same table.",
+      "pixels": [
+        1700,
+        1071
+      ],
+      "bytes": 111289,
+      "sha256": "679f858daf44f46c1adea0b20d8207ecaf28a1d4bdab4ea60ba8c9e30fe2415a"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/livraisons-preuves-0.png",
+      "sheetName": "Production V17",
+      "range": "F29:H33",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/bible_v17",
+      "status": "passed",
+      "finding": "All four source lists, detailed review limitations and both SHA-256 values per drawing are visible and contained within their rows.",
+      "pixels": [
+        2500,
+        1071
+      ],
+      "bytes": 341109,
+      "sha256": "f3feb39ea0305c860f2e9c6297eb753e2381792d7800df6fa653501966454ee1"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-0.png",
+      "sheetName": "Cibles V17",
+      "range": "A1:E10",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        540
+      ],
+      "bytes": 151624,
+      "sha256": "c9034e4248648a26e5d32eb266b6d120438b4dede065eaf9cafa0c2f291ec3a2"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-1.png",
+      "sheetName": "Cibles V17",
+      "range": "A11:E16",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        473
+      ],
+      "bytes": 172428,
+      "sha256": "dd9cd63a9653073dc1f5456b65cd6fd4787afd58a304f7ba0778f384658564ad"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-2.png",
+      "sheetName": "Cibles V17",
+      "range": "A17:E22",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        333
+      ],
+      "bytes": 103666,
+      "sha256": "cfa7f45b1bf8359e207b11bfb09d786351e9611e13f43cedac2bb9865793a23b"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-3.png",
+      "sheetName": "Cibles V17",
+      "range": "A23:E28",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        296
+      ],
+      "bytes": 68847,
+      "sha256": "0e36c37d2c9e21574f64a562d80c8c2d54cf34ce500af4fc95cbb5ca73c7378f"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-4.png",
+      "sheetName": "Cibles V17",
+      "range": "A29:E34",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        361
+      ],
+      "bytes": 96366,
+      "sha256": "c24fc7322f59a6f8cadefbf74a85d49d646b0c86cfc01f2b984c72bd010afa70"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-5.png",
+      "sheetName": "Cibles V17",
+      "range": "A35:E40",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        417
+      ],
+      "bytes": 122054,
+      "sha256": "e8d5b72077f278a3d1d16c6b558ca28644afb0c901981512932ad8d0fd4af1b1"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-6.png",
+      "sheetName": "Cibles V17",
+      "range": "A41:E46",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        277
+      ],
+      "bytes": 63299,
+      "sha256": "13f8dda1dbf549e702ee6c75d018f6b5d86026add893b07a7bf30c4feb049b42"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-7.png",
+      "sheetName": "Cibles V17",
+      "range": "A47:E52",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        324
+      ],
+      "bytes": 79777,
+      "sha256": "388a0b6467f613428d574755137d135f3bc6145d84a132b908012444f851ce94"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-8.png",
+      "sheetName": "Cibles V17",
+      "range": "A53:E58",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        287
+      ],
+      "bytes": 66997,
+      "sha256": "5295146c8659734a9694eb653d57173a39af295db3ba81cf1524570ff25bc568"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-9.png",
+      "sheetName": "Cibles V17",
+      "range": "A59:E64",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        268
+      ],
+      "bytes": 62006,
+      "sha256": "d06d6c160d3d073b3e70a4ccd7322ca3e06199546fdf72591c67a020aefdf82f"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-10.png",
+      "sheetName": "Cibles V17",
+      "range": "A65:E70",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        305
+      ],
+      "bytes": 78627,
+      "sha256": "d3a4cc96bfcf76ad148d29d49f61d1b7b516790b8522078787235f200d886104"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-11.png",
+      "sheetName": "Cibles V17",
+      "range": "A71:E76",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        361
+      ],
+      "bytes": 105862,
+      "sha256": "3889326bd0b4d1e1f5be947995a26b0a2a9f8ec3f55898d71968d0e69462ad1e"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-12.png",
+      "sheetName": "Cibles V17",
+      "range": "A77:E82",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        408
+      ],
+      "bytes": 114372,
+      "sha256": "c6574a88ee3396f8c5c861ac5c0d2641a6543e22c6df3fa7122019b4ca55f3be"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-13.png",
+      "sheetName": "Cibles V17",
+      "range": "A83:E88",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        315
+      ],
+      "bytes": 85099,
+      "sha256": "bd8dbbec997e57a15c07281b96bb42cfd83635d3dc6574703912e7d9f9eb9ff4"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-14.png",
+      "sheetName": "Cibles V17",
+      "range": "A89:E94",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        343
+      ],
+      "bytes": 92579,
+      "sha256": "818e939b9115f3520f6381fe23c36d1931e5e5c5264f12b923e137751944b3f6"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-15.png",
+      "sheetName": "Cibles V17",
+      "range": "A95:E100",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        361
+      ],
+      "bytes": 111872,
+      "sha256": "d446efcdc57d432c13b44d11aa70d0e71cbb7d23d520051e5511e2e95d964b3a"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-16.png",
+      "sheetName": "Cibles V17",
+      "range": "A101:E106",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        315
+      ],
+      "bytes": 81789,
+      "sha256": "1d9e0f42d54327f0491dbc3369926bb2c1409e5550088c9fb3eddcbc2f4c2ff9"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-17.png",
+      "sheetName": "Cibles V17",
+      "range": "A107:E112",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        333
+      ],
+      "bytes": 95208,
+      "sha256": "07e96cbd02d9d6a6d2d6281b66d5b70251886e7709dc8e466bb111c1c7e71115"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/cibles-18.png",
+      "sheetName": "Cibles V17",
+      "range": "A113:E116",
+      "origin": "Artifact Tool additions workbook",
+      "reviewer": "/root/recover_assets",
+      "status": "passed",
+      "finding": "Opened and visually inspected by recover_assets. No visible clipped text, adjacent-row overflow, insufficient row height or broken table striping. Wide five-column view requires zoom when displayed as a reduced preview.",
+      "pixels": [
+        3120,
+        195
+      ],
+      "bytes": 48163,
+      "sha256": "304a2a331b4d0c4c8e6019c42780cbb2e030a3e3593e49a26225a5943a0335bd"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/final-production.png",
+      "sheetName": "Production V17",
+      "range": "A1:E26",
+      "origin": "Artifact Tool complete final workbook",
+      "reviewer": "/root/bible_v17",
+      "status": "passed",
+      "finding": "Opened and visually inspected after complete-workbook import. Readable title, column headers and wrapped data; no visible clipping. PNG identity with the corresponding additions render was separately verified.",
+      "pixels": [
+        1700,
+        1513
+      ],
+      "bytes": 206993,
+      "sha256": "4dc94a016fa2df01ec0303edc089639a824f52fd3e08b04f9a63969d05e4ba9e"
+    },
+    {
+      "path": "docs/standalone/production-v17/workbook-previews/final-cibles-0.png",
+      "sheetName": "Cibles V17",
+      "range": "A1:E10",
+      "origin": "Artifact Tool complete final workbook",
+      "reviewer": "/root/bible_v17",
+      "status": "passed",
+      "finding": "Opened and visually inspected after complete-workbook import. Readable title, column headers and wrapped data; no visible clipping. PNG identity with the corresponding additions render was separately verified.",
+      "pixels": [
+        3120,
+        540
+      ],
+      "bytes": 151624,
+      "sha256": "c9034e4248648a26e5d32eb266b6d120438b4dede065eaf9cafa0c2f291ec3a2"
+    }
+  ],
+  "fidelityOneToOneCertified": false
+}

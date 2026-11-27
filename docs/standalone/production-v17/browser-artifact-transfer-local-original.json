@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "verified",
+  "runtimeCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "packagingCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+  "ciMergeCommit": "7454b9d2b2a7ab87564b8320cb2f04a015211b52",
+  "packagingTree": "e6b31f4e5ae9a92a207bd60b478a27fbea77f341",
+  "runtimeSourceRelationship": {
+    "changedPaths": [
+      ".github/workflows/quality.yml"
+    ],
+    "unchangedBlobs": 5069,
+    "verifiedBy": "root GitHub tree/compare audit"
+  },
+  "ciRunId": 45948785155,
+  "ciRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+  "ciJobId": 140339533601,
+  "ciConclusion": "success",
+  "initialOversizeAttempt": "docs/standalone/production-v17/browser-artifact-transfer-initial-limit.json",
+  "transportArchives": [
+    {
+      "artifactId": 15175519470,
+      "name": "infernal-versus-standalone-part-00",
+      "apiZipBytes": 503317009,
+      "actualZipBytes": 503317009,
+      "apiZipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+      "actualZipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+      "zipEntries": [
+        {
+          "name": "standalone.tar.part-00",
+          "bytes": 503316480,
+          "crc32": "55a6e3ea"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 259,
+          "crc32": "3a2e028c"
+        }
+      ],
+      "zipPathTraversalAndLinkChecksPassed": true,
+      "zipCrcReadPassed": true,
+      "partName": "standalone.tar.part-00",
+      "partBytes": 503316480,
+      "localPartPath": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/transfer-parts/standalone.tar.part-00",
+      "expectedPartSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f",
+      "actualPartSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f",
+      "checksumManifestSha256": "31e0fd9f6e107471af478365de2c78b0356c4c0cf0762dc6bb33daaed8bb8ad0",
+      "localTransportZipPath": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/infernal-versus-v17-part-00-15175519470.zip",
+      "localTransportZipDeleted": true,
+      "materialization": "GitHub reusable reference -> Library prepare_materialize -> official Library transfer helper"
+    },
+    {
+      "artifactId": 15176277382,
+      "name": "infernal-versus-standalone-part-01",
+      "apiZipBytes": 460769809,
+      "actualZipBytes": 460769809,
+      "apiZipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+      "actualZipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+      "zipEntries": [
+        {
+          "name": "standalone.tar.part-01",
+          "bytes": 460769280,
+          "crc32": "c938570b"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 259,
+          "crc32": "3a2e028c"
+        }
+      ],
+      "zipPathTraversalAndLinkChecksPassed": true,
+      "zipCrcReadPassed": true,
+      "partName": "standalone.tar.part-01",
+      "partBytes": 460769280,
+      "localPartPath": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/transfer-parts/standalone.tar.part-01",
+      "expectedPartSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e",
+      "actualPartSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e",
+      "checksumManifestSha256": "31e0fd9f6e107471af478365de2c78b0356c4c0cf0762dc6bb33daaed8bb8ad0",
+      "localTransportZipPath": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/infernal-versus-v17-part-01-15176277382.zip",
+      "localTransportZipDeleted": true,
+      "materialization": "GitHub reusable reference -> Library prepare_materialize -> official Library transfer helper"
+    }
+  ],
+  "combinedArchive": {
+    "format": "tar",
+    "expectedSha256": "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8",
+    "actualSha256": "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8",
+    "bytes": 964085760,
+    "physicalArchiveStored": false,
+    "orderedPartNames": [
+      "standalone.tar.part-00",
+      "standalone.tar.part-01"
+    ],
+    "orderedPartPaths": [
+      "/workspace/scratch/3ca8c3f75b61/verified-build-v17/transfer-parts/standalone.tar.part-00",
+      "/workspace/scratch/3ca8c3f75b61/verified-build-v17/transfer-parts/standalone.tar.part-01"
+    ],
+    "checksumManifestPath": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/transfer-parts/SHA256SUMS",
+    "verification": "SHA256 of concatenated complete ordered part bytes matched CI SHA256SUMS"
+  },
+  "bundle": {
+    "directory": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/dist-combat",
+    "entry": "index.html",
+    "tarPathTraversalAndLinkChecksPassed": true,
+    "normalizedTarEntries": 1488,
+    "tarFileBytes": 962969383,
+    "extractionMethod": "Concatenated parts read as a tar stream; paths validated in a complete first pass, no links or devices accepted, no extractall.",
+    "manifestSha256": "112ff25cf0e74ca403a2a8bc08a7d5d0ab290ea6fdca9defedb8f44d829c3c38",
+    "manifestVerifiedFiles": 1350,
+    "manifestVerifiedBytes": 962706019,
+    "everyManifestFileSizeAndSha256Matched": true,
+    "unexpectedFiles": 0,
+    "selectedV17ExportsVerified": [
+      {
+        "id": "spring-broken-blue-can-s1",
+        "path": "assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "sha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3"
+      },
+      {
+        "id": "crimson-horned-wall-trophy-s2",
+        "path": "assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+        "sha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50"
+      },
+      {
+        "id": "unhappy-campers-outboard-motor-s2",
+        "path": "assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+        "sha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f"
+      },
+      {
+        "id": "crimson-fanged-jaw-wall-trophy-s2",
+        "path": "assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+        "sha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d"
+      }
+    ]
+  },
+  "storagePlan": {
+    "keepOrderedParts": true,
+    "keepExtractedBundle": true,
+    "physicalTarStored": false,
+    "deleteOnlyVerifiedLocalTransportZips": true
+  },
+  "bundleModified": false,
+  "finishedAt": "2026-11-27T06:09:24.645800+00:00",
+  "browserVerification": "Separate browser-gallery-qa.json; no browser used for download or extraction."
+}
