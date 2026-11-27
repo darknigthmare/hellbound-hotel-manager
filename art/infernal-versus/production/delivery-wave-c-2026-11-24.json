@@ -1,0 +1,1880 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-c-2026-11-24",
+  "date": "2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "comparisonCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+  "comparisonTree": "bc64a1288755eba4ebf89b42a87916e21d237600",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "pullRequest": 8,
+  "purpose": "Continue the authorized asset production, integrate authored poses and stage layers, and reconcile the production bible.",
+  "counts": {
+    "newAcceptedArtworks": 35,
+    "newActionPoses": 21,
+    "newCostumePoses": 5,
+    "newStageBackgrounds": 3,
+    "newStageProps": 6,
+    "newMasterPngFiles": 35,
+    "newRuntimeWebPFiles": 35,
+    "derivedThumbnails": 3,
+    "totalNewImageFiles": 73,
+    "newRegisteredPublicImageFiles": 38,
+    "reusedExistingReadyActivated": 1,
+    "generationCalls": 37,
+    "successfulGenerationOutputs": 36,
+    "supersededQualityCandidateOutputs": 1,
+    "safetyRefusals": 1,
+    "unattemptedDeferredPoses": 2
+  },
+  "imageBytes": {
+    "masters": 44084233,
+    "runtimeAndThumbnails": 27913588,
+    "total": 71997821
+  },
+  "before": {
+    "fighters": 36,
+    "individualReady": 34,
+    "individualGuard": 3,
+    "individualLightContact": 5,
+    "individualHit": 4,
+    "costumes": 5,
+    "costumeKeyPoses": 29,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 16,
+    "threePlaneStages": 16,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 297,
+    "brokenReferences": []
+  },
+  "after": {
+    "fighters": 36,
+    "individualReady": 34,
+    "individualGuard": 10,
+    "individualLightContact": 12,
+    "individualHit": 11,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 19,
+    "threePlaneStages": 19,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 336,
+    "brokenReferences": []
+  },
+  "newlyReferencedUrls": [
+    "/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+    "/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+    "/assets/sprites/costumes/lute-pre-injury-jump.webp",
+    "/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+    "/assets/sprites/costumes/lute-pre-injury-strike.webp",
+    "/assets/sprites/individual/carmilla-guard.webp",
+    "/assets/sprites/individual/carmilla-recoil.webp",
+    "/assets/sprites/individual/carmilla-strike.webp",
+    "/assets/sprites/individual/hb_asmodeus-guard.webp",
+    "/assets/sprites/individual/hb_asmodeus-recoil.webp",
+    "/assets/sprites/individual/hb_asmodeus-strike.webp",
+    "/assets/sprites/individual/hb_blitzo-guard.webp",
+    "/assets/sprites/individual/hb_blitzo-recoil.webp",
+    "/assets/sprites/individual/hb_blitzo-strike.webp",
+    "/assets/sprites/individual/hb_fizzarolli-guard.webp",
+    "/assets/sprites/individual/hb_fizzarolli-recoil.webp",
+    "/assets/sprites/individual/hb_fizzarolli-strike.webp",
+    "/assets/sprites/individual/hb_stolas-guard.webp",
+    "/assets/sprites/individual/hb_stolas-recoil.webp",
+    "/assets/sprites/individual/hb_stolas-strike.webp",
+    "/assets/sprites/individual/lute-ready.webp",
+    "/assets/sprites/individual/velvette-guard.webp",
+    "/assets/sprites/individual/velvette-recoil.webp",
+    "/assets/sprites/individual/velvette-strike.webp",
+    "/assets/sprites/individual/vox-guard.webp",
+    "/assets/sprites/individual/vox-recoil.webp",
+    "/assets/sprites/individual/vox-strike.webp",
+    "/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+    "/assets/stages/helluva/crimson-mansion/prop-near.webp",
+    "/assets/stages/helluva/crimson-mansion/room.webp",
+    "/assets/stages/helluva/crimson-mansion/thumb.webp",
+    "/assets/stages/helluva/dhorks/prop-middle.webp",
+    "/assets/stages/helluva/dhorks/prop-near.webp",
+    "/assets/stages/helluva/dhorks/room.webp",
+    "/assets/stages/helluva/dhorks/thumb.webp",
+    "/assets/stages/helluva/mammon-show/prop-middle.webp",
+    "/assets/stages/helluva/mammon-show/prop-near.webp",
+    "/assets/stages/helluva/mammon-show/room.webp",
+    "/assets/stages/helluva/mammon-show/thumb.webp"
+  ],
+  "removedReferencedUrls": [],
+  "assets": [
+    {
+      "id": "vox-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/vox-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/vox-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/vox-guard.png",
+          "role": "master",
+          "bytes": 1273153,
+          "sha256": "f2a4b37a4be28104437840c3216994a526375f0e5dbf626a2d9c82bf4a1f8447"
+        },
+        {
+          "path": "public/assets/sprites/individual/vox-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 840966,
+          "sha256": "cf5a5711f4056eb150332a7a30185382d38d991847a7408e8db0f3a3cff35aa1"
+        }
+      ]
+    },
+    {
+      "id": "vox-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/vox-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/vox-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/vox-strike.png",
+          "role": "master",
+          "bytes": 1317136,
+          "sha256": "ca2903c5c36865a96d991e848268fe7e7f27bbd92f92178c46cfb2399bad838f"
+        },
+        {
+          "path": "public/assets/sprites/individual/vox-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 882690,
+          "sha256": "27d2ca0b9d86af7483c39a8394d30a4f00218284e3c82161a2a4c310635ed56e"
+        }
+      ]
+    },
+    {
+      "id": "vox-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/vox-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/vox-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/vox-recoil.png",
+          "role": "master",
+          "bytes": 1359894,
+          "sha256": "e533821ad8c7d5d9c67409869c5cac01c3b722b172c232d6a2f1be92be084b99"
+        },
+        {
+          "path": "public/assets/sprites/individual/vox-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 898044,
+          "sha256": "6c6a77ba562df7671501eca0677e3cf954b78e8c346148fbed671befa4605895"
+        }
+      ]
+    },
+    {
+      "id": "velvette-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/velvette-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/velvette-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/velvette-guard.png",
+          "role": "master",
+          "bytes": 1511245,
+          "sha256": "8d99acadde760795fa0e850cbfc568577bb250aaa680222e74f29d784cb15691"
+        },
+        {
+          "path": "public/assets/sprites/individual/velvette-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 1026554,
+          "sha256": "eb07971ae469343d55922786203cac99c3b985740e5b26100f1a5696dba189bf"
+        }
+      ]
+    },
+    {
+      "id": "velvette-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/velvette-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/velvette-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/velvette-strike.png",
+          "role": "master",
+          "bytes": 1521681,
+          "sha256": "64b79dd83e3b174ef5b91e96ff2be7ba565be549f7ce2b4dac561ca26ca34ec4"
+        },
+        {
+          "path": "public/assets/sprites/individual/velvette-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 1035622,
+          "sha256": "13b89998056d74e82468834ea20d2943294256cb04fa0edd4fea805de2f6b94c"
+        }
+      ]
+    },
+    {
+      "id": "velvette-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/velvette-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/velvette-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/velvette-recoil.png",
+          "role": "master",
+          "bytes": 1534330,
+          "sha256": "46d2a7dd7acfbcd8a5f394854b0511597780ed9dd385701caf80f3618d9942b0"
+        },
+        {
+          "path": "public/assets/sprites/individual/velvette-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 1036766,
+          "sha256": "0c7d629abbb658cfae8ddd64016ccd1519927cfbf3d06d061a79b1e992df34a8"
+        }
+      ]
+    },
+    {
+      "id": "carmilla-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/carmilla-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/carmilla-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/carmilla-guard.png",
+          "role": "master",
+          "bytes": 1395934,
+          "sha256": "b49c73704508ad151bbe2a298d9b794ae4e9a8db9d7184587ccbc8b3fff43b40"
+        },
+        {
+          "path": "public/assets/sprites/individual/carmilla-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 883918,
+          "sha256": "561a997953238a2ccbe23205c31f25d377627ce9b42ec07d56da50767e241bec"
+        }
+      ]
+    },
+    {
+      "id": "carmilla-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/carmilla-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/carmilla-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/carmilla-strike.png",
+          "role": "master",
+          "bytes": 1342707,
+          "sha256": "6c3c1dc9d950a58db7d11c512ab5fe3a2a610e6671832a95b8930619ec5a266a"
+        },
+        {
+          "path": "public/assets/sprites/individual/carmilla-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 853558,
+          "sha256": "d36b8e362f7a4bde4d90eafa07f3da92834b418a2846e2ed995265e8ddceffab"
+        }
+      ]
+    },
+    {
+      "id": "carmilla-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-main-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/carmilla-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/carmilla-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/carmilla-recoil.png",
+          "role": "master",
+          "bytes": 1493273,
+          "sha256": "0f8fbb6a55e81534f4f79fee7e301e239391f5303bd85dede35316843c3855f2"
+        },
+        {
+          "path": "public/assets/sprites/individual/carmilla-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 943640,
+          "sha256": "e4cb9ad73aa4fc68537a1609d7752be8be491b2328e9721160e7fef4a53e2a38"
+        }
+      ]
+    },
+    {
+      "id": "hb_blitzo-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_blitzo-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_blitzo-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_blitzo-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_blitzo-guard.png",
+          "role": "master",
+          "bytes": 1390122,
+          "sha256": "e09e3b16d011ed2fd3472db3d2614825a0b3a8de756acadd2d51de2e736055b8"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_blitzo-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 878672,
+          "sha256": "8ddfde6b571b57c01d5d5cc4f70d26f91fbeb614c196fc13377d4de9af4f5652"
+        }
+      ]
+    },
+    {
+      "id": "hb_blitzo-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_blitzo-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_blitzo-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_blitzo-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_blitzo-strike.png",
+          "role": "master",
+          "bytes": 1393307,
+          "sha256": "e05282724062c1b328d49e62f926f92e1bf6d1d26d53b32bcfce5d2595aa8265"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_blitzo-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 880232,
+          "sha256": "08a7b6fc05e137844ba355190d35bba4804b89833250a26a1119a68583839344"
+        }
+      ]
+    },
+    {
+      "id": "hb_blitzo-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_blitzo-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_blitzo-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_blitzo-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_blitzo-recoil.png",
+          "role": "master",
+          "bytes": 1410528,
+          "sha256": "5c1cdbc1952c8ff280d212bf79509885397d44c569ea3b9b40ab95de088ed796"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_blitzo-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 881852,
+          "sha256": "ad616d2d310fe6ff363445188d0d41830822df49988394e4d9afeaa14d44d5f2"
+        }
+      ]
+    },
+    {
+      "id": "hb_stolas-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_stolas-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_stolas-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_stolas-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_stolas-guard.png",
+          "role": "master",
+          "bytes": 1228049,
+          "sha256": "175f88ecb39371ab57508410b6be0b7fb8b321ce5de14d17ede03c1ae01975f7"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_stolas-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 778774,
+          "sha256": "59fcf0b614b60ffb56ede1c6488043778e22b441bc38c743b7e04411849d324d"
+        }
+      ]
+    },
+    {
+      "id": "hb_stolas-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_stolas-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_stolas-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_stolas-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_stolas-strike.png",
+          "role": "master",
+          "bytes": 1248749,
+          "sha256": "1d9855ea1e32bc55cbb429036e2e8bbff60196d5cb0e8220b77c1f82bfe84d82"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_stolas-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 780942,
+          "sha256": "da38bca1751cd2139477495b7179c10ab0ebab9b5e3abb82feae292eeb4569ba"
+        }
+      ]
+    },
+    {
+      "id": "hb_stolas-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_stolas-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_stolas-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_stolas-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_stolas-recoil.png",
+          "role": "master",
+          "bytes": 1311510,
+          "sha256": "6d8f99cb5cd3dc97953ecec8e4b287e35ec324133fdde3b0d57d87d675414cd8"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_stolas-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 830118,
+          "sha256": "9fbee6c4e3af04b87642544afa5661528302de72fa887d5023190a78d16a0bf6"
+        }
+      ]
+    },
+    {
+      "id": "hb_fizzarolli-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_fizzarolli-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_fizzarolli-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_fizzarolli-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_fizzarolli-guard.png",
+          "role": "master",
+          "bytes": 1518053,
+          "sha256": "4d1c1c0a5f37103c7e8784658cd598d1ad7cc23c5c5b493f6e539dbb6d3608fe"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_fizzarolli-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 954144,
+          "sha256": "2dd00a70831230dfcc915fb6036bfc0ea0e782cf6da9efc58931b2701fb18006"
+        }
+      ]
+    },
+    {
+      "id": "hb_fizzarolli-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_fizzarolli-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_fizzarolli-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_fizzarolli-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_fizzarolli-strike.png",
+          "role": "master",
+          "bytes": 1573282,
+          "sha256": "fdfc3b0b1cd8202fa8b01eb0762e161a6db77065f38305136a433825de3816df"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_fizzarolli-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 999512,
+          "sha256": "16dc6b6195ee85fd9d61a00b3436ba09098c264992b634d733cdaf30b65b52a4"
+        }
+      ]
+    },
+    {
+      "id": "hb_fizzarolli-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_fizzarolli-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_fizzarolli-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_fizzarolli-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_fizzarolli-recoil.png",
+          "role": "master",
+          "bytes": 1613126,
+          "sha256": "5bd52b5267810f19d1eff49f9d2847794f6a4164c575c164dd97c108ac53fbbf"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_fizzarolli-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 1032440,
+          "sha256": "fed3b19b2b1df9fcdb50687e9c686cca37e2b52311c625aaf35269e787b16906"
+        }
+      ]
+    },
+    {
+      "id": "hb_asmodeus-guard",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_asmodeus-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_asmodeus-guard.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_asmodeus-guard.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_asmodeus-guard.png",
+          "role": "master",
+          "bytes": 1409626,
+          "sha256": "67a809706c85f899260460f8e88ed905e02d6b6a42f2eae5a8fce2760283ee66"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_asmodeus-guard.webp",
+          "role": "runtimeExport",
+          "bytes": 877854,
+          "sha256": "97ace67b7d9c8b91eae3800d26c0e7258e2538dd5c457016049f8f2afe4cc94e"
+        }
+      ]
+    },
+    {
+      "id": "hb_asmodeus-strike",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_asmodeus-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_asmodeus-strike.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_asmodeus-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_asmodeus-strike.png",
+          "role": "master",
+          "bytes": 1361915,
+          "sha256": "b4911267c0826283f922c02d532224a3d19e150a3b2e54e1f036a785b4873590"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_asmodeus-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 843616,
+          "sha256": "ec9f27362aff07379fed69e74c38f445e38e5ea62897f631310b3db3f587c319"
+        }
+      ]
+    },
+    {
+      "id": "hb_asmodeus-recoil",
+      "kind": "action-pose",
+      "manifest": "art/infernal-versus/production/poses-helluva-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/poses/hb_asmodeus-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_asmodeus-recoil.webp",
+      "runtimeUrl": "/assets/sprites/individual/hb_asmodeus-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/poses/hb_asmodeus-recoil.png",
+          "role": "master",
+          "bytes": 1398367,
+          "sha256": "58dc3688aa25428e289e24ea9893c496b76a668806c894f8f50e6ee6eff4c6da"
+        },
+        {
+          "path": "public/assets/sprites/individual/hb_asmodeus-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 868452,
+          "sha256": "7323c858042f810e314c700f6e6e4a58096defacf2b9c1b2ac067788ad968b42"
+        }
+      ]
+    },
+    {
+      "id": "lute-pre-injury-strike",
+      "kind": "costume-pose",
+      "manifest": "art/infernal-versus/production/costumes-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/costumes/lute-pre-injury-strike.png",
+      "runtimeExport": "public/assets/sprites/costumes/lute-pre-injury-strike.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-strike.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/costumes/lute-pre-injury-strike.png",
+          "role": "master",
+          "bytes": 1360882,
+          "sha256": "a04f28cbfe3865e898a9c426ac31b7b240a9ca7731f7009d2e680e23de77bb79"
+        },
+        {
+          "path": "public/assets/sprites/costumes/lute-pre-injury-strike.webp",
+          "role": "runtimeExport",
+          "bytes": 831716,
+          "sha256": "70d94ba111ba1714c4da57196a01b88cde1b0d38a775a61e7b29a233d84fb572"
+        }
+      ]
+    },
+    {
+      "id": "lute-pre-injury-recoil",
+      "kind": "costume-pose",
+      "manifest": "art/infernal-versus/production/costumes-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/costumes/lute-pre-injury-recoil.png",
+      "runtimeExport": "public/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/costumes/lute-pre-injury-recoil.png",
+          "role": "master",
+          "bytes": 1410935,
+          "sha256": "4bf960519f254ec46fd3c2b51dcb65cbcaa5ce23b25e8be3e068088687604052"
+        },
+        {
+          "path": "public/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+          "role": "runtimeExport",
+          "bytes": 864442,
+          "sha256": "3ded7d5346a59ab471c4b2621fc19b4bacfc72c3b5b94a23676f975264933cd6"
+        }
+      ]
+    },
+    {
+      "id": "lute-pre-injury-heavy",
+      "kind": "costume-pose",
+      "manifest": "art/infernal-versus/production/costumes-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/costumes/lute-pre-injury-heavy.png",
+      "runtimeExport": "public/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/costumes/lute-pre-injury-heavy.png",
+          "role": "master",
+          "bytes": 1264508,
+          "sha256": "38ec14670c3f7e9b7c293a7c56e35c9e26ecb72626d40f2039444564197ad799"
+        },
+        {
+          "path": "public/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+          "role": "runtimeExport",
+          "bytes": 772720,
+          "sha256": "d8cedde774806bbbeabca3825d1fd4cb963f7f8056222c9ee6e837a215ab451e"
+        }
+      ]
+    },
+    {
+      "id": "lute-pre-injury-crouch",
+      "kind": "costume-pose",
+      "manifest": "art/infernal-versus/production/costumes-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/costumes/lute-pre-injury-crouch.png",
+      "runtimeExport": "public/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/costumes/lute-pre-injury-crouch.png",
+          "role": "master",
+          "bytes": 1124113,
+          "sha256": "1f2d7e0deea85256888e1b47347bb888942265f2cb10efdf70aae79d5e3edee5"
+        },
+        {
+          "path": "public/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+          "role": "runtimeExport",
+          "bytes": 680484,
+          "sha256": "12e7cff30f5ae22fdef9ebaa544dfac6a03c53ecad3639ee8796b7f7b98a6ecf"
+        }
+      ]
+    },
+    {
+      "id": "lute-pre-injury-jump",
+      "kind": "costume-pose",
+      "manifest": "art/infernal-versus/production/costumes-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/costumes/lute-pre-injury-jump.png",
+      "runtimeExport": "public/assets/sprites/costumes/lute-pre-injury-jump.webp",
+      "runtimeUrl": "/assets/sprites/costumes/lute-pre-injury-jump.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1024,
+        1536
+      ],
+      "runtimeDimensions": [
+        1024,
+        1536
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/costumes/lute-pre-injury-jump.png",
+          "role": "master",
+          "bytes": 1390191,
+          "sha256": "db9dd009be40bd6e096b94c61faaa9d1440f5a96f1f8e976939b4ee351b6712e"
+        },
+        {
+          "path": "public/assets/sprites/costumes/lute-pre-injury-jump.webp",
+          "role": "runtimeExport",
+          "bytes": 846830,
+          "sha256": "84d429f6bb227f36816d5b54e90bfac05ead993e5c33660d57762d398dfa93d7"
+        }
+      ]
+    },
+    {
+      "id": "dhorks-room",
+      "kind": "stage-background",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/dhorks/room.png",
+      "runtimeExport": "public/assets/stages/helluva/dhorks/room.webp",
+      "runtimeUrl": "/assets/stages/helluva/dhorks/room.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1536,
+        1024
+      ],
+      "runtimeDimensions": [
+        1536,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/dhorks/room.png",
+          "role": "master",
+          "bytes": 1466569,
+          "sha256": "cda8efb3e313d3d96b8fcced0519583ad01fb51f3c1b06ec0f7bd53723be49f5"
+        },
+        {
+          "path": "public/assets/stages/helluva/dhorks/room.webp",
+          "role": "runtimeExport",
+          "bytes": 826386,
+          "sha256": "7637650147748357d98df0d941b568d1b9d3ef50b339432273b83d7201d1204a"
+        }
+      ]
+    },
+    {
+      "id": "crimson-mansion-room",
+      "kind": "stage-background",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/crimson-mansion/room.png",
+      "runtimeExport": "public/assets/stages/helluva/crimson-mansion/room.webp",
+      "runtimeUrl": "/assets/stages/helluva/crimson-mansion/room.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1536,
+        1024
+      ],
+      "runtimeDimensions": [
+        1536,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/crimson-mansion/room.png",
+          "role": "master",
+          "bytes": 1533537,
+          "sha256": "25bb2d13059c6145890c9da2b501b873d2ad478964e3b19f1710b7b79576ae82"
+        },
+        {
+          "path": "public/assets/stages/helluva/crimson-mansion/room.webp",
+          "role": "runtimeExport",
+          "bytes": 1036544,
+          "sha256": "cc90efd0bde3e8f2430d896ca97d095c7cff1afd6ae11bf1f5612dd767c8dc6e"
+        }
+      ]
+    },
+    {
+      "id": "mammon-show-room",
+      "kind": "stage-background",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/mammon-show/room.png",
+      "runtimeExport": "public/assets/stages/helluva/mammon-show/room.webp",
+      "runtimeUrl": "/assets/stages/helluva/mammon-show/room.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1536,
+        1024
+      ],
+      "runtimeDimensions": [
+        1536,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": false,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/mammon-show/room.png",
+          "role": "master",
+          "bytes": 1829382,
+          "sha256": "5630dede805390c7d6d6b45d1c4fadeaae500375952101d9bdfc1e8745972949"
+        },
+        {
+          "path": "public/assets/stages/helluva/mammon-show/room.webp",
+          "role": "runtimeExport",
+          "bytes": 1345878,
+          "sha256": "6177b536ad99de9252840473c38c3d355b81fe3b4dcf6d6c25532b74926d91f0"
+        }
+      ]
+    },
+    {
+      "id": "dhorks-prop-middle",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/dhorks/prop-middle.png",
+      "runtimeExport": "public/assets/stages/helluva/dhorks/prop-middle.webp",
+      "runtimeUrl": "/assets/stages/helluva/dhorks/prop-middle.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/dhorks/prop-middle.png",
+          "role": "master",
+          "bytes": 388125,
+          "sha256": "6e3891084b57ea3e386aadcdf7d68565d11392ff7b25a3aed837051098665dd2"
+        },
+        {
+          "path": "public/assets/stages/helluva/dhorks/prop-middle.webp",
+          "role": "runtimeExport",
+          "bytes": 166708,
+          "sha256": "5517a5643617cf2717e47adc9fdc76b627d5c3a8a700271f3c2954b376ce5856"
+        }
+      ]
+    },
+    {
+      "id": "crimson-mansion-prop-middle",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/crimson-mansion/prop-middle.png",
+      "runtimeExport": "public/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+      "runtimeUrl": "/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/crimson-mansion/prop-middle.png",
+          "role": "master",
+          "bytes": 608269,
+          "sha256": "9f23f8cdb7e455fb47002e6d7375acbdefb2a62fa05c349b356bf9cfe37dc298"
+        },
+        {
+          "path": "public/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+          "role": "runtimeExport",
+          "bytes": 284012,
+          "sha256": "32ceda95d9a9744342444c4f7fd29d1b2143c8c187fd9a0af8fe410d9090bd97"
+        }
+      ]
+    },
+    {
+      "id": "mammon-show-prop-middle",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/mammon-show/prop-middle.png",
+      "runtimeExport": "public/assets/stages/helluva/mammon-show/prop-middle.webp",
+      "runtimeUrl": "/assets/stages/helluva/mammon-show/prop-middle.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/mammon-show/prop-middle.png",
+          "role": "master",
+          "bytes": 563791,
+          "sha256": "bea542c5786c1982c483c37f4806b2697084a5b108dc18b677fe07f743575ad4"
+        },
+        {
+          "path": "public/assets/stages/helluva/mammon-show/prop-middle.webp",
+          "role": "runtimeExport",
+          "bytes": 277324,
+          "sha256": "da81fc150495eea893b6ba75cf2204008bfbb75b756bd71065086ec1ed07b9bb"
+        }
+      ]
+    },
+    {
+      "id": "dhorks-prop-near",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/dhorks/prop-near.png",
+      "runtimeExport": "public/assets/stages/helluva/dhorks/prop-near.webp",
+      "runtimeUrl": "/assets/stages/helluva/dhorks/prop-near.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/dhorks/prop-near.png",
+          "role": "master",
+          "bytes": 739724,
+          "sha256": "05f3a56bb1d2bedd1e6f3c921b7ca6f6895e91322e78cc55ab82502526f42f8a"
+        },
+        {
+          "path": "public/assets/stages/helluva/dhorks/prop-near.webp",
+          "role": "runtimeExport",
+          "bytes": 297130,
+          "sha256": "74c57745cb1d44b002c7d9e0a6ebd4a6c3e094843e16241b28deaaaa6a1973ab"
+        }
+      ]
+    },
+    {
+      "id": "crimson-mansion-prop-near",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/crimson-mansion/prop-near.png",
+      "runtimeExport": "public/assets/stages/helluva/crimson-mansion/prop-near.webp",
+      "runtimeUrl": "/assets/stages/helluva/crimson-mansion/prop-near.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/crimson-mansion/prop-near.png",
+          "role": "master",
+          "bytes": 418836,
+          "sha256": "ca05e5f9ded62c4b225641b94eeca0b1be2ccd3e89af6e704a21ce9ee1cc62c2"
+        },
+        {
+          "path": "public/assets/stages/helluva/crimson-mansion/prop-near.webp",
+          "role": "runtimeExport",
+          "bytes": 201770,
+          "sha256": "11b6c80fd4b1abc873834cd1da4c7f0ee5848d41051500977a3920a10917203e"
+        }
+      ]
+    },
+    {
+      "id": "mammon-show-prop-near",
+      "kind": "stage-prop",
+      "manifest": "art/infernal-versus/production/stages-wave-c-2026-11-24.json",
+      "master": "art/infernal-versus/masters/stages/mammon-show/prop-near.png",
+      "runtimeExport": "public/assets/stages/helluva/mammon-show/prop-near.webp",
+      "runtimeUrl": "/assets/stages/helluva/mammon-show/prop-near.webp",
+      "sourcePixelsPreserved": true,
+      "masterDimensions": [
+        1254,
+        1254
+      ],
+      "runtimeDimensions": [
+        1024,
+        1024
+      ],
+      "exportPixelsMatch": true,
+      "resizedForRuntime": true,
+      "files": [
+        {
+          "path": "art/infernal-versus/masters/stages/mammon-show/prop-near.png",
+          "role": "master",
+          "bytes": 379384,
+          "sha256": "a6b0854cbada498b48710c14d7bbec7b596e65b81d87cc1437cc78c579fb7641"
+        },
+        {
+          "path": "public/assets/stages/helluva/mammon-show/prop-near.webp",
+          "role": "runtimeExport",
+          "bytes": 195892,
+          "sha256": "4f2d746e3d7dfced8f72100c82b58b63ec683854c642e70af7f7b507535713a0"
+        }
+      ]
+    }
+  ],
+  "imageFiles": [
+    {
+      "path": "art/infernal-versus/masters/poses/vox-guard.png",
+      "role": "master",
+      "bytes": 1273153,
+      "sha256": "f2a4b37a4be28104437840c3216994a526375f0e5dbf626a2d9c82bf4a1f8447"
+    },
+    {
+      "path": "public/assets/sprites/individual/vox-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 840966,
+      "sha256": "cf5a5711f4056eb150332a7a30185382d38d991847a7408e8db0f3a3cff35aa1"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/vox-strike.png",
+      "role": "master",
+      "bytes": 1317136,
+      "sha256": "ca2903c5c36865a96d991e848268fe7e7f27bbd92f92178c46cfb2399bad838f"
+    },
+    {
+      "path": "public/assets/sprites/individual/vox-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 882690,
+      "sha256": "27d2ca0b9d86af7483c39a8394d30a4f00218284e3c82161a2a4c310635ed56e"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/vox-recoil.png",
+      "role": "master",
+      "bytes": 1359894,
+      "sha256": "e533821ad8c7d5d9c67409869c5cac01c3b722b172c232d6a2f1be92be084b99"
+    },
+    {
+      "path": "public/assets/sprites/individual/vox-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 898044,
+      "sha256": "6c6a77ba562df7671501eca0677e3cf954b78e8c346148fbed671befa4605895"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/velvette-guard.png",
+      "role": "master",
+      "bytes": 1511245,
+      "sha256": "8d99acadde760795fa0e850cbfc568577bb250aaa680222e74f29d784cb15691"
+    },
+    {
+      "path": "public/assets/sprites/individual/velvette-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 1026554,
+      "sha256": "eb07971ae469343d55922786203cac99c3b985740e5b26100f1a5696dba189bf"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/velvette-strike.png",
+      "role": "master",
+      "bytes": 1521681,
+      "sha256": "64b79dd83e3b174ef5b91e96ff2be7ba565be549f7ce2b4dac561ca26ca34ec4"
+    },
+    {
+      "path": "public/assets/sprites/individual/velvette-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 1035622,
+      "sha256": "13b89998056d74e82468834ea20d2943294256cb04fa0edd4fea805de2f6b94c"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/velvette-recoil.png",
+      "role": "master",
+      "bytes": 1534330,
+      "sha256": "46d2a7dd7acfbcd8a5f394854b0511597780ed9dd385701caf80f3618d9942b0"
+    },
+    {
+      "path": "public/assets/sprites/individual/velvette-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 1036766,
+      "sha256": "0c7d629abbb658cfae8ddd64016ccd1519927cfbf3d06d061a79b1e992df34a8"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/carmilla-guard.png",
+      "role": "master",
+      "bytes": 1395934,
+      "sha256": "b49c73704508ad151bbe2a298d9b794ae4e9a8db9d7184587ccbc8b3fff43b40"
+    },
+    {
+      "path": "public/assets/sprites/individual/carmilla-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 883918,
+      "sha256": "561a997953238a2ccbe23205c31f25d377627ce9b42ec07d56da50767e241bec"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/carmilla-strike.png",
+      "role": "master",
+      "bytes": 1342707,
+      "sha256": "6c3c1dc9d950a58db7d11c512ab5fe3a2a610e6671832a95b8930619ec5a266a"
+    },
+    {
+      "path": "public/assets/sprites/individual/carmilla-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 853558,
+      "sha256": "d36b8e362f7a4bde4d90eafa07f3da92834b418a2846e2ed995265e8ddceffab"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/carmilla-recoil.png",
+      "role": "master",
+      "bytes": 1493273,
+      "sha256": "0f8fbb6a55e81534f4f79fee7e301e239391f5303bd85dede35316843c3855f2"
+    },
+    {
+      "path": "public/assets/sprites/individual/carmilla-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 943640,
+      "sha256": "e4cb9ad73aa4fc68537a1609d7752be8be491b2328e9721160e7fef4a53e2a38"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_blitzo-guard.png",
+      "role": "master",
+      "bytes": 1390122,
+      "sha256": "e09e3b16d011ed2fd3472db3d2614825a0b3a8de756acadd2d51de2e736055b8"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_blitzo-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 878672,
+      "sha256": "8ddfde6b571b57c01d5d5cc4f70d26f91fbeb614c196fc13377d4de9af4f5652"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_blitzo-strike.png",
+      "role": "master",
+      "bytes": 1393307,
+      "sha256": "e05282724062c1b328d49e62f926f92e1bf6d1d26d53b32bcfce5d2595aa8265"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_blitzo-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 880232,
+      "sha256": "08a7b6fc05e137844ba355190d35bba4804b89833250a26a1119a68583839344"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_blitzo-recoil.png",
+      "role": "master",
+      "bytes": 1410528,
+      "sha256": "5c1cdbc1952c8ff280d212bf79509885397d44c569ea3b9b40ab95de088ed796"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_blitzo-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 881852,
+      "sha256": "ad616d2d310fe6ff363445188d0d41830822df49988394e4d9afeaa14d44d5f2"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_stolas-guard.png",
+      "role": "master",
+      "bytes": 1228049,
+      "sha256": "175f88ecb39371ab57508410b6be0b7fb8b321ce5de14d17ede03c1ae01975f7"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_stolas-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 778774,
+      "sha256": "59fcf0b614b60ffb56ede1c6488043778e22b441bc38c743b7e04411849d324d"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_stolas-strike.png",
+      "role": "master",
+      "bytes": 1248749,
+      "sha256": "1d9855ea1e32bc55cbb429036e2e8bbff60196d5cb0e8220b77c1f82bfe84d82"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_stolas-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 780942,
+      "sha256": "da38bca1751cd2139477495b7179c10ab0ebab9b5e3abb82feae292eeb4569ba"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_stolas-recoil.png",
+      "role": "master",
+      "bytes": 1311510,
+      "sha256": "6d8f99cb5cd3dc97953ecec8e4b287e35ec324133fdde3b0d57d87d675414cd8"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_stolas-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 830118,
+      "sha256": "9fbee6c4e3af04b87642544afa5661528302de72fa887d5023190a78d16a0bf6"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_fizzarolli-guard.png",
+      "role": "master",
+      "bytes": 1518053,
+      "sha256": "4d1c1c0a5f37103c7e8784658cd598d1ad7cc23c5c5b493f6e539dbb6d3608fe"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_fizzarolli-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 954144,
+      "sha256": "2dd00a70831230dfcc915fb6036bfc0ea0e782cf6da9efc58931b2701fb18006"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_fizzarolli-strike.png",
+      "role": "master",
+      "bytes": 1573282,
+      "sha256": "fdfc3b0b1cd8202fa8b01eb0762e161a6db77065f38305136a433825de3816df"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_fizzarolli-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 999512,
+      "sha256": "16dc6b6195ee85fd9d61a00b3436ba09098c264992b634d733cdaf30b65b52a4"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_fizzarolli-recoil.png",
+      "role": "master",
+      "bytes": 1613126,
+      "sha256": "5bd52b5267810f19d1eff49f9d2847794f6a4164c575c164dd97c108ac53fbbf"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_fizzarolli-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 1032440,
+      "sha256": "fed3b19b2b1df9fcdb50687e9c686cca37e2b52311c625aaf35269e787b16906"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_asmodeus-guard.png",
+      "role": "master",
+      "bytes": 1409626,
+      "sha256": "67a809706c85f899260460f8e88ed905e02d6b6a42f2eae5a8fce2760283ee66"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_asmodeus-guard.webp",
+      "role": "runtimeExport",
+      "bytes": 877854,
+      "sha256": "97ace67b7d9c8b91eae3800d26c0e7258e2538dd5c457016049f8f2afe4cc94e"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_asmodeus-strike.png",
+      "role": "master",
+      "bytes": 1361915,
+      "sha256": "b4911267c0826283f922c02d532224a3d19e150a3b2e54e1f036a785b4873590"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_asmodeus-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 843616,
+      "sha256": "ec9f27362aff07379fed69e74c38f445e38e5ea62897f631310b3db3f587c319"
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_asmodeus-recoil.png",
+      "role": "master",
+      "bytes": 1398367,
+      "sha256": "58dc3688aa25428e289e24ea9893c496b76a668806c894f8f50e6ee6eff4c6da"
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_asmodeus-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 868452,
+      "sha256": "7323c858042f810e314c700f6e6e4a58096defacf2b9c1b2ac067788ad968b42"
+    },
+    {
+      "path": "art/infernal-versus/masters/costumes/lute-pre-injury-strike.png",
+      "role": "master",
+      "bytes": 1360882,
+      "sha256": "a04f28cbfe3865e898a9c426ac31b7b240a9ca7731f7009d2e680e23de77bb79"
+    },
+    {
+      "path": "public/assets/sprites/costumes/lute-pre-injury-strike.webp",
+      "role": "runtimeExport",
+      "bytes": 831716,
+      "sha256": "70d94ba111ba1714c4da57196a01b88cde1b0d38a775a61e7b29a233d84fb572"
+    },
+    {
+      "path": "art/infernal-versus/masters/costumes/lute-pre-injury-recoil.png",
+      "role": "master",
+      "bytes": 1410935,
+      "sha256": "4bf960519f254ec46fd3c2b51dcb65cbcaa5ce23b25e8be3e068088687604052"
+    },
+    {
+      "path": "public/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+      "role": "runtimeExport",
+      "bytes": 864442,
+      "sha256": "3ded7d5346a59ab471c4b2621fc19b4bacfc72c3b5b94a23676f975264933cd6"
+    },
+    {
+      "path": "art/infernal-versus/masters/costumes/lute-pre-injury-heavy.png",
+      "role": "master",
+      "bytes": 1264508,
+      "sha256": "38ec14670c3f7e9b7c293a7c56e35c9e26ecb72626d40f2039444564197ad799"
+    },
+    {
+      "path": "public/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+      "role": "runtimeExport",
+      "bytes": 772720,
+      "sha256": "d8cedde774806bbbeabca3825d1fd4cb963f7f8056222c9ee6e837a215ab451e"
+    },
+    {
+      "path": "art/infernal-versus/masters/costumes/lute-pre-injury-crouch.png",
+      "role": "master",
+      "bytes": 1124113,
+      "sha256": "1f2d7e0deea85256888e1b47347bb888942265f2cb10efdf70aae79d5e3edee5"
+    },
+    {
+      "path": "public/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+      "role": "runtimeExport",
+      "bytes": 680484,
+      "sha256": "12e7cff30f5ae22fdef9ebaa544dfac6a03c53ecad3639ee8796b7f7b98a6ecf"
+    },
+    {
+      "path": "art/infernal-versus/masters/costumes/lute-pre-injury-jump.png",
+      "role": "master",
+      "bytes": 1390191,
+      "sha256": "db9dd009be40bd6e096b94c61faaa9d1440f5a96f1f8e976939b4ee351b6712e"
+    },
+    {
+      "path": "public/assets/sprites/costumes/lute-pre-injury-jump.webp",
+      "role": "runtimeExport",
+      "bytes": 846830,
+      "sha256": "84d429f6bb227f36816d5b54e90bfac05ead993e5c33660d57762d398dfa93d7"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/dhorks/room.png",
+      "role": "master",
+      "bytes": 1466569,
+      "sha256": "cda8efb3e313d3d96b8fcced0519583ad01fb51f3c1b06ec0f7bd53723be49f5"
+    },
+    {
+      "path": "public/assets/stages/helluva/dhorks/room.webp",
+      "role": "runtimeExport",
+      "bytes": 826386,
+      "sha256": "7637650147748357d98df0d941b568d1b9d3ef50b339432273b83d7201d1204a"
+    },
+    {
+      "path": "public/assets/stages/helluva/dhorks/thumb.webp",
+      "role": "derivedThumbnail",
+      "bytes": 63020,
+      "sha256": "47ade65741a480aa01716208bfb272a30ea06ce972c8b68a8ce630bd0fe9ca39"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/crimson-mansion/room.png",
+      "role": "master",
+      "bytes": 1533537,
+      "sha256": "25bb2d13059c6145890c9da2b501b873d2ad478964e3b19f1710b7b79576ae82"
+    },
+    {
+      "path": "public/assets/stages/helluva/crimson-mansion/room.webp",
+      "role": "runtimeExport",
+      "bytes": 1036544,
+      "sha256": "cc90efd0bde3e8f2430d896ca97d095c7cff1afd6ae11bf1f5612dd767c8dc6e"
+    },
+    {
+      "path": "public/assets/stages/helluva/crimson-mansion/thumb.webp",
+      "role": "derivedThumbnail",
+      "bytes": 92680,
+      "sha256": "7d3d8af66bdf7f7e831836bb580b1f2a60253db5b259a7bb99fc2f2a5ce7504e"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/mammon-show/room.png",
+      "role": "master",
+      "bytes": 1829382,
+      "sha256": "5630dede805390c7d6d6b45d1c4fadeaae500375952101d9bdfc1e8745972949"
+    },
+    {
+      "path": "public/assets/stages/helluva/mammon-show/room.webp",
+      "role": "runtimeExport",
+      "bytes": 1345878,
+      "sha256": "6177b536ad99de9252840473c38c3d355b81fe3b4dcf6d6c25532b74926d91f0"
+    },
+    {
+      "path": "public/assets/stages/helluva/mammon-show/thumb.webp",
+      "role": "derivedThumbnail",
+      "bytes": 121686,
+      "sha256": "57ff91e7027f81f9532e37c135129bb9ae3602449eebb7f4e01e6f0b67eb5804"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/dhorks/prop-middle.png",
+      "role": "master",
+      "bytes": 388125,
+      "sha256": "6e3891084b57ea3e386aadcdf7d68565d11392ff7b25a3aed837051098665dd2"
+    },
+    {
+      "path": "public/assets/stages/helluva/dhorks/prop-middle.webp",
+      "role": "runtimeExport",
+      "bytes": 166708,
+      "sha256": "5517a5643617cf2717e47adc9fdc76b627d5c3a8a700271f3c2954b376ce5856"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/crimson-mansion/prop-middle.png",
+      "role": "master",
+      "bytes": 608269,
+      "sha256": "9f23f8cdb7e455fb47002e6d7375acbdefb2a62fa05c349b356bf9cfe37dc298"
+    },
+    {
+      "path": "public/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+      "role": "runtimeExport",
+      "bytes": 284012,
+      "sha256": "32ceda95d9a9744342444c4f7fd29d1b2143c8c187fd9a0af8fe410d9090bd97"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/mammon-show/prop-middle.png",
+      "role": "master",
+      "bytes": 563791,
+      "sha256": "bea542c5786c1982c483c37f4806b2697084a5b108dc18b677fe07f743575ad4"
+    },
+    {
+      "path": "public/assets/stages/helluva/mammon-show/prop-middle.webp",
+      "role": "runtimeExport",
+      "bytes": 277324,
+      "sha256": "da81fc150495eea893b6ba75cf2204008bfbb75b756bd71065086ec1ed07b9bb"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/dhorks/prop-near.png",
+      "role": "master",
+      "bytes": 739724,
+      "sha256": "05f3a56bb1d2bedd1e6f3c921b7ca6f6895e91322e78cc55ab82502526f42f8a"
+    },
+    {
+      "path": "public/assets/stages/helluva/dhorks/prop-near.webp",
+      "role": "runtimeExport",
+      "bytes": 297130,
+      "sha256": "74c57745cb1d44b002c7d9e0a6ebd4a6c3e094843e16241b28deaaaa6a1973ab"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/crimson-mansion/prop-near.png",
+      "role": "master",
+      "bytes": 418836,
+      "sha256": "ca05e5f9ded62c4b225641b94eeca0b1be2ccd3e89af6e704a21ce9ee1cc62c2"
+    },
+    {
+      "path": "public/assets/stages/helluva/crimson-mansion/prop-near.webp",
+      "role": "runtimeExport",
+      "bytes": 201770,
+      "sha256": "11b6c80fd4b1abc873834cd1da4c7f0ee5848d41051500977a3920a10917203e"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/mammon-show/prop-near.png",
+      "role": "master",
+      "bytes": 379384,
+      "sha256": "a6b0854cbada498b48710c14d7bbec7b596e65b81d87cc1437cc78c579fb7641"
+    },
+    {
+      "path": "public/assets/stages/helluva/mammon-show/prop-near.webp",
+      "role": "runtimeExport",
+      "bytes": 195892,
+      "sha256": "4f2d746e3d7dfced8f72100c82b58b63ec683854c642e70af7f7b507535713a0"
+    }
+  ],
+  "reusedAssets": [
+    {
+      "masterPath": "art/infernal-versus/masters/poses/lute-ready.png",
+      "runtimePath": "public/assets/sprites/individual/lute-ready.webp",
+      "master": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1071360,
+        "partiallyTransparentPixels": 501504,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 464501,
+        "veryLowAlphaPixels1To15": 23132,
+        "contentBounds": [
+          91,
+          8,
+          1010,
+          1519
+        ],
+        "visibleBoundsAtAlpha16": [
+          132,
+          10,
+          874,
+          1517
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "ede1aca20c8415c0721047a970a24a6662f2778b032f04bc82d0a670bf243c96",
+        "sha256": "4ff83db698da8337fcf8b10183cba6f0b5f23561e90ad2cfae363b871468fec0",
+        "bytes": 1335694
+      },
+      "runtime": {
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1071360,
+        "partiallyTransparentPixels": 501504,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 464501,
+        "veryLowAlphaPixels1To15": 23132,
+        "contentBounds": [
+          91,
+          8,
+          1010,
+          1519
+        ],
+        "visibleBoundsAtAlpha16": [
+          132,
+          10,
+          874,
+          1517
+        ],
+        "minimumVisibleMarginFraction": 0.00651,
+        "visibleContentClearOfImageEdges": true,
+        "decodedRgbaSha256": "ede1aca20c8415c0721047a970a24a6662f2778b032f04bc82d0a670bf243c96",
+        "sha256": "8f3e5d97fcb938ec9bf9ed9cb58d9ac7bfd100821228f631b4e9fad31dfcdb99",
+        "bytes": 826194
+      },
+      "reusedWithoutCopy": true,
+      "generatedInThisBatch": false,
+      "id": "lute-pre-injury-ready",
+      "fighterId": "lute",
+      "costumeId": "lute-pre-injury",
+      "pose": "ready",
+      "origin": "reused_published_image",
+      "runtimeUrl": "/assets/sprites/individual/lute-ready.webp",
+      "sourceManifest": "art/infernal-versus/production/poses-support-2026-11-24.json",
+      "copiedInThisBatch": false,
+      "countAsNewArtwork": false
+    }
+  ],
+  "blocked": [
+    {
+      "id": "rosie-guard",
+      "fighter": "rosie",
+      "pose": "guard",
+      "status": "safety_refused",
+      "prompt": "Use case: identity-preserve. Create ONE individual full-body fighting-game key pose of adult Rosie from Hazbin Hotel using this READY sprite as the exact face, costume and proportion reference. Keep the extremely tall slender elegant silhouette, pale gray-white skin, black empty eye shapes with no pupils, short white curled hair, pointed small teeth, huge burgundy Edwardian brimmed hat with pink plumes, skull ornament and dark rose, long wine-red high-neck dress with puff shoulders, black throat collar and waist band, slim sleeves, white hands, and pink-and-black striped flared hem. Same flat TV cel colors and clean sharp black ink, preserve her long dress proportions and all hat details. Character facing RIGHT. Portrait1024x1536 canvas with ALL plumes, brim, fingers and dress hem visible, transparent margin on every edge. Dress hem stays at approximately95%height when grounded; do not shorten the body to fit a pose. One character only, no parasol, cane, prop, opponent, effect, aura, gradient, shadow, background, floor, text, labels, watermark or duplicate. True alpha transparency outside the silhouette. Pose: ACTIVE STANDING GUARD with composed smile. Front white hand open near the chin, palm outward in a formal defensive gesture, other forearm across the waist, elbows controlled. Upper body subtly angled into the defense, grounded long dress balanced with small folds indicating softly flexed knees underneath. Preserve face visibility beneath the brim and the full tall silhouette.",
+      "reference": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/rosie-ready.png",
+      "requestId": "9be1607c-96d7-4a20-b15a-30636bba4fb5",
+      "retryAttempted": false,
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 9be1607c-96d7-4a20-b15a-30636bba4fb5.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "rosie-strike",
+      "status": "not_attempted",
+      "reason": "Rosie generation family paused after guard safety refusal; existing runtime retained."
+    },
+    {
+      "id": "rosie-recoil",
+      "status": "not_attempted",
+      "reason": "Rosie generation family paused after guard safety refusal; existing runtime retained."
+    }
+  ],
+  "previousRefusalsNotRetried": [
+    "niffty-guard",
+    "sirpentious-guard",
+    "cherribomb-ready",
+    "carmilla-loose-hair-crouch"
+  ],
+  "groundAlignment": {
+    "scope": [
+      "lute-pre-injury",
+      "vox",
+      "velvette",
+      "carmilla"
+    ],
+    "method": "Explicit source boot contacts align grounded poses to their own READY with CSS translate; no pixel editing or size normalization.",
+    "luteJumpUnchanged": true,
+    "horizontalPivotsCertified": false,
+    "inGameCertified": false,
+    "module": "src/lib/infernal-pose-anchors.ts"
+  },
+  "classification": "Source-guided visual adaptations and authored gameplay key poses, simulation_au; no 1:1 certification.",
+  "verification": {
+    "originalPngBytesPreserved": true,
+    "allAcceptedExportsLosslessComparedToSourceOrDeclaredResize": true,
+    "referencedNewExportsPresent": 38,
+    "runtimeReferences": 336,
+    "missingRuntimeReferences": 0,
+    "automatedQA": {
+      "status": "passed",
+      "command": "npm run qa",
+      "exitCode": 0,
+      "suites": 44,
+      "tests": 341,
+      "typecheck": "passed",
+      "lint": "passed",
+      "builds": 2,
+      "standaloneFiles": 932,
+      "standaloneHashesVerified": 932,
+      "standaloneMiB": 542.0,
+      "runtimeReferences": 336,
+      "missingRuntimeReferences": 0,
+      "sourceFilesHashed": 1083,
+      "sourceMutationsDuringQA": [],
+      "evidence": "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.json"
+    },
+    "runtimeReport": "docs/standalone/QA_RUNTIME_WAVE_C_2026-11-24.json",
+    "workbookReport": "docs/standalone/QA_WORKBOOK_WAVE_C_2026-11-24.json",
+    "browserReview": "Unavailable: previously confirmed Chromium launch blocked by socket EPERM. No browser or actual-device performance certification.",
+    "independentRuntimeReview": "No blocking issue found in seven action sets, costume precedence, 17 alpha-contact measurements, scoped CSS translation and unanchored jump. See REVIEW_ASSETS_WAVE_C_2026-11-24.md."
+  },
+  "remaining": [
+    "Rosie guard refused without retry; strike and recoil unattempted in this wave.",
+    "Four prior generation refusals remain unattempted.",
+    "Long individual animation cycles, horizontal pivots, relative sizes and transitions need further work and in-game review.",
+    "Lute default portrait and banks remain a distinct existing incarnation; S1 costume is optional.",
+    "Story coverage remains 26 illustrated assignments out of108, using22 images.",
+    "No new independent projectile physics, combat rules, damage or hitboxes."
+  ]
+}

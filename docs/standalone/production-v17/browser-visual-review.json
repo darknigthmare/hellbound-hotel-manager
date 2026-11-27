@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "passed",
+  "reviewedAt": "2026-11-27T06:36:43.081812+00:00",
+  "reviewer": "recover_assets",
+  "method": "All 20 original PNG screenshots were individually opened and visually inspected. Automated assertions remain in the unchanged CI report.",
+  "runtimeCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "packagingCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+  "buildRunId": 45948785155,
+  "buildRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+  "browserExecutionRunId": 45952367618,
+  "browserExecutionRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45952367618",
+  "browserExecutionWorkflowHeadCommit": "8c0f9953ac798838f354399c029c79e1d139ffd7",
+  "evidenceArtifact": {
+    "id": 15176917537,
+    "name": "infernal-versus-v17-gallery-evidence",
+    "zipSha256": "cf4afa00378cc3b408a0b25581cc63aa20160c8d8c1bf5170ed500e82079cc9e",
+    "bytes": 4900799
+  },
+  "browserAttemptReport": "docs/standalone/production-v17/browser-gallery-qa.json",
+  "browserAttemptReportSha256": "0548061e39fa49a479f9f24b31ed2360e2a6cd94fcf2c33478de0cae8cdbe4c8",
+  "transferProof": "docs/standalone/production-v17/browser-artifact-transfer.json",
+  "transferProofSha256": "32fa79966bc1f2f4722ae2f9fb54f3e7e365acc0c0472c96d1c8090c8f76528d",
+  "evidenceDownloadReceipt": "docs/standalone/production-v17/browser-evidence-transfer.json",
+  "registerReadByCI": {
+    "path": "docs/standalone/production-v17/delivery-register.json",
+    "commit": "8c0f9953ac798838f354399c029c79e1d139ffd7",
+    "blobSha": "b099a63f98136e0bc4b39a4671b2b5956e4fcac4",
+    "sha256": "ab38186a6583394fe319db008118aad49fb2648155b0303fa7eb64980a975ef7",
+    "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/8c0f9953ac798838f354399c029c79e1d139ffd7/docs/standalone/production-v17/delivery-register.json",
+    "retrievedImmutableCommitContentMatchedCIReport": true,
+    "note": "The current local register is being finalized after this acceptance. Its later metadata is not presented as the register originally read by CI."
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "screenshotsInspected": 10
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "screenshotsInspected": 10
+    }
+  ],
+  "automatedResult": {
+    "status": "passed",
+    "checks": 14,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "failedLocalResponses": 0,
+    "requestFailures": 0,
+    "fullDecodedImages": 8,
+    "visibleReferenceLinksChecked": 24,
+    "closeAndFocusReturnChecks": 8,
+    "allThreeSeasonTwoExclusionsPerViewport": true,
+    "seasonOneCanRetentionPerViewport": true,
+    "scopeRestorePerViewport": true,
+    "manifestFilesRehashedBeforeBrowser": 1350
+  },
+  "pageOpened": true,
+  "screenshotCount": 20,
+  "allScreenshotsActuallyOpened": true,
+  "visualChecksPassed": true,
+  "blockingVisualFindings": [],
+  "reviewedScreenshots": [
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-image.png",
+      "sha256": "720a49ba31fb30687533fd1c322507ce635a4136fc2e30ceea626e38b913d74a",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Blue-violet tilted can with red ribbon and front pull tab; the complete rounded silhouette is visible, including top and lower rim.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-spring-broken-blue-can-s1-references.png",
+      "sha256": "a77e75e5a92da6a4c0c13355245c97688e0b76cda5aad03736dc93be79ad95c5",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Rebecca Reynolds production portfolio, HB4_166.png and the inherited Spring Broken episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "The full object, source list, fidelity notes and close button fit in the captured desktop view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "654193134608173eed67f0b196a9955c5778f751b9c0bc3aabf68bc458f3d26d",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Green wall plaque, central tuft and curved black/pale-banded horns; both horn tips and the entire plaque remain inside the image frame.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "7344330ff113eb233a810b029a15349749fd5f421832a0d70d434d69f8f94b72",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, 204.jpg and the inherited Exes and Oohs episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "The full object, source list, fidelity notes and close button fit in the captured desktop view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "495801b912821a79fc9ebb670efcc79c340008500e9ff7689b1015c9c7190da3",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Purple-gray motor casing, vent, round control, long shaft and two propeller blades are all visible; the lower blade is not cut and no anomalous purple outline is visible on the gallery background.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "8e5477c977853945d0f2e46295257a473902244132acc70f89f6d664fb1618ce",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, boat-house production background and the inherited Unhappy Campers episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "The full object, source list, fidelity notes and close button fit in the captured desktop view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "46d7d6cca909b54aad6cd244de87759b2de901baf93b2e30823c46eaf141a3a8",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Green scalloped wall plaque with open jaw and pointed teeth; both lateral curls and the entire top and bottom plaque contours are visible.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "2e6068e71eaeee5abd58da4d94d0dd3a7bfb825b6c92383c2ac415ec527ea12a",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, Crimson dining-room production background and inherited Exes and Oohs episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "The full object, source list, fidelity notes and close button fit in the captured desktop view.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-retains-can.png",
+      "sha256": "1b0896f0178cb82e524bd2d0b1a2573e9765548e1cfc0a632b0d27519d01bbbd",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Season-one scope retains the new can.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Accessoires and Saison 1 uniquement are selected, the can name is in the search field, and the status reports one matching drawing.",
+        "The retained can card is visibly present.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/desktop-season-one-hides-season-two.png",
+      "sha256": "971c5777b6fae62e0c16e41910e49b41751ad95ecb851926823b35905adaf244",
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Season-one scope excludes the queried season-two prop; all three exclusions checked in report.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Accessoires and Saison 1 uniquement are selected, the Unhappy Campers motor name is in the search field, and zero matching drawings are reported.",
+        "The empty-state sentence is readable and no season-two prop card is present.",
+        "The screenshot illustrates the motor exclusion; the raw automated report separately verifies all three season-two exclusions.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-image.png",
+      "sha256": "f600a5cdcab6d5324b8dc795de84381475a9b08039fe195d6edbb8d0374d2d0e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Blue-violet tilted can with red ribbon and front pull tab; the complete rounded silhouette is visible, including top and lower rim.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "The single-column detail continues below the viewport; metadata below the full image requires normal vertical scrolling.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-spring-broken-blue-can-s1-references.png",
+      "sha256": "4d65a4bd8a062434dbcef062b65d9aacd0c506d60954ccb4f7aa03bef25d567e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Rebecca Reynolds production portfolio, HB4_166.png and the inherited Spring Broken episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "Long reference labels wrap within the panel. The longer fidelity-note list continues below the screenshot by normal vertical scrolling; this screenshot does not show every note at once.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": false
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-image.png",
+      "sha256": "20c9070813c302e5c156fdc88cfef000cd94ae2bf67dec574dedd89c7c3653bb",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Green wall plaque, central tuft and curved black/pale-banded horns; both horn tips and the entire plaque remain inside the image frame.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "The single-column detail continues below the viewport; metadata below the full image requires normal vertical scrolling.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-references.png",
+      "sha256": "e5122cf72a3e38c86db47f4c85600631c8f00f3a1e67fb5439dc5d5b631ce8ce",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-horned-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, 204.jpg and the inherited Exes and Oohs episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "Long reference labels wrap within the panel. The longer fidelity-note list continues below the screenshot by normal vertical scrolling; this screenshot does not show every note at once.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": false
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-image.png",
+      "sha256": "8fc54ccb2a43c0ac957435e9b070f250d1a572086de284b941596d9207f97308",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Purple-gray motor casing, vent, round control, long shaft and two propeller blades are all visible; the lower blade is not cut and no anomalous purple outline is visible on the gallery background.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "The single-column detail continues below the viewport; metadata below the full image requires normal vertical scrolling.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-references.png",
+      "sha256": "94147bfac596fb8e36053be6bedc4207ff2fc47d2bd132f3316d5cafb412e196",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, boat-house production background and the inherited Unhappy Campers episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "Long reference labels wrap within the panel. The longer fidelity-note list continues below the screenshot by normal vertical scrolling; this screenshot does not show every note at once.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": false
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-image.png",
+      "sha256": "b1cd2b163ccce481335ab8a3a5e0c0654d69c14d793e5a255a52038bb50a21e4",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Entire decoded image visible after normal gallery selection; contains the actual game frame.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Green scalloped wall plaque with open jaw and pointed teeth; both lateral curls and the entire top and bottom plaque contours are visible.",
+        "The image is centered within the actual gallery frame with no visible solid contour cropped at an image edge.",
+        "The ordinary game header and correct creation title identify the live gallery view.",
+        "The single-column detail continues below the viewport; metadata below the full image requires normal vertical scrolling.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "wholeObjectVisible": true
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-references.png",
+      "sha256": "9d92d592e4e754b67690ade026865ae07dd6c3caa939f9b9a91ee1de8a93252b",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "crimson-fanged-jaw-wall-trophy-s2",
+      "scope": "Expanded source links and fidelity notes in the real gallery. External destinations were not opened or intercepted.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "The reference disclosure is expanded and the correct creation name is readable.",
+        "All three source labels are readable: Jasper Luu production portfolio, Crimson dining-room production background and inherited Exes and Oohs episode context.",
+        "Source-derived redraw limitations are visibly stated; no one-to-one certification is implied.",
+        "Long reference labels wrap within the panel. The longer fidelity-note list continues below the screenshot by normal vertical scrolling; this screenshot does not show every note at once.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ],
+      "allThreeSourceLabelsReadable": true,
+      "allFidelityNotesInOneViewport": false
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-retains-can.png",
+      "sha256": "898ef7dd0449b04bb8cad9205f51698becb587ad1daed91e5a6aee02a899254e",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "spring-broken-blue-can-s1",
+      "scope": "Season-one scope retains the new can.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Accessoires and Saison 1 uniquement are selected, the can name is in the search field, and the status reports one matching drawing.",
+        "The retained can card is visibly present.",
+        "The lower part of the card extends below this viewport capture; the separate mobile image-detail capture confirms the whole object.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-gallery/mobile-season-one-hides-season-two.png",
+      "sha256": "b9c5ffdeaca9135924a10e3c83c2a80cd758287f2780fb85f1b814e54a9589f1",
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "assetId": "unhappy-campers-outboard-motor-s2",
+      "scope": "Season-one scope excludes the queried season-two prop; all three exclusions checked in report.",
+      "inspected": true,
+      "result": "passed",
+      "observations": [
+        "Accessoires and Saison 1 uniquement are selected, the Unhappy Campers motor name is in the search field, and zero matching drawings are reported.",
+        "The empty-state sentence is readable and no season-two prop card is present.",
+        "The screenshot illustrates the motor exclusion; the raw automated report separately verifies all three season-two exclusions.",
+        "No horizontal text clipping, broken-image placeholder or overlapping gallery control is visible in this capture."
+      ]
+    }
+  ],
+  "observedLimits": [
+    "The reference screenshots are normal viewport captures, not full-page captures. On mobile the image and long fidelity notes extend above or below the reference view through ordinary vertical scrolling.",
+    "The mobile season-one can screenshot shows the retained card but its lower part lies below the viewport; the separate detail screenshot is the evidence for the complete image.",
+    "All three source links are visible in each reference capture and their hrefs were checked. External destinations were not navigated to or recertified.",
+    "This acceptance covers static gallery display, search, category and season filtering, opening, references and closing. It does not establish combat behavior, animation, an operating motor mechanism, exact episode frame identity or one-to-one artwork fidelity."
+  ],
+  "fidelityOneToOneCertified": false,
+  "bundleChanged": false,
+  "imageSubstitution": false,
+  "stateInjection": false,
+  "cssOverride": false,
+  "priorAttemptsPreserved": [
+    "docs/standalone/production-v17/browser-gallery-qa-attempt-01-launch-failure.json",
+    "docs/standalone/production-v17/browser-visual-review-attempt-01-local-blocked.json",
+    "docs/standalone/production-v17/browser-workflow-attempt-01-validation-failure.json",
+    "docs/standalone/production-v17/browser-harness-attempt-02-selector-failure.json",
+    "docs/standalone/production-v17/browser-attempt-02-selector-failure/"
+  ],
+  "rawCIReportsAndScreenshotsModified": false,
+  "independentTargetedReview": {
+    "reviewer": "root",
+    "reportedAt": "2026-11-27T06:36:57.699403+00:00",
+    "scope": "Three mobile screenshots only; not a second review of all 20.",
+    "screenshotsInspected": 3,
+    "result": "passed",
+    "screenshots": [
+      {
+        "path": "docs/standalone/production-v17/browser-gallery/mobile-unhappy-campers-outboard-motor-s2-image.png",
+        "observations": [
+          "Complete casing, shaft and propeller; lateral margins remain visible.",
+          "The title wraps to two readable lines."
+        ]
+      },
+      {
+        "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-horned-wall-trophy-s2-image.png",
+        "observations": [
+          "Both horn tips and the full plaque are visible.",
+          "No abnormal crop or halo is visible."
+        ]
+      },
+      {
+        "path": "docs/standalone/production-v17/browser-gallery/mobile-crimson-fanged-jaw-wall-trophy-s2-references.png",
+        "observations": [
+          "Title, dimensions and all three source links are readable.",
+          "Text continues through ordinary vertical scrolling. The object top is outside this reference-focused viewport; this capture is not evidence for whole-image visibility."
+        ]
+      }
+    ],
+    "horizontalOverflowVisible": false
+  }
+}

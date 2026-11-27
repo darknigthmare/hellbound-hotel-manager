@@ -1,0 +1,51 @@
+{
+  "edition": "V10",
+  "preparedAt": "2026-11-26T15:47:08.756794+00:00",
+  "status": "scripts_prepared_waiting_for_final_character_handoff_and_central_review",
+  "modifiedScope": "Assembler and workbook builder only; no gallery, plan or register integration executed.",
+  "syntax": {
+    "python": "passed_in_memory_compile",
+    "javascript": "passed_primary_node_check"
+  },
+  "baselineReconciliation": {
+    "standaloneBases": 109,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 69,
+    "catalogueIdsWithoutStandaloneBase": 100,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 99,
+    "reserveGalleryEntries": 106,
+    "runtimeCostumeFamilies": 21,
+    "activeStages": 43,
+    "sharedAlias": {
+      "productionIdentityId": "hz_travis",
+      "catalogueIds": [
+        "hz_travis",
+        "hb_travis"
+      ]
+    }
+  },
+  "scripts": [
+    {
+      "path": "docs/standalone/production-v10/assemble-register.py",
+      "sha256": "0c6bfddbd2e1643ce27a1a734f5aeb05c21dc3ece608b0814ead85b038d30ba7",
+      "bytes": 41319
+    },
+    {
+      "path": "docs/standalone/production-v10/build-bible-v10.mjs",
+      "sha256": "0f375135443475d700c8997246e0b5840d409d56d7952c4d652b3287a7aca2fa",
+      "bytes": 29150
+    }
+  ],
+  "plannedCommands": [
+    "python3 docs/standalone/production-v10/assemble-register.py --check-inputs",
+    "python3 docs/standalone/production-v10/assemble-register.py --integrate",
+    "After root current technical/browser QA: python3 docs/standalone/production-v10/assemble-register.py --final",
+    "Use primary Node to run build-bible-v10.mjs --prepare, then --final after final register; inspect rendered views.",
+    "python3 docs/standalone/production-v10/assemble-register.py --workbook-metadata"
+  ],
+  "limits": [
+    "No images fabricated or counted before accepted immutable handoffs.",
+    "Draft gallery metadata remains stable after runtime QA; per-asset browser results belong to final register.",
+    "Only 2 new workbook sheets, 50 historical sheets and 59 historical tables preserved."
+  ]
+}

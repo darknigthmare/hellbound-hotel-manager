@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "edition": "V4 - integration du guide general",
+  "date": "2026-11-25",
+  "baselineCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "pullRequest": "https://github.com/darknigthmare/hellbound-hotel-manager/pull/8",
+  "command": "npm run qa",
+  "result": "passed",
+  "typecheck": "passed",
+  "eslint": "passed",
+  "testSuites": 45,
+  "tests": 395,
+  "failures": 0,
+  "builds": {
+    "manager": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 1031,
+    "bytes": 626483485,
+    "integrity": "all_sha256_verified",
+    "hotelCloudPersistence": "excluded",
+    "manifestSha256": "1cc82f985b2f8e04d2c300b86191e4ca03c33404641b8e9ed5eac5164915d22b"
+  },
+  "publicAssets": {
+    "files": 1027,
+    "bytes": 625709133,
+    "gitBlobHashMismatches": 0,
+    "restoredForVerification": 947,
+    "sourceCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145"
+  },
+  "scope": {
+    "playableFighters": 43,
+    "gameModes": 9,
+    "stages": 30,
+    "v3PersonalRoutes": 43,
+    "v3PersonalChapters": 129,
+    "legacyRoutesPreserved": 43,
+    "globalCampaigns": 1,
+    "globalCampaignChapters": 9,
+    "reserveGalleryArtworks": 22,
+    "newGeneratedArtworks": 0,
+    "newAnimationCycles": 0,
+    "newRuntimeAttacks": 0,
+    "newDedicatedNarrativeIllustrations": 0,
+    "v3IllustrationAssignments": 0,
+    "legacyIllustrationAssignments": 26,
+    "legacyDistinctIllustrations": 22
+  },
+  "regressionCases": [
+    "Pre-guide save without routeVersion resumes the original opponents, narrative and stage order.",
+    "Legacy and V3 endings unlock independently; existing wins do not unlock a rewritten ending.",
+    "Nine campaign chapters change controlled fighters and survive draw, defeat, retry and reload.",
+    "Repeated result callbacks do not duplicate stats or ending unlocks.",
+    "Filtered empty story rosters cannot retain a hidden fighter in another mode.",
+    "Season-two gallery incarnations and campaign content remain hidden under the season-one filter.",
+    "Gallery category filtering and detail-preview focus work; scene options persist after reload.",
+    "Scenery options freeze only scenery camera; fighters and combat keep advancing.",
+    "Survival resumes with the standalone 30-stage rotation after duels 8 and 19.",
+    "Hotel saves and cloud account code remain separate from the standalone build."
+  ],
+  "browser": {
+    "status": "blocked_environment",
+    "executedUiSteps": 0,
+    "screenshots": 0,
+    "reason": "Chromium wrapper exists but its binary target is missing. The official Playwright browser download returned HTTP 403 Site Unavailable.",
+    "plannedViewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "jsdomUiTests": "passed",
+    "visualFidelityCertified": false
+  },
+  "limits": [
+    "No new illustration, pose, animation or combat kit is counted as produced.",
+    "Moves and finishing storyboards from V3 remain proposals except existing engine techniques.",
+    "Browser layout, controller hardware and canonical visual fidelity were not certified in this environment."
+  ],
+  "remoteQualityGate": {
+    "commit": "9a15e6d84e2f7fad90291aff2232fa3217973575",
+    "runId": 45621472744,
+    "url": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45621472744",
+    "result": "success",
+    "testSuites": 45,
+    "tests": 395,
+    "standaloneFilesVerified": 1031
+  },
+  "deploymentPackaging": {
+    "initialCommit": "9a15e6d84e2f7fad90291aff2232fa3217973575",
+    "initialVercelDeployment": "dpl_HJGFiukM3adir42diBNfeHnNtYKJ",
+    "initialError": "TS2307: ReserveGallery imported reserve-assets.json from art/, which .vercelignore removed before the build.",
+    "fix": "Allow only art/infernal-versus/production/reserve-assets.json and its parent directories; keep other source art and documentation excluded.",
+    "includedArtFiles": [
+      "art/infernal-versus/production/reserve-assets.json"
+    ],
+    "excludedArtFiles": 897,
+    "retainedPublicFiles": 1027,
+    "filteredBuild": {
+      "command": "npm run build",
+      "result": "passed",
+      "seconds": 14.55,
+      "context": "Separate build source tree with docs absent and only the gallery catalogue under art/. All 1027 unchanged public files and the exact installed dependencies were linked into the context.",
+      "runtimeImportsAudited": 305,
+      "runtimeAndConfigurationFilesAudited": 89,
+      "otherRuntimeImportsToExcludedDirectories": 0
+    },
+    "subsequentRemoteDeployment": "Tracked on the PR for the following packaging-fix commit."
+  }
+}

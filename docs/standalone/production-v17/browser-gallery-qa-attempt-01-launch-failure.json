@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "startedAt": "2026-11-27T06:09:54.027Z",
+  "status": "failed",
+  "scope": "Real CI-built standalone HTML and assets served unchanged from dist-combat. Normal gallery clicks/taps, category and name search, full decoded images, visible reference links, close/focus return, and season filtering on desktop/mobile. No combat, animation, remote-reference availability or 1:1 fidelity claim.",
+  "build": {
+    "sourceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+    "runtimeSourceCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+    "ciRunUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+    "artifactId": null,
+    "artifactArchiveSha256": null,
+    "transportArtifacts": [
+      {
+        "artifactId": 15175519470,
+        "name": "infernal-versus-standalone-part-00",
+        "zipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+        "partName": "standalone.tar.part-00",
+        "partSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f"
+      },
+      {
+        "artifactId": 15176277382,
+        "name": "infernal-versus-standalone-part-01",
+        "zipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+        "partName": "standalone.tar.part-01",
+        "partSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e"
+      }
+    ],
+    "combinedArchive": {
+      "format": "tar",
+      "sha256": "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8",
+      "bytes": 964085760,
+      "physicalArchiveStored": false,
+      "reconstructedFromOrderedParts": true
+    },
+    "transferProof": {
+      "path": "docs/standalone/production-v17/browser-artifact-transfer.json",
+      "sha256": "3862348ae5e1e01c7c1c74876f8c6ca2681c1adaa90d1e09259b9eecc35e875e"
+    },
+    "archiveDigestVerification": "matched-ordered-parts-tar-stream-before-browser",
+    "bundleDirectory": "/workspace/scratch/3ca8c3f75b61/verified-build-v17/dist-combat",
+    "standaloneManifestSha256": "112ff25cf0e74ca403a2a8bc08a7d5d0ab290ea6fdca9defedb8f44d829c3c38",
+    "manifestVerifiedFiles": 1350,
+    "manifestVerifiedBytes": 962706019,
+    "entrySha256": "273f35e140224d883c38d3291b368dfd226c0e7560bfbc3ccc5953cbb356cb2f",
+    "allManifestBytesVerified": true
+  },
+  "execution": {
+    "node": "v24.22.3",
+    "chromiumExecutable": "/usr/bin/chromium",
+    "playwrightModule": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+    "stateInjection": false,
+    "imageSubstitution": false,
+    "requestInterception": false,
+    "cssOverride": false,
+    "realStaticBundle": true
+  },
+  "localExpectationFiles": {
+    "docs/standalone/production-v17/check-gallery-browser.cjs": "906d7e5f39e9817372732617728092d2e83549b54b1bbd85908cc72537afc60b",
+    "docs/standalone/production-v17/delivery-register.json": "d020d4f71229916714e7f2d68d340fbdcbada13fcce92cea3464b994cfdbe57f",
+    "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+    "src/standalone/ReserveGallery.tsx": "e8f6df3266147db86627c07d200bdec8be5a7b73400fa0945ed04601677332a7",
+    "src/standalone/reserve-gallery.css": "7803214f7cc54192d62c0a80a0b66ee671c18cff3ad412a26e0e978e7e093fd5",
+    "art/infernal-versus/production/reserve-assets.json": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb"
+  },
+  "checks": [],
+  "screenshots": [],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedLocalResponses": [],
+  "requestFailures": [],
+  "assetResponses": [],
+  "visualReview": {
+    "status": "pending-human-inspection",
+    "note": "Automated success does not certify the artwork. Inspect saved browser screenshots separately."
+  },
+  "server": "http://127.0.0.1:39033/index.html",
+  "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-dev-shm-usage --user-data-dir=/workspace/scratch/3ca8c3f75b61/verified-build-v17/browser-runtime-temp/playwright_chromiumdev_profile-yqOOsn --remote-debugging-pipe --no-startup-window\n<launched> pid=16\n[pid=16][err] /usr/bin/chromium: 9: [: 5237899264: unexpected operator\n[pid=16][err] /usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found\nCall log:\n\u001b[2m  - <launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-dev-shm-usage --user-data-dir=/workspace/scratch/3ca8c3f75b61/verified-build-v17/browser-runtime-temp/playwright_chromiumdev_profile-yqOOsn --remote-debugging-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=16\u001b[22m\n\u001b[2m  - [pid=16][err] /usr/bin/chromium: 9: [: 5237899264: unexpected operator\u001b[22m\n\u001b[2m  - [pid=16][err] /usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found\u001b[22m\n\u001b[2m  - [pid=16] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=16] <kill>\u001b[22m\n\u001b[2m  - [pid=16] <will force kill>\u001b[22m\n\u001b[2m  - [pid=16] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=16] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=16] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=16] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=16] <gracefully close end>\u001b[22m\n\n    at /workspace/scratch/3ca8c3f75b61/hellbound-hotel-manager/docs/standalone/production-v17/check-gallery-browser.cjs:303:30",
+  "finishedAt": "2026-11-27T06:09:57.345Z"
+}

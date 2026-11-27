@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "edition": "V8 Helluva",
+  "date": "2026-11-26",
+  "status": "complete",
+  "baselineCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+  "scope": "Missing official static costume families only. No new identity base qualified from the examined sources.",
+  "counts": {
+    "acceptedStaticCostumes": 9,
+    "newCharacterBases": 0,
+    "initialCandidates": 10,
+    "nativeEditCalls": 1,
+    "nativeImageOutputs": 11,
+    "heldCandidates": 1,
+    "newAnimationCycles": 0,
+    "newPlayableKits": 0
+  },
+  "deliveredCostumes": [
+    {
+      "id": "hb_blitzo-bodyguard-looloo",
+      "fighterId": "hb_blitzo",
+      "episode": "S1E2",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_moxxie-bodyguard-looloo",
+      "fighterId": "hb_moxxie",
+      "episode": "S1E2",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_millie-bodyguard-looloo",
+      "fighterId": "hb_millie",
+      "episode": "S1E2",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_stolas-tourist-looloo",
+      "fighterId": "hb_stolas",
+      "episode": "S1E2",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_millie-staff-ghostfuckers",
+      "fighterId": "hb_millie",
+      "episode": "S2E10",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_blitzo-harvest-festival",
+      "fighterId": "hb_blitzo",
+      "episode": "S1E5",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_millie-harvest-festival",
+      "fighterId": "hb_millie",
+      "episode": "S1E5",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_stolas-vampire-apology-tour",
+      "fighterId": "hb_stolas",
+      "episode": "S2E9",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_blitzo-ghost-apology-tour",
+      "fighterId": "hb_blitzo",
+      "episode": "S2E9",
+      "status": "accepted_static_adaptation",
+      "newIdentity": false,
+      "wearable": true,
+      "staticReadyOnly": true,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "historicalRefusalsPreservedWithoutRetry": [
+    {
+      "id": "hb_stella",
+      "priorAttempt": "hb_stella-ready"
+    },
+    {
+      "id": "hb_loopty_goopty",
+      "priorAttempt": "hb_loopty_goopty-ready"
+    },
+    {
+      "id": "hb_deerie",
+      "priorAttempt": "hb_deerie-ready"
+    }
+  ],
+  "alreadyDeliveredFamiliesSkipped": [
+    "Moxxine camping",
+    "Millerd camping",
+    "Loona human disguise",
+    "Stolas human disguise",
+    "Stolas deposed Sinsmas",
+    "Barbie human disguise",
+    "Vortex human disguise",
+    "Fizzarolli casual Oops",
+    "Moxxie Harvest Festival",
+    "Millie past ponytail",
+    "Loona quadruped",
+    "Loona shelter archive",
+    "Fizz pre-accident archive"
+  ],
+  "newReferenceGaps": [
+    {
+      "target": "Fizzarolli — Full Moon breaktime outfit",
+      "status": "not_generated",
+      "reason": "Distinct costume identified in official Full Moon boards8–9; full legs and feet insufficiently legible for a new standing sprite."
+    },
+    {
+      "target": "Verosika — human disguise Spring Broken",
+      "status": "not_generated",
+      "reason": "Human costume torso visible in official Spring Broken board6; lower legs/feet not resolved by the inspected sequence."
+    },
+    {
+      "target": "Stolas — Ozzie’s date",
+      "status": "not_generated",
+      "reason": "Inspected scenes do not establish a sufficiently distinct complete missing costume family."
+    }
+  ],
+  "heldCandidates": [
+    {
+      "id": "hb_blitzo-bethany-ghostfuckers",
+      "status": "held_reference_gap",
+      "delivered": false,
+      "reason": "Le haut/perruque/chapeau sont corroborés. Asymétrie des jambes et grandes bottes à talon du rendu ne sont pas confirmées par les vues primaires inspectées ; aucune exportation ni intégration runtime.",
+      "historicalSafetyRefusal": false,
+      "attemptCount": 1
+    }
+  ],
+  "newCharacterBases": 0,
+  "newAnimationCycles": 0,
+  "fidelityOneToOneCertified": false,
+  "independentReview": "docs/standalone/production-v8/independent-visual-review.json",
+  "countingRule": "9 selected costume drawings. PNG masters and lossless WebP are two encodings of each drawing, not additional art. 10 initial native candidate outputs plus 1 native correction. Bethany and the superseded first Harvest Blitz are not delivered as extra assets."
+}

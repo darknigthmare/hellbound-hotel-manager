@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "reviewer": "/root and independent delegated reviewers",
+  "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+  "status": "accepted_with_documented_limits",
+  "scope": "Seven static drawings compared against native primary references before runtime integration. No gameplay verification is implied by this art review.",
+  "fidelityOneToOneCertified": false,
+  "catalogueSnapshot": {
+    "commit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+    "galleryEntries": 133,
+    "stages": 49
+  },
+  "summary": {
+    "acceptedDrawings": 7,
+    "costumes": 3,
+    "stages": 2,
+    "reserveProps": 2,
+    "newIdentityBases": 0,
+    "correctionsRequired": 0
+  },
+  "assets": [
+    {
+      "id": "sloth-cloud-dispenser-s2",
+      "kind": "prop",
+      "nativeMasterPath": "production/v14/props/masters/sloth-cloud-dispenser-s2.png",
+      "masterSha256": "9b533db0840fcf6465cd748161aab19ce876eeb477ccf788afdf493fcff3e5ee",
+      "nativeDimensions": [
+        1054,
+        1493
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v14_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Secondary color/detail reference; the tap partially overlaps the bottom of the hanging paper.",
+          "portfolioAdvertisedDimensions": "8622x5156"
+        },
+        {
+          "path": "production/v14/props/references/sloth-cloud-dispenser-crop.png",
+          "sha256": "49fb87237ebafc1baf32e309f5f86ea7f968b12adaf3de6a3887091db65d7140",
+          "bytes": 32791,
+          "dimensions": [
+            167,
+            219
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "parentPath": "production/v11/environment/references/jasper-15.jpg",
+          "parentSha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "cropBox": [
+            2238,
+            327,
+            2405,
+            546
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Secondary color/detail reference; the tap partially overlaps the bottom of the hanging paper."
+        },
+        {
+          "path": "production/v11/environment/references/jasper-19.jpg",
+          "sha256": "2f7a50e65a0959e7bdb9444624fd41dccbe071f4826f947e9a3d9bc601fa303c",
+          "bytes": 252218,
+          "dimensions": [
+            2500,
+            1283
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/b1339efd-ea15-427b-8936-33c4c66e353e/1.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Primary contour and pose reference; complete visible casing and hanging paper, unobstructed by the tap.",
+          "portfolioAdvertisedDimensions": "5232x2685"
+        },
+        {
+          "path": "production/v14/props/references/sloth-cloud-dispenser-secondary-crop.png",
+          "sha256": "545648d7ca5526adddf5e2b8cf9fdd08b71b3c4b4bf5d30d201a5a20d9c1502c",
+          "bytes": 19461,
+          "dimensions": [
+            115,
+            163
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/b1339efd-ea15-427b-8936-33c4c66e353e/1.jpeg",
+          "parentPath": "production/v11/environment/references/jasper-19.jpg",
+          "parentSha256": "2f7a50e65a0959e7bdb9444624fd41dccbe071f4826f947e9a3d9bc601fa303c",
+          "cropBox": [
+            1492,
+            309,
+            1607,
+            472
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Primary contour and pose reference; complete visible casing and hanging paper, unobstructed by the tap."
+        }
+      ],
+      "visualComparison": [
+        "Un seul distributeur mural rose, silhouette complète du boîtier et papiers crème pendants, avec marges transparentes de chaque côté.",
+        "Face avant rose, tranche gauche sombre, coins supérieurs arrondis, nuage clair et trois gouttes : les repères visibles des deux sources sont conservés.",
+        "La forme et l’orientation du papier suivent la vue dégagée Jasper19 ; aucun robinet, mur, comptoir, personnage, texte ou second objet ne subsiste.",
+        "Le contour et les plis restent lisibles sur les composites clairs et sombres. Aucun fond rectangulaire ni coupe du boîtier ou du papier n’est observé."
+      ],
+      "limits": [
+        "Le nuage, ses lobes, les gouttes, les reflets et les plis de papier sont redessinés à partir de sources natives 115×163 et 167×219 pixels ; proportions et microdétails ne sont pas certifiés 1:1.",
+        "Le papier et les reflets sont plus développés et plus lisses dans le master que dans la petite source de production.",
+        "Les faibles franges colorées et pixels partiellement transparents du contour natif sont conservés sans retouche ; la lisibilité a été examinée sur les deux composites.",
+        "Un objet statique de réserve uniquement : aucune base de personnage, nouveau kit, animation, fonction médicale ni mécanique de distribution n’est déduite."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/props-diagnostics/sloth-cloud-dispenser-s2-alpha-review.jpg",
+        "sha256": "88801da80b0786d16ca63c28aac92fdd3a11729aea2556a4fcf6802d3e55cb3c",
+        "purpose": "Diagnostic composite only; the native master is unchanged."
+      },
+      "pixelAudit": {
+        "path": "production/v14/props/masters/sloth-cloud-dispenser-s2.png",
+        "sha256": "9b533db0840fcf6465cd748161aab19ce876eeb477ccf788afdf493fcff3e5ee",
+        "bytes": 1045158,
+        "dimensions": [
+          1054,
+          1493
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 772450,
+        "alphaFullPixels": 1410,
+        "alphaPartialPixels": 799762,
+        "visibleBBoxAlpha16": [
+          140,
+          132,
+          885,
+          1380
+        ],
+        "export": {
+          "path": "public/assets/production/v14/props/sloth-cloud-dispenser-s2.webp",
+          "sha256": "7f78b22fb2073a33e0d6b16d0a89af99b437dcbc291ced7ccb09372d1865ae7f",
+          "bytes": 588462,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "The 133 baseline gallery IDs, names and categories contain no separate cloud dispenser. The new master hash differs from recorded historical gallery masters. Existing appearance inside the Sloth background is not a delivered separate prop.",
+        "baselineGalleryEntries": 133
+      }
+    },
+    {
+      "id": "crimson-green-chandelier-s2",
+      "name": "Crimson · lustre vert",
+      "kind": "prop",
+      "nativeMasterPath": "production/v14/props/masters/crimson-green-chandelier-s2.png",
+      "masterSha256": "9e19eb3269c9628b9b3fab6748ff5cc6cd4a8a3d25e8e924c688a1cc92c2204b",
+      "nativeDimensions": [
+        1420,
+        1108
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v14_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "referenceReviewTiming": "Source and master inspected together after generation and before integration.",
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "sha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "bytes": 344285,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Primary production room painting with the whole visible chandelier."
+        },
+        {
+          "path": "production/v14/environment/references/crimson-chandelier-complete-crop.png",
+          "sha256": "124f7f78a6d6514c18e743f24b8207f463488cfa0d4ae0307fdd4653bb81ea4b",
+          "bytes": 91222,
+          "dimensions": [
+            410,
+            320
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "parentPath": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "parentSha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "cropBox": [
+            935,
+            215,
+            1345,
+            535
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Exact unscaled source crop of the whole visible chandelier."
+        }
+      ],
+      "visualComparison": [
+        "Un seul lustre complet dans la même vue : platine ovale, courte suspension, collerette sombre, grand corps central en pointe et boucles fines vertes.",
+        "La source montre deux groupes d’abat-jours chevauchés, avec quatre ouvertures ovales visibles. Le master reprend ces quatre ouvertures et leurs recouvrements.",
+        "Aucune boucle ni fixation visible n’est coupée par le cadre. Plafond, mobilier, trophées et autre décor sont absents du master transparent.",
+        "Abat-jours clairs, facettes anguleuses vertes et boucles restent lisibles sur les composites clairs et sombres."
+      ],
+      "promptDiscrepancy": {
+        "ledger": "docs/standalone/production-v14/root-prompts.json",
+        "originalPromptName": "Crimson · lustre vert à deux globes",
+        "originalPromptSha256": "857b03240a030a44acf73ead22f2ec1887f05f968135031d995f05d52016b151",
+        "originalCountInstruction": "exactly TWO pale luminous green rounded glass lampshades",
+        "sourceObservation": "Four visible oval lampshade openings arranged in two overlapping groups.",
+        "deliveredObservation": "The native master follows the four visible source openings.",
+        "resolution": "Keep the original prompt unchanged and publish the neutral name Crimson · lustre vert. No repainting or new generation was used to conceal the inaccurate count."
+      },
+      "limits": [
+        "Le prompt historique décrivait deux globes ; la revue rapprochée établit quatre ouvertures visibles en deux groupes chevauchés. Le nom livré ne reprend pas ce décompte imprécis.",
+        "Source de détail native 410×320 pixels. Épaisseur des boucles, recouvrements, proportions, facettes et reflets sont redessinés ; aucune fidélité 1:1 ni géométrie arrière cachée n’est certifiée.",
+        "Les marges transparentes entourent l’objet complet mais sont inférieures aux 12 % demandés dans le prompt, avec 31 pixels sous la dernière boucle.",
+        "Les faibles franges vertes et pixels partiellement transparents du contour natif sont conservés sans retouche.",
+        "Un objet statique de réserve ; aucun effet lumineux dynamique, nouvelle mécanique, base de personnage, kit ou cycle animé n’est ajouté."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/props-diagnostics/crimson-green-chandelier-s2-alpha-review.jpg",
+        "sha256": "e26a99a44d7091f157103572400a7e4a729a9eb8d7a1f887a67a02b58a533760",
+        "purpose": "Diagnostic composite only; the native master is unchanged."
+      },
+      "pixelAudit": {
+        "path": "production/v14/props/masters/crimson-green-chandelier-s2.png",
+        "sha256": "9e19eb3269c9628b9b3fab6748ff5cc6cd4a8a3d25e8e924c688a1cc92c2204b",
+        "bytes": 761872,
+        "dimensions": [
+          1420,
+          1108
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1138454,
+        "alphaFullPixels": 3029,
+        "alphaPartialPixels": 431877,
+        "visibleBBoxAlpha16": [
+          96,
+          72,
+          1322,
+          1077
+        ],
+        "transparentMarginsAlpha16": [
+          96,
+          72,
+          98,
+          31
+        ],
+        "export": {
+          "path": "public/assets/production/v14/props/crimson-green-chandelier-s2.webp",
+          "sha256": "f0a2e07ef33d80c7225b4f71b34d0aa16e2717c29ab39528af94b9c348610639",
+          "bytes": 482144,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "The 133 baseline gallery IDs, names and categories contain no separate green Crimson chandelier. The master hash is new. Existing prop-cherub-opera-spotlight and asmodeus-bedroom-candelabrum are different objects.",
+        "baselineGalleryEntries": 133
+      }
+    },
+    {
+      "id": "hb_blitzo-flashback-ghostfuckers-s2",
+      "kind": "costume",
+      "nativeMasterPath": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+      "masterSha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v14/characters/references/blitz-flashback-official-standee.png",
+          "sha256": "0e4a8beec11d62aa54bc4d2dd9db090dc9d353db89856c0a1b1f5c2635a92bb0",
+          "bytes": 2868155,
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "mode": "RGBA",
+          "url": "https://sharkrobot.com/products/flashback-blitz-standee",
+          "title": "Flashback Blitz Standee",
+          "author": "SpindleHorse; character design MistMistly",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_merchandise_fullbody",
+          "role": "primary_full_costume_pose",
+          "qualification": "Complete horns, both hands, trousers, both boots and tail silhouette visible. Product support, building and printed logo excluded.",
+          "transform": "Native official product image bytes preserved unchanged; not a fan-art repost.",
+          "nativeImageUrl": "https://sharkrobot.com/cdn/shop/files/BlitzGhostFckrsStandee.png?v=1751394434",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v14/characters/references/ghostfuckers-official-930s.png",
+          "sha256": "a5e283b6fa92e792fe7b34c8e400f3f644b4f12b2d7c5452dd92cdae34c67048",
+          "bytes": 93271,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=5DV4IIKwqRI&t=930s",
+          "title": "HELLUVA BOSS - GHOSTF**KERS // S2: Episode 10",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_episode_public_preview_frame",
+          "role": "supporting_identity_costume_episode",
+          "qualification": "Blitzø at right in the same dark flashback outfit; this cropped frame corroborates continuity and costume, not complete anatomy.",
+          "timeSeconds": 930,
+          "transform": "Exact native 320×180 storyboard cell extracted without resize, enhancement, repainting or reconstruction.",
+          "parentBoard": "production/v14/characters/references/ghostfuckers-official-board-10.jpg",
+          "cropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "inheritedFrom": "production/v8/helluva/references/ghosts-board-10.jpg",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "La veste noire courte, le pantalon gris, les deux bottes, les mains, les cornes et la queue reprennent la silhouette entière du standee officiel.",
+        "Le plan officiel à 930 secondes confirme le costume et le contexte du flashback ; la pose complète vient du standee.",
+        "Les composites clair et sombre montrent une découpe sans fond rectangulaire. Les marges étroites ne coupent pas les cornes ou les bottes."
+      ],
+      "limits": [
+        "Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit.",
+        "PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération.",
+        "Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents.",
+        "Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres.",
+        "Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée.",
+        "Silhouette entière : cornes, queue et deux bottes complètes, pose des mains issue du standee officiel.",
+        "La demande initiale de marge de 5 % n’est pas atteinte ; marges visibles mesurées haut 13 px et bas 9 px. Aucun bord de silhouette coupé.",
+        "L’épisode officiel à 930 s corrobore l’incarnation et la tenue. Le standee complet fournit la pose et les détails, et ne constitue pas un nouveau plan d’épisode."
+      ],
+      "pixelAudit": {
+        "path": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+        "sha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c",
+        "bytes": 1324673,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 1189871,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 382993,
+        "visibleBBoxAlpha16": [
+          229,
+          13,
+          862,
+          1527
+        ],
+        "export": {
+          "path": "public/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp",
+          "sha256": "b38f0e7b1645eb6bc9cab3179684cd880202a60f4b538f95afe3ee72fd8c94d3",
+          "bytes": 829338,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "baselineGalleryEntries": 133,
+        "baselineStages": 49,
+        "basis": "ID absent from the baseline gallery and, for stages, from the baseline stage register. Native master hash differs from all recorded V7–V13 masters. Costume adds no new identity base."
+      },
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/root-art-diagnostics/hb_blitzo-flashback-ghostfuckers-s2-root-alpha-review.jpg",
+        "sha256": "f94211afc6251439ba7c7e792c907349b809afbd9ce6b3d471e95ec1c62996b6",
+        "purpose": "Technical light/dark composite only; native PNG and export unchanged."
+      }
+    },
+    {
+      "id": "hb_millie-dress-disguise-training-short",
+      "kind": "costume",
+      "nativeMasterPath": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+      "masterSha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v14/characters/references/millie-dress-disguise-official-keychain.png",
+          "sha256": "b06a2b50dbce2ef4f824c9adf7831e03cf99888ec0421d7a8fc611c029f54924",
+          "bytes": 850880,
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "mode": "RGBA",
+          "url": "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "title": "Moxxie & Millie Dress Disguise Keychain — Millie side",
+          "author": "Darius / SpindleHorse",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_merchandise_full_costume",
+          "role": "primary_full_costume_pose",
+          "qualification": "Whole dressed silhouette, hat, two feathers, parasol, hands and sweeping skirt hem visible. Legs and feet are naturally concealed by the dress and must not be reconstructed.",
+          "transform": "Native official product image bytes preserved unchanged; not a fan-art repost.",
+          "nativeImageUrl": "https://sharkrobot.com/cdn/shop/files/MillieKeychain_4eae3578-85d4-4e18-b169-484915f7d76d.png?v=1780421428",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v14/characters/references/training-official-140s.png",
+          "sha256": "9f355cd63febeb48ffd85e3333bbeda7061bd576f67209492d764d3a1bde9f90",
+          "bytes": 81118,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=4kJXWQWW-og&t=140s",
+          "title": "HELLUVA SHORTS 12 // IMP TRAINING VIDEO // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "role": "supporting_identity_costume_short",
+          "qualification": "Millie at right, with black hair and the same lavender hat and outfit; closed parasol in this short frame. Complete open-parasol pose comes from the official product reference.",
+          "timeSeconds": 140,
+          "transform": "Exact native 320×180 storyboard cell extracted without resize, enhancement, repainting or reconstruction.",
+          "parentBoard": "production/v14/characters/references/training-official-board-3.jpg",
+          "cropBox": [
+            320,
+            0,
+            640,
+            180
+          ],
+          "publicationDate": "2026-06-13",
+          "publicationEvidence": "production/v14/characters/references/training-primary-metadata.json",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "La robe lavande, les deux nœuds à l’ourlet, le grand chapeau, ses deux plumes et l’ombrelle ouverte sont complets comme sur le porte-clés officiel.",
+        "Cheveux noirs, yeux grands ouverts, taches sombres et mains réunies sur la poignée distinguent Millie. La cellule officielle à 140 secondes corrobore sa tenue.",
+        "Les pieds sont naturellement dissimulés par la robe dans la source et le dessin. Aucun membre caché n’est reconstruit.",
+        "Les deux composites alpha présentent une silhouette lisible, sans porte-clés matériel, socle, fond rectangulaire ou coupe du contour."
+      ],
+      "limits": [
+        "Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit.",
+        "PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération.",
+        "Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents.",
+        "Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres.",
+        "Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée.",
+        "Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3.",
+        "La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2.",
+        "La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte.",
+        "Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé.",
+        "Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain.",
+        "Cheveux noirs, yeux ouverts et deux mains réunies sur la poignée différencient Millie de Moxxie. Les deux plumes et les deux nœuds de l’ourlet sont présents.",
+        "Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour."
+      ],
+      "pixelAudit": {
+        "path": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+        "sha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+        "bytes": 1717766,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 721944,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 850920,
+        "visibleBBoxAlpha16": [
+          50,
+          27,
+          995,
+          1504
+        ],
+        "export": {
+          "path": "public/assets/production/v14/characters/hb_millie-dress-disguise-training-short.webp",
+          "sha256": "49ced3541c9ffda50f8fdbbebc4d818ec70db048ff4e896b4f42e11cce65e44c",
+          "bytes": 1071600,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "baselineGalleryEntries": 133,
+        "baselineStages": 49,
+        "basis": "ID absent from the baseline gallery and, for stages, from the baseline stage register. Native master hash differs from all recorded V7–V13 masters. Costume adds no new identity base."
+      },
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/root-art-diagnostics/hb_millie-dress-disguise-training-short-root-alpha-review.jpg",
+        "sha256": "28a1cefdfe95faf5e1bcc183411c82a1899c578856a28ffa7cc8be7508895b6d",
+        "purpose": "Technical light/dark composite only; native PNG and export unchanged."
+      }
+    },
+    {
+      "id": "hb_moxxie-dress-disguise-training-short",
+      "kind": "costume",
+      "nativeMasterPath": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+      "masterSha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v14/characters/references/moxxie-dress-disguise-official-keychain.png",
+          "sha256": "c7fc7ee72a0ad188338f816228f878be2ef87b6969ad8352f1a8eaa535550df6",
+          "bytes": 810250,
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "mode": "RGBA",
+          "url": "https://sharkrobot.com/products/moxxie-millie-dress-disguise-keychain",
+          "title": "Moxxie & Millie Dress Disguise Keychain — Moxxie side",
+          "author": "Darius / SpindleHorse",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_merchandise_full_costume",
+          "role": "primary_full_costume_pose",
+          "qualification": "Whole dressed silhouette, hat, two feathers, parasol, distinct hands and complete skirt hem visible. Feet/legs naturally concealed; no hidden anatomy authorized. White hair and pale cheek freckles distinguish Moxxie from Millie.",
+          "transform": "Native official product image bytes preserved unchanged; not a fan-art repost.",
+          "nativeImageUrl": "https://sharkrobot.com/cdn/shop/files/MoxxieKeychain.png?v=1780421428",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v14/characters/references/training-official-130s.png",
+          "sha256": "de1c2be61231cb06a3f84fe55f10f93ce44d743b1add1965f0d211cc52720518",
+          "bytes": 79228,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=4kJXWQWW-og&t=130s",
+          "title": "HELLUVA SHORTS 12 // IMP TRAINING VIDEO // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "role": "supporting_identity_costume_short",
+          "qualification": "Moxxie with white hair, lavender hat and outfit in front of Loona; folded parasol. Complete open-parasol pose comes from official product art.",
+          "timeSeconds": 130,
+          "transform": "Exact native 320×180 storyboard cell extracted without resize, enhancement, repainting or reconstruction.",
+          "parentBoard": "production/v14/characters/references/training-official-board-2.jpg",
+          "cropBox": [
+            640,
+            360,
+            960,
+            540
+          ],
+          "publicationDate": "2026-06-13",
+          "publicationEvidence": "production/v14/characters/references/training-primary-metadata.json",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Le chapeau, ses deux plumes, l’ombrelle entière, la robe jusqu’à l’ourlet et les deux nœuds sont présents comme sur le porte-clés officiel.",
+        "Cheveux blancs, taches claires, yeux mi-clos et une main à la taille distinguent Moxxie. La cellule officielle à 130 secondes corrobore sa tenue.",
+        "Les pieds dissimulés sous la robe ne sont pas reconstruits. La pose ouverte de l’ombrelle vient du porte-clés, pas du plan du court.",
+        "Les composites clair et sombre ne montrent aucun fond visible ni élément matériel du porte-clés."
+      ],
+      "limits": [
+        "Un seul dessin statique de costume ; aucune nouvelle identité, base entière de personnage, animation, transition ou nouveau kit.",
+        "PNG natif conservé octet pour octet depuis les données PNG du générateur natif ; aucune retouche, suppression de fond ou recadrage après génération.",
+        "Export WebP lossless exact vérifié par comparaison de tous les octets RGBA décodés, y compris les pixels totalement transparents.",
+        "Alpha native 0–254 : pixels extérieurs entièrement transparents, intérieur quasi opaque ; aucun fond visible sur les composites clairs et sombres.",
+        "Adaptation redessinée ; proportions et détails peuvent différer des sources. Aucune fidélité 1:1 certifiée.",
+        "Incarnation du court officiel IMP Training Video, publié le 13 juin 2026, distincte d’un épisode numéroté. Aucune attribution à la saison 3.",
+        "La valeur spoilerScope season_2 est seulement le niveau prudent du filtre choisi pour cette incarnation ; elle ne prétend pas dater le court dans la saison 2.",
+        "La pose et l’ombrelle ouverte suivent le porte-clés officiel de Darius. Les cellules du court montrent une ombrelle fermée et corroborent le costume, pas la pose exacte.",
+        "Silhouette entière habillée jusqu’à l’ourlet ; les jambes et pieds ne sont pas visibles sous la robe dans la source. Aucun pied, jambe, queue ou autre membre caché n’a été inventé.",
+        "Les plumes, le contour du chapeau, l’ombrelle et l’ourlet restent à afficher intégralement en contain.",
+        "Cheveux blancs, taches claires des joues, yeux mi-clos et une main à la taille différencient Moxxie de Millie. Deux plumes et deux nœuds à l’ourlet présents.",
+        "Proportions du visage, largeur de l’ombrelle et de la jupe, courbes et détails redessinés ; aucune fidélité 1:1 certifiée. Marges natives plus étroites que les 5 % demandés, sans coupe du contour."
+      ],
+      "pixelAudit": {
+        "path": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+        "sha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+        "bytes": 1777345,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 694035,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 878829,
+        "visibleBBoxAlpha16": [
+          35,
+          16,
+          989,
+          1506
+        ],
+        "export": {
+          "path": "public/assets/production/v14/characters/hb_moxxie-dress-disguise-training-short.webp",
+          "sha256": "af35e202dbeaf4951ca3d478224d33ed182884dc922db5dd3b56b587a09a39b7",
+          "bytes": 1121664,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "baselineGalleryEntries": 133,
+        "baselineStages": 49,
+        "basis": "ID absent from the baseline gallery and, for stages, from the baseline stage register. Native master hash differs from all recorded V7–V13 masters. Costume adds no new identity base."
+      },
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/root-art-diagnostics/hb_moxxie-dress-disguise-training-short-root-alpha-review.jpg",
+        "sha256": "a3559bc5a1c94c6bab20b20054320c6839f508f12232cc4530bbbfb37f6de30a",
+        "purpose": "Technical light/dark composite only; native PNG and export unchanged."
+      }
+    },
+    {
+      "id": "full-moon-shop-s2-room",
+      "kind": "stage",
+      "nativeMasterPath": "production/v14/environment/masters/full-moon-shop-s2-room.png",
+      "masterSha256": "9f776088715c41122791315f83c0dcba0af681419923eb4434edd6e5cdbda049",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+      "frameCoverage": "complete_background",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-208-00003.jpg",
+          "sha256": "9ef6aa97909c9a6c6b224b295efe984e39aa40ee046b4b37ad50a0ddc26d698f",
+          "bytes": 378514,
+          "dimensions": [
+            2500,
+            1022
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/8a573e32-a240-4e4c-932e-adf2457d8fb9/208_00003.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "originalSourceDimensions": [
+            6484,
+            2650
+          ],
+          "role": "primary_stage_layout",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Peinture primaire et master examinés : deux escaliers, comptoir gauche, panneaux décoratifs rouges et mur matelassé droit conservés.",
+        "Huit ogives sont visibles dans chacune des deux rangées ; le compte inférieur a été contrôlé en vue rapprochée.",
+        "Le plan officiel à 710 secondes corrobore l’intérieur. Le sol rouge est prolongé pour la zone de duel AU, sans personnage ni nouvel objet en surimpression."
+      ],
+      "limits": [
+        "Architecture frontale, comptoir gauche, escalier de chaque côté, panneaux en coeur et mur matelassé droit conservés.",
+        "Huit ogives confirmées dans chaque rangée par inspection rapprochée. Un premier comptage erroné de 6 dans l’aperçu réduit a été corrigé avant toute nouvelle génération ; aucun deuxième appel.",
+        "Le cadrage source 2500×1022 est adapté à 1672×941 en prolongeant seulement le même carrelage rouge au premier plan.",
+        "Petits traits, couleurs et motifs redessinés ; aucune égalité pixel à pixel avec la peinture source ni fidélité 1:1 certifiée."
+      ],
+      "pixelAudit": {
+        "path": "production/v14/environment/masters/full-moon-shop-s2-room.png",
+        "sha256": "9f776088715c41122791315f83c0dcba0af681419923eb4434edd6e5cdbda049",
+        "bytes": 1816681,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "alphaZeroPixels": 0,
+        "alphaFullPixels": 1573352,
+        "alphaPartialPixels": 0,
+        "visibleBBoxAlpha16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "export": {
+          "path": "public/assets/production/v14/environment/full-moon-shop-s2-room.webp",
+          "sha256": "6a891c5c1a53abed70fbebaf94d36755e9ada094c194ab44f38ba5c350337a86",
+          "bytes": 1368976,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "baselineGalleryEntries": 133,
+        "baselineStages": 49,
+        "basis": "ID absent from the baseline gallery and, for stages, from the baseline stage register. Native master hash differs from all recorded V7–V13 masters. Costume adds no new identity base."
+      }
+    },
+    {
+      "id": "crimson-dining-room-s2-room",
+      "kind": "stage",
+      "nativeMasterPath": "production/v14/environment/masters/crimson-dining-room-s2-room.png",
+      "masterSha256": "23a8ec847d00196e73d4568ea8efeeed20a5d2c25b508380e60794ac25bb737a",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-26T21:51:59.513902+00:00",
+      "frameCoverage": "complete_background",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "sha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "bytes": 344285,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_production_artist_portfolio_image",
+          "originalSourceDimensions": [
+            4340,
+            2660
+          ],
+          "role": "primary_stage_layout_and_complete_chandelier",
+          "visuallyInspected": true
+        }
+      ],
+      "visualComparison": [
+        "Peinture primaire, master et cellule officielle à 630 secondes examinés : trois fenêtres vertes, trois grands dossiers au premier plan, table, cheminée gauche et porte droite conservés.",
+        "Le cadrage 16:9 réduit le plafond et prolonge le sol pour le duel AU. Le lustre est peint dans le fond ; aucun prop isolé n’est ajouté au stage.",
+        "Le support supérieur du lustre touche le bord haut du fond et reste partiellement hors cadre ; le prop isolé distinct est entier."
+      ],
+      "limits": [
+        "Trois fenêtres vertes, trois grands dossiers sombres vus de dos, table horizontale, grandes chaises d’extrémité, cheminée gauche et double porte droite conservés.",
+        "Le cadrage 16:9 réduit le plafond vide et prolonge le même parquet au premier plan pour le combat, adaptation Simulation AU.",
+        "Le petit support du lustre au plafond est coupé en haut par le cadrage final ; cette limite concerne le fond, pas le prop isolé entier produit séparément par root.",
+        "Le prompt historique disait two shades : description imprécise de deux groupes aux ouvertures chevauchées. La source visuelle fait autorité ; aucune suppression de parties demandée après inspection.",
+        "Les minuscules trophées et motifs sont redessinés ; aucune fidélité 1:1 certifiée. Aucun prop ajouté en surimpression."
+      ],
+      "pixelAudit": {
+        "path": "production/v14/environment/masters/crimson-dining-room-s2-room.png",
+        "sha256": "23a8ec847d00196e73d4568ea8efeeed20a5d2c25b508380e60794ac25bb737a",
+        "bytes": 1594536,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "alphaZeroPixels": 0,
+        "alphaFullPixels": 1573352,
+        "alphaPartialPixels": 0,
+        "visibleBBoxAlpha16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "export": {
+          "path": "public/assets/production/v14/environment/crimson-dining-room-s2-room.webp",
+          "sha256": "ad7dc6fa9f2e0b283d142f1eedd124b80f3816a67127aa4b2e5a36009ec17b88",
+          "bytes": 1124176,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "baselineGalleryEntries": 133,
+        "baselineStages": 49,
+        "basis": "ID absent from the baseline gallery and, for stages, from the baseline stage register. Native master hash differs from all recorded V7–V13 masters. Costume adds no new identity base."
+      }
+    }
+  ],
+  "supportingReviews": [
+    {
+      "path": "docs/standalone/production-v14/props-independent-review.json",
+      "sha256": "8282cb8d79caf7464e4b6242e2924d7998aadf627a6c8c7efba2cf3b30694c66"
+    },
+    {
+      "path": "docs/standalone/production-v14/characters-independent-environment-review.json",
+      "sha256": "3df25deaf697d4eb23bfbe335f4aad7eec89c1715404cbf011d7690e569bb1b8"
+    }
+  ]
+}

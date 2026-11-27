@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "baselineCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+  "status": "accepted_scope_locked",
+  "integrationAuthorizedBy": "/root",
+  "handoffs": [
+    "characters-handoff.json",
+    "environment-handoff.json",
+    "root-handoff.json"
+  ],
+  "acceptedAssets": [
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "category": "narrative_archive",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": "hb_vikki",
+      "stageId": null,
+      "frameCoverage": "bust"
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "category": "narrative_archive",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": "hb_tilla",
+      "stageId": null,
+      "frameCoverage": "bust"
+    },
+    {
+      "id": "dhorks-control-room-s1-room",
+      "category": "stage",
+      "runtimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": "dhorks-control-room-s1",
+      "frameCoverage": "complete_background"
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2-room",
+      "category": "stage",
+      "runtimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": "unhappy-campers-boathouse-s2",
+      "frameCoverage": "complete_background"
+    },
+    {
+      "id": "spring-broken-red-cup",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "dhorks-red-button-panel-s1",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "asmodeus-bedroom-pitcher",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    }
+  ],
+  "acceptedAssetCount": 7,
+  "noRetryTargetIds": [
+    "blitzo-sniper-production",
+    "cherribomb",
+    "hb_belphegor",
+    "hb_deerie",
+    "hb_leviathan",
+    "hb_loopty_goopty",
+    "hb_stella",
+    "hb_stolas_family_butler",
+    "hz_ant_sinner",
+    "hz_clara_carmine",
+    "hz_dazzle",
+    "hz_eel_sinner",
+    "hz_egg_boiz",
+    "hz_fat_nuggets",
+    "hz_frank_egg_boi",
+    "hz_huskette_spider",
+    "hz_keekee",
+    "hz_odette_carmine",
+    "hz_razzle",
+    "hz_rooster",
+    "hz_salina",
+    "hz_shok_wav",
+    "hz_speaker_of_god",
+    "lute",
+    "lute-prosthetic-s2-ready",
+    "pentious-airship-s1",
+    "personal:husk:3:rival",
+    "personal:sirpentious:3:intro"
+  ],
+  "attemptRegisters": [
+    "docs/standalone/production-v13/root-prompts.json",
+    "docs/standalone/production-v13/characters-prompts.json",
+    "docs/standalone/production-v13/environment-prompts.json",
+    "docs/standalone/production-v13/root-refused-attempts.json"
+  ],
+  "limits": [
+    "Vikki et Tilla sont deux bustes narratifs. Aucune base entière supplémentaire ; les bases complètes de ces deux identités restent manquantes.",
+    "Tilla est une adaptation de marchandise officielle non datée. season_2 est seulement le plafond conservateur du filtre, sans attribution à un épisode.",
+    "Le sol du contrôle D.H.O.R.K.S. et le quai du hangar sont prolongés pour le combat AU ; aucune fidélité géométrique 1:1 certifiée.",
+    "Les trois accessoires restent des objets de galerie sans mécanique ni placement ajouté dans les décors.",
+    "Les modèles Erin non récupérés et le fût occulté restent différés. Aucun refus de générateur historique ou courant n’a été relancé."
+  ],
+  "authorizationBasis": "Continuation demandée par l’utilisateur ; génération, intégration, bible existante et publication dans la PR #8 déjà autorisées. Scope artistique accepté par /root.",
+  "supportingEvidence": [
+    "docs/standalone/production-v13/root-image-qa.json",
+    "docs/standalone/production-v13/root-references.json",
+    "docs/standalone/production-v13/root-deferred-targets.json",
+    "docs/standalone/production-v13/characters-qa.json",
+    "docs/standalone/production-v13/characters-references.json",
+    "docs/standalone/production-v13/environment-qa.json",
+    "docs/standalone/production-v13/environment-references.json",
+    "docs/standalone/production-v13/environment-qualification.json",
+    "docs/standalone/production-v13/props-independent-review.json",
+    "docs/standalone/production-v13/props-reference-review.json"
+  ],
+  "lockedAt": "2026-11-26T19:50:42.813953+00:00"
+}

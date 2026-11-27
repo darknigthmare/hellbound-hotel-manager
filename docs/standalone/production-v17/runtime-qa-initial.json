@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "passed",
+  "scope": "Full standard npm run qa on GitHub Actions; this report records technical validation, not browser rendering.",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "headCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "ciCheckoutCommit": "ed6b9fcd903cbccf45ad6baae90fcc33cf612062",
+  "sourceTree": "42cf1d4e84e08f739eee3a50a22a986843802933",
+  "mergeTreeMatchesHead": true,
+  "runId": 45947747957,
+  "runNumber": 102,
+  "jobId": 140336235628,
+  "runUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45947747957",
+  "jobUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45947747957/job/140336235628",
+  "standardCommand": "npm run qa",
+  "standardQaScriptPassed": true,
+  "typecheck": "passed",
+  "lint": "passed",
+  "testsPassed": 439,
+  "testSuites": 51,
+  "managerBuild": "passed",
+  "standaloneBuild": "passed",
+  "standaloneVerifiedHashes": 1350,
+  "artifact": {
+    "name": "infernal-versus-standalone",
+    "id": 15176285543,
+    "bytes": 963249821,
+    "sha256": "03c52a056894f49c8e4a7e0846939b839d09babacf21e24d1a1742b36259eaf3"
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-11-27T05:46:58Z",
+      "completed_at": "2026-11-27T05:46:59Z"
+    },
+    {
+      "name": "Check out repository",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-11-27T05:46:59Z",
+      "completed_at": "2026-11-27T05:50:50Z"
+    },
+    {
+      "name": "Use Node.js 22",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-11-27T05:50:50Z",
+      "completed_at": "2026-11-27T05:50:56Z"
+    },
+    {
+      "name": "Install exact dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-11-27T05:50:56Z",
+      "completed_at": "2026-11-27T05:51:44Z"
+    },
+    {
+      "name": "Type-check, test and build",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-11-27T05:51:44Z",
+      "completed_at": "2026-11-27T05:54:02Z"
+    },
+    {
+      "name": "Upload verified standalone bundle",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-27T05:54:02Z",
+      "completed_at": "2026-11-27T05:54:13Z"
+    },
+    {
+      "name": "Post Use Node.js 22",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11,
+      "started_at": "2026-11-27T05:54:13Z",
+      "completed_at": "2026-11-27T05:54:13Z"
+    },
+    {
+      "name": "Post Check out repository",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12,
+      "started_at": "2026-11-27T05:54:13Z",
+      "completed_at": "2026-11-27T05:54:13Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13,
+      "started_at": "2026-11-27T05:54:13Z",
+      "completed_at": "2026-11-27T05:54:13Z"
+    }
+  ],
+  "browserValidation": "Separate browser-gallery-qa.json; not asserted by CI.",
+  "fidelityOneToOneCertified": false
+}

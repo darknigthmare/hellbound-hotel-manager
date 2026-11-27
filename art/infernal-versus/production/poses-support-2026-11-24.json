@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "batch": "poses-support-2026-11-24",
+  "date": "2026-11-24",
+  "tool": "image_gen.imagegen",
+  "executionMode": "built-in",
+  "imageGenerationCalls": 7,
+  "successfulGenerations": 7,
+  "status": "generated_candidate_pending_in_game_validation",
+  "fidelity": "Source-guided candidates from existing project portraits; not certified 1:1.",
+  "pose": "ready",
+  "facing": "right",
+  "singleCharacterPerImage": true,
+  "formatPolicy": "Original PNG generation masters preserved byte-for-byte; runtime WebP lossless at the same dimensions. No creative raster postprocessing.",
+  "rightsNote": "Generated fan-game adaptations of third-party franchise characters. Existing project portraits are continuity/style guides, not primary official model sheets. Reference screenshots and licensed product art are inspected in scratch only.",
+  "inGameValidation": {
+    "performed": false,
+    "owner": "root integration step"
+  },
+  "primaryContextSources": [
+    {
+      "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+      "publisher": "Prime Video",
+      "sourceType": "official_catalog",
+      "role": "S1 episodes 3 (Overlord meeting), 6 (Heaven) and 7 (Rosie); episode context only, not a pixel-level visual model sheet"
+    },
+    {
+      "url": "https://www.primevideo.com/detail/0K67FVL3VHXNTE3JST8GXWOOFG",
+      "publisher": "Prime Video",
+      "sourceType": "official_catalog",
+      "role": "S2 context for Abel"
+    },
+    {
+      "url": "https://www.aboutamazon.com/news/entertainment/where-to-watch-hazbin-hotel-prime-video",
+      "publisher": "Amazon",
+      "sourceType": "official_article",
+      "role": "Primary confirmation of Abel as a Season 2 character"
+    }
+  ],
+  "assets": [
+    {
+      "id": "emily",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE complete single-character 2D game sprite of Emily from Hazbin Hotel, using the attached existing project reference as the identity and costume authority. Preserve her exact gentle gray-lavender skin, large pale blue eyes and dark lavender lashes, long white/lavender hair, pale crown-like halo, full layered white feather wings, lavender puff sleeves, light high-neck bodice with its little four-point emblem, waistband, and pale bell-shaped full-length dress with lavender zigzag lower panel and diamond motifs. Keep the petite rounded proportions and all costume colors of the reference. Pose: quiet READY/idle stance facing the RIGHT edge of the image in a readable three-quarter side view, gaze right, shoulders calm, one relaxed hand slightly forward and the other near the body. Keep the entire silhouette including halo, all feather tips and whole dress hem inside the frame. This is a neutral standing pose, no attack, no magic effect, no new weapon, no new costume. Clean crisp black/lavender animated outlines and flat cel shading matching the reference. Use a tall 1024 by 1536 composition with at least 7 percent clear margin all around. EXACTLY one character, no turnarounds, no duplicate limbs or duplicate character, no contact sheet. True transparent background including gaps between feathers. No floor, no cast shadow, no text, no labels, no watermark.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-b4b715ed-2616-451e-9427-f18d862345f8.png",
+      "masterPath": "art/infernal-versus/masters/poses/emily-ready.png",
+      "runtimePath": "public/assets/sprites/individual/emily-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 976875,
+        "partiallyTransparentPixels": 595989,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 570388,
+        "veryLowAlphaPixels": 17759,
+        "contentBounds": [
+          0,
+          39,
+          922,
+          1502
+        ],
+        "visibleBoundsAtAlpha16": [
+          115,
+          98,
+          846,
+          1396
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.0638,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "549ad0956e86435d0e4dcd47d54594ab06acce36ad52af62fcc85ea6e10b3582",
+        "runtimeSha256": "2a2cea132bfeaead996d3dbea700110bcf7f53eaeef678bfc0d045eb120f8a27",
+        "masterBytes": 1444349,
+        "runtimeBytes": 896580,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/emily.png",
+          "sha256": "ae3aba033cf508311a8c411be348b84bc57ccd7579cc2a64feadd936fa1cef90"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "sera",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE complete single-character 2D game sprite of Sera from Hazbin Hotel using the attached existing project reference as the identity and costume authority. Preserve her very tall slender silhouette, deep gray-brown face and hands, light blue eyes, immense long pale silver/lavender hair with outward curved ends, delicate high pale halo/crown structure, long layered white feather wings, and the same formal pale blue/white full-length gown with high neck, layered chest ornament, lavender edging and diamond pattern. Do not add armor, jewelry, staff or a new outfit. Pose: composed READY/idle stance in a readable three-quarter side view facing the RIGHT edge, head and gaze directed right, hands calmly clasped at waist level, wings settled behind her. Preserve the complete floor-length gown silhouette without inventing visible legs through the dress. Keep all halo loops, hair and feather tips and dress hem fully inside the image. Match the reference's clean animation linework and flat cel-shaded style. Tall 1024 by 1536 composition, at least 7 percent transparent margin on every side. EXACTLY one complete character, no sheet, no duplicate person, no new transformation, no action effect, no text, no logo, no floor, no cast shadow. True transparent background including feather gaps.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-d4a0e4a3-13a5-44ad-9b17-f105544956c2.png",
+      "masterPath": "art/infernal-versus/masters/poses/sera-ready.png",
+      "runtimePath": "public/assets/sprites/individual/sera-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 870408,
+        "partiallyTransparentPixels": 702456,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 663334,
+        "veryLowAlphaPixels": 27371,
+        "contentBounds": [
+          118,
+          39,
+          974,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          122,
+          55,
+          894,
+          1487
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.0319,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "8e54824f78e20ccd26e8200c57e65c419c8e3bf044719a8303a53fa40dbf399f",
+        "runtimeSha256": "97ad88ce227d416b468fc6983bddc48b11006986120232543407d85adc12fd99",
+        "masterBytes": 1528845,
+        "runtimeBytes": 947240,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/sera.png",
+          "sha256": "35f88cccbf923df7d33b7cc68850ba6f0865783fa333ae67068a0715a27f5bc6"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "lute",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: identity-preserve corrective edit. Create ONE complete single-character 2D READY game sprite of Lute from Hazbin Hotel in her Season 1 exorcist uniform BEFORE her arm injury, UNMASKED. Image 1 is an older project drawing: use only its tall slender body proportions, long legs and general clean 2D game style. Correct its inaccurate mask/hair combination and golden mechanical arm using Image 2, the official licensed Lute illustration, which is the authority for her face, colors and uniform details. Do NOT use Image 2's toy/chibi proportions. Preserve unmasked pale gray skin, sharp asymmetrical white bob, long black eyelashes, yellow eyes with black pupils, dark eyebrows and controlled stern smirk; black ring halo with its narrow vertical black pointed ornament. No helmet and no horns on her unmasked head. She has TWO NORMAL ARMS with matching light-gray elbow-length gloves, NO golden or mechanical prosthesis. Same short charcoal-gray exorcist tunic with pale frilled collar, dark short sleeves with pale bands, pale waist belt, black fitted leggings, very tall pale gray pointed boots with dark chevron trim, black-edged pale wings with two black transverse stripes. Clean intact uniform, no blood stains. Pose: calm balanced READY stance facing RIGHT in a clear three-quarter side view, both hands empty and relaxed slightly in front of body, feet planted, wings folded back enough to show body. No sword or spear, no new outfit. Entire halo, wings, hands and both feet inside generous transparent margins. Tall 1024x1536 canvas. Crisp original-series-like flat 2D cel shading, coherent black contours. One whole person only, no duplicate views, no text, no logos, no floor, no cast shadow, no magic effects, true transparent background.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-191950d5-7ddd-423c-b87c-951b2c5accdd.png",
+      "masterPath": "art/infernal-versus/masters/poses/lute-ready.png",
+      "runtimePath": "public/assets/sprites/individual/lute-ready.webp",
+      "continuityCorrection": {
+        "from": "Existing project portrait combines a mask/hair design with a golden mechanical arm, inconsistent with the documented S1 starting scope.",
+        "to": "Unmasked S1 exorcist appearance before the arm injury, two normal gray-gloved arms.",
+        "authorization": "Root agent explicitly requested this correction on 2026-11-24; historical portrait remains unchanged.",
+        "primaryVisualReference": {
+          "url": "https://youtooz.com/products/lute",
+          "imageUrl": "https://youtooz.com/cdn/shop/files/1c7t1k105p.png?v=1770149952",
+          "publisher": "Youtooz",
+          "copyright": "Amazon Content Services LLC / A24 Films LLC",
+          "type": "official_licensed_merchandise",
+          "localObserved": "reference_work/lute-youtooz-1c7t1k105p.png",
+          "role": "Face, bob, black halo, uniform, normal gray gloves and wing stripes; toy proportions deliberately not copied."
+        },
+        "adaptation": "Neutral empty-handed stance; clean uniform without the collectible's blood marks; long project body proportions retained."
+      },
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1071360,
+        "partiallyTransparentPixels": 501504,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 464501,
+        "veryLowAlphaPixels": 23132,
+        "contentBounds": [
+          91,
+          8,
+          1010,
+          1519
+        ],
+        "visibleBoundsAtAlpha16": [
+          132,
+          10,
+          874,
+          1517
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.00651,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "4ff83db698da8337fcf8b10183cba6f0b5f23561e90ad2cfae363b871468fec0",
+        "runtimeSha256": "8f3e5d97fcb938ec9bf9ed9cb58d9ac7bfd100821228f631b4e9fad31dfcdb99",
+        "masterBytes": 1335694,
+        "runtimeBytes": 826194,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/lute.png",
+          "sha256": "f0b51aad25a074a75bdbafb6a77f5889a5a7f23ca257f357830ebe9c66b4e6a0"
+        },
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/reference_work/lute-youtooz-1c7t1k105p.png",
+          "sha256": "539c32c0f0d1543bfd7a11d0c6a09d9b12fd8415ab02deed62e0850d55009e19"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "rosie",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE full-body single-character 2D game sprite of Rosie from Hazbin Hotel using the attached existing project portrait as the identity and costume authority. Keep her tall extremely slender mature silhouette, pale gray-white face and hands, dark black empty eyes, small elegant toothy smile, short curled pale hair, huge asymmetrical black-and-burgundy wide-brim hat with the same skull decoration and sweeping rose-red feather plume. Preserve the exact Victorian high-neck fitted dusty-burgundy dress with sharp puff shoulders, long sleeves, black collar detail, black waist belt, long tapered skirt and black horizontal stripes near the flared red hem. Pose: poised READY/idle stance facing the RIGHT side in a clear three-quarter side view, gaze right, one hand resting lightly near the waist and the other relaxed, composed posture. Dress remains full-length as in the reference. No cane, parasol, weapon or new accessories. Entire hat, feathers, hands and complete dress hem inside the frame. Match original angular clean animated line art, solid black contours, flat restrained cel shading. Tall 1024x1536 composition with safe transparent margins around the entire silhouette. EXACTLY one person, no lineup, no separate head, no extra limbs. True transparent background. No floor, shadow, glow, lettering, watermark, logo, scene or graphic frame.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-5e2f1e85-b732-496e-889a-ac9d79e99ba6.png",
+      "masterPath": "art/infernal-versus/masters/poses/rosie-ready.png",
+      "runtimePath": "public/assets/sprites/individual/rosie-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1223132,
+        "partiallyTransparentPixels": 349732,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 325249,
+        "veryLowAlphaPixels": 15241,
+        "contentBounds": [
+          45,
+          17,
+          1004,
+          1522
+        ],
+        "visibleBoundsAtAlpha16": [
+          202,
+          19,
+          791,
+          1520
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.01042,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "83410195b9cf1fcce2e54a488a0b79deb531b12bc86eeae864ea225a2acd03f1",
+        "runtimeSha256": "5402aeff871ff9089d6c4ae726d8432bf974adc6770c08f3155563aa8d5f4fd9",
+        "masterBytes": 1277147,
+        "runtimeBytes": 818972,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/rosie.png",
+          "sha256": "6d339a01563578800ecb67eed66e67c63c552676e79932ffb1933a6e4f3452bc"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "zestial",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE full-body single-character 2D game sprite of Zestial from Hazbin Hotel using the attached existing project portrait as the exact identity and costume guide. Keep the extraordinarily tall narrow silhouette, dark gray angular spider-like face with four narrow yellow-green eyes, small controlled smile, tall dark top hat with upcurled brim, ochre vertical hat stripe and small skull/feather ornament, huge pointed multi-layer black/navy collar, central yellow-green round brooch, and the long nearly-black navy cloak with vivid yellow-green inner web-like panel and red-orange thin veins visible down its opening. Retain the costume's exact palette and coverage, no new clothes. Pose: calm READY/idle stance oriented toward the RIGHT in readable three-quarter side view, head and eye direction right, cloak at rest and hands concealed naturally under it. Show the entire hat ornament, collar and complete cloak hem, without inventing weapons, limbs, a staff or spider legs. Match crisp angular 2D series-inspired black outlines and flat cel shading. Tall 1024x1536 image with generous true transparent padding around the complete figure. EXACTLY one character only, no sheet or turnaround, no duplicate. True transparent background, no glow aura, no effects, no floor, no cast shadow, no lettering, no watermark.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-9edc94f2-99d0-43a9-895d-f863198df030.png",
+      "masterPath": "art/infernal-versus/masters/poses/zestial-ready.png",
+      "runtimePath": "public/assets/sprites/individual/zestial-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1155104,
+        "partiallyTransparentPixels": 417760,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 393332,
+        "veryLowAlphaPixels": 17659,
+        "contentBounds": [
+          113,
+          0,
+          968,
+          1522
+        ],
+        "visibleBoundsAtAlpha16": [
+          197,
+          5,
+          819,
+          1520
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.00326,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "65f7365ba0c72985932b1891e7fb73042d1f6685e2cbc64d7afae95df50acf10",
+        "runtimeSha256": "c21e145ce54d7e6c5d1b7ee6890209756dca0be4e468a00258fa864c2d669ff4",
+        "masterBytes": 1063392,
+        "runtimeBytes": 676960,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/zestial.png",
+          "sha256": "9accdfc053b48f9659d045f16cb08b2e46a9a96fa9acd49ffac26e2371b1d920"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "zeezi",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE full-body single-character 2D game sprite of Zeezi from Hazbin Hotel using the attached existing project portrait as the exact identity and outfit reference. Preserve the adult towering dinosaur/reptile demon physique, magenta-pink skin and angular muzzle, black eye markings and acid-yellow eyes, great swept lime-yellow spiky mane, toothy confident grin, black cropped top with yellow edging and studs, fluffy lime shoulder and wrist trims, black shorts, mismatched torn black-and-yellow leg coverings, large clawed pink feet, and long thick dark tail with its bright yellow outer trim and pink serrated markings. Keep all existing garment coverage and the powerful solid proportions; do not change the outfit. Pose: neutral grounded READY stance facing the RIGHT, near-side three-quarter view, both feet on the same implied baseline, arms relaxed but slightly bent, head/gaze right and tail naturally curling behind her to the left. Entire mane, both feet, hands and full tail tip must be visible with transparent safety padding. Match the reference's clean stylized angular animation line art, coherent dark outlines and flat cel shading. Portrait 1024x1536 composition with wide enough room to contain the tail. EXACTLY one whole character. No attack, no energy effect, no new weapons, no duplicate body, no scene, no text, no watermark, no ground, no cast shadow. True transparent background.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-acfb01b6-abbe-4b9f-8254-6186bc4b9737.png",
+      "masterPath": "art/infernal-versus/masters/poses/zeezi-ready.png",
+      "runtimePath": "public/assets/sprites/individual/zeezi-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 946791,
+        "partiallyTransparentPixels": 626073,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 581420,
+        "veryLowAlphaPixels": 29211,
+        "contentBounds": [
+          0,
+          14,
+          1010,
+          1536
+        ],
+        "visibleBoundsAtAlpha16": [
+          16,
+          16,
+          946,
+          1471
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.01042,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "d38022996e736069af1f4dababddd4b606d79ca3040f217d44b3dc29e2a6e599",
+        "runtimeSha256": "318c1f74dd289c807ba98a176209fb3ce60dd31ea12c7c28c39ff19d6833fb23",
+        "masterBytes": 1625076,
+        "runtimeBytes": 1088528,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/zeezi.png",
+          "sha256": "78d3f1352517d431dd37f3c713ab700c4b26b37c73484cbd06576df6bb6b57df"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    },
+    {
+      "id": "abel",
+      "pose": "ready",
+      "tool": "image_gen.imagegen",
+      "status": "generated_candidate",
+      "prompt": "Use case: precise-character-edit. Create ONE complete single-character 2D game sprite of Abel from Hazbin Hotel using the attached existing project portrait as the exact identity, proportions and costume guide. Preserve the short round adult male silhouette, pale warm skin, fluffy blond hair, large gold/orange eyes, friendly slightly nervous smile, cream tall ceremonial hat with coral spire-like insignia and huge white feather plume, golden halo, yellow-gold feather wings, and cream military-style long coat with yellow sleeves, white shoulder epaulettes, coral/pink trim, three gold buttons with coral bars, pointed zigzag lower panels with coral diamond motifs, black gloves and small black shoes. No new costume, armor, weapon or badge. Pose: quiet READY/idle stance facing the RIGHT in a readable three-quarter side view, gaze right, small feet planted level, both gloved hands loosely held near waist, wings settled naturally behind him. Keep full plume and halo, wings, entire coat and both shoes fully visible. Match the existing clean 2D animation linework and flat cel shading; avoid realistic rendering. Tall 1024x1536 canvas with generous transparent margin. EXACTLY one complete figure, no lineup, no second head, no duplicate limbs. True transparent background, no floor or cast shadow, no glow effect, no scenery, no labels or watermark.",
+      "generationOutputPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-4f67cf4f-1840-40b6-94f6-3176dc6d3a3b.png",
+      "masterPath": "art/infernal-versus/masters/poses/abel-ready.png",
+      "runtimePath": "public/assets/sprites/individual/abel-ready.webp",
+      "technicalQa": {
+        "nativeDimensions": [
+          1024,
+          1536
+        ],
+        "runtimeDimensions": [
+          1024,
+          1536
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 812009,
+        "partiallyTransparentPixels": 760855,
+        "fullyOpaquePixels": 0,
+        "nearOpaquePixelsAlpha240Plus": 728221,
+        "veryLowAlphaPixels": 20886,
+        "contentBounds": [
+          0,
+          29,
+          990,
+          1518
+        ],
+        "visibleBoundsAtAlpha16": [
+          66,
+          62,
+          952,
+          1471
+        ],
+        "visibleContentClearOfImageEdges": true,
+        "minimumVisibleMarginFraction": 0.04036,
+        "losslessPixelsMatch": true,
+        "masterPreservedByteForByte": true,
+        "masterSha256": "f5a0a825f104f01de32a0900a4ceaf99026112619a3380b299cb1003dd1e96cb",
+        "runtimeSha256": "c4011236443411fd4a5789711c14d0647db42882bd3b9e27e08c6f7070cf8b4f",
+        "masterBytes": 1671821,
+        "runtimeBytes": 1103820,
+        "alphaNote": "Native generated alpha retained without cleanup; transparent RGB glow is invisible under compositing. Low-alpha fringe pixels may reach canvas edges."
+      },
+      "sourceFiles": [
+        {
+          "path": "public/assets/sprites/portraits/abel.png",
+          "sha256": "eae86be4c0c3a0d6d6a674d637f82dc12ef038827327eb2edde2c6fdd4993bbf"
+        }
+      ],
+      "visualQa": {
+        "inspected": true,
+        "oneFullCharacter": true,
+        "facingRight": true,
+        "neutralReadyPose": true,
+        "noNewCostumeExceptDocumentedLuteContinuityCorrection": true,
+        "status": "candidate; in-game validation pending"
+      }
+    }
+  ],
+  "integration": {
+    "registeredReadyPoses": 6,
+    "candidateOutsideRuntime": [
+      "lute"
+    ],
+    "reason": "Lute S1 with two normal arms would alternate with the existing gold-arm animation banks. Candidate retained without changing active Lute visuals."
+  }
+}

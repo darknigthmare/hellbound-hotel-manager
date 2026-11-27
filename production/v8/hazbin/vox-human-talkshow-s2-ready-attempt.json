@@ -1,0 +1,65 @@
+{
+  "id": "vox-human-talkshow-s2-ready",
+  "characterId": "vox",
+  "sourceIdentityId": "vox",
+  "name": "Vox humain — costume du talk-show, saison 2",
+  "category": "costume",
+  "continuity": "season_2",
+  "frameCoverage": "full_body",
+  "status": "accepted_static_candidate",
+  "referenceUrls": [
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+    "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+  ],
+  "referencePaths": [
+    "production/v8/hazbin/references/vox-talkshow-body-58s.png",
+    "production/v8/hazbin/references/vox-talkshow-face-62s.png",
+    "production/v8/hazbin/references/vox-talkshow-shoes-66s.png"
+  ],
+  "prompt": "Create ONE complete full-body static 2D character sprite of HUMAN VOX from Hazbin Hotel Season 2 as directly shown in the supplied official Prime Video Brighter frames. Preserve his pointed human face, pale skin, green eyes, rectangular black spectacles, narrow long-limbed build, angular upswept dark hair with its pale streak and confident narrow grin. No television head, no antennas, no demon anatomy. Match the show's sharp black cartoon outlines, flat colors and restrained cel shading. A calm upright three-quarter pose facing screen-right, both feet visible and clearly separate, hands relaxed. Keep the entire hair, fingers and shoes within generous transparent margins. True fully transparent RGBA background with opaque character fills. No floor, scenery, cast shadow, glow, lettering, logo, frame, extra character, other pose, multi-panel sheet or animation. Draw this one specific official outfit, without combining different costumes. The pale mint-green/teal talk-show performer's suit shown in these references: Image 1 at58 seconds governs the whole outfit, narrow legs and long jacket contour; Image 2 at62 seconds shows pale lapels, white shirt with black buttons, small BLACK bow tie and hand proportions; Image 3 at66 seconds governs mint-green trouser hems and low pointed black shoes with their tiny light toe accents. Preserve the contrast between the pale jacket front and the teal trouser panels as observed. Draw both hands empty and relaxed: do not include the scene's microphone, wire, audience or stage. Do not use the brown weather-presenter suit or the later black tuxedo. The pose is a neutral static adaptation for the archive.",
+  "transparent_background": true,
+  "fidelityOneToOneCertified": false,
+  "newIdentity": false,
+  "nativePath": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+  "exportPath": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+  "exportUrl": "/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+  "sourceSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+  "exportSha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733",
+  "animationFrames": 0,
+  "poseCount": 1,
+  "qa": {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      254
+    ],
+    "transparentPixelFraction": 0.8160495758056641,
+    "alphaBounds": [
+      57,
+      8,
+      1004,
+      1536
+    ],
+    "visualCompared": true,
+    "technicalAlpha": true,
+    "findings": [
+      "Comparaison du corps entier, coiffure, lunettes, tenue, pieds avec les images officielles désignées dans referencePaths.",
+      "Une seule figure entière isolée, sans crop visible des cheveux ou chaussures ; pose adaptée statique.",
+      "Vraie transparence vérifiée sur fond blanc. Alpha intérieur maximal 254 ; pixels résiduels très faibles jusqu’au bord bas, sans fond visible en composition."
+    ],
+    "limits": [
+      "Les sources sont des miniatures officielles natives 320×180, insuffisantes pour certifier tous les détails fins.",
+      "Marge supérieure serrée malgré la demande de marge généreuse ; aucune coupe visuelle détectée.",
+      "Aucun cycle, animation ni kit de combat ; fidélité 1:1 non certifiée."
+    ]
+  },
+  "countsAsDelivered": true,
+  "gameplayEligibility": "galleryOnly",
+  "generatedNativeBasename": "exec-da00ea1e-769f-490f-998b-bfeb6fd66637.png",
+  "master": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png"
+}

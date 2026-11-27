@@ -1,0 +1,2326 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-24T15:23:38.732256+00:00",
+  "phase": "regenerated workbook, read-only XML and runtime-data QA",
+  "baseline_git_head": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+  "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V2.xlsx",
+  "workbook_sha256": "5472c3c7d2bcf76a6f328624d85b61362202e4a6da6c81a2201fdf025ee9299e",
+  "historical_baseline": "docs/standalone/HAZBIN_HELLUVA_COMBAT_EXTENSION_V1.xlsx",
+  "historical_baseline_sha256": "e4e870fd1add60aaef72a41d06ea496009f134907854fda18f0fa144a89d631b",
+  "runtime_read_command": "$CODEX_PRIMARY_RUNTIME_NODE docs/standalone/build-production-bible.mjs --read-game",
+  "runtime_read_exit_code": 0,
+  "runtime_snapshot_sha256": "c25c61222e4c02411410a863b37b521a5787a8194beb61157cb8c9f0e42832ae",
+  "status": "passed",
+  "checks": {
+    "xlsx_zip_crc_passed": true,
+    "sheet_count_is_23": true,
+    "historical_sheet_count_is_11": true,
+    "all_historical_sheet_xml_bytes_identical": true,
+    "all_historical_decoded_cells_identical": true,
+    "all_formula_caches_present": true,
+    "no_formula_or_cell_error_tokens": true,
+    "all_formula_caches_match_independent_evaluation": true,
+    "all_current_runtime_table_cells_match": true,
+    "all_requested_runtime_metrics_match": true,
+    "workbook_not_modified": true
+  },
+  "sheet_count": 23,
+  "sheet_names_in_order": [
+    "Guide V2",
+    "Modes V2",
+    "Histoires",
+    "Duels de campagne",
+    "Données moteur",
+    "Techniques signatures",
+    "Tenues et gardes",
+    "Finitions",
+    "Plans des arènes",
+    "Illustrations",
+    "Atelier et recette",
+    "Références V2",
+    "Synthèse",
+    "Chantiers",
+    "Parité CQC",
+    "Personnages",
+    "Kits combat",
+    "Variantes",
+    "Techniques",
+    "Arènes",
+    "Parcours",
+    "Recette",
+    "Sources"
+  ],
+  "legacy_preservation_method": "Resolve each workbook.xml sheet r:id through that workbook's workbook.xml.rels; compare uncompressed worksheet part bytes and decoded cells by sheet name.",
+  "historical_sheets": [
+    {
+      "sheet": "Synthèse",
+      "baseline_part": "xl/worksheets/sheet1.xml",
+      "output_part": "xl/worksheets/sheet1.xml",
+      "baseline_xml_sha256": "3cf0654a83b400483875ce26c6888545b8e69ea2e7ba58adcd3a52f955b45f67",
+      "output_xml_sha256": "3cf0654a83b400483875ce26c6888545b8e69ea2e7ba58adcd3a52f955b45f67",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Chantiers",
+      "baseline_part": "xl/worksheets/sheet2.xml",
+      "output_part": "xl/worksheets/sheet2.xml",
+      "baseline_xml_sha256": "f7f28d05d24df5fc916da546d9a6156e640adc2adea04c7d4ee63d72eb21ce53",
+      "output_xml_sha256": "f7f28d05d24df5fc916da546d9a6156e640adc2adea04c7d4ee63d72eb21ce53",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Parité CQC",
+      "baseline_part": "xl/worksheets/sheet3.xml",
+      "output_part": "xl/worksheets/sheet3.xml",
+      "baseline_xml_sha256": "15b0a78b937a31cd7646657063bec2319fd5b6c4b76a76ba242fa7ff4edbcf29",
+      "output_xml_sha256": "15b0a78b937a31cd7646657063bec2319fd5b6c4b76a76ba242fa7ff4edbcf29",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Personnages",
+      "baseline_part": "xl/worksheets/sheet4.xml",
+      "output_part": "xl/worksheets/sheet4.xml",
+      "baseline_xml_sha256": "3f2bf2eb457099aec3f34f99268c9451942db44dcef6317f1cf25057d8b11d38",
+      "output_xml_sha256": "3f2bf2eb457099aec3f34f99268c9451942db44dcef6317f1cf25057d8b11d38",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Kits combat",
+      "baseline_part": "xl/worksheets/sheet5.xml",
+      "output_part": "xl/worksheets/sheet5.xml",
+      "baseline_xml_sha256": "761f61fe5380b3a66a61a94fcd3a21142928cba1c63a0a630ff19cc861d6d9d7",
+      "output_xml_sha256": "761f61fe5380b3a66a61a94fcd3a21142928cba1c63a0a630ff19cc861d6d9d7",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Variantes",
+      "baseline_part": "xl/worksheets/sheet6.xml",
+      "output_part": "xl/worksheets/sheet6.xml",
+      "baseline_xml_sha256": "4381cddf48093e42dd1782325a4cc00995e43c7c169fdfa7e6564ad97cad0cf0",
+      "output_xml_sha256": "4381cddf48093e42dd1782325a4cc00995e43c7c169fdfa7e6564ad97cad0cf0",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Techniques",
+      "baseline_part": "xl/worksheets/sheet7.xml",
+      "output_part": "xl/worksheets/sheet7.xml",
+      "baseline_xml_sha256": "e079ba22938b6c72ba753e87b0018fbfd677abfdf75a0936f28eccfef430a1bb",
+      "output_xml_sha256": "e079ba22938b6c72ba753e87b0018fbfd677abfdf75a0936f28eccfef430a1bb",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Arènes",
+      "baseline_part": "xl/worksheets/sheet8.xml",
+      "output_part": "xl/worksheets/sheet8.xml",
+      "baseline_xml_sha256": "b8cb1b46c901a5b04b423b486f975f371522d62b98398730e205def1db013da0",
+      "output_xml_sha256": "b8cb1b46c901a5b04b423b486f975f371522d62b98398730e205def1db013da0",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Parcours",
+      "baseline_part": "xl/worksheets/sheet9.xml",
+      "output_part": "xl/worksheets/sheet9.xml",
+      "baseline_xml_sha256": "a516957a0e7c3e070a8e8eb5b07cdf19e348a8e91afc237eb206602970fe6f13",
+      "output_xml_sha256": "a516957a0e7c3e070a8e8eb5b07cdf19e348a8e91afc237eb206602970fe6f13",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Recette",
+      "baseline_part": "xl/worksheets/sheet10.xml",
+      "output_part": "xl/worksheets/sheet10.xml",
+      "baseline_xml_sha256": "f5d3a78cc157d8d0f90151273ccf88b6cca92fded2ed07653a9e39a9425ff456",
+      "output_xml_sha256": "f5d3a78cc157d8d0f90151273ccf88b6cca92fded2ed07653a9e39a9425ff456",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    },
+    {
+      "sheet": "Sources",
+      "baseline_part": "xl/worksheets/sheet11.xml",
+      "output_part": "xl/worksheets/sheet11.xml",
+      "baseline_xml_sha256": "cb35c910670e7d59301da917521c15a6bf0ee19385779478271130d66e20753a",
+      "output_xml_sha256": "cb35c910670e7d59301da917521c15a6bf0ee19385779478271130d66e20753a",
+      "byte_identical": true,
+      "decoded_cells_identical": true
+    }
+  ],
+  "formulas": {
+    "total_actual_formula_nodes": 209,
+    "by_sheet": {
+      "Guide V2": 22,
+      "Données moteur": 133,
+      "Synthèse": 54
+    },
+    "cache_checks_passed": 209,
+    "independent_evaluation_method": "Evaluate actual COUNTA, COUNTIF/COUNTIFS, ROUNDUP, ROWS-COUNTBLANK and SUMPRODUCT expressions directly against decoded workbook cell values; compare each numeric cache.",
+    "missing_caches": [],
+    "errors": [],
+    "mismatches": [],
+    "checks": [
+      {
+        "sheet": "Guide V2",
+        "cell": "C6",
+        "formula": "COUNTA('Modes V2'!$A$6:$A18)",
+        "cached": 13,
+        "independently_computed": 13,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C7",
+        "formula": "COUNTA('Histoires'!$A$6:$A48)",
+        "cached": 43,
+        "independently_computed": 43,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C8",
+        "formula": "COUNTA('Duels de campagne'!$A$6:$A134)",
+        "cached": 129,
+        "independently_computed": 129,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C9",
+        "formula": "COUNTA('Données moteur'!$A$6:$A138)",
+        "cached": 133,
+        "independently_computed": 133,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C10",
+        "formula": "COUNTIF('Techniques signatures'!$F$6:$F48,\"Jouable\")",
+        "cached": 4,
+        "independently_computed": 4,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C11",
+        "formula": "COUNTIF('Techniques signatures'!$F$6:$F48,\"À prototyper\")",
+        "cached": 39,
+        "independently_computed": 39,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C12",
+        "formula": "COUNTIF('Tenues et gardes'!$B$6:$B54,\"<>Habituelle\")",
+        "cached": 6,
+        "independently_computed": 6,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C13",
+        "formula": "SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$E$6:$E54<>\"\"))+SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$G$6:$G54<>\"\"))+SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$H$6:$H54<>\"\"))+SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$I$6:$I54<>\"\"))+SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$J$6:$J54<>\"\"))+SUMPRODUCT(('Tenues et gardes'!$B$6:$B54<>\"Habituelle\")*('Tenues et gardes'!$K$6:$K54<>\"\"))",
+        "cached": 35,
+        "independently_computed": 35,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C14",
+        "formula": "ROWS('Tenues et gardes'!$L$6:$L54)-COUNTBLANK('Tenues et gardes'!$L$6:$L54)",
+        "cached": 17,
+        "independently_computed": 17,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C15",
+        "formula": "COUNTA('Finitions'!$A$6:$A48)",
+        "cached": 43,
+        "independently_computed": 43,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C16",
+        "formula": "COUNTA('Plans des arènes'!$A$6:$A30)",
+        "cached": 25,
+        "independently_computed": 25,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C17",
+        "formula": "COUNTIF('Plans des arènes'!$B$6:$B30,\"Trois plans en jeu\")",
+        "cached": 25,
+        "independently_computed": 25,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C18",
+        "formula": "COUNTIF('Plans des arènes'!$B$6:$B30,\"Deux plans en jeu\")",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C19",
+        "formula": "COUNTIF('Plans des arènes'!$B$6:$B30,\"Fond en jeu, calques à produire\")",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C20",
+        "formula": "ROWS('Finitions'!$I$6:$I48)-COUNTBLANK('Finitions'!$I$6:$I48)",
+        "cached": 1,
+        "independently_computed": 1,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C21",
+        "formula": "COUNTA('Illustrations'!$A$6:$A134)",
+        "cached": 129,
+        "independently_computed": 129,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C22",
+        "formula": "COUNTIF('Illustrations'!$E$6:$E134,\"Illustration dédiée\")",
+        "cached": 26,
+        "independently_computed": 26,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C23",
+        "formula": "COUNTIF('Illustrations'!$E$6:$E134,\"Décor et portraits\")",
+        "cached": 103,
+        "independently_computed": 103,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C24",
+        "formula": "COUNTA('Atelier et recette'!$A$6:$A114)",
+        "cached": 109,
+        "independently_computed": 109,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C25",
+        "formula": "COUNTA('Références V2'!$A$6:$A76)",
+        "cached": 71,
+        "independently_computed": 71,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C26",
+        "formula": "COUNTIF('Références V2'!$A$6:$A76,\"Image VFX\")",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Guide V2",
+        "cell": "C27",
+        "formula": "COUNTIF('Atelier et recette'!$A$6:$A114,\"VFX d’attaque\")",
+        "cached": 28,
+        "independently_computed": 28,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F6",
+        "formula": "ROUNDUP(E6*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F7",
+        "formula": "ROUNDUP(E7*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F8",
+        "formula": "ROUNDUP(E8*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F9",
+        "formula": "ROUNDUP(E9*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F10",
+        "formula": "ROUNDUP(E10*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F11",
+        "formula": "ROUNDUP(E11*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F12",
+        "formula": "ROUNDUP(E12*60/1000,0)",
+        "cached": 10,
+        "independently_computed": 10,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F13",
+        "formula": "ROUNDUP(E13*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F14",
+        "formula": "ROUNDUP(E14*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F15",
+        "formula": "ROUNDUP(E15*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F16",
+        "formula": "ROUNDUP(E16*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F17",
+        "formula": "ROUNDUP(E17*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F18",
+        "formula": "ROUNDUP(E18*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F19",
+        "formula": "ROUNDUP(E19*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F20",
+        "formula": "ROUNDUP(E20*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F21",
+        "formula": "ROUNDUP(E21*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F22",
+        "formula": "ROUNDUP(E22*60/1000,0)",
+        "cached": 7,
+        "independently_computed": 7,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F23",
+        "formula": "ROUNDUP(E23*60/1000,0)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F24",
+        "formula": "ROUNDUP(E24*60/1000,0)",
+        "cached": 20,
+        "independently_computed": 20,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F25",
+        "formula": "ROUNDUP(E25*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F26",
+        "formula": "ROUNDUP(E26*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F27",
+        "formula": "ROUNDUP(E27*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F28",
+        "formula": "ROUNDUP(E28*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F29",
+        "formula": "ROUNDUP(E29*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F30",
+        "formula": "ROUNDUP(E30*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F31",
+        "formula": "ROUNDUP(E31*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F32",
+        "formula": "ROUNDUP(E32*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F33",
+        "formula": "ROUNDUP(E33*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F34",
+        "formula": "ROUNDUP(E34*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F35",
+        "formula": "ROUNDUP(E35*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F36",
+        "formula": "ROUNDUP(E36*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F37",
+        "formula": "ROUNDUP(E37*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F38",
+        "formula": "ROUNDUP(E38*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F39",
+        "formula": "ROUNDUP(E39*60/1000,0)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F40",
+        "formula": "ROUNDUP(E40*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F41",
+        "formula": "ROUNDUP(E41*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F42",
+        "formula": "ROUNDUP(E42*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F43",
+        "formula": "ROUNDUP(E43*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F44",
+        "formula": "ROUNDUP(E44*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F45",
+        "formula": "ROUNDUP(E45*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F46",
+        "formula": "ROUNDUP(E46*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F47",
+        "formula": "ROUNDUP(E47*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F48",
+        "formula": "ROUNDUP(E48*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F49",
+        "formula": "ROUNDUP(E49*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F50",
+        "formula": "ROUNDUP(E50*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F51",
+        "formula": "ROUNDUP(E51*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F52",
+        "formula": "ROUNDUP(E52*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F53",
+        "formula": "ROUNDUP(E53*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F54",
+        "formula": "ROUNDUP(E54*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F55",
+        "formula": "ROUNDUP(E55*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F56",
+        "formula": "ROUNDUP(E56*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F57",
+        "formula": "ROUNDUP(E57*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F58",
+        "formula": "ROUNDUP(E58*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F59",
+        "formula": "ROUNDUP(E59*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F60",
+        "formula": "ROUNDUP(E60*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F61",
+        "formula": "ROUNDUP(E61*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F62",
+        "formula": "ROUNDUP(E62*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F63",
+        "formula": "ROUNDUP(E63*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F64",
+        "formula": "ROUNDUP(E64*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F65",
+        "formula": "ROUNDUP(E65*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F66",
+        "formula": "ROUNDUP(E66*60/1000,0)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F67",
+        "formula": "ROUNDUP(E67*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F68",
+        "formula": "ROUNDUP(E68*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F69",
+        "formula": "ROUNDUP(E69*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F70",
+        "formula": "ROUNDUP(E70*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F71",
+        "formula": "ROUNDUP(E71*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F72",
+        "formula": "ROUNDUP(E72*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F73",
+        "formula": "ROUNDUP(E73*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F74",
+        "formula": "ROUNDUP(E74*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F75",
+        "formula": "ROUNDUP(E75*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F76",
+        "formula": "ROUNDUP(E76*60/1000,0)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F77",
+        "formula": "ROUNDUP(E77*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F78",
+        "formula": "ROUNDUP(E78*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F79",
+        "formula": "ROUNDUP(E79*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F80",
+        "formula": "ROUNDUP(E80*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F81",
+        "formula": "ROUNDUP(E81*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F82",
+        "formula": "ROUNDUP(E82*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F83",
+        "formula": "ROUNDUP(E83*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F84",
+        "formula": "ROUNDUP(E84*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F85",
+        "formula": "ROUNDUP(E85*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F86",
+        "formula": "ROUNDUP(E86*60/1000,0)",
+        "cached": 17,
+        "independently_computed": 17,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F87",
+        "formula": "ROUNDUP(E87*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F88",
+        "formula": "ROUNDUP(E88*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F89",
+        "formula": "ROUNDUP(E89*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F90",
+        "formula": "ROUNDUP(E90*60/1000,0)",
+        "cached": 7,
+        "independently_computed": 7,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F91",
+        "formula": "ROUNDUP(E91*60/1000,0)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F92",
+        "formula": "ROUNDUP(E92*60/1000,0)",
+        "cached": 20,
+        "independently_computed": 20,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F93",
+        "formula": "ROUNDUP(E93*60/1000,0)",
+        "cached": 7,
+        "independently_computed": 7,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F94",
+        "formula": "ROUNDUP(E94*60/1000,0)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F95",
+        "formula": "ROUNDUP(E95*60/1000,0)",
+        "cached": 20,
+        "independently_computed": 20,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F96",
+        "formula": "ROUNDUP(E96*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F97",
+        "formula": "ROUNDUP(E97*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F98",
+        "formula": "ROUNDUP(E98*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F99",
+        "formula": "ROUNDUP(E99*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F100",
+        "formula": "ROUNDUP(E100*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F101",
+        "formula": "ROUNDUP(E101*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F102",
+        "formula": "ROUNDUP(E102*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F103",
+        "formula": "ROUNDUP(E103*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F104",
+        "formula": "ROUNDUP(E104*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F105",
+        "formula": "ROUNDUP(E105*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F106",
+        "formula": "ROUNDUP(E106*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F107",
+        "formula": "ROUNDUP(E107*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F108",
+        "formula": "ROUNDUP(E108*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F109",
+        "formula": "ROUNDUP(E109*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F110",
+        "formula": "ROUNDUP(E110*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F111",
+        "formula": "ROUNDUP(E111*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F112",
+        "formula": "ROUNDUP(E112*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F113",
+        "formula": "ROUNDUP(E113*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F114",
+        "formula": "ROUNDUP(E114*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F115",
+        "formula": "ROUNDUP(E115*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F116",
+        "formula": "ROUNDUP(E116*60/1000,0)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F117",
+        "formula": "ROUNDUP(E117*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F118",
+        "formula": "ROUNDUP(E118*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F119",
+        "formula": "ROUNDUP(E119*60/1000,0)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F120",
+        "formula": "ROUNDUP(E120*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F121",
+        "formula": "ROUNDUP(E121*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F122",
+        "formula": "ROUNDUP(E122*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F123",
+        "formula": "ROUNDUP(E123*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F124",
+        "formula": "ROUNDUP(E124*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F125",
+        "formula": "ROUNDUP(E125*60/1000,0)",
+        "cached": 15,
+        "independently_computed": 15,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F126",
+        "formula": "ROUNDUP(E126*60/1000,0)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F127",
+        "formula": "ROUNDUP(E127*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F128",
+        "formula": "ROUNDUP(E128*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F129",
+        "formula": "ROUNDUP(E129*60/1000,0)",
+        "cached": 23,
+        "independently_computed": 23,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F130",
+        "formula": "ROUNDUP(E130*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F131",
+        "formula": "ROUNDUP(E131*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F132",
+        "formula": "ROUNDUP(E132*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F133",
+        "formula": "ROUNDUP(E133*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F134",
+        "formula": "ROUNDUP(E134*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F135",
+        "formula": "ROUNDUP(E135*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F136",
+        "formula": "ROUNDUP(E136*60/1000,0)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F137",
+        "formula": "ROUNDUP(E137*60/1000,0)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Données moteur",
+        "cell": "F138",
+        "formula": "ROUNDUP(E138*60/1000,0)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B6",
+        "formula": "COUNTA('Chantiers'!$A$6:$A$5000)",
+        "cached": 118,
+        "independently_computed": 118,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C6",
+        "formula": "COUNTIFS('Chantiers'!$F$6:$F$5000,C$5)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D6",
+        "formula": "COUNTIFS('Chantiers'!$F$6:$F$5000,D$5)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E6",
+        "formula": "COUNTIFS('Chantiers'!$F$6:$F$5000,E$5)",
+        "cached": 13,
+        "independently_computed": 13,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F6",
+        "formula": "COUNTIFS('Chantiers'!$F$6:$F$5000,F$5)",
+        "cached": 47,
+        "independently_computed": 47,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G6",
+        "formula": "COUNTIFS('Chantiers'!$F$6:$F$5000,G$5)",
+        "cached": 26,
+        "independently_computed": 26,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B7",
+        "formula": "COUNTA('Parité CQC'!$A$6:$A$5000)",
+        "cached": 40,
+        "independently_computed": 40,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C7",
+        "formula": "COUNTIFS('Parité CQC'!$F$6:$F$5000,C$5)",
+        "cached": 2,
+        "independently_computed": 2,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D7",
+        "formula": "COUNTIFS('Parité CQC'!$F$6:$F$5000,D$5)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E7",
+        "formula": "COUNTIFS('Parité CQC'!$F$6:$F$5000,E$5)",
+        "cached": 13,
+        "independently_computed": 13,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F7",
+        "formula": "COUNTIFS('Parité CQC'!$F$6:$F$5000,F$5)",
+        "cached": 13,
+        "independently_computed": 13,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G7",
+        "formula": "COUNTIFS('Parité CQC'!$F$6:$F$5000,G$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B8",
+        "formula": "COUNTA('Personnages'!$A$6:$A$5000)",
+        "cached": 209,
+        "independently_computed": 209,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C8",
+        "formula": "COUNTIFS('Personnages'!$F$6:$F$5000,C$5)",
+        "cached": 22,
+        "independently_computed": 22,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D8",
+        "formula": "COUNTIFS('Personnages'!$F$6:$F$5000,D$5)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E8",
+        "formula": "COUNTIFS('Personnages'!$F$6:$F$5000,E$5)",
+        "cached": 174,
+        "independently_computed": 174,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F8",
+        "formula": "COUNTIFS('Personnages'!$F$6:$F$5000,F$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G8",
+        "formula": "COUNTIFS('Personnages'!$F$6:$F$5000,G$5)",
+        "cached": 1,
+        "independently_computed": 1,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B9",
+        "formula": "COUNTA('Kits combat'!$A$6:$A$5000)",
+        "cached": 36,
+        "independently_computed": 36,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C9",
+        "formula": "COUNTIFS('Kits combat'!$F$6:$F$5000,C$5)",
+        "cached": 24,
+        "independently_computed": 24,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D9",
+        "formula": "COUNTIFS('Kits combat'!$F$6:$F$5000,D$5)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E9",
+        "formula": "COUNTIFS('Kits combat'!$F$6:$F$5000,E$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F9",
+        "formula": "COUNTIFS('Kits combat'!$F$6:$F$5000,F$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G9",
+        "formula": "COUNTIFS('Kits combat'!$F$6:$F$5000,G$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B10",
+        "formula": "COUNTA('Variantes'!$A$6:$A$5000)",
+        "cached": 37,
+        "independently_computed": 37,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C10",
+        "formula": "COUNTIFS('Variantes'!$F$6:$F$5000,C$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D10",
+        "formula": "COUNTIFS('Variantes'!$F$6:$F$5000,D$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E10",
+        "formula": "COUNTIFS('Variantes'!$F$6:$F$5000,E$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F10",
+        "formula": "COUNTIFS('Variantes'!$F$6:$F$5000,F$5)",
+        "cached": 37,
+        "independently_computed": 37,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G10",
+        "formula": "COUNTIFS('Variantes'!$F$6:$F$5000,G$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B11",
+        "formula": "COUNTA('Techniques'!$A$6:$A$5000)",
+        "cached": 108,
+        "independently_computed": 108,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C11",
+        "formula": "COUNTIFS('Techniques'!$F$6:$F$5000,C$5)",
+        "cached": 72,
+        "independently_computed": 72,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D11",
+        "formula": "COUNTIFS('Techniques'!$F$6:$F$5000,D$5)",
+        "cached": 36,
+        "independently_computed": 36,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E11",
+        "formula": "COUNTIFS('Techniques'!$F$6:$F$5000,E$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F11",
+        "formula": "COUNTIFS('Techniques'!$F$6:$F$5000,F$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G11",
+        "formula": "COUNTIFS('Techniques'!$F$6:$F$5000,G$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B12",
+        "formula": "COUNTA('Arènes'!$A$6:$A$5000)",
+        "cached": 34,
+        "independently_computed": 34,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C12",
+        "formula": "COUNTIFS('Arènes'!$F$6:$F$5000,C$5)",
+        "cached": 8,
+        "independently_computed": 8,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D12",
+        "formula": "COUNTIFS('Arènes'!$F$6:$F$5000,D$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E12",
+        "formula": "COUNTIFS('Arènes'!$F$6:$F$5000,E$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F12",
+        "formula": "COUNTIFS('Arènes'!$F$6:$F$5000,F$5)",
+        "cached": 26,
+        "independently_computed": 26,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G12",
+        "formula": "COUNTIFS('Arènes'!$F$6:$F$5000,G$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B13",
+        "formula": "COUNTA('Parcours'!$A$6:$A$5000)",
+        "cached": 68,
+        "independently_computed": 68,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C13",
+        "formula": "COUNTIFS('Parcours'!$F$6:$F$5000,C$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D13",
+        "formula": "COUNTIFS('Parcours'!$F$6:$F$5000,D$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E13",
+        "formula": "COUNTIFS('Parcours'!$F$6:$F$5000,E$5)",
+        "cached": 12,
+        "independently_computed": 12,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F13",
+        "formula": "COUNTIFS('Parcours'!$F$6:$F$5000,F$5)",
+        "cached": 54,
+        "independently_computed": 54,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G13",
+        "formula": "COUNTIFS('Parcours'!$F$6:$F$5000,G$5)",
+        "cached": 2,
+        "independently_computed": 2,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "B14",
+        "formula": "COUNTA('Recette'!$A$6:$A$5000)",
+        "cached": 42,
+        "independently_computed": 42,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "C14",
+        "formula": "COUNTIFS('Recette'!$F$6:$F$5000,C$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "D14",
+        "formula": "COUNTIFS('Recette'!$F$6:$F$5000,D$5)",
+        "cached": 14,
+        "independently_computed": 14,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "E14",
+        "formula": "COUNTIFS('Recette'!$F$6:$F$5000,E$5)",
+        "cached": 1,
+        "independently_computed": 1,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "F14",
+        "formula": "COUNTIFS('Recette'!$F$6:$F$5000,F$5)",
+        "cached": 0,
+        "independently_computed": 0,
+        "match": true
+      },
+      {
+        "sheet": "Synthèse",
+        "cell": "G14",
+        "formula": "COUNTIFS('Recette'!$F$6:$F$5000,G$5)",
+        "cached": 27,
+        "independently_computed": 27,
+        "match": true
+      }
+    ]
+  },
+  "runtime_metrics": {
+    "fighters": {
+      "runtime": 43,
+      "workbook": 43,
+      "expected": 43,
+      "passed": true
+    },
+    "duels": {
+      "runtime": 129,
+      "workbook": 129,
+      "expected": 129,
+      "passed": true
+    },
+    "attacks": {
+      "runtime": 133,
+      "workbook": 133,
+      "expected": 133,
+      "passed": true
+    },
+    "stages": {
+      "runtime": 25,
+      "workbook": 25,
+      "expected": 25,
+      "passed": true
+    },
+    "vfx_images": {
+      "runtime": 14,
+      "workbook": 14,
+      "expected": 14,
+      "passed": true
+    },
+    "vfx_attack_assignments": {
+      "runtime": 28,
+      "workbook": 28,
+      "expected": 28,
+      "passed": true
+    }
+  },
+  "runtime_additional_metrics": {
+    "fighterCount": 43,
+    "stageCount": 25,
+    "threePlanCount": 25,
+    "twoPlanCount": 0,
+    "onePlanCount": 0,
+    "detachedPropCount": 1,
+    "guardPoseCount": 17,
+    "costumePoseCount": 35,
+    "vfxImageCount": 14,
+    "vfxAttackCount": 28,
+    "referencedAssetCount": 408,
+    "signatureCount": 4,
+    "expectedFrames": 22
+  },
+  "runtime_table_comparison": [
+    {
+      "sheet": "Modes V2",
+      "runtime_rows": 13,
+      "data_range": "A6:F18",
+      "compared_cells_including_headers_title_and_note": 86,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Histoires",
+      "runtime_rows": 43,
+      "data_range": "A6:F48",
+      "compared_cells_including_headers_title_and_note": 266,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Duels de campagne",
+      "runtime_rows": 129,
+      "data_range": "A6:F134",
+      "compared_cells_including_headers_title_and_note": 782,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Données moteur",
+      "runtime_rows": 133,
+      "data_range": "A6:L138",
+      "compared_cells_including_headers_title_and_note": 1610,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Techniques signatures",
+      "runtime_rows": 43,
+      "data_range": "A6:F48",
+      "compared_cells_including_headers_title_and_note": 266,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Tenues et gardes",
+      "runtime_rows": 49,
+      "data_range": "A6:L54",
+      "compared_cells_including_headers_title_and_note": 602,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Finitions",
+      "runtime_rows": 43,
+      "data_range": "A6:I48",
+      "compared_cells_including_headers_title_and_note": 398,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Plans des arènes",
+      "runtime_rows": 25,
+      "data_range": "A6:I30",
+      "compared_cells_including_headers_title_and_note": 236,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Illustrations",
+      "runtime_rows": 129,
+      "data_range": "A6:F134",
+      "compared_cells_including_headers_title_and_note": 782,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Atelier et recette",
+      "runtime_rows": 109,
+      "data_range": "A6:E114",
+      "compared_cells_including_headers_title_and_note": 552,
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "sheet": "Références V2",
+      "runtime_rows": 71,
+      "data_range": "A6:D76",
+      "compared_cells_including_headers_title_and_note": 290,
+      "mismatches": [],
+      "passed": true
+    }
+  ],
+  "total_current_cells_compared": 5870,
+  "guide_metrics": [
+    {
+      "row": 6,
+      "sheet": "Modes V2",
+      "measure": "Modes décrits",
+      "count_cell": "C6",
+      "count": 13
+    },
+    {
+      "row": 7,
+      "sheet": "Histoires",
+      "measure": "Routes scénarisées",
+      "count_cell": "C7",
+      "count": 43
+    },
+    {
+      "row": 8,
+      "sheet": "Duels de campagne",
+      "measure": "Confrontations",
+      "count_cell": "C8",
+      "count": 129
+    },
+    {
+      "row": 9,
+      "sheet": "Données moteur",
+      "measure": "Attaques paramétrées",
+      "count_cell": "C9",
+      "count": 133
+    },
+    {
+      "row": 10,
+      "sheet": "Techniques signatures",
+      "measure": "Signatures jouables",
+      "count_cell": "C10",
+      "count": 4
+    },
+    {
+      "row": 11,
+      "sheet": "Techniques signatures",
+      "measure": "Signatures à prototyper",
+      "count_cell": "C11",
+      "count": 39
+    },
+    {
+      "row": 12,
+      "sheet": "Tenues et gardes",
+      "measure": "Tenues alternatives",
+      "count_cell": "C12",
+      "count": 6
+    },
+    {
+      "row": 13,
+      "sheet": "Tenues et gardes",
+      "measure": "Poses des tenues alternatives",
+      "count_cell": "C13",
+      "count": 35
+    },
+    {
+      "row": 14,
+      "sheet": "Tenues et gardes",
+      "measure": "Gardes actives distinctes",
+      "count_cell": "C14",
+      "count": 17
+    },
+    {
+      "row": 15,
+      "sheet": "Finitions",
+      "measure": "Variantes longues à dessiner",
+      "count_cell": "C15",
+      "count": 43
+    },
+    {
+      "row": 16,
+      "sheet": "Plans des arènes",
+      "measure": "Lieux détaillés",
+      "count_cell": "C16",
+      "count": 25
+    },
+    {
+      "row": 17,
+      "sheet": "Plans des arènes",
+      "measure": "Arènes à trois plans jouables",
+      "count_cell": "C17",
+      "count": 25
+    },
+    {
+      "row": 18,
+      "sheet": "Plans des arènes",
+      "measure": "Arènes à deux plans jouables",
+      "count_cell": "C18",
+      "count": 0
+    },
+    {
+      "row": 19,
+      "sheet": "Plans des arènes",
+      "measure": "Arènes avec fond seul",
+      "count_cell": "C19",
+      "count": 0
+    },
+    {
+      "row": 20,
+      "sheet": "Finitions",
+      "measure": "Pièces séparées intégrées",
+      "count_cell": "C20",
+      "count": 1
+    },
+    {
+      "row": 21,
+      "sheet": "Illustrations",
+      "measure": "Affectations de scène",
+      "count_cell": "C21",
+      "count": 129
+    },
+    {
+      "row": 22,
+      "sheet": "Illustrations",
+      "measure": "Affectations dédiées",
+      "count_cell": "C22",
+      "count": 26
+    },
+    {
+      "row": 23,
+      "sheet": "Illustrations",
+      "measure": "Affectations à illustrer",
+      "count_cell": "C23",
+      "count": 103
+    },
+    {
+      "row": 24,
+      "sheet": "Atelier et recette",
+      "measure": "Fiches de travail",
+      "count_cell": "C24",
+      "count": 109
+    },
+    {
+      "row": 25,
+      "sheet": "Références V2",
+      "measure": "Sources de travail",
+      "count_cell": "C25",
+      "count": 71
+    },
+    {
+      "row": 26,
+      "sheet": "Références V2",
+      "measure": "Sprites VFX uniques",
+      "count_cell": "C26",
+      "count": 14
+    },
+    {
+      "row": 27,
+      "sheet": "Atelier et recette",
+      "measure": "Attaques avec VFX",
+      "count_cell": "C27",
+      "count": 28
+    }
+  ],
+  "exact_rows_for_rendering": {
+    "Histoires": [
+      {
+        "row": 46,
+        "name": "Vortex",
+        "cells": {
+          "A46": "Vortex",
+          "B46": "Helluva Boss",
+          "C46": "Le passage libre",
+          "D46": "Pour une soirée d’exhibition, Vortex doit garder libre le chemin entre la scène et la sortie. Les techniciens ont déplacé les barrières après sa première ronde. Il refait le parcours avant l’arrivée des invités.",
+          "E46": "Beelzebub",
+          "F46": "La dernière barrière est déplacée avant l’ouverture des portes. Vortex reste près de la sortie, assez loin des enceintes pour entendre ceux qui ont besoin de passer. Bee lui garde une place pour la fin de la soirée."
+        }
+      },
+      {
+        "row": 47,
+        "name": "Glitz",
+        "cells": {
+          "A47": "Glitz",
+          "B47": "Helluva Boss",
+          "C47": "La marque déplacée",
+          "D47": "Glitz retrouve sa marque de départ déplacée d’un pas vers le bord du plateau. Pour une nouvelle exhibition, elle veut reprendre le numéro depuis son entrée, avec assez de place pour décider elle-même de son dernier mouvement.",
+          "E47": "Mammon",
+          "F47": "Glitz retire le ruban du sol et le roule entre ses doigts. Au prochain départ, Glam se place à sa hauteur. Elles commencent lorsque leurs regards se croisent, sans attendre le geste de la tribune."
+        }
+      },
+      {
+        "row": 48,
+        "name": "Glam",
+        "cells": {
+          "A48": "Glam",
+          "B48": "Helluva Boss",
+          "C48": "Un temps de plus",
+          "D48": "Le conducteur d’une exhibition coupe le dernier mouvement de Glam pour avancer le salut final. Elle garde la page d’origine et cherche un espace où le numéro pourra aller jusqu’au bout.",
+          "E48": "Asmodeus",
+          "F48": "Glam termine le mouvement avant de saluer. Le silence dure un instant de plus que prévu. Dans les coulisses, elle rend à Glitz le conducteur corrigé, avec deux places pour signer."
+        }
+      }
+    ],
+    "Tenues et gardes": [
+      {
+        "row": 52,
+        "name": "Vortex",
+        "cells": {
+          "A52": "Vortex",
+          "B52": "Habituelle",
+          "C52": "Helluva Boss S1E3 and S1E8",
+          "D52": "/assets/sprites/individual/hb_vortex-ready.webp",
+          "E52": "/assets/sprites/individual/hb_vortex-ready.webp",
+          "F52": "/assets/sprites/helluva/sheets/helluva-extended.png",
+          "G52": "/assets/sprites/individual/hb_vortex-strike.webp",
+          "H52": null,
+          "I52": "/assets/sprites/individual/hb_vortex-recoil.webp",
+          "J52": null,
+          "K52": null,
+          "L52": "/assets/sprites/individual/hb_vortex-guard.webp"
+        }
+      },
+      {
+        "row": 53,
+        "name": "Glitz",
+        "cells": {
+          "A53": "Glitz",
+          "B53": "Habituelle",
+          "C53": "Helluva Boss S2E7",
+          "D53": "/assets/sprites/individual/hb_glitz-ready.webp",
+          "E53": "/assets/sprites/individual/hb_glitz-ready.webp",
+          "F53": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+          "G53": "/assets/sprites/individual/hb_glitz-strike.webp",
+          "H53": null,
+          "I53": "/assets/sprites/individual/hb_glitz-recoil.webp",
+          "J53": null,
+          "K53": null,
+          "L53": "/assets/sprites/individual/hb_glitz-guard.webp"
+        }
+      },
+      {
+        "row": 54,
+        "name": "Glam",
+        "cells": {
+          "A54": "Glam",
+          "B54": "Habituelle",
+          "C54": "Helluva Boss S2E7",
+          "D54": "/assets/sprites/individual/hb_glam-ready.webp",
+          "E54": "/assets/sprites/individual/hb_glam-ready.webp",
+          "F54": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+          "G54": null,
+          "H54": null,
+          "I54": "/assets/sprites/individual/hb_glam-recoil.webp",
+          "J54": null,
+          "K54": null,
+          "L54": "/assets/sprites/individual/hb_glam-guard.webp"
+        }
+      }
+    ],
+    "Plans des arènes": [
+      {
+        "row": 28,
+        "name": "I.M.P. · Façade extérieure",
+        "cells": {
+          "A28": "I.M.P. · Façade extérieure",
+          "B28": "Trois plans en jeu",
+          "C28": "Façade, fenêtres et accès de l’immeuble I.M.P. dans Imp City ; rue vidée de personnages.",
+          "D28": "Bloc indépendant de six fenêtres, fixé dans le cadre du fond contenu.",
+          "E28": "Deux affiches murales détourées ; couloir de duel dégagé.",
+          "F28": "Partition procédurale originale ; aucune bande originale reprise.",
+          "G28": "Master complet au ratio natif, contain bas-centre. Fenêtres et affiches sont des éléments indépendants ; leur placement et la piste sont adaptés à la simulation AU.",
+          "H28": "Murder Family S1E1, épisode officiel Vivziepop : https://www.youtube.com/watch?v=el_PChGfJN8 ; repère extérieur vers 02:05. Comparaison en jeu et fidélité 1:1 non certifiées.",
+          "I28": "/assets/stages/helluva/imp-exterior/room.webp\n/assets/stages/helluva/imp-exterior/prop-middle.webp\n/assets/stages/helluva/imp-exterior/prop-near.webp"
+        }
+      },
+      {
+        "row": 29,
+        "name": "Entrepôt · Oops",
+        "cells": {
+          "A29": "Entrepôt · Oops",
+          "B29": "Trois plans en jeu",
+          "C29": "Entrepôt industriel sombre, stockage et cage ; espace frontal libéré pour le duel.",
+          "D29": "Groupe cohérent de cinq caisses détourées au bord du décor.",
+          "E29": "Cage vide indépendante ; placée derrière les combattants pour conserver leur lisibilité.",
+          "F29": "Partition procédurale originale et teinte fixe, sans reprise de chanson.",
+          "G29": "Master entier en contain bas-centre. Les deux props constituent des plans de présentation distincts ; les placements ne reproduisent pas un plan de caméra exact.",
+          "H29": "Oops S2E6, épisode officiel Vivziepop : https://www.youtube.com/watch?v=y1sF6ZeASU0. Motifs repérés ; composition de duel AU et fidélité 1:1 non certifiée.",
+          "I29": "/assets/stages/helluva/oops-warehouse/room.webp\n/assets/stages/helluva/oops-warehouse/prop-middle.webp\n/assets/stages/helluva/oops-warehouse/prop-near.webp"
+        }
+      },
+      {
+        "row": 30,
+        "name": "Balcon de Blitzø · Sinsmas",
+        "cells": {
+          "A30": "Balcon de Blitzø · Sinsmas",
+          "B30": "Trois plans en jeu",
+          "C30": "Balcon nocturne de l’appartement, façade et décorations de Sinsmas.",
+          "D30": "Segment de garde-corps détouré, au bord de la composition.",
+          "E30": "Guirlande multicolore indépendante, alignée au haut de l’image contenue.",
+          "F30": "Lumières fixes et partition procédurale originale ; aucune musique de l’épisode.",
+          "G30": "Fond entier, sans déformation. La piste et les éléments sont réorganisés pour le duel AU ; les bandes de ratio restent teintées.",
+          "H30": "Sinsmas S2E12, épisode officiel Vivziepop : https://www.youtube.com/watch?v=GisSNuVpbkM. Références documentées dans SOURCES_QA.md ; fidélité 1:1 non certifiée.",
+          "I30": "/assets/stages/helluva/sinsmas-balcony/room.webp\n/assets/stages/helluva/sinsmas-balcony/prop-middle.webp\n/assets/stages/helluva/sinsmas-balcony/prop-near.webp"
+        }
+      }
+    ]
+  },
+  "known_missing_pose_cells": [
+    {
+      "sheet": "Tenues et gardes",
+      "cell": "G54",
+      "fighter": "Glam",
+      "pose": "strike",
+      "observed_value": null,
+      "correctly_empty": true
+    }
+  ],
+  "limits": [
+    "Read-only data verification: workbook bytes were unchanged. No Excel or LibreOffice application recalculation was performed.",
+    "All actual formula caches were independently checked for the formulas present; this is not a general Excel formula engine.",
+    "Visual layout/renders and final in-game CSS positioning are separate checks owned by the parent agent.",
+    "Runtime alignment and valid files do not certify canonical 1:1 visual fidelity or complete animation cycles.",
+    "Eleven legacy registers intentionally preserve historical content; their counts are not the current runtime counts."
+  ],
+  "visualReview": {
+    "status": "passed",
+    "method": "Artifact Tool render followed by visual inspection; no desktop Excel session",
+    "views": [
+      {
+        "sheet": "Guide V2",
+        "range": "A1:D18"
+      },
+      {
+        "sheet": "Tenues et gardes",
+        "range": "A44:F54"
+      },
+      {
+        "sheet": "Plans des arènes",
+        "range": "A26:F33"
+      },
+      {
+        "sheet": "Histoires",
+        "range": "A43:F48"
+      }
+    ],
+    "viewCount": 4,
+    "findings": "Lignes ajoutées lisibles, largeur et hauteur cohérentes avec la présentation existante ; aucun chevauchement observé dans ces quatre vues."
+  }
+}

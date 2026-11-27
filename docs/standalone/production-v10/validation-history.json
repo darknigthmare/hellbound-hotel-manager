@@ -1,0 +1,161 @@
+{
+  "edition": "V10",
+  "status": "resolved",
+  "failedAttempts": [
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-1.json",
+      "sha256": "1e3e31dc9f5c768a0204f5e7033d19edaa59966171230630b7968cfea67b8262",
+      "status": "failed",
+      "error": "Error: typecheck failed: 137",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 137
+        }
+      ],
+      "completedAt": "2026-11-26T15:50:08.603Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-2.json",
+      "sha256": "e862ccb101b10ad0fdb348e689e98f803a1a0d92358c50f2837d9f1519946284",
+      "status": "failed",
+      "error": "Error: tests failed: 137",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 0
+        },
+        {
+          "gate": "lint",
+          "command": "npm run lint",
+          "exitCode": 0
+        },
+        {
+          "gate": "tests",
+          "command": "npm test",
+          "exitCode": 137
+        }
+      ],
+      "completedAt": "2026-11-26T15:52:43.784Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-3.json",
+      "sha256": "c4f51da47207415e2f28d213606ef11bfa5bff5866bd148275c00856bdf7aff5",
+      "status": "failed",
+      "error": "Error: tests failed: 137",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 0,
+          "nodeOptions": "--max-old-space-size=1024"
+        },
+        {
+          "gate": "lint",
+          "command": "npm run lint",
+          "exitCode": 0,
+          "nodeOptions": "--max-old-space-size=1024"
+        },
+        {
+          "gate": "tests",
+          "command": "npm test",
+          "exitCode": 137,
+          "nodeOptions": "--max-old-space-size=512"
+        }
+      ],
+      "completedAt": "2026-11-26T15:55:03.402Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-4.json",
+      "sha256": "a5706fa877aa8a1011dc7b9f727980c311f44f7e7e870a3e76807e20462a55ce",
+      "status": "failed",
+      "error": "Error: typecheck failed: 137",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 137,
+          "nodeOptions": "--max-old-space-size=1024"
+        }
+      ],
+      "completedAt": "2026-11-26T15:59:58.088Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-5.json",
+      "sha256": "d1ab676cedebe3bb3e49e767904aae764d9a25d2eda606f6557fedd202760048",
+      "status": "failed",
+      "error": "Error: lint failed: 137",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 0,
+          "nodeOptions": "--max-old-space-size=512"
+        },
+        {
+          "gate": "lint",
+          "command": "npm run lint",
+          "exitCode": 137,
+          "nodeOptions": "--max-old-space-size=512"
+        }
+      ],
+      "completedAt": "2026-11-26T16:03:15.935Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-6.json",
+      "sha256": "4679075762c88c0365b027dc2e4a880081f9935f30338eac822b3b03dd8608e4",
+      "status": "failed",
+      "error": "Error: lint failed: 1",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 0,
+          "nodeOptions": "--max-old-space-size=512"
+        },
+        {
+          "gate": "lint",
+          "command": "npm run lint",
+          "exitCode": 1,
+          "nodeOptions": "--max-old-space-size=512"
+        }
+      ],
+      "completedAt": "2026-11-26T16:05:42.200Z"
+    },
+    {
+      "report": "docs/standalone/production-v10/runtime-qa-attempt-7.json",
+      "sha256": "9db672a743393ddf635f7ecf6d99dea906b4b65e8b99687a8863e5398a2d0e19",
+      "status": "failed",
+      "error": "Error: lint failed: 1",
+      "gates": [
+        {
+          "gate": "typecheck",
+          "command": "npm run typecheck",
+          "exitCode": 0,
+          "nodeOptions": "--max-old-space-size=512"
+        },
+        {
+          "gate": "lint",
+          "command": "npm run lint",
+          "exitCode": 1,
+          "nodeOptions": "--max-old-space-size=512"
+        }
+      ],
+      "completedAt": "2026-11-26T16:07:23.766Z"
+    }
+  ],
+  "currentReport": "docs/standalone/production-v10/runtime-qa.json",
+  "currentReportSha256": "c2f638e8e5663afe8448f61ad21298291f7aed6d7dfa99848ad1bdc43e50e2e2",
+  "currentStatus": "passed",
+  "testsPassed": 413,
+  "testSuites": 47,
+  "notes": [
+    "Exit137 records process termination; memory pressure was suspected during the interrupted attempts but is not independently proven as the sole cause.",
+    "The gallery test failed because both fighters and default stages display43. The assertion now checks the fighter-labelled count explicitly. Its targeted rerun and the final full suite passed.",
+    "A real mobile touch-release issue was discovered by browser interaction and fixed separately. The final runtime report and final browser report include that correction.",
+    "The recovered environment contains additional earlier attempts and a successful pre-touch-fix report. Historical evidence remains separate from the final current report.",
+    "The local build replaces public-file copying with hard links; it is not claimed as a single standard npm run qa execution."
+  ]
+}

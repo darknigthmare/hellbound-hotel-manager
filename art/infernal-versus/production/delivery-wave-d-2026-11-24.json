@@ -1,0 +1,1406 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "batchId": "wave-d-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "comparisonCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "pullRequest": 8,
+  "scope": "Quatre kits autonomes, douze poses de trois personnages, trois arènes à trois plans et cinq images VFX ; fidélité documentée sans certification 1:1.",
+  "generation": {
+    "calls": 28,
+    "successfulOutputs": 27,
+    "acceptedArtworks": 26,
+    "supersededQualityCandidates": 1,
+    "blockedCalls": 1,
+    "safetyRetries": 0,
+    "oneAssetPerCall": true
+  },
+  "newProduction": {
+    "playableFighters": 4,
+    "fighterPoses": 12,
+    "stageBackgrounds": 3,
+    "foregroundProps": 6,
+    "attackEffectImages": 5,
+    "totalNewArtworks": 26,
+    "derivedThumbnails": 3,
+    "newAttackEffectAssignments": 11,
+    "sharedExistingShotAssignments": 5,
+    "newStoryRoutes": 4,
+    "newStoryDuels": 12
+  },
+  "totals": {
+    "newGeneratedArtworks": 26,
+    "newMasterFiles": 26,
+    "publicImageFiles": 29,
+    "registeredPublicImageFiles": 29,
+    "totalImageFiles": 55,
+    "derivedThumbnails": 3
+  },
+  "runtimeBefore": {
+    "fighters": 36,
+    "individualReady": 34,
+    "individualGuard": 10,
+    "individualLightContact": 12,
+    "individualHit": 11,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 108,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 19,
+    "threePlaneStages": 19,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 6,
+    "attackEffectAssignments": 13,
+    "referencedAssets": 336,
+    "brokenReferences": []
+  },
+  "runtimeAfter": {
+    "fighters": 40,
+    "individualReady": 37,
+    "individualGuard": 13,
+    "individualLightContact": 15,
+    "individualHit": 14,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 120,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 22,
+    "threePlaneStages": 22,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 11,
+    "attackEffectAssignments": 24,
+    "referencedAssets": 377,
+    "brokenReferences": []
+  },
+  "sourceManifests": [
+    {
+      "group": "characters",
+      "path": "art/infernal-versus/production/characters-wave-d-2026-11-24.json",
+      "sha256": "6bda3f629941a027484e55128048e756527697e0572a36f66182d24d3ed17ecd"
+    },
+    {
+      "group": "stages",
+      "path": "art/infernal-versus/production/stages-wave-d-2026-11-24.json",
+      "sha256": "413ae5b4ba09e640056dd393486f5185c68ed59f190eeb09bcb8147dcb2c6350"
+    },
+    {
+      "group": "projectiles",
+      "path": "art/infernal-versus/production/projectiles-wave-d-2026-11-24.json",
+      "sha256": "bb40481a7e3875d27269ebca4d9a3629acc66c2a7019a043df0289b9594fcce4"
+    }
+  ],
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/poses/hb_mammon-ready.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1411683,
+      "sha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b",
+      "gitBlobSha": "56c626043c5a4fafe7faaa787b9b4a78322b3d7d",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_mammon-ready.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 948100,
+      "sha256": "9446adcab43ba41bf79630e52be6d86c899736f79c8fc5b465fe8cddbaab0cb8",
+      "gitBlobSha": "2787788621f2a9b46d78ac72d6417c2b172567cb",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_mammon-guard.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1372015,
+      "sha256": "bd106abd9c04d8f984865c450f1db3f4653036d7c85d9b03c0bd927e4c7505fe",
+      "gitBlobSha": "e2f8fec50fcbe08a1d3c63f271c63f4bd850359b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_mammon-guard.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 921902,
+      "sha256": "f2ccf25153a5d8afcfbd2e3893f264d391c4d81e1dd483dc3d135d835f198dbc",
+      "gitBlobSha": "f0a87bfdfc40cb13c3a296f0eda5ee5bbf300c03",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_mammon-strike.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1405457,
+      "sha256": "95eb372dce12dd1774f257926138f8be69ae15bfb9adcdc0323fc36527da40f3",
+      "gitBlobSha": "c33de4e48a60ed70525db005f758c6efffda144a",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_mammon-strike.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 953210,
+      "sha256": "4bf0bcdc9b87ad9731065eaf737a498fd51657c65c0b423f3ed98a6f3275f98a",
+      "gitBlobSha": "4eb14bf06eab7be0e8725bcab9a56b3a553a207b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_mammon-recoil.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1433500,
+      "sha256": "800210a5a31b685e7d0e5727d3c830ea301eaf396a09edcf8347973cfafb8db9",
+      "gitBlobSha": "cf62afba2674521e0659e272b520b2498351bcb5",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_mammon-recoil.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 962832,
+      "sha256": "7929fcf9c1a492ccb94fce30feed6f528b5067622c2ee77f11ed11b04145720c",
+      "gitBlobSha": "5cfc026227750c63ade5292890ef6c7f9c5feb63",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_katie_killjoy-ready.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1249219,
+      "sha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035",
+      "gitBlobSha": "7dbdcca8008f7d62bbfdfb8f7df52cb87f8d074e",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 798082,
+      "sha256": "9c5a95ff51f306a302acdadfac7a841e3fd5442046b78fef5d7362512ff7cf26",
+      "gitBlobSha": "3820a3e55e951a14a16c3677738d124c2f30349a",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_katie_killjoy-guard.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1211320,
+      "sha256": "67f40fd803ee926bb3800a0c1b60c61a3d89d622e2e496074c8cc0186ff96f30",
+      "gitBlobSha": "daed2f146144258b084a9defea2dc38d3297c1d6",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_katie_killjoy-guard.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 771930,
+      "sha256": "cb840f64ad117233758893f6d9ed1db19527316a2daa086344a06375d2bcca20",
+      "gitBlobSha": "a5bdbc598761787f9fa7bc81302f689c19b51aa8",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_katie_killjoy-strike.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1266222,
+      "sha256": "9c6acc9de4f8cbdb9731635684356f7b8a6f60d741572ed473d06dcaee423a89",
+      "gitBlobSha": "13c0242c3b315f3c6a96af13d637defdcb29dcf7",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_katie_killjoy-strike.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 811096,
+      "sha256": "746fde0b9dcbcfbb689712184e05fa1c45a60c8336b0fb1870a7850a8fee617f",
+      "gitBlobSha": "296d031a59152c10c6a47134897119bc8614ec8d",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_katie_killjoy-recoil.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1270062,
+      "sha256": "b8bb908a2e5805d2416708c0e815a898c57a13a2416a25de63e9f9bb4db4eaaa",
+      "gitBlobSha": "34308ecd15fbe4fc13a1fa85a1e476dc67d5ee10",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_katie_killjoy-recoil.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 817850,
+      "sha256": "e427463cf0a8fe9a7028f7808e7897d1e67ad5eb5e6754e892ed8df995234bee",
+      "gitBlobSha": "2b9bd36ca164edfc601eb60207d186afae72ac65",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_tom_trench-ready.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1153895,
+      "sha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6",
+      "gitBlobSha": "38f485ed8d5a6893d4f0a08628bc04f20624a5d6",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_tom_trench-ready.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 715806,
+      "sha256": "f8b1eecca501e206fb56fef656524eb993b26bd46b9da9258e605bfcd0f6ea9a",
+      "gitBlobSha": "02cb04c1e19830f86398b86efe03fe9afdaf3bbc",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_tom_trench-guard.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1139895,
+      "sha256": "d4ef04b2b94f58cff092a36bd38690dec24662fca8707a96470c4098d83283f0",
+      "gitBlobSha": "8ab0e2dee94cd1b9f5a51018a67917b3d99bd57c",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_tom_trench-guard.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 708446,
+      "sha256": "a981b5f1351f0bd0daebbfb293e0d56aeef8cf55cbb07a2aef80836962d79c49",
+      "gitBlobSha": "c31b020bc300fb1418d1db92dd238604b11bc3ab",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_tom_trench-strike.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1199205,
+      "sha256": "523b468540a88c364ed0cbf704b1390b8c576e3212ff8e00ab7ff6c940d2e79f",
+      "gitBlobSha": "232331e61de235b982382e11a44ff0b995eaa7ed",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_tom_trench-strike.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 758766,
+      "sha256": "620862a4cbdf2d6d0d15995f175886fe22ee6501cc3c946d4356eb2a3e1afc8c",
+      "gitBlobSha": "c8cf13bc8267550cbf1740fbaed362708d7f7705",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hz_tom_trench-recoil.png",
+      "group": "characters",
+      "kind": "master",
+      "bytes": 1122671,
+      "sha256": "0e101d835c2451325ef1d44670822ddd8d2b63b39b93c81cce2bf79e03be2ebf",
+      "gitBlobSha": "d0772fb62625974b9bde6eed60f3df0aa159b6e2",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hz_tom_trench-recoil.webp",
+      "group": "characters",
+      "kind": "runtime",
+      "bytes": 700032,
+      "sha256": "d041d4ce109efea6119a83f710b2aa5e56888fdeed1622cb03083bd7c0138db7",
+      "gitBlobSha": "2a06f660443b544dc03358a0bb6cd9f4a5b13bb8",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/western-lair/room.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 1792129,
+      "sha256": "c1de4dba083613d8f8b69b190f10e955a7f8cdfbb77beef045925665881961c6",
+      "gitBlobSha": "cebe2dbe6be86f5ce2915ae3ded1cee092ac96a6",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/western-lair/room.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 1222706,
+      "sha256": "60490c7efd34596f1c1e9b8f8d3fd9b276f0c5f6f27982425c5256733efb2500",
+      "gitBlobSha": "83bddb0beb7666b60c9208c7b089370a94b8dee9",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/western-lair/thumb.webp",
+      "group": "stages",
+      "kind": "thumbnail",
+      "bytes": 106226,
+      "sha256": "8f12a3d2e257392a68040848aa24eb473601ce5f63023ff54936b26a09a1d96b",
+      "gitBlobSha": "252303dee13a89c83f4e609d58eedbdecf95f391",
+      "dimensions": [
+        384,
+        256
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/western-lair/prop-middle.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 546918,
+      "sha256": "944d9e5a22fab1591d51fe174bebfed430ff206b4ef79304991b8f64af1c6fdb",
+      "gitBlobSha": "26e35670f76b8c7bb7f7152a75ddb91b90aa49a4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/western-lair/prop-middle.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 236342,
+      "sha256": "6bc4350f17fd2ee765b867bd167fcde41ad3f1bc7d34af00e3cee6f78f959eca",
+      "gitBlobSha": "d9aa6d6d5772dcc7f770328ee4d71d47fcd345c8",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/western-lair/prop-near.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 341309,
+      "sha256": "7fa1b9c034e05f38b2c22326a2908a91c4b7b1d916a2108a8be3126098303e0d",
+      "gitBlobSha": "966ff5cedcc6178262e47c457b1837e0f37d7a67",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/western-lair/prop-near.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 156646,
+      "sha256": "24142f86d7cbed1fd52ec2b295d8c54ec1ce3c8e7112cf23d4022d2ce401f5f6",
+      "gitBlobSha": "56b362eb1a5586770852d9e2449eed1ed533ce84",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/goetia-court/room.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 1840525,
+      "sha256": "81b90536b0075a15ba30a7d446518558fa7185d425ce5325f8274be7814bb4a4",
+      "gitBlobSha": "9693a7d008d14c9e8a6c60ab5289365a630a3b07",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/goetia-court/room.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 1368646,
+      "sha256": "62fc7fcd8779d5fa36ffd916783ed341b1787fc48879f7af82b9435331dea6e0",
+      "gitBlobSha": "a7ea038da8ce8eac105735b1ec7afefb1cab2251",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/helluva/goetia-court/thumb.webp",
+      "group": "stages",
+      "kind": "thumbnail",
+      "bytes": 120406,
+      "sha256": "42a542ecc437274ef3bbda9eec969720919c6e9d7b458d2ea3e1417628087554",
+      "gitBlobSha": "a882a26db0355283e4a18f424bdc5f186bb04b60",
+      "dimensions": [
+        384,
+        256
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/goetia-court/prop-middle.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 542728,
+      "sha256": "1fa2a585be301ced1b0ecbc843ecf2faf958ac1c0ea4520fbbc76655ae180207",
+      "gitBlobSha": "c5ab37fb61b9208b485524474e624bb30185ebab",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/goetia-court/prop-middle.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 257402,
+      "sha256": "ab115dc4706385fe8c20a362a27c13230fa636747b87460ecb18a80eaa584e28",
+      "gitBlobSha": "494dab3b19cba0e65e7b010c61ef137432343376",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/goetia-court/prop-near.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 654688,
+      "sha256": "ded95899c440d060736ce591abfc837c8dcd6c932b8a778466cb3a33c56dbab8",
+      "gitBlobSha": "09af78686b488353d77fe275075aa6dca926c566",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/helluva/goetia-court/prop-near.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 290836,
+      "sha256": "ea180d80a6dc00034ad8e34eff7b43d44eaac3ab2aa6fe7aa95b467327cf8ff4",
+      "gitBlobSha": "ac2ff822b6861c83d53d08db6d056d74733f37fe",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/hh-heaven-gates/room.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 1691789,
+      "sha256": "b7299e2d31f7c355c32abc316e82c20d0b58c9ba8f16ef2dfaefa5a95405c7c0",
+      "gitBlobSha": "4c015f8b3e425c788e4be0586efa1ceeba04277a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/hazbin/hh-heaven-gates/room.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 1211066,
+      "sha256": "06a97545bda4815674bc08495f4b3b3005e76ac940f53e5bbf54e0c5ddedf2f4",
+      "gitBlobSha": "e7568f30a5cb7f9aca35008bbf971af3a7d3888a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "public/assets/stages/hazbin/hh-heaven-gates/thumb.webp",
+      "group": "stages",
+      "kind": "thumbnail",
+      "bytes": 111432,
+      "sha256": "dfb1e3e25f4c87705832038b2a4836196bce614f6c97af5851f47ffe65435a5a",
+      "gitBlobSha": "91c259736018c918ebfdce0cbf7648ddd2120517",
+      "dimensions": [
+        384,
+        256
+      ],
+      "mode": "RGB",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-middle.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 475628,
+      "sha256": "05396a10d4891c34304abd35aeee188fc13a8950224e9c803eb6bfc3f4a75186",
+      "gitBlobSha": "3611d27d8009c8719bc89dc75af84608336b455c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/hazbin/hh-heaven-gates/prop-middle.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 209248,
+      "sha256": "8d00982506e2062335e6e6970cad31a3bf78d0f2b02eeb9d6c2d427ebf54abe0",
+      "gitBlobSha": "04f69c8d86a0e00332835681ff20877069a1b38c",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-near.png",
+      "group": "stages",
+      "kind": "master",
+      "bytes": 248957,
+      "sha256": "7405ca58ee64a0cd811d7724a18b8048df7cb031e8fd421ce56f03c85c735b3b",
+      "gitBlobSha": "c5d557b54ca191f1a43a6087fbb40cf3684cc186",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/stages/hazbin/hh-heaven-gates/prop-near.webp",
+      "group": "stages",
+      "kind": "runtime",
+      "bytes": 118190,
+      "sha256": "998663d67fbaffa037da648525a7ae6337561ed91ed304934a6cc061f4b607a4",
+      "gitBlobSha": "ed9cf8aa59656587d689ffd7533f30a9e8eed83b",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/husk-card.png",
+      "group": "projectiles",
+      "kind": "master",
+      "bytes": 828577,
+      "sha256": "89c27c1e4573f284d8f1c81b228dbf4124ce28cfa1c966bafbec8657059a80bb",
+      "gitBlobSha": "52e1df24da3a34d368db3911f440e869ccc3af5a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/husk-card.webp",
+      "group": "projectiles",
+      "kind": "runtime",
+      "bytes": 500970,
+      "sha256": "c6e8e744af0976897bba6f7c50fc0c9f916d7be3b62691f6e30c63ecc36350a1",
+      "gitBlobSha": "4b366667387c6de74826af39106e23bd713825f0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/adam-light.png",
+      "group": "projectiles",
+      "kind": "master",
+      "bytes": 831074,
+      "sha256": "b69486965f62485c31c8f9cc335132b89fdf94bc860333c355605cdcf44cc2c3",
+      "gitBlobSha": "7435a71e1f447a41202961d6b8063866c7b961ad",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/adam-light.webp",
+      "group": "projectiles",
+      "kind": "runtime",
+      "bytes": 578084,
+      "sha256": "2b5f6bef6d16828d411743c1b977bad7d47e07d15d45f3c1905f9298d450cd67",
+      "gitBlobSha": "d92c0f78201b07b2026e5dc40777d0b763ea55a2",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/stolas-portal.png",
+      "group": "projectiles",
+      "kind": "master",
+      "bytes": 611925,
+      "sha256": "379c8b579adfcc6121b515c7ac935c7bfbfad57641d69675ecb7e39ab002a305",
+      "gitBlobSha": "a4baf3cebb26af754a2905255afbf3fe8f09702b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/stolas-portal.webp",
+      "group": "projectiles",
+      "kind": "runtime",
+      "bytes": 378776,
+      "sha256": "c2278e781cfde4bd185fa4496fbb6090c4ebaa81147bb13c8e356ee6fdd557a4",
+      "gitBlobSha": "8eea25100b670715f8c83e7dabf7ecb5f3a7582f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/asmodeus-smoke.png",
+      "group": "projectiles",
+      "kind": "master",
+      "bytes": 1175866,
+      "sha256": "3a3ffd45351b77e723c7bde2aadba58fb9a36c943e5112dce0753421831e32f0",
+      "gitBlobSha": "08296d2f75c70bf26ee6e7007395de4bacaadae2",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/asmodeus-smoke.webp",
+      "group": "projectiles",
+      "kind": "runtime",
+      "bytes": 750410,
+      "sha256": "abba9ccf6d31ff13a8e3a01d278c458c65a00e5faba7eff3eacb2a00ec76ffe4",
+      "gitBlobSha": "09426edb8ac6a4aa7d6caa4d83f43a04f21f4437",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/vfx/beelzebub-ribbon.png",
+      "group": "projectiles",
+      "kind": "master",
+      "bytes": 1087251,
+      "sha256": "f609a7c47c30913f0bb84ab5bb92ca19576a1bbb21aab0883174d3e3540be770",
+      "gitBlobSha": "4e712277fc22ef70991a27ddb0e550b7b2c27f5b",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": false
+    },
+    {
+      "path": "public/assets/vfx/infernal-versus/beelzebub-ribbon.webp",
+      "group": "projectiles",
+      "kind": "runtime",
+      "bytes": 696000,
+      "sha256": "352185c91d0143e684fd5fee4fca859caa575a0b62aefb84c41c26a9aac4df96",
+      "gitBlobSha": "1fbc68f93dc6296aad7c123fafdafc6d520941fb",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "registered": true
+    }
+  ],
+  "imageChecks": [
+    {
+      "master": "art/infernal-versus/masters/poses/hb_mammon-ready.png",
+      "runtime": "public/assets/sprites/individual/hb_mammon-ready.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hb_mammon-guard.png",
+      "runtime": "public/assets/sprites/individual/hb_mammon-guard.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hb_mammon-strike.png",
+      "runtime": "public/assets/sprites/individual/hb_mammon-strike.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hb_mammon-recoil.png",
+      "runtime": "public/assets/sprites/individual/hb_mammon-recoil.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-ready.png",
+      "runtime": "public/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-guard.png",
+      "runtime": "public/assets/sprites/individual/hz_katie_killjoy-guard.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-strike.png",
+      "runtime": "public/assets/sprites/individual/hz_katie_killjoy-strike.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-recoil.png",
+      "runtime": "public/assets/sprites/individual/hz_katie_killjoy-recoil.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-ready.png",
+      "runtime": "public/assets/sprites/individual/hz_tom_trench-ready.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-guard.png",
+      "runtime": "public/assets/sprites/individual/hz_tom_trench-guard.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-strike.png",
+      "runtime": "public/assets/sprites/individual/hz_tom_trench-strike.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-recoil.png",
+      "runtime": "public/assets/sprites/individual/hz_tom_trench-recoil.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "runtimeSize": [
+        1024,
+        1536
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/western-lair/room.png",
+      "runtime": "public/assets/stages/helluva/western-lair/room.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/western-lair/prop-middle.png",
+      "runtime": "public/assets/stages/helluva/western-lair/prop-middle.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/western-lair/prop-near.png",
+      "runtime": "public/assets/stages/helluva/western-lair/prop-near.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/goetia-court/room.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/room.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/goetia-court/prop-middle.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/prop-middle.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/goetia-court/prop-near.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/prop-near.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/room.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/room.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-middle.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/prop-middle.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-near.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/prop-near.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "resampled": true
+    },
+    {
+      "master": "art/infernal-versus/masters/vfx/husk-card.png",
+      "runtime": "public/assets/vfx/infernal-versus/husk-card.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/vfx/adam-light.png",
+      "runtime": "public/assets/vfx/infernal-versus/adam-light.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/vfx/stolas-portal.png",
+      "runtime": "public/assets/vfx/infernal-versus/stolas-portal.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1254,
+        1254
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/vfx/asmodeus-smoke.png",
+      "runtime": "public/assets/vfx/infernal-versus/asmodeus-smoke.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    },
+    {
+      "master": "art/infernal-versus/masters/vfx/beelzebub-ribbon.png",
+      "runtime": "public/assets/vfx/infernal-versus/beelzebub-ribbon.webp",
+      "originalPngBytesPreserved": true,
+      "webpPixelsEqualToExpectedExport": true,
+      "aspectPreserved": true,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "resampled": false
+    }
+  ],
+  "validation": {
+    "assetAudit": "passed",
+    "missingRuntimeReferences": 0,
+    "imageChecks": "26 preserved PNG originals, 26 proportional lossless WebP exports and 3 derived thumbnails verified from decoded pixels. Six props are reduced proportionally from 1254² to 1024².",
+    "automatedQA": {
+      "status": "passed",
+      "command": "npm run qa",
+      "exitCode": 0,
+      "suites": 44,
+      "tests": 363,
+      "typecheck": "passed",
+      "lint": "passed",
+      "builds": 2,
+      "standaloneFiles": 961,
+      "standaloneHashesVerified": 961,
+      "standaloneBytes": 586517302,
+      "standaloneMiB": 559.35,
+      "runtimeReferences": 377,
+      "missingRuntimeReferences": 0,
+      "sourceFilesHashed": 1114,
+      "sourceMutationsDuringQA": [],
+      "evidence": "docs/standalone/QA_RUNTIME_WAVE_D_2026-11-24.json"
+    },
+    "workbookQA": {
+      "status": "passed",
+      "sheetCount": 23,
+      "historicalSheetsPreserved": 11,
+      "historicalXmlByteIdentical": true,
+      "formulas": 200,
+      "runtimeCellsChecked": 5361,
+      "recalculationProbes": 8,
+      "visualViews": 21,
+      "workbookSha256": "c72712eb6919b7c80028d1c56a945b5cb559822a10217db2ae20093eac322b1d",
+      "evidence": "docs/standalone/QA_WORKBOOK_WAVE_D_2026-11-24.json"
+    },
+    "browserReview": "Chromium ne démarre pas : socket() EPERM avant création de page. Montages statiques et tests de composants ne sont pas des captures du jeu."
+  },
+  "limits": {
+    "oneToOneFidelity": "Non certifiée. Références primaires, cartes sous licence photographiées sur un hébergement secondaire, captures republiées et reconstructions AU sont distinguées dans les manifestes.",
+    "characters": "12 poses clés pour Katie, Tom et Mammon. Les parties basses de Katie et Tom sont reconstruites depuis les repères disponibles. Les banques historiques des quatre nouveaux jouables contiennent des cellules contaminées ou tronquées. Le standalone utilise provisoirement les poses propres de Katie, Tom et Mammon pour les actions non redessinées et les cinématiques, et le portrait historique intact de Stella pour tous ses états. Le déplacement et les règles de combat restent actifs ; ce repli statique ne constitue aucun nouveau cycle ni pose dédiée.",
+    "stella": "Nouvelle pose READY refusée par imagegen ; zéro relance, aucune dérivée demandée. Le kit utilise provisoirement le portrait historique intact, sans nouveau dessin compté.",
+    "mammon": "Échelle uniforme 1,4 et contact bas de canvas pour les quatre portraits uniquement. Mesures numériques et composition statique ; pas de certification de taille canonique ou transition animée.",
+    "stages": "Trois scènes à trois plans, props séparés et pistes AU. Contain bas-centre protège le fond entier, avec bandes teintées selon le ratio. Pas de validation dynamique de chaque occultation.",
+    "projectiles": "Cinq images et cinq réemplois de tirs : habillage synchronisé des coups existants, sans nouvelle physique, collision, dégât ou portée.",
+    "lucifer": "Projectile de flamme différé faute de référence isolée suffisamment lisible ; aucune génération tentée.",
+    "browser": "Chromium ne démarre pas : socket() EPERM avant création de page. Montages statiques et tests de composants ne sont pas des captures du jeu.",
+    "animation": "Les banques historiques des quatre nouveaux jouables contiennent des cellules contaminées ou tronquées. Le standalone utilise provisoirement les poses propres de Katie, Tom et Mammon pour les actions non redessinées et les cinématiques, et le portrait historique intact de Stella pour tous ses états. Le déplacement et les règles de combat restent actifs ; ce repli statique ne constitue aucun nouveau cycle ni pose dédiée."
+  },
+  "historicalDeliveryManifests": [
+    "art/infernal-versus/production/delivery-2026-11-24.json",
+    "art/infernal-versus/production/delivery-wave-c-2026-11-24.json"
+  ],
+  "legacyAtlasFallback": {
+    "reason": "Existing atlas cells show cropping, neighboring-character fragments or magenta contamination. Authored poses/portrait avoid those cells only in the standalone rendering.",
+    "affectedFighters": [
+      "hz_katie_killjoy",
+      "hz_tom_trench",
+      "hb_mammon",
+      "hb_stella"
+    ],
+    "staticFallback": {
+      "hz_katie_killjoy": "Four accepted Wave D key poses",
+      "hz_tom_trench": "Four accepted Wave D key poses",
+      "hb_mammon": "Four accepted Wave D key poses",
+      "hb_stella": "public/assets/sprites/helluva/portraits/hb_stella.png, unchanged"
+    },
+    "observations": {
+      "hz_katie_killjoy": "Family-media atlas: short proportions and large magenta region in movement, neighboring head overflow in base sheet.",
+      "hz_tom_trench": "Family-media atlas: truncated hair/head and magenta regions.",
+      "hb_stella": "helluva-powers row 3 (zero-based): fragments from Striker above head or at edge.",
+      "hb_mammon": "helluva-rivals row 0 (zero-based): lower-body truncation and fragments entering following row."
+    },
+    "helluvaDamagedCellsZeroBased": {
+      "movement": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "offense": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "reaction": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "runtimeImplementation": [
+      "src/lib/infernal-appearances.ts",
+      "src/components/PentagramLiveFight.tsx"
+    ],
+    "managerChanged": false,
+    "newDrawings": 0,
+    "animationCyclesComplete": false,
+    "regressionTests": {
+      "targetedSuites": 2,
+      "targetedTests": 26,
+      "passed": true,
+      "fullQaTests": 363,
+      "source": "src/tests/standalone-live-fight.test.tsx",
+      "scenarios": [
+        "Both players: intro, actual movement, crouch, heavy attack for all four new fighters",
+        "Katie/Tom: knockout, shared finishing sequence and victory"
+      ],
+      "browserValidated": false
+    },
+    "independentCodeReview": "Read-only review confirmed no atlas rendering branch remains reachable for these four fighters under infernalRules=true, with costume and impact-image priority preserved."
+  }
+}

@@ -1,0 +1,1333 @@
+{
+  "schemaVersion": 1,
+  "edition": "V6",
+  "date": "2026-11-25",
+  "status": "qualification_snapshot_before_new_production",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "baselineCommit": "8d34176aa08dbd566230e5a4742487d64d731cd9",
+  "scope": "Concordance des inventaires et 14 fiches statiques à qualifier ; aucun dessin nouveau accepté par cet audit",
+  "sourceFiles": [
+    {
+      "path": "docs/standalone/production-static-v5.json",
+      "gitBlobSha": "bf7e027061980485f589a85bf472bad47c3798e5"
+    },
+    {
+      "path": "docs/standalone/production-v5-register.json",
+      "gitBlobSha": "42f91c4a2a2fd3034b77d292b5cf88632d51b96e"
+    },
+    {
+      "path": "docs/standalone/extension-plan.json",
+      "gitBlobSha": "213cec28ab8171b62eb613eb8d512c968dd0bb84"
+    },
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "gitBlobSha": "203b3df17f8923ebe4ee5ac18eaaea4eed2ab725"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "gitBlobSha": "a2d737a8d56c8055967a2e01b42970febf0cb1a8"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "gitBlobSha": "1cd15acd31b2c67c484052dc35da7bd7a76d41c7"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "gitBlobSha": "827825ff67a3ceb331408e68b0bb42c6b62d78a5"
+    }
+  ],
+  "baseline": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 77,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 37,
+    "catalogueIdsWithoutStandaloneBase": 132,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 131,
+    "reserveGalleryEntries": 42,
+    "runtimeCostumeFamilies": 11,
+    "activeStages": 35,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "countingRules": {
+    "availabilityField": "baseAvailable (currentBasePath/currentState), jamais actualStaticState seul",
+    "drawings": "Un dessin distinct par empreinte SHA-256 du master retenu ; les PNG/WebP et réaffectations ne sont pas plusieurs dessins.",
+    "identity": "Les 209 IDs incluent individus, groupes, AU, pilote et entrées futures ; le dénominateur ne représente pas 209 personnages canoniques distincts.",
+    "acceptedIncrement": "Compter une nouvelle base seulement avec ID de catalogue résolu, master et export présents et acceptés, et sans base antérieure de la même incarnation.",
+    "aliasIncrement": "hz_travis/hb_travis partagent une identité de production ; documenter les deux affectations sans doubler le dessin.",
+    "defaultVersusCostume": "La READY pré-blessure de Lute existe comme tenue facultative ; elle n’est pas la preuve que sa base d’incarnation par défaut est couverte."
+  },
+  "newWave": {
+    "proposedIdentityCount": 14,
+    "acceptedNewBaseCount": 0,
+    "currentStandaloneBases": 77,
+    "currentCatalogueIdsWithoutStandaloneBase": 132,
+    "projectionIfAll14DistinctCandidatesAccepted": {
+      "standaloneBases": 91,
+      "catalogueIdsWithoutStandaloneBase": 118,
+      "status": "scenario_only_not_delivery"
+    },
+    "actualDeliveryRegister": null
+  },
+  "candidates": [
+    {
+      "priority": 1,
+      "sourceIdentityId": "hz_keekee",
+      "proposedAssetId": "hz_keekee-ready",
+      "name": "KeeKee",
+      "franchise": "Hazbin Hotel",
+      "catalogueCanonClaim": "canon",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+          "type": "official_season_index",
+          "scope": "Hazbin Hotel S1",
+          "supports": "Existence et périmètre de la saison ; ne constitue pas une référence visuelle de ce personnage."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_keekee.png",
+          "gitBlobSha": "ce6e55b40bc31e0b9272bd40a8675c0588ba7146",
+          "sha256": "9d0df96fe70b67cb2cf152c0eff1644033e29059f732e0cfa3d5dd84c3b73b4c",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hz_keekee",
+        "sourceText": "Hazbin Hotel Season 1"
+      },
+      "incarnationChecks": [
+        "Incarnation féline de la série S1 ; la forme de clé est un accessoire/une incarnation distincte.",
+        "Contrôler œil, palette, marques, queue et quatre pattes dans une référence de la même incarnation."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hz_keekee-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hz_keekee-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 2,
+      "sourceIdentityId": "hz_fat_nuggets",
+      "proposedAssetId": "hz_fat_nuggets-ready",
+      "name": "Fat Nuggets",
+      "franchise": "Hazbin Hotel",
+      "catalogueCanonClaim": "canon",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+          "type": "official_season_index",
+          "scope": "Hazbin Hotel S1",
+          "supports": "Existence et périmètre de la saison ; ne constitue pas une référence visuelle de ce personnage."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_fat_nuggets.png",
+          "gitBlobSha": "948403f64e965294e9e0efdf61db06018958d3eb",
+          "sha256": "b391607eea53ff17c183f31482b4acc367934e71a306398b9da9acf1d4359a21",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hz_fat_nuggets",
+        "sourceText": "Hazbin Hotel Season 1"
+      },
+      "incarnationChecks": [
+        "Familier porcin d’Angel, modèle série S1 ; ne pas importer silencieusement une variante pilote/clip.",
+        "Contrôler oreilles, cornes/marques visibles, proportions et sabot de chaque patte."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hz_fat_nuggets-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hz_fat_nuggets-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 3,
+      "sourceIdentityId": "hz_razzle",
+      "proposedAssetId": "hz_razzle-ready",
+      "name": "Razzle",
+      "franchise": "Hazbin Hotel",
+      "catalogueCanonClaim": "canon",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+          "type": "official_season_index",
+          "scope": "Hazbin Hotel S1",
+          "supports": "Existence et périmètre de la saison ; ne constitue pas une référence visuelle de ce personnage."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_razzle.png",
+          "gitBlobSha": "fe9a9e9ab111cab126e4a571e693e44e22247ae8",
+          "sha256": "6aa7c27b29180a838450b3fef449a76b07ed61b5dadc69d1bdec97d708b1142a",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hz_razzle",
+        "sourceText": "Hazbin Hotel Season 1"
+      },
+      "incarnationChecks": [
+        "Individu distinct de Dazzle ; petite forme compagnon uniquement dans cette fiche.",
+        "Comparer couleurs, visage, cornes et ailes entre les deux individus ; une grande forme demanderait sa propre fiche."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hz_razzle-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hz_razzle-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 4,
+      "sourceIdentityId": "hz_dazzle",
+      "proposedAssetId": "hz_dazzle-ready",
+      "name": "Dazzle",
+      "franchise": "Hazbin Hotel",
+      "catalogueCanonClaim": "canon",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+          "type": "official_season_index",
+          "scope": "Hazbin Hotel S1",
+          "supports": "Existence et périmètre de la saison ; ne constitue pas une référence visuelle de ce personnage."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_dazzle.png",
+          "gitBlobSha": "a285b2c7bc4512232f7f386151f682fffbfd83cc",
+          "sha256": "c1738a2b9a2b600b9518c6bf4694838c1128c098f3e219cc5eaa21c4c7d1ff13",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hz_dazzle",
+        "sourceText": "Hazbin Hotel S1E08"
+      },
+      "incarnationChecks": [
+        "Individu distinct de Razzle ; petite forme compagnon uniquement dans cette fiche.",
+        "Préserver l’incarnation et sa période ; ne pas utiliser une grande forme ou un état final comme base générale."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hz_dazzle-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hz_dazzle-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 5,
+      "sourceIdentityId": "hz_frank_egg_boi",
+      "proposedAssetId": "hz_frank_egg_boi-ready",
+      "name": "Frank",
+      "franchise": "Hazbin Hotel",
+      "catalogueCanonClaim": "canon",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.primevideo.com/detail/0HZWTBZYQQXYW48YBANMDM2MZE",
+          "type": "official_season_index",
+          "scope": "Hazbin Hotel S1",
+          "supports": "Existence et périmètre de la saison ; ne constitue pas une référence visuelle de ce personnage."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/hazbin/portraits/hz_frank_egg_boi.png",
+          "gitBlobSha": "60b33844dc0624862d17bd095faea84501f0bf68",
+          "sha256": "d79a3afbf73185110957bedafeb1df7669a5efa6a6b15f25ad459db7bc9588db",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hz_frank_egg_boi",
+        "sourceText": "Hazbin Hotel Season 1"
+      },
+      "incarnationChecks": [
+        "Individu nommé, distinct de l’entrée collective hz_egg_boiz.",
+        "Contrôler numéro/marque et tenue sur un plan attribuable ; le portrait interne ne confirme pas seul l’identité."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hz_frank_egg_boi-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hz_frank_egg_boi-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 6,
+      "sourceIdentityId": "hb_coco",
+      "proposedAssetId": "hb_coco-ready",
+      "name": "Coco",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_coco.png",
+          "gitBlobSha": "a77d39278979257621d720452b453850c10a7d30",
+          "sha256": "1bb10795fea2e2a722bb079bf930ccf809aef39be318ea7ade3fc15fc6f94cd4",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_coco",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; ne pas fusionner plusieurs silhouettes."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_coco-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_coco-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 7,
+      "sourceIdentityId": "hb_apple",
+      "proposedAssetId": "hb_apple-ready",
+      "name": "Apple",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_apple.png",
+          "gitBlobSha": "bdbcdb4fa35844f151f712a5a2cd5d097edb4d1f",
+          "sha256": "e189e260119c16b433fb858aab71e0a24eed47243b340f9cfff1b779870ad8fb",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_apple",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; conserver les éventuelles asymétries."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_apple-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_apple-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 8,
+      "sourceIdentityId": "hb_kat",
+      "proposedAssetId": "hb_kat-ready",
+      "name": "Kat",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_kat.png",
+          "gitBlobSha": "c3a2eb9aaa0ea1ad08405a331266f655370bbe8a",
+          "sha256": "9ac03afc0e0e021103001eb3294bad42273eefc01dc4415e902b68ec5222e46f",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_kat",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; costume fixé sur un moment unique."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_kat-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_kat-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 9,
+      "sourceIdentityId": "hb_milky",
+      "proposedAssetId": "hb_milky-ready",
+      "name": "Milky",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_milky.png",
+          "gitBlobSha": "4d125ea999523d7ae96ae44d711e1b2ef4a485ed",
+          "sha256": "433c706ebaa769265edd9f3638af0fae55382c526703a8d4db741fa498ea961a",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_milky",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; aucun accessoire absent des références."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_milky-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_milky-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 10,
+      "sourceIdentityId": "hb_kiki",
+      "proposedAssetId": "hb_kiki-ready",
+      "name": "Kiki",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_kiki.png",
+          "gitBlobSha": "7240de2a33feacdc50cb115a68ecb555c66540ea",
+          "sha256": "c577225f0ed08d6271015481a4c80379642a902a070feee8547374cabb000941",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_kiki",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; une seule incarnation."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_kiki-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_kiki-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 11,
+      "sourceIdentityId": "hb_josh",
+      "proposedAssetId": "hb_josh-ready",
+      "name": "Josh",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=RghsgkZKedg",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Spring Broken S1E3",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_josh.png",
+          "gitBlobSha": "67940464cf10862351901b4be8e44ced3cf3b7a2",
+          "sha256": "b0d37a119a64ee232f2138eb16944a2bf336d1b12527175ff8456a0d18376c1b",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_josh",
+        "sourceText": "Helluva Boss S1E3"
+      },
+      "incarnationChecks": [
+        "Membre du groupe de Spring Broken ; distinguer la silhouette et la tenue des cinq autres fiches.",
+        "Nom tiré du catalogue, à rapprocher du plan primaire ; une seule silhouette entière."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_josh-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_josh-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 12,
+      "sourceIdentityId": "hb_vikki",
+      "proposedAssetId": "hb_vikki-ready",
+      "name": "Vikki",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Queen Bee S1E8",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_vikki.png",
+          "gitBlobSha": "622377011471339bd76efcac380148efb9ff34bf",
+          "sha256": "5c76819492cad00b16e68e06846303c3ecc1b85aea1f794589df33821b2cff23",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_vikki",
+        "sourceText": "Helluva Boss S1E8"
+      },
+      "incarnationChecks": [
+        "Invité de Queen Bee ; contrôler l’appariement nom/portrait/silhouette avant production.",
+        "Une pose neutre autonome ne livre ni capacité de combat ni kit jouable."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_vikki-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_vikki-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 13,
+      "sourceIdentityId": "hb_gigi",
+      "proposedAssetId": "hb_gigi-ready",
+      "name": "Gigi",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Queen Bee S1E8",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_gigi.png",
+          "gitBlobSha": "03606d9c76432a1641a2ceee5d556a271595ed72",
+          "sha256": "045a756ea0e54b6019dcb8ab3620fad96c49e4f6adc861021f394a3813b282b6",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_gigi",
+        "sourceText": "Helluva Boss S1E8"
+      },
+      "incarnationChecks": [
+        "Invité de Queen Bee ; contrôler l’appariement nom/portrait/silhouette avant production.",
+        "Une pose neutre autonome ne livre ni capacité de combat ni kit jouable."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_gigi-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_gigi-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "priority": 14,
+      "sourceIdentityId": "hb_russ",
+      "proposedAssetId": "hb_russ-ready",
+      "name": "Russ",
+      "franchise": "Helluva Boss",
+      "catalogueCanonClaim": "Canon déclaré dans dépôt",
+      "continuity": "season_1",
+      "kind": "support_base",
+      "role": "Base statique de soutien / codex / galerie ; pas de kit jouable implicite",
+      "status": "pending_primary_visual_qualification",
+      "missingInBaseline": true,
+      "baselineExport": null,
+      "generationPermittedByThisAudit": false,
+      "primaryVisualVerified": false,
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc",
+          "type": "official_episode",
+          "scope": "Helluva Boss — Queen Bee S1E8",
+          "supports": "Cible d’inspection visuelle ; le titre de la page a été relu, aucun plan nouveau certifié."
+        }
+      ],
+      "historicalPortraits": [
+        {
+          "path": "public/assets/sprites/helluva/portraits/hb_russ.png",
+          "gitBlobSha": "db60e1860e962cfc6d3d0248beb95d7b9e1b194e",
+          "sha256": "7a05d65b38e34cdab1d73fbaf3d0f3a1e9f08916663d6a3d0f0f3ef1a69793ee",
+          "role": "historical_internal_artwork_not_primary_canon_proof"
+        }
+      ],
+      "catalogueEvidence": {
+        "path": "docs/standalone/extension-plan.json",
+        "anchor": "roster/hb_russ",
+        "sourceText": "Helluva Boss S1E8"
+      },
+      "incarnationChecks": [
+        "Invité de Queen Bee ; contrôler l’appariement nom/portrait/silhouette avant production.",
+        "Une pose neutre autonome ne livre ni capacité de combat ni kit jouable."
+      ],
+      "qualificationGate": [
+        "Retrouver un plan ou modèle officiel attribuable à la même incarnation.",
+        "Inspecter silhouette complète, palette, costume, asymétries et extrémités ; documenter les occultations.",
+        "Conserver URL, épisode, minutage réel, fichier de référence et empreinte si téléchargé.",
+        "Comparer portrait historique et plan primaire ; résoudre tout désaccord avant le prompt.",
+        "Revue du nouveau dessin : sujet unique, silhouette entière, vrai alpha, pas de nouvelle animation."
+      ],
+      "proposedPaths": {
+        "master": "art/infernal-versus/masters/base/hb_russ-ready.png",
+        "runtimeExport": "public/assets/sprites/reserve/hb_russ-ready.webp"
+      },
+      "delivery": {
+        "accepted": false,
+        "master": null,
+        "export": null,
+        "integrated": false,
+        "animationCycles": 0,
+        "fidelityOneToOneCertified": false
+      }
+    }
+  ],
+  "currentVariantReconciliation": [
+    {
+      "id": "VAR-003",
+      "fighter": "vaggie",
+      "name": "Exorciste — archive",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume actif existant",
+      "currentExport": "public/assets/sprites/costumes/vaggie-exorcist.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-003",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-009",
+      "fighter": "sirpentious",
+      "name": "Pécheur — inventeur",
+      "historicalPlanStatus": "À produire",
+      "currentState": "existing_default_incarnation",
+      "currentExport": null,
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-009",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-013",
+      "fighter": "lute",
+      "name": "Avant / après final S1",
+      "historicalPlanStatus": "Partiel",
+      "currentState": "Costume actif existant",
+      "currentExport": "public/assets/sprites/individual/lute-ready.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-013",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-014",
+      "fighter": "carmilla",
+      "name": "Cheveux lâchés — entraînement",
+      "historicalPlanStatus": "Partiel",
+      "currentState": "Costume actif existant",
+      "currentExport": "public/assets/sprites/costumes/carmilla-loose-hair.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-014",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-018",
+      "fighter": "hb_moxxie",
+      "name": "Moxxine — camping",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_moxxie-moxxine.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-018",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-019",
+      "fighter": "hb_millie",
+      "name": "Millerd — camping",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_millie-millerd.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-019",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-021",
+      "fighter": "hb_loona",
+      "name": "Déguisement humain",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume actif existant",
+      "currentExport": "public/assets/sprites/costumes/hb_loona-human-disguise.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-021",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-024",
+      "fighter": "hb_stolas",
+      "name": "Prince — pouvoirs conservés",
+      "historicalPlanStatus": "À produire",
+      "currentState": "existing_default_incarnation",
+      "currentExport": null,
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-024",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-025",
+      "fighter": "hb_stolas",
+      "name": "Déchu — après Mastermind",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_stolas-deposed-sinsmas.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-025",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-026",
+      "fighter": "hb_stolas",
+      "name": "Déguisement humain",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume actif existant",
+      "currentExport": "public/assets/sprites/costumes/hb_stolas-human-disguise.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-026",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-030",
+      "fighter": "hb_fizzarolli",
+      "name": "Scène / tenue de repos",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_fizzarolli-casual-oops.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-030",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-032",
+      "fighter": "hb_barbie_wire",
+      "name": "Déguisement humain",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_barbie_wire-human-disguise.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-032",
+      "decision": "do_not_regenerate_as_missing"
+    },
+    {
+      "id": "VAR-033",
+      "fighter": "hb_vortex",
+      "name": "Déguisement humain",
+      "historicalPlanStatus": "À produire",
+      "currentState": "Costume statique produit",
+      "currentExport": "public/assets/sprites/costumes/hb_vortex-human-disguise.webp",
+      "evidence": "docs/standalone/production-static-v5.json#variants/VAR-033",
+      "decision": "do_not_regenerate_as_missing"
+    }
+  ],
+  "stageReconciliation": [
+    {
+      "catalogueId": "imp-office",
+      "runtimeId": "imp-reception",
+      "relation": "same_location_runtime_alias",
+      "decision": "already_covered_do_not_duplicate",
+      "evidence": "src/lib/pentagram-stages.ts"
+    },
+    {
+      "catalogueId": "ozzies",
+      "runtimeId": "ozzies-cabaret",
+      "relation": "same_location_runtime_alias",
+      "decision": "already_covered_do_not_duplicate",
+      "evidence": "src/lib/pentagram-stages.ts"
+    },
+    {
+      "catalogueId": "human-beach",
+      "runtimeId": "spring-broken-beach",
+      "relation": "same_location_runtime_alias",
+      "decision": "already_covered_do_not_duplicate",
+      "evidence": "docs/standalone/extension-plan.json#stages/human-beach"
+    },
+    {
+      "catalogueId": "sloth-hospital",
+      "runtimeId": "sloth-hospital",
+      "relation": "same_id_v5_delivered",
+      "historicalPlanStatus": "À produire",
+      "decision": "already_delivered_in_v5",
+      "evidence": "public/assets/stages/helluva/sloth-hospital/room.webp"
+    },
+    {
+      "catalogueId": "hb-ice-palace",
+      "runtimeId": "sinsmas-frozen-pavilion",
+      "relation": "potential_overlap_requires_location_comparison",
+      "decision": "do_not_count_as_missing_until_distinct_location_or_view_established",
+      "evidence": "docs/standalone/production-static-v5.json#otherRequirements/ENV-sinsmas-frozen-pavilion"
+    },
+    {
+      "catalogueId": "hb-australia",
+      "runtimeId": null,
+      "relation": "unverified_future_catalogue_claim",
+      "decision": "require_primary_source_before_new_canonical_stage",
+      "evidence": "docs/standalone/extension-plan.json#stages/hb-australia"
+    },
+    {
+      "catalogueId": "hb-auction",
+      "runtimeId": null,
+      "relation": "unverified_future_catalogue_claim",
+      "decision": "require_primary_source_before_new_canonical_stage",
+      "evidence": "docs/standalone/extension-plan.json#stages/hb-auction"
+    }
+  ],
+  "narrativeReconciliation": {
+    "currentPersonal": 127,
+    "totalPersonal": 129,
+    "currentGlobal": 11,
+    "totalGlobal": 11,
+    "historicalGuideStatementsToReadAsV4Only": [
+      "IV-G08 parle encore de produire 129 briefs.",
+      "IV-G09 décrit encore la campagne avec décors et portraits."
+    ],
+    "remaining": [
+      {
+        "id": "personal:husk:3:rival",
+        "status": "historical_policy_refusal_no_retry"
+      },
+      {
+        "id": "personal:sirpentious:3:intro",
+        "status": "historical_policy_refusal_no_retry"
+      }
+    ],
+    "decision": "Conserver les scènes de secours et les refus ; ne pas recompter 127 scènes ni les 11 scènes globales comme manquantes."
+  },
+  "identitiesToKeepDistinct": [
+    {
+      "ids": [
+        "hz_razzle",
+        "hz_dazzle"
+      ],
+      "reason": "Deux individus distincts."
+    },
+    {
+      "ids": [
+        "hz_frank_egg_boi",
+        "hz_egg_boiz"
+      ],
+      "reason": "Individu nommé contre entrée collective."
+    }
+  ],
+  "sharedAliases": [
+    {
+      "productionIdentityId": "hz_travis",
+      "catalogueIds": [
+        "hz_travis",
+        "hb_travis"
+      ],
+      "reusableOnlyWhenSameIncarnation": true
+    }
+  ],
+  "alreadyProducedV5Bases": [
+    {
+      "id": "hb_bea_cherub-ready",
+      "identity": "hb_bea_cherub",
+      "master": "art/infernal-versus/masters/base/hb_bea_cherub-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bea_cherub-ready.webp"
+    },
+    {
+      "id": "hb_beau_cherub-ready",
+      "identity": "hb_beau_cherub",
+      "master": "art/infernal-versus/masters/base/hb_beau_cherub-ready.png",
+      "export": "public/assets/sprites/reserve/hb_beau_cherub-ready.webp"
+    },
+    {
+      "id": "hb_bombproof-ready",
+      "identity": "hb_bombproof",
+      "master": "art/infernal-versus/masters/base/hb_bombproof-ready.png",
+      "export": "public/assets/sprites/reserve/hb_bombproof-ready.webp"
+    },
+    {
+      "id": "hb_catfish_monster-ready",
+      "identity": "hb_catfish_monster",
+      "master": "art/infernal-versus/masters/base/hb_catfish_monster-ready.png",
+      "export": "public/assets/sprites/reserve/hb_catfish_monster-ready.webp"
+    },
+    {
+      "id": "hb_counselor_jimmy-ready",
+      "identity": "hb_counselor_jimmy",
+      "master": "art/infernal-versus/masters/base/hb_counselor_jimmy-ready.png",
+      "export": "public/assets/sprites/reserve/hb_counselor_jimmy-ready.webp"
+    },
+    {
+      "id": "hb_dr_somna-ready",
+      "identity": "hb_dr_somna",
+      "master": "art/infernal-versus/masters/base/hb_dr_somna-ready.png",
+      "export": "public/assets/sprites/reserve/hb_dr_somna-ready.webp"
+    },
+    {
+      "id": "hb_honey_cherub-ready",
+      "identity": "hb_honey_cherub",
+      "master": "art/infernal-versus/masters/base/hb_honey_cherub-ready.png",
+      "export": "public/assets/sprites/reserve/hb_honey_cherub-ready.webp"
+    },
+    {
+      "id": "hb_lyle_lipton-ready",
+      "identity": "hb_lyle_lipton",
+      "master": "art/infernal-versus/masters/base/hb_lyle_lipton-ready.png",
+      "export": "public/assets/sprites/reserve/hb_lyle_lipton-ready.webp"
+    },
+    {
+      "id": "hb_muffy-ready",
+      "identity": "hb_muffy",
+      "master": "art/infernal-versus/masters/base/hb_muffy-ready.png",
+      "export": "public/assets/sprites/reserve/hb_muffy-ready.webp"
+    },
+    {
+      "id": "hb_octavia-ready",
+      "identity": "hb_octavia",
+      "master": "art/infernal-versus/masters/base/hb_octavia-ready.png",
+      "export": "public/assets/sprites/reserve/hb_octavia-ready.webp"
+    },
+    {
+      "id": "hb_rachel_cherub-ready",
+      "identity": "hb_rachel_cherub",
+      "master": "art/infernal-versus/masters/base/hb_rachel_cherub-ready.png",
+      "export": "public/assets/sprites/reserve/hb_rachel_cherub-ready.webp"
+    },
+    {
+      "id": "hb_ralphie-ready",
+      "identity": "hb_ralphie",
+      "master": "art/infernal-versus/masters/base/hb_ralphie-ready.png",
+      "export": "public/assets/sprites/reserve/hb_ralphie-ready.webp"
+    },
+    {
+      "id": "hb_satan-ready",
+      "identity": "hb_satan",
+      "master": "art/infernal-versus/masters/base/hb_satan-ready.png",
+      "export": "public/assets/sprites/reserve/hb_satan-ready.webp"
+    },
+    {
+      "id": "hb_yogirt-ready",
+      "identity": "hb_yogirt",
+      "master": "art/infernal-versus/masters/base/hb_yogirt-ready.png",
+      "export": "public/assets/sprites/reserve/hb_yogirt-ready.webp"
+    },
+    {
+      "id": "sim_applicant_ember-ready",
+      "identity": "sim_applicant_ember",
+      "master": "art/infernal-versus/masters/base/sim_applicant_ember-ready.png",
+      "export": "public/assets/sprites/reserve/sim_applicant_ember-ready.webp"
+    },
+    {
+      "id": "sim_applicant_marlow-ready",
+      "identity": "sim_applicant_marlow",
+      "master": "art/infernal-versus/masters/base/sim_applicant_marlow-ready.png",
+      "export": "public/assets/sprites/reserve/sim_applicant_marlow-ready.webp"
+    }
+  ],
+  "technicalDeferrals": [
+    {
+      "id": "dhorks-portal-ring",
+      "category": "machine",
+      "status": "defer_complete_isolated_asset",
+      "reason": [
+        "Le bas complet et le socle sont masqués ou coupés ; pas de silhouette complète certifiée.",
+        "Utilisable comme élément cadré du décor ; différer un sprite complet jusqu’à une vue de la machine entière.",
+        "Ne pas dessiner par symétrie des supports non montrés."
+      ],
+      "nextEvidence": "Vue primaire où le cercle inférieur, les supports et le socle entiers apparaissent simultanément sans occultation ; ou modèle de production officiel de cette machine S2E8.",
+      "sourceUrl": "https://www.youtube.com/watch?v=Fj9YRsV1pEw",
+      "alreadyPartlyCovered": "Static portal room stage dhorks-portal-chamber is now implemented; the machine appears within the complete room composition, not as a separately usable complete machine."
+    },
+    {
+      "id": "pentious-airship-pilot",
+      "category": "machine",
+      "status": "defer_complete_isolated_asset",
+      "reason": [
+        "Ne pas présenter le dessin du pilote comme le modèle du finale S1 Prime Video.",
+        "La vue entière est trop petite et partiellement couverte d’effets pour fixer les proportions et armes.",
+        "Il faut une vue d’ensemble propre de l’incarnation demandée avant production 1:1 ; pas de machine générique inventée."
+      ],
+      "nextEvidence": "Choisir explicitement pilote 2019 ou saison Prime, puis fournir une vue d’ensemble primaire assez nette pour les proportions, appendices et armements de cette incarnation.",
+      "sourceUrl": "https://www.youtube.com/watch?v=Zlmswo0S0e0",
+      "alreadyPartlyCovered": null
+    },
+    {
+      "id": "cherub-golden-arrow",
+      "category": "projectile",
+      "status": "defer_complete_isolated_asset",
+      "reason": [
+        "Nouvelle inspection des mêmes vues ne résout pas pointe, empennage et longueur de hampe.",
+        "Ni arc, ni éclat de lumière ne doivent être inventés en projectile isolé.",
+        "Aucun prompt de génération exploitable ; conserver le report."
+      ],
+      "nextEvidence": "Une image primaire montrant la flèche entière sans main ni corps devant : pointe, hampe, empennage et couleurs. L’arc seul ou une lueur ne résout pas le modèle.",
+      "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+      "alreadyPartlyCovered": null
+    },
+    {
+      "id": "dhorks-shuriken",
+      "category": "projectile",
+      "status": "defer_complete_isolated_asset",
+      "reason": [
+        "Nombre et forme des pointes et éventuel trou central non résolus.",
+        "Ne pas remplacer par une étoile de ninja générique.",
+        "Pas de prompt de génération ni d’affectation de gameplay."
+      ],
+      "nextEvidence": "Une image primaire assez nette pour compter les pointes, voir le contour du trou central s’il existe et mesurer les proportions hors flou de mouvement.",
+      "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+      "alreadyPartlyCovered": null
+    }
+  ],
+  "missingByQualification": {
+    "active_legacy_base": 3,
+    "primary_scene_required": 106,
+    "historical_refusal_no_retry": 4,
+    "mentioned_only_no_canonical_visual": 1,
+    "future_or_semi_canon_visual_unqualified": 4,
+    "legacy_pilot_reference_required": 10,
+    "known_reference_gap": 3,
+    "shared_identity_alias": 1
+  },
+  "implementation": {
+    "reserveCatalogue": "art/infernal-versus/production/reserve-assets.json",
+    "gallery": "src/standalone/ReserveGallery.tsx",
+    "newBasesRemainReserve": true,
+    "costumeRegistry": "src/lib/infernal-appearances.ts",
+    "stageRegistry": "src/lib/pentagram-stages.ts",
+    "narrativeRegistry": "src/standalone/campaign-illustrations-v4.ts",
+    "effectRegistry": "src/lib/infernal-attack-effects.ts"
+  },
+  "validation": {
+    "newImageGenerationCalls": 0,
+    "newAcceptedDrawings": 0,
+    "gameplayTestsRun": false,
+    "visualOneToOneCertified": false,
+    "existingV5FilesChanged": false
+  },
+  "limitations": [
+    "La lecture des index et titres officiels ne remplace pas l’inspection d’un plan.",
+    "Le statut canon de chaque nom est celui du catalogue ; les neuf silhouettes secondaires doivent être rapprochées des plans avant production.",
+    "La bible V5 et les rapports antérieurs restent des états historiques conservés ; ce fichier ajoute une vue de concordance, sans modifier rétroactivement leurs chiffres.",
+    "Cette qualification ne prétend pas épuiser tout l’univers Hazbin/Helluva."
+  ]
+}

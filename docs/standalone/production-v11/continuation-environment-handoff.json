@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "edition": "V11",
+  "createdAt": "2026-11-26T16:38:03.400041+00:00",
+  "status": "accepted_after_independent_review",
+  "scope": "Un nouvel accessoire séparé demandé après la finalisation QA navigateur V10. Aucun fichier runtime, catalogue global, registre de livraison ou root-prompts existant modifié.",
+  "generatedDrawings": 1,
+  "producerAcceptedDrawings": 1,
+  "independentlyAcceptedDrawings": 1,
+  "deliverableImageFiles": 2,
+  "newReferenceCropFiles": 1,
+  "candidateStates": [],
+  "historicalRefusalReview": {
+    "performed": true,
+    "scope": [
+      "docs/standalone/production-v5/source-ledgers",
+      "docs/standalone/production-v6/delivery-register.json",
+      "docs/standalone/production-v7/delivery-register.json",
+      "docs/standalone/production-v8/delivery-register.json",
+      "docs/standalone/production-v9/delivery-register.json",
+      "docs/standalone/production-v10/delivery-register.json",
+      "docs/standalone/production-v9/refused-attempts.json",
+      "docs/standalone/production-v10/refused-attempts.json",
+      "art/infernal-versus/production/reserve-assets.json"
+    ],
+    "matchingRefusedTargets": [],
+    "matchingCatalogueEntriesBeforeGeneration": [],
+    "alreadyDeliveredDifferentAsset": "fizzarolli-bozo-award"
+  },
+  "assets": [
+    {
+      "id": "oops-clown-mask-trophy",
+      "name": "Trophée au masque de clown · vitrine Oops",
+      "category": "prop",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "complete_visible_prop_silhouette",
+      "runtimeStatus": "reserve",
+      "stageId": null,
+      "sourceIdentityId": null,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "animationCycles": 0,
+      "fidelityOneToOneCertified": false,
+      "accepted": true,
+      "producerAccepted": true,
+      "reviewStatus": "independent_root_review_accepted",
+      "runtimeIntegrated": false,
+      "inGameChecked": false,
+      "master": "production/v11/environment/masters/oops-clown-mask-trophy.png",
+      "export": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+      "dimensions": [
+        963,
+        1633
+      ],
+      "masterSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+      "exportSha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0",
+      "masterBytes": 990429,
+      "exportBytes": 583190,
+      "alphaBounds16": [
+        57,
+        44,
+        906,
+        1583
+      ],
+      "alphaBounds128": [
+        58,
+        45,
+        905,
+        1582
+      ],
+      "pixelExactExport": true,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+        "https://www.youtube.com/watch?v=y1sF6ZeASU0"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-30.jpg",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "title": "206 Paint 00004 — trophée central de la vitrine",
+          "kind": "official_production_artist_portfolio_image",
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "portfolioDeclaredDimensions": "4340x2660",
+          "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+          "role": "Référence principale : silhouette complète du trophée central, du petit ornement supérieur au socle elliptique. Le trophée BOZO AWARD à droite est un autre objet."
+        },
+        {
+          "path": "production/v11/environment/references/oops-clown-mask-trophy-crop.png",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "title": "Recadrage exact du trophée central",
+          "kind": "exact_reference_crop",
+          "dimensions": [
+            530,
+            900
+          ],
+          "sha256": "34b51842852becb3603d115dac3334c4c800c72fc42e17d49ada172de9b5c4a5",
+          "cropBoxInParent": [
+            980,
+            390,
+            1510,
+            1290
+          ],
+          "parentPath": "production/v11/environment/references/jasper-30.jpg",
+          "role": "Recadrage de lecture et seconde image de référence du générateur ; aucun pixel redessiné."
+        },
+        {
+          "path": "production/v10/environment/references/oops-official-10s.png",
+          "url": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+          "title": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+          "kind": "official_youtube_native_storyboard_cell",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "086669148598707a3c860ebd51c50f0ea2b3ee2941f8b3efb607030ac72bcf72",
+          "role": "Contexte de l’appartement/chambre seulement. La cellule native à 10 s ne certifie pas les détails du trophée central ; aucun timestamp de gros plan du trophée n’est revendiqué."
+        }
+      ],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "mode": "built_in",
+        "calls": 1,
+        "transparentBackground": true,
+        "prompt": "Use case: background-extraction.\nAsset type: one separate static 2D game prop, on a genuinely transparent background.\nInput image 1 is the primary official Helluva Boss production painting of the display case. Input image 2 is an exact crop around its CENTRAL trophy and is the governing shape reference. Create ONLY that central trophy, entire and isolated, preserving the visible front three-quarter angle and the source design.\nSubject: the cream/mauve clown-mask trophy with a broad rounded forehead and two very large opaque black oval eye hollows. Preserve the cyan, two-lobed bow-like ornaments below the outer edges of both hollows, their dark violet mounts and small olive-gold connectors; the large shiny pink spherical nose; the cream/mauve tapered neck; the narrow flaring pedestal stem with the small ochre curved double-loop-and-dot motif; and the complete low, round base seen as an ellipse. Retain the visible small purple projections behind the top center exactly as the source silhouette: a taller rounded lobe leaning left and a shorter rounded lobe partly hidden behind the head. Do not extrapolate any unseen part or change them into horns, ears or a hat.\nComposition: single centered complete trophy with at least 8 percent transparent margin around the entire visible contour, including the top projections and the full base. Keep the same relative proportions, broad head, slim stem, modest base and blue-violet side lighting seen in the reference.\nStyle: clean hand-drawn television-animation prop, crisp tapered dark outlines, restrained cel shading, pale cream/mauve surfaces, cyan decorations, pink nose and muted ochre stem ornament. Match the supplied painting; no photorealism or 3D render.\nConstraints: this is the CENTRAL mask trophy, not the BOZO AWARD trophy on the right. No other trophy, text, invented award name, plaque, lettering, flower bouquet, picture frame, counter, room, floor or cast shadow. Do not add a mouth, eyeballs, smile, extra ornaments or decorations. Preserve actual alpha outside the silhouette, not a drawn checkerboard. One finished prop, one image, no variants or collage.",
+        "inputImages": [
+          {
+            "path": "production/v11/environment/references/jasper-30.jpg",
+            "role": "primary production reference"
+          },
+          {
+            "path": "production/v11/environment/references/oops-clown-mask-trophy-crop.png",
+            "role": "exact crop governing the central trophy shape"
+          }
+        ],
+        "nativeOutputKind": "PNG data URI returned by the built-in tool, decoded verbatim to bytes",
+        "nativeMasterUnmodified": true,
+        "nativeOriginalSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+        "nativeOriginalBytes": 990429,
+        "masterImageEdits": [],
+        "exportTransform": "Lossless WebP encoding with exact=True; decoded RGBA equality verified, including transparent pixel RGB."
+      },
+      "qa": {
+        "pixels": {
+          "nativeBytes": 990429,
+          "nativeSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+          "dimensions": [
+            963,
+            1633
+          ],
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "alphaBounds1": [
+            0,
+            9,
+            947,
+            1633
+          ],
+          "alphaBounds16": [
+            57,
+            44,
+            906,
+            1583
+          ],
+          "alphaBounds128": [
+            58,
+            45,
+            905,
+            1582
+          ],
+          "alphaSampleBlackHollows": [
+            [
+              1,
+              0,
+              1,
+              254
+            ],
+            [
+              1,
+              1,
+              0,
+              254
+            ]
+          ],
+          "nativeMasterUnmodified": true,
+          "decodedRGBAEqual": true,
+          "lossless": true,
+          "exactAlphaAndHiddenRGB": true,
+          "master": "production/v11/environment/masters/oops-clown-mask-trophy.png",
+          "masterSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+          "masterBytes": 990429,
+          "export": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+          "exportSha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0",
+          "exportBytes": 583190,
+          "referenceCropPath": "production/v11/environment/references/oops-clown-mask-trophy-crop.png",
+          "referenceCropSha256": "34b51842852becb3603d115dac3334c4c800c72fc42e17d49ada172de9b5c4a5",
+          "alphaZeroPixels": 891685,
+          "alpha1To15Pixels": 18203,
+          "alpha16To254Pixels": 661549,
+          "alpha255Pixels": 1142,
+          "edgeMaximumAlpha": 1,
+          "edgePixelsAtOrAbove16": 0,
+          "visibleMarginsAtAlpha16": [
+            57,
+            44,
+            57,
+            50
+          ],
+          "requestedEightPercentMarginMet": false
+        },
+        "producerVisualReview": {
+          "passed": true,
+          "viewedNativeGeneratedImage": true,
+          "viewedReferenceFullAndCrop": true,
+          "viewedLightAndDarkAlphaComposites": true,
+          "compositeInternalPath": "/tmp/infernal-v11/environment/oops-clown-mask-trophy-alpha-review.jpg",
+          "compositeSha256": "0f53eecef76c5e1de4abe4f686a0be45f0534c3b4550f52885842e47c6e4f402",
+          "observations": [
+            "Le contour entier, le socle, les deux orbites noires et les deux ornements latéraux cyan sont visibles.",
+            "Le masque crème/mauve, le nez rose, la tige à motif ocre et les deux projections violettes supérieures correspondent aux formes principales de la planche.",
+            "Aucun rectangle de fond, coupe de contour ni halo opaque visible sur les deux fonds inspectés."
+          ],
+          "compositeArchivedPath": "docs/standalone/production-v11/independent-diagnostics/oops-clown-mask-trophy-alpha-review.jpg",
+          "archiveNote": "The original session path is retained as provenance; this byte-identical copy is committed with the V11 evidence."
+        },
+        "independentReview": {
+          "status": "accepted_with_limits",
+          "reviewer": "root",
+          "masterSha256": "27f88cedb814511bcea192cac3dbbee27669cd984564c72d1b164d63b5d30928",
+          "referencePath": "production/v11/environment/references/jasper-30.jpg",
+          "method": "Root directly inspected the final trophy and Jasper30 primary painting, then accepted via collaboration message.",
+          "observations": [
+            "Orbites, ornements cyan, nez rose, tige et socle cohérents avec la référence.",
+            "Proportions redessinées ; les deux lobes supérieurs sont reproduits sans attribution de nature."
+          ],
+          "limits": [
+            "Les limites de marge, de très faible alpha et de provenance de plan consignées restent applicables.",
+            "Cette acceptation visuelle ne constitue pas une validation dans le jeu."
+          ]
+        },
+        "browserReview": "not_run_not_integrated"
+      },
+      "fidelityNotes": [
+        "Nom descriptif uniquement : aucune cérémonie, inscription ou propriété du trophée n’est inventée. L’objet est distinct du BOZO AWARD déjà produit.",
+        "La planche primaire 206 Paint 00004 montre le trophée entier. Le fichier local consulté est de 2500×1532 ; le crop exact fait 530×900. Les traits et reflets ont été redessinés.",
+        "L’ornement supérieur conserve seulement ses deux lobes violets visibles. Sa nature et la géométrie des parties cachées ne sont pas établies.",
+        "Le rattachement à Oops repose sur le groupe de production 206 et le contexte de chambre corroboré dans le plan large officiel à 10 s. Aucun gros plan vidéo précisément horodaté du trophée n’a été qualifié.",
+        "Marges visibles 44–57 px au seuil alpha 16 : la demande de 8 % n’est pas atteinte, mais le trophée entier reste dans le cadre. Ne pas recadrer davantage.",
+        "Quelques pixels d’alpha inférieur à 16 atteignent les bords. L’alpha natif a été conservé ; aucun halo opaque n’a été observé sur les composites clair/sombre.",
+        "Illustration statique adaptée aux formes et couleurs du fond de production. Conformité 1:1, animation et validation en jeu non certifiées."
+      ]
+    }
+  ],
+  "acceptedDrawings": 1,
+  "independentReviewRecordedAt": "2026-11-26T16:39:02.958925+00:00"
+}

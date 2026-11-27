@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "scope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+  "summary": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 24,
+    "costumeKeyPoses": 53,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 127,
+    "uniqueStoryIllustrations": 127,
+    "stages": 49,
+    "stagesAvailableWithoutSeasonThree": 47,
+    "seasonThreeStagesRequiringOptIn": 2,
+    "threePlaneStages": 36,
+    "twoPlaneStages": 3,
+    "onePlaneStages": 10,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 726,
+    "brokenReferences": [],
+    "globalIllustrations": 11,
+    "reserveGalleryEntries": 133
+  },
+  "stages": [
+    {
+      "id": "hotel-lobby",
+      "name": "Hazbin Hotel Lobby",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/hotel-lobby.webp",
+        "/assets/stages/hazbin/hotel-lobby/luggage-cart.webp",
+        "/assets/stages/hazbin/hotel-lobby/valance.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/hotel-lobby.webp"
+    },
+    {
+      "id": "hotel-bar",
+      "name": "Last Call Bar",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/hotel-bar/room.webp",
+        "/assets/stages/hazbin/hotel-bar/stool.webp",
+        "/assets/stages/hazbin/hotel-bar/lamp.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/hotel-bar.webp"
+    },
+    {
+      "id": "hotel-exterior",
+      "name": "Hotel Front Steps",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/hotel-exterior/room-wave-b.webp",
+        "/assets/stages/hazbin/hotel-exterior/planter-wave-b.webp",
+        "/assets/stages/hazbin/hotel-exterior/lantern-wave-b.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/hotel-exterior/thumb-wave-b.webp"
+    },
+    {
+      "id": "pentagram-rooftops",
+      "name": "Pentagram Rooftops",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/pentagram-rooftops.webp",
+        "/assets/stages/hazbin/pentagram-rooftops/vent-wave-b.webp",
+        "/assets/stages/hazbin/pentagram-rooftops/finial-wave-b.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/pentagram-rooftops.webp"
+    },
+    {
+      "id": "cannibal-town-square",
+      "name": "Cannibal Town Square",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/cannibal-town-square.webp",
+        "/assets/stages/hazbin/cannibal-town-square/flower-cart-wave-b.webp",
+        "/assets/stages/hazbin/cannibal-town-square/awning.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/cannibal-town-square.webp"
+    },
+    {
+      "id": "carmine-industries",
+      "name": "Carmine Industries",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/carmine-industries/room.webp",
+        "/assets/stages/hazbin/carmine-industries/rack.webp",
+        "/assets/stages/hazbin/carmine-industries/crate.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/carmine-industries/thumb.webp"
+    },
+    {
+      "id": "vee-broadcast-studio",
+      "name": "Vee Broadcast Studio",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/vee-broadcast-studio.webp",
+        "/assets/stages/hazbin/vee-broadcast-studio/camera.webp",
+        "/assets/stages/hazbin/vee-broadcast-studio/monitor.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/vee-broadcast-studio.webp"
+    },
+    {
+      "id": "heaven-embassy",
+      "name": "Heaven Embassy & Clock Tower",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/heaven-embassy.webp",
+        "/assets/stages/hazbin/heaven-embassy/railing-wave-b.webp",
+        "/assets/stages/hazbin/heaven-embassy/pendant-wave-b.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/thumbs/heaven-embassy.webp"
+    },
+    {
+      "id": "imp-reception",
+      "name": "I.M.P. · Réception",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/imp-reception/room.webp",
+        "/assets/stages/helluva/imp-reception/desk.webp",
+        "/assets/stages/helluva/imp-reception/lamp.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/imp-reception/thumb.webp"
+    },
+    {
+      "id": "ozzies-cabaret",
+      "name": "Ozzie’s · Cabaret",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/ozzies-cabaret/room.webp",
+        "/assets/stages/helluva/ozzies-cabaret/table.webp",
+        "/assets/stages/helluva/ozzies-cabaret/curtain.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/ozzies-cabaret/thumb.webp"
+    },
+    {
+      "id": "wrath-ranch",
+      "name": "Wrath · Ranch",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/wrath-ranch/room.webp",
+        "/assets/stages/helluva/wrath-ranch/hay.webp",
+        "/assets/stages/helluva/wrath-ranch/pennant.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/wrath-ranch/thumb.webp"
+    },
+    {
+      "id": "heaven-court",
+      "name": "Paradis · Cour céleste",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/heaven-court/room.webp",
+        "/assets/stages/hazbin/heaven-court/lectern.webp",
+        "/assets/stages/hazbin/heaven-court/crystal.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/heaven-court/thumb.webp"
+    },
+    {
+      "id": "pentious-workshop",
+      "name": "Sir Pentious · Atelier",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/pentious-workshop/room.webp",
+        "/assets/stages/hazbin/pentious-workshop/bench.webp",
+        "/assets/stages/hazbin/pentious-workshop/hoist.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/pentious-workshop/thumb.webp"
+    },
+    {
+      "id": "looloo-land",
+      "name": "Loo Loo Land · Allée centrale",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/looloo-land/room.webp",
+        "/assets/stages/helluva/looloo-land/booth.webp",
+        "/assets/stages/helluva/looloo-land/pennants.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/looloo-land/thumb.webp"
+    },
+    {
+      "id": "stolas-palace",
+      "name": "Palais de Stolas · Terrasse",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/stolas-palace/room.webp",
+        "/assets/stages/helluva/stolas-palace/prop-middle.webp",
+        "/assets/stages/helluva/stolas-palace/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/stolas-palace/thumb.webp"
+    },
+    {
+      "id": "bee-party",
+      "name": "Beelzebub · Réception",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/bee-party/room.webp",
+        "/assets/stages/helluva/bee-party/prop-middle.webp",
+        "/assets/stages/helluva/bee-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/bee-party/thumb.webp"
+    },
+    {
+      "id": "dhorks",
+      "name": "D.H.O.R.K.S. · Interrogatoire",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/dhorks/room.webp",
+        "/assets/stages/helluva/dhorks/prop-middle.webp",
+        "/assets/stages/helluva/dhorks/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/dhorks/thumb.webp"
+    },
+    {
+      "id": "crimson-mansion",
+      "name": "Demeure de Crimson · Salon",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/crimson-mansion/room.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/crimson-mansion/thumb.webp"
+    },
+    {
+      "id": "mammon-show",
+      "name": "Concours de Mammon · Scène",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/mammon-show/room.webp",
+        "/assets/stages/helluva/mammon-show/prop-middle.webp",
+        "/assets/stages/helluva/mammon-show/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/mammon-show/thumb.webp"
+    },
+    {
+      "id": "western-lair",
+      "name": "Repaire de Striker · Mine",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/western-lair/room.webp",
+        "/assets/stages/helluva/western-lair/prop-middle.webp",
+        "/assets/stages/helluva/western-lair/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/western-lair/thumb.webp"
+    },
+    {
+      "id": "goetia-court",
+      "name": "Tribunal infernal · Mastermind",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/goetia-court/room.webp",
+        "/assets/stages/helluva/goetia-court/prop-middle.webp",
+        "/assets/stages/helluva/goetia-court/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/goetia-court/thumb.webp"
+    },
+    {
+      "id": "hh-heaven-gates",
+      "name": "Paradis · Portes célestes",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/hh-heaven-gates/room.webp",
+        "/assets/stages/hazbin/hh-heaven-gates/prop-middle.webp",
+        "/assets/stages/hazbin/hh-heaven-gates/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/hh-heaven-gates/thumb.webp"
+    },
+    {
+      "id": "imp-exterior",
+      "name": "I.M.P. · Rue des bureaux",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/imp-exterior/room.webp",
+        "/assets/stages/helluva/imp-exterior/prop-middle.webp",
+        "/assets/stages/helluva/imp-exterior/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/imp-exterior/thumb.webp"
+    },
+    {
+      "id": "oops-warehouse",
+      "name": "Oops · Entrepôt",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/oops-warehouse/room.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-middle.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/oops-warehouse/thumb.webp"
+    },
+    {
+      "id": "sinsmas-balcony",
+      "name": "Blitzø · Balcon de Sinsmas",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/sinsmas-balcony/room.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-middle.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/sinsmas-balcony/thumb.webp"
+    },
+    {
+      "id": "spring-broken-beach",
+      "name": "Plage · Spring Broken",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/spring-broken-beach/room.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/spring-broken-beach/thumb.webp"
+    },
+    {
+      "id": "murder-family-house",
+      "name": "Martha · Maison dans la clairière",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/murder-family-house/room.webp",
+        "/assets/stages/helluva/murder-family-house/prop-middle.webp",
+        "/assets/stages/helluva/murder-family-house/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/murder-family-house/thumb.webp"
+    },
+    {
+      "id": "cash-circus",
+      "name": "Cirque de Cash · Piste",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/cash-circus/room.webp",
+        "/assets/stages/helluva/cash-circus/prop-middle.webp",
+        "/assets/stages/helluva/cash-circus/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/cash-circus/thumb.webp"
+    },
+    {
+      "id": "ghost-hotel",
+      "name": "One Star Wonder · Couloir",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/ghost-hotel/room.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-middle.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/ghost-hotel/thumb.webp"
+    },
+    {
+      "id": "apology-party",
+      "name": "Apology Tour · Salle de fête",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/apology-party/room.webp",
+        "/assets/stages/helluva/apology-party/prop-middle.webp",
+        "/assets/stages/helluva/apology-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/apology-party/thumb.webp"
+    },
+    {
+      "id": "sloth-hospital",
+      "name": "Sloth · Salle d’attente",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/sloth-hospital/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/helluva/sloth-hospital/thumb.webp"
+    },
+    {
+      "id": "sinsmas-frozen-pavilion",
+      "name": "Sinsmas · Pavillon gelé",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/sinsmas-frozen-pavilion/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/helluva/sinsmas-frozen-pavilion/thumb.webp"
+    },
+    {
+      "id": "seeing-stars-overlook",
+      "name": "Seeing Stars · Belvédère",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/seeing-stars-overlook/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/helluva/seeing-stars-overlook/thumb.webp"
+    },
+    {
+      "id": "cherub-opera-stage",
+      "name": "C.H.E.R.U.B. · Scène de l’opéra",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/cherub-opera-stage/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/helluva/cherub-opera-stage/thumb.webp"
+    },
+    {
+      "id": "dhorks-portal-chamber",
+      "name": "D.H.O.R.K.S. · Chambre du portail",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/dhorks-portal-chamber/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/helluva/dhorks-portal-chamber/thumb.webp"
+    },
+    {
+      "id": "hellaverse-training",
+      "name": "Annexe infernale · Entraînement",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/original/hellaverse-training/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/original/hellaverse-training/thumb.webp"
+    },
+    {
+      "id": "vox-office-s2",
+      "name": "Vox · Bureau S2",
+      "spoilerTier": null,
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/hazbin/vox-office-s2/room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/stages/hazbin/vox-office-s2/thumb.webp"
+    },
+    {
+      "id": "sloth-hospital-exterior",
+      "name": "Hôpital de Sloth · Façade et parvis",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/stages/helluva/sloth-hospital-exterior/room.webp",
+        "/assets/stages/helluva/sloth-hospital-exterior/prop-middle.webp",
+        "/assets/stages/helluva/sloth-hospital-exterior/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/sloth-hospital-exterior/thumb.webp"
+    },
+    {
+      "id": "australia-desert-s3",
+      "name": "Australie · Désert S3",
+      "spoilerTier": "season_3",
+      "defaultAvailable": false,
+      "planes": [
+        "/assets/stages/helluva/australia-desert-s3/room.webp",
+        "/assets/stages/helluva/australia-desert-s3/prop-middle.webp",
+        "/assets/stages/helluva/australia-desert-s3/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/australia-desert-s3/thumb.webp"
+    },
+    {
+      "id": "auction-glass-hall-s3",
+      "name": "Enchères S3 · Hall vitré",
+      "spoilerTier": "season_3",
+      "defaultAvailable": false,
+      "planes": [
+        "/assets/stages/helluva/auction-glass-hall-s3/room.webp",
+        "/assets/stages/helluva/auction-glass-hall-s3/prop-middle.webp",
+        "/assets/stages/helluva/auction-glass-hall-s3/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/auction-glass-hall-s3/thumb.webp"
+    },
+    {
+      "id": "ozzies-exterior-s1",
+      "name": "Ozzie’s · Rue de Lust",
+      "spoilerTier": "season_1",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v8/environment/ozzies-exterior-s1-room.webp",
+        "/assets/production/v8/environment/ozzies-exterior-rope-barrier.webp"
+      ],
+      "planeCount": 2,
+      "thumbnail": "/assets/production/v8/environment/ozzies-exterior-s1-thumb.webp"
+    },
+    {
+      "id": "hellhound-adoption-s2",
+      "name": "Refuge des hellhounds · Couloir",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v8/environment/hellhound-adoption-s2-room.webp",
+        "/assets/production/v8/environment/hellhound-adoption-clipboard.webp",
+        "/assets/production/v8/environment/hellhound-adoption-sign.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/production/v8/environment/hellhound-adoption-s2-thumb.webp"
+    },
+    {
+      "id": "bee-lounge-s1",
+      "name": "Beelzebub · Salon du bar",
+      "spoilerTier": "season_1",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v9/environment/bee-lounge-s1-room.webp",
+        "/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+        "/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/production/v9/environment/bee-lounge-s1-thumb.webp"
+    },
+    {
+      "id": "asmodeus-bedroom-s2",
+      "name": "Asmodeus · Chambre privée",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+        "/assets/production/v10/environment/asmodeus-bedroom-console.webp",
+        "/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp"
+    },
+    {
+      "id": "blitz-sinsmas-dream-s2",
+      "name": "Blitzø · Noël imaginé",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+        "/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp"
+      ],
+      "planeCount": 2,
+      "thumbnail": "/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp"
+    },
+    {
+      "id": "sloth-consultation-s2",
+      "name": "Sloth · Salle de consultation",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+        "/assets/production/v11/environment/sloth-consultation-container.webp"
+      ],
+      "planeCount": 2,
+      "thumbnail": "/assets/production/v11/environment/sloth-consultation-s2-thumb.webp"
+    },
+    {
+      "id": "mammon-backstage-corridor-s2",
+      "name": "Mammon · Couloir des coulisses",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp"
+    },
+    {
+      "id": "dhorks-control-room-s1",
+      "name": "D.H.O.R.K.S. · Salle de surveillance",
+      "spoilerTier": "season_1",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v13/environment/dhorks-control-room-s1-room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/production/v13/environment/dhorks-control-room-s1-thumb.webp"
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2",
+      "name": "Unhappy Campers · Hangar à bateaux",
+      "spoilerTier": "season_2",
+      "defaultAvailable": true,
+      "planes": [
+        "/assets/production/v13/environment/unhappy-campers-boathouse-s2-room.webp"
+      ],
+      "planeCount": 1,
+      "thumbnail": "/assets/production/v13/environment/unhappy-campers-boathouse-s2-thumb.webp"
+    }
+  ],
+  "missingPersonalIllustrations": [
+    {
+      "fighterId": "husk",
+      "beat": "rival"
+    },
+    {
+      "fighterId": "sirpentious",
+      "beat": "intro"
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "browserReview": "Scoped V13 browser observations are recorded separately in production-v13/browser-qa.json; this path audit does not certify rendering."
+}

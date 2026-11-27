@@ -1,0 +1,169 @@
+{
+  "edition": "V8",
+  "date": "2026-11-26",
+  "assets": [
+    {
+      "id": "ozzies-exterior-s1-room",
+      "name": "Ozzie’s · Rue de Lust",
+      "kind": "stage_background",
+      "runtimeStageId": "ozzies-exterior-s1",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "prompt": "Use case: stylized-concept. Asset type: one full environment background for Infernal Versus, a 2D fan fighting game set in Helluva Boss. Use the attached image as the precise architectural and palette reference: the exterior of Ozzie's in the Lust Ring. Create a high-quality hand-drawn 2D landscape 16:9 background preserving the recognisable real location: navy-violet starry night sky with broad blue sky streaks, empty glossy wet street receding left of centre, densely packed neon storefronts on the left, imposing magenta Ozzie's facade on the right, huge concentric heart entrance, yellow-orange tall windows, curved plum columns, red and gold drapes, heart-topped details, curved sign reading exactly OZZIE'S. Preserve these buildings and colour relationships; no generic theatre or interior. Adapt the foreground only to a continuous clear horizontal street-level lane across the lower fifth, consistent wet paving and reflections for two side-on game characters to stand on. Keep the existing facade in the upper four fifths, door connected to steps and sidewalk. Remove the small freestanding velvet-rope stanchions from this background because they will be a separate game prop. No people, characters, vehicles, interface, border, signature, invented architecture or extra signs. One scene only. Crisp ink contours, layered flat shading, subtle painted environmental gradients consistent with the supplied series background, no 3D rendering. Output a complete polished background, preferably 2560x1440 or higher. The gameplay lane is an adaptation, while the facade must closely follow the reference.",
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_staff_portfolio",
+          "title": "Greg Bartlett — Helluva Boss backgrounds"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva07.jpg",
+          "kind": "official_staff_art",
+          "title": "Ozzie's exterior production background"
+        }
+      ],
+      "fidelityNotes": [
+        "Façade, entrée en cœur, fenêtres, draperies et palette comparées au décor de production public.",
+        "Premier plan élargi horizontalement pour le combat ; perspective du trottoir et disposition fine des enseignes adaptées.",
+        "Bornes et cordes retirées du fond pour un calque séparé.",
+        "Dessin de 1672 × 941 pixels natifs ; aucune certification de fidélité 1:1."
+      ],
+      "nativeOutputBasename": "exec-f195b036-c204-42ef-9575-d0aee0e62a8d.png",
+      "master": "production/v8/environment/masters/ozzies-exterior-s1-room.png",
+      "inputReference": {
+        "path": "production/v8/environment/references/helluva07.jpg",
+        "sha256": "5a799c6398f70478747f6a027f929aa76a0a7b9f9c3b5fba3c9680cc80d34079",
+        "inspected": true
+      }
+    },
+    {
+      "id": "hellhound-adoption-s2-room",
+      "name": "hellhound-adoption-s2-room",
+      "kind": "stage_background",
+      "runtimeStageId": "hellhound-adoption-s2",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "prompt": "Use case: stylized-concept. Asset type: one 16:9 hand-drawn 2D background for the Infernal Versus fan game. The attached source is the actual Helluva Boss Hellhound Adoption corridor production background. Recreate its precise visual identity and architecture as an empty game location: very long worn grey-teal corridor, barred enclosure doors in both walls receding toward a small closed exit at the back left of centre, cyan fluorescent tubes above the cages, cracked plaster, clipped paper records on the bars, simple padlocks, subdued dark floor with irregular cyan reflected puddles and rectangular drain grates, exposed ceiling ducts and conduits. Keep the architecture institutional and shabby, with cage entrances logically in the walls, no cells opening into nowhere. Shift the crop slightly wider at ground level to provide a continuous clear horizontal floor across the lower fifth for a 2D game; retain the source's receding corridor perspective. Remove only the hanging HELLHOUND ADOPTION sign with its chains and remove the closest clipboard at the right, because these will be separate transparent depth layers. Other distant clipboards remain. Do not include any characters, animals, combat, blood, interface, new furnishings, theatrical curtains or invented signage. Keep precise cartoon ink lines, flat desaturated colours, subtle environmental gradients and local cyan lighting. Complete single landscape scene, no border, no signature. Prefer at least 2560x1440; remain faithful to the supplied artwork's actual visible corridor, with the small foreground adaptation described.",
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_staff_portfolio",
+          "title": "Greg Bartlett — Helluva Boss backgrounds"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva03.jpg",
+          "kind": "official_staff_art",
+          "title": "Hellhound Adoption corridor"
+        }
+      ],
+      "fidelityNotes": [
+        "Couloir réel repris ; sol de premier plan élargi pour le combat. Enseigne et clipboard proche retirés pour calques séparés.",
+        "Fidélité 1:1 non certifiée ; contrôle en situation de jeu restant à effectuer."
+      ],
+      "nativeOutputBasename": "exec-b18104da-328f-4bc1-a265-7e050af11832.png",
+      "master": "production/v8/environment/masters/hellhound-adoption-s2-room.png",
+      "inputReference": {
+        "path": "production/v8/environment/references/helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "inspected": true
+      }
+    },
+    {
+      "id": "ozzies-exterior-rope-barrier",
+      "name": "ozzies-exterior-rope-barrier",
+      "kind": "stage_layer",
+      "runtimeStageId": "ozzies-exterior-s1",
+      "franchise": "Helluva Boss",
+      "continuity": "season_1",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent 2D game prop. Study the small rope queue barriers immediately outside the heart doorway in the attached Helluva Boss Ozzie's exterior production background. Draw ONE complete standalone connected barrier section, consisting of two slim charcoal-grey metal posts with small round silver-grey balls on top and wide flat circular bases, joined by one sagging burgundy-red velvet rope with dark attachment clasps. Exactly this barrier design, no gold posts, no exaggerated hearts, no extra posts, no architectural background or characters. Show the entire object, all edges and bases within the canvas, slightly three-quarter elevation matching the source doorway, front-facing enough to read as a horizontal game decoration. Crisp dark cartoon outlines, simple metallic grey highlights, purple-magenta reflected ambient light. Real transparent alpha background. Centre the single connected barrier with generous transparent padding, no ground shadow, no labels, no texture checkerboard, no text.",
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_staff_portfolio",
+          "title": "Greg Bartlett — Helluva Boss backgrounds"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva07.jpg",
+          "kind": "official_staff_art",
+          "title": "Ozzie’s exterior"
+        }
+      ],
+      "fidelityNotes": [
+        "Objet complet redessiné séparément depuis le décor de production ; contours et proportions à comparer au modèle.",
+        "Fidélité 1:1 non certifiée ; contrôle en situation de jeu restant à effectuer."
+      ],
+      "nativeOutputBasename": "exec-cde7c4b4-e806-46a2-9e5d-a4a62172ca64.png",
+      "master": "production/v8/environment/masters/ozzies-exterior-rope-barrier.png",
+      "inputReference": {
+        "path": "production/v8/environment/references/helluva07.jpg",
+        "sha256": "5a799c6398f70478747f6a027f929aa76a0a7b9f9c3b5fba3c9680cc80d34079",
+        "inspected": true
+      }
+    },
+    {
+      "id": "hellhound-adoption-sign",
+      "name": "hellhound-adoption-sign",
+      "kind": "stage_layer",
+      "runtimeStageId": "hellhound-adoption-s2",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent 2D environment prop. From the attached Helluva Boss Hellhound Adoption corridor production background, isolate and redraw ONLY the complete suspended reddish-brown worn wooden rectangular sign with its two short dark chain hangers. Match the irregular chipped edges, warm yellow hand-painted lettering arranged in two lines exactly HELLHOUND then ADOPTION and the yellow pawprint to the right. The lettering must be legible and spelled correctly. Preserve the same slightly oblique angle shown in the reference, with the right edge a little lower, and the two chains attached to the upper corners. Show all of the sign and both chain segments fully within the canvas, standalone on real transparent alpha. Crisp 2D ink outlines and flat muted colours with minimal teal ambient shading; no wall, ceiling, neon tube, cage, second sign, character, border, drop shadow, watermark or checkerboard. One sign assembly only, not a scene.",
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_staff_portfolio",
+          "title": "Greg Bartlett — Helluva Boss backgrounds"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva03.jpg",
+          "kind": "official_staff_art",
+          "title": "Hellhound Adoption corridor"
+        }
+      ],
+      "fidelityNotes": [
+        "Objet complet redessiné séparément depuis le décor de production ; contours et proportions à comparer au modèle.",
+        "Fidélité 1:1 non certifiée ; contrôle en situation de jeu restant à effectuer."
+      ],
+      "nativeOutputBasename": "exec-fe286e6b-bb16-42a6-93fe-7789a5912608.png",
+      "master": "production/v8/environment/masters/hellhound-adoption-sign.png",
+      "inputReference": {
+        "path": "production/v8/environment/references/helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "inspected": true
+      }
+    },
+    {
+      "id": "hellhound-adoption-clipboard",
+      "name": "Refuge · Dossier sur grille",
+      "kind": "stage_layer",
+      "runtimeStageId": "hellhound-adoption-s2",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "prompt": "Use case: stylized-concept. Asset type: one small transparent 2D prop for the Helluva Boss Hellhound Adoption corridor. The attached production background is the precise reference. Redraw ONLY the nearest clipboard hanging on the cage at the right of the source: a thin slightly tilted rectangular dull brown board, a small grey metal clip at its top, one cream paper sheet bearing a few short muted grey registration lines (no readable personal text), a small pale yellow horizontal information block near the upper part and a muted reddish-orange square note attached at an angle near the lower right. The complete clipboard must be visible as a single isolated object with narrow edges and all corners inside the canvas, no hand, cage bars, wall, cage label duplicate, background or shadow. Match the simple flat inked cartoon art, grey-teal ambient light and restrained line thickness of the reference; not photorealistic and not 3D. Real transparent alpha, generous padding, one object per image.",
+      "references": [
+        {
+          "url": "https://backgroundart.net/helluvaboss.html",
+          "kind": "official_staff_portfolio",
+          "title": "Greg Bartlett — Helluva Boss backgrounds"
+        },
+        {
+          "url": "https://backgroundart.net/art/helluva03.jpg",
+          "kind": "official_staff_art",
+          "title": "Hellhound Adoption corridor"
+        }
+      ],
+      "fidelityNotes": [
+        "Clipboard proche retiré du fond et dessiné séparément ; impression remplacée par traits non lisibles.",
+        "Même déplacement que le mur porteur en parallaxe pour maintenir l'accroche.",
+        "Fidélité 1:1 non certifiée."
+      ],
+      "nativeOutputBasename": "exec-7497d908-fe56-4b18-a56f-57ad792d25bc.png",
+      "master": "production/v8/environment/masters/hellhound-adoption-clipboard.png",
+      "inputReference": {
+        "path": "production/v8/environment/references/helluva03.jpg",
+        "sha256": "b39a5cd0018fa59543b6df142b08c86e7addf48612dbf43927e925714fc68769",
+        "inspected": true
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
-import { INFERNAL_ACTION_POSES, INFERNAL_STANCES, costumePose, getInfernalCostume, infernalActionPose } from '../lib/infernal-appearances';
+import { INFERNAL_ACTION_POSES, INFERNAL_STANCES, costumePose, getInfernalCostume, infernalActionPose, infernalFallbackPose } from '../lib/infernal-appearances';
+import { getInfernalPosePlacement } from '../lib/infernal-pose-anchors';
 import '../styles/infernal-authored-poses.css';
 import {
   useCallback,
@@ -11,6 +12,8 @@ import {
 import { canOfferFinish, INFERNAL_FINISHES, FINISH_CINEMATIC_MS, FINISH_INPUT_MS } from '../lib/infernal-finishers';
 import { InfernalMoveList } from './InfernalMoveList';
 import { InfernalStageLayers } from './InfernalStageLayers';
+import { InfernalAttackEffects } from './InfernalAttackEffects';
+import { getInfernalAttackEffectEntries } from '../lib/infernal-attack-effects';
 import { Volume2, VolumeX } from 'lucide-react';
 import {
   getCharacterCinematicSpriteSheet,
@@ -75,6 +78,8 @@ interface PentagramLiveFightProps {
   training?: boolean;
   trainingGuard?: boolean;
   reducedMotion?: boolean;
+  /** Presentation only: combat timing, damage and collisions remain identical. */
+  stagePresentation?: 'alive' | 'static' | 'reduced';
   onMatchComplete?: (result: CombatState) => void;
   onNextMatch?: () => void;
   nextMatchLabel?: string;
@@ -267,6 +272,7 @@ export function PentagramLiveFight({
   training = false,
   trainingGuard = false,
   reducedMotion = false,
+  stagePresentation = 'alive',
   onMatchComplete,
   onNextMatch,
   nextMatchLabel,
@@ -931,9 +937,15 @@ export function PentagramLiveFight({
   const fighterTwoSprite = getCombatSpriteAsset(fighterTwo.id);
   useEffect(() => {
     if (typeof window.Image !== 'function') return;
-    const activeSprites = [fighterOneSprite, fighterTwoSprite].filter(
-      (sprite): sprite is NonNullable<typeof sprite> => sprite !== undefined,
-    );
+    const fighterAssets = [
+      { fighterId: fighterOne.id, sprite: fighterOneSprite, outfit: infernalRules ? getInfernalCostume(fighterOne.id, costumeOne) : undefined },
+      { fighterId: fighterTwo.id, sprite: fighterTwoSprite, outfit: infernalRules ? getInfernalCostume(fighterTwo.id, costumeTwo) : undefined },
+    ];
+    // Keep shared banks whenever either side still renders its normal sprite.
+    const activeSprites = fighterAssets
+      .filter(({ outfit }) => !outfit?.staticReadyOnly)
+      .map(({ sprite }) => sprite)
+      .filter((sprite): sprite is NonNullable<typeof sprite> => sprite !== undefined);
     const priorityUrls = new Set(activeSprites.flatMap(sprite => (
       [
         sprite.animationSheets.movement,
@@ -951,13 +963,17 @@ export function PentagramLiveFight({
       sprite.cinematicSheets.draw,
     ]));
     if (infernalRules) {
-      for (const [fighterId, costumeId] of [[fighterOne.id, costumeOne], [fighterTwo.id, costumeTwo]]) {
-        const poses = INFERNAL_ACTION_POSES[fighterId!];
-        const outfit = getInfernalCostume(fighterId!, costumeId);
-        const finish = INFERNAL_FINISHES[fighterId!];
-        const urls = [INFERNAL_STANCES[fighterId!], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
+      for (const { fighterId, outfit } of fighterAssets) {
+        const poses = INFERNAL_ACTION_POSES[fighterId];
+        const finish = INFERNAL_FINISHES[fighterId];
+        const urls = outfit?.staticReadyOnly ? [outfit.ready] : [
+          INFERNAL_STANCES[fighterId], poses?.ready, poses?.guard, poses?.strike, poses?.recoil,
           outfit?.ready, outfit?.strike, outfit?.heavy, outfit?.recoil, outfit?.crouch, outfit?.jump,
-          finish?.impactSprite, finish?.detachedProp];
+          finish?.impactSprite,
+        ];
+        // These separate effects remain visible even when the fighter is static.
+        urls.push(finish?.detachedProp,
+          ...getInfernalAttackEffectEntries().filter(([id]) => id === fighterId).map(([, effect]) => effect.image));
         for (const url of urls) if (url) priorityUrls.add(url);
       }
     }
@@ -978,6 +994,8 @@ export function PentagramLiveFight({
     ? combat.actionDurationMsTwo
     : undefined;
   const motionReduced = prefersReducedMotion || reducedMotion;
+  const stageMotion = motionReduced ? 'static' : stagePresentation;
+  const stageCameraFixed = stageMotion !== 'alive';
   const displayingFinish = fightPhase === 'finisher' || (fightPhase === 'paused' && pausedPhase === 'finisher');
   const finishWinner = displayingFinish ? combat.matchWinner : null;
   const finishFrameMs = motionReduced ? FINISH_CINEMATIC_MS / 2 : Math.max(0, FINISH_CINEMATIC_MS - animationClockMs);
@@ -1088,23 +1106,39 @@ export function PentagramLiveFight({
     const outfit = getInfernalCostume(fighterId, side === 'one' ? costumeOne : costumeTwo);
     if (outfit) return costumePose(outfit, action, cinematic, finishWinner === side && displayingFinish);
     if (finishWinner === side && impactPose) return impactPose;
-    if (finishWinner === side) return undefined;
+    if (finishWinner === side) return infernalFallbackPose(fighterId, 'victory', cinematic);
     if (INFERNAL_ACTION_POSES[fighterId]) {
       const definition = side === 'one' ? fighterOneDefinition : fighterTwoDefinition;
       const duration = side === 'one' ? combat.actionDurationMsOne : combat.actionDurationMsTwo;
       const remaining = side === 'one' ? combat.actionMsOne : combat.actionMsTwo;
-      const authored = infernalActionPose(fighterId, action, cinematic, duration - remaining, getCombatMoveInfo(definition, 'light').startupMs);
+      const elapsed = duration - remaining;
+      const fallbackStartup = action === 'heavy' || action === 'special' || action === 'signature'
+        ? getCombatMoveInfo(definition, action).startupMs : 0;
+      const authored = infernalActionPose(fighterId, action, cinematic, elapsed, getCombatMoveInfo(definition, 'light').startupMs)
+        ?? infernalFallbackPose(fighterId, action, cinematic, elapsed, fallbackStartup);
       if (authored) return authored;
     }
-    if (!cinematic && action === 'idle') return INFERNAL_STANCES[fighterId];
-    return undefined;
+    return infernalFallbackPose(fighterId, action, cinematic)
+      ?? (!cinematic && action === 'idle' ? INFERNAL_STANCES[fighterId] : undefined);
   }
   const poseOne = individualPose('one', fighterOne.id, combat.actionOne, fighterOneCinematicKind);
   const poseTwo = individualPose('two', fighterTwo.id, combat.actionTwo, fighterTwoCinematicKind);
-  const portraitPoseOne = getInfernalCostume(fighterOne.id, costumeOne)?.layout === 'portrait'
+  const outfitOne = getInfernalCostume(fighterOne.id, costumeOne);
+  const outfitTwo = getInfernalCostume(fighterTwo.id, costumeTwo);
+  const portraitPoseOne = outfitOne?.layout === 'portrait'
     || (poseOne?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterOne.id]?.layout === 'portrait');
-  const portraitPoseTwo = getInfernalCostume(fighterTwo.id, costumeTwo)?.layout === 'portrait'
+  const portraitPoseTwo = outfitTwo?.layout === 'portrait'
     || (poseTwo?.includes('/individual/') && INFERNAL_ACTION_POSES[fighterTwo.id]?.layout === 'portrait');
+  const poseOnePlacement = getInfernalPosePlacement(costumeOne, poseOne);
+  const poseTwoPlacement = getInfernalPosePlacement(costumeTwo, poseTwo);
+  const poseOneAnchorStyle = !poseOnePlacement ? undefined : {
+    '--infernal-pose-ground-offset': `${poseOnePlacement.groundOffsetPercent}%`,
+    '--infernal-pose-width': `${200 / 3 * poseOnePlacement.renderScale}%`,
+  } as CSSProperties;
+  const poseTwoAnchorStyle = !poseTwoPlacement ? undefined : {
+    '--infernal-pose-ground-offset': `${poseTwoPlacement.groundOffsetPercent}%`,
+    '--infernal-pose-width': `${200 / 3 * poseTwoPlacement.renderScale}%`,
+  } as CSSProperties;
   const stageStyle = getPentagramStageVisualProperties(stage) as CSSProperties;
   const soundtrackUnavailable = soundtrackStatus === 'unavailable';
   const soundtrackButtonLabel = soundtrackUnavailable
@@ -1254,6 +1288,7 @@ export function PentagramLiveFight({
         className={`arena-combat-stage${combat.hitstopMs > 0 ? ' is-hitstop' : ''}`}
         style={stageStyle}
         data-stage={stage.id}
+        data-stage-presentation={stageMotion}
         data-phase={fightPhase}
         role="region"
         tabIndex={0}
@@ -1265,7 +1300,7 @@ export function PentagramLiveFight({
         onPointerCancel={(event) => finishPointer(event, true)}
         onLostPointerCapture={(event) => finishPointer(event, true)}
       >
-        <InfernalStageLayers stage={stage} offset={motionReduced ? 0 : 50 - (combat.positionOne + combat.positionTwo) / 2} />
+        <InfernalStageLayers stage={stage} offset={stageCameraFixed ? 0 : 50 - (combat.positionOne + combat.positionTwo) / 2} />
         <div className="arena-stage__glow" aria-hidden="true" />
         <div className="arena-lane-grid" aria-hidden="true" />
         <div className="arena-crowd-lights" aria-hidden="true" />
@@ -1274,7 +1309,16 @@ export function PentagramLiveFight({
           timeline={timeline}
           fighterOneId={fighterOne.id}
           fighterTwoId={fighterTwo.id}
-          cameraFocus={motionReduced ? 50 : (combat.positionOne + combat.positionTwo) / 2}
+          cameraFocus={stageCameraFixed ? 50 : (combat.positionOne + combat.positionTwo) / 2}
+        />
+        <InfernalAttackEffects
+          combat={combat}
+          fighterOneId={fighterOne.id}
+          fighterTwoId={fighterTwo.id}
+          fighterOneDefinition={fighterOneDefinition}
+          fighterTwoDefinition={fighterTwoDefinition}
+          running={infernalRules && fightPhase === 'running'}
+          reducedMotion={motionReduced}
         />
 
         {phaseLabel && (
@@ -1304,8 +1348,8 @@ export function PentagramLiveFight({
           <div className="infernal-finish-choice">
             <span>K.-O. décisif · {winnerName}</span>
             {matchMode === 'ai' && combat.matchWinner === 'two'
-              ? <strong>Finition adverse</strong>
-              : <button className="btn btn-primary" type="button" onClick={beginFinish}>Fatalité · {combat.matchWinner === 'one' ? 'H' : 'L'}</button>}
+              ? <strong>Dernier Acte adverse</strong>
+              : <button className="btn btn-primary" type="button" onClick={beginFinish}>Dernier Acte · {combat.matchWinner === 'one' ? 'H' : 'L'}</button>}
             <button className="btn btn-secondary" type="button" onClick={() => beginCinematic('victory')}>Passer</button>
           </div>
         )}
@@ -1313,7 +1357,7 @@ export function PentagramLiveFight({
           <>
             <div className={`infernal-finish-effect fx-${finish.effect}`} aria-hidden="true" style={{ '--impact-x': `${combat.matchWinner === 'one' ? combat.positionTwo : combat.positionOne}%` } as CSSProperties} />
             {finish.detachedProp && <img className="infernal-detached-prop" src={finish.detachedProp} alt="" aria-hidden="true" style={{ '--prop-x': `${combat.matchWinner === 'one' ? combat.positionOne : combat.positionTwo}%`, '--prop-facing': combat.matchWinner === 'one' ? 1 : -1 } as CSSProperties} />}
-            <div className="arena-cinematic-overlay" role="status"><span>Fatalité · {winnerName}</span><strong>{finish.title}</strong></div>
+            <div className="arena-cinematic-overlay" role="status"><span>Dernier Acte · {winnerName}</span><strong>{finish.title}</strong></div>
           </>
         )}
         {fightPhase === 'outro' && (
@@ -1343,7 +1387,13 @@ export function PentagramLiveFight({
           {!fighterOneCinematicKind && <span className="arena-action-trail" />}
           {!fighterOneCinematicKind && combat.impactMsOne > 0 && <span className={`arena-hit-spark is-${impactOneKind} is-${impactOneTheme}`} />}
           {poseOne ? (
-            <img className={`infernal-individual-pose${portraitPoseOne ? ' infernal-individual-pose--portrait' : ''}`} src={poseOne} alt="" />
+            <img
+              className={`infernal-individual-pose${portraitPoseOne ? ' infernal-individual-pose--portrait' : ''}`}
+              src={poseOne}
+              style={poseOneAnchorStyle}
+              data-ground-anchor={poseOnePlacement?.groundReference}
+              alt=""
+            />
           ) : fighterOneSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterOneSpriteStyle} />
           ) : fighterOneSprite ? (
@@ -1369,7 +1419,13 @@ export function PentagramLiveFight({
           {!fighterTwoCinematicKind && <span className="arena-action-trail" />}
           {!fighterTwoCinematicKind && combat.impactMsTwo > 0 && <span className={`arena-hit-spark is-${impactTwoKind} is-${impactTwoTheme}`} />}
           {poseTwo ? (
-            <img className={`infernal-individual-pose${portraitPoseTwo ? ' infernal-individual-pose--portrait' : ''}`} src={poseTwo} alt="" />
+            <img
+              className={`infernal-individual-pose${portraitPoseTwo ? ' infernal-individual-pose--portrait' : ''}`}
+              src={poseTwo}
+              style={poseTwoAnchorStyle}
+              data-ground-anchor={poseTwoPlacement?.groundReference}
+              alt=""
+            />
           ) : fighterTwoSpriteStyle ? (
             <span className="arena-sprite-frame" style={fighterTwoSpriteStyle} />
           ) : fighterTwoSprite ? (
@@ -1436,10 +1492,12 @@ export function PentagramLiveFight({
                   }}
                   onClick={(event) => {
                     if (touchKeyboardClicksRef.current.delete(`${side}:${input}`)) return;
-                    // Keyboard and assistive-technology activation has no
-                    // pointer click detail: toggle in that case so the same
-                    // control remains usable without a held pointer.
-                    if (event.detail === 0) {
+                    // A touch can also end with a trusted click whose detail
+                    // is zero. Its pointerup has already released this control;
+                    // only keyboard/assistive activation should toggle it.
+                    const pointerType = 'pointerType' in event.nativeEvent
+                      ? event.nativeEvent.pointerType : '';
+                    if (event.detail === 0 && !pointerType) {
                       setTouchInput(side, input, !touchInputsRef.current[side][input]);
                     }
                   }}

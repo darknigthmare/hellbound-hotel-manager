@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "date": "2026-11-27",
+  "reviewer": "audit_guide agent — initial independent V1 reviewer, then coordinator-authorized V2 correction operator",
+  "status": "accepted_with_documented_limits_after_two_corrections",
+  "scope": "Visual comparison of four current static props against three supplied primary portfolio images, including initial independent V1 rejection and operator re-review of the two generated V2 corrections. No gallery or in-game rendering covered.",
+  "methodology": {
+    "inspectedFullReferenceImages": 3,
+    "inspectedNativeMasters": 6,
+    "compositing": "Each unchanged RGBA master was alpha-composited for inspection on RGB(235,235,235) and RGB(25,28,34). Temporary inspection previews only; no master or export was edited.",
+    "sourceDetailInspection": "Crops from the supplied reference images were enlarged 2x with nearest-neighbour sampling only for inspection; full images were also viewed.",
+    "sourceCrops": [
+      {
+        "path": "production/v17/props/references/rebecca-hb4-166.png",
+        "box": [
+          1155,
+          665,
+          1315,
+          844
+        ],
+        "target": "spring-broken-blue-can-s1"
+      },
+      {
+        "path": "production/v17/props/references/jasper-crimson-204.jpg",
+        "box": [
+          1065,
+          350,
+          1300,
+          520
+        ],
+        "target": "crimson-horned-wall-trophy-s2"
+      },
+      {
+        "path": "production/v17/props/references/jasper-crimson-204.jpg",
+        "box": [
+          1285,
+          365,
+          1425,
+          545
+        ],
+        "target": "crimson-fanged-jaw-wall-trophy-s2"
+      },
+      {
+        "path": "production/v17/props/references/jasper-boathouse-21.jpg",
+        "box": [
+          1300,
+          685,
+          1460,
+          965
+        ],
+        "target": "unhappy-campers-outboard-motor-s2"
+      }
+    ],
+    "rgbaComparison": "All four original candidates and both V2 corrections were checked for exact decoded PNG/WebP RGBA parity.",
+    "browserUsed": false,
+    "inGameChecked": false,
+    "currentAcceptedMasters": 4,
+    "independence": "The initial four-candidate audit was independent of generation. The same reviewer subsequently executed and re-reviewed two V2 corrections; this final correction pass is not a separate independent-generation review."
+  },
+  "summary": {
+    "reviewedCurrentDrawings": 4,
+    "evaluatedCandidatesIncludingSuperseded": 6,
+    "acceptedDrawings": 4,
+    "rejectedDrawings": 0,
+    "supersededRejectedCandidates": 2,
+    "correctionRequiredDrawings": 0,
+    "completeVisibleContours": 4,
+    "rgbaExactCurrentExports": 4,
+    "newPlayableKits": 0,
+    "newCharacterBases": 0,
+    "newArenas": 0,
+    "newAnimationCycles": 0
+  },
+  "assets": [
+    {
+      "id": "spring-broken-blue-can-s1",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "master": "production/v17/props/masters/spring-broken-blue-can-s1.png",
+      "masterSha256": "9518fa3141049abfa995883507a61e8ca8f1e3dd79c9e5cbde95490fe186c93c",
+      "export": "public/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+      "exportSha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/rebecca-hb4-166.png",
+      "intendedUse": "One static prop in the reserve gallery; no character base or interaction.",
+      "observations": [
+        "Correct foreground can selected: short slate-blue cylinder, red-orange label ribbon, warm circular face and orange pull tab.",
+        "Diagonal pose and visible front end are retained. The whole contour fits inside the canvas; no beach, second object, text or cast ground shadow is included.",
+        "Light and dark composites show a clean usable silhouette without an opaque background rectangle."
+      ],
+      "limitations": [
+        "The body/front-face ratio, label curve, highlights and pull-tab detail are regularized relative to the small painted source. This is a source-derived redraw, not an exact reproduction.",
+        "Fine stippling and small contour variations in the original are not reproduced exactly.",
+        "Native low-alpha specks remain outside the solid object: 3988 pixels at alpha 1–7. They were preserved without thresholding.",
+        "This review does not establish actual gallery scale, runtime appearance or precise episode-frame identity."
+      ],
+      "alpha": {
+        "bounds8": [
+          301,
+          215,
+          932,
+          1047
+        ],
+        "edgeMaxAlpha": 0,
+        "edgePixelsNonzero": 0
+      },
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "crimson-horned-wall-trophy-s2",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "version": "v2",
+      "master": "production/v17/props/masters/crimson-horned-wall-trophy-s2-v2.png",
+      "masterSha256": "4beb449a1a06f611a3e68786c3118e9f27e7facedb41a790b46defc8d693e751",
+      "export": "public/assets/production/v17/props/crimson-horned-wall-trophy-s2-v2.webp",
+      "exportSha256": "92b14a043f2822352814ac030fbe15dba4be4fb54413dfeda4bc3f99b7ba2f50",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/jasper-crimson-204.jpg",
+      "intendedUse": "One corrected static source-derived prop in the reserve gallery; no character, arena or interactive mechanism.",
+      "observations": [
+        "The backing is now broadly rectangular, with a long upper span, shallow inset corners and a nearly horizontal lower rim. The rejected central shield point is removed.",
+        "The black curved horns, pale rings and hanging eyeless tuft correspond to the intended frontal rear-wall trophy; the tuft is narrower and retains uneven lower tips.",
+        "Both horn tips and every visible edge remain inside the canvas. Light and dark alpha composites show one clean static object with no wall or opaque background."
+      ],
+      "limitations": [
+        "Horn curvature, exact pale-band lengths, tuft proportions and corner-rounding remain regularized compared with the small source crop.",
+        "The generated colours and lower green highlight retain a clean digital finish; the original scene lighting and fine paint texture are not reproduced exactly.",
+        "8662 native pixels at alpha 1–7 remain outside the strong silhouette; the master and lossless export preserve these pixels without thresholding.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bounds": [
+          71,
+          186,
+          1186,
+          1117
+        ],
+        "bounds8": [
+          185,
+          319,
+          1067,
+          899
+        ],
+        "edgeMaxAlpha": 0,
+        "edgePixelsNonzero": 0,
+        "alpha1To7Pixels": 8662,
+        "fullyTransparentPixels": 1241996,
+        "fullyOpaquePixels": 889
+      },
+      "supersedes": "production/v17/props/masters/crimson-horned-wall-trophy-s2.png",
+      "correctionRecord": "docs/standalone/production-v17/trophy-corrections.json",
+      "reviewIndependence": "Operator re-review after executing the requested correction; initial V1 audit was independent.",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "crimson-fanged-jaw-wall-trophy-s2",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "version": "v2",
+      "master": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2-v2.png",
+      "masterSha256": "44121e257de5d3379a5f315826eca48e5542683d5dbe627e025d164cdf010494",
+      "export": "public/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2-v2.webp",
+      "exportSha256": "5f420021e55694dfc3570a456b119c25ec8a41d79509c0567f91e2dfe5b9a21d",
+      "dimensions": [
+        1266,
+        1242
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/jasper-crimson-204.jpg",
+      "intendedUse": "One corrected static source-derived prop in the reserve gallery; no character, arena or interactive mechanism.",
+      "observations": [
+        "The corrected backing is taller than wide with rounded scallops visible above and below the mouth; the invented pointed shield crest and base are removed.",
+        "The mouth now follows the source's high arched upper lip, central downward tooth and irregularly grouped side and lower teeth.",
+        "The whole lip tips, scalloped backing and tooth silhouettes are contained. Light and dark alpha composites show no opaque background or neighbouring trophy."
+      ],
+      "limitations": [
+        "Fine tooth widths, the placement of smaller side teeth and the exact curvature of the lower lip remain interpretations of a small source crop.",
+        "The drawing is brighter and smoother than the scene-lit original, and its scallops are more regular. Exact palette and micro-contour fidelity is not certified.",
+        "The solid alpha>=8 object begins 77 pixels from the top of the 1242-pixel canvas; this upper margin is smaller than the requested generous framing but no solid contour is cut.",
+        "136 border pixels have alpha 1 and 21087 pixels have alpha 1–7 in the native image. These faint native samples remain unchanged; no solid edge touches the border.",
+        "This is an accepted source-derived static redraw for gallery use, not a certification of one-to-one geometry or runtime rendering."
+      ],
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bounds": [
+          0,
+          19,
+          1220,
+          1242
+        ],
+        "bounds8": [
+          189,
+          77,
+          1076,
+          1109
+        ],
+        "edgeMaxAlpha": 1,
+        "edgePixelsNonzero": 136,
+        "alpha1To7Pixels": 21087,
+        "fullyTransparentPixels": 912405,
+        "fullyOpaquePixels": 1112
+      },
+      "supersedes": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2.png",
+      "correctionRecord": "docs/standalone/production-v17/trophy-corrections.json",
+      "reviewIndependence": "Operator re-review after executing the requested correction; initial V1 audit was independent.",
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "unhappy-campers-outboard-motor-s2",
+      "status": "accepted_with_documented_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "master": "production/v17/props/masters/unhappy-campers-outboard-motor-s2.png",
+      "masterSha256": "57903676cf4391aa3d9daaf26f5aee14f376063dc93ef2235611e1f7cc06eaa4",
+      "export": "public/assets/production/v17/props/unhappy-campers-outboard-motor-s2.webp",
+      "exportSha256": "f5d0764279dc90fdee6d45a40d3b644260b7b82ab09d85c94605efb95092224f",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/jasper-boathouse-21.jpg",
+      "intendedUse": "One static machinery prop in the reserve gallery; not a functioning motor, vehicle or animated effect.",
+      "observations": [
+        "Correct visible motor selected: faceted purple-grey casing, slatted warm grille on its left upper face, small brown-red circular detail on the right, short lower mounting cylinder, narrow long shaft and bottom propeller.",
+        "The three-quarter projection and main component layout match the source. The full shaft and both visible propeller blades fit inside the canvas; no boat or dock is included.",
+        "The broad glow visible when viewing the raw RGBA preview is not visible in the correctly alpha-composited light/dark previews; it must not be mistaken for an opaque painted halo."
+      ],
+      "limitations": [
+        "The grille slats, casing proportions, shaft thickness/length and propeller details are smoothed and interpreted from a small painted object.",
+        "The shaft occupies more visual length relative to the casing than in the source; exact dimensional matching is not certified.",
+        "The visible object has approximately 104 pixels above and 58 pixels below at alpha >=8, so the lower margin is narrower than the requested generous framing, while the complete propeller remains visible.",
+        "The master has no fully opaque alpha-255 pixels; most solid drawing pixels are alpha 128–254. Correct alpha compositing was used and no threshold was applied.",
+        "This review does not establish actual gallery scale, runtime appearance or an operating motor mechanism."
+      ],
+      "alpha": {
+        "bounds8": [
+          203,
+          104,
+          823,
+          1478
+        ],
+        "edgeMaxAlpha": 0,
+        "edgePixelsNonzero": 0
+      },
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "decision": "The can, motor and two V2 trophy candidates are accepted for static gallery integration with documented limits. The two V1 trophies remain preserved as rejected, superseded candidates and are excluded from accepted drawing counts. Runtime/gallery validation remains pending.",
+  "inGameChecked": false,
+  "gameplayChecked": false,
+  "fidelityOneToOneCertified": false,
+  "supersededCandidates": [
+    {
+      "id": "crimson-horned-wall-trophy-s2",
+      "status": "rejected_reference_geometry_mismatch",
+      "acceptedForIntegration": false,
+      "correctionRequired": true,
+      "master": "production/v17/props/masters/crimson-horned-wall-trophy-s2.png",
+      "masterSha256": "1fe5b4e49583e95fc44c6578a45272c56449879ef3de6066470609de84204b45",
+      "export": "production/v17/props/rejected-exports/crimson-horned-wall-trophy-s2.webp",
+      "exportSha256": "d93303bee4cf1e10bacd1ca93c93b9072d3da187f38ef96d86e5b76e66ea6e42",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/jasper-crimson-204.jpg",
+      "intendedUse": "Keep as a candidate until the plaque silhouette is corrected; do not count as accepted production.",
+      "observations": [
+        "Correct object identity: two black curved horns with pale bands, an eyeless green tuft, green backing and dark contour.",
+        "One complete isolated object; tips and plaque fit inside the canvas. Alpha composites show no opaque background.",
+        "The generated backing has a pronounced central lower shield point and broad curved lobes. The selected source backing is more rectangular, with angled corner steps and an almost horizontal lower span.",
+        "The lower tuft points and bilateral horn/stripe symmetry are regularized compared with the source."
+      ],
+      "rejectionReasons": [
+        "The invented pointed shield geometry changes a clearly visible identifying contour. This is more than missing microdetail from a low-resolution source.",
+        "It should not be accepted as the faithful isolated redraw of this exact source plaque until that geometry is corrected."
+      ],
+      "requiredCorrections": [
+        "Use the exact selected source plaque crop as the visual authority; retain its broad rectangular backing, corner steps and lower-edge profile.",
+        "Remove the invented central lower point and match the visible horn/tuft asymmetry without adding new material or anatomy."
+      ],
+      "limitations": [
+        "The source object is small and scene-lit; tiny band and edge details still cannot be certified one-to-one after silhouette correction."
+      ],
+      "alpha": {
+        "bounds8": [
+          187,
+          335,
+          1063,
+          920
+        ],
+        "edgeMaxAlpha": 0,
+        "edgePixelsNonzero": 0
+      },
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "superseded": true,
+      "countsAsDeliveredDrawing": false
+    },
+    {
+      "id": "crimson-fanged-jaw-wall-trophy-s2",
+      "status": "rejected_reference_geometry_mismatch",
+      "acceptedForIntegration": false,
+      "correctionRequired": true,
+      "master": "production/v17/props/masters/crimson-fanged-jaw-wall-trophy-s2.png",
+      "masterSha256": "ab6dfca15404dfcee7f35a0db076b6bab0a794449ac830a5fe229c27a8562369",
+      "export": "production/v17/props/rejected-exports/crimson-fanged-jaw-wall-trophy-s2.webp",
+      "exportSha256": "2fa6bc61ef7d11633999d20080552521d5ee4806a06174f4dc535c18ce977728",
+      "dimensions": [
+        1402,
+        1122
+      ],
+      "rgbaExactExport": true,
+      "source": "production/v17/props/references/jasper-crimson-204.jpg",
+      "intendedUse": "Keep as a candidate until shape and teeth arrangement are corrected; do not count as accepted production.",
+      "observations": [
+        "The chosen source object is the small jaw plaque immediately right of the frontal horned plaque on the rear wall.",
+        "The candidate is a whole isolated green jaw decoration without eyes, horns, limbs or other props.",
+        "The source has a comparatively tall scalloped backing visible above and below the opening. The candidate becomes a much broader horizontal emblem with a large pointed upper crest and a different lower point.",
+        "The source's angular mouth opening and grouped irregular teeth are replaced by a smooth wide bowl with fewer, broadly spaced regular triangles."
+      ],
+      "rejectionReasons": [
+        "The width-to-height balance, visible backing contour and tooth arrangement diverge materially from the selected source object.",
+        "These changes produce a redesigned decoration rather than a sufficiently faithful redraw of this plaque."
+      ],
+      "requiredCorrections": [
+        "Base the new image on the native source crop, maintaining the tall scalloped backing, actual arch/point shapes and the visible mouth proportions.",
+        "Preserve the visible tooth placement, direction and spacing instead of replacing them with a simplified symmetric set.",
+        "Keep the whole corrected object isolated, with no wall, invented skull anatomy or additional trophy."
+      ],
+      "limitations": [
+        "The native source detail is small; this prevents certification of tiny contours but does not justify the visible gross-shape changes.",
+        "Seven border pixels have alpha 1; the solid object is not clipped. This transparency detail is not the reason for rejection."
+      ],
+      "alpha": {
+        "bounds8": [
+          124,
+          171,
+          1280,
+          977
+        ],
+        "edgeMaxAlpha": 1,
+        "edgePixelsNonzero": 7,
+        "edgePixelsAlpha8OrMore": 0
+      },
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "superseded": true,
+      "countsAsDeliveredDrawing": false
+    }
+  ],
+  "rootSecondReview": {
+    "date": "2026-11-27",
+    "status": "accepted_with_documented_limits",
+    "scope": "Both corrected V2 trophy alpha composites and the exact primary detail crops were visually inspected by root, independently of their correction generation.",
+    "observations": [
+      "The horn backing restores the broad rectangular silhouette and removes the invented central lower shield point.",
+      "The jaw backing restores the tall scalloped outline and the arched, irregular-toothed opening.",
+      "Both remain source-derived interpretations with documented regularization and scene-lighting differences; no one-to-one fidelity certification."
+    ],
+    "assetIds": [
+      "crimson-horned-wall-trophy-s2",
+      "crimson-fanged-jaw-wall-trophy-s2"
+    ],
+    "inGameChecked": false
+  },
+  "candidateArchive": {
+    "note": "Rejected V1 exports are archived outside public and never referenced by the reserve catalogue. Their native masters remain preserved.",
+    "relocations": [
+      {
+        "originalExport": "public/assets/production/v17/props/crimson-horned-wall-trophy-s2.webp",
+        "archivedExport": "production/v17/props/rejected-exports/crimson-horned-wall-trophy-s2.webp"
+      },
+      {
+        "originalExport": "public/assets/production/v17/props/crimson-fanged-jaw-wall-trophy-s2.webp",
+        "archivedExport": "production/v17/props/rejected-exports/crimson-fanged-jaw-wall-trophy-s2.webp"
+      }
+    ]
+  }
+}

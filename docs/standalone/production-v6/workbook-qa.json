@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "status": "passed",
+  "registerStatus": "final_production_register",
+  "registerSha256": "cc6e49285e6031c7cbc717281324084671d2b1e98014511a9ad01ae5a10c1e85",
+  "inputSources": [
+    {
+      "path": "docs/standalone/production-v6/delivery-register.json",
+      "sha256": "cc6e49285e6031c7cbc717281324084671d2b1e98014511a9ad01ae5a10c1e85"
+    },
+    {
+      "path": "docs/standalone/production-v6/qualification-audit.json",
+      "sha256": "133c2901bc98526523992c454ad5e3007673570c97b0ed553fd4ab521f161880"
+    },
+    {
+      "path": "docs/standalone/production-v6/references.json",
+      "sha256": "0ac23169268856caf469ab8beef93c6ea5a5aeb61fb73d417b66332be0d286d7"
+    },
+    {
+      "path": "docs/standalone/production-v6/references-supplement.json",
+      "sha256": "2e8a6df7ae44c616e47a4a5621bc21b36b06fa63a0a153b8c757d886a807e855"
+    },
+    {
+      "path": "docs/standalone/production-v6/independent-visual-review.json",
+      "sha256": "c4547a5344251a448c4cf8d9ffd506a26ea766105898e20264da155402b2b340"
+    },
+    {
+      "path": "docs/standalone/production-v6/root-generation.json",
+      "sha256": "74f88c4cfe621ce02df94c74047a2007388d98ec1f23dd358a9fb51cdb384411"
+    },
+    {
+      "path": "docs/standalone/production-v6/helluva-generation.json",
+      "sha256": "5444f360260240399b413526a4895dba52af19fb4831feab4b554e7cb97f9160"
+    },
+    {
+      "path": "docs/standalone/production-v6/root-image-qa.json",
+      "sha256": "8c98e892f394ec9a15f3f2f384c834b56507f4994c8e1e52767dbca1ee8c0adc"
+    },
+    {
+      "path": "docs/standalone/production-v6/browser-qa.json",
+      "sha256": "b4fcd81da7c5ffd17942c7995c22fcba6c1b29b43d8fb16a41a2cd34698e745d"
+    },
+    {
+      "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V5.xlsx",
+      "sha256": "aa1b48a30f4d6b5bfedd5d941cc8aba3cebbe92235ef5bb245a68c1469760531"
+    }
+  ],
+  "newSheetNames": [
+    "Production V6",
+    "Cibles V6",
+    "Repères V6"
+  ],
+  "metrics": {
+    "distinctDrawings": 9,
+    "masterPng": 9,
+    "losslessWebp": 9,
+    "thumbnails": 2,
+    "deliveredImageFiles": 20,
+    "characterBases": 6,
+    "supportBases": 0,
+    "machines": 1,
+    "stages": 2,
+    "generatorRefused": 5,
+    "candidatesAwaitingReference": 3,
+    "newAnimationCycles": 0,
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 83,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 43,
+    "catalogueIdsWithoutStandaloneBase": 126,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 125,
+    "reserveGalleryEntries": 49,
+    "runtimeCostumeFamilies": 11,
+    "activeStages": 37,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "summaryValues": [
+    9,
+    20,
+    6,
+    77,
+    83,
+    209,
+    126,
+    208,
+    125,
+    49,
+    37,
+    43,
+    11,
+    127,
+    11,
+    14,
+    5,
+    3,
+    0,
+    3,
+    2
+  ],
+  "deliveredImageFilesChecked": 20,
+  "deliveredImageSha256": [
+    {
+      "path": "art/infernal-versus/masters/machines/dhorks-portal-ring.png",
+      "sha256": "d244c7d523b53fe8a3a9e0962273d488b89b280ae59517a251f05515e86a0142"
+    },
+    {
+      "path": "public/assets/machines/infernal-versus/dhorks-portal-ring.webp",
+      "sha256": "31140ce5b85afe8155a7837df155eb094ab83fb6934bf1d6bb2f1ef118fca1cf"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/hellaverse-training-room.png",
+      "sha256": "c5a75d7cd0d331e088e9b0dbe52d1e27def29bc606d5a9f82362def5156a3cef"
+    },
+    {
+      "path": "public/assets/stages/original/hellaverse-training/room.webp",
+      "sha256": "4cf1154a5d450422f33d2491c27416132c827e22422d44b11a844a6e9bca06c4"
+    },
+    {
+      "path": "public/assets/stages/original/hellaverse-training/thumb.webp",
+      "sha256": "baa018674d0aee0b04f37d3313aedaa12fb36dfa9cd5ef5f848faebafa22117b"
+    },
+    {
+      "path": "art/infernal-versus/masters/stages/vox-office-s2-room.png",
+      "sha256": "7bb2f5860c76ccf3bbb660aa7cb312ea7a5681b47e49ee3bc358f645a8f7644b"
+    },
+    {
+      "path": "public/assets/stages/hazbin/vox-office-s2/room.webp",
+      "sha256": "9fa1f187c7d58edb381c0d062cc3ef326adc7fa648c3552c66728662f2c40ef3"
+    },
+    {
+      "path": "public/assets/stages/hazbin/vox-office-s2/thumb.webp",
+      "sha256": "c2894b117ab5c9299c6c252d7b182c9b6eb8f4890c6eef4abe0c790b99c3ebc2"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_josh-ready.png",
+      "sha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_josh-ready.webp",
+      "sha256": "8cfdf2538c8fe2918984cb709b1c5be2062a224cb47acd15572e033aa7743899"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_coco-ready.png",
+      "sha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_coco-ready.webp",
+      "sha256": "dab6516c2d8635a4e8f59b56cf4a51127935b094ac24a0ef5ac9c4fff5611e58"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_apple-ready.png",
+      "sha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_apple-ready.webp",
+      "sha256": "c8670e10dbf84b81dbcad4251f8993f58a6d9c001f099d1aa10f0a51ab2b1f9d"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_kat-ready.png",
+      "sha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_kat-ready.webp",
+      "sha256": "1c5e08fbacfc1601ca4b3f39f4db79a7518ce00c7a9494838f3d21689abee632"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_milky-ready.png",
+      "sha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_milky-ready.webp",
+      "sha256": "fc7d67f84d07d6f2f9d63854e303a9a05670e81271548b1f65048edd24a84829"
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_kiki-ready.png",
+      "sha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f"
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_kiki-ready.webp",
+      "sha256": "9b0cdcbb5f12bc927cedb6d9459ecb0e1ece48cc20e529f689f1deb614050467"
+    }
+  ],
+  "recalculation": "Artifact Tool",
+  "inputChangeCheck": "passed_changed_candidate_recalculated_and_restored",
+  "nativeExcelRecalculation": "not_run",
+  "formulaErrorCells": 0,
+  "exportedAdditionsReimport": "passed",
+  "historicalWorkbookAuthoring": "none",
+  "packaging": {
+    "baseline": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V5.xlsx",
+    "baselineSha256": "aa1b48a30f4d6b5bfedd5d941cc8aba3cebbe92235ef5bb245a68c1469760531",
+    "output": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V6.xlsx",
+    "outputSha256": "62e0b3e56a95d27750c82107c40821dfe57906136d7f038a3d14744514fcee68",
+    "originalSheetCount": 40,
+    "originalSheetOrder": [
+      "Guide V3",
+      "Modes V2",
+      "Histoires",
+      "Duels de campagne",
+      "Données moteur",
+      "Techniques signatures",
+      "Tenues et gardes",
+      "Finitions",
+      "Plans des arènes",
+      "Illustrations",
+      "Atelier et recette",
+      "Références V3",
+      "Campagnes V3",
+      "Chapitres V3",
+      "Illustrations V3",
+      "Movesets V3",
+      "Derniers Actes",
+      "Continuité V3",
+      "Synthèse",
+      "Chantiers",
+      "Parité CQC",
+      "Personnages",
+      "Kits combat",
+      "Variantes",
+      "Techniques",
+      "Arènes",
+      "Parcours",
+      "Recette",
+      "Sources",
+      "Guide V4",
+      "Fiches V4",
+      "Campagne globale",
+      "Réserves V4",
+      "Recette V4",
+      "Production V5",
+      "Catalogue V5",
+      "Variantes V5",
+      "Illustrations V5",
+      "Livraisons V5",
+      "Suites V5"
+    ],
+    "addedSheets": [
+      "Production V6",
+      "Cibles V6",
+      "Repères V6"
+    ],
+    "finalSheetCount": 43,
+    "openingSheet": "Production V6",
+    "openingSheetIndex": 40,
+    "preservedOriginalParts": 120,
+    "preservedWorksheetXmlParts": 40,
+    "preservedWorksheetSha256": {
+      "xl/worksheets/sheet1.xml": "3cf0654a83b400483875ce26c6888545b8e69ea2e7ba58adcd3a52f955b45f67",
+      "xl/worksheets/sheet2.xml": "f7f28d05d24df5fc916da546d9a6156e640adc2adea04c7d4ee63d72eb21ce53",
+      "xl/worksheets/sheet3.xml": "15b0a78b937a31cd7646657063bec2319fd5b6c4b76a76ba242fa7ff4edbcf29",
+      "xl/worksheets/sheet4.xml": "3f2bf2eb457099aec3f34f99268c9451942db44dcef6317f1cf25057d8b11d38",
+      "xl/worksheets/sheet5.xml": "761f61fe5380b3a66a61a94fcd3a21142928cba1c63a0a630ff19cc861d6d9d7",
+      "xl/worksheets/sheet6.xml": "4381cddf48093e42dd1782325a4cc00995e43c7c169fdfa7e6564ad97cad0cf0",
+      "xl/worksheets/sheet7.xml": "e079ba22938b6c72ba753e87b0018fbfd677abfdf75a0936f28eccfef430a1bb",
+      "xl/worksheets/sheet8.xml": "b8cb1b46c901a5b04b423b486f975f371522d62b98398730e205def1db013da0",
+      "xl/worksheets/sheet9.xml": "a516957a0e7c3e070a8e8eb5b07cdf19e348a8e91afc237eb206602970fe6f13",
+      "xl/worksheets/sheet10.xml": "f5d3a78cc157d8d0f90151273ccf88b6cca92fded2ed07653a9e39a9425ff456",
+      "xl/worksheets/sheet11.xml": "cb35c910670e7d59301da917521c15a6bf0ee19385779478271130d66e20753a",
+      "xl/worksheets/sheet12.xml": "3a2f59b0b8a229954d8e4f25ad9e1e862c610b3c9c63a0760695d8e4abe89976",
+      "xl/worksheets/sheet13.xml": "ab003fcbf204af1c11dd1e468a858139bf0f3f819b070efcd70786c1976aff31",
+      "xl/worksheets/sheet14.xml": "b1845a6af0b48f11438d836b43adc69c81902fe7fd203ee6a9ebeb46ffc512b9",
+      "xl/worksheets/sheet15.xml": "e35026a6cf3a1e388b2c5f1c02605b0ea56bf7396e20f0e965681e2060675a3e",
+      "xl/worksheets/sheet16.xml": "d4e572544ff411c3c5cfefe4bdc92907b2897e42a4e2a4aabb603837c5d273b9",
+      "xl/worksheets/sheet17.xml": "1293e22f05121962e0a3d67f830dbadd4f4ec7411ac592c9ce2b77f1357024ca",
+      "xl/worksheets/sheet18.xml": "673aa63354777b1f24986d9d5165b9088f32512119a569031d90f5f44d91bf86",
+      "xl/worksheets/sheet19.xml": "0ca123ebf3f79b0a54d99f6f9308ab72b737bf6e79f24c08823411d8420d3747",
+      "xl/worksheets/sheet20.xml": "861b9cde9b4ada4ef72f4168113d052363ed8133d51abb9814012461c4e4a68a",
+      "xl/worksheets/sheet21.xml": "3600fc2dd42fa61fe32fd2939d365fd3600a1c20e0da1e93cf2ccc13b08b1f26",
+      "xl/worksheets/sheet22.xml": "c4650e784ce728da091e822d809a93e3541cef8f401d42c1efa60d8568a663d2",
+      "xl/worksheets/sheet23.xml": "82d48e8fcce9c080d7d799ae64dd2fdcef65e24a33713bcf2deea23209262cc0",
+      "xl/worksheets/sheet24.xml": "dbe3ff059190b3adb48a6c02cc9a7d9ff5b86c49138950de51e42a531237ed20",
+      "xl/worksheets/sheet25.xml": "340fd57ea509fc92da0d1622a901f85645b82e00d5e82d950d6545046aae5ee5",
+      "xl/worksheets/sheet26.xml": "5a60d9cdf6f83453b5de1ae3019aa167ed8cbd45f523fd38c61511a1cc625f07",
+      "xl/worksheets/sheet27.xml": "96225d90bc05499316433d0098e860d36c42d031a9560f924170e7eca6013f00",
+      "xl/worksheets/sheet28.xml": "8f0944b55d72aa5eba06ebdf967057f4c8d63edf7c162975191946ad881a35e7",
+      "xl/worksheets/sheet29.xml": "8b2cdd073bb47789c40996db2ed7e1c43d00b9217fb233af7d044c08bacafc2a",
+      "xl/worksheets/sheet30.xml": "8737aa70238e1ee4ed5f5f229bd5e91b0980e5e5a06fa9a3b8a9b52af0938572",
+      "xl/worksheets/sheet31.xml": "a4869d6c52a709fd60f20021f321b6e6e8315bee393570ff11c114042cd7a849",
+      "xl/worksheets/sheet32.xml": "a89fd5d0486f9e1a5fb9477bf8695933672bafb99865b5cce0ba6b2559ac09f0",
+      "xl/worksheets/sheet33.xml": "fa50e1ae8b103ec30f006c428168ee0f9ecf9114728924527dc1b8de59bf8b48",
+      "xl/worksheets/sheet34.xml": "3a4c7b085aaae943f8150eddd31d6757c151bd98c552dd0edcd8ce02e0fb6c49",
+      "xl/worksheets/sheet35.xml": "a31d02b40b8348d0c0cffe66899a67e02de577e01d1849cebb496991ac7fd05d",
+      "xl/worksheets/sheet36.xml": "a894be96ffed6e0793a3201576b2788415d469c1452125b49e59180206d09056",
+      "xl/worksheets/sheet37.xml": "7d70349e4445a0ccd8d16017839a443fefb4328f7e10dcceb48d31690813a6e3",
+      "xl/worksheets/sheet38.xml": "9b99123da316aeb27cf11f94150abda0d0bb53fef74604a96c5bce004c96049a",
+      "xl/worksheets/sheet39.xml": "ec9d6ba03212ad0d88a27ff258b1b0cd96aa6396e3860b8b7e32241e13618180",
+      "xl/worksheets/sheet40.xml": "791f6605ad366f049ad0f7400b195c7d95676d42029f24cc28e0b4862ff3caa5"
+    },
+    "preservedTableXmlParts": 39,
+    "originalPartsChangedUnexpectedly": [],
+    "formulasInAddedSheets": {
+      "Production V6": 9,
+      "Cibles V6": 0,
+      "Repères V6": 0
+    },
+    "newFormulaErrorCells": 0,
+    "zipAndXmlValidation": "passed",
+    "nativeExcelRecalculation": "not_run",
+    "preservationMethod": "Original OOXML parts retained byte for byte except append-only package manifests, shared strings and styles."
+  },
+  "renderedViews": [
+    {
+      "sheet": "Production V6",
+      "range": "A1:C29",
+      "file": "/tmp/bible-v6-builder/previews-final/production.png",
+      "sha256": "fc65012aa3e2e4bcf5cd7b40c065c87df5dd7401faaab598156019e770293d0c",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Production V6",
+      "range": "A31:C41",
+      "file": "/tmp/bible-v6-builder/previews-final/livraisons.png",
+      "sha256": "5082d1462fb9dae83250c94196cb197e9d529aec35b727944e480afebd9b6f0a",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Cibles V6",
+      "range": "A1:F12",
+      "file": "/tmp/bible-v6-builder/previews-final/cibles-1.png",
+      "sha256": "29c6fe4070cdc01c3ad863a739e19c3cd1dee8ae5e9850c7f645186f179622b5",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Cibles V6",
+      "range": "A13:F19",
+      "file": "/tmp/bible-v6-builder/previews-final/cibles-2.png",
+      "sha256": "bec30c11a3e2eef778494f4e5193e9362b2c74974e28de6e83fe1dffb76985d1",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A1:D13",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6References-0.png",
+      "sha256": "002e489ddb55197c2a4dbbce99a3cacf267e79b2f8609cfe82dfbd4cc0aa2ffe",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A14:D22",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6References-1.png",
+      "sha256": "6c3ba5170d55a2873452c1cb6e4bc6579ee7700d7987dcae200ada1eb3563ac9",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A23:D31",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6References-2.png",
+      "sha256": "00fa926eac62fa1de473d521f93f69d1c9e9c1833103890e26ef634955272461",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A32:D32",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6References-3.png",
+      "sha256": "28f44433faf39797578dcc353472907310cae8cc5bfab3dfc4bdeef57e1b9d51",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A34:D43",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6StageAliases-0.png",
+      "sha256": "f6307c0c82ab8473d11af80b231891ade05bb54f9fff5e2274ea1e90e79918d7",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A44:D44",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6StageAliases-1.png",
+      "sha256": "d551909b05c43445b125039ccfbf3e34fdef49ae6eaed62c055e800cf0df52ed",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A46:D55",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Variants-0.png",
+      "sha256": "c3c00c420eea23e97b3de0fc99a08eba14de1999569c55d553252ee4c5b72c6d",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A56:D60",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Variants-1.png",
+      "sha256": "0741e40f0c74d91ee5fc250baa9d077ef220be150ee068fe44d46394e8aab70b",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A62:D67",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Technical-0.png",
+      "sha256": "9e70222be4f2e2f3c56595370e9363154a07404539542e1e8d6feb666dc72f45",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A69:D73",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Identities-0.png",
+      "sha256": "2dbc866707baa272cbc7b42b0e934d6957e700909f6073cff5ccc0c7054dfd76",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A75:D84",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Trace-0.png",
+      "sha256": "79939788b6ac289aac39ec37792dde9ee7ac8cc29c964e63998d903df7b55565",
+      "visuallyReviewed": true
+    },
+    {
+      "sheet": "Repères V6",
+      "range": "A85:D86",
+      "file": "/tmp/bible-v6-builder/previews-final/StaticV6Trace-1.png",
+      "sha256": "90930e8735ad992daaf2d49f9558111d00b1f55d24165eafcd14d050f66ba2d4",
+      "visuallyReviewed": true
+    }
+  ],
+  "visualReview": "passed_new_views_inspected",
+  "browserValidation": {
+    "status": "blocked_before_browser_launch",
+    "report": "docs/standalone/production-v6/browser-qa.json"
+  },
+  "fidelityOneToOneCertified": false,
+  "output": "/home/agent/hazbin-v6/docs/standalone/INFERNAL_VERSUS_BIBLE_V6.xlsx",
+  "visualReviewNotes": [
+    "All 16 rendered ranges of the three V6 sheets were inspected, directly or against byte-identical inspected draft renders; titles, counts, row wrapping, file paths and source qualifications are legible.",
+    "Source observations retain their original language; the overview, production outcomes and reconciliation decisions are in French.",
+    "The final overview shows 9 drawings, 20 image files, 6 new bases, 83 cumulative bases, 49 reserve entries, 37 stages and 408 passing tests.",
+    "Native Excel recalculation and browser gameplay visual checks were not performed; these limits remain explicit in the workbook."
+  ],
+  "historicalFormatAndTextPreservation": {
+    "status": "passed",
+    "historicalWorksheetsByteIdentical": 40,
+    "historicalTablesByteIdentical": 39,
+    "originalStyleEntriesPreserved": {
+      "fonts": 22,
+      "fills": 16,
+      "borders": 8,
+      "cellStyleXfs": 4,
+      "cellXfs": 70,
+      "dxfs": 53,
+      "numFmts": 4
+    },
+    "originalSharedStringsPreserved": 0,
+    "originalDefinedNamesPreserved": true,
+    "originalSheetOrderPreserved": true,
+    "openingSheet": "Production V6"
+  },
+  "outputSha256": "62e0b3e56a95d27750c82107c40821dfe57906136d7f038a3d14744514fcee68",
+  "outputBytes": 516133
+}

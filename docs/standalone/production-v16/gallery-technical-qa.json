@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "status": "passed",
+  "recordedAt": "2026-11-27T01:01:58.567272+00:00",
+  "scope": "Targeted verification for two reserve portraits and gallery provenance; global runtime QA belongs to the separate parent-owned runtime-qa.json.",
+  "commands": [
+    {
+      "command": "npm run test -- src/tests/standalone-reserve-provenance.test.tsx src/tests/standalone-season-three.test.tsx src/tests/standalone-ui.test.tsx --reporter=default --reporter=json --outputFile=docs/standalone/production-v16/gallery-unit-tests.json",
+      "exitCode": 0,
+      "testFiles": 3,
+      "tests": 31,
+      "passed": 31,
+      "report": {
+        "path": "docs/standalone/production-v16/gallery-unit-tests.json",
+        "sha256": "12fa7747de44fbd50868ffb4f5266897cf7c94bfbdd5ed1148005e550b81457c"
+      },
+      "log": {
+        "path": "docs/standalone/production-v16/gallery-unit-tests.log",
+        "sha256": "e8c54024dbcd9d24d22e4948879e2f01b0e5f9849ed61b03cdcb9e252abd7147"
+      }
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "evidence": "Completed tool execution in this task; stdout was not saved as a separate file."
+    },
+    {
+      "command": "npx eslint src/standalone/ReserveGallery.tsx src/tests/standalone-reserve-provenance.test.tsx docs/standalone/production-v16/check-gallery-browser.cjs eslint.config.js --max-warnings=0",
+      "exitCode": 0,
+      "evidence": "Completed tool execution in this task; stdout was not saved as a separate file."
+    },
+    {
+      "command": "node docs/standalone/production-v16/check-gallery-browser.cjs",
+      "exitCode": 0,
+      "checks": 8,
+      "screenshots": 4,
+      "report": {
+        "path": "docs/standalone/production-v16/browser-gallery-qa.json",
+        "sha256": "d2f7e8161b108ec2a641966b1f771f8ee2d2ddfce4cf4f668cb8708bf0f2a822"
+      }
+    }
+  ],
+  "sourceHashes": {
+    "src/standalone/ReserveGallery.tsx": "e8f6df3266147db86627c07d200bdec8be5a7b73400fa0945ed04601677332a7",
+    "src/standalone/reserve-gallery.css": "7803214f7cc54192d62c0a80a0b66ee671c18cff3ad412a26e0e978e7e093fd5",
+    "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+    "src/standalone/infernal-versus.css": "c04ab9498e8a046b2f503a6ad01646c1cf804ea8021e59af4faf98e5a9d34bc6",
+    "art/infernal-versus/production/reserve-assets.json": "46a206fe260693e55d719cb638ae538a225612af892db10585afa19d7f4a7b51",
+    "docs/standalone/production-v16/integration-assets.json": "01d1569d41066652345411caafbbc8a56efa88cba1b9058f8b5f9725fb54a4df",
+    "docs/standalone/production-v16/check-gallery-browser.cjs": "0c53669cc95fcae00d6468eec77fad9c2dbd034681d037c152e16d81f016a090",
+    "src/tests/standalone-reserve-provenance.test.tsx": "6ea4728597646776dbe96de676ccc8b2b907cd3b36b33a1f8fb54134d8742a2d",
+    "eslint.config.js": "1aa44ee7845e3af31a7ddeeda1998adc60bd21eedaee2f53077d0f75a7d1ad15"
+  },
+  "catalogueIntegrity": {
+    "baselineSnapshot": "eca07c70d20fc1f03e52d84b97b45050f0c82308",
+    "baselineCatalogueSha256": "3d802c4a077c30a29c6f7de9a315baa6c94feedf4ffe637b3c1b447d5a73af90",
+    "baselineCount": 143,
+    "currentCount": 145,
+    "first143EntriesUnchanged": true,
+    "nonAssetMetadataUnchanged": true
+  },
+  "artifactIntegrity": {
+    "browserSourceHashesCurrent": true,
+    "allFourScreenshotHashesMatch": true,
+    "publicExportsByteIdenticalToPreparedExports": true,
+    "sourceReferenceAndPublicationHashesMatch": true
+  },
+  "visualReview": {
+    "path": "docs/standalone/production-v16/browser-visual-review.json",
+    "sha256": "17abd9d7e3d9d0cf82fd4e022cb7b05858cd9e4f6e90644e8b62c9f0e604c8e7"
+  },
+  "limitations": [
+    "Browser verification covers the local gallery and filtered reserve visibility, not combat play or a production deployment.",
+    "Reference clicks validate real destinations through local interception; remote source availability is outside this browser run."
+  ]
+}

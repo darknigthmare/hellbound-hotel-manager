@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-27T06:30:09.222915+00:00",
+  "status": "failed-harness-selector-corrected",
+  "runId": 45951963794,
+  "runUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45951963794",
+  "workflowCommit": "a666746809677ed0a08e4a507e56ba082b851a9e",
+  "artifact": {
+    "id": 15177176523,
+    "name": "infernal-versus-v17-gallery-evidence",
+    "sizeBytes": 556723,
+    "apiZipSha256": "9ef2a057f814becb9ea47cb987dcfc0cf1625c03d42314e20312199f7ae2656d",
+    "actualZipSha256": "9ef2a057f814becb9ea47cb987dcfc0cf1625c03d42314e20312199f7ae2656d",
+    "archivePath": "/workspace/scratch/3ca8c3f75b61/browser-evidence-v17/run-45951963794/infernal-versus-v17-gallery-evidence-run-45951963794.zip",
+    "zipCrcAndSafePathChecksPassed": true
+  },
+  "evidenceDirectory": "docs/standalone/production-v17/browser-attempt-02-selector-failure",
+  "automatedResult": {
+    "checks": 0,
+    "screenshots": 1,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "exactError": "locator.selectOption: Timeout 12000ms exceeded.\nCall log:\n  - waiting for getByLabel('Catégorie', { exact: true })\n\n    at /home/runner/work/hellbound-hotel-manager/hellbound-hotel-manager/docs/standalone/production-v17/check-gallery-browser.cjs:353:22",
+    "buildManifestFilesRehashed": 1350,
+    "archivedReportPath": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-gallery-qa.json"
+  },
+  "visualReview": {
+    "inspectedScreenshots": [
+      {
+        "path": "docs/standalone/production-v17/browser-gallery/desktop-failure.png",
+        "sha256": "052af633465666027fdaf6c0220a32299e1f9825c0ee6913991627019ee3d2ce",
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "scope": "Actual viewport at failed assertion.",
+        "archivedPath": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-gallery/desktop-failure.png"
+      }
+    ],
+    "observations": [
+      "The actual 1440×1000 game page is rendered with its normal header, selected Galerie navigation, 149 creations, all three visible filter controls and populated original character cards.",
+      "The category select is visibly available; failure is in the exact label matcher before Accessoires was selected. No new prop detail or mobile behavior was tested in this attempt."
+    ],
+    "reviewer": "recover_assets",
+    "inspectedAt": "2026-11-27T06:30:09.223006+00:00"
+  },
+  "correction": {
+    "file": "docs/standalone/production-v17/check-gallery-browser.cjs",
+    "description": "Remove exact:true only from the two select getByLabel lookups: the wrapping label text also contains option text. Search input and all behavior assertions are unchanged.",
+    "beforeSha256": "58d6c628f3e8e272553104fcb11b8212bc17fe57a815b99cac0ecaef1b0f31f8",
+    "afterSha256": "cdb50e7fb1ec8b2738497b02f0915fbcdff2d75b583c8658e7375b980a7aa2dc",
+    "runtimeOrBundleChanged": false
+  },
+  "files": [
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-artifact-transfer.json",
+      "sha256": "204a612654068f1d106b027cdb6a5c81afb6fd3a2af360e3139d10b5b98a2a85",
+      "bytes": 5856
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-engine-ci.json",
+      "sha256": "3289ccb2b68b6b2ef450c858ac01fd5a4c698e585fdc56434f598fa9d73e254b",
+      "bytes": 572
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-gallery/desktop-failure.png",
+      "sha256": "052af633465666027fdaf6c0220a32299e1f9825c0ee6913991627019ee3d2ce",
+      "bytes": 549068
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-gallery-qa.json",
+      "sha256": "d1c2f143b26f0c73e76dedc13cff3fa17f738edd3e5183271d71aa859b18fc31",
+      "bytes": 4672
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-gallery-run.log",
+      "sha256": "a22a3540157f55ca5cfb20bf76994af26d996a3b6d5a1c9cea5a465869cd400e",
+      "bytes": 414
+    },
+    {
+      "path": "docs/standalone/production-v17/browser-attempt-02-selector-failure/browser-workflow-executed.yml",
+      "sha256": "5ef5c5ec6ab5c4b29640eaf8b7c8d280e9c53fe56b633a32bd27b97db4decb95",
+      "bytes": 18049
+    }
+  ],
+  "archivedPath": "docs/standalone/production-v17/browser-attempt-02-selector-failure"
+}

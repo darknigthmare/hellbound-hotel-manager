@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "generatedAt": "2026-11-27T06:05:44.903Z",
+  "status": "static-review-and-final-diff-complete",
+  "scope": "Static review of catalogue readers and the proposed post-browser inGameChecked metadata change. This report is not a browser result or a compiled-bundle equivalence test.",
+  "baseline": {
+    "runtimeCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+    "runtimeTree": "42cf1d4e84e08f739eee3a50a22a986843802933",
+    "packagingCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+    "packagingTree": "e6b31f4e5ae9a92a207bd60b478a27fbea77f341",
+    "packagingParent": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+    "packagingChangedFiles": [
+      ".github/workflows/quality.yml"
+    ],
+    "sourceInventoryVerification": {
+      "baseCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+      "baseTree": "42cf1d4e84e08f739eee3a50a22a986843802933",
+      "localFiles": 143,
+      "remoteFiles": 143,
+      "missing": [],
+      "different": [],
+      "extra": []
+    },
+    "catalogueSnapshot": {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "bytes": 451446,
+      "sha256": "ddfa03bacb12946042f0ba69086684a8d6e15f76b11fc8e9a95dd198b061cbbb",
+      "gitBlobSha": "0f582905c992b9c9082ef8e9a7de876b34d00a32",
+      "entries": 149,
+      "v17Flags": [
+        {
+          "id": "spring-broken-blue-can-s1",
+          "inGameChecked": false
+        },
+        {
+          "id": "crimson-horned-wall-trophy-s2",
+          "inGameChecked": false
+        },
+        {
+          "id": "unhappy-campers-outboard-motor-s2",
+          "inGameChecked": false
+        },
+        {
+          "id": "crimson-fanged-jaw-wall-trophy-s2",
+          "inGameChecked": false
+        }
+      ]
+    }
+  },
+  "finding": {
+    "inGameCheckedReferencedInSourceFiles": false,
+    "onlyDirectApplicationReader": "src/standalone/ReserveGallery.tsx",
+    "inGameCheckedInGalleryType": false,
+    "inGameCheckedDisplayed": false,
+    "inGameCheckedUsedForFilters": false,
+    "inGameCheckedUsedForGameRules": false,
+    "expectedBehaviorFromCodeInspection": "Changing only the four V17 inGameChecked values records review completion without changing the fields consumed for gallery rendering, filtering, selection, provenance labels or game rules.",
+    "catalogueImportedIntoApplication": true,
+    "compiledBundleByteEqualityClaimed": false,
+    "compiledBundleCaveat": "The JSON is imported by the application. Changing an unused tracking field can still change generated JavaScript bytes or build hashes. Source-level non-use does not certify identical compiled bundles."
+  },
+  "directSourceConsumers": [
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "role": "application",
+      "gitBlobSha": "2f1d29288e8ddaab3f6c5b08c964f751f44ad62b",
+      "uses": [
+        "reserveCatalogue.assets",
+        "assets.length",
+        "id",
+        "name",
+        "kind",
+        "franchise",
+        "continuity",
+        "spoilerScope",
+        "frameCoverage",
+        "runtimeStatus",
+        "sourceIdentityId",
+        "sourceWorkTitle",
+        "reference",
+        "export",
+        "dimensions",
+        "references",
+        "fidelityNotes"
+      ],
+      "nestedReferenceFields": [
+        "url",
+        "kind",
+        "episode",
+        "title"
+      ],
+      "readsInGameChecked": false
+    },
+    {
+      "path": "src/tests/standalone-ui.test.tsx",
+      "role": "test",
+      "gitBlobSha": "40a9a8dc8d24f18ac45bdf753b506e6e54f0a110",
+      "uses": [
+        "reserveCatalogue.assets.length"
+      ],
+      "purpose": "Expected number of gallery cards; UI assertions exercise other displayed fields through the component.",
+      "readsInGameChecked": false
+    },
+    {
+      "path": "src/tests/standalone-season-three.test.tsx",
+      "role": "test mock",
+      "gitBlobSha": "020b2c3f5a09245ed493e2f56e35ff2c8158d5e8",
+      "uses": [
+        "id",
+        "name",
+        "kind",
+        "dimensions",
+        "references",
+        "fidelityNotes",
+        "reference",
+        "spoilerScope",
+        "export"
+      ],
+      "purpose": "Replaces the catalogue with a small season-filter fixture; fixture omits inGameChecked.",
+      "readsInGameChecked": false
+    }
+  ],
+  "galleryFieldGroups": [
+    {
+      "purpose": "Collection counts and category options",
+      "fields": [
+        "assets.length",
+        "kind"
+      ]
+    },
+    {
+      "purpose": "Search, card identity and selected detail",
+      "fields": [
+        "name",
+        "id",
+        "kind"
+      ]
+    },
+    {
+      "purpose": "Season visibility",
+      "fields": [
+        "spoilerScope",
+        "reference",
+        "references[].episode",
+        "references[].title",
+        "sourceIdentityId"
+      ],
+      "externalFallback": "HELLUVA_CHARACTERS[].spoilerScope"
+    },
+    {
+      "purpose": "Images, sizing information and CSS variants",
+      "fields": [
+        "export",
+        "dimensions",
+        "kind",
+        "continuity"
+      ]
+    },
+    {
+      "purpose": "Labels and provenance",
+      "fields": [
+        "name",
+        "franchise",
+        "kind",
+        "continuity",
+        "runtimeStatus",
+        "frameCoverage",
+        "sourceWorkTitle",
+        "id"
+      ]
+    },
+    {
+      "purpose": "Reference links and limitations",
+      "fields": [
+        "references[].url",
+        "references[].kind",
+        "references[].episode",
+        "references[].title",
+        "fidelityNotes"
+      ]
+    }
+  ],
+  "indirectConsumers": [
+    {
+      "path": "src/standalone/InfernalVersus.tsx",
+      "role": "application entry",
+      "purpose": "Renders ReserveGallery with season settings, focus reference and callbacks. Does not import the catalogue or receive inGameChecked."
+    },
+    {
+      "path": "src/tests/standalone-reserve-provenance.test.tsx",
+      "role": "test",
+      "purpose": "Exercises gallery provenance output through ReserveGallery; no direct catalogue import or inGameChecked reference."
+    }
+  ],
+  "additionalKnownTooling": [
+    {
+      "path": "scripts/audit-infernal-assets.mjs",
+      "role": "legacy source audit",
+      "reads": [
+        "assets",
+        "id",
+        "runtimeStatus",
+        "kind",
+        "sourceIdentityId",
+        "master",
+        "export"
+      ],
+      "readsInGameChecked": false
+    },
+    {
+      "path": "docs/standalone/production-v17/audit-runtime-coverage.mjs",
+      "role": "source references versus extracted bundle",
+      "reads": [
+        "assets",
+        "export"
+      ],
+      "alsoReadsWholeFileForSha256": true,
+      "readsInGameChecked": false
+    },
+    {
+      "path": "docs/standalone/production-v17/check-gallery-browser.cjs",
+      "role": "browser evidence provenance",
+      "purpose": "Hashes the entire catalogue snapshot; changing the flag changes that source hash.",
+      "readsInGameChecked": false
+    },
+    {
+      "path": "docs/standalone/production-v17/assemble-v17.py",
+      "role": "authoring writer",
+      "purpose": "Initializes catalogue and register assets with inGameChecked:false before browser validation; reassembly is a pre-review snapshot, not proof of review completion."
+    },
+    {
+      "path": "docs/standalone/production-v17/build-bible-v17.mjs",
+      "role": "workbook gate and report",
+      "purpose": "Reads inGameChecked from the delivery register and its asset records, not from the gallery catalogue. Requires explicit completed review when preparing/finalizing the workbook.",
+      "readsRegisterInGameChecked": true
+    }
+  ],
+  "proposedFinalization": {
+    "status": "applied-after-browser-success",
+    "requires": "Actual browser coverage for each of the four accepted V17 assets.",
+    "catalogueChange": {
+      "field": "inGameChecked",
+      "from": false,
+      "to": true,
+      "assetIds": [
+        "spring-broken-blue-can-s1",
+        "crimson-horned-wall-trophy-s2",
+        "unhappy-campers-outboard-motor-s2",
+        "crimson-fanged-jaw-wall-trophy-s2"
+      ]
+    },
+    "otherCatalogueFieldsMustRemainIdentical": true,
+    "browserEvidenceCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+    "evidenceWordingAfterSuccess": "La recette navigateur porte sur le bundle CI du commit d56202b178d1ecd8cab7e3a4a876aa50501be815. Le commit de finalisation enregistre ensuite la validation des quatre fiches dans inGameChecked et actualise les preuves, documents et classeur. Les champs utilisés par la galerie, les fichiers image et les règles de jeu restent inchangés si le diff final confirme ce périmètre. L’identité octet par octet des bundles JavaScript n’est pas revendiquée.",
+    "finalDiffVerification": "docs/standalone/production-v17/catalogue-finalization.json"
+  },
+  "methods": {
+    "sourceInventory": "Compared local Git blob SHA-1 for all 143 src JavaScript/TypeScript files against the complete runtime tree; no missing, different or extra files.",
+    "commitBoundary": "Fetched d56202b commit metadata: its sole file change is .github/workflows/quality.yml and its parent is 2a7c956.",
+    "searches": [
+      "rg -n 'inGameChecked|reserve-assets\\\\.json|ReserveGallery|import\\\\.meta\\\\.glob' src",
+      "Manual inspection of ReserveGallery.tsx and the listed consumers."
+    ],
+    "testsExecutedForThisReview": [],
+    "catalogueWritten": false,
+    "browserRunForThisReview": false
+  },
+  "finalization": {
+    "onlyFourTrackingBooleansChanged": true,
+    "evidence": "docs/standalone/production-v17/catalogue-finalization.json",
+    "browserVisualReview": "docs/standalone/production-v17/browser-visual-review.json",
+    "compiledBundleByteEqualityClaimed": false
+  }
+}

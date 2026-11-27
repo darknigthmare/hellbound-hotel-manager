@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "batchId": "costumes-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "0c63b5635d05c9ed9b42e5e2fc58359f60d25a67",
+  "date": "2026-11-24",
+  "generationMode": "built-in image_gen; one call per pose or targeted correction; transparent_background=true",
+  "costumeId": "carmilla-loose-hair",
+  "fighterId": "carmilla",
+  "appearanceReference": "Hazbin Hotel · Out For Love / Hello Rosie!, S1E7 · regular outfit with loose hair, distinct from flashback battlesuit",
+  "scope": {
+    "requestedPoses": 6,
+    "uniqueDeliveredPoses": 5,
+    "pngMasters": 5,
+    "losslessWebpExports": 5,
+    "blockedPoses": 1
+  },
+  "status": "generated-and-file-verified-with-one-blocked-pose",
+  "note": "Five individual key poses, not a complete animation cycle. Official appearance is the visual target; authored combat poses are Simulation AU adaptations and canonical 1:1 fidelity remains uncertified.",
+  "references": [
+    {
+      "role": "primary-official-costume-and-hairstyle-reference",
+      "url": "https://www.youtube.com/watch?v=lk6uf9Lkq9s",
+      "title": "Carmilla Sings Out For Love | Hazbin Hotel",
+      "publisher": "Amazon Prime Video UK & IE",
+      "validation": "YouTube oEmbed returned title, publisher and thumbnail; official thumbnail visually inspected.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/lk6uf9Lkq9s/hqdefault.jpg"
+    },
+    {
+      "role": "primary-official-episode-sequence-reference",
+      "url": "https://www.youtube.com/watch?v=lxUz4QOyvyc",
+      "title": "Hazbin Hotel: Out for Love | Prime Video",
+      "publisher": "Prime Video Philippines",
+      "validation": "YouTube oEmbed title/publisher verified; sequence identity corroboration, not frame-by-frame visual certification."
+    },
+    {
+      "role": "scene-image-corroboration-only",
+      "url": "https://i.pinimg.com/736x/f6/db/a5/f6dba53df126c456902132260386e751.jpg",
+      "title": "Reposted scene still showing Carmilla with hair down",
+      "validation": "Visually inspected costume/hair detail, secondary repost; not a standalone primary proof."
+    },
+    {
+      "role": "secondary-written-description-corroboration",
+      "url": "https://hazbinhotel.fandom.com/wiki/Carmilla_Carmine",
+      "validation": "Retrieved description distinguishes loose series hairstyle, regular outfit and flashback battlesuit."
+    }
+  ],
+  "assets": [
+    {
+      "id": "carmilla-loose-hair",
+      "costumeId": "carmilla-loose-hair",
+      "fighterId": "carmilla",
+      "pose": "ready",
+      "kind": "individual-costume-key-pose",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-23666748-5b65-43be-8e7f-45bf8b69f04c.png",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair.webp",
+      "prompt": "Use case: precise-object-edit. Refine the ONE isolated Carmilla Carmine loose-hair fighting sprite in the first image; second reference is the official scene costume detail. Preserve exactly her face, hairstyle fully loose and white, hair streak, body proportions, large hands, grey skin, red eyes, hoop earrings, black-and-white dress and carmine-red lining, right-facing ready pose, clean cel drawing and colors. Change only TWO technical costume/frame details: (1) Extend the WHITE CRISSCROSS RIBBON LACES continuously along BOTH black-stocking legs, from the white pointe shoes upward across calves, knees and thighs to just under the skirt, as in the scene. Keep the black stockings visible in the diamond gaps. (2) Fit the complete figure inside the same portrait canvas with at least 6% clear transparent margin above the hair, below both shoes and at both sides; keep feet around 92% height. Do not crop any tip. Do not add props, atmosphere, glow, shadow, floor, stage or scenery. One character only on genuinely transparent alpha.",
+      "generationHistory": [
+        {
+          "prompt": "Use case: identity-preserve. Asset type: ONE independent full-body 2D fighting-game sprite of adult Carmilla Carmine from Hazbin Hotel, the exact released-series appearance with her HAIR DOWN during Out For Love / Hello Rosie, season 1 episode 7. The two reference images are identity/costume references, not backgrounds to reproduce. Preserve her tall very slender dancer silhouette, light grey skin, darker grey angular eye-mask marking, bright red sclera with small white irises and black slit pupils, black lips, black hoop earrings, long thin neck, unusually large elegant white-gloved hands and black pointed nails. Her thick WHITE hair is fully loose, voluminous and calf-length with a black/dark streak in the front fringe, NO hair horns, NO bun, NO ponytail. Keep the standard black off-the-shoulder short-sleeve ballerina dress, small white buttons and narrow white front stripe, angular pointed skirt with white edging and carmine-red lining, black stockings and white angelic-steel pointe shoes with crisscross white ribbon laces high up both legs. Do not use the different flashback battlesuit. Use neutral flat costume colors rather than the purple lighting in the reference. Crisp clean television cel-animation drawing, thin controlled black lines, flat fills and a restrained single shadow step, detailed but not realistic, no glossy 3D. Entire head, hair, both hands and both pointed shoes visible, safe transparent margins, side-on fighting orientation facing RIGHT with face slightly three-quarter for readability. Single character only, no clone, no opponent, no VFX, no stage, no floor, no cast shadow, no words, no label, no watermark. Genuine transparent alpha. Portrait 1024x1536 composition. Pose: graceful combat READY stance, both feet down near 93% canvas height and separated, one softly bent knee, upper body upright, one large gloved hand extended forward at chest height with relaxed claw-like fingers and the other guarding her torso. Calm focused expression. Hair cascades behind her toward the LEFT, leaving both legs and forward arm clearly readable. Preserve the canonical proportions and costume, no sexualized pose.",
+          "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a422256a-334a-478c-9d59-2a3500fe0e54.png",
+          "disposition": "superseded: lace height and framing corrected"
+        }
+      ],
+      "referenceSeed": "official clip thumbnail and corroborating scene still",
+      "classification": "simulation_au-pose-of-sourced-appearance",
+      "integrationStatus": "prepared-for-runtime-registry",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.6895777384440104,
+        "bboxNonzero": [
+          0,
+          20,
+          1010,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          51,
+          76,
+          979,
+          1479
+        ],
+        "lowAlphaNonzeroFraction": 0.021009445190429688
+      },
+      "files": {
+        "master": {
+          "bytes": 1517028,
+          "sha256": "71885990edfb63fda201d1a5b227a4f8096a182a37bd5093114728c5f34c9b67"
+        },
+        "export": {
+          "bytes": 951488,
+          "sha256": "f2e6d767a9f89c8e70bfc76a4071160cb7b03584f70474e38454df92393ccc11"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA checked byte-for-byte identical. No crop, redraw, alpha correction, scaling or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete adult fighter",
+          "loose hair retained; no horn coiffure",
+          "same black-white-red costume and full-leg white lacing",
+          "right-facing combat orientation",
+          "metallic ballet pointe footwear maintained after targeted correction",
+          "true alpha checked",
+          "lossless decoded RGBA identical"
+        ],
+        "limitations": [
+          "key pose adaptation, not traced canonical frame",
+          "in-game scale, baseline and transitions pending",
+          "canonical 1:1 not certified",
+          "minimum intended 5% margins not reached by every extended limb, but visible subject is contained"
+        ],
+        "fidelity1to1Certified": false
+      }
+    },
+    {
+      "id": "carmilla-loose-hair-strike",
+      "costumeId": "carmilla-loose-hair",
+      "fighterId": "carmilla",
+      "pose": "strike",
+      "kind": "individual-costume-key-pose",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-33073058-235d-4cf6-8e6f-a50733b108fb.png",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-strike.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-strike.webp",
+      "prompt": "Use case: identity-preserve. Repose the ONE adult Carmilla Carmine sprite from the supplied reference into a new single 2D fighting-game key pose. Preserve exactly the loose calf-length WHITE hair with black fringe streak, grey skin and angular dark eye mask, bright red eyes with small white irises, black lips, black hoop earrings, tall very slender ballerina anatomy, disproportionately large white-gloved hands, black off-shoulder short-sleeve dress with white front stripe/buttons and pointed white-trimmed skirt with carmine-red lining, black stockings and WHITE crisscross ribbon laces continuously from shoes up to both thighs. NO hair horns, bun or ponytail. Same sharp cel-animation linework, same flat neutral colors and restraint in shading. One entire character only, transparent alpha, no scenery, floor, shadows, glow, weapons, target, impact effect, text, label or duplicates. Portrait 1024x1536 canvas with at least 5% transparent margins all around, all hair and limbs/shoes visible. Facing RIGHT. Pose: LIGHT STRIKE CONTACT, a controlled ballet front kick toward the right, planted left leg long and balanced on its white pointe shoe near 92% canvas height, right leg extended forward roughly horizontally at hip-to-waist height with pointed shoe clearly visible, torso upright and slightly leaning back, one large hand guarding her chest and other extended to balance. Hair flows gently left with movement; skirt remains properly covering her body. Focused expression, no injury.",
+      "generationHistory": [],
+      "referenceSeed": "/workspace/scratch/eed3bf2e772a/generated_images/exec-23666748-5b65-43be-8e7f-45bf8b69f04c.png",
+      "classification": "simulation_au-pose-of-sourced-appearance",
+      "integrationStatus": "prepared-for-runtime-registry",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7652505238850912,
+        "bboxNonzero": [
+          0,
+          21,
+          1009,
+          1512
+        ],
+        "bboxAlphaAtLeast8": [
+          16,
+          120,
+          1007,
+          1444
+        ],
+        "lowAlphaNonzeroFraction": 0.014577229817708334
+      },
+      "files": {
+        "master": {
+          "bytes": 1357854,
+          "sha256": "b1d09a7b5452ac627a27d99edf7e7cc2af3108dffd922c797dbaa9532249c0ef"
+        },
+        "export": {
+          "bytes": 855018,
+          "sha256": "488b1839738162b634ebdf89832b444478b3d30a876e919754aa96a2a8e27f9b"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA checked byte-for-byte identical. No crop, redraw, alpha correction, scaling or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete adult fighter",
+          "loose hair retained; no horn coiffure",
+          "same black-white-red costume and full-leg white lacing",
+          "right-facing combat orientation",
+          "metallic ballet pointe footwear maintained after targeted correction",
+          "true alpha checked",
+          "lossless decoded RGBA identical"
+        ],
+        "limitations": [
+          "key pose adaptation, not traced canonical frame",
+          "in-game scale, baseline and transitions pending",
+          "canonical 1:1 not certified",
+          "minimum intended 5% margins not reached by every extended limb, but visible subject is contained"
+        ],
+        "fidelity1to1Certified": false
+      }
+    },
+    {
+      "id": "carmilla-loose-hair-recoil",
+      "costumeId": "carmilla-loose-hair",
+      "fighterId": "carmilla",
+      "pose": "recoil",
+      "kind": "individual-costume-key-pose",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-1aae04fc-87ed-4603-bc85-341cefa08913.png",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-recoil.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-recoil.webp",
+      "prompt": "Use case: precise-object-edit. In the first image, correct ONLY the footwear of the single adult Carmilla Carmine reaction sprite. Use the second image as exact shoe/costume reference. Replace the two incorrectly drawn high-heeled pumps with her WHITE METALLIC BALLET POINTE SHOES: each foot extends into a long straight tapered toe and she balances on the toe tip; there must be NO separate stiletto, NO heel column and NO flat pump sole. Keep the bent-knee reaction pose, exact face, eye expression, loose white hair, large gloves, dress, stockings and continuous white thigh-to-ankle crisscross ribbons unchanged. Keep both legs anatomically connected. Single full-body character, facing right, same portrait framing and colors, true transparent alpha; no new props, scene, text, shadow or other changes.",
+      "generationHistory": [
+        {
+          "prompt": "Use case: identity-preserve. Repose the ONE adult Carmilla Carmine sprite from the supplied reference into a new single 2D fighting-game key pose. Preserve exactly the loose calf-length WHITE hair with black fringe streak, grey skin and angular dark eye mask, bright red eyes with small white irises, black lips, black hoop earrings, tall very slender ballerina anatomy, disproportionately large white-gloved hands, black off-shoulder short-sleeve dress with white front stripe/buttons and pointed white-trimmed skirt with carmine-red lining, black stockings and WHITE crisscross ribbon laces continuously from shoes up to both thighs. NO hair horns, bun or ponytail. Same sharp cel-animation linework, same flat neutral colors and restraint in shading. One entire character only, transparent alpha, no scenery, floor, shadows, glow, weapons, target, impact effect, text, label or duplicates. Portrait 1024x1536 canvas with at least 5% transparent margins all around, all hair and limbs/shoes visible. Facing RIGHT. Pose: HIT REACTION / RECOIL, a non-graphic brief recovery from a fictional sparring impact. Both feet remain down near the same 92% ground baseline, knees bent, shoulders and head lean modestly backward toward the left while she continues facing RIGHT; one large gloved forearm raises protectively near her face, other hand at abdomen. Hair lags behind to the left in a single coherent mass. Eyes surprised but determined, no wounds, bruises, blood, damage, opponent or incoming attack.",
+          "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-bf36ecd1-0710-4895-b72f-6dd4173a8a5d.png",
+          "disposition": "superseded: conventional heels corrected to metallic ballet pointe shoes"
+        }
+      ],
+      "referenceSeed": "/workspace/scratch/eed3bf2e772a/generated_images/exec-23666748-5b65-43be-8e7f-45bf8b69f04c.png",
+      "classification": "simulation_au-pose-of-sourced-appearance",
+      "integrationStatus": "prepared-for-runtime-registry",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.6887957255045573,
+        "bboxNonzero": [
+          0,
+          53,
+          1000,
+          1508
+        ],
+        "bboxAlphaAtLeast8": [
+          8,
+          148,
+          832,
+          1477
+        ],
+        "lowAlphaNonzeroFraction": 0.015125274658203125
+      },
+      "files": {
+        "master": {
+          "bytes": 1504795,
+          "sha256": "e4cc736c60f43731b4bd639a34aeb757ed438caa9bf52f17dc6e9851f673024f"
+        },
+        "export": {
+          "bytes": 947270,
+          "sha256": "76c6ba4cd185b8539ea32979734dc00d01374d28dbcd9709d73f333cd7bef13a"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA checked byte-for-byte identical. No crop, redraw, alpha correction, scaling or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete adult fighter",
+          "loose hair retained; no horn coiffure",
+          "same black-white-red costume and full-leg white lacing",
+          "right-facing combat orientation",
+          "metallic ballet pointe footwear maintained after targeted correction",
+          "true alpha checked",
+          "lossless decoded RGBA identical"
+        ],
+        "limitations": [
+          "key pose adaptation, not traced canonical frame",
+          "in-game scale, baseline and transitions pending",
+          "canonical 1:1 not certified",
+          "minimum intended 5% margins not reached by every extended limb, but visible subject is contained"
+        ],
+        "fidelity1to1Certified": false
+      }
+    },
+    {
+      "id": "carmilla-loose-hair-heavy",
+      "costumeId": "carmilla-loose-hair",
+      "fighterId": "carmilla",
+      "pose": "heavy",
+      "kind": "individual-costume-key-pose",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-73e944f1-4140-4aa4-8aa3-21add6250272.png",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-heavy.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-heavy.webp",
+      "prompt": "Use case: identity-preserve. Repose the ONE adult Carmilla Carmine sprite from the supplied reference into a new single 2D fighting-game key pose. Preserve exactly the loose calf-length WHITE hair with black fringe streak, grey skin and angular dark eye mask, bright red eyes with small white irises, black lips, black hoop earrings, tall very slender ballerina anatomy, disproportionately large white-gloved hands, black off-shoulder short-sleeve dress with white front stripe/buttons and pointed white-trimmed skirt with carmine-red lining, black stockings and WHITE crisscross ribbon laces continuously from shoes up to both thighs. NO hair horns, bun or ponytail. Same sharp cel-animation linework, same flat neutral colors and restraint in shading. One entire character only, transparent alpha, no scenery, floor, shadows, glow, weapons, target, impact effect, text, label or duplicates. Portrait 1024x1536 canvas with at least 5% transparent margins all around, all hair and limbs/shoes visible. Facing RIGHT. Pose: HEAVY ATTACK KEYFRAME, a grand controlled upward ballet kick in a strong diagonal arc toward the upper RIGHT, one leg supporting her on its pointe toe near bottom center-left, other leg extended diagonally up-right with a completely visible pointed shoe. Upright elegant torso leaning a little left for balance, large gloved hands open in expressive dancer guard. Very long white loose hair sweeps behind toward the left, pointed skirt moves naturally and keeps coverage. Focused determined face. Show no physical motion arc, no victim, no injury. Both shoes MUST remain the identical white metallic ballet POINTE footwear from the reference: long narrow tapered toe, weight on the toe tip when grounded, NO separate heel, NO stiletto, NO pumps, NO boot heel block.",
+      "generationHistory": [],
+      "referenceSeed": "/workspace/scratch/eed3bf2e772a/generated_images/exec-23666748-5b65-43be-8e7f-45bf8b69f04c.png",
+      "classification": "simulation_au-pose-of-sourced-appearance",
+      "integrationStatus": "prepared-for-runtime-registry",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7518151601155599,
+        "bboxNonzero": [
+          0,
+          22,
+          1010,
+          1496
+        ],
+        "bboxAlphaAtLeast8": [
+          20,
+          144,
+          991,
+          1450
+        ],
+        "lowAlphaNonzeroFraction": 0.01768048604329427
+      },
+      "files": {
+        "master": {
+          "bytes": 1395985,
+          "sha256": "25dcdfb5e958547ab73ef53aca527f4f6fa169b6dba40074c49b9eef0af9298d"
+        },
+        "export": {
+          "bytes": 882412,
+          "sha256": "f72f7d3f24b5c7312bba43dfd57c1bdbb5a47f359d459132718c44c3b83fc7eb"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA checked byte-for-byte identical. No crop, redraw, alpha correction, scaling or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete adult fighter",
+          "loose hair retained; no horn coiffure",
+          "same black-white-red costume and full-leg white lacing",
+          "right-facing combat orientation",
+          "metallic ballet pointe footwear maintained after targeted correction",
+          "true alpha checked",
+          "lossless decoded RGBA identical"
+        ],
+        "limitations": [
+          "key pose adaptation, not traced canonical frame",
+          "in-game scale, baseline and transitions pending",
+          "canonical 1:1 not certified",
+          "minimum intended 5% margins not reached by every extended limb, but visible subject is contained"
+        ],
+        "fidelity1to1Certified": false
+      }
+    },
+    {
+      "id": "carmilla-loose-hair-jump",
+      "costumeId": "carmilla-loose-hair",
+      "fighterId": "carmilla",
+      "pose": "jump",
+      "kind": "individual-costume-key-pose",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-698b4a66-cd04-417e-bf13-b392e82e33dd.png",
+      "master": "art/infernal-versus/masters/costumes/carmilla-loose-hair-jump.png",
+      "runtimeExport": "public/assets/sprites/costumes/carmilla-loose-hair-jump.webp",
+      "prompt": "Use case: identity-preserve. Repose the ONE adult Carmilla Carmine sprite from the supplied reference into a new single 2D fighting-game key pose. Preserve exactly the loose calf-length WHITE hair with black fringe streak, grey skin and angular dark eye mask, bright red eyes with small white irises, black lips, black hoop earrings, tall very slender ballerina anatomy, disproportionately large white-gloved hands, black off-shoulder short-sleeve dress with white front stripe/buttons and pointed white-trimmed skirt with carmine-red lining, black stockings and WHITE crisscross ribbon laces continuously from shoes up to both thighs. NO hair horns, bun or ponytail. Same sharp cel-animation linework, same flat neutral colors and restraint in shading. One entire character only, transparent alpha, no scenery, floor, shadows, glow, weapons, target, impact effect, text, label or duplicates. Portrait 1024x1536 canvas with at least 5% transparent margins all around, all hair and limbs/shoes visible. Facing RIGHT. Pose: JUMP ASCENT KEYFRAME, an elegant airborne ballet jump with one knee lifted forward toward the right, the other leg trailing down-left, torso upright, large gloved hands in a balanced raised guard, focused neutral expression. White loose hair flows downward and to the left, all ends inside canvas. Both shoes are the same long tapered white METALLIC BALLET POINTE shoes as the reference: toes pointed, no separate heels, no stilettos or pumps. Keep full body in frame with generous space under her feet. No opponent, damage, VFX or physical arc.",
+      "generationHistory": [],
+      "referenceSeed": "/workspace/scratch/eed3bf2e772a/generated_images/exec-23666748-5b65-43be-8e7f-45bf8b69f04c.png",
+      "classification": "simulation_au-pose-of-sourced-appearance",
+      "integrationStatus": "prepared-for-runtime-registry",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7022342681884766,
+        "bboxNonzero": [
+          0,
+          19,
+          1006,
+          1497
+        ],
+        "bboxAlphaAtLeast8": [
+          56,
+          80,
+          946,
+          1458
+        ],
+        "lowAlphaNonzeroFraction": 0.02989959716796875
+      },
+      "files": {
+        "master": {
+          "bytes": 1506700,
+          "sha256": "e50b4f5d0270e08dfdfcd7160ac54087c50e721edd32bc1e204854447bbd2d9c"
+        },
+        "export": {
+          "bytes": 947402,
+          "sha256": "eecc7608f8b4593ecd98aec513fde5de8dc3e1c84aef9181ac6591844298ae20"
+        }
+      },
+      "exportMethod": "Original PNG copied unchanged; lossless WebP exact=True; decoded RGBA checked byte-for-byte identical. No crop, redraw, alpha correction, scaling or recoloring.",
+      "visualReview": {
+        "status": "inspected-generated-image",
+        "checks": [
+          "one complete adult fighter",
+          "loose hair retained; no horn coiffure",
+          "same black-white-red costume and full-leg white lacing",
+          "right-facing combat orientation",
+          "metallic ballet pointe footwear maintained after targeted correction",
+          "true alpha checked",
+          "lossless decoded RGBA identical"
+        ],
+        "limitations": [
+          "key pose adaptation, not traced canonical frame",
+          "in-game scale, baseline and transitions pending",
+          "canonical 1:1 not certified",
+          "minimum intended 5% margins not reached by every extended limb, but visible subject is contained"
+        ],
+        "fidelity1to1Certified": false
+      }
+    }
+  ],
+  "blocked": [
+    {
+      "pose": "crouch",
+      "status": "generation-blocked-no-file-produced",
+      "prompt": "Use case: identity-preserve. Repose the ONE adult Carmilla Carmine sprite from the supplied reference into a new single 2D fighting-game key pose. Preserve exactly the loose calf-length WHITE hair with black fringe streak, grey skin and angular dark eye mask, bright red eyes with small white irises, black lips, black hoop earrings, tall very slender ballerina anatomy, disproportionately large white-gloved hands, black off-shoulder short-sleeve dress with white front stripe/buttons and pointed white-trimmed skirt with carmine-red lining, black stockings and WHITE crisscross ribbon laces continuously from shoes up to both thighs. NO hair horns, bun or ponytail. Same sharp cel-animation linework, same flat neutral colors and restraint in shading. One entire character only, transparent alpha, no scenery, floor, shadows, glow, weapons, target, impact effect, text, label or duplicates. Portrait 1024x1536 canvas with at least 5% transparent margins all around, all hair and limbs/shoes visible. Facing RIGHT. Pose: CROUCH GUARD, a low balanced ballet plié with BOTH knees deeply bent and her body lowered, torso upright, both white pointe toes near the bottom 92% baseline and heels raised because she stands on her ballet toe tips, front large gloved hand up protecting her face, rear large hand near her waist. Face and body aimed RIGHT, loose hair gathers in a long flowing mass behind her toward the left without intersecting arms or feet. Keep her limbs long and slim; do not shorten anatomy to a chibi. Keep actual figure scale compatible with reference: the lowered head sits about 25% from top with extra transparent space above. Both shoes MUST remain the identical white metallic ballet POINTE footwear from the reference: long narrow tapered toe, weight on the toe tip when grounded, NO separate heel, NO stiletto, NO pumps, NO boot heel block.",
+      "reason": "Image generation output rejected by safety system; moderation_blocked, output stage, category other.",
+      "requestId": "a392e90e-fe1d-46f4-9774-934916ec2b25",
+      "retry": false,
+      "note": "No attempt to circumvent, no duplicate pose substituted, no crouch asset claimed."
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "attemptId": "v3:hb_moxxie:intro:attempt-02",
+      "assetId": "v3:hb_moxxie:intro",
+      "id": "v3:hb_moxxie:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: precise-object-edit. Edit the supplied narrative scene by removing ONLY the black I.M.P. letters from the red sign above the doorway. Replace the letters with an unmarked red surface matching the sign. Preserve everything else exactly: Moxxie aligning the paper, Millie in the doorway, both adult character identities, hands, the closed case, lamp, room architecture, full 16:9 framing and colors. Do not add any text, letters, numbers, logos, dialogue or watermark. One opaque image. The paper markings should remain abstract unreadable strokes.",
+      "refs": [
+        "/workspace/scratch/675899046881/generated_images/exec-ae771035-e7ef-4a02-ace2-bff85617ff85.png"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-22b6113c-868b-4aca-8410-2d1e48f3fa26.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_moxxie-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_moxxie-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "aabb1422e6abd6f156a7c668cf2fd943db0d5417ade314d4ee9864ba0f1b9af6",
+        "masterSha256": "aabb1422e6abd6f156a7c668cf2fd943db0d5417ade314d4ee9864ba0f1b9af6",
+        "exportSha256": "b00a34a824e1eccb112d8597c6b400fe7363ec5f729c1d990c4ced7ca01e0565"
+      },
+      "masterSha256": "aabb1422e6abd6f156a7c668cf2fd943db0d5417ade314d4ee9864ba0f1b9af6",
+      "exportSha256": "b00a34a824e1eccb112d8597c6b400fe7363ec5f729c1d990c4ced7ca01e0565",
+      "masterBytes": 1879059,
+      "exportBytes": 1383618,
+      "generatedAt": "2026-11-25T14:15:02.847902+00:00",
+      "reviewedAt": "2026-11-25T14:15:03.087102+00:00",
+      "visualReviewNotes": "Moxxie adulte aligne une feuille à la réception I.M.P., Millie reste dans la porte, étui fermé visible. Enseigne corrigée sans lettres. Deux personnages, mains et expressions cohérentes ; composition narrative AU.",
+      "fidelityOneToOneCertified": false,
+      "name": "L’avis plié",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_prime2",
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_moxxie",
+      "beat": "intro",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_moxxie",
+        "hb_millie"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "L’avis plié — Moxxie aligne la feuille au lieu de la froisser."
+    },
+    {
+      "attemptId": "v3:hb_moxxie:rival:attempt-01",
+      "assetId": "v3:hb_moxxie:rival",
+      "id": "v3:hb_moxxie:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Moxxie, Crimson. No extra detailed named character.\nExact stage reference: crimson-mansion. Décor runtime exact : Demeure de Crimson · Salon. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: rival — La chaise du fils. Plan large axial légèrement décentré ; image statique 16:9.\nComposition: Table immense en profondeur, chaise vide au centre, Crimson au fond et Moxxie au seuil. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Moxxie contourne la chaise plutôt que de s’y asseoir.\nLighting: Suspension basse qui enferme le registre dans un cercle lumineux. Palette: Vert sombre, bois brun, rouge.\nIncarnation: Moxxie adulte, costume I.M.P., armes de série; Version Exes and Oohs.\nContinuity: Aucune couronne ou pouvoir surnaturel pour Crimson. Crimson est son père abusif : aucune victoire ne force le pardon, la loyauté ni une réconciliation. Sa compétence armée et son sens musical ne deviennent ni magie sonore ni faiblesse universelle au corps à corps.\nAvoid: Pas de posture enfantine imposée à Moxxie adulte. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Preserve the reference location and re-pose the characters naturally to enact only this story beat.\nReference images in order:\n1. character:hb_moxxie: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:hb_crimson: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:crimson-mansion: stage_palette_architecture. Décor runtime exact : Demeure de Crimson · Salon. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_moxxie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_crimson-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/crimson-mansion/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-1824e2d8-d8de-4432-84ed-6fba8ba26b55.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_moxxie-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_moxxie-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "5604dabfc7d7a2a96965eecc1da629a906abdadc2488b1686779314eecc3a34f",
+        "masterSha256": "5604dabfc7d7a2a96965eecc1da629a906abdadc2488b1686779314eecc3a34f",
+        "exportSha256": "4a38c0247f33f7d591bee34729bff29ee8666624c692a4cac4a8218baca53396"
+      },
+      "masterSha256": "5604dabfc7d7a2a96965eecc1da629a906abdadc2488b1686779314eecc3a34f",
+      "exportSha256": "4a38c0247f33f7d591bee34729bff29ee8666624c692a4cac4a8218baca53396",
+      "masterBytes": 1784305,
+      "exportBytes": 1318118,
+      "generatedAt": "2026-11-25T14:15:05.862827+00:00",
+      "reviewedAt": "2026-11-25T14:15:06.087134+00:00",
+      "visualReviewNotes": "Moxxie contourne la chaise vide, Crimson reste au bout de la grande table dans la demeure verte référencée. Rapport père/fils adulte conservé, aucune réconciliation ou pouvoir inventé. Table et chaise AU ajoutées à la salle existante ; pas de texte.",
+      "fidelityOneToOneCertified": false,
+      "name": "La chaise du fils",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_registry",
+        "HB3_prime2"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_moxxie",
+      "beat": "rival",
+      "stageId": "crimson-mansion",
+      "cast": [
+        "hb_moxxie",
+        "hb_crimson"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La chaise du fils — Moxxie contourne la chaise plutôt que de s’y asseoir."
+    },
+    {
+      "attemptId": "v3:hb_moxxie:ending:attempt-01",
+      "assetId": "v3:hb_moxxie:ending",
+      "id": "v3:hb_moxxie:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Moxxie, Millie. No extra detailed named character.\nExact stage reference: imp-reception. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: ending — Preuve conservée. Plan rapproché à deux, banquette d’I.M.P. ; image statique 16:9.\nComposition: Les mains au centre, page pliée dans la poche, paysage flou derrière la vitre. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Moxxie accepte la main de Millie sans abandonner sa feuille.\nLighting: Reflet de rue doux, sans halo sacré. Palette: Rouge assourdi, crème, bleu nuit.\nIncarnation: Moxxie adulte, costume I.M.P., armes de série; Moxxie et Millie adultes.\nContinuity: Couple existant. Crimson est son père abusif : aucune victoire ne force le pardon, la loyauté ni une réconciliation. Sa compétence armée et son sens musical ne deviennent ni magie sonore ni faiblesse universelle au corps à corps.\nAvoid: Pas de pardon de Crimson suggéré par un portrait lumineux. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Banquette du bureau I.M.P. près d’une fenêtre sur la rue ; cadrage intime. Conserver la relation conjugale, seulement les deux mains qui se rejoignent et la feuille pliée, aucun geste de reddition.\nReference images in order:\n1. character:hb_moxxie: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:hb_millie: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:imp-reception: stage_palette_architecture. Décor runtime exact : I.M.P. · Réception. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_moxxie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_millie-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/imp-reception/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-03c41b22-1b50-417a-8fa5-3de94c363de7.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_moxxie-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_moxxie-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "e693d86332d4bc38cdded0fa6fb52ac81e693e3d3a27adba60577b5ae5dad243",
+        "masterSha256": "e693d86332d4bc38cdded0fa6fb52ac81e693e3d3a27adba60577b5ae5dad243",
+        "exportSha256": "4d1deacd18063377f4a5932653c4eae4d0d6ef927e5a153851d5c2c0f5a80a3b"
+      },
+      "masterSha256": "e693d86332d4bc38cdded0fa6fb52ac81e693e3d3a27adba60577b5ae5dad243",
+      "exportSha256": "4d1deacd18063377f4a5932653c4eae4d0d6ef927e5a153851d5c2c0f5a80a3b",
+      "masterBytes": 1830532,
+      "exportBytes": 1309972,
+      "generatedAt": "2026-11-25T14:15:08.503885+00:00",
+      "reviewedAt": "2026-11-25T14:15:08.722116+00:00",
+      "visualReviewNotes": "Moxxie conserve la page pliée et prend la main de Millie sur une banquette à I.M.P. Couple adulte, visages et mains lisibles, enseigne vide. Banquette narrative AU dans le bureau référencé ; aucun pardon de Crimson suggéré.",
+      "fidelityOneToOneCertified": false,
+      "name": "Preuve conservée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_moxxie",
+      "beat": "ending",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_moxxie",
+        "hb_millie"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Preuve conservée — Moxxie accepte la main de Millie sans abandonner sa feuille."
+    },
+    {
+      "attemptId": "v3:hb_millie:intro:attempt-02",
+      "assetId": "v3:hb_millie:intro",
+      "id": "v3:hb_millie:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: precise-object-edit. Correct this single opaque16:9 narrative illustration. Remove the entire axe and its shaft from Millie’s left hand; relax that hand on her bent knee. Keep her other hand touching the plain ranch mark on the broken crate. Pull the camera back slightly or shift her head down enough that BOTH horn tips are inside the frame with clear space above. Preserve her face, outfit, black hair, tail, serious expression, office background, crate and action. No replacement weapon, no text, no extra character. The wall sign remains blank. This is a calm story beat, not a fighter pose sheet.",
+      "refs": [
+        "/workspace/scratch/675899046881/generated_images/exec-9786dbef-3c13-4ad1-9876-2362236ebbf7.png"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-0f530f8b-16cc-4a27-a1b9-c0b6ec08df90.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_millie-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_millie-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "f2b179bdce3c4d23e24f9ea11205dc8130e53fd802f698032a0b9bdaf440e44f",
+        "masterSha256": "f2b179bdce3c4d23e24f9ea11205dc8130e53fd802f698032a0b9bdaf440e44f",
+        "exportSha256": "ab81fc571d5db4b03052d9975c6c516c4212bf5c7fe410889877dff5defdf666"
+      },
+      "masterSha256": "f2b179bdce3c4d23e24f9ea11205dc8130e53fd802f698032a0b9bdaf440e44f",
+      "exportSha256": "ab81fc571d5db4b03052d9975c6c516c4212bf5c7fe410889877dff5defdf666",
+      "masterBytes": 1938402,
+      "exportBytes": 1413606,
+      "generatedAt": "2026-11-25T14:23:36.025032+00:00",
+      "reviewedAt": "2026-11-25T14:23:36.275499+00:00",
+      "visualReviewNotes": "Millie reconnaît la marque abstraite d’une caisse brisée à I.M.P. Arme ajoutée initialement retirée, cornes entièrement recadrées, visage sérieux et main sur le bois. Aucun texte ; composition narrative AU.",
+      "fidelityOneToOneCertified": false,
+      "name": "La marque du ranch",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_millie",
+      "beat": "intro",
+      "stageId": "imp-reception",
+      "cast": [
+        "hb_millie"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La marque du ranch — Elle cesse de sourire en reconnaissant la caisse."
+    },
+    {
+      "attemptId": "v3:hb_millie:rival:attempt-02",
+      "assetId": "v3:hb_millie:rival",
+      "id": "v3:hb_millie:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: precise-object-edit. Keep this opaque16:9 narrative scene with Millie using the side gap in the ranch fence and Striker on the higher ground. Change ONLY the axe visibility: place its entire large blade head behind the intact foreground fence planks at lower left, leaving the plain red/dark shaft visible in Millie’s hands. No portion of the metal blade should remain exposed. Preserve all characters, faces, clothing, hands, horn shapes, tail, gap, ranch and sunset. Do not change the narrative action, no attack, no blood, no text or extra character. This occlusion avoids defining an unsupported isolated weapon design.",
+      "refs": [
+        "/workspace/scratch/675899046881/generated_images/exec-6112711e-e18e-49c6-80a8-bdf7f00e58ef.png"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-2ebd1753-4487-482a-a173-eb1353799637.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_millie-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_millie-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "41d0be548d71d9c0cbf3c3298dd5deee8257b65bf40ff89ca1f6ee1fa826529b",
+        "masterSha256": "41d0be548d71d9c0cbf3c3298dd5deee8257b65bf40ff89ca1f6ee1fa826529b",
+        "exportSha256": "ecd3a2e2632acaad5ac841cb6327ec5cb4f5a9e33f8b8cab1181a57aef3058e6"
+      },
+      "masterSha256": "41d0be548d71d9c0cbf3c3298dd5deee8257b65bf40ff89ca1f6ee1fa826529b",
+      "exportSha256": "ecd3a2e2632acaad5ac841cb6327ec5cb4f5a9e33f8b8cab1181a57aef3058e6",
+      "masterBytes": 2074584,
+      "exportBytes": 1647502,
+      "generatedAt": "2026-11-25T14:23:39.470286+00:00",
+      "reviewedAt": "2026-11-25T14:23:39.718852+00:00",
+      "visualReviewNotes": "Millie prend une brèche latérale au ranch, Striker reste sur la ligne haute. La tête de hache est occultée par la palissade après correction pour ne pas valider une silhouette inventée ; seules hampe et mains restent visibles. Décor et identités conservés, pas de coup ni blessure.",
+      "fidelityOneToOneCertified": false,
+      "name": "La clôture coupée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_western"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_millie",
+      "beat": "rival",
+      "stageId": "wrath-ranch",
+      "cast": [
+        "hb_millie",
+        "hb_striker"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La clôture coupée — Elle choisit une brèche latérale plutôt que la piste balisée."
+    },
+    {
+      "attemptId": "v3:hb_millie:ending:attempt-02",
+      "assetId": "v3:hb_millie:ending",
+      "id": "v3:hb_millie:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: precise-object-edit. Preserve this opaque16:9 calm dinner scene exactly: Millie and her adult sister Sallie May exchange a plate at the rustic ranch table, same faces, clothing, hands, food, lantern, window and warm light. Change ONLY the axe at the far left: move it down behind Millie’s chair and table so its ENTIRE blade head is occluded; show only a short plain red/dark handle leaning behind the chair. No replacement visible blade, no extra weapon. Keep both adults at equal conversational height. No text, no new person, no changed costume.",
+      "refs": [
+        "/workspace/scratch/675899046881/generated_images/exec-49757bc8-6495-4511-aba1-3e4c91593ba5.png"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-ef9240cd-6210-44a5-811e-f20da82d4e99.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_millie-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_millie-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "f3ae3c4d9fcc2ed79ab2c80a45523f5e469b1d6d0cb9b43803fda0e9b55bb549",
+        "masterSha256": "f3ae3c4d9fcc2ed79ab2c80a45523f5e469b1d6d0cb9b43803fda0e9b55bb549",
+        "exportSha256": "1dae4f60a565d55db1739cfe11a616794c17e4d8ccb5c809582dc8ca8e625068"
+      },
+      "masterSha256": "f3ae3c4d9fcc2ed79ab2c80a45523f5e469b1d6d0cb9b43803fda0e9b55bb549",
+      "exportSha256": "1dae4f60a565d55db1739cfe11a616794c17e4d8ccb5c809582dc8ca8e625068",
+      "masterBytes": 1903080,
+      "exportBytes": 1439542,
+      "generatedAt": "2026-11-25T14:23:42.834255+00:00",
+      "reviewedAt": "2026-11-25T14:23:43.055177+00:00",
+      "visualReviewNotes": "Millie et Sallie May adultes partagent un repas à hauteur égale. Intérieur de ferme AU avec ranch visible à la fenêtre, arme posée hors table et tête occultée derrière le mobilier. Identités, quatre mains au plat et vêtements cohérents ; aucun personnage supplémentaire.",
+      "fidelityOneToOneCertified": false,
+      "name": "À table, enfin",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_belles",
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_millie",
+      "beat": "ending",
+      "stageId": "wrath-ranch",
+      "cast": [
+        "hb_millie",
+        "hb_sallie_may"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "À table, enfin — Millie pose son arme hors de la table et accepte un plat tendu."
+    },
+    {
+      "attemptId": "v3:hb_stolas:intro:attempt-01",
+      "assetId": "v3:hb_stolas:intro",
+      "id": "v3:hb_stolas:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Stolas. No extra detailed named character.\nExact stage reference: stolas-palace. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: intro — L’atlas incomplet. Plan de bibliothèque à hauteur des yeux ; image statique 16:9.\nComposition: Atlas au premier plan ; une lacune rectangulaire conduit le regard vers Stolas, grimoire distinct sur un lutrin au fond. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Il tient la reliure sans arracher les autres pages.\nLighting: Lune froide, chandelles retenues. Palette: Bleu nuit, bordeaux, or terne.\nIncarnation: Stolas prince avec pouvoirs et grimoire, tenue adulte de série; Prince avant Mastermind.\nContinuity: Couronne, cape et nombre d’yeux du modèle retenu. Atlas AU séparé visuellement du grimoire canon. L’incarnation jouable précède la sanction de Mastermind ; une fin ne restaure pas automatiquement ses pouvoirs dans l’état tardif. Le grimoire n’est ni un accessoire d’Octavia à gagner, ni une preuve de consentement de Blitzø à une relation.\nAvoid: Aucun look tardif dépourvu de pouvoirs mélangé à cette scène. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Bibliothèque du palais, extension intérieure AU cohérente avec les fenêtres, boiseries et palette de la référence de palais. L’atlas avec une page manquante est un accessoire original AU, différent du grimoire fermé placé sur un lutrin. Stolas princier AVANT Mastermind, jamais le costume déchu de Sinsmas.\nReference images in order:\n1. character:hb_stolas: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage:stolas-palace: stage_palette_architecture. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_stolas-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/stolas-palace/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-440663dc-d08a-4d8d-85b3-9bad278c558f.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_stolas-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_stolas-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "7039d6e20ffa7b13a1fb20f51ed193b500d74b2ee6df8ec0af9488aba3bd36b9",
+        "masterSha256": "7039d6e20ffa7b13a1fb20f51ed193b500d74b2ee6df8ec0af9488aba3bd36b9",
+        "exportSha256": "57041a4c94d71433d5d9533b3c4eebc8aa76d9640e487a01f160beaa394ee13b"
+      },
+      "masterSha256": "7039d6e20ffa7b13a1fb20f51ed193b500d74b2ee6df8ec0af9488aba3bd36b9",
+      "exportSha256": "57041a4c94d71433d5d9533b3c4eebc8aa76d9640e487a01f160beaa394ee13b",
+      "masterBytes": 2039877,
+      "exportBytes": 1476092,
+      "generatedAt": "2026-11-25T14:30:36.825718+00:00",
+      "reviewedAt": "2026-11-25T14:30:37.047603+00:00",
+      "visualReviewNotes": "Revue visuelle : Stolas princier à quatre yeux, couronne et cape, atlas AU avec lacune rectangulaire au premier plan ; livre fermé distinct sur lutrin. Bibliothèque AU dérivée des colonnes, vitraux et motifs du palais. Aucun texte lisible ni autre personnage. Le livre fermé n’est pas certifié comme reproduction canon exacte du grimoire.",
+      "fidelityOneToOneCertified": false,
+      "name": "L’atlas incomplet",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_circus",
+        "HB3_truth"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_stolas",
+      "beat": "intro",
+      "stageId": "stolas-palace",
+      "cast": [
+        "hb_stolas"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "L’atlas incomplet — Il tient la reliure sans arracher les autres pages."
+    },
+    {
+      "attemptId": "v3:hb_stolas:rival:attempt-01",
+      "assetId": "v3:hb_stolas:rival",
+      "id": "v3:hb_stolas:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Stolas, Andrealphus. No extra detailed named character.\nExact stage reference: goetia-court. Décor runtime exact : Tribunal infernal · Mastermind. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: rival — Une frontière de givre. Plan large symétrique rompu par une diagonale ; image statique 16:9.\nComposition: Andrealphus sur le haut des marches ; Stolas à leur pied ; la page flotte matériellement entre deux doigts, sans effet d’âme. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Stolas pose le pied sur une marche sans tendre la main vers son rival.\nLighting: Glace bleue avec contre-jour rouge discret. Palette: Cyan, blanc, violet sombre.\nIncarnation: Stolas prince avec pouvoirs et grimoire, tenue adulte de série; Stolas pré-sanction, Andrealphus apparence S2.\nContinuity: Rencontre transposée AU explicitement. L’incarnation jouable précède la sanction de Mastermind ; une fin ne restaure pas automatiquement ses pouvoirs dans l’état tardif. Le grimoire n’est ni un accessoire d’Octavia à gagner, ni une preuve de consentement de Blitzø à une relation.\nAvoid: Pas de nouveau titre de souverain attribué au vainqueur. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Tribunal infernal goetia-court, exactement le lieu de combat V3 fourni, avec quelques marches givrées ajoutées pour cette mise en scène AU. Pas le pavillon de Sinsmas ni un palais privé inventé pour Andrealphus. La page est tenue physiquement entre deux doigts.\nReference images in order:\n1. character:hb_stolas: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:hb_andrealphus: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:goetia-court: stage_palette_architecture. Décor runtime exact : Tribunal infernal · Mastermind. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_stolas-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_andrealphus-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/goetia-court/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-4671a04b-7148-4062-b07c-af389f42ec57.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_stolas-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_stolas-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "18c2e063ae33bbf66d573fc2d65f136a8bfa8cc692e0b2a0f5b0e6f272d44549",
+        "masterSha256": "18c2e063ae33bbf66d573fc2d65f136a8bfa8cc692e0b2a0f5b0e6f272d44549",
+        "exportSha256": "f7fc4640c9f4c3c146a26b347a4e8224a2d1f78ef3efb262cf874938fac97100"
+      },
+      "masterSha256": "18c2e063ae33bbf66d573fc2d65f136a8bfa8cc692e0b2a0f5b0e6f272d44549",
+      "exportSha256": "f7fc4640c9f4c3c146a26b347a4e8224a2d1f78ef3efb262cf874938fac97100",
+      "masterBytes": 2137161,
+      "exportBytes": 1671296,
+      "generatedAt": "2026-11-25T14:30:38.946485+00:00",
+      "reviewedAt": "2026-11-25T14:30:39.180869+00:00",
+      "visualReviewNotes": "Revue visuelle : duel AU Stolas pré-sanction / Andrealphus au tribunal goetia-court reconnaissable ; quelques marches givrées ajoutées à la scène. Stolas tient physiquement la feuille et pose un pied sur une marche, sans prise de main ni transfert d’âme. Aucune attribution de titre. Aucun texte lisible.",
+      "fidelityOneToOneCertified": false,
+      "name": "Une frontière de givre",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_sinsmas",
+        "HB3_western"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_stolas",
+      "beat": "rival",
+      "stageId": "goetia-court",
+      "cast": [
+        "hb_stolas",
+        "hb_andrealphus"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Une frontière de givre — Stolas pose le pied sur une marche sans tendre la main vers son rival."
+    },
+    {
+      "attemptId": "v3:hb_stolas:ending:attempt-01",
+      "assetId": "v3:hb_stolas:ending",
+      "id": "v3:hb_stolas:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Stolas. No extra detailed named character.\nExact stage reference: stolas-palace. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: ending — L’invitation non envoyée. Plan intime de bureau ; image statique 16:9.\nComposition: Enveloppe fermée en amorce ; Stolas assis de profil, clé séparée à l’autre bord, fenêtre vide derrière. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Il retire sa main de l’enveloppe.\nLighting: Aube froide avec petite lampe chaude. Palette: Lavande, ivoire, bordeaux.\nIncarnation: Stolas prince avec pouvoirs et grimoire, tenue adulte de série; Prince avant Mastermind.\nContinuity: Aucune silhouette d’Octavia instrumentalisée comme récompense. L’incarnation jouable précède la sanction de Mastermind ; une fin ne restaure pas automatiquement ses pouvoirs dans l’état tardif. Le grimoire n’est ni un accessoire d’Octavia à gagner, ni une preuve de consentement de Blitzø à une relation.\nAvoid: Ne pas montrer un destinataire revenu pardonner. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Bureau privé du palais, extension intérieure AU de l’architecture fournie. Stolas princier AVANT Mastermind ; aucune transformation en tenue déchue et aucune autre personne.\nReference images in order:\n1. character:hb_stolas: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage:stolas-palace: stage_palette_architecture. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_stolas-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/stolas-palace/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-1f345766-8a45-4ed0-b10f-cb9f5b8472ae.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_stolas-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_stolas-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "b63532c62f5d96bd925f61d049786f1eb6a47c5ecb26d2ca440d5377a7af7556",
+        "masterSha256": "b63532c62f5d96bd925f61d049786f1eb6a47c5ecb26d2ca440d5377a7af7556",
+        "exportSha256": "bff892d5a1f1e7434b9446113c7061d5c84db7bebf7d5e8aa088033f0cd3f4e2"
+      },
+      "masterSha256": "b63532c62f5d96bd925f61d049786f1eb6a47c5ecb26d2ca440d5377a7af7556",
+      "exportSha256": "bff892d5a1f1e7434b9446113c7061d5c84db7bebf7d5e8aa088033f0cd3f4e2",
+      "masterBytes": 1953937,
+      "exportBytes": 1402420,
+      "generatedAt": "2026-11-25T14:30:41.670087+00:00",
+      "reviewedAt": "2026-11-25T14:30:41.925385+00:00",
+      "visualReviewNotes": "Revue visuelle : Stolas princier assis de profil, main retirée au-dessus de l’enveloppe fermée ; clé séparée et fenêtre vide. Bureau intérieur AU cohérent avec le palais. Aucune autre personne, pardon imposé ou restauration tardive des pouvoirs. Aucun texte lisible.",
+      "fidelityOneToOneCertified": false,
+      "name": "L’invitation non envoyée",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_circus",
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_stolas",
+      "beat": "ending",
+      "stageId": "stolas-palace",
+      "cast": [
+        "hb_stolas"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "L’invitation non envoyée — Il retire sa main de l’enveloppe."
+    },
+    {
+      "attemptId": "v3:hb_striker:intro:attempt-01",
+      "assetId": "v3:hb_striker:intro",
+      "id": "v3:hb_striker:intro",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Striker. No extra detailed named character.\nExact stage reference: stolas-palace. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: intro — L’étui en exposition. Plan rapproché à travers une vitre ; image statique 16:9.\nComposition: Étui vide en amorce, reflet du visage de Striker superposé à une étiquette illisible. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Sa main efface la poussière du verre.\nLighting: Spot de galerie froid sur un fond ocre. Palette: Or sale, ivoire, brun.\nIncarnation: Striker adulte, tenue de chasseur et armes à vérifier par modèle; Striker adulte.\nContinuity: Dentition, cornes et vêtements du modèle retenu. Son discours contre les puissants n’en fait pas un libérateur : il accepte des commandes de puissants. Une arme bénie doit être identifiée ; toutes ses balles ne sont pas automatiquement létales pour toute espèce.\nAvoid: Aucune nouvelle lignée de démon symbolisée. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Galerie du palais de Stolas, espace intérieur AU cohérent avec la palette et les arches du palais fourni. L’étui est VIDE et fermé derrière du verre pour éviter d’inventer une arme spécifique. Le reflet montre seulement le même Striker, pas un second personnage.\nReference images in order:\n1. character:hb_striker: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage:stolas-palace: stage_palette_architecture. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_striker-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/stolas-palace/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-7f761858-c682-43b4-9781-64b0c9df0548.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_striker-intro.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_striker-intro.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "9d4a8f52296960cf9e537e827edb84516fce80bfee219c8381fd0d91d699c12a",
+        "masterSha256": "9d4a8f52296960cf9e537e827edb84516fce80bfee219c8381fd0d91d699c12a",
+        "exportSha256": "e8ec95a04a3d989b16a7fa3bf8608bb32396a1a94abbaa340a68121e04a75248"
+      },
+      "masterSha256": "9d4a8f52296960cf9e537e827edb84516fce80bfee219c8381fd0d91d699c12a",
+      "exportSha256": "e8ec95a04a3d989b16a7fa3bf8608bb32396a1a94abbaa340a68121e04a75248",
+      "masterBytes": 2238303,
+      "exportBytes": 1588314,
+      "generatedAt": "2026-11-25T14:34:13.920270+00:00",
+      "reviewedAt": "2026-11-25T14:34:14.210755+00:00",
+      "visualReviewNotes": "Revue visuelle : Striker adulte essuie une vitrine poussiéreuse, reflet unique cohérent ; étui vide visible et étiquette sans texte. Galerie du palais recomposée AU à partir de l’architecture fournie. Plan rapproché ; aucun nouveau modèle d’arme isolé revendiqué.",
+      "fidelityOneToOneCertified": false,
+      "name": "L’étui en exposition",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_western",
+        "HB3_registry"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_striker",
+      "beat": "intro",
+      "stageId": "stolas-palace",
+      "cast": [
+        "hb_striker"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "L’étui en exposition — Sa main efface la poussière du verre."
+    },
+    {
+      "attemptId": "v3:hb_striker:rival:attempt-01",
+      "assetId": "v3:hb_striker:rival",
+      "id": "v3:hb_striker:rival",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Striker, Blitzø. No extra detailed named character.\nExact stage reference: western-lair. Décor runtime exact : Repaire de Striker · Mine. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: rival — La caisse entre eux. Plan large bas dans le repaire ; image statique 16:9.\nComposition: Caisse au centre ; Blitzø près de la sortie, Striker près du râtelier. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Striker tend la paume vers la caisse, son autre main près de l’arme.\nLighting: Rayon latéral coupant la poussière. Palette: Ocre sec, rouge, noir.\nIncarnation: Striker adulte, tenue de chasseur et armes à vérifier par modèle; Deux assassins adultes.\nContinuity: L’arme d’enjeu est un modèle à référencer. Son discours contre les puissants n’en fait pas un libérateur : il accepte des commandes de puissants. Une arme bénie doit être identifiée ; toutes ses balles ne sont pas automatiquement létales pour toute espèce.\nAvoid: Pas de fraternisation finale. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Mine-repaire western-lair référencée. La caisse d’enjeu reste fermée ; le râtelier peut rester sombre afin de ne pas inventer le dessin d’une nouvelle arme bénie. Main de Striker près de l’étui déjà présent, jamais de tir.\nReference images in order:\n1. character:hb_striker: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. character:hb_blitzo: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n3. stage:western-lair: stage_palette_architecture. Décor runtime exact : Repaire de Striker · Mine. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_striker-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_blitzo-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/western-lair/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-b0523a3e-fa6e-47ae-9feb-21dc4dad1fa9.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_striker-rival.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_striker-rival.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "9f8670680749cc23819ab3c2e06ddb906883e27ab08a870081603c8b97b666e2",
+        "masterSha256": "9f8670680749cc23819ab3c2e06ddb906883e27ab08a870081603c8b97b666e2",
+        "exportSha256": "6b4e98b889a1d6ff4b2cec7789ed37487597643b3f086975858c64dc6c189735"
+      },
+      "masterSha256": "9f8670680749cc23819ab3c2e06ddb906883e27ab08a870081603c8b97b666e2",
+      "exportSha256": "6b4e98b889a1d6ff4b2cec7789ed37487597643b3f086975858c64dc6c189735",
+      "masterBytes": 1968510,
+      "exportBytes": 1462732,
+      "generatedAt": "2026-11-25T14:34:16.548388+00:00",
+      "reviewedAt": "2026-11-25T14:34:16.777888+00:00",
+      "visualReviewNotes": "Revue visuelle : Striker tend la paume vers la caisse fermée, Blitzø reste près de la sortie de western-lair ; rails et parois du repaire reconnaissables. Râtelier sombre en décor et main proche de l’étui, aucune arme bénie extraite ni tir. Les silhouettes du râtelier restent des accessoires de composition AU non certifiés.",
+      "fidelityOneToOneCertified": false,
+      "name": "La caisse entre eux",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_western"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_striker",
+      "beat": "rival",
+      "stageId": "western-lair",
+      "cast": [
+        "hb_striker",
+        "hb_blitzo"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "La caisse entre eux — Striker tend la paume vers la caisse, son autre main près de l’arme."
+    },
+    {
+      "attemptId": "v3:hb_striker:ending:attempt-01",
+      "assetId": "v3:hb_striker:ending",
+      "id": "v3:hb_striker:ending",
+      "category": "story",
+      "tool": "image_gen__imagegen",
+      "status": "accepted",
+      "prompt": "Use case: illustration-story. Asset type: ONE static narrative game scene, opaque horizontal 16:9. Not a contact sheet, not an animation or a new fighter pose sheet.\nCreate a single continuous 2D cel-shaded illustration, precise dark outlines, coherent flat color shapes and restrained shadows matching the supplied adult character models. All key faces, hands and story objects stay inside the central 84% of the frame.\nNo words, letters, numbers, dialogue, subtitles, lyrics, logo, UI, watermark or signature. Any papers/tickets/signs use blank or abstract unreadable marks. This is an original AU game story, not a purported episode screenshot; do not write AU in the image.\nVisible named adult characters: Striker. No extra detailed named character.\nExact stage reference: stolas-palace. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nBeat: ending — Deux poches. Plan américain de dos, tête tournée ; image statique 16:9.\nComposition: Étui fermé sur une épaule, argent visible comme formes dans l’autre main ; galerie brisée au fond. Garder les bords inférieurs et latéraux libres pour l’interface.\nAction: Striker dissimule l’argent avant de partir.\nLighting: Lumière chaude sur l’argent, visage à l’ombre. Palette: Brun, crème, or sombre.\nIncarnation: Striker adulte, tenue de chasseur et armes à vérifier par modèle; Striker adulte.\nContinuity: Moralité inchangée par une victoire. Son discours contre les puissants n’en fait pas un libérateur : il accepte des commandes de puissants. Une arme bénie doit être identifiée ; toutes ses balles ne sont pas automatiquement létales pour toute espèce.\nAvoid: Pas de foule le célébrant comme héros de Wrath. Aucun texte, logo ou dialogue intégré à l’image.\nScene placement clarification: Galerie du palais après le retour : vitrine brisée en arrière-plan, étui fermé transporté sur l’épaule. Les billets sont des formes sans lettres. Il repart seul, aucun personnage blessé.\nReference images in order:\n1. character:hb_striker: character_identity. Pose READY existante comme guide d’identité et de costume, à comparer à l’incarnation demandée avant génération.\n2. stage:stolas-palace: stage_palette_architecture. Décor runtime exact : Palais de Stolas · Terrasse. Reconstitution AU du jeu ; reprendre architecture et palette, pas une certification d’un plan officiel.\nThe references guide identities and environment architecture; do not paste them as panels. Preserve horn shapes, facial markings, eye count, limb count, clothing and relative character scale. Re-pose calmly for the specified narrative action. No gore, no attack effects, no extra weapons.\nStrict lettering rule: any lettering visible in reference environments must be replaced by plain unmarked surfaces. In particular remove I.M.P. letters from wall signs; no readable wall signs, labels or posters anywhere.",
+      "refs": [
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/sprites/individual/hb_striker-ready.webp",
+        "/workspace/scratch/675899046881/hellbound-hotel-manager/public/assets/stages/helluva/stolas-palace/room.webp"
+      ],
+      "sourcePath": "/workspace/scratch/675899046881/generated_images/exec-6826a5e8-ac09-4df8-92ec-a04bde7f9d5b.png",
+      "masterPath": "art/infernal-versus/masters/story/infernal-versus/v3/hb_striker-ending.png",
+      "exportPath": "public/assets/story/infernal-versus/v3/hb_striker-ending.webp",
+      "width": 1672,
+      "height": 941,
+      "opaque": true,
+      "pixelExactExport": true,
+      "hashes": {
+        "originalPngSha256": "5cc21c7128855ac800b68697657fe4496f452b95e4f71611741d405e71c8ee15",
+        "masterSha256": "5cc21c7128855ac800b68697657fe4496f452b95e4f71611741d405e71c8ee15",
+        "exportSha256": "1b3f0d028310d856a4051353555ba28061344e2da9e29af4acf4cb798abe4b38"
+      },
+      "masterSha256": "5cc21c7128855ac800b68697657fe4496f452b95e4f71611741d405e71c8ee15",
+      "exportSha256": "1b3f0d028310d856a4051353555ba28061344e2da9e29af4acf4cb798abe4b38",
+      "masterBytes": 2124745,
+      "exportBytes": 1563628,
+      "generatedAt": "2026-11-25T14:34:18.557118+00:00",
+      "reviewedAt": "2026-11-25T14:34:18.773328+00:00",
+      "visualReviewNotes": "Revue visuelle : Striker seul en plan américain de dos, tête tournée, étui fermé sur l’épaule et billets aux motifs abstraits dans l’autre main. Vitrine brisée en arrière-plan du palais. Aucun personnage blessé, fraternisation ou foule héroïsante ; aucun texte lisible.",
+      "fidelityOneToOneCertified": false,
+      "name": "Deux poches",
+      "scope": "simulation_au",
+      "sourceIds": [
+        "HB3_western",
+        "HB3_oops"
+      ],
+      "routeVersion": 3,
+      "fighterId": "hb_striker",
+      "beat": "ending",
+      "stageId": "stolas-palace",
+      "cast": [
+        "hb_striker"
+      ],
+      "spoilerTier": "season_2",
+      "alt": "Deux poches — Striker dissimule l’argent avant de partir."
+    }
+  ]
+}

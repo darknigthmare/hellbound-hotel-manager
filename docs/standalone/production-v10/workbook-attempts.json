@@ -1,0 +1,58 @@
+{
+  "edition": "V10",
+  "attempts": [
+    {
+      "id": "v10-workbook-prepare-1",
+      "recordedAt": "2026-11-26T15:52:10.298282+00:00",
+      "command": "Primary Node build-bible-v10.mjs --prepare",
+      "exitCode": 137,
+      "status": "interrupted_before_export",
+      "lastVerifiedPhase": "24 delivered image files and recorded source hashes checked; V10 counters recalculated, input-change/recalculate/restore checks passed, formula-error inspection written.",
+      "lastConsoleOutput": "MONO_WASM: WebAssembly resource does not have the expected content type application/wasm, so falling back to slower ArrayBuffer instantiation.",
+      "failureEvidence": "Process returned 137 without an application stack trace; additions XLSX was not created.",
+      "causeAssessment": "Resource pressure during concurrent workbook and technical QA is suspected. Root reported the TypeScript gate was also terminated with 137 and measured approximately 1.8 GB available system memory. No kernel OOM record was available in this executor.",
+      "historicalWorkbookSha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+      "historicalWorkbookUnchanged": true,
+      "finalV10WorkbookCreated": false,
+      "preparationXlsxCreated": false,
+      "recovery": "Heavy operations will run serially. Waiting for root signal before a measured isolated retry; no runtime source changes."
+    },
+    {
+      "id": "v10-workbook-prepare-2",
+      "recordedAt": "2026-11-26T16:00:32.924909+00:00",
+      "command": "Primary Node --max-old-space-size=1024 build-bible-v10.mjs --prepare, isolated from technical QA",
+      "exitCode": 0,
+      "status": "draft_exported_reimported_and_visually_reviewed",
+      "drawings": 11,
+      "deliveredImageFilesChecked": 24,
+      "renderedViews": 10,
+      "formulaErrorCells": 0,
+      "recalculation": "Artifact Tool; changed source file count, revision category and base delta then restored inputs",
+      "rssCheckpointMaxMiB": 388,
+      "fullProcessPeakRss": "not measured",
+      "historicalWorkbookSha256": "305f4e152e252128d29551059de0b2ce240b1d1ef7f84ea15cc4be22e80d1798",
+      "historicalWorkbookUnchanged": true,
+      "finalV10WorkbookCreated": false,
+      "preparationXlsxCreated": true,
+      "visualReview": "All 10 rendered views inspected at readable size. No clipped headers, cropped descriptions or formula errors observed. Current technical QA remains pending in the draft."
+    },
+    {
+      "id": "v10-workbook-final-1",
+      "startedAt": "2026-11-26T16:33:06.839063+00:00",
+      "command": "NODE_OPTIONS=--max-old-space-size=1024 primary Node build-bible-v10.mjs --final",
+      "status": "final_exported_reimported_and_visually_reviewed",
+      "registerSha256": "4e26da27c390426075774e27cd50b0cff1121dc14a3666767aee9d97f515fe1a",
+      "completedAt": "2026-11-26T16:33:14.830638+00:00",
+      "exitCode": 0,
+      "processPeakRssKiB": 485812,
+      "log": "docs/standalone/production-v10/workbook-final-output.txt",
+      "logSha256": "d025570d3c278d9dde4f62417309f79c76109f30e6cfcf5e8d21fd6783bb0fcf",
+      "visualReview": "passed_with_documented_limits",
+      "renderedViews": 10,
+      "finalSheets": 52,
+      "finalTables": 61,
+      "outputSha256": "f116bf8d5324b2a543852fb14d8c191882684647e73a04b14f9fbc14ce37737a",
+      "reviewReport": "docs/standalone/production-v10/workbook-qa.json"
+    }
+  ]
+}

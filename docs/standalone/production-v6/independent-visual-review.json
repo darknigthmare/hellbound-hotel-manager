@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-25T22:03:32.791347+00:00",
+  "reviewer": "independent reference agent",
+  "scope": "Revue visuelle indépendante des six nouvelles bases HB contre la planche nommée CalisDraws, avec conservation de l’état initial et contrôle des deux retouches natives ; revue supplémentaire du bureau Vox S2.",
+  "reference": {
+    "primaryAuthorUrl": "https://twitter.com/CalisDraws/status/1355948687814520837",
+    "publicAuthorOembedUrl": "https://publish.twitter.com/oembed?url=https://twitter.com/CalisDraws/status/1355948687814520837",
+    "secondaryImageUrl": "https://static.zerochan.net/Helluva.Boss.full.3210579.jpg",
+    "localPath": "/workspace/scratch/efd8f075f90c/reference-sources/calis-succubi-sheet.jpg",
+    "sha256": "f394153535fa735d166ba55f6b141f2ff14b5874dc501c615a93e9236dbb04db",
+    "provenanceLimits": "Texte auteur confirmé par oEmbed public ; copie bitmap secondaire. Quelques plans officiels S1E3 ont été inspectés, mais aucune comparaison exhaustive de six silhouettes dans l’épisode."
+  },
+  "method": [
+    "Inspection de la planche entière et de comparaisons côte à côte ; PNG composités sur gris neutre en appliquant leur alpha.",
+    "Vérification visuelle des cornes, cheveux, vêtements, ailes, queues, pieds et limites du cadre.",
+    "Les nouveaux bras baissés sont traités comme une variation de pose ; les omissions de vêtements/accessoires restent des écarts.",
+    "Aucun changement des masters. Les valeurs alpha 253–254 des corps n’ont pas été normalisées.",
+    "Les halos RGB vus dans certains aperçus bruts ne sont pas visibles après composition alpha ; ils ne sont pas déclarés comme fond opaque."
+  ],
+  "initialSummary": {
+    "generatedBasesReviewed": 6,
+    "recognizableIdentities": 6,
+    "noClippingObserved": 6,
+    "targetedCorrectionsRequested": [
+      "hb_apple",
+      "hb_milky"
+    ],
+    "minorDifferencesObserved": [
+      "hb_josh",
+      "hb_coco",
+      "hb_kiki"
+    ],
+    "noMaterialDifferenceIdentifiedInCheckedFeatures": [
+      "hb_kat"
+    ],
+    "certifiedOneToOne": 0,
+    "inGameValidationPerformedByThisReviewer": false
+  },
+  "initialVersion": {
+    "at": "2026-11-25T22:03:32.791347+00:00",
+    "entries": [
+      {
+        "id": "hb_josh",
+        "path": "art/infernal-versus/masters/base/hb_josh-ready.png",
+        "sha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          205,
+          42,
+          866,
+          1500
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Cheveux pâles asymétriques et côté rasé, deux longues cornes noires à base rouge, peau rouge et yeux jaunes.",
+          "T-shirt noir V avec motif rouge et texte BURN FOREST BURN, tour de cou à croix, boucle dorée.",
+          "Ailes noires, pantalon étroit, pieds pointus, queue rouge avec pointe noire."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "La bouche fermée ne conserve pas le petit croc visible sur la planche.",
+            "action": "Réserver pour une revue de détail si la base doit suivre cette expression exacte."
+          },
+          {
+            "severity": "minor",
+            "detail": "Zone rasée rendue avec un quadrillage plutôt que les quelques hachures courtes de la planche.",
+            "action": "Simplifier la texture du côté rasé si une fidélité de détail est requise."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-josh-comparison.jpg"
+      },
+      {
+        "id": "hb_coco",
+        "path": "art/infernal-versus/masters/base/hb_coco-ready.png",
+        "sha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          246,
+          25,
+          789,
+          1517
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Afro bordeaux volumineux, deux petites cornes rouges, peau rouge foncé, yeux jaunes.",
+          "Crop top violet décolleté à motif crâne blanc, bretelles noires et tour de cou.",
+          "Résille, short bleu, bottines violettes, petites ailes noires et queue rouge."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "Le short reçoit des poches et des ourlets supplémentaires ; sa taille devient presque droite tandis que la planche montre une découpe centrale en V laissant la résille visible.",
+            "action": "Rétablir la taille en V et éviter les coutures non attestées pour une validation de détail."
+          },
+          {
+            "severity": "minor",
+            "detail": "Les ailes sont plus arquées et plus hautes relativement aux épaules que sur la planche.",
+            "action": "Conserver comme variation de pose, sans la présenter comme copie exacte du modèle."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-coco-comparison.jpg"
+      },
+      {
+        "id": "hb_apple",
+        "path": "art/infernal-versus/masters/base/hb_apple-ready.png",
+        "sha256": "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          235,
+          32,
+          858,
+          1521
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "targeted_correction_requested",
+        "retained": [
+          "Cheveux blonds en touffe, deux longues cornes roses à pointe noire, peau rose vive et yeux jaunes.",
+          "Salopette-short grise à attaches rondes, motif de coulures rouges en haut, pendentif pentagramme, revers clairs.",
+          "Ailes noires, talons étroits, queue rose en boucle et motif présent sur le bon mollet."
+        ],
+        "differences": [
+          {
+            "severity": "material",
+            "detail": "Les anneaux/bracelets noirs visibles autour du poignet situé à gauche de la planche sont absents des deux poignets du PNG.",
+            "action": "Rétablir les anneaux sur le même poignet dans la nouvelle pose."
+          },
+          {
+            "severity": "material",
+            "detail": "La pointe de queue devient une flèche rose simple ; les deux prolongements noirs latéraux de la référence sont perdus.",
+            "action": "Reprendre les contours rose/noir de la pointe directement depuis la référence."
+          },
+          {
+            "severity": "material",
+            "detail": "Le motif du mollet est réinterprété : deux ronds clairs et une boucle noire remplacent le dessin irrégulier, ses réserves claires et ses courbes de la planche.",
+            "action": "Reprendre le motif exact de la jambe de référence, sans inventer une symétrie ou un motif générique."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-apple-comparison.jpg"
+      },
+      {
+        "id": "hb_kat",
+        "path": "art/infernal-versus/masters/base/hb_kat-ready.png",
+        "sha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "width": 887,
+        "height": 1774,
+        "visibleAlpha16Bounds": [
+          211,
+          27,
+          771,
+          1731
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "no_material_difference_identified_in_checked_features",
+        "retained": [
+          "Grande silhouette mince, peau rose, cheveux violet presque noir hauts, deux cornes noires.",
+          "Haut bordeaux sans manches avec capuche et cordons ; pantalon bleu gris avec larges revers pâles.",
+          "Ailes noires, queue entièrement noire à pointe en flèche, chaussures noires pointues."
+        ],
+        "differences": [
+          {
+            "severity": "pose",
+            "detail": "La main sur la hanche devient une pose neutre avec deux bras baissés ; les ailes et l’écartement des jambes s’adaptent à cette pose.",
+            "action": "Variation de pose à documenter ; aucune certification d’identité pixel à pixel."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-kat-comparison.jpg"
+      },
+      {
+        "id": "hb_milky",
+        "path": "art/infernal-versus/masters/base/hb_milky-ready.png",
+        "sha256": "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b",
+        "width": 1105,
+        "height": 1423,
+        "visibleAlpha16Bounds": [
+          237,
+          49,
+          903,
+          1392
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "targeted_correction_requested",
+        "retained": [
+          "Silhouette courte et plus ronde, cheveux noirs volumineux, deux cornes noires, peau rouge.",
+          "Crop top sombre asymétrique aux épaules, short bleu clair déchiré, cuissardes noires pointues.",
+          "Petites ailes noires et queue rouge."
+        ],
+        "differences": [
+          {
+            "severity": "material",
+            "detail": "Le bras à gauche de l’image est nu sur la planche ; le PNG ajoute une manche noire complète sur ce bras. Le bras droit possède bien la manche sombre sur la référence.",
+            "action": "Rétablir le bras gauche de l’image en peau rouge tout en conservant la manche droite et le haut asymétrique."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-milky-comparison.jpg"
+      },
+      {
+        "id": "hb_kiki",
+        "path": "art/infernal-versus/masters/base/hb_kiki-ready.png",
+        "sha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          301,
+          32,
+          845,
+          1511
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Longs cheveux bleu gris asymétriques, peau rose, longues cornes noires à base rose, boucles d’oreille en croix.",
+          "Haut en résille avec deux petits cœurs noirs, pièce noire à taille haute et boutons.",
+          "Bottes de hauteurs très différentes, aile noire visible du côté droit, queue rose devenant noire à son extrémité."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "Les petits segments/lignes noirs à la racine rose des cornes sont simplifiés par rapport à la planche.",
+            "action": "Rétablir ces petits marquages si le niveau de détail retenu les exige."
+          },
+          {
+            "severity": "minor",
+            "detail": "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées.",
+            "action": "Comparer le contour du short/corset sur la référence avant qualification finale de détail."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-kiki-comparison.jpg"
+      }
+    ]
+  },
+  "finalVersion": {
+    "status": "character_reviews_complete",
+    "at": "2026-11-25T22:08:13.655824+00:00",
+    "entries": [
+      {
+        "id": "hb_josh",
+        "path": "art/infernal-versus/masters/base/hb_josh-ready.png",
+        "sha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          205,
+          42,
+          866,
+          1500
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Cheveux pâles asymétriques et côté rasé, deux longues cornes noires à base rouge, peau rouge et yeux jaunes.",
+          "T-shirt noir V avec motif rouge et texte BURN FOREST BURN, tour de cou à croix, boucle dorée.",
+          "Ailes noires, pantalon étroit, pieds pointus, queue rouge avec pointe noire."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "La bouche fermée ne conserve pas le petit croc visible sur la planche.",
+            "action": "Réserver pour une revue de détail si la base doit suivre cette expression exacte."
+          },
+          {
+            "severity": "minor",
+            "detail": "Zone rasée rendue avec un quadrillage plutôt que les quelques hachures courtes de la planche.",
+            "action": "Simplifier la texture du côté rasé si une fidélité de détail est requise."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-josh-comparison.jpg",
+        "initialSha256": "0f7a39887e767015a567b1bfbab958ece922d866fc4f80e0ac27696b028c7f2b",
+        "unchangedFromInitialVersion": true,
+        "visibleAlpha16BoundsInsideFrame": true
+      },
+      {
+        "id": "hb_coco",
+        "path": "art/infernal-versus/masters/base/hb_coco-ready.png",
+        "sha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          246,
+          25,
+          789,
+          1517
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Afro bordeaux volumineux, deux petites cornes rouges, peau rouge foncé, yeux jaunes.",
+          "Crop top violet décolleté à motif crâne blanc, bretelles noires et tour de cou.",
+          "Résille, short bleu, bottines violettes, petites ailes noires et queue rouge."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "Le short reçoit des poches et des ourlets supplémentaires ; sa taille devient presque droite tandis que la planche montre une découpe centrale en V laissant la résille visible.",
+            "action": "Rétablir la taille en V et éviter les coutures non attestées pour une validation de détail."
+          },
+          {
+            "severity": "minor",
+            "detail": "Les ailes sont plus arquées et plus hautes relativement aux épaules que sur la planche.",
+            "action": "Conserver comme variation de pose, sans la présenter comme copie exacte du modèle."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-coco-comparison.jpg",
+        "initialSha256": "4028a769b0436bf47b53e6bce8752bd1f847412816a2bb9b952b224551c70f1d",
+        "unchangedFromInitialVersion": true,
+        "visibleAlpha16BoundsInsideFrame": true
+      },
+      {
+        "id": "hb_apple",
+        "path": "art/infernal-versus/masters/base/hb_apple-ready.png",
+        "sha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          234,
+          29,
+          854,
+          1522
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "improved_with_remaining_calf_motif_difference",
+        "retained": [
+          "Cheveux blonds en touffe, deux longues cornes roses à pointe noire, peau rose vive et yeux jaunes.",
+          "Salopette-short grise à attaches rondes, motif de coulures rouges en haut, pendentif pentagramme, revers clairs.",
+          "Ailes noires, talons étroits, queue rose en boucle et motif présent sur le bon mollet."
+        ],
+        "differences": [
+          {
+            "severity": "material",
+            "detail": "Le motif du mollet est réinterprété : deux ronds clairs et une boucle noire remplacent le dessin irrégulier, ses réserves claires et ses courbes de la planche.",
+            "action": "Reprendre le motif exact de la jambe de référence, sans inventer une symétrie ou un motif générique."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-apple-corrected-comparison.jpg",
+        "initialSha256": "562c7bb431f98db13f913bddef800055a3a446c7ed8bedc80b412d68d3ae2f84",
+        "nativeEditOutput": {
+          "path": "/workspace/scratch/efd8f075f90c/generated_images/exec-dfc80b33-0459-44ba-9985-fc92b820bffb.png",
+          "sha256": "40a1493c01410e9104e2086bbd207e05d14fb18d755c1fd5ea00fdb80b1b8cc0",
+          "byteIdenticalToCurrentMaster": true
+        },
+        "resolvedDifferences": [
+          "Bracelets/anneaux noirs rétablis au poignet gauche de l’image.",
+          "Les deux prolongements noirs de la pointe de queue sont rétablis."
+        ],
+        "conclusion": "Amélioration vérifiée ; réserve de fidélité du motif de mollet maintenue. Pas de certification 1:1.",
+        "visibleAlpha16BoundsInsideFrame": true
+      },
+      {
+        "id": "hb_kat",
+        "path": "art/infernal-versus/masters/base/hb_kat-ready.png",
+        "sha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "width": 887,
+        "height": 1774,
+        "visibleAlpha16Bounds": [
+          211,
+          27,
+          771,
+          1731
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "no_material_difference_identified_in_checked_features",
+        "retained": [
+          "Grande silhouette mince, peau rose, cheveux violet presque noir hauts, deux cornes noires.",
+          "Haut bordeaux sans manches avec capuche et cordons ; pantalon bleu gris avec larges revers pâles.",
+          "Ailes noires, queue entièrement noire à pointe en flèche, chaussures noires pointues."
+        ],
+        "differences": [
+          {
+            "severity": "pose",
+            "detail": "La main sur la hanche devient une pose neutre avec deux bras baissés ; les ailes et l’écartement des jambes s’adaptent à cette pose.",
+            "action": "Variation de pose à documenter ; aucune certification d’identité pixel à pixel."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-kat-comparison.jpg",
+        "initialSha256": "b21086226fa9ab9df0e2c0ea8e519765b992a325db881c281b6624593a9c8da0",
+        "unchangedFromInitialVersion": true,
+        "visibleAlpha16BoundsInsideFrame": true
+      },
+      {
+        "id": "hb_milky",
+        "path": "art/infernal-versus/masters/base/hb_milky-ready.png",
+        "sha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89",
+        "width": 1105,
+        "height": 1423,
+        "visibleAlpha16Bounds": [
+          254,
+          44,
+          901,
+          1400
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "targeted_sleeve_difference_resolved",
+        "retained": [
+          "Silhouette courte et plus ronde, cheveux noirs volumineux, deux cornes noires, peau rouge.",
+          "Crop top sombre asymétrique aux épaules, short bleu clair déchiré, cuissardes noires pointues.",
+          "Petites ailes noires et queue rouge."
+        ],
+        "differences": [],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-milky-corrected-comparison.jpg",
+        "initialSha256": "944a6b1a6ecbf0481ea6198c68a68640a1b371f07ae81f22ab6a1c64baf2fa6b",
+        "nativeEditOutput": {
+          "path": "/workspace/scratch/efd8f075f90c/generated_images/exec-9a59faca-cf48-415e-9e85-96738698f72a.png",
+          "sha256": "a194eb5a9b4a1f0425600af3b40a64a093b81052debe9c1a4a3feee2e5524f89",
+          "byteIdenticalToCurrentMaster": true
+        },
+        "resolvedDifferences": [
+          "Le bras gauche de l’image est désormais nu et rouge ; la manche droite est préservée."
+        ],
+        "conclusion": "Correction ciblée vérifiée. Pas de régression majeure observée parmi les éléments contrôlés ; pas de certification 1:1.",
+        "visibleAlpha16BoundsInsideFrame": true
+      },
+      {
+        "id": "hb_kiki",
+        "path": "art/infernal-versus/masters/base/hb_kiki-ready.png",
+        "sha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "width": 1024,
+        "height": 1536,
+        "visibleAlpha16Bounds": [
+          301,
+          32,
+          845,
+          1511
+        ],
+        "clippingObserved": false,
+        "identityAssessment": "reconnaissable par comparaison avec la planche nommée",
+        "fidelityStatus": "minor_differences_observed",
+        "retained": [
+          "Longs cheveux bleu gris asymétriques, peau rose, longues cornes noires à base rose, boucles d’oreille en croix.",
+          "Haut en résille avec deux petits cœurs noirs, pièce noire à taille haute et boutons.",
+          "Bottes de hauteurs très différentes, aile noire visible du côté droit, queue rose devenant noire à son extrémité."
+        ],
+        "differences": [
+          {
+            "severity": "minor",
+            "detail": "Les petits segments/lignes noirs à la racine rose des cornes sont simplifiés par rapport à la planche.",
+            "action": "Rétablir ces petits marquages si le niveau de détail retenu les exige."
+          },
+          {
+            "severity": "minor",
+            "detail": "La découpe basse de la pièce noire à taille haute et ses coutures sont légèrement réinterprétées.",
+            "action": "Comparer le contour du short/corset sur la référence avant qualification finale de détail."
+          }
+        ],
+        "scratchComparison": "/workspace/scratch/efd8f075f90c/reference-sources/qa-kiki-comparison.jpg",
+        "initialSha256": "1282bf3fbae65be2fb77bd7bbdeabd37ef34d384208b4e6174abc27ec0a3862f",
+        "unchangedFromInitialVersion": true,
+        "visibleAlpha16BoundsInsideFrame": true
+      }
+    ],
+    "summary": {
+      "basesReviewed": 6,
+      "recognizableIdentities": 6,
+      "noClippingObserved": 6,
+      "targetedCorrectionResolved": [
+        "hb_milky"
+      ],
+      "improvedWithMaterialDifferenceRemaining": [
+        "hb_apple"
+      ],
+      "minorDifferencesRemain": [
+        "hb_josh",
+        "hb_coco",
+        "hb_kiki"
+      ],
+      "noMaterialDifferenceIdentifiedInCheckedFeatures": [
+        "hb_kat"
+      ],
+      "certifiedOneToOne": 0,
+      "inGameValidationPerformedByThisReviewer": false
+    }
+  },
+  "limits": [
+    "Aucune fidélité 1:1 certifiée, même lorsqu’aucun écart majeur n’a été observé.",
+    "Aucune nouvelle capture de navigateur ou vérification en jeu réalisée par cet agent.",
+    "Les tests techniques de l’agent producteur sont distincts de cette revue de fidélité.",
+    "Les composites contenant la référence originale restent des fichiers de travail hors dépôt."
+  ],
+  "stageReview": {
+    "id": "vox-tower",
+    "incarnation": "Bureau de Vox intérieur, S2, adaptation de cadrage pour combat",
+    "sourceIds": [
+      "SUP-VOX-CLIP",
+      "SUP-VOX-CARD"
+    ],
+    "initialVersion": {
+      "path": "/workspace/scratch/efd8f075f90c/generated_images/exec-f0a42434-8181-4b98-8326-59563d642dda.png",
+      "sha256": "5d5ef9f8dd4b0aef0a76bfe2cde9ced7ecdd2182531c08b636df922140e9126e",
+      "at": "2026-11-25T22:08:13.655824+00:00",
+      "retained": [
+        "Grand V mural, bureau angulaire à bords cyan, panneaux à tracés électroniques, aquarium avec coraux sur les côtés.",
+        "Pas de cadre de carte ni effet foil."
+      ],
+      "differences": [
+        {
+          "severity": "material",
+          "detail": "Fauteuil Vox placé de l’autre côté du bureau et chaises visiteurs côté caméra, à l’inverse de la vue officielle depuis l’aquarium.",
+          "status": "targeted_edit_in_progress_by_parent"
+        },
+        {
+          "severity": "adaptation",
+          "detail": "Caméra horizontale, grand espace de sol dégagé et quadrillage de carrelage adaptés au combat ; ces détails ne sont pas vérifiés dans la vue canonique en plongée."
+        },
+        {
+          "severity": "detail",
+          "detail": "Panneaux de fond uniformisés/vides et chaises visiteurs plus angulaires que dans la carte photographiée."
+        }
+      ]
+    },
+    "finalVersion": {
+      "status": "accepted_as_documented_combat_adaptation_with_limits",
+      "at": "2026-11-25T22:09:48.784609+00:00",
+      "masterPath": "art/infernal-versus/masters/stages/vox-office-s2-room.png",
+      "masterSha256": "7bb2f5860c76ccf3bbb660aa7cb312ea7a5681b47e49ee3bc358f645a8f7644b",
+      "reviewedOutputPath": "/workspace/scratch/efd8f075f90c/generated_images/exec-bac73620-f838-4999-9626-f85f07c82855.png",
+      "reviewedOutputSha256": "7bb2f5860c76ccf3bbb660aa7cb312ea7a5681b47e49ee3bc358f645a8f7644b",
+      "byteIdenticalToCurrentMaster": true,
+      "width": 1671,
+      "height": 941,
+      "corrected": [
+        "Fauteuil de Vox pointu maintenant côté caméra, vu de dos.",
+        "Deux chaises visiteurs de l’autre côté du bureau, conformément à la disposition de la vue officielle depuis l’aquarium."
+      ],
+      "retained": [
+        "Grand V mural, bureau angulaire à bords cyan, tracés électroniques verticaux, aquarium et coraux.",
+        "Absence de personnages, de cadre de carte et de reflets foil."
+      ],
+      "remainingAdaptations": [
+        "Caméra horizontale et espace de combat dégagé, à la place de la vue canonique en plongée depuis l’aquarium.",
+        "Carrelage du sol, uniformisation des panneaux et formes plus angulaires des sièges visiteurs ; détails simplifiés ou non documentés par la vignette canonique."
+      ],
+      "referenceLimits": [
+        "Vue large officielle native 320×180.",
+        "Photo secondaire de carte avec forts reflets foil ; utile pour disposition, pas pour couleurs exactes.",
+        "Aucune façade ou architecture complète de la tour qualifiée."
+      ],
+      "certifiedOneToOne": false,
+      "inGameValidationPerformedByThisReviewer": false,
+      "conclusion": "Correction de disposition vérifiée ; décor retenu comme adaptation de combat du bureau intérieur de Vox S2. Aucune certification 1:1."
+    }
+  },
+  "reviewCompleteAt": "2026-11-25T22:09:48.784609+00:00",
+  "completionSummary": {
+    "characterMastersReviewed": 6,
+    "stageMastersReviewed": 1,
+    "characterMaterialDifferenceRemaining": [
+      "hb_apple: motif du mollet"
+    ],
+    "minorCharacterDifferencesRemain": [
+      "hb_josh",
+      "hb_coco",
+      "hb_kiki"
+    ],
+    "targetedCharacterDifferenceResolved": [
+      "hb_milky: manche indue supprimée"
+    ],
+    "targetedStageDifferenceResolved": [
+      "vox-tower: disposition des sièges"
+    ],
+    "certifiedOneToOne": 0,
+    "imageFilesModifiedByReviewer": 0,
+    "allReviewedFinalOutputsMatchIntegratedMasters": true,
+    "furtherWritesPlanned": false
+  }
+}

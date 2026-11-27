@@ -1,0 +1,601 @@
+{
+  "edition": "V9",
+  "reviewedAt": "2026-11-26T14:44:05.278095+00:00",
+  "reviewer": "reference_audit, independent from image-generation owner",
+  "scope": "Independent visual comparison of seven V9 native outputs with primary reference images, intended environment exclusions and handoff. Alpha measurements and non-destructive compositing diagnostics. No master image edits, commits or runtime testing.",
+  "fidelityOneToOneCertified": false,
+  "assets": [
+    {
+      "id": "stolas-grimoire-closed",
+      "kind": "isolated_prop",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-3f6d62eb-eee8-4b0f-8e18-71aefd8adb17.png",
+      "masterSha256": "b72f753eb11ead277194f2168cfcc5eec83d9ee395ec9790b1d758f3192dc2ad",
+      "nativeDimensions": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        97,
+        57,
+        991,
+        1353
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 415075,
+        "alpha1To31Pixels": 9944,
+        "alpha240To254Pixels": 1140070,
+        "alpha255Pixels": 2767
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9-reference-audit/grimoire-front.png",
+          "sha256": "a67aa4cf73eca2abc3acdd821eeab870708a44542922d50ea386f5f99fd05783",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "url": "https://sharkrobot.com/products/stolas-grimoire-sticker-book",
+          "role": "Official SpindleHorse merchandise front-cover design"
+        }
+      ],
+      "matches": [
+        "Livre bleu nuit, bordure doree a arches, quatre etoiles, croissant orne et sceau central circulaire reconnaissables.",
+        "Un seul livre entier, couverture lisible, contour isole et marges visibles."
+      ],
+      "limitations": [
+        "Reference primaire = carnet derive a reliure spirale : dos relie et bloc de pages du candidat sont une adaptation de volume, pas des details corroborés par cette seule photo.",
+        "Geometrie fine du sceau, arabesques, proportions et reflets redessines ; exactitude vectorielle du symbole non certifiee.",
+        "Reference officielle de produit derive ; ne vaut pas verification de chaque apparition du grimoire dans les episodes."
+      ],
+      "acceptanceReason": "Accessoire statique coherent et reconnaissable avec couverture appuyee sur une source officielle.",
+      "counting": "Un accessoire ; aucune base de personnage ni animation.",
+      "masterPath": "production/v9/props/masters/stolas-grimoire-closed.png",
+      "persistedMasterHashMatchesReviewedNative": true
+    },
+    {
+      "id": "hb_moxxies_mother-portrait-s2",
+      "kind": "waist_up_archive_portrait",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-1bb62d15-e028-495a-a154-8adeaa843465.png",
+      "masterSha256": "69ef5089b7141800160e69f6178e5099eeda9475cdf9da81dadf929a65804083",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        212,
+        20,
+        1044,
+        1243
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 902627,
+        "alpha1To31Pixels": 8516,
+        "alpha240To254Pixels": 654817,
+        "alpha255Pixels": 1381
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9-reference-audit/moxxie-mother-pin.png",
+          "sha256": "785a892729ee7cf94e7933ea6db6f952e199f3862177e05541cca84ffcb7863b",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "url": "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin",
+          "role": "Official SpindleHorse pin, portrait composition"
+        }
+      ],
+      "matches": [
+        "Cheveux noirs longs, peau rouge, yeux jaunes mi-clos, trois points blancs par joue, creoles dorees et fleur rouge a centre blanc.",
+        "Robe bleue a manches bouffantes, col et gants blancs, bordures rouges et bouquet ; composition du portrait conservee.",
+        "Un seul buste a la taille ; absence de jambes explicite, sans fausse silhouette complete."
+      ],
+      "limitations": [
+        "Le cadre metallique masque les pointes des cornes dans la reference ; la hauteur et la terminaison completes des cornes du candidat ne sont pas entierement corroborees.",
+        "Cadrage bas et courbure des cheveux adaptes apres suppression du cadre de pin ; volumes du bouquet et des gants redessines.",
+        "Aucune reference du bassin, des jambes ou des chaussures : ne resout pas la base entiere manquante de cette identite."
+      ],
+      "acceptanceReason": "Portrait d archive reconnaissable et fidele aux principaux motifs visibles, avec reserve explicite sur les parties masquees par le pin.",
+      "counting": "Portrait partiel uniquement ; ne pas reduire le compteur des identites sans base entiere.",
+      "masterPath": "production/v9/helluva/masters/hb_moxxies_mother-portrait-s2.png",
+      "persistedMasterHashMatchesReviewedNative": true
+    },
+    {
+      "id": "lute-post-finale-s1-ready",
+      "kind": "full_body_static_incarnation",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-ce29cd28-61b5-4077-a8e3-4b1667a76b5b.png",
+      "masterSha256": "26b952b8e35f16e4b697cdcc36c2361df3ac32bc1cfd61bca459f33516ca3dac",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        67,
+        14,
+        927,
+        1513
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 957225,
+        "alpha1To31Pixels": 57758,
+        "alpha240To254Pixels": 541325,
+        "alpha255Pixels": 0
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9-reference-audit/lute-post-finale-full-20s.png",
+          "sha256": "4cf18d41e676b9f8a66069a20bfd6d401428f87cdb9e64d451323a9f4c6b2eb6",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=20s",
+          "role": "Prime Video Brasil, S1 finale beach scene, entire figure"
+        },
+        {
+          "path": "/tmp/infernal-v9-reference-audit/lute-post-finale-full-18s.png",
+          "sha256": "e2f165ada9881b785cdbf63ac72e53f9fb9521d106c82c89d36ddd57a24905e7",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=18s",
+          "role": "Second entire-figure frame"
+        },
+        {
+          "path": "/tmp/infernal-v9-reference-audit/lute-post-finale-face-16s.png",
+          "sha256": "52ef321df342d98563ffbe212efbb55b82ae67ee1a691f97cd62233a2d263186",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=16s",
+          "role": "Hair, eyes and facial marks"
+        },
+        {
+          "path": "/tmp/infernal-v9-reference-audit/lute-post-finale-bandage-25s.png",
+          "sha256": "55e016fdce7f35808d18ad4fe41618d25b9b0d621aefc126f92189a73e591e75",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=25s",
+          "role": "Torso and absent left arm; file name does not establish medical bandages"
+        }
+      ],
+      "matches": [
+        "Bras GAUCHE absent et petite manche dechiree ; une seule main droite conservee tenant le halo dore. Aucune prothese.",
+        "Deux ailes claires a bord sombre et bandes noires, halo propre, cheveux blancs en pointes, yeux jaunes et marques de joue.",
+        "Uniforme sombre, col festonne, zones jaune pale du visage et du torse compatibles avec les images ; jambes et pieds entiers.",
+        "Une seule silhouette, sans Lilith, plage ou fauteuil."
+      ],
+      "limitations": [
+        "Chaque source video est un crop natif de 320 x 180 ; la silhouette entiere de Lute occupe seulement une petite partie de l image.",
+        "Longueurs de plumes, nombre et contours fins des divisions, decoupe exacte du bas du vetement, forme des pieds et repartition des zones jaunes ne sont pas certifiables a cette resolution.",
+        "Pose droite adaptee et proportions redessinees ; ne pas presenter comme modele officiel, trace ou reproduction 1:1.",
+        "Incarnation S1 apres le final ; ne pas etiqueter comme incarnation S2 a prothese doree ni comme nouvelle identite."
+      ],
+      "alphaReview": {
+        "verdict": "accepted_no_visible_diffuse_glow_in_rgba_composite",
+        "method": "Compositing diagnostic only on white and slate backgrounds; source master was not modified.",
+        "diagnosticPath": "/tmp/infernal-v9-reference-audit/review-lute-alpha-composite.png",
+        "finding": "La lueur apparente du rendu RGB brut est largement stockee sous alpha=0 et disparait avec une composition RGBA correcte. Des pixels de tres faible alpha subsistent pres des contours ; aucun grand halo visible ni fond opaque observe.",
+        "invisibleRgbExamples": [
+          {
+            "xy": [
+              512,
+              1400
+            ],
+            "rgba": [
+              153,
+              141,
+              103,
+              0
+            ]
+          },
+          {
+            "xy": [
+              512,
+              120
+            ],
+            "rgba": [
+              66,
+              60,
+              60,
+              0
+            ]
+          },
+          {
+            "xy": [
+              650,
+              1450
+            ],
+            "rgba": [
+              78,
+              72,
+              53,
+              0
+            ]
+          }
+        ],
+        "integrationRequirement": "Conserver le canal alpha lors des exports et du rendu ; ne pas aplatir le RGB brut en fond opaque. Les pixels du corps sont principalement proches de 253/255, et non exactement 255."
+      },
+      "acceptanceReason": "Incarnation S1 identifiable, anatomie demandee respectee et transparence effectivement propre apres composition. Aucune correction de generation justifiee par cette revue.",
+      "counting": "Silhouette entiere d une incarnation distincte ; identite Lute deja existante, sans nouveau kit ni animation.",
+      "masterPath": "production/v9/hazbin/masters/lute-post-finale-s1-ready.png",
+      "persistedMasterHashMatchesReviewedNative": true
+    },
+    {
+      "id": "loo-loo-thing-plush",
+      "kind": "isolated_prop",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-84c0e0d3-9a36-44be-91fa-458b20a72cae.png",
+      "masterSha256": "13c7d1db0396ab84acf1e2b494422daf2956b2b4ffa93a4288e91f81466cd57f",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        113,
+        30,
+        1168,
+        1228
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 865964,
+        "alpha1To31Pixels": 13604,
+        "alpha240To254Pixels": 683156,
+        "alpha255Pixels": 1964
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "masterPath": "production/v9/props/masters/loo-loo-thing-plush.png",
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9-reference-audit/loo-loo-thing.png",
+          "sha256": "465b4f19be29c6accbb72129b4dfaae4172d510a2574ee7e16ed566833bbe737",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "url": "https://sharkrobot.com/products/loo-loo-land-thing-plush-acrylic-keychain",
+          "role": "Official SpindleHorse product, complete toy artwork"
+        }
+      ],
+      "matches": [
+        "Silhouette violette assise, bec jaune allongé, deux cornes annelées, trois mèches, yeux noirs et petites pointes dorsales.",
+        "Salopette rose, bord festonné clair, deux boutons X, cœur clair avec croix et étiquette THING? conservés.",
+        "Pattes et queue entières ; attache métallique et bordure acrylique du produit retirées conformément au périmètre."
+      ],
+      "limitations": [
+        "Proportions du bec, des cornes et des pieds, ombres et lettrage redessinés ; aucun tracé exact ni correspondance pixel par pixel.",
+        "Référence de produit dérivé officiel ; cette revue ne compare pas toutes les apparitions de la peluche dans les épisodes."
+      ],
+      "alphaReview": "Composition RGBA sur fond clair inspectée : objet isolé, sans halo ou support opaque visible.",
+      "acceptanceReason": "Accessoire entier reconnaissable, avec tous les motifs distinctifs majeurs conservés.",
+      "counting": "Un accessoire ; aucune nouvelle identité.",
+      "persistedMasterHashMatchesReviewedNative": true
+    },
+    {
+      "id": "bee-lounge-s1-room",
+      "kind": "stage_background",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/production/v9/environment/masters/bee-lounge-s1-room.png",
+      "masterSha256": "6dd0ff3eb5f93af9765385b4522580c698b217238612b8f25b2157d3e79e5ac8",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 0,
+        "alpha1To31Pixels": 0,
+        "alpha240To254Pixels": 0,
+        "alpha255Pixels": 1573352
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "masterPath": "production/v9/environment/masters/bee-lounge-s1-room.png",
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9/environment/helluva05.jpg",
+          "sha256": "dccfdc90d47ec3f34a80157fd9f3e30e3a489dfff44f573f14d7a23da99f117d",
+          "dimensions": [
+            1920,
+            1177
+          ],
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "role": "Greg Bartlett, Helluva Boss production background, linked from https://backgroundart.net/helluvaboss.html"
+        }
+      ],
+      "matches": [
+        "Plafond crème à alvéoles, bar orange courbe à gauche, papier peint cyan, deux colonnes claires à chapiteaux corail.",
+        "Ouverture centrale, banquette turquoise à alvéoles, table dorée à pied central, fenêtre cyan et tapis géométrique à droite.",
+        "Fond opaque complet, sans personnage ni interface."
+      ],
+      "intendedExclusionsVerified": [
+        "Tous les tabourets sont absents pour ajout en couche séparée.",
+        "La cloison droite est absente et laisse un pan de mur disponible.",
+        "La cloison gauche reste présente ; elle conserve huit rangées principales comme la source."
+      ],
+      "limitations": [
+        "Composition plus large, bar et alcôve redimensionnés, premier plan dégagé pour une bande de combat horizontale.",
+        "Dessin des alvéoles, reflets et perspective du tapis redessinés ; fidélité 1:1 non certifiée.",
+        "Placement des objets et contraste des combattants non vérifiés en jeu par cette revue."
+      ],
+      "acceptanceReason": "Décor identifiable, exclusions prévues respectées et sol continu ; adaptation statique acceptable.",
+      "counting": "Un décor de salon distinct ; aucun kit de personnage."
+    },
+    {
+      "id": "bee-lounge-bar-stool",
+      "kind": "isolated_stage_prop",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/production/v9/environment/masters/bee-lounge-bar-stool.png",
+      "masterSha256": "c3eb5ee70dea43c4d947f8e621f38bb754a04fd87f3b511ac68bf1601d9aafd9",
+      "nativeDimensions": [
+        1122,
+        1402
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        163,
+        132,
+        941,
+        1270
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 1249166,
+        "alpha1To31Pixels": 11958,
+        "alpha240To254Pixels": 306774,
+        "alpha255Pixels": 534
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "masterPath": "production/v9/environment/masters/bee-lounge-bar-stool.png",
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9/environment/helluva05.jpg",
+          "sha256": "dccfdc90d47ec3f34a80157fd9f3e30e3a489dfff44f573f14d7a23da99f117d",
+          "dimensions": [
+            1920,
+            1177
+          ],
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "role": "Greg Bartlett, Helluva Boss production background, linked from https://backgroundart.net/helluvaboss.html"
+        }
+      ],
+      "matches": [
+        "Assise large turquoise à alvéoles, bord arrondi, tige cyan unique très fine et pied évasé en trompette.",
+        "Objet entier isolé ; aucun dossier, accoudoir, roue ou anneau de repose-pieds inventé."
+      ],
+      "limitations": [
+        "Assise et pied redessinés ; liseré doré plus marqué, motif des coussins et reflets adaptés.",
+        "L échelle et le placement près du bar doivent être validés en jeu ; aucune collision ou animation impliquée."
+      ],
+      "alphaReview": "Composition RGBA sur fond clair inspectée : contour propre et transparence visible. Les valeurs vert vif du RGB brut sont uniquement à très faible alpha (aucun pixel correspondant à alpha >=32).",
+      "acceptanceReason": "Accessoire cohérent avec le tabouret de premier plan dans la source et les exclusions du décor.",
+      "counting": "Un accessoire de décor réutilisable."
+    },
+    {
+      "id": "bee-lounge-honeycomb-divider",
+      "kind": "isolated_stage_prop",
+      "status": "accepted_candidate",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-b19773d7-952e-4847-b40b-0a9d261a6205.png",
+      "masterSha256": "d74f2a5bc619e45b15c865c190f60e85c605ba21b44f83727969b7906327b6d5",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        181,
+        161,
+        843,
+        1346
+      ],
+      "alphaNotes": {
+        "zeroAlphaPixels": 1202768,
+        "alpha1To31Pixels": 42096,
+        "alpha240To254Pixels": 308057,
+        "alpha255Pixels": 0
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "masterPath": "production/v9/environment/masters/bee-lounge-honeycomb-divider.png",
+      "sourceReferences": [
+        {
+          "path": "/tmp/infernal-v9/environment/helluva05.jpg",
+          "sha256": "dccfdc90d47ec3f34a80157fd9f3e30e3a489dfff44f573f14d7a23da99f117d",
+          "dimensions": [
+            1920,
+            1177
+          ],
+          "url": "https://backgroundart.net/art/helluva05.jpg",
+          "role": "Greg Bartlett, Helluva Boss production background, linked from https://backgroundart.net/helluvaboss.html"
+        }
+      ],
+      "matches": [
+        "Huit grandes alvéoles par colonne principale et sept par colonne intercalaire, soit 38 ouvertures, conformes au décompte de la source.",
+        "Métal turquoise, liserés pêche-doré, ouvertures réellement transparentes et absence de pied ou de support ajouté.",
+        "Silhouette entière : les trois contours inférieurs sont complets avec 190 pixels de marge visible en bas."
+      ],
+      "holeCountReview": {
+        "sourceMainColumns": 3,
+        "sourceMainRows": 8,
+        "sourceInterstitialColumns": 2,
+        "sourceInterstitialRows": 7,
+        "sourceTotalOpenings": 38,
+        "currentMasterMainRows": 8,
+        "currentMasterInterstitialRows": 7,
+        "currentMasterTotalOpenings": 38,
+        "detectedEnclosedTransparentRegionCount": 38,
+        "measurementMethod": "Connected transparent regions below alpha128, excluding image-border background and regions smaller than100pixels; corroborates visual count.",
+        "detectedHoleAreaRangePixels": [
+          9889,
+          10332
+        ],
+        "sourceCropDiagnostic": "/tmp/infernal-v9-reference-audit/review-source-divider-count.png",
+        "retainedLeftScreenInGeneratedRoomMainRows": 8
+      },
+      "alphaReview": {
+        "verdict": "accepted_real_alpha_and_complete_visible_contour",
+        "diagnosticPath": "/tmp/infernal-v9-reference-audit/review-divider-final-rgba.png",
+        "finding": "Le fond vert et les aplats dans les trous du RGB brut disparaissent après composition RGBA ; centres des ouvertures échantillonnés à alpha0. Pas de fond opaque ni de lueur diffuse visible dans la composition.",
+        "paddingFinding": "Bbox visible [181,161,843,1346] dans1024×1536 : marges gauche181, haut161, droite181, bas190 pixels. Contour inférieur complet, aucune coupe visible.",
+        "integrationRequirement": "Conserver le canal alpha à l export et au rendu ; ne pas aplatir le RGB brut."
+      },
+      "limitations": [
+        "Contours, épaisseurs des montants et reflets redessinés ; fidélité artistique1:1 non certifiée.",
+        "Proportion du contour proche de0,559 contre environ0,58 dans le détail source ; petite adaptation de dessin, sans décompte erroné.",
+        "Position, échelle et parallaxe dans le jeu non validées par cette revue."
+      ],
+      "acceptanceReason": "Nombre d ouvertures conforme à la source, transparence propre et silhouette entière avec marges suffisantes ; candidat statique accepté.",
+      "counting": "Un accessoire de décor accepté. Les trois tentatives remplacées ne sont pas comptées comme livrées.",
+      "masterPathStatusAtReview": "Intended destination; reviewer did not copy or replace the master.",
+      "visibleMarginsAlpha128": [
+        181,
+        161,
+        181,
+        190
+      ],
+      "resolvedFindings": [
+        "Ancien décompte erroné de six rangées corrigé à huit ; le premier candidat à neuf rangées reste écarté.",
+        "La tentative à huit rangées sans marge basse a été remplacée par ce nouveau master complet et centré."
+      ],
+      "supersededAttempts": [
+        {
+          "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-fc77321b-b291-483e-bef2-2a6c7a7ee51c.png",
+          "masterSha256": "638c116be078eaa5e2565ed40bb25e4b83e248710e3e5af0a4d6dd4419c509ae",
+          "nativeDimensions": [
+            971,
+            1619
+          ],
+          "mainRows": 9,
+          "interstitialRows": 8,
+          "totalOpenings": 43,
+          "accepted": false,
+          "countedAsDelivered": false,
+          "reason": "Neuf rangées principales au lieu des huit de la source."
+        },
+        {
+          "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-d5a014e6-5f03-47d7-9904-e7d7a0d01ef1.png",
+          "masterSha256": "dc447e4569e0124938d95180534aea41e8678ab42a9969dec3f01bceaa934a4f",
+          "nativeDimensions": [
+            1145,
+            1374
+          ],
+          "mainRows": 6,
+          "interstitialRows": 5,
+          "totalOpenings": 28,
+          "accepted": false,
+          "countedAsDelivered": false,
+          "reason": "Six rangées principales ; correction fondée sur un décompte source erroné."
+        },
+        {
+          "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6e7a8c55-8b0a-4f08-8823-530dec3cc221.png",
+          "masterSha256": "d95b7d64980e3e1e36f8e27a2bf7c317c8e0b88d2d0a59f83d717ff8b0542606",
+          "nativeDimensions": [
+            1024,
+            1536
+          ],
+          "mainRows": 8,
+          "interstitialRows": 7,
+          "totalOpenings": 38,
+          "accepted": false,
+          "countedAsDelivered": false,
+          "reason": "Décompte correct, mais contour inférieur au bord du canvas : marge basse nulle, contour complet non certifiable.",
+          "visibleBboxAlpha128": [
+            106,
+            81,
+            918,
+            1536
+          ],
+          "visibleBottomMarginPixels": 0
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "reviewedCandidates": 7,
+    "acceptedCandidates": 7,
+    "correctionRequired": 0,
+    "pendingAssetIds": [],
+    "supersededDividerAttempts": 3,
+    "newFullIdentityClaim": false,
+    "note": "Seven scoped static candidates accepted. Final divider has eight main rows,38 transparent openings and complete bottom contour. Three superseded divider attempts retained in the audit, not counted as delivered. No1:1 certification."
+  },
+  "diagnostics": {
+    "finalPropsRgbaComposite": "/tmp/infernal-v9-reference-audit/review-v9-final-props-alpha.png",
+    "sourceDividerCountCrop": "/tmp/infernal-v9-reference-audit/review-source-divider-count.png",
+    "acceptedDividerRgbaComposite": "/tmp/infernal-v9-reference-audit/review-divider-final-rgba.png",
+    "finalPropsRgbaCompositeNote": "Earlier diagnostic contains the superseded six-row divider; accepted divider has its own final diagnostic."
+  }
+}

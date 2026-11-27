@@ -1,0 +1,1621 @@
+{
+  "edition": "V9",
+  "startedAt": "2026-11-26T14:49:56.498Z",
+  "server": "http://127.0.0.1:5177/combat.html",
+  "scope": "Local Vite development build; real Chromium browser; desktop and mobile emulation; no gameplay state injected.",
+  "screens": [
+    {
+      "name": "desktop home",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop fight",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery Lute",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery grimoire",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery Mère de Moxxie",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery THING",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery tabouret",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery cloison",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile home",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile fight",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery Lute",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery grimoire",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery Mère de Moxxie",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery THING",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery tabouret",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery cloison",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "brokenVisibleImages": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "desktop home: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop home: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop Lute costume selectable",
+      "passed": true,
+      "detail": "lute-post-finale-s1-ready"
+    },
+    {
+      "name": "desktop Bee stage selected",
+      "passed": true
+    },
+    {
+      "name": "desktop Lute ready image loaded in combat",
+      "passed": true,
+      "detail": {
+        "action": "idle",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "desktop Bee room and two props loaded",
+      "passed": true,
+      "detail": {
+        "stage": "bee-lounge-s1",
+        "phase": "running",
+        "presentation": "alive",
+        "room": "url(\"http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-room.webp\")",
+        "middle": "/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+        "near": "/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+        "props": [
+          {
+            "src": "/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+            "complete": true,
+            "naturalWidth": 1122,
+            "bounds": {
+              "x": 256.234375,
+              "y": 660,
+              "width": 138.140625,
+              "height": 172.609375,
+              "top": 660,
+              "right": 394.375,
+              "bottom": 832.609375,
+              "left": 256.234375
+            }
+          },
+          {
+            "src": "/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+            "complete": true,
+            "naturalWidth": 1024,
+            "bounds": {
+              "x": 898.125,
+              "y": 541.671875,
+              "width": 173.46875,
+              "height": 260.203125,
+              "top": 541.671875,
+              "right": 1071.59375,
+              "bottom": 801.875,
+              "left": 898.125
+            }
+          }
+        ],
+        "bounds": {
+          "x": 95,
+          "y": 375.09375,
+          "width": 1250,
+          "height": 520,
+          "top": 375.09375,
+          "right": 1345,
+          "bottom": 895.09375,
+          "left": 95
+        }
+      }
+    },
+    {
+      "name": "desktop fight buttons within viewport",
+      "passed": true,
+      "detail": [
+        {
+          "text": "Réinitialiser l’entraînement",
+          "left": 860.546875,
+          "right": 1091.046875,
+          "viewport": 1440
+        },
+        {
+          "text": "Music on",
+          "left": 1098.046875,
+          "right": 1207.140625,
+          "viewport": 1440
+        },
+        {
+          "text": "Pause",
+          "left": 1214.140625,
+          "right": 1281.65625,
+          "viewport": 1440
+        },
+        {
+          "text": "Quit",
+          "left": 1288.65625,
+          "right": 1345,
+          "viewport": 1440
+        }
+      ]
+    },
+    {
+      "name": "desktop fight: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop fight: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop Lute static image during movement",
+      "passed": true,
+      "detail": [
+        {
+          "action": "walk",
+          "position": "23.49",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "walk",
+          "position": "24.97",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "walk",
+          "position": "26.46",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "walk",
+          "position": "27.95",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "walk",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: movement",
+      "passed": true,
+      "detail": [
+        "walk"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during guard",
+      "passed": true,
+      "detail": [
+        {
+          "action": "guard",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "guard",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "guard",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "guard",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "guard",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: guard",
+      "passed": true,
+      "detail": [
+        "guard"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during crouch",
+      "passed": true,
+      "detail": [
+        {
+          "action": "crouch",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "crouch",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "crouch",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "crouch",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "crouch",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: crouch",
+      "passed": true,
+      "detail": [
+        "crouch"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during light attack",
+      "passed": true,
+      "detail": [
+        {
+          "action": "light",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "light",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "light",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "light",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "light",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: light attack",
+      "passed": true,
+      "detail": [
+        "light"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during heavy attack",
+      "passed": true,
+      "detail": [
+        {
+          "action": "heavy",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "heavy",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "heavy",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "heavy",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "heavy",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: heavy attack",
+      "passed": true,
+      "detail": [
+        "heavy"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during special attack",
+      "passed": true,
+      "detail": [
+        {
+          "action": "special",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "special",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "special",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "special",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "special",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: special attack",
+      "passed": true,
+      "detail": [
+        "special"
+      ]
+    },
+    {
+      "name": "desktop Lute static image during jump",
+      "passed": true,
+      "detail": [
+        {
+          "action": "jump",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "jump",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "jump",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "jump",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        },
+        {
+          "action": "jump",
+          "position": "29.44",
+          "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+          "complete": true,
+          "width": 1024
+        }
+      ]
+    },
+    {
+      "name": "desktop requested action observed: jump",
+      "passed": true,
+      "detail": [
+        "jump"
+      ]
+    },
+    {
+      "name": "desktop action states actually changed",
+      "passed": true,
+      "detail": [
+        "walk",
+        "guard",
+        "crouch",
+        "light",
+        "heavy",
+        "special",
+        "jump"
+      ]
+    },
+    {
+      "name": "desktop pause",
+      "passed": true
+    },
+    {
+      "name": "desktop resume",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery count",
+      "passed": true,
+      "detail": "106 dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider."
+    },
+    {
+      "name": "desktop gallery preview Lute",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery Lute: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery Lute: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop gallery preview grimoire",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery grimoire: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery grimoire: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop gallery preview Mère de Moxxie",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery Mère de Moxxie: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery Mère de Moxxie: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop gallery preview THING",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery THING: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery THING: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop gallery preview tabouret",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery tabouret: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery tabouret: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop gallery preview cloison",
+      "passed": true
+    },
+    {
+      "name": "desktop gallery cloison: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "desktop gallery cloison: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop S1 gallery entry visible Lute",
+      "passed": true
+    },
+    {
+      "name": "desktop S1 gallery entry visible grimoire",
+      "passed": true
+    },
+    {
+      "name": "desktop S1 gallery entry visible THING",
+      "passed": true
+    },
+    {
+      "name": "desktop S1 gallery entry visible tabouret",
+      "passed": true
+    },
+    {
+      "name": "desktop S1 gallery entry visible cloison",
+      "passed": true
+    },
+    {
+      "name": "desktop S2 portrait hidden by S1 filter",
+      "passed": true
+    },
+    {
+      "name": "desktop S2 portrait restored when S2 is enabled",
+      "passed": true
+    },
+    {
+      "name": "mobile home: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile home: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile Lute costume selectable",
+      "passed": true,
+      "detail": "lute-post-finale-s1-ready"
+    },
+    {
+      "name": "mobile Bee stage selected",
+      "passed": true
+    },
+    {
+      "name": "mobile Lute ready image loaded in combat",
+      "passed": true,
+      "detail": {
+        "action": "idle",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "mobile Bee room and two props loaded",
+      "passed": true,
+      "detail": {
+        "stage": "bee-lounge-s1",
+        "phase": "running",
+        "presentation": "alive",
+        "room": "url(\"http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-room.webp\")",
+        "middle": "/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+        "near": "/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+        "props": [
+          {
+            "src": "/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+            "complete": true,
+            "naturalWidth": 1122,
+            "bounds": {
+              "x": 40.40625,
+              "y": 766.296875,
+              "width": 46.046875,
+              "height": 57.53125,
+              "top": 766.296875,
+              "right": 86.453125,
+              "bottom": 823.828125,
+              "left": 40.40625
+            }
+          },
+          {
+            "src": "/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+            "complete": true,
+            "naturalWidth": 1024,
+            "bounds": {
+              "x": 254.375,
+              "y": 726.84375,
+              "width": 57.828125,
+              "height": 86.734375,
+              "top": 726.84375,
+              "right": 312.203125,
+              "bottom": 813.578125,
+              "left": 254.375
+            }
+          }
+        ],
+        "bounds": {
+          "x": 30.59375,
+          "y": 545.3125,
+          "width": 328.8125,
+          "height": 300,
+          "top": 545.3125,
+          "right": 359.40625,
+          "bottom": 845.3125,
+          "left": 30.59375
+        }
+      }
+    },
+    {
+      "name": "mobile fight buttons within viewport",
+      "passed": true,
+      "detail": [
+        {
+          "text": "Réinitialiser l’entraînement",
+          "left": 30.59375,
+          "right": 191.5,
+          "viewport": 390
+        },
+        {
+          "text": "Music on",
+          "left": 198.5,
+          "right": 359.40625,
+          "viewport": 390
+        },
+        {
+          "text": "Pause",
+          "left": 30.59375,
+          "right": 191.5,
+          "viewport": 390
+        },
+        {
+          "text": "Quit",
+          "left": 198.5,
+          "right": 359.40625,
+          "viewport": 390
+        }
+      ]
+    },
+    {
+      "name": "mobile fight: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile fight: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile touch light retains static image",
+      "passed": true,
+      "detail": {
+        "action": "light",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "mobile requested action observed: light",
+      "passed": true,
+      "detail": "light"
+    },
+    {
+      "name": "mobile touch heavy retains static image",
+      "passed": true,
+      "detail": {
+        "action": "heavy",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "mobile requested action observed: heavy",
+      "passed": true,
+      "detail": "heavy"
+    },
+    {
+      "name": "mobile touch special retains static image",
+      "passed": true,
+      "detail": {
+        "action": "special",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "mobile requested action observed: special",
+      "passed": true,
+      "detail": "special"
+    },
+    {
+      "name": "mobile touch jump retains static image",
+      "passed": true,
+      "detail": {
+        "action": "jump",
+        "position": "22.00",
+        "src": "/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+        "complete": true,
+        "width": 1024
+      }
+    },
+    {
+      "name": "mobile requested action observed: jump",
+      "passed": true,
+      "detail": "jump"
+    },
+    {
+      "name": "mobile touch controls available",
+      "passed": true
+    },
+    {
+      "name": "mobile pause",
+      "passed": true
+    },
+    {
+      "name": "mobile resume",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery count",
+      "passed": true,
+      "detail": "106 dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider."
+    },
+    {
+      "name": "mobile gallery preview Lute",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery Lute: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery Lute: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile gallery preview grimoire",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery grimoire: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery grimoire: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile gallery preview Mère de Moxxie",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery Mère de Moxxie: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery Mère de Moxxie: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile gallery preview THING",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery THING: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery THING: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile gallery preview tabouret",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery tabouret: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery tabouret: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile gallery preview cloison",
+      "passed": true
+    },
+    {
+      "name": "mobile gallery cloison: no horizontal document overflow",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "mobile gallery cloison: no broken visible images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile S1 gallery entry visible Lute",
+      "passed": true
+    },
+    {
+      "name": "mobile S1 gallery entry visible grimoire",
+      "passed": true
+    },
+    {
+      "name": "mobile S1 gallery entry visible THING",
+      "passed": true
+    },
+    {
+      "name": "mobile S1 gallery entry visible tabouret",
+      "passed": true
+    },
+    {
+      "name": "mobile S1 gallery entry visible cloison",
+      "passed": true
+    },
+    {
+      "name": "mobile S2 portrait hidden by S1 filter",
+      "passed": true
+    },
+    {
+      "name": "mobile S2 portrait restored when S2 is enabled",
+      "passed": true
+    },
+    {
+      "name": "runtime files stable during browser pass",
+      "passed": true
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "assetResponses": [
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-thumb.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-room.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-bar-stool.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/props/stolas-grimoire-closed.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/props/loo-loo-thing-plush.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-bar-stool.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-thumb.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-s1-room.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/environment/bee-lounge-bar-stool.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/props/stolas-grimoire-closed.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5177/assets/production/v9/props/loo-loo-thing-plush.webp"
+    }
+  ],
+  "screenshots": [
+    {
+      "label": "desktop-home",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-home.png"
+    },
+    {
+      "label": "desktop-lute-selection",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-lute-selection.png"
+    },
+    {
+      "label": "desktop-bee-stage",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-bee-stage.png"
+    },
+    {
+      "label": "desktop-fight",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-fight.png"
+    },
+    {
+      "label": "desktop-gallery-0",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-0.png"
+    },
+    {
+      "label": "desktop-gallery-1",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-1.png"
+    },
+    {
+      "label": "desktop-gallery-2",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-2.png"
+    },
+    {
+      "label": "desktop-gallery-3",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-3.png"
+    },
+    {
+      "label": "desktop-gallery-4",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-4.png"
+    },
+    {
+      "label": "desktop-gallery-5",
+      "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-5.png"
+    },
+    {
+      "label": "mobile-home",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-home.png"
+    },
+    {
+      "label": "mobile-lute-selection",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-lute-selection.png"
+    },
+    {
+      "label": "mobile-bee-stage",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-bee-stage.png"
+    },
+    {
+      "label": "mobile-fight",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-fight.png"
+    },
+    {
+      "label": "mobile-gallery-0",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-0.png"
+    },
+    {
+      "label": "mobile-gallery-art-0",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-0.png"
+    },
+    {
+      "label": "mobile-gallery-1",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-1.png"
+    },
+    {
+      "label": "mobile-gallery-art-1",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-1.png"
+    },
+    {
+      "label": "mobile-gallery-2",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-2.png"
+    },
+    {
+      "label": "mobile-gallery-art-2",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-2.png"
+    },
+    {
+      "label": "mobile-gallery-3",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-3.png"
+    },
+    {
+      "label": "mobile-gallery-art-3",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-3.png"
+    },
+    {
+      "label": "mobile-gallery-4",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-4.png"
+    },
+    {
+      "label": "mobile-gallery-art-4",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-4.png"
+    },
+    {
+      "label": "mobile-gallery-5",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-5.png"
+    },
+    {
+      "label": "mobile-gallery-art-5",
+      "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-5.png"
+    }
+  ],
+  "browserVersion": "143.0.7499.4",
+  "runtimeFilesBefore": [
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "42d19743e6acc25327f7d0f0a80ed275c4a6fc4742977a67beb3b944a4bfe300"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+      "sha256": "1ba8c4cdbabe7e836b32cc3b1b17914c4a29808211cb49309bf9d8a7f7e689a0"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+      "sha256": "f608fc643c7ef6df6e36b2919fbf032e6cb960d70aba9aabcbf0dd2478341661"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-room.webp",
+      "sha256": "b3c1f6b6bf3bec67a0a56dcaf9a061653d10dc3cecebee7b0931e2ecf45a3f4d"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-thumb.webp",
+      "sha256": "98f9413579fdc17398daf1ab9a914fed2d1cf6caa636b73514c5373f0bea97e2"
+    },
+    {
+      "path": "public/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+      "sha256": "e4a9dfc00d2ba5f2e73d11206fb430acd146e4fd0445678e71ef11d345ee7edd"
+    },
+    {
+      "path": "public/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp",
+      "sha256": "f5a4fee3f78248bf9a66dfc0b6760a5f5e63a4bbd2015594d8f3041ce7537ffd"
+    },
+    {
+      "path": "public/assets/production/v9/props/loo-loo-thing-plush.webp",
+      "sha256": "304ff112386f5d6f8ec815480aebdcdb09810dc9f078f3292c5b2418e1891b3f"
+    },
+    {
+      "path": "public/assets/production/v9/props/stolas-grimoire-closed.webp",
+      "sha256": "1c58556142cabfca3e0279940ac52fa5e3900ab82f1200c6ca63537c6be9ee39"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "1b8b4f7cf0043b1c40e212bb5c230e5fa4101dc6ca1e0db14e88e6ea64668665"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "73bc3e2ed9ed593d3b5c7c5983a355f777c28a80fd894e6dee5a25b993ef8bb0"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "12d1cded0d68a567434fd5e18f7fb5d56c379be3a9c1cb04b7e6e032581832e0"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "ac51aad9d4d9e10b19dea6bcbac97f55a9e74a54673ee3912acf653e3bbe0b93"
+    }
+  ],
+  "runtimeFilesAfter": [
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "42d19743e6acc25327f7d0f0a80ed275c4a6fc4742977a67beb3b944a4bfe300"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+      "sha256": "1ba8c4cdbabe7e836b32cc3b1b17914c4a29808211cb49309bf9d8a7f7e689a0"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+      "sha256": "f608fc643c7ef6df6e36b2919fbf032e6cb960d70aba9aabcbf0dd2478341661"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-room.webp",
+      "sha256": "b3c1f6b6bf3bec67a0a56dcaf9a061653d10dc3cecebee7b0931e2ecf45a3f4d"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-thumb.webp",
+      "sha256": "98f9413579fdc17398daf1ab9a914fed2d1cf6caa636b73514c5373f0bea97e2"
+    },
+    {
+      "path": "public/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+      "sha256": "e4a9dfc00d2ba5f2e73d11206fb430acd146e4fd0445678e71ef11d345ee7edd"
+    },
+    {
+      "path": "public/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp",
+      "sha256": "f5a4fee3f78248bf9a66dfc0b6760a5f5e63a4bbd2015594d8f3041ce7537ffd"
+    },
+    {
+      "path": "public/assets/production/v9/props/loo-loo-thing-plush.webp",
+      "sha256": "304ff112386f5d6f8ec815480aebdcdb09810dc9f078f3292c5b2418e1891b3f"
+    },
+    {
+      "path": "public/assets/production/v9/props/stolas-grimoire-closed.webp",
+      "sha256": "1c58556142cabfca3e0279940ac52fa5e3900ab82f1200c6ca63537c6be9ee39"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "1b8b4f7cf0043b1c40e212bb5c230e5fa4101dc6ca1e0db14e88e6ea64668665"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "73bc3e2ed9ed593d3b5c7c5983a355f777c28a80fd894e6dee5a25b993ef8bb0"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "12d1cded0d68a567434fd5e18f7fb5d56c379be3a9c1cb04b7e6e032581832e0"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "ac51aad9d4d9e10b19dea6bcbac97f55a9e74a54673ee3912acf653e3bbe0b93"
+    }
+  ],
+  "finishedAt": "2026-11-26T14:50:31.687Z",
+  "status": "passed",
+  "schemaVersion": 1,
+  "summary": "99 contrôles navigateur réussis sur Chromium réel : sélection de Lute et du salon de Beelzebub, tenue statique pendant les actions observées, fond et deux accessoires actifs, six aperçus galerie et filtrage S1/S2 sur desktop et mobile émulé. Aucun débordement horizontal, asset manquant, échec réseau, message console.error ou exception JavaScript observé. Revue visuelle des captures effectuée ; fichiers runtime stables pendant le passage.",
+  "checkedAssetIds": [
+    "lute-post-finale-s1-ready",
+    "stolas-grimoire-closed",
+    "hb_moxxies_mother-portrait-s2",
+    "loo-loo-thing-plush",
+    "bee-lounge-bar-stool",
+    "bee-lounge-honeycomb-divider",
+    "bee-lounge-s1-room"
+  ],
+  "assetEvidence": [
+    {
+      "id": "lute-post-finale-s1-ready",
+      "observedIn": [
+        "wardrobe selection",
+        "training combat",
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    },
+    {
+      "id": "stolas-grimoire-closed",
+      "observedIn": [
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    },
+    {
+      "id": "hb_moxxies_mother-portrait-s2",
+      "observedIn": [
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_2",
+      "result": "passed"
+    },
+    {
+      "id": "loo-loo-thing-plush",
+      "observedIn": [
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    },
+    {
+      "id": "bee-lounge-bar-stool",
+      "observedIn": [
+        "training arena prop",
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    },
+    {
+      "id": "bee-lounge-honeycomb-divider",
+      "observedIn": [
+        "training arena prop",
+        "gallery preview"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    },
+    {
+      "id": "bee-lounge-s1-room",
+      "observedIn": [
+        "arena selection thumbnail",
+        "training arena background"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ],
+      "spoilerScope": "season_1",
+      "result": "passed"
+    }
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "hasTouch": false
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 1,
+      "isMobile": true,
+      "hasTouch": true,
+      "physicalDevice": false
+    }
+  ],
+  "counts": {
+    "automatedChecks": 99,
+    "failedChecks": 0,
+    "checkedAssetIds": 7,
+    "newGalleryEntries": 6,
+    "galleryEntriesReported": 106,
+    "screenshots": 26,
+    "visuallyReviewedCaptures": 17,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "failedRequests": 0
+  },
+  "visualReview": {
+    "status": "passed",
+    "reviewer": "QA agent, manual inspection of browser captures",
+    "reviewedCaptures": [
+      {
+        "label": "desktop-bee-stage",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-bee-stage.png",
+        "sha256": "a05fb7252468f4a44ac290eeb45e4202b37ad590f315a54bd1a303a98c776d12"
+      },
+      {
+        "label": "mobile-fight",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-fight.png",
+        "sha256": "d820ff5ce9612dd5ac94b53d95380c186e96aa3cf7b0ab4cd0a5c8860f5d5beb"
+      },
+      {
+        "label": "desktop-gallery-0",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-0.png",
+        "sha256": "dfcb45ae342d4ceaa905120f6c0e45ae0af13721980139f0f9edd8ad5bf082d7"
+      },
+      {
+        "label": "desktop-gallery-1",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-1.png",
+        "sha256": "b4cb7d234ba58e2174a55ac3855103bc6642c5f0e0c6d49c9c2cdac50ee42608"
+      },
+      {
+        "label": "desktop-gallery-2",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-2.png",
+        "sha256": "7ae325e90a73508f70e79830e296270a957b018fa7f0dd099425e96b55759b8b"
+      },
+      {
+        "label": "desktop-gallery-3",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-3.png",
+        "sha256": "4ce61f4e1f49f0757b8fe65f551976325c32f7bc28eabf6be12cccaab5cd566b"
+      },
+      {
+        "label": "desktop-gallery-4",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-4.png",
+        "sha256": "973735be0316159f1d9b9a12abe948d48049744ac1bcf72cd46a710f0ec2ab3b"
+      },
+      {
+        "label": "desktop-gallery-5",
+        "internalPath": "/tmp/infernal-v9/browser/desktop-gallery-5.png",
+        "sha256": "a2f331ecc1f87dde7cad278836e8d43b9c2cf65261ae71688d95a32b1dec55eb"
+      },
+      {
+        "label": "mobile-gallery-0",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-0.png",
+        "sha256": "fd9c8f3cd231c64d0d14657fc2a0eb414c0467028ec6badd7bb14f9f85efa860"
+      },
+      {
+        "label": "mobile-gallery-1",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-1.png",
+        "sha256": "6aa6f6f4da97621f7a753c9483abbbb6438f0ea556f2dd493622f5b1c2e1c697"
+      },
+      {
+        "label": "mobile-gallery-2",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-2.png",
+        "sha256": "7f5af468dcefd2821dfb6e70aa1e66c57b943881eff07c742e1058cc66e089a0"
+      },
+      {
+        "label": "mobile-gallery-3",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-3.png",
+        "sha256": "cde2e01781361d8dfa9a2068d6119609551b2a9caa8a62b39edb6ebb54a647c6"
+      },
+      {
+        "label": "mobile-gallery-4",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-4.png",
+        "sha256": "9d79153429572bbb567907fbeca65293c4e6d9c21afce12233c2e14a5381dec7"
+      },
+      {
+        "label": "mobile-gallery-5",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-5.png",
+        "sha256": "51b28fda9b64615120eaf090e43fdb4313bf7377f962a5b3d9e478ea0e6e808f"
+      },
+      {
+        "label": "mobile-gallery-art-0",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-0.png",
+        "sha256": "966c8dddb98b69bca113419457a565f7b891a016d825a17c51b11671ee8ea258"
+      },
+      {
+        "label": "mobile-gallery-art-1",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-1.png",
+        "sha256": "b0ebf3946b3949ef435cb59d921a1cab9d79fa5d2d394ed08897dfac49461895"
+      },
+      {
+        "label": "mobile-gallery-art-5",
+        "internalPath": "/tmp/infernal-v9/browser/mobile-gallery-art-5.png",
+        "sha256": "ce6a6d8ce7fc181a8588fc0cf33e05b9171ede10e46a1c54befcadc989327788"
+      }
+    ],
+    "observations": [
+      "Les six nouveaux dessins sont affichés sur fond sombre dans la galerie, avec titre et bouton de fermeture lisibles aux deux formats.",
+      "Les captures mobiles de l’article complet peuvent inclure le bandeau fixe ; les captures ciblées supplémentaires confirment que Lute, le grimoire et la cloison sont affichés entièrement après défilement.",
+      "Lute conserve sa pose statique pendant les actions ; ses ailes, son bras manquant et l’anneau porté restent visibles. Aucune nouvelle animation n’est revendiquée.",
+      "Le tabouret est décalé à gauche et vers le haut ; les deux cloisons du décor restent cadrées. La cloison détourée montre huit rangées et 38 ouvertures.",
+      "Les boutons Réinitialiser, Music, Pause et Quit se répartissent sur plusieurs lignes en mobile et restent à l’intérieur de la largeur disponible.",
+      "Le décor conserve l’illustration entière avec le mode contain existant. Les bandes assorties autour du fond, plus visibles en mobile, sont intentionnelles."
+    ]
+  },
+  "responsiveCorrection": {
+    "file": "src/styles/pentagram-arena.css",
+    "selector": "@media (max-width: 700px) .arena-fight-actions",
+    "change": "Enable flex-wrap and min-width:0 on the control row; use flex:1 1 120px and min-width:0 on its buttons.",
+    "result": "Every fight action button fits within the 390px viewport; document horizontal overflow remains zero."
+  },
+  "limitations": [
+    "Local Vite development runtime only; this is not a production-deployment verification.",
+    "The mobile pass uses Chromium touch emulation at 390×844, not physical-device testing.",
+    "Coverage is the seven V9 delivered assets, their six gallery entries, season filtering and the described training flow; the full historical catalogue and all game modes were not revalidated.",
+    "No frame animation, performance profiling, exhaustive combat balance test, or exact canon-fidelity certification is implied."
+  ],
+  "harness": {
+    "internalPath": "/tmp/infernal-v9/browser/run-browser-qa.cjs",
+    "sha256": "2096d551bab76f098458a1379db53e16bf9136c4c972d42051fb9225da4e24f6",
+    "interactions": "UI navigation, keyboard input and touch input only; no game-state injection. Input checks wait through recovery before the next requested action."
+  },
+  "finalizedAt": "2026-11-26T14:50:46.018432+00:00"
+}

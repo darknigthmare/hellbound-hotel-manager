@@ -1,0 +1,61 @@
+{
+  "edition": "V14",
+  "status": "initial_attempts_archived_pending_new_runtime_freeze",
+  "createdAt": "2026-11-26T22:10:26.814964+00:00",
+  "initialRuntimeFingerprint": "ca3c1a332dc73948242883555a48a0799f280ceef45ff6a4a4a2a23b9ea6013b",
+  "initialManifestSha256": "5808603285ebaef26f73a371f6adcd8b6169c9c13c2113510ed1276322b57886",
+  "attempts": [
+    {
+      "segment": "desktop-blitzo-shop",
+      "status": "findings",
+      "report": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-blitzo-shop-initial/browser-qa-run.json",
+      "reportSha256": "5a0b769a41c2e00c5e4d28375cb4dda0eb75571e36d6c92b304eb654d16cf147",
+      "passedChecks": 17,
+      "failedChecks": 2,
+      "screenshots": 4,
+      "nativeCrashes": 1,
+      "error": "locator.waitFor: Target crashed \nCall log:\n\u001b[2m  - waiting for locator('[data-stage=\"full-moon-shop-s2\"]') to be visible\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:280:19)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11"
+    },
+    {
+      "segment": "desktop-moxxie-dining",
+      "status": "findings",
+      "report": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-moxxie-dining-initial/browser-qa-run.json",
+      "reportSha256": "e3b84c4b94e3df8d6ecd92f10e84c6e2c9a1542e2429555bf906a392d895927c",
+      "passedChecks": 15,
+      "failedChecks": 2,
+      "screenshots": 3,
+      "nativeCrashes": 1,
+      "error": "locator.waitFor: Target crashed \nCall log:\n\u001b[2m  - waiting for locator('[data-stage=\"crimson-dining-room-s2\"]') to be visible\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:280:19)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11"
+    },
+    {
+      "segment": "desktop-gallery",
+      "status": "findings",
+      "report": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-gallery-initial/browser-qa-run.json",
+      "reportSha256": "a86fce1c3aacca0db530989ecab8c71c4af638bfe0777b8a9ee3b465c84cd5fc",
+      "passedChecks": 10,
+      "failedChecks": 6,
+      "screenshots": 0,
+      "nativeCrashes": 0,
+      "error": "locator.click: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.iv-reserve-card').filter({ has: locator('img[src=\"/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp\"]') })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-pressed=\"false\" class=\"iv-reserve-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n    at openGalleryAsset (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:203:14)\n    at async inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:325:32)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:42:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v14/browser-harness/run-segment.cjs:447:11"
+    },
+    {
+      "segment": "mobile-blitzo-shop",
+      "status": "interrupted_at_root_request",
+      "report": "docs/standalone/production-v14/browser-harness/failed-segments/mobile-blitzo-shop-interrupted/interruption.json",
+      "reportSha256": "8767499510970c42945ec804d4b7198889ba355c1d2f1cb78fcc18467ee9b9ec",
+      "acceptedAsCompletedSegment": false
+    }
+  ],
+  "neverRunInitialSegments": [
+    "desktop-millie-shop",
+    "mobile-moxxie-dining",
+    "mobile-millie-shop",
+    "mobile-gallery"
+  ],
+  "limits": [
+    "No completed initial browser segment; wardrobe and arena-selection observations are partial evidence only.",
+    "Two native crashes on combat entry and one gallery action timeout were observed. Their cause is not established.",
+    "The mobile session was interrupted at root request before a renderer optimization and new freeze.",
+    "The optimization addresses unnecessary preload work; it does not by itself establish a cause or fix for these failures."
+  ]
+}

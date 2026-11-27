@@ -1,0 +1,137 @@
+{
+  "diagnosticOnly": true,
+  "assets": [
+    {
+      "id": "hb_rolando-ready",
+      "source": "/workspace/scratch/9be6ab2142e0/production-i/assets/hb_rolando-ready.png",
+      "diagnosticOnly": "/workspace/scratch/9be6ab2142e0/production-i/assets/diagnostics/hb_rolando-ready-checkerboard.png",
+      "sourceSha256Before": "57fec9ae496847a275df93b48e2550d246262866078fd76e0ba4b8dddbc3e2a8",
+      "sourceSha256After": "57fec9ae496847a275df93b48e2550d246262866078fd76e0ba4b8dddbc3e2a8",
+      "sourceUnchanged": true,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBoundsAbove16": [
+        235,
+        25,
+        790,
+        1509
+      ],
+      "measurementRegion": "Outside the axis-aligned bounding box of pixels with alpha > 16; not a manually annotated anatomical mask.",
+      "outsidePixelCount": 749244,
+      "outsideCounts": {
+        "alpha0": 748904,
+        "alpha1to15": 338,
+        "alpha16": 2,
+        "alphaAbove16": 0
+      },
+      "outsideFractions": {
+        "alpha0": 0.9995462092455862,
+        "alpha1to15": 0.0004511213970348778,
+        "alpha16": 2.6693573789046024e-06,
+        "alphaAbove16": 0.0
+      },
+      "wholeCanvasCounts": {
+        "alpha0": 1227110,
+        "alpha1to15": 13524,
+        "alpha16": 62,
+        "alphaAbove16": 332168
+      },
+      "wholeCanvasFractions": {
+        "alpha0": 0.780175526936849,
+        "alpha1to15": 0.00859832763671875,
+        "alpha16": 3.9418538411458336e-05,
+        "alphaAbove16": 0.21118672688802084
+      },
+      "caveat": "The >16 bounding box defines a conservative exterior region. Alpha data alone cannot prove where the anatomical silhouette should end. Visual check of checkerboard composition remains necessary.",
+      "contourExterior": {
+        "definition": "Outside the alpha >= 128 core expanded 3 pixels in all directions to exclude ordinary antialiased edges. Operational mask, not manual model silhouette annotation.",
+        "pixelCount": 1215328,
+        "counts": {
+          "alpha0": 1214369,
+          "alpha1to15": 959,
+          "alpha16": 0,
+          "alphaAbove16": 0
+        },
+        "fractions": {
+          "alpha0": 0.9992109126096,
+          "alpha1to15": 0.0007890873903999579,
+          "alpha16": 0.0,
+          "alphaAbove16": 0.0
+        }
+      },
+      "visualReview": "Composition sur damier clair et sombre inspect\u00e9e : aucun halo externe large visible, silhouette lisible, interstices des doigts et espace entre bras et torse transparents. Original inchang\u00e9."
+    },
+    {
+      "id": "hb_dennis-ready",
+      "source": "/workspace/scratch/9be6ab2142e0/production-i/assets/hb_dennis-ready.png",
+      "diagnosticOnly": "/workspace/scratch/9be6ab2142e0/production-i/assets/diagnostics/hb_dennis-ready-checkerboard.png",
+      "sourceSha256Before": "1ff3aeac9636f284fca6ee4640ace85dd1de9186ed122d09a816bd2ad21d202c",
+      "sourceSha256After": "1ff3aeac9636f284fca6ee4640ace85dd1de9186ed122d09a816bd2ad21d202c",
+      "sourceUnchanged": true,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBoundsAbove16": [
+        210,
+        33,
+        862,
+        1511
+      ],
+      "measurementRegion": "Outside the axis-aligned bounding box of pixels with alpha > 16; not a manually annotated anatomical mask.",
+      "outsidePixelCount": 609208,
+      "outsideCounts": {
+        "alpha0": 608982,
+        "alpha1to15": 226,
+        "alpha16": 0,
+        "alphaAbove16": 0
+      },
+      "outsideFractions": {
+        "alpha0": 0.9996290265393757,
+        "alpha1to15": 0.000370973460624286,
+        "alpha16": 0.0,
+        "alphaAbove16": 0.0
+      },
+      "wholeCanvasCounts": {
+        "alpha0": 1205691,
+        "alpha1to15": 20297,
+        "alpha16": 114,
+        "alphaAbove16": 346762
+      },
+      "wholeCanvasFractions": {
+        "alpha0": 0.7665576934814453,
+        "alpha1to15": 0.012904485066731771,
+        "alpha16": 7.2479248046875e-05,
+        "alphaAbove16": 0.22046534220377603
+      },
+      "caveat": "The >16 bounding box defines a conservative exterior region. Alpha data alone cannot prove where the anatomical silhouette should end. Visual check of checkerboard composition remains necessary.",
+      "contourExterior": {
+        "definition": "Outside the alpha >= 128 core expanded 3 pixels in all directions to exclude ordinary antialiased edges. Operational mask, not manual model silhouette annotation.",
+        "pixelCount": 1201996,
+        "counts": {
+          "alpha0": 1198066,
+          "alpha1to15": 3930,
+          "alpha16": 0,
+          "alphaAbove16": 0
+        },
+        "fractions": {
+          "alpha0": 0.9967304383708432,
+          "alpha1to15": 0.003269561629156836,
+          "alpha16": 0.0,
+          "alphaAbove16": 0.0
+        }
+      },
+      "visualReview": "Composition sur damier clair et sombre inspect\u00e9e : aucun halo externe large visible, silhouette lisible, interstices des doigts et espace entre bras et torse transparents. Original inchang\u00e9."
+    }
+  ]
+}

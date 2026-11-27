@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "status": "accepted",
+  "reviewedAt": "2026-11-27T01:01:58.567272+00:00",
+  "reviewer": "/root/finish_unlocks",
+  "scope": "Visual review of four real browser captures after selecting the two static reserve portraits in the local Vite gallery. Desktop 1440 × 1000; mobile 390 × 844.",
+  "browserReport": {
+    "path": "docs/standalone/production-v16/browser-gallery-qa.json",
+    "sha256": "d2f7e8161b108ec2a641966b1f771f8ee2d2ddfce4cf4f668cb8708bf0f2a822"
+  },
+  "independentArtworkReview": {
+    "path": "docs/standalone/production-v16/independent-visual-review.json",
+    "sha256": "5f393e714c1bd57dd798060141ff2d1120dc23aab124beb6ece36f87bb4bb467"
+  },
+  "screenshots": [
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "3ce132f5d060885e8c263e6a684e5ac3050debd1555faf2494763d24eb8a7591",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "viewport": "desktop",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content.",
+      "reviewed": true,
+      "accepted": true,
+      "reviewMethod": "Direct visual inspection of the saved native browser screenshot using view_image.",
+      "observations": [
+        "Le buste entier est lisible dans son panneau : antenne centrale, deux cornes, cheveux, oreilles, col et limite inférieure du torse restent à l’intérieur du cadre.",
+        "Le fond violet de la galerie traverse les zones transparentes ; aucun rectangle opaque ni liseré cyan gênant n’est visible à cette échelle.",
+        "Le titre Gerald · Barbie’s Bad Day · portrait, le badge COURT OFFICIEL · 2026 et le statut Archive narrative statique · Buste sont lisibles, sans confusion avec IMP Training Video.",
+        "Le volet des références et le bouton de fermeture sont visibles à droite sans chevauchement."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "3f6dbad4faaec65e27a6976088a6acad29359c6b855713d268d7730d97054a75",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "viewport": "desktop",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content.",
+      "reviewed": true,
+      "accepted": true,
+      "reviewMethod": "Direct visual inspection of the saved native browser screenshot using view_image.",
+      "observations": [
+        "Les deux pointes de corne, la casquette, la chevelure, le visage et le haut du tablier sont visibles avec une marge autour du buste.",
+        "La transparence se compose proprement sur le fond violet ; les formes noires des cornes restent discernables.",
+        "Le titre Rick · Barbie’s Bad Day · portrait, le badge COURT OFFICIEL · 2026 et le statut Archive narrative statique · Buste sont lisibles ; le texte attribue correctement le court.",
+        "Le volet des références et le bouton de fermeture sont visibles à droite sans chevauchement."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "fb06f8b3f62397f377b738ae54c53fa14e30e20402db91f654297050475a6e59",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "viewport": "mobile",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content.",
+      "reviewed": true,
+      "accepted": true,
+      "reviewMethod": "Direct visual inspection of the saved native browser screenshot using view_image.",
+      "observations": [
+        "À 390 × 844 pixels, l’antenne, les deux cornes, les oreilles et tout le buste restent visibles ; le bandeau fixe ne recouvre pas la tête.",
+        "Le dessin conserve ses proportions et son détourage sur le fond de la galerie, avec des marges latérales.",
+        "Le badge, le titre et le statut de buste sont lisibles sous l’image. Le paragraphe de provenance continue sous le bord inférieur par défilement vertical normal.",
+        "Aucun débordement horizontal ni chevauchement de texte n’est visible. Les références plus bas sont couvertes par les interactions enregistrées dans le rapport navigateur."
+      ]
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "9f8258514099ff83a383742eda934ec4e985433c1ca13b903dc1f5ebc6297252",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "viewport": "mobile",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content.",
+      "reviewed": true,
+      "accepted": true,
+      "reviewMethod": "Direct visual inspection of the saved native browser screenshot using view_image.",
+      "observations": [
+        "À 390 × 844 pixels, les deux cornes entières, la casquette, la chevelure et le buste restent visibles ; le bandeau fixe ne recouvre pas le portrait.",
+        "Les proportions sont conservées et le détourage ne forme pas de rectangle opaque.",
+        "Le badge, le titre et le statut de buste sont lisibles sous l’image. Le paragraphe de provenance continue sous le bord inférieur par défilement vertical normal.",
+        "Aucun débordement horizontal ni chevauchement de texte n’est visible. Les références plus bas sont couvertes par les interactions enregistrées dans le rapport navigateur."
+      ]
+    }
+  ],
+  "checks": {
+    "screenshotsViewed": 4,
+    "bothAssetsReviewedAtBothViewports": true,
+    "completePortraitsVisible": true,
+    "correctWorkTitleVisible": true,
+    "sourceHashesStillCurrent": true,
+    "browserChecksPassed": 8,
+    "consoleErrors": 0,
+    "pageErrors": 0
+  },
+  "addsStandaloneBase": false,
+  "newPlayableKits": 0,
+  "newAnimationCycles": 0,
+  "fidelityOneToOneCertified": false,
+  "limitations": [
+    "These are upper-body portraits for the reserve gallery. They do not establish complete character bases, gameplay integration or new animation cycles.",
+    "The source frames are native 320 × 180 public preview cells; image details remain interpreted. The separate independent artwork review records cropping, alpha and fidelity limitations.",
+    "The four screenshots show the initial portrait view. On mobile, lower provenance details and source links require normal vertical scrolling; the browser report records those interactions separately.",
+    "Reference links were actually activated, with their target URLs intercepted locally. Remote YouTube content availability was not tested.",
+    "The earlier artwork review did not establish the release year. Subsequent local primary publication metadata records 2026-04-25; that additional evidence is preserved in integration-assets.json without rewriting the earlier review."
+  ]
+}

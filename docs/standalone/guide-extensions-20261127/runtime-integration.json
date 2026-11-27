@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27",
+  "createdAt": "2026-11-27T00:44:22.578619+00:00",
+  "status": "intégration locale testée — sept règles de déblocage",
+  "scope": "Parcours optionnel de deux personnages, deux costumes, deux arènes et Boss Rush; contenu, kits jouables et galerie de réserve conservés.",
+  "tested": true,
+  "testCommand": "npm run test -- src/tests/standalone-content-access.test.ts src/tests/standalone-content-access-ui.test.tsx src/tests/standalone-progression.test.ts src/tests/standalone-ui.test.tsx",
+  "testResult": {
+    "unitAndComponentTests": 48,
+    "testFiles": 4,
+    "browserChecks": 28,
+    "visuallyReviewedScreenshots": 8,
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "browserVersion": "143.0.7499.4"
+  },
+  "rules": [
+    {
+      "name": "Lucifer Morningstar",
+      "category": "fighter",
+      "contentId": "lucifer",
+      "ruleId": "pact-lucifer-v1",
+      "conditionText": "Chronique actuelle de Charlie terminée OU dix victoires J1 hors dojo."
+    },
+    {
+      "name": "Stolas",
+      "category": "fighter",
+      "contentId": "hb_stolas",
+      "ruleId": "pact-stolas-v1",
+      "conditionText": "Chronique actuelle de Blitzø terminée OU dix victoires J1 hors dojo."
+    },
+    {
+      "name": "Blitzø — Bodyguard, Loo Loo Land",
+      "category": "costume",
+      "contentId": "hb_blitzo-bodyguard-looloo",
+      "ruleId": "pact-blitz-bodyguard-v1",
+      "conditionText": "Une victoire J1 hors dojo."
+    },
+    {
+      "name": "Moxxie — Bodyguard, Loo Loo Land",
+      "category": "costume",
+      "contentId": "hb_moxxie-bodyguard-looloo",
+      "ruleId": "pact-moxxie-bodyguard-v1",
+      "conditionText": "Trois victoires J1 hors dojo."
+    },
+    {
+      "name": "Paradis — Portes célestes",
+      "category": "stage",
+      "contentId": "hh-heaven-gates",
+      "ruleId": "pact-heaven-gates-v1",
+      "conditionText": "Chronique actuelle de Charlie terminée OU cinq victoires J1 hors dojo."
+    },
+    {
+      "name": "Cour des Goetia",
+      "category": "stage",
+      "contentId": "goetia-court",
+      "ruleId": "pact-goetia-court-v1",
+      "conditionText": "Chronique actuelle de Blitzø terminée OU cinq victoires J1 hors dojo."
+    },
+    {
+      "name": "Boss Rush",
+      "category": "mode",
+      "contentId": "boss-rush",
+      "ruleId": "pact-boss-rush-v1",
+      "conditionText": "Un parcours Arcade terminé (cinq victoires)."
+    }
+  ],
+  "evidencePaths": [
+    "art/audits/unlock-slots-20261127/unit-tests.json",
+    "art/audits/unlock-slots-20261127/technical-qa.json",
+    "art/audits/unlock-slots-20261127/browser-qa.json",
+    "art/audits/unlock-slots-20261127/browser-run.log",
+    "art/audits/unlock-slots-20261127/visual-review.json"
+  ],
+  "fixes": [
+    "Les tenues sont résolues et figées au lancement du duel; les nouvelles récompenses ne modifient plus le dessin pendant la victoire.",
+    "Les gardes de lancement vérifient aussi les accès hors parcours. Les prêts de reprise exigent le même parcours actif et son adversaire exact.",
+    "Espacement entre aide de progression et focus du premier slot corrigé après inspection visuelle."
+  ],
+  "sectionDeltas": {
+    "50": {
+      "status": "partielle — socle local testé",
+      "scope": "Parcours de déblocage optionnel, désactivé par défaut; sept règles sur des contenus jouables existants.",
+      "remaining": "Élargir les règles au catalogue après validation des dépendances; aucun contenu de réserve promu."
+    },
+    "51": {
+      "status": "partielle — socle local testé",
+      "scope": "Découverte, acquisition locale, disponibilité technique et compatibilité sont séparées dans le résolveur. Les droits locaux, prêts dojo/récit et messages techniques sont testés.",
+      "remaining": "Droits temporaires, inconnus et expirés; détection réelle des installations; profil connecté et sources multiples restent à construire."
+    },
+    "52": {
+      "status": "partielle — socle local testé",
+      "scope": "Sceaux décoratifs originaux avec cadenas, silhouettes noires et texte explicatif; huit captures inspectées en bureau et mobile.",
+      "remaining": "Étendre la charte aux révélations animées et aux futurs contenus secrets sans prétendre à un objet canonique."
+    },
+    "53": {
+      "status": "partielle — socle local testé",
+      "scope": "Lucifer et Stolas verrouillables; gardes en sélection et au lancement; dojo libre, adversaires de parcours et reprise de parcours établis autorisés explicitement.",
+      "remaining": "Partenaires et équipes restent dépendants du futur mode Duo; aucun nouveau combattant ajouté."
+    },
+    "54": {
+      "status": "partielle — socle local testé",
+      "scope": "Deux costumes Bodyguard verrouillables; la garde-robe conserve la préférence, applique la tenue habituelle au besoin et restaure la récompense. Tenues figées pendant chaque duel.",
+      "remaining": "Palettes, accessoires équipables, récompense avant propriétaire verrouillé et vêtements avec droits externes restent à couvrir par des cas concrets."
+    },
+    "55": {
+      "status": "partielle — socle local testé",
+      "scope": "Portes célestes et Cour des Goetia verrouillables; sceau, progression, refus de sélection, repli sur arène libre et prêt narratif.",
+      "remaining": "Stages temporaires, transitions d’arène et droits multijoueur connecté restent à réaliser."
+    },
+    "56": {
+      "status": "partielle — socle local testé",
+      "scope": "Boss Rush exige une Arcade terminée. La tuile explique la condition; un parcours validé avant activation reste reprenable sans débloquer de nouvelle sélection.",
+      "remaining": "Autres modes avancés ou règles d’accès externes restent à développer."
+    },
+    "57": {
+      "status": "partielle — socle local testé",
+      "scope": "Compteurs validés et fins de chronique versionnées; conditions ET/OU, alternatives, attribution unique sur identifiant de résultat, progression déjà acquise et import/export testés.",
+      "remaining": "Réclamation manuelle, défis/records supplémentaires et sources distantes restent à développer."
+    },
+    "58": {
+      "status": "partielle — socle local testé",
+      "scope": "Notification textuelle du nombre de récompenses acquises; aucune tenue ne change pendant le duel qui accorde la récompense.",
+      "remaining": "Hub d’Archives, navigation d’exploration, coffres et scène de révélation animée ne sont pas implémentés."
+    },
+    "62": {
+      "status": "partielle — socle local testé",
+      "scope": "Profil local partagé par les deux côtés, dojo libre sans points, prêts narratifs et reprise de parcours commencés. Sélections libres contrôlées avant lancement.",
+      "remaining": "Identités multiples, multijoueur en ligne, droits d’invités et replays ne sont pas couverts."
+    },
+    "63": {
+      "status": "partielle — socle local testé",
+      "scope": "Sceaux focusables, libellés textuels, conditions détaillées, silhouettes et mouvement réduit vérifiés par tests et Chromium clavier/tactile émulé. Présentation secrète neutre testée isolément.",
+      "remaining": "Aucun contenu secret réel dans les sept règles; navigation manette et lecteur d’écran dédiées restent à tester."
+    },
+    "64": {
+      "status": "partielle — socle local testé",
+      "scope": "Migration additive, import/export validé, préférences conservées, doublons de résultat ignorés; 48 tests ciblés, 28 contrôles navigateur et huit captures inspectées.",
+      "remaining": "La recette complète des extensions, l’arrêt pendant écriture, les serveurs et les abonnements ne sont pas validés par ce lot."
+    }
+  },
+  "implementedCardScopes": {
+    "IV-E02-A": "socle local implémenté et testé pour Lucifer; aucun nouveau sprite ou cycle de révélation",
+    "IV-E02-B": "conditions locales ET/OU, fins versionnées, compteurs et doubles résultats testés",
+    "IV-E02-D": "sceaux et silhouettes de sélection vérifiés au clavier et en tactile émulé; secrets et abonnements hors recette",
+    "IV-E02-E": "deux arènes locales sous condition et prêt narratif testés; aucune arène abonnée",
+    "IV-E02-F": "sous-ensemble local testé; la matrice complète reste ouverte pour réseau, abonnements et états futurs"
+  },
+  "caseCoverage": [
+    {
+      "caseId": "IV-E02-QA-02",
+      "scope": "Navigation clavier, activation tactile émulée, condition et refus de sélection contrôlés."
+    },
+    {
+      "caseId": "IV-E02-QA-04",
+      "scope": "Conditions ET/OU, groupes imbriqués et refus des groupes vides testés."
+    },
+    {
+      "caseId": "IV-E02-QA-05",
+      "scope": "Double callback de résultat ignoré et récompense conservée après export/import; arrêt en cours d’écriture non simulé."
+    },
+    {
+      "caseId": "IV-E02-QA-11",
+      "scope": "Résolveur technique testé avec missing; aucun gestionnaire d’installation réel."
+    },
+    {
+      "caseId": "IV-E02-QA-16",
+      "scope": "Costume local mémorisé conservé mais remplacé pendant verrouillage, puis restauré au duel suivant et après rechargement."
+    },
+    {
+      "caseId": "IV-E02-QA-18",
+      "scope": "Boss Rush ouvert après Arcade, reprise possible avant nouvelle acquisition, aucune nouvelle sélection interdite."
+    },
+    {
+      "caseId": "IV-E02-QA-21",
+      "scope": "Clavier, tactile émulé et mouvement réduit; manette/lecteur d’écran non testés."
+    },
+    {
+      "caseId": "IV-E02-QA-22",
+      "scope": "Ancien profil migré sans nouvelle restriction, import/export et garde-robe testés; aucun service de resynchronisation."
+    }
+  ],
+  "limitations": [
+    "Aucune animation supplémentaire, assistance, relais, super duo, fin collective, bonus jouable ou hub d’exploration livré par ce module.",
+    "Aucun abonnement, paiement, service Patreon, droit temporaire ou synchronisation serveur implémenté.",
+    "Le profil local est validé mais non signé: ce mécanisme constitue une progression de jeu hors ligne, pas une sécurité de commerce.",
+    "Les flags d’installation et de compatibilité sont des entrées explicites du résolveur; aucun téléchargement ou détection automatique de fichiers n’est ajouté.",
+    "Le statut secret est testé dans la fonction de présentation mais aucune des sept règles ne cache entièrement son identité.",
+    "Le navigateur contrôle les menus réels; les victoires/reprises UI sont produites dans les tests de composants par un moteur simulé.",
+    "Recette sur Chromium 143.0.7499.4, clavier et tactile émulé; pas de garantie de manette, lecteur d’écran, téléphone physique ou réseau."
+  ],
+  "fidelityOneToOneCertified": false
+}

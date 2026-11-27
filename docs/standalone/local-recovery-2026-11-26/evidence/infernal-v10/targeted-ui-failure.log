@@ -1,0 +1,204 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1 src/tests/standalone-ui.test.tsx -t filters reserve art
+
+
+ RUN  v4.1.10 /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager
+
+ ❯ src/tests/standalone-ui.test.tsx (20 tests | 1 failed | 19 skipped) 398ms
+     × filters reserve art without changing the roster and keeps scene preferences after reload 396ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/tests/standalone-ui.test.tsx > guide integration and narrative compatibility > filters reserve art without changing the roster and keeps scene preferences after reload
+TestingLibraryElementError: Found multiple elements with the text: 43
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<strong>[39m
+  [0m43[0m
+[36m</strong>[39m
+
+Ignored nodes: comments, script, style
+[36m<strong>[39m
+  [0m43[0m
+[36m</strong>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"iv-app"[39m
+      [33mdata-reduced-motion[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"iv-skip"[39m
+        [33mhref[39m=[32m"#infernal-main"[39m
+      [36m>[39m
+        [0mAller au contenu[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"iv-header"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Hellbound, accueil"[39m
+          [33mclass[39m=[32m"iv-brand"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"iv-brand-mark"[39m
+          [36m>[39m
+            [0mH[0m
+            [36m<span>[39m
+              [0m✦[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mHELLBOUND[0m
+            [36m<small>[39m
+              [0mINFERNAL VERSUS[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Navigation principale"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-current[39m=[32m"page"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-gamepad2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"6"[39m
+                [33mx2[39m=[32m"10"[39m
+                [33my1[39m=[32m"11"[39m
+                [33my2[39m=[32m"11"[39m
+              [36m/>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"8"[39m
+                [33mx2[39m=[32m"8"[39m
+                [33my1[39m=[32m"9"[39m
+                [33my2[39m=[32m"13"[39m
+              [36m/>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"15"[39m
+                [33mx2[39m=[32m"15.01"[39m
+                [33my1[39m=[32m"12"[39m
+                [33my2[39m=[32m"12"[39m
+              [36m/>[39m
+              [36m<line[39m
+                [33mx1[39m=[32m"18"[39m
+                [33mx2[39m=[32m"18.01"[39m
+                [33my1[39m=[32m"10"[39m
+                [33my2[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m Jouer[0m
+          [36m</button>[39m
+          [36m<button>[39m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-book-open"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m Combattants[0m
+          [36m</button>[39m
+          [36m<button>[39m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-sparkles"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 3v4"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M22 5h-4"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 17v2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 18H3"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m Galerie[0m
+          [36m</button>[39m
+          [36m<button>[39m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-settings"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.0...
+ ❯ Object.getElementError ../../../../tmp/infernal-v10/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError ../../../../tmp/infernal-v10/node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError ../../../../tmp/infernal-v10/node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ ../../../../tmp/infernal-v10/node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ ../../../../tmp/infernal-v10/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/tests/standalone-ui.test.tsx:410:19
+    408|     view.unmount();
+    409|     render(<InfernalVersus />);
+    410|     expect(screen.getByText('43', { selector: 'strong' })).toBeTruthy(…
+       |                   ^
+    411|     click(/VERSUS CPU/);
+    412|     click('Lancer le combat');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 19 skipped (20)
+   Start at  16:56:21
+   Duration  2.76s (transform 870ms, setup 0ms, import 1.21s, tests 398ms, environment 923ms)
+

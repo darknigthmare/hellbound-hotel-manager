@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "phase": "pre_generation_reference_qualification",
+  "reviewer": "/root/v13_register_bible",
+  "reviewedAt": "2026-11-26T19:39:58.598349+00:00",
+  "status": "three_static_objects_qualified_with_limits_one_deferred",
+  "scope": "Independent visual review of three complete primary production backgrounds and four exact local crops; no generated output review yet.",
+  "sourcePortfoliosIndependentlyOpened": [
+    {
+      "url": "https://rebeccareynolds.me/portfolio/backgrounds",
+      "claimVerified": "Helluva Boss portfolio section credits2020–2021 SpindleHorse and exposes matchingHB4_166/TS_HB6_261B image links.",
+      "webReference": "turn968022041view0"
+    },
+    {
+      "url": "https://jasperluu.com/helluvaboss",
+      "claimVerified": "The artist states these are designed/painted HelluvaBoss backgrounds and lists206 Paint00007.",
+      "webReference": "turn968022041view1",
+      "imageClickLimit": "Tool image fetch failed due encoded-plus URL; local historical primary image and primary image-link path were inspected."
+    }
+  ],
+  "assets": [
+    {
+      "id": "spring-broken-upright-keg",
+      "status": "deferred_lower_right_contour_occluded",
+      "qualifiedForGeneration": false,
+      "observation": "Fût gris violet et dessus visibles ; la glacière masque le coin inférieur droit et une partie du bord de base.",
+      "constraints": [
+        "Ne pas extrapoler la portion masquée pour revendiquer un objet entier fidèle.",
+        "Rechercher une vue primaire complémentaire montrant le même modèle entier."
+      ],
+      "limits": [
+        "Source du crop103×165px ; lettres et petites ferrures de faible résolution."
+      ],
+      "cropReference": {
+        "path": "production/v13/props/references/beach-upright-keg-reference.png",
+        "sha256": "5b4a5aa7007ea6f9921bd0bcebac09833b1aafbb5ae7e9ab663b4435f23efbe9",
+        "dimensions": [
+          103,
+          165
+        ],
+        "visuallyInspected": true,
+        "cropBox": [
+          944,
+          225,
+          1047,
+          390
+        ],
+        "exactPixelCropOfParent": true
+      },
+      "parentReference": {
+        "path": "production/v13/environment/references/rebecca-hb4-166.png",
+        "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+        "dimensions": [
+          1500,
+          844
+        ],
+        "visuallyInspected": true,
+        "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+        "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+        "author": "Rebecca Reynolds",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true
+      },
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "spring-broken-red-cup",
+      "status": "qualified_single_static_object_with_limits",
+      "qualifiedForGeneration": true,
+      "observation": "Un gobelet rouge renversé est isolable : ouverture ovale claire à gauche, parois rouges effilées et fond droit visibles, contour entier non masqué.",
+      "constraints": [
+        "Conserver cet angle couché, ouverture à gauche et fond à droite.",
+        "Un seul gobelet, sans liquide, sans logo ou objet ajouté."
+      ],
+      "limits": [
+        "Source native74×61px ; microtexture, petits reflets, proportion des bords et contour exact ne peuvent pas être certifiés1:1.",
+        "Le contexte du fond vient du portfolio ; corroboration de l’épisode gérée séparément par root."
+      ],
+      "cropReference": {
+        "path": "production/v13/props/references/beach-red-cup-reference.png",
+        "sha256": "ebcd088bd08d4520be0cab70a2b8e65cb599e2a69982a68f23c892971be6aa51",
+        "dimensions": [
+          74,
+          61
+        ],
+        "visuallyInspected": true,
+        "cropBox": [
+          787,
+          363,
+          861,
+          424
+        ],
+        "exactPixelCropOfParent": true
+      },
+      "parentReference": {
+        "path": "production/v13/environment/references/rebecca-hb4-166.png",
+        "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+        "dimensions": [
+          1500,
+          844
+        ],
+        "visuallyInspected": true,
+        "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+        "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+        "author": "Rebecca Reynolds",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true
+      },
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "dhorks-red-button-panel-s1",
+      "status": "qualified_single_static_object_with_limits",
+      "qualifiedForGeneration": true,
+      "observation": "Panneau mural entier : plaque supérieure lisible RED BUTTON, cadre gris rectangulaire en perspective, surface intérieure rayée en diagonale et gros bouton rond rouge.",
+      "constraints": [
+        "Conserver le cadrage oblique de la source.",
+        "Texte RED BUTTON seulement, sans inscription ou pictogramme supplémentaire.",
+        "Ne pas inclure le mur, les débris ni les taches du décor autour."
+      ],
+      "limits": [
+        "Source native73×102px ; lettres, texture et rayures fines sont réinterprétées lors de l’agrandissement.",
+        "La fonction jouable du bouton ne découle pas du dessin de réserve."
+      ],
+      "cropReference": {
+        "path": "production/v13/props/references/dhorks-red-button-reference.png",
+        "sha256": "09434d157e93c77f9ff5589a4ebb727ef705c97a21d6e59c23355c7dac9d4157",
+        "dimensions": [
+          73,
+          102
+        ],
+        "visuallyInspected": true,
+        "cropBox": [
+          477,
+          284,
+          550,
+          386
+        ],
+        "exactPixelCropOfParent": true
+      },
+      "parentReference": {
+        "path": "production/v13/environment/references/rebecca-hb6-261b.png",
+        "sha256": "80c45b6511321b8adfc2d5663c8b0b24384ea2499c64b664002f0621d8cf36f8",
+        "dimensions": [
+          1500,
+          527
+        ],
+        "visuallyInspected": true,
+        "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+        "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+        "author": "Rebecca Reynolds",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true
+      },
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "asmodeus-bedroom-pitcher",
+      "status": "qualified_single_static_object_with_limits",
+      "qualifiedForGeneration": true,
+      "observation": "Le crop élargi montre la pointe entière du bouton de couvercle avec une marge, le bec gauche, l’anse anguleuse droite, le couvercle et le corps rouge jusqu’à la base. Contour complet isolable dans cet angle.",
+      "constraints": [
+        "Conserver le petit bec gauche, le couvercle avec bouton décoratif entier, l’anse anguleuse droite et cet angle de la source.",
+        "Un seul pichet fermé sans contenu, sans ombre de table ni autres éléments de console."
+      ],
+      "limits": [
+        "Source de détail135×165px ; corps environ100×130px, contour et texture fins restent des adaptations à plus haute résolution.",
+        "La couleur est celle du dessin sous éclairage de la chambre ; aucune matière, fonction ou contenance non visible n’est déduite.",
+        "Aucune nouvelle arène ou fonctionnalité associée à cet objet n’est déduite."
+      ],
+      "cropReference": {
+        "path": "production/v13/props/references/asmodeus-pitcher-reference-v2.png",
+        "sha256": "0bb3c190c59e1b4a7400c0e005b466a5eee5c6c993c4d99151492daf640efe1b",
+        "dimensions": [
+          135,
+          165
+        ],
+        "visuallyInspected": true,
+        "cropBox": [
+          2075,
+          475,
+          2210,
+          640
+        ],
+        "exactPixelCropOfParent": true
+      },
+      "parentReference": {
+        "path": "production/v10/environment/references/jasper-206-paint-00007.jpg",
+        "sha256": "bde53558b7255b3511d0e083360be3ecdb4f282a577867095a26ccdf9f37e978",
+        "dimensions": [
+          2500,
+          1532
+        ],
+        "visuallyInspected": true,
+        "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+        "portfolioUrl": "https://jasperluu.com/helluvaboss",
+        "author": "Jasper Luu",
+        "kind": "official_production_artist_portfolio_image",
+        "primary": true
+      },
+      "fidelityOneToOneCertified": false,
+      "qualificationHistory": [
+        {
+          "status": "qualified_parent_pending_expanded_crop",
+          "observation": "Le fond primaire montre le corps conique rouge, l’anse anguleuse droite, le bec gauche et le couvercle. Le crop actuel coupe le sommet du bouton décoratif du couvercle au bord haut.",
+          "cropReference": {
+            "path": "production/v13/props/references/asmodeus-pitcher-reference.png",
+            "sha256": "3514eaa7820b1db8c22a42e7db9d148ebcd6fd2a0650b22791efabfc8b8463dc",
+            "dimensions": [
+              127,
+              130
+            ],
+            "visuallyInspected": true,
+            "cropBox": [
+              2081,
+              503,
+              2208,
+              633
+            ],
+            "exactPixelCropOfParent": true
+          },
+          "qualifiedForGeneration": false
+        }
+      ]
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "generatedImageReviewed": false
+}

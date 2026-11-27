@@ -1,0 +1,21 @@
+{
+  "edition": "V12",
+  "status": "failed",
+  "startedAt": "2026-11-26T17:48:10.832Z",
+  "completedAt": "2026-11-26T17:48:31.602Z",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "nodeOptions": "--max-old-space-size=512"
+    },
+    {
+      "gate": "lint",
+      "command": "npm run lint",
+      "exitCode": 1,
+      "nodeOptions": "--max-old-space-size=512"
+    }
+  ],
+  "error": "Error: lint failed: 1"
+}

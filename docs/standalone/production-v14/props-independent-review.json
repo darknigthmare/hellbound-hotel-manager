@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "reviewer": "/root/v14_register_bible",
+  "reviewedAt": "2026-11-26T21:42:56.129576+00:00",
+  "status": "two_props_accepted_with_limits",
+  "scope": "Independent visual comparison of two native prop masters with their exact detail crops and production backgrounds, light/dark alpha composites, and independent RGBA export verification. No runtime observation is claimed here.",
+  "fidelityOneToOneCertified": false,
+  "catalogueBaselineCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+  "referenceReview": "docs/standalone/production-v14/props-reference-review.json",
+  "referenceReviewSha256": "f48cc4be90313e7688d9a4fd275749c29f28f4bbebef02342ef6989c17b514cf",
+  "assets": [
+    {
+      "id": "sloth-cloud-dispenser-s2",
+      "kind": "prop",
+      "nativeMasterPath": "production/v14/props/masters/sloth-cloud-dispenser-s2.png",
+      "masterSha256": "9b533db0840fcf6465cd748161aab19ce876eeb477ccf788afdf493fcff3e5ee",
+      "nativeDimensions": [
+        1054,
+        1493
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v14_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Secondary color/detail reference; the tap partially overlaps the bottom of the hanging paper.",
+          "portfolioAdvertisedDimensions": "8622x5156"
+        },
+        {
+          "path": "production/v14/props/references/sloth-cloud-dispenser-crop.png",
+          "sha256": "49fb87237ebafc1baf32e309f5f86ea7f968b12adaf3de6a3887091db65d7140",
+          "bytes": 32791,
+          "dimensions": [
+            167,
+            219
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "parentPath": "production/v11/environment/references/jasper-15.jpg",
+          "parentSha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "cropBox": [
+            2238,
+            327,
+            2405,
+            546
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Secondary color/detail reference; the tap partially overlaps the bottom of the hanging paper."
+        },
+        {
+          "path": "production/v11/environment/references/jasper-19.jpg",
+          "sha256": "2f7a50e65a0959e7bdb9444624fd41dccbe071f4826f947e9a3d9bc601fa303c",
+          "bytes": 252218,
+          "dimensions": [
+            2500,
+            1283
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/b1339efd-ea15-427b-8936-33c4c66e353e/1.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Primary contour and pose reference; complete visible casing and hanging paper, unobstructed by the tap.",
+          "portfolioAdvertisedDimensions": "5232x2685"
+        },
+        {
+          "path": "production/v14/props/references/sloth-cloud-dispenser-secondary-crop.png",
+          "sha256": "545648d7ca5526adddf5e2b8cf9fdd08b71b3c4b4bf5d30d201a5a20d9c1502c",
+          "bytes": 19461,
+          "dimensions": [
+            115,
+            163
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/b1339efd-ea15-427b-8936-33c4c66e353e/1.jpeg",
+          "parentPath": "production/v11/environment/references/jasper-19.jpg",
+          "parentSha256": "2f7a50e65a0959e7bdb9444624fd41dccbe071f4826f947e9a3d9bc601fa303c",
+          "cropBox": [
+            1492,
+            309,
+            1607,
+            472
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Primary contour and pose reference; complete visible casing and hanging paper, unobstructed by the tap."
+        }
+      ],
+      "visualComparison": [
+        "Un seul distributeur mural rose, silhouette complète du boîtier et papiers crème pendants, avec marges transparentes de chaque côté.",
+        "Face avant rose, tranche gauche sombre, coins supérieurs arrondis, nuage clair et trois gouttes : les repères visibles des deux sources sont conservés.",
+        "La forme et l’orientation du papier suivent la vue dégagée Jasper19 ; aucun robinet, mur, comptoir, personnage, texte ou second objet ne subsiste.",
+        "Le contour et les plis restent lisibles sur les composites clairs et sombres. Aucun fond rectangulaire ni coupe du boîtier ou du papier n’est observé."
+      ],
+      "limits": [
+        "Le nuage, ses lobes, les gouttes, les reflets et les plis de papier sont redessinés à partir de sources natives 115×163 et 167×219 pixels ; proportions et microdétails ne sont pas certifiés 1:1.",
+        "Le papier et les reflets sont plus développés et plus lisses dans le master que dans la petite source de production.",
+        "Les faibles franges colorées et pixels partiellement transparents du contour natif sont conservés sans retouche ; la lisibilité a été examinée sur les deux composites.",
+        "Un objet statique de réserve uniquement : aucune base de personnage, nouveau kit, animation, fonction médicale ni mécanique de distribution n’est déduite."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/props-diagnostics/sloth-cloud-dispenser-s2-alpha-review.jpg",
+        "sha256": "88801da80b0786d16ca63c28aac92fdd3a11729aea2556a4fcf6802d3e55cb3c",
+        "purpose": "Diagnostic composite only; the native master is unchanged."
+      },
+      "pixelAudit": {
+        "path": "production/v14/props/masters/sloth-cloud-dispenser-s2.png",
+        "sha256": "9b533db0840fcf6465cd748161aab19ce876eeb477ccf788afdf493fcff3e5ee",
+        "bytes": 1045158,
+        "dimensions": [
+          1054,
+          1493
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 772450,
+        "alphaFullPixels": 1410,
+        "alphaPartialPixels": 799762,
+        "visibleBBoxAlpha16": [
+          140,
+          132,
+          885,
+          1380
+        ],
+        "export": {
+          "path": "public/assets/production/v14/props/sloth-cloud-dispenser-s2.webp",
+          "sha256": "7f78b22fb2073a33e0d6b16d0a89af99b437dcbc291ced7ccb09372d1865ae7f",
+          "bytes": 588462,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "The 133 baseline gallery IDs, names and categories contain no separate cloud dispenser. The new master hash differs from recorded historical gallery masters. Existing appearance inside the Sloth background is not a delivered separate prop.",
+        "baselineGalleryEntries": 133
+      }
+    },
+    {
+      "id": "crimson-green-chandelier-s2",
+      "name": "Crimson · lustre vert",
+      "kind": "prop",
+      "nativeMasterPath": "production/v14/props/masters/crimson-green-chandelier-s2.png",
+      "masterSha256": "9e19eb3269c9628b9b3fab6748ff5cc6cd4a8a3d25e8e924c688a1cc92c2204b",
+      "nativeDimensions": [
+        1420,
+        1108
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v14_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "referenceReviewTiming": "Source and master inspected together after generation and before integration.",
+      "sourceReferences": [
+        {
+          "path": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "sha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "bytes": 344285,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "visuallyInspected": true,
+          "role": "Primary production room painting with the whole visible chandelier."
+        },
+        {
+          "path": "production/v14/environment/references/crimson-chandelier-complete-crop.png",
+          "sha256": "124f7f78a6d6514c18e743f24b8207f463488cfa0d4ae0307fdd4653bb81ea4b",
+          "bytes": 91222,
+          "dimensions": [
+            410,
+            320
+          ],
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+          "parentPath": "production/v14/environment/references/jasper-crimson-206.jpg",
+          "parentSha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+          "cropBox": [
+            935,
+            215,
+            1345,
+            535
+          ],
+          "parentPixelCropVerified": true,
+          "visuallyInspected": true,
+          "role": "Exact unscaled source crop of the whole visible chandelier."
+        }
+      ],
+      "visualComparison": [
+        "Un seul lustre complet dans la même vue : platine ovale, courte suspension, collerette sombre, grand corps central en pointe et boucles fines vertes.",
+        "La source montre deux groupes d’abat-jours chevauchés, avec quatre ouvertures ovales visibles. Le master reprend ces quatre ouvertures et leurs recouvrements.",
+        "Aucune boucle ni fixation visible n’est coupée par le cadre. Plafond, mobilier, trophées et autre décor sont absents du master transparent.",
+        "Abat-jours clairs, facettes anguleuses vertes et boucles restent lisibles sur les composites clairs et sombres."
+      ],
+      "promptDiscrepancy": {
+        "ledger": "docs/standalone/production-v14/root-prompts.json",
+        "originalPromptName": "Crimson · lustre vert à deux globes",
+        "originalPromptSha256": "857b03240a030a44acf73ead22f2ec1887f05f968135031d995f05d52016b151",
+        "originalCountInstruction": "exactly TWO pale luminous green rounded glass lampshades",
+        "sourceObservation": "Four visible oval lampshade openings arranged in two overlapping groups.",
+        "deliveredObservation": "The native master follows the four visible source openings.",
+        "resolution": "Keep the original prompt unchanged and publish the neutral name Crimson · lustre vert. No repainting or new generation was used to conceal the inaccurate count."
+      },
+      "limits": [
+        "Le prompt historique décrivait deux globes ; la revue rapprochée établit quatre ouvertures visibles en deux groupes chevauchés. Le nom livré ne reprend pas ce décompte imprécis.",
+        "Source de détail native 410×320 pixels. Épaisseur des boucles, recouvrements, proportions, facettes et reflets sont redessinés ; aucune fidélité 1:1 ni géométrie arrière cachée n’est certifiée.",
+        "Les marges transparentes entourent l’objet complet mais sont inférieures aux 12 % demandés dans le prompt, avec 31 pixels sous la dernière boucle.",
+        "Les faibles franges vertes et pixels partiellement transparents du contour natif sont conservés sans retouche.",
+        "Un objet statique de réserve ; aucun effet lumineux dynamique, nouvelle mécanique, base de personnage, kit ou cycle animé n’est ajouté."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v14/props-diagnostics/crimson-green-chandelier-s2-alpha-review.jpg",
+        "sha256": "e26a99a44d7091f157103572400a7e4a729a9eb8d7a1f887a67a02b58a533760",
+        "purpose": "Diagnostic composite only; the native master is unchanged."
+      },
+      "pixelAudit": {
+        "path": "production/v14/props/masters/crimson-green-chandelier-s2.png",
+        "sha256": "9e19eb3269c9628b9b3fab6748ff5cc6cd4a8a3d25e8e924c688a1cc92c2204b",
+        "bytes": 761872,
+        "dimensions": [
+          1420,
+          1108
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1138454,
+        "alphaFullPixels": 3029,
+        "alphaPartialPixels": 431877,
+        "visibleBBoxAlpha16": [
+          96,
+          72,
+          1322,
+          1077
+        ],
+        "transparentMarginsAlpha16": [
+          96,
+          72,
+          98,
+          31
+        ],
+        "export": {
+          "path": "public/assets/production/v14/props/crimson-green-chandelier-s2.webp",
+          "sha256": "f0a2e07ef33d80c7225b4f71b34d0aa16e2717c29ab39528af94b9c348610639",
+          "bytes": 482144,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "The 133 baseline gallery IDs, names and categories contain no separate green Crimson chandelier. The master hash is new. Existing prop-cherub-opera-spotlight and asmodeus-bedroom-candelabrum are different objects.",
+        "baselineGalleryEntries": 133
+      }
+    }
+  ],
+  "referenceReviewScope": "The separate reference report concerns the Sloth prop before generation. The chandelier source review is documented in its asset record here, after generation and before integration."
+}

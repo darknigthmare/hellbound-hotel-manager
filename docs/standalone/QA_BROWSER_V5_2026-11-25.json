@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-25",
+  "scope": "Published recovery checkpoint and final narrative/image runtime checkpoint; subsequent documentation-only changes are checked separately.",
+  "commit": "ddb964843a4cae630009d34f77a863dbc22929d4",
+  "deploymentId": "dpl_8krezTtw2AEiiZyjyP9noCXBLu7f",
+  "url": "https://hellbound-hotel-manager-luaywbyhe-darknigthmares-projects.vercel.app/combat.html",
+  "method": "Live Chrome browser interaction, accessibility tree, screenshots and read-only DOM image load properties.",
+  "observations": [
+    {
+      "view": "home",
+      "status": "passed",
+      "displayedFighters": 43,
+      "displayedStages": 35,
+      "displayedModes": 9
+    },
+    {
+      "view": "reserve-gallery",
+      "status": "passed",
+      "displayedEntries": 42,
+      "checks": [
+        "Gallery opens through the main navigation.",
+        "Octavia detail opens through its visible gallery card.",
+        "Original AU support entries are visibly labelled as original AU creations.",
+        "Candidate illustration status and pending exact fidelity review are visible in the detail."
+      ]
+    },
+    {
+      "view": "reserve-gallery/octavia",
+      "status": "passed",
+      "asset": "/assets/sprites/reserve/hb_octavia-ready.webp",
+      "complete": true,
+      "naturalWidth": 1024,
+      "naturalHeight": 1536,
+      "visualCheck": "Full character illustration rendered in the detail panel after loading."
+    },
+    {
+      "view": "campaign-overview",
+      "status": "passed",
+      "asset": "/assets/story/infernal-versus/campaign/signal-libre/v1/intro.webp",
+      "complete": true,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "checks": [
+        "Campaign opens through the visible game mode control.",
+        "Intro illustration, nine-chapter description and start control render.",
+        "Universe, season and difficulty selectors are present.",
+        "Original AU continuity is explicitly stated."
+      ]
+    }
+  ],
+  "console": {
+    "sampledErrorEntries": 11,
+    "applicationErrorsObserved": 0,
+    "excluded": "The sampled errors originated from a chrome-extension content script, not the application."
+  },
+  "limits": [
+    "This check does not certify every page, fight, campaign chapter or fighter.",
+    "This check does not certify canonical 1:1 visual fidelity.",
+    "No combat was played and no completed campaign progress was created during this check.",
+    "No browser screenshots or temporary deployment access tokens are stored in this report."
+  ],
+  "finalRuntimeReview": {
+    "commit": "5587b336729b035257abb57171ee2a4edc03eaca",
+    "deploymentId": "dpl_66199Kvf1tdGqx9jv5DY9nwMaUyW",
+    "url": "https://hellbound-hotel-manager-phgffzikd-darknigthmares-projects.vercel.app/combat.html",
+    "deploymentState": "READY",
+    "observedAt": "2026-11-25T16:15:39Z",
+    "registrySha256": "576a0e74cd1b60fa6d67dbe6a96ac7db8c37c702e384c02eb800937ba9b916bb",
+    "checks": [
+      {
+        "view": "home",
+        "status": "passed",
+        "displayedFighters": 43,
+        "displayedStages": 35,
+        "displayedModes": 9
+      },
+      {
+        "view": "story-selection",
+        "status": "passed",
+        "selectedFighter": "Mammon",
+        "visibleRouteTitle": "La caisse applaudit"
+      },
+      {
+        "view": "personal-v3/mammon-intro",
+        "status": "passed",
+        "asset": "/assets/story/infernal-versus/v3/hb_mammon-intro.webp",
+        "complete": true,
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "objectFit": "contain",
+        "visibleAlt": "Le bruit sans recette — Il secoue le tiroir vide avec incrédulité.",
+        "visibleNextOpponent": "Glitz",
+        "enterCombatControlPresent": true,
+        "visualCheck": "The whole horizontal illustration rendered beside the correct prologue and first-duel text; the AU label remains visible."
+      }
+    ],
+    "console": {
+      "sampledErrorEntries": 12,
+      "applicationErrorsObserved": 0,
+      "excluded": "All sampled errors came from the Chrome extension content script."
+    },
+    "progressScope": "One preview-only Mammon route was started to inspect its prologue. No fight was entered, won or completed.",
+    "limits": [
+      "This sample does not certify all 138 illustrations in browser.",
+      "No hardware gamepad, complete fight or canonical 1:1 visual certification is claimed."
+    ]
+  }
+}

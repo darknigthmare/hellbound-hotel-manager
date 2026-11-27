@@ -1,0 +1,2551 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "date": "2026-11-27",
+  "status": "final_production_register",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "prNumber": 8,
+  "baselineCommit": "68007b81bce0307a9c54cb3e42ef8bdf231087d6",
+  "equivalentLocalBaselineCommit": "eca07c70d20fc1f03e52d84b97b45050f0c82308",
+  "baselineTree": "4c5c4fbf079836bb0551a0357822f70ebe34b463",
+  "baselinePublicationStatus": "published_on_existing_pr_8",
+  "baseline": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 115,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 75,
+    "catalogueIdsWithoutStandaloneBase": 94,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 93,
+    "reserveGalleryEntries": 143,
+    "runtimeCostumeFamilies": 27,
+    "activeStages": 51,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "counts": {
+    "distinctDrawings": 2,
+    "newGenerationThisTask": 2,
+    "newStandaloneBases": 0,
+    "newlyCoveredCatalogueIds": 0,
+    "narrativeArchives": 2,
+    "characterPortraits": 2,
+    "masterPng": 2,
+    "losslessWebp": 2,
+    "deliveredImageFiles": 4,
+    "deliveredImageBytes": 2474716,
+    "newAnimationCycles": 0,
+    "newPlayableKits": 0,
+    "newDrawings": 2,
+    "revisedDrawings": 0,
+    "thumbnails": 0,
+    "newCharacterBases": 0,
+    "newStaticCostumes": 0,
+    "newStages": 0,
+    "newPortraits": 2,
+    "newNarrativeIncarnations": 0,
+    "narrativeSilhouettes": 0,
+    "newSceneryProps": 0,
+    "newReserveProps": 0,
+    "newReserveProjectiles": 0,
+    "newReserveMachines": 0,
+    "generatorRefused": 0,
+    "generationAttemptsThisResume": 2
+  },
+  "cumulativeCounts": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 115,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 75,
+    "catalogueIdsWithoutStandaloneBase": 94,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 93,
+    "reserveGalleryEntries": 145,
+    "runtimeCostumeFamilies": 27,
+    "activeStages": 51,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "baseCoverageReconciliation": {
+    "sourceAudit": "docs/standalone/production-v7/catalogue-audit.json",
+    "historicalRegisterEditions": [
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15"
+    ],
+    "knownAliases": [
+      {
+        "productionIdentityId": "hz_travis",
+        "catalogueIds": [
+          "hz_travis",
+          "hb_travis"
+        ],
+        "reusableOnlyWhenSameIncarnation": true
+      }
+    ],
+    "coveredProductionIdentitiesBefore": [
+      "abel",
+      "adam",
+      "alastor",
+      "angeldust",
+      "baxter",
+      "carmilla",
+      "charlie",
+      "emily",
+      "hb_ace",
+      "hb_agent_one",
+      "hb_agent_two",
+      "hb_alessio",
+      "hb_andrealphus",
+      "hb_apple",
+      "hb_arick_burnz",
+      "hb_asmodeus",
+      "hb_barbie_wire",
+      "hb_bea_cherub",
+      "hb_beau_cherub",
+      "hb_beelzebub",
+      "hb_bethany_ghostfucker",
+      "hb_bigfoot_waiter",
+      "hb_blitzo",
+      "hb_bombproof",
+      "hb_cash_buckzo",
+      "hb_catfish_monster",
+      "hb_chazwick_thurman",
+      "hb_cletus",
+      "hb_coco",
+      "hb_collin",
+      "hb_counselor_jimmy",
+      "hb_crimson",
+      "hb_dennis",
+      "hb_dr_somna",
+      "hb_elder_jaws",
+      "hb_emberlynn_pinkle",
+      "hb_fizzarolli",
+      "hb_frank_mctickly_wrigglers",
+      "hb_gerardo_velazquez",
+      "hb_gerardos_wife",
+      "hb_gigi",
+      "hb_glam",
+      "hb_glitz",
+      "hb_gorilla_suit_guy",
+      "hb_hellhound_adoption_lady",
+      "hb_honey_cherub",
+      "hb_jesse",
+      "hb_joe",
+      "hb_josh",
+      "hb_karen_client",
+      "hb_kat",
+      "hb_keenie",
+      "hb_kendra",
+      "hb_kiki",
+      "hb_lin",
+      "hb_loo_loo",
+      "hb_loona",
+      "hb_luigi_paesano",
+      "hb_lyle_lipton",
+      "hb_mammon",
+      "hb_martha",
+      "hb_marthas_son",
+      "hb_milky",
+      "hb_millie",
+      "hb_moxxie",
+      "hb_mr_mayor",
+      "hb_mrs_mayberry",
+      "hb_muffy",
+      "hb_octavia",
+      "hb_paimon",
+      "hb_paulie_paesano",
+      "hb_queef",
+      "hb_rachel_cherub",
+      "hb_ralphie",
+      "hb_rita",
+      "hb_robo_fizz",
+      "hb_rolando",
+      "hb_russ",
+      "hb_sallie_may",
+      "hb_satan",
+      "hb_stolas",
+      "hb_striker",
+      "hb_toledo_the_igor",
+      "hb_uggie",
+      "hb_vassago",
+      "hb_verosika",
+      "hb_vortex",
+      "hb_wally_wackford",
+      "hb_yogirt",
+      "husk",
+      "hz_crymini",
+      "hz_hatchet",
+      "hz_huskette_cat",
+      "hz_huskette_imp",
+      "hz_katie_killjoy",
+      "hz_maestro",
+      "hz_melissa",
+      "hz_mimzy",
+      "hz_prick",
+      "hz_st_peter",
+      "hz_susan",
+      "hz_tom_trench",
+      "lucifer",
+      "niffty",
+      "rosie",
+      "sera",
+      "sim_applicant_ember",
+      "sim_applicant_marlow",
+      "sirpentious",
+      "vaggie",
+      "valentino",
+      "velvette",
+      "vox",
+      "zeezi",
+      "zestial"
+    ],
+    "coveredProductionIdentitiesAfter": [
+      "abel",
+      "adam",
+      "alastor",
+      "angeldust",
+      "baxter",
+      "carmilla",
+      "charlie",
+      "emily",
+      "hb_ace",
+      "hb_agent_one",
+      "hb_agent_two",
+      "hb_alessio",
+      "hb_andrealphus",
+      "hb_apple",
+      "hb_arick_burnz",
+      "hb_asmodeus",
+      "hb_barbie_wire",
+      "hb_bea_cherub",
+      "hb_beau_cherub",
+      "hb_beelzebub",
+      "hb_bethany_ghostfucker",
+      "hb_bigfoot_waiter",
+      "hb_blitzo",
+      "hb_bombproof",
+      "hb_cash_buckzo",
+      "hb_catfish_monster",
+      "hb_chazwick_thurman",
+      "hb_cletus",
+      "hb_coco",
+      "hb_collin",
+      "hb_counselor_jimmy",
+      "hb_crimson",
+      "hb_dennis",
+      "hb_dr_somna",
+      "hb_elder_jaws",
+      "hb_emberlynn_pinkle",
+      "hb_fizzarolli",
+      "hb_frank_mctickly_wrigglers",
+      "hb_gerardo_velazquez",
+      "hb_gerardos_wife",
+      "hb_gigi",
+      "hb_glam",
+      "hb_glitz",
+      "hb_gorilla_suit_guy",
+      "hb_hellhound_adoption_lady",
+      "hb_honey_cherub",
+      "hb_jesse",
+      "hb_joe",
+      "hb_josh",
+      "hb_karen_client",
+      "hb_kat",
+      "hb_keenie",
+      "hb_kendra",
+      "hb_kiki",
+      "hb_lin",
+      "hb_loo_loo",
+      "hb_loona",
+      "hb_luigi_paesano",
+      "hb_lyle_lipton",
+      "hb_mammon",
+      "hb_martha",
+      "hb_marthas_son",
+      "hb_milky",
+      "hb_millie",
+      "hb_moxxie",
+      "hb_mr_mayor",
+      "hb_mrs_mayberry",
+      "hb_muffy",
+      "hb_octavia",
+      "hb_paimon",
+      "hb_paulie_paesano",
+      "hb_queef",
+      "hb_rachel_cherub",
+      "hb_ralphie",
+      "hb_rita",
+      "hb_robo_fizz",
+      "hb_rolando",
+      "hb_russ",
+      "hb_sallie_may",
+      "hb_satan",
+      "hb_stolas",
+      "hb_striker",
+      "hb_toledo_the_igor",
+      "hb_uggie",
+      "hb_vassago",
+      "hb_verosika",
+      "hb_vortex",
+      "hb_wally_wackford",
+      "hb_yogirt",
+      "husk",
+      "hz_crymini",
+      "hz_hatchet",
+      "hz_huskette_cat",
+      "hz_huskette_imp",
+      "hz_katie_killjoy",
+      "hz_maestro",
+      "hz_melissa",
+      "hz_mimzy",
+      "hz_prick",
+      "hz_st_peter",
+      "hz_susan",
+      "hz_tom_trench",
+      "lucifer",
+      "niffty",
+      "rosie",
+      "sera",
+      "sim_applicant_ember",
+      "sim_applicant_marlow",
+      "sirpentious",
+      "vaggie",
+      "valentino",
+      "velvette",
+      "vox",
+      "zeezi",
+      "zestial"
+    ],
+    "newlyCoveredCatalogueIds": [],
+    "newStandaloneBaseIdentities": []
+  },
+  "assets": [
+    {
+      "id": "hb_gerald-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_gerald-barbie-bad-day-portrait.png",
+      "export": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1230,
+        1278
+      ],
+      "mode": "RGBA",
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "masterBytes": 743664,
+      "exportBytes": 465368,
+      "rgbaPixelSha256": "07d9e8d0682cdc9197600dbeeb101f75b360ee5cebbb6320de4dc2a8a36582a1",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        175,
+        45,
+        1003,
+        1240
+      ],
+      "alpha16Margins": {
+        "left": 175,
+        "top": 45,
+        "right": 227,
+        "bottom": 38
+      },
+      "edgeMaxAlpha": 1,
+      "edgePixelsWithNonzeroAlpha": 129,
+      "edgePixelsAlpha16OrMore": 0,
+      "name": "Gerald · Barbie’s Bad Day · portrait",
+      "sourceIdentityId": "hb_gerald",
+      "productionIdentityId": "hb_gerald",
+      "franchise": "Helluva Boss",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "official_short_2026",
+      "spoilerScope": "season_2",
+      "spoilerScopeBasis": "Conservative gallery disclosure ceiling; not a claim this short is a numbered season-two episode.",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie. Aucun kit jouable ni cycle animé.",
+      "reference": "HELLUVA SHORTS 11, Barbie’s Bad Day, Vivziepop. Références officielles natives 320 × 180 ; portrait limité aux parties visibles.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 20 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 60 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/gerald-official-20s.png",
+          "sha256": "e954dd4be4e2053eb0aaa1fb184b37a8992887b2e5c8fd50a028aead6c6eb0d6",
+          "bytes": 100374,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 20,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-00.jpg",
+          "cropBox": [
+            320,
+            180,
+            640,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        },
+        {
+          "path": "production/v16/characters/references/gerald-official-60s.png",
+          "sha256": "5ce399543407c3918d1d6e8bdbb8bdc02bfa8cf86952130274a1bc6bf02785ad",
+          "bytes": 103457,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 60,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-01.jpg",
+          "cropBox": [
+            0,
+            180,
+            320,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Gerald, employé violet de la pharmacie, identifiable au visage, chevelure et col ; bas du corps masqué."
+        }
+      ],
+      "fidelityNotes": [
+        "Les références sont des préviews natives de 320 × 180, pas une model sheet. La tête n’occupe qu’une partie de chaque cellule; courbes des yeux, volume des cheveux, longueur des cornes et rainures du col sont redessinés.",
+        "La couleur source subit l’éclairage magenta de la pharmacie; la palette du portrait isolé et ses légers dégradés ne constituent pas une référence colorimétrique exacte.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 175 px à gauche, 45 px en haut, 227 px à droite et 38 px en bas. Le confort vertical reste inférieur aux dix pour cent souhaités par le prompt, sans coupe des extrémités.",
+        "Le PNG conserve de faibles pixels natifs hors silhouette: alpha 1 au bord gauche et inférieur; maximum 3 dans les 35 dernières lignes. Aucun nettoyage, seuillage ou recoloriage n’a été effectué. Une inspection à plus grande échelle peut rendre ces traces plus perceptibles.",
+        "Les principaux aplats utilisent surtout alpha 253–254, donc ils ne sont pas tous entièrement opaques. L’export respecte exactement cette transparence native.",
+        "Portrait limité à la tête et au haut du torse : aucune base entière, aucun nouveau kit jouable et aucun cycle d’animation.",
+        "La portée de filtre season_2 est un plafond de divulgation conservateur ; Barbie’s Bad Day est un court officiel publié le 25 avril 2026 et ne reçoit aucune saison numérotée dans cette fiche."
+      ],
+      "visualObservations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Gerald conserve visage violet, lourdes paupières, iris turquoise, chevelure rose pâle, cornes, appendice aqua et col montant vert. Le cadrage volontaire s’arrête au haut du torse."
+      ],
+      "visualReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "imageQa": "docs/standalone/production-v16/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": true,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v16-2026-11-27",
+      "intendedExportUrl": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "runtimePlayable": false,
+      "runtimeSelectable": false,
+      "intendedRole": "Portrait narratif statique consultable dans la galerie.",
+      "operatorVisualReview": "docs/standalone/production-v16/image-qa.json",
+      "independentReviewLimits": [
+        "Les références sont des préviews natives de 320 × 180, pas une model sheet. La tête n’occupe qu’une partie de chaque cellule; courbes des yeux, volume des cheveux, longueur des cornes et rainures du col sont redessinés.",
+        "La couleur source subit l’éclairage magenta de la pharmacie; la palette du portrait isolé et ses légers dégradés ne constituent pas une référence colorimétrique exacte.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 175 px à gauche, 45 px en haut, 227 px à droite et 38 px en bas. Le confort vertical reste inférieur aux dix pour cent souhaités par le prompt, sans coupe des extrémités.",
+        "Le PNG conserve de faibles pixels natifs hors silhouette: alpha 1 au bord gauche et inférieur; maximum 3 dans les 35 dernières lignes. Aucun nettoyage, seuillage ou recoloriage n’a été effectué. Une inspection à plus grande échelle peut rendre ces traces plus perceptibles.",
+        "Les principaux aplats utilisent surtout alpha 253–254, donc ils ne sont pas tous entièrement opaques. L’export respecte exactement cette transparence native."
+      ],
+      "publicationDate": "2026-04-25",
+      "publicationEvidence": {
+        "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+        "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+        "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+        "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+        "publishDate": "2026-04-25T10:00:36-07:00",
+        "uploadDate": "2026-04-25T10:00:36-07:00",
+        "primary": true,
+        "verified": true
+      },
+      "continuityBasis": "Official YouTube playerMicroformatRenderer publishDate/uploadDate verified as 2026-04-25T10:00:36-07:00; short 11 Barbie’s Bad Day, not IMP Training Video.",
+      "sourceExport": "production/v16/characters/exports/hb_gerald-barbie-bad-day-portrait.webp",
+      "exportUrl": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "sourceWorkTitle": "Barbie’s Bad Day",
+      "galleryChecked": true,
+      "combatPlayChecked": false,
+      "browserReview": "docs/standalone/production-v16/browser-gallery-qa.json",
+      "independentReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "galleryVisualReview": "docs/standalone/production-v16/browser-visual-review.json"
+    },
+    {
+      "id": "hb_rick-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_rick-barbie-bad-day-portrait.png",
+      "export": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "masterBytes": 799322,
+      "exportBytes": 466362,
+      "rgbaPixelSha256": "04fa433e5d61e9bf73741aea70af17d6a7593cba7de551c746c2598a1d976000",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        197,
+        55,
+        1083,
+        1150
+      ],
+      "alpha16Margins": {
+        "left": 197,
+        "top": 55,
+        "right": 229,
+        "bottom": 49
+      },
+      "edgeMaxAlpha": 0,
+      "edgePixelsWithNonzeroAlpha": 0,
+      "edgePixelsAlpha16OrMore": 0,
+      "name": "Rick · Barbie’s Bad Day · portrait",
+      "sourceIdentityId": "hb_rick",
+      "productionIdentityId": "hb_rick",
+      "franchise": "Helluva Boss",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "official_short_2026",
+      "spoilerScope": "season_2",
+      "spoilerScopeBasis": "Conservative gallery disclosure ceiling; not a claim this short is a numbered season-two episode.",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie. Aucun kit jouable ni cycle animé.",
+      "reference": "HELLUVA SHORTS 11, Barbie’s Bad Day, Vivziepop. Références officielles natives 320 × 180 ; portrait limité aux parties visibles.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 160 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s",
+          "kind": "official_episode_or_clip",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 165 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+        "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v16/characters/references/rick-official-160s.png",
+          "sha256": "f7fbbe98e05758cc807014a18ec7cac5d566e21672afff06d29d9c46bb22dbbf",
+          "bytes": 82379,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 160,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "cropBox": [
+            640,
+            180,
+            960,
+            360
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "primary_character_identity_and_visible_upper_body",
+          "qualification": "Rick derrière le comptoir : visage, coiffure, casquette, col et haut du tablier visibles ; une extrémité de corne touche le bord supérieur de la frame."
+        },
+        {
+          "path": "production/v16/characters/references/rick-official-165s.png",
+          "sha256": "ea8cf945df2aa8dc69454e11e2670f71eff5ed12d857a214cc77a87b4cb8b097",
+          "bytes": 101901,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s",
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS",
+          "author": "Vivziepop",
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_short_public_preview_frame",
+          "timeSeconds": 165,
+          "sourceBoard": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+          "cropBox": [
+            0,
+            360,
+            320,
+            540
+          ],
+          "transform": "Native 320×180 cell crop only, without resizing, enhancement or repainting.",
+          "role": "supporting_same_scene_rear_head_and_complete_horn_tips",
+          "qualification": "Dos du même employé : casquette rose et deux cornes noires à bande claire visibles entièrement. Ne fournit pas de visage supplémentaire."
+        },
+        {
+          "path": "production/v16/characters/references/hb_rick-historical-repository-portrait.png",
+          "sha256": "771d4fd0165cd7226bf641e563c5c351334c04af5b3e0980942a05697e0a580f",
+          "bytes": 145939,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "kind": "historical_repository_cutout",
+          "primary": false,
+          "viewed": true,
+          "sourcePath": "public/assets/sprites/helluva/portraits/hb_rick.png",
+          "role": "secondary_identity_and_colour_support_sent_to_generator",
+          "provenance": "Historical project cutout; detailed original extraction/author not independently verified. Does not establish hidden anatomy or episode-exact full-body design."
+        }
+      ],
+      "fidelityNotes": [
+        "La vue primaire de face à 160 s touche/coupe une extrémité de corne. Les vues de dos à 165 et 170 s corroborent les deux pointes et les bandes claires; leur projection de face demeure une interprétation.",
+        "Les références primaires sont natives 320 × 180. Les taches de rousseur, la petite marque du nez, la bouche, les coutures, la longueur des cornes et l’angle de la casquette ne sont pas certifiés à l’identique.",
+        "Le portrait historique du dépôt fourni à la génération est un support secondaire dont la provenance d’extraction détaillée n’est pas prouvée. Il ne qualifie aucun corps entier dans cette livraison.",
+        "La couleur source subit l’éclairage vert de la boutique; le portrait isolé propose une palette et de légers dégradés redessinés.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 197 px à gauche, 55 px en haut, 229 px à droite et 49 px en bas. Elles restent plus étroites verticalement que les dix pour cent demandés, sans coupe des pointes ou épaules.",
+        "Quelques pixels faibles subsistent dans les marges, sans alpha non nul sur le bord du canevas. Les aplats sont surtout à alpha 253–254. L’export conserve ces pixels sans retouche.",
+        "Portrait limité à la tête et au haut du torse : aucune base entière, aucun nouveau kit jouable et aucun cycle d’animation.",
+        "La portée de filtre season_2 est un plafond de divulgation conservateur ; Barbie’s Bad Day est un court officiel publié le 25 avril 2026 et ne reçoit aucune saison numérotée dans cette fiche."
+      ],
+      "visualObservations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Rick conserve visage rouge, yeux jaunes mi-clos, chevelure blanche, petite barbiche claire, casquette rose, deux cornes noires à bande claire, col de chemise et tablier rose. Le bas du tablier et le reste du corps sont absents."
+      ],
+      "visualReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "imageQa": "docs/standalone/production-v16/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": true,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v16-2026-11-27",
+      "intendedExportUrl": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "runtimePlayable": false,
+      "runtimeSelectable": false,
+      "intendedRole": "Portrait narratif statique consultable dans la galerie.",
+      "operatorVisualReview": "docs/standalone/production-v16/image-qa.json",
+      "independentReviewLimits": [
+        "La vue primaire de face à 160 s touche/coupe une extrémité de corne. Les vues de dos à 165 et 170 s corroborent les deux pointes et les bandes claires; leur projection de face demeure une interprétation.",
+        "Les références primaires sont natives 320 × 180. Les taches de rousseur, la petite marque du nez, la bouche, les coutures, la longueur des cornes et l’angle de la casquette ne sont pas certifiés à l’identique.",
+        "Le portrait historique du dépôt fourni à la génération est un support secondaire dont la provenance d’extraction détaillée n’est pas prouvée. Il ne qualifie aucun corps entier dans cette livraison.",
+        "La couleur source subit l’éclairage vert de la boutique; le portrait isolé propose une palette et de légers dégradés redessinés.",
+        "Les marges visibles au seuil alpha ≥16 mesurent 197 px à gauche, 55 px en haut, 229 px à droite et 49 px en bas. Elles restent plus étroites verticalement que les dix pour cent demandés, sans coupe des pointes ou épaules.",
+        "Quelques pixels faibles subsistent dans les marges, sans alpha non nul sur le bord du canevas. Les aplats sont surtout à alpha 253–254. L’export conserve ces pixels sans retouche."
+      ],
+      "publicationDate": "2026-04-25",
+      "publicationEvidence": {
+        "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+        "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+        "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+        "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+        "publishDate": "2026-04-25T10:00:36-07:00",
+        "uploadDate": "2026-04-25T10:00:36-07:00",
+        "primary": true,
+        "verified": true
+      },
+      "continuityBasis": "Official YouTube playerMicroformatRenderer publishDate/uploadDate verified as 2026-04-25T10:00:36-07:00; short 11 Barbie’s Bad Day, not IMP Training Video.",
+      "sourceExport": "production/v16/characters/exports/hb_rick-barbie-bad-day-portrait.webp",
+      "exportUrl": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "sourceWorkTitle": "Barbie’s Bad Day",
+      "galleryChecked": true,
+      "combatPlayChecked": false,
+      "browserReview": "docs/standalone/production-v16/browser-gallery-qa.json",
+      "independentReview": "docs/standalone/production-v16/independent-visual-review.json",
+      "galleryVisualReview": "docs/standalone/production-v16/browser-visual-review.json"
+    }
+  ],
+  "files": [
+    {
+      "path": "production/v16/characters/masters/hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "bytes": 743664
+    },
+    {
+      "path": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "sha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "bytes": 465368
+    },
+    {
+      "path": "production/v16/characters/masters/hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "bytes": 799322
+    },
+    {
+      "path": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "sha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "bytes": 466362
+    }
+  ],
+  "candidateStates": [],
+  "variantStates": [],
+  "remaining": {
+    "personalIllustrations": [
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "personalIllustrationsStatus": "historical_policy_refusal_no_retry",
+    "technicalReferenceGaps": [
+      "pentious-airship-pilot",
+      "cherub-golden-arrow",
+      "dhorks-shuriken",
+      "vees-weapon-s2",
+      "andrealphus-multiheaded-ice-construction-s2",
+      "big-woobly-animatronic"
+    ],
+    "stageReferenceGaps": [
+      "extermination-roof",
+      "vox-tower-exterior",
+      "vees-weapon-site-s2",
+      "hb-auction-main-room"
+    ],
+    "partiallyCoveredPlannedStages": [
+      "vox-tower",
+      "sloth-hospital",
+      "hb-australia",
+      "hb-auction",
+      "hb-ice-palace"
+    ],
+    "partiallyCoveredPlannedStageDetails": [
+      {
+        "id": "vox-tower",
+        "visualStatus": "specific_rooms_delivered",
+        "notes": "Bureau de Vox S2 livré en V6 ; ne vaut pas reconstitution de toute la tour."
+      },
+      {
+        "id": "sloth-hospital",
+        "visualStatus": "interior_and_exterior_delivered",
+        "notes": "Salle d’attente V5 conservée et façade/parvis V7 effectivement livrés séparément. La lacune visuelle de façade est résolue. Vérification navigateur et performances mobiles encore manquantes."
+      },
+      {
+        "id": "hb-australia",
+        "visualStatus": "specific_desert_view_delivered",
+        "notes": "Fond désert et deux objets V7 livrés. Le reste du lieu n’est pas reconstitué ; composition adaptée au combat, QA navigateur/mobile non exécutée."
+      },
+      {
+        "id": "hb-auction",
+        "visualStatus": "partial_specific_hall_view",
+        "notes": "Un hall vitré cyan livré avec banc et ornement séparés ; ni salle de vente complète ni carte globale. QA navigateur/mobile non exécutée."
+      },
+      {
+        "id": "hb-ice-palace",
+        "visualStatus": "partial_existing_pavilion_and_initial_dragon",
+        "notes": "Le pavillon/jardin glacé S2E12 est déjà couvert par sinsmas-frozen-pavilion ; aucun second palais identique n’est ajouté. Le dragon initial à une tête est livré en V7. La construction multi-têtes entière et les piliers spécifiques du boss restent hors de la couverture statique qualifiée."
+      }
+    ],
+    "environmentQualification": [
+      {
+        "id": "pentious-airship-pilot",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_machine_reference",
+        "accepted": false,
+        "notes": "L’incarnation du pilote 2019 reste sans vue entière assez nette : petite silhouette extérieure sous les effets et détails d’appendices non résolus. Le modèle S1 ne la remplace pas. Aucune génération de cette cible en V7.",
+        "referenceIds": [
+          "ENV-V7-PENTIOUS-PILOT-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=Zlmswo0S0e0"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "pilot_2019",
+        "nextEvidence": "Vue primaire entière et dégagée de l’aéronef du pilote 2019, assez grande pour fixer les appendices, proportions et contours."
+      },
+      {
+        "id": "pentious-airship-s1",
+        "category": "machine",
+        "status": "moderation_refusal_no_retry",
+        "accepted": false,
+        "notes": "La planche de production qualifie une incarnation S1 entière, distincte du pilote. Le générateur natif a refusé la sortie ; aucun fichier livré, aucune relance ni voie de contournement.",
+        "referenceIds": [
+          "ENV-V7-PENTIOUS-S1-MODEL"
+        ],
+        "referenceUrls": [
+          "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-8-BG-PentiousAirshipS1_RO_v01.jpg"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "requestId": "8308a393-fbe3-4cd8-80fb-6861112f3e4c",
+        "moderationStage": "output",
+        "moderationCategories": [
+          "other"
+        ],
+        "nextEvidence": "Aucune relance dans ce lot ; conserver le refus et la distinction entre incarnations."
+      },
+      {
+        "id": "cherub-golden-arrow",
+        "category": "projectile",
+        "status": "deferred_insufficient_projectile_reference",
+        "accepted": false,
+        "notes": "Les scènes d’action inspectées ne donnent pas simultanément une pointe, une hampe et un empennage entiers et lisibles. Une lueur ou l’arme de lancement ne suffit pas à définir le projectile ; attribution personnelle non extrapolée depuis V5.",
+        "referenceIds": [
+          "ENV-V7-CHERUB-ARROW-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=1ZFseYPmkAk"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "nextEvidence": "Vue primaire assez nette de la flèche entière, sans main, personnage ni effet masquant sa silhouette."
+      },
+      {
+        "id": "dhorks-shuriken",
+        "category": "projectile",
+        "status": "deferred_insufficient_projectile_reference",
+        "accepted": false,
+        "notes": "Le nombre et la forme des pointes ainsi que l’éventuel trou central restent illisibles dans les plans d’action disponibles. Aucune étoile de ninja générique n’est substituée.",
+        "referenceIds": [
+          "ENV-V7-DHORKS-SHURIKEN-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=yXErLiSbxXQ"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1",
+        "nextEvidence": "Vue primaire dégagée permettant de compter les pointes et d’identifier le contour intérieur sans flou de mouvement."
+      },
+      {
+        "id": "extermination-roof",
+        "category": "stage",
+        "status": "deferred_insufficient_architecture",
+        "accepted": false,
+        "notes": "Ancien hôtel du final S1 : garde-corps, sol rouge et débris partiels sont visibles, mais personnages et logo masquent la géométrie générale. Le clip officiel avait un contrôle d’accès documenté en V6 ; aucun contournement ni nouvelle affirmation d’accès. Aucun toit générique ou hôtel S2 substitué.",
+        "referenceIds": [
+          "ENV-V7-ROOF-OFFICIAL",
+          "ENV-V7-ROOF-REHOST"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=IKUfXKnfEpA",
+          "https://www.pinterest.com/pin/adam-nearly-kills-alastor--949767008908163404/"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_1_finale",
+        "planRequirementIds": [
+          "extermination-roof"
+        ],
+        "nextEvidence": "Vue primaire dégagée du toit de l’ancien hôtel S1, avec sol, rebords et accès suffisamment visibles pour une arène datée."
+      },
+      {
+        "id": "vox-tower-exterior",
+        "category": "stage",
+        "status": "deferred_distinct_exterior_not_qualified",
+        "accepted": false,
+        "notes": "Le bureau S2 existe depuis V6 ; une façade complète de la tour, les câblages séparés et les écrans réglables ne sont pas documentés ni livrés par cette seule pièce.",
+        "referenceIds": [
+          "ENV-V7-VOX-OFFICE-HISTORICAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=PNqlp9t7ies"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "vox-tower"
+        ],
+        "coveredRuntimeStageIds": [
+          "vox-office-s2"
+        ],
+        "nextEvidence": "Vue primaire de la façade entière et références distinctes pour les câbles et écrans demandés."
+      },
+      {
+        "id": "vees-weapon-s2",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_machine_reference",
+        "accepted": false,
+        "notes": "Les clips officiels montrent l’arme et son déploiement. Les vues larges sont petites ; museau, support arrière et socle ne sont pas conjointement lisibles à une échelle suffisante. Aucun canon complet n’est inventé.",
+        "referenceIds": [
+          "ENV-V7-VEES-WEAPON-CLIP",
+          "ENV-V7-VEES-HOPE-CLIP"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=WQb3QOdO6is",
+          "https://www.youtube.com/watch?v=y0aLqu548A4"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "hh-s2-weapon"
+        ],
+        "nextEvidence": "Plan primaire entier et dégagé de l’arme S2 ou modèle de production montrant son contour, son extrémité et sa base."
+      },
+      {
+        "id": "vees-weapon-site-s2",
+        "category": "stage",
+        "status": "deferred_insufficient_architecture",
+        "accepted": false,
+        "notes": "Le site et la plate-forme circulaire sont attestés, mais la foule, l’arme et les effets masquent les limites du sol et l’architecture nécessaire à un fond autonome. La mission boss/évacuation du plan n’est pas une preuve visuelle supplémentaire.",
+        "referenceIds": [
+          "ENV-V7-VEES-WEAPON-CLIP",
+          "ENV-V7-VEES-HOPE-CLIP"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=WQb3QOdO6is",
+          "https://www.youtube.com/watch?v=y0aLqu548A4"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "planRequirementIds": [
+          "hh-s2-weapon"
+        ],
+        "nextEvidence": "Vue primaire assez large et dégagée de la place et de la plate-forme, avec le sol et ses limites."
+      },
+      {
+        "id": "andrealphus-multiheaded-ice-construction-s2",
+        "category": "machine",
+        "status": "deferred_complete_multiheaded_static_form",
+        "accepted": false,
+        "notes": "Le dragon initial à une tête est livré. Vers 04:35 du clip officiel, deux têtes et le haut du corps apparaissent mais le bas est coupé ; la phase d’effondrement n’établit pas une configuration intacte entière. Le manque concerne aussi un dessin statique, pas seulement une animation.",
+        "referenceIds": [
+          "ENV-V7-ICE-DRAGON-CLIP",
+          "ENV-V7-SINSMAS-OFFICIAL"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=i3xrV1BWKNQ",
+          "https://www.youtube.com/watch?v=GisSNuVpbkM"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_2",
+        "variantRequirementIds": [
+          "VAR-034"
+        ],
+        "variantCoverage": "partial",
+        "coveredAssetIds": [
+          "andrealphus-ice-dragon-s2"
+        ],
+        "nextEvidence": "Vue primaire entière et intacte de chaque configuration multi-têtes visée, avec corps, pattes et queue simultanément visibles."
+      },
+      {
+        "id": "hb-auction-main-room",
+        "category": "stage",
+        "status": "deferred_main_room_layout",
+        "accepted": false,
+        "notes": "Le hall vitré cyan est livré en trois dessins, avec une couverture partielle du lieu. Les vues de la salle principale et du stand d’enchères n’établissent pas le sol entier. Les pièces du flash-back Stolas/Vassago ne sont pas mélangées au lieu présent.",
+        "referenceIds": [
+          "ENV-V7-AUCTION-HALL-CLIP",
+          "ENV-V7-AUCTION-BACKSTORY-CLIP",
+          "ENV-V7-HB-S3-TRAILER",
+          "ENV-V7-HB-S3-INDEX"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=ooMrSNQ6WOY",
+          "https://www.youtube.com/watch?v=FdMp_-d5xeg",
+          "https://www.youtube.com/watch?v=-Fq4VRxhdKI",
+          "https://www.primevideo.com/detail/0GEB35CUYRCDVXUV0UXQY9FHIF"
+        ],
+        "checkedAt": "2026-11-26",
+        "continuity": "season_3",
+        "planRequirementIds": [
+          "hb-auction"
+        ],
+        "planCoverage": "partial_specific_hall_view",
+        "coveredRuntimeStageIds": [
+          "auction-glass-hall-s3"
+        ],
+        "nextEvidence": "Vue primaire dégagée de la salle principale des enchères S3E5, distinguée explicitement du hall cyan et des intérieurs du flash-back."
+      },
+      {
+        "id": "big-woobly-animatronic",
+        "category": "machine",
+        "status": "deferred_insufficient_whole_animatronic_reference",
+        "accepted": false,
+        "notes": "Animatronique dinosaure de Loo Loo Land lié à hb_big_woobly. À 570 s, le bas est hors cadre ; à 650 s, les pieds/jambes minuscules se confondent avec le rebord et les triangles verts du premier plan. Aucun combattant ni nouvelle identité n’est créé.",
+        "referenceIds": [
+          "ENV-V7-LOOLOO-ANIMATRONIC"
+        ],
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=kpnwRg268FQ"
+        ],
+        "checkedAt": "2026-11-26",
+        "sourceIdentityId": "hb_big_woobly",
+        "continuity": "season_1",
+        "rawKind": "animatronic",
+        "nextEvidence": "Vue primaire entière où pieds, jambes, bras, guitare et contours du corps sont lisibles sans reconstruire des parties masquées."
+      },
+      {
+        "id": "vox-angel-projection-s2",
+        "sourceIdentityId": "vox",
+        "status": "primary_lower_body_occluded",
+        "accepted": false,
+        "assetId": null,
+        "notes": "Dans Brighter, ailes et projection théâtrale visibles vers156–160s, mais bas du corps derrière la tour de téléviseurs. Pas de silhouette reconstruite.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=156s"
+        ],
+        "category": "Variante"
+      },
+      {
+        "id": "vox-human-late-tux-s2",
+        "sourceIdentityId": "vox",
+        "status": "primary_lower_body_details_unresolved",
+        "accepted": false,
+        "assetId": null,
+        "notes": "Tuxedo noir, nœud rouge et visage sans lunettes confirmés ; vues entières au piano et sous lumière rouge encore petites/occultées. Ne pas réutiliser arbitrairement les chaussures ou jambes du costume précédent.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=100s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=126s",
+          "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=140s"
+        ],
+        "category": "Variante"
+      },
+      {
+        "id": "hb_blitzo-bethany-ghostfuckers",
+        "category": "Costume",
+        "status": "held_reference_gap",
+        "notes": "Le haut/perruque/chapeau sont corroborés. Asymétrie des jambes et grandes bottes à talon du rendu ne sont pas confirmées par les vues primaires inspectées ; aucune exportation ni intégration runtime."
+      }
+    ],
+    "runtimeValidationGaps": [
+      "V8-browser-visual-review"
+    ],
+    "refusedThisWave": [],
+    "characterReferenceGaps": [
+      {
+        "id": "cherribomb",
+        "name": "Cherri Bomb",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "lute",
+        "name": "Lute",
+        "status": "moderation_refusal_no_retry",
+        "notes": "Incarnation distincte qualifiée puis refusée par le générateur natif ; aucun fichier, aucune relance. La base pré-blessure existante reste distincte.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=5eZonu8XsEs"
+        ]
+      },
+      {
+        "id": "hz_lilith",
+        "name": "Lilith Morningstar",
+        "status": "primary_reference_retrieval_blocked",
+        "notes": "Clip officiel Prime Video Brasil identifié mais récupération publique HTTP429. Portrait familial fourni par A24/Prime dans VFXVoice identifié mais téléchargement local403 ; aucune silhouette entière inspectée exploitable. Pas de génération.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4",
+          "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
+        ]
+      },
+      {
+        "id": "hz_frank_egg_boi",
+        "name": "Frank",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_razzle",
+        "name": "Razzle",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_dazzle",
+        "name": "Dazzle",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_keekee",
+        "name": "KeeKee",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_la_catrina_sinner",
+        "name": "La Catrina sinner",
+        "status": "primary_hem_and_edges_unresolved",
+        "notes": "Board1 cellule2 à20s, à gauche du plan : sombrero, cheveux verts et robe identifiables. Board4 cellule7 à84s, à droite de Charlie, complète tête et robe. Le bord gauche tronque une partie de la première vue ; le bas de la robe touche/coupe le bord inférieur dans la seconde et les figures voisines occultent les bras. Ensemble des extrémités non certifié."
+      },
+      {
+        "id": "hz_eel_sinner",
+        "name": "Eel sinner",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_egyptian_sinner",
+        "name": "Egyptian sinner",
+        "status": "primary_body_occluded_in_group",
+        "notes": "Board4 cellule7 à84s et scènes du hall montrent le groupe autour du comptoir, avec le grand personnage pâle à accessoires dorés près des autres pensionnaires. Pas de vue isolée entière où tête, mains et extrémités inférieures du modèle historique sont simultanément identifiables ; ne pas compléter le bas depuis un simple rapprochement de palette."
+      },
+      {
+        "id": "hz_ant_sinner",
+        "name": "Ant sinner",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_kitty",
+        "name": "Kitty",
+        "status": "reference_incomplete",
+        "notes": "Sujet minuscule et partiellement caché dans la pièce de Valentino vers 300 s ; pas de corps entier exploitable à ce stade. Portrait historique non compté comme base autonome."
+      },
+      {
+        "id": "hz_huskette_spider",
+        "name": "Huskette spider-like waitress",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_reporter_demon",
+        "name": "Reporter demon",
+        "status": "reporter_identity_outfit_unresolved",
+        "notes": "Boards4–5 : journalistes autour de Vox, notamment cellule8 du board4 à215s et cellule2 du board5 à230s. Plusieurs journalistes à cornes et museau animal portent des tenues distinctes ; la correspondance avec le cutout trapu gris-brun, grandes optiques rouges, cravate rouge et veste grise reste non résolue. Ne pas attribuer les jambes d’un autre journaliste."
+      },
+      {
+        "id": "hz_goldfish_sinner",
+        "name": "Goldfish sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout orange/blanc à coiffure nageoire avec les plans du hall, puis foule du clip Hell Attacks Heaven. Le personnage exact n’est pas retrouvé avec certitude dans ces plans. Cette observation est limitée à ces clips ; aucune conclusion d’absence dans les épisodes S2E1/S2E7 complets."
+      },
+      {
+        "id": "hz_fangirl_goat",
+        "name": "Goat-like fangirl sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout à grosses cornes de bélier, peau sombre et haut rose avec les plans du hall. Les personnages féminins proches de Baxter dans board2 ne constituent pas une correspondance certaine de cette tête et de ces cornes ; ne pas substituer Salina ni un autre personnage. Salina a par ailleurs un refus V7 maintenu."
+      },
+      {
+        "id": "hz_fangirl_apple_tree",
+        "name": "Apple-tree fangirl sinner",
+        "status": "primary_details_resolution_gap",
+        "notes": "Board2 cellule3 à40s, à droite de Charlie : tête végétale verte, silhouette en vert, jambes et pieds visibles dans le plan. Les vues voisines montrent la tête derrière Charlie. Seconde revue par root : cadrage global entier dans la cellule native320×180, mais pieds, doigts au comptoir et implantation des branches/fruits insuffisamment définis pour contrôler ces détails. Pas de génération. La limite est la résolution des détails, pas un corps tronqué."
+      },
+      {
+        "id": "hz_conjoined_twins",
+        "name": "Conjoined Twin sinners",
+        "status": "group_view_not_resolved",
+        "notes": "Plans du hall et de l’escalier, notamment board1 cellule6 à28s et board4 cellule7 à84s, confrontés au cutout bicéphale jaune/vert. Les petites silhouettes de groupe n’établissent pas avec certitude le corps partagé entier et ses quatre extrémités. Une foule ne doit pas servir à inventer la jonction anatomique."
+      },
+      {
+        "id": "hz_western_sinner",
+        "name": "Western sinner",
+        "status": "primary_lower_body_cropped",
+        "notes": "Board4 cellule9 à88s : silhouette au chapeau et poncho rouge à droite du plan, tête et tenue supérieure visibles. Cadrage arrêté au torse/bas de poncho ; jambes, gants et chaussures du cutout ne sont pas vérifiés dans ce plan."
+      },
+      {
+        "id": "hz_goth_bird_sinner",
+        "name": "Goth bird-like sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout au plumage noir/blanc, coiffure couvrant un œil et ornement rouge avec les plans du hall et du bar. Aucune correspondance entière certaine identifiée dans les images consultées ; le Rooster visible dans ces plans est une autre identité et son refus V7 demeure."
+      },
+      {
+        "id": "hz_rose_sinner",
+        "name": "Rose-like sinner",
+        "status": "not_located_in_selected_primary_clips",
+        "notes": "Comparaison du cutout à tête de rose rouge et œil central jaune avec les groupes du hall et de l’escalier. Pas de vue entière identifiée dans ces séquences publiques retenues. L’élément floral d’un costume ou d’un décor n’est pas assimilé à ce personnage."
+      },
+      {
+        "id": "hz_fat_nuggets",
+        "name": "Fat Nuggets",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_speaker_of_god",
+        "name": "Speaker of God",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_molly",
+        "name": "Molly",
+        "status": "existing_reference_gap_new_clip_fetch_rate_limited",
+        "notes": "V7 signale le bas du corps occulté. Nouveau clip officiel Heaven ZE2GuxyfQls repéré, récupération publique HTTP429 ; pas de nouvelle preuve entière inspectée ni nouvelle génération.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=ZE2GuxyfQls"
+        ]
+      },
+      {
+        "id": "hz_clara_carmine",
+        "name": "Clara Carmine",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_odette_carmine",
+        "name": "Odette Carmine",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus de génération enregistré dans une édition précédente. Aucun nouvel essai de la même demande."
+      },
+      {
+        "id": "hz_shok_wav",
+        "name": "Shok.wav",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_rooster",
+        "name": "Rooster",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_ethan",
+        "name": "Ethan",
+        "status": "primary_identity_confirmed_lower_body_missing",
+        "notes": "Board5 cellules3/4 à235/240s : assistant au presse-papiers, peau gris bleuté, œil rouge et mèche claire auprès de Vox. Cette présence est dans S1E2, contrairement à la seule mention saison2 du catalogue. Les vues identifiables cadrent le haut ; elles ne qualifient pas jambes, chaussures et queue entières. Ne pas confondre continuité de la scène et preuve d’un full body."
+      },
+      {
+        "id": "hz_salina",
+        "name": "Salina",
+        "status": "generator_refused",
+        "notes": "Refus du générateur V7 ; aucun fichier livré, aucune relance."
+      },
+      {
+        "id": "hz_zack_rabbit",
+        "name": "Zack Rabbit",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_myk_mic_guy",
+        "name": "Myk the Mic Guy",
+        "status": "press_group_identity_unresolved",
+        "notes": "Board4 cellule5 à200s : plusieurs microphones et journalistes, dont une figure cyclope à cornes. Le cutout Myk possède une morphologie rouge/noire et des éléments de tête spécifiques. Un microphone ou un œil unique n’établit pas l’identité ; pas de correspondance entière certaine dans les plans consultés."
+      },
+      {
+        "id": "hz_man_meat",
+        "name": "Man Meat",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_buddy_mcsluggy",
+        "name": "Buddy McSluggy",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_bryrin",
+        "name": "Bryrin",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_tiffany_titfucker",
+        "name": "Tiffany Titfucker",
+        "status": "mentioned_only_no_canonical_visual",
+        "notes": "La fiche source précise « mentioned only, never shown ». L’absence de portrait ne prouve pas un fichier perdu et ne permet pas d’inventer une apparence canon."
+      },
+      {
+        "id": "hz_egg_boiz",
+        "name": "Egg Boiz",
+        "status": "not_generated_related_refusal_preserved",
+        "notes": "Compilation officielle inspectée. Frank a un refus historique ; aucun Egg Boi renommé ou générique n’est généré pour contourner cette cible. Les incarnations célestes ne sont pas produites dans ce lot.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=c56SWmqnU5E"
+        ]
+      },
+      {
+        "id": "hz_rocky",
+        "name": "Rocky",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_dia",
+        "name": "Dia",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_summer",
+        "name": "Summer",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_arackniss",
+        "name": "Arackniss",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_angel_father",
+        "name": "Angel Dust’s father",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_villa",
+        "name": "Villa",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_hellsa_von_eldritch",
+        "name": "Helsa von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_seviathan_von_eldritch",
+        "name": "Seviathan von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_frederick_von_eldritch",
+        "name": "Frederick von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_bethesda_von_eldritch",
+        "name": "Bethesda von Eldritch",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_roo",
+        "name": "Roo",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_eve",
+        "name": "Eve",
+        "status": "future_or_semi_canon_visual_unqualified",
+        "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle."
+      },
+      {
+        "id": "hz_british_gentleman",
+        "name": "British Gentleman",
+        "status": "primary_full_body_reference_required",
+        "notes": "Correction de la classification initiale héritée : le clip officiel du procès de Pentious montre cet homme dans le flashback de la saison2 à174s ; ce n’est pas une preuve de personnage du pilote. Vue du haut seulement ; tenue entière encore à qualifier."
+      },
+      {
+        "id": "hz_female_victim",
+        "name": "Female Victim",
+        "status": "primary_full_body_reference_required",
+        "notes": "Correction de la classification initiale héritée : femme du flashback S2 Storyteller, confirmée à174s dans le clip officiel du procès. Le corps entier et les chaussures ne sont pas visibles de manière exploitable dans les vues inspectées. Aucune représentation de violence produite."
+      },
+      {
+        "id": "hz_the_killer",
+        "name": "The Killer",
+        "status": "primary_details_obscured",
+        "notes": "Sir Pentious’ Trial : chapeau/manteau/scarf confirmés à216s et silhouette entière de dos à234–238s. Le personnage reste dans l’ombre ; face, détail des fermetures et chaussures non qualifiés. Pas de confusion avec le British Gentleman moustachu du début du flashback."
+      },
+      {
+        "id": "hz_human_hunter",
+        "name": "Human Hunter",
+        "status": "primary_full_body_reference_required",
+        "notes": "Origine officielle d’Alastor : bottes, jambes et chien vus en fin de séquence ; haut du corps et visage hors champ. Le portrait historique entier ne peut pas être validé par ces plans."
+      },
+      {
+        "id": "hz_harry",
+        "name": "Harry",
+        "status": "primary_full_body_reference_required",
+        "notes": "Brighter officiel inspecté en entier : les portraits du catalogue correspondent aux candidats de jeu télévisé, pas aux présentateurs assassinés. À92s le plateau montre les candidats derrière les pupitres ; les jambes/chaussures sont masquées. Aucune base entière produite depuis les seules découpes historiques."
+      },
+      {
+        "id": "hz_carrie",
+        "name": "Carrie",
+        "status": "primary_full_body_reference_required",
+        "notes": "Candidate du jeu télévisé aperçue derrière un pupitre dans Brighter à92s, distincte de la présentatrice blonde du journal. Les vues officielles inspectées ne montrent pas la silhouette complète avec chaussures ; portrait historique insuffisant à lui seul."
+      },
+      {
+        "id": "hz_larry",
+        "name": "Larry",
+        "status": "primary_full_body_reference_required",
+        "notes": "Candidat du jeu télévisé dans Brighter : ne pas confondre avec le présentateur roux de talk-show. Le plan du plateau à92s masque le bas du corps. Découpe historique également tronquée sous les jambes ; pas de base autonome produite."
+      },
+      {
+        "id": "hz_robert_bob_sinclaire",
+        "name": "Robert “Bob” Sinclaire",
+        "status": "primary_full_body_reference_required",
+        "notes": "Visage, cheveux gris, chemise, cravate et bretelles confirmés derrière le bureau dans Brighter à98s. Le pantalon et les chaussures ne sont pas lisibles dans les plans consultés. La découpe historique contient aussi les pieds parasites d’une autre figure au-dessus de la tête ; elle n’est pas traitée comme un modèle primaire."
+      },
+      {
+        "id": "hz_crying_exorcist",
+        "name": "Crying Exorcist",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique présent ; scène primaire lisible de cette incarnation non qualifiée dans cet audit."
+      },
+      {
+        "id": "hz_travis",
+        "name": "Travis",
+        "status": "primary_scene_required",
+        "notes": "Aucun plan primaire complet de l’incarnation S1 n’a été qualifié dans cette passe. La piste Poison est une vidéo lyrique. Les IDs hz_travis/hb_travis restent une identité de production à rapprocher, sans deux bases inventées."
+      },
+      {
+        "id": "hz_gator_sinner",
+        "name": "Gator sinner",
+        "status": "crowd_identity_unresolved",
+        "notes": "Boards3 et13 : groupes de spectateurs devant des écrans, avec plusieurs démons gris/verts au museau allongé. Aucune correspondance certaine du modèle historique à collerette, manteau violet et ventre rayé n’est établie en corps entier ; le premier démon reptilien vert d’une foule ne suffit pas à identifier cet ID."
+      },
+      {
+        "id": "hz_velvette_assistant",
+        "name": "Velvette's assistant",
+        "status": "wide_shot_identity_not_resolved",
+        "notes": "Board5 cellule5 à245s présente l’atelier en plan large avec plusieurs silhouettes ; les cellules6–9 et le short Velvette donnent surtout les modèles et Velvette. Le cutout attendu représente un assistant canin gris, haut rose, téléphone et longue queue. Les modèles changeant de tenue dans les plans rapprochés sont d’autres personnages. Le plan large ne résout pas avec certitude visage, mains et pieds de cet assistant."
+      },
+      {
+        "id": "hz_shark_gang_leader",
+        "name": "Shark Gang Leader",
+        "status": "primary_scene_required",
+        "notes": "Portrait historique détaillé disponible, mais aucun plan primaire entier de cette identité exacte qualifié dans les vues inspectées ; ne pas confondre les différents requins de la série. Le groupe à la fin du clip officiel Loser, Baby est cadré en haut du corps : ce plan ne lève pas le manque."
+      },
+      {
+        "id": "hz_cactus_sinner",
+        "name": "Cactus sinner",
+        "status": "episode_scope_not_covered_by_inspected_clips",
+        "notes": "Le cutout vert épineux en chemise rose et pantalon clair a été confronté aux petits groupes des clips disponibles. Le catalogue désigne S2E4 It’s A Deal ; les vues analysées ici couvrent principalement S1E2, Hazbin Guarantee S2E1 et Hell Attacks Heaven S2E7. Aucun plan primaire correspondant de S2E4 n’a été identifié dans ce complément."
+      },
+      {
+        "id": "hz_jack_in_box_sinner",
+        "name": "Jack-in-the-box sinner",
+        "status": "finale_scene_not_in_selected_weapon_clip",
+        "notes": "Le cutout à ressort, haut-de-forme et nœud rouge a été confronté aux plans de foule du clip Hell Attacks Heaven. Le catalogue désigne Curtain Call S2E8, tandis que ce clip couvre l’attaque S2E7. Aucune silhouette complète de ce modèle de finale n’est prouvée par ce corpus."
+      },
+      {
+        "id": "hz_orphan_imp",
+        "name": "Orphan Imp",
+        "status": "exact_intro_scene_not_in_selected_song_clip",
+        "notes": "Le modèle d’orphelin en casquette et veste bleues a été comparé au hall de Hazbin Guarantee. Le clip musical n’établit pas sa scène de New Pentious. Une silhouette enfantine quelconque n’est pas assignée à cet ID ; future production narrative seulement si référence de la même incarnation."
+      },
+      {
+        "id": "hz_top_hat_demon",
+        "name": "Top Hat Demon",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hz_roadkill_sinner",
+        "name": "Roadkill sinner",
+        "status": "legacy_pilot_reference_required",
+        "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+      },
+      {
+        "id": "hb_stella",
+        "name": "Stella",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_stella-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_leviathan",
+        "name": "Leviathan",
+        "status": "inherited_specific_reference_gap",
+        "notes": "Mastermind : deux têtes et haut du corps confirmés vers560s dans l’audit V5, mais jambes et bas de robe non établis. Aucune nouvelle vue primaire complète obtenue en V7 ; le portrait tronqué n’autorise pas de bas inventé."
+      },
+      {
+        "id": "hb_belphegor",
+        "name": "Belphegor",
+        "status": "inherited_specific_reference_gap",
+        "notes": "Mastermind : petit personnage endormi derrière les autres péchés, silhouette complète et détails du corps insuffisamment lisibles dans l’audit V5. Aucune nouvelle fiche primaire complète obtenue en V7."
+      },
+      {
+        "id": "hb_tilla",
+        "name": "Tilla",
+        "status": "primary_photo_cropped",
+        "notes": "Les vues de famille et souvenirs sont de petites photos ou visions : Ozzie’s board10 garde surtout Blitz et son téléphone ; Ghostf**kers board13 cellule6 montre une photo de famille coupée. Aucune silhouette entière de la même incarnation n’est établie, et une image de pilote ne doit pas compléter arbitrairement le design de série."
+      },
+      {
+        "id": "hb_moxxies_mother",
+        "name": "Moxxie's mother",
+        "status": "primary_subject_not_resolved",
+        "notes": "Exes and Oohs boards8–9 : le dîner échantillonné montre surtout Crimson et le jeune Moxxie ; la scène du bateau et la chaussure flottante ne donnent pas une vue identifiable entière de la mère. Le problème précis de V5 demeure, sans inventer robe ni pieds."
+      },
+      {
+        "id": "hb_loopty_goopty",
+        "name": "Loopty Goopty",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_loopty_goopty-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_deerie",
+        "name": "Deerie",
+        "status": "historical_refusal_no_retry",
+        "notes": "Refus historique hb_deerie-ready conservé. Aucune génération V7 de cette identité."
+      },
+      {
+        "id": "hb_better_than_blitzo_guy",
+        "name": "Better Than Blitzo Guy",
+        "status": "incarnation_and_occlusion_gap",
+        "notes": "Apology Tour board10 cellules8/9 montre le haut et un débardeur portant du texte ; le vieux cutout a des marques rouges différentes. Les vues de danse/crowd examinées ne réunissent pas costume exact et chaussures lisibles. Une copie du cutout ne serait pas une reproduction prouvée de cette scène."
+      },
+      {
+        "id": "hb_miles",
+        "name": "Miles",
+        "status": "primary_lower_body_occluded",
+        "notes": "Mammon board9 cellule9 et board10 cellule1 : jeune fan identifié avec Fizz, mais bas du corps et pieds hors cadre ou masqués. Le cutout entier seul ne suffit pas. Toute future livraison de ce personnage mineur restera narrative sans kit de combat."
+      },
+      {
+        "id": "hb_vikki",
+        "name": "Vikki",
+        "status": "staff_art_lower_body_gap",
+        "notes": "Dessin de production CalisDraws de la fête Queen Bee et plans primaires V6 : poodle rose identifiable, robe grise à volants, mais extrémités du bas masquées ou au bord. Aucune vue entière supplémentaire qualifiée dans cette passe."
+      },
+      {
+        "id": "hb_brennon_ragers",
+        "name": "Brennon Ragers",
+        "status": "identity_not_resolved_in_full_body_scene",
+        "notes": "Seeing Stars : les panneaux et dialogues citent Brennon, tandis que le personnage qui joue sur le plateau est Blitz pris pour lui. Les plans consultés ne prouvent pas un corps entier du véritable acteur humain ; le déguisement de Blitz ne peut pas lui être attribué."
+      },
+      {
+        "id": "hb_skips",
+        "name": "Skips",
+        "status": "historical_portrait_incarnation_mismatch_unresolved",
+        "notes": "Unhappy Campers board4 cellules6/7 à410/420s montre le dealer interrogé : cheveux clairs, haut bleu et gants clairs dans les plans du torse. Le portrait hb_skips.png présente cheveux longs sombres à mèche claire, crop-top noir et jean évasé. La correspondance entre ce cutout, le concept nommé Skips et le personnage final doit être résolue ; pas de copie du portrait sous une fausse preuve primaire. La fiche de concept mentionnée publiquement n’a pas été accessible par l’outil web."
+      },
+      {
+        "id": "hb_driveso",
+        "name": "Driveso",
+        "status": "incarnation_clothing_conflict",
+        "notes": "Mission Drivezo boards3–5 : corps d’abord dans le véhicule, puis scène blessée sur la route. Le vieux cutout a pantalon sombre/brun alors que le plan retenu montre du bleu ; aucune référence entière intacte du même costume n’est établie."
+      },
+      {
+        "id": "hb_joe_smoe",
+        "name": "Joe Smoe",
+        "status": "primary_vehicle_occlusion",
+        "notes": "Le client/cible Joe Smoe est présenté en photo ou dans une voiture. Les plans retenus n’établissent pas ses jambes et chaussures de façon entière ; le pantalon et les pieds du cutout ne sont pas vérifiés."
+      },
+      {
+        "id": "hb_william_diddle",
+        "name": "William Diddle",
+        "status": "primary_desk_occlusion",
+        "notes": "Mission Big Boss board0 cellule5 : William Diddle derrière son bureau, bas du corps invisible. Les plans ultérieurs de sa mort ne permettent pas de restituer une silhouette entière intacte."
+      },
+      {
+        "id": "hb_adrian",
+        "name": "Adrian",
+        "status": "primary_table_occlusion",
+        "notes": "Mission Bigfoot board2 cellule4 et vues de bar : Adrian est le petit homme au chapeau et à longue barbe bleutée, derrière table/comptoir ; jambes et bottes cachées. Il ne faut pas l’assimiler au grand Bigfoot de la forêt."
+      },
+      {
+        "id": "hb_gerald",
+        "name": "Gerald",
+        "status": "primary_counter_occlusion",
+        "notes": "Barbie’s Bad Day boards0–1 : patron de pharmacie violet visible au comptoir ; siège et comptoir couvrent le bas du corps. Aucune silhouette entière corroborée."
+      },
+      {
+        "id": "hb_rick",
+        "name": "Rick",
+        "status": "primary_counter_occlusion",
+        "notes": "Barbie’s Bad Day board3 cellules6/8 : employé du comptoir alimentaire identifiable au buste ; comptoir masque pantalon et pieds."
+      },
+      {
+        "id": "hb_stolas_family_butler",
+        "name": "Stolas' Family Butler",
+        "status": "primary_lower_body_occluded",
+        "notes": "Loo Loo Land board2 cellule6, puis début du board3 : petit majordome tenu par Stolas ou avec plateau, bas du corps masqué. Les plans assis d’Ozzie’s ne complètent pas des pieds lisibles."
+      },
+      {
+        "id": "hb_mister_butler",
+        "name": "Mister Butler",
+        "status": "primary_lower_body_occluded",
+        "notes": "The Circus board0 cellules3/4, board1 cellule7 et board3 cellule1 : tête/haut du grand majordome, derrière table ou miroir. Ces plans ne fixent pas les chaussures et la silhouette entière."
+      },
+      {
+        "id": "hb_marthas_daughter",
+        "name": "Martha's Daughter",
+        "status": "primary_child_lower_body_occluded",
+        "notes": "Murder Family board4 cellule2 : fille dans le chariot, bas couvert. Board8 cellule4 : à table, bas masqué. Board15 cellule5 : en partie derrière son frère lors du retour de Moxxie, bottes non lisibles. Le modèle ancien ne suffit pas à certifier le bas ; future livraison narrative uniquement."
+      },
+      {
+        "id": "hb_harold_patriot",
+        "name": "Harold",
+        "status": "primary_bed_occlusion",
+        "notes": "Ghostf**kers board6 cellules1/3/4 : client à l’hôtel dans une scène de lit, couvertures et cadrage masquent le bas du corps. Le cutout en sous-vêtements n’établit pas à lui seul une base entière de ce plan."
+      },
+      {
+        "id": "hb_dolores",
+        "name": "Dolores",
+        "status": "primary_bed_occlusion",
+        "notes": "Ghostf**kers board6 cellules1/3/4 : cliente dans la scène de lit, corps partiellement couvert/coupé. Les détails de robe de nuit et pieds du cutout ne sont pas corroborés dans les plans retenus."
+      },
+      {
+        "id": "hb_travis",
+        "name": "Travis",
+        "status": "shared_alias_owned_by_root",
+        "notes": "Alias de hz_travis, traité par root avec la qualification Hazbin. Aucun dessin HB séparé et aucun double incrément d’identité."
+      },
+      {
+        "id": "hb_tour_guide_guy",
+        "name": "Tour Guide Guy",
+        "status": "primary_vehicle_occlusion",
+        "notes": "C.H.E.R.U.B board2 cellule8 à250s et board3 cellule1 à270s : torse, chapeau et mains visibles ; bus/rampe couvrent jambes et bas. Cadence publique de10s sans autre niveau utile plus fin. Relecture indépendante props_stages."
+      },
+      {
+        "id": "hb_big_woobly",
+        "name": "Big Woobly",
+        "status": "deferred_insufficient_whole_animatronic_reference",
+        "notes": "Animatronique dinosaure de Loo Loo Land lié à hb_big_woobly. À 570 s, le bas est hors cadre ; à 650 s, les pieds/jambes minuscules se confondent avec le rebord et les triangles verts du premier plan. Aucun combattant ni nouvelle identité n’est créé."
+      },
+      {
+        "id": "hb_diddle_secretary",
+        "name": "William Diddle's Secretary",
+        "status": "primary_feet_cropped",
+        "notes": "Mission Big Boss board1 cellules7–9 et board2 cellule7 montrent la secrétaire jusqu’aux genoux, pieds coupés. Board5 cellule9 donne une très petite silhouette près de porte, insuffisante pour vérifier ses chaussures."
+      }
+    ],
+    "limitations": [
+      "Le catalogue inclut individus, groupes, pilote, AU et entrées futures ; 100 IDs restent sans base autonome, soit 99 identités après alias connu.",
+      "Les nouvelles incarnations et tenues ne créent aucune nouvelle identité, base de personnage ou technique de combat.",
+      "Chaque nouveau costume utilise une seule image statique ; aucun nouveau cycle animé.",
+      "Les adaptations de composition et les limites des sources sont documentées ; fidélité 1:1 non certifiée.",
+      "V9 ne réduit pas les 100 identifiants de catalogue (99 identités après alias connu) sans base autonome par défaut.",
+      "Le portrait de la mère de Moxxie n’est pas une silhouette complète ; la tenue Lute n’ajoute ni identité ni kit.",
+      "Les contrôles navigateur V9 portent sur les nouveaux assets et les parcours décrits dans browser-qa.json ; ils ne valident pas rétrospectivement tout le catalogue.",
+      "V10 ajoute 3 premières silhouettes entières : 97 IDs et 96 identités après alias restent sans base autonome.",
+      "Un costume, un buste, un accessoire ou un lieu ne réduit pas les identités sans base entière. Les deux variantes Charlie partagent un seul dessin.",
+      "Les deux arènes V10 ne résolvent pas les lacunes historiques d’autres lieux ; Noël est une vision de Blitzø.",
+      "Les contrôles V10 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "V11 ajoute 0 premières silhouettes entières : 97 IDs et 96 identités après alias restent sans base autonome.",
+      "Les trois portraits V11 restent des bustes ; aucun bas du corps ni nouvelle base entière n’est déduit. Molly conserve l’incarnation historique 2015.",
+      "La consultation de Sloth est un intérieur distinct de la salle d’attente et de la façade ; les deux trophées restent des objets de galerie.",
+      "Les contrôles V11 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "V12 ajoute 2 premières silhouettes entières : 95 IDs et 94 identités après alias restent sans base autonome.",
+      "Un portrait partiel, costume, objet, projectile ou lieu ne ferme pas une lacune de base entière ; aucune nouvelle mécanique ni animation déduite.",
+      "Le couloir de coulisses Mammon est documenté vide ; les caisses proviennent de la réserve voisine et restent des objets de galerie sans placement ajouté au couloir.",
+      "Seules les silhouettes entières provenant de références primaires qualifiées peuvent augmenter les bases autonomes.",
+      "Les trois props Erin Frost sont des modèles de production non datés ; season_2 est un plafond conservateur de filtrage, sans attribution à un épisode ou à S2.",
+      "Les contrôles V12 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "V13 ajoute 0 premières silhouettes entières : 95 IDs et 94 identités après alias restent sans base autonome.",
+      "Vikki et Tilla sont deux bustes narratifs. Aucune base entière supplémentaire ; les bases complètes de ces deux identités restent manquantes.",
+      "Tilla est une adaptation de marchandise officielle non datée. season_2 est seulement le plafond conservateur du filtre, sans attribution à un épisode.",
+      "Le sol du contrôle D.H.O.R.K.S. et le quai du hangar sont prolongés pour le combat AU ; aucune fidélité géométrique 1:1 certifiée.",
+      "Les trois accessoires restent des objets de galerie sans mécanique ni placement ajouté dans les décors.",
+      "Les modèles Erin non récupérés et le fût occulté restent différés. Aucun refus de générateur historique ou courant n’a été relancé.",
+      "Les contrôles V13 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "V14 ajoute 0 premières silhouettes entières : 95 IDs et 94 identités après alias restent sans base autonome.",
+      "Trois costumes statiques pour des combattants existants ; aucune nouvelle identité, base entière, animation ou nouveau kit.",
+      "Les deux robes proviennent du court officiel IMP Training Video (2026). season_2 est uniquement le niveau du filtre ; aucune attribution à une saison numérotée.",
+      "Les deux décors adaptent le cadrage et le premier plan au duel AU. Aucune fidélité géométrique 1:1 ; le haut du support du lustre est coupé dans le fond Crimson.",
+      "Les deux accessoires restent des objets de galerie, sans placement en surimpression ni nouvelle mécanique.",
+      "Les 28 cibles historiquement refusées restent exclues ; aucune reprise d’un refus ni contournement d’une source inaccessible.",
+      "Les contrôles V14 concernent les assets et parcours explicitement consignés ; aucune validation rétrospective de tout le catalogue.",
+      "Roo et Top Hat Demon sont des portraits ; Eve et Lilith sont des silhouettes narratives. Ces quatre dessins ne ferment pas de manque de base détaillée autonome.",
+      "Queef suit le produit officiel Creator Collection ; son apparence exacte dans un épisode reste à corroborer.",
+      "Les modules taunts/tag/bonus sont documentés. Le code de déblocage local ne met pas en service un abonnement Patreon ni un droit commercial distant.",
+      "Gerald et Rick V16 sont deux portraits du court Barbie’s Bad Day ; les deux bases entières restent manquantes.",
+      "Le court officiel est daté du 25 avril 2026 par son microformat YouTube. Les références visuelles sont des previews de 320 × 180 pixels."
+    ],
+    "inheritedFrom": "docs/standalone/production-v15/delivery-register.json",
+    "inheritedRefusedV8": [
+      "lute-prosthetic-s2-ready"
+    ],
+    "v9PartialCharacterCoverage": [
+      {
+        "id": "hb_moxxies_mother",
+        "sourceIdentityId": "hb_moxxies_mother",
+        "name": "Mère de Moxxie",
+        "status": "portrait_delivered_full_body_still_missing",
+        "accepted": true,
+        "assetId": "hb_moxxies_mother-portrait-s2",
+        "notes": "Buste à la taille livré. Le bas du corps n’est pas corroboré ; aucune base entière supplémentaire comptée.",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/exes-and-oohs-moxxies-mom-enamel-pin"
+        ]
+      }
+    ],
+    "inheritedRefusedV9": [
+      "hb_leviathan",
+      "hb_belphegor"
+    ],
+    "resolvedFullBodyIdentitiesV10": [
+      "hz_melissa",
+      "hb_loo_loo",
+      "hz_crymini"
+    ],
+    "inheritedRefusedV10": [],
+    "resolvedFullBodyIdentitiesV11": [],
+    "inheritedRefusedV11": [
+      "hb_stolas_family_butler"
+    ],
+    "resolvedFullBodyIdentitiesV12": [
+      "hb_gigi",
+      "hb_russ"
+    ],
+    "characterReferenceGapReconciliationV12": {
+      "basis": "Explicit resolvedFullBodyIdentitiesV* records; historical counts are unchanged.",
+      "removedResolvedRows": [
+        {
+          "id": "hz_melissa",
+          "name": "Melissa",
+          "status": "reference_incomplete",
+          "notes": "Les plans primaires montrent les tenues après transformation par Velvette. La tenue par défaut tee-shirt rouge/pantalon violet du portrait n’est pas qualifiée ; ne pas mélanger les incarnations."
+        },
+        {
+          "id": "hz_crymini",
+          "name": "Crymini",
+          "status": "legacy_pilot_reference_required",
+          "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle."
+        },
+        {
+          "id": "hb_loo_loo",
+          "name": "Loo Loo",
+          "status": "primary_feet_cropped",
+          "notes": "Loo Loo Land board4 cellule9 : mascotte pomme et jambes visibles, mais les bottes sont coupées au bord inférieur. Le dessin historique montre des bottes vertes à pointes rouges qui n’ont pas été corroborées par un plan entier de cette incarnation."
+        },
+        {
+          "id": "hb_gigi",
+          "name": "Gigi",
+          "status": "staff_art_lower_body_gap",
+          "notes": "Dessin de production CalisDraws de Queen Bee : chevelure rose, haut sombre et short rose identifiables ; partie sous les genoux non établie dans les vues retenues. Aucun mélange avec un costume ultérieur de Sinsmas."
+        },
+        {
+          "id": "hb_russ",
+          "name": "Russ",
+          "status": "staff_art_lower_body_gap",
+          "notes": "Dessin de production CalisDraws de Queen Bee : lunettes et haut à carreaux identifiables ; jambes et chaussures couvertes. Aucun modèle entier primaire supplémentaire qualifié."
+        }
+      ],
+      "historicalQualificationsPreserved": true
+    },
+    "deferredCandidatesV12": [
+      {
+        "sourceIdentityId": "hb_vikki",
+        "status": "primary_views_still_occluded_or_too_small",
+        "notes": "Queen Bee60/90/100s et It’s Chaz Funeral45s inspectés. Cadres proches coupent les pieds ou masquent les jambes ; vues larges trop petites pour sécuriser les contours. Court2026 distinct de S1, aucune fusion de tenue.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=90s",
+          "https://www.youtube.com/watch?v=G3XORWJ2rQc&t=45s"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_villa",
+        "status": "creator_2015_animation_incomplete_for_color_base",
+        "notes": "Animation primaire Popular de Vivziepop2015 inspectée via37cellules natives159×90 ; dessin rose au trait, nombreuses parties hors cadre ou derrière la coiffeuse. Aucune silhouette entière en couleur qualifiée.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=eEUoxQ4qSfs"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_arackniss",
+        "status": "creator_post_requires_sign_in_not_qualified",
+        "notes": "Image publique CDN découverte dans un index tiers et inspectée avant ouverture du post primaire. Celui-ci indique ensuite visibilité réservée aux comptes connectés. Aucune récupération supplémentaire ; ni image ni post retenus comme preuve de génération. Pas de dessin produit.",
+        "referenceUrls": [
+          "https://bsky.app/profile/vivziepop.bsky.social/post/3lpqsod6yi224"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_roo",
+        "status": "creator_2019_primary_post_unavailable",
+        "notes": "Tweet créateur2019 localisé ; navigateur indisponible et oEmbedpublicHTTP403. Archive externe cassée. Aucun fanart ni dérivé retenu.",
+        "referenceUrls": [
+          "https://twitter.com/VivziePop/status/1185376557419782144"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_hellsa_von_eldritch",
+        "status": "creator_2018_primary_post_unavailable",
+        "notes": "Tweet créateur2018 localisé ; navigateur indisponible et oEmbedpublicHTTP403. Pas de génération.",
+        "referenceUrls": [
+          "https://twitter.com/VivziePop/status/1014241101941575681"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_seviathan_von_eldritch",
+        "status": "creator_art_link_not_retrieved",
+        "notes": "Piste dessin de bal créateur2019 mentionnée dans citations secondaires ; original complet non récupéré, aucune image de fans retenue.",
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_lilith",
+        "status": "primary_incarnation_occluded",
+        "notes": "Clip primaire PrimeVideoBrasil présent dans le lot de récupération et inspecté. Corps assis vu de dos, fauteuil/cheveux/chapeau masquent le torse ; visage vu séparément. Pas de reconstruction en pied ni fusion de vues pour inventer les parties cachées.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=12s",
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=28s"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hb_skips",
+        "status": "creator_sheet_not_retrieved",
+        "notes": "Recherche de la feuille du dealer ; lien primaire complet non récupéré. Ne pas reprendre le cutout historique dont la coiffure/tenue diffère du personnage final.",
+        "newDrawing": false
+      }
+    ],
+    "inheritedRefusedV12": [
+      "blitzo-sniper-production"
+    ],
+    "refusalIdentityReconciliationV13": {
+      "source": "docs/standalone/production-v12/refused-attempts.json",
+      "reason": "The V12 summary stored null for a refused prop without a sourceIdentityId; the original refusal record supplies its exact target ID.",
+      "historicalSummary": [
+        null
+      ],
+      "reconciledTargetIds": [
+        "blitzo-sniper-production"
+      ],
+      "historicalFilesUnchanged": true
+    },
+    "resolvedFullBodyIdentitiesV13": [],
+    "characterReferenceGapReconciliationV13": {
+      "basis": "Explicit resolvedFullBodyIdentitiesV* records; historical counts are unchanged.",
+      "removedResolvedRows": [],
+      "historicalQualificationsPreserved": true
+    },
+    "deferredCandidatesV13": [
+      {
+        "sourceIdentityId": "hz_lilith",
+        "status": "portrait_hat_edge_cropped_not_generated",
+        "notes": "Official Prime Video Brasil preview 28, 30 and 31 s inspected. The right edge of the large hat remains outside frame; no complete head-and-hat portrait is generated by extending it. Full-body gap also remains.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=28s",
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=30s",
+          "https://www.youtube.com/watch?v=q9lzr9zsUT4&t=31s"
+        ],
+        "newDrawing": false,
+        "referencePaths": [
+          "docs/standalone/local-recovery-2026-11-26/research/infernal-v9-reference-audit/lilith-beach-face-28s.png",
+          "docs/standalone/local-recovery-2026-11-26/research/infernal-v9-reference-audit/lilith-official-board-3.jpg"
+        ]
+      },
+      {
+        "sourceIdentityId": "hz_molly",
+        "status": "legacy_portrait_already_delivered_v11_no_duplicate",
+        "notes": "Creator2015 frames144/148s inspected again; lower foot remains cropped and the useful portrait already exists as hz_molly-legacy-2015-portrait in V11. No duplicate generated.",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+        ],
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hb_skips",
+        "status": "primary_model_sheet_not_retrieved",
+        "notes": "Public searches located only secondary mention of a drug-dealer concept sheet. Its primary artist post/file could not be identified; no generated full-body based on the inconsistent historical portrait. Secondary Fandom file page returned HTTP402 and no protected access was attempted.",
+        "newDrawing": false
+      },
+      {
+        "sourceIdentityId": "hz_hellsa_von_eldritch",
+        "status": "no_new_primary_reference_qualified",
+        "notes": "Additional public searches found no new complete primary creator source. No new generation; V12 historical gap remains.",
+        "newDrawing": false
+      },
+      {
+        "id": "ralph-shotgun-production",
+        "status": "deferred_primary_source_access_denied",
+        "sourceUrl": "https://cdna.artstation.com/p/assets/images/images/058/983/816/large/erin-frost-dx-shotgun-ep1.jpg?1675365044",
+        "primaryPage": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "reason": "Primary portfolio labels identified. First native source download returned HTTP 403 / code 1010; research stopped without bypassing the restriction. No complete model sheet was visually qualified for generation.",
+        "generationAttempted": false,
+        "generatorRefused": false,
+        "deliveredImageFiles": 0
+      },
+      {
+        "id": "martha-shotgun-production",
+        "status": "deferred_primary_source_not_retrieved",
+        "sourceUrl": "https://cdna.artstation.com/p/assets/images/images/058/983/824/large/erin-frost-martha-rifle.jpg?1675365055",
+        "primaryPage": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "reason": "Primary portfolio labels identified. First native source download returned HTTP 403 / code 1010; research stopped without bypassing the restriction. No complete model sheet was visually qualified for generation.",
+        "generationAttempted": false,
+        "generatorRefused": false,
+        "deliveredImageFiles": 0
+      },
+      {
+        "id": "torch-production",
+        "status": "deferred_primary_source_not_retrieved",
+        "sourceUrl": "https://cdna.artstation.com/p/assets/images/images/058/983/820/large/erin-frost-helluva-visdev-prop-torch.jpg?1675365049",
+        "primaryPage": "https://erinfrostart.artstation.com/projects/KONJ8G",
+        "reason": "Primary portfolio labels identified. First native source download returned HTTP 403 / code 1010; research stopped without bypassing the restriction. No complete model sheet was visually qualified for generation.",
+        "generationAttempted": false,
+        "generatorRefused": false,
+        "deliveredImageFiles": 0
+      },
+      {
+        "id": "spring-broken-upright-keg",
+        "status": "deferred_occluded_source",
+        "source": "production/v13/environment/references/rebecca-hb4-166.png",
+        "inspectionCrop": "production/v13/props/references/beach-upright-keg-reference.png",
+        "cropBox": [
+          944,
+          225,
+          1047,
+          390
+        ],
+        "reason": "Lower right corner masked by the cooler. A whole-object drawing would require inventing hidden geometry.",
+        "generationAttempted": false,
+        "generatorRefused": false,
+        "deliveredImageFiles": 0
+      }
+    ],
+    "inheritedRefusedV13": [],
+    "noRetryTargetIdsV14": [
+      "blitzo-sniper-production",
+      "cherribomb",
+      "hb_belphegor",
+      "hb_deerie",
+      "hb_leviathan",
+      "hb_loopty_goopty",
+      "hb_stella",
+      "hb_stolas_family_butler",
+      "hz_ant_sinner",
+      "hz_clara_carmine",
+      "hz_dazzle",
+      "hz_eel_sinner",
+      "hz_egg_boiz",
+      "hz_fat_nuggets",
+      "hz_frank_egg_boi",
+      "hz_huskette_spider",
+      "hz_keekee",
+      "hz_odette_carmine",
+      "hz_razzle",
+      "hz_rooster",
+      "hz_salina",
+      "hz_shok_wav",
+      "hz_speaker_of_god",
+      "lute",
+      "lute-prosthetic-s2-ready",
+      "pentious-airship-s1",
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "resolvedFullBodyIdentitiesV14": [],
+    "characterReferenceGapReconciliationV14": {
+      "basis": "Explicit resolvedFullBodyIdentitiesV* records; historical counts are unchanged.",
+      "removedResolvedRows": [],
+      "historicalQualificationsPreserved": true
+    },
+    "deferredCandidatesV14": [
+      {
+        "id": "hb_moxxie-human-disguise-karen",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/moxxie-human-disguise-enamel-pin"
+        ],
+        "reason": "Le pin primaire ne montre que la tête. Pas de corps entier qualifié ; portrait additionnel non priorisé pour un personnage déjà représenté.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/moxxie-human-disguise.png",
+            "sha256": "4b8ac0fc6c8e851c2ce710f5836dc902d31a23f62ce64e13e0bee1e42ff75424",
+            "bytes": 1369723,
+            "dimensions": [
+              1500,
+              1500
+            ],
+            "mode": "RGBA"
+          }
+        ]
+      },
+      {
+        "id": "hb_blitzo-cat-disguise-cherub",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/cherub-cat-disguise-blitz-enamel-pin"
+        ],
+        "reason": "Le pin primaire montre la tête et les avant-bras, pas le bas du corps. Aucun costume entier autorisé, aucun portrait supplémentaire.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/blitz-cat.png",
+            "sha256": "674934b39cb04729fcd1e590d20225a3ddf6d294370fb7c3bcd8584f6e0ba497",
+            "bytes": 2271592,
+            "dimensions": [
+              1500,
+              1500
+            ],
+            "mode": "RGBA"
+          }
+        ]
+      },
+      {
+        "id": "hb_blitzo-chupa-costume",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/blitz-chupa-costume-enamel-pin"
+        ],
+        "reason": "Portrait de tête uniquement dans le pin primaire ; silhouette entière non qualifiée.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/blitz-chupa.png",
+            "sha256": "74cdca37d00382905969d5c1539f752f44d9116a459f7ecd600e001234483069",
+            "bytes": 1713408,
+            "dimensions": [
+              1500,
+              1500
+            ],
+            "mode": "RGBA"
+          }
+        ]
+      },
+      {
+        "id": "erin-frost-character-models",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://erinfrostart.artstation.com/projects/B18a4l"
+        ],
+        "reason": "La page de portfolio est listée publiquement, mais la récupération native a retourné HTTP 403. Piste arrêtée immédiatement ; aucun remplacement ou contournement, aucune génération.",
+        "generatorAttempted": false,
+        "sourceFiles": [],
+        "accessResult": "HTTP 403",
+        "retryAttempted": false
+      },
+      {
+        "id": "hb_moxxie-hb_millie-antarctica-costumes",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=uSDG4K1ycvc"
+        ],
+        "reason": "Le standee masque les membres inférieurs des deux personnages ; les meilleures cellules natives inspectées ne donnent pas un costume entier assez lisible sans reconstruire les pieds/occlusions.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/antarctica-standee.png",
+            "sha256": "b6b479eae65aa56cec3c2b24b392e553adaf7ed11a2fd95ef2b5cafb3bd7a042",
+            "bytes": 1624023,
+            "dimensions": [
+              1500,
+              1500
+            ],
+            "mode": "RGBA"
+          },
+          {
+            "path": "production/v14/characters/references/deferred/antarctica-board-5.jpg",
+            "sha256": "0e914f390ef044dde22c90ff0115912aafefb65458ee0319f97622b6ada65e36",
+            "bytes": 79065,
+            "dimensions": [
+              960,
+              540
+            ],
+            "mode": "RGB"
+          },
+          {
+            "path": "production/v14/characters/references/deferred/antarctica-board-7.jpg",
+            "sha256": "969897268dd8a15d1dcee0773aa5cfc0c1587ec4ea296890f0844d16503ae2b1",
+            "bytes": 75124,
+            "dimensions": [
+              960,
+              540
+            ],
+            "mode": "RGB"
+          },
+          {
+            "path": "production/v14/characters/references/deferred/antarctica-metadata.json",
+            "sha256": "357a2b5606dea28330bc8f7a7b1878fb83a2314314e4d7de677e0e8d8f5f4d1b",
+            "bytes": 6143
+          }
+        ],
+        "additionalReferenceUrls": [
+          "https://sharkrobot.com/products/antarctica-standee"
+        ],
+        "inspectedNativeBoards": [
+          5,
+          7
+        ],
+        "overviewContactSheetReviewed": true
+      },
+      {
+        "id": "hb_moxxie-bridal-exes-s2",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=1410s"
+        ],
+        "reason": "La robe entière est visible au plan large final mais le haut du corps et les mains chevauchent Millie ; les détails ne suffisent pas pour isoler une pose entière sans reconstruire des parties cachées.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/exes-official-1410s.png",
+            "sha256": "a2f00fe605260c591a47014155445c9a26b9588352f905d1532e174f5c5df598",
+            "bytes": 96054,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB"
+          },
+          {
+            "path": "production/v14/characters/references/deferred/exes-official-1420s.png",
+            "sha256": "ebcdd71e04a8f87d12b49887a75aab7c4273906c81d14f267047afd7c59c4e74",
+            "bytes": 94275,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB"
+          },
+          {
+            "path": "production/v14/characters/references/deferred/exes-metadata.json",
+            "sha256": "5e9545f54da08898dd285e2a90b60619ff39cebcc5a50dce00b8024211ae7126",
+            "bytes": 3141
+          }
+        ]
+      },
+      {
+        "id": "hb_moxxie-ozzies-stage",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://sharkrobot.com/products/moxxie-on-stage-ozzies-standee"
+        ],
+        "reason": "Source native inspectée : une partie de la jambe et de la queue est masquée par l’enseigne. En outre la différence de costume avec la base active n’est pas assez établie pour créer une nouvelle famille.",
+        "generatorAttempted": false,
+        "sourceFiles": [
+          {
+            "path": "production/v14/characters/references/deferred/moxxie-ozzies-standee.png",
+            "sha256": "82f6aee05a1ea441d836bd3b919a747681d5e2aafd93afba6abde52aba89dc6e",
+            "bytes": 2905977,
+            "dimensions": [
+              1500,
+              1500
+            ],
+            "mode": "RGBA"
+          }
+        ]
+      },
+      {
+        "id": "hb_stolas-ozzies-formal",
+        "status": "deferred_not_generated",
+        "referenceUrls": [
+          "https://www.youtube.com/watch?v=8zyGQquL8VM&t=820s"
+        ],
+        "reason": "La silhouette entière au plan large est trop petite pour qualifier les détails fins de la tenue et des pieds ; les gros plans sont partiels. Aucun nouveau dessin.",
+        "generatorAttempted": false,
+        "sourceFiles": [],
+        "inheritedSources": [
+          "production/v8/helluva/references/ozzies-board-3.jpg",
+          "production/v8/helluva/references/ozzies-board-9.jpg"
+        ]
+      },
+      {
+        "id": "sloth-consultation-radio",
+        "source": "production/v11/environment/references/jasper-15.jpg",
+        "status": "deferred_occluded_source",
+        "reason": "Le bord du comptoir masque le bas du poste ; pas de reconstruction du contour caché.",
+        "generationAttempted": false,
+        "generatorRefused": false
+      },
+      {
+        "id": "crimson-blue-plant",
+        "source": "production/v14/environment/references/jasper-crimson-212.jpg",
+        "status": "deferred_cropped_source",
+        "reason": "Le pot est coupé au bord inférieur, signalé par l’agent environnement ; aucune génération.",
+        "generationAttempted": false,
+        "generatorRefused": false
+      }
+    ],
+    "resolvedFullBodyIdentitiesV15": [
+      "hb_queef"
+    ],
+    "noRetryTargetIdsV15": [
+      "blitzo-sniper-production",
+      "cherribomb",
+      "hb_belphegor",
+      "hb_deerie",
+      "hb_leviathan",
+      "hb_loopty_goopty",
+      "hb_stella",
+      "hb_stolas_family_butler",
+      "hz_ant_sinner",
+      "hz_clara_carmine",
+      "hz_dazzle",
+      "hz_eel_sinner",
+      "hz_egg_boiz",
+      "hz_fat_nuggets",
+      "hz_frank_egg_boi",
+      "hz_huskette_spider",
+      "hz_keekee",
+      "hz_lilith",
+      "hz_man_meat",
+      "hz_odette_carmine",
+      "hz_razzle",
+      "hz_rooster",
+      "hz_salina",
+      "hz_shok_wav",
+      "hz_speaker_of_god",
+      "lute",
+      "lute-prosthetic-s2-ready",
+      "pentious-airship-s1",
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "v15PartialCharacterCoverage": [
+      {
+        "id": "hz_roo",
+        "assetId": "hz_roo-creator-concept-2019-portrait",
+        "frameCoverage": "bust",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      },
+      {
+        "id": "hz_top_hat_demon",
+        "assetId": "hz_top_hat_demon-pilot-portrait",
+        "frameCoverage": "bust",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      },
+      {
+        "id": "hz_eve",
+        "assetId": "hz_eve-storybook-seated-silhouette",
+        "frameCoverage": "full_body",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      },
+      {
+        "id": "hz_lilith",
+        "assetId": "hz_lilith-storybook-standing-silhouette",
+        "frameCoverage": "full_body",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      }
+    ],
+    "provenanceReconciliationV15": {
+      "recoveredLilithMaster": "production/v15/characters/masters/hz_lilith-storybook-standing-silhouette.png",
+      "historicalRefusalPreserved": true,
+      "newGenerationInThisResume": false,
+      "note": "Le handoff antérieur conserve à la fois un refus et un master Lilith distinct. Cette reprise récupère le master existant sans effectuer de nouvelle génération ; elle ne réécrit pas la chronologie antérieure."
+    },
+    "inheritedRefusedV15": [
+      {
+        "targetId": "hz_man_meat",
+        "assetId": "hz_man_meat-s2-portrait",
+        "requestId": "72763c39-e78c-46d4-9551-02ff659b8b78",
+        "stage": "output",
+        "category": "other",
+        "code": "moderation_blocked",
+        "filesProduced": 0,
+        "retried": false
+      },
+      {
+        "targetId": "hz_lilith",
+        "assetId": "hz_lilith-storybook-standing-silhouette",
+        "requestId": "547c681b-93c7-469d-92c7-4a4a1388be39",
+        "stage": "output",
+        "category": "other",
+        "code": "moderation_blocked",
+        "filesProduced": 0,
+        "retried": false
+      }
+    ],
+    "resolvedFullBodyIdentitiesV16": [],
+    "noRetryTargetIdsV16": [
+      "blitzo-sniper-production",
+      "cherribomb",
+      "hb_belphegor",
+      "hb_deerie",
+      "hb_leviathan",
+      "hb_loopty_goopty",
+      "hb_stella",
+      "hb_stolas_family_butler",
+      "hz_ant_sinner",
+      "hz_clara_carmine",
+      "hz_dazzle",
+      "hz_eel_sinner",
+      "hz_egg_boiz",
+      "hz_fat_nuggets",
+      "hz_frank_egg_boi",
+      "hz_huskette_spider",
+      "hz_keekee",
+      "hz_lilith",
+      "hz_man_meat",
+      "hz_odette_carmine",
+      "hz_razzle",
+      "hz_rooster",
+      "hz_salina",
+      "hz_shok_wav",
+      "hz_speaker_of_god",
+      "lute",
+      "lute-prosthetic-s2-ready",
+      "pentious-airship-s1",
+      "personal:husk:3:rival",
+      "personal:sirpentious:3:intro"
+    ],
+    "v16PartialCharacterCoverage": [
+      {
+        "id": "hb_gerald",
+        "assetId": "hb_gerald-barbie-bad-day-portrait",
+        "frameCoverage": "bust",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      },
+      {
+        "id": "hb_rick",
+        "assetId": "hb_rick-barbie-bad-day-portrait",
+        "frameCoverage": "bust",
+        "status": "narrative_archive_full_detailed_base_still_missing"
+      }
+    ]
+  },
+  "qa": {
+    "status": "passed",
+    "inGameChecked": true,
+    "galleryChecked": true,
+    "runtimeReport": "docs/standalone/production-v16/runtime-qa.json",
+    "browserReport": "docs/standalone/production-v16/browser-gallery-qa.json",
+    "activeAssetCoverage": "docs/standalone/production-v16/active-asset-coverage.json",
+    "independentArtReview": "docs/standalone/production-v16/independent-visual-review.json",
+    "independentGalleryReview": "docs/standalone/production-v16/browser-visual-review.json",
+    "testsPassed": 439,
+    "testSuites": 51,
+    "managerBuild": "passed",
+    "standaloneBuild": "passed",
+    "standardQaScriptPassed": true,
+    "referencedAssets": 742,
+    "checkedAssetIds": [
+      "hb_gerald-barbie-bad-day-portrait",
+      "hb_rick-barbie-bad-day-portrait"
+    ],
+    "browserScope": "Current Vite source runtime, real gallery clicks and decoded artwork on desktop and mobile. Static gallery rendering only; no combat play, animation or production deployment claim. External reference link clicks are intercepted locally to verify their actual target; remote content availability is not tested.",
+    "browserChecks": 8,
+    "screenshots": 4,
+    "limitations": [
+      "Galerie statique dans Chromium local et mobile tactile émulé ; aucun appareil physique testé.",
+      "Les portraits n’ajoutent aucun combattant jouable, animation ou modèle entier."
+    ]
+  },
+  "sourceFiles": [
+    {
+      "path": "docs/standalone/production-v16/active-asset-coverage.json",
+      "sha256": "35f288de7207288887f3eea31101d73e6722a94b335b5fec3186821d551091ff",
+      "bytes": 23477
+    },
+    {
+      "path": "docs/standalone/production-v16/assemble-register.py",
+      "sha256": "767648619f19ac8c1dae160f5fbfb177f38592b6cdbdf065090f031cbcd707ad",
+      "bytes": 29073
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery-qa.json",
+      "sha256": "d2f7e8161b108ec2a641966b1f771f8ee2d2ddfce4cf4f668cb8708bf0f2a822",
+      "bytes": 14191
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "3ce132f5d060885e8c263e6a684e5ac3050debd1555faf2494763d24eb8a7591",
+      "bytes": 412113
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "3f6dbad4faaec65e27a6976088a6acad29359c6b855713d268d7730d97054a75",
+      "bytes": 412713
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "fb06f8b3f62397f377b738ae54c53fa14e30e20402db91f654297050475a6e59",
+      "bytes": 157385
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "9f8258514099ff83a383742eda934ec4e985433c1ca13b903dc1f5ebc6297252",
+      "bytes": 155402
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-visual-review.json",
+      "sha256": "17abd9d7e3d9d0cf82fd4e022cb7b05858cd9e4f6e90644e8b62c9f0e604c8e7",
+      "bytes": 6914
+    },
+    {
+      "path": "docs/standalone/production-v16/characters-handoff.json",
+      "sha256": "935ba3fe2f0eec3c6af39faf631b69997c9864d2744bac51df134306414f4dbc",
+      "bytes": 22528
+    },
+    {
+      "path": "docs/standalone/production-v16/characters-prompts.json",
+      "sha256": "32abd1ebdfa68d15c69ede565f33ade447ec444951bebb18434cf61761c86c73",
+      "bytes": 5517
+    },
+    {
+      "path": "docs/standalone/production-v16/characters-references.json",
+      "sha256": "edc18bd3628e964376e83fca99033c969a1ca11fdf3d46e3cad0658791d9b611",
+      "bytes": 12457
+    },
+    {
+      "path": "docs/standalone/production-v16/image-qa.json",
+      "sha256": "e382d3aa7f63bd2c993ff47889a89c5823c0925bf47c59eb9acd257d93982244",
+      "bytes": 7416
+    },
+    {
+      "path": "docs/standalone/production-v16/independent-visual-review.json",
+      "sha256": "5f393e714c1bd57dd798060141ff2d1120dc23aab124beb6ece36f87bb4bb467",
+      "bytes": 17737
+    },
+    {
+      "path": "docs/standalone/production-v16/integration-assets.json",
+      "sha256": "01d1569d41066652345411caafbbc8a56efa88cba1b9058f8b5f9725fb54a4df",
+      "bytes": 23168
+    },
+    {
+      "path": "docs/standalone/production-v16/runtime-qa.json",
+      "sha256": "214e89382f040b77222302b463f3d00995b36e034b4cc1c4d8f3341c826c34b8",
+      "bytes": 529016
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-credits-official-355s.png",
+      "sha256": "9e70290fe09887892498b35ce548d4274b0c856b2e19429f49ef1d5b14a7769e",
+      "bytes": 77753
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+      "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+      "bytes": 1051
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-board-00.jpg",
+      "sha256": "8ddac2b50d3352065a78c10756ddb09f5cb3227f324b3127ba3346712d0c3122",
+      "bytes": 72755
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-board-01.jpg",
+      "sha256": "cf670a26d794c1c429586a94b52027be7515933ef2d362563d24e37cdfb0c11c",
+      "bytes": 82518
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-board-03.jpg",
+      "sha256": "265a9949a77ec854ea67c2304a2976c8dc630e4a7b9fb89fd4984701b39f7001",
+      "bytes": 78549
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-metadata.json",
+      "sha256": "207b0ded20174334620410e4115bad04665ce298ca23b9abf365ec8a42ab8e77",
+      "bytes": 1871
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-rick-extra-board-04.jpg",
+      "sha256": "7380eed5ebe8d351a5844a78a1d7c383e829ab410a3001d47ac448fd825f16c1",
+      "bytes": 61402
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-rick-extra-board-05.jpg",
+      "sha256": "8c78cf24c21cf20532887a90589558cb74b96d1c26ebe0343b031805ac3c693c",
+      "bytes": 54618
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-rick-extra-board-06.jpg",
+      "sha256": "7382a68a25043f686d6efdca28cfb870ecfb5eedb27f26a38fdf417b0776873c",
+      "bytes": 56710
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-rick-extra-board-07.jpg",
+      "sha256": "389693e32605fd968d69fc0d5df6e581dd74aeb651b2a829991a50305888f8ba",
+      "bytes": 58314
+    },
+    {
+      "path": "production/v16/characters/references/barbie-bad-day-v16-rick-extra-metadata.json",
+      "sha256": "4b7310eadb38ba006f422648569c18261054dd2e7870664319e7ece6a925b419",
+      "bytes": 2439
+    },
+    {
+      "path": "production/v16/characters/references/diagnostics/hb_gerald-barbie-bad-day-portrait-three-backgrounds.png",
+      "sha256": "c989fd18ba1d626dbcd84932e63d7731db84f2aeb8eb4d253b1a5f56f4b8f5e5",
+      "bytes": 156309
+    },
+    {
+      "path": "production/v16/characters/references/diagnostics/hb_rick-barbie-bad-day-portrait-three-backgrounds.png",
+      "sha256": "a860ce761a295a6ae95c2c88af9af44867fa8f34dd0b1bc2806de4af264ee1b1",
+      "bytes": 152911
+    },
+    {
+      "path": "production/v16/characters/references/gerald-official-20s.png",
+      "sha256": "e954dd4be4e2053eb0aaa1fb184b37a8992887b2e5c8fd50a028aead6c6eb0d6",
+      "bytes": 100374
+    },
+    {
+      "path": "production/v16/characters/references/gerald-official-60s.png",
+      "sha256": "5ce399543407c3918d1d6e8bdbb8bdc02bfa8cf86952130274a1bc6bf02785ad",
+      "bytes": 103457
+    },
+    {
+      "path": "production/v16/characters/references/hb_gerald-historical-repository-portrait.png",
+      "sha256": "6ce70e9c5805b8d88eec8b8ee38f8b50c60a5c88a9c07f3c708b3914dbc7cfb0",
+      "bytes": 147252
+    },
+    {
+      "path": "production/v16/characters/references/hb_rick-historical-repository-portrait.png",
+      "sha256": "771d4fd0165cd7226bf641e563c5c351334c04af5b3e0980942a05697e0a580f",
+      "bytes": 145939
+    },
+    {
+      "path": "production/v16/characters/references/rick-official-160s.png",
+      "sha256": "f7fbbe98e05758cc807014a18ec7cac5d566e21672afff06d29d9c46bb22dbbf",
+      "bytes": 82379
+    },
+    {
+      "path": "production/v16/characters/references/rick-official-165s.png",
+      "sha256": "ea8cf945df2aa8dc69454e11e2670f71eff5ed12d857a214cc77a87b4cb8b097",
+      "bytes": 101901
+    },
+    {
+      "path": "production/v16/characters/references/rick-official-170s.png",
+      "sha256": "d21a86c9c637ad1c6db7dfca39623b351152d6fcc1f6d17d5de5efc75bb0fb9c",
+      "bytes": 102056
+    }
+  ],
+  "publicationEvidence": {
+    "path": "production/v16/characters/references/barbie-bad-day-publication-metadata.json",
+    "sha256": "99c8cc308b71c7750f95c6130f164d7c4ae23883ef827f81c87dda3fb1f5b19a",
+    "sourceUrl": "https://www.youtube.com/watch?v=PyICIy6fkDo",
+    "microformatPath": "ytInitialPlayerResponse.microformat.playerMicroformatRenderer",
+    "publishDate": "2026-04-25T10:00:36-07:00",
+    "uploadDate": "2026-04-25T10:00:36-07:00",
+    "primary": true,
+    "verified": true
+  },
+  "independentReview": "docs/standalone/production-v16/independent-visual-review.json",
+  "cataloguePlanChecks": {
+    "historicalGalleryEntriesPreserved": 143,
+    "galleryEntries": 145,
+    "historicalRosterRows": 209,
+    "newStandaloneBases": 0,
+    "missingCatalogueIds": 94,
+    "missingDistinctIdentities": 93,
+    "deletedHistoricalFiles": 0
+  },
+  "fidelityOneToOneCertified": false
+}

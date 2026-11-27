@@ -30,6 +30,6 @@ export function InfernalMoveList({ one, two }: Props) {
     </div>)}
     <p><strong>Feinte.</strong> Lancez le léger, puis le lourd avant le contact pour remplacer le premier coup.</p>
     <p><strong>Confirmation.</strong> Après un lourd qui touche sans garde, déclenchez le spécial après l’arrêt sur impact, avant la fin de la pose. Coût de 50 points de tension.</p>
-    <p><strong>Fatalité.</strong> Sur le K.-O. décisif, le vainqueur peut jouer sa finition avec sa touche de spécial ou le bouton à l’écran.</p>
+    <p><strong>Dernier Acte.</strong> Sur le K.-O. décisif, le vainqueur peut jouer sa finition avec sa touche de spécial ou le bouton à l’écran.</p>
   </details>;
 }

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "createdAt": "2026-11-26T21:45:08.629837+00:00",
+  "sources": [
+    {
+      "path": "production/v14/environment/references/jasper-crimson-206.jpg",
+      "sha256": "dd6925123a7647e718fac4c07d25def047abbd1c901b19e9c6c49ba11c8c5e9e",
+      "bytes": 344285,
+      "dimensions": [
+        2500,
+        1532
+      ],
+      "mode": "RGB",
+      "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+      "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg?format=2500w",
+      "portfolioUrl": "https://jasperluu.com/helluvaboss",
+      "author": "Jasper Luu",
+      "primary": true,
+      "viewed": true,
+      "kind": "official_production_artist_portfolio_image",
+      "originalSourceDimensions": [
+        4340,
+        2660
+      ],
+      "role": "primary_stage_layout_and_complete_chandelier"
+    },
+    {
+      "path": "production/v14/environment/references/jasper-crimson-204.jpg",
+      "sha256": "f8df1851fcd23c388e86008ed2adea7ab2e9aeeb7d008b90add4b893562d4e81",
+      "bytes": 488424,
+      "dimensions": [
+        2500,
+        1532
+      ],
+      "mode": "RGB",
+      "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+      "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg?format=2500w",
+      "portfolioUrl": "https://jasperluu.com/helluvaboss",
+      "author": "Jasper Luu",
+      "primary": true,
+      "viewed": true,
+      "kind": "official_production_artist_portfolio_image",
+      "originalSourceDimensions": [
+        4340,
+        2660
+      ],
+      "role": "supporting_view_not_generation_input"
+    }
+  ],
+  "targetCandidates": [
+    {
+      "id": "crimson-green-chandelier-s2",
+      "name": "Crimson · Lustre vert",
+      "source": "production/v14/environment/references/jasper-crimson-206.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/405e706b-13b9-47d4-8afe-069cca111af0/206.jpg",
+      "crop": {
+        "path": "production/v14/environment/references/crimson-chandelier-complete-crop.png",
+        "sha256": "124f7f78a6d6514c18e743f24b8207f463488cfa0d4ae0307fdd4653bb81ea4b",
+        "bytes": 91222,
+        "dimensions": [
+          410,
+          320
+        ],
+        "mode": "RGB",
+        "sourcePath": "production/v14/environment/references/jasper-crimson-206.jpg",
+        "cropBox": [
+          935,
+          215,
+          1345,
+          535
+        ],
+        "transform": "Exact crop only, no resizing or enhancement.",
+        "viewed": true,
+        "entireVisibleContour": true
+      },
+      "cropBox": [
+        935,
+        215,
+        1345,
+        535
+      ],
+      "qualification": "Whole fixture visible from the ceiling canopy through the curved lower arms. Two main light groups have overlapping openings; source image takes precedence over simplified counts.",
+      "status": "qualified_whole_prop_selected_by_root",
+      "selectedBy": "/root",
+      "context": "Helluva Boss, Exes and Oohs, S2E3, Crimson dining room.",
+      "episodeEvidence": "production/v14/environment/references/exes-episode-evidence.json",
+      "episodeLimits": "Official 630 s sample shows portions of the hanging arms; full model supplied by primary painting.",
+      "generationOwner": "/root",
+      "environmentAgentGenerated": false,
+      "intendedUse": "separate reserve/gallery asset; no extra scenery layer on either new arena"
+    }
+  ],
+  "notQualified": [
+    {
+      "id": "crimson-tall-plant",
+      "reason": "Pot bottom cropped in 212.jpg and chair occlusion in 206.jpg. Do not reconstruct."
+    }
+  ],
+  "note": "Environment agent provided source and exact crop only. Root owns prop generation, acceptance and exports. No trophy props are selected for V14."
+}

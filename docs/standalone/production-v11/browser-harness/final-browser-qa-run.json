@@ -1,0 +1,5280 @@
+{
+  "edition": "V11",
+  "schemaVersion": 1,
+  "startedAt": "2026-11-26T16:52:17.754Z",
+  "server": "http://127.0.0.1:5180/combat.html",
+  "scope": "One new arena and scenery prop; six new gallery entries. Local Chromium desktop and mobile touch emulation, real UI interactions, no game-state injection.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "isMobile": false,
+      "hasTouch": false,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "physicalDevice": false
+    }
+  ],
+  "expectedAssetIds": [
+    "hz_molly-legacy-2015-portrait",
+    "hb_mister_butler-circus-s2-portrait",
+    "hb_better_than_blitzo_guy-portrait-s2",
+    "sloth-consultation-container",
+    "fizzarolli-bozo-award",
+    "oops-clown-mask-trophy",
+    "sloth-consultation-s2-room"
+  ],
+  "checkedAssetIds": [
+    "hz_molly-legacy-2015-portrait",
+    "hb_mister_butler-circus-s2-portrait",
+    "hb_better_than_blitzo_guy-portrait-s2",
+    "sloth-consultation-container",
+    "fizzarolli-bozo-award",
+    "oops-clown-mask-trophy",
+    "sloth-consultation-s2-room"
+  ],
+  "regressionAssetIds": [
+    "hz_crymini-legacy-2017-base",
+    "hb_loona-party-queen-bee"
+  ],
+  "galleryCountExpected": 121,
+  "checks": [
+    {
+      "name": "desktop home: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop home: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop: new arena thumbnail selected and loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+        "complete": true,
+        "dimensions": [
+          480,
+          270
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: correct full background",
+      "passed": true,
+      "detail": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 86,
+          "y": 376.09375,
+          "width": 1268,
+          "height": 518,
+          "top": 376.09375,
+          "right": 1354,
+          "bottom": 894.09375,
+          "left": 86
+        },
+        "artBounds": {
+          "left": 259.80021253985126,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        }
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: background within stage",
+      "passed": true,
+      "detail": {
+        "art": {
+          "left": 259.80021253985126,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        },
+        "stage": {
+          "x": 95,
+          "y": 375.09375,
+          "width": 1250,
+          "height": 520,
+          "top": 375.09375,
+          "right": 1345,
+          "bottom": 895.09375,
+          "left": 95
+        }
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: expected scenery count",
+      "passed": true,
+      "detail": [
+        "sloth-consultation-container"
+      ]
+    },
+    {
+      "name": "desktop sloth-consultation-s2: sloth-consultation-container loaded",
+      "passed": true,
+      "detail": {
+        "id": "sloth-consultation-container",
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "display": "block",
+        "objectFit": "contain",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 668.859375,
+          "y": 633.65625,
+          "width": 172.703125,
+          "height": 156.5625,
+          "top": 633.65625,
+          "right": 841.5625,
+          "bottom": 790.21875,
+          "left": 668.859375
+        },
+        "scaleX": 0.13113373196659073,
+        "scaleY": 0.13112437185929648,
+        "visibleBounds": {
+          "left": 686.9558300113895,
+          "top": 648.4733040201005,
+          "right": 823.5971787205771,
+          "bottom": 774.3527010050251
+        },
+        "visibleBoundsInSource": [
+          775.9718842484893,
+          494.80532882802044,
+          1024.1948748572645,
+          723.4781330033371
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: sloth-consultation-container uniform scale",
+      "passed": true,
+      "detail": {
+        "scaleX": 0.13113373196659073,
+        "scaleY": 0.13112437185929648
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: sloth-consultation-container visible contour inside stage",
+      "passed": true,
+      "detail": {
+        "left": 686.9558300113895,
+        "top": 648.4733040201005,
+        "right": 823.5971787205771,
+        "bottom": 774.3527010050251
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: sloth-consultation-container anchored to source location",
+      "passed": true,
+      "detail": {
+        "observed": [
+          775.9718842484893,
+          494.80532882802044,
+          1024.1948748572645,
+          723.4781330033371
+        ],
+        "reference": [
+          776,
+          495,
+          1024,
+          723.4649375600384
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2: sloth-consultation-container shares room parallax transform",
+      "passed": true,
+      "detail": {
+        "room": "matrix(1, 0, 0, 1, 0, 0)",
+        "prop": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "desktop consultation fight: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop consultation fight: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop: real movement observed",
+      "passed": true,
+      "detail": [
+        {
+          "action": "walk",
+          "position": "23.63",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "25.27",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "26.90",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "28.54",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "30.58",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        }
+      ]
+    },
+    {
+      "name": "desktop: movement release returns to idle",
+      "passed": true
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: correct full background",
+      "passed": true,
+      "detail": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, -0.857815, 0)",
+        "bounds": {
+          "x": 85.14218139648438,
+          "y": 376.09375,
+          "width": 1268,
+          "height": 518,
+          "top": 376.09375,
+          "right": 1353.1421813964844,
+          "bottom": 894.09375,
+          "left": 85.14218139648438
+        },
+        "artBounds": {
+          "left": 258.94239393633563,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        }
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: background within stage",
+      "passed": true,
+      "detail": {
+        "art": {
+          "left": 258.94239393633563,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        },
+        "stage": {
+          "x": 95,
+          "y": 375.09375,
+          "width": 1250,
+          "height": 520,
+          "top": 375.09375,
+          "right": 1345,
+          "bottom": 895.09375,
+          "left": 95
+        }
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: expected scenery count",
+      "passed": true,
+      "detail": [
+        "sloth-consultation-container"
+      ]
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: sloth-consultation-container loaded",
+      "passed": true,
+      "detail": {
+        "id": "sloth-consultation-container",
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "display": "block",
+        "objectFit": "contain",
+        "transform": "matrix(1, 0, 0, 1, -0.857815, 0)",
+        "bounds": {
+          "x": 668.0015869140625,
+          "y": 633.65625,
+          "width": 172.703125,
+          "height": 156.5625,
+          "top": 633.65625,
+          "right": 840.7047119140625,
+          "bottom": 790.21875,
+          "left": 668.0015869140625
+        },
+        "scaleX": 0.13113373196659073,
+        "scaleY": 0.13112437185929648,
+        "visibleBounds": {
+          "left": 686.098041925452,
+          "top": 648.4733040201005,
+          "right": 822.7393906346396,
+          "bottom": 774.3527010050251
+        },
+        "visibleBoundsInSource": [
+          775.9719396867924,
+          494.80532882802044,
+          1024.1949302955677,
+          723.4781330033371
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: sloth-consultation-container uniform scale",
+      "passed": true,
+      "detail": {
+        "scaleX": 0.13113373196659073,
+        "scaleY": 0.13112437185929648
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: sloth-consultation-container visible contour inside stage",
+      "passed": true,
+      "detail": {
+        "left": 686.098041925452,
+        "top": 648.4733040201005,
+        "right": 822.7393906346396,
+        "bottom": 774.3527010050251
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: sloth-consultation-container anchored to source location",
+      "passed": true,
+      "detail": {
+        "observed": [
+          775.9719396867924,
+          494.80532882802044,
+          1024.1949302955677,
+          723.4781330033371
+        ],
+        "reference": [
+          776,
+          495,
+          1024,
+          723.4649375600384
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-s2 after movement: sloth-consultation-container shares room parallax transform",
+      "passed": true,
+      "detail": {
+        "room": "matrix(1, 0, 0, 1, -0.857815, 0)",
+        "prop": "matrix(1, 0, 0, 1, -0.857815, 0)"
+      }
+    },
+    {
+      "name": "desktop: room camera translated during real movement",
+      "passed": true,
+      "detail": {
+        "before": "matrix(1, 0, 0, 1, 0, 0)",
+        "after": "matrix(1, 0, 0, 1, -0.857815, 0)"
+      }
+    },
+    {
+      "name": "desktop: consultation container attachment stable during movement",
+      "passed": true,
+      "detail": {
+        "before": [
+          775.9718842484893,
+          494.80532882802044,
+          1024.1948748572645,
+          723.4781330033371
+        ],
+        "after": [
+          775.9719396867924,
+          494.80532882802044,
+          1024.1949302955677,
+          723.4781330033371
+        ]
+      }
+    },
+    {
+      "name": "desktop: consultation fight pauses",
+      "passed": true
+    },
+    {
+      "name": "desktop: consultation fight resumes",
+      "passed": true
+    },
+    {
+      "name": "desktop: final gallery total",
+      "passed": true,
+      "detail": "121 dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider."
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          54,
+          46,
+          1235,
+          1135
+        ],
+        "scaleX": 0.4634146341463415,
+        "scaleY": 0.4634146341463415,
+        "visibleBounds": {
+          "left": 123.02439024390245,
+          "top": 507.375,
+          "right": 670.3170731707318,
+          "bottom": 1012.0335365853659
+        }
+      }
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          54,
+          46,
+          1235,
+          1135
+        ],
+        "scaleX": 0.4634146341463415,
+        "scaleY": 0.4634146341463415,
+        "visibleBounds": {
+          "left": 123.02439024390245,
+          "top": 507.375,
+          "right": 670.3170731707318,
+          "bottom": 1012.0335365853659
+        }
+      }
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES · MODÈLE HISTORIQUE · 2015\n\nMolly · portrait historique 2015\n\nArchive narrative statique · Buste · 1312 × 1199 pixels.\n\nModèle de conception de 2015, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "desktop: Molly historical 2015 card and detail badges",
+      "passed": true,
+      "detail": {
+        "badge": "ARCHIVES · MODÈLE HISTORIQUE · 2015",
+        "card": "ARCHIVES · HAZBIN HOTEL · MODÈLE HISTORIQUE · 2015\nMolly · portrait historique 2015\nVoir le dessin"
+      }
+    },
+    {
+      "name": "desktop: Molly note identifies historical concept",
+      "passed": true,
+      "detail": "Modèle de conception de 2015, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin."
+    },
+    {
+      "name": "desktop gallery hz_molly-legacy-2015-portrait: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery hz_molly-legacy-2015-portrait: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+        ],
+        "observed": [
+          {
+            "text": "Molly · portrait historique 2015",
+            "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+            "visible": true
+          },
+          {
+            "text": "Molly · portrait historique 2015",
+            "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1182,
+        "naturalHeight": 1331,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          275,
+          44,
+          962,
+          1285
+        ],
+        "scaleX": 0.5108940646130729,
+        "scaleY": 0.5108940646130729,
+        "visibleBounds": {
+          "left": 240.557475582269,
+          "top": 446.3543388429752,
+          "right": 591.54169797145,
+          "bottom": 1080.3738730277987
+        }
+      }
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1182,
+        "naturalHeight": 1331,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          275,
+          44,
+          962,
+          1285
+        ],
+        "scaleX": 0.5108940646130729,
+        "scaleY": 0.5108940646130729,
+        "visibleBounds": {
+          "left": 240.557475582269,
+          "top": 446.3543388429752,
+          "right": 591.54169797145,
+          "bottom": 1080.3738730277987
+        }
+      }
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES\n\nMister Butler · portrait The Circus\n\nArchive narrative statique · Buste · 1182 × 1331 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "desktop gallery hb_mister_butler-circus-s2-portrait: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery hb_mister_butler-circus-s2-portrait: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+        ],
+        "observed": [
+          {
+            "text": "Mister Butler · portrait The Circus",
+            "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+            "visible": true
+          },
+          {
+            "text": "Mister Butler · portrait The Circus",
+            "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "complete": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 411.875,
+          "width": 608,
+          "height": 680,
+          "top": 411.875,
+          "right": 706,
+          "bottom": 1091.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          123,
+          38,
+          1408,
+          1010
+        ],
+        "scaleX": 0.3958333333333333,
+        "scaleY": 0.3958333333333333,
+        "visibleBounds": {
+          "left": 146.6875,
+          "top": 564.25,
+          "right": 655.3333333333333,
+          "bottom": 949
+        }
+      }
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "complete": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 411.875,
+          "width": 608,
+          "height": 680,
+          "top": 411.875,
+          "right": 706,
+          "bottom": 1091.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          123,
+          38,
+          1408,
+          1010
+        ],
+        "scaleX": 0.3958333333333333,
+        "scaleY": 0.3958333333333333,
+        "visibleBounds": {
+          "left": 146.6875,
+          "top": 564.25,
+          "right": 655.3333333333333,
+          "bottom": 949
+        }
+      }
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES\n\nBetter Than Blitzo Guy · portrait Apology Tour\n\nArchive narrative statique · Buste · 1536 × 1024 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "desktop gallery hb_better_than_blitzo_guy-portrait-s2: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery hb_better_than_blitzo_guy-portrait-s2: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+        ],
+        "observed": [
+          {
+            "text": "Better Than Blitzo Guy · portrait Apology Tour",
+            "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+            "visible": true
+          },
+          {
+            "text": "Better Than Blitzo Guy · portrait Apology Tour",
+            "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-container: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          138,
+          113,
+          1180,
+          1073
+        ],
+        "scaleX": 0.4616552771450266,
+        "scaleY": 0.4616552771450266,
+        "visibleBounds": {
+          "left": 161.70842824601368,
+          "top": 540.4338458618072,
+          "right": 642.7532270311314,
+          "bottom": 983.6229119210327
+        }
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-container: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          138,
+          113,
+          1180,
+          1073
+        ],
+        "scaleX": 0.4616552771450266,
+        "scaleY": 0.4616552771450266,
+        "visibleBounds": {
+          "left": 161.70842824601368,
+          "top": 540.4338458618072,
+          "right": 642.7532270311314,
+          "bottom": 983.6229119210327
+        }
+      }
+    },
+    {
+      "name": "desktop: consultation container displayed as integrated scenery",
+      "passed": true,
+      "detail": "ACCESSOIRES\n\nSloth · conteneur de consultation\n\nAccessoire intégré au décor · 1317 × 1194 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "desktop gallery sloth-consultation-container: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery sloth-consultation-container: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop sloth-consultation-container: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg"
+        ],
+        "observed": [
+          {
+            "text": "Sloth · conteneur de consultation",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop fizzarolli-bozo-award: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 411.875,
+          "width": 608,
+          "height": 680,
+          "top": 411.875,
+          "right": 706,
+          "bottom": 1091.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          64,
+          92,
+          960,
+          1488
+        ],
+        "scaleX": 0.4427083333333333,
+        "scaleY": 0.4427083333333333,
+        "visibleBounds": {
+          "left": 203.66666666666669,
+          "top": 452.6041666666667,
+          "right": 600.3333333333334,
+          "bottom": 1070.625
+        }
+      }
+    },
+    {
+      "name": "desktop fizzarolli-bozo-award: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 411.875,
+          "width": 608,
+          "height": 680,
+          "top": 411.875,
+          "right": 706,
+          "bottom": 1091.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          64,
+          92,
+          960,
+          1488
+        ],
+        "scaleX": 0.4427083333333333,
+        "scaleY": 0.4427083333333333,
+        "visibleBounds": {
+          "left": 203.66666666666669,
+          "top": 452.6041666666667,
+          "right": 600.3333333333334,
+          "bottom": 1070.625
+        }
+      }
+    },
+    {
+      "name": "desktop gallery fizzarolli-bozo-award: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery fizzarolli-bozo-award: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop fizzarolli-bozo-award: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg"
+        ],
+        "observed": [
+          {
+            "text": "Vitrine d’Asmodeus · BOZO AWARD",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop oops-clown-mask-trophy: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+        "complete": true,
+        "naturalWidth": 963,
+        "naturalHeight": 1633,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          57,
+          44,
+          906,
+          1583
+        ],
+        "scaleX": 0.4164115125535824,
+        "scaleY": 0.4164115125535824,
+        "visibleBounds": {
+          "left": 225.23331292100428,
+          "top": 442.19710655235764,
+          "right": 578.7666870789958,
+          "bottom": 1083.054424372321
+        }
+      }
+    },
+    {
+      "name": "desktop oops-clown-mask-trophy: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+        "complete": true,
+        "naturalWidth": 963,
+        "naturalHeight": 1633,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 98,
+          "y": 423.875,
+          "width": 608,
+          "height": 680,
+          "top": 423.875,
+          "right": 706,
+          "bottom": 1103.875,
+          "left": 98
+        },
+        "alphaBounds16": [
+          57,
+          44,
+          906,
+          1583
+        ],
+        "scaleX": 0.4164115125535824,
+        "scaleY": 0.4164115125535824,
+        "visibleBounds": {
+          "left": 225.23331292100428,
+          "top": 442.19710655235764,
+          "right": 578.7666870789958,
+          "bottom": 1083.054424372321
+        }
+      }
+    },
+    {
+      "name": "desktop gallery oops-clown-mask-trophy: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 1440,
+        "viewportHeight": 1000,
+        "documentWidth": 1440,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "desktop gallery oops-clown-mask-trophy: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop oops-clown-mask-trophy: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s"
+        ],
+        "observed": [
+          {
+            "text": "206 Paint 00004 — trophée central de la vitrine",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+            "visible": true
+          },
+          {
+            "text": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+            "href": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop: inherited Crymini keeps distinct 2017 card/detail badge",
+      "passed": true,
+      "detail": "PERSONNAGES · MODÈLE HISTORIQUE · 2017"
+    },
+    {
+      "name": "desktop: inherited Crymini provenance remains 2017",
+      "passed": true,
+      "detail": "Modèle de conception de 2017, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin."
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_1",
+        "count": 1
+      }
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "desktop sloth-consultation-container: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "desktop fizzarolli-bozo-award: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "desktop oops-clown-mask-trophy: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "desktop hz_crymini-legacy-2017-base: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_1",
+        "count": 1
+      }
+    },
+    {
+      "name": "desktop hz_molly-legacy-2015-portrait: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "desktop hb_mister_butler-circus-s2-portrait: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "desktop hb_better_than_blitzo_guy-portrait-s2: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "desktop sloth-consultation-container: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "desktop fizzarolli-bozo-award: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "desktop oops-clown-mask-trophy: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile home: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile home: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile: new arena thumbnail selected and loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+        "complete": true,
+        "dimensions": [
+          480,
+          270
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: correct full background",
+      "passed": true,
+      "detail": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 21.59375,
+          "y": 546.3125,
+          "width": 346.8125,
+          "height": 298,
+          "top": 546.3125,
+          "right": 368.40625,
+          "bottom": 844.3125,
+          "left": 21.59375
+        },
+        "artBounds": {
+          "left": 41.59375,
+          "top": 671.6387186004785,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        }
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: background within stage",
+      "passed": true,
+      "detail": {
+        "art": {
+          "left": 41.59375,
+          "top": 671.6387186004785,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        },
+        "stage": {
+          "x": 30.59375,
+          "y": 545.3125,
+          "width": 328.8125,
+          "height": 300,
+          "top": 545.3125,
+          "right": 359.40625,
+          "bottom": 845.3125,
+          "left": 30.59375
+        }
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: expected scenery count",
+      "passed": true,
+      "detail": [
+        "sloth-consultation-container"
+      ]
+    },
+    {
+      "name": "mobile sloth-consultation-s2: sloth-consultation-container loaded",
+      "passed": true,
+      "detail": {
+        "id": "sloth-consultation-container",
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "display": "block",
+        "objectFit": "contain",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 177.953125,
+          "y": 757.515625,
+          "width": 57.5625,
+          "height": 52.171875,
+          "top": 757.515625,
+          "right": 235.515625,
+          "bottom": 809.6875,
+          "left": 177.953125
+        },
+        "scaleX": 0.043707289293849656,
+        "scaleY": 0.04369503768844221,
+        "visibleBounds": {
+          "left": 183.98473092255125,
+          "top": 762.453164258794,
+          "right": 229.5277263667426,
+          "bottom": 804.4004004396985
+        },
+        "visibleBoundsInSource": [
+          775.9713835078613,
+          494.90080469571353,
+          1024.1616899089627,
+          723.495724702142
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: sloth-consultation-container uniform scale",
+      "passed": true,
+      "detail": {
+        "scaleX": 0.043707289293849656,
+        "scaleY": 0.04369503768844221
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: sloth-consultation-container visible contour inside stage",
+      "passed": true,
+      "detail": {
+        "left": 183.98473092255125,
+        "top": 762.453164258794,
+        "right": 229.5277263667426,
+        "bottom": 804.4004004396985
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: sloth-consultation-container anchored to source location",
+      "passed": true,
+      "detail": {
+        "observed": [
+          775.9713835078613,
+          494.90080469571353,
+          1024.1616899089627,
+          723.495724702142
+        ],
+        "reference": [
+          776,
+          495,
+          1024,
+          723.4649375600384
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2: sloth-consultation-container shares room parallax transform",
+      "passed": true,
+      "detail": {
+        "room": "matrix(1, 0, 0, 1, 0, 0)",
+        "prop": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "mobile consultation fight: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile consultation fight: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile: real movement observed",
+      "passed": true,
+      "detail": [
+        {
+          "action": "walk",
+          "position": "23.63",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "25.27",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "26.49",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "28.54",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "30.17",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        }
+      ]
+    },
+    {
+      "name": "mobile: movement release returns to idle",
+      "passed": true
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: correct full background",
+      "passed": true,
+      "detail": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, -0.85806, 0)",
+        "bounds": {
+          "x": 20.73569107055664,
+          "y": 6.3125,
+          "width": 346.8125,
+          "height": 298,
+          "top": 6.3125,
+          "right": 367.54819107055664,
+          "bottom": 304.3125,
+          "left": 20.73569107055664
+        },
+        "artBounds": {
+          "left": 40.73569107055664,
+          "top": 131.63871860047848,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        }
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: background within stage",
+      "passed": true,
+      "detail": {
+        "art": {
+          "left": 40.73569107055664,
+          "top": 131.63871860047848,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        },
+        "stage": {
+          "x": 30.59375,
+          "y": 5.3125,
+          "width": 328.8125,
+          "height": 300,
+          "top": 5.3125,
+          "right": 359.40625,
+          "bottom": 305.3125,
+          "left": 30.59375
+        }
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: expected scenery count",
+      "passed": true,
+      "detail": [
+        "sloth-consultation-container"
+      ]
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: sloth-consultation-container loaded",
+      "passed": true,
+      "detail": {
+        "id": "sloth-consultation-container",
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "display": "block",
+        "objectFit": "contain",
+        "transform": "matrix(1, 0, 0, 1, -0.85806, 0)",
+        "bounds": {
+          "x": 177.09506225585938,
+          "y": 217.515625,
+          "width": 57.5625,
+          "height": 52.171875,
+          "top": 217.515625,
+          "right": 234.65756225585938,
+          "bottom": 269.6875,
+          "left": 177.09506225585938
+        },
+        "scaleX": 0.043707289293849656,
+        "scaleY": 0.04369503768844221,
+        "visibleBounds": {
+          "left": 183.12666817841063,
+          "top": 222.45316425879398,
+          "right": 228.66966362260197,
+          "bottom": 264.4004004396985
+        },
+        "visibleBoundsInSource": [
+          775.9713627193543,
+          494.9008046957132,
+          1024.1616691204556,
+          723.4957247021417
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: sloth-consultation-container uniform scale",
+      "passed": true,
+      "detail": {
+        "scaleX": 0.043707289293849656,
+        "scaleY": 0.04369503768844221
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: sloth-consultation-container visible contour inside stage",
+      "passed": true,
+      "detail": {
+        "left": 183.12666817841063,
+        "top": 222.45316425879398,
+        "right": 228.66966362260197,
+        "bottom": 264.4004004396985
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: sloth-consultation-container anchored to source location",
+      "passed": true,
+      "detail": {
+        "observed": [
+          775.9713627193543,
+          494.9008046957132,
+          1024.1616691204556,
+          723.4957247021417
+        ],
+        "reference": [
+          776,
+          495,
+          1024,
+          723.4649375600384
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-s2 after movement: sloth-consultation-container shares room parallax transform",
+      "passed": true,
+      "detail": {
+        "room": "matrix(1, 0, 0, 1, -0.85806, 0)",
+        "prop": "matrix(1, 0, 0, 1, -0.85806, 0)"
+      }
+    },
+    {
+      "name": "mobile: room camera translated during real movement",
+      "passed": true,
+      "detail": {
+        "before": "matrix(1, 0, 0, 1, 0, 0)",
+        "after": "matrix(1, 0, 0, 1, -0.85806, 0)"
+      }
+    },
+    {
+      "name": "mobile: consultation container attachment stable during movement",
+      "passed": true,
+      "detail": {
+        "before": [
+          775.9713835078613,
+          494.90080469571353,
+          1024.1616899089627,
+          723.495724702142
+        ],
+        "after": [
+          775.9713627193543,
+          494.9008046957132,
+          1024.1616691204556,
+          723.4957247021417
+        ]
+      }
+    },
+    {
+      "name": "mobile: consultation fight pauses",
+      "passed": true
+    },
+    {
+      "name": "mobile: consultation fight resumes",
+      "passed": true
+    },
+    {
+      "name": "mobile: final gallery total",
+      "passed": true,
+      "detail": "121 dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider."
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          54,
+          46,
+          1235,
+          1135
+        ],
+        "scaleX": 0.2445217225609756,
+        "scaleY": 0.2445217225609756,
+        "visibleBounds": {
+          "left": 47.79792301829268,
+          "top": 354.37597656250006,
+          "right": 336.57807736280483,
+          "bottom": 620.6601324314024
+        }
+      }
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          54,
+          46,
+          1235,
+          1135
+        ],
+        "scaleX": 0.2445217225609756,
+        "scaleY": 0.2445217225609756,
+        "visibleBounds": {
+          "left": 47.79792301829268,
+          "top": 354.37597656250006,
+          "right": 336.57807736280483,
+          "bottom": 620.6601324314024
+        }
+      }
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES · MODÈLE HISTORIQUE · 2015\n\nMolly · portrait historique 2015\n\nArchive narrative statique · Buste · 1312 × 1199 pixels.\n\nModèle de conception de 2015, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "mobile: Molly historical 2015 card and detail badges",
+      "passed": true,
+      "detail": {
+        "badge": "ARCHIVES · MODÈLE HISTORIQUE · 2015",
+        "card": "ARCHIVES · HAZBIN HOTEL · MODÈLE HISTORIQUE · 2015\nMolly · portrait historique 2015\nVoir le dessin"
+      }
+    },
+    {
+      "name": "mobile: Molly note identifies historical concept",
+      "passed": true,
+      "detail": "Modèle de conception de 2015, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin."
+    },
+    {
+      "name": "mobile gallery hz_molly-legacy-2015-portrait: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery hz_molly-legacy-2015-portrait: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+        ],
+        "observed": [
+          {
+            "text": "Molly · portrait historique 2015",
+            "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+            "visible": true
+          },
+          {
+            "text": "Molly · portrait historique 2015",
+            "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1182,
+        "naturalHeight": 1331,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          275,
+          44,
+          962,
+          1285
+        ],
+        "scaleX": 0.2714149746192893,
+        "scaleY": 0.2714149746192893,
+        "visibleBounds": {
+          "left": 109.23286802030456,
+          "top": 321.0343432741117,
+          "right": 295.6949555837563,
+          "bottom": 657.8603267766498
+        }
+      }
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1182,
+        "naturalHeight": 1331,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          275,
+          44,
+          962,
+          1285
+        ],
+        "scaleX": 0.2714149746192893,
+        "scaleY": 0.2714149746192893,
+        "visibleBounds": {
+          "left": 109.23286802030456,
+          "top": 321.0343432741117,
+          "right": 295.6949555837563,
+          "bottom": 657.8603267766498
+        }
+      }
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES\n\nMister Butler · portrait The Circus\n\nArchive narrative statique · Buste · 1182 × 1331 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "mobile gallery hb_mister_butler-circus-s2-portrait: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery hb_mister_butler-circus-s2-portrait: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+        ],
+        "observed": [
+          {
+            "text": "Mister Butler · portrait The Circus",
+            "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+            "visible": true
+          },
+          {
+            "text": "Mister Butler · portrait The Circus",
+            "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "complete": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          123,
+          38,
+          1408,
+          1010
+        ],
+        "scaleX": 0.2088623046875,
+        "scaleY": 0.2088623046875,
+        "visibleBounds": {
+          "left": 60.2838134765625,
+          "top": 390.718017578125,
+          "right": 328.671875,
+          "bottom": 593.732177734375
+        }
+      }
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+        "complete": true,
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          123,
+          38,
+          1408,
+          1010
+        ],
+        "scaleX": 0.2088623046875,
+        "scaleY": 0.2088623046875,
+        "visibleBounds": {
+          "left": 60.2838134765625,
+          "top": 390.718017578125,
+          "right": 328.671875,
+          "bottom": 593.732177734375
+        }
+      }
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: portrait explicitly labelled Buste",
+      "passed": true,
+      "detail": "ARCHIVES\n\nBetter Than Blitzo Guy · portrait Apology Tour\n\nArchive narrative statique · Buste · 1536 × 1024 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "mobile gallery hb_better_than_blitzo_guy-portrait-s2: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery hb_better_than_blitzo_guy-portrait-s2: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+        ],
+        "observed": [
+          {
+            "text": "Better Than Blitzo Guy · portrait Apology Tour",
+            "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+            "visible": true
+          },
+          {
+            "text": "Better Than Blitzo Guy · portrait Apology Tour",
+            "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-container: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          138,
+          113,
+          1180,
+          1073
+        ],
+        "scaleX": 0.24359339407744876,
+        "scaleY": 0.24359339407744876,
+        "visibleBounds": {
+          "left": 68.20963838268793,
+          "top": 371.8195472665148,
+          "right": 322.03395501138954,
+          "bottom": 605.6692055808655
+        }
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-container: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+        "complete": true,
+        "naturalWidth": 1317,
+        "naturalHeight": 1194,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 257.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "right": 355.40625,
+          "bottom": 721.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          138,
+          113,
+          1180,
+          1073
+        ],
+        "scaleX": 0.24359339407744876,
+        "scaleY": 0.24359339407744876,
+        "visibleBounds": {
+          "left": 68.20963838268793,
+          "top": 371.8195472665148,
+          "right": 322.03395501138954,
+          "bottom": 605.6692055808655
+        }
+      }
+    },
+    {
+      "name": "mobile: consultation container displayed as integrated scenery",
+      "passed": true,
+      "detail": "ACCESSOIRES\n\nSloth · conteneur de consultation\n\nAccessoire intégré au décor · 1317 × 1194 pixels.\n\nDessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.\n\nRéférences et détails du dessin\nRefermer l’aperçu"
+    },
+    {
+      "name": "mobile gallery sloth-consultation-container: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery sloth-consultation-container: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile sloth-consultation-container: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg"
+        ],
+        "observed": [
+          {
+            "text": "Sloth · conteneur de consultation",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile fizzarolli-bozo-award: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 255.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 255.625,
+          "right": 355.40625,
+          "bottom": 719.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          64,
+          92,
+          960,
+          1488
+        ],
+        "scaleX": 0.3022054036458333,
+        "scaleY": 0.3022054036458333,
+        "visibleBounds": {
+          "left": 59.61197916666667,
+          "top": 283.4278971354167,
+          "right": 330.38802083333337,
+          "bottom": 705.306640625
+        }
+      }
+    },
+    {
+      "name": "mobile fizzarolli-bozo-award: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1536,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 255.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 255.625,
+          "right": 355.40625,
+          "bottom": 719.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          64,
+          92,
+          960,
+          1488
+        ],
+        "scaleX": 0.3022054036458333,
+        "scaleY": 0.3022054036458333,
+        "visibleBounds": {
+          "left": 59.61197916666667,
+          "top": 283.4278971354167,
+          "right": 330.38802083333337,
+          "bottom": 705.306640625
+        }
+      }
+    },
+    {
+      "name": "mobile gallery fizzarolli-bozo-award: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery fizzarolli-bozo-award: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile fizzarolli-bozo-award: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg"
+        ],
+        "observed": [
+          {
+            "text": "Vitrine d’Asmodeus · BOZO AWARD",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile oops-clown-mask-trophy: gallery asset loaded",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+        "complete": true,
+        "naturalWidth": 963,
+        "naturalHeight": 1633,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 255.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 255.625,
+          "right": 355.40625,
+          "bottom": 719.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          57,
+          44,
+          906,
+          1583
+        ],
+        "scaleX": 0.28425443968156766,
+        "scaleY": 0.28425443968156766,
+        "visibleBounds": {
+          "left": 74.33399035517452,
+          "top": 268.132195345989,
+          "right": 315.66600964482546,
+          "bottom": 705.5997780159216
+        }
+      }
+    },
+    {
+      "name": "mobile oops-clown-mask-trophy: entire supplied drawing fits without stretching",
+      "passed": true,
+      "detail": {
+        "src": "/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+        "complete": true,
+        "naturalWidth": 963,
+        "naturalHeight": 1633,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "bounds": {
+          "x": 34.59375,
+          "y": 255.625,
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 255.625,
+          "right": 355.40625,
+          "bottom": 719.8125,
+          "left": 34.59375
+        },
+        "alphaBounds16": [
+          57,
+          44,
+          906,
+          1583
+        ],
+        "scaleX": 0.28425443968156766,
+        "scaleY": 0.28425443968156766,
+        "visibleBounds": {
+          "left": 74.33399035517452,
+          "top": 268.132195345989,
+          "right": 315.66600964482546,
+          "bottom": 705.5997780159216
+        }
+      }
+    },
+    {
+      "name": "mobile gallery oops-clown-mask-trophy: no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "documentWidth": 390,
+        "horizontalOverflow": 0,
+        "mainHorizontalOverflow": 0,
+        "brokenVisibleImages": []
+      }
+    },
+    {
+      "name": "mobile gallery oops-clown-mask-trophy: no broken visible image",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "mobile oops-clown-mask-trophy: qualified reference links rendered",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s"
+        ],
+        "observed": [
+          {
+            "text": "206 Paint 00004 — trophée central de la vitrine",
+            "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+            "visible": true
+          },
+          {
+            "text": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+            "href": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile: inherited Crymini keeps distinct 2017 card/detail badge",
+      "passed": true,
+      "detail": "PERSONNAGES · MODÈLE HISTORIQUE · 2017"
+    },
+    {
+      "name": "mobile: inherited Crymini provenance remains 2017",
+      "passed": true,
+      "detail": "Modèle de conception de 2017, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin."
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_1",
+        "count": 1
+      }
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "mobile sloth-consultation-container: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "mobile fizzarolli-bozo-award: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "mobile oops-clown-mask-trophy: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_2",
+        "count": 0
+      }
+    },
+    {
+      "name": "mobile hz_crymini-legacy-2017-base: S1 filter respects explicit scope",
+      "passed": true,
+      "detail": {
+        "scope": "season_1",
+        "count": 1
+      }
+    },
+    {
+      "name": "mobile hz_molly-legacy-2015-portrait: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile hb_mister_butler-circus-s2-portrait: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile hb_better_than_blitzo_guy-portrait-s2: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile sloth-consultation-container: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile fizzarolli-bozo-award: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "mobile oops-clown-mask-trophy: S1/S2 scope shows new entry",
+      "passed": true
+    },
+    {
+      "name": "runtime files stable before/after browser pass",
+      "passed": true
+    },
+    {
+      "name": "hz_molly-legacy-2015-portrait: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "hb_mister_butler-circus-s2-portrait: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "hb_better_than_blitzo_guy-portrait-s2: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "sloth-consultation-container: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "fizzarolli-bozo-award: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "oops-clown-mask-trophy: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "sloth-consultation-s2-room: observed in both viewports",
+      "passed": true
+    },
+    {
+      "name": "no consoleErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no pageErrors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no failedRequests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no httpErrors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "screens": [
+    {
+      "name": "desktop home",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop consultation fight",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery hz_molly-legacy-2015-portrait",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery hb_mister_butler-circus-s2-portrait",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery hb_better_than_blitzo_guy-portrait-s2",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery sloth-consultation-container",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery fizzarolli-bozo-award",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "desktop gallery oops-clown-mask-trophy",
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile home",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile consultation fight",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery hz_molly-legacy-2015-portrait",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery hb_mister_butler-circus-s2-portrait",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery hb_better_than_blitzo_guy-portrait-s2",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery sloth-consultation-container",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery fizzarolli-bozo-award",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    },
+    {
+      "name": "mobile gallery oops-clown-mask-trophy",
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "documentWidth": 390,
+      "horizontalOverflow": 0,
+      "mainHorizontalOverflow": 0,
+      "brokenVisibleImages": []
+    }
+  ],
+  "sceneryMeasurements": [
+    {
+      "viewport": "desktop",
+      "moment": "before movement",
+      "stageId": "sloth-consultation-s2",
+      "phase": "running",
+      "presentation": "alive",
+      "bounds": {
+        "x": 95,
+        "y": 375.09375,
+        "width": 1250,
+        "height": 520,
+        "top": 375.09375,
+        "right": 1345,
+        "bottom": 895.09375,
+        "left": 95
+      },
+      "room": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 86,
+          "y": 376.09375,
+          "width": 1268,
+          "height": 518,
+          "top": 376.09375,
+          "right": 1354,
+          "bottom": 894.09375,
+          "left": 86
+        },
+        "artBounds": {
+          "left": 259.80021253985126,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        }
+      },
+      "props": [
+        {
+          "id": "sloth-consultation-container",
+          "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+          "complete": true,
+          "naturalWidth": 1317,
+          "naturalHeight": 1194,
+          "display": "block",
+          "objectFit": "contain",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "bounds": {
+            "x": 668.859375,
+            "y": 633.65625,
+            "width": 172.703125,
+            "height": 156.5625,
+            "top": 633.65625,
+            "right": 841.5625,
+            "bottom": 790.21875,
+            "left": 668.859375
+          },
+          "scaleX": 0.13113373196659073,
+          "scaleY": 0.13112437185929648,
+          "visibleBounds": {
+            "left": 686.9558300113895,
+            "top": 648.4733040201005,
+            "right": 823.5971787205771,
+            "bottom": 774.3527010050251
+          },
+          "visibleBoundsInSource": [
+            775.9718842484893,
+            494.80532882802044,
+            1024.1948748572645,
+            723.4781330033371
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "moment": "after movement",
+      "stageId": "sloth-consultation-s2",
+      "phase": "running",
+      "presentation": "alive",
+      "bounds": {
+        "x": 95,
+        "y": 375.09375,
+        "width": 1250,
+        "height": 520,
+        "top": 375.09375,
+        "right": 1345,
+        "bottom": 895.09375,
+        "left": 95
+      },
+      "room": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, -0.857815, 0)",
+        "bounds": {
+          "x": 85.14218139648438,
+          "y": 376.09375,
+          "width": 1268,
+          "height": 518,
+          "top": 376.09375,
+          "right": 1353.1421813964844,
+          "bottom": 894.09375,
+          "left": 85.14218139648438
+        },
+        "artBounds": {
+          "left": 258.94239393633563,
+          "top": 376.09375,
+          "width": 920.3995749202975,
+          "height": 518,
+          "scale": 0.5504782146652497
+        }
+      },
+      "props": [
+        {
+          "id": "sloth-consultation-container",
+          "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+          "complete": true,
+          "naturalWidth": 1317,
+          "naturalHeight": 1194,
+          "display": "block",
+          "objectFit": "contain",
+          "transform": "matrix(1, 0, 0, 1, -0.857815, 0)",
+          "bounds": {
+            "x": 668.0015869140625,
+            "y": 633.65625,
+            "width": 172.703125,
+            "height": 156.5625,
+            "top": 633.65625,
+            "right": 840.7047119140625,
+            "bottom": 790.21875,
+            "left": 668.0015869140625
+          },
+          "scaleX": 0.13113373196659073,
+          "scaleY": 0.13112437185929648,
+          "visibleBounds": {
+            "left": 686.098041925452,
+            "top": 648.4733040201005,
+            "right": 822.7393906346396,
+            "bottom": 774.3527010050251
+          },
+          "visibleBoundsInSource": [
+            775.9719396867924,
+            494.80532882802044,
+            1024.1949302955677,
+            723.4781330033371
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "moment": "before movement",
+      "stageId": "sloth-consultation-s2",
+      "phase": "running",
+      "presentation": "alive",
+      "bounds": {
+        "x": 30.59375,
+        "y": 545.3125,
+        "width": 328.8125,
+        "height": 300,
+        "top": 545.3125,
+        "right": 359.40625,
+        "bottom": 845.3125,
+        "left": 30.59375
+      },
+      "room": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "bounds": {
+          "x": 21.59375,
+          "y": 546.3125,
+          "width": 346.8125,
+          "height": 298,
+          "top": 546.3125,
+          "right": 368.40625,
+          "bottom": 844.3125,
+          "left": 21.59375
+        },
+        "artBounds": {
+          "left": 41.59375,
+          "top": 671.6387186004785,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        }
+      },
+      "props": [
+        {
+          "id": "sloth-consultation-container",
+          "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+          "complete": true,
+          "naturalWidth": 1317,
+          "naturalHeight": 1194,
+          "display": "block",
+          "objectFit": "contain",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "bounds": {
+            "x": 177.953125,
+            "y": 757.515625,
+            "width": 57.5625,
+            "height": 52.171875,
+            "top": 757.515625,
+            "right": 235.515625,
+            "bottom": 809.6875,
+            "left": 177.953125
+          },
+          "scaleX": 0.043707289293849656,
+          "scaleY": 0.04369503768844221,
+          "visibleBounds": {
+            "left": 183.98473092255125,
+            "top": 762.453164258794,
+            "right": 229.5277263667426,
+            "bottom": 804.4004004396985
+          },
+          "visibleBoundsInSource": [
+            775.9713835078613,
+            494.90080469571353,
+            1024.1616899089627,
+            723.495724702142
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "moment": "after movement",
+      "stageId": "sloth-consultation-s2",
+      "phase": "running",
+      "presentation": "alive",
+      "bounds": {
+        "x": 30.59375,
+        "y": 5.3125,
+        "width": 328.8125,
+        "height": 300,
+        "top": 5.3125,
+        "right": 359.40625,
+        "bottom": 305.3125,
+        "left": 30.59375
+      },
+      "room": {
+        "background": "url(\"http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp\")",
+        "backgroundSize": "contain",
+        "backgroundPosition": "50% 100%",
+        "transform": "matrix(1, 0, 0, 1, -0.85806, 0)",
+        "bounds": {
+          "x": 20.73569107055664,
+          "y": 6.3125,
+          "width": 346.8125,
+          "height": 298,
+          "top": 6.3125,
+          "right": 367.54819107055664,
+          "bottom": 304.3125,
+          "left": 20.73569107055664
+        },
+        "artBounds": {
+          "left": 40.73569107055664,
+          "top": 131.63871860047848,
+          "width": 306.8125,
+          "height": 172.67378139952152,
+          "scale": 0.1835002990430622
+        }
+      },
+      "props": [
+        {
+          "id": "sloth-consultation-container",
+          "src": "/assets/production/v11/environment/sloth-consultation-container.webp",
+          "complete": true,
+          "naturalWidth": 1317,
+          "naturalHeight": 1194,
+          "display": "block",
+          "objectFit": "contain",
+          "transform": "matrix(1, 0, 0, 1, -0.85806, 0)",
+          "bounds": {
+            "x": 177.09506225585938,
+            "y": 217.515625,
+            "width": 57.5625,
+            "height": 52.171875,
+            "top": 217.515625,
+            "right": 234.65756225585938,
+            "bottom": 269.6875,
+            "left": 177.09506225585938
+          },
+          "scaleX": 0.043707289293849656,
+          "scaleY": 0.04369503768844221,
+          "visibleBounds": {
+            "left": 183.12666817841063,
+            "top": 222.45316425879398,
+            "right": 228.66966362260197,
+            "bottom": 264.4004004396985
+          },
+          "visibleBoundsInSource": [
+            775.9713627193543,
+            494.9008046957132,
+            1024.1616691204556,
+            723.4957247021417
+          ]
+        }
+      ]
+    }
+  ],
+  "movementSamples": [
+    {
+      "viewport": "desktop",
+      "method": "keyboard d",
+      "samples": [
+        {
+          "action": "walk",
+          "position": "23.63",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "25.27",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "26.90",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "28.54",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "30.58",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "method": "CDP native touch events on displayed move-right control",
+      "samples": [
+        {
+          "action": "walk",
+          "position": "23.63",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "25.27",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "26.49",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "28.54",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        },
+        {
+          "action": "walk",
+          "position": "30.17",
+          "src": "/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+          "complete": true,
+          "width": 1160
+        }
+      ]
+    }
+  ],
+  "assetEvidence": [
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "desktop",
+      "observedIn": "arena selection thumbnail",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "desktop",
+      "observedIn": "training arena background",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "desktop",
+      "observedIn": "training arena scenery",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "desktop",
+      "observedIn": "training arena background",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "desktop",
+      "observedIn": "training arena scenery",
+      "passed": true
+    },
+    {
+      "id": "hz_molly-legacy-2015-portrait",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "fizzarolli-bozo-award",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "oops-clown-mask-trophy",
+      "viewport": "desktop",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "mobile",
+      "observedIn": "arena selection thumbnail",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "mobile",
+      "observedIn": "training arena background",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "mobile",
+      "observedIn": "training arena scenery",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-s2-room",
+      "viewport": "mobile",
+      "observedIn": "training arena background",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "mobile",
+      "observedIn": "training arena scenery",
+      "passed": true
+    },
+    {
+      "id": "hz_molly-legacy-2015-portrait",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "sloth-consultation-container",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "fizzarolli-bozo-award",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    },
+    {
+      "id": "oops-clown-mask-trophy",
+      "viewport": "mobile",
+      "observedIn": "gallery detail",
+      "passed": true
+    }
+  ],
+  "referenceLinkGroups": [
+    {
+      "viewport": "desktop",
+      "id": "hz_molly-legacy-2015-portrait",
+      "links": [
+        {
+          "text": "Molly · portrait historique 2015",
+          "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "visible": true
+        },
+        {
+          "text": "Molly · portrait historique 2015",
+          "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "links": [
+        {
+          "text": "Mister Butler · portrait The Circus",
+          "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "visible": true
+        },
+        {
+          "text": "Mister Butler · portrait The Circus",
+          "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "links": [
+        {
+          "text": "Better Than Blitzo Guy · portrait Apology Tour",
+          "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "visible": true
+        },
+        {
+          "text": "Better Than Blitzo Guy · portrait Apology Tour",
+          "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "sloth-consultation-container",
+      "links": [
+        {
+          "text": "Sloth · conteneur de consultation",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "fizzarolli-bozo-award",
+      "links": [
+        {
+          "text": "Vitrine d’Asmodeus · BOZO AWARD",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "oops-clown-mask-trophy",
+      "links": [
+        {
+          "text": "206 Paint 00004 — trophée central de la vitrine",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "visible": true
+        },
+        {
+          "text": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+          "href": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "hz_molly-legacy-2015-portrait",
+      "links": [
+        {
+          "text": "Molly · portrait historique 2015",
+          "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "visible": true
+        },
+        {
+          "text": "Molly · portrait historique 2015",
+          "href": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "links": [
+        {
+          "text": "Mister Butler · portrait The Circus",
+          "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "visible": true
+        },
+        {
+          "text": "Mister Butler · portrait The Circus",
+          "href": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "links": [
+        {
+          "text": "Better Than Blitzo Guy · portrait Apology Tour",
+          "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "visible": true
+        },
+        {
+          "text": "Better Than Blitzo Guy · portrait Apology Tour",
+          "href": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "sloth-consultation-container",
+      "links": [
+        {
+          "text": "Sloth · conteneur de consultation",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "fizzarolli-bozo-award",
+      "links": [
+        {
+          "text": "Vitrine d’Asmodeus · BOZO AWARD",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "oops-clown-mask-trophy",
+      "links": [
+        {
+          "text": "206 Paint 00004 — trophée central de la vitrine",
+          "href": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "visible": true
+        },
+        {
+          "text": "Vivziepop — Oops, S2 épisode 6, plan large de la chambre à 10 s",
+          "href": "https://www.youtube.com/watch?v=y1sF6ZeASU0&t=10s",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "assetResponses": [
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-thumb.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-container.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-container.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/fizzarolli-bozo-award.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/oops-clown-mask-trophy.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp"
+    },
+    {
+      "viewport": "desktop",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/fizzarolli-bozo-award.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-thumb.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-s2-room.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-container.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/sloth-consultation-container.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/fizzarolli-bozo-award.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/oops-clown-mask-trophy.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp"
+    },
+    {
+      "viewport": "mobile",
+      "status": 200,
+      "url": "http://127.0.0.1:5180/assets/production/v11/environment/oops-clown-mask-trophy.webp"
+    }
+  ],
+  "screenshots": [
+    {
+      "label": "desktop-home",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-home.png",
+      "sha256": "4b83ef6caafc5028618b994ac6aad802ffd1be3fc20ab0ca1d3ca0ecd4271954"
+    },
+    {
+      "label": "desktop-sloth-consultation-selection",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-sloth-consultation-selection.png",
+      "sha256": "7feb9911ced298abd073b187101e277f97e0f79739a26baf3429069f85d48919"
+    },
+    {
+      "label": "desktop-sloth-consultation-fight",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-sloth-consultation-fight.png",
+      "sha256": "fd5f4bf159abb89de6f2d417030316b4e5ea24ef554bc7fc545fafeef87c23c1"
+    },
+    {
+      "label": "desktop-sloth-consultation-stage",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-sloth-consultation-stage.png",
+      "sha256": "bbf372acc7a945e2caba16b83f052fbc62c8e2b12d645e9f8bb75bc1d8605c99"
+    },
+    {
+      "label": "desktop-sloth-consultation-after-movement",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-sloth-consultation-after-movement.png",
+      "sha256": "4e00b3eba4912c04dd90d995b3cafdc44f1249b7d4cb6502658822f4e439e0a7"
+    },
+    {
+      "label": "desktop-gallery-art-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-hz_molly-legacy-2015-portrait.png",
+      "sha256": "ac338ee82d862515cfab48a70c503b0e1301a2a13c415fd1e884816e2fe2c9f2"
+    },
+    {
+      "label": "desktop-gallery-provenance-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-hz_molly-legacy-2015-portrait.png",
+      "sha256": "40638c24c0dd3a8e58d270913db2894aed376f51015050fc39e8456e5ebfce9e"
+    },
+    {
+      "label": "desktop-gallery-references-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-hz_molly-legacy-2015-portrait.png",
+      "sha256": "be40035fb883d75dc2a64fb889e49d1dfa0ee69866326eae84c9a9889c180b4d"
+    },
+    {
+      "label": "desktop-gallery-art-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "5f81bfd814e74eb4ee819fc817dc7005f3f15c27dc05dbd3c3d51a544b03a8aa"
+    },
+    {
+      "label": "desktop-gallery-provenance-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "9ed64e96a26a80a96b4a549c835cf7e1846711ae7df393d6ceaf1fb4f349bbd1"
+    },
+    {
+      "label": "desktop-gallery-references-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "9f16372e49de9242c41b1d092c0a403f4ba75272f7bcc44e056b29e1dd4bc632"
+    },
+    {
+      "label": "desktop-gallery-art-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "2b0a1ab63dbfc023da19b361902c9740ee1d68e3a75c1b150f6441604d2cd93d"
+    },
+    {
+      "label": "desktop-gallery-provenance-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "c9b82abd0401c6e3cec68ffd96b1a7d74fd5a16f357dd071a3de59e56aa59ab4"
+    },
+    {
+      "label": "desktop-gallery-references-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "f1d64a39283cc01559fe6cd1e40a6f59017a8b7cf153041c92a2a2d85c9431c6"
+    },
+    {
+      "label": "desktop-gallery-art-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-sloth-consultation-container.png",
+      "sha256": "62011a07b93916150fb129380d11121adbded85618391a2bf2b94e6c595ea4c3"
+    },
+    {
+      "label": "desktop-gallery-provenance-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-sloth-consultation-container.png",
+      "sha256": "0644752896c16ac27fb5772539e5a4a6d1bddf2416b9fbdd5bf10b4645842a1c"
+    },
+    {
+      "label": "desktop-gallery-references-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-sloth-consultation-container.png",
+      "sha256": "3561b7fdeafc134d53eb0b52f555b1c98c05f7d2b6501d29254e0adec18e7fd8"
+    },
+    {
+      "label": "desktop-gallery-art-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-fizzarolli-bozo-award.png",
+      "sha256": "89a8a9209c45a4b35847d640e54acc19dbe63032f6ba35e43ed9bce10ed04a1e"
+    },
+    {
+      "label": "desktop-gallery-provenance-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-fizzarolli-bozo-award.png",
+      "sha256": "0dc19f51934515a4e300eaaf197d366c68b809027fe48ce27ebb7602f76c5296"
+    },
+    {
+      "label": "desktop-gallery-references-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-fizzarolli-bozo-award.png",
+      "sha256": "13e6104dce8ca87ffc70ef0411c94a924acb9bf7e866698de9bf1747082ca09b"
+    },
+    {
+      "label": "desktop-gallery-art-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-art-oops-clown-mask-trophy.png",
+      "sha256": "19b5136013145542b4c42e8fb7905b224a7315d362504a06a742ae064c6416e6"
+    },
+    {
+      "label": "desktop-gallery-provenance-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-provenance-oops-clown-mask-trophy.png",
+      "sha256": "92119c2f20e40f1f9391098687f2acde029a02ca4dcc74fc68c402dc2a2d3ea4"
+    },
+    {
+      "label": "desktop-gallery-references-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-gallery-references-oops-clown-mask-trophy.png",
+      "sha256": "4e28c278bdb2aaccfc3dabd81a37064bb2c2fe0ec71e079f7862463d11185856"
+    },
+    {
+      "label": "desktop-crymini-2017-provenance",
+      "internalPath": "/tmp/infernal-v11/browser/desktop-crymini-2017-provenance.png",
+      "sha256": "b40e0cd6d57433e5390f7a28ea4cd9a05ce9f7d8d90001b5c50d428cbcbd4b62"
+    },
+    {
+      "label": "mobile-home",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-home.png",
+      "sha256": "658d6c7361ffe06ee6b1d4728c1214e0cadf33de90f13743ffb37667fcc27b3e"
+    },
+    {
+      "label": "mobile-sloth-consultation-selection",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-sloth-consultation-selection.png",
+      "sha256": "488971b35fd973067b69792d60ef4c980171a4c9e0e1787afcc59055bb4c8f2b"
+    },
+    {
+      "label": "mobile-sloth-consultation-fight",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-sloth-consultation-fight.png",
+      "sha256": "780d7f23398728dd4576f261035bd67a0fa7ac2016489b394bcafaaa0294161e"
+    },
+    {
+      "label": "mobile-sloth-consultation-stage",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-sloth-consultation-stage.png",
+      "sha256": "882d12f3b743b62beb678058a52fe116a845f30f932b3b7a517e2e0d0cdc87b5"
+    },
+    {
+      "label": "mobile-sloth-consultation-after-movement",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-sloth-consultation-after-movement.png",
+      "sha256": "bec2eb4779c7a4097f7beb327b9bd660c5072931acf2677470f9acf3c691bb01"
+    },
+    {
+      "label": "mobile-gallery-art-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-hz_molly-legacy-2015-portrait.png",
+      "sha256": "c4436ac19a02ac1b51d16a4aefa320467deccd9eb53e3694505e7d20b344aff5"
+    },
+    {
+      "label": "mobile-gallery-provenance-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-hz_molly-legacy-2015-portrait.png",
+      "sha256": "5809c60da993d8ece23fee64249fdac3edc56d57806923a02e62ed116dbb9b7c"
+    },
+    {
+      "label": "mobile-gallery-references-hz_molly-legacy-2015-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-hz_molly-legacy-2015-portrait.png",
+      "sha256": "14a88f162f205465d7882c2c2aeb50081f4c232c79cac65e02a4dc36b574c43f"
+    },
+    {
+      "label": "mobile-gallery-art-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "0c8d874e8a32f6edab3eb33b8d1c227e45b9d0cc470dc18f8dbf910a52d005f8"
+    },
+    {
+      "label": "mobile-gallery-provenance-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "982abe70321d89694f6231e2b6882b383fe3dda9ca7b6bc111ab82e1908b047b"
+    },
+    {
+      "label": "mobile-gallery-references-hb_mister_butler-circus-s2-portrait",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-hb_mister_butler-circus-s2-portrait.png",
+      "sha256": "7b44ea473b0489194c013e2f4c5d8b475f0c43e3462c5ede9d4ab1ad7bef3cfe"
+    },
+    {
+      "label": "mobile-gallery-art-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "71228fa122f2b5484f084cd0768a20e84c5790cdf97355babb9aa1c1189704d0"
+    },
+    {
+      "label": "mobile-gallery-provenance-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "89c68d715d054a213f0075375a183d696bea630f414b03ec700d5da27de04697"
+    },
+    {
+      "label": "mobile-gallery-references-hb_better_than_blitzo_guy-portrait-s2",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-hb_better_than_blitzo_guy-portrait-s2.png",
+      "sha256": "6d9de2599500963b4898a05eb2d3c8aa29da8bc6ff8f45d26c2e813e5d752e0b"
+    },
+    {
+      "label": "mobile-gallery-art-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-sloth-consultation-container.png",
+      "sha256": "1f2a3dc725159c44a39e1b697680f73e80b317b297ec3a7297cffc776ae77b4f"
+    },
+    {
+      "label": "mobile-gallery-provenance-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-sloth-consultation-container.png",
+      "sha256": "2ee65426a1842e09c3173232508b7038edbca0fb796b1be313308c7f1cd8c904"
+    },
+    {
+      "label": "mobile-gallery-references-sloth-consultation-container",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-sloth-consultation-container.png",
+      "sha256": "20cb41ab2a76ee90231fa386e8d65488f8b70612134ba8ac91f29480e4658b79"
+    },
+    {
+      "label": "mobile-gallery-art-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-fizzarolli-bozo-award.png",
+      "sha256": "a55e2838c18b3020c3b7178225ee447e3b6f104691f724f52d530c38d64fe12c"
+    },
+    {
+      "label": "mobile-gallery-provenance-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-fizzarolli-bozo-award.png",
+      "sha256": "dd45fb38938d2fab176abb70e8705bf8d862d6742d10ba71c35e15220968e1f9"
+    },
+    {
+      "label": "mobile-gallery-references-fizzarolli-bozo-award",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-fizzarolli-bozo-award.png",
+      "sha256": "737a437940a39fb59aeda2eea52d1eb0d269a41ad8601a36a8cd39f38fa20fef"
+    },
+    {
+      "label": "mobile-gallery-art-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-art-oops-clown-mask-trophy.png",
+      "sha256": "89c7a209cf58544307959069ef79ba73282f8fc0b608077041105708fd2e2877"
+    },
+    {
+      "label": "mobile-gallery-provenance-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-provenance-oops-clown-mask-trophy.png",
+      "sha256": "61b11875c3d0415718bedcd8a44c88d7e61294ae86e58b4abe02510f51701a58"
+    },
+    {
+      "label": "mobile-gallery-references-oops-clown-mask-trophy",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-gallery-references-oops-clown-mask-trophy.png",
+      "sha256": "0bce8052be0b50db2d26621b0ddd8512824bb05f4d7cb6bb459ca2df0623f52b"
+    },
+    {
+      "label": "mobile-crymini-2017-provenance",
+      "internalPath": "/tmp/infernal-v11/browser/mobile-crymini-2017-provenance.png",
+      "sha256": "c6558b463333504da5b422e0e3a824621c6731938f582975d0d46001854aaf9c"
+    }
+  ],
+  "recipe": {
+    "path": "/tmp/infernal-v11/browser/recipe.json",
+    "sha256": "eca7efa3d15a822886a2c4ec716c1f6f1a041d52ec9ff099c62df9cc57a734bc"
+  },
+  "runtimeFilesBefore": [
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "2bcdd7812191a3c5bc9c27916e9db17a40affda85a46cfef877d35890ba91b3e"
+    },
+    {
+      "path": "combat.html",
+      "sha256": "cbefe525311252f82ad15b125841c61613623b557723aea0cd92da731020094d"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e00b540ef924857bd308c8168294091d641a8401f8677be2f3a619fc58b3461f"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+      "sha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+      "sha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+      "sha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+      "sha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+      "sha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+      "sha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp",
+      "sha256": "b7b3963458eae6ff869a015e7d186d22eb3030f3168b21dcd3f9cc8b2269636d"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-console.webp",
+      "sha256": "5637edde69fd2c439ca76c8d8e3b52e44200732c12412fa1ae80f9902155c8ca"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+      "sha256": "175eeebf55b4ff5ab938314fbd7eb3cfe7c1357c7a38d99bbebd3100bc0d570e"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp",
+      "sha256": "55257c9e538c3f720dd8eddbc5bffe60f53f3745836c2021098d7e7f6a0cb17d"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+      "sha256": "19781e8dcae0ecb1a6ae6910fa96464b05a6108cd4d39c51a53c8a3806efe0a8"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp",
+      "sha256": "b1da9452d5bf3d6864299ce24872ebdf8feb6c72d3d807342dec70492d8bfd48"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp",
+      "sha256": "fba024e005b3432597b7f05976fc1f4c3345959e60a212e3fbbb333b9640042b"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "sha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "sha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "sha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781"
+    },
+    {
+      "path": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "sha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9"
+    },
+    {
+      "path": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+      "sha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+      "sha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "sha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+      "sha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "fa394ec5f78cd0ef97e42dbb15d35ab1d6dc42d290052597db2602fddbb4be06"
+    },
+    {
+      "path": "src/cloudAccount.ts",
+      "sha256": "0f5d979f8951c4103d143c32ed440a91a83a82d4beaf6309674514b31014b991"
+    },
+    {
+      "path": "src/components/CanonBadge.tsx",
+      "sha256": "4da5c555a528df444eb4713acb880a1e95162c2c2d391e0d59c6ed1626a3a44c"
+    },
+    {
+      "path": "src/components/ConfirmDialog.tsx",
+      "sha256": "f7d7daba61792c1354feb938edcc41b89e1c4722954fd18913125c3f64a9165d"
+    },
+    {
+      "path": "src/components/ContentPackCard.tsx",
+      "sha256": "ca99b9125848e409adc6af83e09c7c6ccc2d588df337358dbd144c5272524fd6"
+    },
+    {
+      "path": "src/components/HazbinAtlasGallery.tsx",
+      "sha256": "3e3889b27d8f45847af37f0cad71683eb151c90dca428b1e9aa115d38b6e8e10"
+    },
+    {
+      "path": "src/components/HazbinRoster.tsx",
+      "sha256": "3a4c170c637ad91b714886f7c60f081ff6dc07434462e807c4d6ffedfb70f476"
+    },
+    {
+      "path": "src/components/HelluvaAtlasGallery.tsx",
+      "sha256": "bfc97c7bef997b6fd3ec7ed30db734bfa29cf4a34856dc6e83a44e4589bb4ddb"
+    },
+    {
+      "path": "src/components/HelluvaRoster.tsx",
+      "sha256": "ba28953d9faab8377f3a746488ab214abbb1de87dc4af4a11a8f1c149f99832d"
+    },
+    {
+      "path": "src/components/HotelOpening.tsx",
+      "sha256": "4c76433b83215a854ccb79fea55e63e022abc4ce742de96581a34001472a88bf"
+    },
+    {
+      "path": "src/components/InfernalAttackEffects.tsx",
+      "sha256": "1ce3a9bc623514d6af4c0c7b02b50f55f68138b0beb930026cf151db4ebf5864"
+    },
+    {
+      "path": "src/components/InfernalMoveList.tsx",
+      "sha256": "a16f4db3b6454f84fe8b4b0beb5b6616507f2efa7d38845e73c26f12e1d58b57"
+    },
+    {
+      "path": "src/components/InfernalStageLayers.tsx",
+      "sha256": "efc2da3a43f5f1624ab307b89abe4b3d63f841259f4cde48a5e2f72e37e77ed8"
+    },
+    {
+      "path": "src/components/MissionCompass.tsx",
+      "sha256": "e19c5d358936a737ad686487925f203fce3e8d0d61b6d242cb3d0b5cf13bf9a2"
+    },
+    {
+      "path": "src/components/PentagramLiveFight.tsx",
+      "sha256": "7a888c904f8a80ee3325613d7bf19891ee3f19b063c97c4655a348b87ae574d1"
+    },
+    {
+      "path": "src/components/PentagramStageSpectators.tsx",
+      "sha256": "f691fea129a829a4b52351049260883483df1eba47d8733b22d4877bd35d0a48"
+    },
+    {
+      "path": "src/components/ProgressiveText.tsx",
+      "sha256": "b7857296d3b68fc6b901e996a34b7b9e7b44a84636b0caa27a796ce8355404f3"
+    },
+    {
+      "path": "src/components/RiskBadge.tsx",
+      "sha256": "dbc6bfee7b6dbc87220477f70f26ca9fec6b1e7f3ae49c6710be9d0033e54589"
+    },
+    {
+      "path": "src/components/Sidebar.tsx",
+      "sha256": "5b52d09ecbc7023d5a05957cd2ea597aeb371eb8424f8b1a5e3f67eec53e156e"
+    },
+    {
+      "path": "src/components/SpoilerBadge.tsx",
+      "sha256": "7cafbaaa58bb56bd3313958cea98711958b7086d19cac94bb65c40ef3884f6df"
+    },
+    {
+      "path": "src/components/Topbar.tsx",
+      "sha256": "e11df73213d475c29333a097990adb82119d93f8ce9083206d12b545d5702d13"
+    },
+    {
+      "path": "src/components/useDialogFocus.ts",
+      "sha256": "18fee03ed0905156f7626f1ffcfcf3cabe64b277f687fde6a2599a830047b26f"
+    },
+    {
+      "path": "src/components/usePentagramCombatSoundtrack.ts",
+      "sha256": "da8d760b9068bf6cac558c6352060d1e06dbb1b47cbef0a661126ad08e784b7a"
+    },
+    {
+      "path": "src/data/hazbin-directory.ts",
+      "sha256": "76b0df014ec201ec00d3aef4b139f6e861843836c98b65f836f58ef8eec307d7"
+    },
+    {
+      "path": "src/db/localDb.ts",
+      "sha256": "80e2cf2e518078a2ba399570f6892e8fa22e067cbaae41fe650f0210936899c6"
+    },
+    {
+      "path": "src/db/seed.ts",
+      "sha256": "c6ac0036f6d14703ad79ac48782cb81a519cafcd7d68154b6290cda8a5a737d0"
+    },
+    {
+      "path": "src/expansions/helluva-boss/data.ts",
+      "sha256": "fc0fd7b783f3f91a4c294a8d333cdf311cebd577a77bd55b4afe578731eecfea"
+    },
+    {
+      "path": "src/expansions/helluva-boss/engine.ts",
+      "sha256": "8628fa5615ff1fe321ceb4e5c468417d6746446e9f408b3ab957d7fbdbf9771f"
+    },
+    {
+      "path": "src/expansions/helluva-boss/spoilers.ts",
+      "sha256": "46ecffcfa589c6cceb90c25c3c59050b0a9871ad650d2c35a6e39a616c348a4d"
+    },
+    {
+      "path": "src/lib/campaign-day.ts",
+      "sha256": "e8234c158e8eab900d7674d791e415cdff819c86a653decc1f35ca30c1004844"
+    },
+    {
+      "path": "src/lib/character-sprites.ts",
+      "sha256": "6240c0427fa453f85720333862956aa697f3f95ef4c78d3a5742e2d9d12a0970"
+    },
+    {
+      "path": "src/lib/export-import.ts",
+      "sha256": "89c78a9c9e59ea5c6dd44c3359ea707ea59d1c69f53dd84bde13f5ecd37a3b26"
+    },
+    {
+      "path": "src/lib/first-arrival-tutorial.ts",
+      "sha256": "34a5f783086b654e654016c7631d78d89829281465388cac82284e4da2bfd6c2"
+    },
+    {
+      "path": "src/lib/hazbin-arena-fighters.ts",
+      "sha256": "87f5a79721bf1853e9d59614b4f7873987ad16b66fe63b3e33ccf64505f9c55f"
+    },
+    {
+      "path": "src/lib/hotel-operations.ts",
+      "sha256": "081430f0191837c3e65c199e912e6c7d26746f883332c3d34a9106c2462c784c"
+    },
+    {
+      "path": "src/lib/hotel-prologue.ts",
+      "sha256": "0b755e1b6ef00b223b25cacbb360e8e670db50924f47462693d16f56972be919"
+    },
+    {
+      "path": "src/lib/hotel-shift-resolution.ts",
+      "sha256": "53cc59ff965667fbe9d5baeaddf80ce69b7aec91accaac5f14fbcfee7c3183c8"
+    },
+    {
+      "path": "src/lib/hotel-shift.ts",
+      "sha256": "7013ded6ca80e274dc7075d468e8dec235d511d1ec086f2f0c85f200f594820c"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "47c59df1445d5829d34c02a645cf92e9e938f6fdcf106e2f938ae7afa0604094"
+    },
+    {
+      "path": "src/lib/infernal-attack-effects.ts",
+      "sha256": "7c40d6b61c0ef3bd32c6b849d174620163af435b06a6ff5607eed6a43ef0b661"
+    },
+    {
+      "path": "src/lib/infernal-costumes-v8.ts",
+      "sha256": "a9b83e87375c05fe2e68b4d4fbf3bb5ca39e458794326a546d8569bed03b7cb2"
+    },
+    {
+      "path": "src/lib/infernal-finishers.ts",
+      "sha256": "53bb87b5ce59214075aee5cd95f5e178f2a769d88e3ed6b34ee138ab1cc25f03"
+    },
+    {
+      "path": "src/lib/infernal-pose-anchors.ts",
+      "sha256": "525feecb75716361b53f4f6cfe09f3e296d26b8fabcbf7fbe242f5628d555161"
+    },
+    {
+      "path": "src/lib/lore-validation.ts",
+      "sha256": "a57edcef3abd94b2a9f909a10b06a93b4edf33f44988e395bde20c5ca978059c"
+    },
+    {
+      "path": "src/lib/mission-compass.ts",
+      "sha256": "61047709cfda6153222b4d1de0827fdc0c72073e158c8601cb85465beee704e9"
+    },
+    {
+      "path": "src/lib/onboarding.ts",
+      "sha256": "b10ec05af3e22b5141e05e457cfc015bf6e3b73ef4d437409c13e0db72172523"
+    },
+    {
+      "path": "src/lib/pentagram-ai.ts",
+      "sha256": "9730f337b7f1e9afc4a2fee7213bb3a92114dbcb3499f91f971390fb60b96eab"
+    },
+    {
+      "path": "src/lib/pentagram-animation.ts",
+      "sha256": "2aae433933448991f16c0d052b691b5d87a061e4fb254cc31402ea488e640dfd"
+    },
+    {
+      "path": "src/lib/pentagram-cinematics.ts",
+      "sha256": "ecc4d1395de8593dfa01dc9c6e43d3c8795946eb56e127dc9c3d54d24901a9cf"
+    },
+    {
+      "path": "src/lib/pentagram-combat.ts",
+      "sha256": "b3156ab54f090446a09c99a1d0b77c2b5b3fcdcc5a60bc27a4f908d4b83d4522"
+    },
+    {
+      "path": "src/lib/pentagram-fighters.ts",
+      "sha256": "2bf2a649e2385581e9c5ba86b4e24b68fe24e5f286e23549a1e4df93d83311a6"
+    },
+    {
+      "path": "src/lib/pentagram-soundtrack-worker-client.ts",
+      "sha256": "83a600158875394774a770341dc0524133dd7e745c6c9c15e3a5686241888084"
+    },
+    {
+      "path": "src/lib/pentagram-soundtrack.ts",
+      "sha256": "ba887d00bf279c6d031ba73e119e7ec605006f9042a91dd1371d66fdfc452cb5"
+    },
+    {
+      "path": "src/lib/pentagram-spectators.ts",
+      "sha256": "bfabec0d73860164ef08038afba008ea8248093cd45de0f8a91bf785a27c58bc"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "c4f92bf560f2393acb1dd52a874d85193c484b1d5189bc262676daf6b5fe39ee"
+    },
+    {
+      "path": "src/lib/rules-engine.ts",
+      "sha256": "e6a0f9ec47a4e8e1e6e32832be4b37114dd894bdefcd041a1f28ed8f100adfd5"
+    },
+    {
+      "path": "src/lib/sprite-animation-registry.ts",
+      "sha256": "871c053bdb525e19f6e7e90a5d3b44d27f8f24673ba71cff552b88e9dfea03bf"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "4b67d4405109a8312669246cb4bd73137052388652e62bf0c5222243642fad02"
+    },
+    {
+      "path": "src/pages/Characters.tsx",
+      "sha256": "baf0faa7543a5287375f399f629c07e65f3854e779cce2e861b5eb4dd529d0ce"
+    },
+    {
+      "path": "src/pages/Dashboard.tsx",
+      "sha256": "0ce76e825ba81385d3663988b5515f537d55531acb6351ef7bf4b8380fb9d9fe"
+    },
+    {
+      "path": "src/pages/Extensions.tsx",
+      "sha256": "f3cccfbb2954784dd23d1a6bdf4d107841582e5ab699c24a25201ad509d462a2"
+    },
+    {
+      "path": "src/pages/FirstArrivalTutorial.tsx",
+      "sha256": "3089280e9ee3352db775424fa70f9361a5806ac34edc7ede62d73ba00e08be33"
+    },
+    {
+      "path": "src/pages/HelluvaBoss.tsx",
+      "sha256": "b73a0ffb58edfcfe1f4c413de59da9c373fdfda14163232f185affcb028e6694"
+    },
+    {
+      "path": "src/pages/HotelShift.tsx",
+      "sha256": "471ec6083050ef678ca93507befdcf9915477b5679125a78330aeef7015c106d"
+    },
+    {
+      "path": "src/pages/Incidents.tsx",
+      "sha256": "d00ec1b5acc327b8df899ada192b94e4a1b613b1de47cc434ad4ab2624dcea2e"
+    },
+    {
+      "path": "src/pages/LoreCodex.tsx",
+      "sha256": "9e860143860ef6b55959c320ef8e83083baca7b47c5c676b7ef197f03266ff86"
+    },
+    {
+      "path": "src/pages/PentagramArena.tsx",
+      "sha256": "25af38c233669e753999e016951af1eecb91f5ca6dc4cb405307cfd302fc6de5"
+    },
+    {
+      "path": "src/pages/Rehabilitation.tsx",
+      "sha256": "fa80752f889b972835877bca3efbef2d09f6926c5d39d1e9a20b617fd987762f"
+    },
+    {
+      "path": "src/pages/Relations.tsx",
+      "sha256": "b86a09bf0b01a6555c74dbeb52deef9315703eb9d68479ba0118a13d8cf99b41"
+    },
+    {
+      "path": "src/pages/Reputation.tsx",
+      "sha256": "4600b56de9a6d63c767a1cb0a47b459c4655a1b102376935982a57964ca47d15"
+    },
+    {
+      "path": "src/pages/Resources.tsx",
+      "sha256": "5b3712b0f4a7053343201e58ead0e3f477ed80a8cb6921f65cc35efaf291d833"
+    },
+    {
+      "path": "src/pages/Rooms.tsx",
+      "sha256": "a960de39aa8878dd4248d3e1a24d543316f9ecfee03bda5860f86ceee895fb7c"
+    },
+    {
+      "path": "src/pages/Settings.tsx",
+      "sha256": "cb453fbad6bd61e247fe384725d84b0029505fd1f265043873b6712f01391bae"
+    },
+    {
+      "path": "src/pages/Staff.tsx",
+      "sha256": "10619ef15df4e46c320862a2bf9b7d0055d5fd9e329ed98e528ae38d195bfe26"
+    },
+    {
+      "path": "src/pages/Timeline.tsx",
+      "sha256": "1f5771dc803e6a115cb18b4f76da1da829f718ca903acd8fd452d65939e69902"
+    },
+    {
+      "path": "src/standalone/InfernalVersus.tsx",
+      "sha256": "ad81bf917dbff77b23b6bf8883b3624d3c12a755ff7f33594c2532f1aade1928"
+    },
+    {
+      "path": "src/standalone/NarrativeCollection.tsx",
+      "sha256": "9803f1530611de700c2dca16c9ce4659c6d5b8d09ab453f09542687959c7a2ea"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "f281f8f7ca094779124b81bd46d898231944ef110d9fa14aaaf2c5a11d8ee08c"
+    },
+    {
+      "path": "src/standalone/RunInterlude.tsx",
+      "sha256": "c6936564e1aac6cdb5d3fe1f4ee34481071e19ef28ff6160fe9e04e5eb57c65a"
+    },
+    {
+      "path": "src/standalone/campaign-global.ts",
+      "sha256": "28e70c580345c0cf5494b4f40c471dfd0a4b358f3c837347cb95d5b5ee686549"
+    },
+    {
+      "path": "src/standalone/campaign-illustrations-v4.ts",
+      "sha256": "576a0e74cd1b60fa6d67dbe6a96ac7db8c37c702e384c02eb800937ba9b916bb"
+    },
+    {
+      "path": "src/standalone/campaign-legacy.ts",
+      "sha256": "085fcd34e3a3c6eff78d2d52ac13c26112866e23da1bf76ba9ea83e20c06a05a"
+    },
+    {
+      "path": "src/standalone/campaign-v3.ts",
+      "sha256": "e536e004d302a2826e955e2892eb9bd32a1f856d16594c20bac5eff64ccb50ea"
+    },
+    {
+      "path": "src/standalone/campaign.ts",
+      "sha256": "db9d1a3756a49cd5219d5702ee9b467f70a2e580aa40572625354e4d75935627"
+    },
+    {
+      "path": "src/standalone/infernal-versus.css",
+      "sha256": "d4a4d288006958616ea4d7bdb0cb224659990c9b29390a74c7c01c89cef39a3f"
+    },
+    {
+      "path": "src/standalone/main.tsx",
+      "sha256": "36d436d0ce722abf7cedcea18aeea4f8a125ad52f956367695b10ac0192b5810"
+    },
+    {
+      "path": "src/standalone/progression.ts",
+      "sha256": "ab6522c73db62c64c0cc7991af88963ec8231b97967f539e4a1d119286420282"
+    },
+    {
+      "path": "src/standalone/reserve-gallery.css",
+      "sha256": "d6aacae45122dd695d0dd2aa47bcfe8b2e1562f2890df5f17aa8f3a903f90a8f"
+    },
+    {
+      "path": "src/standalone/roster.ts",
+      "sha256": "3b196f488f1c23ea6d9e501a441c2135fc59985b0f2a7ded706c91bb26463c69"
+    },
+    {
+      "path": "src/standalone/run-interlude.css",
+      "sha256": "a62cb2268ac8a7a79b285ff1a3debc38d303d38e49594a7372adc0e7bd97b5b7"
+    },
+    {
+      "path": "src/styles/first-arrival-tutorial.css",
+      "sha256": "c2bf69de5cfd162555ae8d16a7ca8da78bc80ff540881399c25708ed3280f326"
+    },
+    {
+      "path": "src/styles/hazbin-directory.css",
+      "sha256": "aebc18b26320e8f05fb66ab288ad11873920dbbb3564ddf5ff26b473282268c1"
+    },
+    {
+      "path": "src/styles/helluva-boss.css",
+      "sha256": "0f3a374c786262bef33834209624ebef213a85aeb02307b23c1b4dfdf57b8079"
+    },
+    {
+      "path": "src/styles/hotel-opening.css",
+      "sha256": "af0efb134e6526cf357fcfdd50d27734d916145e158995b3cdd5bae6f38cef4c"
+    },
+    {
+      "path": "src/styles/hotel-shift.css",
+      "sha256": "de489e76f3567740d974b2ac352babc52070a27fbf421524cd63803261f1ff84"
+    },
+    {
+      "path": "src/styles/infernal-attack-effects.css",
+      "sha256": "86c1b216be70871aefc2e7d1474bf9ee8fd9622d5cd76af98fdd1882ca67f287"
+    },
+    {
+      "path": "src/styles/infernal-authored-poses.css",
+      "sha256": "f6dbe4ef390f5ab19790d7fb6cc98cee157fa6cc7950b47e9f3ccf69137c966a"
+    },
+    {
+      "path": "src/styles/mission-compass.css",
+      "sha256": "2f6f03441494fa5c7d1e3d2777d2ae197fe12d138ff5e748515e41b164aa31df"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "b55e14ecc9674e41c2f8611a878b4758f32de666751593aba25863328da33d68"
+    },
+    {
+      "path": "src/styles/progressive-text.css",
+      "sha256": "69ee94395069b194d30eefdcb58f0f305cf6198620d7f1e142b4d220e0a3590b"
+    },
+    {
+      "path": "src/styles/theme.css",
+      "sha256": "2a8ad31eb3360ee87a64fc0c2301acbd58af643d2c20d734ac27dad0360b6087"
+    },
+    {
+      "path": "src/tests/accessibility.test.tsx",
+      "sha256": "f837da0faa604304edf8577e2805f3aacc191cc716c72aa888b8996ac615d0ad"
+    },
+    {
+      "path": "src/tests/active-gameplay-gates.test.tsx",
+      "sha256": "26f2feabac5c12421f9ef669b44c27d248b9723727582115b6d8812a4542f918"
+    },
+    {
+      "path": "src/tests/campaign-day.test.ts",
+      "sha256": "88486434a38878649323a362e829a1d877e623f4cb0e9ba451a805346a9d5b4b"
+    },
+    {
+      "path": "src/tests/dashboard-hero.test.tsx",
+      "sha256": "c44f8a61a43b99946f076981d5074fc1d4ed0f6c749d7c5f857d3f3730ef07cc"
+    },
+    {
+      "path": "src/tests/data-integrity.test.ts",
+      "sha256": "4406865cedb014c06b710baa3d21bacb080c3d48b892221e02629b2c528036ce"
+    },
+    {
+      "path": "src/tests/first-arrival-tutorial.test.ts",
+      "sha256": "b14af54a10bcbb31a2c515330827876edb9ed2bf3d9129b2b841e59c4efa1821"
+    },
+    {
+      "path": "src/tests/gameplay-safety.test.ts",
+      "sha256": "d41b105ab9d2579bbc0da33f65eed262ad6b3e5e4070e619bfbe52101abe3709"
+    },
+    {
+      "path": "src/tests/hazbin-animation-banks.test.ts",
+      "sha256": "07c9472d906932f21c69f554529e3249a6b5c31ccb5e7a70565a24e58a27e5fe"
+    },
+    {
+      "path": "src/tests/hazbin-arena-fighters.test.ts",
+      "sha256": "b537c0c4b92ecc0d0ac58561726af69ad997f040428283e6ff96c02724ce21d5"
+    },
+    {
+      "path": "src/tests/hazbin-cinematic-banks.test.ts",
+      "sha256": "441856e809e898b2f9b52a6501148ed1b94d99b52f125aaecb85994e77fe0a21"
+    },
+    {
+      "path": "src/tests/hazbin-directory.test.tsx",
+      "sha256": "438964f6d25f9f1aafbd75c289758dc3cc3258a41afe9ef69df43e461e4a49e0"
+    },
+    {
+      "path": "src/tests/hazbin-sprite-manifest.test.ts",
+      "sha256": "9418b72aa9eb542da49142b2082bf7e30a8ce46fb85b34414eccdc0f2b14f59d"
+    },
+    {
+      "path": "src/tests/helluva-animation-banks.test.ts",
+      "sha256": "0ec8af3725a1849f25200ae2ffece971c407c320dfef2c79346a17b2d357d4dd"
+    },
+    {
+      "path": "src/tests/helluva-directory.test.tsx",
+      "sha256": "55e0cca8856c07ff93e8a7e04f615cb84f3f94fb20a940e4b1f30b77cd340e1a"
+    },
+    {
+      "path": "src/tests/helluva-expansion.test.ts",
+      "sha256": "3e13a23a59dd89f6ff7141dc72be8a162213facc680d9bdeebd536f1da0304bc"
+    },
+    {
+      "path": "src/tests/helluva-spoilers.test.tsx",
+      "sha256": "e47c7273b531d45306a58e5a6befd136146307c7321a5137ff91e045e8d3102f"
+    },
+    {
+      "path": "src/tests/hotel-operations.test.ts",
+      "sha256": "5b8032287a2ff1fcd6c0a729bfa1986ff04f24096c0812de686c0230c393f558"
+    },
+    {
+      "path": "src/tests/hotel-prologue.test.ts",
+      "sha256": "618663b1a3243192c0d4476ef24221a5adfafae8437a5e9cfa50e8b7557d5cf0"
+    },
+    {
+      "path": "src/tests/hotel-shift-resolution.test.ts",
+      "sha256": "742918d408c9bcf2851849f75b8054543a44d0870b99e4ec33d6113f0ba4ccfa"
+    },
+    {
+      "path": "src/tests/hotel-shift.test.ts",
+      "sha256": "7e2f5fb9eecd2f5a78a47c760ba0099ef430ac82566cc5b8cec758c4b99e0dc1"
+    },
+    {
+      "path": "src/tests/infernal-attack-effects-live.test.tsx",
+      "sha256": "cc2b37360791aac727e1c88c36831af5a79c036d63a0e307a645f5293cc1f1f7"
+    },
+    {
+      "path": "src/tests/infernal-attack-effects.test.ts",
+      "sha256": "b6ffe1a12977b4789d5057a32af30024ee49513995a0145e0b761c0c45a5b450"
+    },
+    {
+      "path": "src/tests/infernal-authored-poses.test.ts",
+      "sha256": "9af7a37ebc0ff6dc88c1f2d0947a118f71d22097238cae6c7463ffc87db8920d"
+    },
+    {
+      "path": "src/tests/infernal-pose-anchors.test.ts",
+      "sha256": "58ff092db40adf7dff769aa6a4026f646965c244da45186765d235594b25c3a1"
+    },
+    {
+      "path": "src/tests/infernal-production.test.ts",
+      "sha256": "a7b213601e064db045ad81885bfb3efd251d632b8dc74d662954d3bc178c44c8"
+    },
+    {
+      "path": "src/tests/infernal-signatures.test.ts",
+      "sha256": "630b5dc352bb771026cb99f60a18baedd7d7aa62ba957575ef2b89c49aef4303"
+    },
+    {
+      "path": "src/tests/mission-compass.test.tsx",
+      "sha256": "c8e8fb79d138132b0833825fc7239240062a0946a9e27bdae06f280c896cecdf"
+    },
+    {
+      "path": "src/tests/onboarding-ui.test.tsx",
+      "sha256": "6bbba66d9681d165e530da1252844d8df17f418646897ab980e6712edc3b2b19"
+    },
+    {
+      "path": "src/tests/onboarding.test.ts",
+      "sha256": "1d3969e9f9ea589c48724fe93bc920eefcf3b699fb3d0bf5e72f05857522fc82"
+    },
+    {
+      "path": "src/tests/pentagram-ai.test.ts",
+      "sha256": "631ede26cc7e79368604d4af7d45bbb5687ae9e0dca09f80473da657979d72b2"
+    },
+    {
+      "path": "src/tests/pentagram-cinematics.test.ts",
+      "sha256": "e41096976b017ec2f11767510f791c906eaf71e3adc3dec2d24cc4d9c30a8473"
+    },
+    {
+      "path": "src/tests/pentagram-combat.test.ts",
+      "sha256": "7fd8c83cd783e385bc019851cdc0b32216a2e177bd11e4e363631e7b81109808"
+    },
+    {
+      "path": "src/tests/pentagram-fighters.test.ts",
+      "sha256": "8eb1b7bfc7fabc0c2d643a17a4a9ef205814c3f7be4711ae8172fe570d131639"
+    },
+    {
+      "path": "src/tests/pentagram-live-inputs.test.tsx",
+      "sha256": "e9e28f3ccb7581dab34af76ad17ac1096731f73ce468d221bc1a74b12a6ed3e1"
+    },
+    {
+      "path": "src/tests/pentagram-soundtrack-hook.test.tsx",
+      "sha256": "e2b689dcf38c02df7cedea957583de9e1dd27fe43ea9e57d377432abd03216be"
+    },
+    {
+      "path": "src/tests/pentagram-soundtrack-worker-client.test.ts",
+      "sha256": "5889de092bf60e206e4b0a0e510281b83228944d3f5339ddc3f47a177de08817"
+    },
+    {
+      "path": "src/tests/pentagram-spectators.test.ts",
+      "sha256": "531b19c23c67781fbb43e54b8e58fc1e6005164eec022ca77a30bc5ea084b717"
+    },
+    {
+      "path": "src/tests/pentagram-stages.test.ts",
+      "sha256": "2befebbb0d23b4380932db19e03ea7d34c7fe46ddce2e91f1b91c64530818a1a"
+    },
+    {
+      "path": "src/tests/rules.test.ts",
+      "sha256": "9b417129f9311686d4b82aec5f41b68e4ed49f6956542fb20afa2d7f0aadab57"
+    },
+    {
+      "path": "src/tests/standalone-campaign-cup.test.ts",
+      "sha256": "c6f329b192933cd6336ae60f03ade113436552ef9c4365f40336e8abc7ac80c8"
+    },
+    {
+      "path": "src/tests/standalone-illustrations.test.tsx",
+      "sha256": "52c05b8d50cdb1ff9e6abc652ef6a5435d75f249c95cd23c0a5232299111913c"
+    },
+    {
+      "path": "src/tests/standalone-live-fight.test.tsx",
+      "sha256": "4bc3c4f15789508e89a0352394b4bf8378b1e7fb30efa640a78360eb2a19568d"
+    },
+    {
+      "path": "src/tests/standalone-narrative.test.ts",
+      "sha256": "3942ccf7dc9ecc3327e18efe1f94a5881630f3d61044dcfd8cabfce991ee7b48"
+    },
+    {
+      "path": "src/tests/standalone-progression.test.ts",
+      "sha256": "c471024fbc7812d104f54e2db72d3150b8e04cd0d059e9dfa5a3201fb5a03850"
+    },
+    {
+      "path": "src/tests/standalone-roster.test.ts",
+      "sha256": "711b383aa4f5d47e1234ee9530eacbf6570f77afc3791dad69195efea6fb6939"
+    },
+    {
+      "path": "src/tests/standalone-season-three.test.tsx",
+      "sha256": "dfbd0e2d70116ce76e601d164cb5ad89e96b1c13d5289b9ba87221e55895f390"
+    },
+    {
+      "path": "src/tests/standalone-ui.test.tsx",
+      "sha256": "530329d642a959d307e740d4c28bc67c83d0cf3e2f18bc6bf625968f92d39d4d"
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "59ca2495d6801f1cc08f1f51146f1e24c7ae095d252c841823e144faa5efcd99"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "src/workers/pentagram-soundtrack.worker.ts",
+      "sha256": "6d6e9090fa7539b69791698a2a9f1845f05d3f158cfbf51d6816a490ad0980c2"
+    }
+  ],
+  "serverProcess": {
+    "pid": 12,
+    "httpReadiness": [
+      {
+        "phase": "Chromium launch",
+        "status": 200,
+        "elapsedMs": 48
+      },
+      {
+        "phase": "first browser navigation",
+        "status": 200,
+        "elapsedMs": 56
+      }
+    ],
+    "exitCode": 143,
+    "exitSignal": null,
+    "intentionalShutdown": true
+  },
+  "browserVersion": "143.0.7499.4",
+  "trainingControlDiagnostics": [
+    {
+      "viewport": "desktop",
+      "controls": [
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "UniversLes deux universHazbin HotelHelluva Boss",
+              "innerText": "UNIVERS\nLes deux univers\nHazbin Hotel\nHelluva Boss"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "ContenuSaisons 1 et 2Saison 1 uniquement",
+              "innerText": "CONTENU\nSaisons 1 et 2\nSaison 1 uniquement"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "INPUT",
+          "labels": [
+            {
+              "textContent": "Rechercher",
+              "innerText": "RECHERCHER"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "Tenue de Charlie MorningstarTenue habituelleCombat final S1 · forme démoniaque",
+              "innerText": "TENUE DE CHARLIE MORNINGSTAR\nTenue habituelle\nCombat final S1 · forme démoniaque"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "MannequinImmobileGarde permanente",
+              "innerText": "MANNEQUIN\nImmobile\nGarde permanente"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "INPUT",
+          "labels": [
+            {
+              "textContent": " Autoriser les décors et créations de saison 3",
+              "innerText": "AUTORISER LES DÉCORS ET CRÉATIONS DE SAISON 3"
+            }
+          ],
+          "ariaLabel": null
+        }
+      ],
+      "labelCounts": {
+        "exact": 0,
+        "prefix": 1,
+        "role": 1
+      }
+    },
+    {
+      "viewport": "mobile",
+      "controls": [
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "UniversLes deux universHazbin HotelHelluva Boss",
+              "innerText": "UNIVERS\nLes deux univers\nHazbin Hotel\nHelluva Boss"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "ContenuSaisons 1 et 2Saison 1 uniquement",
+              "innerText": "CONTENU\nSaisons 1 et 2\nSaison 1 uniquement"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "INPUT",
+          "labels": [
+            {
+              "textContent": "Rechercher",
+              "innerText": "RECHERCHER"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "Tenue de Charlie MorningstarTenue habituelleCombat final S1 · forme démoniaque",
+              "innerText": "TENUE DE CHARLIE MORNINGSTAR\nTenue habituelle\nCombat final S1 · forme démoniaque"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "SELECT",
+          "labels": [
+            {
+              "textContent": "MannequinImmobileGarde permanente",
+              "innerText": "MANNEQUIN\nImmobile\nGarde permanente"
+            }
+          ],
+          "ariaLabel": null
+        },
+        {
+          "tag": "INPUT",
+          "labels": [
+            {
+              "textContent": " Autoriser les décors et créations de saison 3",
+              "innerText": "AUTORISER LES DÉCORS ET CRÉATIONS DE SAISON 3"
+            }
+          ],
+          "ariaLabel": null
+        }
+      ],
+      "labelCounts": {
+        "exact": 0,
+        "prefix": 1,
+        "role": 1
+      }
+    }
+  ],
+  "stageFilterObservations": [
+    {
+      "viewport": "desktop",
+      "rosterScope": "season_1",
+      "consultationStageVisible": true,
+      "interpretation": "The inherited S1/S2 selector filters roster/costumes/gallery. Arenas have a distinct S3 availability gate."
+    },
+    {
+      "viewport": "mobile",
+      "rosterScope": "season_1",
+      "consultationStageVisible": true,
+      "interpretation": "The inherited S1/S2 selector filters roster/costumes/gallery. Arenas have a distinct S3 availability gate."
+    }
+  ],
+  "runtimeFilesAfter": [
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "2bcdd7812191a3c5bc9c27916e9db17a40affda85a46cfef877d35890ba91b3e"
+    },
+    {
+      "path": "combat.html",
+      "sha256": "cbefe525311252f82ad15b125841c61613623b557723aea0cd92da731020094d"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e00b540ef924857bd308c8168294091d641a8401f8677be2f3a619fc58b3461f"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hb_loo_loo-park-s1-base.webp",
+      "sha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hz_crymini-legacy-2017-base.webp",
+      "sha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289"
+    },
+    {
+      "path": "public/assets/production/v10/characters/hz_melissa-model-s1-base.webp",
+      "sha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/charlie-demon-battle-s1-ready.webp",
+      "sha256": "01722dfa5d4cbbf544d9d28c1a004a85aeff4d3bb5facb5dc2ddc217e2361a7e"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/hb_loona-party-queen-bee.webp",
+      "sha256": "f5eef65103f39f197952f642026f37a996006a0d2f14a3808c2f62e06e813a8e"
+    },
+    {
+      "path": "public/assets/production/v10/costumes/hb_moxxie-hallucination-truth-seekers.webp",
+      "sha256": "7c004ab3ff941cbc05835cc5d5c732e9daba4381208fca42682338a6d6c7efc9"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-candelabrum.webp",
+      "sha256": "b7b3963458eae6ff869a015e7d186d22eb3030f3168b21dcd3f9cc8b2269636d"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-console.webp",
+      "sha256": "5637edde69fd2c439ca76c8d8e3b52e44200732c12412fa1ae80f9902155c8ca"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-room.webp",
+      "sha256": "175eeebf55b4ff5ab938314fbd7eb3cfe7c1357c7a38d99bbebd3100bc0d570e"
+    },
+    {
+      "path": "public/assets/production/v10/environment/asmodeus-bedroom-s2-thumb.webp",
+      "sha256": "55257c9e538c3f720dd8eddbc5bffe60f53f3745836c2021098d7e7f6a0cb17d"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-room.webp",
+      "sha256": "19781e8dcae0ecb1a6ae6910fa96464b05a6108cd4d39c51a53c8a3806efe0a8"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-dream-s2-thumb.webp",
+      "sha256": "b1da9452d5bf3d6864299ce24872ebdf8feb6c72d3d807342dec70492d8bfd48"
+    },
+    {
+      "path": "public/assets/production/v10/environment/blitz-sinsmas-tree-snowglobe.webp",
+      "sha256": "fba024e005b3432597b7f05976fc1f4c3345959e60a212e3fbbb333b9640042b"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "sha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "sha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447"
+    },
+    {
+      "path": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "sha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781"
+    },
+    {
+      "path": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "sha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9"
+    },
+    {
+      "path": "public/assets/production/v11/environment/oops-clown-mask-trophy.webp",
+      "sha256": "0f723b4a7eff6b450727f54e630ba59f2e443295af319a2ffc26c0f8507833b0"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+      "sha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "sha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939"
+    },
+    {
+      "path": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+      "sha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "fa394ec5f78cd0ef97e42dbb15d35ab1d6dc42d290052597db2602fddbb4be06"
+    },
+    {
+      "path": "src/cloudAccount.ts",
+      "sha256": "0f5d979f8951c4103d143c32ed440a91a83a82d4beaf6309674514b31014b991"
+    },
+    {
+      "path": "src/components/CanonBadge.tsx",
+      "sha256": "4da5c555a528df444eb4713acb880a1e95162c2c2d391e0d59c6ed1626a3a44c"
+    },
+    {
+      "path": "src/components/ConfirmDialog.tsx",
+      "sha256": "f7d7daba61792c1354feb938edcc41b89e1c4722954fd18913125c3f64a9165d"
+    },
+    {
+      "path": "src/components/ContentPackCard.tsx",
+      "sha256": "ca99b9125848e409adc6af83e09c7c6ccc2d588df337358dbd144c5272524fd6"
+    },
+    {
+      "path": "src/components/HazbinAtlasGallery.tsx",
+      "sha256": "3e3889b27d8f45847af37f0cad71683eb151c90dca428b1e9aa115d38b6e8e10"
+    },
+    {
+      "path": "src/components/HazbinRoster.tsx",
+      "sha256": "3a4c170c637ad91b714886f7c60f081ff6dc07434462e807c4d6ffedfb70f476"
+    },
+    {
+      "path": "src/components/HelluvaAtlasGallery.tsx",
+      "sha256": "bfc97c7bef997b6fd3ec7ed30db734bfa29cf4a34856dc6e83a44e4589bb4ddb"
+    },
+    {
+      "path": "src/components/HelluvaRoster.tsx",
+      "sha256": "ba28953d9faab8377f3a746488ab214abbb1de87dc4af4a11a8f1c149f99832d"
+    },
+    {
+      "path": "src/components/HotelOpening.tsx",
+      "sha256": "4c76433b83215a854ccb79fea55e63e022abc4ce742de96581a34001472a88bf"
+    },
+    {
+      "path": "src/components/InfernalAttackEffects.tsx",
+      "sha256": "1ce3a9bc623514d6af4c0c7b02b50f55f68138b0beb930026cf151db4ebf5864"
+    },
+    {
+      "path": "src/components/InfernalMoveList.tsx",
+      "sha256": "a16f4db3b6454f84fe8b4b0beb5b6616507f2efa7d38845e73c26f12e1d58b57"
+    },
+    {
+      "path": "src/components/InfernalStageLayers.tsx",
+      "sha256": "efc2da3a43f5f1624ab307b89abe4b3d63f841259f4cde48a5e2f72e37e77ed8"
+    },
+    {
+      "path": "src/components/MissionCompass.tsx",
+      "sha256": "e19c5d358936a737ad686487925f203fce3e8d0d61b6d242cb3d0b5cf13bf9a2"
+    },
+    {
+      "path": "src/components/PentagramLiveFight.tsx",
+      "sha256": "7a888c904f8a80ee3325613d7bf19891ee3f19b063c97c4655a348b87ae574d1"
+    },
+    {
+      "path": "src/components/PentagramStageSpectators.tsx",
+      "sha256": "f691fea129a829a4b52351049260883483df1eba47d8733b22d4877bd35d0a48"
+    },
+    {
+      "path": "src/components/ProgressiveText.tsx",
+      "sha256": "b7857296d3b68fc6b901e996a34b7b9e7b44a84636b0caa27a796ce8355404f3"
+    },
+    {
+      "path": "src/components/RiskBadge.tsx",
+      "sha256": "dbc6bfee7b6dbc87220477f70f26ca9fec6b1e7f3ae49c6710be9d0033e54589"
+    },
+    {
+      "path": "src/components/Sidebar.tsx",
+      "sha256": "5b52d09ecbc7023d5a05957cd2ea597aeb371eb8424f8b1a5e3f67eec53e156e"
+    },
+    {
+      "path": "src/components/SpoilerBadge.tsx",
+      "sha256": "7cafbaaa58bb56bd3313958cea98711958b7086d19cac94bb65c40ef3884f6df"
+    },
+    {
+      "path": "src/components/Topbar.tsx",
+      "sha256": "e11df73213d475c29333a097990adb82119d93f8ce9083206d12b545d5702d13"
+    },
+    {
+      "path": "src/components/useDialogFocus.ts",
+      "sha256": "18fee03ed0905156f7626f1ffcfcf3cabe64b277f687fde6a2599a830047b26f"
+    },
+    {
+      "path": "src/components/usePentagramCombatSoundtrack.ts",
+      "sha256": "da8d760b9068bf6cac558c6352060d1e06dbb1b47cbef0a661126ad08e784b7a"
+    },
+    {
+      "path": "src/data/hazbin-directory.ts",
+      "sha256": "76b0df014ec201ec00d3aef4b139f6e861843836c98b65f836f58ef8eec307d7"
+    },
+    {
+      "path": "src/db/localDb.ts",
+      "sha256": "80e2cf2e518078a2ba399570f6892e8fa22e067cbaae41fe650f0210936899c6"
+    },
+    {
+      "path": "src/db/seed.ts",
+      "sha256": "c6ac0036f6d14703ad79ac48782cb81a519cafcd7d68154b6290cda8a5a737d0"
+    },
+    {
+      "path": "src/expansions/helluva-boss/data.ts",
+      "sha256": "fc0fd7b783f3f91a4c294a8d333cdf311cebd577a77bd55b4afe578731eecfea"
+    },
+    {
+      "path": "src/expansions/helluva-boss/engine.ts",
+      "sha256": "8628fa5615ff1fe321ceb4e5c468417d6746446e9f408b3ab957d7fbdbf9771f"
+    },
+    {
+      "path": "src/expansions/helluva-boss/spoilers.ts",
+      "sha256": "46ecffcfa589c6cceb90c25c3c59050b0a9871ad650d2c35a6e39a616c348a4d"
+    },
+    {
+      "path": "src/lib/campaign-day.ts",
+      "sha256": "e8234c158e8eab900d7674d791e415cdff819c86a653decc1f35ca30c1004844"
+    },
+    {
+      "path": "src/lib/character-sprites.ts",
+      "sha256": "6240c0427fa453f85720333862956aa697f3f95ef4c78d3a5742e2d9d12a0970"
+    },
+    {
+      "path": "src/lib/export-import.ts",
+      "sha256": "89c78a9c9e59ea5c6dd44c3359ea707ea59d1c69f53dd84bde13f5ecd37a3b26"
+    },
+    {
+      "path": "src/lib/first-arrival-tutorial.ts",
+      "sha256": "34a5f783086b654e654016c7631d78d89829281465388cac82284e4da2bfd6c2"
+    },
+    {
+      "path": "src/lib/hazbin-arena-fighters.ts",
+      "sha256": "87f5a79721bf1853e9d59614b4f7873987ad16b66fe63b3e33ccf64505f9c55f"
+    },
+    {
+      "path": "src/lib/hotel-operations.ts",
+      "sha256": "081430f0191837c3e65c199e912e6c7d26746f883332c3d34a9106c2462c784c"
+    },
+    {
+      "path": "src/lib/hotel-prologue.ts",
+      "sha256": "0b755e1b6ef00b223b25cacbb360e8e670db50924f47462693d16f56972be919"
+    },
+    {
+      "path": "src/lib/hotel-shift-resolution.ts",
+      "sha256": "53cc59ff965667fbe9d5baeaddf80ce69b7aec91accaac5f14fbcfee7c3183c8"
+    },
+    {
+      "path": "src/lib/hotel-shift.ts",
+      "sha256": "7013ded6ca80e274dc7075d468e8dec235d511d1ec086f2f0c85f200f594820c"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "47c59df1445d5829d34c02a645cf92e9e938f6fdcf106e2f938ae7afa0604094"
+    },
+    {
+      "path": "src/lib/infernal-attack-effects.ts",
+      "sha256": "7c40d6b61c0ef3bd32c6b849d174620163af435b06a6ff5607eed6a43ef0b661"
+    },
+    {
+      "path": "src/lib/infernal-costumes-v8.ts",
+      "sha256": "a9b83e87375c05fe2e68b4d4fbf3bb5ca39e458794326a546d8569bed03b7cb2"
+    },
+    {
+      "path": "src/lib/infernal-finishers.ts",
+      "sha256": "53bb87b5ce59214075aee5cd95f5e178f2a769d88e3ed6b34ee138ab1cc25f03"
+    },
+    {
+      "path": "src/lib/infernal-pose-anchors.ts",
+      "sha256": "525feecb75716361b53f4f6cfe09f3e296d26b8fabcbf7fbe242f5628d555161"
+    },
+    {
+      "path": "src/lib/lore-validation.ts",
+      "sha256": "a57edcef3abd94b2a9f909a10b06a93b4edf33f44988e395bde20c5ca978059c"
+    },
+    {
+      "path": "src/lib/mission-compass.ts",
+      "sha256": "61047709cfda6153222b4d1de0827fdc0c72073e158c8601cb85465beee704e9"
+    },
+    {
+      "path": "src/lib/onboarding.ts",
+      "sha256": "b10ec05af3e22b5141e05e457cfc015bf6e3b73ef4d437409c13e0db72172523"
+    },
+    {
+      "path": "src/lib/pentagram-ai.ts",
+      "sha256": "9730f337b7f1e9afc4a2fee7213bb3a92114dbcb3499f91f971390fb60b96eab"
+    },
+    {
+      "path": "src/lib/pentagram-animation.ts",
+      "sha256": "2aae433933448991f16c0d052b691b5d87a061e4fb254cc31402ea488e640dfd"
+    },
+    {
+      "path": "src/lib/pentagram-cinematics.ts",
+      "sha256": "ecc4d1395de8593dfa01dc9c6e43d3c8795946eb56e127dc9c3d54d24901a9cf"
+    },
+    {
+      "path": "src/lib/pentagram-combat.ts",
+      "sha256": "b3156ab54f090446a09c99a1d0b77c2b5b3fcdcc5a60bc27a4f908d4b83d4522"
+    },
+    {
+      "path": "src/lib/pentagram-fighters.ts",
+      "sha256": "2bf2a649e2385581e9c5ba86b4e24b68fe24e5f286e23549a1e4df93d83311a6"
+    },
+    {
+      "path": "src/lib/pentagram-soundtrack-worker-client.ts",
+      "sha256": "83a600158875394774a770341dc0524133dd7e745c6c9c15e3a5686241888084"
+    },
+    {
+      "path": "src/lib/pentagram-soundtrack.ts",
+      "sha256": "ba887d00bf279c6d031ba73e119e7ec605006f9042a91dd1371d66fdfc452cb5"
+    },
+    {
+      "path": "src/lib/pentagram-spectators.ts",
+      "sha256": "bfabec0d73860164ef08038afba008ea8248093cd45de0f8a91bf785a27c58bc"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "c4f92bf560f2393acb1dd52a874d85193c484b1d5189bc262676daf6b5fe39ee"
+    },
+    {
+      "path": "src/lib/rules-engine.ts",
+      "sha256": "e6a0f9ec47a4e8e1e6e32832be4b37114dd894bdefcd041a1f28ed8f100adfd5"
+    },
+    {
+      "path": "src/lib/sprite-animation-registry.ts",
+      "sha256": "871c053bdb525e19f6e7e90a5d3b44d27f8f24673ba71cff552b88e9dfea03bf"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "4b67d4405109a8312669246cb4bd73137052388652e62bf0c5222243642fad02"
+    },
+    {
+      "path": "src/pages/Characters.tsx",
+      "sha256": "baf0faa7543a5287375f399f629c07e65f3854e779cce2e861b5eb4dd529d0ce"
+    },
+    {
+      "path": "src/pages/Dashboard.tsx",
+      "sha256": "0ce76e825ba81385d3663988b5515f537d55531acb6351ef7bf4b8380fb9d9fe"
+    },
+    {
+      "path": "src/pages/Extensions.tsx",
+      "sha256": "f3cccfbb2954784dd23d1a6bdf4d107841582e5ab699c24a25201ad509d462a2"
+    },
+    {
+      "path": "src/pages/FirstArrivalTutorial.tsx",
+      "sha256": "3089280e9ee3352db775424fa70f9361a5806ac34edc7ede62d73ba00e08be33"
+    },
+    {
+      "path": "src/pages/HelluvaBoss.tsx",
+      "sha256": "b73a0ffb58edfcfe1f4c413de59da9c373fdfda14163232f185affcb028e6694"
+    },
+    {
+      "path": "src/pages/HotelShift.tsx",
+      "sha256": "471ec6083050ef678ca93507befdcf9915477b5679125a78330aeef7015c106d"
+    },
+    {
+      "path": "src/pages/Incidents.tsx",
+      "sha256": "d00ec1b5acc327b8df899ada192b94e4a1b613b1de47cc434ad4ab2624dcea2e"
+    },
+    {
+      "path": "src/pages/LoreCodex.tsx",
+      "sha256": "9e860143860ef6b55959c320ef8e83083baca7b47c5c676b7ef197f03266ff86"
+    },
+    {
+      "path": "src/pages/PentagramArena.tsx",
+      "sha256": "25af38c233669e753999e016951af1eecb91f5ca6dc4cb405307cfd302fc6de5"
+    },
+    {
+      "path": "src/pages/Rehabilitation.tsx",
+      "sha256": "fa80752f889b972835877bca3efbef2d09f6926c5d39d1e9a20b617fd987762f"
+    },
+    {
+      "path": "src/pages/Relations.tsx",
+      "sha256": "b86a09bf0b01a6555c74dbeb52deef9315703eb9d68479ba0118a13d8cf99b41"
+    },
+    {
+      "path": "src/pages/Reputation.tsx",
+      "sha256": "4600b56de9a6d63c767a1cb0a47b459c4655a1b102376935982a57964ca47d15"
+    },
+    {
+      "path": "src/pages/Resources.tsx",
+      "sha256": "5b3712b0f4a7053343201e58ead0e3f477ed80a8cb6921f65cc35efaf291d833"
+    },
+    {
+      "path": "src/pages/Rooms.tsx",
+      "sha256": "a960de39aa8878dd4248d3e1a24d543316f9ecfee03bda5860f86ceee895fb7c"
+    },
+    {
+      "path": "src/pages/Settings.tsx",
+      "sha256": "cb453fbad6bd61e247fe384725d84b0029505fd1f265043873b6712f01391bae"
+    },
+    {
+      "path": "src/pages/Staff.tsx",
+      "sha256": "10619ef15df4e46c320862a2bf9b7d0055d5fd9e329ed98e528ae38d195bfe26"
+    },
+    {
+      "path": "src/pages/Timeline.tsx",
+      "sha256": "1f5771dc803e6a115cb18b4f76da1da829f718ca903acd8fd452d65939e69902"
+    },
+    {
+      "path": "src/standalone/InfernalVersus.tsx",
+      "sha256": "ad81bf917dbff77b23b6bf8883b3624d3c12a755ff7f33594c2532f1aade1928"
+    },
+    {
+      "path": "src/standalone/NarrativeCollection.tsx",
+      "sha256": "9803f1530611de700c2dca16c9ce4659c6d5b8d09ab453f09542687959c7a2ea"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "f281f8f7ca094779124b81bd46d898231944ef110d9fa14aaaf2c5a11d8ee08c"
+    },
+    {
+      "path": "src/standalone/RunInterlude.tsx",
+      "sha256": "c6936564e1aac6cdb5d3fe1f4ee34481071e19ef28ff6160fe9e04e5eb57c65a"
+    },
+    {
+      "path": "src/standalone/campaign-global.ts",
+      "sha256": "28e70c580345c0cf5494b4f40c471dfd0a4b358f3c837347cb95d5b5ee686549"
+    },
+    {
+      "path": "src/standalone/campaign-illustrations-v4.ts",
+      "sha256": "576a0e74cd1b60fa6d67dbe6a96ac7db8c37c702e384c02eb800937ba9b916bb"
+    },
+    {
+      "path": "src/standalone/campaign-legacy.ts",
+      "sha256": "085fcd34e3a3c6eff78d2d52ac13c26112866e23da1bf76ba9ea83e20c06a05a"
+    },
+    {
+      "path": "src/standalone/campaign-v3.ts",
+      "sha256": "e536e004d302a2826e955e2892eb9bd32a1f856d16594c20bac5eff64ccb50ea"
+    },
+    {
+      "path": "src/standalone/campaign.ts",
+      "sha256": "db9d1a3756a49cd5219d5702ee9b467f70a2e580aa40572625354e4d75935627"
+    },
+    {
+      "path": "src/standalone/infernal-versus.css",
+      "sha256": "d4a4d288006958616ea4d7bdb0cb224659990c9b29390a74c7c01c89cef39a3f"
+    },
+    {
+      "path": "src/standalone/main.tsx",
+      "sha256": "36d436d0ce722abf7cedcea18aeea4f8a125ad52f956367695b10ac0192b5810"
+    },
+    {
+      "path": "src/standalone/progression.ts",
+      "sha256": "ab6522c73db62c64c0cc7991af88963ec8231b97967f539e4a1d119286420282"
+    },
+    {
+      "path": "src/standalone/reserve-gallery.css",
+      "sha256": "d6aacae45122dd695d0dd2aa47bcfe8b2e1562f2890df5f17aa8f3a903f90a8f"
+    },
+    {
+      "path": "src/standalone/roster.ts",
+      "sha256": "3b196f488f1c23ea6d9e501a441c2135fc59985b0f2a7ded706c91bb26463c69"
+    },
+    {
+      "path": "src/standalone/run-interlude.css",
+      "sha256": "a62cb2268ac8a7a79b285ff1a3debc38d303d38e49594a7372adc0e7bd97b5b7"
+    },
+    {
+      "path": "src/styles/first-arrival-tutorial.css",
+      "sha256": "c2bf69de5cfd162555ae8d16a7ca8da78bc80ff540881399c25708ed3280f326"
+    },
+    {
+      "path": "src/styles/hazbin-directory.css",
+      "sha256": "aebc18b26320e8f05fb66ab288ad11873920dbbb3564ddf5ff26b473282268c1"
+    },
+    {
+      "path": "src/styles/helluva-boss.css",
+      "sha256": "0f3a374c786262bef33834209624ebef213a85aeb02307b23c1b4dfdf57b8079"
+    },
+    {
+      "path": "src/styles/hotel-opening.css",
+      "sha256": "af0efb134e6526cf357fcfdd50d27734d916145e158995b3cdd5bae6f38cef4c"
+    },
+    {
+      "path": "src/styles/hotel-shift.css",
+      "sha256": "de489e76f3567740d974b2ac352babc52070a27fbf421524cd63803261f1ff84"
+    },
+    {
+      "path": "src/styles/infernal-attack-effects.css",
+      "sha256": "86c1b216be70871aefc2e7d1474bf9ee8fd9622d5cd76af98fdd1882ca67f287"
+    },
+    {
+      "path": "src/styles/infernal-authored-poses.css",
+      "sha256": "f6dbe4ef390f5ab19790d7fb6cc98cee157fa6cc7950b47e9f3ccf69137c966a"
+    },
+    {
+      "path": "src/styles/mission-compass.css",
+      "sha256": "2f6f03441494fa5c7d1e3d2777d2ae197fe12d138ff5e748515e41b164aa31df"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "b55e14ecc9674e41c2f8611a878b4758f32de666751593aba25863328da33d68"
+    },
+    {
+      "path": "src/styles/progressive-text.css",
+      "sha256": "69ee94395069b194d30eefdcb58f0f305cf6198620d7f1e142b4d220e0a3590b"
+    },
+    {
+      "path": "src/styles/theme.css",
+      "sha256": "2a8ad31eb3360ee87a64fc0c2301acbd58af643d2c20d734ac27dad0360b6087"
+    },
+    {
+      "path": "src/tests/accessibility.test.tsx",
+      "sha256": "f837da0faa604304edf8577e2805f3aacc191cc716c72aa888b8996ac615d0ad"
+    },
+    {
+      "path": "src/tests/active-gameplay-gates.test.tsx",
+      "sha256": "26f2feabac5c12421f9ef669b44c27d248b9723727582115b6d8812a4542f918"
+    },
+    {
+      "path": "src/tests/campaign-day.test.ts",
+      "sha256": "88486434a38878649323a362e829a1d877e623f4cb0e9ba451a805346a9d5b4b"
+    },
+    {
+      "path": "src/tests/dashboard-hero.test.tsx",
+      "sha256": "c44f8a61a43b99946f076981d5074fc1d4ed0f6c749d7c5f857d3f3730ef07cc"
+    },
+    {
+      "path": "src/tests/data-integrity.test.ts",
+      "sha256": "4406865cedb014c06b710baa3d21bacb080c3d48b892221e02629b2c528036ce"
+    },
+    {
+      "path": "src/tests/first-arrival-tutorial.test.ts",
+      "sha256": "b14af54a10bcbb31a2c515330827876edb9ed2bf3d9129b2b841e59c4efa1821"
+    },
+    {
+      "path": "src/tests/gameplay-safety.test.ts",
+      "sha256": "d41b105ab9d2579bbc0da33f65eed262ad6b3e5e4070e619bfbe52101abe3709"
+    },
+    {
+      "path": "src/tests/hazbin-animation-banks.test.ts",
+      "sha256": "07c9472d906932f21c69f554529e3249a6b5c31ccb5e7a70565a24e58a27e5fe"
+    },
+    {
+      "path": "src/tests/hazbin-arena-fighters.test.ts",
+      "sha256": "b537c0c4b92ecc0d0ac58561726af69ad997f040428283e6ff96c02724ce21d5"
+    },
+    {
+      "path": "src/tests/hazbin-cinematic-banks.test.ts",
+      "sha256": "441856e809e898b2f9b52a6501148ed1b94d99b52f125aaecb85994e77fe0a21"
+    },
+    {
+      "path": "src/tests/hazbin-directory.test.tsx",
+      "sha256": "438964f6d25f9f1aafbd75c289758dc3cc3258a41afe9ef69df43e461e4a49e0"
+    },
+    {
+      "path": "src/tests/hazbin-sprite-manifest.test.ts",
+      "sha256": "9418b72aa9eb542da49142b2082bf7e30a8ce46fb85b34414eccdc0f2b14f59d"
+    },
+    {
+      "path": "src/tests/helluva-animation-banks.test.ts",
+      "sha256": "0ec8af3725a1849f25200ae2ffece971c407c320dfef2c79346a17b2d357d4dd"
+    },
+    {
+      "path": "src/tests/helluva-directory.test.tsx",
+      "sha256": "55e0cca8856c07ff93e8a7e04f615cb84f3f94fb20a940e4b1f30b77cd340e1a"
+    },
+    {
+      "path": "src/tests/helluva-expansion.test.ts",
+      "sha256": "3e13a23a59dd89f6ff7141dc72be8a162213facc680d9bdeebd536f1da0304bc"
+    },
+    {
+      "path": "src/tests/helluva-spoilers.test.tsx",
+      "sha256": "e47c7273b531d45306a58e5a6befd136146307c7321a5137ff91e045e8d3102f"
+    },
+    {
+      "path": "src/tests/hotel-operations.test.ts",
+      "sha256": "5b8032287a2ff1fcd6c0a729bfa1986ff04f24096c0812de686c0230c393f558"
+    },
+    {
+      "path": "src/tests/hotel-prologue.test.ts",
+      "sha256": "618663b1a3243192c0d4476ef24221a5adfafae8437a5e9cfa50e8b7557d5cf0"
+    },
+    {
+      "path": "src/tests/hotel-shift-resolution.test.ts",
+      "sha256": "742918d408c9bcf2851849f75b8054543a44d0870b99e4ec33d6113f0ba4ccfa"
+    },
+    {
+      "path": "src/tests/hotel-shift.test.ts",
+      "sha256": "7e2f5fb9eecd2f5a78a47c760ba0099ef430ac82566cc5b8cec758c4b99e0dc1"
+    },
+    {
+      "path": "src/tests/infernal-attack-effects-live.test.tsx",
+      "sha256": "cc2b37360791aac727e1c88c36831af5a79c036d63a0e307a645f5293cc1f1f7"
+    },
+    {
+      "path": "src/tests/infernal-attack-effects.test.ts",
+      "sha256": "b6ffe1a12977b4789d5057a32af30024ee49513995a0145e0b761c0c45a5b450"
+    },
+    {
+      "path": "src/tests/infernal-authored-poses.test.ts",
+      "sha256": "9af7a37ebc0ff6dc88c1f2d0947a118f71d22097238cae6c7463ffc87db8920d"
+    },
+    {
+      "path": "src/tests/infernal-pose-anchors.test.ts",
+      "sha256": "58ff092db40adf7dff769aa6a4026f646965c244da45186765d235594b25c3a1"
+    },
+    {
+      "path": "src/tests/infernal-production.test.ts",
+      "sha256": "a7b213601e064db045ad81885bfb3efd251d632b8dc74d662954d3bc178c44c8"
+    },
+    {
+      "path": "src/tests/infernal-signatures.test.ts",
+      "sha256": "630b5dc352bb771026cb99f60a18baedd7d7aa62ba957575ef2b89c49aef4303"
+    },
+    {
+      "path": "src/tests/mission-compass.test.tsx",
+      "sha256": "c8e8fb79d138132b0833825fc7239240062a0946a9e27bdae06f280c896cecdf"
+    },
+    {
+      "path": "src/tests/onboarding-ui.test.tsx",
+      "sha256": "6bbba66d9681d165e530da1252844d8df17f418646897ab980e6712edc3b2b19"
+    },
+    {
+      "path": "src/tests/onboarding.test.ts",
+      "sha256": "1d3969e9f9ea589c48724fe93bc920eefcf3b699fb3d0bf5e72f05857522fc82"
+    },
+    {
+      "path": "src/tests/pentagram-ai.test.ts",
+      "sha256": "631ede26cc7e79368604d4af7d45bbb5687ae9e0dca09f80473da657979d72b2"
+    },
+    {
+      "path": "src/tests/pentagram-cinematics.test.ts",
+      "sha256": "e41096976b017ec2f11767510f791c906eaf71e3adc3dec2d24cc4d9c30a8473"
+    },
+    {
+      "path": "src/tests/pentagram-combat.test.ts",
+      "sha256": "7fd8c83cd783e385bc019851cdc0b32216a2e177bd11e4e363631e7b81109808"
+    },
+    {
+      "path": "src/tests/pentagram-fighters.test.ts",
+      "sha256": "8eb1b7bfc7fabc0c2d643a17a4a9ef205814c3f7be4711ae8172fe570d131639"
+    },
+    {
+      "path": "src/tests/pentagram-live-inputs.test.tsx",
+      "sha256": "e9e28f3ccb7581dab34af76ad17ac1096731f73ce468d221bc1a74b12a6ed3e1"
+    },
+    {
+      "path": "src/tests/pentagram-soundtrack-hook.test.tsx",
+      "sha256": "e2b689dcf38c02df7cedea957583de9e1dd27fe43ea9e57d377432abd03216be"
+    },
+    {
+      "path": "src/tests/pentagram-soundtrack-worker-client.test.ts",
+      "sha256": "5889de092bf60e206e4b0a0e510281b83228944d3f5339ddc3f47a177de08817"
+    },
+    {
+      "path": "src/tests/pentagram-spectators.test.ts",
+      "sha256": "531b19c23c67781fbb43e54b8e58fc1e6005164eec022ca77a30bc5ea084b717"
+    },
+    {
+      "path": "src/tests/pentagram-stages.test.ts",
+      "sha256": "2befebbb0d23b4380932db19e03ea7d34c7fe46ddce2e91f1b91c64530818a1a"
+    },
+    {
+      "path": "src/tests/rules.test.ts",
+      "sha256": "9b417129f9311686d4b82aec5f41b68e4ed49f6956542fb20afa2d7f0aadab57"
+    },
+    {
+      "path": "src/tests/standalone-campaign-cup.test.ts",
+      "sha256": "c6f329b192933cd6336ae60f03ade113436552ef9c4365f40336e8abc7ac80c8"
+    },
+    {
+      "path": "src/tests/standalone-illustrations.test.tsx",
+      "sha256": "52c05b8d50cdb1ff9e6abc652ef6a5435d75f249c95cd23c0a5232299111913c"
+    },
+    {
+      "path": "src/tests/standalone-live-fight.test.tsx",
+      "sha256": "4bc3c4f15789508e89a0352394b4bf8378b1e7fb30efa640a78360eb2a19568d"
+    },
+    {
+      "path": "src/tests/standalone-narrative.test.ts",
+      "sha256": "3942ccf7dc9ecc3327e18efe1f94a5881630f3d61044dcfd8cabfce991ee7b48"
+    },
+    {
+      "path": "src/tests/standalone-progression.test.ts",
+      "sha256": "c471024fbc7812d104f54e2db72d3150b8e04cd0d059e9dfa5a3201fb5a03850"
+    },
+    {
+      "path": "src/tests/standalone-roster.test.ts",
+      "sha256": "711b383aa4f5d47e1234ee9530eacbf6570f77afc3791dad69195efea6fb6939"
+    },
+    {
+      "path": "src/tests/standalone-season-three.test.tsx",
+      "sha256": "dfbd0e2d70116ce76e601d164cb5ad89e96b1c13d5289b9ba87221e55895f390"
+    },
+    {
+      "path": "src/tests/standalone-ui.test.tsx",
+      "sha256": "530329d642a959d307e740d4c28bc67c83d0cf3e2f18bc6bf625968f92d39d4d"
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "59ca2495d6801f1cc08f1f51146f1e24c7ae095d252c841823e144faa5efcd99"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "src/workers/pentagram-soundtrack.worker.ts",
+      "sha256": "6d6e9090fa7539b69791698a2a9f1845f05d3f158cfbf51d6816a490ad0980c2"
+    }
+  ],
+  "finishedAt": "2026-11-26T16:52:44.196Z",
+  "status": "passed_automated_browser_checks_pending_visual_review",
+  "harness": {
+    "internalPath": "/tmp/infernal-v11/browser/run-browser-qa.cjs",
+    "sha256": "7aaea8f7b6ad7534bd812f8e196bf29ccafcbfed8161d677cfe39b2ac337d1b1",
+    "base": "/tmp/infernal-v10/browser/run-browser-qa.cjs"
+  }
+}

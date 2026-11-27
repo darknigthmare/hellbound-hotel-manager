@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "edition": "V17",
+  "status": "passed",
+  "scope": "Full standard npm run qa on GitHub Actions, followed by SHA256-addressed multipart packaging. Browser rendering is documented separately.",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "headCommit": "d56202b178d1ecd8cab7e3a4a876aa50501be815",
+  "assetSourceCommit": "2a7c956ceedfb4f3a845af67c621290f7fd41654",
+  "ciCheckoutCommit": "7454b9d2b2a7ab87564b8320cb2f04a015211b52",
+  "sourceTree": "e6b31f4e5ae9a92a207bd60b478a27fbea77f341",
+  "mergeTreeMatchesHead": true,
+  "onlyChangeSinceInitialValidation": ".github/workflows/quality.yml",
+  "runId": 45948785155,
+  "runNumber": 103,
+  "jobId": 140339533601,
+  "runUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155",
+  "jobUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155/job/140339533601",
+  "standardCommand": "npm run qa",
+  "standardQaScriptPassed": true,
+  "typecheck": "passed",
+  "lint": "passed",
+  "testsPassed": 439,
+  "testSuites": 51,
+  "managerBuild": "passed",
+  "standaloneBuild": "passed",
+  "standaloneVerifiedHashes": 1350,
+  "artifactTransport": "Complete tar split into 480 MiB parts; each transport ZIP and concatenated tar verified separately by browser-artifact-transfer.json.",
+  "initialValidation": "docs/standalone/production-v17/runtime-qa-initial.json",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-11-27T05:56:54Z",
+      "completed_at": "2026-11-27T05:56:55Z"
+    },
+    {
+      "name": "Check out repository",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-11-27T05:56:55Z",
+      "completed_at": "2026-11-27T06:00:48Z"
+    },
+    {
+      "name": "Use Node.js 22",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-11-27T06:00:48Z",
+      "completed_at": "2026-11-27T06:00:52Z"
+    },
+    {
+      "name": "Install exact dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-11-27T06:00:52Z",
+      "completed_at": "2026-11-27T06:01:32Z"
+    },
+    {
+      "name": "Type-check, test and build",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-11-27T06:01:32Z",
+      "completed_at": "2026-11-27T06:03:45Z"
+    },
+    {
+      "name": "Package verified standalone transfer parts",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-27T06:03:45Z",
+      "completed_at": "2026-11-27T06:03:48Z"
+    },
+    {
+      "name": "Upload verified standalone part 00",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-11-27T06:03:48Z",
+      "completed_at": "2026-11-27T06:03:55Z"
+    },
+    {
+      "name": "Upload verified standalone part 01",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-11-27T06:03:55Z",
+      "completed_at": "2026-11-27T06:04:01Z"
+    },
+    {
+      "name": "Upload verified standalone part 02 when needed",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 9,
+      "started_at": "2026-11-27T06:04:01Z",
+      "completed_at": "2026-11-27T06:04:01Z"
+    },
+    {
+      "name": "Post Use Node.js 22",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17,
+      "started_at": "2026-11-27T06:04:01Z",
+      "completed_at": "2026-11-27T06:04:01Z"
+    },
+    {
+      "name": "Post Check out repository",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 18,
+      "started_at": "2026-11-27T06:04:01Z",
+      "completed_at": "2026-11-27T06:04:01Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19,
+      "started_at": "2026-11-27T06:04:01Z",
+      "completed_at": "2026-11-27T06:04:02Z"
+    }
+  ],
+  "browserValidation": "Separate browser-gallery-qa.json; not asserted by CI.",
+  "fidelityOneToOneCertified": false
+}

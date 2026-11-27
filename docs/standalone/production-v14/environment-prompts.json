@@ -1,0 +1,43 @@
+{
+  "edition": "V14",
+  "tool": "image_gen.imagegen",
+  "policy": "One static opaque drawing per call; native PNG preserved, deterministic exact lossless WebP and thumbnail only.",
+  "prompts": [
+    {
+      "id": "full-moon-shop-s2-room",
+      "tool": "image_gen.imagegen",
+      "useCase": "stylized-concept",
+      "prompt": "Use case: stylized-concept.\nAsset type: one static opaque 16:9 landscape background for the 2D fighting game Infernal Versus.\nInput image 1 is a primary architectural reference: Jasper Luu production painting 208_00003 from Helluva Boss, The Full Moon, season 2 episode 8. Generate one complete redraw of THIS particular empty red gothic shop interior, preserving its frontal low camera, its architecture and the source composition.\nKeep the broad central wall of two stacked rows of narrow pointed gothic red panels with heart finials, framed by near-black angular pillars. Preserve the dark stairs rising along BOTH sides of this wall, their pointed side rails with small red heart motifs, the partly visible angular counter at the far LEFT, and the padded burgundy wall and small wall-mounted hanging accessories on the RIGHT. Keep the central red-and-burgundy rectangular tiled floor with tiny dark diamond motifs. Palette: saturated crimson and dark burgundy, near-black navy outlines, restrained hot pink edge light, sharp flat cel-painted shadows. Refined 2D television animation background; clear angular line work and restrained painted texture.\nComposition adaptation: convert the wide source to 16:9 by extending ONLY the SAME existing foreground tiled floor toward the camera; keep the building structures behind a continuous flat lower-quarter combat strip. Do not introduce any new rooms, doorways, architecture, shelves, furniture or foreground obstacles. Preserve the left counter, twin stairs and central double row of heart panels as shown. All objects must be painted into the single background, not a separate overlay.\nExactly one empty background, no people, no creatures, no UI, no logos, no watermark, no border, no panels, no lettering. Entire image opaque. This is a source-guided gameplay camera and foreground-floor adaptation (Simulation AU), not a claim of exact canonical level geometry.",
+      "referencedImagePaths": [
+        "production/v14/environment/references/jasper-208-00003.jpg"
+      ],
+      "transparentBackground": false,
+      "attempt": 1,
+      "status": "accepted_native_output",
+      "output": "production/v14/environment/masters/full-moon-shop-s2-room.png"
+    },
+    {
+      "id": "crimson-dining-room-s2-room",
+      "tool": "image_gen.imagegen",
+      "useCase": "stylized-concept",
+      "prompt": "Use case: stylized-concept.\nAsset type: one static opaque 16:9 landscape arena background for Infernal Versus.\nInput image 1 is the sole layout reference: Jasper Luu production background 206.jpg, Crimson's dining room from Helluva Boss, Exes and Oohs, season 2 episode 3. Redraw this particular empty dining room, preserving its frontal camera, its green light and all main architectural features.\nPreserve the long horizontal dining table in the middle distance, the three large dark rounded heart-shaped chair backs nearest the camera, the tall burgundy head chairs at the two ends, and the smaller burgundy chairs beyond the table. Keep their original overlap and arrangement. The left wall contains the large dark arched fireplace with a few logs; the right wall contains the closed double doors with two round pale knobs. Along the rear wall retain exactly three tall green-lit windows with olive curtains. Preserve the dense row of mounted stylized horn and tooth trophies across the upper walls, the dark teal patterned wallpaper, green edging on the wall panels, the two visible tall potted plants, and the centered hanging light with two pale green rounded glass shades and slender curving arms.\nUse the source's near-black ceiling, deep blue-green wood floor, olive curtains, burgundy chair upholstery and controlled luminous green accents. Keep the quiet dark palette readable with crisp angular television-animation linework, broad cel-painted shadows and restrained texture. No photorealistic or 3D rendering.\nComposition for a 16:9 fight screen: keep the SAME lateral extent of the reference room, reduce only the empty dark ceiling region, and extend the SAME existing wooden foreground floor toward the camera. Keep the dining furniture wholly behind an unobstructed continuous lower-quarter combat strip; do not delete the table or chairs, replace the room, invent new architecture or enlarge the fireplace. Do not add dinnerware or new decorations. Preserve the supplied occlusions; no invented hidden furniture details.\nExactly one full finished empty background, all pixels opaque. No people, creatures, bodies, UI, lettering, logos, watermark, border or split panels. No detached prop overlays. This source-guided framing and foreground-floor adaptation is Simulation AU for gameplay; it does not certify exact canonical room geometry.",
+      "referencedImagePaths": [
+        "production/v14/environment/references/jasper-crimson-206.jpg"
+      ],
+      "transparentBackground": false,
+      "attempt": 1,
+      "status": "accepted_native_output",
+      "output": "production/v14/environment/masters/crimson-dining-room-s2-room.png"
+    }
+  ],
+  "attemptCount": 2,
+  "acceptedDrawings": 2,
+  "refusedAttempts": [],
+  "historicalPromptImprecision": [
+    {
+      "id": "crimson-dining-room-s2-room",
+      "text": "two shades",
+      "clarification": "Two groups with overlapping openings in the visual source; the source image is authoritative. No claim of exactly two separate lamps."
+    }
+  ]
+}

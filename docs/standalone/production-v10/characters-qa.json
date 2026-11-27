@@ -1,0 +1,125 @@
+{
+  "edition": "V10",
+  "scope": "Character asset native preservation, alpha, framing, exact lossless WebP export, and own/independent visual review; excludes runtime/browser tests.",
+  "status": "passed",
+  "newBases": 3,
+  "imageFiles": 6,
+  "imageBytes": 5030833,
+  "assets": [
+    {
+      "id": "hz_melissa-model-s1-base",
+      "masterSha256": "ed6f0996b6caa7d8fc3ca5c146f690ee54f39512133466f6c247453d48e36e58",
+      "exportSha256": "12f6fac218b02b94716c7f126d0ee54aff734377a389dc7a327a7dba3ccbdae8",
+      "nativeMasterPreservedByteForByte": true,
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1334789,
+        "threshold128Bbox": [
+          209,
+          36,
+          659,
+          1524
+        ],
+        "threshold128Margins": {
+          "left": 209,
+          "top": 36,
+          "right": 365,
+          "bottom": 12
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "limitations": [
+        "La tenue correspond au plan officiel à 285 s et au clip à 37 s. Elle ne qualifie pas le tee-shirt rouge et pantalon violet du portrait historique.",
+        "Références natives 320×180 et 101×180 : petits détails du vêtement et des chaussures adaptés, fidélité 1:1 non certifiée.",
+        "Le troisième repère est un détail de visage historique, de provenance primaire non résolue, utilisé seulement pour les traits concordants. Aucun bas du corps n’en est tiré.",
+        "Marge basse étroite de 12 px au seuil alpha 128 ; les deux bottines restent entières et aucun pixel alpha >= 128 ne touche un bord."
+      ]
+    },
+    {
+      "id": "hb_loo_loo-park-s1-base",
+      "masterSha256": "bbfe97eb99f391df20310493774cd0f371f9617da22bad8610ef4bc552eb7a35",
+      "exportSha256": "300a410f040ca76445abd6d78eb9c9bbafa5cb7488cb0bb1e57fc7a7a4b416ec",
+      "nativeMasterPreservedByteForByte": true,
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPixels": 1120535,
+        "threshold128Bbox": [
+          181,
+          125,
+          1037,
+          1199
+        ],
+        "threshold128Margins": {
+          "left": 181,
+          "top": 125,
+          "right": 145,
+          "bottom": 131
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "limitations": [
+        "Le plan large à 56 s montre la silhouette complète ; les plans à 72 et 90 s détaillent le haut, mais coupent le bas de certaines chaussures.",
+        "Jambes noires et chaussures rouges corroborées par le clip. Les bottes vertes du cutout historique ne sont pas utilisées.",
+        "Le plan entier montre un personnage de petite taille dans l’image : détails des semelles et des gants adaptés, aucune certification 1:1.",
+        "Le premier candidat ajoutait un nez ovale rouge non corroboré ; une correction imagegen a retiré ce nez."
+      ]
+    },
+    {
+      "id": "hz_crymini-legacy-2017-base",
+      "masterSha256": "4a7bf397a3d4915d492ffa4a1286c61d17b350730175750e18a8f270e808f987",
+      "exportSha256": "7eaa678083af911fd6a45ac54305e8b615927dd5a8c5a182a55254b54078a289",
+      "nativeMasterPreservedByteForByte": true,
+      "visualReview": {
+        "viewedNative": true,
+        "viewedAlphaComposite": true,
+        "completeFigure": true,
+        "transparentAlpha": true,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentPixels": 1092815,
+        "threshold128Bbox": [
+          123,
+          131,
+          827,
+          1404
+        ],
+        "threshold128Margins": {
+          "left": 123,
+          "top": 131,
+          "right": 197,
+          "bottom": 132
+        },
+        "webpDecodedRgbaEqualsMaster": true,
+        "renderingNote": "La prévisualisation RGB brute peut afficher des couleurs sous alpha 0 ; la composition RGBA a été vérifiée."
+      },
+      "limitations": [
+        "Incarnation legacy_concept_2017 uniquement ; cette base ne certifie ni sa présence ni son modèle dans la série actuelle.",
+        "spoilerScope=season_1 sert uniquement de plafond compatible avec les filtres existants ; il ne date pas le concept en saison 1.",
+        "Les frames officielles natives 320×180 qualifient la silhouette entière, la tenue et la queue ; les détails fins des vêtements et du visage sont adaptés, sans certification 1:1.",
+        "Le cutout historique sert de repère complémentaire de détail concordant. La qualification du corps entier vient des frames officielles à 595 et 590 s.",
+        "Une seule oreille reste nettement visible dans la pose ; la seconde est masquée par la chevelure. La queue conserve les deux touffes claires lisibles dans le tableau de 2017."
+      ]
+    }
+  ],
+  "testsRun": [],
+  "testsNote": "No implementation unit tests added for static asset exports. All three master/export pairs decoded and compared as exact RGBA pixels.",
+  "fidelityOneToOneCertified": false
+}

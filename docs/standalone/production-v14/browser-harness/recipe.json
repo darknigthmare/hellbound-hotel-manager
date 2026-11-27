@@ -1,0 +1,114 @@
+{
+  "edition": "V14",
+  "status": "runtime_frozen_execution_authorized",
+  "expectedGalleryCount": 138,
+  "expectedAssetIds": [
+    "hb_blitzo-flashback-ghostfuckers-s2",
+    "hb_millie-dress-disguise-training-short",
+    "hb_moxxie-dress-disguise-training-short",
+    "sloth-cloud-dispenser-s2",
+    "crimson-green-chandelier-s2",
+    "full-moon-shop-s2-room",
+    "crimson-dining-room-s2-room"
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "isMobile": false,
+      "hasTouch": false,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "physicalDevice": false
+    }
+  ],
+  "stages": [
+    {
+      "id": "full-moon-shop-s2",
+      "roomId": "full-moon-shop-s2-room"
+    },
+    {
+      "id": "crimson-dining-room-s2",
+      "roomId": "crimson-dining-room-s2-room"
+    }
+  ],
+  "combats": [
+    {
+      "id": "blitzo-shop",
+      "stageId": "full-moon-shop-s2",
+      "fighterName": "Blitzø",
+      "costumeId": "hb_blitzo-flashback-ghostfuckers-s2"
+    },
+    {
+      "id": "moxxie-dining",
+      "stageId": "crimson-dining-room-s2",
+      "fighterName": "Moxxie",
+      "costumeId": "hb_moxxie-dress-disguise-training-short"
+    },
+    {
+      "id": "millie-shop",
+      "stageId": "full-moon-shop-s2",
+      "fighterName": "Millie",
+      "costumeId": "hb_millie-dress-disguise-training-short"
+    }
+  ],
+  "officialShortBadge": "COURT OFFICIEL · 2026",
+  "officialShortProvenance": "Costume du court officiel IMP Training Video (2026). La pose s’appuie sur le porte-clés officiel ; cette fiche ne l’attribue pas à une saison numérotée.",
+  "frozenCatalogueSha256": "26bea49d2bddc42c45c53d47d4245fe6f046be1c4dbbad6e94ab9fe2bf2ffe5f",
+  "coverage": [
+    "Seven new drawings across both viewports. Five targeted gallery details and three wardrobe/combat costume checks per viewport.",
+    "Two stage selections and contained full backgrounds with zero extra scenery planes.",
+    "Real keyboard or CDP native touch movement, static costume retention, pause/resume and unchanged default soundtrack.",
+    "Official short badges and provenance, explicit S1 versus S1+S2 gallery and wardrobe filters.",
+    "Qualified reference links, inherited Crymini2017 distinction, no overflow or broken visible images."
+  ],
+  "limits": [
+    "Local Chromium software rendering and mobile touch emulation only, no physical device or deployed preview test.",
+    "No continuous long-session/full unfiltered gallery certification. Historical V13 renderer instability remains unresolved; GPU software flag is a bounded execution choice, not a proven fix or diagnosis.",
+    "Canonical fidelity is separate from image export parity and current runtime checks.",
+    "No new animation cycle or playable kit."
+  ],
+  "executionStrategy": {
+    "independentSegmentCount": 8,
+    "perSegmentDeadlineMs": 120000,
+    "globalPerProcessDeadlineMs": 150000,
+    "browserGracefulCloseDeadlineMs": 5000,
+    "browserKillDeadlineMs": 5000,
+    "defaultSoundtrack": "enabled, read through Options, unchanged",
+    "gpuAcceleration": "disabled via --disable-gpu",
+    "continuousSessionCertified": false,
+    "globalBudgetScope": "150s active work, plus separately bounded owned-browser cleanup"
+  },
+  "server": {
+    "kind": "validated_production_build",
+    "root": "dist-combat",
+    "command": "python -m http.server",
+    "entry": "index.html",
+    "manifestSha256": "5808603285ebaef26f73a371f6adcd8b6169c9c13c2113510ed1276322b57886"
+  },
+  "authorization": {
+    "by": "/root",
+    "receivedAt": "2026-11-26T22:03:09.853664+00:00",
+    "technicalReview": "docs/standalone/production-v14/runtime-qa.json",
+    "rootRuntimeFingerprint": "ca3c1a332dc73948242883555a48a0799f280ceef45ff6a4a4a2a23b9ea6013b",
+    "rootRuntimeInputCount": 207,
+    "tests": 413,
+    "suites": 47,
+    "checkedActivePaths": 735,
+    "distributionHashes": 1339,
+    "message": "All technical gates passed; eight browser segments authorized after targeted harness fixes and syntax/lint checks."
+  },
+  "harnessBase": {
+    "path": "docs/standalone/production-v13/browser-harness/run-mobile-browser-qa.cjs",
+    "sha256": "27f4befa2a42a44d5aa72ee5de8f91914e3a6f94de82f52bb03ebb6081c2f2ed",
+    "correctedCleanupBehaviorPreserved": true
+  }
+}

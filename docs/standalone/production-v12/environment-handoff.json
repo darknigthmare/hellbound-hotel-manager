@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "date": "2026-11-26",
+  "createdAt": "2026-11-26T17:40:38.508536+00:00",
+  "status": "accepted_static_art_runtime_pending",
+  "scope": "Un nouveau fond de couloir et deux caisses distinctes de réserve ; ces caisses appartiennent au secteur de stockage voisin, pas au couloir.",
+  "assets": [
+    {
+      "id": "mammon-backstage-corridor-s2-room",
+      "name": "Mammon · couloir des coulisses S2",
+      "category": "stage",
+      "kind": "stage_background",
+      "stageId": "mammon-backstage-corridor-s2",
+      "runtimeStatus": "selectable_stage",
+      "sourceLocation": "Couloir vide menant à un escalier des coulisses, peinture 207_SHOT_269.",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "complete_background",
+      "accepted": true,
+      "producerAccepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "intendedRuntimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v12/environment/masters/mammon-backstage-corridor-s2-room.png",
+      "export": "public/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp",
+      "runtime": "/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp",
+      "masterSha256": "4044e2e3f45fb3591a064323081f04aec8a9bb325da7213389bddaecfc5e680c",
+      "exportSha256": "12862a06b77693b802459ab2b72940241688703fa8df0d774fca8e304188c86f",
+      "masterBytes": 1543152,
+      "exportBytes": 974064,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "nativeMode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alphaZeroPixels": 0,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Native image_url data:image/png;base64 returned by image_gen; decoded directly to PNG bytes without image re-encoding. No output_hint or tool-local path was returned.",
+      "nativePngBytesUnchanged": true,
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE opaque wide 16:9 landscape background for the 2D fighting game Infernal Versus. Source: the supplied Jasper Luu production painting 207_SHOT_269 for Helluva Boss, Mammon's Magnificent Musical Mid-Season Special, season 2 episode 7. Redraw this specific empty backstage corridor, retaining its identity and the supplied camera: a slightly tilted low corridor view, deep navy and purple panel walls, a cyan-lit rectangular open doorway left of center with the same short staircase visible through it, the same dark wall-panel seams and sparse cracks, recessed circular ceiling lights receding above the doorway, and a continuous dark violet floor in the foreground with the narrow cyan/violet edge lines. Retain the strong cyan light spilling from the left-of-center doorway, magenta reflected wash on the left wall and near-black right wall. Preserve the doorway, ceiling, panel geometry, visible stairs, and sparse empty composition from this ONE reference. Adapt only the outer framing to a clean wide combat background, keeping the lower quarter clear and continuous for two fighters; do not add extra rooms or architecture. Refined hand-drawn television-animation background, crisp thin angular outlines, broad controlled cel-painted shadows and restrained gradients, no 3D rendering or photorealism. No people, creatures, furniture, boxes, props, signs, labels, lettering, watermark, interface, border, montage or split panels. One finished clean empty background; all pixels opaque. This is a source-guided gameplay adaptation, not a claim of pixel-exact reproduction.",
+      "transparentBackgroundRequested": false,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c124e785-c6cf-48fc-88cd-7617a471dd28/207_SHOT_269.jpeg",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-269-corridor.jpg",
+          "sha256": "2ba73f5ff2840b10b5446aa0737300d555153356c2374bacd5067a78f4c6fa71",
+          "bytes": 161029,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_269",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c124e785-c6cf-48fc-88cd-7617a471dd28/207_SHOT_269.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c124e785-c6cf-48fc-88cd-7617a471dd28/207_SHOT_269.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4340,
+            2660
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1532
+          ],
+          "role": "Exact source for the empty corridor",
+          "note": "dimensions décrit le fichier local ; originalSourceDimensions conserve les dimensions annoncées dans le portfolio."
+        }
+      ],
+      "episodeCorroboration": {
+        "metadata": {
+          "path": "production/v12/environment/references/mammon-official-metadata.json",
+          "sha256": "d7801d06b5cdabd1e22a4edfc5d58d6f6f783b0cd59545a783d616c9edb72b9f",
+          "bytes": 1055
+        },
+        "frames": [
+          {
+            "path": "production/v12/environment/references/mammon-official-1040s.png",
+            "sha256": "1d8a1fd0e953b3befcce4140d87badf6e83b3d09da40c64cab4433aced05d808",
+            "bytes": 100498,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1040s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1040,
+            "timecode": "17:20",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              640,
+              180,
+              960,
+              360
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: merchandise in backstage area",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          },
+          {
+            "path": "production/v12/environment/references/mammon-official-1050s.png",
+            "sha256": "eb9541e507b0fca277fdf80eb09e7262a8c95176e50d4b5ef7aa811e75a9c6dd",
+            "bytes": 114979,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1050s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1050,
+            "timecode": "17:30",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              0,
+              360,
+              320,
+              540
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: cyan staircase railing near the stage",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          }
+        ],
+        "level": "context_only_exact_painting_not_seen_in_samples",
+        "limits": [
+          "Les plans retenus confirment les coulisses, les marchandises et l’escalier cyan du concours.",
+          "Ni la peinture 207_SHOT_269 exacte ni les deux caisses ne sont directement visibles dans ces deux échantillons. Les peintures de production restent les références de dessin.",
+          "Aucune URL de lecture signée, cookie, jeton ou cache complet de la page YouTube n’est persisté."
+        ]
+      },
+      "canonicalContext": "Helluva Boss S2E7, concours de Mammon : références de production207. La mise en combat reste une adaptation AU.",
+      "fidelityNotes": [
+        "Cadrage large 1672×941 et sol avant adaptés au duel ; la perspective légèrement inclinée du couloir est conservée.",
+        "La porte cyan, l’escalier, les panneaux fissurés et les quatre plafonniers sont conservés ; traits plus nets et lumineux que la source.",
+        "Les deux échantillons officiels confirment le contexte des coulisses/escalier, pas le plan269 exact.",
+        "Aucun meuble, caisse ou accessoire ajouté ; ce stage ne comporte qu’un seul plan."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v12/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v12/environment/masters/mammon-backstage-corridor-s2-room.png",
+          "sha256": "4044e2e3f45fb3591a064323081f04aec8a9bb325da7213389bddaecfc5e680c",
+          "bytes": 1543152,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp",
+          "sha256": "12862a06b77693b802459ab2b72940241688703fa8df0d774fca8e304188c86f",
+          "bytes": 974064,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp",
+          "sha256": "a55d354f8f5b8c3545d60d10a9f33af2ccf1c8de58e9f54233af93f5e00d65de",
+          "bytes": 11938,
+          "dimensions": [
+            480,
+            270
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "thumbnail": "public/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp",
+      "thumbnailUrl": "/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp",
+      "thumbnailSha256": "a55d354f8f5b8c3545d60d10a9f33af2ccf1c8de58e9f54233af93f5e00d65de",
+      "thumbnailBytes": 11938,
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "presentationProposal": {
+        "referenceFrame": {
+          "width": 1672,
+          "height": 941
+        },
+        "layerCount": 1,
+        "imagePosition": "center bottom",
+        "scenery": [],
+        "note": "Proposition de cadre seulement ; adaptation responsive, ligne de combat et lecture des combattants à contrôler par l’intégration runtime."
+      }
+    },
+    {
+      "id": "mammon-backstage-cube-case",
+      "name": "Mammon · caisse cubique des coulisses",
+      "category": "prop",
+      "kind": "prop",
+      "stageId": null,
+      "runtimeStatus": "reserve",
+      "sourceLocation": "Secteur de stockage des coulisses, peintures 207_SHOT_242/245 ; posé sur la caisse basse dans la référence, pas dans le couloir 269.",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "accepted": true,
+      "producerAccepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "intendedRuntimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v12/environment/masters/mammon-backstage-cube-case.png",
+      "export": "public/assets/production/v12/environment/mammon-backstage-cube-case.webp",
+      "runtime": "/assets/production/v12/environment/mammon-backstage-cube-case.webp",
+      "masterSha256": "f53912d1fd6b95dda48365d00b4aab6c475b130191c6abf83fc7ceab01621e7b",
+      "exportSha256": "53061bdbbc1dcd78df6d5d96496ad90a54b22cea8e782525bfddf6e575d65483",
+      "masterBytes": 1056312,
+      "exportBytes": 576610,
+      "dimensions": [
+        1268,
+        1241
+      ],
+      "nativeMode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        133,
+        112,
+        1137,
+        1099
+      ],
+      "visibleBBoxAlpha128": [
+        134,
+        113,
+        1136,
+        1099
+      ],
+      "alphaZeroPixels": 732026,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Native image_url data:image/png;base64 returned by image_gen; decoded directly to PNG bytes without image re-encoding. No output_hint or tool-local path was returned.",
+      "nativePngBytesUnchanged": true,
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE isolated complete static scenery prop on a truly transparent background. Reproduce ONLY the small cubic storage case shown in the supplied cropped Helluva Boss production painting 207_SHOT_245 by Jasper Luu. Keep the same elevated front three-quarter angle and exact overall shape: a squat cube-shaped closed box with a broad dark plum front panel, narrower left side panel, flat violet top panel, rigid burgundy/magenta framing strips and a thin warm ochre edge around the top. The front panel has just two blank muted-purple rectangular paper-like patches: one small nearly horizontal patch high at right, one larger tilted rectangular patch low at left. The left side has two similar blank purple patches, a small one high and a larger tilted one lower. Preserve the angular frame, dark indigo shading, reddish violet edge highlights, and the relationship of the top, front and left planes from the source. There are NO printed symbols or words on the patches. Isolate only this upper small cube; omit the larger box beneath it and every backdrop element. Do not add handles, hinges, rivets, wheels, feet, locks, metallic corners, stickers with text, gems or emblems. A single full cube silhouette, fully inside the image with at least ten percent transparent breathing room on all four sides; centered, no crop. Clean hand-drawn 2D television-animation linework and restrained cel shading, not photorealistic or 3D. No floor, cast shadow, room, characters, particles, typography, watermark, checkerboard, collage or extra object. True native alpha outside the case. This is a source-guided redrawing; preserve the visible design rather than decorate it.",
+      "transparentBackgroundRequested": true,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "sha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "bytes": 329002,
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_245",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4335,
+            2655
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1531
+          ],
+          "role": "Primary production painting showing the two storage cases in the neighboring backstage stock area",
+          "note": "dimensions décrit le fichier local ; originalSourceDimensions conserve les dimensions annoncées dans le portfolio."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-242-storage.jpg",
+          "sha256": "a7c1cdd65eac266758117483ba7aa63861101a249597bee02c4b7e1b9585e6eb",
+          "bytes": 293677,
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_242",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4335,
+            2655
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1531
+          ],
+          "role": "Primary production painting showing the two storage cases in the neighboring backstage stock area",
+          "note": "dimensions décrit le fichier local ; originalSourceDimensions conserve les dimensions annoncées dans le portfolio."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-cube-crop.png",
+          "sha256": "344bf5db0307cd54e2288da5c6d14ad54f3d62724815c49a4c5564138c5ab13e",
+          "bytes": 105384,
+          "dimensions": [
+            339,
+            332
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_245_cube_crop",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "viewed": true,
+          "parentPath": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "parentSha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "cropBox": [
+            1083,
+            13,
+            1422,
+            345
+          ],
+          "transform": "Pixel crop only; no resizing, retouching, upscaling or enhancement.",
+          "role": "Exact object crop used by image_gen"
+        }
+      ],
+      "episodeCorroboration": {
+        "metadata": {
+          "path": "production/v12/environment/references/mammon-official-metadata.json",
+          "sha256": "d7801d06b5cdabd1e22a4edfc5d58d6f6f783b0cd59545a783d616c9edb72b9f",
+          "bytes": 1055
+        },
+        "frames": [
+          {
+            "path": "production/v12/environment/references/mammon-official-1040s.png",
+            "sha256": "1d8a1fd0e953b3befcce4140d87badf6e83b3d09da40c64cab4433aced05d808",
+            "bytes": 100498,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1040s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1040,
+            "timecode": "17:20",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              640,
+              180,
+              960,
+              360
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: merchandise in backstage area",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          },
+          {
+            "path": "production/v12/environment/references/mammon-official-1050s.png",
+            "sha256": "eb9541e507b0fca277fdf80eb09e7262a8c95176e50d4b5ef7aa811e75a9c6dd",
+            "bytes": 114979,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1050s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1050,
+            "timecode": "17:30",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              0,
+              360,
+              320,
+              540
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: cyan staircase railing near the stage",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          }
+        ],
+        "level": "context_only_exact_painting_not_seen_in_samples",
+        "limits": [
+          "Les plans retenus confirment les coulisses, les marchandises et l’escalier cyan du concours.",
+          "Ni la peinture 207_SHOT_269 exacte ni les deux caisses ne sont directement visibles dans ces deux échantillons. Les peintures de production restent les références de dessin.",
+          "Aucune URL de lecture signée, cookie, jeton ou cache complet de la page YouTube n’est persisté."
+        ]
+      },
+      "canonicalContext": "Helluva Boss S2E7, concours de Mammon : références de production207. La mise en combat reste une adaptation AU.",
+      "fidelityNotes": [
+        "Silhouette, dessus, deux faces et quatre patches rectangulaires conservés.",
+        "Épaisseur des contours, proportions des panneaux et patches, renforts d’angle et intensité lumineuse interprétés ; aucune fidélité 1:1.",
+        "Objet de réserve sans position de scène assignée ; son échelle relative proposée est issue du secteur de stockage, pas du couloir."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v12/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v12/environment/masters/mammon-backstage-cube-case.png",
+          "sha256": "f53912d1fd6b95dda48365d00b4aab6c475b130191c6abf83fc7ceab01621e7b",
+          "bytes": 1056312,
+          "dimensions": [
+            1268,
+            1241
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v12/environment/mammon-backstage-cube-case.webp",
+          "sha256": "53061bdbbc1dcd78df6d5d96496ad90a54b22cea8e782525bfddf6e575d65483",
+          "bytes": 576610,
+          "dimensions": [
+            1268,
+            1241
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "presentationProposal": {
+        "pivotNormalized": {
+          "x": 0.500789,
+          "y": 0.885576
+        },
+        "referenceFrame": {
+          "width": 1672,
+          "height": 941
+        },
+        "sourceComparisonFrame": "207_SHOT_245 storage view, distinct from corridor269",
+        "sourceVisibleWidthFractionApprox": 0.124,
+        "sourceRelativeCubeToLowVisibleWidthRatioApprox": 0.38,
+        "sourceScaleConfidence": "approximate projected 2D comparison, not physical dimensions",
+        "runtimePlacement": null,
+        "runtimeScaleApplied": false,
+        "note": "Conserver approximativement le rapport de largeur visible cube/caisse basse de 0,38 dans une éventuelle composition du stockage ; ne pas appliquer ces tailles au couloir sans nouvelle qualification."
+      },
+      "diagnosticComposites": [
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-cube-case-alpha-light.jpg",
+          "sha256": "f4276f5bce5ee8376877e4f248b211da4357c626f752cf6dcd70638418579f89",
+          "bytes": 47882,
+          "dimensions": [
+            634,
+            621
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-cube-case-alpha-gray.jpg",
+          "sha256": "6fd874b98c2f70bc8cb19a669dafc9f3e0d27850337c8796d8e4730319d088bf",
+          "bytes": 45566,
+          "dimensions": [
+            634,
+            621
+          ],
+          "mode": "RGB"
+        }
+      ]
+    },
+    {
+      "id": "mammon-backstage-low-case",
+      "name": "Mammon · caisse basse des coulisses",
+      "category": "prop",
+      "kind": "prop",
+      "stageId": null,
+      "runtimeStatus": "reserve",
+      "sourceLocation": "Grande caisse basse du secteur de stockage des coulisses, sous le cube dans 207_SHOT_242/245 ; aucun rattachement au couloir 269.",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "accepted": true,
+      "producerAccepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "intendedRuntimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v12/environment/masters/mammon-backstage-low-case.png",
+      "export": "public/assets/production/v12/environment/mammon-backstage-low-case.webp",
+      "runtime": "/assets/production/v12/environment/mammon-backstage-low-case.webp",
+      "masterSha256": "15c39cad6e8441a387399965c80fee4fced5d12a0360c74622993db73c6921c3",
+      "exportSha256": "f67d1bf878b89dab63044bea02fc7c753eb6a103c986e1d82c6fddf5072a6c14",
+      "masterBytes": 1444619,
+      "exportBytes": 955146,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "nativeMode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha16": [
+        69,
+        42,
+        1467,
+        977
+      ],
+      "visibleBBoxAlpha128": [
+        70,
+        43,
+        1466,
+        976
+      ],
+      "alphaZeroPixels": 674257,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Native image_url data:image/png;base64 returned by image_gen; decoded directly to PNG bytes without image re-encoding. No output_hint or tool-local path was returned.",
+      "nativePngBytesUnchanged": true,
+      "prompt": "Use case: precise-object-edit. Deliver exactly ONE isolated complete static scenery prop with a truly transparent background. From this supplied crop of Jasper Luu's Helluva Boss production painting 207_SHOT_245, redraw ONLY the large LOW WIDE RECTANGULAR STORAGE CASE underneath the small cubic case. Remove the small cube entirely; its presence in the reference is solely to identify the requested lower case. The requested asset is one broad closed rectangular crate, longer than it is tall, at the same elevated three-quarter view, with a large long left/front side panel, a narrower right end panel and the large flat dark-violet top. Preserve the case's rectangular proportions, rigid burgundy and magenta perimeter framing, thin warm orange upper rim, nearly black indigo side panels and restrained purple/magenta light. Preserve the two blank muted-violet patches on the long left/front face: one large tilted rectangular patch toward the upper-left and one smaller tilted rectangle just to its right; preserve the small blank horizontal patch high on the right end. These are plain rectangular patches, no text or invented insignia. The small cube occludes part of the flat top and a merchandise heap occludes a small part of the right end in the reference: complete ONLY the same already-visible flat plane and straight border continuation under those occlusions, with NO new hardware or decorative detail. The resulting single case must have its entire box silhouette and every corner visible, with ten percent transparent margins on all sides. No stacked boxes, smaller cube, other objects, floor, cast shadow, merchandise, haze, lettering, sign, watermark or checkerboard. No handles, hinges, wheels, feet, locks, bolts or gems. Clean precise hand-drawn 2D television-animation outlines and restrained cel shading consistent with the supplied source, not a realistic 3D render. True native transparent alpha outside this one low rectangular case.",
+      "transparentBackgroundRequested": true,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+        "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "sha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "bytes": 329002,
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_245",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4335,
+            2655
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1531
+          ],
+          "role": "Primary production painting showing the two storage cases in the neighboring backstage stock area",
+          "note": "dimensions décrit le fichier local ; originalSourceDimensions conserve les dimensions annoncées dans le portfolio."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-242-storage.jpg",
+          "sha256": "a7c1cdd65eac266758117483ba7aa63861101a249597bee02c4b7e1b9585e6eb",
+          "bytes": 293677,
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_242",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+          "downloadUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4335,
+            2655
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1531
+          ],
+          "role": "Primary production painting showing the two storage cases in the neighboring backstage stock area",
+          "note": "dimensions décrit le fichier local ; originalSourceDimensions conserve les dimensions annoncées dans le portfolio."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-low-case-crop.png",
+          "sha256": "e95108972dcef8ec48324b1b66d4f83e199be1ba32c845423893a9cd3965fad7",
+          "bytes": 386209,
+          "dimensions": [
+            862,
+            643
+          ],
+          "mode": "RGB",
+          "id": "jasper_207_245_low_crop",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "native_crop_of_primary_production_painting",
+          "primary": true,
+          "viewed": true,
+          "parentPath": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "parentSha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "cropBox": [
+            825,
+            82,
+            1687,
+            725
+          ],
+          "transform": "Pixel crop only; no resizing, retouching, upscaling or enhancement.",
+          "role": "Exact object crop used by image_gen"
+        }
+      ],
+      "episodeCorroboration": {
+        "metadata": {
+          "path": "production/v12/environment/references/mammon-official-metadata.json",
+          "sha256": "d7801d06b5cdabd1e22a4edfc5d58d6f6f783b0cd59545a783d616c9edb72b9f",
+          "bytes": 1055
+        },
+        "frames": [
+          {
+            "path": "production/v12/environment/references/mammon-official-1040s.png",
+            "sha256": "1d8a1fd0e953b3befcce4140d87badf6e83b3d09da40c64cab4433aced05d808",
+            "bytes": 100498,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1040s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1040,
+            "timecode": "17:20",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              640,
+              180,
+              960,
+              360
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: merchandise in backstage area",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          },
+          {
+            "path": "production/v12/environment/references/mammon-official-1050s.png",
+            "sha256": "eb9541e507b0fca277fdf80eb09e7262a8c95176e50d4b5ef7aa811e75a9c6dd",
+            "bytes": 114979,
+            "dimensions": [
+              320,
+              180
+            ],
+            "mode": "RGB",
+            "id": "mammon_official_1050s",
+            "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s",
+            "videoId": "rRymSi8SmqA",
+            "author": "Vivziepop",
+            "kind": "official_episode_public_storyboard_cell",
+            "primary": true,
+            "viewed": true,
+            "timeSeconds": 1050,
+            "timecode": "17:30",
+            "storyboardLevel": 3,
+            "sheetIndex": 11,
+            "cropBox": [
+              0,
+              360,
+              320,
+              540
+            ],
+            "transform": "Native public storyboard cell crop only; no resizing or enhancement.",
+            "role": "Episode context: cyan staircase railing near the stage",
+            "limits": "Context corroboration only; does not identify the exact corridor painting or the complete storage-case designs."
+          }
+        ],
+        "level": "context_only_exact_painting_not_seen_in_samples",
+        "limits": [
+          "Les plans retenus confirment les coulisses, les marchandises et l’escalier cyan du concours.",
+          "Ni la peinture 207_SHOT_269 exacte ni les deux caisses ne sont directement visibles dans ces deux échantillons. Les peintures de production restent les références de dessin.",
+          "Aucune URL de lecture signée, cookie, jeton ou cache complet de la page YouTube n’est persisté."
+        ]
+      },
+      "canonicalContext": "Helluva Boss S2E7, concours de Mammon : références de production207. La mise en combat reste une adaptation AU.",
+      "fidelityNotes": [
+        "Le dessus masqué par le cube et la partie droite inférieure sous le tas de marchandises sont complétés comme de simples plans. La géométrie complète n’est donc pas entièrement attestée par les sources.",
+        "Silhouette utile entière, proportions et patches interprétés ; aucune reproduction 1:1.",
+        "Les marges sont de 4–5 % environ, inférieures aux 10 % demandés mais sans coupe de silhouette.",
+        "Alpha maximum 254 ; aucune promesse d’opacité intérieure strictement 255. Les composites clairs/gris ne montrent pas de halo visible.",
+        "Objet de réserve sans stageId ni placement dans le couloir."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v12/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v12/environment/masters/mammon-backstage-low-case.png",
+          "sha256": "15c39cad6e8441a387399965c80fee4fced5d12a0360c74622993db73c6921c3",
+          "bytes": 1444619,
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v12/environment/mammon-backstage-low-case.webp",
+          "sha256": "f67d1bf878b89dab63044bea02fc7c753eb6a103c986e1d82c6fddf5072a6c14",
+          "bytes": 955146,
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "presentationProposal": {
+        "pivotNormalized": {
+          "x": 0.5,
+          "y": 0.954102
+        },
+        "referenceFrame": {
+          "width": 1672,
+          "height": 941
+        },
+        "sourceComparisonFrame": "207_SHOT_245 storage view, distinct from corridor269",
+        "sourceVisibleWidthFractionApprox": 0.327,
+        "sourceRelativeCubeToLowVisibleWidthRatioApprox": 0.38,
+        "sourceScaleConfidence": "approximate projected 2D comparison, not physical dimensions",
+        "runtimePlacement": null,
+        "runtimeScaleApplied": false,
+        "note": "Conserver approximativement le rapport de largeur visible cube/caisse basse de 0,38 dans une éventuelle composition du stockage ; ne pas appliquer ces tailles au couloir sans nouvelle qualification."
+      },
+      "diagnosticComposites": [
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-low-case-alpha-light.jpg",
+          "sha256": "ac641d4f9528f9d61914ffd1f5dddbef30ea3a63dc76a2d8f71c3ff4306800a5",
+          "bytes": 58614,
+          "dimensions": [
+            768,
+            512
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-low-case-alpha-gray.jpg",
+          "sha256": "c31dd90633319389722e18b01a0763f47d6a2971c0af7ffe03bbcd769314649c",
+          "bytes": 54308,
+          "dimensions": [
+            768,
+            512
+          ],
+          "mode": "RGB"
+        }
+      ]
+    }
+  ],
+  "stageSuggestions": [
+    {
+      "id": "mammon-backstage-corridor-s2",
+      "stageId": "mammon-backstage-corridor-s2",
+      "name": "Mammon · couloir des coulisses",
+      "district": "Concours de Mammon",
+      "place": "Couloir vide attenant à l’escalier des coulisses",
+      "episode": {
+        "season": 2,
+        "episode": 7,
+        "title": "HELLUVA BOSS - MAMMON’S MAGNIFICENT MUSICAL MID-SEASON SPECIAL (ft Fizzarolli)  // S2: Episode 7",
+        "url": "https://www.youtube.com/watch?v=rRymSi8SmqA"
+      },
+      "canonicalState": "source_guided_production_background_gameplay_adaptation",
+      "design": "Un seul fond opaque ; panneaux bleu nuit/violets, plafonniers ronds et porte cyan à gauche donnant sur un escalier.",
+      "description": "Le couloir sombre des coulisses, éclairé par la porte cyan vers l’escalier du concours.",
+      "loreBasis": "Peinture de production Jasper Luu 207_SHOT_269, série 207 ; contexte des coulisses et de l’escalier corroboré dans S2E7 aux échantillons 1040 et 1050 s. Le duel n’est pas une scène canonique.",
+      "assetId": "mammon-backstage-corridor-s2-room",
+      "image": "/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp",
+      "thumbnail": "/assets/production/v12/environment/mammon-backstage-corridor-s2-thumb.webp",
+      "layers": [
+        {
+          "assetId": "mammon-backstage-corridor-s2-room",
+          "type": "background"
+        }
+      ],
+      "scenery": [],
+      "distinctFromExistingStage": "mammon-show",
+      "limits": [
+        "Cadrage large 1672×941 et sol avant adaptés au duel ; la perspective légèrement inclinée du couloir est conservée.",
+        "La porte cyan, l’escalier, les panneaux fissurés et les quatre plafonniers sont conservés ; traits plus nets et lumineux que la source.",
+        "Les deux échantillons officiels confirment le contexte des coulisses/escalier, pas le plan269 exact.",
+        "Aucun meuble, caisse ou accessoire ajouté ; ce stage ne comporte qu’un seul plan."
+      ],
+      "inGameChecked": false
+    }
+  ],
+  "counts": {
+    "acceptedDrawings": 3,
+    "deliveredImageFiles": 7,
+    "deliveredImageBytes": 6561841,
+    "backgrounds": 1,
+    "reserveProps": 2,
+    "newStandaloneBases": 0,
+    "newPlayableKits": 0,
+    "newAnimationCycles": 0,
+    "plannedNewStages": 1,
+    "integratedNewStages": 0,
+    "generationCalls": 3,
+    "refusals": 0,
+    "retries": 0
+  },
+  "sourceLedger": "docs/standalone/production-v12/environment-references.json",
+  "promptLedger": "docs/standalone/production-v12/environment-prompts.json",
+  "imageQa": "docs/standalone/production-v12/environment-qa.json",
+  "independentReview": "docs/standalone/production-v12/independent-visual-review.json",
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "integrationNotes": [
+    "Ajouter seulement le couloir comme nouvelle arène ; conserver mammon-show.",
+    "Aucune couche de caisses dans le couloir. Les deux caisses restent des props de réserve sans stageId.",
+    "Runtime, plan, catalogue, PR et Drive sont pris en charge par root ; aucun de ces fichiers n’a été modifié par cet agent."
+  ]
+}

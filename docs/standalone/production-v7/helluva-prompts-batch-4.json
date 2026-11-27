@@ -1,0 +1,51 @@
+[
+  {
+    "id": "hb_jesse-ready",
+    "attemptId": "hb_jesse-ready-attempt2",
+    "name": "Jesse",
+    "sourceIdentityId": "hb_jesse",
+    "continuity": "season_1",
+    "prompt": "Use case: precise-object-edit. Correct the anatomy of image1, the rejected Jesse sprite, while keeping the character, colors, outfit, tail, wings, face, trousers, shoes, black outlines and transparent background unchanged. Image2 is the original reference for Jesse's correct pose. The rejected image accidentally has THREE arms: one raised behind his head, and TWO more on his hips. Remove ONLY the downward-bent arm on the viewer's right, including its white wrist cuff and hand at the right waist. Leave exactly TWO arms: the arm bent up behind the head, and the arm on the viewer's left with its hand on the left hip, matching image2. The right side of his ribcage should connect cleanly from shoulder to waist with no additional arm. Keep the single existing bat wing behind that side. Preserve the entire full-body silhouette, both shoes and tail, and genuine RGBA transparency; no scene, extra parts or text. Do not redraw him into a new pose.",
+    "referencePaths": [
+      "/home/agent/hazbin-v7-reference-sources/jesse-rejected-three-arms.png",
+      "/home/agent/hazbin-v6/public/assets/sprites/helluva/portraits/hb_jesse.png"
+    ],
+    "referenceUrls": [
+      "https://www.youtube.com/watch?v=8zyGQquL8VM"
+    ],
+    "sourceNote": "Targeted correction of extra arm, restoring original cutout pose. Same source incarnation as attempt1, Ozzie's official board3 cells4–5 at300–310s. First draft excluded from runtime."
+  },
+  {
+    "id": "hb_millie_past_ponytail-ready",
+    "name": "Millie — passé, queue de cheval",
+    "sourceIdentityId": "hb_millie",
+    "sourceVariantId": "VAR-020",
+    "continuity": "season_2",
+    "staticVariantOnly": true,
+    "prompt": "Use case: identity-preserve. Create one transparent static full-body sprite of adult Millie in the specific past/flashback incarnation from Helluva Boss Ghostf**kers, shown in the supplied official episode storyboards. This is her western outfit and very long high ponytail, before she joined I.M.P. Image1 shows her whole silhouette in row1 column1 and head/torso in row1 column2 and row2 column1. Image2 supplies the lower costume and tail in row2 column2 and row3. Preserve her red skin, yellow eyes, heavy black lashes, black lipstick, slim adult build, two narrow black horns with fine pale stripes, long red tail with pale scars and arrow tip. Her large dark charcoal hair is tied into a high messy ponytail with a burgundy tie, not her present short haircut. Black choker; cropped burgundy leather western jacket with raised gold-studded collar, black panels, gold/pale-yellow cuffs; bare midriff; dark purple western trousers/chaps with lighter purple waist/upper front panels, side fringe, burgundy thigh strap and black low-heeled boots with red toes. Draw her alone in a relaxed neutral standing pose, one hand on hip and one relaxed, no weapon or held object. Use the observed scene colors normalized from the green bar lighting. Crisp black cel outlines and flat cartoon colors, full ponytail, horns, tail and both feet inside generous margins. Genuine transparent RGBA background, no floor, shadow, words, props, extra characters or animation frames. Preserve this specific outfit and proportions rather than mixing in current Millie's clothes.",
+    "referencePaths": [
+      "/home/agent/hazbin-v7-reference-sources/ghosts-board-10.jpg",
+      "/home/agent/hazbin-v7-reference-sources/ghosts-board-9.jpg"
+    ],
+    "referenceUrls": [
+      "https://www.youtube.com/watch?v=5DV4IIKwqRI"
+    ],
+    "sourceNote": "VAR-020. Official Ghostf**kers public storyboards: board10 cell1 at900s whole silhouette; cells2/4 at910/930s head/torso; board9 cell5 at850s lower costume and tail. Parent independently confirmed reasonable static qualification. No HD model; small/occluded portions reconstructed from complementary320×180 frames, not exact1:1."
+  },
+  {
+    "id": "hb_loona_quadruped-ready",
+    "name": "Loona — forme quadrupède",
+    "sourceIdentityId": "hb_loona",
+    "sourceVariantId": "VAR-022",
+    "continuity": "season_2",
+    "staticVariantOnly": true,
+    "prompt": "Use case: identity-preserve. Create one transparent full-body static sprite of Loona's QUADRUPED hellhound transformation from Helluva Boss Sinsmas, exactly the incarnation shown in the supplied official storyboard. Reference row3 column3 shows her transformed head, mane, body and legs from the front; row2 column3 supplies the elongated dark body and sweeping tail from behind/side. She is a four-legged wolf-like hellhound, not her normal upright humanoid form. Preserve her narrow long muzzle, black nose, red eyes and pale irises, black pointed ears with pale inner fur, enormous pale grey-white asymmetrical flowing mane sweeping across the side of her face and down her chest, spiked black collar, dark charcoal/blue-grey body, pale muzzle/chest and inner patches, slender dark legs ending in clawed paws, very long bushy dark tail with a pale underside. Her expression is alert and stern. Draw one calm standing quadruped pose in three-quarter side view, all FOUR paws on one invisible ground line and clearly distinguishable, whole mane and sweeping tail inside clear margins. Match the show's angular black cel outlines, flat colors and proportions from this exact transformation. No bipedal stance, human hands, extra legs, extra figures, backpack, weapon, clothing redesign, scene, floor, shadow, text, glow or animation frames. Genuine transparent RGBA background.",
+    "referencePaths": [
+      "/home/agent/hazbin-v7-reference-sources/sinsmas-board-12.jpg"
+    ],
+    "referenceUrls": [
+      "https://www.youtube.com/watch?v=GisSNuVpbkM"
+    ],
+    "sourceNote": "VAR-022. Official Sinsmas board12 cells6/9 at1130/1160s show transformed body/tail and frontal head/legs; native static pose reconstruction from these complementary320×180 views. Parent independently confirmed qualification. No HD model; portions obscured by mane or perspective reconstructed; no1:1 certification, no rig/animation."
+  }
+]

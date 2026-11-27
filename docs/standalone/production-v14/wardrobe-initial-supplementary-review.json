@@ -1,0 +1,71 @@
+{
+  "edition": "V14",
+  "status": "partial_observations_only",
+  "reviewer": "/root/v14_register_bible",
+  "reviewedAt": "2026-11-26T22:13:19.505174+00:00",
+  "scope": "Four captured wardrobe crops from two subsequently failed initial desktop sessions. No new browser session was executed by this reviewer.",
+  "initialAttemptLedger": "docs/standalone/production-v14/browser-harness/initial-attempts.json",
+  "initialAttemptLedgerSha256": "a8beea052ff57a30a62014eef4816eeb8ae934ce059825f897db0830bc8da0e1",
+  "screenshotsReviewed": [
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-blitzo-shop-initial/desktop-blitzo-shop-wardrobe-art.png",
+      "sha256": "e5bfce641e2e6a5dfde6871a90e61bf6550ce50ed0ab6d60049fe57e9fce03a2",
+      "dimensions": [
+        141,
+        211
+      ],
+      "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+      "observed": true,
+      "scope": "wardrobe_preview",
+      "observations": "Cornes, queue, mains et deux bottes visibles en entier dans le cadrage du vestiaire. Aucun débordement ni coupe observé dans cette capture partielle.",
+      "acceptedAsCompletedBrowserSegment": false
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-blitzo-shop-initial/desktop-blitzo-shop-wardrobe-selection.png",
+      "sha256": "b6e3324e27bfccdf0bd9f9e5c1b9f97ef0f6c223bd465dc1a5204ba6963af729",
+      "dimensions": [
+        233,
+        45
+      ],
+      "assetId": "hb_blitzo-flashback-ghostfuckers-s2",
+      "observed": true,
+      "scope": "selected_costume_label",
+      "observations": "Sélection affichée « Flashback · Ghostf**kers ».",
+      "acceptedAsCompletedBrowserSegment": false
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-moxxie-dining-initial/desktop-moxxie-dining-wardrobe-art.png",
+      "sha256": "9b6544f2946d6e036d873ae93d5660b262a3e4f41319da6dc3b779ec2d59ac35",
+      "dimensions": [
+        141,
+        211
+      ],
+      "assetId": "hb_moxxie-dress-disguise-training-short",
+      "observed": true,
+      "scope": "wardrobe_preview",
+      "observations": "Ombrelle ouverte, chapeau avec plumes, robe jusqu’à l’ourlet et deux nœuds visibles. Aucun pied ajouté sous la robe ; pas de coupe observée du contour dans ce cadrage de vestiaire.",
+      "acceptedAsCompletedBrowserSegment": false
+    },
+    {
+      "path": "docs/standalone/production-v14/browser-harness/failed-segments/desktop-moxxie-dining-initial/desktop-moxxie-dining-wardrobe-selection.png",
+      "sha256": "d53bb9014e05a528f466dc8ffdfca3e52c0e219ec65647d320a29dab09490f09",
+      "dimensions": [
+        233,
+        45
+      ],
+      "assetId": "hb_moxxie-dress-disguise-training-short",
+      "observed": true,
+      "scope": "selected_costume_label",
+      "observations": "Sélection affichée « Robe et ombrelle · IMP Training » dans le contrôle visible.",
+      "acceptedAsCompletedBrowserSegment": false
+    }
+  ],
+  "completedBrowserSegments": 0,
+  "inGameChecked": false,
+  "limits": [
+    "Both sessions later crashed on combat entry. These visual observations do not validate either arena or completed combat.",
+    "The gallery failed before its first detail; no continuity badge, detail panel or filter result was observed here.",
+    "No Millie wardrobe view, mobile result or final optimized-runtime result is included.",
+    "The final register must require new complete browser evidence after root freezes the changed runtime."
+  ]
+}

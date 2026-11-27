@@ -1,0 +1,132 @@
+import { useEffect, useRef, useState, type Ref } from 'react';
+import reserveCatalogue from '../../art/infernal-versus/production/reserve-assets.json';
+import { HELLUVA_CHARACTERS } from '../expansions/helluva-boss/data';
+import './reserve-gallery.css';
+
+type ReserveKind = 'character_base' | 'support_base' | 'enemy_base' | 'costume_base' | 'narrative_archive' | 'projectile' | 'prop' | 'machine';
+interface ReserveAsset {
+  id: string;
+  name: string;
+  kind: ReserveKind;
+  franchise?: 'Hazbin Hotel' | 'Helluva Boss';
+  continuity?: 'simulation_au' | 'season_1' | 'season_2' | 'season_3' | 'legacy_concept_2015' | 'legacy_concept_2017' | 'legacy_concept_2019' | 'pilot_legacy' | 'season_1_storybook' | 'production_model_undated' | 'official_merchandise_undated' | 'official_short_2026';
+  spoilerScope?: 'season_1' | 'season_2' | 'season_3';
+  frameCoverage?: 'bust' | 'full_body' | 'full_object';
+  runtimeStatus?: 'reserve' | 'selectable_costume' | 'stage_scenery';
+  sourceIdentityId?: string | null;
+  sourceWorkTitle?: string;
+  reference: string;
+  export: string;
+  dimensions: number[];
+  references: { url: string; kind: string; episode?: string; title?: string }[];
+  fidelityNotes: string[];
+}
+const KINDS: Record<ReserveKind, string> = {
+  character_base: 'Personnages', support_base: 'Soutiens', enemy_base: 'Ennemis',
+  costume_base: 'Tenues', narrative_archive: 'Archives', projectile: 'Projectiles', prop: 'Accessoires', machine: 'Machines',
+};
+const STATUS: Record<ReserveKind, string> = {
+  character_base: 'Base de personnage en réserve', support_base: 'Personnage de soutien en réserve',
+  enemy_base: 'Base d’ennemi en réserve', costume_base: 'Tenue statique en réserve',
+  narrative_archive: 'Archive narrative statique', projectile: 'Projectile visuel en réserve', prop: 'Accessoire statique en réserve', machine: 'Machine statique en réserve',
+};
+const assets = reserveCatalogue.assets as ReserveAsset[];
+const assetStatus = (asset: ReserveAsset) => asset.runtimeStatus === 'selectable_costume'
+  ? 'Tenue statique disponible dans le vestiaire'
+  : asset.runtimeStatus === 'stage_scenery' ? 'Accessoire intégré au décor' : STATUS[asset.kind];
+const historicalYear = (asset: ReserveAsset) => asset.continuity === 'legacy_concept_2015' ? 2015
+  : asset.continuity === 'legacy_concept_2017' ? 2017 : asset.continuity === 'legacy_concept_2019' ? 2019 : null;
+const historicalLabel = (asset: ReserveAsset) => historicalYear(asset) ? ` · MODÈLE HISTORIQUE · ${historicalYear(asset)}` : '';
+const archiveLabel = (asset: ReserveAsset) => asset.continuity === 'pilot_legacy' ? ' · PILOTE · 2019'
+  : asset.continuity === 'season_1_storybook' ? ' · RÉCIT · SAISON 1' : '';
+const productionLabel = (asset: ReserveAsset) => asset.continuity === 'production_model_undated' ? ' · PLANCHE DE PRODUCTION' : '';
+const merchandiseLabel = (asset: ReserveAsset) => asset.continuity === 'official_merchandise_undated' ? ' · PRODUIT OFFICIEL' : '';
+const shortLabel = (asset: ReserveAsset) => asset.continuity === 'official_short_2026' ? ' · COURT OFFICIEL · 2026' : '';
+const provenanceNote = (asset: ReserveAsset) => {
+  if (asset.continuity === 'simulation_au') return 'Personnage original créé pour la simulation du projet. Il ne fait pas partie des séries.';
+  if (asset.continuity === 'production_model_undated') return 'Adaptation statique d’un objet identifié sur une planche de production de Helluva Boss. Son apparition précise dans un épisode reste à confirmer.';
+  if (asset.continuity === 'official_merchandise_undated') return 'Dessin adapté d’un produit officiel. L’apparition exacte de cette incarnation dans un épisode n’est pas confirmée.';
+  if (asset.continuity === 'official_short_2026') {
+    if (asset.sourceWorkTitle) return `${asset.kind === 'costume_base' ? 'Costume' : asset.kind === 'narrative_archive' ? 'Portrait' : 'Dessin'} du court officiel ${asset.sourceWorkTitle} (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.`;
+    if (asset.id === 'hb_millie-dress-disguise-training-short' || asset.id === 'hb_moxxie-dress-disguise-training-short') return 'Costume du court officiel IMP Training Video (2026). La pose s’appuie sur le porte-clés officiel ; cette fiche ne l’attribue pas à une saison numérotée.';
+    return 'Dessin issu d’un court officiel de 2026. Consultez ses références pour identifier l’œuvre et les détails représentés ; cette fiche ne l’attribue pas à une saison numérotée.';
+  }
+  if (asset.id === 'hb_blitzo-flashback-ghostfuckers-s2') return 'Costume du flashback de Ghostf**kers (S2E10). La pose s’appuie sur le standee officiel ; le plan de l’épisode corrobore la tenue.';
+  if (asset.continuity === 'pilot_legacy') return 'Portrait du pilote de 2019. Cette fiche conserve son incarnation historique, distincte des saisons de la série.';
+  if (asset.continuity === 'season_1_storybook') return 'Silhouette narrative de l’ouverture de la saison 1. Cette archive illustre le récit ; elle ne constitue pas un modèle détaillé de combat ni une preuve de capacités.';
+  const year = historicalYear(asset);
+  if (year) return `Modèle de conception de ${year}, antérieur à la série. Cette fiche documente cette incarnation historique ; son apparence dans les saisons récentes n’est pas établie par ce dessin.`;
+  return 'Dessin candidat inspiré des références de la série. La conformité exacte de chaque détail reste à valider.';
+};
+const secondarySourceKinds = new Set(['secondary_reproduction_of_attributed_creator_art', 'historical_repository_cutout', 'creator_primary_source_unavailable']);
+const referenceLabel = (reference: ReserveAsset['references'][number]) => {
+  const title = reference.episode ?? reference.title ?? (reference.kind === 'project_design' ? 'Design original du projet' : 'Référence officielle');
+  if (reference.kind === 'secondary_reproduction_of_attributed_creator_art') return `Reproduction secondaire — ${title}`;
+  if (reference.kind === 'historical_repository_cutout') return `Archive du projet, provenance non revérifiée — ${title}`;
+  if (reference.kind === 'creator_primary_source_unavailable') return `Source primaire attribuée, accès non obtenu — ${title}`;
+  return title;
+};
+
+/** Incarnation-specific evidence takes priority over a character's first appearance. */
+function spoilerScope(asset: ReserveAsset): 'season_1' | 'season_2' | 'season_3' {
+  if (asset.spoilerScope) return asset.spoilerScope;
+  const evidence = [asset.reference, ...asset.references.map(reference => reference.episode ?? reference.title ?? '')].join(' ');
+  if (/\bS3(?:\s*E\d+)?\b|\b(?:saison|season)\s*3\b/i.test(evidence)) return 'season_3';
+  if (/\bS2\s*E|\b(?:saison|season)\s*2\b/i.test(evidence)) return 'season_2';
+  if (/\bS1\s*E|\b(?:saison|season)\s*1\b/i.test(evidence)) return 'season_1';
+  const character = HELLUVA_CHARACTERS.find(candidate => candidate.id === asset.sourceIdentityId);
+  if (character) return character.spoilerScope === 'season_1' ? 'season_1' : 'season_2';
+  // Unknown chronology is hidden by the stricter content filter.
+  return 'season_2';
+}
+
+export function ReserveGallery({ titleRef, allowSeasonTwo, allowSeasonThree, onScopeChange, onSeasonThreeChange }: {
+  titleRef: Ref<HTMLHeadingElement>;
+  allowSeasonTwo: boolean;
+  allowSeasonThree: boolean;
+  onScopeChange: (allow: boolean) => void;
+  onSeasonThreeChange: (allow: boolean) => void;
+}) {
+  const [kind, setKind] = useState<ReserveKind | 'all'>('all');
+  const [query, setQuery] = useState('');
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const detailRef = useRef<HTMLElement>(null);
+  const detailTitleRef = useRef<HTMLHeadingElement>(null);
+  const selectedCardRef = useRef<HTMLButtonElement | null>(null);
+  const eligible = assets.filter(asset => {
+    const scope = spoilerScope(asset);
+    return scope === 'season_1' || (allowSeasonTwo && (scope !== 'season_3' || allowSeasonThree));
+  });
+  const visible = eligible.filter(asset => (kind === 'all' || asset.kind === kind)
+    && asset.name.toLocaleLowerCase().includes(query.toLocaleLowerCase().trim()));
+  const selected = visible.find(asset => asset.id === selectedId);
+  useEffect(() => {
+    if (selected) {
+      detailTitleRef.current?.focus({ preventScroll: true });
+      detailRef.current?.scrollIntoView?.({ block: 'start' });
+    }
+  }, [selected]);
+  return <section className="iv-reserve-gallery">
+    <p className="iv-eyebrow">BASES VISUELLES & OBJETS</p>
+    <h1 ref={titleRef} tabIndex={-1}>La galerie des créations</h1>
+    <p className="iv-lead">{assets.length} dessins à explorer en plein cadre. Les fiches indiquent leur usage dans le jeu, leurs références et les détails encore à valider.</p>
+    <div className="iv-filter-row">
+      <label>Catégorie<select value={kind} onChange={event => { setSelectedId(null); setKind(event.target.value as ReserveKind | 'all'); }}><option value="all">Toutes les créations</option>{Object.entries(KINDS).filter(([value]) => assets.some(asset => asset.kind === value)).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+      <label>Contenu de la galerie<select value={allowSeasonTwo ? (allowSeasonThree ? 'season_3' : 'all') : 'season_1'} onChange={event => { setSelectedId(null); onScopeChange(event.target.value !== 'season_1'); onSeasonThreeChange(event.target.value === 'season_3'); }}><option value="season_1">Saison 1 uniquement</option><option value="all">Saisons 1 et 2</option><option value="season_3">Saisons 1, 2 et 3 — spoilers autorisés</option></select></label>
+      <label>Rechercher une création<input value={query} onChange={event => { setSelectedId(null); setQuery(event.target.value); }} placeholder="Personnage, tenue, accessoire…" /></label>
+    </div>
+    <p className="iv-small" role="status">{visible.length} dessin{visible.length > 1 ? 's' : ''} affiché{visible.length > 1 ? 's' : ''} sur {eligible.length} disponible{eligible.length > 1 ? 's' : ''} avec ce contenu.</p>
+    {selected && <article ref={detailRef} className="iv-panel iv-reserve-detail" aria-label={`Détail de ${selected.name}`}>
+      <img className={selected.continuity === 'season_1_storybook' ? 'is-storybook' : undefined} src={`/${selected.export.replace(/^public\//, '')}`} alt={selected.name} />
+      <div><p className="iv-eyebrow">{KINDS[selected.kind]}{selected.continuity === 'simulation_au' ? ' · CRÉATION ORIGINALE AU' : ''}{historicalLabel(selected)}{archiveLabel(selected)}{productionLabel(selected)}{merchandiseLabel(selected)}{shortLabel(selected)}{spoilerScope(selected) === 'season_3' ? ' · SAISON 3' : ''}</p><h2 ref={detailTitleRef} tabIndex={-1}>{selected.name}</h2><p>{assetStatus(selected)}{selected.frameCoverage === 'bust' ? ' · Buste' : selected.frameCoverage === 'full_body' ? ' · Silhouette entière' : ''} · {selected.dimensions.join(' × ')} pixels.</p><p className="iv-small">{provenanceNote(selected)}</p>
+        <details><summary>Références et détails du dessin</summary><ul>{selected.references.filter(reference => reference.kind.startsWith('official_') || reference.kind === 'project_design' || secondarySourceKinds.has(reference.kind)).map((reference, index) => <li key={index}><a href={reference.url} target="_blank" rel="noreferrer">{referenceLabel(reference)}</a></li>)}</ul><ul>{selected.fidelityNotes.map((note, index) => <li key={index}>{note}</li>)}</ul></details>
+        <button className="iv-secondary" onClick={() => { setSelectedId(null); selectedCardRef.current?.focus(); }}>Refermer l’aperçu</button>
+      </div>
+    </article>}
+    <div className="iv-reserve-grid">{visible.map(asset => <button className="iv-reserve-card" key={asset.id} aria-pressed={selectedId === asset.id} onClick={event => { selectedCardRef.current = event.currentTarget; setSelectedId(asset.id); }}>
+      <span className={`iv-reserve-image is-${asset.kind}${asset.continuity === 'season_1_storybook' ? ' is-storybook' : ''}`}><img src={`/${asset.export.replace(/^public\//, '')}`} alt="" loading="lazy" /></span>
+      <span className="iv-eyebrow">{KINDS[asset.kind]} · {asset.continuity === 'simulation_au' ? 'CRÉATION ORIGINALE AU' : (asset.franchise ?? 'Helluva Boss').toLocaleUpperCase()}{historicalLabel(asset)}{archiveLabel(asset)}{productionLabel(asset)}{merchandiseLabel(asset)}{shortLabel(asset)}{spoilerScope(asset) === 'season_3' ? ' · SAISON 3' : ''}</span><strong>{asset.name}</strong><small>Voir le dessin</small>
+    </button>)}</div>
+    {visible.length === 0 && <p className="iv-empty">Aucune création ne correspond à ces filtres.</p>}
+  </section>;
+}

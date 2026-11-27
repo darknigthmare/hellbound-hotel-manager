@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "edition": "V15",
+  "date": "2026-11-27",
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "assetId": "hz_top_hat_demon-pilot-portrait",
+      "sourceIdentityId": "hz_top_hat_demon",
+      "name": "Top Hat Demon — portrait du pilote",
+      "continuity": "pilot_legacy",
+      "spoilerScope": "season_1",
+      "frameCoverage": "waist_up_portrait",
+      "kind": "character_portrait",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "master": "masters/hz_top_hat_demon-pilot-portrait.png",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "masterSha256": "e811e42c882cc526af06821b789050f4f8d851a7d8a7cc71c1c9ecf6dfbc40f6",
+      "primaryReference": {
+        "url": "https://www.youtube.com/watch?v=Zlmswo0S0e0&t=680s",
+        "title": "HAZBIN HOTEL (PILOT)",
+        "author": "Vivziepop",
+        "timeSeconds": 680,
+        "path": "references/top-hat-demon-official-680s.png",
+        "sourceBoard": "references/top-hat-demon-official-board.jpg",
+        "nativeCellSize": [
+          320,
+          180
+        ],
+        "cropBox": [
+          640,
+          180,
+          960,
+          360
+        ],
+        "transform": "Native cell crop only; no enhancement or painting.",
+        "viewed": true
+      },
+      "visualQa": {
+        "status": "accepted_with_limits_pending_independent_review",
+        "whiteCompositeViewed": true,
+        "darkCompositeViewed": true,
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alpha128BoundingBox": [
+          98,
+          138,
+          1238,
+          1157
+        ],
+        "allHeadShoulderHandExtremitiesInsideCanvas": true,
+        "initialCandidateRejected": "Head was incorrectly interpreted as a tall literal top hat. Corrected with imagegen to compact oval/pear head from official scene.",
+        "correction": "Head compacted; white upper arch and small magenta top patch restored; shallower smile.",
+        "limits": [
+          "Native official source is a 320×180 preview frame; precise fingers, eye shape, seams and proportions redrawn and not certified 1:1.",
+          "Intentional waist-level portrait crop, no standalone full-body base delivered.",
+          "Pointing arm and scene gesture kept; lower left glove position adapted slightly to keep it fully inside canvas.",
+          "Subtle source-independent shading and edge alpha noise remain; no manual repainting or background removal.",
+          "Current-game browser integration not performed by this agent."
+        ]
+      },
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "assetId": "hz_eve-storybook-seated-silhouette",
+      "sourceIdentityId": "hz_eve",
+      "name": "Eve — SILHOUETTE DU RÉCIT",
+      "continuity": "season_1_storybook",
+      "spoilerScope": "season_1",
+      "frameCoverage": "whole_seated_silhouette",
+      "kind": "character_base",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": true,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "master": "masters/hz_eve-storybook-seated-silhouette.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "masterSha256": "23b0a13fe6cbdb99c058ad5635be1a4c84de584e69eae4cf1b2bd37fc3515880",
+      "primaryReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=56s",
+          "title": "The First 2 Minutes of Hazbin Hotel l Prime Video",
+          "author": "Prime Video",
+          "timesSeconds": [
+            56,
+            58,
+            60,
+            62,
+            64,
+            66
+          ],
+          "path": "references/eve-official-56s.png",
+          "sourceBoard": "references/eve-official-opening-board.jpg",
+          "nativeCellSize": [
+            159,
+            90
+          ],
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=55s",
+          "title": "The First 5 Minutes of Hazbin Hotel | Season 1 Episode 1",
+          "author": "Amazon Prime Video UK & IE",
+          "timesSeconds": [
+            55,
+            60,
+            65
+          ],
+          "path": "references/eve-official-uk-55s.png",
+          "sourceBoard": "references/eve-official-uk-opening-board.jpg",
+          "nativeCellSize": [
+            320,
+            180
+          ],
+          "viewed": true
+        }
+      ],
+      "secondaryReference": {
+        "path": "references/eve-existing-cutout-secondary.png",
+        "origin": "Existing repository public/assets/sprites/hazbin/portraits/hz_eve.png",
+        "provenance": "Historical cutout; original author/extraction not independently verified. Used for large contour support after matching the silhouette to primary frames.",
+        "viewed": true
+      },
+      "visualQa": {
+        "status": "accepted_with_limits_pending_independent_review",
+        "whiteCompositeViewed": true,
+        "darkCompositeViewed": true,
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alpha128BoundingBox": [
+          69,
+          194,
+          1172,
+          1177
+        ],
+        "allExtremitiesInsideCanvas": true,
+        "limits": [
+          "Only the narrative silhouette from The Story of Hell opening is represented. No modern detailed Eve incarnation, costume or powers claimed.",
+          "Primary full-body views are small public preview frames (159×90 and 320×180). Larger preexisting cutout is declared as secondary support.",
+          "Seated pose, folded lower silhouette, black head and body, grey hair underlayer are visible. No hidden anatomy or realistic features added.",
+          "Slight gradient and texture from generation remain instead of a mathematically flat fill; contour is adapted and not certified 1:1.",
+          "Counting as an entire narrative base does not establish a detailed standing combat model; no kit or animation delivered.",
+          "Current-game browser integration not performed by this agent."
+        ]
+      },
+      "catalogueQualificationSuggestion": {
+        "prior": "future_or_semi_canon_visual_unqualified",
+        "proposed": "official_season_1_storybook_silhouette",
+        "scope": "The on-screen silhouette is attested; complete role, abilities and a present-day detailed design remain unqualified."
+      },
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "refused": [
+    {
+      "targetId": "hz_man_meat",
+      "assetId": "hz_man_meat-s2-portrait",
+      "requestId": "72763c39-e78c-46d4-9551-02ff659b8b78",
+      "stage": "output",
+      "category": "other",
+      "code": "moderation_blocked",
+      "filesProduced": 0,
+      "retried": false
+    },
+    {
+      "targetId": "hz_lilith",
+      "assetId": "hz_lilith-storybook-standing-silhouette",
+      "requestId": "547c681b-93c7-469d-92c7-4a4a1388be39",
+      "stage": "output",
+      "category": "other",
+      "code": "moderation_blocked",
+      "filesProduced": 0,
+      "retried": false
+    }
+  ],
+  "noRetryTargetIdsAdded": [
+    "hz_man_meat",
+    "hz_lilith"
+  ],
+  "prompts": [
+    {
+      "id": "hz_top_hat_demon-pilot-portrait",
+      "prompt": "Use case: stylized-concept. Asset type: one high-resolution transparent static character portrait for a 2D animated game archive. Reference: official Hazbin Hotel PILOT storyboard contact sheet. Use ONLY the top-hat cyclops demon in the MIDDLE ROW RIGHT CELL (row 2 column 3), who is pointing to the upper right. Draw this SINGLE character only as an isolated waist-up portrait, carefully matching that exact 2019 pilot model. Black top-hat-like rounded head, one large central white eye with black pupil, small magenta top marking, white side tufts, pale mouth and cheek circles, gray formal jacket with round puff shoulders, gray bow tie, white shirt-front with black buttons, black slim arms and white gloves; preserve the pointing gesture. Precise crisp dark cartoon linework and flat cel colors from the reference. Frame the entire hat/head, both shoulders, both hands and complete upper body, then a clean intentional waist-level lower edge; 8 percent transparent padding above and beside the silhouette. This is a bust portrait, not a full-body drawing; no invented legs. Plain genuinely transparent alpha background, no shadow, no glow, no text, no panels, no contact sheet, no other people, no scenery, no watermark. Faithful reference adaptation; keep the unusual hat-shaped face and single eye.",
+      "references": [
+        "/mnt/data/infernal-v15-character-portraits/references/top-hat-demon-official-board.jpg"
+      ]
+    },
+    {
+      "id": "hz_man_meat-s2-portrait",
+      "prompt": "Use case: stylized-concept. Asset type: one high-resolution transparent static character bust portrait for a 2D animated game archive. Subject: Man Meat from Hazbin Hotel season 2 Bad With Us, the large muscular dark charcoal gray REPTILIAN DEMON with yellow eyes, broad crocodile-like angular muzzle, black spiky hair, red geometric tribal markings over his shoulders/upper arms and red skull chest tattoo, wearing a BLACK SLEEVELESS LOW-CUT VEST. Image 1: use MIDDLE ROW CENTER cell (row 2 column 2) for upper body proportions, neck, shoulders and outfit. Image 2: use MIDDLE ROW CENTER and RIGHT cells and BOTTOM ROW LEFT cell for face, yellow eyes, hair, red shoulder markings and visible black vest. Ignore all other characters and subtitles in both contact sheets. Draw this single character as a waist-up neutral three-quarter portrait, head turned slightly toward viewer left, broad shoulders readable and arms resting naturally near the torso. Match his exact on-screen face shape, vest neckline and markings as closely as references support, crisp 2D cartoon linework, flat cel colors, no painterly rendering, no 3D. Keep all head and shoulder extremities inside frame with 8 percent margin. Deliberate clean waist-level portrait crop; no legs, no invented full body, no weapon. Genuinely transparent alpha background, no glow, no shadow, no text, no second character, no panels, no watermark.",
+      "references": [
+        "/mnt/data/infernal-v15-character-portraits/references/man-meat-official-board-00.jpg",
+        "/mnt/data/infernal-v15-character-portraits/references/man-meat-official-board-01.jpg"
+      ]
+    },
+    {
+      "id": "hz_top_hat_demon-pilot-portrait-correction",
+      "prompt": "Edit target: image 1 is the generated transparent portrait. Image 2 is the authoritative native official 2019 Hazbin Hotel pilot frame of the same cyclops character pointing upwards. Correct ONLY the HEAD and NECK PROPORTIONS of image 1 to match image 2 much more closely. The character's head is a COMPACT rounded black oval/pear-shaped face enclosing its huge white cyclops eye, NOT a tall literal top-hat cylinder. Remove the tall cylinder above the eye. The black head's upper edge is a compact rounded arch close above the white eye, with the small narrow MAGENTA PATCH near the top and a thin WHITE outer arch highlight as visible in image 2. Overall head height should be only roughly 1.3 times the large white eye height. Keep the big eye, cheek dots, wide PALE SMILE, white short side tufts. The mouth is a shallow wide smile, not a deep triangular opening. Keep the gray puff-shoulder jacket, bow tie, white shirt panel, pointing white glove, other arm and deliberate waist crop from image 1. Resize head down to these exact compact reference proportions; preserve complete extremities and transparent margin. Native genuine alpha transparent background, no text, no glow, no cast shadow. One character only. Crisp 2D cel line art, no painterly shading.",
+      "references": [
+        "masters/hz_top_hat_demon-pilot-portrait.png (first candidate, now archived in candidates/)",
+        "references/top-hat-demon-official-680s.png"
+      ]
+    },
+    {
+      "id": "hz_eve-storybook-seated-silhouette",
+      "prompt": "Create a single static transparent-background character asset of EVE as she appears in the stylized Story of Hell opening of Hazbin Hotel season 1. This is the simple seated storybook silhouette incarnation, not a realistic redesign. Use the attached official opening frames as the authority. The larger preexisting transparent cutout is a secondary visual aid only; it matches the seated woman on the LEFT of the tree in the wide official scene. The standing woman on the RIGHT is Lilith and must NOT be depicted.\n\nExactly ONE character, seated in side profile facing screen-right, with the same complete compact folded-leg pose as the secondary cutout and primary wide frame. Preserve her smooth domed black head, tiny pointed side-profile nose and small chin, the long black forelock/upper hair shape with irregular pointed ends covering any eyes. Her very long wind-swept hair fans back towards screen-left as a broad charcoal-grey tapered silhouette underlayer, with the exact few pointed ends visible in the reference. Keep the slender black neck and upper torso upright; slender black near arm descends and its hand rests near her bent knees. Folded black legs form the low smooth seated silhouette beneath the torso, pointing screen-right. Include the whole outer silhouette of all hair and the folded lower body, with comfortable transparent margins on all sides. Do not draw extra feet sticking out or add details hidden by the silhouette; use the same solid black shapes. Do not crop at the bottom.\n\nStyle: extremely spare flat 2D storybook shadow-puppet design, sharp clean smooth contour, solid near-black body and main hair, medium-dark grey broad hair underlayer, no outlines outside the silhouette, no eyes, no realistic face, no clothing or skin details, no muscular anatomy, no jewelry or crown. No apple, red glow, wings or horns. No tree, floor, ground shadow, setting, labels, text, other characters or watermark. The asset must have real alpha transparency, not a painted checkerboard. This is an evidenced visual adaptation, not a claim of exact model-sheet fidelity.",
+      "references": [
+        "references/eve-existing-cutout-secondary.png",
+        "references/eve-official-uk-55s.png",
+        "references/eve-official-56s.png"
+      ]
+    },
+    {
+      "id": "hz_lilith-storybook-standing-silhouette",
+      "prompt": "Create ONE single static transparent character asset: LILITH, specifically the black-and-grey standing silhouette in the Story of Hell opening of Hazbin Hotel season 1. This is a faithful stylized shadow-puppet adaptation of the narrative illustration, not a detailed modern queen design.\n\nThe attached official frames show two figures: depict ONLY THE FEMALE FIGURE ON THE RIGHT. The man on the left is Adam and must not appear. Match the female's full head-to-feet contour and pose: tall very slender figure, small smooth head in profile turned toward screen-left, no visible eyes or face details, small pointed nose and chin. Her head's top rises at the front on the left and then sweeps backward toward the right into a small pointed hair tuft. Long black fore-hair falls below the head around the neck/shoulder area, while a broad elongated dark-grey underlayer of hair trails behind the body toward screen-right, rounded along its right edge and tapering to a long point near the lower calf. Preserve this characteristic tall grey hair mass behind her, not Eve's wide horizontal seated hairstyle.\n\nBody: flat black slender long neck, narrow shoulders, angular hourglass waist and elongated hips, very long thin black legs. Her screen-left arm bends slightly outward at the elbow and the hand rests near the left hip/thigh; her screen-right arm hangs down at her side with a small simplified tapering hand. Preserve the open negative space between arms, waist and the long hair. She stands upright with both legs down, slightly parted; one knee subtly angled, the ends of her legs taper into very small plain foot silhouettes as supported by the source. No detailed shoes or toes. Keep the same neutral pose and proportions; no dynamic action.\n\nExtremely spare flat 2D paper-cut silhouette: solid near-black body and front hair, a single dark grey hair-underlayer shape, smooth clean contour, no outline strokes around everything, no glow, no texture, no shading, no extra colors. Do NOT add eyes, breasts detail, anatomy marks, garments, dress, crown, horns, jewelry, gloves, wings, weapon or queen outfit. This image represents only the simple adult narrative silhouette as actually depicted in the official opening. No apple, tree, ground, scenery, shadow, words or watermark. Exactly one figure with entire head, hair tips, arms, hands, legs and minimal feet comfortably inside the canvas, around 10 percent transparent padding at top and bottom. True alpha transparency. Do not copy the source background and do not generate a painted checkerboard.",
+      "references": [
+        "references/lilith-adam-official-uk-40s.png",
+        "references/lilith-adam-official-40s.png",
+        "references/lilith-adam-official-42s.png"
+      ]
+    }
+  ],
+  "fileLedger": [
+    {
+      "path": "candidates/hz_top_hat_demon-pilot-portrait-attempt-1.png",
+      "bytes": 761655,
+      "sha256": "f0d57c49ac4e78a151d4d8e2a2755f50e14618e8571f8d49b27e4010a1616304"
+    },
+    {
+      "path": "dark.jpg",
+      "bytes": 67367,
+      "sha256": "7b3ca4acad3dd3a2dc07b1e8a18e472fc93803b74c5782a8cbd84f229afdb3b5"
+    },
+    {
+      "path": "eve-dark.jpg",
+      "bytes": 35947,
+      "sha256": "51b2278d0f5616d524cb83e6711c784d785def958c97726d623507936b7d9359"
+    },
+    {
+      "path": "eve-white.jpg",
+      "bytes": 46674,
+      "sha256": "580b00e2caff83fadd21e12bcaed4984c067527fd7c87894f8bedc3e0d86e640"
+    },
+    {
+      "path": "masters/hz_eve-storybook-seated-silhouette.png",
+      "bytes": 697190,
+      "sha256": "23b0a13fe6cbdb99c058ad5635be1a4c84de584e69eae4cf1b2bd37fc3515880"
+    },
+    {
+      "path": "masters/hz_top_hat_demon-pilot-portrait.png",
+      "bytes": 725349,
+      "sha256": "e811e42c882cc526af06821b789050f4f8d851a7d8a7cc71c1c9ecf6dfbc40f6"
+    },
+    {
+      "path": "prompts/eve-storybook-silhouette.txt",
+      "bytes": 2091,
+      "sha256": "6003977a7a41e841a483b38851af88a4c7c6c61e318b60b265184fa3ae4d4569"
+    },
+    {
+      "path": "prompts/lilith-storybook-silhouette.txt",
+      "bytes": 2559,
+      "sha256": "1ce230890a3fe96ed13ebd292e5e2b5897374110478d5a4e40f615c3df514d71"
+    },
+    {
+      "path": "references/eve-existing-cutout-secondary.png",
+      "bytes": 83017,
+      "sha256": "41f827b0f4b473ad6272173bc2e23aed7595c6f858253b35a46fe46d63b230a9"
+    },
+    {
+      "path": "references/eve-official-56s.png",
+      "bytes": 23692,
+      "sha256": "4d55bfeffb81a9920fc0db0c26fc42478ef2ce05dbd5853da7411ae326b45766"
+    },
+    {
+      "path": "references/eve-official-opening-board.jpg",
+      "bytes": 35930,
+      "sha256": "c17f7368acdb3ccba103412b3819c2e1c42154ad4bd0fce1ff37118f7d755297"
+    },
+    {
+      "path": "references/eve-official-uk-55s.png",
+      "bytes": 61153,
+      "sha256": "62684eab4568f5c9bb009d0a45ad860342d7c2e50f5a8142355d0131ae49c38e"
+    },
+    {
+      "path": "references/eve-official-uk-opening-board.jpg",
+      "bytes": 41179,
+      "sha256": "62fd46ba74daed769b2999acf0762e029449e019039bfbbedf299c745b51e823"
+    },
+    {
+      "path": "references/lilith-adam-official-40s.png",
+      "bytes": 17159,
+      "sha256": "a1607ebb99a8f7e74874897e714e5c57642bad9119794ba631140a49b551ca9f"
+    },
+    {
+      "path": "references/lilith-adam-official-42s.png",
+      "bytes": 17789,
+      "sha256": "1aecdc5fff52659a3155f5c8e0719692ad31ce60ece536232915d6c35886e74e"
+    },
+    {
+      "path": "references/lilith-adam-official-uk-40s.png",
+      "bytes": 53813,
+      "sha256": "f9da9cfd4d2bede55260e9c52c65675038a23790c86536c4c19a743320c79469"
+    },
+    {
+      "path": "references/man-meat-official-board-00.jpg",
+      "bytes": 71413,
+      "sha256": "92d14849914a721435d91e61580b2c05702e37fa33db3f8439d93e6166805b1a"
+    },
+    {
+      "path": "references/man-meat-official-board-01.jpg",
+      "bytes": 79370,
+      "sha256": "5e1aa08d6a10a7728df0206fc5f68d13d2628de83d121a1542ccfcb287b96795"
+    },
+    {
+      "path": "references/top-hat-demon-official-680s.png",
+      "bytes": 102918,
+      "sha256": "3b0caa4125524d61c7258b063227e56856b9dfe2da2505088d660fc98660742a"
+    },
+    {
+      "path": "references/top-hat-demon-official-board.jpg",
+      "bytes": 76259,
+      "sha256": "c745bd5d8ead6231f93c17a806b699e382b4a696120dc1f301d3d8063346fd02"
+    },
+    {
+      "path": "white.jpg",
+      "bytes": 79590,
+      "sha256": "518cb930d8cad3309408d1ef0ad8ae26b72796ac68f66d22b627ace45b4f5f87"
+    }
+  ]
+}

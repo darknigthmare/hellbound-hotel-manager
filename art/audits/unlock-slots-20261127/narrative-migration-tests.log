@@ -1,0 +1,16 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1 src/tests/standalone-narrative.test.ts --reporter=default --reporter=json --outputFile=art/audits/unlock-slots-20261127/narrative-migration-tests.json
+
+
+ RUN  v4.1.10 /mnt/data/hellbound-hotel-manager
+
+ ✓ src/tests/standalone-narrative.test.ts (10 tests) 34ms
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  01:46:39
+   Duration  572ms (transform 267ms, setup 0ms, import 336ms, tests 34ms, environment 0ms)
+
+JSON report written to /mnt/data/hellbound-hotel-manager/art/audits/unlock-slots-20261127/narrative-migration-tests.json

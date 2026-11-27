@@ -1,0 +1,130 @@
+{
+  "edition": "V8",
+  "status": "passed",
+  "summary": "413 tests dans 47 suites ; typecheck, lint, builds manager et standalone standards, puis 1283 empreintes de distribution vérifiées.",
+  "command": "npm run qa",
+  "exitCode": 0,
+  "standardQaScriptPassed": true,
+  "testsPassed": 413,
+  "testSuites": 47,
+  "log": "docs/standalone/production-v8/qa-final.log",
+  "logSha256": "5831cddd64b3d4469c069bb68d20031396dd810913280f662730ecc3ae109fbe",
+  "validatedAcceptedDrawings": 18,
+  "managerBuild": "passed",
+  "standaloneBuild": "passed",
+  "standaloneFilesVerified": 1283,
+  "standaloneManifestSha256": "91df649884c1a256273941033466cd64b925fce588eff8d0cd24068250f55e44",
+  "runtimeInputFiles": [
+    {
+      "path": "src/components/InfernalStageLayers.tsx",
+      "sha256": "efc2da3a43f5f1624ab307b89abe4b3d63f841259f4cde48a5e2f72e37e77ed8"
+    },
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "d72949025921a747086a6568bdd648849c24cabd1ef7494f25c19e9dc02b0921"
+    },
+    {
+      "path": "src/lib/infernal-costumes-v8.ts",
+      "sha256": "a9b83e87375c05fe2e68b4d4fbf3bb5ca39e458794326a546d8569bed03b7cb2"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "d2ec85d0fdac32098ce775a01a9edd4162620ce323d088b0cdef3cf5628e1ac9"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "12d1cded0d68a567434fd5e18f7fb5d56c379be3a9c1cb04b7e6e032581832e0"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "d87e4f0c607708f36f17763cc1c5f4e6bed59209d8e973b9a1d178a0546632a2"
+    },
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "2b2121f02d1904b144e87c93e048cc2c6c402f836741a3e78ca7e03b48749db0"
+    },
+    {
+      "path": "public/assets/production/v8/environment/hellhound-adoption-clipboard.webp",
+      "sha256": "b073c784687e2fe525571bab78f124182296b463d296160582f381be0f58545e"
+    },
+    {
+      "path": "public/assets/production/v8/environment/hellhound-adoption-s2-room.webp",
+      "sha256": "e3c1b051ee1802c92bef1d1ea3fd4b1000d40af0565090f36f76ef753537c3a0"
+    },
+    {
+      "path": "public/assets/production/v8/environment/hellhound-adoption-s2-thumb.webp",
+      "sha256": "d855a0fb62a1d10cb746bdfe9b7736ff7aca0103bd8e22b8735d1caca813b196"
+    },
+    {
+      "path": "public/assets/production/v8/environment/hellhound-adoption-sign.webp",
+      "sha256": "738dbd02cc79398a32f63add04e6dd238850e46e65a8a765f2d555f6590724b4"
+    },
+    {
+      "path": "public/assets/production/v8/environment/ozzies-exterior-rope-barrier.webp",
+      "sha256": "716f07dbcd6366b42d0bc0646bb26a425f3fce64edfe40323057b9c224f3f938"
+    },
+    {
+      "path": "public/assets/production/v8/environment/ozzies-exterior-s1-room.webp",
+      "sha256": "007566b1daf155b0c6f1ab00a8fb5e5a1642dc65e7579403caa122fbb56fe728"
+    },
+    {
+      "path": "public/assets/production/v8/environment/ozzies-exterior-s1-thumb.webp",
+      "sha256": "82650663773c134e77f88288d76433f94510ba8bfdc821dda50b8daf2146b840"
+    },
+    {
+      "path": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+      "sha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a"
+    },
+    {
+      "path": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+      "sha256": "d2b439cb4d718a25d294670d436bc18b61002a2ecfc7edad988edf76b528f43a"
+    },
+    {
+      "path": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+      "sha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733"
+    },
+    {
+      "path": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+      "sha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_blitzo-bodyguard-looloo.webp",
+      "sha256": "97ffeeb0fc9cc4fb466180d1b537b44b88811fc1b98ae6b97aa291b70cf9c71c"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_blitzo-ghost-apology-tour.webp",
+      "sha256": "f4193ee5cc7592221938efe653bba67005aab88c5c23e039fa59a3edf0335a20"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_blitzo-harvest-festival.webp",
+      "sha256": "00f7436f72b9d42c8dadf5ef83e567371fc31adfbbdf08e567ed281a4c336a89"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_millie-bodyguard-looloo.webp",
+      "sha256": "4d157ac0212c8996739eea02518648328beb79baede089e84962778cdf93e0b1"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_millie-harvest-festival.webp",
+      "sha256": "0ff99e4b00da69916642057dbe07b0e92ae19d2221ed68204e13018ccc1d9620"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_millie-staff-ghostfuckers.webp",
+      "sha256": "c3d7a464ebd4dc4ada16a0b73058f444fa82558f18a44790cfb6cd5cbc30df52"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_moxxie-bodyguard-looloo.webp",
+      "sha256": "a97273addb71506fd42fd4e34e25430cc80f3c041def0ce5a02009cfc3ebee9d"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_stolas-tourist-looloo.webp",
+      "sha256": "84eaa30fbb310dd9b3e78f2ce03649fa8da253cd970396d737812a4f217ba378"
+    },
+    {
+      "path": "public/assets/production/v8/helluva/hb_stolas-vampire-apology-tour.webp",
+      "sha256": "4db1c4a620b5040b34adc131a3e7c6dfae86c56ffd8c4aa1b355b5fa9eabe4cc"
+    }
+  ],
+  "runtimeInputFingerprint": "6ec1c683971b8d5a161f805eec3d55323e6efcaa7c5cbece8785b8767bee8442",
+  "inGameChecked": false,
+  "browserStatus": "Installation Chromium locale bloquée par HTTP403 ; contrôle de la prévisualisation distante à effectuer."
+}

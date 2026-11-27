@@ -1,0 +1,60 @@
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v12/browser-harness/run-browser-qa.cjs
+    1:12   error  A `require()` style import is forbidden    @typescript-eslint/no-require-imports
+    1:12   error  'require' is not defined                   no-undef
+    2:14   error  A `require()` style import is forbidden    @typescript-eslint/no-require-imports
+    2:14   error  'require' is not defined                   no-undef
+    3:19   error  A `require()` style import is forbidden    @typescript-eslint/no-require-imports
+    3:19   error  'require' is not defined                   no-undef
+    4:24   error  A `require()` style import is forbidden    @typescript-eslint/no-require-imports
+    4:24   error  'require' is not defined                   no-undef
+    5:22   error  A `require()` style import is forbidden    @typescript-eslint/no-require-imports
+    5:22   error  'require' is not defined                   no-undef
+    7:6    error  'process' is not defined                   no-undef
+    8:3    error  'console' is not defined                   no-undef
+    9:3    error  'process' is not defined                   no-undef
+   11:27   error  '__dirname' is not defined                 no-undef
+   13:30   error  '__dirname' is not defined                 no-undef
+   29:43   error  'setTimeout' is not defined                no-undef
+   42:156  error  'console' is not defined                   no-undef
+   63:20   error  'innerWidth' is not defined                no-undef
+   63:48   error  'innerHeight' is not defined               no-undef
+   64:20   error  'document' is not defined                  no-undef
+   65:37   error  'document' is not defined                  no-undef
+   65:76   error  'innerWidth' is not defined                no-undef
+   66:49   error  'document' is not defined                  no-undef
+   67:30   error  'document' is not defined                  no-undef
+   67:160  error  'innerHeight' is not defined               no-undef
+   77:15   error  'getComputedStyle' is not defined          no-undef
+   78:20   error  'document' is not defined                  no-undef
+  100:132  error  'getComputedStyle' is not defined          no-undef
+  105:18   error  'getComputedStyle' is not defined          no-undef
+  141:36   error  'document' is not defined                  no-undef
+  156:36   error  'document' is not defined                  no-undef
+  186:5    error  'console' is not defined                   no-undef
+  201:38   error  'document' is not defined                  no-undef
+  213:113  error  'document' is not defined                  no-undef
+  220:15   error  'card' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  267:24   error  'process' is not defined                   no-undef
+  282:32   error  'fetch' is not defined                     no-undef
+  282:63   error  'AbortSignal' is not defined               no-undef
+  298:58   error  'console' is not defined                   no-undef
+  316:36   error  '__filename' is not defined                no-undef
+  316:63   error  '__filename' is not defined                no-undef
+  319:3    error  'console' is not defined                   no-undef
+
+✖ 42 problems (42 errors, 0 warnings)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+Error: lint failed: 1
+    at run (file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v12/verify-runtime.mjs:49:34)
+    at file:///workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v12/verify-runtime.mjs:70:3

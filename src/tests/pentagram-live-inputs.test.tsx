@@ -221,6 +221,18 @@ describe('Pentagram Arena live input lifecycle', () => {
       expect(fighterOneNode?.dataset.action).toBe('idle');
     });
 
+    // Chromium can emit this click after a real touch release. It must not
+    // reactivate movement, while pointer-free assistive clicks still toggle.
+    const releasedTouchClick = new MouseEvent('click', { bubbles: true, detail: 0 });
+    Object.defineProperty(releasedTouchClick, 'pointerType', { value: 'touch' });
+    fireEvent(moveRight, releasedTouchClick);
+    expect(moveRight.getAttribute('aria-pressed')).toBe('false');
+    expect(fighterOneNode?.dataset.action).toBe('idle');
+    fireEvent.click(moveRight, { detail: 0 });
+    await waitFor(() => expect(moveRight.getAttribute('aria-pressed')).toBe('true'));
+    fireEvent.click(moveRight, { detail: 0 });
+    await waitFor(() => expect(moveRight.getAttribute('aria-pressed')).toBe('false'));
+
     const guard = screen.getByRole('button', { name: 'P1 guard' });
     fireEvent.pointerDown(guard, { pointerId: 42 });
     await waitFor(() => expect(fighterOneNode?.dataset.action).toBe('guard'));

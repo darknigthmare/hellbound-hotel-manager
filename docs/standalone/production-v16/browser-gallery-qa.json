@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "startedAt": "2026-11-27T00:58:55.108Z",
+  "scope": "Current Vite source runtime, real gallery clicks and decoded artwork on desktop and mobile. Static gallery rendering only; no combat play, animation or production deployment claim. External reference link clicks are intercepted locally to verify their actual target; remote content availability is not tested.",
+  "server": "http://127.0.0.1:5186/combat.html",
+  "sourceHashes": {
+    "src/standalone/ReserveGallery.tsx": "e8f6df3266147db86627c07d200bdec8be5a7b73400fa0945ed04601677332a7",
+    "src/standalone/reserve-gallery.css": "7803214f7cc54192d62c0a80a0b66ee671c18cff3ad412a26e0e978e7e093fd5",
+    "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+    "src/standalone/infernal-versus.css": "c04ab9498e8a046b2f503a6ad01646c1cf804ea8021e59af4faf98e5a9d34bc6",
+    "art/infernal-versus/production/reserve-assets.json": "46a206fe260693e55d719cb638ae538a225612af892db10585afa19d7f4a7b51",
+    "docs/standalone/production-v16/integration-assets.json": "01d1569d41066652345411caafbbc8a56efa88cba1b9058f8b5f9725fb54a4df",
+    "docs/standalone/production-v16/check-gallery-browser.cjs": "0c53669cc95fcae00d6468eec77fad9c2dbd034681d037c152e16d81f016a090"
+  },
+  "checks": [
+    {
+      "viewport": "desktop",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "passed": true,
+      "decodedImage": {
+        "src": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1230,
+        "naturalHeight": 1278,
+        "objectFit": "contain",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "width": 608,
+          "height": 680,
+          "top": 197.875,
+          "bottom": 877.875,
+          "left": 98,
+          "right": 706
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ARCHIVES · COURT OFFICIEL · 2026\n\nGerald · Barbie’s Bad Day · portrait\n\nArchive narrative statique · Buste · 1230 × 1278 pixels.\n\nPortrait du court officiel Barbie’s Bad Day (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 20 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s"
+        },
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 60 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s"
+        }
+      ],
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "fetchedExportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "referenceClick": {
+        "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+        "targetVerified": true,
+        "interceptedLocally": true,
+        "externalContentFetched": false
+      }
+    },
+    {
+      "viewport": "desktop",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "passed": true,
+      "decodedImage": {
+        "src": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "width": 608,
+          "height": 680,
+          "top": 197.875,
+          "bottom": 877.875,
+          "left": 98,
+          "right": 706
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000,
+          "contentTop": 90,
+          "contentBottom": 1000
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ARCHIVES · COURT OFFICIEL · 2026\n\nRick · Barbie’s Bad Day · portrait\n\nArchive narrative statique · Buste · 1312 × 1199 pixels.\n\nPortrait du court officiel Barbie’s Bad Day (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 160 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s"
+        },
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 165 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s"
+        }
+      ],
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "fetchedExportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "referenceClick": {
+        "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+        "targetVerified": true,
+        "interceptedLocally": true,
+        "externalContentFetched": false
+      }
+    },
+    {
+      "viewport": "desktop",
+      "check": "season_one_excludes_both_short_portraits",
+      "passed": true,
+      "hiddenIds": [
+        "hb_gerald-barbie-bad-day-portrait",
+        "hb_rick-barbie-bad-day-portrait"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "check": "both_portraits_restored_without_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "passed": true,
+      "decodedImage": {
+        "src": "/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1230,
+        "naturalHeight": 1278,
+        "objectFit": "contain",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "bottom": 721.8125,
+          "left": 34.59375,
+          "right": 355.40625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ARCHIVES · COURT OFFICIEL · 2026\n\nGerald · Barbie’s Bad Day · portrait\n\nArchive narrative statique · Buste · 1230 × 1278 pixels.\n\nPortrait du court officiel Barbie’s Bad Day (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 20 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s"
+        },
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 60 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=60s"
+        }
+      ],
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "fetchedExportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "referenceClick": {
+        "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+        "targetVerified": true,
+        "interceptedLocally": true,
+        "externalContentFetched": false
+      }
+    },
+    {
+      "viewport": "mobile",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "passed": true,
+      "decodedImage": {
+        "src": "/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+        "complete": true,
+        "naturalWidth": 1312,
+        "naturalHeight": 1199,
+        "objectFit": "contain",
+        "background": "radial-gradient(rgb(80, 51, 73), rgb(27, 19, 30))",
+        "rect": {
+          "width": 320.8125,
+          "height": 464.1875,
+          "top": 257.625,
+          "bottom": 721.8125,
+          "left": 34.59375,
+          "right": 355.40625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "contentTop": 103,
+          "contentBottom": 844
+        },
+        "entireImageVisible": true
+      },
+      "detailText": "ARCHIVES · COURT OFFICIEL · 2026\n\nRick · Barbie’s Bad Day · portrait\n\nArchive narrative statique · Buste · 1312 × 1199 pixels.\n\nPortrait du court officiel Barbie’s Bad Day (2026). Les références décrivent cette incarnation ; cette fiche ne l’attribue pas à une saison numérotée.\n\nRéférences et détails du dessin\nRefermer l’aperçu",
+      "sourceLinks": [
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 160 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s"
+        },
+        {
+          "title": "HELLUVA SHORTS 11 // BARBIE'S BAD DAY // HELLUVA BOSS · 165 s",
+          "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=165s"
+        }
+      ],
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "fetchedExportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "referenceClick": {
+        "href": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+        "targetVerified": true,
+        "interceptedLocally": true,
+        "externalContentFetched": false
+      }
+    },
+    {
+      "viewport": "mobile",
+      "check": "season_one_excludes_both_short_portraits",
+      "passed": true,
+      "hiddenIds": [
+        "hb_gerald-barbie-bad-day-portrait",
+        "hb_rick-barbie-bad-day-portrait"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "check": "both_portraits_restored_without_horizontal_overflow",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "3ce132f5d060885e8c263e6a684e5ac3050debd1555faf2494763d24eb8a7591",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "viewport": "desktop",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content."
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/desktop-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "3f6dbad4faaec65e27a6976088a6acad29359c6b855713d268d7730d97054a75",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "viewport": "desktop",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content."
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_gerald-barbie-bad-day-portrait.png",
+      "sha256": "fb06f8b3f62397f377b738ae54c53fa14e30e20402db91f654297050475a6e59",
+      "assetId": "hb_gerald-barbie-bad-day-portrait",
+      "viewport": "mobile",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content."
+    },
+    {
+      "path": "docs/standalone/production-v16/browser-gallery/mobile-hb_rick-barbie-bad-day-portrait.png",
+      "sha256": "9f8258514099ff83a383742eda934ec4e985433c1ca13b903dc1f5ebc6297252",
+      "assetId": "hb_rick-barbie-bad-day-portrait",
+      "viewport": "mobile",
+      "scope": "Viewport after normal gallery selection; entire image rectangle verified within visible content."
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "assetResponses": [
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "status": 200
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:5186/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "status": 200
+    }
+  ],
+  "referenceNavigations": [
+    {
+      "viewport": "desktop",
+      "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+      "interceptedLocally": true,
+      "externalContentFetched": false
+    },
+    {
+      "viewport": "desktop",
+      "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+      "interceptedLocally": true,
+      "externalContentFetched": false
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=20s",
+      "interceptedLocally": true,
+      "externalContentFetched": false
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://www.youtube.com/watch?v=PyICIy6fkDo&t=160s",
+      "interceptedLocally": true,
+      "externalContentFetched": false
+    }
+  ],
+  "status": "passed",
+  "finishedAt": "2026-11-27T00:59:01.786Z"
+}

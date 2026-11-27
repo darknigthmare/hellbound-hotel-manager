@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "edition": "V11",
+  "date": "2026-11-26",
+  "status": "accepted_art_handoff_runtime_pending",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "acceptedDrawings": 3,
+  "deliveredImageFiles": 6,
+  "newStandaloneBases": 0,
+  "newPlayableKits": 0,
+  "newAnimationCycles": 0,
+  "assets": [
+    {
+      "id": "hz_molly-legacy-2015-portrait",
+      "master": "production/v11/characters/masters/hz_molly-legacy-2015-portrait.png",
+      "export": "public/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "exportUrl": "/assets/production/v11/characters/hz_molly-legacy-2015-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "masterBytes": 1202626,
+      "exportBytes": 759480,
+      "masterSha256": "96fe5f9047dc4fa9c39f29edf629ec7dc616eb22b81968a5df541cbe10de5a63",
+      "exportSha256": "533a6a63f5a6fdaefedd26575f8e5deb876796edca78269eaef2878de346c781",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 838436,
+      "alphaFullPixels": 685,
+      "visibleBBoxAlpha16": [
+        54,
+        46,
+        1235,
+        1135
+      ],
+      "name": "Molly · portrait historique 2015",
+      "sourceIdentityId": "hz_molly",
+      "franchise": "Hazbin Hotel",
+      "continuity": "legacy_concept_2015",
+      "spoilerScope": "season_1",
+      "fidelityNotes": [
+        "Portrait partiel du concept publié par Vivziepop en 2015 ; ne représente pas le modèle angélique de la série actuelle.",
+        "La vue à 144 s et la seconde à 148 s montrent le visage, la chevelure et le costume historique ; le cadrage volontaire à la taille ne complète aucun bas de corps.",
+        "Les yeux, contours, proportions du buste, mains, pinstripes et mèches sont redessinés depuis les prévisualisations natives 320×180 ; la fidélité artistique exacte 1:1 n’est pas certifiée.",
+        "spoilerScope season_1 sert seulement au filtrage actuel de la galerie ; le concept reste daté 2015 et n’est pas attribué à la saison 1."
+      ],
+      "category": "character_portrait",
+      "kind": "narrative_archive",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "frameCoverage": "bust",
+      "newStandaloneBase": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Use case: identity-preserve. Asset type: ONE static waist-up narrative portrait on transparent background for a 2D game archive. Subject: Molly, specifically VivziePop's historical 2015 concept shown in the two supplied official speedpaint frames, NOT her later angel series model. Recreate only this character's visible upper-body design: pale pink-white spider-like face, enormous oval dark plum/black eyes rimmed in bright pink, white lower lashes, big pale cream-and-pink fluffy hair swept into the huge rounded side ponytail, small fuchsia bow at the neck, narrow dark wine tuxedo bodice with fine pink pinstripes, pale pink pointed lapels, pink fluffy cuffs and the multiple slim articulated pink arms visible in the reference pose. Preserve the asymmetry and visible hand positions of the reference. Crop deliberately at the waist with a clean finished lower contour; do not invent legs, shoes or a lower-body model. Match the original cheerful friendly expression and recognizable head-to-torso proportions. Render as crisp hand-drawn 2D animation art with flat cel colors, clean tapered dark pink lines, restrained highlight and no photographic texture. Keep all the hair and the pictured arms entirely inside the canvas with 10 percent transparent margin. Exactly one character, no second figure, no software UI, no lettering, no caption, no frame, no background, no floor, no drop-shadow disk. Actual alpha transparency. One still portrait only, no sprite sheet, no animation, no halo, no angel wings, no weapon.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+        "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/molly-legacy-2015-144s.png",
+          "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=144s",
+          "timeSeconds": 144,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "f4fee948c0ef4ecf815cfe2dfc64beae491e7b4bc8900abb1629466517f325eb",
+          "bytes": 56477,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        },
+        {
+          "path": "production/v11/characters/references/molly-legacy-2015-148s.png",
+          "url": "https://www.youtube.com/watch?v=XBccdYyWGLo&t=148s",
+          "timeSeconds": 148,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "7ce4bbba6f92897968aca3056c41da5e90a56f140cd96c51d89e62f1635ad1f0",
+          "bytes": 44053,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "intendedRole": "Portrait narratif de galerie seulement ; le manque de base entière autonome reste ouvert.",
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json"
+    },
+    {
+      "id": "hb_mister_butler-circus-s2-portrait",
+      "master": "production/v11/characters/masters/hb_mister_butler-circus-s2-portrait.png",
+      "export": "public/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "exportUrl": "/assets/production/v11/characters/hb_mister_butler-circus-s2-portrait.webp",
+      "dimensions": [
+        1182,
+        1331
+      ],
+      "masterBytes": 727882,
+      "exportBytes": 413306,
+      "masterSha256": "08c641c17e1db78d454a39639587b08deab47bcb41a172ae7ab6fc1d114a9d9d",
+      "exportSha256": "c8bd97a73a6342a02ed92c8d21370637c1285233d998ea6482c5d9765de45447",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZeroPixels": 1131882,
+      "alphaFullPixels": 1177,
+      "visibleBBoxAlpha16": [
+        275,
+        44,
+        962,
+        1285
+      ],
+      "name": "Mister Butler · portrait The Circus",
+      "sourceIdentityId": "hb_mister_butler",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "fidelityNotes": [
+        "Grand majordome moustachu du flashback The Circus, identité distincte du petit majordome de la famille de Stolas dans Loo Loo Land.",
+        "Deux plans officiels natifs 320×180 corroborent visage rouge, moustache et cheveux blancs, cornes rayées, regard jaune et tenue de service ; aucune paire de chaussures n’est extrapolée.",
+        "Buste seul, cadré au bas de la poitrine ; la forme précise des revers, les boutons, la teinte hors éclairage violet et les proportions sont adaptés au dessin de galerie.",
+        "Aucune base entière, animation ou kit jouable créé ; fidélité artistique 1:1 non certifiée."
+      ],
+      "category": "character_portrait",
+      "kind": "narrative_archive",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "frameCoverage": "bust",
+      "newStandaloneBase": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Use case: identity-preserve. Asset type: ONE static upper-body narrative portrait with native alpha transparency for a 2D game. Subject: Mister Butler, the tall red imp butler shown in the supplied official Helluva Boss S2E1 The Circus frames, specifically the imp beside young Stolas, NOT the small family butler from Loo Loo Land. Use the references for the complete character design. Preserve his slender adult red face, drooping pale yellow eyes and tired dry expression, pointed red nose, large curling white moustache and small white goatee, long swept white side hair, two tall narrow horns with alternating thick black and white stripes. Preserve the formal navy/charcoal longcoat shoulders, pale gray high-collared waistcoat, small dark burgundy bow tie, two small gold coat buttons and white shirt detail. Create a calm three-quarter bust facing slightly left. Crop deliberately at the lower chest with a clean finished lower contour and keep arms outside the portrait crop; do not show a mirror, Paimon, young Stolas or any handheld object. Complete horn tips, white hair and shoulders inside frame with 12 percent transparent margin. Match the exact angular 2D cartoon visual language, crisp tapered black linework, flat cel colors and restrained shadows. The source's face, horn design, moustache, hairstyle and formal costume govern; do not replace with a generic fantasy butler, human or owl. One single character only. No scenery, furniture, text, name label, border, floor, shadow disk or watermark. No legs or invented lower-body design. One still portrait, no sheet, no animation.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+        "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/mister-butler-60s.png",
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U&t=60s",
+          "timeSeconds": 60,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "206c91af1344632f1069acf1b51f769ccba50be19c3be61f3b93cc3bbc23268c",
+          "bytes": 110496,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        },
+        {
+          "path": "production/v11/characters/references/mister-butler-150s.png",
+          "url": "https://www.youtube.com/watch?v=_spuxXnul0U&t=150s",
+          "timeSeconds": 150,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_creator_video_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "285cd96f25b3e40ae881879bbe4c322be67a7b9d159bd0a117f8d905e57443dd",
+          "bytes": 84763,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "intendedRole": "Portrait narratif de galerie seulement ; le manque de base entière autonome reste ouvert.",
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json"
+    },
+    {
+      "id": "hb_better_than_blitzo_guy-portrait-s2",
+      "master": "production/v11/characters/masters/hb_better_than_blitzo_guy-portrait-s2.png",
+      "export": "public/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "exportUrl": "/assets/production/v11/characters/hb_better_than_blitzo_guy-portrait-s2.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "masterBytes": 1506787,
+      "exportBytes": 948576,
+      "masterSha256": "ca49ef0882a5eaf94f571a3ec6149fd498fb18284bef142a5202c5a00315ad61",
+      "exportSha256": "9a768dc54f7a8cd6bd89edd12c83418ba519f8b84753166cb003b825675af12a",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 878613,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha16": [
+        123,
+        38,
+        1408,
+        1010
+      ],
+      "name": "Better Than Blitzo Guy · portrait Apology Tour",
+      "sourceIdentityId": "hb_better_than_blitzo_guy",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "category": "character_portrait",
+      "kind": "narrative_archive",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "frameCoverage": "bust",
+      "newStandaloneBase": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "generationTool": "image_gen.imagegen",
+      "prompt": "Use case: background-extraction. Correct this same single narrative portrait for game compositing. KEEP the character identity, exact face, colors, hair, horns, wings, necklace, shirt neckline, line art, pose and proportions unchanged. Remove ONLY the entire purple luminous halo outside the silhouette and the blurry horizontal pink band across the bottom. Every pixel outside the actual character silhouette must be fully transparent alpha zero. Make the portrait's intended upper-chest crop a clean crisp finished curved lower silhouette directly below the necklace, with no haze, no shadow, no reflected color wash, no rectangular bar and no background. Add generous fully transparent canvas margin around the unchanged drawing so the horn tips, wings, shoulders and lower edge do not touch the image border. Exactly one static portrait. Do not redraw into another style, do not add anatomy, no extra character, no text, no watermark, no border, no platform.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+        "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/characters/references/better-guy-970s.png",
+          "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=970s",
+          "timeSeconds": 970,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_episode_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "e05530ac6e9a9fa0cac2a589afd8db062ecf3411776524a9eeb8a090cb1ccf64",
+          "bytes": 81982,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        },
+        {
+          "path": "production/v11/characters/references/better-guy-980s.png",
+          "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4&t=980s",
+          "timeSeconds": 980,
+          "primary": true,
+          "viewed": true,
+          "kind": "official_episode_public_preview_frame",
+          "dimensions": [
+            320,
+            180
+          ],
+          "sha256": "7cd846068d7646ff667935ac845d1fc269c09e03ecc2a611546523614291b8ce",
+          "bytes": 86079,
+          "transform": "Native 320×180 storyboard cell crop only; no enhancement, repainting or inferred pixels."
+        }
+      ],
+      "fidelityNotes": [
+        "Portrait narratif limité au visage, épaules et collier de la tenue Apology Tour ; le cadrage s’arrête avant le texte du débardeur et ne remplace pas une base entière.",
+        "Les plans officiels de 970 et 980 s corroborent cheveux blancs, cornes noires, carrure, ailes, yeux jaunes et collier ; microdétails des boucles, maillons et mèches adaptés depuis 320×180.",
+        "La version corrigée possède une bordure basse incurvée complète. Les composites RGBA sur gris et blanc confirment que le halo visible dans le RGB brut est hors alpha et invisible après composition.",
+        "Aucune revendication de conformité artistique 1:1, de nouveau kit, animation, ou de reproduction complète de l’inscription du vêtement."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "intendedRole": "Portrait narratif de galerie ; la base autonome entière reste manquante.",
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json"
+    }
+  ],
+  "deferredCandidates": [
+    {
+      "sourceIdentityId": "hb_stolas_family_butler",
+      "status": "generator_refused_after_identification_correction",
+      "newStandaloneBase": false,
+      "newPortrait": false,
+      "reason": "Premier candidat exclu pour mauvaise identité. Correction fondée sur pin officiel refusée par générateur ; aucune relance après refus.",
+      "referenceUrl": "https://sharkrobot.com/products/loo-loo-land-imp-butler-enamel-pin",
+      "refusalRequestId": "0ee97349-10dd-49cc-bbdd-56a249c92276"
+    }
+  ],
+  "promptLedger": "docs/standalone/production-v11/characters-prompts.json",
+  "imageQa": "docs/standalone/production-v11/characters-image-qa.json",
+  "fidelityOneToOneCertified": false
+}

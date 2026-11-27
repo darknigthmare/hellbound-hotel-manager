@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "checkedAtUtc": "2026-11-25T09:00:05.138794+00:00",
+  "batchId": "wave-h-2026-11-25",
+  "baseCommit": "9995ec777cda4feca47a547ca6233d3db6f42d82",
+  "status": "passed_after_build_recovery",
+  "initialCommand": {
+    "command": "npm run qa",
+    "exitCode": 1,
+    "completedPhases": [
+      "typecheck",
+      "lint",
+      "tests"
+    ],
+    "stoppedAt": "manager build",
+    "reason": "ENOSPC while Vite copied public assets into dist; the workspace volume was full."
+  },
+  "recovery": {
+    "removedOnlyIgnoredProjectBuildOutputs": [
+      "dist/",
+      "dist-combat/"
+    ],
+    "sourceFilesRemoved": false,
+    "gameSourcesChangedBetweenAttempts": false,
+    "commands": [
+      {
+        "command": "npm run build",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run build:standalone",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run check:standalone",
+        "exitCode": 0
+      }
+    ],
+    "allQualityGatePhasesCompletedSuccessfully": true,
+    "managerOutputRemovedAfterSuccessToReleaseDiskSpace": true,
+    "standaloneOutputRemovedAfterSuccessfulHashVerificationToReleaseDiskSpace": true
+  },
+  "typecheck": "passed",
+  "lint": "passed",
+  "testSuites": 44,
+  "tests": 376,
+  "builds": {
+    "manager": "passed",
+    "standalone": "passed"
+  },
+  "standalone": {
+    "files": 1025,
+    "verifiedHashes": 1025,
+    "bytes": 622972043,
+    "mib": 594.11,
+    "bootAssets": "present",
+    "hotelPersistence": "excluded"
+  },
+  "activeCoverage": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 30,
+    "threePlaneStages": 30,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 428,
+    "brokenReferences": []
+  },
+  "reserveCoverage": {
+    "catalogue": "art/infernal-versus/production/reserve-assets.json",
+    "characterBases": 9,
+    "enemyBases": 6,
+    "projectileImages": 1,
+    "artworks": 16,
+    "referencedFiles": 32,
+    "brokenReferences": []
+  },
+  "exports": {
+    "masterCount": 10,
+    "fileCount": 22,
+    "allRuntimeExportsPixelExact": true
+  },
+  "logs": [
+    "docs/standalone/qa-wave-h-2026-11-25/runtime-initial-command.txt",
+    "docs/standalone/qa-wave-h-2026-11-25/runtime-manager-recovery.txt",
+    "docs/standalone/qa-wave-h-2026-11-25/runtime-standalone-recovery.txt"
+  ],
+  "browser": {
+    "status": "blocked",
+    "browserExecuted": false,
+    "screenshots": 0,
+    "reason": "/usr/bin/chromium launcher exists; /usr/lib/chromium/chromium is absent. No H page or browser capture was created."
+  },
+  "scope": "Final game source, CSS and 12 new public image files. Later changes only finalize documentation and verification metadata. Workbook and static visual checks are separate; no 1:1 certification."
+}

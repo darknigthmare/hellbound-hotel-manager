@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "status": "blocked_before_browser_launch",
+  "url": "http://127.0.0.1:4177/combat.html",
+  "runtimeViewsObserved": [],
+  "screenshotsProduced": 0,
+  "desktopMobileVisualValidation": false,
+  "cause": [
+    "The installed /usr/bin/chromium launcher refers to /usr/lib/chromium/chromium, which is absent.",
+    "The official Playwright Chromium download returned HTTP 403 Site Unavailable. No browser was installed."
+  ],
+  "officialDownloadAttempt": {
+    "command": "PLAYWRIGHT_BROWSERS_PATH=/tmp/hazbin-v6-browser $CODEX_PRIMARY_RUNTIME_NODE $CODEX_PRIMARY_RUNTIME_NODE_MODULES/playwright/cli.js install chromium",
+    "url": "https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-linux64.zip",
+    "httpStatus": 403,
+    "alternativeDownloadAttempted": false
+  },
+  "preparedSmokeScope": [
+    "Reserve gallery on desktop 1440x1000 and mobile 390x844, category filtering, query, detail focus and image decode.",
+    "S2 portal machine visible with all content and absent from the S1 scope; S1 Helluva bases remain visible.",
+    "User selection of hellaverse-training in training, image loading, contain framing, hidden generic overlays and overflow checks."
+  ],
+  "checksNotPerformed": [
+    "Live desktop or mobile page rendering and interaction.",
+    "Actual arena framing and floor legibility during a duel or training session.",
+    "Browser console, network, focus and viewport smoke assertions.",
+    "Live visual validation of the additional vox-office-s2 room."
+  ],
+  "implementationChange": {
+    "path": "src/styles/pentagram-arena.css",
+    "description": "hellaverse-training and vox-office-s2 were added to the two existing selectors that preserve the full authored rooms with background-size: contain and hide generic lane-grid and crowd-light overlays.",
+    "verification": "Source review only; runtime visual verification remains blocked."
+  },
+  "fidelityOneToOneCertified": false
+}

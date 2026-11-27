@@ -1,0 +1,2577 @@
+{
+  "date": "2026-11-24",
+  "wave": "D",
+  "scope": "Three sourced standalone arena candidates; 1:1 target is not certified. Gameplay geometry and placements are simulation AU.",
+  "baseCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+  "generator": "Built-in image_gen.imagegen",
+  "generationCallsPlanned": 9,
+  "generationCallsAttempted": 9,
+  "generationCallsSuccessful": 9,
+  "generationCallsBlocked": 0,
+  "noSafetyRetry": true,
+  "referenceRoot": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources",
+  "qaRoot": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124",
+  "certification": {
+    "canonicalOneToOne": false,
+    "browser": false,
+    "status": "AU candidates integrated; PNG originals, exact WebP exports and static geometry checked"
+  },
+  "stages": [
+    {
+      "id": "western-lair",
+      "world": "helluva",
+      "name": "Repaire de Striker · Mine",
+      "episode": "Helluva Boss · Western Energy, S2E4",
+      "timeline": "Intact mine hideout before the I.M.P. van crashes into the cavern.",
+      "middle": "Petit radiocassette gris à flancs roses, extrait du plan d’arrivée, au bord gauche.",
+      "near": "Court tronçon de rails bleu-gris sur traverses rouges, au bord droit du sol.",
+      "back": "Caverne bleu-gris et mauve, voies courbes superposées, petites lampes cyan au sol, reflets orange latéraux.",
+      "adaptations": [
+        "Wide continuous foreground stone duel lane is AU.",
+        "Radio and rail section are repositioned and scaled as separate decorative layers.",
+        "Characters, restraints, statue, van and combat damage are absent."
+      ]
+    },
+    {
+      "id": "goetia-court",
+      "world": "helluva",
+      "name": "Tribunal infernal · Mastermind",
+      "episode": "Helluva Boss · Mastermind, S2E11",
+      "timeline": "Intact infernal court during the episode, presented empty; internal ID does not mean an exclusively Goetia court.",
+      "middle": "Tribune flottante pointue du témoin avec garde-corps simple, au bord gauche.",
+      "near": "Court panneau de balustrade pourpre à motif pomme et serpent, au bord droit.",
+      "back": "Vue axiale des gradins, trônes vides, yeux noirs des galeries, braseros et fosse lumineuse orange.",
+      "adaptations": [
+        "A broad front balcony is added/expanded as an AU duel lane; the canonical court contains a deep open fiery pit.",
+        "The witness stand and short gallery panel are repositioned for edge parallax.",
+        "No judges, jury, detainees, characters or episode dialogue are rendered."
+      ]
+    },
+    {
+      "id": "hh-heaven-gates",
+      "world": "hazbin",
+      "name": "Paradis · Portes célestes",
+      "episode": "Hazbin Hotel · Welcome to Heaven, S1E6",
+      "timeline": "Intact closed Season 1 gates before entry, based on the Season 1 production color key and official gate clip; not a Season 2 state.",
+      "middle": "Pupitre bleu pâle facetté et couronne d’or du contrôle d’entrée, au bord droit.",
+      "near": "Court segment de grille dorée à pointes de flèche, au bord gauche.",
+      "back": "Deux vantaux d’or, piliers à couronnes solaires, motif lumineux à trois yeux et nuages pêche, bleus et blancs.",
+      "adaptations": [
+        "The reflective approach path is widened into a continuous AU duel lane.",
+        "The check-in pedestal and fence section are extracted and repositioned as independent layers.",
+        "Color-key geometry is a production reference, not proof of a final-frame 1:1 match."
+      ]
+    }
+  ],
+  "sources": {
+    "westernEpisode": {
+      "role": "official episode",
+      "publisher": "Vivziepop",
+      "url": "https://www.youtube.com/watch?v=KJy7T24rhg0",
+      "title": "Western Energy · S2E4"
+    },
+    "mastermindEpisode": {
+      "role": "official episode",
+      "publisher": "Vivziepop",
+      "url": "https://www.youtube.com/watch?v=IoVB5Hn2m_k",
+      "title": "Mastermind · S2E11"
+    },
+    "heavenClip": {
+      "role": "official clip",
+      "publisher": "Prime Video Philippines",
+      "url": "https://www.youtube.com/watch?v=RFiEU6ZXyWg",
+      "title": "Hazbin Hotel: Gate of Heaven"
+    },
+    "jasperPortfolio": {
+      "role": "primary production artist portfolio",
+      "publisher": "Jasper Luu",
+      "url": "https://jasperluu.com/helluvaboss",
+      "note": "Portfolio states these backgrounds were designed and painted for SpindleHorse. Court reference filenames 211_00004, 211_00005, 211_00006; designs inspected directly."
+    },
+    "heavenProduction": {
+      "role": "production color key supplied by Prime Video / A24 in production interview",
+      "url": "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/",
+      "imageUrl": "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-11-HH02_BG-HeavenExtGate_PR_v01-684x800.jpg",
+      "publisher": "VFX Voice; images courtesy Prime Video and A24",
+      "note": "Published July 16, 2024. Color key is not itself a certification of final broadcast geometry."
+    },
+    "westernCavern": {
+      "role": "secondary rehost of episode still, visual corroboration only",
+      "url": "https://x.com/TheCartoonBase/status/1792726254031982700",
+      "imageUrl": "https://pbs.twimg.com/media/GOEKh1IXYAAYQMf.jpg"
+    },
+    "westernArrival": {
+      "role": "secondary rehost of episode still, visual corroboration only",
+      "url": "https://www.imdb.com/title/tt27786887/",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMGQzZmNhOTYtNTU3Yi00ODIzLWE4Y2ItOTFmMmRkYjUwMGYyXkEyXkFqcGc%40._V1_.jpg"
+    }
+  },
+  "assets": [
+    {
+      "id": "western-lair",
+      "key": "room",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/western-cavern-still.jpg"
+      ],
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Create ONE complete 2D fighting-game background, landscape 1536 x 1024, fully opaque. Reference image 1 is an authentic episode still of Striker's mine hideout from Helluva Boss, Western Energy, Season 2 Episode 4; use ONLY its environment as the design reference. This is a documented AU gameplay reconstruction of the intact cavern before the van crash. Preserve the angular blue-grey rock formations, purple/mauve rock walls, curved blue-silver railway rails over reddish timber sleepers, rails looping upward at the side and crossing higher in the cavern, small bright cyan orb lamps on tiny dark ground studs beside the tracks, restrained orange light reflected from a side crevice. No snow or ice. Remove every character, living figure, restraint, weapon and statue from the reference. Frame a wide side-view arena with level horizon and a broad continuous blue-grey stone foreground extending across the entire bottom 30 percent. This empty flat front stone lane is the deliberate AU adaptation, with low detail and a legible horizontal ground plane. Keep the curved rails and their cyan lamps in the middle/background, behind the fighting lane. No radio, free-standing rail prop, furniture or foreground obstacles: separate props will be layered later. Clean black/dark navy ink edges, angular painted 2D animation shapes, restrained cel shading, subtle light gradients, coherent show palette. Preserve the characteristic mine design, not a generic western saloon, desert or icy cave. No text, labels, UI, watermark, border, collage or multiple panels. One empty environment only.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-4f26ddd6-845b-45a8-90e3-d6d37fac7547.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-4f26ddd6-845b-45a8-90e3-d6d37fac7547.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/western-lair/room.png",
+      "runtime": "public/assets/stages/helluva/western-lair/room.webp",
+      "masterSha256": "c1de4dba083613d8f8b69b190f10e955a7f8cdfbb77beef045925665881961c6",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "60490c7efd34596f1c1e9b8f8d3fd9b276f0c5f6f27982425c5256733efb2500",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          255,
+          255
+        ],
+        "transparentFraction": 0.0,
+        "opaqueFraction": 1.0,
+        "nonzeroBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "visibleBoundsAlpha16": [
+          0,
+          0,
+          1536,
+          1024
+        ]
+      },
+      "thumbnail": "public/assets/stages/helluva/western-lair/thumb.webp",
+      "thumbnailSize": [
+        384,
+        256
+      ],
+      "thumbnailPixelEquality": true,
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "The ground lane and framing are widened; large chain and other set dressing are omitted. No exact layout match claimed."
+      }
+    },
+    {
+      "id": "western-lair",
+      "key": "prop-middle",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/western-episode-still.jpg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/western-lair/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Produce ONE isolated 2D game prop on a genuinely transparent square canvas, 1024 x 1024. Object: the small portable radiocassette / boombox visible low at the LEFT of reference image 1, an authentic Western Energy S2E4 episode still. Use only that radio as the subject; absolutely no characters, statue, horse, rail, ground or other scene elements. Reference image 2 is the approved generated mine background, a supporting palette and ink-weight reference only. Preserve the compact pale grey rectangular radio housing with pink side face, two tall oval dark-purple speaker grilles, the small blue-green rectangular central cassette/control panel, simple dark top edge and sparse understated controls. Slight three-quarter front view, completely visible, clear silhouette, clean dark outlines and simple flat cel shading with cool blue light and restrained pink side shading. Center the single radio within the square with generous transparent margins on all four sides; the radio occupies about 65 percent of image width and less than half the image height. No pedestal, no stone, no floor, no cast shadow plane, no background glow. No labels, text, logos, UI, watermark, collage or additional versions. The broad shapes should follow the real visible prop; do not embellish it with invented decoration. This is one complete prop intended to sit on the left edge behind fighters.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-acc4f214-e48a-4b2a-a6ca-ea4640bae1f7.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-acc4f214-e48a-4b2a-a6ca-ea4640bae1f7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/western-lair/prop-middle.png",
+      "runtime": "public/assets/stages/helluva/western-lair/prop-middle.webp",
+      "masterSha256": "944d9e5a22fab1591d51fe174bebfed430ff206b4ef79304991b8f64af1c6fdb",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "6bc4350f17fd2ee765b867bd167fcde41ad3f1bc7d34af00e3cee6f78f959eca",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.7234363555908203,
+        "opaqueFraction": 0.0012454986572265625,
+        "nonzeroBounds": [
+          0,
+          40,
+          916,
+          937
+        ],
+        "visibleBoundsAlpha16": [
+          148,
+          301,
+          867,
+          752
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Small reference prop enlarged; top controls, cassette panel and grille details are interpretations at this resolution.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    },
+    {
+      "id": "western-lair",
+      "key": "prop-near",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/western-cavern-still.jpg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/western-lair/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Generate ONE isolated decorative foreground game prop, genuinely transparent square canvas 1024 x 1024. Subject: one short connected section of the mine railway seen in reference image 1, from Helluva Boss Western Energy S2E4. It consists only of two parallel blue-silver steel rails on five thick reddish wooden sleepers. Reproduce the reference's clean dark navy outline, blue-grey rail profile with narrow pale highlights and simple red-brown timber forms. Reference image 2 is the approved mine background: match its 2D ink weight, cool-blue illumination and restrained cel shading. View from a slightly elevated shallow three-quarter side angle, with the rails running predominantly left-to-right and receding only gently. This is a SHORT finite decorative section, all five sleepers and both cut rail ends fully in frame. Center the complete assembly with at least 12 percent transparent clearance on every side. Overall silhouette low and wide, around 72 percent of canvas width and 35 percent of canvas height. No ground patch, no rocks, no cyan bulbs, no surrounding cave, no person, no train, no text, no labels, no border or duplicate views. No cast shadow plane, white rectangle or opaque background. Intended for the bottom-right edge of the arena, so keep its silhouette low and uncluttered. This isolated and repositioned section is an AU gameplay layer, not a new canonical object.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-417356ca-a028-446c-8165-0151326738c5.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-417356ca-a028-446c-8165-0151326738c5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/western-lair/prop-near.png",
+      "runtime": "public/assets/stages/helluva/western-lair/prop-near.webp",
+      "masterSha256": "7fa1b9c034e05f38b2c22326a2908a91c4b7b1d916a2108a8be3126098303e0d",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "24142f86d7cbed1fd52ec2b295d8c54ec1ce3c8e7112cf23d4022d2ce401f5f6",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.8499574661254883,
+        "opaqueFraction": 0.00205230712890625,
+        "nonzeroBounds": [
+          42,
+          96,
+          983,
+          1004
+        ],
+        "visibleBoundsAlpha16": [
+          45,
+          451,
+          981,
+          673
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Canonical rail colors and sleeper forms; finite five-sleeper extraction, straightening, scale and placement are AU.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    },
+    {
+      "id": "goetia-court",
+      "key": "room",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/jasper-211_00004.jpeg",
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/jasper-211_00006.jpeg"
+      ],
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Create ONE complete 2D fighting-game background, landscape 1536 x 1024, fully opaque. Visual references are authentic production backgrounds of the infernal courtroom in Helluva Boss Mastermind, Season 2 Episode 11. Reference 1 defines the axial court architecture; reference 2 clarifies the throne, sharp platforms and gallery structure. Reconstruct that intact court empty, with no judges, audience or other characters. Preserve its distinctive saturated crimson/magenta and deep purple palette, tall red gallery columns bearing huge BLACK OVAL EYES with a narrow vertical slit, curved ascending tiers of dark pointed judicial balconies, sharp red-black rock-like throne structures, the central tier crest, the intensely orange-lit abyss below, hanging shallow black fire bowls with red rims and thin straight gold/orange suspension lines. Keep the tiered empty court as the dominant middle and upper background, with gallery balconies flanking it and restrained warm underlighting from the pit. This is an AU gameplay reconstruction: add a broad empty continuous dark red stone FRONT BALCONY, level side-view surface across the entire bottom 28 percent, with a calm low-contrast readable fighting lane. Behind this lane retain a clearly visible separation and orange depth down into the original pit, so this does not become a normal flat throne room. Gentle perspective, level horizon. No witness stand or near decorative railing in the front lane; those props are separate layers. Clean angular 2D animation architecture, sharp dark linework, controlled painted glow, simple cel shading; match the references' shapes and color hierarchy. No characters, silhouettes of people, dialogue, text, labels, signs, UI, watermark, border, collage or multiple panels. Do not replace the court with a generic medieval palace. The internal stage ID is goetia-court, but this is the infernal court from Mastermind, not an exclusively Goetia institution.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-697ce4be-aaae-45f5-9143-430e0d8f2b4e.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-697ce4be-aaae-45f5-9143-430e0d8f2b4e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/goetia-court/room.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/room.webp",
+      "masterSha256": "81b90536b0075a15ba30a7d446518558fa7185d425ce5325f8274be7814bb4a4",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "62fc7fcd8779d5fa36ffd916783ed341b1787fc48879f7af82b9435331dea6e0",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          255,
+          255
+        ],
+        "transparentFraction": 0.0,
+        "opaqueFraction": 1.0,
+        "nonzeroBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "visibleBoundsAlpha16": [
+          0,
+          0,
+          1536,
+          1024
+        ]
+      },
+      "thumbnail": "public/assets/stages/helluva/goetia-court/thumb.webp",
+      "thumbnailSize": [
+        384,
+        256
+      ],
+      "thumbnailPixelEquality": true,
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Primary production architecture retained; broad solid front balcony and empty court are AU. The original fiery pit remains behind the lane."
+      }
+    },
+    {
+      "id": "goetia-court",
+      "key": "prop-middle",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/jasper-211_00005.jpeg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/goetia-court/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Produce ONE complete isolated 2D game prop on a genuinely transparent square 1024 x 1024 canvas. Subject: the small empty FLOATING WITNESS STAND from the lower middle of reference image 1, an authentic production background for Helluva Boss Mastermind S2E11. Preserve its specific design: a dark magenta/crimson roughly polygonal stone platform with a ragged downward taper ending in a sharp central point, red vertical crack-like facets, and a simple thin dark-red metal guardrail around its top, with an open front and sparse angular upright bars. No staircase, no floor supports, no wheels or ornament. The object itself floats; do not add a cast ground shadow. Reference image 2 is the approved empty court background and defines matching ink weight, red-black rock colors and warm rim light. Draw the stand in shallow three-quarter front view, slightly above the platform level so the top is visible, matching reference 1. One stand only, entirely within the frame, including every railing end and its lowest rock point; generous clear transparent margins on all sides. Occupy approximately 65 percent of width and 75 percent of height. Clean angular 2D animation linework, flat cel shading and restrained highlights. No characters, audience, flames, hanging candles, background architecture, opaque glow, ground, text, labels, watermark, border or additional views. This witness stand will be repositioned at the far left of a gameplay arena; that placement is AU.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ad8dc659-4e85-4b51-94b9-b86201dbe9cf.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-ad8dc659-4e85-4b51-94b9-b86201dbe9cf.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/goetia-court/prop-middle.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/prop-middle.webp",
+      "masterSha256": "1fa2a585be301ced1b0ecbc843ecf2faf958ac1c0ea4520fbbc76655ae180207",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "ab115dc4706385fe8c20a362a27c13230fa636747b87460ecb18a80eaa584e28",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.76715087890625,
+        "opaqueFraction": 0.00273895263671875,
+        "nonzeroBounds": [
+          42,
+          20,
+          998,
+          965
+        ],
+        "visibleBoundsAlpha16": [
+          145,
+          160,
+          879,
+          920
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Witness stand extracted from production painting; scale, perspective and floating edge placement are AU.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    },
+    {
+      "id": "goetia-court",
+      "key": "prop-near",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/jasper-211_00006.jpeg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/goetia-court/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Create ONE isolated 2D foreground game prop on a genuinely transparent square canvas 1024 x 1024. Subject: a SHORT solid gallery-balustrade section based closely on the rail visible across the LOWER LEFT FOREGROUND of reference image 1, an authentic Mastermind S2E11 production background. Preserve the heavy angular dark burgundy / purple rectangular rail, broad flat beveled top cap, and two inset rectangular panels with the same simple stylized apple-and-coiling-serpent carved motif seen in that reference. These are shallow engraved motifs in stone, not faces or figures. Reference image 2 is the approved court room artwork, for matching the crimson edge light, black-purple shadows and sharp 2D ink treatment. Show the short section in shallow three-quarter front view with its top cap visible; all four corners, both finite ends and the bottom edge must be completely visible, no continuation beyond canvas. Wide low object occupying about 68 percent of canvas width and 35 percent of canvas height, centered with generous transparent clearance. Crisp dark outlines, simple cel shading, subtle red edge light. No characters, separate statues, floor or ground patch, chains, flames, candles, extra pillars, scenery, words, symbols unrelated to the reference, labels, UI, border, watermark or multiple versions. No cast ground shadow. This extracted rail section will be scaled and repositioned at the far right foreground as an AU decorative layer.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a154cbc1-7b3e-41bc-ac7e-ff09c07c815c.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-a154cbc1-7b3e-41bc-ac7e-ff09c07c815c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/goetia-court/prop-near.png",
+      "runtime": "public/assets/stages/helluva/goetia-court/prop-near.webp",
+      "masterSha256": "ded95899c440d060736ce591abfc837c8dcd6c932b8a778466cb3a33c56dbab8",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "ea180d80a6dc00034ad8e34eff7b43d44eaac3ab2aa6fe7aa95b467327cf8ff4",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.6792926788330078,
+        "opaqueFraction": 0.001468658447265625,
+        "nonzeroBounds": [
+          27,
+          37,
+          973,
+          952
+        ],
+        "visibleBoundsAlpha16": [
+          57,
+          333,
+          968,
+          732
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Apple/serpent carving simplified into a short two-panel assembly; isolation and placement are AU.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    },
+    {
+      "id": "hh-heaven-gates",
+      "key": "room",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/heaven-gate-colorkey.jpg"
+      ],
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Create ONE complete empty 2D fighting-game background, landscape 1536 x 1024, fully opaque. Reference image 1 is a Prime Video/A24 production color key for the Heaven exterior gate from Hazbin Hotel Season 1. Reconstruct the INTACT CLOSED GATES as encountered in Welcome to Heaven, S1E6, before entry; this is a documented AU gameplay adaptation, not a Season 2 scene. Preserve the specific symmetrical gold double gate: tall closed twin leaves meeting at the center, gently curved rising upper crests, broad pale-gold sweeping feather/fan shapes, the large oval gold inset on each half, the split central teardrop/leaf motif and concentric lower semicircles. Preserve the two squared gold side pillars with long angular inset panels and half-sun ray crowns, and the thin golden side fencing with arrow-pointed upright bars. Above the gate, preserve the luminous THREE-EYE emblem: one large center eye flanked by two smaller eyes, radiating short rays and teardrop sparks. Warm peach and butter-yellow sky above, blue-white and lavender cloud banks near the sides. Keep the gate and whole three-eye emblem fully inside the composition, with a little sky clearance above. Straight-on wide side-view arena, gentle perspective. Extend the white-gold reflective approach path into a broad continuous flat EMPTY foreground occupying the bottom 30 percent, low-detail and pale, with a readable horizontal standing plane. This widened path is the deliberate AU duel lane. Omit the small blue pedestal from the room image because it will be an independent prop layer. No characters, angel figures, added statues, vehicles, furniture, weapons, text, signage, UI, watermark, labels, panels or collage. Do NOT reproduce the grey outer margins, rectangular frame, crop guides or image artifacts of the production reference. Clean 2D animation design, fine warm-gold linework, restrained cel shading and luminous painted light; no photorealism or generic cathedral substitutions.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a56359c1-ce51-4b0e-9a8c-63bed3e0d13b.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-a56359c1-ce51-4b0e-9a8c-63bed3e0d13b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/room.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/room.webp",
+      "masterSha256": "b7299e2d31f7c355c32abc316e82c20d0b58c9ba8f16ef2dfaefa5a95405c7c0",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1536,
+        1024
+      ],
+      "runtimeSize": [
+        1536,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "06a97545bda4815674bc08495f4b3b3005e76ac940f53e5bbf54e0c5ddedf2f4",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          255,
+          255
+        ],
+        "transparentFraction": 0.0,
+        "opaqueFraction": 1.0,
+        "nonzeroBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "visibleBoundsAlpha16": [
+          0,
+          0,
+          1536,
+          1024
+        ]
+      },
+      "thumbnail": "public/assets/stages/hazbin/hh-heaven-gates/thumb.webp",
+      "thumbnailSize": [
+        384,
+        256
+      ],
+      "thumbnailPixelEquality": true,
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Season 1 color-key shapes retained; wide reflecting approach and empty space are AU. No final-frame or Season 2 equivalence claimed."
+      }
+    },
+    {
+      "id": "hh-heaven-gates",
+      "key": "prop-middle",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/heaven-gate-colorkey.jpg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/hh-heaven-gates/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Produce ONE isolated 2D stage prop on a genuinely transparent square canvas 1024 x 1024. Subject: the small pale-blue faceted CHECK-IN PEDESTAL at the right of reference image 1, a Prime Video/A24 Season 1 production color key of the Hazbin Hotel Heaven gates. Preserve its specific simple form: a tall tapering light-blue and icy-white polygonal column, slightly wider toward the base, irregular diagonal blue facets, and a narrow gold rim/crown at its top with a short row of repeating open rounded arches. The top is a small flat pale surface, without books, screens, writing or objects. A thin gold line finishes the bottom edge. Reference image 2 is our approved gate background and defines the matching warm light, fine gold outlines and clean 2D palette. Front three-quarter view, entire pedestal visible, all lower corners and upper arches within the frame. Make the complete pedestal about 70 percent of canvas height and 35 percent of canvas width with generous fully transparent margins. Warm rim light from upper left, restrained cel shading and pale blue crystalline planar faces; drawn animation prop, not realistic glass. No floor, clouds, reflection plane, cast shadow, opaque halo, characters, wings, weapon, text, symbols, labels, UI, watermark, background scene, collage or extra versions. This extracted object is to be placed at the right edge of an AU duel approach to the closed Season 1 gates.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-58173ee6-9b14-4c76-a59e-9c2e3f30a9df.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-58173ee6-9b14-4c76-a59e-9c2e3f30a9df.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-middle.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/prop-middle.webp",
+      "masterSha256": "05396a10d4891c34304abd35aeee188fc13a8950224e9c803eb6bfc3f4a75186",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "8d00982506e2062335e6e6970cad31a3bf78d0f2b02eeb9d6c2d427ebf54abe0",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.8173933029174805,
+        "opaqueFraction": 0.000797271728515625,
+        "nonzeroBounds": [
+          0,
+          56,
+          998,
+          1024
+        ],
+        "visibleBoundsAlpha16": [
+          350,
+          136,
+          695,
+          923
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Facets, upper arch count and surface thickness are interpretations of the small production reference. Positioned and scaled as a separate AU layer.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    },
+    {
+      "id": "hh-heaven-gates",
+      "key": "prop-near",
+      "refs": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/sources/heaven-gate-colorkey.jpg",
+        "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/stages/hh-heaven-gates/room.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Create ONE complete isolated 2D foreground game prop on a genuinely transparent square 1024 x 1024 canvas. Subject: one SHORT SECTION of the golden side fence visible to either side of the Heaven gates in reference image 1, the Prime Video/A24 Season 1 color key. Preserve the specific slender gold upright rods with small outlined triangular arrowhead finials and one gently curved gold horizontal connecting rail passing below their tips. Make five upright rods in one connected assembly, with plain visible finite lower ends; no grand pillar, pedestal or invented ornament. Reference image 2 is the approved Season 1 gate room and establishes warm gold linework, white-yellow highlights and soft peach side shading. Nearly front view with only a slight sense of depth, all arrowheads, both outer rail ends and every lower bar end fully contained. Entire section low and wide, about 70 percent of canvas width and 45 percent of canvas height, centered with generous transparent margin on every side. Keep the spaces between rods truly transparent. Clean thin warm-gold outlines, restrained 2D cel shading. No surrounding clouds, sky, gate, floor, cast shadow, opaque glow, characters, wings, text, labels, signs, UI, watermark, border or multiple views. The complete extracted section is intended for the lower LEFT edge of the gameplay arena; this isolated placement is explicitly an AU adaptation.",
+      "generatedSource": "/workspace/scratch/eed3bf2e772a/generated_images/exec-961ed857-d4e9-48b5-90d4-11cbbcd1227c.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/eed3bf2e772a/generated_images as /workspace/scratch/eed3bf2e772a/generated_images/exec-961ed857-d4e9-48b5-90d4-11cbbcd1227c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "generated",
+      "master": "art/infernal-versus/masters/stages/hh-heaven-gates/prop-near.png",
+      "runtime": "public/assets/stages/hazbin/hh-heaven-gates/prop-near.webp",
+      "masterSha256": "7405ca58ee64a0cd811d7724a18b8048df7cb031e8fd421ce56f03c85c735b3b",
+      "masterBytesPreserved": true,
+      "masterSize": [
+        1254,
+        1254
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "losslessPixelEquality": true,
+      "runtimeSha256": "998663d67fbaffa037da648525a7ae6337561ed91ed304934a6cc061f4b607a4",
+      "export": "Original PNG copied byte-for-byte; lossless exact WebP. Lanczos resize only for props to 1024 square and derived room thumbnail.",
+      "alphaQA": {
+        "extrema": [
+          0,
+          255
+        ],
+        "transparentFraction": 0.913172721862793,
+        "opaqueFraction": 0.0032978057861328125,
+        "nonzeroBounds": [
+          0,
+          51,
+          1008,
+          933
+        ],
+        "visibleBoundsAlpha16": [
+          103,
+          308,
+          921,
+          748
+        ]
+      },
+      "visualReview": {
+        "status": "candidate accepted after static inspection",
+        "oneAssetPerImage": true,
+        "charactersPresent": false,
+        "exactCanonicalMatchCertified": false,
+        "observedLimitations": "Five finite fence uprights and end treatment form a short AU extraction from the side fence; no full-location dimensional equivalence claimed.",
+        "genuineTransparentBackground": true,
+        "visibleSilhouetteCroppedAtAlpha16": false,
+        "alphaCleanupPerformed": false
+      }
+    }
+  ],
+  "guidanceRead": [
+    "AGENTS.md",
+    "docs/development/GAMEDEV_GUIDANCE.md",
+    "docs/lore-governance.md",
+    "imagegen",
+    "router",
+    "create-game-assets",
+    "level-design",
+    "camera-systems",
+    "custom-engines",
+    "raster-pipeline",
+    "provenance"
+  ],
+  "guidancePin": "gamedev-skills/awesome-gamedev-agent-skills@19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9",
+  "geometryQA": {
+    "method": "Numeric projection of the authored CSS plus deterministic illustrative composites, not browser rendering.",
+    "alphaThreshold": 16,
+    "fringeNote": "Original alpha 1..15 is preserved and may extend beyond the visible bbox; no alpha cleanup or creative retouching.",
+    "viewportSamples": [
+      [
+        300,
+        300
+      ],
+      [
+        720,
+        430
+      ],
+      [
+        1200,
+        520
+      ]
+    ],
+    "offsetSamples": [
+      -39.5,
+      0,
+      39.5
+    ],
+    "parallaxPixels": {
+      "room": 7.9,
+      "middle": 25.675,
+      "near": 47.4
+    },
+    "roomContain": "Full art within content box, centered at the bottom; 10px safe horizontal margin before parallax. Tinted side bands on wide frames and top bands on narrow frames.",
+    "checks": [
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 90,
+        "visibleBounds": [
+          41.333,
+          217.855,
+          104.526,
+          257.494
+        ],
+        "edgeMargins": [
+          41.333,
+          217.855,
+          195.474,
+          42.506
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          108.995,
+          274.043,
+          200.401,
+          295.723
+        ],
+        "edgeMargins": [
+          108.995,
+          274.043,
+          99.599,
+          4.277
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 90,
+        "visibleBounds": [
+          67.008,
+          217.855,
+          130.201,
+          257.494
+        ],
+        "edgeMargins": [
+          67.008,
+          217.855,
+          169.799,
+          42.506
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          156.395,
+          274.043,
+          247.801,
+          295.723
+        ],
+        "edgeMargins": [
+          156.395,
+          274.043,
+          52.199,
+          4.277
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 90,
+        "visibleBounds": [
+          92.683,
+          217.855,
+          155.876,
+          257.494
+        ],
+        "edgeMargins": [
+          92.683,
+          217.855,
+          144.124,
+          42.506
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          203.795,
+          274.043,
+          295.201,
+          295.723
+        ],
+        "edgeMargins": [
+          203.795,
+          274.043,
+          4.799,
+          4.277
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          124.737,
+          305.568,
+          225.847,
+          368.99
+        ],
+        "edgeMargins": [
+          124.737,
+          305.568,
+          494.153,
+          61.01
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          473.161,
+          391.22,
+          617.948,
+          425.561
+        ],
+        "edgeMargins": [
+          473.161,
+          391.22,
+          102.052,
+          4.439
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          150.412,
+          305.568,
+          251.522,
+          368.99
+        ],
+        "edgeMargins": [
+          150.412,
+          305.568,
+          468.478,
+          61.01
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          520.561,
+          391.22,
+          665.348,
+          425.561
+        ],
+        "edgeMargins": [
+          520.561,
+          391.22,
+          54.652,
+          4.439
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          176.088,
+          305.568,
+          277.197,
+          368.99
+        ],
+        "edgeMargins": [
+          176.088,
+          305.568,
+          442.803,
+          61.01
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          567.961,
+          391.22,
+          712.748,
+          425.561
+        ],
+        "edgeMargins": [
+          567.961,
+          391.22,
+          7.252,
+          4.439
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 210,
+        "visibleBounds": [
+          220.677,
+          353.529,
+          368.128,
+          446.019
+        ],
+        "edgeMargins": [
+          220.677,
+          353.529,
+          831.872,
+          73.981
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          882.268,
+          467.695,
+          1083.362,
+          515.39
+        ],
+        "edgeMargins": [
+          882.268,
+          467.695,
+          116.638,
+          4.61
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 210,
+        "visibleBounds": [
+          246.352,
+          353.529,
+          393.803,
+          446.019
+        ],
+        "edgeMargins": [
+          246.352,
+          353.529,
+          806.197,
+          73.981
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          929.668,
+          467.695,
+          1130.762,
+          515.39
+        ],
+        "edgeMargins": [
+          929.668,
+          467.695,
+          69.238,
+          4.61
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 210,
+        "visibleBounds": [
+          272.027,
+          353.529,
+          419.478,
+          446.019
+        ],
+        "edgeMargins": [
+          272.027,
+          353.529,
+          780.522,
+          73.981
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "western-lair",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          977.068,
+          467.695,
+          1178.162,
+          515.39
+        ],
+        "edgeMargins": [
+          977.068,
+          467.695,
+          21.838,
+          4.61
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          42.485,
+          137.625,
+          114.165,
+          211.844
+        ],
+        "edgeMargins": [
+          42.485,
+          137.625,
+          185.835,
+          88.156
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          112.166,
+          256.82,
+          201.131,
+          295.784
+        ],
+        "edgeMargins": [
+          112.166,
+          256.82,
+          98.869,
+          4.216
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          68.16,
+          137.625,
+          139.84,
+          211.844
+        ],
+        "edgeMargins": [
+          68.16,
+          137.625,
+          160.16,
+          88.156
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          159.566,
+          256.82,
+          248.531,
+          295.784
+        ],
+        "edgeMargins": [
+          159.566,
+          256.82,
+          51.469,
+          4.216
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          93.835,
+          137.625,
+          165.515,
+          211.844
+        ],
+        "edgeMargins": [
+          93.835,
+          137.625,
+          134.485,
+          88.156
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          206.966,
+          256.82,
+          295.931,
+          295.784
+        ],
+        "edgeMargins": [
+          206.966,
+          256.82,
+          4.069,
+          4.216
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 172.8,
+        "visibleBounds": [
+          128.394,
+          172.4,
+          252.256,
+          300.65
+        ],
+        "edgeMargins": [
+          128.394,
+          172.4,
+          467.744,
+          129.35
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          477.017,
+          363.938,
+          617.938,
+          425.658
+        ],
+        "edgeMargins": [
+          477.017,
+          363.938,
+          102.062,
+          4.342
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 172.8,
+        "visibleBounds": [
+          154.069,
+          172.4,
+          277.931,
+          300.65
+        ],
+        "edgeMargins": [
+          154.069,
+          172.4,
+          442.069,
+          129.35
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          524.417,
+          363.938,
+          665.338,
+          425.658
+        ],
+        "edgeMargins": [
+          524.417,
+          363.938,
+          54.662,
+          4.342
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 172.8,
+        "visibleBounds": [
+          179.744,
+          172.4,
+          303.606,
+          300.65
+        ],
+        "edgeMargins": [
+          179.744,
+          172.4,
+          416.394,
+          129.35
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          571.817,
+          363.938,
+          712.737,
+          425.658
+        ],
+        "edgeMargins": [
+          571.817,
+          363.938,
+          7.263,
+          4.342
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 230,
+        "visibleBounds": [
+          222.893,
+          190.737,
+          387.757,
+          361.441
+        ],
+        "edgeMargins": [
+          222.893,
+          190.737,
+          812.243,
+          158.559
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          896.846,
+          429.803,
+          1092.569,
+          515.526
+        ],
+        "edgeMargins": [
+          896.846,
+          429.803,
+          107.431,
+          4.474
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 230,
+        "visibleBounds": [
+          248.568,
+          190.737,
+          413.432,
+          361.441
+        ],
+        "edgeMargins": [
+          248.568,
+          190.737,
+          786.568,
+          158.559
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          944.246,
+          429.803,
+          1139.969,
+          515.526
+        ],
+        "edgeMargins": [
+          944.246,
+          429.803,
+          60.031,
+          4.474
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 230,
+        "visibleBounds": [
+          274.243,
+          190.737,
+          439.107,
+          361.441
+        ],
+        "edgeMargins": [
+          274.243,
+          190.737,
+          760.893,
+          158.559
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          991.646,
+          429.803,
+          1187.369,
+          515.526
+        ],
+        "edgeMargins": [
+          991.646,
+          429.803,
+          12.631,
+          4.474
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 60,
+        "visibleBounds": [
+          183.833,
+          211.669,
+          204.048,
+          257.782
+        ],
+        "edgeMargins": [
+          183.833,
+          211.669,
+          95.952,
+          42.218
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          2.659,
+          252.578,
+          82.541,
+          295.547
+        ],
+        "edgeMargins": [
+          2.659,
+          252.578,
+          217.459,
+          4.453
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 60,
+        "visibleBounds": [
+          209.508,
+          211.669,
+          229.723,
+          257.782
+        ],
+        "edgeMargins": [
+          209.508,
+          211.669,
+          70.277,
+          42.218
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          50.059,
+          252.578,
+          129.941,
+          295.547
+        ],
+        "edgeMargins": [
+          50.059,
+          252.578,
+          170.059,
+          4.453
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 60,
+        "visibleBounds": [
+          235.183,
+          211.669,
+          255.398,
+          257.782
+        ],
+        "edgeMargins": [
+          235.183,
+          211.669,
+          44.602,
+          42.218
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "canvasPixels": 100,
+        "visibleBounds": [
+          97.459,
+          252.578,
+          177.341,
+          295.547
+        ],
+        "edgeMargins": [
+          97.459,
+          252.578,
+          122.659,
+          4.453
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          477.144,
+          258.605,
+          525.659,
+          369.277
+        ],
+        "edgeMargins": [
+          477.144,
+          258.605,
+          194.341,
+          60.723
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          8.533,
+          357.22,
+          135.067,
+          425.282
+        ],
+        "edgeMargins": [
+          8.533,
+          357.22,
+          584.933,
+          4.718
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          502.819,
+          258.605,
+          551.334,
+          369.277
+        ],
+        "edgeMargins": [
+          502.819,
+          258.605,
+          168.666,
+          60.723
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          55.933,
+          357.22,
+          182.467,
+          425.282
+        ],
+        "edgeMargins": [
+          55.933,
+          357.22,
+          537.533,
+          4.718
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 144.0,
+        "visibleBounds": [
+          528.494,
+          258.605,
+          577.009,
+          369.277
+        ],
+        "edgeMargins": [
+          528.494,
+          258.605,
+          142.991,
+          60.723
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "canvasPixels": 158.4,
+        "visibleBounds": [
+          103.333,
+          357.22,
+          229.867,
+          425.282
+        ],
+        "edgeMargins": [
+          103.333,
+          357.22,
+          490.133,
+          4.718
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 170,
+        "visibleBounds": [
+          858.43,
+          315.928,
+          915.706,
+          446.582
+        ],
+        "edgeMargins": [
+          858.43,
+          315.928,
+          284.294,
+          73.418
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          22.729,
+          420.472,
+          198.471,
+          515.003
+        ],
+        "edgeMargins": [
+          22.729,
+          420.472,
+          1001.529,
+          4.997
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 170,
+        "visibleBounds": [
+          884.105,
+          315.928,
+          941.381,
+          446.582
+        ],
+        "edgeMargins": [
+          884.105,
+          315.928,
+          258.619,
+          73.418
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          70.129,
+          420.472,
+          245.871,
+          515.003
+        ],
+        "edgeMargins": [
+          70.129,
+          420.472,
+          954.129,
+          4.997
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-middle",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 170,
+        "visibleBounds": [
+          909.78,
+          315.928,
+          967.056,
+          446.582
+        ],
+        "edgeMargins": [
+          909.78,
+          315.928,
+          232.944,
+          73.418
+        ],
+        "visibleSilhouetteContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "layer": "prop-near",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "canvasPixels": 220,
+        "visibleBounds": [
+          117.529,
+          420.472,
+          293.271,
+          515.003
+        ],
+        "edgeMargins": [
+          117.529,
+          420.472,
+          906.729,
+          4.997
+        ],
+        "visibleSilhouetteContained": true
+      }
+    ],
+    "roomChecks": [
+      {
+        "stage": "western-lair",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          2.1,
+          113.333,
+          282.1,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "imageBounds": [
+          10.0,
+          113.333,
+          290.0,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          17.9,
+          113.333,
+          297.9,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          29.6,
+          0.0,
+          674.6,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "imageBounds": [
+          37.5,
+          0.0,
+          682.5,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          45.4,
+          0.0,
+          690.4,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          202.1,
+          0.0,
+          982.1,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "imageBounds": [
+          210.0,
+          0.0,
+          990.0,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "western-lair",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          217.9,
+          0.0,
+          997.9,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          2.1,
+          113.333,
+          282.1,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "imageBounds": [
+          10.0,
+          113.333,
+          290.0,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          17.9,
+          113.333,
+          297.9,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          29.6,
+          0.0,
+          674.6,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "imageBounds": [
+          37.5,
+          0.0,
+          682.5,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          45.4,
+          0.0,
+          690.4,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          202.1,
+          0.0,
+          982.1,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "imageBounds": [
+          210.0,
+          0.0,
+          990.0,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "goetia-court",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          217.9,
+          0.0,
+          997.9,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          2.1,
+          113.333,
+          282.1,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 0,
+        "imageBounds": [
+          10.0,
+          113.333,
+          290.0,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          300,
+          300
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          17.9,
+          113.333,
+          297.9,
+          300.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          29.6,
+          0.0,
+          674.6,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 0,
+        "imageBounds": [
+          37.5,
+          0.0,
+          682.5,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          720,
+          430
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          45.4,
+          0.0,
+          690.4,
+          430.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": -39.5,
+        "imageBounds": [
+          202.1,
+          0.0,
+          982.1,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 0,
+        "imageBounds": [
+          210.0,
+          0.0,
+          990.0,
+          520.0
+        ],
+        "fullImageContained": true
+      },
+      {
+        "stage": "hh-heaven-gates",
+        "viewport": [
+          1200,
+          520
+        ],
+        "offset": 39.5,
+        "imageBounds": [
+          217.9,
+          0.0,
+          997.9,
+          520.0
+        ],
+        "fullImageContained": true
+      }
+    ],
+    "summary": {
+      "propCases": 54,
+      "propCasesPassed": 54,
+      "roomCases": 27,
+      "roomCasesPassed": 27,
+      "minimumPropEdgeMarginPx": 2.659
+    },
+    "configs": {
+      "western-lair": {
+        "floor": "#354f6d",
+        "prop-middle": {
+          "width": [
+            90,
+            0.2,
+            210
+          ],
+          "side": "left",
+          "margin": [
+            18,
+            0.18,
+            220
+          ],
+          "bottomRatio": 0.14,
+          "translate": 0.26
+        },
+        "prop-near": {
+          "width": [
+            100,
+            0.22,
+            220
+          ],
+          "side": "right",
+          "margin": [
+            48,
+            0.05,
+            72
+          ],
+          "bottomPx": 4,
+          "translate": 0.34
+        }
+      },
+      "goetia-court": {
+        "floor": "#650c35",
+        "prop-middle": {
+          "width": [
+            100,
+            0.24,
+            230
+          ],
+          "side": "left",
+          "margin": [
+            20,
+            0.18,
+            220
+          ],
+          "bottomRatio": 0.26,
+          "translate": 0
+        },
+        "prop-near": {
+          "width": [
+            100,
+            0.22,
+            220
+          ],
+          "side": "right",
+          "margin": [
+            46,
+            0.04,
+            64
+          ],
+          "bottomPx": 4,
+          "translate": 0.283
+        }
+      },
+      "hh-heaven-gates": {
+        "floor": "#f9e3b4",
+        "prop-middle": {
+          "width": [
+            60,
+            0.2,
+            170
+          ],
+          "side": "right",
+          "margin": [
+            48,
+            0.17,
+            204
+          ],
+          "bottomRatio": 0.14,
+          "translate": 0.095
+        },
+        "prop-near": {
+          "width": [
+            100,
+            0.22,
+            220
+          ],
+          "side": "left",
+          "margin": [
+            40,
+            0.04,
+            64
+          ],
+          "bottomPx": 4,
+          "translate": 0.265
+        }
+      }
+    }
+  },
+  "stageDesign": [
+    {
+      "id": "western-lair",
+      "name": "Repaire de Striker · Mine",
+      "back": "Caverne bleu-gris et mauve, voies courbes superposées, traverses rouges et petites lampes cyan au sol.",
+      "middle": "Radiocassette gris et rose entier, détouré, sur le bord gauche du sol illustré.",
+      "floor": "Court tronçon de rail à cinq traverses en avant-plan droit ; piste de pierre centrale libre.",
+      "ambient": "Reflets cyan et orange fixes, partition procédurale originale La voie bleue ; parallaxe désactivée en mouvements réduits.",
+      "composition": "Mine intacte avant le crash du van. Piste frontale élargie, radio et rail déplacés pour la simulation AU. Fond entier en contain, centré en bas ; bandes teintées selon le format.",
+      "reference": "Helluva Boss · Western Energy, S2E4, Vivziepop (KJy7T24rhg0). Deux frames de l’épisode inspectées via rehébergement identifié ; détails de commande du petit radio interprétés. Fidélité 1:1 non certifiée."
+    },
+    {
+      "id": "goetia-court",
+      "name": "Tribunal infernal · Mastermind",
+      "back": "Gradins judiciaires pourpres, yeux noirs, trônes vides, braseros suspendus et fosse lumineuse orange.",
+      "middle": "Tribune flottante du témoin, garde-corps et pointe rocheuse entiers, au bord gauche.",
+      "floor": "Court panneau de balustrade à pommes et serpent en avant-plan droit ; balcon central libre.",
+      "ambient": "Lueur orange fixe, partition procédurale originale Audience sur les braises ; aucune reprise de chanson.",
+      "composition": "Tribunal infernal S2E11 intact et vidé ; ID interne conservé, sans en faire une institution exclusivement Goetia. Balcon frontal ajouté/élargi et props déplacés pour la simulation AU. Fond contain entier, bas-centre.",
+      "reference": "Helluva Boss · Mastermind, S2E11, Vivziepop (IoVB5Hn2m_k), décors de production Jasper Luu (jasperluu.com/helluvaboss, 211_00004/00005/00006). Motif de balustrade simplifié ; pas de certification 1:1."
+    },
+    {
+      "id": "hh-heaven-gates",
+      "name": "Paradis · Portes célestes",
+      "back": "Double porte d’or fermée, piliers solaires, trois yeux lumineux et nuages pêche, blancs et lavande.",
+      "middle": "Petit pupitre bleu pâle facetté avec couronne dorée, entier et détouré, au bord droit.",
+      "floor": "Segment de grille dorée à cinq pointes de flèche en avant-plan gauche ; approche claire dégagée.",
+      "ambient": "Lumière céleste fixe, partition procédurale originale Le seuil doré ; aucun personnage ajouté.",
+      "composition": "Portes intactes de S1E6 avant l’entrée. Approche élargie, pupitre et grille extraits/repositionnés pour la simulation AU. Contain bas-centre conserve le motif à trois yeux ; bandes teintées aux formats divergents.",
+      "reference": "Hazbin Hotel · Welcome to Heaven, S1E6. Clip officiel Prime Video Philippines RFiEU6ZXyWg et plan couleur Prime Video/A24 publié par VFX Voice le 16/07/2024. Repère de production S1, pas état S2 ni comparaison en jeu certifiée."
+    }
+  ],
+  "referenceImages": [
+    {
+      "filename": "heaven-gate-colorkey.jpg",
+      "url": "https://vfxvoice.com/wp-content/uploads/2024/07/PIX-11-HH02_BG-HeavenExtGate_PR_v01-684x800.jpg",
+      "sha256": "da256c64aa63b72496806cbe09e5d2a3564b5ce137e1ba29bb7e7addf04770b5",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    },
+    {
+      "filename": "jasper-211_00004.jpeg",
+      "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/ee06395d-4dd4-41c6-ab76-9516d199a483/211_00004.jpeg",
+      "sha256": "bb4d965aed1cb8590747f64a37f2e7f05ef204224e8391cf558c4c7574c0ef98",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    },
+    {
+      "filename": "jasper-211_00005.jpeg",
+      "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/98d6e335-348c-4d74-a8ba-8d9ed0d78d17/211_00005.jpeg",
+      "sha256": "717476fd7d20f43a4d89a55bd6b1ee381839c1355e77e351afdb9aff7b8c4348",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    },
+    {
+      "filename": "jasper-211_00006.jpeg",
+      "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/788b264b-678b-4136-962e-f6dbd2c480a6/211_00006.jpeg",
+      "sha256": "c9b998bbbac1e0d5f0cea821b92b23a36b29615d2b4051328e212b6fe1ce31c0",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    },
+    {
+      "filename": "western-cavern-still.jpg",
+      "url": "https://pbs.twimg.com/media/GOEKh1IXYAAYQMf.jpg",
+      "sha256": "b0732cfd59a020970d58801e21f76b5b7f4fc24c02cce3d67c3854a19d64c268",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    },
+    {
+      "filename": "western-episode-still.jpg",
+      "url": "https://m.media-amazon.com/images/M/MV5BMGQzZmNhOTYtNTU3Yi00ODIzLWE4Y2ItOTFmMmRkYjUwMGYyXkEyXkFqcGc%40._V1_.jpg",
+      "sha256": "7f34cc0d282e162c514ce8c7874fa4460cc63e229e1cfd47b4a34a4da085b7c5",
+      "inspected": true,
+      "role": "visual reference only; source image is not shipped"
+    }
+  ],
+  "integration": {
+    "codeFrozen": true,
+    "managerStagesBefore": 8,
+    "managerStagesAfter": 8,
+    "standaloneStagesBefore": 19,
+    "standaloneStagesAfter": 22,
+    "newStageIds": [
+      "western-lair",
+      "goetia-court",
+      "hh-heaven-gates"
+    ],
+    "codeFiles": [
+      "src/lib/pentagram-stages.ts",
+      "src/styles/pentagram-arena.css"
+    ],
+    "roomFit": "contain; center bottom; no deformation; horizontal 10px safe reserve before parallax",
+    "propFit": "natural square canvas, object-fit contain; middle z-index 1, near z-index 3, fighters z-index 2",
+    "originalScoreIds": [
+      "cyan-track-reel",
+      "verdict-over-embers",
+      "gilded-threshold"
+    ],
+    "existingAssetsOverwritten": false
+  },
+  "deliveryCounts": {
+    "masterPng": 9,
+    "runtimeWebpLayers": 9,
+    "derivedThumbnails": 3,
+    "imageFiles": 21
+  },
+  "validation": {
+    "imageExports": "9 original PNG copies byte-for-byte; 9 exact decoded lossless WebP layers and 3 exact derived thumbnails; six genuine alpha props",
+    "registry": "TypeScript transpiled and registry evaluated locally in memory: manager 8; standalone 22; 22 unique IDs; 22 unique score IDs; 12 new runtime layer/thumbnail paths exist.",
+    "diffCheck": "git diff --check on the two owned code files passed.",
+    "automatedTestSuitesRunByThisAgent": [],
+    "browserRun": false,
+    "staticCompositesInspected": [
+      "stage-composites-review.png",
+      "props-alpha-review.png",
+      "hh-heaven-gates-1200x520-static.png",
+      "hh-heaven-gates-300x300-static.png"
+    ],
+    "limits": [
+      "Static numeric projection is not a browser render or in-motion visual certification.",
+      "Full room art produces side bands on wide arenas and a top band on narrow arenas; colors match the room floor.",
+      "Foreground objects may occlude fighters near an edge; center readability is reviewed in static compositions, not certified during every combat pose.",
+      "Alpha values 1..15 remain unmodified and can extend beyond the alpha>=16 silhouette.",
+      "Character foot anchoring is outside this stage-only change and is not certified here."
+    ]
+  },
+  "provenancePolicy": {
+    "sourceImagesShipped": false,
+    "masterOriginalsPreserved": true,
+    "generationTool": "Built-in image_gen.imagegen only; one requested asset per successful call",
+    "creativePostprocessing": "none",
+    "deterministicDerivatives": "Lanczos resize and lossless exact WebP encode only",
+    "franchiseDesigns": "Sourced visual reconstructions/adaptations; not official artwork or endorsed canonical reproductions."
+  }
+}

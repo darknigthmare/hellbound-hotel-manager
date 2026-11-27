@@ -1,0 +1,64 @@
+{
+  "reviewer": "recover_v8 independent visual review",
+  "reviewedAt": "2026-11-26T15:34:08.217313+00:00",
+  "scope": "Comparaison visuelle des sources listées, anatomie, cadrage et inspection du vrai composite sur gris opaque. Aucun contrôle animé ou en jeu.",
+  "assetId": "moxxie-truth-seekers-hallucination",
+  "status": "accepted_with_limits",
+  "asset": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-f44aa579-48ce-4f13-8b9b-d9844529d23a.png",
+    "sha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+    "width": 1199,
+    "height": 1312,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bboxAlphaGreaterThan16": [
+      91,
+      45,
+      1039,
+      1289
+    ],
+    "marginsAlphaGreaterThan16": [
+      91,
+      45,
+      160,
+      23
+    ],
+    "edgeAlphaMax": 0,
+    "diagnosticComposite": "/tmp/infernal-v10/independent-review/moxxie-revised-neutral-composite.png"
+  },
+  "referencesInspected": [
+    {
+      "path": "/tmp/infernal-v10/references/moxxie-hallucination-510s.png",
+      "sha256": "555e5c032389dd522a272fe5c22dcf9b5aed6f2326f6b207ef87590b4faf3b6f"
+    },
+    {
+      "path": "/tmp/infernal-v10/references/moxxie-hallucination-490s.png",
+      "sha256": "6ed81266122cf5d2607802d2baecf4bf63033cd5da5dead3f1ec1763c83520b3"
+    },
+    {
+      "path": "/tmp/infernal-v10/references/truth-seekers-hallucination-moxxie-enamel-pin.png",
+      "sha256": "a112f21dd702ef1c0e7403a85d66d9d3de9451365934a7ea6901bf22a87f6aba"
+    }
+  ],
+  "checks": {
+    "costume": "Correction revue : les doublures roses ont disparu. Pans de queue-de-pie désormais sombres charbon/violet, cohérents avec la silhouette à 510 s. Nœud noir, jabot blanc, deux boutons, poignets et identité maintenus.",
+    "anatomy": "Deux bras, deux jambes, une queue et les deux cornes ; aucun membre supplémentaire ni raccord manifestement cassé. Proportions stylisées compatibles avec les sources mais non certifiées 1:1.",
+    "framing": "Silhouette entièrement visible ; marges alpha > 16 : gauche 91, haut 45, droite 160, bas 23 px.",
+    "alpha": "Nouveau composite gris réellement inspecté : découpe propre, aucun fond ou halo coloré visible ; tous les pixels en bord du canevas ont alpha nul."
+  },
+  "blockingIssues": [],
+  "requestedCorrections": [],
+  "limitations": [
+    "Le pin est limité au torse ; il ne qualifie pas les pans inférieurs.",
+    "Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés.",
+    "Aucune animation ni conformité 1:1 certifiée."
+  ],
+  "supersedesRejectedCandidate": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-93d6d6bc-a203-4579-a527-144dc5f2ef72.png",
+    "sha256": "7e82f9a7d0d9871358942468a1e32ba558a49eb2c80dd63452fa40bf06033096",
+    "reason": "Doublures de queue-de-pie roses non soutenues par les références."
+  }
+}

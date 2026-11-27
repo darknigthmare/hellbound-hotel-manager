@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "edition": "V12",
+  "reviewer": "/root/v12_register_bible",
+  "reviewedAt": "2026-11-26T17:46:57.462300+00:00",
+  "status": "eight_masters_accepted_with_limits_runtime_pending",
+  "scope": "Revue indépendante de huit masters, références primaires et composites ; hashes et exports RGBA vérifiés. Deux silhouettes entières nouvelles de soutien ; aucun test moteur ni navigateur dans cette revue.",
+  "fidelityOneToOneCertified": false,
+  "catalogueSnapshot": {
+    "path": "art/infernal-versus/production/reserve-assets.json",
+    "sha256": "2bcdd7812191a3c5bc9c27916e9db17a40affda85a46cfef877d35890ba91b3e",
+    "reserveEntries": 121,
+    "edition": "V11"
+  },
+  "summary": {
+    "reviewedMasters": 8,
+    "acceptedWithLimits": 8,
+    "rejectedMasters": 0,
+    "newStandaloneBaseDelta": 2,
+    "runtimeValidatedByThisReview": false
+  },
+  "assets": [
+    {
+      "id": "mammon-backstage-corridor-s2-room",
+      "kind": "stage_background",
+      "nativeMasterPath": "production/v12/environment/masters/mammon-backstage-corridor-s2-room.png",
+      "masterSha256": "4044e2e3f45fb3591a064323081f04aec8a9bb325da7213389bddaecfc5e680c",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_scene",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-269-corridor.jpg",
+          "sha256": "2ba73f5ff2840b10b5446aa0737300d555153356c2374bacd5067a78f4c6fa71",
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c124e785-c6cf-48fc-88cd-7617a471dd28/207_SHOT_269.jpeg",
+          "visuallyInspected": true,
+          "role": "Fond de production du portfolio primaire de Jasper Luu."
+        },
+        {
+          "path": "production/v12/environment/references/mammon-official-1040s.png",
+          "sha256": "1d8a1fd0e953b3befcce4140d87badf6e83b3d09da40c64cab4433aced05d808",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1040s",
+          "visuallyInspected": true,
+          "role": "Contexte officiel seulement ; pas le plan exact269."
+        },
+        {
+          "path": "production/v12/environment/references/mammon-official-1050s.png",
+          "sha256": "eb9541e507b0fca277fdf80eb09e7262a8c95176e50d4b5ef7aa811e75a9c6dd",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=rRymSi8SmqA&t=1050s",
+          "visuallyInspected": true,
+          "role": "Contexte officiel seulement ; pas le plan exact269."
+        }
+      ],
+      "visualComparison": [
+        "Porte cyan, escalier au fond, panneaux violets fissurés et quatre plafonniers circulaires repris dans un cadrage horizontal.",
+        "La piste avant est dégagée ; aucune caisse, personnage, enseigne, interface ou objet ajouté dans le couloir vide.",
+        "Le fond est visuellement distinct de la scène de spectacle mammon-show historique, également inspectée."
+      ],
+      "limits": [
+        "Perspective, proportions, ouverture du sol et ratio 1672 × 941 adaptés au duel ; traits plus nets et lumineux que la source.",
+        "Le portfolio de Jasper Luu établit le fond de production 207_SHOT_269 ; les plans officiels 1040/1050 s corroborent seulement le contexte spectacle/escalier, pas ce plan exact.",
+        "Ce décor est une adaptation statique de combat AU ; aucune validation des collisions, échelles runtime ou parallaxe dans cette revue."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/environment/masters/mammon-backstage-corridor-s2-room.png",
+        "sha256": "4044e2e3f45fb3591a064323081f04aec8a9bb325da7213389bddaecfc5e680c",
+        "bytes": 1543152,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "alphaZeroPixels": 0,
+        "alphaFullPixels": 1573352,
+        "alphaPartialPixels": 0,
+        "visibleBBoxAlpha16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "export": {
+          "path": "public/assets/production/v12/environment/mammon-backstage-corridor-s2-room.webp",
+          "sha256": "12862a06b77693b802459ab2b72940241688703fa8df0d774fca8e304188c86f",
+          "bytes": 974064,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": false,
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent des 121 entrées historiques et des 46 arènes V11 ; comparaison visuelle avec public/assets/stages/helluva/mammon-show/room.webp : scène de spectacle distincte du couloir."
+      }
+    },
+    {
+      "id": "mammon-backstage-cube-case",
+      "kind": "prop",
+      "nativeMasterPath": "production/v12/environment/masters/mammon-backstage-cube-case.png",
+      "masterSha256": "f53912d1fd6b95dda48365d00b4aab6c475b130191c6abf83fc7ceab01621e7b",
+      "nativeDimensions": [
+        1268,
+        1241
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-242-storage.jpg",
+          "sha256": "a7c1cdd65eac266758117483ba7aa63861101a249597bee02c4b7e1b9585e6eb",
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+          "visuallyInspected": true,
+          "role": "Fond de production du portfolio primaire de Jasper Luu."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "sha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "visuallyInspected": true,
+          "role": "Fond de production du portfolio primaire de Jasper Luu."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-cube-crop.png",
+          "sha256": "344bf5db0307cd54e2288da5c6d14ad54f3d62724815c49a4c5564138c5ab13e",
+          "dimensions": [
+            339,
+            332
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "visuallyInspected": true,
+          "role": "Crop exact du fond245 ; aucun détail généré."
+        }
+      ],
+      "visualComparison": [
+        "Caisse cubique entièrement cadrée : dessus et deux faces, ossature pourpre, panneaux sombres et quatre patches conservés.",
+        "Les composites gris et clair sont propres à l’inspection, sans rectangle opaque ni halo visible."
+      ],
+      "limits": [
+        "Contour, encadrement, taille et position des patches interprétés ; proportions et éclairage ne sont pas une reproduction exacte.",
+        "Objet de réserve provenant du local de stockage 242/245 ; aucun placement arbitraire dans le couloir 269.",
+        "Cette inspection valide un dessin statique détouré ; aucune interaction, collision, mécanique ou base de personnage ajoutée."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/environment/masters/mammon-backstage-cube-case.png",
+        "sha256": "f53912d1fd6b95dda48365d00b4aab6c475b130191c6abf83fc7ceab01621e7b",
+        "bytes": 1056312,
+        "dimensions": [
+          1268,
+          1241
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 732026,
+        "alphaFullPixels": 1864,
+        "alphaPartialPixels": 839698,
+        "visibleBBoxAlpha16": [
+          133,
+          112,
+          1137,
+          1099
+        ],
+        "export": {
+          "path": "public/assets/production/v12/environment/mammon-backstage-cube-case.webp",
+          "sha256": "53061bdbbc1dcd78df6d5d96496ad90a54b22cea8e782525bfddf6e575d65483",
+          "bytes": 576610,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": true,
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent de la galerie V11 ; inventaire des 23 objets/machines/projectiles antérieurs inspecté, aucune caisse de stockage Mammon identique enregistrée."
+      },
+      "alphaCompositeEvidence": [
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-cube-case-alpha-gray.jpg",
+          "sha256": "6fd874b98c2f70bc8cb19a669dafc9f3e0d27850337c8796d8e4730319d088bf",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-cube-case-alpha-light.jpg",
+          "sha256": "f4276f5bce5ee8376877e4f248b211da4357c626f752cf6dcd70638418579f89",
+          "visuallyInspected": true
+        }
+      ]
+    },
+    {
+      "id": "mammon-backstage-low-case",
+      "kind": "prop",
+      "nativeMasterPath": "production/v12/environment/masters/mammon-backstage-low-case.png",
+      "masterSha256": "15c39cad6e8441a387399965c80fee4fced5d12a0360c74622993db73c6921c3",
+      "nativeDimensions": [
+        1536,
+        1024
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-242-storage.jpg",
+          "sha256": "a7c1cdd65eac266758117483ba7aa63861101a249597bee02c4b7e1b9585e6eb",
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/305bb13f-58ec-4ea6-a8e9-d581d74fd557/207_SHOT_242.jpeg",
+          "visuallyInspected": true,
+          "role": "Fond de production du portfolio primaire de Jasper Luu."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-storage.jpg",
+          "sha256": "8b81af220274746e1713b58247f620a89cbbcf0cbbcb25dc07bac046dedfdad5",
+          "dimensions": [
+            2500,
+            1531
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "visuallyInspected": true,
+          "role": "Fond de production du portfolio primaire de Jasper Luu."
+        },
+        {
+          "path": "production/v12/environment/references/jasper-207-shot-245-low-case-crop.png",
+          "sha256": "e95108972dcef8ec48324b1b66d4f83e199be1ba32c845423893a9cd3965fad7",
+          "dimensions": [
+            862,
+            643
+          ],
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/7891f4fb-f6c7-42d8-b892-1de27f467516/207_SHOT_245.jpeg",
+          "visuallyInspected": true,
+          "role": "Crop exact du fond245 ; aucun détail généré."
+        }
+      ],
+      "visualComparison": [
+        "Grande caisse rectangulaire seule : dessus, deux faces, cadre pourpre et patches cohérents avec la source 245.",
+        "Le cube et le tas voisins ont été exclus du dessin ; les composites gris et clair montrent un détourage propre."
+      ],
+      "limits": [
+        "Le dessus masqué par le cube et la partie droite inférieure sous le tas sont complétés comme plans simples ; la géométrie entière n’est pas attestée sans occlusion.",
+        "Perspective, proportions, contour et éclairage adaptés ; le dessin ne doit pas être présenté comme une reproduction 1:1.",
+        "Alpha maximal 254 : la silhouette n’est pas mathématiquement opaque à 255, même si elle est lisible sur les composites.",
+        "Objet de réserve du local 242/245, sans stageId ni placement ajouté au couloir 269 ; aucun nouveau kit ou mécanisme."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/environment/masters/mammon-backstage-low-case.png",
+        "sha256": "15c39cad6e8441a387399965c80fee4fced5d12a0360c74622993db73c6921c3",
+        "bytes": 1444619,
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 674257,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 898607,
+        "visibleBBoxAlpha16": [
+          69,
+          42,
+          1467,
+          977
+        ],
+        "export": {
+          "path": "public/assets/production/v12/environment/mammon-backstage-low-case.webp",
+          "sha256": "f67d1bf878b89dab63044bea02fc7c753eb6a103c986e1d82c6fddf5072a6c14",
+          "bytes": 955146,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": true,
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent de la galerie V11 ; inventaire des 23 objets/machines/projectiles antérieurs inspecté. Caisse basse distincte de la caisse cubique par sa forme et sa provenance visuelle."
+      },
+      "alphaCompositeEvidence": [
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-low-case-alpha-gray.jpg",
+          "sha256": "c31dd90633319389722e18b01a0763f47d6a2971c0af7ffe03bbcd769314649c",
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v12/environment/diagnostics/mammon-backstage-low-case-alpha-light.jpg",
+          "sha256": "ac641d4f9528f9d61914ffd1f5dddbef30ea3a63dc76a2d8f71c3ff4306800a5",
+          "visuallyInspected": true
+        }
+      ]
+    },
+    {
+      "id": "blitzo-lighter-production",
+      "kind": "prop",
+      "nativeMasterPath": "production/v12/props/masters/blitzo-lighter-production.png",
+      "masterSha256": "9fe851d26936a4759cd48dfd5b0d720de2364db76ee0f9866665f8e4013c6787",
+      "nativeDimensions": [
+        1312,
+        1199
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/props/references/blitzo-lighter-final-model.jpg",
+          "sha256": "5c4e5247cd51a93c1779bff27a42a83a0e23f0f7ecb75969e21246678aef82ce",
+          "dimensions": [
+            1500,
+            897
+          ],
+          "url": "https://cdnb.artstation.com/p/assets/images/images/058/983/811/large/erin-frost-blitzo-lighter.jpg?1675365040",
+          "visuallyInspected": true,
+          "role": "Blitzo's Lighter_final Pass ; portfolio primaire Erin Frost."
+        }
+      ],
+      "visualComparison": [
+        "Vue fermée frontale du briquet : boîtier bleu, charnière latérale rouge, emblème ovale jaune à pupille noire et reflets diagonaux conservés.",
+        "Un seul objet entièrement cadré ; aucune flamme ou cigarette ajoutée.",
+        "Composites gris et clair examinés : fond transparent propre, sans rectangle opaque ni halo visible."
+      ],
+      "limits": [
+        "Angles plus arrondis, emblème et épaisseur des bordures interprétés ; les rayures ne sont pas reproduites à l’identique.",
+        "La planche primaire fixe le modèle de production ; elle ne suffit pas à dater son apparition dans un épisode.",
+        "La datation épisode reste indépendante de la qualification artistique de la planche ; revue runtime non réalisée ici.",
+        "Continuité non datée ; le plafond season_2 règle seulement la visibilité du filtre. La passe ponctuelle S1E1 ne confirme pas ce modèle exact et ne prouve pas son absence."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/props/masters/blitzo-lighter-production.png",
+        "sha256": "9fe851d26936a4759cd48dfd5b0d720de2364db76ee0f9866665f8e4013c6787",
+        "bytes": 622921,
+        "dimensions": [
+          1312,
+          1199
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1075262,
+        "alphaFullPixels": 304,
+        "alphaPartialPixels": 497522,
+        "visibleBBoxAlpha16": [
+          298,
+          202,
+          958,
+          997
+        ],
+        "export": {
+          "path": "public/assets/production/v12/props/blitzo-lighter-production.webp",
+          "sha256": "65bb76c74a2a1000872bd56fcb9ea428aa81e931963a8a06c648e21d106b15c1",
+          "bytes": 316738,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": true,
+      "alphaCompositeEvidence": [
+        {
+          "path": "/tmp/infernal-v12/review/blitzo-lighter-production-alpha-gray.jpg",
+          "sourceMaster": "production/v12/props/masters/blitzo-lighter-production.png",
+          "sourceSha256": "9fe851d26936a4759cd48dfd5b0d720de2364db76ee0f9866665f8e4013c6787",
+          "sha256": "627720295946a793ea772366aee54e2e428a597b87f3ab1b44ebe8a1c77903d5",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        },
+        {
+          "path": "/tmp/infernal-v12/review/blitzo-lighter-production-alpha-light.jpg",
+          "sourceMaster": "production/v12/props/masters/blitzo-lighter-production.png",
+          "sourceSha256": "9fe851d26936a4759cd48dfd5b0d720de2364db76ee0f9866665f8e4013c6787",
+          "sha256": "56f25038050789045c010f28eb31548c5fb8b4a35f6d78cb4818de82442f1e68",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        }
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent des 121 entrées de galerie V11 ; inventaire des objets techniques consulté. Nouvelle incarnation de prop issue de sa propre planche de production, non substitution d’un dessin existant."
+      }
+    },
+    {
+      "id": "millie-knife-production",
+      "kind": "prop",
+      "nativeMasterPath": "production/v12/props/masters/millie-knife-production.png",
+      "masterSha256": "1cec3bd3c7b219bd02e47d2d32d829ff4f6694ecacc0b1be047b1d0c17627352",
+      "nativeDimensions": [
+        1136,
+        1385
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/props/references/millie-knife-model.jpg",
+          "sha256": "f153d49f73d33ac8e2884ec24e43da5deb541a2f6f5cc8d61f8c823aca5b200d",
+          "dimensions": [
+            900,
+            1097
+          ],
+          "url": "https://cdna.artstation.com/p/assets/images/images/058/983/826/large/erin-frost-millie-knife.jpg?1675365062",
+          "visuallyInspected": true,
+          "role": "Millie's Knife + Palette ; portfolio primaire Erin Frost."
+        }
+      ],
+      "visualComparison": [
+        "Lame courbe sombre à encoches rouges, garde noire et manche brun strié reconnaissables depuis la planche primaire.",
+        "Pointe et extrémité du manche entièrement cadrées ; aucun personnage ni composant supplémentaire.",
+        "Composites gris et clair examinés : fond transparent propre, sans rectangle opaque ni halo visible."
+      ],
+      "limits": [
+        "Courbures, espacement des encoches et stries du manche redessinés ; proportions non certifiées 1:1.",
+        "Objet visuel de réserve ; aucun usage d’attaque, collision, cycle ou nouveau kit ajouté.",
+        "La datation épisode reste indépendante de la qualification artistique de la planche ; revue runtime non réalisée ici.",
+        "Continuité non datée ; le plafond season_2 règle seulement la visibilité du filtre. La passe ponctuelle S1E1 ne confirme pas ce modèle exact et ne prouve pas son absence."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/props/masters/millie-knife-production.png",
+        "sha256": "1cec3bd3c7b219bd02e47d2d32d829ff4f6694ecacc0b1be047b1d0c17627352",
+        "bytes": 353675,
+        "dimensions": [
+          1136,
+          1385
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1355969,
+        "alphaFullPixels": 270,
+        "alphaPartialPixels": 217121,
+        "visibleBBoxAlpha16": [
+          276,
+          49,
+          951,
+          1331
+        ],
+        "export": {
+          "path": "public/assets/production/v12/props/millie-knife-production.webp",
+          "sha256": "a8f18e97a0675fc9ea13a58439c8a5871f8253c393417dacb2e7db999ede43e9",
+          "bytes": 198012,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": true,
+      "alphaCompositeEvidence": [
+        {
+          "path": "/tmp/infernal-v12/review/millie-knife-production-alpha-gray.jpg",
+          "sourceMaster": "production/v12/props/masters/millie-knife-production.png",
+          "sourceSha256": "1cec3bd3c7b219bd02e47d2d32d829ff4f6694ecacc0b1be047b1d0c17627352",
+          "sha256": "4a4037923dfa88a59ecb9044eefe76630693daf38a52b38731467fd5482a6b33",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        },
+        {
+          "path": "/tmp/infernal-v12/review/millie-knife-production-alpha-light.jpg",
+          "sourceMaster": "production/v12/props/masters/millie-knife-production.png",
+          "sourceSha256": "1cec3bd3c7b219bd02e47d2d32d829ff4f6694ecacc0b1be047b1d0c17627352",
+          "sha256": "068360b03a380f61c7bb748caa96c3a5ed1aa8cfe00207eae5561dc1959c430f",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        }
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent des 121 entrées de galerie V11 ; inventaire des objets techniques consulté. Nouvelle incarnation de prop issue de sa propre planche de production, non substitution d’un dessin existant."
+      }
+    },
+    {
+      "id": "moxxie-sniper-production",
+      "kind": "prop",
+      "nativeMasterPath": "production/v12/props/masters/moxxie-sniper-production.png",
+      "masterSha256": "00d1e1945ecd8d79452681bdf5b5c28758160d8a45c7c44a62b707a06b750dac",
+      "nativeDimensions": [
+        2078,
+        757
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "complete_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/props/references/moxxie-sniper-model.jpg",
+          "sha256": "c4360ff5e0ef49c6208563b908a35151137f0b78ebde2dac8e1e317176513159",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "url": "https://cdnb.artstation.com/p/assets/images/images/058/983/833/large/erin-frost-moxxie-sniper-final-2.jpg?1675365066",
+          "visuallyInspected": true,
+          "role": "Moxxie's Sniper ; portfolio primaire Erin Frost."
+        }
+      ],
+      "visualComparison": [
+        "Long canon noir à extrémité rouge, lunette à lentille orange, boîtier bordeaux et crosse au motif musical repris.",
+        "Crosse et extrémité du canon entièrement visibles ; aucune pièce coupée au bord. Le bipied déployé de la note de modèle n’est pas ajouté au dessin.",
+        "Composites gris et clair examinés : fond transparent propre, sans rectangle opaque ni halo visible."
+      ],
+      "limits": [
+        "Marges horizontales 51 px sur 2078 px, soit environ 2,45 % : plus étroites que le prompt, mais silhouette entièrement cadrée.",
+        "Motif musical, ouvertures, courbures et proportions redessinés ; aucune fidélité pixel à pixel ni 1:1 certifiée.",
+        "Objet statique de réserve ; aucune trajectoire, munition, animation, attaque ou nouveau kit déduit.",
+        "La datation épisode reste indépendante de la qualification artistique de la planche ; revue runtime non réalisée ici.",
+        "Continuité non datée ; le plafond season_2 règle seulement la visibilité du filtre. La passe ponctuelle S1E1 ne confirme pas ce modèle exact et ne prouve pas son absence."
+      ],
+      "pixelAudit": {
+        "path": "production/v12/props/masters/moxxie-sniper-production.png",
+        "sha256": "00d1e1945ecd8d79452681bdf5b5c28758160d8a45c7c44a62b707a06b750dac",
+        "bytes": 420505,
+        "dimensions": [
+          2078,
+          757
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1282676,
+        "alphaFullPixels": 1292,
+        "alphaPartialPixels": 289078,
+        "visibleBBoxAlpha16": [
+          51,
+          167,
+          2027,
+          596
+        ],
+        "export": {
+          "path": "public/assets/production/v12/props/moxxie-sniper-production.webp",
+          "sha256": "d40b3f17bae154155d3de3d8014d01696a2f9eecab6524bd86b140acf0cd2d8b",
+          "bytes": 246902,
+          "pixelExact": true
+        }
+      },
+      "alphaCompositeInspected": true,
+      "alphaCompositeEvidence": [
+        {
+          "path": "/tmp/infernal-v12/review/moxxie-sniper-production-alpha-gray.jpg",
+          "sourceMaster": "production/v12/props/masters/moxxie-sniper-production.png",
+          "sourceSha256": "00d1e1945ecd8d79452681bdf5b5c28758160d8a45c7c44a62b707a06b750dac",
+          "sha256": "90e394a9ae6ebe5e8f11d82fab5c42a0b5fc433ec9b36e120cddd67d6be1a299",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        },
+        {
+          "path": "/tmp/infernal-v12/review/moxxie-sniper-production-alpha-light.jpg",
+          "sourceMaster": "production/v12/props/masters/moxxie-sniper-production.png",
+          "sourceSha256": "00d1e1945ecd8d79452681bdf5b5c28758160d8a45c7c44a62b707a06b750dac",
+          "sha256": "b6b02c74870e98b18a3507b35cbe682f917470fe2b216e4ee54d6895b6159c44",
+          "diagnosticOnly": true,
+          "visuallyInspected": true,
+          "temporaryDiagnostic": true
+        }
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent des 121 entrées de galerie V11 ; inventaire des objets techniques consulté. Nouvelle incarnation de prop issue de sa propre planche de production, non substitution d’un dessin existant."
+      }
+    },
+    {
+      "id": "hb_gigi-queen-bee-s1-base",
+      "kind": "support_base",
+      "sourceIdentityId": "hb_gigi",
+      "nativeMasterPath": "production/v12/characters/masters/hb_gigi-queen-bee-s1-base.png",
+      "masterSha256": "8998a269b61108540785fd19a700652c3e51671d9621145e0ed528493f71bf87",
+      "nativeDimensions": [
+        1060,
+        1484
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/characters/references/queen-bee-official-560s.png",
+          "sha256": "675d783a1fc7687f253151ac2af743c131cae45ed2b02ede1b3e19badf86fbbc",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=560s",
+          "visuallyInspected": true,
+          "role": "Identification et tenue du haut dans le groupe."
+        },
+        {
+          "path": "production/v12/characters/references/queen-bee-official-620s.png",
+          "sha256": "7d57a5b176dcbc9e2bbb3d81d56728ba90f18978ac0223a1f5ef8160a736e3e2",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=620s",
+          "visuallyInspected": true,
+          "role": "Vue primaire entière, pantalon et deux pieds visibles."
+        }
+      ],
+      "visualComparison": [
+        "Afro bicolore gris/rose, grandes créoles, haut rose, pantalon crème ample et deux pieds sombres cohérents entre les plans primaires 560 s et 620 s.",
+        "Silhouette du master complète, mains, chevelure, gobelet, queue et pieds dans le cadre.",
+        "Composites blanc et gris propres à l’inspection ; aucune coupe au bord du canevas."
+      ],
+      "limits": [
+        "Sources natives 320 × 180 : forme générale et tenue établies, détails fins des mains, pieds, visage et coutures interprétés.",
+        "Pose de fête, expression, taille de la chevelure et forme de la queue adaptées ; aucun calque ni certification 1:1.",
+        "La qualification V7 décrivait un autre figurant avec short rose ; cette identification est corrigée par les plans primaires et la correspondance au portrait de catalogue, sans effacer l’historique.",
+        "Une seule base statique de soutien en réserve ; aucun kit jouable ni cycle animé."
+      ],
+      "qualificationCorrection": {
+        "historicalField": "qualificationV7",
+        "correction": "La mention de short rose se rapportait à un autre figurant ; Gigi porte le pantalon crème ample visible en entier à 620 s.",
+        "historicalRecordRetained": true,
+        "primaryReferences": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=560s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=620s"
+        ]
+      },
+      "identityComparisonEvidence": {
+        "path": "public/assets/sprites/helluva/portraits/hb_gigi.png",
+        "sha256": "045a756ea0e54b6019dcb8ab3620fad96c49e4f6adc861021f394a3813b282b6",
+        "visuallyInspected": true,
+        "role": "Rapprochement avec l’ID existant du catalogue seulement ; ce portrait ne sert pas de preuve primaire du corps."
+      },
+      "pixelAudit": {
+        "id": "hb_gigi-queen-bee-s1-base",
+        "dimensions": [
+          1060,
+          1484
+        ],
+        "mode": "RGBA",
+        "master": "production/v12/characters/masters/hb_gigi-queen-bee-s1-base.png",
+        "export": "public/assets/production/v12/characters/hb_gigi-queen-bee-s1-base.webp",
+        "masterSha256": "8998a269b61108540785fd19a700652c3e51671d9621145e0ed528493f71bf87",
+        "exportSha256": "a9fa1d42279d2a3b2d542064367bee9c128ebad5700c973b65d182d09e601b18",
+        "masterBytes": 855727,
+        "exportBytes": 478802,
+        "nativeBytesUnchanged": true,
+        "pixelExactExport": true,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 994125,
+        "alphaFullPixels": 739,
+        "alphaPartialPixels": 578176,
+        "visibleBBoxAlpha16": [
+          77,
+          72,
+          835,
+          1430
+        ],
+        "canvasEdgeVisibleAlpha16": false
+      },
+      "alphaCompositeInspected": true,
+      "alphaCompositeEvidence": [
+        {
+          "path": "docs/standalone/production-v12/characters-diagnostics/hb_gigi-queen-bee-s1-base-white-composite.jpg",
+          "sha256": "63002855967d1d10d152a6e2cb0759a55fd145e646f1faf460b26e4afca38227",
+          "visuallyInspected": true
+        },
+        {
+          "path": "docs/standalone/production-v12/characters-diagnostics/hb_gigi-queen-bee-s1-base-grey-composite.jpg",
+          "sha256": "fc7e067055b0133ed7b65e6f127d5680c4881602f3752b0af6a8e9935ec4955f",
+          "visuallyInspected": true
+        }
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "hb_gigi était sans base qualifiée dans l’audit V7 et aucun registre V7–V11 ne livre de nouvelle base entière pour cette identité. Le master constitue une pose nouvelle, distincte du portrait historique utilisé pour le rapprochement de catalogue."
+      }
+    },
+    {
+      "id": "hb_russ-queen-bee-s1-base",
+      "kind": "support_base",
+      "sourceIdentityId": "hb_russ",
+      "nativeMasterPath": "production/v12/characters/masters/hb_russ-queen-bee-s1-base.png",
+      "masterSha256": "11fc4654845e05f571f48c3f8247820cb8596f493180077354867b572508279c",
+      "nativeDimensions": [
+        1246,
+        1263
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v12_register_bible",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": true,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v12/characters/references/queen-bee-official-460s.png",
+          "sha256": "b09ec7d84788474e37f8755aaa6634310a02c5664313f8bc937b25aa029e69bb",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=460s",
+          "visuallyInspected": true,
+          "role": "Présence et identité dans le groupe ; vue de dos."
+        },
+        {
+          "path": "production/v12/characters/references/queen-bee-official-560s.png",
+          "sha256": "675d783a1fc7687f253151ac2af743c131cae45ed2b02ede1b3e19badf86fbbc",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=560s",
+          "visuallyInspected": true,
+          "role": "Complément visuel de l’identité et du haut du corps ; détails fins limités."
+        },
+        {
+          "path": "production/v12/characters/references/queen-bee-official-620s.png",
+          "sha256": "7d57a5b176dcbc9e2bbb3d81d56728ba90f18978ac0223a1f5ef8160a736e3e2",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=620s",
+          "visuallyInspected": true,
+          "role": "Vue primaire entière, tenue sombre et deux pieds visibles."
+        },
+        {
+          "path": "production/v12/characters/references/queen-bee-official-690s.png",
+          "sha256": "12c961f957bc5497a9998075f2faba983256f0e85ccc5a174db5730b54226e16",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=690s",
+          "visuallyInspected": true,
+          "role": "Complément visuel de l’identité et du haut du corps ; détails fins limités."
+        }
+      ],
+      "visualComparison": [
+        "Morphologie trapue, chevelure et fourrure rousses, tee-shirt brun à motif pâle, vêtement inférieur sombre et deux pieds cohérents avec la silhouette entière du plan 620 s.",
+        "Oreilles, mèches, mains, queue et pieds inclus dans le cadre ; le dessin constitue une seule pose statique distincte du portrait historique.",
+        "Composites blanc et gris propres à l’inspection, sans coupe de silhouette au bord."
+      ],
+      "limits": [
+        "Sources natives 320 × 180 : yeux, dents, expression, mains, pieds, mèches et coutures sont interprétés ; le graphisme du tee-shirt reste un motif abstrait sans transcription d’un mot.",
+        "Marge haute de 14 px sur 1263 px : réduite mais aucun pixel visible de la silhouette ne touche le bord ; cadrage galerie à confirmer au navigateur.",
+        "La description V7 « lunettes/haut à carreaux » correspondait à un autre figurant ; correction explicite par les plans primaires et le rapprochement au portrait du catalogue, historique conservé.",
+        "Une seule base statique de soutien en réserve ; aucun kit jouable, cycle animé ni fidélité 1:1 certifiée."
+      ],
+      "qualificationCorrection": {
+        "historicalField": "qualificationV7",
+        "correction": "La mention lunettes/haut à carreaux ne décrivait pas Russ ; la silhouette rousse trapue au tee-shirt brun est établie dans les plans de Queen Bee et visible entière à 620 s.",
+        "historicalRecordRetained": true,
+        "primaryReferences": [
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=460s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=560s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=620s",
+          "https://www.youtube.com/watch?v=D-2799Y07Zc&t=690s"
+        ]
+      },
+      "identityComparisonEvidence": {
+        "path": "public/assets/sprites/helluva/portraits/hb_russ.png",
+        "sha256": "7a05d65b38e34cdab1d73fbaf3d0f3a1e9f08916663d6a3d0f0f3ef1a69793ee",
+        "visuallyInspected": true,
+        "role": "Rapprochement avec l’ID existant du catalogue seulement ; ce portrait ne sert pas de preuve primaire du corps."
+      },
+      "pixelAudit": {
+        "id": "hb_russ-queen-bee-s1-base",
+        "dimensions": [
+          1246,
+          1263
+        ],
+        "mode": "RGBA",
+        "master": "production/v12/characters/masters/hb_russ-queen-bee-s1-base.png",
+        "export": "public/assets/production/v12/characters/hb_russ-queen-bee-s1-base.webp",
+        "masterSha256": "11fc4654845e05f571f48c3f8247820cb8596f493180077354867b572508279c",
+        "exportSha256": "99d9a614bb40ea9eb6a694b5411d5a2a5264452a60f359516f7557b5e6f16f0b",
+        "masterBytes": 1258646,
+        "exportBytes": 733188,
+        "nativeBytesUnchanged": true,
+        "pixelExactExport": true,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 682367,
+        "alphaFullPixels": 1746,
+        "alphaPartialPixels": 889585,
+        "visibleBBoxAlpha16": [
+          92,
+          14,
+          1159,
+          1227
+        ],
+        "canvasEdgeVisibleAlpha16": false
+      },
+      "alphaCompositeInspected": true,
+      "alphaCompositeEvidence": [
+        {
+          "path": "docs/standalone/production-v12/characters-diagnostics/hb_russ-queen-bee-s1-base-white-composite.jpg",
+          "sha256": "43a7cda6c30e64db83fabd47303319c7e9afebd9b4e14e428f628208ca4361f9",
+          "visuallyInspected": true
+        },
+        {
+          "path": "docs/standalone/production-v12/characters-diagnostics/hb_russ-queen-bee-s1-base-grey-composite.jpg",
+          "sha256": "7bc28c76066e8b88b3f8ce70a26da42ab53d4e16a9a4d3830eb7de9292906be3",
+          "visuallyInspected": true
+        }
+      ],
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "hb_russ était sans base qualifiée dans l’audit V7 et aucun registre V7–V11 ne livre de base entière pour cette identité. Nouveau master distinct du portrait historique."
+      }
+    }
+  ],
+  "primaryPortfolioVerification": [
+    {
+      "url": "https://jasperluu.com/helluvaboss",
+      "observed": "Page du créateur présentant ses fonds conçus et peints pour SpindleHorse, dont 207_SHOT_242, 245 et 269.",
+      "checkedAt": "2026-11-26T17:38:56.561798+00:00"
+    },
+    {
+      "url": "https://erinfrostart.artstation.com/projects/KONJ8G",
+      "title": "Props_Helluva Boss",
+      "author": "Erin Frost",
+      "observed": "Page primaire consultée : intitulés Blitzo Lighter final Pass, Millie Knife + Palette, Moxxie Sniper concordent avec les planches persistées.",
+      "checkedAt": "2026-11-26T17:40:41.750127+00:00"
+    }
+  ],
+  "continuityVerificationStatus": "separate_episode_pass_complete_production_models_remain_undated",
+  "continuityEvidence": {
+    "path": "docs/standalone/production-v12/root-props-episode-corroboration.json",
+    "sha256": "bf03cfe50dd3fcc8b1bc664b2fd1c92c8f96b3191927d5a71353509dee547880",
+    "decision": "Les trois props root conservent une continuité de modèle de production non daté. season_2 est seulement le plafond conservateur du filtre ; aucune attribution canonique S2.",
+    "independentlyViewedEpisodeSamples": [
+      330,
+      420
+    ],
+    "fullEpisodeViewed": false,
+    "absenceFromEpisodeClaim": false
+  }
+}

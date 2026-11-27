@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-27T00:44:22.578619+00:00",
+  "sourceHashes": {
+    "src/standalone/content-access.ts": "4b5046e924002051d5dcdfd197099a86dbd7a2e3abfc75885031ddf2d028adce",
+    "src/standalone/ContentSeal.tsx": "a9c344cf2894bdef7c24774086dba6e966604979fa8dadc07093f52815b5b813",
+    "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+    "src/standalone/progression.ts": "485b11117a5cebd468062645a0a11bf0c94154961497d32de0a64c1026e0259a",
+    "src/standalone/infernal-versus.css": "c04ab9498e8a046b2f503a6ad01646c1cf804ea8021e59af4faf98e5a9d34bc6",
+    "src/tests/standalone-content-access.test.ts": "33414c31ced407698078d15cf58fba10d522667e5b9fa25e2adc0c3eb9d1fa08",
+    "src/tests/standalone-content-access-ui.test.tsx": "64290d332ed78a4f138663ec78445e99d0d80b28332eaa329810111ec15845ec",
+    "src/tests/standalone-progression.test.ts": "ba39a01b7b8846d80364149bb7e103e0fd7886ad9bc74ae993c96a38dc6377b4",
+    "scripts/check-content-access-browser.mjs": "46aa7802e4799269c4169c0d52fa690196a9ab55acb8b21a4368ae8a3b434501"
+  },
+  "checks": [
+    {
+      "name": "Typescript",
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "Lint ciblé",
+      "command": "npx eslint src/standalone/content-access.ts src/standalone/ContentSeal.tsx src/standalone/InfernalVersus.tsx src/standalone/progression.ts src/tests/standalone-content-access.test.ts src/tests/standalone-content-access-ui.test.tsx src/tests/standalone-progression.test.ts scripts/check-content-access-browser.mjs --max-warnings=0",
+      "exitCode": 0
+    },
+    {
+      "name": "Tests ciblés",
+      "command": "npm run test -- src/tests/standalone-content-access.test.ts src/tests/standalone-content-access-ui.test.tsx src/tests/standalone-progression.test.ts src/tests/standalone-ui.test.tsx --reporter=default --reporter=json --outputFile=art/audits/unlock-slots-20261127/unit-tests.json",
+      "exitCode": 0,
+      "tests": 48,
+      "files": 4,
+      "report": "art/audits/unlock-slots-20261127/unit-tests.json"
+    },
+    {
+      "name": "Chromium clavier et tactile émulé",
+      "command": "INFERNAL_QA_BROWSER=<binaire Chromium disponible> node scripts/check-content-access-browser.mjs",
+      "exitCode": 0,
+      "checks": 28,
+      "screenshots": 8,
+      "report": "art/audits/unlock-slots-20261127/browser-qa.json"
+    }
+  ],
+  "scope": "Vérification ciblée des sept règles et de leurs parcours. La commande globale npm run qa est hors périmètre de ce rapport.",
+  "limitations": [
+    "Les composants UI de tests utilisent un moteur de combat simulé pour produire leurs résultats.",
+    "La recette Chromium contrôle les menus, les droits de sélection, les silhouettes réelles, la persistance et le rendu adaptatif; elle ne termine pas des combats réels.",
+    "Pas de recette manette, lecteur d’écran, téléphone physique, réseau ou abonnement."
+  ]
+}

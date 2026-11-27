@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "edition": "V8",
+  "date": "2026-11-26",
+  "baselineCommit": "daae49839972f31a1d55cbbe2942c1b0c7abe304",
+  "generator": "native image_gen.imagegen",
+  "status": "complete_for_qualified_targets",
+  "counts": {
+    "deliveredDrawings": 4,
+    "newIdentities": 0,
+    "newCharacterBases": 0,
+    "costumes": 4,
+    "narrativeOnly": 4,
+    "humanIncarnations": 3,
+    "documentedWingedForms": 1,
+    "animationCycles": 0,
+    "refusedAttempts": 1
+  },
+  "attempts": [
+    {
+      "assetId": "alastor-human-s2-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Use case: identity-preserving single static character sprite for Infernal Versus. Draw the HUMAN incarnation of ALASTOR from the official Hazbin Hotel Season 2 flashback, as shown in the three supplied Prime Video reference frames. Image 1 (2 seconds) governs his complete slender body, dark fitted trousers, low black pointed shoes, waistcoat silhouette and daylight palette. Image 2 (4 seconds) governs his warm brown skin, swept dark brown-black curls with reddish highlights, narrow oval spectacles, freckles, angular smiling face and long red necktie. Image 3 (20 seconds) governs the ivory shirt sleeves, dark sleeve garters, burgundy waistcoat and its long pointed lower contour. Keep exactly this human costume and anatomy. One complete full-body character, in a calm upright standing pose, three-quarter side view facing screen-right, one relaxed open hand, the other by his side. Reproduce the show's crisp expressive black 2D animation outlines and flat cel colors. Match his tall narrow human proportions; no deer antlers, no demon ears, no tail, no supernatural transformation. Show the whole hairstyle, fingers and both shoes inside the canvas with at least 7 percent transparent padding on every side. True transparent RGBA background. No floor, scene, cast shadow, words, logos, frame, glass, microphone, weapon, other character, second pose, multi-panel sheet or animation. This is a single clothed human character portrait intended as a static archive/costume sprite.",
+      "inputPaths": [
+        "production/v8/hazbin/references/alastor-human-body-2s.png",
+        "production/v8/hazbin/references/alastor-human-face-4s.png",
+        "production/v8/hazbin/references/alastor-human-uniform-20s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+      ],
+      "transparentBackground": true,
+      "outputMaster": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+      "outputMasterSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+      "recordPath": "production/v8/hazbin/alastor-human-attempt.json"
+    },
+    {
+      "assetId": "vox-human-weather-s2-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Create ONE complete full-body static 2D character sprite of HUMAN VOX from Hazbin Hotel Season 2 as directly shown in the supplied official Prime Video Brighter frames. Preserve his pointed human face, pale skin, green eyes, rectangular black spectacles, narrow long-limbed build, angular upswept dark hair with its pale streak and confident narrow grin. No television head, no antennas, no demon anatomy. Match the show's sharp black cartoon outlines, flat colors and restrained cel shading. A calm upright three-quarter pose facing screen-right, both feet visible and clearly separate, hands relaxed. Keep the entire hair, fingers and shoes within generous transparent margins. True fully transparent RGBA background with opaque character fills. No floor, scenery, cast shadow, glow, lettering, logo, frame, extra character, other pose, multi-panel sheet or animation. Draw this one specific official outfit, without combining different costumes. The weather-presenter costume: use Image 1 at14 seconds for the whole body and exact dark brown/burgundy suit and narrow trousers; Image 2 at12 seconds supplies the face, hair, glasses and suit front; Image 3 at10 seconds supplies the collar, pale shirt and thin light tie and the small golden lapel accent visible in this incarnation. Brown pointed-shoulder suit jacket, pale shirt, light muted tie, matching dark trousers and black pointed low shoes. Do not add a microphone, weapon, map pointer or weather board. The pose is a neutral static adaptation for the archive.",
+      "inputPaths": [
+        "production/v8/hazbin/references/vox-weather-body-14s.png",
+        "production/v8/hazbin/references/vox-weather-face-12s.png",
+        "production/v8/hazbin/references/vox-weather-torso-10s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+      ],
+      "transparentBackground": true,
+      "outputMaster": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+      "outputMasterSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+      "recordPath": "production/v8/hazbin/vox-human-weather-s2-ready-attempt.json"
+    },
+    {
+      "assetId": "vox-human-talkshow-s2-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Create ONE complete full-body static 2D character sprite of HUMAN VOX from Hazbin Hotel Season 2 as directly shown in the supplied official Prime Video Brighter frames. Preserve his pointed human face, pale skin, green eyes, rectangular black spectacles, narrow long-limbed build, angular upswept dark hair with its pale streak and confident narrow grin. No television head, no antennas, no demon anatomy. Match the show's sharp black cartoon outlines, flat colors and restrained cel shading. A calm upright three-quarter pose facing screen-right, both feet visible and clearly separate, hands relaxed. Keep the entire hair, fingers and shoes within generous transparent margins. True fully transparent RGBA background with opaque character fills. No floor, scenery, cast shadow, glow, lettering, logo, frame, extra character, other pose, multi-panel sheet or animation. Draw this one specific official outfit, without combining different costumes. The pale mint-green/teal talk-show performer's suit shown in these references: Image 1 at58 seconds governs the whole outfit, narrow legs and long jacket contour; Image 2 at62 seconds shows pale lapels, white shirt with black buttons, small BLACK bow tie and hand proportions; Image 3 at66 seconds governs mint-green trouser hems and low pointed black shoes with their tiny light toe accents. Preserve the contrast between the pale jacket front and the teal trouser panels as observed. Draw both hands empty and relaxed: do not include the scene's microphone, wire, audience or stage. Do not use the brown weather-presenter suit or the later black tuxedo. The pose is a neutral static adaptation for the archive.",
+      "inputPaths": [
+        "production/v8/hazbin/references/vox-talkshow-body-58s.png",
+        "production/v8/hazbin/references/vox-talkshow-face-62s.png",
+        "production/v8/hazbin/references/vox-talkshow-shoes-66s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+      ],
+      "transparentBackground": true,
+      "outputMaster": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+      "outputMasterSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+      "recordPath": "production/v8/hazbin/vox-human-talkshow-s2-ready-attempt.json"
+    },
+    {
+      "assetId": "lute-prosthetic-s2-ready",
+      "operation": "generate_reference_guided",
+      "status": "refused",
+      "prompt": "Use case: identity-preserving static game sprite, one image only. Create Lute from Hazbin Hotel in the Season 2 Gravity incarnation, with her LEFT arm replaced by the golden articulated prosthetic shown in the references and Adam's pale glowing halo worn around that prosthetic wrist. Reference image 1 shows her complete silhouette at 56 seconds of the official Prime Video Gravity clip; reference image 2 shows the wrist and articulated hand; reference image 3 governs face, asymmetrical short pale bob, dark grey tunic with pale collar and belt contour, black high boots, and black-and-grey feathered wings. Preserve her white/pale skin, pale gold eyes with black makeup, thin black overhead halo with central dark element, and the exact narrow angular silhouette. Her biological RIGHT arm remains ordinary pale skin; do not mirror the prosthesis to the wrong side. One complete full-body static 2D sprite, shallow three-quarter view facing right, calm alert standing pose with both hands lowered and wings partially relaxed so their full tips remain visible. Draw the same outfit and anatomy, no new armor or weapon. Clean sharp series-like 2D cel animation contours, flat opaque fills, restrained existing shading, crisp identity details. All boots, fingers, hair, halo and wing tips must fit inside the canvas with generous transparent padding. Real transparent RGBA background, no floor, no scenery, no cast shadow, no aura outside the wrist halo, no lettering, no label, no additional person, no duplicate pose, no sprite sheet. Do not recreate the many-panel reference board, only a single isolated Lute.",
+      "inputPaths": [
+        "production/v8/hazbin/references/lute-body-56s.png",
+        "production/v8/hazbin/references/lute-prosthesis-60s.png",
+        "production/v8/hazbin/references/lute-wings-8s.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5eZonu8XsEs"
+      ],
+      "transparentBackground": true,
+      "error": {
+        "code": "moderation_blocked",
+        "stage": "output",
+        "categories": [
+          "other"
+        ],
+        "requestId": "c5deebc5-74ed-428d-aa7e-ac6bd38ea204"
+      },
+      "outputMaster": null,
+      "recordPath": "production/v8/hazbin/lute-attempt.json",
+      "retry": false
+    },
+    {
+      "assetId": "emily-six-wings-s2-ready",
+      "operation": "generate_reference_guided",
+      "status": "success",
+      "prompt": "Use case: identity-preserving static alternate-form sprite. Create ONE isolated full-body EMILY from Hazbin Hotel Season 2 in her SIX-WINGED floating presentation, as directly shown in these official Prime Video frames. Image 1, at200 seconds of the official Egg Boiz compilation, governs her complete floating silhouette, all three pairs of deployed feathered wings, crown-like halo, rounded dress hem and pointed feet. Image 2, at195 seconds, governs her face, large lavender-blue eyes with dark lashes, pale grey-lavender skin, soft pale lilac hair with asymmetrical fringe, and small white cheek freckles. Image 3, at235 seconds, corroborates the complete outline and lower legs/feet. Preserve her short puff sleeves, pale lilac dress, small dark four-petal chest emblem, and the darker lavender pointed zigzag-and-diamond hem pattern. She has exactly SIX feathered wings: three separate layered pairs emerging behind her torso, with long narrow pale feathers, all tips fully visible and distinct. Do not mistake long hair for another wing or add extra limbs. Her luminous pale crown halo has the same small upright droplet points as the reference. Pose: calmly floating upright, slightly three-quarter facing right, hands gently open at her sides and feet just below the hem, peaceful alert expression. This is a static archive illustration of the already documented winged state, not a new costume or a redesign. Crisp black/dark-lavender 2D series-style animation outlines, flat opaque cel colors and minimal reference-consistent shadows. Use a wide enough canvas to leave at least 7 percent real transparent margin around ALL six wings, halo and feet. True transparent RGBA background, no magical aura or broad glow, no ground, shadow, clouds, scenery, companions, eggs, lettering, captions, logos, frame, duplicate views or animation frames.",
+      "inputPaths": [
+        "production/v8/hazbin/references/emily-seraph-body.png",
+        "production/v8/hazbin/references/emily-seraph-face-195s.png",
+        "production/v8/hazbin/references/emily-seraph-group.png"
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+      ],
+      "transparentBackground": true,
+      "outputMaster": "production/v8/hazbin/native/emily-six-wings-s2-ready.png",
+      "outputMasterSha256": "c02c840423bae808607c4b9497a48466a3d3cf26a496a6b2ba2fad887ad65cf0",
+      "recordPath": "production/v8/hazbin/emily-six-wings-s2-ready-attempt.json"
+    }
+  ],
+  "assets": [
+    {
+      "id": "alastor-human-s2-ready",
+      "sourceIdentityId": "alastor",
+      "category": "costume",
+      "role": "narrative_archive",
+      "name": "Alastor humain — flashback saison 2",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Alastor humain — flashback saison 2",
+      "spoilerTier": "season_2",
+      "continuity": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "gameplayEligibility": "galleryOnly",
+      "frameCoverage": "full_body",
+      "master": "production/v8/hazbin/native/alastor-human-s2-ready.png",
+      "export": "public/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+      "exportUrl": "/assets/production/v8/hazbin/alastor-human-s2-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1325158,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        318,
+        31,
+        906,
+        1511
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "d5c5e4d30ed771df402072df068286a3031fb4e8f7a96b9aeaeb5cb922945117",
+      "exportSha256": "8ab1e33750b07927020002a03200d45be7e4e02678b05f060734f00974853d2a",
+      "masterBytes": 1086282,
+      "exportBytes": 704142,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+        "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=2s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/alastor-human-body-2s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=4s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/alastor-human-face-4s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=BqhHYxM2sQo&t=20s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/alastor-human-uniform-20s.png",
+          "viewed": true
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "newIdentity": false,
+      "limits": [
+        "Les références natives ne font que 320×180 : détails fins non certifiés.",
+        "La pose debout est une adaptation de jeu ; aucun cycle ni kit de combat créé.",
+        "Proportions/expressivité dessinées approximatives ; certification 1:1 non revendiquée."
+      ],
+      "visualReview": {
+        "status": "accepted_with_documented_limits",
+        "subjectComplete": true,
+        "transparencyVisuallyChecked": true,
+        "notes": [
+          "Visage brun humain, chevelure bouclée, lunettes, cravate rouge, gilet bordeaux et garrots de manche conformes aux trois vues officielles inspectées.",
+          "Une silhouette entière isolée ; pieds, cheveux et doigts visibles. Les marges haut/bas sont plus petites que le prompt, sans coupe observée.",
+          "Comparaison sur fonds blanc et gris : vraie transparence, aucun halo de fond visible ; alpha intérieur maximal 254, limitation conservée."
+        ]
+      },
+      "independentReview": "docs/standalone/production-v8/independent-visual-review.json"
+    },
+    {
+      "id": "vox-human-weather-s2-ready",
+      "sourceIdentityId": "vox",
+      "category": "costume",
+      "role": "narrative_archive",
+      "name": "Vox humain — présentateur météo, saison 2",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Vox humain — présentateur météo, saison 2",
+      "spoilerTier": "season_2",
+      "continuity": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "gameplayEligibility": "galleryOnly",
+      "frameCoverage": "full_body",
+      "master": "production/v8/hazbin/native/vox-human-weather-s2-ready.png",
+      "export": "public/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+      "exportUrl": "/assets/production/v8/hazbin/vox-human-weather-s2-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1302303,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        332,
+        11,
+        683,
+        1525
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "0caa5c6fcdcfc8dbd9ed25e35ace924d25e8dc51fed467fec18d20bf388f1c8d",
+      "exportSha256": "d296dbeb31ae66f7825ccf765c377a7f32b312c76c74e0bb4c8e2ad8a3b211b0",
+      "masterBytes": 1046270,
+      "exportBytes": 670660,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=14s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-weather-body-14s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=12s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-weather-face-12s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=10s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-weather-torso-10s.png",
+          "viewed": true
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "newIdentity": false,
+      "limits": [
+        "Les sources sont des miniatures officielles natives 320×180, insuffisantes pour certifier tous les détails fins.",
+        "Marge supérieure serrée malgré la demande de marge généreuse ; aucune coupe visuelle détectée.",
+        "Aucun cycle, animation ni kit de combat ; fidélité 1:1 non certifiée."
+      ],
+      "visualReview": {
+        "status": "accepted_with_documented_limits",
+        "subjectComplete": true,
+        "transparencyVisuallyChecked": true,
+        "notes": [
+          "Comparaison du corps entier, coiffure, lunettes, tenue, pieds avec les images officielles désignées dans referencePaths.",
+          "Une seule figure entière isolée, sans crop visible des cheveux ou chaussures ; pose adaptée statique.",
+          "Vraie transparence vérifiée sur fond blanc. Alpha intérieur maximal 254 ; pixels résiduels très faibles jusqu’au bord bas, sans fond visible en composition."
+        ]
+      },
+      "independentReview": "docs/standalone/production-v8/independent-visual-review.json"
+    },
+    {
+      "id": "vox-human-talkshow-s2-ready",
+      "sourceIdentityId": "vox",
+      "category": "costume",
+      "role": "narrative_archive",
+      "name": "Vox humain — costume du talk-show, saison 2",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Vox humain — costume du talk-show, saison 2",
+      "spoilerTier": "season_2",
+      "continuity": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "gameplayEligibility": "galleryOnly",
+      "frameCoverage": "full_body",
+      "master": "production/v8/hazbin/native/vox-human-talkshow-s2-ready.png",
+      "export": "public/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+      "exportUrl": "/assets/production/v8/hazbin/vox-human-talkshow-s2-ready.webp",
+      "width": 1024,
+      "height": 1536,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 1283535,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        333,
+        10,
+        695,
+        1526
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "9a7b035eac30d98e35a0118475ed99dc0604ba8ad4511e0de1889d8ab54b6395",
+      "exportSha256": "0be7206854beac7dd88222310ffbf7692d01de78d944fd7b9385c85a1aa74733",
+      "masterBytes": 1160094,
+      "exportBytes": 738516,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=58s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-talkshow-body-58s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=62s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-talkshow-face-62s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=66s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/vox-talkshow-shoes-66s.png",
+          "viewed": true
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "newIdentity": false,
+      "limits": [
+        "Les sources sont des miniatures officielles natives 320×180, insuffisantes pour certifier tous les détails fins.",
+        "Marge supérieure serrée malgré la demande de marge généreuse ; aucune coupe visuelle détectée.",
+        "Aucun cycle, animation ni kit de combat ; fidélité 1:1 non certifiée."
+      ],
+      "visualReview": {
+        "status": "accepted_with_documented_limits",
+        "subjectComplete": true,
+        "transparencyVisuallyChecked": true,
+        "notes": [
+          "Comparaison du corps entier, coiffure, lunettes, tenue, pieds avec les images officielles désignées dans referencePaths.",
+          "Une seule figure entière isolée, sans crop visible des cheveux ou chaussures ; pose adaptée statique.",
+          "Vraie transparence vérifiée sur fond blanc. Alpha intérieur maximal 254 ; pixels résiduels très faibles jusqu’au bord bas, sans fond visible en composition."
+        ]
+      },
+      "independentReview": "docs/standalone/production-v8/independent-visual-review.json"
+    },
+    {
+      "id": "emily-six-wings-s2-ready",
+      "sourceIdentityId": "emily",
+      "category": "costume",
+      "role": "documented_form",
+      "name": "Emily — six ailes déployées, saison 2",
+      "franchise": "Hazbin Hotel",
+      "incarnation": "Emily — six ailes déployées, saison 2",
+      "spoilerTier": "season_2",
+      "continuity": "season_2",
+      "accepted": true,
+      "status": "independent_review_accepted",
+      "gameplayEligibility": "galleryOnly",
+      "frameCoverage": "full_body",
+      "master": "production/v8/hazbin/native/emily-six-wings-s2-ready.png",
+      "export": "public/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+      "exportUrl": "/assets/production/v8/hazbin/emily-six-wings-s2-ready.webp",
+      "width": 1536,
+      "height": 1024,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 966811,
+      "alphaFullPixels": 0,
+      "visibleBBoxAlpha50": [
+        132,
+        12,
+        1395,
+        1001
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "c02c840423bae808607c4b9497a48466a3d3cf26a496a6b2ba2fad887ad65cf0",
+      "exportSha256": "d2b439cb4d718a25d294670d436bc18b61002a2ecfc7edad988edf76b528f43a",
+      "masterBytes": 1630024,
+      "exportBytes": 1022146,
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+        "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s"
+      ],
+      "sourceReferences": [
+        {
+          "url": "https://www.youtube.com/watch?v=c56SWmqnU5E&t=200s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/emily-seraph-body.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=c56SWmqnU5E&t=195s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/emily-seraph-face-195s.png",
+          "viewed": true
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=c56SWmqnU5E&t=235s",
+          "kind": "primary_official_clip",
+          "publisher": "Prime Video",
+          "nativeFrameDimensions": [
+            320,
+            180
+          ],
+          "path": "production/v8/hazbin/references/emily-seraph-group.png",
+          "viewed": true
+        }
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "animationCycles": 0,
+      "poseCount": 1,
+      "newIdentity": false,
+      "limits": [
+        "Sources officielles 320×180 ; détails de plumes et proportions ne peuvent pas être certifiés 1:1.",
+        "Pose flottante, éventail des ailes et ourlet adaptés au sprite statique.",
+        "Marges supérieures serrées autour des ailes ; aucune coupe visuelle de leur pointe détectée.",
+        "Alpha natif maximal 254 conservé ; aucun cycle ni animation livré."
+      ],
+      "visualReview": {
+        "status": "accepted_with_documented_limits",
+        "subjectComplete": true,
+        "transparencyVisuallyChecked": true,
+        "notes": [
+          "Six ailes distinctes, trois paires entières visibles ; halo, coiffure et motif de robe comparés aux sources officielles.",
+          "Une seule figure flottante, pieds et mains complets ; transparence validée en composition blanche.",
+          "Revue indépendante acceptée pour galerie par recover_local_assets, rapport référencé dans le manifest."
+        ]
+      },
+      "independentReview": "docs/standalone/production-v8/independent-visual-review.json"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "lute",
+      "sourceIdentityId": "lute",
+      "incarnation": "Saison2 Gravity, bras gauche prothétique doré",
+      "status": "moderation_refusal_no_retry",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Incarnation distincte qualifiée puis refusée par le générateur natif ; aucun fichier, aucune relance. La base pré-blessure existante reste distincte.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=5eZonu8XsEs"
+      ],
+      "requestId": "c5deebc5-74ed-428d-aa7e-ac6bd38ea204"
+    },
+    {
+      "id": "hz_lilith",
+      "sourceIdentityId": "hz_lilith",
+      "status": "primary_reference_retrieval_blocked",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Clip officiel Prime Video Brasil identifié mais récupération publique HTTP429. Portrait familial fourni par A24/Prime dans VFXVoice identifié mais téléchargement local403 ; aucune silhouette entière inspectée exploitable. Pas de génération.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=q9lzr9zsUT4",
+        "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
+      ]
+    },
+    {
+      "id": "vox-angel-projection-s2",
+      "sourceIdentityId": "vox",
+      "status": "primary_lower_body_occluded",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Dans Brighter, ailes et projection théâtrale visibles vers156–160s, mais bas du corps derrière la tour de téléviseurs. Pas de silhouette reconstruite.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=156s"
+      ]
+    },
+    {
+      "id": "vox-human-late-tux-s2",
+      "sourceIdentityId": "vox",
+      "status": "primary_lower_body_details_unresolved",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Tuxedo noir, nœud rouge et visage sans lunettes confirmés ; vues entières au piano et sous lumière rouge encore petites/occultées. Ne pas réutiliser arbitrairement les chaussures ou jambes du costume précédent.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=100s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=126s",
+        "https://www.youtube.com/watch?v=GJQpBUcKhTk&t=140s"
+      ]
+    },
+    {
+      "id": "hz_egg_boiz",
+      "sourceIdentityId": "hz_egg_boiz",
+      "status": "not_generated_related_refusal_preserved",
+      "accepted": false,
+      "assetId": null,
+      "notes": "Compilation officielle inspectée. Frank a un refus historique ; aucun Egg Boi renommé ou générique n’est généré pour contourner cette cible. Les incarnations célestes ne sont pas produites dans ce lot.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=c56SWmqnU5E"
+      ]
+    },
+    {
+      "id": "hz_molly",
+      "sourceIdentityId": "hz_molly",
+      "status": "existing_reference_gap_new_clip_fetch_rate_limited",
+      "accepted": false,
+      "assetId": null,
+      "notes": "V7 signale le bas du corps occulté. Nouveau clip officiel Heaven ZE2GuxyfQls repéré, récupération publique HTTP429 ; pas de nouvelle preuve entière inspectée ni nouvelle génération.",
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=ZE2GuxyfQls"
+      ]
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "scope": "Quatre sprites statiques Hazbin pour galerie : trois incarnations humaines et la forme à six ailes déployées d’Emily. Aucun code, animation, kit ou nouvelle identité. Une tentative Lute S2 refusée, sans relance."
+}

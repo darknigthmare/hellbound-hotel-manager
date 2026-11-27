@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-26T15:26:26.931354+00:00",
+  "status": "qualified_primary_reference_with_resolution_limits",
+  "publisher": "Prime Video",
+  "sourceKind": "official_video_public_storyboard",
+  "videoUrl": "https://www.youtube.com/watch?v=7OIa6bri7aE",
+  "title": "Lucifer Morningstar vs. Adam | Hazbin Hotel | Clip | Prime Video",
+  "channelId": "UCQJWtTnAHhEG5w4uN0udnUQ",
+  "durationSeconds": 312,
+  "nativeCellDimensions": [
+    320,
+    180
+  ],
+  "episodeContext": "Hazbin Hotel, finale season 1, The Show Must Go On: battle against Adam and Lute; clip republished by Prime Video. Incarnation identified by the displayed battle sequence.",
+  "primaryCandidate": {
+    "character": "Charlie Morningstar",
+    "incarnation": "Tenue du combat final S1, déjà transformée en démone ; scène après le sauvetage par Lucifer.",
+    "relatedRequirements": [
+      "VAR-001",
+      "VAR-002"
+    ],
+    "cell": {
+      "frameIndex": 45,
+      "approxTimeSeconds": 225,
+      "sourceSheet": 5,
+      "cell": 0,
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-full-body-s1-225s.png",
+      "dimensions": [
+        320,
+        180
+      ],
+      "sha256": "3d52fab4860f1b07b09bbb8656bcbd1d6333834a4739bfc29c97001e47869c9b"
+    },
+    "approxTimestampUrl": "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+    "framing": "Full body including both feet, native frame 320x180; character is approximately 140px tall.",
+    "visibleEvidence": [
+      "Longue chevelure blonde et petites cornes visibles.",
+      "Tenue rouge du combat avec éléments noirs.",
+      "Jambes et deux pieds dans le cadre.",
+      "Lucifer entier à côté, apportant un repère d’échelle relatif."
+    ],
+    "limits": [
+      "Cellule de prévisualisation seulement. Les petits détails du costume, des doigts et des pieds ne sont pas certifiables à cette résolution.",
+      "Charlie est déjà transformée et porte les traces du combat. Cette image ne prouve pas une variante intacte ou pré-transformation.",
+      "La queue et l’action sont mieux documentées par la cellule complémentaire vers 145s ; ne pas prétendre qu’elles sont entièrement lisibles dans ce seul plan."
+    ]
+  },
+  "supplementaryCandidates": [
+    {
+      "character": "Charlie Morningstar",
+      "cell": {
+        "frameIndex": 29,
+        "approxTimeSeconds": 145,
+        "sourceSheet": 3,
+        "cell": 2,
+        "path": "/tmp/infernal-v10/hazbin-reference/charlie-demon-battle-s1-145s.png",
+        "dimensions": [
+          320,
+          180
+        ],
+        "sha256": "c2474b4bace00d31ff5883698c9ae9df43290ea4b483f12e7c813b624ca57fce"
+      },
+      "use": "Tenue transformée en action et queue recourbée visibles ; raccourci de pose, pas vue orthographique de référence."
+    },
+    {
+      "character": "Vaggie",
+      "cell": {
+        "frameIndex": 20,
+        "approxTimeSeconds": 100,
+        "sourceSheet": 2,
+        "cell": 2,
+        "path": "/tmp/infernal-v10/hazbin-reference/vaggie-battle-s1-100s.png",
+        "dimensions": [
+          320,
+          180
+        ],
+        "sha256": "de66244509200c883981763fea815882de8d68e2a9c50ed0092bcc7e52ba94fd"
+      },
+      "relatedRequirements": [
+        "VAR-005"
+      ],
+      "use": "Silhouette de bataille accroupie et lance visibles à droite du plan.",
+      "limits": [
+        "Personnage très petit dans la cellule ; insufﬁsant seul pour qualifier les détails fins de la tenue ou des pieds.",
+        "Les ailes retrouvées ne sont pas déployées dans ce plan ; ne ferme pas VAR-004."
+      ]
+    },
+    {
+      "character": "Lucifer",
+      "cell": {
+        "frameIndex": 52,
+        "approxTimeSeconds": 260,
+        "sourceSheet": 5,
+        "cell": 7,
+        "path": "/tmp/infernal-v10/hazbin-reference/lucifer-six-wings-s1-260s.png",
+        "dimensions": [
+          320,
+          180
+        ],
+        "sha256": "4e8c3658694228808a952c488df3c02727add5e507c9cbcb3f196439861b37ab"
+      },
+      "use": "Trois paires d’ailes rouges/blanches et tenue visibles pendant le combat.",
+      "limits": [
+        "Pieds hors cadre ; référence partielle pour les ailes, pas master autonome complet."
+      ]
+    },
+    {
+      "character": "Lucifer et Charlie",
+      "cell": {
+        "frameIndex": 59,
+        "approxTimeSeconds": 295,
+        "sourceSheet": 6,
+        "cell": 5,
+        "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-six-wings-s1-295s.png",
+        "dimensions": [
+          320,
+          180
+        ],
+        "sha256": "6109ca046855b49c4609bf0bc98411eacd4aa970efe9dbd4c84907c35fc9cc7e"
+      },
+      "use": "Plan tardif avec ailes déployées.",
+      "limits": [
+        "Bas des jambes/pieds coupés par le cadre ; ne pas utiliser comme preuve de silhouette complète."
+      ]
+    }
+  ],
+  "fidelityOneToOneCertified": false,
+  "downloadedFullVideo": false,
+  "extraction": "JPEG storyboards published by YouTube player response; exact 320x180 cells cropped losslessly to PNG, no upscale or reconstruction.",
+  "provenanceFiles": [
+    "lucifer-storyboard-manifest.json",
+    "lucifer-player-response.json",
+    "candidate-cells.json"
+  ],
+  "searchStoppedAfterQualifiedLead": true
+}

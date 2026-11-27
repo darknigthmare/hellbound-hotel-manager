@@ -1,0 +1,93 @@
+{
+  "edition": "V13",
+  "date": "2026-11-26",
+  "prompts": [
+    {
+      "id": "hb_vikki-queen-bee-s1-portrait",
+      "tool": "image_gen.imagegen",
+      "intent": "reference_based_portrait",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v13/characters/references/queen-bee-official-090s.png"
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: ONE static 2D game dialogue portrait on a real transparent background.\nPrimary request: Draw VIKKI, the pink poodle hellhound on the LEFT of the supplied official Queen Bee episode frame. The wolf on the right is Loona and must NOT be included. This is a faithful character portrait, not a new character or costume.\nReference image role: primary visual reference for Vikki only. Preserve her pale cream face, long pointed canine muzzle and small dark nose, downturned half-lidded eyes with narrow pupils and long black lashes, pink eyelid accents, pink poodle coiffure with the very large rounded upper sweep, dark-rose hair shadow, curled side ear masses, distinctive pointed forehead lock, fluffy pale chest/neck fur, and crisp white blouse with pointed open lapels. Follow the exact left subject's face direction, proportions and dusty pink/cream/white palette. Use her skeptical aloof expression and three-quarter head turn toward viewer right from the frame.\nComposition: a head-and-upper-chest portrait. Include the complete top and sides of the pink hair and ear curls with generous clear margin. End the portrait with a deliberate clean curved crop across the upper chest, below the blouse collar. Do not draw the waist, belt, skirt, legs or feet. Do not include the forearms or hands; this is a closely framed dialogue bust. No reconstruction of hidden lower body.\nStyle: polished hand-drawn animated-series cel illustration, precise dark tapered outlines, crisp flat shapes, restrained cel shading, readable at game dialogue scale. Match the reference design closely without adding patterns, accessories, horns or jewelry.\nBackground: transparent alpha, no room, no other figures, no floor, no shadow, no pin border, no text, no labels, no watermark. Exactly one portrait, not a sheet or multiple views.",
+      "status": "generated_accepted_with_documented_limits",
+      "sourceIdentityId": "hb_vikki",
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "referenceApproval": {
+        "reviewer": "/root",
+        "status": "approved_bust_only",
+        "note": "Tête, coiffure, collier et haut blanc qualifiés. Aucun bas de corps autorisé."
+      }
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait",
+      "tool": "image_gen.imagegen",
+      "intent": "reference_based_portrait",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v13/characters/references/tilla-nightmare-official-pin.png"
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: ONE static 2D narrative archive portrait, isolated on a real transparent background.\nPrimary request: Adapt ONLY the TILLA character portrait from this official Nightmare Tilla pin illustration. Preserve the exact character drawing and the deliberate original bust boundary. The green flames, glitter and metallic pin frame are surrounding merchandise decoration and must be removed completely.\nReference image role: primary official merchandise illustration by Kain; preserve the specific Nightmare portrait rather than converting it into an episode model or full-body character.\nSubject invariants: red imp face with angular jaw and pointed chin, yellow eyes with red irises and small dark pupils, long black upper lashes, the exact asymmetric damaged horns with black-and-pale stripes, large burgundy/purple swept hairstyle with its broad pale lavender highlight, long jagged hair framing the shoulders, smiling closed mouth, pointed violet collar, skull-shaped red brooch with black eyes at the neck, violet torn-edged sleeves, and the two red hands gently clasped together vertically at the chest. Follow the source hand pose and complete outlines of fingers, hair tips, horns and costume fragments. Match source colors, proportions and front-facing pose as closely as possible.\nComposition: head, complete horns/hair, shoulders and the exact visible upper-torso/hand silhouette. End where the original portrait ends. Do not extend into legs, waist, feet, a full skirt or a standing pose. Keep generous transparent margin around every tip.\nStyle: clean hand-drawn animated-series cel art; crisp dark tapered outlines and flat colors with limited shading. Convert the shiny metallic separators to normal dark ink lines. No enamel reflection, no grain, no glitter, no bevel, no photographed object.\nBackground: transparent alpha. Exactly one character portrait; no green flames, no halo, no frame or ring, no floor, no shadow, no writing, no watermark, no other figure.",
+      "status": "generated_rejected_design_deviation",
+      "sourceIdentityId": "hb_tilla",
+      "frameCoverage": "bust",
+      "addsStandaloneBase": false,
+      "referenceApproval": {
+        "reviewer": "/root",
+        "status": "approved_official_merchandise_portrait_only",
+        "note": "Conserver la silhouette de buste du pin ; retirer la décoration sans extension du bas. Modèle marchandise non daté."
+      },
+      "archivedOutputPath": "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-1.png"
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait-correction-1",
+      "assetId": "hb_tilla-nightmare-merch-portrait",
+      "tool": "image_gen.imagegen",
+      "intent": "targeted_correction",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-1.png",
+        "production/v13/characters/references/tilla-nightmare-official-pin.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Image 1 is the edit target, the generated Tilla portrait. Image 2 is the original official pin and is only the design reference.\nCorrect ONLY the two incorrectly added shapes near the top of Image 1. First, remove the short separate black-and-white horn sticking up ABOVE THE HAIR on the viewer LEFT. The source has the broken left horn as a tiny jagged black stump at the forehead/hairline; preserve that tiny forehead stump, but no horn should stick out above the left hair mass. Second, remove the burgundy flame-shaped extension above and behind the tip of the tall striped horn on the viewer RIGHT. The tall horn must end with the blunt angled black top shown in Image 2, with no flame, extra curl, or pointed colored extension. Follow the original source silhouette exactly in these two areas.\nKeep the entire rest of Image 1 unchanged: same face and eyes, same hair with lavender stripe, same mouth expression, same brooch, same clasped hands, same purple costume, same deliberate bust endpoint, same colors and line quality. Do not reintroduce the pin's green flame decoration or metallic frame. Keep the real transparent background and preserve existing transparency. One isolated static portrait only, no text or border.",
+      "status": "generated_superseded_upper_horn_mark_refinement",
+      "reason": "Retirer petite corne inventée au-dessus de la chevelure gauche et extension bordeaux inventée au bout de la grande corne droite.",
+      "originalReferencePathsAtGeneration": [
+        "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-1.png",
+        "production/v13/characters/references/tilla-nightmare-official-pin.png"
+      ],
+      "archivedOutputPath": "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-2.png"
+    },
+    {
+      "id": "hb_tilla-nightmare-merch-portrait-correction-2",
+      "assetId": "hb_tilla-nightmare-merch-portrait",
+      "tool": "image_gen.imagegen",
+      "intent": "targeted_correction",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v13/characters/discarded/hb_tilla-nightmare-merch-portrait-attempt-2.png",
+        "production/v13/characters/references/tilla-nightmare-official-pin.png",
+        "docs/standalone/production-v13/characters-diagnostics/tilla-source-horn-detail.png"
+      ],
+      "originalReferencePathsAtGeneration": [
+        "production/v13/characters/masters/hb_tilla-nightmare-merch-portrait.png",
+        "production/v13/characters/references/tilla-nightmare-official-pin.png",
+        "docs/standalone/production-v13/characters-diagnostics/tilla-source-horn-detail.png"
+      ],
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the edit target: the already corrected Tilla portrait. Image 2 is the official product photo. Image 3 is a native-resolution inspection crop of the tall horn in that same official photo.\nMake exactly ONE small local change to Image 1. On the tall black horn at the viewer's RIGHT, replace ONLY the uppermost long white stripe near the blunt tip with the much smaller, short, partial, softly rounded white mark visible near the tip in Image 3. That source mark is an irregular rounded patch inside the black horn, not a broad stripe spanning its width. Match its small size and relative placement from the photo. Preserve black around this small mark. We are reproducing a mark visible in the official product photograph, without making a claim about episode canon.\nKeep the two broader white stripes below it exactly as they are. Preserve the horn's entire existing outer contour, its height, tip, bend and black fill. Do not remove either lower stripe. Do not add a horn or an extension. Keep everything else in Image 1 unchanged: all face, eye and hair shapes, expression, colors, outline thickness, lavender hair highlight, skull brooch, clasped hands, purple clothing, complete bust silhouette, image framing and dimensions. Keep the existing real transparent background. No green flames, no metallic outline, no pin border, no shadow, no text, no extra objects. One isolated static portrait.",
+      "status": "generated_accepted_with_documented_limits",
+      "reason": "Root requested one native refinement of upper horn mark only: reproduce small partial rounded photographic mark, without canonical stripe-count claim.",
+      "authorization": {
+        "reviewer": "/root",
+        "scope": "one_targeted_native_edit_then_stop_generation"
+      },
+      "independentReview": "docs/standalone/production-v13/independent-visual-review.json"
+    }
+  ],
+  "status": "complete_generation_stopped",
+  "acceptedDrawings": 2,
+  "generatedDrawings": 4,
+  "discardedDrawings": 2
+}

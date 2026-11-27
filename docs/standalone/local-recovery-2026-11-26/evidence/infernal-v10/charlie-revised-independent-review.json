@@ -1,0 +1,67 @@
+{
+  "reviewer": "recover_v8 independent visual review",
+  "reviewedAt": "2026-11-26T15:36:24.852618+00:00",
+  "scope": "Comparaison visuelle des sources listées, anatomie, cadrage et inspection du vrai composite sur gris opaque. Aucun contrôle animé ou en jeu.",
+  "assetId": "charlie-s1-finale-partial-demon-battle",
+  "status": "accepted_with_limits",
+  "asset": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-eb5c7573-d252-4b0c-b5c1-ffb515f5aaed.png",
+    "sha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "bboxAlphaGreaterThan16": [
+      224,
+      4,
+      862,
+      1525
+    ],
+    "marginsAlphaGreaterThan16": [
+      224,
+      4,
+      162,
+      11
+    ],
+    "edgeAlphaMax": 0,
+    "diagnosticComposite": "/tmp/infernal-v10/independent-review/charlie-revised-neutral-composite.png"
+  },
+  "referencesInspected": [
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-full-body-s1-225s.png",
+      "sha256": "3d52fab4860f1b07b09bbb8656bcbd1d6333834a4739bfc29c97001e47869c9b"
+    },
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-demon-battle-s1-145s.png",
+      "sha256": "c2474b4bace00d31ff5883698c9ae9df43290ea4b483f12e7c813b624ca57fce"
+    },
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-torso-s1-220s.png",
+      "sha256": "f296429f006970f2fe8097dc570734d15040cfcb4d668edc96ee2de7b658f509"
+    }
+  ],
+  "selectedState": "État après le sauvetage 220–225 s : tenue finale, cornes/queue, yeux jaunes, bras transformé ; fusion en un dessin.",
+  "checks": {
+    "costume": "Correction revue sur les mêmes sources : bras propre gauche (droite de l’image) rouge et élargi, grande main sombre à griffes, autre bras fin conservé. Cornes, yeux jaunes, queue, tenue rouge/noire et ourlet clair maintenus.",
+    "anatomy": "Deux bras désormais asymétriques conformément à l’état sélectionné, deux jambes et une queue ; pas de membre ajouté ni de raccord manifestement cassé. Extrémités entières.",
+    "framing": "Marges alpha > 16 : gauche 224, haut 4, droite 162, bas 11 px. Sommet des cornes très proche du bord mais intact ; ne pas recadrer davantage.",
+    "alpha": "Nouveau composite gris réellement inspecté : découpe propre, aucun fond ou halo coloré visible ; pixels de bord alpha nul, alpha maximal 254/255."
+  },
+  "blockingIssues": [],
+  "requestedCorrections": [],
+  "limitations": [
+    "Toutes les cellules sources sont natives 320 × 180 ; aucun détail HD ne peut être certifié.",
+    "Le volume, le sens et les grandes couleurs du bras sont étayés ; nombre exact, courbure et articulation des doigts redessinés, non certifiés.",
+    "Pieds entiers à 225 s mais détails des pointes/chaussures non certifiables à cette résolution.",
+    "Marges haut/bas très étroites (4 et 11 px) ; silhouette intacte, ne pas recadrer davantage.",
+    "Incarnation statique combinée tenue finale + transformation partielle : un seul dessin, aucune animation ni conformité 1:1 certifiée."
+  ],
+  "supersedesRejectedCandidate": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6a4f9f81-ad02-4894-9afa-3b3ace317ebf.png",
+    "sha256": "a36201499e800cd1d358121b2656169c98e087b200e187b22625facfde8b90cd",
+    "reason": "État transformé incomplet : bras gauche rouge élargi et grande main sombre absents."
+  }
+}

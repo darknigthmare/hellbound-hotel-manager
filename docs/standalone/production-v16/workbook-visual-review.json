@@ -1,0 +1,96 @@
+{
+  "edition": "V16",
+  "status": "passed_with_documented_limits",
+  "reviewDate": "2026-11-27",
+  "reviewer": "finish_bible",
+  "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V16.xlsx",
+  "workbookSha256": "5a4c82a521c4bfb90bf91485a2c531e0cb047ded7d8535e0f798cd0ad109c704",
+  "registerSha256": "9723e5e491ec548bbf42f8069a9ef9d746bc3bc05b7f710643e340d5f7e2ff00",
+  "reviewedViews": [
+    {
+      "sheetName": "Production V16",
+      "range": "A1:E26",
+      "label": "production",
+      "representativeFinal": true,
+      "authoringPreviewRelativePath": "previews/production.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/production.png",
+      "previewSha256": "4a82c860845bffa27ddf15983211fe29af73d62b45d4d5176b3ece4c9e3c8c1d",
+      "visualReview": "passed"
+    },
+    {
+      "sheetName": "Production V16",
+      "range": "A29:E31",
+      "label": "livraisons-usage-0",
+      "authoringPreviewRelativePath": "previews/livraisons-usage-0.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/livraisons-usage-0.png",
+      "previewSha256": "2b7b9f5e0bc73bf68d09e356a37cc85de6b9bda316083dc04cecbbd45d6b8433",
+      "visualReview": "passed"
+    },
+    {
+      "sheetName": "Production V16",
+      "range": "F29:H31",
+      "label": "livraisons-preuves-0",
+      "authoringPreviewRelativePath": "previews/livraisons-preuves-0.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/livraisons-preuves-0.png",
+      "previewSha256": "dce76aa8a4918f7c08413946a92256ad553361c024de028076c471f26b4aa4cc",
+      "visualReview": "passed"
+    },
+    {
+      "sheetName": "Cibles V16",
+      "range": "A1:E10",
+      "label": "cibles-0",
+      "representativeFinal": true,
+      "authoringPreviewRelativePath": "previews/cibles-0.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/cibles-0.png",
+      "previewSha256": "8aef1c83a2c076d8115e9d66ee86217d69f639fb1c63140b32249338269526c1",
+      "visualReview": "passed"
+    },
+    {
+      "sheetName": "Cibles V16",
+      "range": "A101:E106",
+      "label": "cibles-16",
+      "representativeFinal": false,
+      "authoringPreviewRelativePath": "previews/cibles-16.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/cibles-16.png",
+      "previewSha256": "1d9e0f42d54327f0491dbc3369926bb2c1409e5550088c9fb3eddcbc2f4c2ff9",
+      "visualReview": "passed"
+    },
+    {
+      "sheetName": "Cibles V16",
+      "range": "A113:E116",
+      "label": "cibles-18",
+      "representativeFinal": false,
+      "authoringPreviewRelativePath": "previews/cibles-18.png",
+      "archivedPreview": "docs/standalone/production-v16/workbook-previews/cibles-18.png",
+      "previewSha256": "52606bc8b52dee4cef0db3978bb971217bf64e9980784dc2b4f670c23d947bf9",
+      "visualReview": "passed"
+    }
+  ],
+  "reviewedViewCount": 6,
+  "reviewedAppendedSheets": 2,
+  "renderedAuthoringViewCount": 22,
+  "fullWorkbookRepresentativeRenderCount": 2,
+  "allRepresentativeFinalPngsEqualAuthoringPreviews": true,
+  "baselineViewReviewed": {
+    "sheet": "Production V15",
+    "range": "A1:E26",
+    "preview": "docs/standalone/production-v16/workbook-previews/baseline-production-v15.png",
+    "previewSha256": "7f7bfe0d53947f7a884fcc99a11e99e59c0c2a56af10944fa0ea0fc364bf540c",
+    "matchesPreviouslyReviewedV15FinalPng": true
+  },
+  "fullWorkbookRenderCheck": "docs/standalone/production-v16/workbook-final-render-check.json",
+  "observations": [
+    "Les deux nouvelles feuilles conservent les conventions de V15 : Arial 11, en-têtes bordeaux, bandes pâles, tableaux filtrables et volets figés pour les cibles.",
+    "La synthèse affiche deux dessins, quatre fichiers, aucune nouvelle base, 115 bases cumulées et 145 éléments de galerie; les 43 combattants actifs restent distincts des portraits.",
+    "Les lignes Gerald et Rick conservent leurs identifiants, leur catégorie narrative_archive, le cadrage bust, les chemins PNG/WebP, les URL de référence, les limites détaillées et les empreintes des quatre fichiers.",
+    "Les cibles hb_gerald et hb_rick restent correctement ouvertes pour une silhouette entière; la livraison de leurs portraits ne comble pas cette lacune.",
+    "La synthèse de recette reprend les 439 tests dans 51 suites, 742 assets référencés et huit contrôles de galerie; la portée locale et les limites des liens de référence sont explicites.",
+    "Aucun texte, identifiant, hash ou chiffre tronqué observé dans les six plages inspectées. Les preuves longues entraînent des lignes hautes et un défilement horizontal."
+  ],
+  "limitations": [
+    "Microsoft Excel natif non exécuté; recalcul et rendu par Artifact Tool, vérification indépendante par lecture OOXML.",
+    "La revue visuelle porte sur six des 22 plages produites, couvrant les deux nouvelles feuilles et les deux livraisons; les valeurs de tous les en-têtes et lignes des deux tableaux ont été comparées après export et réimport.",
+    "Les 68 feuilles historiques, dont les six extensions, sont conservées octet pour octet et ne font pas l’objet d’un nouvel audit de contenu.",
+    "Cette revue du classeur ne certifie pas la fidélité canonique des portraits ni une couverture de combat ou d’animation."
+  ]
+}

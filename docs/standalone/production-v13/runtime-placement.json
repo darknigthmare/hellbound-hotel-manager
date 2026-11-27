@@ -1,0 +1,63 @@
+{
+  "edition": "V13",
+  "status": "browser_verified_with_documented_limits",
+  "stages": [
+    {
+      "stageId": "dhorks-control-room-s1",
+      "backgroundAssetId": "dhorks-control-room-s1-room",
+      "planes": [
+        "room"
+      ],
+      "placements": [],
+      "roomDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "stageId": "unhappy-campers-boathouse-s2",
+      "backgroundAssetId": "unhappy-campers-boathouse-s2-room",
+      "planes": [
+        "room"
+      ],
+      "placements": [],
+      "roomDimensions": [
+        1672,
+        941
+      ]
+    }
+  ],
+  "sceneryNote": "Empty scenery sets enable contained background planes. No gallery reserve prop is independently placed in either arena.",
+  "browserEvidence": {
+    "path": "docs/standalone/production-v13/browser-qa.json",
+    "sha256": "6f67ff73986e4dec5b02ae566c9d38eaa84c9f36e99fa59d5bf665a34e041601",
+    "checksPassed": 184,
+    "checksFailed": 0,
+    "evidenceIntegrityChecks": 16,
+    "evidenceType": "targeted_aggregate_of_completed_segments",
+    "continuousRunCertified": false,
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "isMobile": false,
+        "hasTouch": false,
+        "deviceScaleFactor": 1
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "isMobile": true,
+        "hasTouch": true,
+        "deviceScaleFactor": 1,
+        "physicalDevice": false
+      }
+    ]
+  },
+  "limits": [
+    "Source-guided gameplay floor/framing adaptations, not exact canonical geometry.",
+    "Full backgrounds contained with viewport-dependent solid-color margins."
+  ]
+}

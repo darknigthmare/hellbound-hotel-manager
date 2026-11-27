@@ -1,0 +1,60 @@
+{
+  "edition": "V11",
+  "recordedAt": "2026-11-26T16:59:27.626796+00:00",
+  "status": "passed_with_history_preserved",
+  "technical": {
+    "report": "docs/standalone/production-v11/runtime-qa.json",
+    "sha256": "154a760c2e42bf4f41f3132449959c5f6dec66d011d548deaca9fb8a7e45253f",
+    "status": "passed",
+    "testsPassed": 413,
+    "testSuites": 47,
+    "standardQaScriptPassedLocally": false,
+    "conditions": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique."
+  },
+  "browser": {
+    "report": "docs/standalone/production-v11/browser-qa.json",
+    "sha256": "c0131630b80d0a88ac9a737facc49acb8af0b43ce269339b85eb04cae0681026",
+    "status": "passed",
+    "checksPassed": 170,
+    "checksFailed": 0,
+    "acceptedDrawingsCovered": 7,
+    "finalCaptures": 48,
+    "finalCapturesVisuallyReviewed": 48,
+    "history": "docs/standalone/production-v11/browser-qa-history.json",
+    "historySha256": "ea4312216ae57c60ecd8bd726a68a3702154227ff647005d289e465677330831",
+    "attempts": 3,
+    "priorFindings": "Two earlier harness attempts retained: an exact-label locator mismatch, then an unfounded expectation that the roster S1 filter hides S2 arenas. The final recipe follows the existing product scope; no runtime fix was required."
+  },
+  "postQaHarnessSyntaxAndLint": {
+    "reviewer": "environment_assets",
+    "scope": "All three CJS files added to the browser-harness directory, including both historical attempts, were syntax-checked and linted after archiving. No source bytes changed.",
+    "scripts": [
+      {
+        "path": "docs/standalone/production-v11/browser-harness/history/01-selector-run-browser-qa.cjs",
+        "sha256": "20c29573b57e3a4186332e0e8be76e045fc9c2c439ab2451f726c8c51f3eb59d",
+        "nodeCheckExitCode": 0,
+        "eslintExitCode": 0,
+        "bytesUnchangedDuringCheck": true
+      },
+      {
+        "path": "docs/standalone/production-v11/browser-harness/history/02-stage-scope-assumption-run-browser-qa.cjs",
+        "sha256": "d72dc7b0211670d209dacd123c18a9112c0247025de312682cee57014a6dbb6e",
+        "nodeCheckExitCode": 0,
+        "eslintExitCode": 0,
+        "bytesUnchangedDuringCheck": true
+      },
+      {
+        "path": "docs/standalone/production-v11/browser-harness/run-browser-qa.cjs",
+        "sha256": "7aaea8f7b6ad7534bd812f8e196bf29ccafcbfed8161d677cfe39b2ac337d1b1",
+        "nodeCheckExitCode": 0,
+        "eslintExitCode": 0,
+        "bytesUnchangedDuringCheck": true
+      }
+    ]
+  },
+  "artifactArchiving": {
+    "incident": "The workspace volume filled during evidence copying. Copying was paused and sufficient space was restored without deleting any asset.",
+    "resolution": "The partially copied finalizer was restored from its preserved source. All 48 durable captures were SHA-256 compared with their source files; the trophy composite archive was also compared byte for byte.",
+    "runtimeModified": false
+  }
+}

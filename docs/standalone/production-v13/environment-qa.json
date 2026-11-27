@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "createdAt": "2026-11-26T19:44:07.344762+00:00",
+  "reviewer": "/root/v13_environment",
+  "status": "producer_and_independent_art_reviews_passed_with_limits",
+  "assets": [
+    {
+      "id": "dhorks-control-room-s1-room",
+      "status": "independent_review_accepted_with_limits",
+      "master": {
+        "path": "production/v13/environment/masters/dhorks-control-room-s1-room.png",
+        "sha256": "074bef4967328823d2c7a8528911a2e068650af5187c5f20dd4e1636d93b7e95",
+        "bytes": 1877317,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "export": {
+        "path": "public/assets/production/v13/environment/dhorks-control-room-s1-room.webp",
+        "sha256": "fcc80eb5fcf55a4879fcc6048f1504faff664a26129caf8a48b8ce4c97a49598",
+        "bytes": 1330776,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "thumbnail": {
+        "path": "public/assets/production/v13/environment/dhorks-control-room-s1-thumb.webp",
+        "sha256": "f6104311c7040cbc475f8839c6a1e2c8cd9486bc79be641db5b6884a73121ce6",
+        "bytes": 119938,
+        "dimensions": [
+          480,
+          270
+        ],
+        "mode": "RGB"
+      },
+      "checks": {
+        "nativePngPreserved": true,
+        "dimensionsMatch": true,
+        "decodedRgbaPixelsIdentical": true,
+        "allPixelsOpaque": true,
+        "producerViewedNativeOutput": true,
+        "oneBackgroundPerImage": true,
+        "noCharacters": true,
+        "noUiOrWatermark": true,
+        "continuousForegroundCombatStrip": true,
+        "sourceReferencesInspected": true,
+        "newArchitectureNotAddedExceptDocumentedFloorExtension": true
+      },
+      "notes": [
+        "Le cadrage source très large est adapté à1672×941 en étendant le même sol avant ; aucune ouverture ni pièce nouvelle ajoutée.",
+        "Console à gauche, banque de moniteurs, vitre brisée, deux portes à hublots et éclairages fluorescents conservés.",
+        "Les petites éclaboussures et débris sont redessinés, sans égalité pixel à pixel avec la référence ; la bande basse reste libre de gros obstacles.",
+        "Le bouton intégré est repris de la peinture, sans ajout d’un prop superposé. Un seul plan de décor."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "unhappy-campers-boathouse-s2-room",
+      "status": "independent_review_accepted_with_limits",
+      "master": {
+        "path": "production/v13/environment/masters/unhappy-campers-boathouse-s2-room.png",
+        "sha256": "5729ece4c020f75e1ef99edc7eac427a13ddefa77742d128f1ed8ff97a4f1850",
+        "bytes": 1877800,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "export": {
+        "path": "public/assets/production/v13/environment/unhappy-campers-boathouse-s2-room.webp",
+        "sha256": "ba0c0c65b10e5b9802d4fed66b278d368c5858a4fd397f2ee9669b3f45044939",
+        "bytes": 1338706,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "thumbnail": {
+        "path": "public/assets/production/v13/environment/unhappy-campers-boathouse-s2-thumb.webp",
+        "sha256": "a94c376327beff8a25e88d31816425b69e67f872d65d335ed20ce7f4773fe90c",
+        "bytes": 126802,
+        "dimensions": [
+          480,
+          270
+        ],
+        "mode": "RGB"
+      },
+      "checks": {
+        "nativePngPreserved": true,
+        "dimensionsMatch": true,
+        "decodedRgbaPixelsIdentical": true,
+        "allPixelsOpaque": true,
+        "producerViewedNativeOutput": true,
+        "oneBackgroundPerImage": true,
+        "noCharacters": true,
+        "noUiOrWatermark": true,
+        "continuousForegroundCombatStrip": true,
+        "sourceReferencesInspected": true,
+        "newArchitectureNotAddedExceptDocumentedFloorExtension": true
+      },
+      "notes": [
+        "Deux fenêtres, pile de sacs, barque et moteur, bassin sombre, bâche déchirée, charpente et planches délabrées conservés.",
+        "La bande de quai existante au premier plan est prolongée pour offrir un sol de combat continu ; le bassin et la barque restent derrière cette bande. Cette géométrie jouable est une adaptation AU explicitement documentée.",
+        "Le cadrage passe de2500×1146 à1672×941 ; les proportions, espacements, textures et petites déchirures sont adaptés.",
+        "Aucun objet supplémentaire créé dans le décor. Un seul plan statique, sans animation du bateau ou de l’eau."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    }
+  ],
+  "refusedAttempts": [],
+  "counts": {
+    "drawings": 2,
+    "masters": 2,
+    "losslessWebpExports": 2,
+    "thumbnails": 2,
+    "deliveredImageFiles": 6
+  },
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false
+}

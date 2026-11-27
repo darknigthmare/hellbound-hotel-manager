@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-f-2026-11-24",
+  "date": "2026-11-24",
+  "baselineHead": "3be94943f5315bbe8e7af996ff6ac7f8678a2fa3",
+  "phase": "before final CSS positioning",
+  "overall": {
+    "command": "npm run qa",
+    "exitCode": 0,
+    "status": "passed",
+    "evidence": "Root observed exit 0; the inspected log reaches the final successful standalone verification through the package-script && chain."
+  },
+  "log": {
+    "sourcePath": "/tmp/hellbound-wave-f-qa-final.log",
+    "sha256": "3fab419a7a2ebd9e66d64b526f29799a2c33c0332f822c1d551732e5b633a078"
+  },
+  "gates": [
+    {
+      "command": "npm run typecheck",
+      "expandedCommand": "tsc --noEmit",
+      "exitCode": 0,
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "expandedCommand": "eslint . --max-warnings=0",
+      "exitCode": 0,
+      "status": "passed"
+    },
+    {
+      "command": "npm run test",
+      "expandedCommand": "vitest run --maxWorkers=1",
+      "exitCode": 0,
+      "status": "passed",
+      "testFilesPassed": 44,
+      "testsPassed": 376,
+      "testFilesFailed": 0,
+      "testsFailed": 0,
+      "durationSeconds": 52.46
+    },
+    {
+      "command": "npm run build",
+      "expandedCommand": "tsc && vite build",
+      "exitCode": 0,
+      "status": "passed",
+      "modulesTransformed": 1581,
+      "viteBuildMilliseconds": 770
+    },
+    {
+      "command": "npm run build:standalone",
+      "expandedCommand": "tsc && vite build --mode standalone && node scripts/finalize-standalone.mjs",
+      "exitCode": 0,
+      "status": "passed",
+      "modulesTransformed": 1523,
+      "viteBuildMilliseconds": 986,
+      "distributionFiles": 989,
+      "distributionSizeMiB": 572.3
+    },
+    {
+      "command": "npm run check:standalone",
+      "expandedCommand": "node scripts/check-standalone.mjs",
+      "exitCode": 0,
+      "status": "passed",
+      "verifiedHashes": 989,
+      "bootAssetsPresent": true,
+      "hotelAndCloudPersistenceExcluded": true
+    }
+  ],
+  "warnings": [
+    {
+      "source": "npm environment",
+      "message": "Unknown env config \"http-proxy\". This will stop working in the next major version of npm.",
+      "occurrences": 7,
+      "impact": "Non-fatal tooling configuration deprecation; no ESLint warning or failing gate reported."
+    }
+  ],
+  "staticReview": {
+    "status": "no obvious defect found in reviewed diff",
+    "files": [
+      "src/lib/pentagram-stages.ts",
+      "src/standalone/roster.ts",
+      "src/standalone/campaign.ts",
+      "src/lib/infernal-attack-effects.ts",
+      "src/lib/infernal-pose-anchors.ts",
+      "scripts/audit-infernal-assets.mjs",
+      "src/components/PentagramLiveFight.tsx",
+      "docs/standalone/build-production-bible.mjs"
+    ],
+    "findings": [],
+    "checks": [
+      "Three distinct stage IDs are present in both the type union and standalone registry.",
+      "Three distinct fighter IDs match the existing Helluva directory and have three-opponent Simulation AU routes.",
+      "Striker heavy retains the existing bullet; his special selects the lasso variant.",
+      "Audit, image preloading and the bible collector use the complete attack-effect entry helper.",
+      "Native pose canvas dimensions and independently measured foot contacts are represented without changing source pixels."
+    ],
+    "diffCheck": {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  },
+  "limitations": [
+    "This log covers the source snapshot before final CSS positioning; later CSS changes and rebuilt distributions are outside this recorded gate.",
+    "Automated tests and static review do not certify visual fidelity 1:1, browser rendering, relative character scale or final prop placement.",
+    "Individual key poses are not complete animation cycles.",
+    "Alastor strike and Glam strike remain unproduced; fallbacks are not counted as newly authored strike images."
+  ],
+  "finalCssBuildVerification": {
+    "status": "passed",
+    "sourceCssSha256": "31cd5c9979adc2029ff0c3562b2809509140a30b87345eb98b372520ade8c34d",
+    "commands": [
+      {
+        "command": "npm run build",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run build:standalone",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run check:standalone",
+        "exitCode": 0
+      }
+    ],
+    "standaloneFiles": 989,
+    "standaloneHashesVerified": 989,
+    "standaloneBytes": 600133226,
+    "standaloneMiB": 572.33,
+    "logs": [
+      {
+        "sourcePath": "/tmp/hellbound-wave-f-final-builds.log",
+        "sha256": "9971ecec95855431353f50e47d5ce0cd734eb58cecfa7432df39bc9f8fb7d508"
+      },
+      {
+        "sourcePath": "/tmp/hellbound-wave-f-final-standalone.log",
+        "sha256": "5edcc13aacfd4b239b143a1e680ffcbf2f7a270f2c6ef97ce5827a5882d645f4"
+      }
+    ],
+    "intermediateFailure": "The combined final-build invocation completed the manager build, then the standalone build was killed with exit137 under memory pressure. Generated build directories were removed and standalone build/check succeeded in an isolated invocation."
+  },
+  "runtimeAssetAudit": {
+    "referencedAssets": 408,
+    "missingReferences": 0,
+    "evidence": "docs/standalone/ASSET_COVERAGE.json"
+  }
+}

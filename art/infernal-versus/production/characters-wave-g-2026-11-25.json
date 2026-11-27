@@ -1,0 +1,1659 @@
+{
+  "schemaVersion": 1,
+  "batchId": "wave-g-2026-11-25",
+  "generator": "built-in image_gen.imagegen",
+  "scope": "11 distinct missing READY bases. No new animations, gameplay kits or stories.",
+  "generationCalls": 13,
+  "retainedDrawings": 11,
+  "qualityCorrections": 2,
+  "refusals": 0,
+  "referencePolicy": "Reference filenames name inspected local process inputs; episode frames and historical portraits are not redistributed as new assets.",
+  "characterEvidence": {
+    "date": "2026-11-25",
+    "batch": "wave-g",
+    "scope": "five missing base READY characters only; catalogue reserve, no new playable kit, story or attack animation",
+    "generator": "built-in image_gen.imagegen",
+    "generationCalls": 5,
+    "successfulImages": 5,
+    "acceptedBaseSprites": 5,
+    "safetyRefusals": 0,
+    "qualityRegenerations": 0,
+    "priorRefusalsNotRetried": [
+      "Stella READY",
+      "Cherri Bomb READY",
+      "Alastor strike F",
+      "Glam strike F"
+    ],
+    "missingAudit": {
+      "commit": "5f50431",
+      "treeEntries": 2254,
+      "finding": "Existing historical portraits only; no dedicated READY or master for these five identities.",
+      "reportedBy": "audit_repo"
+    },
+    "sourceRecord": "../refs-characters/OFFICIAL_BOARDS_INDEX.json",
+    "prompts": "GENERATION_PLAN_AND_PROMPTS.json",
+    "qaComposite": "QA_INITIAL_WHITE_CONTACT.png",
+    "sourceReferencePublication": "Reference photos, preview frames and historical portraits are process material, not new generated assets and not to be counted among deliverables.",
+    "demographicClaims": "No numeric age or biological sex inferred or added.",
+    "files": [
+      {
+        "sourceIdentityId": "hb_vassago",
+        "label": "Vassago — tenue du tribunal de Mastermind",
+        "path": "hb_vassago-ready.png",
+        "filename": "hb_vassago-ready.png",
+        "status": "selected_base_ready_reserve",
+        "runtimeActivation": "not_performed_by_this_agent",
+        "generatedSource": "exec-93fbadf2-66ce-40b9-b0d6-ee927ebc75d3.png",
+        "sha256": "7f492edaf80e29893463d9311bc72470148c072b58e7dff750b73d81c08c0728",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "transparentPixels": 1154313,
+        "visibleBoundsAlphaGe16": [
+          93,
+          50,
+          831,
+          1487
+        ],
+        "visibleMarginsPx": [
+          93,
+          50,
+          193,
+          49
+        ],
+        "groundBottomExclusive": 1487,
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=IoVB5Hn2m_k",
+            "kind": "official_episode",
+            "episode": "Mastermind S2E11",
+            "approximatePreviewTimesSeconds": [
+              290,
+              370
+            ],
+            "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+          },
+          {
+            "url": "https://sharkrobot.com/products/vassago-standee",
+            "kind": "supplementary_licensed_merchandise"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_vassago.png",
+            "kind": "historical_project_portrait",
+            "officialProvenanceCertified": false
+          }
+        ],
+        "referenceFiles": [
+          "vassago_official_head.png",
+          "vassago_official_costume.png",
+          "project_hb_vassago.png",
+          "vassago_licensed_standee.png"
+        ],
+        "checks": {
+          "pngOriginalBytesPreserved": true,
+          "alphaCompositedOnWhiteForReview": true,
+          "visibleSolidBackgroundOrHaloInComposite": false,
+          "fullSilhouetteContainedAtAlpha16": true,
+          "oneCharacter": true,
+          "facing": "right",
+          "neutralStandingBaseOnly": true,
+          "attackPoseOrNewWeapon": false,
+          "observedDesign": [
+            "Silhouette aviaire rouge, visage blanc, bec sombre et lunettes jaunes conservés.",
+            "Veste rouge, étoile de col, gants blancs et queue de plumes présents ; aucune aile ou arme ajoutée."
+          ]
+        },
+        "limitations": [
+          "Détails des bottes et du bas du corps complétés avec portrait du projet et merchandising sous licence, non avec une planche de modèle de production.",
+          "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+          "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+          "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+        ],
+        "canonStatus": "source_guided_game_ready_adaptation",
+        "poseIsGameplayAdaptation": true,
+        "fidelityOneToOneCertified": false,
+        "inGameChecked": false
+      },
+      {
+        "sourceIdentityId": "hb_wally_wackford",
+        "label": "Wally Wackford — costume commercial C.H.E.R.U.B.",
+        "path": "hb_wally_wackford-ready.png",
+        "filename": "hb_wally_wackford-ready.png",
+        "status": "selected_base_ready_reserve",
+        "runtimeActivation": "not_performed_by_this_agent",
+        "generatedSource": "exec-92cb429d-6dd5-44fb-92da-22eb1071b80b.png",
+        "sha256": "6eb1e7a28e2c10172d1c9c690ecdee81f794c49fc497b6f17da9d2f9fa2421b0",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 1240186,
+        "visibleBoundsAlphaGe16": [
+          200,
+          88,
+          795,
+          1468
+        ],
+        "visibleMarginsPx": [
+          200,
+          88,
+          229,
+          68
+        ],
+        "groundBottomExclusive": 1468,
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "kind": "official_episode",
+            "episode": "C.H.E.R.U.B. S1E4",
+            "approximatePreviewTimesSeconds": [
+              850,
+              880
+            ],
+            "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_wally_wackford.png",
+            "kind": "historical_project_portrait",
+            "officialProvenanceCertified": false
+          }
+        ],
+        "referenceFiles": [
+          "wally_official_head.png",
+          "wally_official_fullbody.png",
+          "project_hb_wally_wackford.png"
+        ],
+        "checks": {
+          "pngOriginalBytesPreserved": true,
+          "alphaCompositedOnWhiteForReview": true,
+          "visibleSolidBackgroundOrHaloInComposite": false,
+          "fullSilhouetteContainedAtAlpha16": true,
+          "oneCharacter": true,
+          "facing": "right",
+          "neutralStandingBaseOnly": true,
+          "attackPoseOrNewWeapon": false,
+          "observedDesign": [
+            "Haut-de-forme noir à bande claire conforme au repère officiel, plutôt que couronne peu lisible du petit portrait historique.",
+            "Cornes rayées, yeux jaunes, vêtement blanc et gris, nœud noir et queue rouge conservés."
+          ]
+        },
+        "limitations": [
+          "Le plan officiel de corps entier est une vignette de prévisualisation basse résolution ; détails fins complétés depuis le portrait du projet.",
+          "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+          "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+          "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+        ],
+        "canonStatus": "source_guided_game_ready_adaptation",
+        "poseIsGameplayAdaptation": true,
+        "fidelityOneToOneCertified": false,
+        "inGameChecked": false
+      },
+      {
+        "sourceIdentityId": "hb_barbie_wire",
+        "label": "Barbie Wire — forme imp Unhappy Campers",
+        "path": "hb_barbie_wire-ready.png",
+        "filename": "hb_barbie_wire-ready.png",
+        "status": "selected_base_ready_reserve",
+        "runtimeActivation": "not_performed_by_this_agent",
+        "generatedSource": "exec-82a19df2-74f3-49c9-bf07-58753974d267.png",
+        "sha256": "566225b98fd2f488aea8aa26aa7487a2f1d3c01156f5abbcfe4ff7d2009d8668",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "transparentPixels": 1257856,
+        "visibleBoundsAlphaGe16": [
+          119,
+          40,
+          786,
+          1484
+        ],
+        "visibleMarginsPx": [
+          119,
+          40,
+          238,
+          52
+        ],
+        "groundBottomExclusive": 1484,
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=lYu1ysDULwA",
+            "kind": "official_episode",
+            "episode": "Unhappy Campers S2E5",
+            "approximatePreviewTimesSeconds": [
+              1010,
+              1140
+            ],
+            "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_barbie_wire.png",
+            "kind": "historical_project_portrait",
+            "officialProvenanceCertified": false
+          }
+        ],
+        "referenceFiles": [
+          "barbie_official_fullbody.png",
+          "barbie_official_head.png",
+          "project_hb_barbie_wire.png"
+        ],
+        "checks": {
+          "pngOriginalBytesPreserved": true,
+          "alphaCompositedOnWhiteForReview": true,
+          "visibleSolidBackgroundOrHaloInComposite": false,
+          "fullSilhouetteContainedAtAlpha16": true,
+          "oneCharacter": true,
+          "facing": "right",
+          "neutralStandingBaseOnly": true,
+          "attackPoseOrNewWeapon": false,
+          "observedDesign": [
+            "Forme imp uniquement : peau rouge, grandes cornes noires à fines bandes, X blanc au front.",
+            "Tenue rayée rouge et crème, petit gilet sombre, bottes noires, détail de poignet et queue conservés."
+          ]
+        },
+        "limitations": [
+          "Petit détail du cristal au poignet simplifié à la définition de sortie ; la géométrie exacte du bijou n’est pas certifiée.",
+          "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+          "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+          "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+        ],
+        "canonStatus": "source_guided_game_ready_adaptation",
+        "poseIsGameplayAdaptation": true,
+        "fidelityOneToOneCertified": false,
+        "inGameChecked": false
+      },
+      {
+        "sourceIdentityId": "hb_martha",
+        "label": "Martha — forme sinner Apology Tour",
+        "path": "hb_martha-ready.png",
+        "filename": "hb_martha-ready.png",
+        "status": "selected_base_ready_reserve",
+        "runtimeActivation": "not_performed_by_this_agent",
+        "generatedSource": "exec-d0d72b31-90e5-4cdb-b867-7d3c3f2725db.png",
+        "sha256": "c4f9926dd11e5ffee239463b30f3690aefe32748095823a4e74cc77d84b39761",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "transparentPixels": 1023344,
+        "visibleBoundsAlphaGe16": [
+          166,
+          28,
+          841,
+          1499
+        ],
+        "visibleMarginsPx": [
+          166,
+          28,
+          183,
+          37
+        ],
+        "groundBottomExclusive": 1499,
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=tLD-OUkYtk4",
+            "kind": "official_episode",
+            "episode": "Apology Tour S2E9",
+            "approximatePreviewTimesSeconds": [
+              320
+            ],
+            "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+          },
+          {
+            "url": "https://x.com/mccraecook/status/1827524429628215297",
+            "kind": "secondary_frame_reproduction"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_martha.png",
+            "kind": "historical_project_portrait",
+            "officialProvenanceCertified": false
+          }
+        ],
+        "referenceFiles": [
+          "martha_official_frame.png",
+          "martha_apology_secondary_frame.jpg",
+          "project_hb_martha.png"
+        ],
+        "checks": {
+          "pngOriginalBytesPreserved": true,
+          "alphaCompositedOnWhiteForReview": true,
+          "visibleSolidBackgroundOrHaloInComposite": false,
+          "fullSilhouetteContainedAtAlpha16": true,
+          "oneCharacter": true,
+          "facing": "right",
+          "neutralStandingBaseOnly": true,
+          "attackPoseOrNewWeapon": false,
+          "observedDesign": [
+            "Forme sinner rouge ; grand volume de cheveux gris-violet, cornes branchues et tenue blanche à pois rouges conservés.",
+            "Asymétrie respectée : orbite droite anatomique sombre, œil gauche avec iris rose ; aucun panier ou partenaire ajouté."
+          ]
+        },
+        "limitations": [
+          "Le plan officiel inspecté montre surtout le haut du corps ; pantalon et pieds sont complétés depuis le portrait historique du projet.",
+          "Les cornes, motifs du pantalon et pointes de doigts sont des reconstructions dessinées ; leur conformité trait pour trait n’est pas certifiée.",
+          "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+          "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+          "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+        ],
+        "canonStatus": "source_guided_game_ready_adaptation",
+        "poseIsGameplayAdaptation": true,
+        "fidelityOneToOneCertified": false,
+        "inGameChecked": false
+      },
+      {
+        "sourceIdentityId": "hb_mrs_mayberry",
+        "label": "Mrs Mayberry — forme sinner cliente Murder Family",
+        "path": "hb_mrs_mayberry-ready.png",
+        "filename": "hb_mrs_mayberry-ready.png",
+        "status": "selected_base_ready_reserve",
+        "runtimeActivation": "not_performed_by_this_agent",
+        "generatedSource": "exec-c206e190-e566-498d-bd7d-2013b8a87146.png",
+        "sha256": "175fb894ab711261ff7925a5556997bbd0c627da16323dd24d8cc60f2158faa1",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "transparentPixels": 1130303,
+        "visibleBoundsAlphaGe16": [
+          113,
+          35,
+          777,
+          1486
+        ],
+        "visibleMarginsPx": [
+          113,
+          35,
+          247,
+          50
+        ],
+        "groundBottomExclusive": 1486,
+        "references": [
+          {
+            "url": "https://www.youtube.com/watch?v=el_PChGfJN8",
+            "kind": "official_episode",
+            "episode": "Murder Family S1E1",
+            "approximatePreviewTimesSeconds": [
+              155,
+              780
+            ],
+            "method": "Public YouTube preview sheets downloaded from official player metadata and visually inspected; not full playback."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/darknigthmare/hellbound-hotel-manager/5f50431/public/assets/sprites/helluva/portraits/hb_mrs_mayberry.png",
+            "kind": "historical_project_portrait",
+            "officialProvenanceCertified": false
+          }
+        ],
+        "referenceFiles": [
+          "mayberry_official_glasses.png",
+          "mayberry_official_cake.png",
+          "project_hb_mrs_mayberry.png"
+        ],
+        "checks": {
+          "pngOriginalBytesPreserved": true,
+          "alphaCompositedOnWhiteForReview": true,
+          "visibleSolidBackgroundOrHaloInComposite": false,
+          "fullSilhouetteContainedAtAlpha16": true,
+          "oneCharacter": true,
+          "facing": "right",
+          "neutralStandingBaseOnly": true,
+          "attackPoseOrNewWeapon": false,
+          "observedDesign": [
+            "Forme lilas, chevelure blanche, cornes recourbées et tenue bordeaux/noire conservées.",
+            "Lunettes cat-eye roses présentes, vérifiées dans le plan officiel de bureau et rétablies par rapport au portrait historique."
+          ]
+        },
+        "limitations": [
+          "Le bas de la jupe et les chaussures sont principalement renseignés par le portrait historique ; aucun modèle officiel complet n’a été inspecté.",
+          "Fidélité 1:1 non certifiée ; aucune validation navigateur ou animation.",
+          "Marges parfois plus serrées que les 7 % demandés ; aucune silhouette visible rognée.",
+          "Faible bruit alpha périphérique conservé ; les pixels originaux ne sont pas retouchés."
+        ],
+        "canonStatus": "source_guided_game_ready_adaptation",
+        "poseIsGameplayAdaptation": true,
+        "fidelityOneToOneCertified": false,
+        "inGameChecked": false
+      }
+    ]
+  },
+  "enemyEvidence": {
+    "schemaVersion": 1,
+    "batchId": "enemy-bases-wave-g-2026-11-25",
+    "checkedAtUtc": "2026-11-25T06:05:34.354282+00:00",
+    "sourceCommit": "5f50431ebac6b4e60e13d92d0958127122cd0141",
+    "status": "six-neutral-base-sprites-accepted-as-reserve",
+    "generator": "built-in image_gen.imagegen",
+    "oneImagePerCall": true,
+    "generation": {
+      "calls": 8,
+      "successfulOutputs": 8,
+      "acceptedDistinctBaseArtworks": 6,
+      "orientationCorrectionCalls": 2,
+      "supersededCandidates": 2,
+      "refusedRequests": 0,
+      "retriesAfterSafetyRefusal": 0
+    },
+    "scope": {
+      "runtimeStatus": "reserve",
+      "posesPerIdentity": 1,
+      "pose": "ready",
+      "fightersAdded": 0,
+      "newKits": 0,
+      "newRoutes": 0,
+      "newAnimationFrames": 0,
+      "newAttackEffects": 0
+    },
+    "sourcePolicy": "Official episode storyboard frames are the primary design reference. Old repository portraits are secondary palette/silhouette support and do not certify a canonical design.",
+    "assets": [
+      {
+        "id": "hb_agent_one-ready",
+        "identityId": "hb_agent_one",
+        "file": "hb_agent_one-ready.png",
+        "nativeSize": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "sha256": "9b44cae7b4b1ab3c790c91d88733a2d45fbee11a9a3d277758c7818d281ae9a7",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1228848,
+        "lowAlphaPixels1to15": 16559,
+        "bboxAlphaAtLeast16": [
+          324,
+          52,
+          713,
+          1499
+        ],
+        "marginsLTRB": [
+          324,
+          52,
+          311,
+          37
+        ],
+        "groundLineYExclusive": 1499,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": true,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "episodeTitle": "HELLUVA BOSS - Truth Seekers // S1: Episode 6",
+          "samplesSeconds": [
+            210,
+            240,
+            380
+          ],
+          "review": "Dark swept short hair, pale angular face, black sunglasses, slim burgundy suit, collar/tie, long trousers and flat shoes. Green scene lighting was excluded from neutral palette."
+        },
+        "referenceImages": [
+          {
+            "path": "truth_seekers_official_board_02.jpg",
+            "sha256": "8677fabc1adad3b21937fce54df7aa2ffdd0e2bfa4bbd200f767bbb9c581a9b6",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "board": 2,
+            "firstCellSeconds": 180.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "truth_seekers_official_board_04.jpg",
+            "sha256": "87e650ce86eac8d029010e9bab260789ce18e05be28b2c95a3ffa7b1bf991421",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "board": 4,
+            "firstCellSeconds": 360.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_agent_one.png",
+            "sha256": "d56225d70862e69fd175756684fd9c138d7220d312656c9218f7c6191fa31a2f",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_agent_one.png"
+          }
+        ],
+        "generatedSourcePath": "exec-58980607-37e2-435d-bfe2-151d359c0463.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      },
+      {
+        "id": "hb_agent_two-ready",
+        "identityId": "hb_agent_two",
+        "file": "hb_agent_two-ready.png",
+        "nativeSize": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "sha256": "dc99887526e0f7cf384a6eaadb991f450a0e6998c2d63012c4ec2e9b396d1f7c",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1205879,
+        "lowAlphaPixels1to15": 14169,
+        "bboxAlphaAtLeast16": [
+          240,
+          66,
+          751,
+          1501
+        ],
+        "marginsLTRB": [
+          240,
+          66,
+          273,
+          35
+        ],
+        "groundLineYExclusive": 1501,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": false,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+          "episodeTitle": "HELLUVA BOSS - Truth Seekers // S1: Episode 6",
+          "samplesSeconds": [
+            210,
+            240,
+            380
+          ],
+          "review": "Blonde short swept bob, medium gray-brown complexion, black sunglasses and matching slim suit. Distinguished from Agent One; no weapon or action added."
+        },
+        "referenceImages": [
+          {
+            "path": "truth_seekers_official_board_02.jpg",
+            "sha256": "8677fabc1adad3b21937fce54df7aa2ffdd0e2bfa4bbd200f767bbb9c581a9b6",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "board": 2,
+            "firstCellSeconds": 180.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "truth_seekers_official_board_04.jpg",
+            "sha256": "87e650ce86eac8d029010e9bab260789ce18e05be28b2c95a3ffa7b1bf991421",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=yXErLiSbxXQ",
+            "board": 4,
+            "firstCellSeconds": 360.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_agent_two.png",
+            "sha256": "8f40122958e136ba6480754d5ca4b26993b493e913d8e32341cfaf54780f194c",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_agent_two.png"
+          }
+        ],
+        "generatedSourcePath": "exec-bb6ce60b-9a97-43e1-a582-9e138b9bfd93.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      },
+      {
+        "id": "hb_cletus-ready",
+        "identityId": "hb_cletus",
+        "file": "hb_cletus-ready.png",
+        "nativeSize": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "sha256": "ac2e01b42a519baab1daef25952ed1a18d7b2ebfa4a877ef526f21581f61381b",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "fullyTransparentPixels": 1116092,
+        "lowAlphaPixels1to15": 15724,
+        "bboxAlphaAtLeast16": [
+          260,
+          57,
+          966,
+          1213
+        ],
+        "marginsLTRB": [
+          260,
+          57,
+          288,
+          41
+        ],
+        "groundLineYExclusive": 1213,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": false,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "episodeTitle": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "samplesSeconds": [
+            330,
+            730,
+            780
+          ],
+          "review": "Pink quiff, huge lavender eyes, pale face, yellow shirt with white collar, pink bib overalls, small wings and a thin elliptical halo. Deliberately small original proportions retained."
+        },
+        "referenceImages": [
+          {
+            "path": "cherub_official_board_03.jpg",
+            "sha256": "37c873c7826e8649d2aa59ae9ba2dbbbe6b2271b6ec4151bfdb5b5b3900997a1",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 3,
+            "firstCellSeconds": 270.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "cherub_official_board_08.jpg",
+            "sha256": "97ca65c5e2c029dd4885918f90a938baf02bb66597f6a09d0c414f5a849b7e6e",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 8,
+            "firstCellSeconds": 720.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_cletus.png",
+            "sha256": "bdba1fe56e61c1d733c0df72ad1780b53b51e02e913fde85f68b4e3257d2b337",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_cletus.png"
+          }
+        ],
+        "generatedSourcePath": "exec-fea959e9-9a8b-4819-aee9-cdaf346522d2.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      },
+      {
+        "id": "hb_collin-ready",
+        "identityId": "hb_collin",
+        "file": "hb_collin-ready.png",
+        "nativeSize": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "sha256": "82a0749bc3159ce8eda639113e93be5f6000a501166f609f2d8520d62b63c0fa",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "fullyTransparentPixels": 1082206,
+        "lowAlphaPixels1to15": 22495,
+        "bboxAlphaAtLeast16": [
+          245,
+          48,
+          991,
+          1209
+        ],
+        "marginsLTRB": [
+          245,
+          48,
+          263,
+          45
+        ],
+        "groundLineYExclusive": 1209,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": false,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "episodeTitle": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "samplesSeconds": [
+            330,
+            600,
+            730
+          ],
+          "review": "Blue-lavender lamb-like face, fluffy pale wool, long ears, pale bow tie, four-button waistcoat, wool cuffs, wings, halo and cloven-hoof silhouette."
+        },
+        "referenceImages": [
+          {
+            "path": "cherub_official_board_03.jpg",
+            "sha256": "37c873c7826e8649d2aa59ae9ba2dbbbe6b2271b6ec4151bfdb5b5b3900997a1",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 3,
+            "firstCellSeconds": 270.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "cherub_official_board_08.jpg",
+            "sha256": "97ca65c5e2c029dd4885918f90a938baf02bb66597f6a09d0c414f5a849b7e6e",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 8,
+            "firstCellSeconds": 720.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_collin.png",
+            "sha256": "00899e624b3714caf0b0aaa5063c29e92268dedf616fac7b2ca3cde53d8f88b3",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_collin.png"
+          }
+        ],
+        "generatedSourcePath": "exec-c3584e13-612b-4ab1-80d6-d0ef068b0337.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      },
+      {
+        "id": "hb_keenie-ready",
+        "identityId": "hb_keenie",
+        "file": "hb_keenie-ready.png",
+        "nativeSize": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "sha256": "b6bc87290c959f74e1d5beed330809b0391a36fc83d59493ece18491811a310b",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "fullyTransparentPixels": 1104339,
+        "lowAlphaPixels1to15": 12960,
+        "bboxAlphaAtLeast16": [
+          268,
+          47,
+          951,
+          1204
+        ],
+        "marginsLTRB": [
+          268,
+          47,
+          303,
+          50
+        ],
+        "groundLineYExclusive": 1204,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": true,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+          "episodeTitle": "HELLUVA BOSS - C.H.E.R.U.B // S1: Episode 4",
+          "samplesSeconds": [
+            330,
+            610,
+            620
+          ],
+          "review": "Golden bob/fringe, large pink eye, cream face and ears, yellow dress with pink scalloped hem and bow, small wings, halo and pink hoof tips. No bow weapon or attacking pose."
+        },
+        "referenceImages": [
+          {
+            "path": "cherub_official_board_03.jpg",
+            "sha256": "37c873c7826e8649d2aa59ae9ba2dbbbe6b2271b6ec4151bfdb5b5b3900997a1",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 3,
+            "firstCellSeconds": 270.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "cherub_official_board_06.jpg",
+            "sha256": "5482d02d5e50afae26643d6c31c360c9022df0ac6fb2466718a901ccb6e16e79",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=1ZFseYPmkAk",
+            "board": 6,
+            "firstCellSeconds": 540.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_keenie.png",
+            "sha256": "36e44b6417cd8d49456f2ef4980745925aff6f429f9bcb482f166fda268e80dc",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_keenie.png"
+          }
+        ],
+        "generatedSourcePath": "exec-03146ae5-91b1-4c8c-ae32-61e782fe1bb4.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      },
+      {
+        "id": "hb_robo_fizz-ready",
+        "identityId": "hb_robo_fizz",
+        "file": "hb_robo_fizz-ready.png",
+        "nativeSize": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA",
+        "sha256": "b911ebe78f736f9fda1e6108f74ddd7217218a79eae50017d3a5781564818572",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "fullyTransparentPixels": 1227631,
+        "lowAlphaPixels1to15": 25655,
+        "bboxAlphaAtLeast16": [
+          206,
+          67,
+          753,
+          1504
+        ],
+        "marginsLTRB": [
+          206,
+          67,
+          271,
+          32
+        ],
+        "groundLineYExclusive": 1504,
+        "fullSilhouetteWithinCanvas": true,
+        "facing": "screen-right",
+        "runtimeStatus": "reserve",
+        "pose": "ready",
+        "masterBytesPreserved": true,
+        "orientationCorrection": false,
+        "source": {
+          "episode": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+          "episodeTitle": "HELLUVA BOSS - Loo Loo Land // S1: Episode 2",
+          "samplesSeconds": [
+            550,
+            560,
+            680,
+            700
+          ],
+          "review": "Intact mechanical jester, not living Fizzarolli: white mask with forehead heart, yellow eyes, red nose, long striped hat lobes, yellow ruff, narrow colored tunic and spindly mechanical limbs. Stage lighting and damaged form excluded."
+        },
+        "referenceImages": [
+          {
+            "path": "loo_loo_land_official_board_06.jpg",
+            "sha256": "99010d5a2646a4e5b6bc6b6b11f5eaef1e94739244c1a9a1f723290d283662f5",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+            "board": 6,
+            "firstCellSeconds": 540.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "loo_loo_land_official_board_07.jpg",
+            "sha256": "5d2b1276babdd702b3783aed6901bbeef6cae304d38a9ddf2dfb27cb20067f22",
+            "role": "official episode public storyboard board",
+            "sourceUrl": "https://www.youtube.com/watch?v=kpnwRg268FQ",
+            "board": 7,
+            "firstCellSeconds": 630.0,
+            "intervalMs": 10000,
+            "cellSize": [
+              320,
+              180
+            ]
+          },
+          {
+            "path": "hb_robo_fizz.png",
+            "sha256": "22b323973c3eed848618442709e9e8aa996c62ac777c69ffe291a53462ceab9c",
+            "role": "historical project portrait, secondary support only",
+            "sourceUrl": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/5f50431ebac6b4e60e13d92d0958127122cd0141/public/assets/sprites/helluva/portraits/hb_robo_fizz.png"
+          }
+        ],
+        "generatedSourcePath": "exec-be2f1bec-d18a-4e55-a267-9cd85b08b131.png",
+        "selected": true,
+        "visualReview": {
+          "neutralBaseOnly": true,
+          "oneCharacter": true,
+          "wholeSilhouette": true,
+          "facesScreenRight": true,
+          "noAddedWeaponOrEffect": true,
+          "neutralBackgroundCompositeInspected": true,
+          "visibleOuterGlow": false,
+          "canonicalOneToOneCertified": false
+        }
+      }
+    ],
+    "superseded": [
+      {
+        "path": "hb_agent_one-ready-candidate-v1.png",
+        "reason": "Wrong left-facing direction; replaced by one direction-only imagegen correction."
+      },
+      {
+        "path": "hb_keenie-ready-candidate-v1.png",
+        "reason": "Wrong left-facing direction; replaced by one direction-only imagegen correction."
+      }
+    ],
+    "diagnostic": {
+      "file": "QA_CONTACT_SHEET.png",
+      "kind": "neutral-background static comparison; not production artwork",
+      "inspected": true,
+      "countsAsArtwork": false,
+      "note": "Generated images retain RGB color outside the silhouette beneath alpha zero. The beige alpha-composited diagnostic shows no rendered aura or background."
+    },
+    "measurementMethod": "PNG RGBA metadata and SHA-256; silhouette bounding box at alpha >=16 with exclusive lower/right edges. Original source bytes copied unchanged, no crop/rescale/recolor/mirror performed on the masters.",
+    "limits": [
+      "Canonical 1:1 fidelity is not certified.",
+      "Official public storyboard samples are 320x180 cells sampled every 10 seconds; they are reference evidence, not full-resolution model sheets or pixel-identical pose references.",
+      "The neutral standing/resting arrangement and orientation are adaptations for the reserve catalogue.",
+      "No in-game placement, relative canonical scale, animation, attack, collision or gameplay test is claimed; these six assets remain reserve-only.",
+      "Alpha values 1-15 contain minor peripheral noise; no destructive alpha thresholding was applied. Measurements use alpha >=16, and visual review used the unmodified RGBA image."
+    ],
+    "deliverOnly": [
+      "hb_agent_one-ready.png",
+      "hb_agent_two-ready.png",
+      "hb_cletus-ready.png",
+      "hb_collin-ready.png",
+      "hb_keenie-ready.png",
+      "hb_robo_fizz-ready.png"
+    ]
+  },
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/base/hb_vassago-ready.png",
+      "bytes": 1380612,
+      "sha256": "7f492edaf80e29893463d9311bc72470148c072b58e7dff750b73d81c08c0728",
+      "gitBlobSha": "a4d75f50a3c29c6a62cf49c3d17f738439c97221",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        93,
+        50,
+        831,
+        1487
+      ],
+      "id": "hb_vassago-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_vassago-ready.webp",
+      "bytes": 914896,
+      "sha256": "0fb44cb7ccf973e68d65de8f55632fb6929661089a7749d2ffd46bdc447dd1ed",
+      "gitBlobSha": "d88d8fd25aaa64f57978b18d78ed73b5d90f0f6c",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        93,
+        50,
+        831,
+        1487
+      ],
+      "id": "hb_vassago-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_wally_wackford-ready.png",
+      "bytes": 1311277,
+      "sha256": "6eb1e7a28e2c10172d1c9c690ecdee81f794c49fc497b6f17da9d2f9fa2421b0",
+      "gitBlobSha": "2bd7b26c51aac75f5ec565182bf966a1965cf641",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        200,
+        88,
+        795,
+        1468
+      ],
+      "id": "hb_wally_wackford-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_wally_wackford-ready.webp",
+      "bytes": 843132,
+      "sha256": "5e1075da15c1cba34e0f47a684b7786ced9d60f41ce439f018a5ae0b9f2869b2",
+      "gitBlobSha": "9d0bfc24f805de560937e58e1792d947b1444a74",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        200,
+        88,
+        795,
+        1468
+      ],
+      "id": "hb_wally_wackford-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_barbie_wire-ready.png",
+      "bytes": 1176326,
+      "sha256": "566225b98fd2f488aea8aa26aa7487a2f1d3c01156f5abbcfe4ff7d2009d8668",
+      "gitBlobSha": "797df72efd2458e55e35d9e3e3b23af19e5b347b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        119,
+        40,
+        786,
+        1484
+      ],
+      "id": "hb_barbie_wire-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_barbie_wire-ready.webp",
+      "bytes": 766812,
+      "sha256": "7d620b14681a04d08994160b6b169693dbeb75ebf9302a23886c3caa38c3ccb5",
+      "gitBlobSha": "e18164f6212ed54f3186f12255e14a9fb972f461",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        119,
+        40,
+        786,
+        1484
+      ],
+      "id": "hb_barbie_wire-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_martha-ready.png",
+      "bytes": 1365052,
+      "sha256": "c4f9926dd11e5ffee239463b30f3690aefe32748095823a4e74cc77d84b39761",
+      "gitBlobSha": "ac344fa9055add0ac8cc4d73ab60717bc2a8042b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        166,
+        28,
+        841,
+        1499
+      ],
+      "id": "hb_martha-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_martha-ready.webp",
+      "bytes": 909936,
+      "sha256": "947ea84ea5a0b774c92a63dbee288ff3320f03a06bf78327c8d9a2bd5702a652",
+      "gitBlobSha": "db65b6a008faec3f20cf1801925eea8833247566",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        166,
+        28,
+        841,
+        1499
+      ],
+      "id": "hb_martha-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_mrs_mayberry-ready.png",
+      "bytes": 1380798,
+      "sha256": "175fb894ab711261ff7925a5556997bbd0c627da16323dd24d8cc60f2158faa1",
+      "gitBlobSha": "2ffa01771470df491d8be882b90c12fc5c755c8b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        113,
+        35,
+        777,
+        1486
+      ],
+      "id": "hb_mrs_mayberry-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_mrs_mayberry-ready.webp",
+      "bytes": 890342,
+      "sha256": "d9fd9a48de8317bc05b262563ecaba3a39909994104384507ccb42b68e831bb1",
+      "gitBlobSha": "9c64617aca40f21ec031954656d807bdba223f32",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        113,
+        35,
+        777,
+        1486
+      ],
+      "id": "hb_mrs_mayberry-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_agent_one-ready.png",
+      "bytes": 1040222,
+      "sha256": "9b44cae7b4b1ab3c790c91d88733a2d45fbee11a9a3d277758c7818d281ae9a7",
+      "gitBlobSha": "7d65f05753cc10d57c67768edea7fa11106552d0",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        324,
+        52,
+        713,
+        1499
+      ],
+      "id": "hb_agent_one-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_agent_one-ready.webp",
+      "bytes": 672150,
+      "sha256": "198524a319d925517889288e28d9dc9ad27dfdb266794da8da8f64e4bf7c5311",
+      "gitBlobSha": "c7158ea799de2b981827f832f83fd6949e1d8513",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        324,
+        52,
+        713,
+        1499
+      ],
+      "id": "hb_agent_one-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_agent_two-ready.png",
+      "bytes": 1057594,
+      "sha256": "dc99887526e0f7cf384a6eaadb991f450a0e6998c2d63012c4ec2e9b396d1f7c",
+      "gitBlobSha": "1617404ad5f0ab4838f2c47ff4377afd6429635e",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        240,
+        66,
+        751,
+        1501
+      ],
+      "id": "hb_agent_two-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_agent_two-ready.webp",
+      "bytes": 684556,
+      "sha256": "603171e2cfde1929591fb98a5e523e33e3911fb7d2ac8e21970e1406e4a78154",
+      "gitBlobSha": "3c7ffbe5cf48bed35319e42246676712af6c2069",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        240,
+        66,
+        751,
+        1501
+      ],
+      "id": "hb_agent_two-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_cletus-ready.png",
+      "bytes": 752938,
+      "sha256": "ac2e01b42a519baab1daef25952ed1a18d7b2ebfa4a877ef526f21581f61381b",
+      "gitBlobSha": "bd903f040c0834e6fc6dd572bb81d1ca563e955e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        260,
+        57,
+        966,
+        1213
+      ],
+      "id": "hb_cletus-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_cletus-ready.webp",
+      "bytes": 489100,
+      "sha256": "0f6af22a8fb3d6ffa1bb7394a9590b4d8bdcaa676bd4bec16881fbf82789a7c1",
+      "gitBlobSha": "6a423b373b9d3f9b8aeedbb3e6b5cc2b46f57b5b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        260,
+        57,
+        966,
+        1213
+      ],
+      "id": "hb_cletus-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_collin-ready.png",
+      "bytes": 785720,
+      "sha256": "82a0749bc3159ce8eda639113e93be5f6000a501166f609f2d8520d62b63c0fa",
+      "gitBlobSha": "1eda5f675a9b1ce5b841e8c7de60ffc58adf2279",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        245,
+        48,
+        991,
+        1209
+      ],
+      "id": "hb_collin-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_collin-ready.webp",
+      "bytes": 487274,
+      "sha256": "3ba9d0acc6f7c3bbc359fc4b19f947c627a4094e44ea0d2697f82d4c2e709d5f",
+      "gitBlobSha": "a9fc01d34393378d6d05ece93d1a7390003b68e8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        245,
+        48,
+        991,
+        1209
+      ],
+      "id": "hb_collin-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_keenie-ready.png",
+      "bytes": 836869,
+      "sha256": "b6bc87290c959f74e1d5beed330809b0391a36fc83d59493ece18491811a310b",
+      "gitBlobSha": "cffaf1319110e6e105f4a3af561777ffac3a63ec",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        268,
+        47,
+        951,
+        1204
+      ],
+      "id": "hb_keenie-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_keenie-ready.webp",
+      "bytes": 522514,
+      "sha256": "96bffa6fff50d07bed54c661737c189d227d642f0ca156e48c0a21b5f3230880",
+      "gitBlobSha": "2db37e9cce139076bb126e007b721cc45f31a2d2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        268,
+        47,
+        951,
+        1204
+      ],
+      "id": "hb_keenie-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_robo_fizz-ready.png",
+      "bytes": 1380106,
+      "sha256": "b911ebe78f736f9fda1e6108f74ddd7217218a79eae50017d3a5781564818572",
+      "gitBlobSha": "62085dcfc148a5ffe551f60d261c4884d157b8d8",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        206,
+        67,
+        753,
+        1504
+      ],
+      "id": "hb_robo_fizz-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_robo_fizz-ready.webp",
+      "bytes": 919264,
+      "sha256": "98eab753fe5cf0d473444e3b423023d73989284ec8ca4f7e25a592332732f9b5",
+      "gitBlobSha": "f6532fc121809d43299e1bc12868ca909f61109b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        206,
+        67,
+        753,
+        1504
+      ],
+      "id": "hb_robo_fizz-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    }
+  ],
+  "prompts": "art/infernal-versus/production/character-prompts-wave-g-2026-11-25.json"
+}

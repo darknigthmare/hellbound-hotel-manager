@@ -1,0 +1,49 @@
+{
+  "edition": "V12",
+  "attempts": [
+    {
+      "id": "technical-01",
+      "status": "failed_lint",
+      "cause": "New V12 CommonJS browser harness was outside the existing scoped Node/browser ESLint configuration, and an unused card destructuring remained after removing V11-specific assertions.",
+      "runtimeDefect": false,
+      "evidence": [
+        {
+          "path": "docs/standalone/production-v12/validation-history/attempt-01-runtime-qa.json",
+          "sha256": "074a01940644839b52b311f61ac5092a9526a10a258c28285931897096404824"
+        },
+        {
+          "path": "docs/standalone/production-v12/validation-history/attempt-01-qa-runtime.log",
+          "sha256": "bb37d2732aaf882641913531b9afc97e06d87f5f5cb7ba6a02651249b6c82ce0"
+        },
+        {
+          "path": "docs/standalone/production-v12/validation-history/attempt-01-browser-harness.cjs.txt",
+          "sha256": "f78f1d2f51c34ab13564fc65d8ee0adb56c82cef12cc3858123e4d2b0d2c1706"
+        },
+        {
+          "path": "docs/standalone/production-v12/validation-history/attempt-01-eslint-config.js.txt",
+          "sha256": "66c5f187d2df56180c2bd048fd913a4d231e581d4e7693eeaf403cb8e6a97f3d"
+        }
+      ],
+      "resolution": "Add the V12 harness to the same explicit CommonJS environment scope as V10/V11, remove the unused binding, then rerun all required gates."
+    }
+  ],
+  "status": "resolved_final_technical_pass",
+  "finalTechnicalPass": {
+    "path": "docs/standalone/production-v12/runtime-qa.json",
+    "sha256": "69190930e7d3f0251dd0e64c5f18de1d2626cb26032cdc7b0a0573f0fdc5baf9",
+    "testsPassed": 413,
+    "testSuites": 47,
+    "runtimeInputFiles": 189
+  },
+  "browserReportCorrection": {
+    "cause": "Final register normalizes stage_background handoff category to stage with runtimeStatus selectable_stage. The report finalizer incorrectly counted the room as a gallery entry.",
+    "correction": "Classify gallery membership from actual catalogue IDs and stage backgrounds from selectable_stage. New gallery entries7, new stage backgrounds1; eight checked drawings remain unchanged.",
+    "runtimeChanged": false,
+    "browserRerunRequired": false,
+    "rawBrowserRunUnchanged": true,
+    "originalReport": {
+      "path": "docs/standalone/production-v12/validation-history/browser-summary-before-category-correction.json",
+      "sha256": "23be8be3bc22c943eb5bc8f8649bcb753d446e056bd38fbe4881f3e786b15954"
+    }
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "date": "2026-11-25",
+  "batchId": "wave-i-2026-11-25",
+  "comparisonCommit": "6aeb4cf68567b6e38481591d76882c2da35e9a49",
+  "branch": "feat/infernal-versus-assets-20261124",
+  "manifest": "art/infernal-versus/production/delivery-wave-i-2026-11-25.json",
+  "reserveManifest": "art/infernal-versus/production/reserve-assets.json",
+  "newProduction": {
+    "playableFighters": 0,
+    "characterBases": 4,
+    "enemyBases": 2,
+    "animationPoses": 0,
+    "stageBackgrounds": 0,
+    "foregroundProps": 0,
+    "projectileImages": 0,
+    "totalNewArtworks": 6,
+    "derivedThumbnails": 0,
+    "newAttackEffectAssignments": 0,
+    "newStoryRoutes": 0,
+    "newStoryDuels": 0
+  },
+  "totals": {
+    "newGeneratedArtworks": 6,
+    "newMasterFiles": 6,
+    "publicImageFiles": 6,
+    "registeredPublicImageFiles": 0,
+    "reservePublicImageFiles": 6,
+    "totalImageFiles": 12,
+    "derivedThumbnails": 0
+  },
+  "runtime": {
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
+    "finisherKeyPoses": 5,
+    "separatedFinishProps": 1,
+    "storyAssignments": 129,
+    "illustratedStoryAssignments": 26,
+    "uniqueStoryIllustrations": 22,
+    "stages": 30,
+    "threePlaneStages": 30,
+    "twoPlaneStages": 0,
+    "onePlaneStages": 0,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 428,
+    "brokenReferences": []
+  },
+  "reserves": {
+    "characterBases": 13,
+    "enemyBases": 8,
+    "projectileImages": 1,
+    "artworks": 22,
+    "referencedFiles": 44,
+    "brokenReferences": []
+  },
+  "retainedComponents": [
+    {
+      "id": "hb_moxxie-bowtie",
+      "name": "Nœud papillon de Moxxie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-bowtie.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-bowtie.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "hb_millie-top",
+      "name": "Haut de Millie",
+      "kind": "Pièce de costume",
+      "master": "art/infernal-versus/masters/parts/hb_millie-top.png",
+      "export": "public/assets/sprites/parts/hb_millie-top.webp",
+      "status": "Conservé, hors rig"
+    },
+    {
+      "id": "alastor-microphone-cane",
+      "name": "Canne-micro d’Alastor",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/alastor-microphone-cane.png",
+      "export": "public/assets/sprites/finishers/props/alastor-microphone-cane.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "vaggie-exorcist-spear",
+      "name": "Lance d’exorciste de Vaggie",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/props/finishers/vaggie-exorcist-spear.png",
+      "export": "public/assets/sprites/finishers/props/vaggie-exorcist-spear.webp",
+      "status": "Conservé, hors animation"
+    },
+    {
+      "id": "carmine-industries-crate-variant",
+      "name": "Caisse Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-crate.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/crate-variant.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "carmine-industries-chain",
+      "name": "Chaîne Carmine du checkpoint",
+      "kind": "Variante de décor",
+      "master": "art/infernal-versus/masters/stages/carmine-industries-chain.png",
+      "export": "public/assets/stages/hazbin/carmine-industries/chain.webp",
+      "status": "Conservé, hors scène active"
+    },
+    {
+      "id": "wrath-ranch-lantern",
+      "name": "Lanterne de Wrath",
+      "kind": "Variante de décor",
+      "master": null,
+      "export": "public/assets/stages/helluva/wrath-ranch/lantern.webp",
+      "status": "Export récupéré, hors scène active"
+    },
+    {
+      "id": "lucifer-top-hat",
+      "name": "Chapeau de Lucifer",
+      "kind": "Accessoire séparé",
+      "master": "art/infernal-versus/masters/parts/lucifer-top-hat.png",
+      "export": "public/assets/sprites/parts/lucifer-top-hat.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    },
+    {
+      "id": "hb_moxxie-tail",
+      "name": "Queue de Moxxie",
+      "kind": "Partie séparée",
+      "master": "art/infernal-versus/masters/parts/hb_moxxie-tail.png",
+      "export": "public/assets/sprites/parts/hb_moxxie-tail.webp",
+      "status": "Réserve, hors rig",
+      "manifest": "art/infernal-versus/production/wave-b-parts-2026-11-19.json"
+    }
+  ],
+  "verification": {
+    "status": "passed_with_documented_limits",
+    "exports": {
+      "status": "passed",
+      "unchangedMasterFiles": 6,
+      "losslessPixelExactWebP": 6,
+      "productionImageFiles": 12,
+      "evidence": "art/infernal-versus/production/export-wave-i-2026-11-25.json"
+    },
+    "oneToOneFidelity": {
+      "certified": false,
+      "reason": "Official previews are 320 by 180. Some fine details rely on historical portraits; Toledo lacks an inspected official close-up. Static neutral poses are presentation adaptations.",
+      "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_I_2026-11-25.md"
+    },
+    "animationScope": {
+      "newAnimationPoses": 0,
+      "newAnimationCycles": 0,
+      "neutralReadyBases": 6,
+      "newAttackEffectAssignments": 0,
+      "newCombatKits": 0
+    },
+    "checkedAtUtc": "2026-11-25T10:13:10.034530+00:00",
+    "runtime": {
+      "status": "passed",
+      "evidence": "docs/standalone/QA_RUNTIME_WAVE_I_2026-11-25.json",
+      "typecheck": "passed",
+      "lint": "passed",
+      "testSuites": 44,
+      "tests": 376,
+      "managerBuild": "passed",
+      "standaloneBuild": "passed",
+      "standaloneHashes": 1031,
+      "standaloneBytes": 626287158,
+      "activeAssetPaths": 428,
+      "reserveAssetFiles": 44,
+      "missingFiles": 0,
+      "browserExecuted": false
+    },
+    "workbook": {
+      "status": "passed",
+      "evidence": "docs/standalone/QA_WORKBOOK_WAVE_I_2026-11-25.json",
+      "path": "docs/standalone/INFERNAL_VERSUS_BIBLE_V3.xlsx",
+      "sha256": "e7e029be8db051825ef059ae77076ed9ed400b0fbb0a9090bbbb08f50cfe491b",
+      "sheets": 29,
+      "formulas": 222,
+      "formulaCacheMismatches": 0,
+      "currentCellsCompared": 11577,
+      "cellMismatches": 0,
+      "historicalSheetsByteIdentical": 11,
+      "renderedAndInspectedViews": 29,
+      "visualEvidence": "docs/standalone/qa-wave-i-2026-11-25/workbook-visual-qa.json"
+    },
+    "campaignDesign": {
+      "status": "passed_with_documented_limits",
+      "evidence": "docs/standalone/QA_DESIGN_WAVE_I_2026-11-25.json",
+      "fighters": 43,
+      "campaigns": 43,
+      "chapters": 129,
+      "illustrationBriefs": 129,
+      "introEndingBriefs": 86,
+      "moveProposals": 172,
+      "finisherStoryboards": 43,
+      "loreAnchors": 109,
+      "sources": 27,
+      "newMechanics": 67,
+      "limitedEvidenceMoves": 127,
+      "existingCompatible": 105,
+      "canonicalTerm": false,
+      "runtimeCampaignsReplaced": false,
+      "runtimeMovesReplaced": false
+    },
+    "staticReview": {
+      "reviewedMasterImages": 6,
+      "alphaCompositeDiagnostics": 2,
+      "evidence": "docs/standalone/REVIEW_ASSETS_WAVE_I_2026-11-25.md",
+      "alphaEvidence": "docs/standalone/qa-wave-i-2026-11-25/alpha-compositing-qa.json",
+      "relativeCanonicalSizesVerified": false,
+      "inGameVisualReview": false
+    },
+    "diagnostics": {
+      "pngFiles": 31,
+      "workbookViews": 29,
+      "alphaComposites": 2,
+      "excludedFromProductionImageCounts": true
+    }
+  },
+  "blockedRequests": [],
+  "discardedVariants": [
+    {
+      "file": "/workspace/scratch/9be6ab2142e0/generated_images/exec-b08bea85-83ce-48fc-883a-020f27398805.png",
+      "identity": "hb_rolando",
+      "reason": "Premier essai remplacé par une passe de nettoyage du fond Imagegen, non compté comme asset livré."
+    }
+  ],
+  "cumulativeProduction": {
+    "initial": {
+      "drawings": 42,
+      "imageFiles": 86
+    },
+    "waveC": {
+      "drawings": 35,
+      "imageFiles": 73
+    },
+    "waveD": {
+      "drawings": 26,
+      "imageFiles": 55
+    },
+    "waveF": {
+      "drawings": 25,
+      "imageFiles": 53
+    },
+    "waveG": {
+      "drawings": 21,
+      "imageFiles": 45
+    },
+    "total": {
+      "drawings": 165,
+      "imageFiles": 346,
+      "pngMasters": 165,
+      "webpExports": 165,
+      "derivedThumbnails": 16
+    },
+    "scope": "Seven traced production lots on PR #8. Diagnostic images and discarded image-generation variants are excluded.",
+    "waveH": {
+      "drawings": 10,
+      "imageFiles": 22
+    },
+    "waveI": {
+      "drawings": 6,
+      "imageFiles": 12
+    }
+  },
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/base/hb_chazwick_thurman-ready.png",
+      "bytes": 638282,
+      "sha256": "8d7c4ce13ecf07a707db97f39893d9a8804bbf2381cb958012e376096e60d87b",
+      "gitBlobSha": "d3f6b2a5f06d080db5c97aa436d3c67aad30fbac",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        183,
+        37,
+        1026,
+        1275
+      ],
+      "id": "hb_chazwick_thurman-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_chazwick_thurman-ready.webp",
+      "bytes": 394542,
+      "sha256": "7bd3be9452eab4f78efe5c46769f197f34499c179e496373123407ba208ac05e",
+      "gitBlobSha": "e60cd9b831f3d6e57b533aa7d2687d35bec75961",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        183,
+        37,
+        1026,
+        1275
+      ],
+      "id": "hb_chazwick_thurman-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_alessio-ready.png",
+      "bytes": 418659,
+      "sha256": "7d8cf30892a26eaf6259ecf9ecf28e446361f4a615bf4e060b2accf6fc59ba33",
+      "gitBlobSha": "5ba33461cdce29ce33eb8921dcf5faa8cf85b71a",
+      "dimensions": [
+        1214,
+        1295
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        348,
+        35,
+        898,
+        1245
+      ],
+      "id": "hb_alessio-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_alessio-ready.webp",
+      "bytes": 264470,
+      "sha256": "879dbfcd28625772eca807cc83be90ebf38dd8e650902eb54851fd9a6d5eec0d",
+      "gitBlobSha": "ea78da83619872a0f0a7c83ac14e5880f30da205",
+      "dimensions": [
+        1214,
+        1295
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        348,
+        35,
+        898,
+        1245
+      ],
+      "id": "hb_alessio-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_elder_jaws-ready.png",
+      "bytes": 709470,
+      "sha256": "2f967cbfa284ed3131b496b6dc5612aaa2e9eb9da3a468ed908b932f03489fb2",
+      "gitBlobSha": "c75838a4083ed94aef5139d78f17d73f31db2e36",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        57,
+        46,
+        1053,
+        1264
+      ],
+      "id": "hb_elder_jaws-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_elder_jaws-ready.webp",
+      "bytes": 412892,
+      "sha256": "0ec6e85896d754ea9c866fa47dbe6cf396d90260ae5e335bb1d2e1f512035420",
+      "gitBlobSha": "cf96baa7d6c9ed053aebd6c24e231af878d17c58",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        57,
+        46,
+        1053,
+        1264
+      ],
+      "id": "hb_elder_jaws-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_rolando-ready.png",
+      "bytes": 1215388,
+      "sha256": "57fec9ae496847a275df93b48e2550d246262866078fd76e0ba4b8dddbc3e2a8",
+      "gitBlobSha": "cb55756747138e936d0b190f0a6fe75fecee65a9",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        234,
+        25,
+        790,
+        1509
+      ],
+      "id": "hb_rolando-ready",
+      "group": "enemy_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_rolando-ready.webp",
+      "bytes": 780914,
+      "sha256": "26a02e02a19fb21b20b6076d924f9dddd8e632b5d368370afc5a96f4eb6d6c4b",
+      "gitBlobSha": "135a4b476aec8408b309ed4ef571aa8e6f0f663c",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        234,
+        25,
+        790,
+        1509
+      ],
+      "id": "hb_rolando-ready",
+      "group": "enemy_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_dennis-ready.png",
+      "bytes": 1275855,
+      "sha256": "1ff3aeac9636f284fca6ee4640ace85dd1de9186ed122d09a816bd2ad21d202c",
+      "gitBlobSha": "6b86ee38c6f717beb12bd7711b94bed9f39e50ea",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        210,
+        33,
+        862,
+        1511
+      ],
+      "id": "hb_dennis-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_dennis-ready.webp",
+      "bytes": 833866,
+      "sha256": "ed72718892ebb9bee8545efdb5eb4b53b5da534f799f19315be9ee46132be63c",
+      "gitBlobSha": "dd7fb024ba86eb60c69bf19ee635c0720d44a950",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        210,
+        33,
+        862,
+        1511
+      ],
+      "id": "hb_dennis-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "art/infernal-versus/masters/base/hb_toledo_the_igor-ready.png",
+      "bytes": 1017275,
+      "sha256": "44ca51dadd8938b6d0b29ab6fac2a4cc4b3d5b4fb39bd0cf54e6066deef75640",
+      "gitBlobSha": "0f2ea49b8d5f2d354879f808699d86732b0a0679",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        92,
+        51,
+        1155,
+        1209
+      ],
+      "id": "hb_toledo_the_igor-ready",
+      "group": "character_base",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "runtimeStatus": "reserve",
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/reserve/hb_toledo_the_igor-ready.webp",
+      "bytes": 628418,
+      "sha256": "c4b1d2453840ac5e5e8fbc91d661585617f578d0823ee45ef4b37da1e1c4d48a",
+      "gitBlobSha": "017a86f3b0d1f009acaa54a820eadc655dfd5623",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        92,
+        51,
+        1155,
+        1209
+      ],
+      "id": "hb_toledo_the_igor-ready",
+      "group": "character_base",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "runtimeStatus": "reserve",
+      "registered": false
+    }
+  ],
+  "sourceManifestSha256": {
+    "characters-wave-i-2026-11-25.json": "b0b3e57666404f6d3c8049d93828ab19f71547da76060004e9812b0f70782e7c",
+    "export-wave-i-2026-11-25.json": "d9821d06e078206e719eb947a3ba58233d16817f2787a0c6b2cbe669e06b0629",
+    "reserve-assets-wave-i-2026-11-25.json": "00e8abcdab97f4c1c8cfc2b651cc1bc38fdd1a1ddd5aecfbb5265355e1461991",
+    "character-prompts-wave-i-2026-11-25.md": "9dacaf2e27c9c4d41cbf0570fb0cacb8b7fc53b618f7abc8ae127a206a0d93aa",
+    "reserve-assets.json": "cdec42bf8b7b2690b6407526c0c254011e50de374b68d391e5af336df8b5ad27"
+  }
+}

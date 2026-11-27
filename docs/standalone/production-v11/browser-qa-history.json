@@ -1,0 +1,73 @@
+{
+  "edition": "V11",
+  "status": "resolved_by_harness_corrections_final_pass_completed",
+  "createdAt": "2026-11-26T16:52:09.790868+00:00",
+  "runtimeEditsForTheseCorrections": false,
+  "attempts": [
+    {
+      "id": "01-selector",
+      "rawInternalPath": "/tmp/infernal-v11/browser/attempts/01-selector/browser-qa-run.json",
+      "rawSha256": "a8953a22d35f53d76ad997a83a3996e80548517bb6a9320660873c2437046ec4",
+      "harnessInternalPath": "/tmp/infernal-v11/browser/attempts/01-selector/run-browser-qa.cjs",
+      "harnessSha256": "20c29573b57e3a4186332e0e8be76e045fc9c2c439ab2451f726c8c51f3eb59d",
+      "diagnosticCaptureInternalPath": "/tmp/infernal-v11/browser/attempts/01-selector/desktop-failure.png",
+      "diagnosticCaptureSha256": "346fad342df53639f491b49afc29b9d0578748a2182d80839ef4d528bcc381bc",
+      "result": "Stopped before V11 asset coverage: exact Contenu label locator did not match the label text including its option labels.",
+      "correction": "DOM diagnostics found 0 exact matches and exactly 1 prefix/combobox match. Changed only the harness to /^Contenu/i.",
+      "assetCoverageClaim": false,
+      "rawPath": "docs/standalone/production-v11/browser-harness/history/01-selector-browser-qa-run.json",
+      "harnessPath": "docs/standalone/production-v11/browser-harness/history/01-selector-run-browser-qa.cjs",
+      "diagnosticCapturePath": "docs/standalone/production-v11/browser-harness/history/01-selector-desktop-failure.png",
+      "viteLog": {
+        "path": "docs/standalone/production-v11/browser-harness/history/01-selector-vite-log.txt",
+        "sha256": "df5cfbd4300e37b3a5b4786441b32f0cfab5ad64d59a27feef454f2f10980494"
+      }
+    },
+    {
+      "id": "02-stage-scope-assumption",
+      "rawInternalPath": "/tmp/infernal-v11/browser/attempts/02-stage-scope-assumption/browser-qa-run.json",
+      "rawSha256": "d6b38a5c244c28e088f664cb5474f37c2ad296c32321a7447fba26cbaf5c3352",
+      "harnessInternalPath": "/tmp/infernal-v11/browser/attempts/02-stage-scope-assumption/run-browser-qa.cjs",
+      "harnessSha256": "d72dc7b0211670d209dacd123c18a9112c0247025de312682cee57014a6dbb6e",
+      "screenshotsInternalDirectory": "/tmp/infernal-v11/browser/attempts/02-stage-scope-assumption",
+      "screenshotsPreservedInScratch": 48,
+      "failedChecks": [
+        {
+          "name": "desktop: new S2 consultation arena hidden by S1 filter",
+          "passed": false
+        },
+        {
+          "name": "mobile: new S2 consultation arena hidden by S1 filter",
+          "passed": false
+        }
+      ],
+      "successfulChecks": 170,
+      "result": "Both viewports completed; two assertions expected the S1 roster selector to hide an S2 arena, which is outside the existing control contract.",
+      "correction": "Root confirmed that S1/S2 filters roster, costumes and gallery; arena availability uses its distinct S3 gate. Removed only that unsupported assertion, retained the observed scope behavior as a limitation, and retained all six applicable gallery-filter checks.",
+      "runtimeProductDefectEstablished": false,
+      "rawPath": "docs/standalone/production-v11/browser-harness/history/02-stage-scope-assumption-browser-qa-run.json",
+      "harnessPath": "docs/standalone/production-v11/browser-harness/history/02-stage-scope-assumption-run-browser-qa.cjs",
+      "viteLog": {
+        "path": "docs/standalone/production-v11/browser-harness/history/02-stage-scope-assumption-vite-log.txt",
+        "sha256": "fa7917555c349864c5dbf162cec597a31f363d05b9c519140b54823a637d4cdb"
+      }
+    }
+  ],
+  "finalPass": {
+    "rawPath": "docs/standalone/production-v11/browser-harness/final-browser-qa-run.json",
+    "rawSha256": "b33a920c2c238f3b0a2b85cd3b5515bda72578b45e158af9388b444d4954b36a",
+    "checks": 170,
+    "failedChecks": 0,
+    "checkedAssetIds": [
+      "hz_molly-legacy-2015-portrait",
+      "hb_mister_butler-circus-s2-portrait",
+      "hb_better_than_blitzo_guy-portrait-s2",
+      "sloth-consultation-container",
+      "fizzarolli-bozo-award",
+      "oops-clown-mask-trophy",
+      "sloth-consultation-s2-room"
+    ],
+    "harnessSha256": "7aaea8f7b6ad7534bd812f8e196bf29ccafcbfed8161d677cfe39b2ac337d1b1"
+  },
+  "archivePolicy": "The raw failed runs, exact harness versions, server logs and first failure capture are preserved in the repository. The second attempt’s complete screenshots remain in its scratch archive; the final pass captures are preserved separately under browser-captures."
+}

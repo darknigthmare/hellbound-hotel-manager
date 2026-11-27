@@ -18,6 +18,10 @@ The application deliberately separates two kinds of information:
 - Global search, responsive navigation, keyboard-friendly dialogs and high-contrast mode.
 - Lore metadata diagnostics and explicitly guarded edits for bundled canonical entries.
 
+## Infernal Versus standalone
+
+The fighting game opens at `/combat.html` and has its own progression and saves. Its current delivery, artwork counts, Excel bible and validation evidence are indexed in [the standalone documentation](docs/standalone/README.md). The [combat guide and its two extensions](docs/standalone/COMBAT_GUIDES.md) distinguish implemented features from planned taunts, team mechanics, bonus stages and external supporter rights.
+
 ## Requirements and commands
 
 - Node.js 22 LTS or newer.
@@ -65,4 +69,4 @@ When adding lore, use `canon` only with a traceable official source. Use `offici
 
 ## Disclaimer
 
-This is an unofficial, non-commercial fan project. Hazbin Hotel and its characters belong to their respective rights holders. The repository contains operational text and generic UI only; it does not include official character art, logos, episode transcripts, music, lyrics or audio.
+This is an unofficial, non-commercial fan project. Hazbin Hotel and its characters belong to their respective rights holders. The standalone’s generated artwork, visual references and source qualifications are documented in [the production records](docs/standalone/README.md).

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "reviewer": "/root/v14_environment",
+  "createdAt": "2026-11-26T21:50:38.569709+00:00",
+  "scope": "Independent source/native/alpha/exact-export review of Millie and Moxxie dress-disguise static costumes.",
+  "status": "accepted_with_limits",
+  "assets": [
+    {
+      "id": "hb_millie-dress-disguise-training-short",
+      "decision": "accepted_with_limits",
+      "source": {
+        "path": "production/v14/characters/references/millie-dress-disguise-official-keychain.png",
+        "sha256": "b06a2b50dbce2ef4f824c9adf7831e03cf99888ec0421d7a8fc611c029f54924",
+        "bytes": 850880,
+        "dimensions": [
+          1500,
+          1500
+        ],
+        "mode": "RGBA"
+      },
+      "master": {
+        "path": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+        "sha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f",
+        "bytes": 1717766,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v14/characters/hb_millie-dress-disguise-training-short.webp",
+        "sha256": "49ced3541c9ffda50f8fdbbebc4d818ec70db048ff4e896b4f42e11cce65e44c",
+        "bytes": 1071600,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 721944,
+      "alpha1to15Pixels": 34254,
+      "alpha16to254Pixels": 816666,
+      "alpha255Pixels": 0,
+      "alphaBBox16": [
+        50,
+        27,
+        995,
+        1504
+      ],
+      "alphaBBox128": [
+        51,
+        28,
+        995,
+        1503
+      ],
+      "marginAtAlpha16": [
+        50,
+        27,
+        29,
+        32
+      ],
+      "pixelExactDecodedRGBAExport": true,
+      "sourceAndNativeViewed": true,
+      "lightAndDarkDiagnosticsViewed": true,
+      "observed": [
+        "Parasol ouvert entier, poignée courbe et main(s) visibles conformes à la pose de référence.",
+        "Deux plumes et deux nœuds à l’ourlet visibles et non coupés.",
+        "Millie : cheveux noirs et deux mains sur la poignée ; Moxxie : mèches blanches et une main à la hanche.",
+        "Les robes cachent les jambes et les pieds, comme sur les produits officiels ; aucun membre caché reconstruit.",
+        "Le matériel du porte-clés et son contour plastique ne sont pas repris dans le sprite.",
+        "Contour lisible sur fonds clair et sombre, sans grand halo visible dans les compositions diagnostiques."
+      ],
+      "limits": [
+        "Pose de produit officiel, pas reproduction de la pose animée : le court montre des ombrelles fermées.",
+        "Alpha natif maximal 254 conservé : pas de correction destructive de l’alpha ou des couleurs.",
+        "Petits détails de trait et proportions redessinés ; aucune fidélité 1:1 certifiée.",
+        "Vérification dans le jeu attend le gel du build."
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    },
+    {
+      "id": "hb_moxxie-dress-disguise-training-short",
+      "decision": "accepted_with_limits",
+      "source": {
+        "path": "production/v14/characters/references/moxxie-dress-disguise-official-keychain.png",
+        "sha256": "c7fc7ee72a0ad188338f816228f878be2ef87b6969ad8352f1a8eaa535550df6",
+        "bytes": 810250,
+        "dimensions": [
+          1500,
+          1500
+        ],
+        "mode": "RGBA"
+      },
+      "master": {
+        "path": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+        "sha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3",
+        "bytes": 1777345,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v14/characters/hb_moxxie-dress-disguise-training-short.webp",
+        "sha256": "af35e202dbeaf4951ca3d478224d33ed182884dc922db5dd3b56b587a09a39b7",
+        "bytes": 1121664,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZeroPixels": 694035,
+      "alpha1to15Pixels": 28610,
+      "alpha16to254Pixels": 850219,
+      "alpha255Pixels": 0,
+      "alphaBBox16": [
+        35,
+        16,
+        989,
+        1506
+      ],
+      "alphaBBox128": [
+        36,
+        17,
+        988,
+        1505
+      ],
+      "marginAtAlpha16": [
+        35,
+        16,
+        35,
+        30
+      ],
+      "pixelExactDecodedRGBAExport": true,
+      "sourceAndNativeViewed": true,
+      "lightAndDarkDiagnosticsViewed": true,
+      "observed": [
+        "Parasol ouvert entier, poignée courbe et main(s) visibles conformes à la pose de référence.",
+        "Deux plumes et deux nœuds à l’ourlet visibles et non coupés.",
+        "Millie : cheveux noirs et deux mains sur la poignée ; Moxxie : mèches blanches et une main à la hanche.",
+        "Les robes cachent les jambes et les pieds, comme sur les produits officiels ; aucun membre caché reconstruit.",
+        "Le matériel du porte-clés et son contour plastique ne sont pas repris dans le sprite.",
+        "Contour lisible sur fonds clair et sombre, sans grand halo visible dans les compositions diagnostiques."
+      ],
+      "limits": [
+        "Pose de produit officiel, pas reproduction de la pose animée : le court montre des ombrelles fermées.",
+        "Alpha natif maximal 254 conservé : pas de correction destructive de l’alpha ou des couleurs.",
+        "Petits détails de trait et proportions redessinés ; aucune fidélité 1:1 certifiée.",
+        "Vérification dans le jeu attend le gel du build."
+      ],
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false
+    }
+  ],
+  "newImageGenerationRequested": false
+}

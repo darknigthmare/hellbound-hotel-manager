@@ -1,0 +1,1214 @@
+{
+  "edition": "V13",
+  "status": "passed",
+  "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+  "evidenceType": "targeted_aggregate_of_completed_segments",
+  "reviewer": "/root/v13_environment and /root/v13_characters, with /root spot-check",
+  "reviewedLabels": [
+    "desktop-home",
+    "desktop-dhorks-control-room-s1-selection",
+    "desktop-dhorks-control-room-s1-fight",
+    "desktop-dhorks-control-room-s1-stage",
+    "desktop-dhorks-control-room-s1-after-movement",
+    "desktop-unhappy-campers-boathouse-s2-selection",
+    "desktop-unhappy-campers-boathouse-s2-fight",
+    "desktop-unhappy-campers-boathouse-s2-stage",
+    "desktop-unhappy-campers-boathouse-s2-after-movement",
+    "desktop-gallery-art-hb_vikki-queen-bee-s1-portrait",
+    "desktop-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+    "desktop-gallery-references-hb_vikki-queen-bee-s1-portrait",
+    "desktop-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+    "desktop-gallery-art-hb_tilla-nightmare-merch-portrait",
+    "desktop-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+    "desktop-gallery-references-hb_tilla-nightmare-merch-portrait",
+    "desktop-gallery-art-spring-broken-red-cup",
+    "desktop-gallery-provenance-spring-broken-red-cup",
+    "desktop-gallery-references-spring-broken-red-cup",
+    "desktop-gallery-art-dhorks-red-button-panel-s1",
+    "desktop-gallery-provenance-dhorks-red-button-panel-s1",
+    "desktop-gallery-references-dhorks-red-button-panel-s1",
+    "desktop-gallery-art-asmodeus-bedroom-pitcher",
+    "desktop-gallery-provenance-asmodeus-bedroom-pitcher",
+    "desktop-gallery-references-asmodeus-bedroom-pitcher",
+    "desktop-crymini-2017-provenance",
+    "desktop-gallery-filter-season-1",
+    "desktop-gallery-filter-season-1-and-2",
+    "mobile-home",
+    "mobile-dhorks-control-room-s1-selection",
+    "mobile-dhorks-control-room-s1-fight",
+    "mobile-dhorks-control-room-s1-stage",
+    "mobile-dhorks-control-room-s1-after-movement",
+    "mobile-unhappy-campers-boathouse-s2-selection",
+    "mobile-unhappy-campers-boathouse-s2-fight",
+    "mobile-unhappy-campers-boathouse-s2-stage",
+    "mobile-unhappy-campers-boathouse-s2-after-movement",
+    "mobile-gallery-art-hb_vikki-queen-bee-s1-portrait",
+    "mobile-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+    "mobile-gallery-references-hb_vikki-queen-bee-s1-portrait",
+    "mobile-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+    "mobile-gallery-art-hb_tilla-nightmare-merch-portrait",
+    "mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+    "mobile-gallery-references-hb_tilla-nightmare-merch-portrait",
+    "mobile-gallery-art-spring-broken-red-cup",
+    "mobile-gallery-provenance-spring-broken-red-cup",
+    "mobile-gallery-references-spring-broken-red-cup",
+    "mobile-gallery-art-dhorks-red-button-panel-s1",
+    "mobile-gallery-provenance-dhorks-red-button-panel-s1",
+    "mobile-gallery-references-dhorks-red-button-panel-s1",
+    "mobile-gallery-art-asmodeus-bedroom-pitcher",
+    "mobile-gallery-provenance-asmodeus-bedroom-pitcher",
+    "mobile-gallery-references-asmodeus-bedroom-pitcher",
+    "mobile-crymini-2017-provenance",
+    "mobile-gallery-filter-season-1",
+    "mobile-gallery-filter-season-1-and-2"
+  ],
+  "independentReviews": [
+    {
+      "path": "docs/standalone/production-v13/browser-harness/desktop-visual-review.json",
+      "sha256": "d0d6134cb9b146390379578faeedd2f508aa94901ebeb553158727af93669714",
+      "review": {
+        "schemaVersion": 2,
+        "edition": "V13",
+        "status": "passed",
+        "reviewer": "/root/v13_environment",
+        "reviewedAt": "2026-11-26T20:29:32.350869+00:00",
+        "sourceRunPath": "/tmp/infernal-v13/browser/browser-qa-run.json",
+        "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+        "sourceRunStatus": "passed_automated_browser_checks_pending_visual_review",
+        "sourceEvidenceType": "targeted_aggregate_of_completed_segments",
+        "viewport": {
+          "name": "desktop",
+          "width": 1440,
+          "height": 1000
+        },
+        "method": "All 28 selected desktop captures were opened individually with view_image. Nine gallery captures were inspected during the retained software-gallery diagnostic; their identical hashes are selected in the aggregate. The remaining 19 were opened after assembly. Every final selected hash was rechecked against its preserved file.",
+        "reviewedCaptureCount": 28,
+        "reviewedLabels": [
+          "desktop-home",
+          "desktop-dhorks-control-room-s1-selection",
+          "desktop-dhorks-control-room-s1-fight",
+          "desktop-dhorks-control-room-s1-stage",
+          "desktop-dhorks-control-room-s1-after-movement",
+          "desktop-unhappy-campers-boathouse-s2-selection",
+          "desktop-unhappy-campers-boathouse-s2-fight",
+          "desktop-unhappy-campers-boathouse-s2-stage",
+          "desktop-unhappy-campers-boathouse-s2-after-movement",
+          "desktop-gallery-art-hb_vikki-queen-bee-s1-portrait",
+          "desktop-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+          "desktop-gallery-references-hb_vikki-queen-bee-s1-portrait",
+          "desktop-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+          "desktop-gallery-art-hb_tilla-nightmare-merch-portrait",
+          "desktop-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+          "desktop-gallery-references-hb_tilla-nightmare-merch-portrait",
+          "desktop-gallery-art-spring-broken-red-cup",
+          "desktop-gallery-provenance-spring-broken-red-cup",
+          "desktop-gallery-references-spring-broken-red-cup",
+          "desktop-gallery-art-dhorks-red-button-panel-s1",
+          "desktop-gallery-provenance-dhorks-red-button-panel-s1",
+          "desktop-gallery-references-dhorks-red-button-panel-s1",
+          "desktop-gallery-art-asmodeus-bedroom-pitcher",
+          "desktop-gallery-provenance-asmodeus-bedroom-pitcher",
+          "desktop-gallery-references-asmodeus-bedroom-pitcher",
+          "desktop-crymini-2017-provenance",
+          "desktop-gallery-filter-season-1",
+          "desktop-gallery-filter-season-1-and-2"
+        ],
+        "captures": [
+          {
+            "label": "desktop-home",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-home.png",
+            "sha256": "6cc2cb0893a9c2cac93899d75e76551a195efde6b11686f4a27f69eaaff256c0",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-home.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Navigation, titre et cartes de modes lisibles. Le compteur affiche43 combattants et47 arènes disponibles avec la porte saison 3 désactivée ; il ne représente pas les114 bases de réserve ni le total 49 toutes saisons."
+          },
+          {
+            "label": "desktop-dhorks-control-room-s1-selection",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-dhorks-control-room-s1-selection.png",
+            "sha256": "cb14a74c4780aee49b8744ae46b21d1f8ea99056f73b13d96a62efa6073be763",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-dhorks-control-room-s1-selection.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Vignette complète, salle sombre reconnaissable, bouton rouge et portes à hublots visibles ; contour de sélection doré et intitulé lisible."
+          },
+          {
+            "label": "desktop-dhorks-control-room-s1-fight",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-dhorks-control-room-s1-fight.png",
+            "sha256": "f8eee8c94ae162b7359c09a20bae9f81a72c6c629c7ddb5ff5cbcebc6ecde7b9",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-dhorks-control-room-s1-fight.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "HUD et commandes lisibles. Fond entier contenu avec bandes latérales ; Loona en robe existante et Blitzø restent entièrement visibles sur le sol."
+          },
+          {
+            "label": "desktop-dhorks-control-room-s1-stage",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-dhorks-control-room-s1-stage.png",
+            "sha256": "a23c760090b3099deb1fca1092169da5a713fd4bfa518a78e2e3a0abcb369dbd",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-dhorks-control-room-s1-stage.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Moniteurs, console, vitre brisée, plafonniers et portes sont lisibles. Les pieds des deux personnages reposent sur le premier plan libre."
+          },
+          {
+            "label": "desktop-dhorks-control-room-s1-after-movement",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-dhorks-control-room-s1-after-movement.png",
+            "sha256": "ba369e1f51eef44b4f8c48ec7a8f160caaa2aac04dce0818d7d535066c6f528c",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-dhorks-control-room-s1-after-movement.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Loona s’est déplacée vers la droite ; contours et tenue restent complets, sol et fond conservent leurs proportions et marges."
+          },
+          {
+            "label": "desktop-unhappy-campers-boathouse-s2-selection",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-unhappy-campers-boathouse-s2-selection.png",
+            "sha256": "3473c348a093e7e40f4a6201d101f0e4831bebcd456e4be9b13f5f0f7b26bb99",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-unhappy-campers-boathouse-s2-selection.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Deux fenêtres roses, sacs, barque et quai visibles dans la vignette ; intitulé et contour de sélection lisibles."
+          },
+          {
+            "label": "desktop-unhappy-campers-boathouse-s2-fight",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-unhappy-campers-boathouse-s2-fight.png",
+            "sha256": "5b5974353abb07d551882cea128c3f2db5d532fee34f1611ebb9fb8abd6b3530",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-unhappy-campers-boathouse-s2-fight.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "HUD lisible ; fond entier, bandes latérales assumées, deux combattants sur le quai continu. Le bassin et la barque restent en arrière-plan."
+          },
+          {
+            "label": "desktop-unhappy-campers-boathouse-s2-stage",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-unhappy-campers-boathouse-s2-stage.png",
+            "sha256": "e230bac117336d86f768ec33d96a591921409a74d0236f911c4d943d3bba7629",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-unhappy-campers-boathouse-s2-stage.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Fenêtres, sacs, moteur, barque, eau sombre et bâche restent distincts. Le quai ajouté pour le duel forme une bande de jeu lisible."
+          },
+          {
+            "label": "desktop-unhappy-campers-boathouse-s2-after-movement",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/attempts/attempt-7/desktop-unhappy-campers-boathouse-s2-after-movement.png",
+            "sha256": "a6fa7eefb2a7e8bd93e3b2e1bc2f581d33718951b69146ee44840b55c56cbb29",
+            "originalInternalPath": "/tmp/infernal-v13/browser/desktop-unhappy-campers-boathouse-s2-after-movement.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-combats",
+              "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+              "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+              "originalStatus": "findings"
+            },
+            "observation": "Loona est plus à droite sur le quai ; les personnages ne passent pas dans le bassin. Aucun rognage ni étirement du fond."
+          },
+          {
+            "label": "desktop-gallery-art-hb_vikki-queen-bee-s1-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-art-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "8e7cad83e182f6e132a5c13be1923caf3253dbbe0c8193e15209231b4bce6067",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-art-hb_vikki-queen-bee-s1-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Chevelure, nœud, museau et buste entièrement dans le cadre, avec marges ; aucune déformation visible."
+          },
+          {
+            "label": "desktop-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-provenance-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "c6d6f0d9e7b3cb0ef0e67c546ece9e8d1bbbbec0dd075a791fca2274f1e3c7c4",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-provenance-hb_vikki-queen-bee-s1-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Titre Queen Bee S1, Archive narrative statique et Buste lisibles ; aucune promesse de base entière ou de kit jouable."
+          },
+          {
+            "label": "desktop-gallery-references-hb_vikki-queen-bee-s1-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-references-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "386580d941551c55d5dbbdd49074070453597bd8cbf435f84894e0a108777c65",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-references-hb_vikki-queen-bee-s1-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Lien cyan vers Queen Bee S1 Episode 8 entier et lisible."
+          },
+          {
+            "label": "desktop-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "e92876a41d97c68414ede809d99aa163a9b988d45b8696122cec7e48c2bf3278",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Carte et portrait entiers, badge PRODUIT OFFICIEL visible et titre correctement replié."
+          },
+          {
+            "label": "desktop-gallery-art-hb_tilla-nightmare-merch-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-art-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "42b2e168326229ba4a8a325b7dc9cf1492b334bce3e457a2d4cc220cc17c924e",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-art-hb_tilla-nightmare-merch-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Chevelure, corne, mains jointes et bord inférieur du portrait restent visibles dans leur cadre ; aucune déformation."
+          },
+          {
+            "label": "desktop-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-provenance-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "db157b4348e23c38280b0bd90b28054d718711b511d61da4d5d046c24092cbea",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-provenance-hb_tilla-nightmare-merch-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "ARCHIVES · PRODUIT OFFICIEL et Buste sont explicites ; provenance complète indiquant que cette incarnation en épisode n’est pas confirmée."
+          },
+          {
+            "label": "desktop-gallery-references-hb_tilla-nightmare-merch-portrait",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-references-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "a3e2151d4dbcc9fef94dc393227d62f97fbd5a83d762d8f8170b47914e3ea28e",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-references-hb_tilla-nightmare-merch-portrait.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Lien Nightmare Tilla — Glitter Enamel Pin lisible et entier."
+          },
+          {
+            "label": "desktop-gallery-art-spring-broken-red-cup",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-art-spring-broken-red-cup.png",
+            "sha256": "5d701f0d6946b5e7d84c490a86d1063366abe6dcddaee9175b63b34efee06103",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-art-spring-broken-red-cup.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Gobelet rouge renversé entier, rebord elliptique et fond visibles avec marges ; pas de rognage."
+          },
+          {
+            "label": "desktop-gallery-provenance-spring-broken-red-cup",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-provenance-spring-broken-red-cup.png",
+            "sha256": "2fbab267fa60f18821ddce55683a815f559a53738c0484d533b07bdccdcaacd0",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-provenance-spring-broken-red-cup.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Intitulé Spring Broken et statut Accessoire statique en réserve lisibles."
+          },
+          {
+            "label": "desktop-gallery-references-spring-broken-red-cup",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-references-spring-broken-red-cup.png",
+            "sha256": "4fa74fdbabeb2c210c2b1539744b589c627c96f9b3348e36a2f8736eef5d9f9e",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-references-spring-broken-red-cup.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Lien gobelet rouge renversé entier et lisible."
+          },
+          {
+            "label": "desktop-gallery-art-dhorks-red-button-panel-s1",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-art-dhorks-red-button-panel-s1.png",
+            "sha256": "d6fe2e9e1cb944a9b5fcaaabc3efb050fe0ee31cbd735fb10ac9386eb7d26439",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-art-dhorks-red-button-panel-s1.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Panneau entier, bord inférieur, bandes diagonales et texte RED BUTTON lisibles ; bouton rouge distinct."
+          },
+          {
+            "label": "desktop-gallery-provenance-dhorks-red-button-panel-s1",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-provenance-dhorks-red-button-panel-s1.png",
+            "sha256": "1a218eb3572508b8bc9bec8597fc8bb4d529f1bacf92a0db27c60b77a90a865f",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-provenance-dhorks-red-button-panel-s1.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Titre D.H.O.R.K.S. S1 et statut Accessoire statique en réserve explicites."
+          },
+          {
+            "label": "desktop-gallery-references-dhorks-red-button-panel-s1",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-references-dhorks-red-button-panel-s1.png",
+            "sha256": "e15ed29dba775656c2ed29d92afd2c44e07b4f33b30bdaed905f62087be47a0c",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-references-dhorks-red-button-panel-s1.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Lien du panneau complet et lisible ; destination primaire contrôlée dans la preuve automatisée."
+          },
+          {
+            "label": "desktop-gallery-art-asmodeus-bedroom-pitcher",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-art-asmodeus-bedroom-pitcher.png",
+            "sha256": "93ee77e869586b1feda81bf3878479486256e50103d7c18ca537e012f353134d",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-art-asmodeus-bedroom-pitcher.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Carafe entière : pointe du couvercle, bec, anse et base restent dans le cadre avec marges."
+          },
+          {
+            "label": "desktop-gallery-provenance-asmodeus-bedroom-pitcher",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-provenance-asmodeus-bedroom-pitcher.png",
+            "sha256": "1546284d2d674a98679411616fb79a88ba6bcadaf499dd2a40f8a6d40a06dffd",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-provenance-asmodeus-bedroom-pitcher.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Titre de la carafe et Accessoire statique en réserve lisibles ; dimensions affichées sans débordement."
+          },
+          {
+            "label": "desktop-gallery-references-asmodeus-bedroom-pitcher",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-references-asmodeus-bedroom-pitcher.png",
+            "sha256": "7c6b542203586cab7258454e6d0d763ef6d01f50215b1c4490d4beb5cff39422",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-references-asmodeus-bedroom-pitcher.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Le libellé de peinture 206 Paint 00007 décrit le décor complet (console et candélabre) ; il est lisible et renvoie à la source entière de la carafe, sans attribuer le prop au candélabre."
+          },
+          {
+            "label": "desktop-crymini-2017-provenance",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-crymini-2017-provenance.png",
+            "sha256": "b40e0cd6d57433e5390f7a28ea4cd9a05ce9f7d8d90001b5c50d428cbcbd4b62",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-crymini-2017-provenance.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "MODÈLE HISTORIQUE · 2017 reste distinct ; la note précise que le modèle antérieur à la série ne confirme pas une apparition récente."
+          },
+          {
+            "label": "desktop-gallery-filter-season-1",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-filter-season-1.png",
+            "sha256": "1dcb15699112356d8167435615016108c173cd3e85135d7d3ceb538f4c8d3837",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-filter-season-1.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Recherche Tilla explicite, Saison 1 uniquement sélectionnée,0 résultat et message de filtre vide lisibles."
+          },
+          {
+            "label": "desktop-gallery-filter-season-1-and-2",
+            "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/desktop-gallery-filter-season-1-and-2.png",
+            "sha256": "ba6f39133a416d6f54b5f62e8a4deeb1e5070b86d14ee3061fb51d93a3c76ca2",
+            "originalInternalPath": "/tmp/infernal-v13/browser/gallery-software/desktop-gallery-filter-season-1-and-2.png",
+            "sourceEvidence": {
+              "sourceId": "desktop-gallery",
+              "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+              "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+              "originalStatus": "diagnostic_checks_complete_not_acceptance"
+            },
+            "observation": "Même recherche avec Saisons 1 et 2 :1 carte Tilla visible, badge produit officiel et portrait complets."
+          }
+        ],
+        "observations": [
+          "Both source-guided arenas remain fully contained, with readable foreground fighting strips and no separately placed reserve props.",
+          "Vikki and Tilla remain static busts; the three objects remain reserve props.",
+          "Tilla carries official-product provenance without an asserted episode appearance.",
+          "The seasonal filter illustrations and all selected reference labels are legible.",
+          "The default home counter excludes the two season3arenas; this is distinct from the full inventory of 49 arenas."
+        ],
+        "limits": [
+          {
+            "kind": "evidence_scope",
+            "detail": "Targeted aggregate of completed source segments; earlier failed runs retain their failures. No continuous-session, full unfiltered gallery of 133 entries or cross-browser guarantee."
+          },
+          {
+            "kind": "rendering_backend",
+            "detail": "Retained desktop fights use the default headless renderer; retained gallery disables GPU acceleration. This does not identify the cause of prior native failures."
+          },
+          {
+            "kind": "motion_scope",
+            "detail": "Static before/after captures support placement and movement observations, not animation smoothness, performance or exhaustive camera behavior."
+          },
+          {
+            "kind": "provenance",
+            "detail": "Reference labels are inspected visually; href matching is supplied by browser assertions, external destinations were not opened here."
+          },
+          {
+            "kind": "art_fidelity",
+            "detail": "No 1:1 canonical fidelity certification. Floor/quay extensions remain explicit gameplay adaptations."
+          }
+        ],
+        "blockingFindings": [],
+        "appEditsMade": false,
+        "browserRerun": false,
+        "fidelityOneToOneCertified": false
+      }
+    },
+    {
+      "path": "docs/standalone/production-v13/browser-harness/mobile-visual-review.json",
+      "sha256": "e0ee574f5f88288c1e9927998d737c62a7523be7f76aa5c196aa9f14eca8116b",
+      "review": {
+        "schemaVersion": 1,
+        "edition": "V13",
+        "status": "passed",
+        "reviewer": "/root/v13_characters",
+        "reviewType": "independent_static_mobile_screenshot_visual_review",
+        "sourceRun": "/tmp/infernal-v13/browser/browser-qa-run.json",
+        "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+        "sourceRunStatus": "passed_automated_browser_checks_pending_visual_review",
+        "sourceEvidenceType": "targeted_aggregate_of_completed_segments",
+        "continuousRunCertified": false,
+        "sourceMobileRun": {
+          "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+          "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+          "segments": [
+            "dhorks-control-room-s1",
+            "unhappy-campers-boathouse-s2",
+            "gallery"
+          ],
+          "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+        },
+        "viewport": {
+          "name": "mobile",
+          "width": 390,
+          "height": 844,
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1,
+          "physicalDevice": false
+        },
+        "browser": {
+          "name": "Chromium",
+          "version": "143.0.7499.4",
+          "gpuDisabled": true,
+          "sharedMemory": "native /dev/shm",
+          "soundtrackOption": "enabled through unchanged UI option",
+          "audioAuditionPerformed": false
+        },
+        "reviewedCount": 28,
+        "reviewedLabels": [
+          "mobile-home",
+          "mobile-dhorks-control-room-s1-selection",
+          "mobile-dhorks-control-room-s1-fight",
+          "mobile-dhorks-control-room-s1-stage",
+          "mobile-dhorks-control-room-s1-after-movement",
+          "mobile-unhappy-campers-boathouse-s2-selection",
+          "mobile-unhappy-campers-boathouse-s2-fight",
+          "mobile-unhappy-campers-boathouse-s2-stage",
+          "mobile-unhappy-campers-boathouse-s2-after-movement",
+          "mobile-gallery-art-hb_vikki-queen-bee-s1-portrait",
+          "mobile-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+          "mobile-gallery-references-hb_vikki-queen-bee-s1-portrait",
+          "mobile-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+          "mobile-gallery-art-hb_tilla-nightmare-merch-portrait",
+          "mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+          "mobile-gallery-references-hb_tilla-nightmare-merch-portrait",
+          "mobile-gallery-art-spring-broken-red-cup",
+          "mobile-gallery-provenance-spring-broken-red-cup",
+          "mobile-gallery-references-spring-broken-red-cup",
+          "mobile-gallery-art-dhorks-red-button-panel-s1",
+          "mobile-gallery-provenance-dhorks-red-button-panel-s1",
+          "mobile-gallery-references-dhorks-red-button-panel-s1",
+          "mobile-gallery-art-asmodeus-bedroom-pitcher",
+          "mobile-gallery-provenance-asmodeus-bedroom-pitcher",
+          "mobile-gallery-references-asmodeus-bedroom-pitcher",
+          "mobile-crymini-2017-provenance",
+          "mobile-gallery-filter-season-1",
+          "mobile-gallery-filter-season-1-and-2"
+        ],
+        "captures": [
+          {
+            "label": "mobile-home",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-home.png",
+            "sha256": "c9beae4b7df8709009104971122b2cc99fe351cb0fc1282965b0d888fc8446d0",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-dhorks-control-room-s1-selection",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-dhorks-control-room-s1-selection.png",
+            "sha256": "7fda2112022cdd9116daf5518286518a596fe30e8914436f9d702110aa78bc5d",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-dhorks-control-room-s1-fight",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-dhorks-control-room-s1-fight.png",
+            "sha256": "280c86b5864fd63fd08c6c8094f2f69abf74a0722c0d629f0f97035aece566df",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-dhorks-control-room-s1-stage",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-dhorks-control-room-s1-stage.png",
+            "sha256": "fe1afc05be4528fcaa0a88f07b6734d404e4b91a42c9f4f1a481850b7e0e6848",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-dhorks-control-room-s1-after-movement",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-dhorks-control-room-s1-after-movement.png",
+            "sha256": "0fb04973acd70fd91ecc5df3163808f5296b74ae248d726f787f118a965719be",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-unhappy-campers-boathouse-s2-selection",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-unhappy-campers-boathouse-s2-selection.png",
+            "sha256": "fb25073732179381c8c4fc992085c0ce78b757bbc45ba218859571e5da9b58de",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-unhappy-campers-boathouse-s2-fight",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-unhappy-campers-boathouse-s2-fight.png",
+            "sha256": "d3c8ead9a0f9e2ec7257adfc1f77bc45bd7308021896afaf3c544065576a0cb6",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-unhappy-campers-boathouse-s2-stage",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-unhappy-campers-boathouse-s2-stage.png",
+            "sha256": "1ced94a568a66592ebb11669c243191e01a7bf572acc779b33e14e7c1fada9d4",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-unhappy-campers-boathouse-s2-after-movement",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-unhappy-campers-boathouse-s2-after-movement.png",
+            "sha256": "d3977cda7b47116d7299fc1def02ae5c631ce6420aef27244879891d5d3c065c",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-art-hb_vikki-queen-bee-s1-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "a03545055bac571f2751daaecc27d781b50cedd4cb967822e8f9945c3b037820",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "386f3661aef361a0f01175b15e70ad00b2433313f50b9d4456cba8a78a3965f4",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-references-hb_vikki-queen-bee-s1-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-references-hb_vikki-queen-bee-s1-portrait.png",
+            "sha256": "7aa9917f7654dcdf1f4ee4078d4a70ee28e9d353ba1de838c8a0f7357de2ceb8",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "22fe3e2c0ea70e63801ca74177f329873e471c0c8d76f1eb0f3ed5dbf2e9a87f",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-art-hb_tilla-nightmare-merch-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "18e21946dd702aac626d0d14a594b9d28234b251a86cd8d4ae726c6361555b34",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "8646aa3fbe2f43d0fb746644c08a2adbbee4991d6cf458ece15d525ca7bad299",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-references-hb_tilla-nightmare-merch-portrait",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-references-hb_tilla-nightmare-merch-portrait.png",
+            "sha256": "8c37777566a3eaafea5ee596fe02e88be5a19f236b34e8b5eeb68f36943e64ad",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-art-spring-broken-red-cup",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-spring-broken-red-cup.png",
+            "sha256": "ea6c81a027eb6158ac530151e8fab66b213bf8c05b6d515a9cd5389b07c4ffce",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-provenance-spring-broken-red-cup",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-spring-broken-red-cup.png",
+            "sha256": "55caaddef5acbbe6aec854723d401334e124181442d6ab2a32aef5ce8e51a097",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-references-spring-broken-red-cup",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-references-spring-broken-red-cup.png",
+            "sha256": "9e88383a1f2fafdb14567935aaffdfbce6d5716a8bbf9c483be055b7bd3e4c9f",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-art-dhorks-red-button-panel-s1",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-dhorks-red-button-panel-s1.png",
+            "sha256": "9306d380fc2ce498285321d766fc48a144c57c381f5d9f71dcd4a780a0022fc6",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-provenance-dhorks-red-button-panel-s1",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-dhorks-red-button-panel-s1.png",
+            "sha256": "dcc3f8e9f4856d94a65c87224d5fb5598d62aff7810efab1a3c80e84e7222bdc",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-references-dhorks-red-button-panel-s1",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-references-dhorks-red-button-panel-s1.png",
+            "sha256": "520cb3f5c10f6f2f5dafba99e19f244e6812b6ae6ec8b9ff2e1d573982ae612e",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-art-asmodeus-bedroom-pitcher",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-asmodeus-bedroom-pitcher.png",
+            "sha256": "1965040563b11b65606e26b24757d4ed9885d568ecd887e35d2d8a1a71af7b70",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-provenance-asmodeus-bedroom-pitcher",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-asmodeus-bedroom-pitcher.png",
+            "sha256": "177bd051883f7bb62f9501919a6dbcf2d1dc36a27c0a26b1ba890469d54041c7",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-references-asmodeus-bedroom-pitcher",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-references-asmodeus-bedroom-pitcher.png",
+            "sha256": "26f9518ad47d899b3d0343869f13143f767c9a4b444abca464e5d76642029e00",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-crymini-2017-provenance",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-crymini-2017-provenance.png",
+            "sha256": "c6558b463333504da5b422e0e3a824621c6731938f582975d0d46001854aaf9c",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-filter-season-1",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-filter-season-1.png",
+            "sha256": "71ebf5ae1ab313dfd481ae2db886c288083d3243c8d57126e9df5f562d352d03",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          },
+          {
+            "label": "mobile-gallery-filter-season-1-and-2",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-filter-season-1-and-2.png",
+            "sha256": "345f6d36db49b80543c578f8d3797d29e4c73477fa61c73a80a64a7a0dc0de19",
+            "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+            "sourceEvidence": {
+              "sourceId": "mobile-segments",
+              "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+              "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+              "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+            },
+            "visuallyInspectedIndividually": true
+          }
+        ],
+        "findings": [],
+        "observations": [
+          {
+            "scope": "mobile-home",
+            "result": "passed",
+            "detail": "Navigation, titre principal, texte et bouton Entrer dans l’arène lisibles. Le compteur affiche 43 combattants, 47 arènes et 9 modes. Les cartes de modes continuent sous le viewport sans débordement horizontal visible."
+          },
+          {
+            "scope": "mobile-dhorks-control-room-s1-selection",
+            "result": "passed",
+            "detail": "Vignette complète et contour de sélection doré visibles. Le nom D.H.O.R.K.S. · Salle de surveillance revient sur plusieurs lignes sans coupe de texte."
+          },
+          {
+            "scope": "mobile-dhorks-control-room-s1-fight",
+            "result": "passed",
+            "detail": "En-tête d’entraînement, nom de l’arène, noms des combattants, commandes Pause/Quit et jauges lisibles. Le viewport coupe naturellement le bas du panneau de combat ; le stage complet est vérifié dans sa capture isolée."
+          },
+          {
+            "scope": "mobile-dhorks-control-room-s1-stage",
+            "result": "passed",
+            "detail": "Loona et Blitzø sont visibles jusqu’aux pieds, avec cheveux, cornes et queues entiers. Le fond est contenu, sans étirement visible ; l’espace uni au-dessus du décor résulte du cadrage contain aligné en bas."
+          },
+          {
+            "scope": "mobile-dhorks-control-room-s1-after-movement",
+            "result": "passed",
+            "detail": "La position de Loona est décalée vers la droite par rapport à la capture précédente. Pieds et queue restent cadrés ; le décor reste contenu et ne présente pas de déformation visible."
+          },
+          {
+            "scope": "mobile-unhappy-campers-boathouse-s2-selection",
+            "result": "passed",
+            "detail": "Vignette du hangar complète, sélection dorée et libellé Unhappy Campers · Hangar à bateaux lisibles."
+          },
+          {
+            "scope": "mobile-unhappy-campers-boathouse-s2-fight",
+            "result": "passed",
+            "detail": "En-tête, commandes et jauges du second entraînement restent lisibles. La couleur unie au-dessus du décor est cohérente avec le cadrage contain ; la capture isolée complète la vue partielle du stage dans le viewport."
+          },
+          {
+            "scope": "mobile-unhappy-campers-boathouse-s2-stage",
+            "result": "passed",
+            "detail": "Les deux combattants sont entièrement cadrés devant la barque, les fenêtres et le plancher. Le décor reste contenu sans accessoire indépendant ajouté et sans étirement visible."
+          },
+          {
+            "scope": "mobile-unhappy-campers-boathouse-s2-after-movement",
+            "result": "passed",
+            "detail": "Loona apparaît plus à droite ; ses pieds, sa queue et la silhouette de Blitzø restent entiers. Les changements de position du personnage et du fond sont visibles entre les captures statiques."
+          },
+          {
+            "scope": "mobile-gallery-art-hb_vikki-queen-bee-s1-portrait",
+            "result": "passed",
+            "detail": "Le portrait de Vikki est entier dans le cadre de galerie : sommet et côtés de la coiffure, visage et bord volontaire du buste restent visibles, avec un fond alpha propre."
+          },
+          {
+            "scope": "mobile-gallery-provenance-hb_vikki-queen-bee-s1-portrait",
+            "result": "passed",
+            "detail": "Le titre, Archive narrative statique, Buste et 1312 × 1199 pixels sont lisibles. La réserve sur la conformité exacte des détails et le bouton de fermeture ne se chevauchent pas."
+          },
+          {
+            "scope": "mobile-gallery-references-hb_vikki-queen-bee-s1-portrait",
+            "result": "passed",
+            "detail": "Le lien de référence de Queen Bee est lisible sur une ligne et reste dans la largeur de sa capture."
+          },
+          {
+            "scope": "mobile-gallery-merchandise-card-hb_tilla-nightmare-merch-portrait",
+            "result": "passed",
+            "detail": "La carte de Tilla montre le portrait complet. Le badge ARCHIVES · HELLUVA BOSS · PRODUIT OFFICIEL est visible, ainsi que le titre explicite marchandise officielle sur deux lignes."
+          },
+          {
+            "scope": "mobile-gallery-art-hb_tilla-nightmare-merch-portrait",
+            "result": "passed",
+            "detail": "Le buste de Tilla, sa grande corne, sa chevelure, ses mains et les pointes du vêtement restent entièrement dans le cadre. Le rendu n’est pas étiré ; la petite marque haute de la corne reste visible sans certification de son statut canonique."
+          },
+          {
+            "scope": "mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+            "result": "passed",
+            "detail": "Le badge PRODUIT OFFICIEL, le titre, la qualification Buste et 1254 × 1254 pixels sont lisibles. La phrase indique clairement que l’apparition exacte de cette incarnation dans un épisode n’est pas confirmée."
+          },
+          {
+            "scope": "mobile-gallery-references-hb_tilla-nightmare-merch-portrait",
+            "result": "passed",
+            "detail": "Le lien Nightmare Tilla — Glitter Enamel Pin est lisible et contenu dans sa largeur."
+          },
+          {
+            "scope": "mobile-gallery-art-spring-broken-red-cup",
+            "result": "passed",
+            "detail": "Le gobelet rouge renversé est entièrement visible, y compris son ouverture, son bord et son fond. Aucune coupe ou déformation visible dans le cadre alpha."
+          },
+          {
+            "scope": "mobile-gallery-provenance-spring-broken-red-cup",
+            "result": "passed",
+            "detail": "Le titre Spring Broken · gobelet rouge renversé, la mention Accessoire statique en réserve et 1536 × 1024 pixels sont lisibles ; la notice et le bouton de fermeture restent séparés."
+          },
+          {
+            "scope": "mobile-gallery-references-spring-broken-red-cup",
+            "result": "passed",
+            "detail": "Le lien de référence du gobelet est lisible et contenu sur une ligne."
+          },
+          {
+            "scope": "mobile-gallery-art-dhorks-red-button-panel-s1",
+            "result": "passed",
+            "detail": "Le panneau et son bouton sont entiers, avec tous les coins et la base visibles. L’inscription RED BUTTON est lisible ; le cadre conserve les proportions de l’image."
+          },
+          {
+            "scope": "mobile-gallery-provenance-dhorks-red-button-panel-s1",
+            "result": "passed",
+            "detail": "Le titre D.H.O.R.K.S. · panneau du bouton rouge S1, Accessoire statique en réserve et 1061 × 1483 pixels sont lisibles. Les retours à la ligne restent contenus."
+          },
+          {
+            "scope": "mobile-gallery-references-dhorks-red-button-panel-s1",
+            "result": "passed",
+            "detail": "Le lien de référence du panneau D.H.O.R.K.S. est lisible, sans coupe horizontale visible."
+          },
+          {
+            "scope": "mobile-gallery-art-asmodeus-bedroom-pitcher",
+            "result": "passed",
+            "detail": "La carafe est entièrement cadrée, y compris le bec, l’anse, le couvercle et son sommet. Les proportions et la silhouette alpha restent lisibles."
+          },
+          {
+            "scope": "mobile-gallery-provenance-asmodeus-bedroom-pitcher",
+            "result": "passed",
+            "detail": "Le titre Asmodeus · carafe de la chambre, Accessoire statique en réserve et 1287 × 1222 pixels sont lisibles, avec une notice et un bouton de fermeture sans chevauchement."
+          },
+          {
+            "scope": "mobile-gallery-references-asmodeus-bedroom-pitcher",
+            "result": "passed",
+            "detail": "Le titre long de la peinture 206 Paint 00007 revient sur deux lignes ; le mot candélabre et l’ensemble du lien restent visibles."
+          },
+          {
+            "scope": "mobile-crymini-2017-provenance",
+            "result": "passed",
+            "detail": "Le titre et le badge identifient explicitement Crymini comme modèle historique 2017. La notice dit que ce modèle est antérieur à la série et ne confirme pas une apparence dans les saisons récentes."
+          },
+          {
+            "scope": "mobile-gallery-filter-season-1",
+            "result": "passed",
+            "detail": "Le filtre Saison 1 uniquement et la recherche de Tilla restent lisibles. Le compteur indique 0 dessin affiché sur 57 disponibles et le message d’absence de résultat est visible ; aucune carte Tilla n’apparaît."
+          },
+          {
+            "scope": "mobile-gallery-filter-season-1-and-2",
+            "result": "passed",
+            "detail": "Le filtre Saisons 1 et 2 conserve la même recherche et affiche 1 dessin sur 133 disponibles. La carte de Tilla réapparaît ; sa partie basse continue sous le viewport, son dessin complet étant vérifié dans les captures de carte et d’aperçu."
+          }
+        ],
+        "inheritedAutomatedEvidence": {
+          "selectedBrowserAssertions": 184,
+          "selectedMobileAssertions": 92,
+          "integrityChecks": 16,
+          "selectedCaptures": 56,
+          "rootRuntimeInputCount": 198,
+          "rootRuntimeFingerprint": "ac0c4bce3fb2b3a05132e25fd62e5893a4cee5f701f232392d8b0629e139b161",
+          "executedAgainByThisReviewer": false
+        },
+        "limits": [
+          "Inspection visuelle statique de 28 captures individuellement ouvertes et de leurs empreintes ; viewport mobile émulé 390 × 844 à DPR 1. Aucun appareil physique testé.",
+          "Les captures mobiles proviennent de trois segments réussis, exécutés dans des navigateurs séparés avec --disable-gpu. La revue ne certifie aucune passe continue.",
+          "L’agrégat conserve les sources, indices et empreintes des segments retenus. Les échecs et crashes des tentatives précédentes restent archivés et ne sont pas requalifiés en succès par cette revue.",
+          "La cause des défaillances natives précédentes n’est pas établie ; aucune attribution définitive au GPU, à l’audio, à la mémoire ou au contenu des images.",
+          "La musique est activée dans les options des segments retenus, conformément au run source. Cette revue de captures n’évalue ni l’audio écouté ni la stabilité du cycle audio.",
+          "Les positions avant/après déplacement sont comparées sur images fixes ; fluidité temporelle, performances et ergonomie tactile sur matériel physique ne sont pas certifiées.",
+          "Le navigateur n’a pas été relancé et aucun fichier de runtime ou asset n’a été modifié pendant cette revue. Les assertions automatisées citées appartiennent au run source.",
+          "Les liens de référence sont vérifiés pour leur lisibilité visible ; leurs destinations n’ont pas été ouvertes pendant cette passe.",
+          "Le parcours observé cible les nouvelles créations et régressions indiquées. Les longues sessions, le défilement prolongé et l’expansion intégrale des 133 fiches ne sont pas validés.",
+          "La revue des captures ne certifie aucune fidélité artistique ou canonique 1:1."
+        ],
+        "captureHashesVerified": true,
+        "sourceRunHashVerified": true,
+        "sourceMobileRunHashVerified": true,
+        "fidelityOneToOneCertified": false,
+        "browserRelaunched": false,
+        "runtimeModified": false,
+        "reviewedAt": "2026-11-26T20:28:28.570Z"
+      }
+    }
+  ],
+  "rootSpotCheck": {
+    "path": "docs/standalone/production-v13/browser-harness/root-visual-spot-check.json",
+    "sha256": "b7d01b44de905348ac7544593bf48703762bea67ba3df83777555c7c54115ebd",
+    "review": {
+      "edition": "V13",
+      "status": "accepted_targeted_spot_check",
+      "reviewer": "/root",
+      "sourceRunSha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+      "confirmedBy": "Parent messages confirming the four exact views, including stage-only 330×300 boathouse capture.",
+      "reviewedAt": "2026-11-26T20:29:32.352044+00:00",
+      "captures": [
+        {
+          "label": "mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait",
+          "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait.png",
+          "sha256": "8646aa3fbe2f43d0fb746644c08a2adbbee4991d6cf458ece15d525ca7bad299",
+          "originalInternalPath": "/tmp/infernal-v13/browser/mobile-final/mobile-gallery-provenance-hb_tilla-nightmare-merch-portrait.png",
+          "sourceEvidence": {
+            "sourceId": "mobile-segments",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+            "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+            "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+          }
+        },
+        {
+          "label": "mobile-gallery-art-hb_vikki-queen-bee-s1-portrait",
+          "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-hb_vikki-queen-bee-s1-portrait.png",
+          "sha256": "a03545055bac571f2751daaecc27d781b50cedd4cb967822e8f9945c3b037820",
+          "originalInternalPath": "/tmp/infernal-v13/browser/mobile-final/mobile-gallery-art-hb_vikki-queen-bee-s1-portrait.png",
+          "sourceEvidence": {
+            "sourceId": "mobile-segments",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+            "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+            "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+          }
+        },
+        {
+          "label": "mobile-gallery-art-hb_tilla-nightmare-merch-portrait",
+          "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-gallery-art-hb_tilla-nightmare-merch-portrait.png",
+          "sha256": "18e21946dd702aac626d0d14a594b9d28234b251a86cd8d4ae726c6361555b34",
+          "originalInternalPath": "/tmp/infernal-v13/browser/mobile-final/mobile-gallery-art-hb_tilla-nightmare-merch-portrait.png",
+          "sourceEvidence": {
+            "sourceId": "mobile-segments",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+            "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+            "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+          }
+        },
+        {
+          "label": "mobile-unhappy-campers-boathouse-s2-stage",
+          "internalPath": "/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/mobile-final-segments/mobile-unhappy-campers-boathouse-s2-stage.png",
+          "sha256": "1ced94a568a66592ebb11669c243191e01a7bf572acc779b33e14e7c1fada9d4",
+          "originalInternalPath": "/tmp/infernal-v13/browser/mobile-final/mobile-unhappy-campers-boathouse-s2-stage.png",
+          "sourceEvidence": {
+            "sourceId": "mobile-segments",
+            "path": "docs/standalone/production-v13/browser-harness/mobile-final-segments/browser-qa-run.json",
+            "sha256": "a1d85c3d0ef4dfa6a83832ff75dbbf08b6e00e9358cb7f4e13b2e2a851f0c422",
+            "originalStatus": "passed_targeted_mobile_checks_pending_visual_review"
+          }
+        }
+      ],
+      "observations": [
+        "Tilla provenance is complete and legible.",
+        "Vikki remains an entire supplied bust without clipping.",
+        "Tilla portrait shows the hands and final horn completely.",
+        "Boathouse stage-only 330×300 view shows Loona left and Blitzø right on the foreground quay, with water and boat behind."
+      ],
+      "limits": [
+        "Targeted independent spot-check; complete mobile review is recorded separately."
+      ]
+    }
+  },
+  "observations": [
+    "All 56 selected captures were individually inspected; each hash matches its preserved source file.",
+    "Both new arenas and all five gallery entries are visually legible on desktop and mobile emulation.",
+    "Tilla official-product provenance, Vikki/Tilla bust status, reserve props and Crymini 2017 are explicit."
+  ],
+  "limits": [
+    "This is a targeted aggregate of completed segments; it is not one continuous pass.",
+    "Seven earlier failed browser attempts and two unsuccessful diagnostic runs remain archived. Their incomplete coverage assertions and renderer errors are not counted as successful observations.",
+    "Native renderer failures also occurred before restoring the whole catalogue; their cause is undetermined and is not attributed conclusively to GPU, audio, memory or asset content.",
+    "The retained desktop-gallery and mobile segments disable GPU acceleration. Default soundtrack remains enabled.",
+    "Long continuous sessions, full unfiltered 133-entry expansion/prolonged scrolling, physical devices and cross-browser behavior are not certified.",
+    "Static screenshot review does not certify audio playback, smooth animation or physical-device ergonomics.",
+    "Reference href assertions are retained from their exact browser source checks; external destinations were not opened during visual review."
+  ]
+}

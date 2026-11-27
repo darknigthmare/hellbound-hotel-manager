@@ -1,0 +1,60 @@
+TRAINING_CONTROL_DIAGNOSTIC {"viewport":"desktop","stageId":"dhorks-control-room-s1","labelCounts":{"exact":0,"prefix":1,"role":1},"controls":[{"tag":"SELECT","labels":[{"textContent":"UniversLes deux universHazbin HotelHelluva Boss","innerText":"UNIVERS\nLes deux univers\nHazbin Hotel\nHelluva Boss"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"ContenuSaisons 1 et 2Saison 1 uniquement","innerText":"CONTENU\nSaisons 1 et 2\nSaison 1 uniquement"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":"Rechercher","innerText":"RECHERCHER"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"Tenue de Charlie MorningstarTenue habituelleCombat final S1 · forme démoniaque","innerText":"TENUE DE CHARLIE MORNINGSTAR\nTenue habituelle\nCombat final S1 · forme démoniaque"}],"ariaLabel":null},{"tag":"SELECT","labels":[{"textContent":"MannequinImmobileGarde permanente","innerText":"MANNEQUIN\nImmobile\nGarde permanente"}],"ariaLabel":null},{"tag":"INPUT","labels":[{"textContent":" Autoriser les décors et créations de saison 3","innerText":"AUTORISER LES DÉCORS ET CRÉATIONS DE SAISON 3"}],"ariaLabel":null}]}
+locator.waitFor: Timeout 18000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-stage="dhorks-control-room-s1"]') to be visible[22m
+
+    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:206:74)
+    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:321:46 {
+  log: [
+    `  - waiting for locator('[data-stage="dhorks-control-room-s1"]') to be visible`
+  ],
+  name: 'TimeoutError'
+}
+CHECK_FAILED hb_vikki-queen-bee-s1-portrait: observed in both viewports undefined
+CHECK_FAILED hb_tilla-nightmare-merch-portrait: observed in both viewports undefined
+CHECK_FAILED spring-broken-red-cup: observed in both viewports undefined
+CHECK_FAILED dhorks-red-button-panel-s1: observed in both viewports undefined
+CHECK_FAILED asmodeus-bedroom-pitcher: observed in both viewports undefined
+CHECK_FAILED dhorks-control-room-s1-room: observed in both viewports undefined
+CHECK_FAILED unhappy-campers-boathouse-s2-room: observed in both viewports undefined
+{
+  "status": "findings",
+  "checks": 15,
+  "checkedAssetIds": [],
+  "failedChecks": [
+    {
+      "name": "hb_vikki-queen-bee-s1-portrait: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "hb_tilla-nightmare-merch-portrait: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "spring-broken-red-cup: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "dhorks-red-button-panel-s1: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "asmodeus-bedroom-pitcher: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "dhorks-control-room-s1-room: observed in both viewports",
+      "passed": false
+    },
+    {
+      "name": "unhappy-campers-boathouse-s2-room: observed in both viewports",
+      "passed": false
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "executionError": "locator.waitFor: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-stage=\"dhorks-control-room-s1\"]') to be visible\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:206:74)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:321:46",
+  "screenshots": 2
+}

@@ -1,0 +1,185 @@
+
+ RUN  v4.1.10 /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager
+
+ ❯ src/tests/infernal-preload.test.tsx (6 tests | 6 failed) 183ms
+     × requests only the two READY images and shared attack effect when both sides are static 81ms
+     × keeps the normal opponent and detached finish prop without loading the static side’s banks 32ms
+     × preserves shared banks for normal Blitzø while skipping Moxxie’s unused base poses on the other side 20ms
+     × retains all shared banks and base poses in a static-versus-normal mirror match 17ms
+     × keeps existing multi-pose costumes and their banks intact 18ms
+     × ignores costume preload restrictions outside infernal rules 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > requests only the two READY images and shared attack effect when both sides are static
+AssertionError: expected Set{ …(6) } to deeply equal Set{ …(3) }
+
+- Expected
++ Received
+
+  Set {
+    "/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp",
+    "/assets/production/v14/characters/hb_moxxie-dress-disguise-training-short.webp",
++   "/assets/sprites/hazbin/animation/v1/movement/hazbin-companions-movement.png",
++   "/assets/sprites/hazbin/animation/v1/movement/hazbin-hotel-patrons-movement.png",
++   "/assets/sprites/hazbin/animation/v1/movement/hazbin-recurring-patrons-ii-movement.png",
+    "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+  }
+
+ ❯ src/tests/infernal-preload.test.tsx:85:34
+     83|     const readyOne = getInfernalCostume('hb_blitzo', BLITZO_COSTUME)!.…
+     84|     const readyTwo = getInfernalCostume('hb_moxxie', MOXXIE_COSTUME)!.…
+     85|     expect(new Set(requested())).toEqual(new Set([readyOne, readyTwo, …
+       |                                  ^
+     86|     expect(images).toHaveLength(3);
+     87|     expect(document.querySelector('.arena-combatant.is-one > img')?.ge…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > keeps the normal opponent and detached finish prop without loading the static side’s banks
+AssertionError: expected [ …(17) ] to deeply equal [ …(19) ]
+
+- Expected
++ Received
+
+@@ -1,8 +1,6 @@
+  [
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-recurring-patrons-ii-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/season2-au-movement.png",
+    "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
+    "/assets/sprites/hazbin/animation/v1/offense/core-b-offense.png",
+    "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png",
+    "/assets/sprites/hazbin/cinematics/v1/intro/core-b-intro.png",
+    "/assets/sprites/hazbin/cinematics/v1/victory/core-b-victory.png",
+
+ ❯ finishPreloading src/tests/infernal-preload.test.tsx:67:19
+     65|   act(() => { vi.advanceTimersByTime(900); });
+     66|   // Every observed Image.src assignment reaches the preload decoder e…
+     67|   expect(decoded).toEqual(requested());
+       |                   ^
+     68|   images.forEach(image => expect(image.decode).toHaveBeenCalledTimes(1…
+     69| }
+ ❯ src/tests/infernal-preload.test.tsx:101:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > preserves shared banks for normal Blitzø while skipping Moxxie’s unused base poses on the other side
+AssertionError: expected [ …(16) ] to deeply equal [ …(19) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,6 @@
+  [
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-recurring-patrons-ii-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-companions-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-hotel-patrons-movement.png",
+    "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
+    "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
+    "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png",
+    "/assets/sprites/helluva/sheets/helluva-core.png",
+    "/assets/sprites/individual/hb_blitzo-ready.webp",
+
+ ❯ finishPreloading src/tests/infernal-preload.test.tsx:67:19
+     65|   act(() => { vi.advanceTimersByTime(900); });
+     66|   // Every observed Image.src assignment reaches the preload decoder e…
+     67|   expect(decoded).toEqual(requested());
+       |                   ^
+     68|   images.forEach(image => expect(image.decode).toHaveBeenCalledTimes(1…
+     69| }
+ ❯ src/tests/infernal-preload.test.tsx:110:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > retains all shared banks and base poses in a static-versus-normal mirror match
+AssertionError: expected [ …(16) ] to deeply equal [ …(20) ]
+
+- Expected
++ Received
+
+@@ -1,10 +1,6 @@
+  [
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-hotel-patrons-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-recurring-patrons-ii-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/season2-au-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png",
+    "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
+    "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
+    "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png",
+    "/assets/sprites/helluva/sheets/helluva-core.png",
+    "/assets/production/v14/characters/hb_blitzo-flashback-ghostfuckers-s2.webp",
+
+ ❯ finishPreloading src/tests/infernal-preload.test.tsx:67:19
+     65|   act(() => { vi.advanceTimersByTime(900); });
+     66|   // Every observed Image.src assignment reaches the preload decoder e…
+     67|   expect(decoded).toEqual(requested());
+       |                   ^
+     68|   images.forEach(image => expect(image.decode).toHaveBeenCalledTimes(1…
+     69| }
+ ❯ src/tests/infernal-preload.test.tsx:122:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > keeps existing multi-pose costumes and their banks intact
+AssertionError: expected [ …(21) ] to deeply equal [ …(25) ]
+
+- Expected
++ Received
+
+@@ -1,10 +1,6 @@
+  [
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-city-names-b-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-heaven-pets-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-hotel-patrons-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
+    "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
+    "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
+    "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png",
+    "/assets/sprites/helluva/sheets/helluva-core.png",
+    "/assets/sprites/individual/hb_moxxie-ready.webp",
+
+ ❯ finishPreloading src/tests/infernal-preload.test.tsx:67:19
+     65|   act(() => { vi.advanceTimersByTime(900); });
+     66|   // Every observed Image.src assignment reaches the preload decoder e…
+     67|   expect(decoded).toEqual(requested());
+       |                   ^
+     68|   images.forEach(image => expect(image.decode).toHaveBeenCalledTimes(1…
+     69| }
+ ❯ src/tests/infernal-preload.test.tsx:136:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  src/tests/infernal-preload.test.tsx > Combat image preloading for static costumes > ignores costume preload restrictions outside infernal rules
+AssertionError: expected [ …(9) ] to deeply equal [ …(12) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,6 @@
+  [
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-recurring-patrons-ii-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-companions-movement.png",
+-   "/assets/sprites/hazbin/animation/v1/movement/hazbin-hotel-patrons-movement.png",
+    "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
+    "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
+    "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png",
+    "/assets/sprites/helluva/sheets/helluva-core.png",
+    "/assets/sprites/helluva/animation/v1/reaction/helluva-core-reaction.png",
+
+ ❯ finishPreloading src/tests/infernal-preload.test.tsx:67:19
+     65|   act(() => { vi.advanceTimersByTime(900); });
+     66|   // Every observed Image.src assignment reaches the preload decoder e…
+     67|   expect(decoded).toEqual(requested());
+       |                   ^
+     68|   images.forEach(image => expect(image.decode).toHaveBeenCalledTimes(1…
+     69| }
+ ❯ src/tests/infernal-preload.test.tsx:152:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed (6)
+   Start at  23:11:57
+   Duration  1.57s (transform 314ms, setup 0ms, import 528ms, tests 183ms, environment 636ms)
+

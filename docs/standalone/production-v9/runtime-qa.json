@@ -1,0 +1,111 @@
+{
+  "edition": "V9",
+  "status": "passed",
+  "startedAt": "2026-11-26T14:50:57.627Z",
+  "completedAt": "2026-11-26T14:52:39.138Z",
+  "summary": "413 tests dans 47 suites ; typecheck, lint, builds manager et standalone puis contrôle d’intégrité de la distribution.",
+  "command": "node docs/standalone/production-v9/verify-runtime.mjs",
+  "standardQaScriptPassed": false,
+  "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
+  "testsPassed": 413,
+  "testSuites": 47,
+  "validatedAcceptedDrawings": 7,
+  "managerBuild": "passed",
+  "standaloneBuild": "passed",
+  "gates": [
+    {
+      "gate": "typecheck",
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "gate": "lint",
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    {
+      "gate": "tests",
+      "command": "npm test",
+      "exitCode": 0
+    },
+    {
+      "gate": "manager-build",
+      "status": "passed",
+      "publicFilesLinked": 1287
+    },
+    {
+      "gate": "standalone-build",
+      "status": "passed",
+      "publicFilesLinked": 1287
+    },
+    {
+      "gate": "standalone-packaging",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/finalize-standalone.mjs",
+      "exitCode": 0
+    },
+    {
+      "gate": "standalone-integrity",
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/check-standalone.mjs",
+      "exitCode": 0
+    }
+  ],
+  "standaloneIntegrityOutput": "Standalone verified: 1291 hashes, boot assets present, hotel/cloud persistence excluded.",
+  "standaloneManifest": "dist-combat/standalone-manifest.json",
+  "standaloneManifestSha256": "87a960668e353a311cd986618a6d19b4c3e439529f303294d8b43387772935b1",
+  "runtimeInputFiles": [
+    {
+      "path": "src/lib/infernal-appearances.ts",
+      "sha256": "1b8b4f7cf0043b1c40e212bb5c230e5fa4101dc6ca1e0db14e88e6ea64668665"
+    },
+    {
+      "path": "src/lib/pentagram-stages.ts",
+      "sha256": "73bc3e2ed9ed593d3b5c7c5983a355f777c28a80fd894e6dee5a25b993ef8bb0"
+    },
+    {
+      "path": "src/styles/pentagram-arena.css",
+      "sha256": "ac51aad9d4d9e10b19dea6bcbac97f55a9e74a54673ee3912acf653e3bbe0b93"
+    },
+    {
+      "path": "src/standalone/ReserveGallery.tsx",
+      "sha256": "12d1cded0d68a567434fd5e18f7fb5d56c379be3a9c1cb04b7e6e032581832e0"
+    },
+    {
+      "path": "art/infernal-versus/production/reserve-assets.json",
+      "sha256": "42d19743e6acc25327f7d0f0a80ed275c4a6fc4742977a67beb3b944a4bfe300"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-bar-stool.webp",
+      "sha256": "1ba8c4cdbabe7e836b32cc3b1b17914c4a29808211cb49309bf9d8a7f7e689a0"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-honeycomb-divider.webp",
+      "sha256": "f608fc643c7ef6df6e36b2919fbf032e6cb960d70aba9aabcbf0dd2478341661"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-room.webp",
+      "sha256": "b3c1f6b6bf3bec67a0a56dcaf9a061653d10dc3cecebee7b0931e2ecf45a3f4d"
+    },
+    {
+      "path": "public/assets/production/v9/environment/bee-lounge-s1-thumb.webp",
+      "sha256": "98f9413579fdc17398daf1ab9a914fed2d1cf6caa636b73514c5373f0bea97e2"
+    },
+    {
+      "path": "public/assets/production/v9/hazbin/lute-post-finale-s1-ready.webp",
+      "sha256": "e4a9dfc00d2ba5f2e73d11206fb430acd146e4fd0445678e71ef11d345ee7edd"
+    },
+    {
+      "path": "public/assets/production/v9/helluva/hb_moxxies_mother-portrait-s2.webp",
+      "sha256": "f5a4fee3f78248bf9a66dfc0b6760a5f5e63a4bbd2015594d8f3041ce7537ffd"
+    },
+    {
+      "path": "public/assets/production/v9/props/loo-loo-thing-plush.webp",
+      "sha256": "304ff112386f5d6f8ec815480aebdcdb09810dc9f078f3292c5b2418e1891b3f"
+    },
+    {
+      "path": "public/assets/production/v9/props/stolas-grimoire-closed.webp",
+      "sha256": "1c58556142cabfca3e0279940ac52fa5e3900ab82f1200c6ca63537c6be9ee39"
+    }
+  ],
+  "runtimeInputFingerprint": "724c9ae3725814db86f4338f6166a16aac393a4e5cffbc4a85d02f440ae12d25",
+  "log": "docs/standalone/production-v9/qa-runtime.log"
+}

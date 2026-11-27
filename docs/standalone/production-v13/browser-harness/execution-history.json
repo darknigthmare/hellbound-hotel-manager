@@ -1,0 +1,154 @@
+{
+  "edition": "V13",
+  "acceptanceMethod": "Targeted aggregate of completed segments; no failed run is reclassified.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-1/browser-qa-run.json",
+      "sha256": "3aea8d181a6697aa85e4f4a445bc0944fd9f20e6183ab7f003f47c53befb0479",
+      "status": "findings",
+      "method": "Vite development server",
+      "checksRecorded": 15,
+      "capturesRecorded": 2,
+      "executionError": "locator.waitFor: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-stage=\"dhorks-control-room-s1\"]') to be visible\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:206:74)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:321:46",
+      "rendererEvents": [],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 2,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-2/browser-qa-run.json",
+      "sha256": "5c26aa1452db6c18a9395b4c2dff6a7bd5f22ab3026cb862babbf898d69d9925",
+      "status": "findings",
+      "method": "Vite development server",
+      "checksRecorded": 15,
+      "capturesRecorded": 2,
+      "executionError": "locator.click: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Lancer le combat' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"iv-primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:205:80)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:332:46",
+      "rendererEvents": [],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 3,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-3/browser-qa-run.json",
+      "sha256": "66b1c136405c0ab94c131fb2475daa6616d1ec91a5f6964cc78e62f4140e4f8c",
+      "status": "findings",
+      "method": "Vite development server",
+      "checksRecorded": 15,
+      "capturesRecorded": 2,
+      "executionError": "page.waitForFunction: Target crashed \n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:242:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:356:46",
+      "rendererEvents": [
+        {
+          "viewport": "desktop",
+          "event": "crash",
+          "at": "2026-11-26T20:03:42.334Z"
+        }
+      ],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 4,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-4/browser-qa-run.json",
+      "sha256": "43806d75b7f0741fec06a563dcbb83f26d6012dc23ff7c546884b6151fd4df10",
+      "status": "findings",
+      "method": "Vite development server",
+      "checksRecorded": 15,
+      "capturesRecorded": 2,
+      "executionError": "page.waitForFunction: Timeout 16000ms exceeded.\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:242:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:358:46",
+      "rendererEvents": [
+        {
+          "viewport": "desktop",
+          "event": "crash",
+          "at": "2026-11-26T20:05:58.699Z"
+        }
+      ],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 5,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-5/browser-qa-run.json",
+      "sha256": "5c44f365dadb8cfa0fb94878d6916d2810bd8516a13a30b28f3aa12146bbd36d",
+      "status": "findings",
+      "method": "Validated static production package",
+      "checksRecorded": 46,
+      "capturesRecorded": 9,
+      "executionError": "locator.click: Timeout 18000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Galerie', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button>…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:267:70)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:364:46",
+      "rendererEvents": [],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 6,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-6/browser-qa-run.json",
+      "sha256": "4b5a305a635f0c43235cfc24014971a4224cebb86203ce17f48784dd1fb214fa",
+      "status": "findings",
+      "method": "Validated static production package",
+      "checksRecorded": 97,
+      "capturesRecorded": 26,
+      "executionError": "locator.scrollIntoViewIfNeeded: Target crashed \nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    - waiting for element to be stable\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:339:52)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:34:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:398:11",
+      "rendererEvents": [
+        {
+          "viewport": "desktop",
+          "event": "crash",
+          "at": "2026-11-26T20:13:46.718Z"
+        }
+      ],
+      "globalFailuresRetained": true,
+      "selectedSegments": []
+    },
+    {
+      "attempt": 7,
+      "path": "docs/standalone/production-v13/browser-harness/attempts/attempt-7/browser-qa-run.json",
+      "sha256": "6ee39f535ce7bcbcb11049a05d26b411bea0a95769f63fa931144f614ea1a3f7",
+      "status": "findings",
+      "method": "Validated static production package",
+      "checksRecorded": 89,
+      "capturesRecorded": 25,
+      "executionError": "locator.innerText: Target crashed \nCall log:\n\u001b[2m  - waiting for locator('.iv-reserve-detail').locator('p.iv-eyebrow')\u001b[22m\n\n    at inspectViewport (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:328:63)\n    at async bounded (/workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:34:16)\n    at async /workspace/scratch/57c1b6f2d64f/hellbound-hotel-manager/docs/standalone/production-v13/browser-harness/run-browser-qa.cjs:409:11",
+      "rendererEvents": [
+        {
+          "viewport": "desktop",
+          "event": "crash",
+          "at": "2026-11-26T20:19:33.487Z"
+        }
+      ],
+      "globalFailuresRetained": true,
+      "selectedSegments": [
+        "desktop dhorks-control-room-s1",
+        "desktop unhappy-campers-boathouse-s2"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "path": "docs/standalone/production-v13/browser-harness/isolation/transition-isolation.json",
+      "sha256": "ffaf1057b63d351fc881a94e93e730adb226ce971447d7a482b90480af3edd92",
+      "status": "findings",
+      "acceptanceScope": "Diagnostic only; no acceptance count"
+    },
+    {
+      "path": "docs/standalone/production-v13/browser-harness/gallery-memory-diagnostic/browser-qa-run.json",
+      "sha256": "90bbe958130f7c9a41a678192edae6c44da3cb85836cba84602bd2989b1aa2f8",
+      "status": "findings",
+      "acceptanceScope": "Diagnostic only; no acceptance count"
+    },
+    {
+      "path": "docs/standalone/production-v13/browser-harness/gallery-software-diagnostic/browser-qa-run.json",
+      "sha256": "fab41e074140115baede872278bf22fe56fb82067916415b2dcbd0579374c811",
+      "status": "diagnostic_checks_complete_not_acceptance",
+      "acceptanceScope": "Retained desktop gallery only"
+    }
+  ],
+  "aggregate": {
+    "path": "docs/standalone/production-v13/browser-harness/final-browser-qa-run.json",
+    "sha256": "6e6ab65a647f23d7586c83502f06588856e901632d4fc8e12595d8cb8b56faa4",
+    "selectedBrowserAssertions": 184,
+    "evidenceIntegrityChecks": 16,
+    "selectedCaptureCount": 56,
+    "selectedBrowserSessions": 6,
+    "continuousRunCertified": false
+  },
+  "causeAssessment": "Prior native failures also occurred before full-catalogue expansion. No definitive GPU, audio, memory or content cause is established. The selected software-rendering gallery/mobile segments are reproducible observations, not a general crash-resolution claim."
+}

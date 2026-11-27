@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "edition": "V11",
+  "date": "2026-11-26",
+  "status": "accepted_static_art_runtime_pending",
+  "scope": "Trois dessins environnement existants : un fond, deux objets ; aucun asset de la future continuation inclus.",
+  "assets": [
+    {
+      "id": "sloth-consultation-s2-room",
+      "name": "Sloth · salle de consultation S2",
+      "category": "stage_background",
+      "kind": "stage_background",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "complete_background",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "intendedRuntimeStatus": "stage_background",
+      "stageId": "sloth-consultation-s2",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v11/environment/masters/sloth-consultation-s2-room.png",
+      "export": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "runtime": "/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+      "masterSha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+      "exportSha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939",
+      "masterBytes": 1503657,
+      "exportBytes": 1002014,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "nativeMode": "RGB",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alphaZeroPixels": 0,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Existing final native master; original tool-output path is not recorded in root-prompts.json and is not reconstructed.",
+      "prompt": "Use case: precise-object-edit. Asset: one opaque 16:9 landscape background for the 2D fighting game Infernal Versus. Recreate the supplied official Helluva Boss production background as the Sloth clinic consultation room, retaining the exact room identity, its lilac upper wall, deep purple lower wall, pale pink horizontal trim, tiled violet floor, left wall shelf, overhead pink cabinet silhouettes and pink lower cupboards on the right. Preserve the wall-mounted sink/tap, tissue dispenser and the whimsical purple radio with a tooth-shaped speaker on the counter. Preserve the angular purple and magenta lighting and the same front three-quarter camera. Remove ONLY the entire floor-standing purple container filled with syringes at the center-right, leaving clean continuation of the existing wall trim and tiles behind it: that container will be a separate scenery sprite. Keep a continuous clear foreground floor across the bottom quarter for side-view fighting, with no new platform, furniture, door, signage or architecture invented. No people, characters, blood, HUD, logos or watermark. Clean sophisticated hand-painted 2D television-animation background, crisp tapered outlines, controlled cel shadows, same color palette and characteristic shape design as reference. One finished background, no panels or collage. The scene is a static source-guided adaptation for gameplay.",
+      "transparentBackgroundRequested": false,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+        "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            8622,
+            5156
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1495
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio."
+        }
+      ],
+      "fidelityNotes": [
+        "Le ratio 1672×941 et le cadrage sont adaptés au duel; disposition et proportions ne sont pas un calque pixel pour pixel.",
+        "Ce contrôle compare les images fournies; il ne valide ni placement en jeu, ni collisions, ni parallaxe.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v11/environment/masters/sloth-consultation-s2-room.png",
+          "sha256": "fcb0fb49039cbd511329223166ec73e8d31a2628a8ef72345d2e5bff9caa3ab9",
+          "bytes": 1503657,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v11/environment/sloth-consultation-s2-room.webp",
+          "sha256": "f0fbd0cbe2cc68f886aad1e6f70b6300c3177c7b56e3d61ddc4c57d572d37939",
+          "bytes": 1002014,
+          "dimensions": [
+            1672,
+            941
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+          "sha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261",
+          "bytes": 13468,
+          "dimensions": [
+            480,
+            270
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "canonicalContext": "Helluva Boss, Western Energy S2E4 : salle de consultation de Sloth, distincte de la salle d’attente et de la façade déjà livrées.",
+      "episodeCorroboration": {
+        "url": "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s",
+        "videoId": "KJy7T24rhg0",
+        "title": "HELLUVA BOSS - WESTERN ENERGY // S2: Episode 4",
+        "author": "Vivziepop",
+        "published": "2023-05-20",
+        "timeSeconds": 630,
+        "scratchFramePath": "/tmp/infernal-v11-audit/western-energy-official-630s.png",
+        "frameSha256": "33facd9eb0655714a57feac7d6bd2256f28c6dd95b5121c3fc14cbdfc7d6e5b9",
+        "dimensions": [
+          320,
+          180
+        ],
+        "role": "Frame visuellement inspectée : consultation avec le médecin, radio à bouche dentée, meubles roses et conteneur corroborant Jasper15. La planche de production fixe la vue dégagée ; le plan épisode confirme le contexte S2E4.",
+        "primary": true,
+        "transform": "Native public storyboard cell crop only; no retouching or enhancement."
+      },
+      "thumbnail": "public/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+      "thumbnailUrl": "/assets/production/v11/environment/sloth-consultation-s2-thumb.webp",
+      "thumbnailSha256": "352fffd32d1851bce2d6c0a72ad5a4034d0f4224a116b76434b2abbe44932261",
+      "thumbnailBytes": 13468,
+      "thumbnailDimensions": [
+        480,
+        270
+      ],
+      "exclusions": [
+        "Conteneur de seringues retiré du fond et livré séparément.",
+        "Aucun personnage, moteur de collision, placement CSS ou nouvelle animation dans ce handoff."
+      ]
+    },
+    {
+      "id": "sloth-consultation-container",
+      "name": "Sloth · conteneur de consultation",
+      "category": "prop",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "intendedRuntimeStatus": "stage_scenery",
+      "stageId": "sloth-consultation-s2",
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v11/environment/masters/sloth-consultation-container.png",
+      "export": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+      "runtime": "/assets/production/v11/environment/sloth-consultation-container.webp",
+      "masterSha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+      "exportSha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db",
+      "masterBytes": 1172967,
+      "exportBytes": 733282,
+      "dimensions": [
+        1317,
+        1194
+      ],
+      "nativeMode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBBoxAlpha16": [
+        138,
+        113,
+        1180,
+        1073
+      ],
+      "alphaZeroPixels": 768744,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Existing final native master; original tool-output path is not recorded in root-prompts.json and is not reconstructed.",
+      "prompt": "Use case: precise-object-edit. Asset: exactly one isolated static scenery prop on a truly transparent background. From the supplied Helluva Boss production background, reproduce ONLY the complete purple floor container at the center-right, including the short upright silver-purple syringes protruding from its cream scalloped liner. The container is broad and square with a narrower bottom, a deep violet front, pink corner trim and a pale pink curved smile-shaped handle held by two small knobs. Match the visible three-quarter angle, proportions, rim silhouette, face and left side from the source. Preserve a compact cluster of silver syringe barrels and plungers, with no enlargement, no individual disconnected object and no additional equipment. One cohesive container prop, not a sheet of separate needles. Entire container and all protruding equipment inside frame with 10 percent transparent margins on all sides. No character, patient, blood, floor, room, labels, text, cast shadow, checkerboard or watermark. Crisp hand-drawn television animation linework and flat cel shading, not a 3D model. Real alpha outside the silhouette, native transparent image.",
+      "transparentBackgroundRequested": true,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+        "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-15.jpg",
+          "sha256": "d8ba7e1d00a6e0447549096b43a6ba7482bfe784a8fa410ad32ae63dbda69ca0",
+          "bytes": 242279,
+          "dimensions": [
+            2500,
+            1495
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/c94a8365-141e-45ad-9e1b-2b5a2e47fcba/3.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            8622,
+            5156
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1495
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio."
+        }
+      ],
+      "fidelityNotes": [
+        "Le nombre, l’implantation et la taille relative des seringues ont été redessinés; cette géométrie ne doit pas être présentée comme une reproduction exacte.",
+        "Conteneur destiné à une couche de décor; son échelle et son ancrage doivent être contrôlés dans l’arène.",
+        "Les valeurs alpha de la silhouette sont souvent 251–254; l’absence de fond est réelle, sans promesse d’opacité intérieure strictement égale à 255.",
+        "Contexte S2E4 corroboré par le plan public officiel à 630 s ; la revue ne constitue pas un visionnage intégral de l’épisode ni un contrôle runtime."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v11/environment/masters/sloth-consultation-container.png",
+          "sha256": "f20b38ec9332a3feba0a2951e17f5a94c6c570da3ee38b8a59a718e054967567",
+          "bytes": 1172967,
+          "dimensions": [
+            1317,
+            1194
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v11/environment/sloth-consultation-container.webp",
+          "sha256": "42c174dcc56e09e777ce270a2a3567e63d3bddd275015716e8d464e9423541db",
+          "bytes": 733282,
+          "dimensions": [
+            1317,
+            1194
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "canonicalContext": "Helluva Boss, Western Energy S2E4 : salle de consultation de Sloth, distincte de la salle d’attente et de la façade déjà livrées.",
+      "episodeCorroboration": {
+        "url": "https://www.youtube.com/watch?v=KJy7T24rhg0&t=630s",
+        "videoId": "KJy7T24rhg0",
+        "title": "HELLUVA BOSS - WESTERN ENERGY // S2: Episode 4",
+        "author": "Vivziepop",
+        "published": "2023-05-20",
+        "timeSeconds": 630,
+        "scratchFramePath": "/tmp/infernal-v11-audit/western-energy-official-630s.png",
+        "frameSha256": "33facd9eb0655714a57feac7d6bd2256f28c6dd95b5121c3fc14cbdfc7d6e5b9",
+        "dimensions": [
+          320,
+          180
+        ],
+        "role": "Frame visuellement inspectée : consultation avec le médecin, radio à bouche dentée, meubles roses et conteneur corroborant Jasper15. La planche de production fixe la vue dégagée ; le plan épisode confirme le contexte S2E4.",
+        "primary": true,
+        "transform": "Native public storyboard cell crop only; no retouching or enhancement."
+      }
+    },
+    {
+      "id": "fizzarolli-bozo-award",
+      "name": "Vitrine d’Asmodeus · BOZO AWARD",
+      "category": "prop",
+      "kind": "prop",
+      "franchise": "Helluva Boss",
+      "continuity": "season_2",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_object",
+      "accepted": true,
+      "status": "independent_review_accepted_with_limits",
+      "runtimeStatus": "reserve",
+      "intendedRuntimeStatus": "reserve",
+      "stageId": null,
+      "addsStandaloneBase": false,
+      "newIdentity": false,
+      "newPlayableKit": false,
+      "animationCycles": 0,
+      "master": "production/v11/environment/masters/fizzarolli-bozo-award.png",
+      "export": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "runtime": "/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+      "masterSha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+      "exportSha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9",
+      "masterBytes": 1469138,
+      "exportBytes": 980182,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "nativeMode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBBoxAlpha16": [
+        64,
+        92,
+        960,
+        1488
+      ],
+      "alphaZeroPixels": 1014489,
+      "pixelExactExport": true,
+      "generationTool": "image_gen.imagegen",
+      "generationSource": "Existing final native master; original tool-output path is not recorded in root-prompts.json and is not reconstructed.",
+      "prompt": "Use case: precise-object-edit. Asset: one isolated static trophy sprite for the Helluva Boss game gallery, transparent background. Extract and faithfully redraw ONLY the trophy on the RIGHT of the supplied official production background. It has a cream clown head with a peach forehead V, small blue-purple pointed horns, sparse narrow blue eyes, wide peach smile, one shiny round pink nose, and large maroon three-lobed hair tufts on both sides. Below the head is a purple bow tie, tall tapered lavender trophy body with the exact hand-lettered words BOZO AWARD, a five-petal pink flower on the lower front and a small faceted lavender pedestal with a pink rectangular plaque. Preserve its complete visible silhouette, same three-quarter front camera, palette and blue room highlights from the source. No other trophy, bouquet, photo frame, counter or room. Entire single trophy in frame, at least 8 percent transparent margin on every side. Crisp clean hand-drawn 2D animation lines, restrained cel shading, no photoreal texture, no added decorations, no watermark. Real transparent alpha surrounding the trophy.",
+      "transparentBackgroundRequested": true,
+      "referenceUrls": [
+        "https://jasperluu.com/helluvaboss",
+        "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v11/environment/references/jasper-30.jpg",
+          "sha256": "171da043ec782cbaa992853ff9d63a06d0d68ad0a29173c5cd9af2292c07e71a",
+          "bytes": 289350,
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/deb48db8-fe2f-4f43-bfb1-e724690e959c/206+Paint+00004.jpeg",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "viewed": true,
+          "originalSourceDimensions": [
+            4340,
+            2660
+          ],
+          "downloadedImageDimensions": [
+            2500,
+            1532
+          ],
+          "note": "dimensions décrit le fichier local réellement inspecté ; originalSourceDimensions conserve la taille annoncée dans le portfolio."
+        }
+      ],
+      "fidelityNotes": [
+        "La géométrie de la tête et l’épaisseur des contours sont interprétées; aucune fidélité absolue 1:1.",
+        "La marge basse visible est d’environ 48 pixels sur 1536; cadrage intégral, mais plus serré que les 8 % demandés dans le prompt.",
+        "Alpha maximum mesuré à 254; rendu visuel propre, sans opacité intérieure strictement 255."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+      "files": [
+        {
+          "path": "production/v11/environment/masters/fizzarolli-bozo-award.png",
+          "sha256": "679da829dfdabbeae64122a23b480061bc984ef95cb46f842bc6db6116bf8d0b",
+          "bytes": 1469138,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "public/assets/production/v11/environment/fizzarolli-bozo-award.webp",
+          "sha256": "fa878d463c6849ab5be449ff87725ae4bd9e06a783926e64d36893d5a7598bf9",
+          "bytes": 980182,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "canonicalContext": "Trophée BOZO AWARD à droite du fond de production 206 Paint 00004, lié à Oops S2E6. Objet de galerie ; aucun nouveau combat ni attribution officielle d’un nom autre que le texte visible."
+    }
+  ],
+  "counts": {
+    "acceptedDrawings": 3,
+    "deliveredImageFiles": 7,
+    "deliveredImageBytes": 6874708,
+    "newStandaloneBases": 0,
+    "newPlayableKits": 0,
+    "newAnimationCycles": 0,
+    "plannedNewStages": 1,
+    "integratedNewStages": 0
+  },
+  "sourceLedger": "production/v11/environment/references/sources.json",
+  "promptLedger": "docs/standalone/production-v11/root-prompts.json",
+  "independentReview": "docs/standalone/production-v11/independent-visual-review.json",
+  "imageQa": "docs/standalone/production-v11/environment-image-qa.json",
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "integrationNotes": [
+    "Conserver la salle d’attente et la façade de Sloth ; la consultation est un intérieur distinct.",
+    "Poser le conteneur comme couche séparée après contrôle de l’échelle, de l’ancrage au sol et de la parallaxe.",
+    "BOZO AWARD est un objet de réserve, distinct du trophée central au masque de clown proposé pour la continuation."
+  ]
+}

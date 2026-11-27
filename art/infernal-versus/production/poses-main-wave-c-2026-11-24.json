@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "batchId": "poses-main-wave-c-2026-11-24",
+  "date": "2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "baseCommit": "02ce6a48bc0913e52885de5603745f466d6ae7f9",
+  "generationMode": "built-in image_gen, one individual asset per call",
+  "exportMethod": "Original PNG preserved byte-for-byte; WebP lossless exact; decoded RGBA bytes identical; no raster edits/crops/resizing",
+  "newArtworks": 9,
+  "assets": [
+    {
+      "id": "vox-guard",
+      "fighter": "vox",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Create ONE new individual full-body 2D fighting-game key pose of Vox from Hazbin Hotel using the supplied READY sprite as the identity and costume reference. Preserve exactly the tall slender anatomy, rectangular television head with red rim, dark cyan screen, red eyes and cyan zigzag grin, tiny top hat with red antenna tips and signal emblem, dark navy striped suit with cyan piping, red lapels and waistcoat, red bow tie, cyan clawed hands and matching shoes. Match the same crisp black linework and flat cel shading. Change only the pose into an ACTIVE STANDING GUARD facing RIGHT: knees slightly flexed, front forearm upright protecting the right-facing screen, rear hand near sternum, elbows compact, feet separated and grounded. His eye expression is focused and confident. Keep the full antennae, both hands, coat tails and both shoes inside the frame; preserve the reference body proportions and overall figure scale. Same portrait 1024x1536 canvas, at least 4% clear margin all around, the lowest grounded shoe at approximately 94% of the canvas height. Exactly one character, no duplicate, no opponent, no energy, lightning, aura, background, floor, shadow, words, watermark or labels. Transparent alpha background, preserving transparency. This is an authored gameplay guard, not a new costume or a redesign.",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/vox-ready.png",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-25d108f6-d1ff-40ad-b558-151bc2ef0efb.png",
+      "reference": "art/infernal-versus/masters/poses/vox-ready.png",
+      "master": "art/infernal-versus/masters/poses/vox-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-guard.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7985083262125651,
+        "bboxVisible16": [
+          176,
+          48,
+          821,
+          1469
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1273153,
+          "sha256": "f2a4b37a4be28104437840c3216994a526375f0e5dbf626a2d9c82bf4a1f8447"
+        },
+        "runtimeExport": {
+          "bytes": 840966,
+          "sha256": "cf5a5711f4056eb150332a7a30185382d38d991847a7408e8db0f3a3cff35aa1"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "vox-guard",
+        "bounds16": [
+          176,
+          48,
+          821,
+          1469
+        ],
+        "bottomDifferenceFromReady": -4,
+        "minVisibleMarginPx": 48
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -4,
+        "offsetDownPxAtSourceHeight": 4,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "vox-strike",
+      "fighter": "vox",
+      "pose": "strike",
+      "prompt": "Use case: identity-preserve. Create ONE new individual full-body 2D fighting-game key pose of Vox from Hazbin Hotel using the supplied READY sprite as the identity and costume reference. Preserve exactly the tall slender anatomy, rectangular television head with red rim, dark cyan screen, red eyes and cyan zigzag grin, tiny top hat with red antenna tips and signal emblem, dark navy striped suit with cyan piping, red lapels and waistcoat, red bow tie, cyan clawed hands and matching shoes. Match the same crisp black linework and flat cel shading. Change only the pose into the CONTACT of his light attack 'Static jab' facing RIGHT: front cyan clawed fist punching straight forward at chest height, elbow nearly extended, rear hand guarding the torso, shoulders rotated into the quick jab, front knee bent and rear heel lightly raised while the front shoe is firmly grounded. TV head follows the jab with a focused confident expression. The extended hand remains wholly inside the right edge with clear margin. Keep the full antennae, both hands, coat tails and both shoes inside the frame; preserve the reference body proportions and overall figure scale. Same portrait 1024x1536 canvas, at least 4% clear margin all around, the lowest grounded shoe at approximately 94% of the canvas height. Exactly one character, no duplicate, no opponent, no energy, lightning, aura, background, floor, shadow, words, watermark or labels. Transparent alpha background, preserving transparency. This is an authored gameplay light-attack key pose, not a new costume or a redesign.",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/vox-ready.png",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-74f6da3e-83d5-414f-b9ef-5c111b117d29.png",
+      "reference": "art/infernal-versus/masters/poses/vox-ready.png",
+      "master": "art/infernal-versus/masters/poses/vox-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-strike.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7983729044596354,
+        "bboxVisible16": [
+          60,
+          114,
+          989,
+          1454
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1317136,
+          "sha256": "ca2903c5c36865a96d991e848268fe7e7f27bbd92f92178c46cfb2399bad838f"
+        },
+        "runtimeExport": {
+          "bytes": 882690,
+          "sha256": "27d2ca0b9d86af7483c39a8394d30a4f00218284e3c82161a2a4c310635ed56e"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "vox-strike",
+        "bounds16": [
+          60,
+          114,
+          989,
+          1454
+        ],
+        "bottomDifferenceFromReady": -19,
+        "minVisibleMarginPx": 35
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -19,
+        "offsetDownPxAtSourceHeight": 19,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "vox-recoil",
+      "fighter": "vox",
+      "pose": "recoil",
+      "prompt": "Use case: identity-preserve. Create ONE new individual full-body 2D fighting-game key pose of Vox from Hazbin Hotel using the supplied READY sprite as the identity and costume reference. Preserve exactly the tall slender anatomy, rectangular television head with red rim, dark cyan screen, red eyes and cyan zigzag grin, tiny top hat with red antenna tips and signal emblem, dark navy striped suit with cyan piping, red lapels and waistcoat, red bow tie, cyan clawed hands and matching shoes. Match the same crisp black linework and flat cel shading. Change only the pose into a non-graphic HIT REACTION facing RIGHT: torso recoils backward toward the LEFT, screen tilts back slightly, shoulders lifted, forearms drawn apart in a startled reflex, knees flexed and both shoes still visibly grounded. Screen expression briefly startled and irritated; the television casing and costume remain intact. No injury or damage is shown. Keep the full antennae, both hands, coat tails and both shoes inside the frame; preserve the reference body proportions and overall figure scale. Same portrait 1024x1536 canvas, at least 4% clear margin all around, the lowest grounded shoe at approximately 94% of the canvas height. Exactly one character, no duplicate, no opponent, no energy, lightning, aura, background, floor, shadow, words, watermark or labels. Transparent alpha background, preserving transparency. This is an authored gameplay reaction key pose, not a new costume or a redesign.",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/vox-ready.png",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ae1c3045-06f6-4437-95a0-d13c10d8ff0c.png",
+      "reference": "art/infernal-versus/masters/poses/vox-ready.png",
+      "master": "art/infernal-versus/masters/poses/vox-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/vox-recoil.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7827053070068359,
+        "bboxVisible16": [
+          129,
+          68,
+          808,
+          1465
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1359894,
+          "sha256": "e533821ad8c7d5d9c67409869c5cac01c3b722b172c232d6a2f1be92be084b99"
+        },
+        "runtimeExport": {
+          "bytes": 898044,
+          "sha256": "6c6a77ba562df7671501eca0677e3cf954b78e8c346148fbed671befa4605895"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "vox-recoil",
+        "bounds16": [
+          129,
+          68,
+          808,
+          1465
+        ],
+        "bottomDifferenceFromReady": -8,
+        "minVisibleMarginPx": 68
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -8,
+        "offsetDownPxAtSourceHeight": 8,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "velvette-guard",
+      "fighter": "velvette",
+      "pose": "guard",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/velvette-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE individual full-body 2D fighting-game key pose of adult Velvette from Hazbin Hotel using the supplied READY image as the exact identity, costume and proportion reference. Preserve her dark brown skin, red eyes, long navy hair with huge red-and-white curled twin puffs, skull earrings, black crop top with red heart motifs, black-and-white striped sleeves, loose magenta-and-navy vertically striped trousers, long dark coat tails, and black shoes with white circular details. Same sharp black linework, flat TV cel colors, long-legged silhouette and visible facial features. Keep the hair, arms, coat tails and shoes fully inside a portrait 1024x1536 canvas. Same overall scale; grounded shoe line around94% height, at least4% transparent margin on all sides. Face and body oriented RIGHT; one complete character, no opponent, phone, weapon, energy effect, dust, shadow, scenery, floor, text, watermark or duplicate. Genuine transparent alpha. Pose: ACTIVE STANDING GUARD. Knees softly bent, front forearm raised defensively at chin level, rear hand close to ribs, elbows compact, front foot forward and both shoes planted. Expression cool and focused. Keep the outfit and hairstyle unchanged; this is only a new defensive key pose.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-48cd31dc-9e9b-46b8-9a1c-77f1bb50108d.png",
+      "reference": "art/infernal-versus/masters/poses/velvette-ready.png",
+      "master": "art/infernal-versus/masters/poses/velvette-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-guard.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.5311101277669271,
+        "bboxVisible16": [
+          115,
+          61,
+          877,
+          1484
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1511245,
+          "sha256": "8d99acadde760795fa0e850cbfc568577bb250aaa680222e74f29d784cb15691"
+        },
+        "runtimeExport": {
+          "bytes": 1026554,
+          "sha256": "eb07971ae469343d55922786203cac99c3b985740e5b26100f1a5696dba189bf"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "velvette-guard",
+        "bounds16": [
+          115,
+          61,
+          877,
+          1484
+        ],
+        "bottomDifferenceFromReady": -22,
+        "minVisibleMarginPx": 52
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -22,
+        "offsetDownPxAtSourceHeight": 22,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "velvette-strike",
+      "fighter": "velvette",
+      "pose": "strike",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/velvette-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE individual full-body 2D fighting-game key pose of adult Velvette from Hazbin Hotel using the supplied READY image as the exact identity, costume and proportion reference. Preserve her dark brown skin, red eyes, long navy hair with huge red-and-white curled twin puffs, skull earrings, black crop top with red heart motifs, black-and-white striped sleeves, loose magenta-and-navy vertically striped trousers, long dark coat tails, and black shoes with white circular details. Same sharp black linework, flat TV cel colors, long-legged silhouette and visible facial features. Keep the hair, arms, coat tails and shoes fully inside a portrait 1024x1536 canvas. Same overall scale; grounded shoe line around94% height, at least4% transparent margin on all sides. Face and body oriented RIGHT; one complete character, no opponent, phone, weapon, energy effect, dust, shadow, scenery, floor, text, watermark or duplicate. Genuine transparent alpha.  Pose: CONTACT KEY FRAME for her light move Runway feint. A sharp forward right-facing open-palm jab: front arm extending horizontally toward the right, rear elbow bent with hand near ribs, torso turning through the waist, one long leg stepping forward and rear foot planted. Cool assertive expression, fingers clear and anatomically coherent. No phone or VFX; this is a brief physical feint authored for the game, preserving the reference clothing and silhouette. Background strictly fully transparent outside the character: no colored halo, glow, ambient gradient, aura or cast shadow.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f8fb873e-f291-44ef-8c91-891ccfbc153c.png",
+      "reference": "art/infernal-versus/masters/poses/velvette-ready.png",
+      "master": "art/infernal-versus/masters/poses/velvette-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-strike.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.5383427937825521,
+        "bboxVisible16": [
+          32,
+          82,
+          1016,
+          1444
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1521681,
+          "sha256": "64b79dd83e3b174ef5b91e96ff2be7ba565be549f7ce2b4dac561ca26ca34ec4"
+        },
+        "runtimeExport": {
+          "bytes": 1035622,
+          "sha256": "13b89998056d74e82468834ea20d2943294256cb04fa0edd4fea805de2f6b94c"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "velvette-strike",
+        "bounds16": [
+          32,
+          82,
+          1016,
+          1444
+        ],
+        "bottomDifferenceFromReady": -62,
+        "minVisibleMarginPx": 8
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -62,
+        "offsetDownPxAtSourceHeight": 62,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "velvette-recoil",
+      "fighter": "velvette",
+      "pose": "recoil",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/velvette-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE individual full-body 2D fighting-game key pose of adult Velvette from Hazbin Hotel using the supplied READY image as the exact identity, costume and proportion reference. Preserve her dark brown skin, red eyes, long navy hair with huge red-and-white curled twin puffs, skull earrings, black crop top with red heart motifs, black-and-white striped sleeves, loose magenta-and-navy vertically striped trousers, long dark coat tails, and black shoes with white circular details. Same sharp black linework, flat TV cel colors, long-legged silhouette and visible facial features. Keep the hair, arms, coat tails and shoes fully inside a portrait 1024x1536 canvas. Same overall scale; grounded shoe line around94% height, at least4% transparent margin on all sides. Face and body oriented RIGHT; one complete character, no opponent, phone, weapon, energy effect, dust, shadow, scenery, floor, text, watermark or duplicate. Genuine transparent alpha.  Pose: brief NON-GRAPHIC HIT REACTION, recoiling left away from an unseen impact from the right. Torso tilts backward to the left, front knee bent, rear foot braced, front hand opening near face and rear arm thrown slightly back, expression startled and irritated. Keep both shoes grounded on the same approximately94% line and maintain full hairstyle inside the canvas. Clothing and body completely intact: no wound, blood, bruises, tears, damage or violent contact shown. One character only, no attacker or effect. Strict transparent background with no visible glow or halo.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-c12aaf3b-3566-47ae-856e-38bcd06984c3.png",
+      "reference": "art/infernal-versus/masters/poses/velvette-ready.png",
+      "master": "art/infernal-versus/masters/poses/velvette-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/velvette-recoil.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.530022939046224,
+        "bboxVisible16": [
+          23,
+          93,
+          938,
+          1484
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1534330,
+          "sha256": "46d2a7dd7acfbcd8a5f394854b0511597780ed9dd385701caf80f3618d9942b0"
+        },
+        "runtimeExport": {
+          "bytes": 1036766,
+          "sha256": "0c7d629abbb658cfae8ddd64016ccd1519927cfbf3d06d061a79b1e992df34a8"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "velvette-recoil",
+        "bounds16": [
+          23,
+          93,
+          938,
+          1484
+        ],
+        "bottomDifferenceFromReady": -22,
+        "minVisibleMarginPx": 23
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -22,
+        "offsetDownPxAtSourceHeight": 22,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "carmilla-guard",
+      "fighter": "carmilla",
+      "pose": "guard",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/carmilla-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE full-body individual fighting-game key pose of adult Carmilla Carmine from Hazbin Hotel, using the supplied READY sprite as identity, outfit and proportion reference. Preserve the original tied-up tall white twin horn-shaped hair with fine black crossed lines, short white forelock, light gray skin, red eyes with black angular eye markings, fitted black high-neck bodice with white buttons and white edge piping, white glove-like forearms with long slender fingers and flowing cuffs, black and white split tailcoat with red lining, long slim black legs with white criss-cross ribbons and pointed white ballet shoes. Do NOT use her loose-hair costume. Same angular black outlines, flat cel colors, very tall graceful body proportions and long legs. Face and body oriented RIGHT. Same portrait 1024x1536 canvas; hair tips, all fingers, fabric tails and both shoes completely visible with clear transparent border. Grounded shoe line approximately94% height, at least4% transparent margin, figure not cropped. Exactly one character, no opponent, detached piece, weapon, effect, glow, shadow, background, floor, text, watermark or duplicate. True transparent alpha. Pose: elegant ACTIVE STANDING GUARD. Front forearm raised with an open hand protecting the upper torso, rear hand near the waist, elbows compact, knees softly flexed in a balanced dancer stance, front ballet shoe slightly forward and both feet grounded. Focused calm expression. Preserve the complete paired tall hair and the reference silhouette; this is a defensive action key pose.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-7406c411-8bd7-4c62-a99a-744ff2a1e75c.png",
+      "reference": "art/infernal-versus/masters/poses/carmilla-ready.png",
+      "master": "art/infernal-versus/masters/poses/carmilla-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-guard.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7829577128092448,
+        "bboxVisible16": [
+          216,
+          18,
+          822,
+          1496
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1395934,
+          "sha256": "b49c73704508ad151bbe2a298d9b794ae4e9a8db9d7184587ccbc8b3fff43b40"
+        },
+        "runtimeExport": {
+          "bytes": 883918,
+          "sha256": "561a997953238a2ccbe23205c31f25d377627ce9b42ec07d56da50767e241bec"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "carmilla-guard",
+        "bounds16": [
+          216,
+          18,
+          822,
+          1496
+        ],
+        "bottomDifferenceFromReady": -2,
+        "minVisibleMarginPx": 18
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -2,
+        "offsetDownPxAtSourceHeight": 2,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "carmilla-strike",
+      "fighter": "carmilla",
+      "pose": "strike",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/carmilla-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE full-body individual fighting-game key pose of adult Carmilla Carmine from Hazbin Hotel, using the supplied READY sprite as identity, outfit and proportion reference. Preserve the original tied-up tall white twin horn-shaped hair with fine black crossed lines, short white forelock, light gray skin, red eyes with black angular eye markings, fitted black high-neck bodice with white buttons and white edge piping, white glove-like forearms with long slender fingers and flowing cuffs, black and white split tailcoat with red lining, long slim black legs with white criss-cross ribbons and pointed white ballet shoes. Do NOT use her loose-hair costume. Same angular black outlines, flat cel colors, very tall graceful body proportions and long legs. Face and body oriented RIGHT. Same portrait 1024x1536 canvas; hair tips, all fingers, fabric tails and both shoes completely visible with clear transparent border. Grounded shoe line approximately94% height, at least4% transparent margin, figure not cropped. Exactly one character, no opponent, detached piece, weapon, effect, glow, shadow, background, floor, text, watermark or duplicate. True transparent alpha. Pose: CONTACT KEY FRAME for her light attack Precision kick. A controlled elegant ballet front kick toward the RIGHT at waist height: ONE forward leg extends straight with its white pointed shoe to the right, the other long leg is the supporting planted leg. Slightly leaning back torso, arms balanced gracefully with fingers open, focused gaze toward the right. Keep both pointed shoes, all hair tips and hands safely inside canvas. This is one non-graphic air kick, no target or contact effect. Preserve the adult tall proportions, no extreme foreshortening.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-2a8c5a01-deff-4331-903c-cfbcd901a851.png",
+      "reference": "art/infernal-versus/masters/poses/carmilla-ready.png",
+      "master": "art/infernal-versus/masters/poses/carmilla-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-strike.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7953135172526041,
+        "bboxVisible16": [
+          22,
+          34,
+          1003,
+          1493
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1342707,
+          "sha256": "6c3c1dc9d950a58db7d11c512ab5fe3a2a610e6671832a95b8930619ec5a266a"
+        },
+        "runtimeExport": {
+          "bytes": 853558,
+          "sha256": "d36b8e362f7a4bde4d90eafa07f3da92834b418a2846e2ed995265e8ddceffab"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "carmilla-strike",
+        "bounds16": [
+          22,
+          34,
+          1003,
+          1493
+        ],
+        "bottomDifferenceFromReady": -5,
+        "minVisibleMarginPx": 21
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -5,
+        "offsetDownPxAtSourceHeight": 5,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    },
+    {
+      "id": "carmilla-recoil",
+      "fighter": "carmilla",
+      "pose": "recoil",
+      "ref": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/carmilla-ready.png",
+      "prompt": "Use case: identity-preserve. Create ONE full-body individual fighting-game key pose of adult Carmilla Carmine from Hazbin Hotel, using the supplied READY sprite as identity, outfit and proportion reference. Preserve the original tied-up tall white twin horn-shaped hair with fine black crossed lines, short white forelock, light gray skin, red eyes with black angular eye markings, fitted black high-neck bodice with white buttons and white edge piping, white glove-like forearms with long slender fingers and flowing cuffs, black and white split tailcoat with red lining, long slim black legs with white criss-cross ribbons and pointed white ballet shoes. Do NOT use her loose-hair costume. Same angular black outlines, flat cel colors, very tall graceful body proportions and long legs. Face and body oriented RIGHT. Same portrait 1024x1536 canvas; hair tips, all fingers, fabric tails and both shoes completely visible with clear transparent border. Grounded shoe line approximately94% height, at least4% transparent margin, figure not cropped. Exactly one character, no opponent, detached piece, weapon, effect, glow, shadow, background, floor, text, watermark or duplicate. True transparent alpha. Pose: NON-GRAPHIC HIT REACTION. Her upper body and tall hair lean backward toward the LEFT from an unseen impact from the right; front knee bent, rear supporting foot braced on the ground, one open hand raised defensively near face and other arm slightly extended behind for balance. Gaze remains RIGHT, surprised determined expression. Both legs and all hair fully visible. Clothes and body completely intact, no injury, blood, bruise, wounds, tears or visible attacker. Preserve very tall slender proportions.",
+      "source": "/workspace/scratch/eed3bf2e772a/generated_images/exec-6a4c88ed-7a10-499c-b8eb-fd3495d16cfc.png",
+      "reference": "art/infernal-versus/masters/poses/carmilla-ready.png",
+      "master": "art/infernal-versus/masters/poses/carmilla-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/carmilla-recoil.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": {
+        "range": [
+          0,
+          254
+        ],
+        "transparentFraction": 0.7200355529785156,
+        "bboxVisible16": [
+          41,
+          32,
+          939,
+          1492
+        ]
+      },
+      "files": {
+        "master": {
+          "bytes": 1493273,
+          "sha256": "0f8fbb6a55e81534f4f79fee7e301e239391f5303bd85dede35316843c3855f2"
+        },
+        "runtimeExport": {
+          "bytes": 943640,
+          "sha256": "e4cb9ad73aa4fc68537a1609d7752be8be491b2328e9721160e7fef4a53e2a38"
+        }
+      },
+      "visualReview": {
+        "inspected": true,
+        "oneCharacterPerImage": true,
+        "completeVisibleSilhouette": true,
+        "facing": "right",
+        "fidelity1to1Certified": false,
+        "inGameReview": "not-available",
+        "note": "Pose authored from the published ready reference; identity, proportions, costume and full-body composition reviewed. Ground anchors are measured separately; long animation cycles are not claimed.",
+        "neutralBackgroundComparisonInspected": true
+      },
+      "framing": {
+        "id": "carmilla-recoil",
+        "bounds16": [
+          41,
+          32,
+          939,
+          1492
+        ],
+        "bottomDifferenceFromReady": -6,
+        "minVisibleMarginPx": 32
+      },
+      "integrationStatus": "registered-individual-pose",
+      "runtimeVerticalAlignment": {
+        "method": "Explicit CSS translate using measured ground contact relative to the published READY; source pixels unchanged.",
+        "sourceBottomDifferencePx": -6,
+        "offsetDownPxAtSourceHeight": 6,
+        "module": "src/lib/infernal-pose-anchors.ts",
+        "horizontalPivotNormalized": false,
+        "relativeBodyScaleNormalized": false
+      }
+    }
+  ],
+  "blocked": [
+    {
+      "id": "rosie-guard",
+      "fighter": "rosie",
+      "pose": "guard",
+      "status": "safety_refused",
+      "prompt": "Use case: identity-preserve. Create ONE individual full-body fighting-game key pose of adult Rosie from Hazbin Hotel using this READY sprite as the exact face, costume and proportion reference. Keep the extremely tall slender elegant silhouette, pale gray-white skin, black empty eye shapes with no pupils, short white curled hair, pointed small teeth, huge burgundy Edwardian brimmed hat with pink plumes, skull ornament and dark rose, long wine-red high-neck dress with puff shoulders, black throat collar and waist band, slim sleeves, white hands, and pink-and-black striped flared hem. Same flat TV cel colors and clean sharp black ink, preserve her long dress proportions and all hat details. Character facing RIGHT. Portrait1024x1536 canvas with ALL plumes, brim, fingers and dress hem visible, transparent margin on every edge. Dress hem stays at approximately95%height when grounded; do not shorten the body to fit a pose. One character only, no parasol, cane, prop, opponent, effect, aura, gradient, shadow, background, floor, text, labels, watermark or duplicate. True alpha transparency outside the silhouette. Pose: ACTIVE STANDING GUARD with composed smile. Front white hand open near the chin, palm outward in a formal defensive gesture, other forearm across the waist, elbows controlled. Upper body subtly angled into the defense, grounded long dress balanced with small folds indicating softly flexed knees underneath. Preserve face visibility beneath the brim and the full tall silhouette.",
+      "reference": "/workspace/scratch/eed3bf2e772a/hellbound-hotel-manager/art/infernal-versus/masters/poses/rosie-ready.png",
+      "requestId": "9be1607c-96d7-4a20-b15a-30636bba4fb5",
+      "retryAttempted": false,
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 9be1607c-96d7-4a20-b15a-30636bba4fb5.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    }
+  ],
+  "notes": [
+    "These are authored key poses for existing attacks, classified simulation_au.",
+    "Previous safety-refused requests are not retried in this batch."
+  ],
+  "deferred": [
+    {
+      "id": "rosie-strike",
+      "status": "not_attempted",
+      "reason": "Rosie generation family paused after guard safety refusal; existing runtime retained."
+    },
+    {
+      "id": "rosie-recoil",
+      "status": "not_attempted",
+      "reason": "Rosie generation family paused after guard safety refusal; existing runtime retained."
+    }
+  ],
+  "imageGenerationCalls": 10,
+  "status": "Nine action key poses integrated; Rosie guard refused without retry, other Rosie poses deferred."
+}

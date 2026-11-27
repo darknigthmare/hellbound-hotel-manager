@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "edition": "V14",
+  "baselineCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+  "status": "accepted_scope_locked",
+  "integrationAuthorizedBy": "/root",
+  "handoffs": [
+    "characters-handoff.json",
+    "environment-handoff.json",
+    "root-handoff.json"
+  ],
+  "acceptedAssets": [
+    {
+      "id": "hb_blitzo-flashback-ghostfuckers-s2",
+      "category": "costume",
+      "runtimeStatus": "selectable_costume",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": "hb_blitzo",
+      "stageId": null,
+      "frameCoverage": "full_body"
+    },
+    {
+      "id": "hb_millie-dress-disguise-training-short",
+      "category": "costume",
+      "runtimeStatus": "selectable_costume",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": "hb_millie",
+      "stageId": null,
+      "frameCoverage": "full_body"
+    },
+    {
+      "id": "hb_moxxie-dress-disguise-training-short",
+      "category": "costume",
+      "runtimeStatus": "selectable_costume",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": "hb_moxxie",
+      "stageId": null,
+      "frameCoverage": "full_body"
+    },
+    {
+      "id": "full-moon-shop-s2-room",
+      "category": "stage",
+      "runtimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": "full-moon-shop-s2",
+      "frameCoverage": "complete_background"
+    },
+    {
+      "id": "crimson-dining-room-s2-room",
+      "category": "stage",
+      "runtimeStatus": "selectable_stage",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": "crimson-dining-room-s2",
+      "frameCoverage": "complete_background"
+    },
+    {
+      "id": "sloth-cloud-dispenser-s2",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    },
+    {
+      "id": "crimson-green-chandelier-s2",
+      "category": "prop",
+      "runtimeStatus": "reserve",
+      "addsStandaloneBase": false,
+      "sourceIdentityId": null,
+      "stageId": null,
+      "frameCoverage": "full_object"
+    }
+  ],
+  "acceptedAssetCount": 7,
+  "noRetryTargetIds": [
+    "blitzo-sniper-production",
+    "cherribomb",
+    "hb_belphegor",
+    "hb_deerie",
+    "hb_leviathan",
+    "hb_loopty_goopty",
+    "hb_stella",
+    "hb_stolas_family_butler",
+    "hz_ant_sinner",
+    "hz_clara_carmine",
+    "hz_dazzle",
+    "hz_eel_sinner",
+    "hz_egg_boiz",
+    "hz_fat_nuggets",
+    "hz_frank_egg_boi",
+    "hz_huskette_spider",
+    "hz_keekee",
+    "hz_odette_carmine",
+    "hz_razzle",
+    "hz_rooster",
+    "hz_salina",
+    "hz_shok_wav",
+    "hz_speaker_of_god",
+    "lute",
+    "lute-prosthetic-s2-ready",
+    "pentious-airship-s1",
+    "personal:husk:3:rival",
+    "personal:sirpentious:3:intro"
+  ],
+  "attemptRegisters": [
+    "docs/standalone/production-v14/root-prompts.json",
+    "docs/standalone/production-v14/characters-prompts.json",
+    "docs/standalone/production-v14/environment-prompts.json",
+    "docs/standalone/production-v14/root-refused-attempts.json"
+  ],
+  "limits": [
+    "Trois costumes statiques pour des combattants existants ; aucune nouvelle identité, base entière, animation ou nouveau kit.",
+    "Les deux robes proviennent du court officiel IMP Training Video (2026). season_2 est uniquement le niveau du filtre ; aucune attribution à une saison numérotée.",
+    "Les deux décors adaptent le cadrage et le premier plan au duel AU. Aucune fidélité géométrique 1:1 ; le haut du support du lustre est coupé dans le fond Crimson.",
+    "Les deux accessoires restent des objets de galerie, sans placement en surimpression ni nouvelle mécanique.",
+    "Les 28 cibles historiquement refusées restent exclues ; aucune reprise d’un refus ni contournement d’une source inaccessible."
+  ],
+  "authorizationBasis": "Continuation demandée par l’utilisateur ; génération, intégration, bible existante et publication dans la PR #8 déjà autorisées. Sept dessins acceptés après revue indépendante.",
+  "supportingEvidence": [
+    "docs/standalone/production-v14/characters-qa.json",
+    "docs/standalone/production-v14/environment-qa.json",
+    "docs/standalone/production-v14/root-image-qa.json",
+    "docs/standalone/production-v14/independent-visual-review.json",
+    "docs/standalone/production-v14/characters-references.json",
+    "docs/standalone/production-v14/environment-references.json",
+    "docs/standalone/production-v14/environment-qualification.json",
+    "docs/standalone/production-v14/root-references.json",
+    "docs/standalone/production-v14/props-reference-review.json",
+    "docs/standalone/production-v14/root-deferred-targets.json"
+  ],
+  "lockedAt": "2026-11-26T21:51:59.513902+00:00"
+}

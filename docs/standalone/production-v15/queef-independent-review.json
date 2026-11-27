@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "edition": "V15",
+  "assetId": "hb_queef-creator-collection",
+  "candidate": "candidate02",
+  "reviewer": "/root/recovery_audit",
+  "reviewedAt": "2026-11-26T23:17:53.205420+00:00",
+  "status": "accepted_with_documented_limits",
+  "accepted": true,
+  "correctionRequired": false,
+  "scope": "Independent visual comparison of the supplied full official-product motif, native RGBA candidate and supplied gray-background alpha composite; read-only technical alpha/component analysis. No image was edited.",
+  "inputs": {
+    "master": {
+      "path": "/mnt/data/hellbound-hotel-manager/production/v15/characters/masters/queef-creator-collection-candidate02.png",
+      "bytes": 1712631,
+      "sha256": "83b514d7faa458f61b71ddf268463fe6ecc5a013f5abf1314e98ed21fab73eac",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    "reference": {
+      "path": "/mnt/data/hellbound-hotel-manager/production/v15/characters/references/queef-official-creator-collection.png",
+      "bytes": 308376,
+      "sha256": "679ad28488afaf232b265088d1412f8314f9beff7651dccdb3edfe928d59ad2d",
+      "dimensions": [
+        2000,
+        2500
+      ],
+      "mode": "RGB"
+    },
+    "grayAlphaComposite": {
+      "path": "/mnt/data/queef-qa-gray.jpg",
+      "bytes": 140916,
+      "sha256": "aecbd53d2f5e70d91f98a7df115de21a46dca5fc564e05adc4a64a19df2b58a7",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGB"
+    }
+  },
+  "sourceQualification": {
+    "sourceType": "official_merchandise_undated",
+    "collection": "Creator Collection",
+    "artistAttributionProvidedByParent": "Amanda Heard",
+    "attributionVerificationScope": "The supplied source image was visually inspected. Product-page provenance/artist attribution is inherited from the parent research, not independently reverified on the web by this reviewer.",
+    "incarnationLimit": "The approved subject is the stylized motif printed on the official product. It is not an asserted episode model sheet or exact canonical geometry."
+  },
+  "identityAndSilhouette": {
+    "sameRecognizableSubjectAsReference": true,
+    "singleCharacterWithAttachedMobilityCart": true,
+    "fullVisibleSilhouette": true,
+    "headAndEarsComplete": true,
+    "bothVisibleWheelsComplete": true,
+    "visibleForelimbsComplete": true,
+    "noInventedRearLegsObserved": true,
+    "noTextShirtTagOrBackgroundFabricObservedInComposite": true,
+    "observations": [
+      "The huge asymmetric pale ears, pink tufts, hooked pale muzzle, red eyes with dark heart pupils and white lattice highlights identify the same source subject.",
+      "The spotted red bow tie, pale forelimbs, lime cart with pink heart panel, near black-rimmed wheel with white heart and partially overlapped far wheel correspond to the supplied product motif.",
+      "The foreground/background wheel overlap and attached mobility cart read as one complete supporting character. The submitted canvas contains one subject, not a sheet or several poses.",
+      "The pink perimeter line belongs to the stylized source treatment. Candidate outline geometry, color strength and tiny highlights differ from the photographed printed source; no pixel or geometric identity claim is made."
+    ]
+  },
+  "alphaAndFrame": {
+    "nativeMode": "RGBA",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "alphaMin": 0,
+    "alphaMax": 254,
+    "alphaZeroPixels": 801563,
+    "alphaOneToFifteenPixels": 24749,
+    "alphaAtLeastSixteenPixels": 746552,
+    "fullyOpaque255Pixels": 0,
+    "threshold16": {
+      "bbox": [
+        17,
+        19,
+        935,
+        1527
+      ],
+      "components": 1,
+      "largestComponents": [
+        {
+          "area": 746552,
+          "bbox": [
+            17,
+            19,
+            935,
+            1527
+          ],
+          "alphaMax": 254
+        }
+      ],
+      "totalSmallComponentPixels": 0,
+      "edgePixels": 0
+    },
+    "significantSilhouetteMarginsPx": {
+      "left": 17,
+      "top": 19,
+      "right": 89,
+      "bottom": 9
+    },
+    "canvasEdgeNonzeroPixels": 32,
+    "canvasEdgeMaximumAlpha": 1,
+    "canvasEdgePixelsAlpha16OrMore": 0,
+    "weakAlphaThreshold1": {
+      "bbox": [
+        14,
+        18,
+        986,
+        1536
+      ],
+      "componentCount": 881,
+      "pixelsOutsideLargestComponent": 4896
+    },
+    "interpretation": "At alpha >=16 there is exactly one connected component, completely inside the canvas, with no significant border pixel. The tiny bottom-border trace is very low-alpha native residue, not a cut-off wheel or limb. RGB glow displayed by a raw preview is not an opaque background; the supplied actual alpha composite shows the clean silhouette. Some low-alpha native residue exists, so not every pixel outside the strong silhouette is exactly alpha zero."
+  },
+  "recommendedIntegration": {
+    "kind": "support_base",
+    "sourceIdentityId": "hb_queef",
+    "continuity": "official_merchandise_undated",
+    "frameCoverage": "full_body",
+    "runtimeStatus": "reserve",
+    "addsStandaloneBase": true,
+    "newPlayableKit": false,
+    "newAnimationCycles": 0,
+    "nameSuggestion": "Queef · Creator Collection, Amanda Heard",
+    "nativePngPreserveWithoutRetouch": true,
+    "losslessExportMustPreserveDecodedRgba": true
+  },
+  "limits": [
+    "Merchandise stylization is retained, including the pink outline; this is not a certified episode-design reproduction.",
+    "Margins are narrow on the left, top and especially bottom (9 px at alpha >=16), despite the generation prompt asking for generous margins. Important silhouette parts remain inside the frame.",
+    "Maximum alpha is 254 rather than 255. Keep the native transparency; this review does not authorize or perform thresholding, recoloring or background repair.",
+    "Very low-alpha specks remain in transparent margins and on 32 sampled border pixels; the strongest edge alpha is recorded above. No detached visible component exists at alpha >=16.",
+    "This acceptance covers an autonomous static support drawing. It adds no selectable combat kit, movement animation or in-game placement verification."
+  ],
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "imageEditsPerformed": false
+}

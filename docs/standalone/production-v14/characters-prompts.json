@@ -1,0 +1,73 @@
+{
+  "edition": "V14",
+  "date": "2026-11-26",
+  "prompts": [
+    {
+      "id": "hb_blitzo-flashback-ghostfuckers-s2",
+      "tool": "image_gen.imagegen",
+      "intent": "reference_based_static_costume",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v14/characters/references/blitz-flashback-official-standee.png",
+        "production/v14/characters/references/ghostfuckers-official-930s.png"
+      ],
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE static full-body 2D character costume illustration for the Infernal Versus game, with genuine transparent alpha.\nPrimary request: Draw Blitzø in his flashback outfit from Helluva Boss S2E10 Ghostf**kers. This is the already designed character and costume shown in the references, not a new outfit.\nInput image 1 role: PRIMARY full-body visual reference, the official SpindleHorse Flashback Blitz standee. Only the character in front is the drawing reference; the building, acrylic support, printed name and logo are not part of the character.\nInput image 2 role: SUPPORTING official episode frame at 930 seconds. Blitzø is the figure on the right. Use it only to corroborate the outfit and identity; do not include Millie or the environment and do not substitute this cropped pose for the complete pose of image 1.\nSubject and visual locks: match the entire character from image 1 closely, including the long curved black-and-ivory banded horns, red narrow face, white facial scar on the viewer-left side, black forehead symbol, long red neck, yellow eyes and pointed yellow teeth. Preserve the dark pointed shoulder and sleeve shapes, fitted dark upper garment, bare red forearms with their visible white scars, black fingerless gloves and the exact two-hand pose at the waist. Preserve the gray-blue narrow trousers with the red angular edging at the knees, tall black boots with red pointed toes, and long curved red tail with dark bands near its red arrow-shaped tip. Keep the same pose and visible anatomy as the full-body source. Do not add objects in either hand or invent accessories. Do not reconstruct hidden surfaces or move limbs to expose them.\nStyle and palette: clean animated-series cel illustration, controlled dark tapered outlines, flat color shapes with restrained cel shading, high silhouette readability. Remove only photographic acrylic glare and product edges; keep the character design and costume. No metallic pin effect, no painterly texture, no gradients or arbitrary color redesign.\nFraming: one complete standing figure centered on a portrait canvas, the horn tips, tail tip and both boots fully inside the canvas, with at least 5 percent transparent margin on every side. No cropped extremities. Keep slender adult proportions rather than chibi proportions.\nBackground: true transparent alpha. No ground plane, shadow, hotel, sign, base, standee tabs, plastic outline, text, watermark, extra figure or duplicate pose. Exactly one static drawing, no sheet, no animation frames.",
+      "status": "generated_accepted_with_documented_limits",
+      "sourceIdentityId": "hb_blitzo",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "nativeBytesUnchanged": true,
+      "attemptCount": 1,
+      "corrections": 0,
+      "refusal": null,
+      "master": "production/v14/characters/masters/hb_blitzo-flashback-ghostfuckers-s2.png",
+      "masterSha256": "14944b4dd7bd19228b8634af6857ce60f6b9f4cc8caf2254799db87992c3b19c"
+    },
+    {
+      "id": "hb_millie-dress-disguise-training-short",
+      "tool": "image_gen.imagegen",
+      "intent": "reference_based_static_costume",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v14/characters/references/millie-dress-disguise-official-keychain.png",
+        "production/v14/characters/references/training-official-140s.png"
+      ],
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE static full-costume 2D game character illustration on true transparent alpha.\nPrimary request: Draw Millie wearing the ornate lavender dress disguise seen in the official Helluva Boss short IMP TRAINING VIDEO, as depicted completely in the supplied official Darius / SpindleHorse keychain artwork.\nInput image 1 role: PRIMARY complete visual reference, Millie's official dress-disguise keychain. The character, open parasol, feathered hat and entire dress silhouette are the sole subject. Remove the metal keychain hardware, the clear acrylic border and pale pink product-outline backing.\nInput image 2 role: SUPPORTING official short frame at 140 seconds. Millie is the small red imp with black hair and the lavender hat to the right of the reception desk. This frame confirms her identity and costume. Do not draw Loona or the desk.\nVisual locks: follow the COMPLETE costume, pose and silhouette of image 1. Preserve Millie's red face, short pointed black hair, large yellow eyes with black slit pupils and long lashes, tiny dark facial beauty marks, open startled mouth and white teeth. Preserve the wide dark-violet brim and lavender crown of the hat, its pale pink bow and the two long lavender feathers; the lavender fitted jacket with pointed cuffs and pale collar brooch; the two white gloves together around the curved peach parasol handle; the large open mauve parasol behind her head and torso with its dark structural ribs and small white decorative scallops; and the full bell-shaped light lavender skirt with a dark violet horizontal lower band, TWO pale pink bows on that band, and the visible lower flounce.\nPose and anatomy: retain the precise visible hand placement and arm bends from image 1, not the pose of the supporting frame. The long dress already conceals her legs and feet. Preserve its complete sweeping hem and do NOT expose or invent feet, legs, a tail, hidden horn sections or any other unseen anatomy. This is one whole clothed silhouette, not an anatomical reconstruction.\nStyle: crisp animated-series cel drawing, clean controlled tapered dark outlines, mostly flat pastel violet and mauve shapes with restrained cel shading, readable at game scale. Preserve the provided costume and character rather than redesigning it. Remove photographic plastic shine, metal, shadows and product textures.\nFraming: portrait canvas, one figure with the entire hat, feathers, parasol and dress hem visible, with generous transparent breathing room around the whole outline. All four margins clear. No clipping.\nBackground: transparent alpha, no scene, floor, ground shadow, desk, other character, labels, text, logo, pink backing outline, keyring, product display, duplicate pose or animation sheet. Exactly one static drawing.",
+      "status": "generated_accepted_with_documented_limits",
+      "sourceIdentityId": "hb_millie",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "nativeBytesUnchanged": true,
+      "attemptCount": 1,
+      "corrections": 0,
+      "refusal": null,
+      "master": "production/v14/characters/masters/hb_millie-dress-disguise-training-short.png",
+      "masterSha256": "3094dd4ee47977acb0945b46ab576fca261d3ffa6251f29c4f4b483256fda59f"
+    },
+    {
+      "id": "hb_moxxie-dress-disguise-training-short",
+      "tool": "image_gen.imagegen",
+      "intent": "reference_based_static_costume",
+      "transparentBackground": true,
+      "referencePaths": [
+        "production/v14/characters/references/moxxie-dress-disguise-official-keychain.png",
+        "production/v14/characters/references/training-official-130s.png"
+      ],
+      "prompt": "Use case: stylized-concept.\nAsset type: ONE static full-costume 2D game character illustration on true transparent alpha.\nPrimary request: Draw Moxxie wearing the ornate lavender dress disguise seen in the official Helluva Boss short IMP TRAINING VIDEO, as depicted completely in the supplied official Darius / SpindleHorse keychain artwork.\nInput image 1 role: PRIMARY complete visual reference, Moxxie's official dress-disguise keychain. The red imp with WHITE hair is Moxxie, not Millie. The character, open parasol, feathered hat and entire dress silhouette are the sole subject. Remove the metal keychain hardware, clear acrylic border and pale pink product-outline backing.\nInput image 2 role: SUPPORTING official short frame at 130 seconds. Moxxie is the red imp with white hair, the lavender hat and folded parasol. Use it to corroborate identity and costume, not to change the full pose of image 1. Do not draw Loona or the desk.\nVisual locks: follow the COMPLETE costume, pose and silhouette of image 1. Preserve Moxxie's red narrow face, small white hair tufts at each cheek, large half-lidded yellow eyes with narrow black pupils and visible long lashes, groups of small pale cheek freckles, open surprised mouth with pointed teeth, and the visible bases of his black-and-white horn forms beneath the hat. Preserve the wide dark-violet brim and lavender crown of the hat, pale pink bow and two long lavender feathers; lavender fitted jacket with angular shoulders, white cuffs and pale pink oval brooch; his one white-gloved hand gripping the straight upper part of the peach parasol handle and his other hand resting at his waist; the large open mauve parasol behind the head and torso with dark ribs and small white scalloped ornaments; and the full light lavender bell-shaped skirt with a dark violet horizontal band, TWO pale pink bows on the band, and the lower violet flounce.\nPose and anatomy: keep Moxxie's exact visible hand placement and arm bends from image 1, distinct from Millie's both-hands-together pose. The long dress conceals his legs and feet. Preserve the complete sweeping hem and do NOT expose or invent feet, legs, a tail, hidden horn sections or any other unseen anatomy. This is one whole clothed silhouette.\nStyle: crisp animated-series cel drawing, clean controlled tapered dark outlines, mostly flat pastel violet and mauve shapes with restrained cel shading, readable at game scale. Preserve the reference costume and character. Remove photographic plastic shine, metal, shadows and product textures.\nFraming: portrait canvas, one figure with the entire hat, feathers, parasol and dress hem visible and generous clear transparent margins. No clipping.\nBackground: transparent alpha, no scene, floor, ground shadow, desk, other character, labels, text, logo, pink backing outline, keyring, product display, duplicate pose or animation sheet. Exactly one static drawing.",
+      "status": "generated_accepted_with_documented_limits",
+      "sourceIdentityId": "hb_moxxie",
+      "frameCoverage": "full_body",
+      "addsStandaloneBase": false,
+      "nativeBytesUnchanged": true,
+      "attemptCount": 1,
+      "corrections": 0,
+      "refusal": null,
+      "master": "production/v14/characters/masters/hb_moxxie-dress-disguise-training-short.png",
+      "masterSha256": "b75155d290bf37e6e393ddd478f7df278f4b0b11b18565fd69faa8a7fdfa7ef3"
+    }
+  ],
+  "status": "three_native_calls_accepted_no_refusal_no_correction",
+  "acceptedDrawings": 3,
+  "generatedDrawings": 3,
+  "discardedDrawings": 0
+}

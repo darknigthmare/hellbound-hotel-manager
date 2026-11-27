@@ -1,0 +1,736 @@
+{
+  "date": "2026-11-24",
+  "batchId": "wave-f-2026-11-24",
+  "generator": "Built-in image_gen.imagegen",
+  "oneAssetPerImage": true,
+  "oneToOneFidelityCertified": false,
+  "canonStatus": "simulation_au",
+  "newPlayableFighters": [
+    "hb_vortex",
+    "hb_glitz",
+    "hb_glam"
+  ],
+  "poses": {
+    "hb_vortex": [
+      "ready",
+      "guard",
+      "strike",
+      "recoil"
+    ],
+    "hb_glitz": [
+      "ready",
+      "guard",
+      "strike",
+      "recoil"
+    ],
+    "hb_glam": [
+      "ready",
+      "guard",
+      "recoil"
+    ],
+    "alastor": [
+      "guard",
+      "recoil"
+    ]
+  },
+  "blockedRequests": [
+    {
+      "asset": "alastor-strike",
+      "status": "generation_refused",
+      "requestId": "f665822b-5dce-48ff-bfd5-64e57c513736",
+      "fileProduced": false,
+      "retryAfterRefusal": false
+    },
+    {
+      "asset": "hb_glam-strike",
+      "status": "generation_refused",
+      "requestId": "b7f06d9a-9564-4c19-99c7-f8ff6aa00def",
+      "fileProduced": false,
+      "retryAfterRefusal": false
+    }
+  ],
+  "animationCompleteness": "Vortex et Glitz : quatre poses clés chacun. Glam : repos, garde, recul. Alastor : nouvelle garde et nouveau recul, repos conservé. Les actions non dessinées utilisent le repli existant ; aucun cycle complet ni nouvelle finition animée.",
+  "sourcesAndPrompts": [
+    "art/infernal-versus/production/root-prompts-wave-f-2026-11-24.json",
+    "art/infernal-versus/production/wave-f-2026-11-24/characters/PROMPTS_AND_SOURCES.md",
+    "art/infernal-versus/production/wave-f-2026-11-24/characters/VORTEX_POSE_PROMPTS.md"
+  ],
+  "files": [
+    {
+      "path": "art/infernal-versus/masters/poses/alastor-guard.png",
+      "bytes": 1202390,
+      "sha256": "acf0b157624060791fcf45a67c995299dec651b6ac10dc3f76f80ba068fd13fc",
+      "gitBlobSha": "8c4a59d9cac42175aae50338ca2f6ce4e4bb3158",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        416,
+        26,
+        1116,
+        992
+      ],
+      "id": "alastor-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/alastor-guard.webp",
+      "bytes": 769454,
+      "sha256": "a91225b4436c2f9c6e6db9b617ee2ef7c94ea25296e5bcc6fcb9992418348cb5",
+      "gitBlobSha": "ed033094060da46f78b5a85fcdb1cbd2cc73e057",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        416,
+        26,
+        1116,
+        992
+      ],
+      "id": "alastor-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/alastor-recoil.png",
+      "bytes": 1144770,
+      "sha256": "e8d4404202b9f30eaee1a081d352087a8efa9a8f27ee3742b45d1a657f3dd1c1",
+      "gitBlobSha": "dc38df6cfd9cfa26dc2bd023286f03bd4863e150",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        443,
+        20,
+        966,
+        990
+      ],
+      "id": "alastor-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/alastor-recoil.webp",
+      "bytes": 731682,
+      "sha256": "9823f6ecd128496e16ce48268f4c587d6e54b67120b09af0c639acd29ca75437",
+      "gitBlobSha": "d60bf83d6806a9ff206ba7cdefe6145ec4ae04cb",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        443,
+        20,
+        966,
+        990
+      ],
+      "id": "alastor-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-ready.png",
+      "bytes": 792406,
+      "sha256": "191fe22bd46ea1ea0b525e4435be5d7d0f2141a0021fa546e9346aa46b2be788",
+      "gitBlobSha": "46d2a9ffb5a845ad3a6c2974bb103a77dba55f6b",
+      "dimensions": [
+        1200,
+        1310
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        113,
+        29,
+        1016,
+        1268
+      ],
+      "id": "hb_vortex-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-ready.webp",
+      "bytes": 450420,
+      "sha256": "5fa57790e070a65e54f6995a73786ef06ef963772838eda9cc754b9ea6f2e82b",
+      "gitBlobSha": "fd4f8afacb6b4b0df0e2624b30747f9811ca4f2a",
+      "dimensions": [
+        1200,
+        1310
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        113,
+        29,
+        1016,
+        1268
+      ],
+      "id": "hb_vortex-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-guard.png",
+      "bytes": 912481,
+      "sha256": "93b4ad7a9b27769264da66746bcc2fdb310a1b059763bb7c6af3f3b41ccc4a09",
+      "gitBlobSha": "1e936311b62bd2c1fa506511252e5c068dae3f94",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        67,
+        39,
+        982,
+        1376
+      ],
+      "id": "hb_vortex-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-guard.webp",
+      "bytes": 526216,
+      "sha256": "3e61de0e93f2e13876f3d833beb9dc8a6cdf49477e0f05b5447b4873c424091a",
+      "gitBlobSha": "60ec406089b5480dd1f634635c53ad1bf7f133b6",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        67,
+        39,
+        982,
+        1376
+      ],
+      "id": "hb_vortex-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-strike.png",
+      "bytes": 880456,
+      "sha256": "5dd655e6eb1bb5754b9878c7b581687f2a1c6631d43b3645ee5f12354cccdf7f",
+      "gitBlobSha": "46ca106bb8bc214c3edeee15ba7375e62164f9b4",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        15,
+        76,
+        1099,
+        1367
+      ],
+      "id": "hb_vortex-strike",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-strike.webp",
+      "bytes": 508608,
+      "sha256": "720245ddea284c2b7c84dbd1c7bc5cc3beaf654d8850c955bfd3aca518181d5a",
+      "gitBlobSha": "b4a496a9a280c57c98aea1f28d1f8d98cf5e70a1",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        15,
+        76,
+        1099,
+        1367
+      ],
+      "id": "hb_vortex-strike",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_vortex-recoil.png",
+      "bytes": 1019391,
+      "sha256": "d03c985dbfb46c58064905de32b87f07009ecb31dc1f39b4e9f98ee7652a6551",
+      "gitBlobSha": "1c807e712b7e29efd2de9fc3a9f29b42a928540d",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        55,
+        67,
+        1080,
+        1387
+      ],
+      "id": "hb_vortex-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_vortex-recoil.webp",
+      "bytes": 578216,
+      "sha256": "a95f8fd829ed9ce1b767d2edba99d003e5551ba1c033f50f5a7dc27cd56715fd",
+      "gitBlobSha": "16d94a1ea3ea87645a819526dd8c2cfc8a74dc96",
+      "dimensions": [
+        1109,
+        1419
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        55,
+        67,
+        1080,
+        1387
+      ],
+      "id": "hb_vortex-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-ready.png",
+      "bytes": 691126,
+      "sha256": "719ca716b72468ffda976c64c48df4c97cebd251a5f4566cc9e70bb6e20c147f",
+      "gitBlobSha": "f2300d6e8cc5cfb10a5fc391ce68162e17ad5896",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        103,
+        89,
+        982,
+        1301
+      ],
+      "id": "hb_glitz-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-ready.webp",
+      "bytes": 436970,
+      "sha256": "93f2704fabbd7cb3cacad92d1dc5be1e040f97aa3f3b8a378c60310bcf63fd1b",
+      "gitBlobSha": "fc3fa93e0ee8b12803fac0da5300b428d73cfa94",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        103,
+        89,
+        982,
+        1301
+      ],
+      "id": "hb_glitz-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-guard.png",
+      "bytes": 772974,
+      "sha256": "82c10b1c89356b8762fe81799707bf9479f03b73c6b3591f9fee31debecbbb5f",
+      "gitBlobSha": "8cfcb3899a1132033795c9d8c8b68967e807df0c",
+      "dimensions": [
+        1080,
+        1456
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        64,
+        91,
+        926,
+        1371
+      ],
+      "id": "hb_glitz-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-guard.webp",
+      "bytes": 480518,
+      "sha256": "cb7c72f042820b45052e0805d75379d42555e74bf5f1dc7abaa7e758a2b10579",
+      "gitBlobSha": "c28d7496f4789c090ba062a71a6c2d4e9f92d04b",
+      "dimensions": [
+        1080,
+        1456
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        64,
+        91,
+        926,
+        1371
+      ],
+      "id": "hb_glitz-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-strike.png",
+      "bytes": 700317,
+      "sha256": "01dad19546f6cbfe72f89ec190695d9e489c633f4fd4cc7a01bb77222ae69087",
+      "gitBlobSha": "08a4379171528c604579f36275d3d45bd21cdd4d",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        99,
+        86,
+        1037,
+        1298
+      ],
+      "id": "hb_glitz-strike",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-strike.webp",
+      "bytes": 441408,
+      "sha256": "cbea835ed5e6d5e02b97ae538ad05d261258ef0b4fccd89a2ba9124862db4f00",
+      "gitBlobSha": "e323e7c46341eafe8716a597f6bb3096c69225ed",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        99,
+        86,
+        1037,
+        1298
+      ],
+      "id": "hb_glitz-strike",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glitz-recoil.png",
+      "bytes": 706952,
+      "sha256": "4d6eef9a5450b058a750ef0c819d366a379643fd1c835dff0f52bf0baf1338df",
+      "gitBlobSha": "51d8d3b395f8e15aae757588e120712362e8d772",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        75,
+        99,
+        907,
+        1288
+      ],
+      "id": "hb_glitz-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glitz-recoil.webp",
+      "bytes": 446728,
+      "sha256": "6b7a26202ac7ac675e3a79c1255b7f5cd60ca4f60b36201d595b5255a6ed6602",
+      "gitBlobSha": "11b9034754fa92d6ffede698d196942855c7153b",
+      "dimensions": [
+        1140,
+        1380
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        75,
+        99,
+        907,
+        1288
+      ],
+      "id": "hb_glitz-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-ready.png",
+      "bytes": 641631,
+      "sha256": "d6daa4d9a78db0f7ca9db36038b138541f773ec39f45605aca28edfa65fd354b",
+      "gitBlobSha": "d4d002baa32acaf27959b3f3d87e16ee4d7fdcd2",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        235,
+        70,
+        970,
+        1226
+      ],
+      "id": "hb_glam-ready",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-ready.webp",
+      "bytes": 403546,
+      "sha256": "44b5941aded4014ce3fbc790f9abcf7e36a55f5ddfe7cc260636f2151fa15418",
+      "gitBlobSha": "cc35b6713d66cbaa18dec490380be8b97bbe8f6e",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        235,
+        70,
+        970,
+        1226
+      ],
+      "id": "hb_glam-ready",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-guard.png",
+      "bytes": 790481,
+      "sha256": "c94d85d7d6522d8af4dd9f881f678c92867c248d3445bb27746cce84e6b4f923",
+      "gitBlobSha": "ae2090e09e97371d4fa71ec819d869ba55f0dbce",
+      "dimensions": [
+        1108,
+        1420
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        73,
+        884,
+        1341
+      ],
+      "id": "hb_glam-guard",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-guard.webp",
+      "bytes": 491158,
+      "sha256": "c981eed03daf0f2152b9e719f0ad81d5e0b98c57aaa86b3cefdee7afc9b33a4a",
+      "gitBlobSha": "fca9f2b72bb2a367f67bf3eeca442cb7a9d03e17",
+      "dimensions": [
+        1108,
+        1420
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        152,
+        73,
+        884,
+        1341
+      ],
+      "id": "hb_glam-guard",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    },
+    {
+      "path": "art/infernal-versus/masters/poses/hb_glam-recoil.png",
+      "bytes": 680125,
+      "sha256": "7114755847a398a6f3fa910adf153b7dd062b42e7e014cebbca2e8de5839efd8",
+      "gitBlobSha": "1bcd45943229264bfdf33df554ae8e5b5f0cc64a",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        138,
+        78,
+        867,
+        1220
+      ],
+      "id": "hb_glam-recoil",
+      "group": "characters",
+      "kind": "master",
+      "pixelExactToMaster": false,
+      "registered": false
+    },
+    {
+      "path": "public/assets/sprites/individual/hb_glam-recoil.webp",
+      "bytes": 424644,
+      "sha256": "5008493044444effd28333caefc61bd753ec94f599c2932bf4204993472f709a",
+      "gitBlobSha": "8c23c8bd793a0dea8c7c129964db53e64090f859",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        138,
+        78,
+        867,
+        1220
+      ],
+      "id": "hb_glam-recoil",
+      "group": "characters",
+      "kind": "runtime",
+      "pixelExactToMaster": true,
+      "registered": true
+    }
+  ]
+}

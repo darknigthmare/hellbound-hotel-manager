@@ -12,6 +12,8 @@ export interface InfernalFinish {
 // Original exhibition endings. Titles and stage effects describe the simulation.
 export const INFERNAL_FINISHES: Readonly<Record<string, InfernalFinish>> = {
   hz_mimzy: { title: 'Un dernier huit pour la salle', effect: 'curtain', impactSprite: '/assets/sprites/finishers/hz_mimzy.webp' },
+  hz_katie_killjoy: { title: 'Coupure d’antenne', effect: 'signal' },
+  hz_tom_trench: { title: 'Retour à la régie', effect: 'signal' },
   hb_sallie_may: { title: 'La barrière se referme', effect: 'blade', impactSprite: '/assets/sprites/finishers/hb_sallie_may.webp' },
   charlie: { title: 'Le rideau de l’aube', effect: 'embers', impactSprite: '/assets/sprites/finishers/charlie.webp' },
   vaggie: { title: 'La dernière sentinelle', effect: 'blade' },
@@ -47,6 +49,12 @@ export const INFERNAL_FINISHES: Readonly<Record<string, InfernalFinish>> = {
   hb_beelzebub: { title: 'Extinction des néons', effect: 'signal' },
   hb_crimson: { title: 'Ardoise soldée', effect: 'shadow' },
   hb_andrealphus: { title: 'Palais de glace', effect: 'frost' },
+  hb_stella: { title: 'L’audience est terminée', effect: 'curtain' },
+  hb_mammon: { title: 'Le rappel est payant', effect: 'curtain' },
+  // Shared stage curtains with the accepted pose fallback, not new finisher art.
+  hb_vortex: { title: 'La sortie reste libre', effect: 'curtain' },
+  hb_glitz: { title: 'Le salut choisi', effect: 'curtain' },
+  hb_glam: { title: 'Jusqu’au dernier temps', effect: 'curtain' },
 };
 
 export const FINISH_INPUT_MS = 3200;

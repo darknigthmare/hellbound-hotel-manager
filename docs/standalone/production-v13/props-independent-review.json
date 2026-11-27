@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "edition": "V13",
+  "reviewer": "/root/v13_register_bible",
+  "reviewedAt": "2026-11-26T19:44:27.693389+00:00",
+  "status": "three_props_accepted_with_limits",
+  "scope": "Independent visual comparison of three complete native prop masters, primary backgrounds and exact detail crops, alpha composites and losslessRGBA export verification. No runtime review performed here.",
+  "fidelityOneToOneCertified": false,
+  "catalogueBaselineCommit": "bdcf1f2ec32f3a8228b4b0bca0c61b7fdd06e963",
+  "referenceReview": "docs/standalone/production-v13/props-reference-review.json",
+  "referenceReviewSha256": "8e7604ef7652d4c26f45435eb0954df4598840842383be5df00605c5096ac637",
+  "assets": [
+    {
+      "id": "spring-broken-red-cup",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/spring-broken-red-cup.png",
+      "masterSha256": "8bbe82a8a48638aff827136ddc543cb7a7dde07b52fe8680efeb767523350674",
+      "nativeDimensions": [
+        1536,
+        1024
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v13/environment/references/rebecca-hb4-166.png",
+          "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+          "dimensions": [
+            1500,
+            844
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "author": "Rebecca Reynolds",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/beach-red-cup-reference.png",
+          "sha256": "ebcd088bd08d4520be0cab70a2b8e65cb599e2a69982a68f23c892971be6aa51",
+          "dimensions": [
+            74,
+            61
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            787,
+            363,
+            861,
+            424
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Un seul gobelet rouge couché, ouverture ovale claire à gauche et fond à droite, contour complet.",
+        "Aucun sable, liquide, logo, second objet ni ombre de sol ajouté.",
+        "Rim, couleurs générales et forme effilée sont repris du crop primaire."
+      ],
+      "limits": [
+        "Source primaire de détail74×61px. Contour, petits traits intérieurs, reflets et proportions sont interprétés à haute résolution.",
+        "Une pose statique de réserve ; absence de fonction jouable propre à ce dessin."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/spring-broken-red-cup-alpha-diagnostic.png",
+        "sha256": "4ba6c1e1b2331b8bce5c6975c648c043b6d5717e323db88f898cd70143c4b1d2",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/spring-broken-red-cup.png",
+        "sha256": "8bbe82a8a48638aff827136ddc543cb7a7dde07b52fe8680efeb767523350674",
+        "bytes": 1066399,
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaZeroPixels": 1135953,
+        "alphaFullPixels": 0,
+        "alphaPartialPixels": 436911,
+        "visibleBBoxAlpha16": [
+          303,
+          217,
+          1208,
+          840
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/spring-broken-red-cup.webp",
+          "sha256": "d2482985b97eb772da84004a84ae932237029b79406e77ac346609129f0659ae",
+          "bytes": 676420,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    },
+    {
+      "id": "dhorks-red-button-panel-s1",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/dhorks-red-button-panel-s1.png",
+      "masterSha256": "a6fd1cb10bf3f3f33cdb860de857650f4746dcf12586d779d575ad39771c2b64",
+      "nativeDimensions": [
+        1061,
+        1483
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v13/environment/references/rebecca-hb6-261b.png",
+          "sha256": "80c45b6511321b8adfc2d5663c8b0b24384ea2499c64b664002f0621d8cf36f8",
+          "dimensions": [
+            1500,
+            527
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+          "author": "Rebecca Reynolds",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/dhorks-red-button-reference.png",
+          "sha256": "09434d157e93c77f9ff5589a4ebb727ef705c97a21d6e59c23355c7dac9d4157",
+          "dimensions": [
+            73,
+            102
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            477,
+            284,
+            550,
+            386
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/c7c79ca3-0189-4005-9423-22d270800b5a/TS_HB6_261B.png",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Texte RED BUTTON lisible et exact, gros bouton rouge sur cadre gris rectangulaire.",
+        "Perspective oblique et zones à rayures diagonales conservées, panneau entier avec marge.",
+        "Aucun morceau de mur, débris ou personnage conservé."
+      ],
+      "limits": [
+        "Source primaire de détail73×102px. Typographie, épaisseur du cadre, rayures et texture sont réinterprétées.",
+        "Des reflets ponctuels et une texture plus détaillée que la source apparaissent sur le bouton et le panneau. Ces détails ne sont pas des éléments canoniques certifiés.",
+        "Aucune fonction de commande, voyant ou circuit n’est déduite du dessin de réserve."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/dhorks-red-button-panel-s1-alpha-diagnostic.png",
+        "sha256": "2542f4ea8d6f4eb04b9693333068f1514bb24564dff96f004dea8450df2deed4",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/dhorks-red-button-panel-s1.png",
+        "sha256": "a6fd1cb10bf3f3f33cdb860de857650f4746dcf12586d779d575ad39771c2b64",
+        "bytes": 861762,
+        "dimensions": [
+          1061,
+          1483
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 918601,
+        "alphaFullPixels": 104,
+        "alphaPartialPixels": 654758,
+        "visibleBBoxAlpha16": [
+          183,
+          210,
+          848,
+          1228
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/dhorks-red-button-panel-s1.webp",
+          "sha256": "bcd796421a9b8a76983cf7436d7c889499b403d9cd6f4ce6969b4b52eb0f02ed",
+          "bytes": 461486,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    },
+    {
+      "id": "asmodeus-bedroom-pitcher",
+      "kind": "prop",
+      "nativeMasterPath": "production/v13/props/masters/asmodeus-bedroom-pitcher.png",
+      "masterSha256": "c0a4677434d4c028e89eeb3a00f7a39678779d86ada51a26882e5039208bc17c",
+      "nativeDimensions": [
+        1287,
+        1222
+      ],
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "reviewer": "/root/v13_register_bible",
+      "frameCoverage": "full_object",
+      "addsStandaloneBase": false,
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false,
+      "references": [
+        {
+          "path": "production/v10/environment/references/jasper-206-paint-00007.jpg",
+          "sha256": "bde53558b7255b3511d0e083360be3ecdb4f282a577867095a26ccdf9f37e978",
+          "dimensions": [
+            2500,
+            1532
+          ],
+          "visuallyInspected": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "portfolioUrl": "https://jasperluu.com/helluvaboss",
+          "author": "Jasper Luu",
+          "kind": "official_production_artist_portfolio_image",
+          "primary": true,
+          "role": "Primary complete production background"
+        },
+        {
+          "path": "production/v13/props/references/asmodeus-pitcher-reference-v2.png",
+          "sha256": "0bb3c190c59e1b4a7400c0e005b466a5eee5c6c993c4d99151492daf640efe1b",
+          "dimensions": [
+            135,
+            165
+          ],
+          "visuallyInspected": true,
+          "cropBox": [
+            2075,
+            475,
+            2210,
+            640
+          ],
+          "exactPixelCropOfParent": true,
+          "url": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/0cc74b05-b81f-4c5b-a79b-9f53bc4af4e6/206+Paint+00007.jpeg?format=2500w",
+          "role": "Exact unscaled detail crop, complete visible object at the source angle"
+        }
+      ],
+      "visualComparison": [
+        "Pichet fermé rouge violet, corps conique, bec à gauche, anse anguleuse à droite.",
+        "Couvercle et bouton décoratif pointu entiers, sans coupure du sommet.",
+        "Aucun meuble, bougie, contenu ou second objet ajouté."
+      ],
+      "limits": [
+        "Source primaire de détail135×165px. Proportions du bec, de l’anse et du bouton de couvercle légèrement adaptées.",
+        "Les reflets et nuances sont redessinés sous la palette de la chambre ; aucune matière ou contenance non visible n’est déduite.",
+        "Une seule pose statique de réserve, pas de nouvelle arène ou mécanique."
+      ],
+      "alphaCompositeInspected": true,
+      "alphaComposite": {
+        "path": "docs/standalone/production-v13/props-diagnostics/asmodeus-bedroom-pitcher-alpha-diagnostic.png",
+        "sha256": "610fd4c5d43bb1e284aa88ab679adadd28a8603a61b6930f2ccda5f76ba06cae",
+        "purpose": "Diagnostic compositing only; native master untouched."
+      },
+      "pixelAudit": {
+        "path": "production/v13/props/masters/asmodeus-bedroom-pitcher.png",
+        "sha256": "c0a4677434d4c028e89eeb3a00f7a39678779d86ada51a26882e5039208bc17c",
+        "bytes": 696767,
+        "dimensions": [
+          1287,
+          1222
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaZeroPixels": 1048292,
+        "alphaFullPixels": 1057,
+        "alphaPartialPixels": 523365,
+        "visibleBBoxAlpha16": [
+          269,
+          108,
+          1052,
+          1099
+        ],
+        "export": {
+          "path": "public/assets/production/v13/props/asmodeus-bedroom-pitcher.webp",
+          "sha256": "af19924634ea33535f0f9c2d991dc9b304c8e90ff193b0a61c5b694eac365f96",
+          "bytes": 370444,
+          "pixelExact": true
+        }
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "basis": "ID absent from all128 baseline gallery entries; master SHA differs from historical masters. No cup/button/pitcher entry was present. Background source reuse is not an existing standalone prop."
+      }
+    }
+  ]
+}

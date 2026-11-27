@@ -1,0 +1,108 @@
+{
+  "reviewer": "recover_v8 independent visual review",
+  "reviewedAt": "2026-11-26T15:31:14.463418+00:00",
+  "assetId": "loona-queen-bee-party-dress",
+  "status": "accepted_with_limits",
+  "asset": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-7bf83668-e78e-4dba-91cc-1a2d7b5d0007.png",
+    "sha256": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+    "mode": "RGBA",
+    "width": 1160,
+    "height": 1355,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "alphaZero": 1065510,
+    "alphaNonzero": 506290,
+    "alphaAtLeast240": 462119,
+    "edgeAlphaMax": 1,
+    "thresholds": {
+      "0": {
+        "bbox": [
+          0,
+          4,
+          1150,
+          1355
+        ],
+        "margins": [
+          0,
+          4,
+          10,
+          0
+        ]
+      },
+      "16": {
+        "bbox": [
+          16,
+          7,
+          1071,
+          1344
+        ],
+        "margins": [
+          16,
+          7,
+          89,
+          11
+        ]
+      },
+      "128": {
+        "bbox": [
+          17,
+          7,
+          1070,
+          1343
+        ],
+        "margins": [
+          17,
+          7,
+          90,
+          12
+        ]
+      },
+      "240": {
+        "bbox": [
+          20,
+          8,
+          1069,
+          1340
+        ],
+        "margins": [
+          20,
+          8,
+          91,
+          15
+        ]
+      }
+    },
+    "diagnosticComposite": "/tmp/infernal-v10/independent-review/loona-neutral-composite.png"
+  },
+  "referencesInspected": [
+    {
+      "path": "/tmp/infernal-v10/references/loona-party-full-670s.png",
+      "sha256": "966f4a2caac3f8ad0dee63592d2fe4cd6cc3bdb6d5dea78ed46e8a390daf10c7"
+    },
+    {
+      "path": "/tmp/infernal-v10/references/loona-party-full-40s.png",
+      "sha256": "b3adc1be37acf0e44ac0bfa97f33dd091d410986c7313ec8361e0eaf496fb0fd"
+    },
+    {
+      "path": "/tmp/infernal-v10/references/queen-bee-party-dress-loona-enamel-pin.png",
+      "sha256": "e7d4e748f27b12ec6c4cfc962276b88f42000c8c6bd1cb78c98b2be87b43e39b"
+    }
+  ],
+  "checks": {
+    "costume": "Robe courte bordeaux sans bretelles, bord supérieur noir, lignes de laçage, gants longs noirs, collier à clous : cohérents avec le pin officiel et les deux cellules Queen Bee.",
+    "anatomy": "Deux bras, deux jambes digitigrades et deux pattes distinctes ; une queue entière. Pas de membre supplémentaire ni de raccord manifestement cassé observé.",
+    "framing": "Oreille, cheveux, queue et pattes entièrement dans le cadre. Marges de silhouette alpha > 16 : gauche 16, haut 7, droite 89, bas 11 px.",
+    "alpha": "Composite sur gris opaque réellement inspecté : silhouette propre, aucun fond ou halo coloré visible. Les rares pixels de bord du canevas sont alpha 1/255 et ne constituent pas une coupure visible."
+  },
+  "limitations": [
+    "Corps et bas du costume contrôlés sur deux cellules publiques natives 320 × 180 ; les petits détails des doigts, griffes et pattes ne peuvent pas être certifiés à partir de ces sources.",
+    "Le pin officiel ne couvre que le buste et ne prouve pas le bas du costume.",
+    "Marges haut/bas étroites ; aucun rognage visible mais ne pas recadrer davantage.",
+    "Illustration statique interprétée ; conformité 1:1 et animation non certifiées."
+  ],
+  "blockingIssues": [],
+  "requestedCorrections": []
+}

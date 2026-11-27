@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "edition": "V16",
+  "date": "2026-11-27",
+  "reviewer": "/root/audit_roster",
+  "tool": "Chromium native image display plus numeric PIL/NumPy checks; no pixel repair",
+  "assets": [
+    {
+      "id": "hb_gerald-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_gerald-barbie-bad-day-portrait.png",
+      "export": "production/v16/characters/exports/hb_gerald-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_gerald-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1230,
+        1278
+      ],
+      "mode": "RGBA",
+      "masterSha256": "80c725b3c888975bbd3549b2f09f3a0848a9657a0413977faadd3d56dee6339b",
+      "exportSha256": "647082560fc2106da7a463697a368cfc87c902593047468f599fbaee5e79606d",
+      "masterBytes": 743664,
+      "exportBytes": 465368,
+      "rgbaPixelSha256": "07d9e8d0682cdc9197600dbeeb101f75b360ee5cebbb6320de4dc2a8a36582a1",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        175,
+        45,
+        1003,
+        1240
+      ],
+      "alpha16Margins": {
+        "left": 175,
+        "top": 45,
+        "right": 227,
+        "bottom": 38
+      },
+      "edgeMaxAlpha": 1,
+      "edgePixelsWithNonzeroAlpha": 129,
+      "edgePixelsAlpha16OrMore": 0,
+      "status": "operator_visual_review_accepted_with_limits",
+      "reviewer": "/root/audit_roster",
+      "nativeAlphaDiagnostic": {
+        "path": "production/v16/characters/references/diagnostics/hb_gerald-barbie-bad-day-portrait-three-backgrounds.png",
+        "sha256": "c989fd18ba1d626dbcd84932e63d7731db84f2aeb8eb4d253b1a5f56f4b8f5e5",
+        "bytes": 156309,
+        "dimensions": [
+          1500,
+          700
+        ],
+        "mode": "RGB",
+        "kind": "chromium_native_alpha_diagnostic_not_primary_reference",
+        "backgrounds": [
+          "#eeeeee",
+          "#888888",
+          "#14131c"
+        ],
+        "visuallyInspected": true,
+        "rendering": "Unmodified native PNG displayed with CSS object-fit contain on three flat backgrounds; screenshot in Chromium. No recolour, alpha threshold, painting or repair."
+      },
+      "observations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Gerald conserve visage violet, lourdes paupières, iris turquoise, chevelure rose pâle, cornes, appendice aqua et col montant vert. Le cadrage volontaire s’arrête au haut du torse."
+      ],
+      "limits": [
+        "Préviews primaires natives 320 × 180 pixels ; petits détails, contours, proportions fines et couleurs hors éclairage de scène sont adaptés. Aucune certification artistique 1:1.",
+        "Le portrait n’est ni une base autonome entière ni un kit jouable. Aucune animation et aucun contrôle dans la galerie du jeu effectué par cet agent.",
+        "Le degré de frontalité, les courbes des yeux, le volume des cheveux, les longueurs de cornes et les plis du col sont interprétés depuis les petites frames.",
+        "Un très faible bruit alpha de bord est conservé à l’identique. Aucun nettoyage par seuil ou retouche n’a été réalisé.",
+        "Des résidus cyan dans le RGB brut sous le buste ont un alpha maximal de 3 dans les 35 dernières lignes ; ils ne constituent pas un halo opaque dans les composites inspectés. Ils sont conservés dans le PNG natif."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    },
+    {
+      "id": "hb_rick-barbie-bad-day-portrait",
+      "master": "production/v16/characters/masters/hb_rick-barbie-bad-day-portrait.png",
+      "export": "production/v16/characters/exports/hb_rick-barbie-bad-day-portrait.webp",
+      "intendedRuntimeExport": "public/assets/production/v16/characters/hb_rick-barbie-bad-day-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "masterSha256": "4439084ea3917e7f0bb3983951115ccd8cee3c55a440a1fcaa367af17be5b4e6",
+      "exportSha256": "a3ef44e575c9e73165bd058c38e7ad5eb4fab23996fdc4189ceccca1479702d5",
+      "masterBytes": 799322,
+      "exportBytes": 466362,
+      "rgbaPixelSha256": "04fa433e5d61e9bf73741aea70af17d6a7593cba7de551c746c2598a1d976000",
+      "pixelExactExport": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        197,
+        55,
+        1083,
+        1150
+      ],
+      "alpha16Margins": {
+        "left": 197,
+        "top": 55,
+        "right": 229,
+        "bottom": 49
+      },
+      "edgeMaxAlpha": 0,
+      "edgePixelsWithNonzeroAlpha": 0,
+      "edgePixelsAlpha16OrMore": 0,
+      "status": "operator_visual_review_accepted_with_limits",
+      "reviewer": "/root/audit_roster",
+      "nativeAlphaDiagnostic": {
+        "path": "production/v16/characters/references/diagnostics/hb_rick-barbie-bad-day-portrait-three-backgrounds.png",
+        "sha256": "a860ce761a295a6ae95c2c88af9af44867fa8f34dd0b1bc2806de4af264ee1b1",
+        "bytes": 152911,
+        "dimensions": [
+          1500,
+          700
+        ],
+        "mode": "RGB",
+        "kind": "chromium_native_alpha_diagnostic_not_primary_reference",
+        "backgrounds": [
+          "#eeeeee",
+          "#888888",
+          "#14131c"
+        ],
+        "visuallyInspected": true,
+        "rendering": "Unmodified native PNG displayed with CSS object-fit contain on three flat backgrounds; screenshot in Chromium. No recolour, alpha threshold, painting or repair."
+      },
+      "observations": [
+        "Un personnage unique, portrait de tête, cou et haut du torse. Toutes les extrémités de la tête sont contenues ; aucun membre inférieur ni corps derrière le comptoir reconstruit.",
+        "Les composites Chromium sur fonds clair, gris et sombre ont été visualisés ; aucune plaque opaque de fond ni rognure d’extrémité significative observée.",
+        "Rick conserve visage rouge, yeux jaunes mi-clos, chevelure blanche, petite barbiche claire, casquette rose, deux cornes noires à bande claire, col de chemise et tablier rose. Le bas du tablier et le reste du corps sont absents."
+      ],
+      "limits": [
+        "Préviews primaires natives 320 × 180 pixels ; petits détails, contours, proportions fines et couleurs hors éclairage de scène sont adaptés. Aucune certification artistique 1:1.",
+        "Le portrait n’est ni une base autonome entière ni un kit jouable. Aucune animation et aucun contrôle dans la galerie du jeu effectué par cet agent.",
+        "Le portrait historique du dépôt a été fourni comme support secondaire. Les extrémités des cornes reposent aussi sur une vue arrière officielle ; leur projection de face, l’angle de la casquette, les taches de rousseur, la bouche et les coutures sont interprétés.",
+        "Un très faible bruit alpha de bord est conservé à l’identique. Aucun nettoyage par seuil ou retouche n’a été réalisé."
+      ],
+      "fidelityOneToOneCertified": false,
+      "inGameChecked": false
+    }
+  ],
+  "inGameChecked": false,
+  "fidelityOneToOneCertified": false
+}

@@ -1,0 +1,2000 @@
+{
+  "schemaVersion": 1,
+  "batchId": "characters-wave-d-2026-11-24",
+  "repository": "darknigthmare/hellbound-hotel-manager",
+  "sourceCommit": "3db6dce417e8c597baaee8f23dbe85b8d40e0a39",
+  "date": "2026-11-24",
+  "generationMode": "Built-in image_gen, one complete character and one pose per call, transparent_background=true. Independent pose requests were parallelized after their READY had been inspected.",
+  "classification": "simulation_au",
+  "requestedAssets": 16,
+  "scope": {
+    "requestedFamilies": [
+      "hz_katie_killjoy",
+      "hz_tom_trench",
+      "hb_stella",
+      "hb_mammon"
+    ],
+    "acceptedFamilies": [
+      "hz_katie_killjoy",
+      "hz_tom_trench",
+      "hb_mammon"
+    ],
+    "uniqueDrawings": 12,
+    "pngMasters": 12,
+    "losslessWebpExports": 12,
+    "selectedDrawings": 12,
+    "generatedCandidatesIncludingSuperseded": 13,
+    "generationCalls": 14,
+    "safetyBlockedCalls": 1,
+    "qualityCorrectionCalls": 1,
+    "safetyRetries": 0,
+    "undeliveredRequestedAssets": 4
+  },
+  "status": "12-accepted-assets-generated-file-verified-and-neutral-background-reviewed; Stella blocked",
+  "note": "Three new READY identities and nine pose-only variants. Gameplay movements are original Simulation AU adaptations. Canonical 1:1 reproduction is not certified. This batch changes only image assets and this production manifest; runtime integration is handled separately by the root agent.",
+  "sources": [
+    {
+      "id": "mammon-official-standee",
+      "authority": "primary licensed product artwork",
+      "publisher": "SpindleHorse / Shark Robot",
+      "url": "https://sharkrobot.com/products/mammon-standee-2",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0284/5558/files/MammonStandee_fd97f564-f326-4ccf-a60a-e338e1d2156f.png?v=1757955735",
+      "inspection": "Official full-body standee artwork inspected. Broad tiered jester silhouette, exactly four arms, short pale legs, green-black-gold palette and three-pronged cap used as identity reference. Standee base and product presentation are excluded.",
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/mammon-official-standee.png",
+      "sha256": "bd8f51e23c92b78f367b9adfd1f79848b7784d67220ceee7407ebf58fc7e5d97"
+    },
+    {
+      "id": "mammon-s2e7-primary-preview",
+      "authority": "primary official episode sampled preview frames",
+      "publisher": "Vivziepop",
+      "url": "https://www.youtube.com/watch?v=rRymSi8SmqA",
+      "title": "MAMMON'S MAGNIFICENT MUSICAL MID-SEASON SPECIAL — HELLUVA BOSS S2E7",
+      "inspection": "Public player metadata was playable. Storyboard L3 M9 inspected: nine sampled 320x180 frames from 810 through 890 seconds in 10-second steps. Present-day normal broad four-arm form corroborates the standee; no claim of having inspected continuous motion.",
+      "publicStoryboardRecord": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/rRymSi8SmqA-tiles-L3.json",
+      "sampleTimestampsSeconds": [
+        810,
+        820,
+        830,
+        840,
+        850,
+        860,
+        870,
+        880,
+        890
+      ],
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/rRymSi8SmqA-storyboard-L3-M9.jpg",
+      "sha256": "22108cd363d4e5fda7c7f7d0e43c2646389e913591290b0fac92767dccf0eb9a"
+    },
+    {
+      "id": "stella-official-standee",
+      "authority": "primary licensed product artwork",
+      "publisher": "SpindleHorse / Shark Robot",
+      "url": "https://sharkrobot.com/products/stella-standee-1",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0284/5558/files/StellaStandee_6b23fcea-efe9-4465-bc26-a8c3f6974941.png?v=1757955790",
+      "inspection": "Adult usual white-and-pink outfit, crown, dark arms and long skirt/tail inspected before the one blocked READY request. No output was produced.",
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/stella-official-standee.png",
+      "sha256": "64e169fd8db4d8be6936f6be8476441e572197e4dbf900d807553a1b1c9a97a1"
+    },
+    {
+      "id": "stella-s2e1-primary-preview",
+      "authority": "primary official episode sampled preview frames",
+      "publisher": "Vivziepop",
+      "url": "https://www.youtube.com/watch?v=_spuxXnul0U",
+      "title": "The Circus — HELLUVA BOSS S2E1",
+      "inspection": "Public player metadata was playable. L3 M8 and M13 sampled preview sheets inspected for adult Stella. M8 was supplied with the standee to the one blocked READY request. No output was produced.",
+      "publicStoryboardRecord": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/_spuxXnul0U-tiles-L3.json",
+      "suppliedSampleSheetRangeSeconds": [
+        720,
+        800
+      ],
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/_spuxXnul0U-storyboard-L3-M8.jpg",
+      "sha256": "b74935ea92435cfb102a67f36a17b18449e17d2949a2b51242dee3719a03a9d0"
+    },
+    {
+      "id": "katie-tom-licensed-s1-card-photo",
+      "authority": "secondary-host photograph of licensed season-one card artwork",
+      "publisher": "Marketplace seller photo; underlying cards Hazbin Hotel licensed artwork",
+      "url": "https://www.ebay.com/itm/196417285564",
+      "imageUrl": "https://i.ebayimg.com/images/g/j0MAAOSwMa9mMpGJ/s-l1200.jpg",
+      "inspection": "Photo inspected: Katie Killjoy card 24/50 at left; Tom Trench card 43/50 at right. Card numbers and characters corroborated by the official checklist. This is not an official image host. Katie face, hairstyle, long neck, jewelry and rose jacket; Tom gas-mask construction, blond hair, blue-grey suit and red tie are the directly visible identity evidence. Original lower-body game reconstruction is explicitly not an inspected full-body canonical model.",
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/katie-tom-licensed-card-photo.jpg",
+      "sha256": "8f29e69ea1da215448fbb54d6dec21f7e5a8d47abbe5f8ee34bb98f52e862e8f"
+    },
+    {
+      "id": "official-hazbin-card-checklist",
+      "authority": "primary official product checklist; identification evidence, not full-body visual reference",
+      "publisher": "Hazbin Hotel official store",
+      "url": "https://hazbinhotel.com/products/hazbin-hotel-trading-cards-official-checklist",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0739/8545/8482/files/Trading_Card_Checklist.jpg?v=1763660637",
+      "inspection": "Official checklist image inspected and matches Katie Killjoy 24/50 Common and Tom Trench 43/50 Common to the photo. No email form was submitted.",
+      "localReferencePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/official-trading-card-checklist.jpg",
+      "sha256": "60eacd752f2fa0605c0df907a7d460085ae1e252d06a637de55e81b3c2bef12e"
+    }
+  ],
+  "sourceAudit": [
+    {
+      "url": "https://www.youtube.com/watch?v=QyDE8yhUtKE",
+      "result": "Public metadata returned LOGIN_REQUIRED; no episode images fetched and no access bypass attempted."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=XELRz4aBZls",
+      "publisher": "Prime Video",
+      "title": "Alastor & Vox Go Head To Head In 'Stayed Gone' | Hazbin Hotel | Clip | Prime Video",
+      "result": "L3 M0, M1 and M2 inspected: 27 sampled preview frames from 0 through 52 seconds, every two seconds. These samples show Vox/Valentino and 666 News screens, but no Katie/Tom visual detail. Not used as positive identity evidence; not all clip frames were inspected.",
+      "publicStoryboardRecord": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/XELRz4aBZls-tiles-L3.json"
+    },
+    {
+      "result": "Historical Katie/Tom portraits were inspected for comparison only. Katie's historical portrait had a parasitic extra head and chibi proportions; Tom's historical portrait clipped his hair. Neither served as visual authority for the new READY."
+    }
+  ],
+  "assets": [
+    {
+      "id": "hb_mammon-ready",
+      "fighter": "hb_mammon",
+      "pose": "ready",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png",
+      "master": "art/infernal-versus/masters/poses/hb_mammon-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_mammon-ready.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: one transparent READY sprite for a 2D side-view fighting game, 1024 x 1536 portrait canvas.\nPrimary request: Faithfully draw Mammon from Helluva Boss, normal present-day form in season2 episode7. Use official standee picture ONLY for the character design, plus supplied official episode frames for the wide body proportions. Do not draw the acrylic product, its base, logo, dollar decorations, money bag, staff or surrounding scenery.\nIdentity: a very WIDE, heavy, tiered triangular jester-demon silhouette, a small grinning round face inside the collar and a tall three-pronged jester hat with curved green and dark prongs; bright yellow-green grin and eyes, sharp triangular teeth. His huge tiered dark green and black tunic resembles pointed overlapping bells, trimmed golden yellow with lime diamond markings and small gold circles. EXACTLY FOUR ARMS attached to the sides: broad pale sleeves and dark striped forearms, light clawlike fingertips. SHORT pale legs under the huge tunic with pointed dark feet. Never give him a narrow human waist or long human legs. Match the source clothing, colors and broad silhouette.\nPose: one full-body READY stance looking SCREEN RIGHT in a three-quarter side view. Stand broadly grounded, upper pair of elbows slightly bent, one upper hand gesturing open, other near the torso; lower two hands visibly resting to either side of his broad lower body. All FOUR distinct arms and hands must read clearly, no fifth arm. No held item. Character fills roughly85% of width and82% of height with safe margins; feet baseline near y=1440. Leave sufficient top clearance for hat. Preserve width-to-height proportions; do not stretch him vertically simply to fill the portrait.\nStyle: crisp 2D cel-animation contours, flat source colors and one simple cel shadow, no realistic skin, no painted texture.\nBackground: real transparent alpha. No floor, shadow, aura, projectile or VFX. Exactly one complete character, one pose; no duplicate, grid, text, watermark or border. This READY is an original game posture, not a new canonical ability.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/mammon-official-standee.png",
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/rRymSi8SmqA-storyboard-L3-M9.jpg"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.5958970387776693,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.38899993896484375,
+        "lowAlphaNonzeroFraction": 0.009039560953776041,
+        "bboxNonzero": [
+          0,
+          49,
+          1018,
+          1495
+        ],
+        "bboxAlphaAtLeast8": [
+          4,
+          314,
+          1016,
+          1351
+        ],
+        "bboxAlphaAtLeast16": [
+          4,
+          315,
+          1016,
+          1351
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          923,
+          1351
+        ],
+        "poseFootBandCenter": [
+          499.5,
+          1351
+        ],
+        "contactLastVisibleRow": 1350,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.00390625,
+          0.205078125,
+          0.0078125,
+          0.12044270833333333
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          4,
+          315,
+          1016,
+          1351
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          923,
+          1351
+        ],
+        "referenceFootBandCenter": [
+          499.5,
+          1351
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1411683,
+          "sha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b",
+          "gitBlobSha": "56c626043c5a4fafe7faaa787b9b4a78322b3d7d"
+        },
+        "export": {
+          "bytes": 948100,
+          "sha256": "9446adcab43ba41bf79630e52be6d86c899736f79c8fc5b465fe8cddbaab0cb8",
+          "gitBlobSha": "2787788621f2a9b46d78ac72d6417c2b172567cb"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Normal broad four-arm form, Helluva Boss S2E7; no elongated or slim flashback form.",
+      "provenanceSourceIds": [
+        "mammon-official-standee",
+        "mammon-s2e7-primary-preview"
+      ],
+      "readyBaselinePixels": 1351,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/mammon-official-standee.png",
+          "sha256": "bd8f51e23c92b78f367b9adfd1f79848b7784d67220ceee7407ebf58fc7e5d97"
+        },
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/rRymSi8SmqA-storyboard-L3-M9.jpg",
+          "sha256": "22108cd363d4e5fda7c7f7d0e43c2646389e913591290b0fac92767dccf0eb9a"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hb_mammon-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "usable READY identity baseline",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly",
+          "exactly four distinct arms retained",
+          "broad tiered body and short legs retained"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Wide silhouette has narrow horizontal canvas margins, at least four pixels at alpha >=16 in every accepted pose; no visible clipping observed."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root"
+    },
+    {
+      "id": "hb_mammon-guard",
+      "fighter": "hb_mammon",
+      "pose": "guard",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-8df45b68-1f3a-4ec2-b94d-182ffefffee9.png",
+      "master": "art/infernal-versus/masters/poses/hb_mammon-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_mammon-guard.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved Mammon READY sprite. Preserve the identical huge wide tiered triangular body, EXACTLY FOUR ARMS, short pale legs, pointed dark shoes, three-pronged jester cap, tiny grinning pale face, yellow-green eyes/teeth, dark green and black costume tiers, gold trims and lime diamond markings. Preserve the same 1024x1536 canvas, same scale, same line style, same palette, same facing SCREEN RIGHT and same foot placements. Both shoe soles stay around y=1350 pixels, the right at x=875 and left at x=155. Do not zoom, stretch, shrink, rotate camera, change clothes or body proportions. Keep the entire character inside the canvas. The broad jester shape must not become a long thin human.\nCHANGE ONLY POSE: defensive GUARD. Both upper arms bend at their elbows, forearms raised at chest-to-face height, palms inward, protecting the face without hiding it. Both LOWER arms remain visible, bent near the lower torso with two separate hands. Exactly four arms and four hands, each rooted on its proper side of the torso. Stable stance and unchanged feet. Compact elbows stay inside the broad body width.\nReal transparent alpha background. No backdrop, floor, shadow, glow, aura, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. This is a simulation AU game pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.6298198699951172,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.3555157979329427,
+        "lowAlphaNonzeroFraction": 0.0089263916015625,
+        "bboxNonzero": [
+          0,
+          22,
+          1023,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          5,
+          314,
+          1017,
+          1351
+        ],
+        "bboxAlphaAtLeast16": [
+          6,
+          314,
+          1017,
+          1351
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          924,
+          1351
+        ],
+        "poseFootBandCenter": [
+          500.0,
+          1351
+        ],
+        "contactLastVisibleRow": 1350,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.005859375,
+          0.20442708333333334,
+          0.0068359375,
+          0.12044270833333333
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          4,
+          315,
+          1016,
+          1351
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          923,
+          1351
+        ],
+        "referenceFootBandCenter": [
+          499.5,
+          1351
+        ],
+        "footBandCenterDeltaPixels": [
+          0.5,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1372015,
+          "sha256": "bd106abd9c04d8f984865c450f1db3f4653036d7c85d9b03c0bd927e4c7505fe",
+          "gitBlobSha": "e2f8fec50fcbe08a1d3c63f271c63f4bd850359b"
+        },
+        "export": {
+          "bytes": 921902,
+          "sha256": "f2ccf25153a5d8afcfbd2e3893f264d391c4d81e1dd483dc3d135d835f198dbc",
+          "gitBlobSha": "f0a87bfdfc40cb13c3a296f0eda5ee5bbf300c03"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Normal broad four-arm form, Helluva Boss S2E7; no elongated or slim flashback form.",
+      "provenanceSourceIds": [
+        "mammon-official-standee",
+        "mammon-s2e7-primary-preview"
+      ],
+      "readyBaselinePixels": 1351,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png",
+          "sha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hb_mammon-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly",
+          "exactly four distinct arms retained",
+          "broad tiered body and short legs retained"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Wide silhouette has narrow horizontal canvas margins, at least four pixels at alpha >=16 in every accepted pose; no visible clipping observed."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+    },
+    {
+      "id": "hb_mammon-strike",
+      "fighter": "hb_mammon",
+      "pose": "strike",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-7308a6d2-62d4-49ad-96b3-4825eb39a41b.png",
+      "master": "art/infernal-versus/masters/poses/hb_mammon-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_mammon-strike.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved Mammon READY sprite. Preserve the identical huge wide tiered triangular body, EXACTLY FOUR ARMS, short pale legs, pointed dark shoes, three-pronged jester cap, tiny grinning pale face, yellow-green eyes/teeth, dark green and black costume tiers, gold trims and lime diamond markings. Preserve the same 1024x1536 canvas, same scale, same line style, same palette, same facing SCREEN RIGHT and same foot placements. Both shoe soles stay around y=1350 pixels, the right at x=875 and left at x=155. Do not zoom, stretch, shrink, rotate camera, change clothes or body proportions. Keep the entire character inside the canvas. The broad jester shape must not become a long thin human.\nCHANGE ONLY POSE: a short open-palm PUSH to screen right with the upper right arm, palm at chest height. This is a brief contact key pose, elbow still slightly bent, not a long lunge. The other three arms remain distinctly visible, folded near the torso and lower sides. Keep the torso centered and both feet planted in their READY positions. Exactly four arms and four hands. No opponent, no impact mark, no weapon and no effect.\nReal transparent alpha background. No backdrop, floor, shadow, glow, aura, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. This is a simulation AU game pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.5986131032307943,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.3849220275878906,
+        "lowAlphaNonzeroFraction": 0.010693868001302084,
+        "bboxNonzero": [
+          0,
+          57,
+          1018,
+          1490
+        ],
+        "bboxAlphaAtLeast8": [
+          6,
+          314,
+          1016,
+          1352
+        ],
+        "bboxAlphaAtLeast16": [
+          6,
+          314,
+          1016,
+          1352
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          76,
+          1288,
+          922,
+          1352
+        ],
+        "poseFootBandCenter": [
+          499.0,
+          1352
+        ],
+        "contactLastVisibleRow": 1351,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.005859375,
+          0.20442708333333334,
+          0.0078125,
+          0.11979166666666667
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          4,
+          315,
+          1016,
+          1351
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 1,
+        "visibleBaselineDeltaFractionFromReady": 0.0006510416666666666,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          923,
+          1351
+        ],
+        "referenceFootBandCenter": [
+          499.5,
+          1351
+        ],
+        "footBandCenterDeltaPixels": [
+          -0.5,
+          1
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1405457,
+          "sha256": "95eb372dce12dd1774f257926138f8be69ae15bfb9adcdc0323fc36527da40f3",
+          "gitBlobSha": "c33de4e48a60ed70525db005f758c6efffda144a"
+        },
+        "export": {
+          "bytes": 953210,
+          "sha256": "4bf0bcdc9b87ad9731065eaf737a498fd51657c65c0b423f3ed98a6f3275f98a",
+          "gitBlobSha": "4eb14bf06eab7be0e8725bcab9a56b3a553a207b"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Normal broad four-arm form, Helluva Boss S2E7; no elongated or slim flashback form.",
+      "provenanceSourceIds": [
+        "mammon-official-standee",
+        "mammon-s2e7-primary-preview"
+      ],
+      "readyBaselinePixels": 1351,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png",
+          "sha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hb_mammon-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly",
+          "exactly four distinct arms retained",
+          "broad tiered body and short legs retained"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Wide silhouette has narrow horizontal canvas margins, at least four pixels at alpha >=16 in every accepted pose; no visible clipping observed."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+    },
+    {
+      "id": "hb_mammon-recoil",
+      "fighter": "hb_mammon",
+      "pose": "recoil",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-3eed3cd0-be16-405e-9135-626d64ea5184.png",
+      "master": "art/infernal-versus/masters/poses/hb_mammon-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hb_mammon-recoil.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved Mammon READY sprite. Preserve the identical huge wide tiered triangular body, EXACTLY FOUR ARMS, short pale legs, pointed dark shoes, three-pronged jester cap, tiny grinning pale face, yellow-green eyes/teeth, dark green and black costume tiers, gold trims and lime diamond markings. Preserve the same 1024x1536 canvas, same scale, same line style, same palette, same facing SCREEN RIGHT and same foot placements. Both shoe soles stay around y=1350 pixels, the right at x=875 and left at x=155. Do not zoom, stretch, shrink, rotate camera, change clothes or body proportions. Keep the entire character inside the canvas. The broad jester shape must not become a long thin human.\nCHANGE ONLY POSE: mild RECOIL reaction after an offscreen game hit. His broad torso leans slightly back toward screen left, startled eyebrows, open grimacing grin; upper two elbows draw back and lower two palms lift a little, with exactly four distinct arms and hands. Keep both feet grounded at the READY positions, no fall, no injury, no wound, no detached parts. Preserve full hat and outfit.\nReal transparent alpha background. No backdrop, floor, shadow, glow, aura, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. This is a simulation AU game pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.6178277333577474,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.36489105224609375,
+        "lowAlphaNonzeroFraction": 0.01116943359375,
+        "bboxNonzero": [
+          0,
+          19,
+          1015,
+          1510
+        ],
+        "bboxAlphaAtLeast8": [
+          10,
+          261,
+          1013,
+          1353
+        ],
+        "bboxAlphaAtLeast16": [
+          11,
+          261,
+          1013,
+          1353
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          75,
+          1289,
+          924,
+          1353
+        ],
+        "poseFootBandCenter": [
+          499.5,
+          1353
+        ],
+        "contactLastVisibleRow": 1352,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.0107421875,
+          0.169921875,
+          0.0107421875,
+          0.119140625
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          4,
+          315,
+          1016,
+          1351
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 2,
+        "visibleBaselineDeltaFractionFromReady": 0.0013020833333333333,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          76,
+          1287,
+          923,
+          1351
+        ],
+        "referenceFootBandCenter": [
+          499.5,
+          1351
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          2
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1433500,
+          "sha256": "800210a5a31b685e7d0e5727d3c830ea301eaf396a09edcf8347973cfafb8db9",
+          "gitBlobSha": "cf62afba2674521e0659e272b520b2498351bcb5"
+        },
+        "export": {
+          "bytes": 962832,
+          "sha256": "7929fcf9c1a492ccb94fce30feed6f528b5067622c2ee77f11ed11b04145720c",
+          "gitBlobSha": "5cfc026227750c63ade5292890ef6c7f9c5feb63"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Normal broad four-arm form, Helluva Boss S2E7; no elongated or slim flashback form.",
+      "provenanceSourceIds": [
+        "mammon-official-standee",
+        "mammon-s2e7-primary-preview"
+      ],
+      "readyBaselinePixels": 1351,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-144a75d0-1d28-467c-aef0-54e367d3fc7d.png",
+          "sha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hb_mammon-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly",
+          "exactly four distinct arms retained",
+          "broad tiered body and short legs retained"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Wide silhouette has narrow horizontal canvas margins, at least four pixels at alpha >=16 in every accepted pose; no visible clipping observed."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "ab845e46ba11ba87c41957ed77e7cf8adc46f614f0ac125e6e660e340030aa8b"
+    },
+    {
+      "id": "hz_katie_killjoy-ready",
+      "fighter": "hz_katie_killjoy",
+      "pose": "ready",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png",
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: one transparent full-body READY sprite for a 2D side-view game, 1024 x1536 portrait.\nSubject: adult Katie Killjoy, Hazbin Hotel television SERIES season1 design, NOT the pilot mini-dress and NOT a chibi.\nReference: in the supplied photograph of the two licensed season1 trading cards, use ONLY the LEFT card (Katie). The card is a face, hair, neckline, jewelry and jacket reference. Ignore the right character, physical card, frame, paper, lettering and photographic surface.\nPreserve Katie's tall extremely slender adult cartoon proportions, very long thin white neck, white skin, pale blonde short sharply flaring bob with cream highlight and sweeping forelock, large rose-red eyes with heavy sharp black lashes, angular broad grin with pointed teeth and red lipstick. Small pearl earrings and pearl necklace.\nClothes: fitted rose-red SERIES blazer with black lapel/neckline trim, small black buttons and flared long sleeves; short black pencil-skirt layer at the hips over WHITE long flared trousers; red pointed low-heeled shoes. No pilot bare-leg mini-dress. No alternate clothing.\nPose: one READY stance, entire character in three-quarter side view facing SCREEN RIGHT; haughty upright bearing, very long neck held high, one hand on hip and the other loosely bent near her waist, long fingers relaxed. No fighting opponent and no held object. Feet apart in a natural narrow stance, both shoe soles about y=1440, hair top about y=100, all hands/hair/shoes inside the frame with visible empty margin.\nArt: clean 2D cel animation, crisp dark tapered outlines and flat source colors, subtle single cel shadow, no texture, no realism, no glamour lighting. Adult series proportions; absolutely no baby head, no chibi anatomy.\nBackground: genuine transparent alpha, no scenery, floor or shadow, no glow or VFX. Exactly ONE whole character in ONE pose, no duplicate body/head, no sheet/grid/labels/text/watermark. This is a neutral game pose adaptation.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/katie-tom-licensed-card-photo.jpg"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8167819976806641,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.1657721201578776,
+        "lowAlphaNonzeroFraction": 0.010566075642903646,
+        "bboxNonzero": [
+          71,
+          51,
+          994,
+          1520
+        ],
+        "bboxAlphaAtLeast8": [
+          268,
+          55,
+          725,
+          1515
+        ],
+        "bboxAlphaAtLeast16": [
+          268,
+          55,
+          724,
+          1514
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          718,
+          1514
+        ],
+        "poseFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "contactLastVisibleRow": 1513,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.26171875,
+          0.035807291666666664,
+          0.29296875,
+          0.014322916666666666
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          268,
+          55,
+          724,
+          1514
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          718,
+          1514
+        ],
+        "referenceFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1249219,
+          "sha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035",
+          "gitBlobSha": "7dbdcca8008f7d62bbfdfb8f7df52cb87f8d074e"
+        },
+        "export": {
+          "bytes": 798082,
+          "sha256": "9c5a95ff51f306a302acdadfac7a841e3fd5442046b78fef5d7362512ff7cf26",
+          "gitBlobSha": "3820a3e55e951a14a16c3677738d124c2f30349a"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, not pilot or chibi.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1514,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/katie-tom-licensed-card-photo.jpg",
+          "sha256": "8f29e69ea1da215448fbb54d6dec21f7e5a8d47abbe5f8ee34bb98f52e862e8f"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_katie_killjoy-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "usable READY identity baseline",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root"
+    },
+    {
+      "id": "hz_katie_killjoy-guard",
+      "fighter": "hz_katie_killjoy",
+      "pose": "guard",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ec6a381d-c1e5-4303-80ad-7fb1d972da00.png",
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_katie_killjoy-guard.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent animation key pose.\nInput image is the accepted Katie Killjoy READY sprite. Preserve EXACTLY the same adult television-series identity, elongated white neck, blonde flared bob and cream highlight, rose eyes and sharp dark lashes, angular grin, pearl jewelry, fitted rose-red blazer with black trim and two black buttons, black skirt layer, white flared trousers and red pointed shoes. Preserve the same 1024x1536 portrait canvas, upright body scale, screen-right facing three-quarter camera, colors and crisp cel outlines. Feet must stay in their current positions and shoe soles around y=1513. Do not zoom, recenter or stretch. Keep all hair, fingers and shoes inside the canvas.\nChange only pose to a compact defensive GUARD. Raise both bent forearms in front of upper chest and jaw, hands open with long fingers together, elbows near ribs. Keep her face visible and unimpressed. Torso and both legs remain nearly fixed; show a distinct defensive pose rather than the hand-on-hip READY.\nKeep real transparent alpha; no scenery, floor, shadow, glow, magic, projectile or VFX. Exactly one whole character and one pose, no extra head, no duplicate, no grid, no captions/text/logo/watermark. The pose is a simulation AU adaptation.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8173929850260416,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.16669591267903647,
+        "lowAlphaNonzeroFraction": 0.009730656941731771,
+        "bboxNonzero": [
+          91,
+          36,
+          985,
+          1520
+        ],
+        "bboxAlphaAtLeast8": [
+          268,
+          55,
+          726,
+          1515
+        ],
+        "bboxAlphaAtLeast16": [
+          268,
+          55,
+          726,
+          1514
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          717,
+          1514
+        ],
+        "poseFootBandCenter": [
+          492.5,
+          1514
+        ],
+        "contactLastVisibleRow": 1513,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.26171875,
+          0.035807291666666664,
+          0.291015625,
+          0.014322916666666666
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          268,
+          55,
+          724,
+          1514
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          718,
+          1514
+        ],
+        "referenceFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "footBandCenterDeltaPixels": [
+          -0.5,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1211320,
+          "sha256": "67f40fd803ee926bb3800a0c1b60c61a3d89d622e2e496074c8cc0186ff96f30",
+          "gitBlobSha": "daed2f146144258b084a9defea2dc38d3297c1d6"
+        },
+        "export": {
+          "bytes": 771930,
+          "sha256": "cb840f64ad117233758893f6d9ed1db19527316a2daa086344a06375d2bcca20",
+          "gitBlobSha": "a5bdbc598761787f9fa7bc81302f689c19b51aa8"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, not pilot or chibi.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1514,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png",
+          "sha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_katie_killjoy-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+    },
+    {
+      "id": "hz_katie_killjoy-strike",
+      "fighter": "hz_katie_killjoy",
+      "pose": "strike",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-6735c397-aaf0-4053-9475-9b0662eecf06.png",
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_katie_killjoy-strike.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent animation key pose.\nInput image is the accepted Katie Killjoy READY sprite. Preserve EXACTLY the same adult television-series identity, elongated white neck, blonde flared bob and cream highlight, rose eyes and sharp dark lashes, angular grin, pearl jewelry, fitted rose-red blazer with black trim and two black buttons, black skirt layer, white flared trousers and red pointed shoes. Preserve the same 1024x1536 portrait canvas, upright body scale, screen-right facing three-quarter camera, colors and crisp cel outlines. Feet must stay in their current positions and shoe soles around y=1513. Do not zoom, recenter or stretch. Keep all hair, fingers and shoes inside the canvas.\nChange only pose to a brief open-hand BACKHAND STRIKE toward SCREEN RIGHT at shoulder height, forward arm almost horizontal and its fingers together with palm edge leading, elbow not overextended. Other hand stays bent close to chest. Slight torso rotation toward right, both feet firmly fixed. One contact key pose with no opponent, no impact flash, no trail, no motion lines and no effect.\nKeep real transparent alpha; no scenery, floor, shadow, glow, magic, projectile or VFX. Exactly one whole character and one pose, no extra head, no duplicate, no grid, no captions/text/logo/watermark. The pose is a simulation AU adaptation.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8117008209228516,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.17287127176920572,
+        "lowAlphaNonzeroFraction": 0.009199142456054688,
+        "bboxNonzero": [
+          41,
+          19,
+          942,
+          1520
+        ],
+        "bboxAlphaAtLeast8": [
+          266,
+          54,
+          933,
+          1515
+        ],
+        "bboxAlphaAtLeast16": [
+          267,
+          55,
+          933,
+          1514
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          267,
+          1450,
+          719,
+          1514
+        ],
+        "poseFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "contactLastVisibleRow": 1513,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.2607421875,
+          0.035807291666666664,
+          0.0888671875,
+          0.014322916666666666
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          268,
+          55,
+          724,
+          1514
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          718,
+          1514
+        ],
+        "referenceFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1266222,
+          "sha256": "9c6acc9de4f8cbdb9731635684356f7b8a6f60d741572ed473d06dcaee423a89",
+          "gitBlobSha": "13c0242c3b315f3c6a96af13d637defdcb29dcf7"
+        },
+        "export": {
+          "bytes": 811096,
+          "sha256": "746fde0b9dcbcfbb689712184e05fa1c45a60c8336b0fb1870a7850a8fee617f",
+          "gitBlobSha": "296d031a59152c10c6a47134897119bc8614ec8d"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, not pilot or chibi.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1514,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png",
+          "sha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_katie_killjoy-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+    },
+    {
+      "id": "hz_katie_killjoy-recoil",
+      "fighter": "hz_katie_killjoy",
+      "pose": "recoil",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-fc80c305-8674-405a-8e79-18efa4959168.png",
+      "master": "art/infernal-versus/masters/poses/hz_katie_killjoy-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_katie_killjoy-recoil.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent animation key pose.\nInput image is the accepted Katie Killjoy READY sprite. Preserve EXACTLY the same adult television-series identity, elongated white neck, blonde flared bob and cream highlight, rose eyes and sharp dark lashes, angular grin, pearl jewelry, fitted rose-red blazer with black trim and two black buttons, black skirt layer, white flared trousers and red pointed shoes. Preserve the same 1024x1536 portrait canvas, upright body scale, screen-right facing three-quarter camera, colors and crisp cel outlines. Feet must stay in their current positions and shoe soles around y=1513. Do not zoom, recenter or stretch. Keep all hair, fingers and shoes inside the canvas.\nChange only pose to a mild RECOIL game reaction: upper torso and long neck lean slightly to screen left, brows irritated and mouth briefly open, both hands draw up with bent elbows. Keep both shoe soles planted at the same ground line and leg lengths unchanged. No fall, bruise, injury, wounds or detached parts.\nKeep real transparent alpha; no scenery, floor, shadow, glow, magic, projectile or VFX. Exactly one whole character and one pose, no extra head, no duplicate, no grid, no captions/text/logo/watermark. The pose is a simulation AU adaptation.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8041998545328776,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.17613093058268228,
+        "lowAlphaNonzeroFraction": 0.013246536254882812,
+        "bboxNonzero": [
+          39,
+          23,
+          998,
+          1520
+        ],
+        "bboxAlphaAtLeast8": [
+          210,
+          43,
+          720,
+          1515
+        ],
+        "bboxAlphaAtLeast16": [
+          210,
+          43,
+          720,
+          1515
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          266,
+          1451,
+          720,
+          1515
+        ],
+        "poseFootBandCenter": [
+          493.0,
+          1515
+        ],
+        "contactLastVisibleRow": 1514,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.205078125,
+          0.027994791666666668,
+          0.296875,
+          0.013671875
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          268,
+          55,
+          724,
+          1514
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 1,
+        "visibleBaselineDeltaFractionFromReady": 0.0006510416666666666,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          268,
+          1450,
+          718,
+          1514
+        ],
+        "referenceFootBandCenter": [
+          493.0,
+          1514
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          1
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1270062,
+          "sha256": "b8bb908a2e5805d2416708c0e815a898c57a13a2416a25de63e9f9bb4db4eaaa",
+          "gitBlobSha": "34308ecd15fbe4fc13a1fa85a1e476dc67d5ee10"
+        },
+        "export": {
+          "bytes": 817850,
+          "sha256": "e427463cf0a8fe9a7028f7808e7897d1e67ad5eb5e6754e892ed8df995234bee",
+          "gitBlobSha": "2b9bd36ca164edfc601eb60207d186afae72ac65"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, not pilot or chibi.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1514,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-ffe00a08-4456-4873-a6c8-50772aa90df5.png",
+          "sha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_katie_killjoy-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "8207b4f0972eed9bed729933b9d5d509012a24b6d7938adcf491a83e4680c035"
+    },
+    {
+      "id": "hz_tom_trench-ready",
+      "fighter": "hz_tom_trench",
+      "pose": "ready",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png",
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-ready.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_tom_trench-ready.webp",
+      "prompt": "Use case: identity-preserve.\nCorrect ONLY the facing direction of this Tom Trench READY sprite. MIRROR THE ENTIRE FIGURE HORIZONTALLY so he faces SCREEN RIGHT: the projecting round respirator must point toward the RIGHT edge, the larger nearer eyepiece on the LEFT side of the image, and the entire body and hands face the same rightward direction. Keep the exact drawing, clothing, hairstyle, mask parts, anatomy, colors, line thickness, silhouette scale, 1024x1536 portrait canvas, and ground baseline at y=1509. No additional body parts. No change to the shape or pose beyond the mirrored orientation. Preserve genuine transparent alpha background, no floor, shadow, glow, text or additional content. One full-body character, no duplicate.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-a1ee918f-7fab-4804-8de8-7e734c2ddb1c.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8055572509765625,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.17924817403157553,
+        "lowAlphaNonzeroFraction": 0.008501052856445312,
+        "bboxNonzero": [
+          33,
+          34,
+          962,
+          1504
+        ],
+        "bboxAlphaAtLeast8": [
+          296,
+          37,
+          785,
+          1502
+        ],
+        "bboxAlphaAtLeast16": [
+          296,
+          37,
+          784,
+          1502
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          784,
+          1502
+        ],
+        "poseFootBandCenter": [
+          540.0,
+          1502
+        ],
+        "contactLastVisibleRow": 1501,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.2890625,
+          0.024088541666666668,
+          0.234375,
+          0.022135416666666668
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          296,
+          37,
+          784,
+          1502
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          784,
+          1502
+        ],
+        "referenceFootBandCenter": [
+          540.0,
+          1502
+        ],
+        "footBandCenterDeltaPixels": [
+          0.0,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1153895,
+          "sha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6",
+          "gitBlobSha": "38f485ed8d5a6893d4f0a08628bc04f20624a5d6"
+        },
+        "export": {
+          "bytes": 715806,
+          "sha256": "f8b1eecca501e206fb56fef656524eb993b26bd46b9da9258e605bfcd0f6ea9a",
+          "gitBlobSha": "02cb04c1e19830f86398b86efe03fe9afdaf3bbc"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, complete gas mask and hairstyle.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1502,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a1ee918f-7fab-4804-8de8-7e734c2ddb1c.png",
+          "sha256": "4a5bad600744472361cd5d27f9f20f76602cde61d46437db249917ff55031e21"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_tom_trench-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "usable READY identity baseline",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model.",
+          "The selected baseline has no visible red pocket square; identity consistency with this READY was preserved in derivatives."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root"
+    },
+    {
+      "id": "hz_tom_trench-guard",
+      "fighter": "hz_tom_trench",
+      "pose": "guard",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-dfeb9fbd-470f-480b-98fd-60434890e02f.png",
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-guard.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_tom_trench-guard.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved corrected Tom Trench READY sprite. Preserve EXACTLY this adult character identity: rounded dark-grey gas mask with two large dark oval glass eyepieces, projecting ridged circular respirator toward SCREEN RIGHT and small circular side valve; complete pale blond swept hairstyle; light blue-grey fitted suit jacket and darker lapels, pale collared shirt, red necktie, dark grey gloves, very dark navy slightly flared long trousers, black pointed formal shoes. No exposed human face.\nPreserve the identical tall slender adult proportions, linework, flat palette, shadow style, 1024x1536 canvas, camera, facing SCREEN RIGHT and body scale. Keep the mask projection pointing toward the right edge. Preserve BOTH legs and shoe positions from the input, with the left visible shoe near x=300..465 and right shoe near x=650..785, their soles around y=1500. Keep the whole hairstyle visible with its top around y=37. Do not zoom, stretch, shrink, crop, or change outfit.\nCHANGE ONLY UPPER-BODY POSE: defensive GUARD. Both elbows bend compactly in front of the chest, both gloved hands are raised to chest-to-mask height with palms angled inward. The forearms protect without covering the distinctive eyepieces or respirator. Slightly cautious shoulders. Keep head orientation, same legs and exact foot positions.\nReal transparent alpha background. No backdrop, floor, shadow, glow, smoke, gas, aura, weapon, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. Original nonviolent simulation AU game key pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.8049755096435547,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.18302536010742188,
+        "lowAlphaNonzeroFraction": 0.0068327585856119795,
+        "bboxNonzero": [
+          113,
+          34,
+          988,
+          1505
+        ],
+        "bboxAlphaAtLeast8": [
+          296,
+          37,
+          785,
+          1502
+        ],
+        "bboxAlphaAtLeast16": [
+          296,
+          37,
+          785,
+          1502
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          299,
+          1438,
+          785,
+          1502
+        ],
+        "poseFootBandCenter": [
+          542.0,
+          1502
+        ],
+        "contactLastVisibleRow": 1501,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.2890625,
+          0.024088541666666668,
+          0.2333984375,
+          0.022135416666666668
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          296,
+          37,
+          784,
+          1502
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          784,
+          1502
+        ],
+        "referenceFootBandCenter": [
+          540.0,
+          1502
+        ],
+        "footBandCenterDeltaPixels": [
+          2.0,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1139895,
+          "sha256": "d4ef04b2b94f58cff092a36bd38690dec24662fca8707a96470c4098d83283f0",
+          "gitBlobSha": "8ab0e2dee94cd1b9f5a51018a67917b3d99bd57c"
+        },
+        "export": {
+          "bytes": 708446,
+          "sha256": "a981b5f1351f0bd0daebbfb293e0d56aeef8cf55cbb07a2aef80836962d79c49",
+          "gitBlobSha": "c31b020bc300fb1418d1db92dd238604b11bc3ab"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, complete gas mask and hairstyle.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1502,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png",
+          "sha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_tom_trench-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model.",
+          "The selected baseline has no visible red pocket square; identity consistency with this READY was preserved in derivatives."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+    },
+    {
+      "id": "hz_tom_trench-strike",
+      "fighter": "hz_tom_trench",
+      "pose": "strike",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-7ca61c85-a58b-4135-b5f1-a3cb7ca9a3f3.png",
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-strike.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_tom_trench-strike.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved corrected Tom Trench READY sprite. Preserve EXACTLY this adult character identity: rounded dark-grey gas mask with two large dark oval glass eyepieces, projecting ridged circular respirator toward SCREEN RIGHT and small circular side valve; complete pale blond swept hairstyle; light blue-grey fitted suit jacket and darker lapels, pale collared shirt, red necktie, dark grey gloves, very dark navy slightly flared long trousers, black pointed formal shoes. No exposed human face.\nPreserve the identical tall slender adult proportions, linework, flat palette, shadow style, 1024x1536 canvas, camera, facing SCREEN RIGHT and body scale. Keep the mask projection pointing toward the right edge. Preserve BOTH legs and shoe positions from the input, with the left visible shoe near x=300..465 and right shoe near x=650..785, their soles around y=1500. Keep the whole hairstyle visible with its top around y=37. Do not zoom, stretch, shrink, crop, or change outfit.\nCHANGE ONLY UPPER-BODY POSE: a short open-palm forward PUSH key pose. The arm toward SCREEN RIGHT reaches forward horizontally from the shoulder with an open gloved hand and palm facing right, fingers clearly grouped. The other elbow stays bent with hand near the chest. A small forward shoulder lean, mask remains fully visible and facing right. No object and no opponent. Both legs and feet stay in the original planted positions.\nReal transparent alpha background. No backdrop, floor, shadow, glow, smoke, gas, aura, weapon, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. Original nonviolent simulation AU game key pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7924079895019531,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.18787574768066406,
+        "lowAlphaNonzeroFraction": 0.013018925984700521,
+        "bboxNonzero": [
+          0,
+          34,
+          1010,
+          1536
+        ],
+        "bboxAlphaAtLeast8": [
+          293,
+          37,
+          924,
+          1503
+        ],
+        "bboxAlphaAtLeast16": [
+          293,
+          37,
+          924,
+          1503
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          295,
+          1439,
+          789,
+          1503
+        ],
+        "poseFootBandCenter": [
+          542.0,
+          1503
+        ],
+        "contactLastVisibleRow": 1502,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.2861328125,
+          0.024088541666666668,
+          0.09765625,
+          0.021484375
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          296,
+          37,
+          784,
+          1502
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 1,
+        "visibleBaselineDeltaFractionFromReady": 0.0006510416666666666,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          784,
+          1502
+        ],
+        "referenceFootBandCenter": [
+          540.0,
+          1502
+        ],
+        "footBandCenterDeltaPixels": [
+          2.0,
+          1
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1199205,
+          "sha256": "523b468540a88c364ed0cbf704b1390b8c576e3212ff8e00ab7ff6c940d2e79f",
+          "gitBlobSha": "232331e61de235b982382e11a44ff0b995eaa7ed"
+        },
+        "export": {
+          "bytes": 758766,
+          "sha256": "620862a4cbdf2d6d0d15995f175886fe22ee6501cc3c946d4356eb2a3e1afc8c",
+          "gitBlobSha": "c8cf13bc8267550cbf1740fbaed362708d7f7705"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, complete gas mask and hairstyle.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1502,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png",
+          "sha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_tom_trench-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model.",
+          "The selected baseline has no visible red pocket square; identity consistency with this READY was preserved in derivatives."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+    },
+    {
+      "id": "hz_tom_trench-recoil",
+      "fighter": "hz_tom_trench",
+      "pose": "recoil",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-14c4b703-2796-4f01-b5c9-30177cf88025.png",
+      "master": "art/infernal-versus/masters/poses/hz_tom_trench-recoil.png",
+      "runtimeExport": "public/assets/sprites/individual/hz_tom_trench-recoil.webp",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent full-body 2D animation key pose.\nInput is the approved corrected Tom Trench READY sprite. Preserve EXACTLY this adult character identity: rounded dark-grey gas mask with two large dark oval glass eyepieces, projecting ridged circular respirator toward SCREEN RIGHT and small circular side valve; complete pale blond swept hairstyle; light blue-grey fitted suit jacket and darker lapels, pale collared shirt, red necktie, dark grey gloves, very dark navy slightly flared long trousers, black pointed formal shoes. No exposed human face.\nPreserve the identical tall slender adult proportions, linework, flat palette, shadow style, 1024x1536 canvas, camera, facing SCREEN RIGHT and body scale. Keep the mask projection pointing toward the right edge. Preserve BOTH legs and shoe positions from the input, with the left visible shoe near x=300..465 and right shoe near x=650..785, their soles around y=1500. Keep the whole hairstyle visible with its top around y=37. Do not zoom, stretch, shrink, crop, or change outfit.\nCHANGE ONLY UPPER-BODY POSE: a small RECOIL from surprise. Tilt the shoulders and mask subtly backward toward SCREEN LEFT, while continuing to face SCREEN RIGHT. Both elbows bend, open gloved hands close to the chest and mask without covering the eyes or respirator. No injury or fall. Preserve the same leg silhouette and planted foot positions.\nReal transparent alpha background. No backdrop, floor, shadow, glow, smoke, gas, aura, weapon, projectile, scenery, lettering, watermark, second character, duplicated pose, contact sheet or grid. One complete character in one clearly distinct pose. Original nonviolent simulation AU game key pose.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png"
+      ],
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.7983239491780599,
+        "opaqueFraction": 0.0,
+        "nearOpaqueFractionAlphaAtLeast240": 0.18646113077799478,
+        "lowAlphaNonzeroFraction": 0.007836659749348959,
+        "bboxNonzero": [
+          113,
+          32,
+          994,
+          1505
+        ],
+        "bboxAlphaAtLeast8": [
+          238,
+          34,
+          785,
+          1503
+        ],
+        "bboxAlphaAtLeast16": [
+          239,
+          35,
+          785,
+          1502
+        ]
+      },
+      "framing": {
+        "footBandHeightPixels": 64,
+        "poseFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          785,
+          1502
+        ],
+        "poseFootBandCenter": [
+          540.5,
+          1502
+        ],
+        "contactLastVisibleRow": 1501,
+        "visibleMarginFractionsLeftTopRightBottom": [
+          0.2333984375,
+          0.022786458333333332,
+          0.2333984375,
+          0.022135416666666668
+        ],
+        "visibleSilhouetteInsideFrame": true,
+        "referenceCanvas": [
+          1024,
+          1536
+        ],
+        "sameCanvasAsReady": true,
+        "referenceBboxAlphaAtLeast16": [
+          296,
+          37,
+          784,
+          1502
+        ],
+        "visibleBaselineDeltaPixelsFromReady": 0,
+        "visibleBaselineDeltaFractionFromReady": 0.0,
+        "visibleBaselineWithinTwoPercentOfReady": true,
+        "referenceFootBandBboxAlphaAtLeast16": [
+          296,
+          1438,
+          784,
+          1502
+        ],
+        "referenceFootBandCenter": [
+          540.0,
+          1502
+        ],
+        "footBandCenterDeltaPixels": [
+          0.5,
+          0
+        ],
+        "footBandCenterWithinFivePercentWidthAndTwoPercentHeight": true
+      },
+      "files": {
+        "master": {
+          "bytes": 1122671,
+          "sha256": "0e101d835c2451325ef1d44670822ddd8d2b63b39b93c81cce2bf79e03be2ebf",
+          "gitBlobSha": "d0772fb62625974b9bde6eed60f3df0aa159b6e2"
+        },
+        "export": {
+          "bytes": 700032,
+          "sha256": "d041d4ce109efea6119a83f710b2aa5e56888fdeed1622cb03083bd7c0138db7",
+          "gitBlobSha": "2a06f660443b544dc03358a0bb6cd9f4a5b13bb8"
+        }
+      },
+      "decodedRGBAIdentical": true,
+      "masterOriginalBytesIdentical": true,
+      "classification": "simulation_au",
+      "identityTarget": "Adult Hazbin Hotel television season-one design, complete gas mask and hairstyle.",
+      "provenanceSourceIds": [
+        "katie-tom-licensed-s1-card-photo",
+        "official-hazbin-card-checklist"
+      ],
+      "readyBaselinePixels": 1502,
+      "referenceFileHashes": [
+        {
+          "path": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png",
+          "sha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+        }
+      ],
+      "exportMethod": "Original generated PNG copied unchanged. WebP lossless=True, exact=True, method=6. Decoded RGBA pixels verified identical for all 12 exports. No image crop, resize, recolor, orientation transform or alpha modification was applied in code.",
+      "visualReview": {
+        "status": "inspected-on-neutral-background-and-compared-at-common-canvas-scale",
+        "fidelity1to1Certified": false,
+        "runtimeVisualVerified": false,
+        "neutralBackgroundCompared": true,
+        "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/hz_tom_trench-four-poses-review.jpg",
+        "checks": [
+          "one complete full-body character",
+          "screen-right facing",
+          "hair and head inside frame",
+          "requested key pose distinct from READY",
+          "no opponent or VFX",
+          "no visible background halo after alpha composition",
+          "same canvas and stable foot contact",
+          "PNG preserved unchanged",
+          "WebP decoded RGBA matches PNG exactly"
+        ],
+        "limitations": [
+          "Generated AU key poses are source-guided reconstructions; exact canonical 1:1 reproduction is not certified.",
+          "Measured alpha bounds and static comparisons do not validate animation timing, hitboxes or live browser appearance.",
+          "Licensed upper-body card art is hosted in a secondary photograph. The official checklist corroborates identification; lower body is reconstructed for this game and not directly certified against a full-body primary model.",
+          "The selected baseline has no visible red pocket square; identity consistency with this READY was preserved in derivatives."
+        ]
+      },
+      "integrationStatus": "assets supplied to integration owner; registry/code work belongs to root",
+      "referenceSha256": "2118c5e5d51dae2072f9b9c614f99576167a588f9274a28d81bb02c29f2ae6e6"
+    }
+  ],
+  "supersededCandidates": [
+    {
+      "id": "hz_tom_trench-ready-initial",
+      "fighter": "hz_tom_trench",
+      "pose": "ready",
+      "sourceGeneratedPath": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a1ee918f-7fab-4804-8de8-7e734c2ddb1c.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one transparent full-body READY sprite for a 2D side-view game, 1024 x1536 portrait.\nSubject: adult Tom Trench, Hazbin Hotel television series season1 design.\nReference: in the supplied photograph of two licensed season1 trading cards, use ONLY the RIGHT card (Tom). Use its original character drawing to preserve head, mask construction, hair, suit colors, tie and gloves. Ignore the left character, physical cards, frame, typography, desk, chair, television overlay and photographic surface.\nIdentity: tall slender adult male cartoon demon, his entire FACE is a rounded dark grey GAS MASK with TWO large dark oval glass eyepieces and an integrated projecting circular ridged central respirator plus small circular side valve. Thick pale blond side-swept hair with pale cream highlight droops over one side of the mask; keep all hair visible, never crop his head. No exposed human face and no helmet.\nClothes: light blue-grey fitted suit jacket with darker blue-grey lapels, paler blue-grey collared shirt, RED necktie and red pocket square, very dark navy long trousers slightly flared at ankles, dark grey gloves and black pointed formal shoes. Match the card's jacket and mask design; no military uniform or weapons.\nPose: a single full-body READY stance in a three-quarter side view facing SCREEN RIGHT, slightly cautious upright posture; both elbows loosely bent, one hand near the jacket lapel and the other near his waist. No cup, no object, no other character. Whole figure on portrait canvas with ample margin: hair near y=120 and both shoe soles near y=1440. Thin adult limbs and long trousers, not chibi proportions.\nStyle: crisp 2D cel-animation contour, flat source colors, one restrained cel-shadow level, no painterly texture, no photorealism.\nBackground: actual transparent alpha, no floor, shadow, glow, smoke, gas, aura or projectile. One complete character, one pose; no extra head, no grid, no text/labels, no watermark. The posture is an original game adaptation, not a claim of a canon power.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/katie-tom-licensed-card-photo.jpg"
+      ],
+      "reason": "Initial complete full-body READY faced screen left. A single quality edit corrected the orientation; this original is not exported."
+    }
+  ],
+  "blocked": [
+    {
+      "id": "hb_stella-ready",
+      "fighter": "hb_stella",
+      "prompt": "Use case: stylized-concept.\nAsset type: one transparent READY sprite for a 2D side-view fighting game, 1024 x 1536 portrait canvas.\nPrimary request: Faithfully draw adult Stella from Helluva Boss in her usual white-and-dark aristocratic outfit as seen in The Circus, season 2. Use the supplied official standee picture ONLY as a character-design reference, and the supplied episode frames to corroborate her original animation appearance. Do not draw the standee, acrylic, base, words, embellishments or background.\nIdentity: slender long-necked adult avian demon woman; white face, small pink pointed beak, enormous swept black eyelashes, red eyes, pale grey-white layered feather mane flowing behind shoulders, small golden three-point crown. Pale pink puffed short shoulders over very slim black arms and black gloves with light pointed fingertips; fitted pale bodice and long white layered feather skirt/tail over a very dark purple-black underskirt. Preserve her regal feather silhouette, angular outlines, tiny waist and tall neck, not a human face.\nPose: a single full-body neutral READY stance facing SCREEN RIGHT in a readable three-quarter side view; haughty upright posture, chin slightly raised, hands relaxed and slightly lifted near her waist. No weapon, no drink, no gesturing at another character. Show whole crown, every feather tip, hands and hem with clear transparent margin. Her long dress retains its natural shape and hides most of her feet; resting hem at about y=1435 of1536. The highest crown near y=90. Fit the whole feather volume into the width without cropping.\nStyle: clean 2D cel animation, crisp dark variable-width outlines, flat source-matching pastel and dark colors, restrained single cel shadow, no painting texture, no photographic lighting.\nBackground: actual transparent alpha outside the single character, no floor, no shadow, no glow, no effect, no scene. One character, one pose, no duplicate, no grid, no label or watermark. This is a game pose adaptation; preserve the canonical identity and clothing rather than inventing alternate powers or costume.",
+      "referencedImagePaths": [
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/stella-official-standee.png",
+        "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/_spuxXnul0U-storyboard-L3-M8.jpg"
+      ],
+      "status": "safety-output-moderation_blocked-other",
+      "httpStatus": 400,
+      "moderationStage": "output",
+      "moderationCategories": [
+        "other"
+      ],
+      "requestId": "b7998587-5511-4713-b869-b604e74d4ebe",
+      "retries": 0,
+      "derivativesNotAttempted": [
+        "guard",
+        "strike",
+        "recoil"
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "id": "hb_stella-ready",
+      "reason": "READY generation was safety-blocked and not retried; derivatives not attempted. Existing historical Stella banks remain outside this batch."
+    },
+    {
+      "id": "hb_stella-guard",
+      "reason": "READY generation was safety-blocked and not retried; derivatives not attempted. Existing historical Stella banks remain outside this batch."
+    },
+    {
+      "id": "hb_stella-strike",
+      "reason": "READY generation was safety-blocked and not retried; derivatives not attempted. Existing historical Stella banks remain outside this batch."
+    },
+    {
+      "id": "hb_stella-recoil",
+      "reason": "READY generation was safety-blocked and not retried; derivatives not attempted. Existing historical Stella banks remain outside this batch."
+    }
+  ],
+  "fullInitialReadyPrompts": {
+    "hb_stella": "Use case: stylized-concept.\nAsset type: one transparent READY sprite for a 2D side-view fighting game, 1024 x 1536 portrait canvas.\nPrimary request: Faithfully draw adult Stella from Helluva Boss in her usual white-and-dark aristocratic outfit as seen in The Circus, season 2. Use the supplied official standee picture ONLY as a character-design reference, and the supplied episode frames to corroborate her original animation appearance. Do not draw the standee, acrylic, base, words, embellishments or background.\nIdentity: slender long-necked adult avian demon woman; white face, small pink pointed beak, enormous swept black eyelashes, red eyes, pale grey-white layered feather mane flowing behind shoulders, small golden three-point crown. Pale pink puffed short shoulders over very slim black arms and black gloves with light pointed fingertips; fitted pale bodice and long white layered feather skirt/tail over a very dark purple-black underskirt. Preserve her regal feather silhouette, angular outlines, tiny waist and tall neck, not a human face.\nPose: a single full-body neutral READY stance facing SCREEN RIGHT in a readable three-quarter side view; haughty upright posture, chin slightly raised, hands relaxed and slightly lifted near her waist. No weapon, no drink, no gesturing at another character. Show whole crown, every feather tip, hands and hem with clear transparent margin. Her long dress retains its natural shape and hides most of her feet; resting hem at about y=1435 of1536. The highest crown near y=90. Fit the whole feather volume into the width without cropping.\nStyle: clean 2D cel animation, crisp dark variable-width outlines, flat source-matching pastel and dark colors, restrained single cel shadow, no painting texture, no photographic lighting.\nBackground: actual transparent alpha outside the single character, no floor, no shadow, no glow, no effect, no scene. One character, one pose, no duplicate, no grid, no label or watermark. This is a game pose adaptation; preserve the canonical identity and clothing rather than inventing alternate powers or costume.",
+    "hb_mammon": "Use case: stylized-concept.\nAsset type: one transparent READY sprite for a 2D side-view fighting game, 1024 x 1536 portrait canvas.\nPrimary request: Faithfully draw Mammon from Helluva Boss, normal present-day form in season2 episode7. Use official standee picture ONLY for the character design, plus supplied official episode frames for the wide body proportions. Do not draw the acrylic product, its base, logo, dollar decorations, money bag, staff or surrounding scenery.\nIdentity: a very WIDE, heavy, tiered triangular jester-demon silhouette, a small grinning round face inside the collar and a tall three-pronged jester hat with curved green and dark prongs; bright yellow-green grin and eyes, sharp triangular teeth. His huge tiered dark green and black tunic resembles pointed overlapping bells, trimmed golden yellow with lime diamond markings and small gold circles. EXACTLY FOUR ARMS attached to the sides: broad pale sleeves and dark striped forearms, light clawlike fingertips. SHORT pale legs under the huge tunic with pointed dark feet. Never give him a narrow human waist or long human legs. Match the source clothing, colors and broad silhouette.\nPose: one full-body READY stance looking SCREEN RIGHT in a three-quarter side view. Stand broadly grounded, upper pair of elbows slightly bent, one upper hand gesturing open, other near the torso; lower two hands visibly resting to either side of his broad lower body. All FOUR distinct arms and hands must read clearly, no fifth arm. No held item. Character fills roughly85% of width and82% of height with safe margins; feet baseline near y=1440. Leave sufficient top clearance for hat. Preserve width-to-height proportions; do not stretch him vertically simply to fill the portrait.\nStyle: crisp 2D cel-animation contours, flat source colors and one simple cel shadow, no realistic skin, no painted texture.\nBackground: real transparent alpha. No floor, shadow, aura, projectile or VFX. Exactly one complete character, one pose; no duplicate, grid, text, watermark or border. This READY is an original game posture, not a new canonical ability.",
+    "hz_katie_killjoy": "Use case: stylized-concept.\nAsset type: one transparent full-body READY sprite for a 2D side-view game, 1024 x1536 portrait.\nSubject: adult Katie Killjoy, Hazbin Hotel television SERIES season1 design, NOT the pilot mini-dress and NOT a chibi.\nReference: in the supplied photograph of the two licensed season1 trading cards, use ONLY the LEFT card (Katie). The card is a face, hair, neckline, jewelry and jacket reference. Ignore the right character, physical card, frame, paper, lettering and photographic surface.\nPreserve Katie's tall extremely slender adult cartoon proportions, very long thin white neck, white skin, pale blonde short sharply flaring bob with cream highlight and sweeping forelock, large rose-red eyes with heavy sharp black lashes, angular broad grin with pointed teeth and red lipstick. Small pearl earrings and pearl necklace.\nClothes: fitted rose-red SERIES blazer with black lapel/neckline trim, small black buttons and flared long sleeves; short black pencil-skirt layer at the hips over WHITE long flared trousers; red pointed low-heeled shoes. No pilot bare-leg mini-dress. No alternate clothing.\nPose: one READY stance, entire character in three-quarter side view facing SCREEN RIGHT; haughty upright bearing, very long neck held high, one hand on hip and the other loosely bent near her waist, long fingers relaxed. No fighting opponent and no held object. Feet apart in a natural narrow stance, both shoe soles about y=1440, hair top about y=100, all hands/hair/shoes inside the frame with visible empty margin.\nArt: clean 2D cel animation, crisp dark tapered outlines and flat source colors, subtle single cel shadow, no texture, no realism, no glamour lighting. Adult series proportions; absolutely no baby head, no chibi anatomy.\nBackground: genuine transparent alpha, no scenery, floor or shadow, no glow or VFX. Exactly ONE whole character in ONE pose, no duplicate body/head, no sheet/grid/labels/text/watermark. This is a neutral game pose adaptation.",
+    "hz_tom_trench": "Use case: stylized-concept.\nAsset type: one transparent full-body READY sprite for a 2D side-view game, 1024 x1536 portrait.\nSubject: adult Tom Trench, Hazbin Hotel television series season1 design.\nReference: in the supplied photograph of two licensed season1 trading cards, use ONLY the RIGHT card (Tom). Use its original character drawing to preserve head, mask construction, hair, suit colors, tie and gloves. Ignore the left character, physical cards, frame, typography, desk, chair, television overlay and photographic surface.\nIdentity: tall slender adult male cartoon demon, his entire FACE is a rounded dark grey GAS MASK with TWO large dark oval glass eyepieces and an integrated projecting circular ridged central respirator plus small circular side valve. Thick pale blond side-swept hair with pale cream highlight droops over one side of the mask; keep all hair visible, never crop his head. No exposed human face and no helmet.\nClothes: light blue-grey fitted suit jacket with darker blue-grey lapels, paler blue-grey collared shirt, RED necktie and red pocket square, very dark navy long trousers slightly flared at ankles, dark grey gloves and black pointed formal shoes. Match the card's jacket and mask design; no military uniform or weapons.\nPose: a single full-body READY stance in a three-quarter side view facing SCREEN RIGHT, slightly cautious upright posture; both elbows loosely bent, one hand near the jacket lapel and the other near his waist. No cup, no object, no other character. Whole figure on portrait canvas with ample margin: hair near y=120 and both shoe soles near y=1440. Thin adult limbs and long trousers, not chibi proportions.\nStyle: crisp 2D cel-animation contour, flat source colors, one restrained cel-shadow level, no painterly texture, no photorealism.\nBackground: actual transparent alpha, no floor, shadow, glow, smoke, gas, aura or projectile. One complete character, one pose; no extra head, no grid, no text/labels, no watermark. The posture is an original game adaptation, not a claim of a canon power."
+  },
+  "tomOrientationQualityCorrection": {
+    "prompt": "Use case: identity-preserve.\nCorrect ONLY the facing direction of this Tom Trench READY sprite. MIRROR THE ENTIRE FIGURE HORIZONTALLY so he faces SCREEN RIGHT: the projecting round respirator must point toward the RIGHT edge, the larger nearer eyepiece on the LEFT side of the image, and the entire body and hands face the same rightward direction. Keep the exact drawing, clothing, hairstyle, mask parts, anatomy, colors, line thickness, silhouette scale, 1024x1536 portrait canvas, and ground baseline at y=1509. No additional body parts. No change to the shape or pose beyond the mirrored orientation. Preserve genuine transparent alpha background, no floor, shadow, glow, text or additional content. One full-body character, no duplicate.",
+    "input": "/workspace/scratch/eed3bf2e772a/generated_images/exec-a1ee918f-7fab-4804-8de8-7e734c2ddb1c.png",
+    "selectedOutput": "/workspace/scratch/eed3bf2e772a/generated_images/exec-f7c7b7bc-8f0c-4633-9cb5-43be65a3981c.png",
+    "reason": "Initial Tom READY faced screen left; one permitted quality edit made the complete figure face right.",
+    "retriesAfterSafetyRefusal": 0
+  },
+  "qaSummary": {
+    "allDimensions": [
+      1024,
+      1536
+    ],
+    "allMode": "RGBA",
+    "realAlpha": true,
+    "allMasterBytesIdenticalToGeneratedOutput": true,
+    "allDecodedRGBAIdentical": true,
+    "allVisibleSilhouettesInsideFrame": true,
+    "maximumAbsoluteBaselineDeltaPixelsWithinFamily": 2,
+    "maximumAbsoluteHorizontalFootBandCenterDeltaPixelsWithinFamily": 2.0,
+    "comparisonImage": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/characters-twelve-poses-review.jpg",
+    "metricsFile": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/characters/character-metrics.json",
+    "alphaBoundsConvention": "Pillow exclusive right/bottom; contactLastVisibleRow is bbox bottom minus one. Alpha threshold16 suppresses nearly invisible low-alpha edge noise.",
+    "runtimeVisualVerified": false
+  },
+  "staticIntegrationReview": {
+    "fighter": "hb_mammon",
+    "status": "visually-inspected",
+    "type": "static geometry reconstruction, not live browser rendering",
+    "imagePath": "/workspace/scratch/eed3bf2e772a/qa-infernal-wave-d-20261124/mammon-placement-review.jpg",
+    "imageSha256": "b1d55a59b446c659e8e637a585be95d9a1b71bbb3ad55212a2462f7b1eebcb52",
+    "uniformScale": 1.4,
+    "findings": [
+      "Uniform scaling preserves the broad body aspect ratio.",
+      "The reviewed after-image places the shoe contacts on the floor line.",
+      "The before-image visibly floats above the floor; the reviewed after-image corrects that offset.",
+      "Source image pixels are unchanged."
+    ],
+    "integrationOwnerReportedBeforeFootGapPixels": 26.54,
+    "integrationOwnerReportedAfterFootGapPixels": 0,
+    "runtimeBrowserVerified": false
+  }
+}

@@ -1286,6 +1286,25 @@
   animation: arena-spectator-idle-frames 940ms steps(1, end) infinite;
 }
 
+/* Scenery preferences are independent of fighter animations and combat rules. */
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator,
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator {
+  animation: none;
+  transition: none;
+  will-change: auto;
+}
+.arena-combat-stage[data-stage-presentation="reduced"] .arena-stage-spectator__sprite {
+  animation-duration: 1880ms;
+}
+.arena-combat-stage[data-stage-presentation="static"] .arena-stage-spectator__sprite {
+  animation: none;
+  background-position-x: 0%;
+}
+.arena-combat-stage:is([data-stage-presentation="reduced"], [data-stage-presentation="static"]) :is(.arena-stage__glow, .arena-crowd-lights) {
+  animation: none;
+  transition: none;
+}
+
 .arena-combatant {
   --arena-facing-scale: 1;
   position: absolute;
@@ -2087,8 +2106,14 @@
     flex-direction: column;
   }
 
+  .arena-fight-actions {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
   .arena-fight-actions .btn {
-    flex: 1;
+    flex: 1 1 120px;
+    min-width: 0;
   }
 
   .arena-combatant {
@@ -2318,12 +2343,394 @@
 .arena-combat-stage[data-stage="looloo-land"] .infernal-near-plane {
   width: 72%; left: 19%; top: -5%;
 }
+/* These props have transparent square canvases; place their visible bases on
+   the rear floor (middle) or near floor (stool), not at the canvas edge. */
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="stolas-palace"],[data-stage="bee-party"]) .infernal-desk-plane {
+  z-index: 1;
+  width: auto;
+  object-fit: contain;
+  object-position: left bottom;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-desk-plane {
+  height: 40%; max-width: 34%; left: clamp(20px, 5%, 60px); bottom: 13%;
+}
+.arena-combat-stage[data-stage="stolas-palace"] .infernal-near-plane {
+  width: auto; height: 50%; max-width: 28%;
+  right: clamp(26px, 4%, 60px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-desk-plane {
+  height: 54%; max-width: 32%; left: 0; bottom: 18%;
+}
+.arena-combat-stage[data-stage="bee-party"] .infernal-near-plane {
+  width: auto; height: 36%; max-width: 22%;
+  right: clamp(32px, 5%, 72px); left: auto; top: auto; bottom: -1%;
+  object-fit: contain; object-position: right bottom;
+}
 .arena-combat-stage[data-stage="carmine-industries"] .infernal-desk-plane {
   width: auto; height: 44%; left: 1%; bottom: 14%;
 }
 .arena-combat-stage[data-stage="carmine-industries"] .infernal-near-plane {
   width: 25%; right: -3%; left: auto; top: auto; bottom: -1%;
 }
+
+/* Wave C props keep their full square alpha canvases and natural aspect ratio.
+   Edge margins account for up to 25.675px (middle) / 47.4px (near) of
+   horizontal parallax; the visible silhouettes stay inside at 300px width. */
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-room-plane {
+  background-position: center 65%;
+}
+.arena-combat-stage:is([data-stage="dhorks"],[data-stage="crimson-mansion"],[data-stage="mammon-show"]) .infernal-desk-plane {
+  z-index: 1;
+  width: clamp(100px, 27%, 250px); height: auto;
+  left: clamp(12px, 2%, 32px); right: auto; top: auto; bottom: 14%;
+  object-fit: contain; object-position: left bottom;
+}
+.arena-combat-stage[data-stage="dhorks"] .infernal-near-plane {
+  width: clamp(85px, 21%, 230px); height: auto;
+  right: clamp(48px, 4%, 64px); left: auto; top: 0; bottom: auto;
+  object-fit: contain; object-position: right top;
+}
+.arena-combat-stage[data-stage="crimson-mansion"] .infernal-near-plane {
+  width: clamp(90px, 22%, 220px); height: auto;
+  right: clamp(24px, 3%, 48px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+.arena-combat-stage[data-stage="mammon-show"] .infernal-near-plane {
+  width: clamp(130px, 30%, 300px); height: auto;
+  right: clamp(0px, 1%, 16px); left: auto; top: auto; bottom: 0;
+  object-fit: contain; object-position: right bottom;
+}
+
+/* Wave D preserves complete room art with contain and a bottom anchor.
+   Wide arenas have tinted side bands; narrow arenas may have a top band.
+   Room padding reserves 10px per side for its 7.9px parallax maximum.
+   Props keep their full square alpha canvases. Their independent vertical
+   translate compensates transparent padding without replacing parallax.
+   Margins include the 25.675px middle / 47.4px near horizontal extremes. */
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  height: auto;
+  top: auto;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="western-lair"],[data-stage="goetia-court"],[data-stage="hh-heaven-gates"]) .infernal-desk-plane {
+  z-index: 1;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-desk-plane {
+  width: clamp(90px, 20%, 210px);
+  left: clamp(18px, 18%, 220px); right: auto; bottom: 14%;
+  translate: 0 26%;
+}
+.arena-combat-stage[data-stage="western-lair"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(48px, 5%, 72px); left: auto; bottom: 4px;
+  translate: 0 34%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-desk-plane {
+  width: clamp(100px, 24%, 230px);
+  left: clamp(20px, 18%, 220px); right: auto; bottom: 26%;
+}
+.arena-combat-stage[data-stage="goetia-court"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  right: clamp(46px, 4%, 64px); left: auto; bottom: 4px;
+  translate: 0 28.3%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-desk-plane {
+  width: clamp(60px, 20%, 170px);
+  right: clamp(48px, 17%, 204px); left: auto; bottom: 14%;
+  translate: 0 9.5%;
+}
+.arena-combat-stage[data-stage="hh-heaven-gates"] .infernal-near-plane {
+  width: clamp(100px, 22%, 220px);
+  left: clamp(40px, 4%, 64px); right: auto; bottom: 4px;
+  translate: 0 26.5%;
+}
+
+/* Waves F, G, H and the V7 three-layer stages keep the complete master visible.
+   Props share its contained bounds,
+   including transparent canvas margins; scenery stays behind the fighters. */
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+  --infernal-contained-stage-height: clamp(330px, 42vw, 520px);
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) .infernal-room-plane {
+  inset: 0 -10px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-origin: content-box;
+  background-color: var(--arena-stage-floor);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  display: none;
+  z-index: 1;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+/* The complete master remains the fallback without container query units.
+   Enhanced layers become visible only with the shared image coordinate frame. */
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+  width: clamp(84px, 19%, 190px);
+  left: clamp(20px, 4%, 52px); right: auto; top: auto; bottom: clamp(52px, 10vw, 160px);
+}
+.arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+  width: clamp(80px, 17%, 160px);
+  right: clamp(48px, 6%, 80px); left: auto; top: auto; bottom: clamp(42px, 8vw, 130px);
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+  width: clamp(90px, 22%, 205px);
+  left: clamp(22px, 4%, 56px); right: auto; top: auto; bottom: 13%;
+}
+.arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+  width: clamp(92px, 23%, 220px);
+  right: clamp(46px, 5%, 76px); left: auto; top: auto; bottom: 0;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+  width: clamp(108px, 25%, 250px);
+  left: clamp(24px, 5%, 64px); right: auto; top: auto; bottom: 12%;
+}
+.arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+  width: clamp(140px, 38%, 430px);
+  left: 31%; right: auto; top: auto; bottom: clamp(64px, 15vw, 230px);
+  object-position: center top;
+}
+.arena-combat-stage:is([data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+  inset: auto;
+  translate: none;
+}
+@media (max-width: 700px) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    --infernal-contained-stage-height: clamp(300px, 72vw, 430px);
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    --infernal-contained-stage-height: 62vh;
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    bottom: 8%;
+  }
+}
+@supports (height: 1svh) {
+  @media (max-height: 600px) and (orientation: landscape) {
+    .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+      --infernal-contained-stage-height: 62svh;
+    }
+  }
+}
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) {
+    /* Definite height preserves the existing responsive minimum under size
+       containment. The absolutely positioned layers cannot size this box. */
+    height: var(--infernal-contained-stage-height);
+    min-height: var(--infernal-contained-stage-height);
+    container-type: size;
+  }
+  .arena-combat-stage:is([data-stage="imp-exterior"],[data-stage="oops-warehouse"],[data-stage="sinsmas-balcony"],[data-stage="spring-broken-beach"],[data-stage="murder-family-house"],[data-stage="cash-circus"],[data-stage="ghost-hotel"],[data-stage="apology-party"],[data-stage="sloth-hospital-exterior"],[data-stage="australia-desert-s3"],[data-stage="auction-glass-hall-s3"],[data-stage="ozzies-exterior-s1"],[data-stage="hellhound-adoption-s2"],[data-stage="bee-lounge-s1"],[data-stage="asmodeus-bedroom-s2"],[data-stage="blitz-sinsmas-dream-s2"],[data-stage="sloth-consultation-s2"],[data-stage="mammon-backstage-corridor-s2"],[data-stage="dhorks-control-room-s1"],[data-stage="unhappy-campers-boathouse-s2"],[data-stage="full-moon-shop-s2"],[data-stage="crimson-dining-room-s2"]) :is(.infernal-desk-plane,.infernal-near-plane) {
+    display: block;
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
+    --wave-art-side: calc((100% - var(--wave-art-width)) / 2);
+    width: var(--wave-prop-width);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-desk-plane {
+    --wave-prop-width: clamp(56px, calc(var(--wave-art-width) * .18), 190px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .60 - var(--wave-prop-width) * .725678);
+  }
+  .arena-combat-stage[data-stage="imp-exterior"] .infernal-near-plane {
+    --wave-prop-width: clamp(42px, calc(var(--wave-art-width) * .14), 140px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .04);
+    bottom: calc(var(--wave-art-height) * .58 - var(--wave-prop-width) * .865231);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-desk-plane {
+    --wave-prop-width: clamp(70px, calc(var(--wave-art-width) * .20), 205px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .14 - var(--wave-prop-width) * .270335);
+  }
+  .arena-combat-stage[data-stage="oops-warehouse"] .infernal-near-plane {
+    --wave-prop-width: clamp(72px, calc(var(--wave-art-width) * .22), 220px);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .035);
+    bottom: calc(var(--wave-art-height) * .07 - var(--wave-prop-width) * .215311);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-desk-plane {
+    --wave-prop-width: clamp(84px, calc(var(--wave-art-width) * .25), 250px);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .21 - var(--wave-prop-width) * .279107);
+  }
+  .arena-combat-stage[data-stage="sinsmas-balcony"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .65);
+    left: calc((100% - var(--wave-prop-width)) / 2);
+    bottom: calc(var(--wave-art-height) * .94 - var(--wave-prop-width) * .563796);
+  }
+  /* Wave G uses the same contained image frame. The subtraction removes each
+     PNG's transparent bottom margin without changing its native aspect ratio. */
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .16);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .055664);
+  }
+  .arena-combat-stage[data-stage="spring-broken-beach"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .32);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .12 - var(--wave-prop-width) * .038872);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .132);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .572 - var(--wave-prop-width) * .5);
+    bottom: calc(var(--wave-art-height) * .359 - var(--wave-prop-width) * .120631);
+  }
+  .arena-combat-stage[data-stage="murder-family-house"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .45);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01);
+    bottom: calc(var(--wave-art-height) * .015 - var(--wave-prop-width) * .034070);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .34);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .235 - var(--wave-prop-width) * .096685);
+  }
+  .arena-combat-stage[data-stage="cash-circus"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .28);
+    right: calc(var(--wave-art-side) + var(--wave-art-width) * .015);
+    bottom: calc(var(--wave-art-height) * .26 - var(--wave-prop-width) * .107422);
+  }
+  /* Wave H: source-guided placement in the same image coordinate frame. */
+  .arena-combat-stage[data-stage="ghost-hotel"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.240922190);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.060000000 - var(--wave-prop-width) * 0.083732057);
+    bottom: calc(var(--wave-art-height) * 0.170000000 - var(--wave-prop-width) * 0.174641148);
+  }
+  .arena-combat-stage[data-stage="ghost-hotel"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.098526859);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.780000000 - var(--wave-prop-width) * 0.496054115);
+    bottom: calc(var(--wave-art-height) * 0.520000000 - var(--wave-prop-width) * 0.144306652);
+  }
+  .arena-combat-stage[data-stage="apology-party"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.129557971);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.870000000 - var(--wave-prop-width) * 0.501993620);
+    bottom: calc(var(--wave-art-height) * 0.630000000 - var(--wave-prop-width) * 0.090111643);
+  }
+  .arena-combat-stage[data-stage="apology-party"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.133546326);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.130000000 - var(--wave-prop-width) * 0.495614035);
+    bottom: calc(var(--wave-art-height) * 0.712608185 - var(--wave-prop-width) * 0.066985646);
+  }
+  /* Sloth exterior V7: the bench and the smaller left roadside lamp were
+     removed from the room master. Restore each once on the pavement, using
+     native alpha margins; both remain behind the combatants. */
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .09);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .272 - var(--wave-prop-width) * .105975);
+    bottom: calc(var(--wave-art-height) * .146 - var(--wave-prop-width) * .058625);
+  }
+  .arena-combat-stage[data-stage="sloth-hospital-exterior"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .054);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .225 - var(--wave-prop-width) * .493785);
+    bottom: calc(var(--wave-art-height) * .10 - var(--wave-prop-width) * .056630);
+  }
+  /* Australia S3: one rock and one tuft occupy the cleared lower-left
+     patches. Native transparent margins keep their visible bases grounded. */
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .155);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .147 - var(--wave-prop-width) * .207644);
+    bottom: calc(var(--wave-art-height) * .152 - var(--wave-prop-width) * .055249);
+  }
+  .arena-combat-stage[data-stage="australia-desert-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .113);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .252 - var(--wave-prop-width) * .109357);
+    bottom: calc(var(--wave-art-height) * .068 - var(--wave-prop-width) * .054115);
+  }
+  /* Auction hall S3: restore the nearest right-wall bench and its adjacent
+     ornament once each; the other benches remain part of the room artwork. */
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .224);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .782 - var(--wave-prop-width) * .069335);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .042841);
+  }
+  .arena-combat-stage[data-stage="auction-glass-hall-s3"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .075);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .735 - var(--wave-prop-width) * .252537);
+    bottom: calc(var(--wave-art-height) * .245 - var(--wave-prop-width) * .036077);
+  }
+}
+
+/* V8 objects use the same contained image frame as their source room.
+   Attached documents and chains share the room's parallax in the registry. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="ozzies-exterior-s1"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .13);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .58 - var(--wave-prop-width) * .0265);
+    bottom: calc(var(--wave-art-height) * .20 - var(--wave-prop-width) * .0372);
+  }
+  .arena-combat-stage[data-stage="hellhound-adoption-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .085);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .925 - var(--wave-prop-width) * .5);
+    bottom: calc(var(--wave-art-height) * .46 - var(--wave-prop-width) * .14);
+  }
+  .arena-combat-stage[data-stage="hellhound-adoption-s2"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .34);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .24 - var(--wave-prop-width) * .0276);
+    bottom: calc(var(--wave-art-height) * .64 - var(--wave-prop-width) * .018);
+  }
+}
+
+/* V9 lounge props retain their native alpha margins. Their visible bases share
+   the source room coordinate system and the room's parallax ratio. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="bee-lounge-s1"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .1501);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .01794 - var(--wave-prop-width) * .14528);
+    bottom: calc(var(--wave-art-height) * .14984 - var(--wave-prop-width) * .11676);
+  }
+  .arena-combat-stage[data-stage="bee-lounge-s1"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * .188483);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * .72667 - var(--wave-prop-width) * .175781);
+    bottom: calc(var(--wave-art-height) * .24017 - var(--wave-prop-width) * .185547);
+  }
+}
+
+/* Static stage expansions: complete background, no generated prop layers.
+   Contain preserves the authored framing; coloured bands extend the floor.
+   The combat lane and its collision bounds stay independent of the image. */
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) {
+  background-color: var(--arena-stage-floor);
+  background-image:
+    linear-gradient(180deg, rgba(7, 3, 5, .12), rgba(7, 3, 5, .24)),
+    var(--arena-stage-art, none);
+  background-position: center, var(--arena-stage-position, center bottom);
+  background-size: auto, contain;
+  background-repeat: no-repeat;
+}
+.arena-combat-stage:is([data-stage="sloth-hospital"],[data-stage="sinsmas-frozen-pavilion"],[data-stage="seeing-stars-overlook"],[data-stage="cherub-opera-stage"],[data-stage="dhorks-portal-chamber"],[data-stage="hellaverse-training"],[data-stage="vox-office-s2"]) :is(.arena-lane-grid,.arena-crowd-lights) {
+  display: none;
+}
+/* End static stage expansions. */
 
 .infernal-finish-choice {
   position: absolute;
@@ -2376,4 +2783,42 @@
   height: auto;
   aspect-ratio: 3 / 2;
   bottom: -3%;
+}
+
+/* V10 props share each room’s native aspect ratio, alpha margins and parallax. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] :is(.infernal-desk-plane,.infernal-near-plane) {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1602 / 982));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 982 / 1602));
+  }
+  .arena-combat-stage[data-stage="blitz-sinsmas-dream-s2"] :is(.infernal-desk-plane,.infernal-near-plane) {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1648 / 954));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 954 / 1648));
+  }
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.2407258039);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.8052434457 - var(--wave-prop-width) * 0.1058441558);
+    bottom: calc(var(--wave-art-height) * 0.3415196407 - var(--wave-prop-width) * 0.0324675325);
+  }
+  .arena-combat-stage[data-stage="asmodeus-bedroom-s2"] .infernal-near-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.0886975745);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.9051186017 - var(--wave-prop-width) * 0.1699218750);
+    bottom: calc(var(--wave-art-height) * 0.5214770853 - var(--wave-prop-width) * 0.0996093750);
+  }
+  .arena-combat-stage[data-stage="blitz-sinsmas-dream-s2"] .infernal-desk-plane {
+    --wave-prop-width: calc(var(--wave-art-width) * 0.0685587419);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.5946601942 - var(--wave-prop-width) * 0.2199850858);
+    bottom: calc(var(--wave-art-height) * 0.7149730127 - var(--wave-prop-width) * 0.1737509321);
+  }
+}
+
+/* V11 consultation prop uses the room frame, including transparent margins. */
+@supports (container-type: size) and (width: 1cqw) {
+  .arena-combat-stage[data-stage="sloth-consultation-s2"] .infernal-desk-plane {
+    --wave-art-width: min(calc(100cqw - 20px), calc(100cqh * 1672 / 941));
+    --wave-art-height: min(100cqh, calc((100cqw - 20px) * 941 / 1672));
+    --wave-prop-width: calc(var(--wave-art-width) * 0.1876508142);
+    left: calc(var(--wave-art-side) + var(--wave-art-width) * 0.4641148325 - var(--wave-prop-width) * 0.1047835991);
+    bottom: calc(var(--wave-art-height) * 0.2311743490 - var(--wave-prop-width) * 0.0918754746);
+  }
 }

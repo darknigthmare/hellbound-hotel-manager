@@ -1,23 +1,34 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 3,
   "summary": {
-    "fighters": 36,
-    "individualReady": 10,
-    "individualGuard": 3,
-    "individualLightContact": 5,
-    "individualHit": 4,
-    "costumes": 4,
-    "costumeKeyPoses": 24,
+    "fighters": 43,
+    "individualReady": 40,
+    "individualGuard": 17,
+    "individualLightContact": 17,
+    "individualHit": 18,
+    "costumes": 6,
+    "costumeKeyPoses": 35,
     "finisherKeyPoses": 5,
     "separatedFinishProps": 1,
-    "storyAssignments": 108,
+    "storyAssignments": 129,
     "illustratedStoryAssignments": 26,
     "uniqueStoryIllustrations": 22,
-    "stages": 14,
-    "threePlaneStages": 14,
+    "stages": 30,
+    "threePlaneStages": 30,
     "twoPlaneStages": 0,
     "onePlaneStages": 0,
-    "referencedAssets": 254,
+    "attackEffectImages": 14,
+    "attackEffectAssignments": 28,
+    "referencedAssets": 428,
+    "brokenReferences": []
+  },
+  "reserveSummary": {
+    "catalogue": "art/infernal-versus/production/reserve-assets.json",
+    "characterBases": 13,
+    "enemyBases": 8,
+    "projectileImages": 1,
+    "artworks": 22,
+    "referencedFiles": 44,
     "brokenReferences": []
   },
   "fighters": [
@@ -26,7 +37,9 @@
       "name": "Charlie Morningstar",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/charlie.png",
+      "fallbackPortrait": "/assets/sprites/portraits/charlie.png",
       "atlas": "/assets/sprites/sheets/core-a.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-a-offense.png",
@@ -56,7 +69,9 @@
       "name": "Vaggie",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/vaggie.png",
+      "fallbackPortrait": "/assets/sprites/portraits/vaggie.png",
       "atlas": "/assets/sprites/sheets/core-a.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-a-offense.png",
@@ -99,7 +114,9 @@
       "name": "Angel Dust",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/angeldust.png",
+      "fallbackPortrait": "/assets/sprites/portraits/angeldust.png",
       "atlas": "/assets/sprites/sheets/core-a.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-a-offense.png",
@@ -129,7 +146,9 @@
       "name": "Alastor",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/alastor.png",
+      "fallbackPortrait": "/assets/sprites/portraits/alastor.png",
       "atlas": "/assets/sprites/sheets/core-a.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-a-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-a-offense.png",
@@ -141,9 +160,9 @@
       },
       "individual": {
         "ready": "/assets/sprites/stances/alastor.webp",
-        "guard": null,
+        "guard": "/assets/sprites/individual/alastor-guard.webp",
         "lightContact": null,
-        "hit": null
+        "hit": "/assets/sprites/individual/alastor-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": "/assets/sprites/finishers/alastor.webp",
@@ -159,7 +178,9 @@
       "name": "Husk",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/husk.png",
+      "fallbackPortrait": "/assets/sprites/portraits/husk.png",
       "atlas": "/assets/sprites/sheets/core-b.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-b-offense.png",
@@ -189,7 +210,9 @@
       "name": "Niffty",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/niffty.png",
+      "fallbackPortrait": "/assets/sprites/portraits/niffty.png",
       "atlas": "/assets/sprites/sheets/core-b.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-b-offense.png",
@@ -200,7 +223,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/niffty-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -219,7 +242,9 @@
       "name": "Sir Pentious",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/sirpentious.png",
+      "fallbackPortrait": "/assets/sprites/portraits/sirpentious.png",
       "atlas": "/assets/sprites/sheets/core-b.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-b-offense.png",
@@ -230,7 +255,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/core-b-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/sirpentious-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -249,7 +274,9 @@
       "name": "Lucifer Morningstar",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/lucifer.png",
+      "fallbackPortrait": "/assets/sprites/portraits/lucifer.png",
       "atlas": "/assets/sprites/sheets/core-b.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/core-b-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/core-b-offense.png",
@@ -279,7 +306,9 @@
       "name": "Cherri Bomb",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/cherribomb.png",
+      "fallbackPortrait": "/assets/sprites/portraits/cherribomb.png",
       "atlas": "/assets/sprites/sheets/hell-antagonists.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/hell-antagonists-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/hell-antagonists-offense.png",
@@ -309,7 +338,9 @@
       "name": "Vox",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/vox.png",
+      "fallbackPortrait": "/assets/sprites/portraits/vox.png",
       "atlas": "/assets/sprites/sheets/hell-antagonists.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/hell-antagonists-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/hell-antagonists-offense.png",
@@ -320,10 +351,10 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/vox-ready.webp",
+        "guard": "/assets/sprites/individual/vox-guard.webp",
+        "lightContact": "/assets/sprites/individual/vox-strike.webp",
+        "hit": "/assets/sprites/individual/vox-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -339,7 +370,9 @@
       "name": "Valentino",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/valentino.png",
+      "fallbackPortrait": "/assets/sprites/portraits/valentino.png",
       "atlas": "/assets/sprites/sheets/hell-antagonists.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/hell-antagonists-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/hell-antagonists-offense.png",
@@ -350,7 +383,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/valentino-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -369,7 +402,9 @@
       "name": "Velvette",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/velvette.png",
+      "fallbackPortrait": "/assets/sprites/portraits/velvette.png",
       "atlas": "/assets/sprites/sheets/hell-antagonists.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/hell-antagonists-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/hell-antagonists-offense.png",
@@ -380,10 +415,10 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hell-antagonists-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/velvette-ready.webp",
+        "guard": "/assets/sprites/individual/velvette-guard.webp",
+        "lightContact": "/assets/sprites/individual/velvette-strike.webp",
+        "hit": "/assets/sprites/individual/velvette-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -399,7 +434,9 @@
       "name": "Adam",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/adam.png",
+      "fallbackPortrait": "/assets/sprites/portraits/adam.png",
       "atlas": "/assets/sprites/sheets/heaven.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/heaven-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/heaven-offense.png",
@@ -410,7 +447,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/adam-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -429,7 +466,9 @@
       "name": "Emily",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/emily.png",
+      "fallbackPortrait": "/assets/sprites/portraits/emily.png",
       "atlas": "/assets/sprites/sheets/heaven.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/heaven-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/heaven-offense.png",
@@ -440,7 +479,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/emily-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -459,7 +498,9 @@
       "name": "Sera",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/sera.png",
+      "fallbackPortrait": "/assets/sprites/portraits/sera.png",
       "atlas": "/assets/sprites/sheets/heaven.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/heaven-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/heaven-offense.png",
@@ -470,7 +511,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/heaven-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/sera-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -489,7 +530,9 @@
       "name": "Lute",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/lute.png",
+      "fallbackPortrait": "/assets/sprites/portraits/lute.png",
       "atlas": "/assets/sprites/sheets/heaven.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/heaven-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/heaven-offense.png",
@@ -505,7 +548,20 @@
         "lightContact": null,
         "hit": null
       },
-      "costumes": [],
+      "costumes": [
+        {
+          "id": "lute-pre-injury",
+          "name": "Avant la blessure · saison 1",
+          "poses": {
+            "ready": "/assets/sprites/individual/lute-ready.webp",
+            "strike": "/assets/sprites/costumes/lute-pre-injury-strike.webp",
+            "heavy": "/assets/sprites/costumes/lute-pre-injury-heavy.webp",
+            "recoil": "/assets/sprites/costumes/lute-pre-injury-recoil.webp",
+            "crouch": "/assets/sprites/costumes/lute-pre-injury-crouch.webp",
+            "jump": "/assets/sprites/costumes/lute-pre-injury-jump.webp"
+          }
+        }
+      ],
       "finisherKeyPose": null,
       "separatedFinishProp": null,
       "story": {
@@ -519,7 +575,9 @@
       "name": "Carmilla Carmine",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/carmilla.png",
+      "fallbackPortrait": "/assets/sprites/portraits/carmilla.png",
       "atlas": "/assets/sprites/sheets/overlords.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/overlords-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/overlords-offense.png",
@@ -530,12 +588,25 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/carmilla-ready.webp",
+        "guard": "/assets/sprites/individual/carmilla-guard.webp",
+        "lightContact": "/assets/sprites/individual/carmilla-strike.webp",
+        "hit": "/assets/sprites/individual/carmilla-recoil.webp"
       },
-      "costumes": [],
+      "costumes": [
+        {
+          "id": "carmilla-loose-hair",
+          "name": "Cheveux lâchés",
+          "poses": {
+            "ready": "/assets/sprites/costumes/carmilla-loose-hair.webp",
+            "strike": "/assets/sprites/costumes/carmilla-loose-hair-strike.webp",
+            "heavy": "/assets/sprites/costumes/carmilla-loose-hair-heavy.webp",
+            "recoil": "/assets/sprites/costumes/carmilla-loose-hair-recoil.webp",
+            "crouch": null,
+            "jump": "/assets/sprites/costumes/carmilla-loose-hair-jump.webp"
+          }
+        }
+      ],
       "finisherKeyPose": null,
       "separatedFinishProp": null,
       "story": {
@@ -549,7 +620,9 @@
       "name": "Rosie",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/rosie.png",
+      "fallbackPortrait": "/assets/sprites/portraits/rosie.png",
       "atlas": "/assets/sprites/sheets/overlords.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/overlords-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/overlords-offense.png",
@@ -560,7 +633,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/rosie-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -579,7 +652,9 @@
       "name": "Zestial",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/zestial.png",
+      "fallbackPortrait": "/assets/sprites/portraits/zestial.png",
       "atlas": "/assets/sprites/sheets/overlords.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/overlords-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/overlords-offense.png",
@@ -590,7 +665,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/zestial-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -609,7 +684,9 @@
       "name": "Zeezi",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/zeezi.png",
+      "fallbackPortrait": "/assets/sprites/portraits/zeezi.png",
       "atlas": "/assets/sprites/sheets/overlords.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/overlords-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/overlords-offense.png",
@@ -620,7 +697,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/overlords-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/zeezi-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -639,7 +716,9 @@
       "name": "Baxter",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/baxter.png",
+      "fallbackPortrait": "/assets/sprites/portraits/baxter.png",
       "atlas": "/assets/sprites/sheets/season2-au.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/season2-au-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/season2-au-offense.png",
@@ -650,7 +729,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/season2-au-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/baxter-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -669,7 +748,9 @@
       "name": "Abel",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/portraits/abel.png",
+      "fallbackPortrait": "/assets/sprites/portraits/abel.png",
       "atlas": "/assets/sprites/sheets/season2-au.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/season2-au-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/season2-au-offense.png",
@@ -680,7 +761,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/season2-au-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/abel-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -699,7 +780,9 @@
       "name": "Mimzy",
       "franchise": "Hazbin Hotel",
       "portrait": "/assets/sprites/hazbin/portraits/hz_mimzy.png",
+      "fallbackPortrait": "/assets/sprites/hazbin/portraits/hz_mimzy.png",
       "atlas": "/assets/sprites/hazbin/sheets/hazbin-family-media.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/hazbin/animation/v1/movement/hazbin-family-media-movement.png",
         "offense": "/assets/sprites/hazbin/animation/v1/offense/hazbin-family-media-offense.png",
@@ -710,7 +793,7 @@
         "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hazbin-family-media-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hz_mimzy-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -725,11 +808,77 @@
       }
     },
     {
+      "id": "hz_katie_killjoy",
+      "name": "Katie Killjoy",
+      "franchise": "Hazbin Hotel",
+      "portrait": "/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+      "fallbackPortrait": "/assets/sprites/hazbin/portraits/hz_katie_killjoy.png",
+      "atlas": "/assets/sprites/hazbin/sheets/hazbin-family-media.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/hazbin/animation/v1/movement/hazbin-family-media-movement.png",
+        "offense": "/assets/sprites/hazbin/animation/v1/offense/hazbin-family-media-offense.png",
+        "reaction": "/assets/sprites/hazbin/animation/v1/reaction/hazbin-family-media-reaction.png",
+        "taunt": "/assets/sprites/hazbin/animation/v1/taunt/hazbin-family-media-taunt.png",
+        "jump": "/assets/sprites/hazbin/animation/v1/jump/hazbin-family-media-jump.png",
+        "crouch": "/assets/sprites/hazbin/animation/v1/crouch/hazbin-family-media-crouch.png",
+        "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hazbin-family-media-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hz_katie_killjoy-ready.webp",
+        "guard": "/assets/sprites/individual/hz_katie_killjoy-guard.webp",
+        "lightContact": "/assets/sprites/individual/hz_katie_killjoy-strike.webp",
+        "hit": "/assets/sprites/individual/hz_katie_killjoy-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hz_tom_trench",
+      "name": "Tom Trench",
+      "franchise": "Hazbin Hotel",
+      "portrait": "/assets/sprites/individual/hz_tom_trench-ready.webp",
+      "fallbackPortrait": "/assets/sprites/hazbin/portraits/hz_tom_trench.png",
+      "atlas": "/assets/sprites/hazbin/sheets/hazbin-family-media.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hz_tom_trench-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/hazbin/animation/v1/movement/hazbin-family-media-movement.png",
+        "offense": "/assets/sprites/hazbin/animation/v1/offense/hazbin-family-media-offense.png",
+        "reaction": "/assets/sprites/hazbin/animation/v1/reaction/hazbin-family-media-reaction.png",
+        "taunt": "/assets/sprites/hazbin/animation/v1/taunt/hazbin-family-media-taunt.png",
+        "jump": "/assets/sprites/hazbin/animation/v1/jump/hazbin-family-media-jump.png",
+        "crouch": "/assets/sprites/hazbin/animation/v1/crouch/hazbin-family-media-crouch.png",
+        "recoil": "/assets/sprites/hazbin/animation/v1/recoil/hazbin-family-media-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hz_tom_trench-ready.webp",
+        "guard": "/assets/sprites/individual/hz_tom_trench-guard.webp",
+        "lightContact": "/assets/sprites/individual/hz_tom_trench-strike.webp",
+        "hit": "/assets/sprites/individual/hz_tom_trench-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
       "id": "hb_blitzo",
       "name": "Blitzø",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_blitzo.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_blitzo.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-core.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
@@ -740,10 +889,10 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-core-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/hb_blitzo-ready.webp",
+        "guard": "/assets/sprites/individual/hb_blitzo-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_blitzo-strike.webp",
+        "hit": "/assets/sprites/individual/hb_blitzo-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": "/assets/sprites/finishers/hb_blitzo.webp",
@@ -759,7 +908,9 @@
       "name": "Moxxie",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_moxxie.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_moxxie.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-core.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
@@ -802,7 +953,9 @@
       "name": "Millie",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_millie.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_millie.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-core.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
@@ -832,7 +985,9 @@
       "name": "Loona",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_loona.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_loona.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-core.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-core-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-core-offense.png",
@@ -875,7 +1030,9 @@
       "name": "Stolas",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_stolas.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_stolas.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-allies.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-allies-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-allies-offense.png",
@@ -886,10 +1043,10 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/hb_stolas-ready.webp",
+        "guard": "/assets/sprites/individual/hb_stolas-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_stolas-strike.webp",
+        "hit": "/assets/sprites/individual/hb_stolas-recoil.webp"
       },
       "costumes": [
         {
@@ -918,7 +1075,9 @@
       "name": "Striker",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_striker.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_striker.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-powers.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-powers-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-powers-offense.png",
@@ -948,7 +1107,9 @@
       "name": "Verosika Mayday",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_verosika.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_verosika.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-allies.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-allies-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-allies-offense.png",
@@ -959,7 +1120,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_verosika-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -978,7 +1139,9 @@
       "name": "Fizzarolli",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_fizzarolli.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_fizzarolli.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-allies.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-allies-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-allies-offense.png",
@@ -989,10 +1152,10 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-allies-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/hb_fizzarolli-ready.webp",
+        "guard": "/assets/sprites/individual/hb_fizzarolli-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_fizzarolli-strike.webp",
+        "hit": "/assets/sprites/individual/hb_fizzarolli-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -1008,7 +1171,9 @@
       "name": "Asmodeus",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_asmodeus.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_asmodeus.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-powers.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-powers-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-powers-offense.png",
@@ -1019,10 +1184,10 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-powers-recoil.png"
       },
       "individual": {
-        "ready": null,
-        "guard": null,
-        "lightContact": null,
-        "hit": null
+        "ready": "/assets/sprites/individual/hb_asmodeus-ready.webp",
+        "guard": "/assets/sprites/individual/hb_asmodeus-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_asmodeus-strike.webp",
+        "hit": "/assets/sprites/individual/hb_asmodeus-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -1038,7 +1203,9 @@
       "name": "Beelzebub",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_beelzebub.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_beelzebub.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-powers.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-powers-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-powers-offense.png",
@@ -1049,7 +1216,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-powers-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_beelzebub-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1068,7 +1235,9 @@
       "name": "Crimson",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_crimson.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_crimson.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-extended-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-extended-offense.png",
@@ -1079,7 +1248,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_crimson-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1098,7 +1267,9 @@
       "name": "Sallie May",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_sallie_may.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_sallie_may.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-extended-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-extended-offense.png",
@@ -1109,7 +1280,7 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
-        "ready": null,
+        "ready": "/assets/sprites/individual/hb_sallie_may-ready.webp",
         "guard": null,
         "lightContact": null,
         "hit": null
@@ -1128,7 +1299,9 @@
       "name": "Andrealphus",
       "franchise": "Helluva Boss",
       "portrait": "/assets/sprites/helluva/portraits/hb_andrealphus.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_andrealphus.png",
       "atlas": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "temporaryStaticFallback": null,
       "animationBanks": {
         "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-extended-movement.png",
         "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-extended-offense.png",
@@ -1139,10 +1312,170 @@
         "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
       },
       "individual": {
+        "ready": "/assets/sprites/individual/hb_andrealphus-ready.webp",
+        "guard": null,
+        "lightContact": null,
+        "hit": null
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_stella",
+      "name": "Stella",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/helluva/portraits/hb_stella.png",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_stella.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-powers.png",
+      "temporaryStaticFallback": "/assets/sprites/helluva/portraits/hb_stella.png",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-powers-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-powers-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-powers-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-powers-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-powers-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-powers-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-powers-recoil.png"
+      },
+      "individual": {
         "ready": null,
         "guard": null,
         "lightContact": null,
         "hit": null
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_mammon",
+      "name": "Mammon",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_mammon-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_mammon.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_mammon-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-rivals-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-rivals-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-rivals-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-rivals-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-rivals-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-rivals-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-rivals-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_mammon-ready.webp",
+        "guard": "/assets/sprites/individual/hb_mammon-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_mammon-strike.webp",
+        "hit": "/assets/sprites/individual/hb_mammon-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_vortex",
+      "name": "Vortex",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_vortex-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_vortex.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-extended.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_vortex-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-extended-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-extended-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-extended-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-extended-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-extended-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-extended-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-extended-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_vortex-ready.webp",
+        "guard": "/assets/sprites/individual/hb_vortex-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_vortex-strike.webp",
+        "hit": "/assets/sprites/individual/hb_vortex-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_glitz",
+      "name": "Glitz",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_glitz-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_glitz.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_glitz-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-rivals-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-rivals-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-rivals-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-rivals-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-rivals-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-rivals-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-rivals-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_glitz-ready.webp",
+        "guard": "/assets/sprites/individual/hb_glitz-guard.webp",
+        "lightContact": "/assets/sprites/individual/hb_glitz-strike.webp",
+        "hit": "/assets/sprites/individual/hb_glitz-recoil.webp"
+      },
+      "costumes": [],
+      "finisherKeyPose": null,
+      "separatedFinishProp": null,
+      "story": {
+        "intro": null,
+        "rival": null,
+        "ending": null
+      }
+    },
+    {
+      "id": "hb_glam",
+      "name": "Glam",
+      "franchise": "Helluva Boss",
+      "portrait": "/assets/sprites/individual/hb_glam-ready.webp",
+      "fallbackPortrait": "/assets/sprites/helluva/portraits/hb_glam.png",
+      "atlas": "/assets/sprites/helluva/sheets/helluva-rivals.png",
+      "temporaryStaticFallback": "/assets/sprites/individual/hb_glam-ready.webp",
+      "animationBanks": {
+        "movement": "/assets/sprites/helluva/animation/v1/movement/helluva-rivals-movement.png",
+        "offense": "/assets/sprites/helluva/animation/v1/offense/helluva-rivals-offense.png",
+        "reaction": "/assets/sprites/helluva/animation/v1/reaction/helluva-rivals-reaction.png",
+        "taunt": "/assets/sprites/helluva/animation/v1/taunt/helluva-rivals-taunt.png",
+        "jump": "/assets/sprites/helluva/animation/v1/jump/helluva-rivals-jump.png",
+        "crouch": "/assets/sprites/helluva/animation/v1/crouch/helluva-rivals-crouch.png",
+        "recoil": "/assets/sprites/helluva/animation/v1/recoil/helluva-rivals-recoil.png"
+      },
+      "individual": {
+        "ready": "/assets/sprites/individual/hb_glam-ready.webp",
+        "guard": "/assets/sprites/individual/hb_glam-guard.webp",
+        "lightContact": null,
+        "hit": "/assets/sprites/individual/hb_glam-recoil.webp"
       },
       "costumes": [],
       "finisherKeyPose": null,
@@ -1308,7 +1641,366 @@
       ],
       "planeCount": 3,
       "thumbnail": "/assets/stages/helluva/looloo-land/thumb.webp"
+    },
+    {
+      "id": "stolas-palace",
+      "name": "Palais de Stolas · Terrasse",
+      "planes": [
+        "/assets/stages/helluva/stolas-palace/room.webp",
+        "/assets/stages/helluva/stolas-palace/prop-middle.webp",
+        "/assets/stages/helluva/stolas-palace/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/stolas-palace/thumb.webp"
+    },
+    {
+      "id": "bee-party",
+      "name": "Beelzebub · Réception",
+      "planes": [
+        "/assets/stages/helluva/bee-party/room.webp",
+        "/assets/stages/helluva/bee-party/prop-middle.webp",
+        "/assets/stages/helluva/bee-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/bee-party/thumb.webp"
+    },
+    {
+      "id": "dhorks",
+      "name": "D.H.O.R.K.S. · Interrogatoire",
+      "planes": [
+        "/assets/stages/helluva/dhorks/room.webp",
+        "/assets/stages/helluva/dhorks/prop-middle.webp",
+        "/assets/stages/helluva/dhorks/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/dhorks/thumb.webp"
+    },
+    {
+      "id": "crimson-mansion",
+      "name": "Demeure de Crimson · Salon",
+      "planes": [
+        "/assets/stages/helluva/crimson-mansion/room.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-middle.webp",
+        "/assets/stages/helluva/crimson-mansion/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/crimson-mansion/thumb.webp"
+    },
+    {
+      "id": "mammon-show",
+      "name": "Concours de Mammon · Scène",
+      "planes": [
+        "/assets/stages/helluva/mammon-show/room.webp",
+        "/assets/stages/helluva/mammon-show/prop-middle.webp",
+        "/assets/stages/helluva/mammon-show/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/mammon-show/thumb.webp"
+    },
+    {
+      "id": "western-lair",
+      "name": "Repaire de Striker · Mine",
+      "planes": [
+        "/assets/stages/helluva/western-lair/room.webp",
+        "/assets/stages/helluva/western-lair/prop-middle.webp",
+        "/assets/stages/helluva/western-lair/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/western-lair/thumb.webp"
+    },
+    {
+      "id": "goetia-court",
+      "name": "Tribunal infernal · Mastermind",
+      "planes": [
+        "/assets/stages/helluva/goetia-court/room.webp",
+        "/assets/stages/helluva/goetia-court/prop-middle.webp",
+        "/assets/stages/helluva/goetia-court/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/goetia-court/thumb.webp"
+    },
+    {
+      "id": "hh-heaven-gates",
+      "name": "Paradis · Portes célestes",
+      "planes": [
+        "/assets/stages/hazbin/hh-heaven-gates/room.webp",
+        "/assets/stages/hazbin/hh-heaven-gates/prop-middle.webp",
+        "/assets/stages/hazbin/hh-heaven-gates/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/hazbin/hh-heaven-gates/thumb.webp"
+    },
+    {
+      "id": "imp-exterior",
+      "name": "I.M.P. · Rue des bureaux",
+      "planes": [
+        "/assets/stages/helluva/imp-exterior/room.webp",
+        "/assets/stages/helluva/imp-exterior/prop-middle.webp",
+        "/assets/stages/helluva/imp-exterior/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/imp-exterior/thumb.webp"
+    },
+    {
+      "id": "oops-warehouse",
+      "name": "Oops · Entrepôt",
+      "planes": [
+        "/assets/stages/helluva/oops-warehouse/room.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-middle.webp",
+        "/assets/stages/helluva/oops-warehouse/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/oops-warehouse/thumb.webp"
+    },
+    {
+      "id": "sinsmas-balcony",
+      "name": "Blitzø · Balcon de Sinsmas",
+      "planes": [
+        "/assets/stages/helluva/sinsmas-balcony/room.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-middle.webp",
+        "/assets/stages/helluva/sinsmas-balcony/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/sinsmas-balcony/thumb.webp"
+    },
+    {
+      "id": "spring-broken-beach",
+      "name": "Plage · Spring Broken",
+      "planes": [
+        "/assets/stages/helluva/spring-broken-beach/room.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-middle.webp",
+        "/assets/stages/helluva/spring-broken-beach/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/spring-broken-beach/thumb.webp"
+    },
+    {
+      "id": "murder-family-house",
+      "name": "Martha · Maison dans la clairière",
+      "planes": [
+        "/assets/stages/helluva/murder-family-house/room.webp",
+        "/assets/stages/helluva/murder-family-house/prop-middle.webp",
+        "/assets/stages/helluva/murder-family-house/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/murder-family-house/thumb.webp"
+    },
+    {
+      "id": "cash-circus",
+      "name": "Cirque de Cash · Piste",
+      "planes": [
+        "/assets/stages/helluva/cash-circus/room.webp",
+        "/assets/stages/helluva/cash-circus/prop-middle.webp",
+        "/assets/stages/helluva/cash-circus/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/cash-circus/thumb.webp"
+    },
+    {
+      "id": "ghost-hotel",
+      "name": "One Star Wonder · Couloir",
+      "planes": [
+        "/assets/stages/helluva/ghost-hotel/room.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-middle.webp",
+        "/assets/stages/helluva/ghost-hotel/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/ghost-hotel/thumb.webp"
+    },
+    {
+      "id": "apology-party",
+      "name": "Apology Tour · Salle de fête",
+      "planes": [
+        "/assets/stages/helluva/apology-party/room.webp",
+        "/assets/stages/helluva/apology-party/prop-middle.webp",
+        "/assets/stages/helluva/apology-party/prop-near.webp"
+      ],
+      "planeCount": 3,
+      "thumbnail": "/assets/stages/helluva/apology-party/thumb.webp"
     }
   ],
-  "interpretation": "Counts describe registered files and authored key poses. They do not certify animation fluidity, canonical visual fidelity, or browser rendering."
+  "attackEffects": [
+    {
+      "fighter": "cherribomb",
+      "id": "cherri-bomb",
+      "image": "/assets/vfx/infernal-versus/cherri-bomb.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_moxxie",
+      "id": "moxxie-bullet",
+      "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "attacks": [
+        "light",
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_andrealphus",
+      "id": "andrealphus-ice",
+      "image": "/assets/vfx/infernal-versus/andrealphus-ice.webp",
+      "attacks": [
+        "light",
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "vox",
+      "id": "vox-electric",
+      "image": "/assets/vfx/infernal-versus/vox-electric.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "sirpentious",
+      "id": "sirpentious-ray",
+      "image": "/assets/vfx/infernal-versus/sirpentious-ray.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "alastor",
+      "id": "alastor-shadow",
+      "image": "/assets/vfx/infernal-versus/alastor-shadow.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "husk",
+      "id": "husk-card",
+      "image": "/assets/vfx/infernal-versus/husk-card.webp",
+      "attacks": [
+        "light",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "adam",
+      "id": "adam-light",
+      "image": "/assets/vfx/infernal-versus/adam-light.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_stolas",
+      "id": "stolas-portal",
+      "image": "/assets/vfx/infernal-versus/stolas-portal.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_asmodeus",
+      "id": "asmodeus-smoke",
+      "image": "/assets/vfx/infernal-versus/asmodeus-smoke.webp",
+      "attacks": [
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_beelzebub",
+      "id": "beelzebub-ribbon",
+      "image": "/assets/vfx/infernal-versus/beelzebub-ribbon.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "velvette",
+      "id": "velvette-arrow",
+      "image": "/assets/vfx/infernal-versus/velvette-arrow.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "valentino",
+      "id": "valentino-smoke",
+      "image": "/assets/vfx/infernal-versus/valentino-smoke.webp",
+      "attacks": [
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "angeldust",
+      "id": "moxxie-bullet",
+      "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_blitzo",
+      "id": "moxxie-bullet",
+      "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "attacks": [
+        "heavy",
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_striker",
+      "id": "moxxie-bullet",
+      "image": "/assets/vfx/infernal-versus/moxxie-bullet.webp",
+      "attacks": [
+        "heavy"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    },
+    {
+      "fighter": "hb_striker",
+      "id": "striker-lasso",
+      "image": "/assets/vfx/infernal-versus/striker-lasso.webp",
+      "attacks": [
+        "special"
+      ],
+      "canonStatus": "simulation_au",
+      "behavior": "Visual overlay of existing attack timing and reach; no independent projectile physics or additional damage."
+    }
+  ],
+  "interpretation": "Summary counts active registered files and authored key poses. ReserveSummary counts the cumulative static reserve catalogue, never playable kits or active VFX assignments. Neither count certifies animation fluidity, canonical visual fidelity, or browser rendering."
 }

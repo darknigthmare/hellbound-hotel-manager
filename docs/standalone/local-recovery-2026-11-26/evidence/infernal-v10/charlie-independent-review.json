@@ -1,0 +1,117 @@
+{
+  "reviewer": "recover_v8 independent visual review",
+  "reviewedAt": "2026-11-26T15:33:46.283285+00:00",
+  "scope": "Comparaison visuelle des sources listées, anatomie, cadrage et inspection du vrai composite sur gris opaque. Aucun contrôle animé ou en jeu.",
+  "assetId": "charlie-s1-finale-partial-demon-battle",
+  "status": "needs_revision_for_selected_state",
+  "asset": {
+    "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6a4f9f81-ad02-4894-9afa-3b3ace317ebf.png",
+    "sha256": "a36201499e800cd1d358121b2656169c98e087b200e187b22625facfde8b90cd",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "alphaZero": 1152097,
+    "alphaNonzero": 420767,
+    "alphaAtLeast240": 383588,
+    "edgeAlphaMax": 0,
+    "thresholds": {
+      "0": {
+        "bbox": [
+          27,
+          9,
+          1008,
+          1527
+        ],
+        "margins": [
+          27,
+          9,
+          16,
+          9
+        ]
+      },
+      "16": {
+        "bbox": [
+          226,
+          11,
+          862,
+          1524
+        ],
+        "margins": [
+          226,
+          11,
+          162,
+          12
+        ]
+      },
+      "128": {
+        "bbox": [
+          227,
+          13,
+          861,
+          1524
+        ],
+        "margins": [
+          227,
+          13,
+          163,
+          12
+        ]
+      },
+      "240": {
+        "bbox": [
+          228,
+          15,
+          860,
+          1523
+        ],
+        "margins": [
+          228,
+          15,
+          164,
+          13
+        ]
+      }
+    },
+    "diagnosticComposite": "/tmp/infernal-v10/independent-review/charlie-neutral-composite.png"
+  },
+  "referencesInspected": [
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-full-body-s1-225s.png",
+      "sha256": "3d52fab4860f1b07b09bbb8656bcbd1d6333834a4739bfc29c97001e47869c9b"
+    },
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-demon-battle-s1-145s.png",
+      "sha256": "c2474b4bace00d31ff5883698c9ae9df43290ea4b483f12e7c813b624ca57fce"
+    },
+    {
+      "path": "/tmp/infernal-v10/hazbin-reference/charlie-lucifer-torso-s1-220s.png",
+      "sha256": "f296429f006970f2fe8097dc570734d15040cfcb4d668edc96ee2de7b658f509"
+    }
+  ],
+  "selectedState": "État après le sauvetage 220–225 s : tenue finale, cornes/queue, yeux jaunes, bras transformé ; fusion en un dessin.",
+  "checks": {
+    "costume": "Tenue rouge/noire, ourlet clair, cheveux, cornes rouges et queue pointue cohérents à grande échelle avec la transformation de la bataille.",
+    "anatomy": "Deux bras, deux jambes et une queue, extrémités entières ; défaut de fidélité de l’état du bras, décrit séparément.",
+    "framing": "Cornes et pieds entiers ; marges alpha > 16 : 226, 11, 162, 12 px. Marges haut/bas étroites.",
+    "alpha": "Composite gris réellement inspecté : fond transparent propre, aucun halo coloré visible ; tous les pixels de bord du canevas ont alpha nul. Alpha maximal 254/255."
+  },
+  "blockingIssues": [
+    {
+      "kind": "selected_incarnation_arm_state",
+      "description": "La candidate a deux avant-bras noirs fins comparables. La cellule 220 s montre un grand bras rouge transformé terminé par une main noire, visible sous la chevelure à droite de la cellule 225 s. L’asymétrie de masse et de couleur est plus claire que les détails des doigts."
+    }
+  ],
+  "requestedCorrections": [
+    "Si l’état précis 220–225 s reste la cible, conserver le bras rouge transformé et sa main noire agrandie, asymétriques par rapport au bras fin. Ne pas inventer les doigts au-delà des références. Faire revoir le nouveau SHA."
+  ],
+  "limitations": [
+    "Les trois cellules sont natives 320 × 180 ; agrandissements de diagnostic faits par voisin le plus proche, sans création de détails.",
+    "Doigts exacts occlus et détails des pieds/chaussures non certifiables.",
+    "La candidate se rapproche davantage de l’état général 145 s que du bras spécifique de 220/225 s.",
+    "Le dessin ne prouve ni les animations ni une conformité 1:1."
+  ]
+}

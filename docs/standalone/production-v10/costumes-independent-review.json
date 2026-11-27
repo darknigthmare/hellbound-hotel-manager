@@ -1,0 +1,360 @@
+{
+  "edition": "V10",
+  "reviewedAt": "2026-11-26T15:36:24.852618+00:00",
+  "reviewer": "recover_v8, independent from root image-generation owner",
+  "scope": "Independent source comparison of three final native masters (Loona, Moxxie, Charlie), anatomy/framing inspection, pixel alpha measurements and actual neutral-background compositing. No master edits, exports, in-game validation or animation verification.",
+  "fidelityOneToOneCertified": false,
+  "assets": [
+    {
+      "id": "hb_loona-party-queen-bee",
+      "kind": "full_body_static_incarnation",
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "production/v10/costumes/masters/hb_loona-party-queen-bee.png",
+      "masterSha256": "55eb96106d928caf68d49e6bf67ccfa5d67e44859f90cc4592acf0d9fec19fef",
+      "nativeDimensions": [
+        1160,
+        1355
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        17,
+        7,
+        1070,
+        1343
+      ],
+      "visibleBboxAlpha16": [
+        16,
+        7,
+        1071,
+        1344
+      ],
+      "marginsAlpha16": {
+        "left": 16,
+        "top": 7,
+        "right": 89,
+        "bottom": 11
+      },
+      "alphaNotes": {
+        "zeroAlphaPixels": 1065510,
+        "alpha1To31Pixels": 31685,
+        "alpha240To254Pixels": 460278,
+        "alpha255Pixels": 1841
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "addsStandaloneBase": false,
+      "sourceReferences": [
+        {
+          "path": "production/v10/references/loona-party-full-670s.png",
+          "sha256": "966f4a2caac3f8ad0dee63592d2fe4cd6cc3bdb6d5dea78ed46e8a390daf10c7",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=670s",
+          "role": "Vivziepop, Queen Bee S1E8, silhouette entière et costume de fête",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/loona-party-full-40s.png",
+          "sha256": "b3adc1be37acf0e44ac0bfa97f33dd091d410986c7313ec8361e0eaf496fb0fd",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=D-2799Y07Zc&t=40s",
+          "role": "Vivziepop, Queen Bee S1E8, seconde vue de la tenue entière",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/queen-bee-party-dress-loona-enamel-pin.png",
+          "sha256": "e7d4e748f27b12ec6c4cfc962276b88f42000c8c6bd1cb78c98b2be87b43e39b",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "url": "https://sharkrobot.com/products/queen-bee-party-dress-loona-enamel-pin",
+          "role": "Pin officiel Vivziepop, visage, collier, buste et gants ; partie basse absente",
+          "viewed": true,
+          "frameResolutionNote": "Official merchandise image; only visible product artwork qualifies."
+        }
+      ],
+      "observations": [
+        "Robe courte bordeaux sans bretelles, bord supérieur noir, lignes de laçage, gants longs noirs, collier à clous : cohérents avec le pin officiel et les deux cellules Queen Bee.",
+        "Deux bras, deux jambes digitigrades et deux pattes distinctes ; une queue entière. Pas de membre supplémentaire ni de raccord manifestement cassé observé.",
+        "Oreille, cheveux, queue et pattes entièrement dans le cadre. Marges de silhouette alpha > 16 : gauche 16, haut 7, droite 89, bas 11 px.",
+        "Composite sur gris opaque réellement inspecté : silhouette propre, aucun fond ou halo coloré visible. Les rares pixels de bord du canevas sont alpha 1/255 et ne constituent pas une coupure visible."
+      ],
+      "limitations": [
+        "Corps et bas du costume contrôlés sur deux cellules publiques natives 320 × 180 ; les petits détails des doigts, griffes et pattes ne peuvent pas être certifiés à partir de ces sources.",
+        "Le pin officiel ne couvre que le buste et ne prouve pas le bas du costume.",
+        "Marges haut/bas étroites ; aucun rognage visible mais ne pas recadrer davantage.",
+        "Illustration statique interprétée ; conformité 1:1 et animation non certifiées."
+      ],
+      "acceptanceReason": "Incarnation statique reconnaissable, vérifiée sur les références primaires visibles et le vrai composite alpha, avec réserves explicites sur les détails non résolus.",
+      "counting": "Un dessin de costume/incarnation pour une identité déjà dotée d’une base ; aucune nouvelle identité, base standalone ou animation.",
+      "diagnosticComposite": "/tmp/infernal-v10/independent-review/loona-neutral-composite.png"
+    },
+    {
+      "id": "hb_moxxie-hallucination-truth-seekers",
+      "kind": "full_body_static_incarnation",
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "production/v10/costumes/masters/hb_moxxie-hallucination-truth-seekers.png",
+      "masterSha256": "14356b9667467a5fa4f4ef32c477f69c7231a059b9b82ec43906fc07c6c17978",
+      "nativeDimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "visibleBboxAlpha128": [
+        92,
+        46,
+        1038,
+        1288
+      ],
+      "visibleBboxAlpha16": [
+        91,
+        45,
+        1039,
+        1289
+      ],
+      "marginsAlpha16": {
+        "left": 91,
+        "top": 45,
+        "right": 160,
+        "bottom": 23
+      },
+      "alphaNotes": {
+        "zeroAlphaPixels": 1243008,
+        "alpha1To31Pixels": 18074,
+        "alpha240To254Pixels": 299238,
+        "alpha255Pixels": 1728
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "addsStandaloneBase": false,
+      "sourceReferences": [
+        {
+          "path": "production/v10/references/moxxie-hallucination-510s.png",
+          "sha256": "555e5c032389dd522a272fe5c22dcf9b5aed6f2326f6b207ef87590b4faf3b6f",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=510s",
+          "role": "Vivziepop, Truth Seekers S1E6, silhouette entière de dos trois-quarts et pans de manteau",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/moxxie-hallucination-490s.png",
+          "sha256": "6ed81266122cf5d2607802d2baecf4bf63033cd5da5dead3f1ec1763c83520b3",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=yXErLiSbxXQ&t=490s",
+          "role": "Vivziepop, Truth Seekers S1E6, profil et silhouette du haut du corps",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/truth-seekers-hallucination-moxxie-enamel-pin.png",
+          "sha256": "a112f21dd702ef1c0e7403a85d66d9d3de9451365934a7ea6901bf22a87f6aba",
+          "dimensions": [
+            1500,
+            1500
+          ],
+          "url": "https://sharkrobot.com/products/truth-seekers-hallucination-moxxie-enamel-pin",
+          "role": "Pin officiel Vivziepop, visage, nœud noir, jabot, boutons et poignets",
+          "viewed": true,
+          "frameResolutionNote": "Official merchandise image; only visible product artwork qualifies."
+        }
+      ],
+      "observations": [
+        "Correction revue : les doublures roses ont disparu. Pans de queue-de-pie désormais sombres charbon/violet, cohérents avec la silhouette à 510 s. Nœud noir, jabot blanc, deux boutons, poignets et identité maintenus.",
+        "Deux bras, deux jambes, une queue et les deux cornes ; aucun membre supplémentaire ni raccord manifestement cassé. Proportions stylisées compatibles avec les sources mais non certifiées 1:1.",
+        "Silhouette entièrement visible ; marges alpha > 16 : gauche 91, haut 45, droite 160, bas 23 px.",
+        "Nouveau composite gris réellement inspecté : découpe propre, aucun fond ou halo coloré visible ; tous les pixels en bord du canevas ont alpha nul."
+      ],
+      "limitations": [
+        "Le pin est limité au torse ; il ne qualifie pas les pans inférieurs.",
+        "Références corps entier/profil natives 320 × 180 ; détails de petites mains et chaussures non certifiés.",
+        "Aucune animation ni conformité 1:1 certifiée."
+      ],
+      "acceptanceReason": "Incarnation statique reconnaissable, vérifiée sur les références primaires visibles et le vrai composite alpha, avec réserves explicites sur les détails non résolus.",
+      "counting": "Un dessin de costume/incarnation pour une identité déjà dotée d’une base ; aucune nouvelle identité, base standalone ou animation.",
+      "diagnosticComposite": "/tmp/infernal-v10/independent-review/moxxie-revised-neutral-composite.png",
+      "supersedesRejectedCandidate": {
+        "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-93d6d6bc-a203-4579-a527-144dc5f2ef72.png",
+        "sha256": "7e82f9a7d0d9871358942468a1e32ba558a49eb2c80dd63452fa40bf06033096",
+        "reason": "Doublures de queue-de-pie roses non soutenues par les références."
+      }
+    },
+    {
+      "id": "charlie-demon-battle-s1-ready",
+      "kind": "full_body_static_incarnation",
+      "status": "accepted_with_limits",
+      "acceptedForIntegration": true,
+      "correctionRequired": false,
+      "nativeMasterPath": "production/v10/costumes/masters/charlie-demon-battle-s1-ready.png",
+      "masterSha256": "128b7f24540dfa54722ebe6a7df0c59cffa1d13401ef39ad49259b26b5e8e8a6",
+      "nativeDimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "visibleBboxAlpha128": [
+        225,
+        5,
+        862,
+        1524
+      ],
+      "visibleBboxAlpha16": [
+        224,
+        4,
+        862,
+        1525
+      ],
+      "marginsAlpha16": {
+        "left": 224,
+        "top": 4,
+        "right": 162,
+        "bottom": 11
+      },
+      "alphaNotes": {
+        "zeroAlphaPixels": 1143580,
+        "alpha1To31Pixels": 21358,
+        "alpha240To254Pixels": 397047,
+        "alpha255Pixels": 0
+      },
+      "fidelityOneToOneCertified": false,
+      "runtimeValidated": false,
+      "animationValidated": false,
+      "addsStandaloneBase": false,
+      "sourceReferences": [
+        {
+          "path": "production/v10/references/charlie-lucifer-full-body-s1-225s.png",
+          "sha256": "3d52fab4860f1b07b09bbb8656bcbd1d6333834a4739bfc29c97001e47869c9b",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=7OIa6bri7aE&t=225s",
+          "role": "Prime Video, Lucifer Morningstar vs. Adam, S1E8 : Charlie entière après le sauvetage, yeux jaunes et bras transformé",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/charlie-demon-battle-s1-145s.png",
+          "sha256": "c2474b4bace00d31ff5883698c9ae9df43290ea4b483f12e7c813b624ca57fce",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=7OIa6bri7aE&t=145s",
+          "role": "Prime Video, même bataille : cornes rouges et queue ; expression/yeux rouges de cette cellule non repris",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        },
+        {
+          "path": "production/v10/references/charlie-lucifer-torso-s1-220s.png",
+          "sha256": "f296429f006970f2fe8097dc570734d15040cfcb4d668edc96ee2de7b658f509",
+          "dimensions": [
+            320,
+            180
+          ],
+          "url": "https://www.youtube.com/watch?v=7OIa6bri7aE&t=220s",
+          "role": "Prime Video, visage aux yeux jaunes, torse et grand bras rouge à main sombre ; mains en chevauchement, cornes coupées",
+          "viewed": true,
+          "frameResolutionNote": "Native public preview cell, not HD playback."
+        }
+      ],
+      "observations": [
+        "Correction revue sur les mêmes sources : bras propre gauche (droite de l’image) rouge et élargi, grande main sombre à griffes, autre bras fin conservé. Cornes, yeux jaunes, queue, tenue rouge/noire et ourlet clair maintenus.",
+        "Deux bras désormais asymétriques conformément à l’état sélectionné, deux jambes et une queue ; pas de membre ajouté ni de raccord manifestement cassé. Extrémités entières.",
+        "Marges alpha > 16 : gauche 224, haut 4, droite 162, bas 11 px. Sommet des cornes très proche du bord mais intact ; ne pas recadrer davantage.",
+        "Nouveau composite gris réellement inspecté : découpe propre, aucun fond ou halo coloré visible ; pixels de bord alpha nul, alpha maximal 254/255."
+      ],
+      "limitations": [
+        "Toutes les cellules sources sont natives 320 × 180 ; aucun détail HD ne peut être certifié.",
+        "Le volume, le sens et les grandes couleurs du bras sont étayés ; nombre exact, courbure et articulation des doigts redessinés, non certifiés.",
+        "Pieds entiers à 225 s mais détails des pointes/chaussures non certifiables à cette résolution.",
+        "Marges haut/bas très étroites (4 et 11 px) ; silhouette intacte, ne pas recadrer davantage.",
+        "Incarnation statique combinée tenue finale + transformation partielle : un seul dessin, aucune animation ni conformité 1:1 certifiée."
+      ],
+      "acceptanceReason": "Incarnation statique reconnaissable, vérifiée sur les références primaires visibles et le vrai composite alpha, avec réserves explicites sur les détails non résolus.",
+      "counting": "Un dessin de costume/incarnation pour une identité déjà dotée d’une base ; aucune nouvelle identité, base standalone ou animation.",
+      "diagnosticComposite": "/tmp/infernal-v10/independent-review/charlie-revised-neutral-composite.png",
+      "supersedesRejectedCandidate": {
+        "path": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6a4f9f81-ad02-4894-9afa-3b3ace317ebf.png",
+        "sha256": "a36201499e800cd1d358121b2656169c98e087b200e187b22625facfde8b90cd",
+        "reason": "État transformé incomplet : bras gauche rouge élargi et grande main sombre absents."
+      }
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "id": "moxxie-truth-seekers-hallucination",
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-93d6d6bc-a203-4579-a527-144dc5f2ef72.png",
+      "masterSha256": "7e82f9a7d0d9871358942468a1e32ba558a49eb2c80dd63452fa40bf06033096",
+      "acceptedForIntegration": false,
+      "reasons": [
+        {
+          "kind": "unsupported_costume_color",
+          "description": "Les grandes zones roses/bordeaux à l’intérieur des pans de queue-de-pie sont absentes des références consultées. La silhouette entière à 510 s montre des pans sombres."
+        }
+      ],
+      "report": "/tmp/infernal-v10/moxxie-independent-review.json"
+    },
+    {
+      "id": "charlie-s1-finale-partial-demon-battle",
+      "nativeMasterPath": "/workspace/scratch/b07af32d1b2c/generated_images/exec-6a4f9f81-ad02-4894-9afa-3b3ace317ebf.png",
+      "masterSha256": "a36201499e800cd1d358121b2656169c98e087b200e187b22625facfde8b90cd",
+      "acceptedForIntegration": false,
+      "reasons": [
+        {
+          "kind": "selected_incarnation_arm_state",
+          "description": "La candidate a deux avant-bras noirs fins comparables. La cellule 220 s montre un grand bras rouge transformé terminé par une main noire, visible sous la chevelure à droite de la cellule 225 s. L’asymétrie de masse et de couleur est plus claire que les détails des doigts."
+        }
+      ],
+      "report": "/tmp/infernal-v10/charlie-independent-review.json"
+    }
+  ],
+  "summary": {
+    "reviewedFinalAssets": 3,
+    "acceptedForIntegration": 3,
+    "correctionRequired": 0,
+    "rejectedEarlierCandidates": 2,
+    "oneToOneCertified": 0
+  },
+  "diagnostics": {
+    "directory": "/tmp/infernal-v10/independent-review",
+    "compositeBackgroundRGB": [
+      215,
+      219,
+      226
+    ],
+    "sourceCrops": "Charlie source crops enlarged by nearest-neighbor for inspection only; no added source detail."
+  }
+}

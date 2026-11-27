@@ -1,0 +1,47 @@
+{
+  "edition": "V13",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "interrupted_during_tests",
+      "typecheck": "passed",
+      "lint": "passed",
+      "testProcessExitCode": 137,
+      "testAssertionFailuresReported": false,
+      "cause": "Process was killed by the execution environment; the log alone does not establish a specific kernel cause.",
+      "log": "docs/standalone/production-v13/validation-history/attempt-1-qa-runtime.log",
+      "report": "docs/standalone/production-v13/validation-history/attempt-1-runtime-qa.json"
+    },
+    {
+      "attempt": 2,
+      "status": "parent_process_interrupted_during_standalone_build",
+      "typecheck": "passed",
+      "lint": "passed",
+      "testsPassed": 413,
+      "testSuites": 47,
+      "managerBuild": "passed",
+      "processExitCode": 137,
+      "standaloneBuild": "interrupted",
+      "log": "docs/standalone/production-v13/validation-history/attempt-2-qa-runtime.log",
+      "reportWritten": false,
+      "note": "The parent was killed before its catch/final report. The previous runtime-qa.json belongs to attempt 1 and is not evidence for attempt 2."
+    },
+    {
+      "attempt": 3,
+      "status": "passed",
+      "completedAt": "2026-11-26T19:58:24.222Z",
+      "testsPassed": 413,
+      "testSuites": 47,
+      "managerBuild": "passed",
+      "standaloneBuild": "passed",
+      "standaloneFilesVerified": 1330,
+      "runtimeInputsVerified": 198,
+      "runtimeInputFingerprint": "ac0c4bce3fb2b3a05132e25fd62e5893a4cee5f701f232392d8b0629e139b161",
+      "report": "docs/standalone/production-v13/runtime-qa.json",
+      "log": "docs/standalone/production-v13/qa-runtime.log",
+      "runtimeReportSha256": "9795cc58b0221e620da9524d81ffcb543e983d7312f23649c8196725c2e2e0e0",
+      "adjustment": "Fresh process for each Vite build; old-space384 MiB and semi-space8 MiB. Complete existing tests, one worker and isolation unchanged."
+    }
+  ],
+  "status": "final_attempt_passed_prior_interruptions_preserved"
+}

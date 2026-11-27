@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "version": "V17",
+  "batch": "recover-assets-two-static-props",
+  "createdAt": "2026-11-27",
+  "scope": "Two independently generated, source-derived static scenery props, delivered as untouched native PNG masters with primary references. Catalogue registration and game inspection are owned by the integration agent.",
+  "totals": {
+    "newDrawings": 2,
+    "nativePngMasters": 2,
+    "primaryReferenceCopies": 2,
+    "generationAttempts": 2,
+    "refusals": 0,
+    "newStandaloneCharacterBases": 0,
+    "newPlayableKits": 0,
+    "newArenas": 0,
+    "newAnimationCycles": 0,
+    "losslessWebpExports": 2
+  },
+  "missingEvidence": {
+    "planPath": "docs/standalone/extension-plan.json",
+    "baselineRepoTreeSha": "28c98cf1fa67fa02c7f7565a231059d57f872d50",
+    "reviewedBeforeGeneration": true,
+    "conclusion": "Neither selected object existed as a separately delivered prop in the baseline catalogue/tree. Presence inside a painted environment was not counted as an existing isolated prop. The V13 spring-broken-red-cup and other trophies are different delivered objects."
+  },
+  "noRetryAudit": {
+    "source": "docs/standalone/production-v16/delivery-register.json#/remaining/noRetryTargetIdsV16",
+    "historicalTargetCount": 31,
+    "selectedTargetMatches": [],
+    "noRefusedTargetRetried": true
+  },
+  "generationPolicy": {
+    "tool": "image_gen.imagegen",
+    "builtinTool": true,
+    "oneCallPerAsset": true,
+    "transparentBackground": true,
+    "referenceMechanism": "referenced_image_paths",
+    "nativePixelsUnmodified": true,
+    "manualCroppingRepaintingThresholdingOrBackgroundRemoval": false,
+    "externalImageApiUsed": false
+  },
+  "fidelityOneToOneCertified": false,
+  "inGameChecked": false,
+  "catalogueModifiedByThisBatch": false,
+  "assets": [
+    {
+      "id": "spring-broken-blue-can-s1",
+      "title": "Canette bleue couchée — plage de Spring Broken",
+      "primary": {
+        "creator": "Rebecca Reynolds",
+        "project": "Helluva Boss backgrounds (Spindle Horse Toons, 2020–2021)",
+        "portfolioUrl": "https://rebeccareynolds.me/portfolio/backgrounds",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/62292604da47b8467e8765ba/f4173c2c-e8f9-451f-b146-9e42e5dacfb7/HB4_166.png",
+        "imageTitle": "HB4_166.png",
+        "reference": {
+          "reference": "rebecca-hb4-166.png",
+          "path": "production/v17/props/references/rebecca-hb4-166.png",
+          "sha256": "be772448f6575088a348cba38264741d2b97da271ffd685e419eb371dee82439",
+          "bytes": 457454,
+          "size": [
+            1500,
+            844
+          ],
+          "mode": "P",
+          "format": "PNG"
+        },
+        "inheritedRepoPath": "production/v13/environment/references/rebecca-hb4-166.png",
+        "gitBlobSha": "8527af3a65157054d18a2d03f8b00505b9a3806b"
+      },
+      "context": {
+        "episodeTitle": "HELLUVA BOSS — SPRING BROKEN // S1: Episode 3",
+        "episodeUrl": "https://www.youtube.com/watch?v=RghsgkZKedg&t=760s",
+        "basis": "Episode context inherited from the V13 reference handoff; the selected can was visually reviewed directly in the artist's full background painting, not newly checked against an individual episode frame."
+      },
+      "selectedObject": "One whole blue can in the extreme lower-right foreground. The other cans, green bottle, cups, kegs and beach are excluded.",
+      "approximateSourceRegionPixels": [
+        1165,
+        670,
+        1310,
+        839
+      ],
+      "visibleFeatures": [
+        "Short blue/slate cylindrical body.",
+        "Red-orange label ribbon without readable text.",
+        "Can lies diagonally from back/up-left to front/down-right.",
+        "Large reddish circular end with blue-grey rim and red-orange ring pull faces the viewer."
+      ],
+      "visualReview": {
+        "status": "accepted-as-static-source-derived-redraw",
+        "sourceInspected": true,
+        "nativeResultInspected": true,
+        "wholeContourVisible": true,
+        "identityMatchesSelectedObject": true,
+        "noExtraObject": true,
+        "visibleAlpha8Bounds": [
+          301,
+          215,
+          932,
+          1047
+        ],
+        "limitations": [
+          "The small source object limits confidence in fine contour, ring-pull and surface details.",
+          "The generated ribbon, highlights and cylinder proportions are smoothed/regularized relative to the painting; exact one-to-one fidelity is not certified.",
+          "The native alpha channel contains faint alpha 1–7 pixels outside the visually solid silhouette, and the interior is mostly alpha 253–254. They were preserved unchanged."
+        ]
+      },
+      "classification": "static-source-derived-prop",
+      "canonClaim": "Visual reference is a primary artist portfolio image. The generated redraw is an adaptation, not an official production asset or a certification of canon-perfect fidelity.",
+      "generation": {
+        "attempts": 1,
+        "status": "succeeded",
+        "prompt": "Use case: stylized-concept. Asset type: one isolated static 2D scenery prop for the game Infernal Versus, on a truly transparent background.\nInput image is a primary Helluva Boss background painting by Rebecca Reynolds, HB4_166. Use it only as a visual reference. Redraw ONLY the single blue beverage can lying in the very bottom-right foreground, approximately x=1165..1310 and y=670..839 in the 1500x844 reference. Do not select the green bottle, the other cans, the red cups or the barrels.\nPreserve that exact can's pose: it lies diagonally back/up-left to front/down-right, with its large elliptical circular end facing the viewer toward the bottom right. Preserve the short muted blue/slate cylindrical body, orange-red label band across the side, blue-grey dark rim around the warm reddish front circular end, and small orange-red pull tab drawn on that end. Keep the same asymmetrical perspective, line contour, flat cel shading and restrained warm/purple ambient colors seen in the painting. Do not invent typography, a brand, extra rings, liquid or a replacement generic beer-can design.\nOne object only, entire contour inside the image. Center it on a square transparent canvas with at least 12 percent clear transparent margin on every side, sufficiently large to inspect the fine outline. Match the original 2D animation background painting style with clean dark contour and minimal surface texture. No sand, cast ground shadow, beach, bottles, extra can, border, caption, watermark, or checkerboard pattern baked into the image. This is one static source-derived prop, not a sprite sheet or photorealistic product render.",
+        "referencedImagePaths": [
+          "production/v17/props/references/rebecca-hb4-166.png"
+        ],
+        "transparentBackground": true,
+        "nativeOutputPreserved": true
+      },
+      "master": {
+        "id": "spring-broken-blue-can-s1",
+        "path": "production/v17/props/masters/spring-broken-blue-can-s1.png",
+        "bytes": 563119,
+        "sha256": "9518fa3141049abfa995883507a61e8ca8f1e3dd79c9e5cbde95490fe186c93c",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "format": "PNG",
+        "alphaBounds": [
+          49,
+          51,
+          1136,
+          1148
+        ],
+        "transparentPixels": 1176615,
+        "partialAlphaPixels": 395068,
+        "opaquePixels": 833,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentMarginPixels": [
+          49,
+          51,
+          118,
+          106
+        ]
+      },
+      "technicalExport": {
+        "path": "public/assets/production/v17/props/spring-broken-blue-can-s1.webp",
+        "bytes": 315158,
+        "sha256": "e44d7b2016f04827d3cd996ef2f87137e0f55d29627e9532fb83dd4bdf6b1ce3",
+        "format": "WEBP",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "lossless": true,
+        "rgbaParityWithNativePng": true,
+        "alphaUnmodified": true,
+        "conversion": "Pillow libwebp lossless=True, quality=100, method=6, exact=True; decoded RGBA bytes compared exactly with native PNG"
+      },
+      "runtimeRegistration": "pending-integration",
+      "inGameVisualCheck": "pending-integration",
+      "counts": {
+        "drawings": 1,
+        "characterBases": 0,
+        "playableKits": 0,
+        "arenas": 0,
+        "animationCycles": 0
+      },
+      "category": "prop",
+      "kind": "prop",
+      "coverage": "full_object",
+      "addsStandaloneBase": false
+    },
+    {
+      "id": "crimson-horned-wall-trophy-s2",
+      "title": "Trophée mural aux cornes annelées — salle à manger de Crimson",
+      "primary": {
+        "creator": "Jasper Luu",
+        "project": "Helluva Boss backgrounds for SpindleHorse",
+        "portfolioUrl": "https://jasperluu.com/helluvaboss",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/600b2d56a47f4b27bcd130c7/52d86334-637e-4d47-9e4a-5e1128f674c0/204.jpg",
+        "imageTitle": "204.jpg",
+        "reference": {
+          "reference": "jasper-crimson-204.jpg",
+          "path": "production/v17/props/references/jasper-crimson-204.jpg",
+          "sha256": "f8df1851fcd23c388e86008ed2adea7ab2e9aeeb7d008b90add4b893562d4e81",
+          "bytes": 488424,
+          "size": [
+            2500,
+            1532
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        },
+        "inheritedRepoPath": "production/v14/environment/references/jasper-crimson-204.jpg",
+        "gitBlobSha": "1a8b1e25bd7b4b0a7dfd981d4ab39221a28a75e6"
+      },
+      "context": {
+        "episodeTitle": "HELLUVA BOSS — EXES AND OOHS // S2: Episode 3",
+        "episodeUrl": "https://www.youtube.com/watch?v=j1BfO7VlIw4&t=630s",
+        "basis": "Room context inherited from the V14 environment handoff. The selected plaque was inspected directly in primary artwork 204.jpg. The inherited V14 room master used 206.jpg; that different painting is not claimed as the present reference."
+      },
+      "selectedObject": "The complete frontal horned wall plaque on the rear wall, immediately right of the chandelier and left of the horizontal open-mouthed plaque. Excludes the chandelier, chair, other trophies and wallpaper.",
+      "approximateSourceCenterPixels": [
+        1175,
+        460
+      ],
+      "visibleFeatures": [
+        "Stepped/scalloped green backing plaque with luminous lower rim.",
+        "Small downward-pointing green-gray tuft without visible eyes.",
+        "Two wide black horns curve sideways and upwards with pale cream/green annular bands.",
+        "Dark navy contour with flat green cel-painted lighting."
+      ],
+      "visualReview": {
+        "status": "accepted-as-static-source-derived-redraw",
+        "sourceInspected": true,
+        "nativeResultInspected": true,
+        "wholeContourVisible": true,
+        "identityMatchesSelectedObject": true,
+        "noExtraObject": true,
+        "visibleAlpha8Bounds": [
+          187,
+          335,
+          1063,
+          920
+        ],
+        "limitations": [
+          "The small source plaque does not provide enough detail to certify exact band counts, tiny contours or material texture.",
+          "The generated plaque is more symmetrical and its lighting/tufts are regularized relative to the background; exact one-to-one fidelity is not certified.",
+          "The native alpha channel contains faint alpha 1–7 pixels outside the visually solid silhouette, and the interior is mostly alpha 252–254. They were preserved unchanged."
+        ]
+      },
+      "classification": "static-source-derived-prop",
+      "canonClaim": "Visual reference is a primary artist portfolio image. The generated redraw is an adaptation, not an official production asset or a certification of canon-perfect fidelity.",
+      "generation": {
+        "attempts": 1,
+        "status": "succeeded",
+        "prompt": "Use case: stylized-concept. Asset type: one isolated static 2D wall decoration prop for the game Infernal Versus, on a truly transparent background.\nInput image is a primary Helluva Boss background painting by Jasper Luu, 204.jpg, Crimson's dining room. Use it only as a visual reference. Redraw ONLY the single complete small horned wall trophy on the rear wall immediately to the right of the hanging chandelier and left of the open-mouthed oval wall trophy, centered roughly x=1175,y=460 in the 2500x1532 reference. It is the nearly frontal plaque above the large chair, NOT the larger central chandelier, not a chair or one of the trophies on the perspective right-hand wall.\nPreserve the complete green decorative backing plaque, its stepped/scalloped outline and green glowing lower rim. Preserve the small downward-pointing tufted green-gray face/skull ornament with no visible eyes, and the two wide black horns curving sideways then upward, each with pale cream/green annular bands. Keep its dark navy contour, the exact left/right asymmetry visible in the reference, green light, flat cel-painted shadows and the original low-detail animated-background design. Do not add eyes, antlers, teeth, hanging chains, new anatomy, red flesh, extra horns or a generic animal skull.\nOne complete decorative object only, centered on a transparent square canvas with at least 12 percent transparent margin on every side and room around both horn tips. Preserve the reference's frontal viewpoint. No wall, wallpaper, furniture, chandelier, drop shadow, blood, second object, text, signature or watermark. This is an isolated static redraw of the pictured ornament, not a character, not a new creature and not a photorealistic taxidermy object.",
+        "referencedImagePaths": [
+          "production/v17/props/references/jasper-crimson-204.jpg"
+        ],
+        "transparentBackground": true,
+        "nativeOutputPreserved": true
+      },
+      "master": {
+        "id": "crimson-horned-wall-trophy-s2",
+        "path": "production/v17/props/masters/crimson-horned-wall-trophy-s2.png",
+        "bytes": 489797,
+        "sha256": "1fe5b4e49583e95fc44c6578a45272c56449879ef3de6066470609de84204b45",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "format": "PNG",
+        "alphaBounds": [
+          41,
+          49,
+          1184,
+          1182
+        ],
+        "transparentPixels": 1246718,
+        "partialAlphaPixels": 324872,
+        "opaquePixels": 926,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentMarginPixels": [
+          41,
+          49,
+          70,
+          72
+        ]
+      },
+      "technicalExport": {
+        "path": "production/v17/props/rejected-exports/crimson-horned-wall-trophy-s2.webp",
+        "bytes": 280118,
+        "sha256": "d93303bee4cf1e10bacd1ca93c93b9072d3da187f38ef96d86e5b76e66ea6e42",
+        "format": "WEBP",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "lossless": true,
+        "rgbaParityWithNativePng": true,
+        "alphaUnmodified": true,
+        "conversion": "Pillow libwebp lossless=True, quality=100, method=6, exact=True; decoded RGBA bytes compared exactly with native PNG"
+      },
+      "runtimeRegistration": "pending-integration",
+      "inGameVisualCheck": "pending-integration",
+      "counts": {
+        "drawings": 1,
+        "characterBases": 0,
+        "playableKits": 0,
+        "arenas": 0,
+        "animationCycles": 0
+      },
+      "category": "prop",
+      "kind": "prop",
+      "coverage": "full_object",
+      "addsStandaloneBase": false
+    }
+  ]
+}
