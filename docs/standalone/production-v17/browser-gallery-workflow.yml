@@ -1,0 +1,303 @@
+name: Gallery V17 acceptance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/gallery-v17-verify.yml
+      - docs/standalone/production-v17/check-gallery-browser.cjs
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify_gallery:
+    name: Verify original run 103 gallery in browser
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      IV_V17_BUILD_DIR: ${{ runner.temp }}/infernal-v17-verified
+      IV_V17_PLAYWRIGHT_MODULES: ${{ runner.temp }}/infernal-v17-playwright/node_modules
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/infernal-v17-playwright-browsers
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out only acceptance inputs
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/workflows/gallery-v17-verify.yml
+            /docs/standalone/production-v17/check-gallery-browser.cjs
+            /docs/standalone/production-v17/delivery-register.json
+            /art/infernal-versus/production/reserve-assets.json
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Retrieve and verify the unchanged run 103 bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp .github/workflows/gallery-v17-verify.yml docs/standalone/production-v17/browser-workflow-executed.yml
+          python3 - <<'PY'
+          import hashlib, json, os, re, shutil, stat, subprocess, tarfile, traceback, zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path, PurePosixPath
+          repository = "darknigthmare/hellbound-hotel-manager"
+          assert os.environ["GITHUB_REPOSITORY"] == repository
+          runtime_commit = "2a7c956ceedfb4f3a845af67c621290f7fd41654"
+          packaging_commit = "d56202b178d1ecd8cab7e3a4a876aa50501be815"
+          build_run = 45948785155
+          build_url = "https://github.com/" + repository + "/actions/runs/" + str(build_run)
+          execution_run = int(os.environ["GITHUB_RUN_ID"])
+          execution_url = "https://github.com/" + repository + "/actions/runs/" + str(execution_run)
+          expected = [
+              {"id": 15175519470, "name": "infernal-versus-standalone-part-00",
+               "zipBytes": 503317009, "zipSha256": "79074067d1b92103f51e0e36097ac7c2f5a44da6dd8d6d5b1828c5cf55e48aea",
+               "partName": "standalone.tar.part-00", "partSha256": "b5fa0e65550245026f9a7ba5321d3162bd0cbd6bf68c7261ad36421f4c80891f"},
+              {"id": 15176277382, "name": "infernal-versus-standalone-part-01",
+               "zipBytes": 460769809, "zipSha256": "f5bc99bb6a4d875d45e69629e1d55c4ba0c6f4b3d191e631663cde9dfd32697f",
+               "partName": "standalone.tar.part-01", "partSha256": "a1b5922e803a19924adee3d6079c2b53f33f1623d850e4683c2c8c5ddeefc35e"},
+          ]
+          tar_sha = "26bb4a74c4cff7b8cc4db8294fed6d05f65d007d0411b19ddc98852b6a1828f8"
+          manifest_sha = "112ff25cf0e74ca403a2a8bc08a7d5d0ab290ea6fdca9defedb8f44d829c3c38"
+          base = Path(os.environ["IV_V17_BUILD_DIR"])
+          base.mkdir(parents=True, exist_ok=True)
+          parts_dir = base / "transfer-parts"
+          parts_dir.mkdir()
+          docs = Path("docs/standalone/production-v17")
+          report_path = docs / "browser-artifact-transfer.json"
+          report = {
+              "schemaVersion": 1, "edition": "V17", "status": "running",
+              "startedAt": datetime.now(timezone.utc).isoformat(),
+              "runtimeCommit": runtime_commit, "packagingCommit": packaging_commit,
+              "ciMergeCommit": "7454b9d2b2a7ab87564b8320cb2f04a015211b52",
+              "packagingTree": "e6b31f4e5ae9a92a207bd60b478a27fbea77f341",
+              "runtimeSourceRelationship": {"changedPaths": [".github/workflows/quality.yml"],
+                  "unchangedBlobs": 5068, "preservedBlobPaths": 5069,
+                  "verifiedBy": "Prior root GitHub compare/tree audit; current job independently verifies the original build bytes."},
+              "ciRunId": build_run, "ciRunUrl": build_url, "ciConclusion": None,
+              "executionRunId": execution_run, "executionRunUrl": execution_url,
+              "executionSourceSha": os.environ["GITHUB_SHA"],
+              "transportArchives": [], "combinedArchive": None, "bundle": None,
+              "bundleModified": False,
+          }
+          def save():
+              report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+          def sha(file):
+              with Path(file).open("rb") as stream:
+                  return hashlib.file_digest(stream, "sha256").hexdigest()
+          def gh_json(endpoint):
+              return json.loads(subprocess.check_output(["gh", "api", endpoint], text=True))
+          def safe_relative(name):
+              p = PurePosixPath(name)
+              assert not p.is_absolute() and ".." not in p.parts and "\\" not in name and "\x00" not in name, name
+              return p
+          save()
+          try:
+              run = gh_json("repos/" + repository + "/actions/runs/" + str(build_run))
+              assert run["head_sha"] == packaging_commit and run["status"] == "completed" and run["conclusion"] == "success"
+              report["ciConclusion"] = "success"
+              first_sums = None
+              wanted_sums = {"standalone.tar": tar_sha, **{item["partName"]: item["partSha256"] for item in expected}}
+              for item in expected:
+                  endpoint = "repos/" + repository + "/actions/artifacts/" + str(item["id"])
+                  metadata = gh_json(endpoint)
+                  assert metadata["name"] == item["name"] and not metadata["expired"]
+                  assert metadata["workflow_run"]["id"] == build_run and metadata["workflow_run"]["head_sha"] == packaging_commit
+                  assert metadata["digest"] == "sha256:" + item["zipSha256"]
+                  assert metadata["size_in_bytes"] == item["zipBytes"]
+                  local_zip = base / (item["name"] + ".zip")
+                  with local_zip.open("xb") as output:
+                      subprocess.run(["gh", "api", endpoint + "/zip"], stdout=output, check=True)
+                  actual_zip = sha(local_zip)
+                  assert actual_zip == item["zipSha256"] and local_zip.stat().st_size == item["zipBytes"]
+                  with zipfile.ZipFile(local_zip) as zipped:
+                      files = []
+                      for member in zipped.infolist():
+                          safe_relative(member.filename)
+                          assert stat.S_IFMT(member.external_attr >> 16) in (0, stat.S_IFREG, stat.S_IFDIR)
+                          if not member.is_dir():
+                              files.append(member)
+                      assert len(files) == 2
+                      assert sorted(PurePosixPath(f.filename).name for f in files) == sorted(["SHA256SUMS", item["partName"]])
+                      sums_member = next(f for f in files if PurePosixPath(f.filename).name == "SHA256SUMS")
+                      assert sums_member.file_size < 8192
+                      sums = zipped.read(sums_member)
+                      parsed = {}
+                      for line in sums.decode("ascii").splitlines():
+                          match = re.fullmatch(r"([a-f0-9]{64})  (standalone\.tar(?:\.part-\d\d)?)", line)
+                          assert match and match.group(2) not in parsed
+                          parsed[match.group(2)] = match.group(1)
+                      assert parsed == wanted_sums
+                      if first_sums is None:
+                          first_sums = sums
+                          (parts_dir / "SHA256SUMS").write_bytes(sums)
+                      else:
+                          assert sums == first_sums
+                      part_member = next(f for f in files if PurePosixPath(f.filename).name == item["partName"])
+                      part_path = parts_dir / item["partName"]
+                      with zipped.open(part_member) as source, part_path.open("xb") as output:
+                          shutil.copyfileobj(source, output, 1024 * 1024)
+                      assert part_path.stat().st_size == part_member.file_size
+                      actual_part = sha(part_path)
+                      assert actual_part == item["partSha256"]
+                      report["transportArchives"].append({
+                          "artifactId": item["id"], "name": item["name"],
+                          "apiZipBytes": metadata["size_in_bytes"], "actualZipBytes": local_zip.stat().st_size,
+                          "apiZipSha256": item["zipSha256"], "actualZipSha256": actual_zip,
+                          "zipEntries": [{"name": f.filename, "bytes": f.file_size, "crc32": format(f.CRC, "08x")} for f in files],
+                          "zipPathTraversalAndLinkChecksPassed": True, "zipCrcReadPassed": True,
+                          "partName": item["partName"], "partBytes": part_path.stat().st_size,
+                          "expectedPartSha256": item["partSha256"], "actualPartSha256": actual_part,
+                          "localPartPath": str(part_path), "checksumManifestSha256": hashlib.sha256(sums).hexdigest(),
+                          "retrieval": "Authenticated gh api; original Actions artifact ZIP bytes verified before extraction",
+                      })
+                  save()
+              ordered_parts = [parts_dir / item["partName"] for item in expected]
+              local_tar = base / "standalone.tar"
+              with local_tar.open("xb") as output:
+                  for part in ordered_parts:
+                      with part.open("rb") as source:
+                          shutil.copyfileobj(source, output, 1024 * 1024)
+              actual_tar = sha(local_tar)
+              assert actual_tar == tar_sha
+              report["combinedArchive"] = {
+                  "format": "tar", "expectedSha256": tar_sha, "actualSha256": actual_tar,
+                  "bytes": local_tar.stat().st_size, "physicalArchiveStored": True,
+                  "localPath": str(local_tar), "orderedPartPaths": [str(p) for p in ordered_parts],
+                  "checksumManifestPath": str(parts_dir / "SHA256SUMS"),
+                  "verification": "Original part bytes concatenated; recomposed tar SHA256 matches CI SHA256SUMS.",
+              }
+              bundle = base / "dist-combat"
+              bundle.mkdir()
+              normalized = set()
+              with tarfile.open(local_tar, "r:") as archive:
+                  members = archive.getmembers()
+                  for member in members:
+                      name = safe_relative(member.name).as_posix()
+                      assert member.isdir() or member.isreg(), ("links/devices rejected", member.name)
+                      assert name not in normalized, ("duplicate normalized path", name)
+                      normalized.add(name)
+                      if name == ".":
+                          assert member.isdir()
+                  for member in members:
+                      name = safe_relative(member.name).as_posix()
+                      if name == ".":
+                          continue
+                      destination = bundle.joinpath(*PurePosixPath(name).parts)
+                      assert destination.resolve().is_relative_to(bundle.resolve())
+                      if member.isdir():
+                          destination.mkdir(parents=True, exist_ok=True)
+                      else:
+                          destination.parent.mkdir(parents=True, exist_ok=True)
+                          with archive.extractfile(member) as source, destination.open("xb") as output:
+                              shutil.copyfileobj(source, output, 1024 * 1024)
+                          assert destination.stat().st_size == member.size
+              manifest_file = bundle / "standalone-manifest.json"
+              assert sha(manifest_file) == manifest_sha
+              manifest = json.loads(manifest_file.read_text())
+              assert manifest["entry"] == "index.html"
+              seen = set()
+              for entry in manifest["files"]:
+                  relative = safe_relative(entry["path"])
+                  assert relative.as_posix() not in seen
+                  seen.add(relative.as_posix())
+                  file = bundle.joinpath(*relative.parts)
+                  assert file.is_file() and not file.is_symlink()
+                  assert file.stat().st_size == entry["bytes"] and sha(file) == entry["sha256"], entry["path"]
+              actual_files = {p.relative_to(bundle).as_posix() for p in bundle.rglob("*") if p.is_file()}
+              assert actual_files == seen | {"standalone-manifest.json"}
+              register = json.loads((docs / "delivery-register.json").read_text())
+              v17 = []
+              for asset in register["assets"]:
+                  if "/production/v17/" in asset.get("export", ""):
+                      relative = asset["export"].removeprefix("public/")
+                      actual = sha(bundle / relative)
+                      assert actual == asset["exportSha256"]
+                      v17.append({"id": asset["id"], "path": relative, "sha256": actual})
+              assert len(v17) == 4
+              report["bundle"] = {
+                  "directory": str(bundle), "entry": "index.html",
+                  "manifestSha256": manifest_sha, "manifestVerifiedFiles": len(seen),
+                  "manifestVerifiedBytes": sum(f["bytes"] for f in manifest["files"]),
+                  "everyManifestFileSizeAndSha256Matched": True,
+                  "tarPathTraversalAndLinkChecksPassed": True, "unexpectedFiles": 0,
+                  "selectedV17ExportsVerified": v17,
+              }
+              report["status"] = "verified"
+              report["finishedAt"] = datetime.now(timezone.utc).isoformat()
+              save()
+              print(json.dumps({"status": report["status"], "buildRun": build_run, "executionRun": execution_run,
+                                "tarSha256": actual_tar, "files": len(seen), "bundle": str(bundle)}))
+          except Exception:
+              report["status"] = "failed"
+              report["error"] = traceback.format_exc()
+              report["finishedAt"] = datetime.now(timezone.utc).isoformat()
+              save()
+              raise
+          PY
+
+      - name: Install the exact Playwright headless engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/infernal-v17-playwright" --no-package-lock --no-audit --no-fund --save-exact playwright@1.62.1
+          node "$IV_V17_PLAYWRIGHT_MODULES/playwright/cli.js" install --with-deps chromium --only-shell
+          python3 - <<'PY'
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+          root = Path(os.environ["PLAYWRIGHT_BROWSERS_PATH"]) / "chromium_headless_shell-1234"
+          assert root.is_dir()
+          binaries = [p for p in root.rglob("*") if p.name in ("chrome-headless-shell", "headless_shell") and p.is_file() and os.access(p, os.X_OK)]
+          assert len(binaries) == 1
+          executable = binaries[0]
+          version = subprocess.check_output([str(executable), "--version"], text=True).strip()
+          assert "151.0.7922.34" in version, version
+          with executable.open("rb") as stream:
+              digest = hashlib.file_digest(stream, "sha256").hexdigest()
+          evidence = {"playwrightVersion": "1.62.1", "browserRevision": "1234",
+                      "browserVersion": version, "executable": str(executable),
+                      "executableSha256": digest, "runnerImageOS": os.environ.get("ImageOS"),
+                      "runnerImageVersion": os.environ.get("ImageVersion"),
+                      "executionRunId": os.environ["GITHUB_RUN_ID"],
+                      "primaryDocumentation": "https://playwright.dev/docs/browsers#chromium-headless-shell"}
+          Path("docs/standalone/production-v17/browser-engine-ci.json").write_text(json.dumps(evidence, indent=2) + "\n")
+          with Path(os.environ["GITHUB_ENV"]).open("a") as env:
+              env.write("IV_V17_CHROMIUM_EXECUTABLE=" + str(executable) + "\n")
+          PY
+
+      - name: Exercise the real standalone gallery on desktop and mobile
+        shell: bash
+        run: |
+          set -euo pipefail
+          node docs/standalone/production-v17/check-gallery-browser.cjs \
+            --bundle-dir "$IV_V17_BUILD_DIR/dist-combat" \
+            --commit d56202b178d1ecd8cab7e3a4a876aa50501be815 \
+            --ci-run-url https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/45948785155 \
+            --transfer-report "$GITHUB_WORKSPACE/docs/standalone/production-v17/browser-artifact-transfer.json" \
+            --artifact-archive "$IV_V17_BUILD_DIR/standalone.tar" \
+            --execution-run-id "$GITHUB_RUN_ID" \
+            --execution-run-url "https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            2>&1 | tee docs/standalone/production-v17/browser-gallery-run.log
+
+      - name: Preserve browser evidence even when acceptance fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: infernal-versus-v17-gallery-evidence
+          path: |
+            docs/standalone/production-v17/browser-artifact-transfer.json
+            docs/standalone/production-v17/browser-engine-ci.json
+            docs/standalone/production-v17/browser-gallery-qa.json
+            docs/standalone/production-v17/browser-gallery-run.log
+            docs/standalone/production-v17/browser-workflow-executed.yml
+            docs/standalone/production-v17/browser-gallery/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
+

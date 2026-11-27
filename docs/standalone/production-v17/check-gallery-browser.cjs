@@ -8,8 +8,9 @@
  *   --bundle-dir /workspace/scratch/3ca8c3f75b61/verified-build-v17/dist-combat \
  *   --commit <40-character CI head SHA> \
  *   --ci-run-url https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/<id> \
- *   --artifact-id <id> --artifact-sha256 <64-character archive SHA256> \
- *   [--artifact-archive /absolute/path/to/verified-archive.zip]
+ *   --transfer-report /absolute/path/to/browser-artifact-transfer.json
+ * For a single artifact, use --artifact-id and --artifact-sha256 instead;
+ * --artifact-archive can recheck a local archive of either format.
  *
  * The server serves only unchanged files from the real standalone manifest.
  * No Vite source runtime, route substitution, localStorage injection, React-state
@@ -37,7 +38,18 @@ const viewports = [
   { name: 'mobile', width: 390, height: 844 },
 ];
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
-const hashFile = file => hashBytes(fs.readFileSync(file));
+function hashFile(file) {
+  const hash = createHash('sha256');
+  const descriptor = fs.openSync(file, 'r');
+  const buffer = Buffer.alloc(1024 * 1024);
+  try {
+    let count;
+    while ((count = fs.readSync(descriptor, buffer, 0, buffer.length, null)) > 0) hash.update(buffer.subarray(0, count));
+  } finally {
+    fs.closeSync(descriptor);
+  }
+  return hash.digest('hex');
+}
 const relativeRepoPath = file => path.relative(repoRoot, file).split(path.sep).join('/');
 const args = {};
 for (let index = 2; index < process.argv.length; index += 2) {
@@ -52,11 +64,36 @@ const config = {
   artifactId: args['artifact-id'] || process.env.IV_V17_ARTIFACT_ID,
   artifactSha256: args['artifact-sha256'] || process.env.IV_V17_ARTIFACT_SHA256,
   artifactArchive: args['artifact-archive'] || process.env.IV_V17_ARTIFACT_ARCHIVE || null,
+  transferReportFile: args['transfer-report'] || process.env.IV_V17_TRANSFER_REPORT || null,
+  chromiumExecutable: args['chromium-executable'] || process.env.IV_V17_CHROMIUM_EXECUTABLE || '/usr/bin/chromium',
+  playwrightModules: args['playwright-modules'] || process.env.IV_V17_PLAYWRIGHT_MODULES || process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES || null,
+  executionRunId: args['execution-run-id'] || null,
+  executionRunUrl: args['execution-run-url'] || null,
 };
 assert(/^[a-f0-9]{40}$/i.test(config.commit || ''), 'Supply the exact verified CI commit with --commit.');
 assert(/^https:\/\/github\.com\/darknigthmare\/hellbound-hotel-manager\/actions\/runs\/\d+$/.test(config.ciRunUrl || ''), 'Supply the actual CI run URL.');
-assert(/^\d+$/.test(config.artifactId || ''), 'Supply the verified CI artifact ID.');
-assert(/^[a-f0-9]{64}$/i.test(config.artifactSha256 || ''), 'Supply the verified artifact archive SHA256.');
+if (config.executionRunId || config.executionRunUrl) {
+  assert(/^\d+$/.test(config.executionRunId || ''), 'Supply the browser execution run ID.');
+  assert.equal(config.executionRunUrl, 'https://github.com/darknigthmare/hellbound-hotel-manager/actions/runs/' + config.executionRunId);
+}
+const transfer = config.transferReportFile ? JSON.parse(fs.readFileSync(path.resolve(config.transferReportFile), 'utf8')) : null;
+if (transfer) {
+  assert.equal(transfer.status, 'verified');
+  assert.equal(transfer.packagingCommit, config.commit);
+  assert.equal(transfer.ciRunUrl, config.ciRunUrl);
+  assert.equal(path.resolve(transfer.bundle.directory), config.bundleDir);
+  assert.equal(transfer.combinedArchive.format, 'tar');
+  assert(transfer.transportArchives.length >= 2);
+  for (const item of transfer.transportArchives) {
+    assert.equal(item.actualZipSha256, item.apiZipSha256, 'Transport ZIP digest mismatch');
+    assert.equal(item.actualPartSha256, item.expectedPartSha256, 'Transport part digest mismatch');
+  }
+  assert.equal(transfer.combinedArchive.actualSha256, transfer.combinedArchive.expectedSha256);
+  config.artifactSha256 = transfer.combinedArchive.expectedSha256;
+} else {
+  assert(/^\d+$/.test(config.artifactId || ''), 'Supply the verified CI artifact ID.');
+  assert(/^[a-f0-9]{64}$/i.test(config.artifactSha256 || ''), 'Supply the verified artifact archive SHA256.');
+}
 assert(fs.existsSync(path.join(config.bundleDir, 'standalone-manifest.json')), 'The verified dist-combat bundle is not available. No browser was launched.');
 
 const registerPath = path.join(__dirname, 'delivery-register.json');
@@ -82,15 +119,22 @@ const report = {
   scope: 'Real CI-built standalone HTML and assets served unchanged from dist-combat. Normal gallery clicks/taps, category and name search, full decoded images, visible reference links, close/focus return, and season filtering on desktop/mobile. No combat, animation, remote-reference availability or 1:1 fidelity claim.',
   build: {
     sourceCommit: config.commit,
+    runtimeSourceCommit: transfer ? transfer.runtimeCommit : config.commit,
     ciRunUrl: config.ciRunUrl,
-    artifactId: config.artifactId,
-    artifactArchiveSha256: config.artifactSha256.toLowerCase(),
-    archiveDigestVerification: config.artifactArchive ? 'pending-local-recheck' : 'provided-by-root-after-artifact-verification',
+    artifactId: transfer ? null : config.artifactId,
+    artifactArchiveSha256: transfer ? null : config.artifactSha256.toLowerCase(),
+    transportArtifacts: transfer ? transfer.transportArchives.map(item => ({ artifactId: item.artifactId, name: item.name, zipSha256: item.apiZipSha256, partName: item.partName, partSha256: item.actualPartSha256 })) : null,
+    combinedArchive: transfer ? { format: 'tar', sha256: transfer.combinedArchive.expectedSha256, bytes: transfer.combinedArchive.bytes, physicalArchiveStored: transfer.combinedArchive.physicalArchiveStored === true, reconstructedFromOrderedParts: true } : null,
+    transferProof: transfer ? { path: relativeRepoPath(path.resolve(config.transferReportFile)), sha256: hashFile(path.resolve(config.transferReportFile)) } : null,
+    archiveDigestVerification: transfer ? 'pending-ordered-parts-recheck' : config.artifactArchive ? 'pending-local-recheck' : 'provided-by-root-after-artifact-verification',
     bundleDirectory: config.bundleDir,
   },
   execution: {
     node: process.version,
-    chromiumExecutable: '/usr/bin/chromium',
+    chromiumExecutable: config.chromiumExecutable,
+    executionRunId: config.executionRunId,
+    executionRunUrl: config.executionRunUrl,
+    location: config.executionRunId ? 'github-actions-runner' : 'local-workspace',
     playwrightModule: null,
     stateInjection: false,
     imageSubstitution: false,
@@ -129,11 +173,31 @@ function insideBundle(relative) {
 }
 
 function verifyBundle() {
+  if (transfer) {
+    const hash = createHash('sha256');
+    const buffer = Buffer.alloc(1024 * 1024);
+    let totalBytes = 0;
+    for (const part of transfer.combinedArchive.orderedPartPaths) {
+      const descriptor = fs.openSync(part, 'r');
+      try {
+        let count;
+        while ((count = fs.readSync(descriptor, buffer, 0, buffer.length, null)) > 0) {
+          hash.update(buffer.subarray(0, count)); totalBytes += count;
+        }
+      } finally { fs.closeSync(descriptor); }
+    }
+    assert.equal(hash.digest('hex'), config.artifactSha256, 'Recomposed tar stream digest mismatch');
+    assert.equal(totalBytes, transfer.combinedArchive.bytes, 'Recomposed tar stream size mismatch');
+    report.build.archiveDigestVerification = 'matched-ordered-parts-tar-stream-before-browser';
+    report.build.orderedTarPartsRehashedThisRun = true;
+  }
   if (config.artifactArchive) {
     assert.equal(hashFile(path.resolve(config.artifactArchive)), config.artifactSha256.toLowerCase(), 'Artifact archive digest mismatch');
     report.build.archiveDigestVerification = 'matched-local-archive-bytes';
+    report.build.localArchiveRehashedThisRun = true;
   }
   const manifestFile = path.join(config.bundleDir, 'standalone-manifest.json');
+  if (transfer) assert.equal(hashFile(manifestFile), transfer.bundle.manifestSha256, 'Standalone manifest no longer matches the verified transfer');
   const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   assert.equal(manifest.entry, 'index.html', 'Serve the finalized standalone entry, not an ad-hoc page');
   assert(Array.isArray(manifest.files) && manifest.files.length > 0);
@@ -244,13 +308,15 @@ async function imageFacts(picture) {
   let server, browser, currentPage, currentViewport;
   try {
     const names = verifyBundle();
-    const runtimePaths = process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES ? [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES] : [];
+    const runtimePaths = config.playwrightModules ? [config.playwrightModules] : [];
     const playwrightModule = require.resolve('playwright', { paths: [...runtimePaths, repoRoot] });
     report.execution.playwrightModule = playwrightModule;
     const { chromium } = require(playwrightModule);
+    report.execution.playwrightVersion = require(path.join(path.dirname(playwrightModule), 'package.json')).version;
+    report.execution.chromiumExecutableSha256 = hashFile(config.chromiumExecutable);
     server = await startStaticServer(names);
     report.server = 'http://127.0.0.1:' + server.address().port + '/index.html';
-    browser = await chromium.launch({ executablePath: '/usr/bin/chromium', headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
+    browser = await chromium.launch({ executablePath: config.chromiumExecutable, headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
     report.execution.chromiumVersion = browser.version();
     save();
     for (const viewport of viewports) {
