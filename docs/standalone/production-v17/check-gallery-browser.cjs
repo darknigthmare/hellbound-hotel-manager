@@ -347,8 +347,8 @@ async function imageFacts(picture) {
       assert.equal(hashBytes(await response.body()), report.build.entrySha256, 'Browser did not load the verified standalone HTML');
       await activate(page.getByRole('button', { name: 'Galerie', exact: true }));
       await page.getByRole('heading', { name: 'La galerie des créations', exact: true }).waitFor({ state: 'visible' });
-      const category = page.getByLabel('Catégorie', { exact: true });
-      const scope = page.getByLabel('Contenu de la galerie', { exact: true });
+      const category = page.getByLabel('Catégorie');
+      const scope = page.getByLabel('Contenu de la galerie');
       const search = page.getByLabel('Rechercher une création', { exact: true });
       await category.selectOption({ label: 'Accessoires' });
       await scope.selectOption('all');
