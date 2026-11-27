@@ -29,12 +29,51 @@ jobs:
       - name: Type-check, test and build
         run: npm run qa
 
-      - name: Upload verified standalone bundle
+      - name: Package verified standalone transfer parts
+        id: standalone_transfer
+        if: ${{ success() }}
+        run: |
+          mkdir -p standalone-transfer
+          tar -C dist-combat -cf standalone-transfer/standalone.tar .
+          split --bytes=480M --numeric-suffixes=0 --suffix-length=2 standalone-transfer/standalone.tar standalone-transfer/standalone.tar.part-
+          test ! -e standalone-transfer/standalone.tar.part-03
+          (cd standalone-transfer && sha256sum standalone.tar standalone.tar.part-* > SHA256SUMS)
+          if [ -f standalone-transfer/standalone.tar.part-02 ]; then
+            printf 'third_part=true\n' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload verified standalone part 00
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: infernal-versus-standalone
-          path: dist-combat/
+          name: infernal-versus-standalone-part-00
+          path: |
+            standalone-transfer/standalone.tar.part-00
+            standalone-transfer/SHA256SUMS
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload verified standalone part 01
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: infernal-versus-standalone-part-01
+          path: |
+            standalone-transfer/standalone.tar.part-01
+            standalone-transfer/SHA256SUMS
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload verified standalone part 02 when needed
+        if: ${{ success() && steps.standalone_transfer.outputs.third_part == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: infernal-versus-standalone-part-02
+          path: |
+            standalone-transfer/standalone.tar.part-02
+            standalone-transfer/SHA256SUMS
           if-no-files-found: error
           retention-days: 7
           compression-level: 0
