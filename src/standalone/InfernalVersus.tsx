@@ -19,9 +19,11 @@ import { NarrativeArt, RunInterlude } from './RunInterlude';
 import { globalCampaignIllustration } from './campaign-illustrations-v4';
 import { NarrativeCollection, StoryDossier } from './NarrativeCollection';
 import { ReserveGallery } from './ReserveGallery';
+import { contentAccessPresentation, getContentAccess, newlyEarnedContent, type ContentAccess } from './content-access';
+import { ContentSeal } from './ContentSeal';
 
 type Screen = 'home' | 'setup' | 'campaign' | 'interlude' | 'fight' | 'codex' | 'gallery' | 'options';
-interface Match { id: string; one: string; two: string; mode: StandaloneMode; stageId: PentagramStageId; allowSeasonTwo: boolean; runIndex?: number }
+interface Match { id: string; one: string; two: string; mode: StandaloneMode; stageId: PentagramStageId; allowSeasonTwo: boolean; runIndex?: number; costumeOne?: string; costumeTwo?: string }
 const MODES = [
   { id: 'versus', title: 'Duel infernal', label: 'VERSUS CPU', description: 'Choisissez librement les deux combattants et votre arène.', icon: Swords },
   { id: 'local', title: 'Rivalité locale', label: '2 JOUEURS', description: 'Deux joueurs, un écran. Clavier partagé ou commandes tactiles.', icon: Users },
@@ -81,14 +83,16 @@ export function InfernalVersus() {
   const selected = activeSide === 'one' ? selectedOne : selectedTwo;
   const selectedId = selected.character.id;
   const outfits = (INFERNAL_COSTUMES[selectedId] ?? []).filter(outfit => scope === 'all' || outfit.spoilerTier !== 'season_2');
-  const worn = outfits.find(outfit => outfit.id === save.wardrobe?.[activeSide]?.[selectedId]);
-  const visibleCostumeId = (fighterId: string, side: 'one' | 'two', allowSeasonTwo: boolean) => {
-    const outfit = getInfernalCostume(fighterId, save.wardrobe?.[side]?.[fighterId]);
-    return outfit && (allowSeasonTwo || outfit.spoilerTier !== 'season_2') ? outfit.id : undefined;
+  const worn = outfits.find(outfit => outfit.id === save.wardrobe?.[activeSide]?.[selectedId] && getContentAccess(save, 'costume', outfit.id, { mode }).selectable);
+  const visibleCostumeId = (fighterId: string, side: 'one' | 'two', allowSeasonTwo: boolean, matchMode: StandaloneMode) => {
+    const current = saveRef.current;
+    const outfit = getInfernalCostume(fighterId, current.wardrobe?.[side]?.[fighterId]);
+    return outfit && (allowSeasonTwo || outfit.spoilerTier !== 'season_2') && getContentAccess(current, 'costume', outfit.id, { mode: matchMode }).selectable ? outfit.id : undefined;
   };
   const allowSeasonThree = save.options.allowSeasonThree === true;
   const availableStages = getAvailableStandaloneStages(save.options);
-  const selectedStage = availableStages.find(arena => arena.id === stageId) ?? availableStages[0];
+  const selectableStages = availableStages.filter(arena => getContentAccess(save, 'stage', arena.id, { mode }).selectable);
+  const selectedStage = selectableStages.find(arena => arena.id === stageId) ?? selectableStages[0];
   const stage = getPentagramStage(match?.stageId ?? selectedStage.id);
   const combatants = useMemo(() => {
     if (!match) return null;
@@ -111,6 +115,7 @@ export function InfernalVersus() {
     setStorageNotice(result.ok ? '' : result.message ?? 'Progression conservée pour cette session seulement.');
   }, []);
   const changeOption = <K extends keyof StandaloneOptions>(key: K, value: StandaloneOptions[K]) => updateSave({ ...saveRef.current, options: { ...saveRef.current.options, [key]: value } });
+  const explainAccess = (access: ContentAccess, name: string) => setNotice(contentAccessPresentation(access, name).description);
   const canShowNarrative = (next: StandaloneRun) => {
     if (next.mode === 'campaign') return scope === 'all';
     if (next.mode !== 'story') return true;
@@ -119,16 +124,43 @@ export function InfernalVersus() {
   };
   const chooseCostume = (choice: string) => {
     const current = saveRef.current;
+    if (choice) {
+      const outfit = getInfernalCostume(selectedId, choice);
+      if (!outfit) return;
+      const access = getContentAccess(current, 'costume', choice, { mode });
+      if (!access.selectable) { explainAccess(access, outfit.name); return; }
+    }
     const selections = { ...current.wardrobe?.[activeSide] };
     if (choice) selections[selectedId] = choice;
     else delete selections[selectedId];
     updateSave({ ...current, wardrobe: { ...current.wardrobe, [activeSide]: selections } });
   };
   const launch = (next: Match) => {
-    const allowedStages = getAvailableStandaloneStages(saveRef.current.options);
+    const current = saveRef.current;
+    const activeRun = current.run;
+    // A previously accepted route stays resumable after the optional policy is
+    // enabled. Validate its exact encounter before granting that contextual loan.
+    const runEncounter = activeRun?.status === 'active' && activeRun.mode === next.mode && activeRun.index === next.runIndex
+      ? getRunEncounter(activeRun, current.options) : undefined;
+    const establishedRun = runEncounter?.fighterId === next.one && runEncounter?.opponentId === next.two;
+    if (!establishedRun) {
+      const modeAccess = getContentAccess(current, 'mode', next.mode, { mode: next.mode });
+      if (!modeAccess.selectable) { explainAccess(modeAccess, modeTitle(next.mode)); return; }
+      for (const id of [next.one, next.two]) {
+        const access = getContentAccess(current, 'fighter', id, { mode: next.mode });
+        if (!access.selectable) { explainAccess(access, getStandaloneFighter(id)?.character.name ?? 'Combattant'); return; }
+      }
+    }
+    const narrativeLoan = next.mode === 'story' || next.mode === 'campaign';
+    const allowedStages = getAvailableStandaloneStages(current.options).filter(arena => getContentAccess(current, 'stage', arena.id, { mode: next.mode, narrativeLoan }).selectable);
     const nextStage = allowedStages.find(arena => arena.id === next.stageId) ?? allowedStages[0];
     setNotice('');
-    setMatch({ ...next, stageId: nextStage.id });
+    // Rewards become available immediately in menus, but a result callback must
+    // never swap the artwork in the fight that earned the reward.
+    setMatch({ ...next, stageId: nextStage.id,
+      costumeOne: visibleCostumeId(next.one, 'one', next.allowSeasonTwo, next.mode),
+      costumeTwo: visibleCostumeId(next.two, 'two', next.allowSeasonTwo, next.mode),
+    });
     setScreen('fight');
     if (saveRef.current.options.soundtrack) void soundtrack.start(nextStage.soundtrack);
   };
@@ -136,6 +168,10 @@ export function InfernalVersus() {
     if (run.status !== 'active') return;
     if (!canShowNarrative(run)) { setNotice('Ce récit est masqué par le filtre de contenu. Choisissez « Saisons 1 et 2 » pour le reprendre.'); return; }
     const encounter = getRunEncounter(run, saveRef.current.options);
+    if (run.mode !== 'story' && run.mode !== 'campaign') {
+      const rotatingStages = getAvailableStandaloneStages(saveRef.current.options).filter(arena => getContentAccess(saveRef.current, 'stage', arena.id, { mode: run.mode }).selectable);
+      encounter.stageId = rotatingStages[run.index % rotatingStages.length].id;
+    }
     launch({ id: identifier(), one: encounter.fighterId, two: encounter.opponentId, mode: run.mode, stageId: encounter.stageId, runIndex: run.index, allowSeasonTwo: run.mode === 'campaign' || run.rosterIds.some(id => getStandaloneFighter(id)?.spoiler === 'season_2') });
   };
   const enterRun = (next: StandaloneRun) => {
@@ -147,6 +183,14 @@ export function InfernalVersus() {
   };
   const startMatch = () => {
     try {
+      const modeAccess = getContentAccess(saveRef.current, 'mode', mode, { mode });
+      if (!modeAccess.selectable) throw new Error(contentAccessPresentation(modeAccess, modeTitle(mode)).description);
+      if (mode !== 'campaign') {
+        for (const id of isRunMode(mode) ? [oneId] : [oneId, twoId]) {
+          const access = getContentAccess(saveRef.current, 'fighter', id, { mode });
+          if (!access.selectable) throw new Error(contentAccessPresentation(access, getStandaloneFighter(id)?.character.name ?? 'Combattant').description);
+        }
+      }
       if (isRunMode(mode)) {
         if (mode === 'campaign' && !campaignAvailable(eligibleIds, narrativeFilters)) throw new Error('Choisissez les deux univers et les saisons 1 et 2 pour cette campagne.');
         if (mode === 'story' && !storyAvailable(oneId, eligibleIds, narrativeFilters)) throw new Error('Cette chronique est masquée par les filtres de contenu.');
@@ -163,7 +207,11 @@ export function InfernalVersus() {
   const onMatchComplete = useCallback((result: CombatState) => {
     if (!match || match.mode === 'training' || !result.matchWinner) return;
     try {
-      updateSave(applyMatchResult(saveRef.current, { id: match.id, mode: match.mode, fighterId: match.one, opponentId: match.two, outcome: result.matchWinner === 'one' ? 'won' : 'lost', playedAt: Date.now() }));
+      const previous = saveRef.current;
+      const next = applyMatchResult(previous, { id: match.id, mode: match.mode, fighterId: match.one, opponentId: match.two, outcome: result.matchWinner === 'one' ? 'won' : 'lost', playedAt: Date.now() });
+      const rewards = newlyEarnedContent(previous, next);
+      updateSave(next);
+      if (rewards.length > 0) setNotice(`${rewards.length} ${rewards.length === 1 ? 'récompense acquise' : 'récompenses acquises'} ! Les sceaux correspondants sont ouverts dans la sélection.`);
     } catch (error) { setNotice(error instanceof Error ? error.message : 'Résultat non enregistré.'); }
   }, [match, updateSave]);
   const exitMatch = () => {
@@ -187,9 +235,12 @@ export function InfernalVersus() {
     else soundtrack.stop();
   };
   const openSetup = (nextMode: StandaloneMode) => {
-    const candidates = nextMode === 'story' ? eligibleRoster.filter(fighter => storyAvailable(fighter.character.id, eligibleIds, narrativeFilters)) : eligibleRoster;
+    const access = getContentAccess(saveRef.current, 'mode', nextMode, { mode: nextMode });
+    if (!access.selectable) { explainAccess(access, modeTitle(nextMode)); return; }
+    const accessible = eligibleRoster.filter(fighter => getContentAccess(saveRef.current, 'fighter', fighter.character.id, { mode: nextMode }).selectable);
+    const candidates = nextMode === 'story' ? accessible.filter(fighter => storyAvailable(fighter.character.id, eligibleIds, narrativeFilters)) : accessible;
     if (!candidates.some(fighter => fighter.character.id === oneId)) setOneId((candidates[0] ?? eligibleRoster[0]).character.id);
-    if (!eligibleIds.includes(twoId)) setTwoId((eligibleRoster[1] ?? eligibleRoster[0]).character.id);
+    if (!accessible.some(fighter => fighter.character.id === twoId)) setTwoId((accessible[1] ?? accessible[0]).character.id);
     setSlot('one');
     setMode(nextMode);
     setNotice('');
@@ -200,9 +251,10 @@ export function InfernalVersus() {
     setScope(nextScope);
     const valid = STANDALONE_ROSTER.filter(fighter => (value === 'all' || fighter.franchise === value) && (nextScope === 'all' || fighter.spoiler === 'season_1'));
     const ids = valid.map(fighter => fighter.character.id);
-    const heroes = mode === 'story' ? valid.filter(fighter => storyAvailable(fighter.character.id, ids, { allowSeasonTwo: nextScope === 'all' })) : valid;
-    if (!heroes.some(fighter => fighter.character.id === oneId)) setOneId((heroes[0] ?? valid[0]).character.id);
-    if (!valid.some(fighter => fighter.character.id === twoId)) setTwoId((valid[1] ?? valid[0]).character.id);
+    const accessible = valid.filter(fighter => getContentAccess(saveRef.current, 'fighter', fighter.character.id, { mode }).selectable);
+    const heroes = mode === 'story' ? accessible.filter(fighter => storyAvailable(fighter.character.id, ids, { allowSeasonTwo: nextScope === 'all' })) : accessible;
+    if (!heroes.some(fighter => fighter.character.id === oneId)) setOneId((heroes[0] ?? accessible[0]).character.id);
+    if (!accessible.some(fighter => fighter.character.id === twoId)) setTwoId((accessible[1] ?? accessible[0]).character.id);
   };
   const downloadSave = () => {
     try {
@@ -252,12 +304,15 @@ export function InfernalVersus() {
             <h1 ref={titleRef} tabIndex={-1}>Tous les démons<br /><em>ont leurs rivaux.</em></h1>
             <p className="iv-hero-copy">Les résidents de l’hôtel et les figures de Helluva Boss se retrouvent dans l’arène. Choisissez votre camp. Faites monter la tension.</p>
             <button className="iv-primary" onClick={() => openSetup('versus')}>Entrer dans l’arène <ArrowRight size={18} /></button>
-            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.length}</strong> combattants</span><span><strong>{availableStages.length}</strong> arènes disponibles</span><span><strong>{MODES.length}</strong> modes</span></div>
+            <div className="iv-hero-facts"><span><strong>{STANDALONE_ROSTER.filter(fighter => getContentAccess(save, 'fighter', fighter.character.id).selectable).length}</strong> combattants{save.options.progressionEnabled ? ' disponibles' : ''}</span><span><strong>{availableStages.filter(arena => getContentAccess(save, 'stage', arena.id).selectable).length}</strong> arènes disponibles</span><span><strong>{MODES.filter(item => getContentAccess(save, 'mode', item.id).selectable).length}</strong> modes{save.options.progressionEnabled ? ' disponibles' : ''}</span></div>
           </div>
           <div className="iv-hero-cast" aria-hidden="true"><Portrait id="charlie" /><Portrait id="hb_blitzo" /><span>LET’S MAKE<br />A SCENE.</span></div>
         </section>
         <div className="iv-section-heading"><div><p className="iv-eyebrow">À VOUS DE CHOISIR</p><h2>Votre prochaine confrontation</h2></div><span>Clavier & commandes tactiles</span></div>
-        <section className="iv-mode-grid" aria-label="Modes de jeu">{MODES.map(item => <button className="iv-mode" key={item.id} onClick={() => openSetup(item.id)}><item.icon size={24} /><span className="iv-eyebrow">{item.label}</span><strong>{item.title}</strong><p>{item.description}</p><ArrowRight className="iv-mode-arrow" size={18} /></button>)}</section>
+        <section className="iv-mode-grid" aria-label="Modes de jeu">{MODES.map(item => {
+          const access = getContentAccess(save, 'mode', item.id, { mode: item.id });
+          return <button className={`iv-mode ${!access.selectable ? 'iv-content-locked' : ''}`} key={item.id} aria-disabled={!access.selectable || undefined} onClick={() => openSetup(item.id)}><item.icon size={24} /><span className="iv-eyebrow">{item.label}</span><strong>{item.title}</strong><p>{item.description}</p>{!access.selectable ? <ContentSeal access={access} /> : <ArrowRight className="iv-mode-arrow" size={18} />}</button>;
+        })}</section>
         <section className="iv-bottom-grid">
           <article className="iv-panel">
             <p className="iv-eyebrow">VOTRE PARCOURS</p><h2>{run ? modeTitle(run.mode) : 'Une nouvelle histoire de rivalité'}</h2>
@@ -299,13 +354,33 @@ export function InfernalVersus() {
         <div className="iv-setup-layout">
           <section className="iv-picker"><div className="iv-filter-row"><label>Univers<select value={franchise} onChange={event => updateFranchise(event.target.value)}><option value="all">Les deux univers</option><option>Hazbin Hotel</option><option>Helluva Boss</option></select></label><label>Contenu<select value={scope} onChange={event => updateFranchise(franchise, event.target.value)}><option value="all">Saisons 1 et 2</option><option value="season_1">Saison 1 uniquement</option></select></label><label>Rechercher<input value={query} onChange={event => setQuery(event.target.value)} placeholder="Nom, style…" /></label></div>
             <div className="iv-slot-switch" role="group" aria-label="Côté à sélectionner"><button aria-pressed={slot === 'one'} onClick={() => setSlot('one')}>J1 · {selectedOne.character.name}</button>{!isRunMode(mode) && <button aria-pressed={slot === 'two'} onClick={() => setSlot('two')}>{mode === 'local' ? 'J2' : mode === 'training' ? 'Mannequin' : 'CPU'} · {selectedTwo.character.name}</button>}</div>
-            <div className="iv-roster-grid" aria-label="Choix du combattant">{displayedRoster.map(fighter => <button className={`iv-fighter-tile ${fighter.character.id === oneId ? 'is-one' : ''} ${!isRunMode(mode) && fighter.character.id === twoId ? 'is-two' : ''}`} key={fighter.character.id} onClick={() => slot === 'one' || isRunMode(mode) ? setOneId(fighter.character.id) : setTwoId(fighter.character.id)} aria-pressed={fighter.character.id === (slot === 'one' || isRunMode(mode) ? oneId : twoId)}><Portrait id={fighter.character.id} /><strong>{fighter.character.name}</strong><small>{fighter.franchise === 'Hazbin Hotel' ? 'HAZBIN' : 'HELLUVA'}</small></button>)}</div>
+            {save.options.progressionEnabled && <p className="iv-small">Sceaux de progression actifs. Sélectionnez un sceau pour lire sa condition. Le dojo prête tous les contenus ; les adversaires et lieux imposés par un récit restent disponibles.</p>}
+            <div className="iv-roster-grid" aria-label="Choix du combattant">{displayedRoster.map(fighter => {
+              const access = getContentAccess(save, 'fighter', fighter.character.id, { mode });
+              const presentation = contentAccessPresentation(access, fighter.character.name);
+              return <button className={`iv-fighter-tile ${!access.selectable ? 'iv-content-locked' : ''} ${presentation.silhouette ? 'iv-content-silhouette' : ''} ${access.selectable && fighter.character.id === oneId ? 'is-one' : ''} ${access.selectable && !isRunMode(mode) && fighter.character.id === twoId ? 'is-two' : ''}`} key={fighter.character.id} aria-disabled={!access.selectable || undefined} onClick={() => {
+                if (!access.selectable) { explainAccess(access, fighter.character.name); return; }
+                if (slot === 'one' || isRunMode(mode)) setOneId(fighter.character.id); else setTwoId(fighter.character.id);
+              }} aria-pressed={access.selectable && fighter.character.id === (slot === 'one' || isRunMode(mode) ? oneId : twoId)}>
+                {presentation.showImage ? <Portrait id={fighter.character.id} /> : <span className="iv-secret-emblem" aria-hidden="true">✦</span>}
+                <strong>{presentation.name}</strong><small>{fighter.franchise === 'Hazbin Hotel' ? 'HAZBIN' : 'HELLUVA'}</small>{!access.selectable && <ContentSeal access={access} compact />}
+              </button>;
+            })}</div>
             {displayedRoster.length === 0 && <p className="iv-empty">{mode === 'story' && playableRoster.length === 0 ? 'Aucune chronique complète avec ces filtres. Élargissez les univers ou les saisons pour retrouver les adversaires nécessaires.' : 'Aucun combattant ne correspond à cette recherche.'}</p>}
           </section>
           <aside className="iv-panel iv-match-card"><p className="iv-eyebrow">{activeSide === 'one' ? 'JOUEUR 1' : mode === 'local' ? 'JOUEUR 2' : 'ADVERSAIRE'}</p>
             {worn ? <img className="iv-selected-portrait" src={worn.ready} alt={worn.name} /> : <Portrait id={selectedId} key={selectedId} className="iv-selected-portrait" />}
             <h2>{selected.character.name}</h2><p>{selected.profile.style}</p>
-            {outfits.length > 0 && <><label>Tenue de {selected.character.name}<select value={worn?.id ?? ''} onChange={event => chooseCostume(event.target.value)}><option value="">Tenue habituelle</option>{outfits.map(outfit => <option key={outfit.id} value={outfit.id}>{outfit.name}</option>)}</select></label>{worn && <small>{worn.appearance}</small>}</>}
+            {outfits.length > 0 && <><label>Tenue de {selected.character.name}<select value={worn?.id ?? ''} onChange={event => chooseCostume(event.target.value)}><option value="">Tenue habituelle</option>{outfits.filter(outfit => getContentAccess(save, 'costume', outfit.id, { mode }).selectable).map(outfit => <option key={outfit.id} value={outfit.id}>{outfit.name}</option>)}</select></label>{worn && <small>{worn.appearance}</small>}
+              <div className="iv-costume-locks">{outfits.filter(outfit => !getContentAccess(save, 'costume', outfit.id, { mode }).selectable).map(outfit => {
+                const access = getContentAccess(save, 'costume', outfit.id, { mode });
+                const presentation = contentAccessPresentation(access, outfit.name);
+                return <button className={`iv-costume-lock iv-content-locked ${presentation.silhouette ? 'iv-content-silhouette' : ''}`} aria-disabled="true" key={outfit.id} onClick={() => explainAccess(access, outfit.name)}>
+                  {presentation.showImage && <img src={outfit.ready} alt="" loading="lazy" />}<span>{presentation.name}</span><ContentSeal access={access} />
+                </button>;
+              })}</div>
+              {!worn && save.wardrobe?.[activeSide]?.[selectedId] && outfits.some(outfit => outfit.id === save.wardrobe?.[activeSide]?.[selectedId]) && <small>Votre tenue préférée reste enregistrée. La tenue habituelle s’applique tant que son sceau est fermé.</small>}
+            </>}
             <dl className="iv-kit"><div><dt>Léger</dt><dd>{selected.profile.basicMove}</dd></div><div><dt>Lourd</dt><dd>{selected.profile.heavyMove}</dd></div><div><dt>Spécial</dt><dd>{selected.profile.specialMove}</dd></div>{selected.profile.signature && <div><dt>Signature</dt><dd>{INFERNAL_SIGNATURES[selected.profile.signature].name}</dd></div>}</dl>
             {mode !== 'local' && mode !== 'training' && <label>Difficulté<select value={save.options.difficulty} onChange={event => changeOption('difficulty', event.target.value as StandaloneOptions['difficulty'])}>{Object.entries(DIFFICULTIES).map(([value, title]) => <option key={value} value={value}>{title}</option>)}</select></label>}
             {mode === 'training' && <label>Mannequin<select value={trainingGuard ? 'guard' : 'idle'} onChange={event => setTrainingGuard(event.target.value === 'guard')}><option value="idle">Immobile</option><option value="guard">Garde permanente</option></select></label>}
@@ -314,7 +389,13 @@ export function InfernalVersus() {
             <button className="iv-primary" onClick={startMatch} disabled={mode === 'story' && !storyAvailable(oneId, eligibleIds, narrativeFilters)}>{isRunMode(mode) ? 'Démarrer le parcours' : 'Lancer le combat'} <Swords size={18} /></button>
           </aside>
         </div>
-        {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{selectedStage.name}</span></div><label className="iv-check"><input type="checkbox" checked={allowSeasonThree} onChange={event => changeOption('allowSeasonThree', event.target.checked)} /> Autoriser les décors et créations de saison 3</label><div className="iv-stage-grid">{availableStages.map(arena => <button key={arena.id} onClick={() => setStageId(arena.id)} aria-pressed={selectedStage.id === arena.id}><img src={arena.thumbnailPath} alt="" loading="lazy" /><span>{arena.name}</span></button>)}</div></section>}
+        {!isRunMode(mode) && <section className="iv-stage-section"><div className="iv-section-heading"><h2>Choisissez votre arène</h2><span>{selectedStage.name}</span></div><label className="iv-check"><input type="checkbox" checked={allowSeasonThree} onChange={event => changeOption('allowSeasonThree', event.target.checked)} /> Autoriser les décors et créations de saison 3</label><div className="iv-stage-grid">{availableStages.map(arena => {
+          const access = getContentAccess(save, 'stage', arena.id, { mode });
+          const presentation = contentAccessPresentation(access, arena.name);
+          return <button className={!access.selectable ? 'iv-content-locked' : undefined} key={arena.id} aria-disabled={!access.selectable || undefined} onClick={() => { if (access.selectable) setStageId(arena.id); else explainAccess(access, arena.name); }} aria-pressed={access.selectable && selectedStage.id === arena.id}>
+            {presentation.showImage ? <img src={arena.thumbnailPath} alt="" loading="lazy" /> : <span className="iv-secret-emblem" aria-hidden="true">✦</span>}<span>{presentation.name}</span>{!access.selectable && <ContentSeal access={access} />}
+          </button>;
+        })}</div></section>}
       </>}
 
       {screen === 'interlude' && run && <RunInterlude run={run} allowSeasonTwo={scope === 'all'} titleRef={titleRef} onHome={exitMatch} onFight={() => launchRun(run)} />}
@@ -322,7 +403,7 @@ export function InfernalVersus() {
       {screen === 'fight' && match && combatants && <div className="iv-live-wrap">
         {isRunMode(match.mode) && run && <div className="iv-run-strip"><strong>{modeTitle(match.mode)}</strong><span>Duel {Math.min((match.runIndex ?? 0) + 1, run.opponentIds.length)} / {run.opponentIds.length} · {run.wins} victoires</span></div>}
         {match.mode === 'training' && <p className="iv-practice-note">Mannequin {trainingGuard ? 'en garde' : 'immobile'} · tension illimitée · récupération après K.O. · aucun score enregistré</p>}
-        <PentagramLiveFight infernalRules costumeOne={visibleCostumeId(match.one, 'one', match.allowSeasonTwo)} costumeTwo={visibleCostumeId(match.two, 'two', match.allowSeasonTwo)} key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} stagePresentation={save.options.stagePresentation} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={match.mode === 'tournament' ? 'Tableau du tournoi' : (match.mode === 'story' || match.mode === 'campaign') && run?.status === 'complete' ? 'Voir l’épilogue' : isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
+        <PentagramLiveFight infernalRules costumeOne={match.costumeOne} costumeTwo={match.costumeTwo} key={match.id} fighterOne={combatants.one.character} fighterTwo={combatants.two.character} fighterOneDefinition={combatants.oneDefinition} fighterTwoDefinition={combatants.twoDefinition} matchMode={match.mode === 'local' ? 'local' : 'ai'} aiDifficulty={save.options.difficulty} stage={stage} timeline={match.allowSeasonTwo ? STANDALONE_TIMELINE : { ...STANDALONE_TIMELINE, current: 'season_1_end', hideSpoilers: true, spoilerLevel: 'season_1' }} soundtrackEnabled={save.options.soundtrack} soundtrackStatus={soundtrack.status} onSoundtrackToggle={toggleSoundtrack} onSoundtrackPause={soundtrack.pause} onSoundtrackResume={soundtrack.resume} onExit={exitMatch} training={match.mode === 'training'} trainingGuard={trainingGuard} reducedMotion={save.options.reducedMotion} stagePresentation={save.options.stagePresentation} onMatchComplete={onMatchComplete} onNextMatch={nextMatch} nextMatchLabel={match.mode === 'tournament' ? 'Tableau du tournoi' : (match.mode === 'story' || match.mode === 'campaign') && run?.status === 'complete' ? 'Voir l’épilogue' : isRunMode(match.mode) ? run?.status === 'active' ? 'Combat suivant' : 'Bilan du parcours' : 'Revanche'} />
       </div>}
 
       {screen === 'codex' && <>
@@ -345,6 +426,8 @@ export function InfernalVersus() {
         <p className="iv-eyebrow">À VOTRE MESURE</p><h1 ref={titleRef} tabIndex={-1}>Options & progression</h1>
         <div className="iv-options-grid"><section className="iv-panel">
           <h2>Confort de jeu</h2>
+          <label className="iv-check"><input type="checkbox" checked={save.options.progressionEnabled === true} onChange={event => changeOption('progressionEnabled', event.target.checked)} /> Parcours de déblocage</label>
+          <p className="iv-small">Active sept récompenses de personnages, tenues, arènes et Boss Rush, obtenues par les victoires, chroniques et Arcade. Les résultats déjà acquis comptent. Désactivé, la sélection reste libre. Le dojo, les contenus imposés par les récits et la reprise d’un parcours commencé restent accessibles. Les deux joueurs locaux partagent ce profil.</p>
           <label className="iv-check"><input type="checkbox" checked={save.options.soundtrack} onChange={event => changeOption('soundtrack', event.target.checked)} /> Musique originale des arènes</label>
           <label className="iv-check"><input type="checkbox" checked={save.options.reducedMotion} onChange={event => changeOption('reducedMotion', event.target.checked)} /> Réduire mouvements et flashes</label>
           <label>Présentation des décors<select value={save.options.stagePresentation ?? 'alive'} onChange={event => changeOption('stagePresentation', event.target.value as StandaloneOptions['stagePresentation'])}><option value="alive">Décor vivant</option><option value="reduced">Ambiance réduite</option><option value="static">Décor statique</option></select></label>

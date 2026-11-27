@@ -71,26 +71,26 @@
       "scope": "Six bases statiques en réserve et bible V3 des 43 combattants. Dernier Acte remplace Fatalité dans l’interface. Aucune nouvelle animation ni kit. Fidélité exacte 1:1 non certifiée."
     },
     "currentRuntime": {
-      "date": "2026-11-26",
-      "batchId": "static-v14-2026-11-26",
-      "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "date": "2026-11-27",
+      "batchId": "static-v15-2026-11-27",
+      "baseCommit": "d03434054739e2995ccdc86617fb2ca3a1ea56bf",
       "fighters": 43,
       "bossCandidates": 9,
       "runtimeKits": 43,
       "runtimeBaseAttacks": 129,
-      "note": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+      "note": "V15 : cinq dessins statiques de galerie, dont une base de soutien Queef ; deux portraits et deux silhouettes narratives. Aucun nouveau kit ni cycle animé.",
       "stages": 51,
       "threePlaneStages": 36,
       "attackEffectImages": 14,
       "attackEffectAssignments": 28,
-      "referencedAssets": 735,
+      "referencedAssets": 740,
       "modes": 9,
       "personalRouteVersion": 3,
       "personalRoutes": 43,
       "personalChapters": 129,
       "globalCampaigns": 1,
       "globalChapters": 9,
-      "reserveGalleryDrawings": 138,
+      "reserveGalleryDrawings": 143,
       "stagePresentations": [
         "alive",
         "static",
@@ -101,45 +101,41 @@
       "twoPlaneStages": 3,
       "costumeFamilies": 27,
       "globalIllustrationAssignments": 11,
-      "productionRegister": "docs/standalone/production-v14/delivery-register.json",
+      "productionRegister": "docs/standalone/production-v15/delivery-register.json",
       "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
-      "standaloneBases": 114,
-      "catalogueIdsWithoutStandaloneBase": 95,
-      "distinctProductionIdentitiesWithoutStandaloneBase": 94,
-      "assetCoverageReport": "docs/standalone/production-v14/active-asset-coverage.json",
-      "referencedAssetsStatus": "verified_current_v14_paths",
+      "standaloneBases": 115,
+      "catalogueIdsWithoutStandaloneBase": 94,
+      "distinctProductionIdentitiesWithoutStandaloneBase": 93,
+      "assetCoverageReport": "docs/standalone/production-v15/active-asset-coverage.json",
+      "referencedAssetsStatus": "verified_current_v15_paths",
       "browserReview": {
         "status": "passed",
-        "report": "docs/standalone/production-v14/browser-qa.json",
+        "report": "docs/standalone/production-v15/browser-gallery-qa.json",
+        "scope": "Current Vite source runtime, real gallery clicks and decoded artwork on desktop and mobile. Static gallery rendering only; no combat play, animation or production deployment claim.",
         "checkedAssetIds": [
-          "crimson-dining-room-s2-room",
-          "crimson-green-chandelier-s2",
-          "full-moon-shop-s2-room",
-          "hb_blitzo-flashback-ghostfuckers-s2",
-          "hb_millie-dress-disguise-training-short",
-          "hb_moxxie-dress-disguise-training-short",
-          "sloth-cloud-dispenser-s2"
-        ],
-        "scope": "Seven V14 drawings: three selectable static costumes and two stages in desktop training, one full mobile touch combat journey, and five gallery entries including two props at both viewport sizes.",
-        "summary": "Sept dessins V14 contrôlés dans le jeu : 286 assertions d’interaction et 34 contrôles d’intégrité, issus de six sessions Chromium indépendantes. Trois costumes et deux arènes en combat desktop ; parcours Blitzø/Full Moon complet en émulation tactile mobile ; cinq fiches galerie, provenance des courts 2026 et filtres de contenu sur les deux formats. Dix captures inspectées. Aucun cycle d’animation ni kit supplémentaire."
+          "hb_queef-creator-collection",
+          "hz_roo-creator-concept-2019-portrait",
+          "hz_top_hat_demon-pilot-portrait",
+          "hz_eve-storybook-seated-silhouette",
+          "hz_lilith-storybook-standing-silhouette"
+        ]
       },
       "technicalReview": {
         "status": "passed",
-        "testsPassed": 419,
-        "testSuites": 48,
+        "testsPassed": 434,
+        "testSuites": 51,
         "managerBuild": "passed",
         "standaloneBuild": "passed",
-        "standardQaScriptPassed": true,
-        "buildMethod": "Commandes standard npm du dépôt, sans modification des tests, configurations ou options de copie.",
-        "report": "docs/standalone/production-v14/runtime-qa.json"
+        "standardQaScriptPassed": true
       }
     },
     "latestIntegration": {
-      "date": "2026-11-25",
-      "batchId": "guide-v4-2026-11-25",
-      "baseCommit": "2738bfdcc95a0a7d65cc79a4b7b38be9d0343145",
-      "branch": "feat/infernal-versus-assets-20261124",
-      "scope": "Guide général contextualisé, 43 routes V3 versionnées, campagne AU de neuf chapitres, galerie 22 réserves et présentation des arènes. Aucun dessin ou cycle nouveau."
+      "date": "2026-11-27",
+      "batchId": "combat-guide-extensions-01-02",
+      "guide": "docs/standalone/COMBAT_GUIDES.md",
+      "matrix": "docs/standalone/guide-extensions-20261127/integration.json",
+      "runtime": "docs/standalone/guide-extensions-20261127/runtime-integration.json",
+      "scope": "Guide général et deux extensions contextualisés ; déblocages locaux optionnels. Taunts, assistances, relais, supers collectives et bonus restent des conceptions tant que leur implémentation n’est pas attestée."
     },
     "runtimeHistory": [
       {
@@ -631,63 +627,166 @@
           "buildMethod": "Configuration Vite normale ; copyPublicDir:false, puis liens physiques vers chaque fichier public sur le même système de fichiers. Le contenu et le packaging final sont vérifiés. npm run qa standard non exécuté comme commande unique.",
           "report": "docs/standalone/production-v13/runtime-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v14-2026-11-26",
+        "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+        "fighters": 43,
+        "bossCandidates": 9,
+        "runtimeKits": 43,
+        "runtimeBaseAttacks": 129,
+        "note": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+        "stages": 51,
+        "threePlaneStages": 36,
+        "attackEffectImages": 14,
+        "attackEffectAssignments": 28,
+        "referencedAssets": 735,
+        "modes": 9,
+        "personalRouteVersion": 3,
+        "personalRoutes": 43,
+        "personalChapters": 129,
+        "globalCampaigns": 1,
+        "globalChapters": 9,
+        "reserveGalleryDrawings": 138,
+        "stagePresentations": [
+          "alive",
+          "static",
+          "reduced"
+        ],
+        "illustrationAssignmentsV3": 127,
+        "onePlaneStages": 12,
+        "twoPlaneStages": 3,
+        "costumeFamilies": 27,
+        "globalIllustrationAssignments": 11,
+        "productionRegister": "docs/standalone/production-v14/delivery-register.json",
+        "referencedAssetScope": "Current registered fighter/stage/effect, V3 personal and global illustration, and reserve-gallery export paths. Historical V1 narrative artwork is preserved separately and not reassigned to V3.",
+        "standaloneBases": 114,
+        "catalogueIdsWithoutStandaloneBase": 95,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 94,
+        "assetCoverageReport": "docs/standalone/production-v14/active-asset-coverage.json",
+        "referencedAssetsStatus": "verified_current_v14_paths",
+        "browserReview": {
+          "status": "passed",
+          "report": "docs/standalone/production-v14/browser-qa.json",
+          "checkedAssetIds": [
+            "crimson-dining-room-s2-room",
+            "crimson-green-chandelier-s2",
+            "full-moon-shop-s2-room",
+            "hb_blitzo-flashback-ghostfuckers-s2",
+            "hb_millie-dress-disguise-training-short",
+            "hb_moxxie-dress-disguise-training-short",
+            "sloth-cloud-dispenser-s2"
+          ],
+          "scope": "Seven V14 drawings: three selectable static costumes and two stages in desktop training, one full mobile touch combat journey, and five gallery entries including two props at both viewport sizes.",
+          "summary": "Sept dessins V14 contrôlés dans le jeu : 286 assertions d’interaction et 34 contrôles d’intégrité, issus de six sessions Chromium indépendantes. Trois costumes et deux arènes en combat desktop ; parcours Blitzø/Full Moon complet en émulation tactile mobile ; cinq fiches galerie, provenance des courts 2026 et filtres de contenu sur les deux formats. Dix captures inspectées. Aucun cycle d’animation ni kit supplémentaire."
+        },
+        "technicalReview": {
+          "status": "passed",
+          "testsPassed": 419,
+          "testSuites": 48,
+          "managerBuild": "passed",
+          "standaloneBuild": "passed",
+          "standardQaScriptPassed": true,
+          "buildMethod": "Commandes standard npm du dépôt, sans modification des tests, configurations ou options de copie.",
+          "report": "docs/standalone/production-v14/runtime-qa.json"
+        }
       }
     ],
     "latestStaticDelivery": {
-      "date": "2026-11-26",
-      "batchId": "static-v14-2026-11-26",
-      "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+      "date": "2026-11-27",
+      "batchId": "static-v15-2026-11-27",
+      "baseCommit": "d03434054739e2995ccdc86617fb2ca3a1ea56bf",
       "branch": "feat/infernal-versus-assets-20261124",
       "prNumber": 8,
-      "register": "docs/standalone/production-v14/delivery-register.json",
-      "status": "final_production_register",
+      "register": "docs/standalone/production-v15/delivery-register.json",
       "counts": {
-        "distinctDrawings": 7,
-        "newDrawings": 7,
-        "revisedDrawings": 0,
-        "masterPng": 7,
-        "losslessWebp": 7,
-        "thumbnails": 2,
-        "deliveredImageFiles": 16,
-        "deliveredImageBytes": 16890823,
-        "newStandaloneBases": 0,
-        "newCharacterBases": 0,
-        "newlyCoveredCatalogueIds": 0,
+        "distinctDrawings": 5,
+        "newStandaloneBases": 1,
+        "newlyCoveredCatalogueIds": 1,
+        "narrativeArchives": 4,
+        "narrativeSilhouettes": 2,
+        "characterPortraits": 2,
+        "masterPng": 5,
+        "losslessWebp": 5,
+        "deliveredImageFiles": 10,
+        "deliveredImageBytes": 7816422,
+        "newAnimationCycles": 0,
         "newPlayableKits": 0,
-        "newStaticCostumes": 3,
-        "newNarrativeIncarnations": 0,
-        "newPortraits": 0,
-        "newStages": 2,
+        "newDrawings": 5,
+        "revisedDrawings": 0,
+        "thumbnails": 0,
+        "newCharacterBases": 1,
+        "newStaticCostumes": 0,
+        "newStages": 0,
+        "newPortraits": 2,
+        "newNarrativeIncarnations": 2,
         "newSceneryProps": 0,
-        "newReserveProps": 2,
+        "newReserveProps": 0,
         "newReserveProjectiles": 0,
         "newReserveMachines": 0,
-        "newAnimationCycles": 0,
-        "generatorRefused": 0,
-        "historicalVariantRequirementsReconciled": 0,
-        "historicalVariantRequirementsPartiallyCovered": 0
+        "generatorRefused": 2,
+        "generationAttemptsThisResume": 0,
+        "recoveredDrawingsThisResume": 5
       },
-      "scope": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+      "cumulativeCounts": {
+        "catalogueIds": 209,
+        "distinctProductionIdentitiesAfterKnownAlias": 208,
+        "activeFighters": 43,
+        "standaloneBases": 115,
+        "activeStandaloneBases": 40,
+        "reserveStandaloneBases": 75,
+        "catalogueIdsWithoutStandaloneBase": 94,
+        "distinctProductionIdentitiesWithoutStandaloneBase": 93,
+        "reserveGalleryEntries": 143,
+        "runtimeCostumeFamilies": 27,
+        "activeStages": 51,
+        "illustratedPersonalScenes": 127,
+        "personalScenes": 129,
+        "illustratedGlobalScenes": 11,
+        "globalScenesIncludingBookends": 11
+      },
       "verification": {
-        "technicalReport": "docs/standalone/production-v14/runtime-qa.json",
-        "browserReport": "docs/standalone/production-v14/browser-qa.json",
-        "workbookReport": "docs/standalone/production-v14/workbook-qa.json"
+        "status": "passed",
+        "inGameChecked": true,
+        "runtimeReport": "docs/standalone/production-v15/runtime-qa.json",
+        "browserReport": "docs/standalone/production-v15/browser-gallery-qa.json",
+        "activeAssetCoverage": "docs/standalone/production-v15/active-asset-coverage.json",
+        "testsPassed": 434,
+        "testSuites": 51,
+        "managerBuild": "passed",
+        "standaloneBuild": "passed",
+        "standardQaScriptPassed": true,
+        "referencedAssets": 740,
+        "checkedAssetIds": [
+          "hb_queef-creator-collection",
+          "hz_roo-creator-concept-2019-portrait",
+          "hz_top_hat_demon-pilot-portrait",
+          "hz_eve-storybook-seated-silhouette",
+          "hz_lilith-storybook-standing-silhouette"
+        ],
+        "browserScope": "Current Vite source runtime, real gallery clicks and decoded artwork on desktop and mobile. Static gallery rendering only; no combat play, animation or production deployment claim.",
+        "browserChecks": 12,
+        "limitations": [
+          "Chromium local et émulation tactile ; aucun test sur téléphone physique.",
+          "Les cinq dessins sont des éléments de galerie statiques, sans nouveau kit animé."
+        ]
       }
     },
     "latestProductionBible": {
-      "edition": "V14",
-      "date": "2026-11-26",
-      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V14.xlsx",
-      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
-      "historicalSheetsPreserved": 58,
-      "historicalTablesPreserved": 67,
-      "appendedSheets": 2,
-      "finalSheets": 60,
-      "finalTables": 69,
-      "sha256": "5c5aaf76a14be77c5b87e97ba6cb4aa48d1207a1b251224176815b81a9e3bb52",
-      "bytes": 692823,
-      "register": "docs/standalone/production-v14/delivery-register.json",
-      "qa": "docs/standalone/production-v14/workbook-qa.json",
+      "edition": "V15",
+      "date": "2026-11-27",
+      "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V15.xlsx",
+      "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V14.xlsx",
+      "historicalSheetsPreserved": 60,
+      "historicalTablesPreserved": 69,
+      "appendedSheets": 8,
+      "finalSheets": 68,
+      "finalTables": 77,
+      "sha256": "b98174db5b2c641e8f088cf3b3919e34ff7da581b693c4ee93679fa135c71450",
+      "bytes": 764746,
+      "register": "docs/standalone/production-v15/delivery-register.json",
+      "qa": "docs/standalone/production-v15/workbook-qa.json",
       "status": "verified"
     },
     "staticDeliveryHistory": [
@@ -918,6 +1017,47 @@
           "browserReport": "docs/standalone/production-v13/browser-qa.json",
           "workbookReport": "docs/standalone/production-v13/workbook-qa.json"
         }
+      },
+      {
+        "date": "2026-11-26",
+        "batchId": "static-v14-2026-11-26",
+        "baseCommit": "0ce3b069e738bbcae50b268806396ca2e65c1bad",
+        "branch": "feat/infernal-versus-assets-20261124",
+        "prNumber": 8,
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "status": "final_production_register",
+        "counts": {
+          "distinctDrawings": 7,
+          "newDrawings": 7,
+          "revisedDrawings": 0,
+          "masterPng": 7,
+          "losslessWebp": 7,
+          "thumbnails": 2,
+          "deliveredImageFiles": 16,
+          "deliveredImageBytes": 16890823,
+          "newStandaloneBases": 0,
+          "newCharacterBases": 0,
+          "newlyCoveredCatalogueIds": 0,
+          "newPlayableKits": 0,
+          "newStaticCostumes": 3,
+          "newNarrativeIncarnations": 0,
+          "newPortraits": 0,
+          "newStages": 2,
+          "newSceneryProps": 0,
+          "newReserveProps": 2,
+          "newReserveProjectiles": 0,
+          "newReserveMachines": 0,
+          "newAnimationCycles": 0,
+          "generatorRefused": 0,
+          "historicalVariantRequirementsReconciled": 0,
+          "historicalVariantRequirementsPartiallyCovered": 0
+        },
+        "scope": "V14 : 7 dessins retenus ; 0 nouvelles bases entières de réserve, 3 costumes statiques, 2 arènes, 5 fiches ajoutées en galerie. Aucun nouveau kit ni cycle animé. 0 refus de génération conservés sans relance.",
+        "verification": {
+          "technicalReport": "docs/standalone/production-v14/runtime-qa.json",
+          "browserReport": "docs/standalone/production-v14/browser-qa.json",
+          "workbookReport": "docs/standalone/production-v14/workbook-qa.json"
+        }
       }
     ],
     "productionBibleHistory": [
@@ -1008,6 +1148,22 @@
         "bytes": 674412,
         "register": "docs/standalone/production-v13/delivery-register.json",
         "qa": "docs/standalone/production-v13/workbook-qa.json",
+        "status": "verified"
+      },
+      {
+        "edition": "V14",
+        "date": "2026-11-26",
+        "workbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V14.xlsx",
+        "previousWorkbook": "docs/standalone/INFERNAL_VERSUS_BIBLE_V13.xlsx",
+        "historicalSheetsPreserved": 58,
+        "historicalTablesPreserved": 67,
+        "appendedSheets": 2,
+        "finalSheets": 60,
+        "finalTables": 69,
+        "sha256": "5c5aaf76a14be77c5b87e97ba6cb4aa48d1207a1b251224176815b81a9e3bb52",
+        "bytes": 692823,
+        "register": "docs/standalone/production-v14/delivery-register.json",
+        "qa": "docs/standalone/production-v14/workbook-qa.json",
         "status": "verified"
       }
     ]
@@ -4900,6 +5056,17 @@
           "https://vfxvoice.com/checking-into-hazbin-hotel-to-check-out-the-animation/"
         ],
         "register": "docs/standalone/production-v8/delivery-register.json"
+      },
+      "productionV15": {
+        "assetId": "hz_lilith-storybook-standing-silhouette",
+        "export": "public/assets/production/v15/characters/hz_lilith-storybook-standing-silhouette.webp",
+        "register": "docs/standalone/production-v15/delivery-register.json",
+        "continuity": "season_1_storybook",
+        "frameCoverage": "full_body",
+        "addsStandaloneBase": false,
+        "status": "verified_gallery_static",
+        "reference": "The Story of Hell, ouverture S1 à 40–42 s : silhouette debout de Lilith à droite d’Adam. Seule Lilith est reproduite.",
+        "fullDetailedCombatModelStillMissing": true
       }
     },
     {
@@ -6791,6 +6958,17 @@
         "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "productionV15": {
+        "assetId": "hz_roo-creator-concept-2019-portrait",
+        "export": "public/assets/production/v15/characters/hz_roo-creator-concept-2019-portrait.webp",
+        "register": "docs/standalone/production-v15/delivery-register.json",
+        "continuity": "legacy_concept_2019",
+        "frameCoverage": "bust",
+        "addsStandaloneBase": false,
+        "status": "verified_gallery_static",
+        "reference": "Concept attribué à Vivienne Medrano, 2019 ; reproduction secondaire inspectée. Le rôle de Roo dans la série et les théories sur Eve/Lilith ne sont pas établis par cette image.",
+        "fullDetailedCombatModelStillMissing": true
       }
     },
     {
@@ -6817,6 +6995,17 @@
         "notes": "Entrée future/semi-canon du catalogue ; aucune incarnation complète officielle qualifiée pour une production canon actuelle.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "productionV15": {
+        "assetId": "hz_eve-storybook-seated-silhouette",
+        "export": "public/assets/production/v15/characters/hz_eve-storybook-seated-silhouette.webp",
+        "register": "docs/standalone/production-v15/delivery-register.json",
+        "continuity": "season_1_storybook",
+        "frameCoverage": "full_body",
+        "addsStandaloneBase": false,
+        "status": "verified_gallery_static",
+        "reference": "The Story of Hell, ouverture S1 : silhouette assise d’Eve à gauche de l’arbre. La scène officielle atteste cette incarnation narrative, sans établir de modèle détaillé actuel.",
+        "fullDetailedCombatModelStillMissing": true
       }
     },
     {
@@ -7293,6 +7482,17 @@
         "notes": "Entrée explicitement pilote/legacy ; une base future doit conserver cette incarnation, sans fusion avec la série actuelle.",
         "references": [],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "productionV15": {
+        "assetId": "hz_top_hat_demon-pilot-portrait",
+        "export": "public/assets/production/v15/characters/hz_top_hat_demon-pilot-portrait.webp",
+        "register": "docs/standalone/production-v15/delivery-register.json",
+        "continuity": "pilot_legacy",
+        "frameCoverage": "bust",
+        "addsStandaloneBase": false,
+        "status": "verified_gallery_static",
+        "reference": "Hazbin Hotel PILOT, séquence 666 News vers 680 s : cyclope à tête compacte, épaules grises, gants blancs et geste pointé.",
+        "fullDetailedCombatModelStillMissing": true
       }
     },
     {
@@ -9963,11 +10163,11 @@
       "canon": "Canon déclaré dans dépôt",
       "reference": "Helluva Boss S2E6",
       "source": "SRC-HH-02",
-      "asset": "Atlas référencé",
+      "asset": "Base entière de soutien en réserve · modèle du produit officiel Creator Collection",
       "kit": "Aucun kit combat dédié",
       "target": "Candidat / PNJ à qualifier",
       "status": "Partiel",
-      "next": "Définir rôle combat, support ou PNJ selon preuves de scène.",
+      "next": "Définir l’usage de soutien selon preuves ; modèle d’épisode et kit jouable non livrés.",
       "validation": "Fiche/asset existant ne signifie pas combattant livré.",
       "loreFacts": "Fiche existante non revalidée scène par scène.",
       "proposedKit": "À définir selon capacités attestées et rôle retenu.",
@@ -9979,6 +10179,17 @@
           "https://www.youtube.com/watch?v=y1sF6ZeASU0"
         ],
         "register": "docs/standalone/production-v7/delivery-register.json"
+      },
+      "productionV15": {
+        "assetId": "hb_queef-creator-collection",
+        "export": "public/assets/production/v15/characters/hb_queef-creator-collection.webp",
+        "register": "docs/standalone/production-v15/delivery-register.json",
+        "continuity": "official_merchandise_undated",
+        "frameCoverage": "full_body",
+        "addsStandaloneBase": true,
+        "status": "verified_gallery_static",
+        "reference": "Motif entier du produit officiel Creator Collection d’Amanda Heard ; incarnation graphique de produit dérivé, non modèle d’épisode.",
+        "fullDetailedCombatModelStillMissing": false
       }
     },
     {

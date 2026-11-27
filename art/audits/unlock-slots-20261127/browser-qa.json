@@ -1,0 +1,141 @@
+{
+  "scope": "Real Chromium UI, keyboard and emulated touch; no injected game state. Seven-rule local progression only.",
+  "target": "http://127.0.0.1:5183/combat.html",
+  "startedAt": "2026-11-27T00:43:03.875Z",
+  "checks": [
+    {
+      "name": "desktop: progression option survives a real reload",
+      "ok": true
+    },
+    {
+      "name": "desktop: reduced motion option survives a real reload",
+      "ok": true
+    },
+    {
+      "name": "desktop: Boss Rush has a focusable lock",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked mode explains its Arcade condition",
+      "ok": true
+    },
+    {
+      "name": "desktop: fighter portrait is loaded and rendered as a silhouette",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked fighter retains keyboard focus",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked fighter keeps selection on Charlie",
+      "ok": true
+    },
+    {
+      "name": "desktop: fighter explains both unlock paths",
+      "ok": true
+    },
+    {
+      "name": "desktop: costume art is loaded and rendered as a silhouette",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked costume explains its win requirement",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked costume is not equipped",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked stage thumbnail loads",
+      "ok": true
+    },
+    {
+      "name": "desktop: locked stage did not replace selected arena",
+      "ok": true
+    },
+    {
+      "name": "desktop: viewport has no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "mobile: progression option survives a real reload",
+      "ok": true
+    },
+    {
+      "name": "mobile: reduced motion option survives a real reload",
+      "ok": true
+    },
+    {
+      "name": "mobile: Boss Rush has a focusable lock",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked mode explains its Arcade condition",
+      "ok": true
+    },
+    {
+      "name": "mobile: fighter portrait is loaded and rendered as a silhouette",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked fighter keeps selection on Charlie",
+      "ok": true
+    },
+    {
+      "name": "mobile: fighter explains both unlock paths",
+      "ok": true
+    },
+    {
+      "name": "mobile: costume art is loaded and rendered as a silhouette",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked costume explains its win requirement",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked costume is not equipped",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked stage thumbnail loads",
+      "ok": true
+    },
+    {
+      "name": "mobile: locked stage did not replace selected arena",
+      "ok": true
+    },
+    {
+      "name": "mobile: viewport has no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "No browser page errors",
+      "ok": true,
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "desktop-locked-mode.png",
+    "desktop-fighter-seal.png",
+    "desktop-costume-seal.png",
+    "desktop-stage-seal.png",
+    "mobile-locked-mode.png",
+    "mobile-fighter-seal.png",
+    "mobile-costume-seal.png",
+    "mobile-stage-seal.png"
+  ],
+  "errors": [],
+  "sourceHashes": {
+    "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+    "src/standalone/content-access.ts": "4b5046e924002051d5dcdfd197099a86dbd7a2e3abfc75885031ddf2d028adce",
+    "src/standalone/ContentSeal.tsx": "a9c344cf2894bdef7c24774086dba6e966604979fa8dadc07093f52815b5b813",
+    "src/standalone/progression.ts": "485b11117a5cebd468062645a0a11bf0c94154961497d32de0a64c1026e0259a",
+    "src/standalone/infernal-versus.css": "c04ab9498e8a046b2f503a6ad01646c1cf804ea8021e59af4faf98e5a9d34bc6"
+  },
+  "browserVersion": "143.0.7499.4",
+  "status": "passed",
+  "finishedAt": "2026-11-27T00:43:12.246Z"
+}

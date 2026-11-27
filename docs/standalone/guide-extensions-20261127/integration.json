@@ -1,0 +1,2397 @@
+{
+  "schemaVersion": 1,
+  "edition": "Guide général + extensions 01/02 — contextualisation Infernal Versus",
+  "date": "2026-11-27",
+  "baselineAudit": "État local V14 relu ; les chiffres de production historiques ne sont pas modifiés par cette annexe.",
+  "sourceManifest": [
+    {
+      "id": "general",
+      "path": "docs/standalone/references/Combat_Games_Guide_General_v1.0.txt",
+      "bytes": 55172,
+      "sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+      "driveId": "14o_RrgXucs8Km-x1LQJtMK7rol6mENKy",
+      "url": "https://drive.google.com/file/d/14o_RrgXucs8Km-x1LQJtMK7rol6mENKy/view",
+      "preservedVerbatim": true,
+      "sectionRange": [
+        0,
+        29
+      ],
+      "checkedDate": "2026-11-27"
+    },
+    {
+      "id": "extension01",
+      "path": "docs/standalone/references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt",
+      "bytes": 60589,
+      "sha256": "330fb7485a7a52b2a20f855646c940aaac0fcd9510032bc84b2e17c518edd25f",
+      "driveId": "1rYxKLIbz67L1sstmJWsga76uK7cX2mXF",
+      "url": "https://drive.google.com/file/d/1rYxKLIbz67L1sstmJWsga76uK7cX2mXF/view",
+      "preservedVerbatim": true,
+      "sectionRange": [
+        30,
+        49
+      ],
+      "checkedDate": "2026-11-27"
+    },
+    {
+      "id": "extension02",
+      "path": "docs/standalone/references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt",
+      "bytes": 47334,
+      "sha256": "08b57ea542e83c487fef3276997a612d4657f2ee9ed4f8e46b0bf65a2778038b",
+      "driveId": "1qr8hgvvjFqdWzcGaf1DPeKromk75bBn0",
+      "url": "https://drive.google.com/file/d/1qr8hgvvjFqdWzcGaf1DPeKromk75bBn0/view",
+      "preservedVerbatim": true,
+      "sectionRange": [
+        50,
+        67
+      ],
+      "checkedDate": "2026-11-27"
+    }
+  ],
+  "generalGuide": {
+    "alreadyIntegrated": true,
+    "requirements": 30,
+    "referenceCards": 10,
+    "evidencePaths": [
+      "docs/standalone/INFERNAL_VERSUS_GUIDE_V4.md",
+      "docs/standalone/guide-integration-v4.json"
+    ],
+    "unchanged": true
+  },
+  "statusDefinitions": {
+    "contextualisée": "Source reliée à une décision, au code existant et à une recette ; ne signifie pas mécanique livrée.",
+    "partielle": "Une partie du besoin existe dans le code inspecté ; compléments identifiés.",
+    "non implémentée": "Conception et dépendances explicites ; pas de boucle jouable correspondante.",
+    "documentaire": "Traçabilité, fiche ou instruction ; aucune fonction de gameplay revendiquée.",
+    "à tester": "Cas de recette prévu ; aucune preuve de succès associée."
+  },
+  "requirements": [
+    {
+      "id": "IV-EXT-30",
+      "section": 30,
+      "title": "PORTÉE ET RATTACHEMENT AU GUIDE GÉNÉRAL",
+      "sourceId": "extension01",
+      "sourceLine": 46,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Le guide général est archivé à l’identique ; V4 associe ses 30 sections et dix fiches. Les extensions étaient absentes des références.",
+      "projectDecision": "Conserver les trois originaux et raccorder les 38 nouvelles sections à la bible actuelle, sans réécrire les constats V4.",
+      "remainingWork": "Maintenir les liens après chaque lot ; associer les preuves de code, d’image et de recette indépendamment.",
+      "acceptanceCriterion": "68 sections couvertes par V4 + cette annexe, trois empreintes exactes, aucun contenu absent déclaré jouable.",
+      "evidencePaths": [
+        "docs/lore-governance.md",
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ],
+      "generalGuideSections": [
+        0,
+        25,
+        26,
+        27,
+        28
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-31",
+      "section": 31,
+      "title": "TAUNTS : PROVOCATIONS ET RÉACTIONS DE PERSONNALITÉ",
+      "sourceId": "extension01",
+      "sourceLine": 87,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "La provocation existe : R/U et tactile, 1 000 ms, récupération 1 250 ms, +8 tension à l’engagement, refus si action verrouillée ou hitstop.",
+      "projectDecision": "Conserver ce taunt à effet de jeu. Ajouter des fiches personnelles, entrée/pose/sortie, interruption et variantes de rival ; un taunt décoratif futur ne donnera pas de gain implicite.",
+      "remainingWork": "Produire les gestes et voix propres aux incarnations. Vérifier punition, conservation du gain déjà accordé et retour de contrôle ; les banques historiques ne valent pas certification 1:1.",
+      "acceptanceCriterion": "Une commande acceptée donne une seule fois +8, reste exposée selon les règles, se termine ou est interrompue proprement ; pas de gain pendant pause/KO.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/lib/pentagram-animation.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/tests/pentagram-combat.test.ts"
+      ],
+      "generalGuideSections": [
+        5,
+        7,
+        18,
+        22
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-32",
+      "section": 32,
+      "title": "ANIMATIONS DE SÉLECTION, CONFIRMATION ET DÉSÉLECTION",
+      "sourceId": "extension01",
+      "sourceLine": 133,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Le roster possède portraits, choix des deux côtés et garde-robe. Le cycle complet de sélection/désélection n’est pas implémenté.",
+      "projectDecision": "Séparer survol, aperçu, confirmation, attente, costume, annulation et départ. Pour Blitzø : aperçu arme basse, confirmation puis retour/rangement dédié, sans inventer de téléportation.",
+      "remainingWork": "Ajouter état de présentation, annulation des voix/VFX et sprites séparés. Changer le choix immédiatement, sans attendre l’animation sortante.",
+      "acceptanceCriterion": "Dix changements rapides puis confirmation ne laissent aucun acteur/son précédent ; clavier et mouvement réduit transmettent le même choix.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/roster.ts",
+        "src/lib/infernal-appearances.ts",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "generalGuideSections": [
+        3,
+        7,
+        17,
+        19
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-33",
+      "section": 33,
+      "title": "PROFILS D'ÉQUIPE ET CATÉGORIES DE PARTENAIRES",
+      "sourceId": "extension01",
+      "sourceLine": 178,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le moteur oppose actuellement un combattant par côté ; aucun profil d’équipe contrôlable.",
+      "projectDecision": "Prévoir un mode Duo hybride optionnel à deux membres : vie propre, un actif, une réserve, élimination des deux, entrée gratuite du survivant après KO. Le duel actuel garde ses règles.",
+      "remainingWork": "Définir état d’équipe, sélection des deux membres, ressources par membre et règles d’unicité des incarnations. Les entités natives n’occupent pas un slot de réserve.",
+      "acceptanceCriterion": "Un partenaire engagé ne peut être appelé deux fois ; un survivant entre même si la jauge commune est vide ; premier KO ne termine pas le mode Duo.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/standalone/roster.ts",
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx"
+      ],
+      "generalGuideSections": [
+        4,
+        5,
+        12,
+        16
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-34",
+      "section": 34,
+      "title": "COMMANDES, JAUGES ET DISPONIBILITÉ",
+      "sourceId": "extension01",
+      "sourceLine": 228,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Déplacement, garde, coups, signature et taunt disposent de commandes. La tension 0–100 est individuelle, sans jauge d’équipe.",
+      "projectDecision": "Actions distinctes ASSISTANCE, RELAIS, SUPER_DUO, FINISHER_EQUIPE, ORDRE_ENTITE. Prototyper jauge d’équipe séparée, coût atomique et horloge de simulation ; les chiffres de la fiche C sont des hypothèses.",
+      "remainingWork": "Remappage complet, manette, affichage d’état du partenaire et arbitrage des commandes simultanées à produire.",
+      "acceptanceCriterion": "Deux commandes dans le même pas ne dépensent jamais deux fois la dernière ressource ; un refus avant engagement ne prélève aucun coût.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/InfernalVersus.tsx"
+      ],
+      "generalGuideSections": [
+        5,
+        19,
+        20,
+        22
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-35",
+      "section": 35,
+      "title": "ASSISTANCES PONCTUELLES",
+      "sourceId": "extension01",
+      "sourceLine": 280,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Des soutiens et ennemis existent comme dessins de réserve ; cela ne constitue pas une assistance active.",
+      "projectDecision": "Premier prototype : couverture ponctuelle de Moxxie pour Millie, action adaptée de son profil existant ; arrivée, tir lisible, sortie, récupération. Partenaire vulnérable avec dégâts portés à sa propre vie.",
+      "remainingWork": "Acteur secondaire, collision, synchronisation, sortie si actif KO et recette à deux cibles. Aucune promotion automatique des bases de réserve.",
+      "acceptanceCriterion": "Interruption ou KO pendant arrivée ferme le cycle ; un coup touchant deux corps ne double pas involontairement le gain de jauge.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "art/infernal-versus/production/reserve-assets.json",
+        "src/standalone/roster.ts"
+      ],
+      "generalGuideSections": [
+        5,
+        12,
+        16,
+        21
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-36",
+      "section": 36,
+      "title": "TAG : CHANGEMENT RÉEL DE COMBATTANT",
+      "sourceId": "extension01",
+      "sourceLine": 316,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le passage entre héros de campagne se fait entre chapitres ; il n’est pas un tag en combat.",
+      "projectDecision": "Relais volontaire en état neutre ; transfert des commandes à un instant de simulation défini. Combo, secours et relais scénarisé sont trois variantes séparées à développer ensuite.",
+      "remainingWork": "Maintenir vie, tension propre, récupérations et historique de combo du sortant. Prévoir retrait sûr d’un soutien déjà engagé et secours gratuit après KO.",
+      "acceptanceCriterion": "Les commandes après le point de transfert agissent uniquement sur l’entrant ; le switch ne recharge ni munitions, ni coût, ni limites de combo.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/campaign-global.ts",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        4,
+        5,
+        9,
+        12
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-37",
+      "section": 37,
+      "title": "TECHNIQUES COMBINÉES ET SUPERS D'ÉQUIPE",
+      "sourceId": "extension01",
+      "sourceLine": 359,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Signatures individuelles et concepts de techniques V3 existent, sans super duo.",
+      "projectDecision": "Prioriser Charlie/Vaggie et Moxxie/Millie. Une ouverture confirmée déclenche la chorégraphie ; garde ou raté utilisent une résolution courte. Les noms et enchaînements ci-dessous sont créations de jeu.",
+      "remainingWork": "Mise en scène à deux, positions de retour, variantes morphologiques et disponibilité des acteurs ; équilibrer les valeurs proposées.",
+      "acceptanceCriterion": "Réserver les deux membres et la jauge une seule fois ; scène passée ou complète aboutissent au même état autorisé.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "docs/standalone/campaign-design-v3.json",
+        "src/components/PentagramLiveFight.tsx"
+      ],
+      "generalGuideSections": [
+        5,
+        6,
+        7,
+        10
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-38",
+      "section": 38,
+      "title": "FINISHERS D'ÉQUIPE ET FINS DRAMATIQUES CONDITIONNELLES",
+      "sourceId": "extension01",
+      "sourceLine": 409,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Le Dernier Acte individuel et les épilogues versionnés existent. Aucune finition collective ni condition dramatique complète.",
+      "projectDecision": "Nommer le système collectif « Dernier Acte — Duo » (nom original). Priorité : fin dramatique compatible, duo, individuel, victoire normale ; résultat acquis immuable.",
+      "remainingWork": "Conditions de version, duo, stage et dernière action, repli morphologique, codex de découverte. Un partenaire KO ne revient pas pour une scène ordinaire.",
+      "acceptanceCriterion": "Une scène incompatible retombe sur une conclusion valide ; aucun second résultat ni récompense supplémentaire après passage abrégé.",
+      "evidencePaths": [
+        "src/lib/infernal-finishers.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/NarrativeCollection.tsx",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        6,
+        7,
+        8,
+        10
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-39",
+      "section": 39,
+      "title": "CLASHES ET CONFRONTATIONS AVEC QTE",
+      "sourceId": "extension01",
+      "sourceLine": 459,
+      "decision": "adaptée",
+      "priority": "P2",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le moteur résout des attaques et un hitstop ; aucune règle de clash/QTE dédiée.",
+      "projectDecision": "Définir des groupes d’attaques compatibles par données. En duel standard, commencer par une séparation sans QTE ; QTE seulement dans un profil spectacle ou une scène solo annoncée.",
+      "remainingWork": "Détection de contact simultané, priorité indépendante du côté, gestion des tiers, égalité/absence d’entrée et limite de fréquence.",
+      "acceptanceCriterion": "Inverser gauche/droite conserve le résultat ; un projectile tiers au même instant est résolu selon la même priorité ; zéro réponse possède une issue bornée.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/tests/pentagram-combat.test.ts"
+      ],
+      "generalGuideSections": [
+        4,
+        12,
+        18,
+        22,
+        23
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-40",
+      "section": 40,
+      "title": "MOVESETS À ENTITÉS INDÉPENDANTES ET OBJETS PLACÉS",
+      "sourceId": "extension01",
+      "sourceLine": 536,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Les effets associés aux attaques ne sont pas des entités natives autonomes avec commandes et durée de vie.",
+      "projectDecision": "Premier candidat : dispositif d’atelier de Sir Pentious, capacité et forme à valider dans les sources de sa fiche ; mécanisme jouable original. Propriétaire stable, budget et ordre dédiés.",
+      "remainingWork": "Créer modèle d’entité, placement, armement, destruction et réactions au KO/réserve. Ne pas transformer tout effet visuel ou compagnon en IA.",
+      "acceptanceCriterion": "Une entité n’existe qu’une fois, répond à son propriétaire et ne change pas de propriétaire pendant un tag ; les limites restent identiques en mouvement réduit.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "docs/standalone/campaign-design-v3.json",
+        "src/components/PentagramLiveFight.tsx"
+      ],
+      "generalGuideSections": [
+        5,
+        11,
+        16,
+        18
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-41",
+      "section": 41,
+      "title": "PROJECTILES PERSISTANTS ET RÈGLES COMMUNES AUX ENTITÉS",
+      "sourceId": "extension01",
+      "sourceLine": 600,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Les VFX de tirs sont rattachés au contact d’attaque ; un dessin de projectile ne simule pas son trajet.",
+      "projectDecision": "Créer un contrat commun pour projectile : propriétaire, trajectoire, collision, nombre d’impacts, expiration, réflexion et attribution. Les pièges partagent les plafonds de combo.",
+      "remainingWork": "Simulation persistante et interactions ; geler les horloges selon la règle de pause/cinématique et remettre à zéro en nouvelle manche.",
+      "acceptanceCriterion": "Tag, KO, réflexion puis fin de manche ne dupliquent ni impact ni gain ; retirer une particule décorative ne retire jamais une menace simulée.",
+      "evidencePaths": [
+        "src/lib/pentagram-combat.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "generalGuideSections": [
+        5,
+        16,
+        18,
+        23
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-42",
+      "section": 42,
+      "title": "STAGES BONUS ET ÉPREUVES INTÉGRÉES AUX HISTOIRES",
+      "sourceId": "extension01",
+      "sourceLine": 646,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Les routes et la campagne enchaînent des duels ; le mode Survie enchaîne des adversaires, sans horde multi-acteurs.",
+      "projectDecision": "Planifier dix familles de bonus, rattachées aux lieux existants et à une insertion AU après un chapitre. Échec d’un bonus facultatif permet de continuer.",
+      "remainingWork": "Objectifs non duel, foule bornée, objets destructibles, score/records, reprise et attribution unique. Les ennemis d’élite ne deviennent pas faibles par défaut.",
+      "acceptanceCriterion": "Réussite, échec, abandon et reprise conduisent au bon chapitre ; aucun doublon de récompense ; six ennemis tests restent lisibles avant extension du budget.",
+      "evidencePaths": [
+        "src/standalone/campaign-v3.ts",
+        "src/standalone/campaign-global.ts",
+        "src/standalone/progression.ts",
+        "src/lib/pentagram-stages.ts"
+      ],
+      "generalGuideSections": [
+        8,
+        9,
+        11,
+        12,
+        15,
+        20
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-43",
+      "section": 43,
+      "title": "ESPACE D'EXPLORATION ET DE DÉBLOCAGE INSPIRÉ DE LA KRYPT",
+      "sourceId": "extension01",
+      "sourceLine": 729,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Les galeries et épilogues sont consultables ; aucun hub exploratoire de déblocage.",
+      "projectDecision": "Créer les « Archives de l’Entre-Acte », lieu AU de présentation : vestibule, dossiers de chroniques, casiers de costumes et salle des scènes. Carte 2D compatible avec la pile actuelle.",
+      "remainingWork": "Connexions logiques, clés ciblées, registre unique des récompenses, navigation et sauvegarde des ouvertures. Les Archives ne sont pas présentées comme un lieu officiel.",
+      "acceptanceCriterion": "Chaque zone est atteignable sans dépendre de sa propre récompense ; ouvrir deux fois un casier ne consomme pas deux fois une clé.",
+      "evidencePaths": [
+        "src/standalone/NarrativeCollection.tsx",
+        "src/standalone/progression.ts",
+        "src/lib/pentagram-stages.ts",
+        "docs/lore-governance.md"
+      ],
+      "generalGuideSections": [
+        15,
+        19,
+        24,
+        25
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-44",
+      "section": 44,
+      "title": "COHÉRENCE NARRATIVE, RELATIONS ET COMPATIBILITÉS",
+      "sourceId": "extension01",
+      "sourceLine": 785,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "La bible V3 contient rivaux, continuités, relations et sources ; les récits sont explicitement AU.",
+      "projectDecision": "Étendre les relations aux duos prioritaires et séparer affiliation attestée et chorégraphie inventée. Contrôler période, état de relation et présence dans le chapitre.",
+      "remainingWork": "Ajouter source primaire précise et comparaison pour chaque capacité collective avant production visuelle ; les paires libres restent exhibition AU.",
+      "acceptanceCriterion": "Aucun costume d’une autre période ni connaissance future implicite ; 43 combattants impliquent 903 paires sans ordre, sans promettre 903 scènes exclusives.",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/campaign-v3.ts",
+        "src/standalone/campaign-global.ts",
+        "docs/lore-governance.md"
+      ],
+      "generalGuideSections": [
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-45",
+      "section": 45,
+      "title": "ASSETS, ANIMATIONS, SONS ET MISE EN SCÈNE",
+      "sourceId": "extension01",
+      "sourceLine": 822,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Masters individuels et registres de production existent ; les nouveaux cycles d’équipe ne sont pas produits.",
+      "projectDecision": "Ajouter catégories taunt, menu, assist, relais, duo, entité, bonus et révélation. Chaque source autonome garde un sujet ; storyboard collectif séparé.",
+      "remainingWork": "Produire poses puis séquences à la phase animation. Référencer pivots, mains, arme, sol, morphologie et sortie ; ne pas transformer une pose en animation comptabilisée.",
+      "acceptanceCriterion": "Chaque asset possède source, statut et consommateur ; nombre de dessins, exports et cycles séparé ; aucune ligne « animé » sans séquence réelle.",
+      "evidencePaths": [
+        "art/infernal-versus/production/reserve-assets.json",
+        "src/lib/pentagram-animation.ts",
+        "src/lib/infernal-appearances.ts",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "generalGuideSections": [
+        17,
+        18,
+        25
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-46",
+      "section": 46,
+      "title": "INTERFACE, APPRENTISSAGE, ACCESSIBILITÉ ET RÉSEAU",
+      "sourceId": "extension01",
+      "sourceLine": 864,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Clavier, tactile, réduction de mouvement et entraînement existants ; pas de réseau/rollback/replays ni remappage complet.",
+      "projectDecision": "Étendre HUD et dojo au partenaire, jauge commune, entité et raisons d’indisponibilité. Les modalités réseau restent une phase distincte.",
+      "remainingWork": "Exercices assist/relais/entité ; réglages de QTE propres au mode ; lecture accessible et navigation manette à tester avant annonce.",
+      "acceptanceCriterion": "Même règle de simulation quel que soit le confort visuel ; une aide solo n’altère pas secrètement une règle PvP.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/progression.ts",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "generalGuideSections": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "partielle",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-47",
+      "section": 47,
+      "title": "VALIDATION, STATISTIQUES ET ORDRE D'INTÉGRATION",
+      "sourceId": "extension01",
+      "sourceLine": 914,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Des tests et registres de lot existent. Les cas des extensions n’étaient pas reliés au projet.",
+      "projectDecision": "Ajouter les 18 scénarios E01 et les 22 E02 au suivi, sans déclarer qu’ils sont exécutés. Intégrer par prototype vertical puis étendre le contenu.",
+      "remainingWork": "Rattacher chaque preuve future à un commit et au cas couvert ; garder les cas bloqués visibles avec dépendance.",
+      "acceptanceCriterion": "Aucune réussite reprise d’un ancien lot pour un système nouveau ; chaque chiffre nomme son périmètre et son unité.",
+      "evidencePaths": [
+        "src/tests/pentagram-combat.test.ts",
+        "src/tests/standalone-progression.test.ts",
+        "src/tests/standalone-ui.test.tsx",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "generalGuideSections": [
+        25,
+        26
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-48",
+      "section": 48,
+      "title": "DIX FICHES DE PRODUCTION COMPLÉMENTAIRES",
+      "sourceId": "extension01",
+      "sourceLine": 973,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Les dix fiches A–J du guide général sont présentes depuis V4.",
+      "projectDecision": "Renseigner les dix nouvelles fiches E01 A–J avec personnages, version, règles, assets et recette d’Infernal Versus.",
+      "remainingWork": "Étendre ces fiches à chaque contenu futur ; les exemples ci-après constituent des briefs de production, pas des actions actives.",
+      "acceptanceCriterion": "Dix fiches complètes, IDs stables, état explicite et aucune référence à un personnage absent du registre.",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts",
+        "src/lib/pentagram-stages.ts"
+      ],
+      "generalGuideSections": [
+        27
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-49",
+      "section": 49,
+      "title": "INSTRUCTION D'INTÉGRATION ET RÉFÉRENCES",
+      "sourceId": "extension01",
+      "sourceLine": 1120,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Le fichier E01 original est désormais conservé sans modification et relié à cette annexe.",
+      "projectDecision": "Appliquer ses instructions selon la phase sprites fixes : conception maintenant, cycles lors de la phase animation. Conserver les références externes comme sources d’inspiration du guide.",
+      "remainingWork": "Revérifier une référence externe avant d’en faire une dépendance technique ou une affirmation nouvelle ; aucune règle d’un autre jeu attribuée au lore.",
+      "acceptanceCriterion": "L’original est identique à Drive ; tous les écarts d’adaptation sont explicités dans la matrice.",
+      "evidencePaths": [
+        "docs/lore-governance.md",
+        "docs/standalone/campaign-design-v3.json"
+      ],
+      "generalGuideSections": [
+        0,
+        28,
+        29
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-50",
+      "section": 50,
+      "title": "PORTÉE, PRINCIPES ET RACCORDEMENT AUX GUIDES",
+      "sourceId": "extension02",
+      "sourceLine": 47,
+      "decision": "adaptée",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le roster, les costumes et les modes sont accessibles selon filtres ; les épilogues ont déjà une condition de complétion.",
+      "projectDecision": "Introduire un parcours optionnel de déblocage, désactivé par défaut pour conserver l’accès existant. Récompenser du contenu déjà intégré ; les bases inachevées restent en galerie de réserve.",
+      "remainingWork": "Élargir les règles au catalogue après validation des dépendances; aucun contenu de réserve promu.",
+      "acceptanceCriterion": "Un fichier manquant n’est jamais présenté comme un achat ou un succès requis ; désactiver le parcours conserve les acquis et préférences.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/roster.ts",
+        "src/lib/infernal-appearances.ts",
+        "src/standalone/NarrativeCollection.tsx",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "generalGuideSections": [
+        3,
+        12,
+        19,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Parcours de déblocage optionnel, désactivé par défaut; sept règles sur des contenus jouables existants.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Relier les quatre catégories de sélection à un catalogue et un évaluateur commun. Documenter séparément la politique d’abonnement future."
+    },
+    {
+      "id": "IV-EXT-51",
+      "section": 51,
+      "title": "ÉTATS DE DÉCOUVERTE, DE DROIT ET DE DISPONIBILITÉ",
+      "sourceId": "extension02",
+      "sourceLine": 77,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Filtres de saison, disponibilité des histoires et épilogues acquis existent, sans modèle complet de droits.",
+      "projectDecision": "Séparer découverte, acquisition, installation et compatibilité. Le nouvel évaluateur local doit exposer les quatre axes ; droit externe futur reste hors du profil local.",
+      "remainingWork": "Droits temporaires, inconnus et expirés; détection réelle des installations; profil connecté et sources multiples restent à construire.",
+      "acceptanceCriterion": "Un contenu acquis mais indisponible conserve son acquisition ; plusieurs obstacles montrent une prochaine action utile sans écraser les autres.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/NarrativeCollection.tsx"
+      ],
+      "generalGuideSections": [
+        3,
+        19,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Découverte, acquisition locale, disponibilité technique et compatibilité sont séparées dans le résolveur. Les droits locaux, prêts dojo/récit et messages techniques sont testés.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Rendre les états secret/indice/identifié, aucun/prêt/permanent/temporaire/inconnu/expiré et leurs messages. Le moteur courant ne prouve pas un abonnement."
+    },
+    {
+      "id": "IV-EXT-52",
+      "section": 52,
+      "title": "LANGAGE VISUEL ADAPTÉ AU LORE",
+      "sourceId": "extension02",
+      "sourceLine": 118,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le thème sombre du standalone et ses portraits sont présents ; pas de charte de verrou dédiée.",
+      "projectDecision": "Métaphore UI originale : dossier d’exhibition scellé, silhouette noire, sceau circulaire et texte. Secret complet = emblème neutre, jamais silhouette reconnaissable.",
+      "remainingWork": "Étendre la charte aux révélations animées et aux futurs contenus secrets sans prétendre à un objet canonique.",
+      "acceptanceCriterion": "Le statut reste compréhensible sans couleur et sans son ; le texte aria ne divulgue pas un nom protégé.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "docs/lore-governance.md",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "generalGuideSections": [
+        2,
+        19,
+        22
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Sceaux décoratifs originaux avec cadenas, silhouettes noires et texte explicatif; huit captures inspectées en bureau et mobile.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Focus, refus bref, ouverture sans flash, version mouvement réduit et texte accessible ; cette métaphore ne crée aucun contrat d’âme narratif."
+    },
+    {
+      "id": "IV-EXT-53",
+      "section": 53,
+      "title": "EMPLACEMENTS DE PERSONNAGES ET PARTENAIRES",
+      "sourceId": "extension02",
+      "sourceLine": 166,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "La sélection n’active que les 43 kits existants ; les réserves n’y figurent pas.",
+      "projectDecision": "Appliquer des règles optionnelles à Lucifer et Stolas déjà jouables ; expliquer la condition au focus et à la confirmation. Le dojo et les rôles scénarisés utilisent leur politique explicite.",
+      "remainingWork": "Partenaires et équipes restent dépendants du futur mode Duo; aucun nouveau combattant ajouté.",
+      "acceptanceCriterion": "Aucun personnage interdit ne démarre un duel libre ; un prêt narratif ne devient pas silencieusement une acquisition globale.",
+      "evidencePaths": [
+        "src/standalone/roster.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/progression.ts",
+        "src/standalone/campaign-global.ts"
+      ],
+      "generalGuideSections": [
+        3,
+        8,
+        9,
+        12,
+        19
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Lucifer et Stolas verrouillables; gardes en sélection et au lancement; dojo libre, adversaires de parcours et reprise de parcours établis autorisés explicitement.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Filtrer aléatoire et lancement par contexte ; ne pas verrouiller des entités indispensables du moveset. Les futurs partenaires auront des accès de sélection distincts si nécessaire."
+    },
+    {
+      "id": "IV-EXT-54",
+      "section": 54,
+      "title": "COSTUMES, PALETTES ET ACCESSOIRES",
+      "sourceId": "extension02",
+      "sourceLine": 209,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Garde-robe persistée par côté/personnage ; familles de costumes intégrées et filtres de contenu existants.",
+      "projectDecision": "Premières récompenses : tenues Bodyguard de Blitzø et Moxxie, si leurs IDs intégrés sont validés. Aperçu et droit d’équiper distincts ; préférence sauvegardée même en cas de repli.",
+      "remainingWork": "Palettes, accessoires équipables, récompense avant propriétaire verrouillé et vêtements avec droits externes restent à couvrir par des cas concrets.",
+      "acceptanceCriterion": "Costume acquis avant le personnage conservé ; changement de filtre ou droits ne corrompt pas la garde-robe ni les propriétés des coups.",
+      "evidencePaths": [
+        "src/lib/infernal-appearances.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        3,
+        17,
+        19,
+        22,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Deux costumes Bodyguard verrouillables; la garde-robe conserve la préférence, applique la tenue habituelle au besoin et restaure la récompense. Tenues figées pendant chaque duel.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Présenter condition, silhouette ou aperçu autorisé ; préserver acquisition si personnage indisponible ; aucun bonus de statistiques lié à une tenue."
+    },
+    {
+      "id": "IV-EXT-55",
+      "section": 55,
+      "title": "STAGES, VARIANTES ET DESTINATIONS",
+      "sourceId": "extension02",
+      "sourceLine": 250,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "51 arènes dans le registre local V14, variantes de présentation et filtrage saison 3. Pas de droit de collection sur les stages.",
+      "projectDecision": "Parcours optionnel sur Portes célestes et Cour des Goetia ; versions vivante/statique/réduite partagent le même accès. L’accès de participation est distinct de celui de sélection.",
+      "remainingWork": "Stages temporaires, transitions d’arène et droits multijoueur connecté restent à réaliser.",
+      "acceptanceCriterion": "Une option de confort ne se monétise pas ; une partie valide ne change pas d’arène à mi-combat lors d’un changement de droit.",
+      "evidencePaths": [
+        "src/lib/pentagram-stages.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        13,
+        14,
+        15,
+        19
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Portes célestes et Cour des Goetia verrouillables; sceau, progression, refus de sélection, repli sur arène libre et prêt narratif.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Préparer évaluateur, repli avant match et destinations liées futures. Habillage abonné éventuel = création AU clairement séparée des arènes canoniques."
+    },
+    {
+      "id": "IV-EXT-56",
+      "section": 56,
+      "title": "MODES DE JEU ET PARCOURS VERROUILLÉS",
+      "sourceId": "extension02",
+      "sourceLine": 296,
+      "decision": "adaptée",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Neuf modes jouables accessibles ; Boss Rush déjà implémenté comme parcours de duels.",
+      "projectDecision": "Parcours optionnel : Boss Rush après une Arcade complète. Maintenir dojo, options, accessibilité et voies d’acquisition nécessaires.",
+      "remainingWork": "Autres modes avancés ou règles d’accès externes restent à développer.",
+      "acceptanceCriterion": "Aucun cycle Boss Rush → récompense → Boss Rush ; mode verrouillé n’empêche ni quitter, ni s’entraîner, ni reprendre une partie autorisée.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx"
+      ],
+      "generalGuideSections": [
+        12,
+        19,
+        20,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Boss Rush exige une Arcade terminée. La tuile explique la condition; un parcours validé avant activation reste reprenable sans débloquer de nouvelle sélection.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Tuile focusable et condition détaillée ; reprise d’un parcours déjà commencé ; variantes avancées futures documentées individuellement."
+    },
+    {
+      "id": "IV-EXT-57",
+      "section": 57,
+      "title": "CONDITIONS DE DÉBLOCAGE ET PROGRESSION",
+      "sourceId": "extension02",
+      "sourceLine": 328,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Stats, résultats dédupliqués, complétions de routes versionnées et Arcade complète déjà sauvegardés.",
+      "projectDecision": "Utiliser les faits persistés pour sept récompenses locales. Écrire exactement les ET/OU ; attribuer rétroactivement seulement ce que les données présentes prouvent.",
+      "remainingWork": "Réclamation manuelle, défis/records supplémentaires et sources distantes restent à développer.",
+      "acceptanceCriterion": "Une chronique V1 n’équivaut pas à une V3 ; une même victoire rejouée ne progresse pas deux fois ; voie A OU B ne devient jamais A ET B.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/tests/standalone-progression.test.ts",
+        "src/standalone/campaign-v3.ts"
+      ],
+      "generalGuideSections": [
+        8,
+        9,
+        20,
+        24,
+        25
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Compteurs validés et fins de chronique versionnées; conditions ET/OU, alternatives, attribution unique sur identifiant de résultat, progression déjà acquise et import/export testés.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "ID stable de règle et contenu, compteur visible, acquisition idempotente. Pour des récompenses futures de coffre/bonus, ajouter les événements avant de promettre la rétroactivité."
+    },
+    {
+      "id": "IV-EXT-58",
+      "section": 58,
+      "title": "EXPLORATION, RÉCOMPENSES ET SCÈNE DE RÉVÉLATION",
+      "sourceId": "extension02",
+      "sourceLine": 373,
+      "decision": "retenue",
+      "priority": "P1",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Les épilogues s’ouvrent après leurs routes ; aucune exploration ni coffre.",
+      "projectDecision": "Le même ID de récompense peut être accordé automatiquement par succès ou via un futur casier des Archives. Sauvegarder avant présentation ; passage abrégé conserve l’acquisition.",
+      "remainingWork": "Hub d’Archives, navigation d’exploration, coffres et scène de révélation animée ne sont pas implémentés.",
+      "acceptanceCriterion": "Fermer l’application pendant l’ouverture puis recharger donne une seule récompense ; aucune deuxième facturation sur casier déjà traité.",
+      "evidencePaths": [
+        "src/standalone/NarrativeCollection.tsx",
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx"
+      ],
+      "generalGuideSections": [
+        10,
+        15,
+        19,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Notification textuelle du nombre de récompenses acquises; aucune tenue ne change pendant le duel qui accorde la récompense.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Créer objets de révélation, transaction de coût et casier déjà ouvert. Les succès automatiques n’affichent pas un faux état « À réclamer »."
+    },
+    {
+      "id": "IV-EXT-59",
+      "section": 59,
+      "title": "CONTENUS DÉDIÉS AUX ABONNÉS ET MODÈLES D'ACQUISITION",
+      "sourceId": "extension02",
+      "sourceLine": 407,
+      "decision": "retenue comme conception",
+      "priority": "P2",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Aucun catalogue abonné, paiement, compte lié ou avantage confirmé dans ce lot.",
+      "projectDecision": "Prévoir uniquement des cosmétiques/ambiances de soutien dans le premier catalogue envisagé, sans modifier dégâts ni accès de confort. Trois modèles : acquisition permanente, accès temporaire, lot par période.",
+      "remainingWork": "Choisir catalogue, conditions, autorisations des assets et texte d’offre avant lancement ; aucun niveau, prix, échéance ni avantage actif inventé.",
+      "acceptanceCriterion": "La fiche annonce modèle, durée et alternatives ; un permanent reste permanent après fin ordinaire d’abonnement.",
+      "evidencePaths": [
+        "src/lib/infernal-appearances.ts",
+        "src/lib/pentagram-stages.ts",
+        "src/standalone/progression.ts",
+        "docs/lore-governance.md"
+      ],
+      "generalGuideSections": [
+        3,
+        12,
+        19,
+        22,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-60",
+      "section": 60,
+      "title": "LIAISON AVEC PATREON OU UN SERVICE ÉQUIVALENT",
+      "sourceId": "extension02",
+      "sourceLine": 455,
+      "decision": "différée avec contrat",
+      "priority": "P2",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Le standalone est local ; aucun backend d’identité ou adaptateur Patreon.",
+      "projectDecision": "Prévoir une liaison volontaire via un service de confiance, droits autoritatifs et secrets hors client. Le guide conserve ses références officielles ; elles devront être revérifiées lors de l’implémentation.",
+      "remainingWork": "Serveur, compte de jeu, configuration du fournisseur, vérification d’événements, réconciliation et recette. Un booléen local ne peut représenter un droit commercial.",
+      "acceptanceCriterion": "Doublons et désordre des événements ne créent pas de droits ; une panne reste « vérification indisponible », jamais « abonnement expiré » sans preuve.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx"
+      ],
+      "generalGuideSections": [
+        19,
+        23,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-61",
+      "section": 61,
+      "title": "EXPIRATION, CHANGEMENTS D'ACCÈS ET FONCTIONNEMENT HORS LIGNE",
+      "sourceId": "extension02",
+      "sourceLine": 506,
+      "decision": "retenue comme conception",
+      "priority": "P2",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "non implémentée",
+      "existingBehavior": "Les sauvegardes locales ne contiennent pas de droits temporaires ni de justificatifs externes.",
+      "projectDecision": "Séparer les sources d’accès. À expiration confirmée, retirer seulement la source temporaire ; conserver acquisitions permanentes et progression. Geler la configuration du match jusqu’au résultat.",
+      "remainingWork": "Fixer durée de justificatif et tolérance seulement après contrat fournisseur. Définir remboursement, baisse de niveau et déliaison sans prétendre un automatisme universel.",
+      "acceptanceCriterion": "Permanent OU temporaire reste utilisable après expiration du temporaire ; panne, annulation et expiration donnent des états différents.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/standalone/InfernalVersus.tsx",
+        "src/components/PentagramLiveFight.tsx"
+      ],
+      "generalGuideSections": [
+        19,
+        23,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "non implémentée",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-62",
+      "section": 62,
+      "title": "SÉLECTION LOCALE, MULTIJOUEUR, ENTRAÎNEMENT ET REPLAYS",
+      "sourceId": "extension02",
+      "sourceLine": 567,
+      "decision": "adaptée",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Le duel local, le dojo et les parcours fonctionnent ; pas de réseau ni replays.",
+      "projectDecision": "Préciser aperçu/sélection/participation/entraînement. Profil local partagé pour les récompenses locales ; dojo libre et prêts scénarisés explicites. Les parties déjà engagées gardent leur configuration.",
+      "remainingWork": "Identités multiples, multijoueur en ligne, droits d’invités et replays ne sont pas couverts.",
+      "acceptanceCriterion": "Un prêt narratif ne permet pas sélection libre après la scène ; un stage choisi légalement est jouable par l’adversaire sans acquisition globale.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/progression.ts",
+        "src/components/PentagramLiveFight.tsx",
+        "src/standalone/campaign-global.ts"
+      ],
+      "generalGuideSections": [
+        12,
+        19,
+        20,
+        23,
+        24
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Profil local partagé par les deux côtés, dojo libre sans points, prêts narratifs et reprise de parcours commencés. Sélections libres contrôlées avant lancement.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Contrôler entrée dans le match et restauration des équipes futures. Réseau et replays suivent une phase dédiée, sans annoncer leur disponibilité."
+    },
+    {
+      "id": "IV-EXT-63",
+      "section": 63,
+      "title": "INTERFACE, TEXTES, ACCESSIBILITÉ ET PROTECTION DES SURPRISES",
+      "sourceId": "extension02",
+      "sourceLine": 603,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Labels, filtres de saison et options de mouvement existent, sans états détaillés de verrou.",
+      "projectDecision": "Texte court + sceau + condition détaillée. Masquer nom, portrait, voix et texte accessible selon découverte ; distinguer acquisition, installation et restriction de mode.",
+      "remainingWork": "Aucun contenu secret réel dans les sept règles; navigation manette et lecteur d’écran dédiées restent à tester.",
+      "acceptanceCriterion": "L’ARIA respecte le secret ; chaque refus propose une action utile ; un obstacle n’est pas signalé par la couleur seule.",
+      "evidencePaths": [
+        "src/standalone/InfernalVersus.tsx",
+        "src/standalone/NarrativeCollection.tsx",
+        "src/tests/standalone-ui.test.tsx"
+      ],
+      "generalGuideSections": [
+        2,
+        19,
+        22
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Sceaux focusables, libellés textuels, conditions détaillées, silhouettes et mouvement réduit vérifiés par tests et Chromium clavier/tactile émulé. Présentation secrète neutre testée isolément.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Tester focus et lecteur d’écran sur les nouveaux contrôles ; expliquer alternatives sans redirection automatique vers un service externe."
+    },
+    {
+      "id": "IV-EXT-64",
+      "section": 64,
+      "title": "PRODUCTION, SAUVEGARDE ET CRITÈRES DE VALIDATION",
+      "sourceId": "extension02",
+      "sourceLine": 653,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "partielle",
+      "existingBehavior": "Résultats dédupliqués, import strict et progression versionnée existent ; pas de registre multiorigine complet des droits.",
+      "projectDecision": "Séparer catalogue, acquisitions et disponibilité ; migrer sans perte. Les 22 cas source sont importés dans le suivi avec statuts non exécutés tant que les preuves manquent.",
+      "remainingWork": "La recette complète des extensions, l’arrêt pendant écriture, les serveurs et les abonnements ne sont pas validés par ce lot.",
+      "acceptanceCriterion": "Une règle validée ne fait pas compter son contenu comme produit ; reprise et migration ne perdent ni anciens résultats ni garde-robe.",
+      "evidencePaths": [
+        "src/standalone/progression.ts",
+        "src/tests/standalone-progression.test.ts",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "generalGuideSections": [
+        24,
+        25,
+        26
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": true,
+      "currentRuntimeStatus": "partielle — socle local testé",
+      "currentImplementedScope": "Migration additive, import/export validé, préférences conservées, doublons de résultat ignorés; 48 tests ciblés, 28 contrôles navigateur et huit captures inspectées.",
+      "runtimeEvidencePaths": [
+        "art/audits/unlock-slots-20261127/unit-tests.json",
+        "art/audits/unlock-slots-20261127/technical-qa.json",
+        "art/audits/unlock-slots-20261127/browser-qa.json",
+        "art/audits/unlock-slots-20261127/browser-run.log",
+        "art/audits/unlock-slots-20261127/visual-review.json"
+      ],
+      "baselineRemainingWork": "Ajouter métriques des règles d’accès indépendantes des bases/sprites ; couvrir interruptions, doublons, sources multiples et sauvegarde corrompue."
+    },
+    {
+      "id": "IV-EXT-65",
+      "section": 65,
+      "title": "SIX FICHES DE PRODUCTION À REMPLIR",
+      "sourceId": "extension02",
+      "sourceLine": 719,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Les six fiches E02 sont présentes uniquement dans le guide source nouvellement importé.",
+      "projectDecision": "Remplir A–F pour le profil local optionnel et un futur avantage de soutien, en identifiant explicitement ce dernier comme non activé.",
+      "remainingWork": "Étendre à chaque contenu et modèle d’acquisition retenu ; ajouter les preuves après intégration.",
+      "acceptanceCriterion": "Six fiches liées à leurs IDs, aucune offre fictive annoncée comme active et critères vérifiables.",
+      "evidencePaths": [
+        "src/standalone/roster.ts",
+        "src/lib/infernal-appearances.ts",
+        "src/lib/pentagram-stages.ts",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        27
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-66",
+      "section": 66,
+      "title": "INSTRUCTION PRÊTE À TRANSMETTRE À UN PROJET",
+      "sourceId": "extension02",
+      "sourceLine": 813,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "E02 est maintenant archivée et reliée aux sections 00–49.",
+      "projectDecision": "Appliquer d’abord la collection locale sur des contenus déjà intégrés ; conserver la conception abonnés comme chantier explicite. Aucun verrou de production utilisé pour un kit absent.",
+      "remainingWork": "Actualiser cette annexe au rythme des implémentations ; préserver origine des fichiers et statut de chaque mécanisme.",
+      "acceptanceCriterion": "La livraison distingue documentation complète, fonctions locales testées et service externe absent.",
+      "evidencePaths": [
+        "docs/lore-governance.md",
+        "src/standalone/progression.ts",
+        "art/infernal-versus/production/reserve-assets.json"
+      ],
+      "generalGuideSections": [
+        0,
+        25,
+        28
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    },
+    {
+      "id": "IV-EXT-67",
+      "section": 67,
+      "title": "RÉFÉRENCES VÉRIFIÉES ET VOCABULAIRE",
+      "sourceId": "extension02",
+      "sourceLine": 851,
+      "decision": "retenue",
+      "priority": "P0",
+      "documentationStatus": "contextualisée",
+      "runtimeBaselineStatus": "documentaire",
+      "existingBehavior": "Les quatre références officielles et le vocabulaire sont conservés dans E02 sans modification.",
+      "projectDecision": "Utiliser cette source comme référence documentaire, puis reconsulter la documentation officielle au moment de construire l’adaptateur. Cette livraison ne reconfirme pas les API et règles commerciales externes.",
+      "remainingWork": "Journaliser date et version lors d’une future intégration ; distinguer recommandé par le guide et exigé par le fournisseur.",
+      "acceptanceCriterion": "Aucune règle externe sensible présentée comme validée par une simple copie du texte.",
+      "evidencePaths": [
+        "docs/lore-governance.md",
+        "src/standalone/progression.ts"
+      ],
+      "generalGuideSections": [
+        2,
+        29
+      ],
+      "fidelity": "adaptation jouable / création AU explicitée",
+      "currentRuntimeTestClaim": false,
+      "currentRuntimeStatus": "documentaire",
+      "currentImplementedScope": "",
+      "runtimeEvidencePaths": []
+    }
+  ],
+  "referenceCards": [
+    {
+      "id": "IV-E01-A",
+      "title": "Taunt de Blitzø — Contrat en attente",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Sujet / incarnation": "hb_blitzo, tenue habituelle de la période admise par le filtre ; nom du taunt original AU.",
+        "Source et fidélité": "Profil, arme et incarnation déjà enregistrés dans roster/campaign-design-v3 ; geste à comparer à une référence primaire avant dessin. Pas une réplique officielle.",
+        "Commande et contexte": "TAUNT, R/U/tactile existants ; seulement état autorisé du combat. Variante rivale non imposée.",
+        "Entrée / pose / sortie": "Proposition : 200 ms de préparation, 550 ms de défi arme basse, 250 ms de retour, total 1 000 ms actuel. Découpage à valider ; pas de tir gratuit.",
+        "Effet et exposition": "Conserver +8 tension à l’engagement et récupération 1 250 ms ; pas de garde pendant le taunt. Interruption par un coup selon moteur ; aucun remboursement du gain déjà inscrit.",
+        "Son / VFX": "Un geste lisible, aucun flash obligatoire ; voix originale future facultative, pas de paroles d’épisode copiées. Intervalle anti-répétition à fixer après essai.",
+        "Production": "Sprites entrée, pose et sortie individuels à produire lors de la phase animation ; banque historique présente, fidélité de ce geste non certifiée.",
+        "Recette": "Commande double, hitstop, pause, interruption, KO et reprise ; gain unique et contrôle récupéré. Test existant de pose lu, non réexécuté par cette annexe."
+      }
+    },
+    {
+      "id": "IV-E01-B",
+      "title": "Sélection et désélection de Charlie",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Sujet / version": "charlie, incarnation du registre courant et costume compatible avec le filtre.",
+        "Survol / aperçu": "Portrait stable ; apparition de la pose entière sans jouer une voix à chaque déplacement du curseur.",
+        "Confirmation / attente": "Geste d’accueil original et pose de confiance ; attente courte facultative. La sélection est enregistrée immédiatement.",
+        "Désélection": "Sortie dédiée où le geste se referme et Charlie reprend sa pose ; sortie abrégée en navigation rapide, jamais simple lecture inverse imposée.",
+        "Costume / équipe": "Annuler l’aperçu précédent, valider les ancrages de la tenue ; validation de duo seulement lorsque le profil équipe existera.",
+        "Nettoyage": "Un propriétaire de présentation par côté ; arrêter voix, particules et compagnon de l’ancien aperçu. Une promesse de chargement périmée ne remplace pas le nouveau choix.",
+        "Confort / contrôle": "Mouvement réduit = pose fixe et annonce de confirmation ; deux choix simultanés, miroir et retour arrière sans blocage.",
+        "Assets / recette": "Cycle non produit ; tester dix changements rapides, sélection des deux côtés, filtre et rechargement des images. Le portrait existant est un réemploi, pas une nouvelle animation."
+      }
+    },
+    {
+      "id": "IV-E01-C",
+      "title": "Profil Duo hybride — hypothèse de prototype",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Mode et composition": "Nouveau mode Duo optionnel, deux membres jouables par côté ; un actif, une réserve. Pas de même identité dans les deux slots d’une équipe au prototype.",
+        "Vie et défaite": "100 PV par membre comme base de réglage, défaite après KO des deux. Pas de régénération passive de réserve dans le premier prototype.",
+        "Jauges": "Tension propre conservée ; jauge d’équipe proposée 0–100, départ 50. Aucun gain passif au premier prototype, gains de combat plafonnés par séquence à déterminer.",
+        "Coûts proposés": "Assistance 25, relais volontaire 20, relais de combo 40, super duo 100 ; chiffres de conception non testés, non présents dans le duel courant.",
+        "Récupérations": "Hypothèse assistance 8 s après sortie, relais 3 s après transfert. Pause, cinématique et hitstop figent la même horloge d’équipe.",
+        "KO / secours": "Entrée du survivant sans coût ; aucun relais de secours défensif implicite. Un partenaire engagé dans une action collective est indisponible.",
+        "Entités et HUD": "Un soutien temporaire par côté ; budget d’entité distinct. Afficher actif, vie de réserve, jauge commune et motif de refus.",
+        "Recette": "Deux commandes en même pas, dernier membre KO, jauge vide, assistance en sortie ; symétrie gauche/droite, historique de combo partagé."
+      }
+    },
+    {
+      "id": "IV-E01-D",
+      "title": "Assistance de Moxxie pour Millie",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Identité": "IV-ASSIST-MOX-COVER ; actif hb_millie, réserve hb_moxxie ; période et costume cohérents.",
+        "Statut": "Couverture de tir proposée depuis son profil existant ; action combinée originale, pas reproduction certifiée d’un épisode.",
+        "Conditions et coût": "Actif neutre, réserve disponible et vivante, jauge commune >=25 ; prélèvement atomique à appel accepté, aucune dépense si refus.",
+        "Arrivée / action / sortie": "Apparition latérale annoncée, tir unique adapté, retrait. Durées de prototype 300/200/400 ms à éprouver ; récupération 8 s proposée après sortie.",
+        "Vulnérabilité": "Pas d’invulnérabilité automatique. Dégâts subis affectent la réserve ; interrompre le tir avant engagement le supprime, impact engagé suit priorité commune.",
+        "Touche / garde / échec": "Touche contribue au combo de l’équipe, garde donne la résolution du coup, raté n’accorde pas un tir de remplacement. Ne double pas la jauge en touchant actif et soutien.",
+        "Transitions et KO": "Fermer l’intervention à fin de manche ; si actif KO, résoudre impacts simultanés puis entrée du survivant si encore valide. Aucun acteur dupliqué.",
+        "Production / recette": "Sprites et acteur de support manquants ; entrée près du mur, KO à arrivée, pause et appel concurrent avec relais à tester."
+      }
+    },
+    {
+      "id": "IV-E01-E",
+      "title": "Dernier Acte — Duo : Double sortie",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Type et nom": "Finisher d’équipe original AU ; Double sortie est un nom de travail, pas une expression canonique.",
+        "Participants": "Moxxie et Millie, vivants, disponibles, versions compatibles ; le joueur choisit le meneur déjà actif.",
+        "Condition": "KO décisif acquis, fenêtre de Dernier Acte valide, arène compatible et cible dont les ancrages sont pris en charge ; aucune résurrection de réserve KO.",
+        "Commande / coût": "FINISHER_EQUIPE ; pas de coût supplémentaire proposé après KO, disponibilité exigée. Les conditions finales seront alignées au système individuel.",
+        "Déroulement": "Moxxie couvre la sortie, Millie exécute le geste conclusif chorégraphié, duo reprend sa pose ; aucune conclusion canonique imposée au récit.",
+        "Caméra et morphologies": "Storyboard court, cible humanoïde au prototype ; repli individuel pour boss/morphologie incompatible. Découpage exact, voix et VFX restent à produire.",
+        "Priorité et retour": "Fin dramatique spécifique compatible > duo > individuel > victoire. Conserver vainqueur, score et récompense ; passage abrégé aboutit au même écran.",
+        "Recette": "Partenaire KO/engagé, mauvais costume, mauvais lieu, cible géante, double confirmation et passage abrégé sans double résultat."
+      }
+    },
+    {
+      "id": "IV-E01-F",
+      "title": "Clash d’armes — prototype sans QTE par défaut",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Groupe": "IV-CLASH-MELEE-01 : paire d’attaques explicitement inscrites après audit des armes et de leurs phases actives ; aucune activation par deux touches visuellement proches.",
+        "Source / statut": "Mécanisme original inspiré des références E01 §39 ; aucun événement Hazbin/Helluva certifié.",
+        "Éligibilité": "Contact des zones actives et orientation compatibles dans le même pas ; fenêtre proposée <=50 ms et une occurrence par engagement, à mesurer.",
+        "Priorité": "Résoudre ensemble les contacts de ce pas, y compris projectile tiers, avant choix de clash ; aucun avantage lié à ordre des joueurs.",
+        "Duel standard": "Séparation courte, pas de QTE, pas de dégâts supplémentaires de présentation ; positions bornées.",
+        "Profil spectacle futur": "QTE d’un appui, fenêtre proposée 600 ms ; réussite unique avantage borné, double réussite/échec ou absence = séparation. Maintien alternatif en solo, pas avantage caché en PvP.",
+        "État global": "Geler chrono, récupérations et entités de façon commune pendant séquence ; reprise synchronisée. Aucune preuve réseau dans ce lot.",
+        "Recette": "Miroir, hit tiers, égalité, zéro entrée, pause, temps maximal et deux collisions du même multi-hit."
+      }
+    },
+    {
+      "id": "IV-E01-G",
+      "title": "Dispositif placé de Sir Pentious",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Sujet": "IV-ENTITY-PENTIOUS-WORKSHOP-01, propriétaire sirpentious ; forme et capacité à confirmer dans ses sources de conception V3.",
+        "Fidélité": "Objet d’atelier adapté au kit ; aucun modèle inventé présenté comme machine officielle. Prototype de données avant image définitive.",
+        "Création et contrôle": "Commande POSE puis ORDRE_ENTITE ; un seul dispositif par propriétaire au prototype. Seconde pose refusée tant que premier actif ; coût propre à régler.",
+        "États": "Disponible, déploiement, armé, action, récupération, détruit/expiré. Position dans la piste et hors corps adverse ; signal d’armement lisible.",
+        "Simultanéité": "Propriétaire peut se déplacer quand armé ; action de déploiement l’expose. Attaque adverse peut neutraliser selon points de vie à fixer.",
+        "Propriété et durée": "OwnerId stable ; tir et gain attribués au propriétaire. Au tag : désactivation du prototype ; KO et fin de manche : suppression après résolution des impacts déjà engagés.",
+        "Rappel / transition": "Rappel ne rembourse pas gratuitement le coût. Transition, super ou clash appliquent une règle explicite commune ; pas de persistance accidentelle.",
+        "Recette et assets": "Sprite autonome et cycle non produits ; budget, deux ordres simultanés, destruction, KO et attribution de projectile à tester."
+      }
+    },
+    {
+      "id": "IV-E01-H",
+      "title": "Bonus — Livraison à démonter",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Identité / lieu": "IV-BONUS-IMP-01 ; imp-exterior, séquence originale d’entraînement I.M.P. hors événement canonique.",
+        "Insertion": "Bonus facultatif entre deux duels d’une chronique I.M.P. après adaptation explicite de sa version ; ne pas réécrire silencieusement V3.",
+        "Objectif": "Démonter une carcasse d’entraînement, trois zones destructibles ; temps proposé 45 s. Aucun civil dans la zone de destruction.",
+        "Personnages": "Blitzø, Moxxie ou Millie ; toutes les zones accessibles en corps-à-corps et à distance, munitions gérées sans impasse.",
+        "Score / état": "Vie et ressources du bonus séparées ; rang selon zones/durée. Récompense permanente identifiée par ID, attribution unique ; record améliorable sans récompense répétée.",
+        "Réussite / échec": "Réussite ouvre une fiche cosmétique/archives à définir ; échec laisse poursuivre avec bilan. Aucun résultat de duel gagné artificiellement.",
+        "Reprise": "Sauvegarder entrée et résultat, jamais une récompense seulement dans l’animation ; possibilité de réessayer depuis les bonus une fois débloqué.",
+        "Production / recette": "Carcasse intacte/abîmée/détruite, signaux et HUD restent à produire ; hit multiple même zone, abandon, timeout et reprise à tester."
+      }
+    },
+    {
+      "id": "IV-E01-I",
+      "title": "Archives de l’Entre-Acte",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Identité": "IV-ARCHIVES-01 ; lieu original AU d’interface et d’exploration, non répertorié comme lieu canonique.",
+        "Format": "Carte 2D à salles reliées : vestibule → chroniques → scènes ; vestibule → garde-robe ; garde-robe → défis. Portes placées sur limites lisibles.",
+        "Avatar / navigation": "Curseur d’exploration ou protagoniste de présentation sans capacités nécessaires à toutes les portes ; clavier/tactile d’abord.",
+        "Objets et conditions": "Clés de collection ciblées provenant de faits sauvegardés ; chaque coffre référence un ID unique du catalogue.",
+        "Récompenses": "Costumes, illustrations, présentations et scènes. Les partenaires/jouables futurs demandent kit complet avant activation.",
+        "Anti-impasse": "Aucune clé derrière la porte qu’elle ouvre ; parcours minimal gratuit et distinct du catalogue soutien futur.",
+        "Sauvegarde / doublons": "Version de carte, salles découvertes et coffres ouverts ; créditer avant scène, relecture sans nouveau coût.",
+        "Production / recette": "Concept et connexions documentés, aucune salle produite ici ; atteignabilité, retour arrière, fermeture pendant révélation et accessibilité à tester."
+      }
+    },
+    {
+      "id": "IV-E01-J",
+      "title": "Récompense d’une chronique versionnée",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Identité": "IV-REWARD-STORY-CHARLIE-V3, concept de règle relié à charlie et version 3.",
+        "Condition": "storyCompletions contient {fighterId: charlie, routeVersion: 3}. La fiche runtime de Lucifer peut proposer cette condition OU dix victoires ; ce OU doit rester visible.",
+        "Événement": "Validation idempotente du résultat final de route ; aucune victoire V1 ne se transforme implicitement en V3.",
+        "Contenu": "Acquisition permanente locale et éventuelle révélation du dossier associé ; aucun fait narratif d’allégeance ajouté.",
+        "Indice / affichage": "« Terminer la chronique actuelle de Charlie » ; si filtre cache les saisons nécessaires, expliquer filtre sans afficher l’épilogue.",
+        "Doublons": "Relire une fin ou réimporter le même historique ne crée pas une seconde récompense ; identité de règle stable.",
+        "Migration": "Rétroactivité admise seulement sur complétions V3 sauvegardées ou compteur de victoires existant ; pas sur un événement non enregistré.",
+        "Recette": "V1 seule, V3, voie alternative, victoire dupliquée, interruption au résultat et restauration ; états attendus explicites."
+      }
+    },
+    {
+      "id": "IV-E02-A",
+      "title": "Slot de Lucifer — parcours optionnel",
+      "status": "socle local implémenté et testé pour Lucifer; aucun nouveau sprite ou cycle de révélation",
+      "fields": {
+        "Identité / catégorie": "lucifer ; combattant déjà jouable. Le système concerne son droit de sélection dans le parcours optionnel, pas son état de production.",
+        "Univers / sources": "Hazbin Hotel, incarnation du roster ; sources existantes V3, adaptation UI originale.",
+        "Découverte": "Choix proposé : identifié sous silhouette noire, nom visible si filtre le permet ; un futur personnage secret utiliserait un emblème neutre.",
+        "Visuel / texte": "Dossier scellé, contour contrasté, sceau et « À débloquer ». Condition courte lisible au focus et détail sans effet d’erreur répétitif.",
+        "Condition": "Chronique Charlie V3 terminée OU dix victoires admissibles du profil local ; chiffres de réglage du parcours, pas du lore.",
+        "Dépendances": "Kit et portrait déjà inscrits. Si ressource indisponible, afficher disponibilité technique ; un verrou ne remplace pas un asset manquant.",
+        "Contexte": "Dojo libre ; chapitre imposé = prêt narratif. Parcours désactivé par défaut : accès historique conservé.",
+        "Animation / recette": "Ouverture simple et variante réduite ; aucun nouveau cycle personnage déclaré. Tester sélection, lancement, focus, ancien profil et prêt."
+      }
+    },
+    {
+      "id": "IV-E02-B",
+      "title": "Règle locale — chronique OU victoires",
+      "status": "conditions locales ET/OU, fins versionnées, compteurs et doubles résultats testés",
+      "fields": {
+        "ID de conception": "IV-UNLOCK-LUCIFER-01 ; règle technique pact-lucifer-v1, contenu lucifer, dans src/standalone/content-access.ts.",
+        "Expression": "OR(storyCompletion(charlie,3), wins>=10). Aucun abonnement requis ; pas de transformation du OU en ET.",
+        "Événements / compteurs": "Complétions versionnées et stats.wins persistés ; les résultats du dojo ne participent pas.",
+        "Périmètre": "Profil de sauvegarde standalone, isolé du manager ; progression locale, non preuve commerciale.",
+        "Attribution": "Automatique, permanente, sans monnaie ni action de réclamation ; réévaluation idempotente sur les faits conservés.",
+        "Rétroactivité": "Oui pour les événements déjà prouvés par la sauvegarde. Pas de reconstruction de parties disparues.",
+        "Interface": "Présenter les deux alternatives et le compteur utile ; le filtre narratif peut masquer les détails de la chronique sans annuler les acquis.",
+        "Recette": "0/9/10 victoires, V1/V3, deux voies simultanées, doublon et sauvegarde importée ; conserver accès et garde-robe après rechargement."
+      }
+    },
+    {
+      "id": "IV-E02-C",
+      "title": "Avantage de soutien — cahier des charges non activé",
+      "status": "brief contextualisé ; production et recette dédiées restantes",
+      "fields": {
+        "Identité / état": "IV-SUPPORT-COSMETIC-PROPOSAL-01, version de conception 1 ; aucune offre ni avantage réel actif.",
+        "Fournisseur / admissibilité": "Patreon ou équivalent envisagé. Campagne et niveaux non configurés ; ne pas inventer leurs IDs, prix, dates ou justificatifs.",
+        "Contenus": "Habillage de cadre/ambiance original AU, sélection finale à faire après vérification de l’autorisation d’usage des assets ; aucun bonus de combat.",
+        "Modèle proposé": "Récompense permanente par lot explicitement annoncé ; catalogue temporaire possible seulement avec fiche séparée. Pas d’inclusion présumée de lots historiques.",
+        "Déclencheur": "Événement confirmé par service autoritatif et règles d’avantage versionnées ; compte lié seul, email identique ou capture insuffisants.",
+        "Expiration / retrait": "Fin ordinaire du soutien ne retire pas un lot permanent. Remboursement et retrait affectent seulement la source concernée selon politique définie avant lancement.",
+        "Hors ligne / déliaison": "Justificatif et tolérance à établir lors du backend ; aucune durée inventée. Déliaison, annulation et suppression du compte sont distinctes.",
+        "Avant activation": "Choisir offre, règles essais/cadeaux/gratuit/transfert, autorisations, compte cible, consentement, backend, textes et recette. Aucun bouton d’achat opérationnel livré."
+      }
+    },
+    {
+      "id": "IV-E02-D",
+      "title": "Charte — dossiers scellés d’exhibition",
+      "status": "sceaux et silhouettes de sélection vérifiés au clavier et en tactile émulé; secrets et abonnements hors recette",
+      "fields": {
+        "Univers / statut": "Interface originale compatible avec la direction scénique du standalone ; pas un contrat d’âme canonique ni une magie ajoutée au récit.",
+        "Personnage / costume": "Silhouette noire contrastée pour identité connue, emblème neutre pour secret ; tenue parent toujours consultable.",
+        "Stage / mode": "Miniature masquée et dossier fermé ; pictogramme de mode accompagné d’une condition écrite.",
+        "États": "Non révélé, À débloquer, Acquis, Installation nécessaire, Indisponible dans ce mode ; futur temporaire/inconnu/expiré ont des libellés distincts.",
+        "Actions": "Focus visible, explication au clic, ouverture brève après attribution ; aucun flash obligatoire ni dialogue d’erreur en boucle.",
+        "Accessibilité": "Icône + forme + texte, nom accessible filtré, tailles mobiles et clavier ; mouvement réduit transmet même état via transition simple.",
+        "Confidentialité narrative": "Ne pas charger une voix de personnage secret au survol ; noms, alt, aria, infobulles et miniature suivent découverte.",
+        "Recette": "Fond clair/sombre, zoom, petit écran, lecteur d’écran, interaction répétée et suppression d’animations ; revue visuelle après code."
+      }
+    },
+    {
+      "id": "IV-E02-E",
+      "title": "Accès à un stage spécial",
+      "status": "deux arènes locales sous condition et prêt narratif testés; aucune arène abonnée",
+      "fields": {
+        "Premier cas local": "hh-heaven-gates, arène intégrée ; condition de parcours optionnel à relier au module. Pas d’achat actif.",
+        "Sélection / participation": "Le profil doit posséder le droit de sélection dans le parcours. L’adversaire participe au match autorisé sans gagner ce droit.",
+        "Installation et versions": "Vérifier les plans requis avant match ; si ressource introuvable, message technique et repli annoncé, pas faux verrou financier.",
+        "Confort": "Vivante, statique et réduite suivent le même accès et la même géométrie.",
+        "Dojo / narration": "Dojo libre ; destination imposée de chapitre utilise prêt explicite. Une acquisition ne change pas la chronologie du récit.",
+        "Abonné futur": "Une ambiance de soutien serait un habillage original distinct. Distribution des assets et politique compétition doivent être définies avant réseau.",
+        "Expiration / replay": "Une configuration de match autorisée est conservée jusqu’au résultat. Replays/réseau non livrés, aucune garantie de lecture distante.",
+        "Recette": "Profil acquis/non acquis, invité local, dojo, chapitre, ressource absente et changement de droit entre deux parties."
+      }
+    },
+    {
+      "id": "IV-E02-F",
+      "title": "Matrice de validation d’accès",
+      "status": "sous-ensemble local testé; la matrice complète reste ouverte pour réseau, abonnements et états futurs",
+      "fields": {
+        "Profil test": "Sauvegarde standalone sans victoire puis seuil atteint ; isoler chaque scénario sans modifier le manager.",
+        "Local permanent": "Pas de droit → explication ; règle satisfaite → sélection ; deux règles satisfaites → une acquisition ; rechargement → acquis conservé.",
+        "Dépendances": "Costume acquis avant personnage = droit conservé et contexte expliqué ; fichier absent = état technique.",
+        "Temporaire futur": "Permanent valide OU temporaire expiré = acquis ; temporaire seul expiré = accès terminé ; service en panne = état inconnu, pas expiration.",
+        "Modes": "Dojo et prêt scénarisé autorisés selon politique ; sélection libre refusée si verrouillée ; parcours commencé reprenable.",
+        "Sauvegarde": "Ancien profil, import/export, résultat dupliqué et interruption pendant révélation : acquisitions et préférences sans perte.",
+        "Interface": "Focus atteignable, condition complète, texte anti-spoiler, alternatives et repli annoncé.",
+        "État de recette": "La présente fiche spécifie les attentes. Résultats réels dans runtime-integration.json et rapports associés lorsqu’ils existent ; pas de validation automatique par la rédaction."
+      }
+    }
+  ],
+  "priorityDuos": [
+    {
+      "id": "IV-DUO-CHARLIE-VAGGIE",
+      "members": [
+        "charlie",
+        "vaggie"
+      ],
+      "priority": "P1",
+      "continuity": "S1, incarnation cohérente avec route",
+      "concept": "Appui commun / couverture de terrain",
+      "guardrail": "Le lien des personnages s’appuie sur les sources V3 ; chorégraphie et nom restent originaux.",
+      "sourceAnchor": "hh-i-cast",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-MOXXIE-MILLIE",
+      "members": [
+        "hb_moxxie",
+        "hb_millie"
+      ],
+      "priority": "P1",
+      "continuity": "Helluva, même période",
+      "concept": "Couverture de tir / approche de mêlée",
+      "guardrail": "Respecter équipement et connaissances de chaque incarnation ; aucune arme nouvelle implicite.",
+      "sourceAnchor": "project-profile",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-BLITZO-MOXXIE",
+      "members": [
+        "hb_blitzo",
+        "hb_moxxie"
+      ],
+      "priority": "P1",
+      "continuity": "Mission I.M.P. AU",
+      "concept": "Tirs alternés et retrait coordonné",
+      "guardrail": "Action de mission créée pour le jeu ; pas de téléportation native attribuée à un imp.",
+      "sourceAnchor": "project-profile",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-BLITZO-MILLIE",
+      "members": [
+        "hb_blitzo",
+        "hb_millie"
+      ],
+      "priority": "P1",
+      "continuity": "Mission I.M.P. AU",
+      "concept": "Ouverture à distance / finition de mêlée",
+      "guardrail": "Le timing, les dégâts et le nom ne sont pas canoniques.",
+      "sourceAnchor": "project-profile",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-HUSK-ANGEL",
+      "members": [
+        "husk",
+        "angeldust"
+      ],
+      "priority": "P1",
+      "continuity": "S1 après la relation admise par la route",
+      "concept": "Couverture mutuelle et sortie de scène",
+      "guardrail": "Le lien de soutien est référencé ; aucune romance ou guérison inventée présentée comme attestée.",
+      "sourceAnchor": "hh-i-husk-angel",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-CARMILLA-VAGGIE",
+      "members": [
+        "carmilla",
+        "vaggie"
+      ],
+      "priority": "P1",
+      "continuity": "S1, contexte d’entraînement cohérent",
+      "concept": "Exercice de garde et contre",
+      "guardrail": "Inspiration de transmission, pas scène nouvelle présentée comme extrait d’épisode.",
+      "sourceAnchor": "hh-i-carmilla",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-FIZZ-ASMODEUS",
+      "members": [
+        "hb_fizzarolli",
+        "hb_asmodeus"
+      ],
+      "priority": "P2",
+      "continuity": "Versions compatibles définies par leurs fiches",
+      "concept": "Relais de scène avec contribution distincte",
+      "guardrail": "Ne pas extrapoler les capacités scéniques en pouvoir non attesté ; audit primaire avant dessin.",
+      "sourceAnchor": "project-profile",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    },
+    {
+      "id": "IV-DUO-GLITZ-GLAM",
+      "members": [
+        "hb_glitz",
+        "hb_glam"
+      ],
+      "priority": "P2",
+      "continuity": "S2, incarnation de concours",
+      "concept": "Présentation synchronisée et relais",
+      "guardrail": "La pose commune et les variantes sont à produire ; ne pas fusionner les deux identités en un sprite autonome.",
+      "sourceAnchor": "project-profile",
+      "status": "conception ; aucune chorégraphie exclusive produite",
+      "evidencePaths": [
+        "docs/standalone/campaign-design-v3.json",
+        "src/standalone/roster.ts"
+      ]
+    }
+  ],
+  "bonusDesigns": [
+    {
+      "id": "IV-BONUS-01",
+      "family": "destruction",
+      "name": "Livraison à démonter",
+      "stageId": "imp-exterior",
+      "fighters": [
+        "hb_blitzo",
+        "hb_moxxie",
+        "hb_millie"
+      ],
+      "objective": "Trois zones destructibles, 45 s proposées",
+      "restriction": "Facultatif ; progression suivante même en échec",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-02",
+      "family": "horde",
+      "name": "Exercice de défense de l’hôtel",
+      "stageId": "hotel-exterior",
+      "fighters": [
+        "charlie",
+        "vaggie"
+      ],
+      "objective": "Cibles de simulation AU, plafond proposé six simultanées",
+      "restriction": "Ne pas transformer un exorciste canonique en ennemi fragile sans justification",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-03",
+      "family": "precision",
+      "name": "Dossiers de tir I.M.P.",
+      "stageId": "imp-reception",
+      "fighters": [
+        "hb_moxxie",
+        "hb_blitzo"
+      ],
+      "objective": "Cibles inertes distinctes des personnes",
+      "restriction": "Version mêlée équivalente pour personnages sans tir",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-04",
+      "family": "defense",
+      "name": "Leçon de contre",
+      "stageId": "carmine-industries",
+      "fighters": [
+        "vaggie",
+        "carmilla"
+      ],
+      "objective": "Assauts annoncés et fenêtres lisibles",
+      "restriction": "Séquence d’entraînement AU, pas ajout d’un épisode",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-05",
+      "family": "mobility",
+      "name": "Sortie d’exercice",
+      "stageId": "hellaverse-training",
+      "fighters": [
+        "all-tested-kits"
+      ],
+      "objective": "Atteindre une issue sans pouvoir de vol obligatoire",
+      "restriction": "Le moteur de mobilité doit être étendu avant validation",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-06",
+      "family": "protection",
+      "name": "Dossiers à protéger",
+      "stageId": "hotel-lobby",
+      "fighters": [
+        "charlie",
+        "vaggie"
+      ],
+      "objective": "Défendre un objet de simulation pendant une durée bornée",
+      "restriction": "Pas de victime civile imposée ; objectif non duel explicite",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-07",
+      "family": "interaction",
+      "name": "Couper le signal d’exercice",
+      "stageId": "dhorks",
+      "fighters": [
+        "hb_blitzo",
+        "hb_moxxie"
+      ],
+      "objective": "Interrupteurs de jeu et cibles mécaniques",
+      "restriction": "Sabotage fictif dans la simulation, aucune expertise informatique canonique inventée",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-08",
+      "family": "entity",
+      "name": "Atelier de déploiement",
+      "stageId": "pentious-workshop",
+      "fighters": [
+        "sirpentious"
+      ],
+      "objective": "Positionner une entité et activer une cible déportée",
+      "restriction": "Bloqué par système d’entité et référence visuelle à valider",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-09",
+      "family": "team",
+      "name": "Couverture et relais",
+      "stageId": "hellaverse-training",
+      "fighters": [
+        "hb_moxxie+hb_millie"
+      ],
+      "objective": "Deux cibles exigeant contribution des deux membres",
+      "restriction": "Bloqué par mode Duo ; pas proposé dans la campagne courante avant versionnement",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    },
+    {
+      "id": "IV-BONUS-10",
+      "family": "personality",
+      "name": "Répétition de spectacle",
+      "stageId": "ozzies-cabaret",
+      "fighters": [
+        "hb_fizzarolli"
+      ],
+      "objective": "Épreuve courte de précision scénique adaptée aux commandes",
+      "restriction": "Original compatible ; pas de paroles ou numéro officiel copiés",
+      "status": "conception ; objectif, assets et intégration manquants",
+      "rewardPolicy": "ID unique, attribution permanente locale après résultat validé, pas de doublon",
+      "continuity": "séquence originale AU"
+    }
+  ],
+  "validationCases": [
+    {
+      "id": "IV-E01-QA-01",
+      "sourceId": "extension01",
+      "description": "Navigation rapide puis confirmation et désélection sans effets résiduels.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-02",
+      "sourceId": "extension01",
+      "description": "Taunt interrompu et retour au contrôle selon les fenêtres annoncées.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-03",
+      "sourceId": "extension01",
+      "description": "Assistance et relais demandés au même instant pour un partenaire unique.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-04",
+      "sourceId": "extension01",
+      "description": "Deux actions tentant de dépenser la dernière portion de jauge.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-05",
+      "sourceId": "extension01",
+      "description": "Soutien touché ou KO pendant son arrivée ; état de l'équipe cohérent.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-06",
+      "sourceId": "extension01",
+      "description": "Super duo demandée pendant la sortie d'une assistance.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-07",
+      "sourceId": "extension01",
+      "description": "Attaque initiale du super bloquée ou ratée ; résolution correcte.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-08",
+      "sourceId": "extension01",
+      "description": "Fin dramatique avec version, lieu ou partenaire incompatible ; remplacement.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-09",
+      "sourceId": "extension01",
+      "description": "Clash simultané avec projectile tiers, piège ou assistance.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-10",
+      "sourceId": "extension01",
+      "description": "Réussite, échec, égalité, absence de réponse et déconnexion pendant un QTE.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-11",
+      "sourceId": "extension01",
+      "description": "Propriétaire en réserve ou KO avec une entité encore active.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-12",
+      "sourceId": "extension01",
+      "description": "Transition d'arène pendant un combo utilisant un objet placé.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-13",
+      "sourceId": "extension01",
+      "description": "Réflexion de projectile puis dégâts, attribution et éventuelle fin dramatique.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-14",
+      "sourceId": "extension01",
+      "description": "Tentative de boucle infinie combinant pièges, relais et assistances.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-15",
+      "sourceId": "extension01",
+      "description": "Horde à la limite de présence : performance, lisibilité et issues accessibles.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-16",
+      "sourceId": "extension01",
+      "description": "Bonus réussi ou raté : bonne progression, ressources et récompenses.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-17",
+      "sourceId": "extension01",
+      "description": "Déblocage, sauvegarde et rechargement : contenu conservé sans doublon.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E01-QA-18",
+      "sourceId": "extension01",
+      "description": "Passage abrégé d'une scène et correction réseau : même état de combat.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "profil équipe/entités/bonus futur"
+    },
+    {
+      "id": "IV-E02-QA-01",
+      "sourceId": "extension02",
+      "description": "Personnage secret : nom, silhouette, voix et texte accessible ne le trahissent pas.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-02",
+      "sourceId": "extension02",
+      "description": "Slot verrouillé : navigation et condition lisibles, confirmation non bloquante.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-03",
+      "sourceId": "extension02",
+      "description": "Déblocage automatique ou à réclamer : bon état, bonne animation, bon contenu.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-04",
+      "sourceId": "extension02",
+      "description": "Condition ET / OU : branches correctes, progression et alternatives explicites.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-05",
+      "sourceId": "extension02",
+      "description": "Récompense réclamée deux fois ou sauvegarde interrompue : attribution unique.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-06",
+      "sourceId": "extension02",
+      "description": "Costume acquis avant le personnage : récompense conservée, dépendance indiquée.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-07",
+      "sourceId": "extension02",
+      "description": "Costume gagné définitivement puis abonnement expiré : accès permanent conservé.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-08",
+      "sourceId": "extension02",
+      "description": "Catalogue temporaire expiré : source retirée, préférences et progression préservées.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-09",
+      "sourceId": "extension02",
+      "description": "Annulation avec accès encore valide : aucune révocation anticipée injustifiée.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-10",
+      "sourceId": "extension02",
+      "description": "Service indisponible : état inconnu et politique hors ligne correctement appliqués.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-11",
+      "sourceId": "extension02",
+      "description": "Droit valide mais assets absents : message d'installation, pas faux verrou de paiement.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-12",
+      "sourceId": "extension02",
+      "description": "Remboursement d'une source et seconde source valide : bon accès final.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-13",
+      "sourceId": "extension02",
+      "description": "Stage abonné contre joueur non abonné : chargement, participation et choix conformes.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-14",
+      "sourceId": "extension02",
+      "description": "Transition vers un stage lié : destination et assets disponibles pour la partie.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-15",
+      "sourceId": "extension02",
+      "description": "Expiration pendant un match : résultat valide et changement au moment prévu.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-16",
+      "sourceId": "extension02",
+      "description": "Costume ou partenaire équipé devenu inaccessible : remplacement sans perte de profil.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-17",
+      "sourceId": "extension02",
+      "description": "Variante vivante ou statique : choix de confort disponible selon la règle annoncée.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-18",
+      "sourceId": "extension02",
+      "description": "Mode verrouillé : aucune boucle de prérequis et progression récupérable.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-19",
+      "sourceId": "extension02",
+      "description": "Compte invité, double liaison ou changement de niveau : droits attribués au bon profil.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-20",
+      "sourceId": "extension02",
+      "description": "Événements externes doublés ou désordonnés : état final cohérent, pas de double lot.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-21",
+      "sourceId": "extension02",
+      "description": "Clavier, manette, lecteur d'écran et mouvement réduit : états compréhensibles.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    },
+    {
+      "id": "IV-E02-QA-22",
+      "sourceId": "extension02",
+      "description": "Migration, resynchronisation et restauration : acquisitions et sources conservées.",
+      "status": "à tester",
+      "proof": null,
+      "projectScope": "collection locale puis adaptateur externe selon le cas"
+    }
+  ],
+  "runtimeIntegration": {
+    "schemaVersion": 1,
+    "date": "2026-11-27",
+    "createdAt": "2026-11-27T00:44:22.578619+00:00",
+    "status": "intégration locale testée — sept règles de déblocage",
+    "scope": "Parcours optionnel de deux personnages, deux costumes, deux arènes et Boss Rush; contenu, kits jouables et galerie de réserve conservés.",
+    "tested": true,
+    "testCommand": "npm run test -- src/tests/standalone-content-access.test.ts src/tests/standalone-content-access-ui.test.tsx src/tests/standalone-progression.test.ts src/tests/standalone-ui.test.tsx",
+    "testResult": {
+      "unitAndComponentTests": 48,
+      "testFiles": 4,
+      "browserChecks": 28,
+      "visuallyReviewedScreenshots": 8,
+      "typecheck": "passed",
+      "targetedLint": "passed",
+      "browserVersion": "143.0.7499.4"
+    },
+    "rules": [
+      {
+        "name": "Lucifer Morningstar",
+        "category": "fighter",
+        "contentId": "lucifer",
+        "ruleId": "pact-lucifer-v1",
+        "conditionText": "Chronique actuelle de Charlie terminée OU dix victoires J1 hors dojo."
+      },
+      {
+        "name": "Stolas",
+        "category": "fighter",
+        "contentId": "hb_stolas",
+        "ruleId": "pact-stolas-v1",
+        "conditionText": "Chronique actuelle de Blitzø terminée OU dix victoires J1 hors dojo."
+      },
+      {
+        "name": "Blitzø — Bodyguard, Loo Loo Land",
+        "category": "costume",
+        "contentId": "hb_blitzo-bodyguard-looloo",
+        "ruleId": "pact-blitz-bodyguard-v1",
+        "conditionText": "Une victoire J1 hors dojo."
+      },
+      {
+        "name": "Moxxie — Bodyguard, Loo Loo Land",
+        "category": "costume",
+        "contentId": "hb_moxxie-bodyguard-looloo",
+        "ruleId": "pact-moxxie-bodyguard-v1",
+        "conditionText": "Trois victoires J1 hors dojo."
+      },
+      {
+        "name": "Paradis — Portes célestes",
+        "category": "stage",
+        "contentId": "hh-heaven-gates",
+        "ruleId": "pact-heaven-gates-v1",
+        "conditionText": "Chronique actuelle de Charlie terminée OU cinq victoires J1 hors dojo."
+      },
+      {
+        "name": "Cour des Goetia",
+        "category": "stage",
+        "contentId": "goetia-court",
+        "ruleId": "pact-goetia-court-v1",
+        "conditionText": "Chronique actuelle de Blitzø terminée OU cinq victoires J1 hors dojo."
+      },
+      {
+        "name": "Boss Rush",
+        "category": "mode",
+        "contentId": "boss-rush",
+        "ruleId": "pact-boss-rush-v1",
+        "conditionText": "Un parcours Arcade terminé (cinq victoires)."
+      }
+    ],
+    "evidencePaths": [
+      "art/audits/unlock-slots-20261127/unit-tests.json",
+      "art/audits/unlock-slots-20261127/technical-qa.json",
+      "art/audits/unlock-slots-20261127/browser-qa.json",
+      "art/audits/unlock-slots-20261127/browser-run.log",
+      "art/audits/unlock-slots-20261127/visual-review.json"
+    ],
+    "fixes": [
+      "Les tenues sont résolues et figées au lancement du duel; les nouvelles récompenses ne modifient plus le dessin pendant la victoire.",
+      "Les gardes de lancement vérifient aussi les accès hors parcours. Les prêts de reprise exigent le même parcours actif et son adversaire exact.",
+      "Espacement entre aide de progression et focus du premier slot corrigé après inspection visuelle."
+    ],
+    "sectionDeltas": {
+      "50": {
+        "status": "partielle — socle local testé",
+        "scope": "Parcours de déblocage optionnel, désactivé par défaut; sept règles sur des contenus jouables existants.",
+        "remaining": "Élargir les règles au catalogue après validation des dépendances; aucun contenu de réserve promu."
+      },
+      "51": {
+        "status": "partielle — socle local testé",
+        "scope": "Découverte, acquisition locale, disponibilité technique et compatibilité sont séparées dans le résolveur. Les droits locaux, prêts dojo/récit et messages techniques sont testés.",
+        "remaining": "Droits temporaires, inconnus et expirés; détection réelle des installations; profil connecté et sources multiples restent à construire."
+      },
+      "52": {
+        "status": "partielle — socle local testé",
+        "scope": "Sceaux décoratifs originaux avec cadenas, silhouettes noires et texte explicatif; huit captures inspectées en bureau et mobile.",
+        "remaining": "Étendre la charte aux révélations animées et aux futurs contenus secrets sans prétendre à un objet canonique."
+      },
+      "53": {
+        "status": "partielle — socle local testé",
+        "scope": "Lucifer et Stolas verrouillables; gardes en sélection et au lancement; dojo libre, adversaires de parcours et reprise de parcours établis autorisés explicitement.",
+        "remaining": "Partenaires et équipes restent dépendants du futur mode Duo; aucun nouveau combattant ajouté."
+      },
+      "54": {
+        "status": "partielle — socle local testé",
+        "scope": "Deux costumes Bodyguard verrouillables; la garde-robe conserve la préférence, applique la tenue habituelle au besoin et restaure la récompense. Tenues figées pendant chaque duel.",
+        "remaining": "Palettes, accessoires équipables, récompense avant propriétaire verrouillé et vêtements avec droits externes restent à couvrir par des cas concrets."
+      },
+      "55": {
+        "status": "partielle — socle local testé",
+        "scope": "Portes célestes et Cour des Goetia verrouillables; sceau, progression, refus de sélection, repli sur arène libre et prêt narratif.",
+        "remaining": "Stages temporaires, transitions d’arène et droits multijoueur connecté restent à réaliser."
+      },
+      "56": {
+        "status": "partielle — socle local testé",
+        "scope": "Boss Rush exige une Arcade terminée. La tuile explique la condition; un parcours validé avant activation reste reprenable sans débloquer de nouvelle sélection.",
+        "remaining": "Autres modes avancés ou règles d’accès externes restent à développer."
+      },
+      "57": {
+        "status": "partielle — socle local testé",
+        "scope": "Compteurs validés et fins de chronique versionnées; conditions ET/OU, alternatives, attribution unique sur identifiant de résultat, progression déjà acquise et import/export testés.",
+        "remaining": "Réclamation manuelle, défis/records supplémentaires et sources distantes restent à développer."
+      },
+      "58": {
+        "status": "partielle — socle local testé",
+        "scope": "Notification textuelle du nombre de récompenses acquises; aucune tenue ne change pendant le duel qui accorde la récompense.",
+        "remaining": "Hub d’Archives, navigation d’exploration, coffres et scène de révélation animée ne sont pas implémentés."
+      },
+      "62": {
+        "status": "partielle — socle local testé",
+        "scope": "Profil local partagé par les deux côtés, dojo libre sans points, prêts narratifs et reprise de parcours commencés. Sélections libres contrôlées avant lancement.",
+        "remaining": "Identités multiples, multijoueur en ligne, droits d’invités et replays ne sont pas couverts."
+      },
+      "63": {
+        "status": "partielle — socle local testé",
+        "scope": "Sceaux focusables, libellés textuels, conditions détaillées, silhouettes et mouvement réduit vérifiés par tests et Chromium clavier/tactile émulé. Présentation secrète neutre testée isolément.",
+        "remaining": "Aucun contenu secret réel dans les sept règles; navigation manette et lecteur d’écran dédiées restent à tester."
+      },
+      "64": {
+        "status": "partielle — socle local testé",
+        "scope": "Migration additive, import/export validé, préférences conservées, doublons de résultat ignorés; 48 tests ciblés, 28 contrôles navigateur et huit captures inspectées.",
+        "remaining": "La recette complète des extensions, l’arrêt pendant écriture, les serveurs et les abonnements ne sont pas validés par ce lot."
+      }
+    },
+    "implementedCardScopes": {
+      "IV-E02-A": "socle local implémenté et testé pour Lucifer; aucun nouveau sprite ou cycle de révélation",
+      "IV-E02-B": "conditions locales ET/OU, fins versionnées, compteurs et doubles résultats testés",
+      "IV-E02-D": "sceaux et silhouettes de sélection vérifiés au clavier et en tactile émulé; secrets et abonnements hors recette",
+      "IV-E02-E": "deux arènes locales sous condition et prêt narratif testés; aucune arène abonnée",
+      "IV-E02-F": "sous-ensemble local testé; la matrice complète reste ouverte pour réseau, abonnements et états futurs"
+    },
+    "caseCoverage": [
+      {
+        "caseId": "IV-E02-QA-02",
+        "scope": "Navigation clavier, activation tactile émulée, condition et refus de sélection contrôlés."
+      },
+      {
+        "caseId": "IV-E02-QA-04",
+        "scope": "Conditions ET/OU, groupes imbriqués et refus des groupes vides testés."
+      },
+      {
+        "caseId": "IV-E02-QA-05",
+        "scope": "Double callback de résultat ignoré et récompense conservée après export/import; arrêt en cours d’écriture non simulé."
+      },
+      {
+        "caseId": "IV-E02-QA-11",
+        "scope": "Résolveur technique testé avec missing; aucun gestionnaire d’installation réel."
+      },
+      {
+        "caseId": "IV-E02-QA-16",
+        "scope": "Costume local mémorisé conservé mais remplacé pendant verrouillage, puis restauré au duel suivant et après rechargement."
+      },
+      {
+        "caseId": "IV-E02-QA-18",
+        "scope": "Boss Rush ouvert après Arcade, reprise possible avant nouvelle acquisition, aucune nouvelle sélection interdite."
+      },
+      {
+        "caseId": "IV-E02-QA-21",
+        "scope": "Clavier, tactile émulé et mouvement réduit; manette/lecteur d’écran non testés."
+      },
+      {
+        "caseId": "IV-E02-QA-22",
+        "scope": "Ancien profil migré sans nouvelle restriction, import/export et garde-robe testés; aucun service de resynchronisation."
+      }
+    ],
+    "limitations": [
+      "Aucune animation supplémentaire, assistance, relais, super duo, fin collective, bonus jouable ou hub d’exploration livré par ce module.",
+      "Aucun abonnement, paiement, service Patreon, droit temporaire ou synchronisation serveur implémenté.",
+      "Le profil local est validé mais non signé: ce mécanisme constitue une progression de jeu hors ligne, pas une sécurité de commerce.",
+      "Les flags d’installation et de compatibilité sont des entrées explicites du résolveur; aucun téléchargement ou détection automatique de fichiers n’est ajouté.",
+      "Le statut secret est testé dans la fonction de présentation mais aucune des sept règles ne cache entièrement son identité.",
+      "Le navigateur contrôle les menus réels; les victoires/reprises UI sont produites dans les tests de composants par un moteur simulé.",
+      "Recette sur Chromium 143.0.7499.4, clavier et tactile émulé; pas de garantie de manette, lecteur d’écran, téléphone physique ou réseau."
+    ],
+    "fidelityOneToOneCertified": false
+  },
+  "counts": {
+    "existingGeneralSections": 30,
+    "newExtensionSections": 38,
+    "totalMappedSections": 68,
+    "existingGeneralCards": 10,
+    "newExtensionCards": 16,
+    "priorityDuos": 8,
+    "bonusDesigns": 10,
+    "plannedValidationCases": 40,
+    "newDrawingsByThisAnnex": 0,
+    "newAnimationCyclesByThisAnnex": 0,
+    "newPlayableKitsByThisAnnex": 0
+  },
+  "fidelityOneToOneCertified": false,
+  "publicationNote": "Les fichiers sources et cette annexe sont intégrables à la PR ; le statut de publication est vérifié par la livraison du lot, pas par ce générateur."
+}

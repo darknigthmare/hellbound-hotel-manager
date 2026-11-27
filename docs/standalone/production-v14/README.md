@@ -114,4 +114,4 @@ Le poste de radio de Sloth demeure masqué par le comptoir ; le pot de la plante
 - [Registre des refus](refused-attempts.json), [cibles différées](root-deferred-targets.json) et [plan global de production](../extension-plan.json)
 - [Audit de la bible de référence](workbook-baseline-audit.json) et [bible V13 — fichier Excel](../INFERNAL_VERSUS_BIBLE_V13.xlsx)
 
-Les handoffs figés décrivent les dessins acceptés avant validation en jeu. Le registre courant est encore un registre de préparation ; les futurs rapports techniques, navigateur, classeur et publication établiront l’état final livré.
+Les handoffs figés décrivent les dessins acceptés avant validation en jeu. Le registre final, les rapports techniques, le contrôle navigateur et la bible établissent l’état livré. La publication du 27 novembre 2026 est confirmée au commit `d03434054739e2995ccdc86617fb2ca3a1ea56bf`, dont l’arbre est identique à l’instantané local vérifié ; la [preuve de reprise](../production-v15/publication-baseline-v14.json) consigne les 249 chemins transférés sans suppression historique.

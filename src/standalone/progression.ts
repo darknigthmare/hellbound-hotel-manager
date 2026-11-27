@@ -26,6 +26,8 @@ export interface StandaloneOptions {
   stagePresentation?: 'alive' | 'static' | 'reduced';
   /** Later-season scenery and reserve art require a separate, explicit opt-in. */
   allowSeasonThree?: boolean;
+  /** Optional exhibition progression; existing profiles retain free selection. */
+  progressionEnabled?: boolean;
 }
 
 export interface StandaloneStats {
@@ -200,7 +202,7 @@ export function tournamentTable(fighterId: string, rosterIds: readonly string[],
 export function createDefaultSave(): StandaloneSave {
   return {
     version: 1,
-    options: { soundtrack: true, reducedMotion: false, difficulty: 'standard', stagePresentation: 'alive', allowSeasonThree: false },
+    options: { soundtrack: true, reducedMotion: false, difficulty: 'standard', stagePresentation: 'alive', allowSeasonThree: false, progressionEnabled: false },
     stats: { matches: 0, wins: 0, losses: 0, draws: 0, streak: 0, bestStreak: 0, bestSurvival: 0, completedArcades: 0 },
     storyEndings: [], storyCompletions: [], campaignEndings: [], recentResults: [], processedResultIds: [], run: null,
   };
@@ -401,6 +403,7 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   const optionKeys = ['soundtrack', 'reducedMotion', 'difficulty'];
   if (entry.options && typeof entry.options === 'object' && Object.hasOwn(entry.options, 'stagePresentation')) optionKeys.push('stagePresentation');
   if (entry.options && typeof entry.options === 'object' && Object.hasOwn(entry.options, 'allowSeasonThree')) optionKeys.push('allowSeasonThree');
+  if (entry.options && typeof entry.options === 'object' && Object.hasOwn(entry.options, 'progressionEnabled')) optionKeys.push('progressionEnabled');
   const options = record(entry.options, optionKeys, 'Options');
   ensure(typeof options.soundtrack === 'boolean' && typeof options.reducedMotion === 'boolean' && DIFFICULTIES.includes(options.difficulty as CombatAiDifficulty), 'Options incompatibles.');
   // Old reduced-motion saves keep a reduced stage presentation on first load.
@@ -409,6 +412,8 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   // Absence in a legacy save never unlocks newer-season artwork.
   const allowSeasonThree = Object.hasOwn(options, 'allowSeasonThree') ? options.allowSeasonThree : false;
   ensure(typeof allowSeasonThree === 'boolean', 'Option de saison 3 incompatible.');
+  const progressionEnabled = Object.hasOwn(options, 'progressionEnabled') ? options.progressionEnabled : false;
+  ensure(typeof progressionEnabled === 'boolean', 'Option de déblocage incompatible.');
   const counters = record(entry.stats, ['matches', 'wins', 'losses', 'draws', 'streak', 'bestStreak', 'bestSurvival', 'completedArcades'], 'Statistiques');
   ensure(Object.values(counters).every(value => integer(value, 0, MAX_SAVED_MATCHES)), 'Compteurs invalides.');
   const stats = { ...counters } as unknown as StandaloneStats;
@@ -458,7 +463,7 @@ export function validateSave(value: unknown, rosterIds: readonly string[]): Stan
   ensure(storyCompletions.length * 3 + campaignEndings.length * GLOBAL_CAMPAIGN.chapters.length + stats.completedArcades * 5 <= stats.wins, 'Épilogues sans les victoires correspondantes.');
   return {
     version: 1,
-    options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty, stagePresentation: stagePresentation as StandaloneOptions['stagePresentation'], allowSeasonThree },
+    options: { soundtrack: options.soundtrack, reducedMotion: options.reducedMotion, difficulty: options.difficulty as CombatAiDifficulty, stagePresentation: stagePresentation as StandaloneOptions['stagePresentation'], allowSeasonThree, progressionEnabled },
     ...(wardrobe ? { wardrobe } : {}),
     stats, storyEndings: [...storyEndings], storyCompletions, campaignEndings: [...campaignEndings], recentResults, processedResultIds: [...processedResultIds], run,
   };

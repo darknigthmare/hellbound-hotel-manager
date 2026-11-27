@@ -1,0 +1,59 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 qa
+> npm run typecheck && npm run lint && npm run test && npm run build && npm run build:standalone && npm run check:standalone
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 lint
+> eslint . --max-warnings=0
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> hellbound-hotel-manager@0.1.0 test
+> vitest run --maxWorkers=1
+
+
+ RUN  v4.1.10 /mnt/data/hellbound-hotel-manager
+
+ ❯ src/tests/standalone-narrative.test.ts (10 tests | 1 failed) 34ms
+     × resumes an old mid-story save with the exact old opponent and stage without rewriting storage 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/tests/standalone-narrative.test.ts > versioned narrative and save compatibility > resumes an old mid-story save with the exact old opponent and stage without rewriting storage
+AssertionError: expected { soundtrack: false, …(5) } to deeply equal { soundtrack: false, …(4) }
+
+- Expected
++ Received
+
+  {
+    "allowSeasonThree": false,
+    "difficulty": "rookie",
++   "progressionEnabled": false,
+    "reducedMotion": true,
+    "soundtrack": false,
+    "stagePresentation": "reduced",
+  }
+
+ ❯ src/tests/standalone-narrative.test.ts:68:33
+     66|     expect(loaded.status).toBe('ok');
+     67|     expect(storage.setItem).not.toHaveBeenCalled();
+     68|     expect(loaded.save.options).toEqual({ ...old.options, stagePresent…
+       |                                 ^
+     69|     expect(loaded.save.run).toEqual({ ...old.run, routeVersion: 1 });
+     70|     expect(getRunStory(loaded.save.run!)?.title).toBe('Une place à la …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 50 passed (51)
+      Tests  1 failed | 433 passed (434)
+   Start at  01:44:59
+   Duration  72.34s (transform 1.99s, setup 0ms, import 6.41s, tests 50.30s, environment 8.75s)
+

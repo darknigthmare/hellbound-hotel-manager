@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 1,
+  "edition": "V15",
+  "date": "2026-11-27",
+  "status": "assets_prepared_runtime_browser_qa_pending",
+  "baselineLocalCommit": "93c2b130535a0c85973a9944b5cf635fc847b6f8",
+  "baseline": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 114,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 74,
+    "catalogueIdsWithoutStandaloneBase": 95,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 94,
+    "reserveGalleryEntries": 138,
+    "runtimeCostumeFamilies": 27,
+    "activeStages": 51,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "counts": {
+    "distinctDrawings": 5,
+    "recoveredDrawings": 4,
+    "newGenerationThisTurn": 1,
+    "newStandaloneBases": 1,
+    "newlyCoveredCatalogueIds": 1,
+    "narrativeArchives": 4,
+    "narrativeSilhouettes": 2,
+    "characterPortraits": 2,
+    "masterPng": 5,
+    "losslessWebp": 5,
+    "deliveredImageFiles": 10,
+    "deliveredImageBytes": 7816422,
+    "newAnimationCycles": 0,
+    "newPlayableKits": 0
+  },
+  "proposedCumulativeCounts": {
+    "catalogueIds": 209,
+    "distinctProductionIdentitiesAfterKnownAlias": 208,
+    "activeFighters": 43,
+    "standaloneBases": 115,
+    "activeStandaloneBases": 40,
+    "reserveStandaloneBases": 75,
+    "catalogueIdsWithoutStandaloneBase": 94,
+    "distinctProductionIdentitiesWithoutStandaloneBase": 93,
+    "reserveGalleryEntries": 143,
+    "runtimeCostumeFamilies": 27,
+    "activeStages": 51,
+    "illustratedPersonalScenes": 127,
+    "personalScenes": 129,
+    "illustratedGlobalScenes": 11,
+    "globalScenesIncludingBookends": 11
+  },
+  "assets": [
+    {
+      "id": "hb_queef-creator-collection",
+      "master": "production/v15/characters/masters/queef-creator-collection-candidate02.png",
+      "export": "public/assets/production/v15/characters/hb_queef-creator-collection.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds16": [
+        17,
+        19,
+        935,
+        1527
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "83b514d7faa458f61b71ddf268463fe6ecc5a013f5abf1314e98ed21fab73eac",
+      "exportSha256": "45c4a8d53f0b9890d2605d36ae718d29f0427ea55d095ee217eb806f8b2ada5d",
+      "rgbaPixelSha256": "2a646e1acf51a3cc9cd9c42eccd70abff2d3d80577c6f620c0a65a9ad834bd45",
+      "masterBytes": 1712631,
+      "exportBytes": 1148702,
+      "name": "Queef · Creator Collection, Amanda Heard",
+      "sourceIdentityId": "hb_queef",
+      "productionIdentityId": "hb_queef",
+      "franchise": "Helluva Boss",
+      "category": "support_base",
+      "kind": "support_base",
+      "subtype": "support_base",
+      "continuity": "official_merchandise_undated",
+      "spoilerScope": "season_2",
+      "frameCoverage": "full_body",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé.",
+      "reference": "Motif entier du produit officiel Creator Collection d’Amanda Heard ; incarnation graphique de produit dérivé, non modèle d’épisode.",
+      "references": [
+        {
+          "url": "https://www.stylishoccult.com/products/fizz-oversized-dog-t-shirt-blue",
+          "kind": "official_merchandise",
+          "title": "Creator Collection, Amanda Heard · Fizz Oversized Quieve T-Shirt"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.stylishoccult.com/products/fizz-oversized-dog-t-shirt-blue"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v15/characters/references/queef-official-creator-collection.png",
+          "sha256": "679ad28488afaf232b265088d1412f8314f9beff7651dccdb3edfe928d59ad2d",
+          "bytes": 308376,
+          "url": "https://www.stylishoccult.com/products/fizz-oversized-dog-t-shirt-blue",
+          "kind": "official_merchandise",
+          "title": "Creator Collection, Amanda Heard · Fizz Oversized Quieve T-Shirt",
+          "primary": true,
+          "visuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Merchandise stylization is retained, including the pink outline; this is not a certified episode-design reproduction.",
+        "Margins are narrow on the left, top and especially bottom (9 px at alpha >=16), despite the generation prompt asking for generous margins. Important silhouette parts remain inside the frame.",
+        "Maximum alpha is 254 rather than 255. Keep the native transparency; this review does not authorize or perform thresholding, recoloring or background repair.",
+        "Very low-alpha specks remain in transparent margins and on 32 sampled border pixels; the strongest edge alpha is recorded above. No detached visible component exists at alpha >=16.",
+        "This acceptance covers an autonomous static support drawing. It adds no selectable combat kit, movement animation or in-game placement verification.",
+        "Le produit et son attribution Amanda Heard ont été revérifiés sur la page officielle le 27 novembre 2026."
+      ],
+      "visualReview": "docs/standalone/production-v15/characters-visual-review.json",
+      "imageQa": "docs/standalone/production-v15/image-qa.json",
+      "addsStandaloneBase": true,
+      "newlyCoveredCatalogueIds": [
+        "hb_queef"
+      ],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v15-2026-11-27",
+      "exportUrl": "/assets/production/v15/characters/hb_queef-creator-collection.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "intendedRole": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé."
+    },
+    {
+      "id": "hz_roo-creator-concept-2019-portrait",
+      "master": "production/v15/characters/masters/hz_roo-creator-concept-2019-portrait.png",
+      "export": "public/assets/production/v15/characters/hz_roo-creator-concept-2019-portrait.webp",
+      "dimensions": [
+        1024,
+        1535
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        38,
+        21,
+        997,
+        1519
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "00b8636367c73a3c54d6568e5661d1c655251e84f85114eec4a19e8145adc186",
+      "exportSha256": "cff1b695768996964c4b0ad0e2c9adabf8ab024c2032dc59c87960ef99ce22fd",
+      "rgbaPixelSha256": "e57d4febb541a1e810ce9dea564ee10d2b7ebfe88b24017d1c49056b65d9226f",
+      "masterBytes": 1219790,
+      "exportBytes": 821944,
+      "name": "Roo · concept 2019 · portrait",
+      "sourceIdentityId": "hz_roo",
+      "productionIdentityId": "hz_roo",
+      "franchise": "Hazbin Hotel",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "legacy_concept_2019",
+      "spoilerScope": "season_2",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé.",
+      "reference": "Concept attribué à Vivienne Medrano, 2019 ; reproduction secondaire inspectée. Le rôle de Roo dans la série et les théories sur Eve/Lilith ne sont pas établis par cette image.",
+      "references": [
+        {
+          "url": "https://comicbook.com/tv-shows/news/hazbin-hotel-creator-teases-a-long-awaited-big-bad-that-sets-up-a-huge-change/",
+          "kind": "secondary_reproduction_of_attributed_creator_art",
+          "title": "Reproduction secondaire du concept attribué à Vivienne Medrano, 2019"
+        },
+        {
+          "url": "https://twitter.com/VivziePop/status/1185376557419782144",
+          "kind": "creator_primary_source_unavailable",
+          "title": "Publication originale attribuée à la créatrice · accès non obtenu"
+        }
+      ],
+      "referenceUrls": [
+        "https://comicbook.com/tv-shows/news/hazbin-hotel-creator-teases-a-long-awaited-big-bad-that-sets-up-a-huge-change/",
+        "https://twitter.com/VivziePop/status/1185376557419782144"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v15/characters/references/roo-creator-concept-2019-secondary-reproduction.jpg",
+          "sha256": "6fbf7a232fa027cce2cb9a5c459a2881767ba6f0f45f5ab0cc24d021ba440b71",
+          "bytes": 127250,
+          "url": "https://comicbook.com/tv-shows/news/hazbin-hotel-creator-teases-a-long-awaited-big-bad-that-sets-up-a-huge-change/",
+          "kind": "secondary_reproduction_of_attributed_creator_art",
+          "title": "Reproduction secondaire du concept attribué à Vivienne Medrano, 2019",
+          "primary": false,
+          "visuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "La source examinée est une reproduction secondaire attribuée à la créatrice ; le tweet primaire demeure inaccessible.",
+        "La géométrie des épines, le nombre et la place exacte des petites marques, les chaînes et les accents lumineux sont adaptés ; pas de certification 1:1.",
+        "Marges significatives mesurées : gauche 38, haut 21, droite 27, bas 16 px ; plus étroites que le confort demandé dans le prompt.",
+        "Présence de résidus natifs alpha 1 sur 34 pixels de bord ; aucun pixel alpha ≥ 16 ou plus n’atteint le bord.",
+        "Portrait d’archive statique ; aucune base entière, aucun kit et aucune animation."
+      ],
+      "visualReview": "docs/standalone/production-v15/characters-visual-review.json",
+      "imageQa": "docs/standalone/production-v15/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v15-2026-11-27",
+      "exportUrl": "/assets/production/v15/characters/hz_roo-creator-concept-2019-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "intendedRole": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé."
+    },
+    {
+      "id": "hz_top_hat_demon-pilot-portrait",
+      "master": "production/v15/characters/masters/hz_top_hat_demon-pilot-portrait.png",
+      "export": "public/assets/production/v15/characters/hz_top_hat_demon-pilot-portrait.webp",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        98,
+        137,
+        1239,
+        1158
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "e811e42c882cc526af06821b789050f4f8d851a7d8a7cc71c1c9ecf6dfbc40f6",
+      "exportSha256": "bd49baa0cfb8786b77103216fe1e680b37f60609143101c3e686ee16bace94a3",
+      "rgbaPixelSha256": "92cce91eae62a293959b24cc640fe2fcaf902ca1d62d7eed157a68deea34a77f",
+      "masterBytes": 725349,
+      "exportBytes": 384316,
+      "name": "Top Hat Demon · pilote 2019 · portrait",
+      "sourceIdentityId": "hz_top_hat_demon",
+      "productionIdentityId": "hz_top_hat_demon",
+      "franchise": "Hazbin Hotel",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "character_portrait",
+      "continuity": "pilot_legacy",
+      "spoilerScope": "season_1",
+      "frameCoverage": "bust",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé.",
+      "reference": "Hazbin Hotel PILOT, séquence 666 News vers 680 s : cyclope à tête compacte, épaules grises, gants blancs et geste pointé.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=Zlmswo0S0e0&t=680s",
+          "kind": "official_episode_or_clip",
+          "title": "Vivziepop · Hazbin Hotel PILOT · séquence 666 News, 680 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=Zlmswo0S0e0&t=680s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v15/characters/references/top-hat-demon-official-680s.png",
+          "sha256": "3b0caa4125524d61c7258b063227e56856b9dfe2da2505088d660fc98660742a",
+          "bytes": 102918,
+          "url": "https://www.youtube.com/watch?v=Zlmswo0S0e0&t=680s",
+          "kind": "official_episode_or_clip",
+          "title": "Vivziepop · Hazbin Hotel PILOT · séquence 666 News, 680 s",
+          "primary": true,
+          "visuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Native official source is a 320×180 preview frame; precise fingers, eye shape, seams and proportions redrawn and not certified 1:1.",
+        "Intentional waist-level portrait crop, no standalone full-body base delivered.",
+        "Pointing arm and scene gesture kept; lower left glove position adapted slightly to keep it fully inside canvas.",
+        "Subtle source-independent shading and edge alpha noise remain; no manual repainting or background removal.",
+        "Current-game browser integration not performed by this agent."
+      ],
+      "visualReview": "docs/standalone/production-v15/characters-visual-review.json",
+      "imageQa": "docs/standalone/production-v15/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v15-2026-11-27",
+      "exportUrl": "/assets/production/v15/characters/hz_top_hat_demon-pilot-portrait.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "intendedRole": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé."
+    },
+    {
+      "id": "hz_eve-storybook-seated-silhouette",
+      "master": "production/v15/characters/masters/hz_eve-storybook-seated-silhouette.png",
+      "export": "public/assets/production/v15/characters/hz_eve-storybook-seated-silhouette.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        68,
+        194,
+        1173,
+        1179
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "23b0a13fe6cbdb99c058ad5635be1a4c84de584e69eae4cf1b2bd37fc3515880",
+      "exportSha256": "9c204a20835a97264a1d5a8d071baabbc8fe4faa25029c6436e2c275f08aa246",
+      "rgbaPixelSha256": "df2f4168a5fb061e83545dfe2cff839ab1623f875965817e30be719ba029582e",
+      "masterBytes": 697190,
+      "exportBytes": 359732,
+      "name": "Eve · silhouette assise du récit S1",
+      "sourceIdentityId": "hz_eve",
+      "productionIdentityId": "hz_eve",
+      "franchise": "Hazbin Hotel",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "narrative_silhouette",
+      "continuity": "season_1_storybook",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé.",
+      "reference": "The Story of Hell, ouverture S1 : silhouette assise d’Eve à gauche de l’arbre. La scène officielle atteste cette incarnation narrative, sans établir de modèle détaillé actuel.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=55s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video UK & IE · ouverture S1, 55 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=56s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, 56 s"
+        },
+        {
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/0ce3b069e738/public/assets/sprites/hazbin/portraits/hz_eve.png",
+          "kind": "historical_repository_cutout",
+          "title": "Découpe historique du dépôt, origine détaillée non revérifiée"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=55s",
+        "https://www.youtube.com/watch?v=I0tobM9b_9I&t=56s",
+        "https://github.com/darknigthmare/hellbound-hotel-manager/blob/0ce3b069e738/public/assets/sprites/hazbin/portraits/hz_eve.png"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v15/characters/references/eve-official-uk-55s.png",
+          "sha256": "62684eab4568f5c9bb009d0a45ad860342d7c2e50f5a8142355d0131ae49c38e",
+          "bytes": 61153,
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=55s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video UK & IE · ouverture S1, 55 s",
+          "primary": true,
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v15/characters/references/eve-official-56s.png",
+          "sha256": "4d55bfeffb81a9920fc0db0c26fc42478ef2ce05dbd5853da7411ae326b45766",
+          "bytes": 23692,
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=56s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, 56 s",
+          "primary": true,
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v15/characters/references/eve-existing-cutout-secondary.png",
+          "sha256": "41f827b0f4b473ad6272173bc2e23aed7595c6f858253b35a46fe46d63b230a9",
+          "bytes": 83017,
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/0ce3b069e738/public/assets/sprites/hazbin/portraits/hz_eve.png",
+          "kind": "historical_repository_cutout",
+          "title": "Découpe historique du dépôt, origine détaillée non revérifiée",
+          "primary": false,
+          "visuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Only the narrative silhouette from The Story of Hell opening is represented. No modern detailed Eve incarnation, costume or powers claimed.",
+        "Primary full-body views are small public preview frames (159×90 and 320×180). Larger preexisting cutout is declared as secondary support.",
+        "Seated pose, folded lower silhouette, black head and body, grey hair underlayer are visible. No hidden anatomy or realistic features added.",
+        "Slight gradient and texture from generation remain instead of a mathematically flat fill; contour is adapted and not certified 1:1.",
+        "Counting as an entire narrative base does not establish a detailed standing combat model; no kit or animation delivered.",
+        "Current-game browser integration not performed by this agent.",
+        "Qualification finale : archive narrative. Cette silhouette entière n’est pas comptée comme base détaillée autonome et ne ferme pas le manque de modèle de combat d’Eve."
+      ],
+      "visualReview": "docs/standalone/production-v15/characters-visual-review.json",
+      "imageQa": "docs/standalone/production-v15/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v15-2026-11-27",
+      "exportUrl": "/assets/production/v15/characters/hz_eve-storybook-seated-silhouette.webp",
+      "reviewStatus": "independent_review_accepted",
+      "independentReviewPending": false,
+      "intendedRole": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé."
+    },
+    {
+      "id": "hz_lilith-storybook-standing-silhouette",
+      "master": "production/v15/characters/masters/hz_lilith-storybook-standing-silhouette.png",
+      "export": "public/assets/production/v15/characters/hz_lilith-storybook-standing-silhouette.webp",
+      "dimensions": [
+        887,
+        1774
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds16": [
+        180,
+        43,
+        708,
+        1745
+      ],
+      "pixelExactExport": true,
+      "masterSha256": "7553f5e7869508ac7deb7325f897f7585bebdae9855742ba32c87dd78703be80",
+      "exportSha256": "fafb5804089499e826ea754d8cdd8a20fd8f43cfb40c0e1b14ab76b07404cf4c",
+      "rgbaPixelSha256": "8637f21d95ea8d9225c38c13967d0de243f088fa7fb34e69157a8e68860f8c19",
+      "masterBytes": 487828,
+      "exportBytes": 258940,
+      "name": "Lilith · silhouette debout du récit S1",
+      "sourceIdentityId": "hz_lilith",
+      "productionIdentityId": "hz_lilith",
+      "franchise": "Hazbin Hotel",
+      "category": "narrative_archive",
+      "kind": "narrative_archive",
+      "subtype": "narrative_silhouette",
+      "continuity": "season_1_storybook",
+      "spoilerScope": "season_1",
+      "frameCoverage": "full_body",
+      "accepted": true,
+      "status": "accepted_with_documented_limits",
+      "runtimeStatus": "reserve",
+      "eligibility": "galleryOnly",
+      "runtimeUsage": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé.",
+      "reference": "The Story of Hell, ouverture S1 à 40–42 s : silhouette debout de Lilith à droite d’Adam. Seule Lilith est reproduite.",
+      "references": [
+        {
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=40s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video UK & IE · ouverture S1, Lilith à droite, 40 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=40s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, Lilith à droite, 40 s"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=42s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, Lilith à droite, 42 s"
+        }
+      ],
+      "referenceUrls": [
+        "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=40s",
+        "https://www.youtube.com/watch?v=I0tobM9b_9I&t=40s",
+        "https://www.youtube.com/watch?v=I0tobM9b_9I&t=42s"
+      ],
+      "sourceReferences": [
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-uk-40s.png",
+          "sha256": "f9da9cfd4d2bede55260e9c52c65675038a23790c86536c4c19a743320c79469",
+          "bytes": 53813,
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=40s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video UK & IE · ouverture S1, Lilith à droite, 40 s",
+          "primary": true,
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-40s.png",
+          "sha256": "a1607ebb99a8f7e74874897e714e5c57642bad9119794ba631140a49b551ca9f",
+          "bytes": 17159,
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=40s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, Lilith à droite, 40 s",
+          "primary": true,
+          "visuallyInspected": true
+        },
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-42s.png",
+          "sha256": "1aecdc5fff52659a3155f5c8e0719692ad31ce60ece536232915d6c35886e74e",
+          "bytes": 17789,
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=42s",
+          "kind": "official_episode_or_clip",
+          "title": "Prime Video · The First 2 Minutes, Lilith à droite, 42 s",
+          "primary": true,
+          "visuallyInspected": true
+        }
+      ],
+      "fidelityNotes": [
+        "Sources primaires natives 320 × 180 et 159 × 90 pixels : contours, angles du visage, proportions et extrémités redessinés, sans certification 1:1.",
+        "Silhouette narrative noire et grise seulement. Aucune robe, couronne, apparence actuelle détaillée ou pouvoir extrapolé.",
+        "Les mains, la pose et la pointe de chevelure restent des adaptations depuis la petite source ; une légère texture de génération persiste.",
+        "Une seule silhouette entière, avec marges significatives 180/43/179/29 pixels au seuil alpha 16 ; la marge verticale demandée de 10 % n’est pas atteinte.",
+        "Aucune base détaillée de Lilith n’est présente dans le registre V14, mais cette archive ne clôt pas le manque du modèle détaillé. addsStandaloneBase reste false.",
+        "Aucun kit, costume sélectionnable ni cycle animé ; consultation en galerie uniquement."
+      ],
+      "visualReview": "docs/standalone/production-v15/characters-visual-review.json",
+      "imageQa": "docs/standalone/production-v15/image-qa.json",
+      "addsStandaloneBase": false,
+      "newlyCoveredCatalogueIds": [],
+      "newIdentity": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "animationCycles": 0,
+      "inGameChecked": false,
+      "fidelityOneToOneCertified": false,
+      "batchId": "static-v15-2026-11-27",
+      "exportUrl": "/assets/production/v15/characters/hz_lilith-storybook-standing-silhouette.webp",
+      "reviewStatus": "operator_review_accepted",
+      "independentReviewPending": true,
+      "intendedRole": "Consultation statique dans la galerie ; aucun kit jouable ni cycle animé."
+    }
+  ],
+  "countingDecision": {
+    "reason": "Les silhouettes Eve et Lilith documentent le récit S1 ; elles ne ferment pas le manque de modèle détaillé autonome. Les portraits Roo/Top Hat ne sont pas des corps entiers. Queef fournit le seul nouvel objet personnage entier autonome de soutien.",
+    "newBaseIds": [
+      "hb_queef"
+    ],
+    "remainingFullBaseGapsAmongThisWave": [
+      "hz_eve",
+      "hz_lilith",
+      "hz_roo",
+      "hz_top_hat_demon"
+    ],
+    "historicalEveProvisionalAddsStandaloneBaseSuperseded": true,
+    "source": "docs/standalone/production-v15/recovered-portrait-handoff.json"
+  },
+  "refused": [
+    {
+      "targetId": "hz_man_meat",
+      "assetId": "hz_man_meat-s2-portrait",
+      "requestId": "72763c39-e78c-46d4-9551-02ff659b8b78",
+      "stage": "output",
+      "category": "other",
+      "code": "moderation_blocked",
+      "filesProduced": 0,
+      "retried": false
+    },
+    {
+      "targetId": "hz_lilith",
+      "assetId": "hz_lilith-storybook-standing-silhouette",
+      "requestId": "547c681b-93c7-469d-92c7-4a4a1388be39",
+      "stage": "output",
+      "category": "other",
+      "code": "moderation_blocked",
+      "filesProduced": 0,
+      "retried": false
+    }
+  ],
+  "noRetryTargetIdsAdded": [
+    "hz_man_meat",
+    "hz_lilith"
+  ],
+  "candidateStates": [
+    {
+      "id": "queef-creator-collection-candidate01",
+      "status": "superseded_by_candidate02",
+      "counted": false
+    },
+    {
+      "id": "hz_top_hat_demon-pilot-portrait-attempt-1",
+      "status": "head_proportion_rejected",
+      "counted": false
+    }
+  ],
+  "qa": {
+    "pixelExactExports": true,
+    "nativeAlphaThreeBackgroundsInspected": true,
+    "inGameChecked": false,
+    "standaloneBuildNotRunByThisAgent": true,
+    "pending": [
+      "Parent independent review of newly generated Lilith",
+      "Current runtime gallery browser verification"
+    ]
+  },
+  "fidelityOneToOneCertified": false
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "hz_roo-creator-concept-2019-portrait",
+  "status": "accepted_with_documented_limits",
+  "reviewer": "/root/recovery_audit",
+  "reviewType": "operator_visual_review_not_independent",
+  "reviewedAt": "2026-11-26T23:22:21.521312+00:00",
+  "inputs": [
+    {
+      "path": "production/v15/characters/references/roo-creator-concept-2019-secondary-reproduction.jpg",
+      "sha256": "6fbf7a232fa027cce2cb9a5c459a2881767ba6f0f45f5ab0cc24d021ba440b71"
+    },
+    {
+      "path": "production/v15/characters/masters/hz_roo-creator-concept-2019-portrait.png",
+      "bytes": 1219790,
+      "sha256": "00b8636367c73a3c54d6568e5661d1c655251e84f85114eec4a19e8145adc186",
+      "dimensions": [
+        1024,
+        1535
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/standalone/production-v15/roo-diagnostics/roo-dark.jpg",
+      "bytes": 229237,
+      "sha256": "d1c2cc85ff70b8251f7bce9340128a0f69e14b9b0c950a4769c6c90d050b3749",
+      "dimensions": [
+        1024,
+        1535
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/standalone/production-v15/roo-diagnostics/roo-gray.jpg",
+      "bytes": 277699,
+      "sha256": "c29e4822256708d89ed42dff13193edd6412892eb0e3ecb972e43adadcbb9bb1",
+      "dimensions": [
+        1024,
+        1535
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/standalone/production-v15/roo-diagnostics/roo-light.jpg",
+      "bytes": 312055,
+      "sha256": "07ee6f51a14da62e3562e5b33d07ad1638f9eb2dbbe83a7b28025433f187df69",
+      "dimensions": [
+        1024,
+        1535
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "checks": {
+    "oneCharacterPortrait": true,
+    "headHatAndBranchedTonguePresent": true,
+    "sourceLeaningBackCompositionPreserved": true,
+    "portraitEndsBelowUpperTorso": true,
+    "noInventedLegsOrFullBodyCostume": true,
+    "noVisibleCaptionOrSignature": true,
+    "transparentBackgroundConfirmed": true,
+    "meaningfulCompositionInsideCanvas": true,
+    "lightGrayDarkCompositesInspected": true
+  },
+  "observations": [
+    "Le visage pâle penché en arrière, les cheveux bordeaux, le large chapeau, le damier rouge-blanc, le manteau rouge et les chaînes reprennent les éléments visibles de la référence fournie.",
+    "La langue rouge ramifiée, ses formes oculaires et les grandes branches noires gardent la composition graphique générale ; les contours et détails fins sont redessinés.",
+    "Les branches et petites formes rouges détachées appartiennent à la composition du concept ; les 34 composantes au seuil alpha ≥ 16 ne correspondent pas à plusieurs personnages.",
+    "La découpe inférieure volontaire reste un cadrage de portrait du haut du corps. Aucun bas du corps n’est inventé.",
+    "Les traits noirs restent moins contrastés sur le fond très sombre du test ; la composition sur fond clair montre les contours et la chaîne plus nettement."
+  ],
+  "limits": [
+    "La source examinée est une reproduction secondaire attribuée à la créatrice ; le tweet primaire demeure inaccessible.",
+    "La géométrie des épines, le nombre et la place exacte des petites marques, les chaînes et les accents lumineux sont adaptés ; pas de certification 1:1.",
+    "Marges significatives mesurées : gauche 38, haut 21, droite 27, bas 16 px ; plus étroites que le confort demandé dans le prompt.",
+    "Présence de résidus natifs alpha 1 sur 34 pixels de bord ; aucun pixel alpha ≥ 16 ou plus n’atteint le bord.",
+    "Portrait d’archive statique ; aucune base entière, aucun kit et aucune animation."
+  ],
+  "fidelityOneToOneCertified": false,
+  "independentReviewPending": true
+}

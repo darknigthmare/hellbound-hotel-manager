@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 1,
+  "edition": "V15",
+  "date": "2026-11-27",
+  "reviewedAtUtc": "2026-11-27T00:44:37.971284+00:00",
+  "reviewer": "/root/audit_roster",
+  "reviewType": "independent_visual_review_of_existing_files",
+  "status": "five_assets_visually_accepted_with_documented_limits_all_current_gallery_artwork_complete",
+  "scope": "5 unchanged masters, their 5 exports checked for exact decoded RGBA equality during the first review, 9 unchanged source images, 5 unchanged three-background diagnostic sheets, and 10 new full-viewport gallery screenshots. All ten new captures viewed independently. No generation, asset editing, browser execution or gameplay verification performed by this reviewer.",
+  "counts": {
+    "assetsReviewed": 5,
+    "mastersViewed": 5,
+    "referenceImagesViewed": 9,
+    "diagnosticSheetsViewed": 5,
+    "galleryScreenshotsViewed": 10,
+    "visuallyAcceptedAssets": 5,
+    "visuallyRejectedAssets": 0,
+    "newStandaloneBasesSupported": 1,
+    "desktopArtworkCompleteCaptures": 5,
+    "mobileArtworkCompleteCaptures": 5,
+    "mobileArtworkPartialCaptures": 0,
+    "fidelityOneToOneCertifiedAssets": 0,
+    "currentGalleryScreenshotsViewed": 10,
+    "galleryScreenshotsViewedAcrossBothPasses": 20
+  },
+  "reviews": [
+    {
+      "id": "hb_queef-creator-collection",
+      "sourceIdentityId": "hb_queef",
+      "visualAssetStatus": "accepted_with_documented_limits",
+      "accepted": true,
+      "reviewScope": "static gallery asset, supplied references and existing screenshots only",
+      "master": {
+        "path": "production/v15/characters/masters/queef-creator-collection-candidate02.png",
+        "sha256": "83b514d7faa458f61b71ddf268463fe6ecc5a013f5abf1314e98ed21fab73eac",
+        "bytes": 1712631,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v15/characters/hb_queef-creator-collection.webp",
+        "sha256": "45c4a8d53f0b9890d2605d36ae718d29f0427ea55d095ee217eb806f8b2ada5d",
+        "bytes": 1148702,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "mode": "RGBA"
+      },
+      "technicalChecks": {
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "alphaBounds16": [
+          17,
+          19,
+          935,
+          1527
+        ],
+        "rgbaSha256": "2a646e1acf51a3cc9cd9c42eccd70abff2d3d80577c6f620c0a65a9ad834bd45",
+        "pixelExactLosslessExport": true
+      },
+      "references": [
+        {
+          "path": "production/v15/characters/references/queef-official-creator-collection.png",
+          "sha256": "679ad28488afaf232b265088d1412f8314f9beff7651dccdb3edfe928d59ad2d",
+          "bytes": 308376,
+          "dimensions": [
+            2000,
+            2500
+          ],
+          "mode": "RGB",
+          "url": "https://www.stylishoccult.com/products/fizz-oversized-dog-t-shirt-blue",
+          "kind": "official_merchandise",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        }
+      ],
+      "diagnostic": {
+        "path": "docs/standalone/production-v15/diagnostics/hb_queef-creator-collection.png",
+        "sha256": "02c00fe47eac4d81da09c799318dbdda071d31c2fbdcfd0dd8955bb81515edb4",
+        "bytes": 243487,
+        "dimensions": [
+          1434,
+          596
+        ],
+        "mode": "RGB",
+        "visuallyInspected": true,
+        "backgrounds": [
+          "light",
+          "gray",
+          "dark"
+        ]
+      },
+      "captures": [
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/desktop-hb_queef-creator-collection.png",
+          "sha256": "01f78731bfa16d2c9c70b9d25927c9807e9020b84669036d0ea72683feb8c740",
+          "bytes": 479962,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "mode": "RGB",
+          "viewport": "desktop",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "currentBrowserReportEntireImageVisible": true
+        },
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hb_queef-creator-collection.png",
+          "sha256": "f394b8beeb51ccbce1563f03103d756adf9a970deb7de8b4859c9adf351e029f",
+          "bytes": 204471,
+          "dimensions": [
+            390,
+            844
+          ],
+          "mode": "RGB",
+          "viewport": "mobile",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "captionAndControlsMayContinueBelowViewport": true,
+          "notes": "Illustration entière visible sous le header fixe ; le texte et les commandes peuvent nécessiter de poursuivre le défilement.",
+          "currentBrowserReportEntireImageVisible": true
+        }
+      ],
+      "observations": [
+        "Le sujet du motif produit est reconnaissable : très grandes oreilles asymétriques pâles, mèches roses, yeux rouges à pupilles en cœur, museau crochu, nœud à pois et chariot vert à panneau rose.",
+        "Un seul personnage entier ; les roues et le chariot restent attachés à la silhouette. Les membres, pointes des oreilles et roues restent dans le master.",
+        "Les composites existants sur fonds clair, gris et sombre montrent une transparence exploitable ; le halo coloré apparent dans le RGB brut du master ne forme pas un fond opaque dans ces composites.",
+        "La capture desktop montre le dessin entier et son statut de soutien issu d’un produit officiel.",
+        "Nouvelle capture mobile inspectée : la grande oreille jusqu’à sa pointe, l’oreille latérale, les mèches, les membres et les deux roues sont visibles, sans recouvrement par le header."
+      ],
+      "limits": [
+        "Le contour, la saturation et la géométrie de petits détails diffèrent du motif photographié. La pose est adaptée d’un produit, pas une feuille de modèle d’épisode.",
+        "La marge supérieure et inférieure du master reste étroite. Le contour rose appartient au traitement du motif ; ne pas le qualifier de contour d’épisode canonique.",
+        "Les nouvelles captures mobiles cadrent l’illustration entière ; selon la longueur de la fiche, la description et les commandes continuent au-dessous du viewport. La présente revue ne vérifie pas leurs interactions."
+      ],
+      "addsStandaloneBase": true,
+      "baseCountingReason": "Nouvelle silhouette entière de soutien adaptée du produit officiel.",
+      "fidelityOneToOneCertified": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "browserRunExecutedByReviewer": false,
+      "mobileCompleteFramingEstablished": true
+    },
+    {
+      "id": "hz_roo-creator-concept-2019-portrait",
+      "sourceIdentityId": "hz_roo",
+      "visualAssetStatus": "accepted_with_documented_limits",
+      "accepted": true,
+      "reviewScope": "static gallery asset, supplied references and existing screenshots only",
+      "master": {
+        "path": "production/v15/characters/masters/hz_roo-creator-concept-2019-portrait.png",
+        "sha256": "00b8636367c73a3c54d6568e5661d1c655251e84f85114eec4a19e8145adc186",
+        "bytes": 1219790,
+        "dimensions": [
+          1024,
+          1535
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v15/characters/hz_roo-creator-concept-2019-portrait.webp",
+        "sha256": "cff1b695768996964c4b0ad0e2c9adabf8ab024c2032dc59c87960ef99ce22fd",
+        "bytes": 821944,
+        "dimensions": [
+          1024,
+          1535
+        ],
+        "mode": "RGBA"
+      },
+      "technicalChecks": {
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaBounds16": [
+          38,
+          21,
+          997,
+          1519
+        ],
+        "rgbaSha256": "e57d4febb541a1e810ce9dea564ee10d2b7ebfe88b24017d1c49056b65d9226f",
+        "pixelExactLosslessExport": true
+      },
+      "references": [
+        {
+          "path": "production/v15/characters/references/roo-creator-concept-2019-secondary-reproduction.jpg",
+          "sha256": "6fbf7a232fa027cce2cb9a5c459a2881767ba6f0f45f5ab0cc24d021ba440b71",
+          "bytes": 127250,
+          "dimensions": [
+            683,
+            1024
+          ],
+          "mode": "RGB",
+          "url": "https://comicbook.com/tv-shows/news/hazbin-hotel-creator-teases-a-long-awaited-big-bad-that-sets-up-a-huge-change/",
+          "kind": "secondary_reproduction_of_attributed_creator_art",
+          "primary": false,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        }
+      ],
+      "diagnostic": {
+        "path": "docs/standalone/production-v15/diagnostics/hz_roo-creator-concept-2019-portrait.png",
+        "sha256": "b440ff8d271f95e53ab222a0e24af3b050fb415ac182170045435711643a7793",
+        "bytes": 385000,
+        "dimensions": [
+          1434,
+          596
+        ],
+        "mode": "RGB",
+        "visuallyInspected": true,
+        "backgrounds": [
+          "light",
+          "gray",
+          "dark"
+        ]
+      },
+      "captures": [
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/desktop-hz_roo-creator-concept-2019-portrait.png",
+          "sha256": "600f44cf49f46761dcc1cca0e64e9d9a6f860619ba519de05a978525d99d2eeb",
+          "bytes": 516727,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "mode": "RGB",
+          "viewport": "desktop",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "currentBrowserReportEntireImageVisible": true
+        },
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hz_roo-creator-concept-2019-portrait.png",
+          "sha256": "f39de384b0a7b1b45a16ac0b4e965fc94dde247befa67140449186106b8d833a",
+          "bytes": 223204,
+          "dimensions": [
+            390,
+            844
+          ],
+          "mode": "RGB",
+          "viewport": "mobile",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "captionAndControlsMayContinueBelowViewport": true,
+          "notes": "Illustration entière visible sous le header fixe ; le texte et les commandes peuvent nécessiter de poursuivre le défilement.",
+          "currentBrowserReportEntireImageVisible": true
+        }
+      ],
+      "observations": [
+        "Le chapeau à damier, la chevelure rouge, le visage incliné, la langue ramifiée et les grandes branches noires reprennent la composition du concept attribué à la créatrice.",
+        "Un portrait vertical unique, volontairement terminé au torse ; aucune jambe ou autre personnage ajouté.",
+        "Le portrait entier est visible dans les captures desktop et mobile. Le libellé conserve explicitement la provenance historique 2019."
+      ],
+      "limits": [
+        "La référence inspectée est une reproduction secondaire ; cette revue ne rétablit pas un accès au post primaire.",
+        "Le nombre et les angles des épines, les petits motifs, chaînes, intensité du rouge et lueurs sont réinterprétés. Aucune géométrie exacte ou conformité 1:1 certifiée.",
+        "Les branches noires se lisent moins nettement sur le fond sombre ; elles restent identifiables sur le fond violet de galerie.",
+        "Les nouvelles captures mobiles cadrent l’illustration entière ; selon la longueur de la fiche, la description et les commandes continuent au-dessous du viewport. La présente revue ne vérifie pas leurs interactions."
+      ],
+      "addsStandaloneBase": false,
+      "baseCountingReason": "Portrait ou silhouette narrative ; aucune nouvelle base détaillée entière de personnage.",
+      "fidelityOneToOneCertified": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "browserRunExecutedByReviewer": false,
+      "mobileCompleteFramingEstablished": true
+    },
+    {
+      "id": "hz_top_hat_demon-pilot-portrait",
+      "sourceIdentityId": "hz_top_hat_demon",
+      "visualAssetStatus": "accepted_with_documented_limits",
+      "accepted": true,
+      "reviewScope": "static gallery asset, supplied references and existing screenshots only",
+      "master": {
+        "path": "production/v15/characters/masters/hz_top_hat_demon-pilot-portrait.png",
+        "sha256": "e811e42c882cc526af06821b789050f4f8d851a7d8a7cc71c1c9ecf6dfbc40f6",
+        "bytes": 725349,
+        "dimensions": [
+          1312,
+          1199
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v15/characters/hz_top_hat_demon-pilot-portrait.webp",
+        "sha256": "bd49baa0cfb8786b77103216fe1e680b37f60609143101c3e686ee16bace94a3",
+        "bytes": 384316,
+        "dimensions": [
+          1312,
+          1199
+        ],
+        "mode": "RGBA"
+      },
+      "technicalChecks": {
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaBounds16": [
+          98,
+          137,
+          1239,
+          1158
+        ],
+        "rgbaSha256": "92cce91eae62a293959b24cc640fe2fcaf902ca1d62d7eed157a68deea34a77f",
+        "pixelExactLosslessExport": true
+      },
+      "references": [
+        {
+          "path": "production/v15/characters/references/top-hat-demon-official-680s.png",
+          "sha256": "3b0caa4125524d61c7258b063227e56856b9dfe2da2505088d660fc98660742a",
+          "bytes": 102918,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=Zlmswo0S0e0&t=680s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        }
+      ],
+      "diagnostic": {
+        "path": "docs/standalone/production-v15/diagnostics/hz_top_hat_demon-pilot-portrait.png",
+        "sha256": "7385b0775b1b66c87927500681e4cf09246c7dff84066ca3db4392189a35bf14",
+        "bytes": 131763,
+        "dimensions": [
+          1434,
+          596
+        ],
+        "mode": "RGB",
+        "visuallyInspected": true,
+        "backgrounds": [
+          "light",
+          "gray",
+          "dark"
+        ]
+      },
+      "captures": [
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/desktop-hz_top_hat_demon-pilot-portrait.png",
+          "sha256": "cd80bdb00922aa30216a597606d59eb64e1989aeae9adb341145f7716f1f8064",
+          "bytes": 396633,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "mode": "RGB",
+          "viewport": "desktop",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "currentBrowserReportEntireImageVisible": true
+        },
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hz_top_hat_demon-pilot-portrait.png",
+          "sha256": "b65327d27dfa1100c8971e970d7566187a2eb02e95d43bb84817649096dab418",
+          "bytes": 150579,
+          "dimensions": [
+            390,
+            844
+          ],
+          "mode": "RGB",
+          "viewport": "mobile",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "captionAndControlsMayContinueBelowViewport": true,
+          "notes": "Illustration entière visible sous le header fixe ; le texte et les commandes peuvent nécessiter de poursuivre le défilement.",
+          "currentBrowserReportEntireImageVisible": true
+        }
+      ],
+      "observations": [
+        "La tête cyclope compacte, le grand œil blanc, les touffes latérales, la petite marque magenta, les épaules grises et le geste pointé correspondent au personnage central de la frame officielle du pilote.",
+        "Les deux mains sont entièrement contenues ; le bas du portrait est une coupe à la taille assumée.",
+        "Le dessin complet, le titre portrait et la provenance pilote 2019 sont visibles dans les deux nouvelles captures ; les contrôles ne sont pas tous simultanément visibles sur mobile."
+      ],
+      "limits": [
+        "Le rapport tête/épaules, l’angle du bras pointé, les mains, les coutures et les courbes du sourire sont adaptés depuis une frame de 320 × 180 pixels.",
+        "Le bas du corps demeure absent et cette livraison ne ferme pas le manque d’une base entière.",
+        "Une légère variation de ton et de texture persiste ; aucune fidélité 1:1 certifiée.",
+        "Les nouvelles captures mobiles cadrent l’illustration entière ; selon la longueur de la fiche, la description et les commandes continuent au-dessous du viewport. La présente revue ne vérifie pas leurs interactions."
+      ],
+      "addsStandaloneBase": false,
+      "baseCountingReason": "Portrait ou silhouette narrative ; aucune nouvelle base détaillée entière de personnage.",
+      "fidelityOneToOneCertified": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "browserRunExecutedByReviewer": false,
+      "mobileCompleteFramingEstablished": true
+    },
+    {
+      "id": "hz_eve-storybook-seated-silhouette",
+      "sourceIdentityId": "hz_eve",
+      "visualAssetStatus": "accepted_with_documented_limits",
+      "accepted": true,
+      "reviewScope": "static gallery asset, supplied references and existing screenshots only",
+      "master": {
+        "path": "production/v15/characters/masters/hz_eve-storybook-seated-silhouette.png",
+        "sha256": "23b0a13fe6cbdb99c058ad5635be1a4c84de584e69eae4cf1b2bd37fc3515880",
+        "bytes": 697190,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v15/characters/hz_eve-storybook-seated-silhouette.webp",
+        "sha256": "9c204a20835a97264a1d5a8d071baabbc8fe4faa25029c6436e2c275f08aa246",
+        "bytes": 359732,
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "technicalChecks": {
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaBounds16": [
+          68,
+          194,
+          1173,
+          1179
+        ],
+        "rgbaSha256": "df2f4168a5fb061e83545dfe2cff839ab1623f875965817e30be719ba029582e",
+        "pixelExactLosslessExport": true
+      },
+      "references": [
+        {
+          "path": "production/v15/characters/references/eve-official-uk-55s.png",
+          "sha256": "62684eab4568f5c9bb009d0a45ad860342d7c2e50f5a8142355d0131ae49c38e",
+          "bytes": 61153,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=55s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        },
+        {
+          "path": "production/v15/characters/references/eve-official-56s.png",
+          "sha256": "4d55bfeffb81a9920fc0db0c26fc42478ef2ce05dbd5853da7411ae326b45766",
+          "bytes": 23692,
+          "dimensions": [
+            159,
+            90
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=56s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        },
+        {
+          "path": "production/v15/characters/references/eve-existing-cutout-secondary.png",
+          "sha256": "41f827b0f4b473ad6272173bc2e23aed7595c6f858253b35a46fe46d63b230a9",
+          "bytes": 83017,
+          "dimensions": [
+            512,
+            512
+          ],
+          "mode": "RGBA",
+          "url": "https://github.com/darknigthmare/hellbound-hotel-manager/blob/0ce3b069e738/public/assets/sprites/hazbin/portraits/hz_eve.png",
+          "kind": "historical_repository_cutout",
+          "primary": false,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        }
+      ],
+      "diagnostic": {
+        "path": "docs/standalone/production-v15/diagnostics/hz_eve-storybook-seated-silhouette.png",
+        "sha256": "9e74d93003f6d0a51514b920eebdc6b9e6bf63e13aa7ce9cbf89f5793a8b6f07",
+        "bytes": 107804,
+        "dimensions": [
+          1434,
+          596
+        ],
+        "mode": "RGB",
+        "visuallyInspected": true,
+        "backgrounds": [
+          "light",
+          "gray",
+          "dark"
+        ]
+      },
+      "captures": [
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/desktop-hz_eve-storybook-seated-silhouette.png",
+          "sha256": "d0be229888b9cabc66e72a3040ec9c146a76a36b7c6926a9046bc8c02e17a3a2",
+          "bytes": 357816,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "mode": "RGB",
+          "viewport": "desktop",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "currentBrowserReportEntireImageVisible": true
+        },
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hz_eve-storybook-seated-silhouette.png",
+          "sha256": "15e73859e961c58610cfd9acdfdc104e2560090763448d3955ee24c1926cfd71",
+          "bytes": 137434,
+          "dimensions": [
+            390,
+            844
+          ],
+          "mode": "RGB",
+          "viewport": "mobile",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "captionAndControlsMayContinueBelowViewport": true,
+          "notes": "Illustration entière visible sous le header fixe ; le texte et les commandes peuvent nécessiter de poursuivre le défilement.",
+          "currentBrowserReportEntireImageVisible": true
+        }
+      ],
+      "observations": [
+        "La silhouette assise regarde à droite, avec une longue masse de cheveux grise déployée à gauche, un corps noir et une pose de jambes repliées cohérente avec la scène d’ouverture.",
+        "Le contour principal correspond également à la découpe historique déclarée comme appui secondaire ; aucun visage réaliste, costume moderne ou pouvoir n’est ajouté.",
+        "Les deux captures affichent la silhouette entière sur un fond plus clair et explicitent son usage d’archive du récit S1."
+      ],
+      "limits": [
+        "Les sources primaires sont de petites previews 320 × 180 et 159 × 90 ; l’origine détaillée de la grande découpe secondaire n’est pas revérifiée ici.",
+        "Le profil, les pointes des cheveux et le contour des jambes sont redessinés ; une texture et un dégradé discrets restent perceptibles.",
+        "Il s’agit d’une silhouette narrative attestée, sans modèle détaillé debout ni kit de combat. Ne pas compter comme nouvelle base autonome détaillée.",
+        "Les nouvelles captures mobiles cadrent l’illustration entière ; selon la longueur de la fiche, la description et les commandes continuent au-dessous du viewport. La présente revue ne vérifie pas leurs interactions."
+      ],
+      "addsStandaloneBase": false,
+      "baseCountingReason": "Portrait ou silhouette narrative ; aucune nouvelle base détaillée entière de personnage.",
+      "fidelityOneToOneCertified": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "browserRunExecutedByReviewer": false,
+      "mobileCompleteFramingEstablished": true
+    },
+    {
+      "id": "hz_lilith-storybook-standing-silhouette",
+      "sourceIdentityId": "hz_lilith",
+      "visualAssetStatus": "accepted_with_documented_limits",
+      "accepted": true,
+      "reviewScope": "static gallery asset, supplied references and existing screenshots only",
+      "master": {
+        "path": "production/v15/characters/masters/hz_lilith-storybook-standing-silhouette.png",
+        "sha256": "7553f5e7869508ac7deb7325f897f7585bebdae9855742ba32c87dd78703be80",
+        "bytes": 487828,
+        "dimensions": [
+          887,
+          1774
+        ],
+        "mode": "RGBA"
+      },
+      "export": {
+        "path": "public/assets/production/v15/characters/hz_lilith-storybook-standing-silhouette.webp",
+        "sha256": "fafb5804089499e826ea754d8cdd8a20fd8f43cfb40c0e1b14ab76b07404cf4c",
+        "bytes": 258940,
+        "dimensions": [
+          887,
+          1774
+        ],
+        "mode": "RGBA"
+      },
+      "technicalChecks": {
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "alphaBounds16": [
+          180,
+          43,
+          708,
+          1745
+        ],
+        "rgbaSha256": "8637f21d95ea8d9225c38c13967d0de243f088fa7fb34e69157a8e68860f8c19",
+        "pixelExactLosslessExport": true
+      },
+      "references": [
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-uk-40s.png",
+          "sha256": "f9da9cfd4d2bede55260e9c52c65675038a23790c86536c4c19a743320c79469",
+          "bytes": 53813,
+          "dimensions": [
+            320,
+            180
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=mmO6WN6-6s8&t=40s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        },
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-40s.png",
+          "sha256": "a1607ebb99a8f7e74874897e714e5c57642bad9119794ba631140a49b551ca9f",
+          "bytes": 17159,
+          "dimensions": [
+            159,
+            90
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=40s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        },
+        {
+          "path": "production/v15/characters/references/lilith-adam-official-42s.png",
+          "sha256": "1aecdc5fff52659a3155f5c8e0719692ad31ce60ece536232915d6c35886e74e",
+          "bytes": 17789,
+          "dimensions": [
+            159,
+            90
+          ],
+          "mode": "RGB",
+          "url": "https://www.youtube.com/watch?v=I0tobM9b_9I&t=42s",
+          "kind": "official_episode_or_clip",
+          "primary": true,
+          "visuallyInspected": true,
+          "hashMatchesRegisteredReference": true
+        }
+      ],
+      "diagnostic": {
+        "path": "docs/standalone/production-v15/diagnostics/hz_lilith-storybook-standing-silhouette.png",
+        "sha256": "7bd32dd677223ab4afa5b79bd85c5552a9b306f637c829a9bea40ef2aae91e82",
+        "bytes": 89658,
+        "dimensions": [
+          1434,
+          596
+        ],
+        "mode": "RGB",
+        "visuallyInspected": true,
+        "backgrounds": [
+          "light",
+          "gray",
+          "dark"
+        ]
+      },
+      "captures": [
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/desktop-hz_lilith-storybook-standing-silhouette.png",
+          "sha256": "3c6213965b2949d6fed8ca87c7b97ac4ac7f9dc1e0c9e71d29c3c36d6e12dc74",
+          "bytes": 370415,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "mode": "RGB",
+          "viewport": "desktop",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "currentBrowserReportEntireImageVisible": true
+        },
+        {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hz_lilith-storybook-standing-silhouette.png",
+          "sha256": "5d8dde1d765e2ace08adc5ce3e1a17a6dbff7c1ad7bde4cb71a1c5edc511f8df",
+          "bytes": 139369,
+          "dimensions": [
+            390,
+            844
+          ],
+          "mode": "RGB",
+          "viewport": "mobile",
+          "visuallyInspected": true,
+          "inspectionMethod": "view_image of newly captured full viewport PNG",
+          "status": "artwork_complete",
+          "hashMatchesCurrentBrowserReport": true,
+          "entireArtworkVisuallyConfirmed": true,
+          "captionAndControlsMayContinueBelowViewport": true,
+          "notes": "Illustration entière visible sous le header fixe ; le texte et les commandes peuvent nécessiter de poursuivre le défilement.",
+          "currentBrowserReportEntireImageVisible": true
+        }
+      ],
+      "observations": [
+        "La femme à droite des trois frames officielles sert bien de sujet : silhouette debout tournée à gauche, tête noire balayée vers l’arrière, très longs cheveux gris derrière le corps, bras gauche de l’image plié et bras droit descendant.",
+        "Le master conserve tête, mains, pointes des cheveux, jambes et petits pieds dans le cadre ; aucun Adam, décor ou détail anatomique n’est ajouté.",
+        "Les composites clair/gris/sombre permettent de suivre les contours. La capture desktop montre le dessin entier avec la provenance récit S1 et la distinction d’un modèle détaillé de combat.",
+        "Nouvelle capture mobile inspectée : le sommet de la tête, le profil, les pointes de cheveux, les deux mains et les deux pieds sont visibles entièrement sous le header ; la perte de tête observée auparavant est corrigée dans cette preuve."
+      ],
+      "limits": [
+        "Le profil du visage, les proportions du cou et des hanches, le dessin des mains et la pointe des cheveux diffèrent du petit contour source. Le master est une adaptation, sans certification 1:1.",
+        "La source primaire entière est minuscule (320 × 180 ou 159 × 90) ; aucune apparence contemporaine détaillée ni capacité ne peut être déduite.",
+        "Les registres conservent un refus antérieur pour ce même ID tandis qu’un master et un prompt de reprise existent. Cette revue inspecte seulement les fichiers présents ; elle ne résout pas cette contradiction historique et ne relance aucune génération.",
+        "Les nouvelles captures mobiles cadrent l’illustration entière ; selon la longueur de la fiche, la description et les commandes continuent au-dessous du viewport. La présente revue ne vérifie pas leurs interactions."
+      ],
+      "addsStandaloneBase": false,
+      "baseCountingReason": "Portrait ou silhouette narrative ; aucune nouvelle base détaillée entière de personnage.",
+      "fidelityOneToOneCertified": false,
+      "newPlayableKits": 0,
+      "newAnimationCycles": 0,
+      "browserRunExecutedByReviewer": false,
+      "mobileCompleteFramingEstablished": true
+    }
+  ],
+  "followUpEvidenceNeeded": [],
+  "provenanceDiscrepancy": {
+    "assetId": "hz_lilith-storybook-standing-silhouette",
+    "status": "historical_record_inconsistency_preserved_not_resolved_by_visual_review",
+    "refusalRequestId": "547c681b-93c7-469d-92c7-4a4a1388be39",
+    "evidenceFiles": [
+      {
+        "path": "docs/standalone/production-v15/recovered-portrait-handoff.json",
+        "sha256": "d5d6601ea522ab5a17af76277bc442ab1a6500491f47902c99bcb80745687faf"
+      },
+      {
+        "path": "docs/standalone/production-v15/characters-handoff.json",
+        "sha256": "237699fa30c7b51c65c15f421acc19109ab1b7105cbc530709d64b904a643252"
+      },
+      {
+        "path": "docs/standalone/production-v15/lilith-prompt.json",
+        "sha256": "d955dd5c88d093d023b32b274541b2eac2a70b7b1ed70bf17c9ac9ee5f49c2f4"
+      },
+      {
+        "path": "docs/standalone/production-v15/characters-prompts.json",
+        "sha256": "b8a552b32084aff28e0349d2cb836d55660f5f3b9d5da0bf6eecfcbaad7f3cfc"
+      }
+    ],
+    "facts": [
+      "Recovered handoff records moderation_blocked, filesProduced 0, retried false for this ID and adds hz_lilith to noRetryTargetIdsAdded.",
+      "characters-handoff retains the refusal while also listing an accepted existing Lilith master.",
+      "lilith-prompt.json names a native output for the available master; it supplies no full event timeline reconciling that output with the refusal."
+    ],
+    "currentReviewAction": "Existing master inspected only. No tool generation or retry made by this reviewer. Historical records left unchanged.",
+    "visualAcceptanceDoesNotResolveGenerationHistory": true
+  },
+  "countingDecision": {
+    "newStandaloneBaseIds": [
+      "hb_queef"
+    ],
+    "portraitOnlyIds": [
+      "hz_roo",
+      "hz_top_hat_demon"
+    ],
+    "narrativeSilhouetteOnlyIds": [
+      "hz_eve",
+      "hz_lilith"
+    ],
+    "totalNewStandaloneBases": 1,
+    "noAdditionalPlayableKit": true,
+    "noAnimationAdded": true
+  },
+  "limitations": [
+    "Visual inspection of saved screenshots cannot establish present runtime behavior, scrolling reachability, keyboard interaction, network health or deployment state.",
+    "Source URLs were inherited from local evidence; this review inspected the referenced local image bytes, without a new web provenance verification.",
+    "None of the five assets is certified as a 1:1 reproduction.",
+    "Assets remain unchanged. The only repository file written by this reviewer is this JSON report."
+  ],
+  "resolvedVisualEvidenceHistory": {
+    "previousReportSha256": "ff45ddfb7ca343a1f6f9cec2c7a495c3886b15b245837fde7014f7a34a5d4ebe",
+    "previousReviewTimeUtc": "2026-11-27T00:43:25.536688+00:00",
+    "previousPartialMobileCaptureCount": 2,
+    "currentPartialMobileCaptureCount": 0,
+    "previousFilesRetainedSeparately": false,
+    "issues": [
+      {
+        "assetId": "hb_queef-creator-collection",
+        "observation": "Le sommet de la grande oreille était masqué sous le header fixe.",
+        "previousScreenshot": {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hb_queef-creator-collection.png",
+          "sha256AtPriorReview": "9e73e007fb89adf2d76b2d7e312985e54b0bd57e2b7358f3cae640d49700c4bf",
+          "fileAvailability": "replaced_at_same_path_by_new_capture_not_retained_as_separate_file"
+        },
+        "resolution": "Nouvelle capture viewport inspectée ; dessin désormais entièrement visible sous le header."
+      },
+      {
+        "assetId": "hz_lilith-storybook-standing-silhouette",
+        "observation": "La tête et le haut de la chevelure étaient masqués sous le header fixe.",
+        "previousScreenshot": {
+          "path": "docs/standalone/production-v15/browser-gallery/mobile-hz_lilith-storybook-standing-silhouette.png",
+          "sha256AtPriorReview": "b33ffb4c475035a67afa52e9c69a62a60f056f2f736dd9c7b1d8be57c6b3b0f3",
+          "fileAvailability": "replaced_at_same_path_by_new_capture_not_retained_as_separate_file"
+        },
+        "resolution": "Nouvelle capture viewport inspectée ; dessin désormais entièrement visible sous le header."
+      }
+    ],
+    "scope": "Historical observations retained as text and previous hashes. The old images have been replaced at the same paths; this report does not claim they are still present."
+  },
+  "currentBrowserEvidence": {
+    "path": "docs/standalone/production-v15/browser-gallery-qa.json",
+    "sha256": "eeb007f85248f0a38a3ae68b80b80ea08ab671730a1d30fbc2e59cf1bbe20d73",
+    "startedAt": "2026-11-27T00:43:32.476Z",
+    "finishedAt": "2026-11-27T00:43:43.295Z",
+    "reportedStatus": "passed",
+    "reportedChecks": 12,
+    "reportedPassedChecks": 12,
+    "reportedConsoleErrors": 0,
+    "reportedPageErrors": 0,
+    "sourceHashes": {
+      "src/standalone/ReserveGallery.tsx": "aa77736cc3d24133e7091cf7cc2f671c6035d8f3c2f31ef7780a316424ae518b",
+      "src/standalone/reserve-gallery.css": "7803214f7cc54192d62c0a80a0b66ee671c18cff3ad412a26e0e978e7e093fd5",
+      "src/standalone/InfernalVersus.tsx": "6716e6a3e7e58b80e80a8b94b585ba7edc531e82e9599b26a811a8047425fc76",
+      "src/standalone/infernal-versus.css": "c04ab9498e8a046b2f503a6ad01646c1cf804ea8021e59af4faf98e5a9d34bc6",
+      "art/infernal-versus/production/reserve-assets.json": "3d802c4a077c30a29c6f7de9a315baa6c94feedf4ffe637b3c1b447d5a73af90"
+    },
+    "sourceHashesMatchCurrentFiles": true,
+    "allTenCurrentCaptureHashesMatch": true,
+    "independentReviewerExecutedBrowser": false,
+    "independentReviewerViewedAllTenCurrentCaptures": true
+  }
+}

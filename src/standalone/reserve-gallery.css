@@ -7,8 +7,9 @@
 .iv-reserve-card .iv-eyebrow { font-size: 9px; letter-spacing: 1px; margin: 4px 0 0 !important; }
 .iv-reserve-card strong { line-height: 1.4; font-size: 15px; }
 .iv-reserve-card small { margin-top: auto; }
-.iv-reserve-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 1fr); gap: 28px; margin: 22px 0; }
+.iv-reserve-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 1fr); gap: 28px; margin: 22px 0; scroll-margin-top: 16px; }
 .iv-reserve-detail > img { width: 100%; height: min(70vh, 680px); object-fit: contain; background: radial-gradient(ellipse, #503349, #1b131e); border-radius: 4px; }
+.iv-reserve-image.is-storybook, .iv-reserve-detail > img.is-storybook { background: radial-gradient(ellipse, #c8c0c4, #8a808c); }
 .iv-reserve-detail details { color: var(--iv-muted); line-height: 1.6; margin: 22px 0; }
 .iv-reserve-detail details li { margin: 8px 0; }
 .iv-reserve-detail summary { color: var(--iv-gold); cursor: pointer; }
